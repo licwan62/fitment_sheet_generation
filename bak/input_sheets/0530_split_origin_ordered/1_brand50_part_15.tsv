@@ -1,0 +1,50 @@
+Ford Focus	普通		EV hatchback	2012-2018	172.9	71.8	58.2	Edmunds		
+Ford Focus	普通		RS hatchback	2016-2018	172.8	71.8	58	Edmunds		
+Ford Focus	普通		sedan	2000-2004	174.9	66.9	56.3	Edmunds		
+Ford Focus	普通		hatchback / ZX3	2000-2004	168.1	66.9	56.3	fallback		
+Ford Focus	普通		wagon	2000-2004	178.2	66.9	57	Edmunds		
+Ford Focus	普通		sedan	2005-2007	175.2	66.7	56.8	Edmunds		
+Ford Focus	普通		hatchback / ZX3/ZX5	2005-2007	168.5	66.7	56.8	fallback		
+Ford Focus	普通		wagon	2005-2007	178.4	66.7	57.5	Edmunds		
+Ford Focus	普通		sedan	2008-2011	175	67.9	58.6	fallback		
+Ford Focus	普通		coupe	2008-2011	175	67.9	58.6	fallback		
+Ford Focus	普通		sedan	2012-2018	178.7	71.8	57.8	Edmunds		
+Ford Focus	普通		hatchback	2012-2018	171.7	71.8	57.9	Edmunds		
+Ford Focus	普通		EV hatchback	2012-2018	172.9	71.8	58.2	Edmunds		
+Ford Focus	普通		RS hatchback	2016-2018	172.8	71.8	58	Edmunds		
+Ford Freestyle	普通		wagon/crossover	2005-2007	199.8	74.4	65.9	2007 Ford Freestyle		
+Ford Fusion	普通		sedan	2006-2009	190.2	72.2	57.2	Ford Fusion SEL		
+Ford Fusion	普通		sedan	2010-2012	190.6	72.2	56.9	Ford Fusion Sport		
+Ford Fusion	普通		sedan inc: Hybrid/PHEV	2013-2018	191.8	72.9	58.2	Ford Fusion Energi Titanium		
+Ford Fusion	普通		sedan inc: Hybrid/PHEV	2019-2020	192.3	72.9	58.2	Ford Fusion Titanium		
+Ford Grand C-Max	普通		无美国常规车型	—	—	—	—	No regular US-market Ford Grand C-Max		
+Ford GT	普通		coupe Gen1	2005-2006	182.8	76.9	44.3	Ford GT Base		
+Ford GT	普通		coupe Gen2	2017-2022	187.5	78.9	43.7	Ford GT 2nd gen		
+Ford Mustang	普通		cou/conv	1965-1966	181.6	68.2	51.2	fallback		
+Ford Mustang	普通		cou/fb/conv	1967-1968	183.6	70.9	51.6	fallback		
+Ford Mustang	普通		cou/fb/conv	1969-1970	187.4	71.9	51.3	fallback		
+Ford Mustang	普通		cou/fb/conv	1971-1973	193.8	74.1	50.8	fallback		
+Ford Mustang	普通		cou/hch	1974-1978	175	70.2	49.9	fallback		
+Ford Mustang	普通		cou/hch/conv	1979-1993	179.1	69.1	51.8	fallback		
+Ford Mustang	普通		coupe	1994-1998	181.5	71.8	52.9	Edmunds		
+Ford Mustang	普通		convertible	1994-1998	181.5	71.8	53.1	Edmunds		
+Ford Mustang	普通		cou/conv	1999-2004	183.2	73.1	53.2	Edmunds		
+Ford Mustang	普通		cou/conv	2005-2009	187.6	74	54.5	Edmunds		
+Ford Mustang	普通		cou/conv	2010-2014	188.1	73.9	55.8	Edmunds / fallback		
+Ford Mustang	普通		coupe	2015-2023	188.5	75.4	54.4	Edmunds		
+Ford Mustang	普通		convertible	2015-2023	188.3	75.4	54.9	Edmunds		
+Ford Mustang	普通		cou/conv	2024-2026	189.4	75.4	55	Edmunds		
+Ford Mustang	普通		Dark Horse coupe	2024-2026	189.7	75.5	55.2	Edmunds		
+Ford Mustang Mach-E	普通		EV suv/cuv	2021	185.6	74.1	64	2021 Ford Mustang Mach-E Select/Premium/California Route 1/GT/First Edition		
+Ford Mustang Mach-E	普通		EV suv/cuv	2022	185.6	74.1	64	2022 Ford Mustang Mach-E California Route 1 / trims		
+Ford Mustang Mach-E	普通		EV suv/cuv inc: GT	2023	186.7	74.1	64	2023 Ford Mustang Mach-E GT / non-GT		
+Ford Mustang Mach-E	普通		EV suv/cuv excl: Rally	2024	186.7	74.1	64	2024 Ford Mustang Mach-E GT / Select/Premium		
+Ford Mustang Mach-E	普通		EV suv/cuv Rally	2024	187	74.1	64.9	2024 Ford Mustang Mach-E Rally		
+Ford Mustang Mach-E	普通		EV suv/cuv excl: Rally	2025	186.7	74.1	64.1	2025 Ford Mustang Mach-E GT / Premium		
+Ford Mustang Mach-E	普通		EV suv/cuv Rally	2025	187	74.1	64.9	2025 Ford Mustang Mach-E Rally		
+Ford Mustang Mach-E	普通		EV suv/cuv excl: Rally	2026	186.7	74.1	64.1	2026 Ford Mustang Mach-E GT / Premium		
+Ford Mustang Mach-E	普通		EV suv/cuv Rally	2026	187	74.1	64.9	2026 Ford Mustang Mach-E Rally		
+Ford Taurus	普通		sedan compact	1986-1991	188.4	70.8	54.3	Ford Taurus 1st gen sedan		
+Ford Taurus	普通		wagon compact	1986-1991	191.9	70.8	55.2	Ford Taurus 1st gen wagon		
+Ford Taurus	普通		sedan compact	1992-1995	192	71.2	54.1	Ford Taurus Sedan		
+Ford Taurus	普通		wagon compact	1992-1995	193.1	71.2	55.5	Ford Taurus Wagon		

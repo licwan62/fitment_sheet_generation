@@ -1,0 +1,50 @@
+Chevrolet Chevelle	老爷	gen1 mid-size	cou/conv/sdn	1964	193.9	74.6	54.5	1964 Chevrolet Chevelle Fact Sheet	初代短中型	可入库
+Chevrolet Chevelle	老爷	gen1 mid-size	wagon	1964	198.8	74.6	54.1	1964 Chevrolet Chevelle Wagon	wagon必拆	可入库
+Chevrolet Chevelle	老爷	gen1 mid-size	cou/conv/sdn	1967	197	75	53	1967 Chevrolet Chevelle Fact Sheet	facelift后变长	可入库
+Chevrolet Chevelle	老爷	gen1 mid-size	wagon	1967	199.9	75	54.6	1967 Chevrolet Chevelle Wagon	wagon高车顶	可入库
+Chevrolet Chevelle	老爷	gen2 mid-size	cou/conv	1968	197.1	75.7	53.2	1968 Chevrolet Chevelle Fact Sheet	短轴cou/conv	可入库
+Chevrolet Chevelle	老爷	gen2 mid-size	sedan	1968	201.1	75.7	53.5	1968 Chevrolet Chevelle Malibu Sedan	sedan更长	可入库
+Chevrolet Chevelle	老爷	gen2 mid-size	wagon	1968	207.1	75.7	55.2	1968 Chevrolet Chevelle Wagon Fact Sheet	wagon长度风险	可入库
+Chevrolet Chevelle	老爷	gen2 mid-size	cou/conv	1971	197.5	75.4	53.2	1971 Chevrolet Chevelle Fact Sheet	cou/conv短轴	可入库
+Chevrolet Chevelle	老爷	gen2 mid-size	sedan	1971	201.5	75.4	53.5	1971 Chevrolet Chevelle Fact Sheet	sedan独立	可入库
+Chevrolet Chevelle	老爷	gen2 mid-size	wagon	1971	206.8	75.4	55.2	1971 Chevrolet Chevelle Wagon	wagon独立	可入库
+Chevrolet Chevelle	老爷	gen3 Colonnade mid-size	coupe	1973	202.9	76.6	53.3	1973 Chevrolet Chevelle SS Coupe	Colonnade coupe	可入库
+Chevrolet Chevelle	老爷	gen3 Colonnade mid-size	sedan	1973	206.9	76.6	54	1973 Chevrolet Chevelle Deluxe Sedan	sedan更长	可入库
+Chevrolet Chevelle	老爷	gen3 Colonnade mid-size	wagon	1974	216.1	76.6	55.5	1974 Chevelle Malibu Classic Wagon	最大wagon段	可入库
+Chevrolet Chevelle	老爷	gen3 Colonnade mid-size	coupe	1974	207.3	76.6	53.3	1974 Chevelle Laguna Type S-3 Coupe	Laguna鼻头更长	可入库
+Chevrolet Chevelle	老爷	gen3 Colonnade mid-size	sedan	1974	210.3	76.6	54	1974 Chevelle Malibu Classic Sedan	sedan独立	可入库
+Chevrolet Chevelle	老爷	gen3 Colonnade mid-size	sedan	1977	209.7	76.9	54	1977 Chevrolet Chevelle Malibu Sedan	末年sedan	可入库
+Chevrolet Chevelle	老爷	gen3 Colonnade mid-size	wagon	1977	215.4	76.8	55.8	1977 Chevrolet Chevelle Malibu Wagon	wagon独立	可入库
+Chevrolet Chevelle	老爷	gen1 mid-size	cou/conv/sdn	1964-1966	193.9	74.6	54.5	1964 Chevrolet Chevelle Malibu / 1965-1966 Chevelle reference	A-body早期	待终核: 1965-1966高度
+Chevrolet Chevelle	老爷	gen1 mid-size	cou/conv/sdn	1967	197	75	53	1967 Chevrolet Chevelle Mid-size Fact Sheet	67普通车回调	可入库
+Chevrolet Chevelle	老爷	gen1 mid-size	wagon	1967	199.9	75	54.6	1967 Chevrolet Chevelle Station Wagon	wagon略长高	可入库
+Chevrolet Chevelle	老爷	gen2 mid-size	cou/conv	1968-1972	197.5	76	53.2	1968-1972 Chevrolet Chevelle 2-Door / Convertible	低车顶短轴	可入库
+Chevrolet Chevelle	老爷	gen2 mid-size	sedan	1968-1972	201.5	76	53.5	1968-1972 Chevrolet Chevelle 4-Door Sedan	四门长轴	可入库
+Chevrolet Chevelle	老爷	gen2 mid-size	wagon	1968-1972	207.9	76	55.2	1968-1972 Chevrolet Chevelle Station Wagon	wagon长高	可入库
+Chevrolet Chevelle	老爷	gen3 Colonnade mid-size	cou/sdn	1973-1977	209.3	76.6	54	1973/1976 Chevrolet Chevelle Malibu Coupe / Sedan	非wagon	可入库
+Chevrolet Chevelle	老爷	gen3 Colonnade mid-size	wagon	1973-1977	216.1	76.8	56	1974/1975/1977 Chevrolet Chevelle Malibu Classic Estate Wagon	wagon长高	可入库
+Ford Focus	普通		sedan	2000-2004	174.9	66.9	56.3	Edmunds		
+Ford Focus	普通		hatchback / ZX3	2000-2004	168.1	66.9	56.3	fallback		
+Ford Focus	普通		wagon	2000-2004	178.2	66.9	57	Edmunds		
+Ford Focus	普通		sedan	2005-2007	175.2	66.7	56.8	Edmunds		
+Ford Focus	普通		hatchback / ZX3/ZX5	2005-2007	168.5	66.7	56.8	fallback		
+Ford Focus	普通		wagon	2005-2007	178.4	66.7	57.5	Edmunds		
+Ford Focus	普通		sedan	2008-2011	175	67.9	58.6	fallback		
+Ford Focus	普通		coupe	2008-2011	175	67.9	58.6	fallback		
+Ford Focus	普通		sedan	2012-2018	178.7	71.8	57.8	Edmunds		
+Ford Focus	普通		hatchback	2012-2018	171.7	71.8	57.9	Edmunds		
+Ford Focus	普通		EV hatchback	2012-2018	172.9	71.8	58.2	Edmunds		
+Ford Focus	普通		RS hatchback	2016-2018	172.8	71.8	58	Edmunds		
+Ford Focus	普通		sedan	2000-2004	174.9	66.9	56.3	Edmunds		
+Ford Focus	普通		hatchback / ZX3	2000-2004	168.1	66.9	56.3	fallback		
+Ford Focus	普通		wagon	2000-2004	178.2	66.9	57	Edmunds		
+Ford Focus	普通		sedan	2005-2007	175.2	66.7	56.8	Edmunds		
+Ford Focus	普通		hatchback / ZX3/ZX5	2005-2007	168.5	66.7	56.8	fallback		
+Ford Focus	普通		wagon	2005-2007	178.4	66.7	57.5	Edmunds		
+Ford Focus	普通		sedan	2008-2011	175	67.9	58.6	fallback		
+Ford Focus	普通		coupe	2008-2011	175	67.9	58.6	fallback		
+Ford Focus	普通		sedan	2012-2018	178.7	71.8	57.8	Edmunds		
+Ford Focus	普通		hatchback	2012-2018	171.7	71.8	57.9	Edmunds		
+Ford Focus	普通		EV hatchback	2012-2018	172.9	71.8	58.2	Edmunds		
+Ford Focus	普通		RS hatchback	2016-2018	172.8	71.8	58	Edmunds		
+BMW 1 Series	普通		cou/conv	2008-2013	172.2	68.8	56	2013 BMW 1 Series Coupe / Convertible		

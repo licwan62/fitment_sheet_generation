@@ -1,0 +1,50 @@
+Ford Escort	老爷	gen1 compact	wagon early	1981-1990	169.4	65.9	53.7	Ford Escort NA gen1 wagon cross-ref	wagon尾部不同	待终核: 1981-1990 wagon
+Ford Escort	老爷	gen2 compact	hatchback	1991-1996	170	66.7	52.5	1991/1993 Ford Escort Hatchback	低矮hatch	可入库
+Ford Escort	老爷	gen2 compact	sedan	1991-1996	170.9	66.7	52.7	1991/1994 Ford Escort Sedan	sedan略长	可入库
+Ford Escort	老爷	gen2 compact	wagon	1991-1996	171.3	66.7	53.6	1991/1995 Ford Escort Wagon	wagon更高	可入库
+Ford Escort	老爷	gen3 compact	sedan	1997-2002	174.7	67	53.3	1997/1998 Ford Escort Sedan	三厢长度增加	待终核: 1999-2002 sedan
+Ford Escort	老爷	gen3 compact	wagon	1997-1999	172.7	67	53.9	1997 Ford Escort Wagon LX	wagon高度高点	待终核: 1998/1999 wagon
+Ford Escort	老爷	gen3 compact	ZX2 coupe	1998-2003	175.2	67.4	52.1	1998/2000 Ford Escort ZX2	低车顶coupe	可入库
+Ford Excursion	普通		SUV	2000-2005	226.4	79.9	80.2	2005 Ford Excursion 4WD		
+Ford Expedition	普通		SUV early	1997-2001	204.6	78.6	76.4	1997 Ford Expedition XLT，Edmunds		
+Ford Expedition	普通		SUV early	2002	205.8	78.7	78.4	2002 Ford Expedition Eddie Bauer，Edmunds		
+Ford Expedition	普通		SUV early	2003-2004	205.8	78.7	77.6	Edmunds		
+Ford Expedition	普通		SUV early	2005-2006	205.8	78.7	76.7	Edmunds		
+Ford Expedition	普通		SUV	2007-2014	206.5	78.8	77.2	Edmunds / fallback		
+Ford Expedition	普通		SUV EL	2007-2014	221.3	78.8	77.7	Edmunds		
+Ford Expedition	普通		SUV	2015-2017	206	78.8	77.2	Edmunds		
+Ford Expedition	普通		SUV EL	2015-2017	220.8	78.8	77.7	Edmunds		
+Ford Expedition	普通		SUV	2018-2024	210	79.9	76.6	Edmunds		
+Ford Expedition	普通		SUV MAX	2018-2024	221.9	79.9	76.4	Edmunds		
+Ford Expedition	普通		SUV inc: Tremor	2025-2026	209.9	80	78.9	Ford official / Edmunds		
+Ford Expedition	普通		SUV MAX	2025-2026	221.7	80	78	Ford official		
+Ford Explorer	普通		SUV 2dr	1991-1994	174.4	70.2	67.5	Ford Explorer Sport		
+Ford Explorer	普通		SUV 4dr	1991-1994	184.3	70.2	67.3	Ford Explorer Eddie Bauer		
+Ford Explorer	普通		SUV 2dr	1995-1997	178.6	70.2	67	Ford Explorer Sport		
+Ford Explorer	普通		SUV 4dr	1995-1997	188.5	70.2	66.8	Ford Explorer XLT		
+Ford Explorer	普通		SUV 2dr	1998	179.6	70.2	67	Ford Explorer Sport		
+Ford Explorer	普通		SUV 4dr	1998	189.5	70.2	67.5	Ford Explorer Limited		
+Ford Explorer	普通		SUV 2dr	1999-2001	180.8	70.2	67	Ford Explorer Sport		
+Ford Explorer	普通		SUV 4dr	1999-2001	190.7	70.2	67.5	Ford Explorer XLT		
+Ford Explorer	普通		SUV Sport Trac	2001-2005	205.8	73.6	71.2	Ford Explorer Sport Trac		
+Ford Explorer	普通		SUV 4dr	2002-2010	193.4	73.7	72.5	Ford Explorer Eddie Bauer		
+Ford Fiesta	普通		sedan	2011	173.6	66.8	58	2011 Ford Fiesta Sedan		
+Ford Fiesta	普通		hatchback	2011	160.1	66.8	58	2011 Ford Fiesta Hatchback		
+Ford Fiesta	普通		sedan	2012-2013	173.6	67.8	58	Ford Fiesta Sedan		
+Ford Fiesta	普通		hatchback	2012-2013	160.1	67.8	58	Ford Fiesta Hatchback		
+Ford Fiesta	普通		sedan	2014-2017	173.6	67.8	58	Ford Fiesta Sedan		
+Ford Fiesta	普通		hatchback inc: ST	2014-2017	160.1	67.8	57.2	Ford Fiesta ST		
+Ford Fiesta	普通		sedan	2018-2019	173.5	67.8	58.1	2019 Ford Fiesta Sedan		
+Ford Fiesta	普通		hatchback inc: ST	2018-2019	160.1	67.8	58.1	2019 Ford Fiesta Hatchback / ST		
+Ford Five Hundred	普通		sedan	2005-2007	200.7	74.5	61.5	2007 Ford Five Hundred		
+Ford Flex	普通		SUV	2009-2019	201.8	75.9	68	Ford Flex		
+Ford Focus	普通		sedan	2000-2004	174.9	66.9	56.3	Edmunds		
+Ford Focus	普通		hatchback / ZX3	2000-2004	168.1	66.9	56.3	fallback		
+Ford Focus	普通		wagon	2000-2004	178.2	66.9	57	Edmunds		
+Ford Focus	普通		sedan	2005-2007	175.2	66.7	56.8	Edmunds		
+Ford Focus	普通		hatchback / ZX3/ZX5	2005-2007	168.5	66.7	56.8	fallback		
+Ford Focus	普通		wagon	2005-2007	178.4	66.7	57.5	Edmunds		
+Ford Focus	普通		sedan	2008-2011	175	67.9	58.6	fallback		
+Ford Focus	普通		coupe	2008-2011	175	67.9	58.6	fallback		
+Ford Focus	普通		sedan	2012-2018	178.7	71.8	57.8	Edmunds		
+Ford Focus	普通		hatchback	2012-2018	171.7	71.8	57.9	Edmunds		
