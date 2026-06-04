@@ -3,6 +3,8 @@
 
 Add-Type -AssemblyName System.Windows.Forms
 Add-Type -AssemblyName System.Drawing
+Add-Type -AssemblyName UIAutomationClient
+Add-Type -AssemblyName UIAutomationTypes
 
 # Win32 API for mouse events
 Add-Type -TypeDefinition @"
@@ -86,6 +88,122 @@ function Click-AtPosition {
     Start-Sleep -Milliseconds 50
     [MouseEvent]::mouse_event([MouseEvent]::MOUSEEVENTF_LEFTUP, 0, 0, 0, 0)
     Start-Sleep -Milliseconds 200
+}
+
+function Get-ChatGPTAutomationRoot {
+    $process = Get-Process -Name "*ChatGPT*" -ErrorAction SilentlyContinue | Select-Object -First 1
+    if (-not $process -or $process.MainWindowHandle -eq 0) { return $null }
+    return [System.Windows.Automation.AutomationElement]::FromHandle($process.MainWindowHandle)
+}
+
+function Get-ElementText {
+    param($Element)
+
+    if (-not $Element) { return "" }
+
+    try {
+        $valuePattern = $Element.GetCurrentPattern([System.Windows.Automation.ValuePattern]::Pattern)
+        if ($valuePattern -and $valuePattern.Current.Value) {
+            return [string]$valuePattern.Current.Value
+        }
+    } catch { }
+
+    try {
+        $textPattern = $Element.GetCurrentPattern([System.Windows.Automation.TextPattern]::Pattern)
+        if ($textPattern) {
+            return [string]$textPattern.DocumentRange.GetText(-1)
+        }
+    } catch { }
+
+    try {
+        return [string]$Element.Current.Name
+    } catch {
+        return ""
+    }
+}
+
+function Find-EditorAutomationElement {
+    $root = Get-ChatGPTAutomationRoot
+    if (-not $root) { return $null }
+
+    $condition = New-Object System.Windows.Automation.PropertyCondition(
+        [System.Windows.Automation.AutomationElement]::ControlTypeProperty,
+        [System.Windows.Automation.ControlType]::Edit
+    )
+    $editors = $root.FindAll([System.Windows.Automation.TreeScope]::Descendants, $condition)
+    foreach ($editor in $editors) {
+        try {
+            if (-not $editor.Current.IsEnabled) { continue }
+            $name = [string]$editor.Current.Name
+            if ($name -match "Message|消息|Prompt|输入|Ask|Chat") { return $editor }
+        } catch { }
+    }
+
+    if ($editors.Count -gt 0) { return $editors[$editors.Count - 1] }
+    return $null
+}
+
+function ConvertTo-SendKeysLiteral {
+    param([string]$Text)
+
+    $escaped = $Text
+    $escaped = $escaped.Replace('{', '{{}')
+    $escaped = $escaped.Replace('}', '{}}')
+    $escaped = $escaped.Replace('+', '{+}')
+    $escaped = $escaped.Replace('^', '{^}')
+    $escaped = $escaped.Replace('%', '{%}')
+    $escaped = $escaped.Replace('~', '{~}')
+    $escaped = $escaped.Replace('(', '{(}')
+    $escaped = $escaped.Replace(')', '{)}')
+    $escaped = $escaped.Replace('[', '{[}')
+    $escaped = $escaped.Replace(']', '{]}')
+    return $escaped
+}
+
+function Send-TextWithoutClipboard {
+    param([string]$Text)
+
+    $normalized = $Text -replace "`r`n", "`n"
+    $lines = $normalized -split "`n"
+    for ($i = 0; $i -lt $lines.Count; $i++) {
+        $line = $lines[$i]
+        if ($line.Length -gt 0) {
+            [System.Windows.Forms.SendKeys]::SendWait((ConvertTo-SendKeysLiteral -Text $line))
+        }
+        if ($i -lt ($lines.Count - 1)) {
+            [System.Windows.Forms.SendKeys]::SendWait("+{ENTER}")
+        }
+        Start-Sleep -Milliseconds 20
+    }
+}
+
+function Get-ChatGPTReplyText {
+    $root = Get-ChatGPTAutomationRoot
+    if (-not $root) { return "" }
+
+    $conditions = @(
+        (New-Object System.Windows.Automation.PropertyCondition(
+            [System.Windows.Automation.AutomationElement]::ControlTypeProperty,
+            [System.Windows.Automation.ControlType]::Document
+        )),
+        (New-Object System.Windows.Automation.PropertyCondition(
+            [System.Windows.Automation.AutomationElement]::ControlTypeProperty,
+            [System.Windows.Automation.ControlType]::Text
+        ))
+    )
+
+    $bestText = ""
+    foreach ($condition in $conditions) {
+        $elements = $root.FindAll([System.Windows.Automation.TreeScope]::Descendants, $condition)
+        foreach ($element in $elements) {
+            $text = (Get-ElementText -Element $element).Trim()
+            if ($text.Length -gt $bestText.Length) {
+                $bestText = $text
+            }
+        }
+    }
+
+    return $bestText
 }
 
 # 主脚本开始
@@ -200,10 +318,8 @@ $tsvContent
     [System.Windows.Forms.SendKeys]::SendWait("{DELETE}")
     Start-Sleep -Milliseconds 100
     
-    # 粘贴内容
-    Set-Clipboard -Value $sendContent
-    Start-Sleep -Milliseconds 200
-    [System.Windows.Forms.SendKeys]::SendWait("^v")
+    # 直接键入内容，不占用系统剪贴板
+    Send-TextWithoutClipboard -Text $sendContent
     Start-Sleep -Seconds 1
     
     # 点击发送按钮
@@ -215,17 +331,12 @@ $tsvContent
     Write-Host "等待回复..." -ForegroundColor Yellow
     Start-Sleep -Seconds 30  # 等待30秒，您可以根据实际情况调整
     
-    # 复制回复（Ctrl+A, Ctrl+C）
-    Write-Host "复制回复..." -ForegroundColor Yellow
-    [System.Windows.Forms.SendKeys]::SendWait("^a")
-    Start-Sleep -Milliseconds 200
-    [System.Windows.Forms.SendKeys]::SendWait("^c")
-    Start-Sleep -Milliseconds 500
-    
-    $replyContent = Get-Clipboard -Format Text -ErrorAction SilentlyContinue
+    # 直接从界面读取回复文本，不占用系统剪贴板
+    Write-Host "读取回复..." -ForegroundColor Yellow
+    $replyContent = Get-ChatGPTReplyText
     if (-not $replyContent) {
         $status = "页面错误"
-        $remark = "无法复制回复内容"
+        $remark = "无法读取回复内容"
     } else {
         # 保存结果
         $baseName = [System.IO.Path]::GetFileNameWithoutExtension($fileName)

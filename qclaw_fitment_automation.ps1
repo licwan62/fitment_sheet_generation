@@ -9,6 +9,7 @@ param(
     [string]$RequirementPath = (Join-Path $PSScriptRoot "requirement.md"),
     [string]$ChatGptUrl = "https://chatgpt.com/",
     [string]$Browser = "edge",
+    [Alias("MaxRounds")]
     [int]$MaxNextSteps = 30,
     [int]$ReplyStabilityDelay = 10,
     [int]$OperationDelay = 2,
@@ -37,6 +38,10 @@ else {
 }
 $SkipStatuses = @("成功")
 $ProgressKeywords = @("更新点", "当前批次进度", "下一步优先核对", "待终核", "可入库", "数据抓取过程", "全量表", "TSV", "新增/拆出记录", "主要数值修改", "🟢", "🟡", "🔴")
+$ContinueMessage = "继续补强当前批次，并严格按以下格式回复：1) 更新点；2) 当前批次进度；3) 本轮更新后的 TSV（必须是真正更新过的 TSV，不能只写计划或说明，字段顺序必须与原表一致）；4) 下一步优先核对；5) 若仍未完成，在末尾单独输出：下一步。不要只描述这一轮将要做什么而不给 TSV，不要连续重复上一轮内容。"
+$MissingSignalsMessage = "你的上一轮回复缺少正常推进信号。请立刻继续当前批次，并严格补齐以下内容：更新点、当前批次进度、本轮更新后的 TSV、下一步优先核对；如果还没完成，末尾单独输出“下一步”。不得只给说明、计划、摘要或重复上一轮文本，必须给一个更新过的 TSV。"
+$FullTableRequestMessage = "给我当前批次更新后的完整可替换 TSV。必须包含未变更、已修改、新增/拆分后的全部记录；不要只给变化部分或摘要。年份是范围时，参考车型必须覆盖起止年份，例如 2002-2004 Audi A6 Avant，不能只写 2002 Audi A6 Avant。若版本列含有 2dr、4dr、2-door、4-door、两门、四门 或其他门数口径，必须按不同门数拆成独立多条记录，不能合并。仍有待终核/待补强行时不要说完成，请继续补强。表格后单独输出：本批次完成。"
+$CompletionFixMessage = "你刚才给了完成信号，但当前批次完整可替换 TSV 不完整、年份范围行的参考车型没有覆盖起止年份，或仍有待终核/待补强行。请继续补强；只有全部行都可入库时，才输出当前批次更新后的完整可替换 TSV。年份是 2002-2004 这类范围时，参考车型必须类似 2002-2004 Audi A6 Avant 或同时包含 2002 和 2004，不能只写 2002。若版本列含有 2dr、4dr、2-door、4-door、两门、四门 或其他门数口径，必须按不同门数拆成独立多条记录，不能合并。未完成时仍需带上：更新点、当前批次进度、本轮更新后的 TSV、下一步优先核对，并在末尾单独输出：下一步。最终表格后单独输出：本批次完成。"
 
 function Invoke-XB {
     param([Parameter(ValueFromRemainingArguments = $true)][string[]]$Args)
@@ -364,6 +369,46 @@ function Test-ReplyContainsFullTable {
     return ((Get-TSVDataRowCountFromText -Text $Reply) -ge $MinimumRows)
 }
 
+function Test-ReplyContainsTSV {
+    param([string]$Reply)
+
+    return ((Get-TSVDataRowCountFromText -Text $Reply) -gt 0)
+}
+
+function Test-ReplyHasNextDirection {
+    param([string]$Reply)
+
+    if ([string]::IsNullOrWhiteSpace($Reply)) { return $false }
+
+    $patterns = @(
+        "下一步优先核对",
+        "(^|[\r\n])\s*下一步[：:]?",
+        "后续优先",
+        "继续核对",
+        "继续补强",
+        "优先处理"
+    )
+
+    foreach ($pattern in $patterns) {
+        if ($Reply -match $pattern) { return $true }
+    }
+
+    return $false
+}
+
+function Test-ReplyHasRoundProgressSignals {
+    param([string]$Reply)
+
+    if ([string]::IsNullOrWhiteSpace($Reply)) { return $false }
+
+    $hasTsv = Test-ReplyContainsTSV -Reply $Reply
+    $hasUpdate = $Reply -match "更新点"
+    $hasProgress = $Reply -match "当前批次进度"
+    $hasNextDirection = Test-ReplyHasNextDirection -Reply $Reply
+
+    return ($hasTsv -and $hasUpdate -and $hasProgress -and $hasNextDirection)
+}
+
 function Test-ForceNextSignal {
     param([string]$Text)
 
@@ -424,9 +469,12 @@ function Get-TextSimilarity {
 function Open-ChatGPT {
     Write-Host "打开 ChatGPT: $ChatGptUrl" -ForegroundColor Yellow
     $openArgs = @("run", "--browser", $Browser, "open", $ChatGptUrl)
-    $openResult = Invoke-XB @openArgs
+    $allowCleanupRetry = $true
 
-    if (-not $openResult.ok) {
+    while ($true) {
+        $openResult = Invoke-XB @openArgs
+        if ($openResult.ok) { break }
+
         $rawError = ""
         if ($openResult.data -and $openResult.data.raw_error) {
             $rawError = [string]$openResult.data.raw_error
@@ -444,16 +492,36 @@ function Open-ChatGPT {
         }
         catch { }
 
-        if ($currentUrl -notlike "https://chatgpt.com*") {
-            if ($rawError -like "*ERR_ABORTED*") {
-                Write-Host "open 返回 ERR_ABORTED，改用新标签页打开 ChatGPT..." -ForegroundColor Yellow
-                Invoke-XBRun "tab" "new" $ChatGptUrl | Out-Null
-            }
-            else {
-                $hint = if ($openResult.hint) { " 提示: $($openResult.hint)" } else { "" }
-                throw "xbrowser 打开 ChatGPT 失败: $($openResult.error)$hint 原始错误: $rawError"
-            }
+        if ($currentUrl -like "https://chatgpt.com*") { break }
+
+        if ($rawError -like "*ERR_ABORTED*") {
+            Write-Host "open 返回 ERR_ABORTED，改用新标签页打开 ChatGPT..." -ForegroundColor Yellow
+            Invoke-XBRun "tab" "new" $ChatGptUrl | Out-Null
+            break
         }
+
+        $isSessionLost = (
+            $rawError -like "*Session with given id not found*" -or
+            $rawError -like "*Target closed*" -or
+            $rawError -like "*No target with given id found*" -or
+            $openResult.error -like "*CDP*"
+        )
+        if ($allowCleanupRetry -and $isSessionLost) {
+            Write-Host "检测到 xbrowser/CDP 会话失联，执行 cleanup 后重试一次..." -ForegroundColor Yellow
+            try {
+                Invoke-XB "cleanup" | Out-Null
+            }
+            catch {
+                Write-Host "  cleanup 执行失败，继续尝试重新初始化: $($_.Exception.Message)" -ForegroundColor Yellow
+            }
+            Start-Sleep -Seconds 2
+            Initialize-XBrowser
+            $allowCleanupRetry = $false
+            continue
+        }
+
+        $hint = if ($openResult.hint) { " 提示: $($openResult.hint)" } else { "" }
+        throw "xbrowser 打开 ChatGPT 失败: $($openResult.error)$hint 原始错误: $rawError"
     }
 
     Start-Sleep -Seconds 3
@@ -632,29 +700,110 @@ function Get-ChatGPTComposerState {
     return $state
 }
 
-function Set-ClipboardReliable {
+function Set-ChatGPTEditorText {
     param([string]$Text)
 
-    $lastError = $null
-    for ($attempt = 1; $attempt -le 8; $attempt++) {
-        try {
-            Set-Clipboard -Value $Text
-            return
-        }
-        catch {
-            $lastError = $_.Exception.Message
-            Start-Sleep -Milliseconds (250 * $attempt)
+    Ensure-ChatGPTActive
+    $encodedText = [Convert]::ToBase64String([System.Text.Encoding]::UTF8.GetBytes($Text))
+    $script = @"
+(() => {
+  const encoded = '$encodedText';
+  const nextValue = new TextDecoder().decode(Uint8Array.from(atob(encoded), c => c.charCodeAt(0)));
+  const isVisible = el => {
+    if (!el) return false;
+    const style = window.getComputedStyle(el);
+    const rect = el.getBoundingClientRect();
+    return style.display !== 'none' && style.visibility !== 'hidden' && rect.width > 0 && rect.height > 0;
+  };
+  const editor = Array.from(document.querySelectorAll('#prompt-textarea, textarea, [contenteditable="true"], [role="textbox"]'))
+    .find(el => isVisible(el) && !el.disabled && el.getAttribute('aria-disabled') !== 'true');
+  if (!editor) {
+    return { ok: false, reason: 'no-editor' };
+  }
+
+  editor.focus();
+  if (editor.scrollIntoView) editor.scrollIntoView({ block: 'center' });
+
+  if ('value' in editor) {
+    const proto = Object.getPrototypeOf(editor);
+    const descriptor = proto ? Object.getOwnPropertyDescriptor(proto, 'value') : null;
+    if (descriptor && descriptor.set) {
+      descriptor.set.call(editor, nextValue);
+    } else {
+      editor.value = nextValue;
+    }
+    editor.dispatchEvent(new InputEvent('input', { bubbles: true, data: nextValue, inputType: 'insertText' }));
+    editor.dispatchEvent(new Event('change', { bubbles: true }));
+    return { ok: true, mode: 'value', length: editor.value.length };
+  }
+
+  if (editor.isContentEditable) {
+    editor.innerHTML = '';
+    const lines = nextValue.split(/\r?\n/);
+    lines.forEach((line, index) => {
+      if (index > 0) editor.appendChild(document.createElement('br'));
+      editor.appendChild(document.createTextNode(line));
+    });
+    editor.dispatchEvent(new InputEvent('input', { bubbles: true, data: nextValue, inputType: 'insertText' }));
+    editor.dispatchEvent(new Event('change', { bubbles: true }));
+    return { ok: true, mode: 'contenteditable', length: (editor.innerText || editor.textContent || '').length };
+  }
+
+  return { ok: false, reason: 'unsupported-editor' };
+})()
+"@
+    $result = Get-XBValue (Invoke-XBRun "eval" $script)
+    if (-not $result -or -not $result.ok) {
+        $reason = if ($result -and $result.reason) { [string]$result.reason } else { "unknown" }
+        throw "写入 ChatGPT 输入框失败: $reason"
+    }
+}
+
+function Copy-LastChatGPTReplyMarkdown {
+    param([string]$FallbackReply = "")
+
+    Ensure-ChatGPTActive
+    $script = @'
+(() => {
+  const textOf = el => (el && (el.innerText || el.textContent || '') || '').trim();
+  let assistantNodes = Array.from(document.querySelectorAll('[data-message-author-role="assistant"]'));
+  if (assistantNodes.length === 0) {
+    assistantNodes = Array.from(document.querySelectorAll('article')).filter(el => {
+      const role = el.getAttribute('data-message-author-role') || '';
+      return role !== 'user';
+    });
+  }
+  if (assistantNodes.length === 0) return { ok: false, reason: 'no-assistant-node' };
+  const last = assistantNodes[assistantNodes.length - 1];
+  last.scrollIntoView({ block: 'center' });
+  const text = textOf(last);
+  if (!text) {
+    const container = last.closest('article') || last.closest('[data-testid*="conversation-turn"]') || last;
+    const articleText = textOf(container);
+    if (!articleText) return { ok: false, reason: 'empty-reply' };
+    return { ok: true, text: articleText };
+  }
+  return { ok: true, text };
+})()
+'@
+    $replyResult = Get-XBValue (Invoke-XBRun "eval" $script)
+    if (-not $replyResult -or -not $replyResult.ok) {
+        $reason = if ($replyResult -and $replyResult.reason) { [string]$replyResult.reason } else { "unknown" }
+        throw "读取最后一条回复失败: $reason"
+    }
+    $copied = ([string]$replyResult.text).TrimEnd()
+    if ([string]::IsNullOrWhiteSpace($copied)) {
+        throw "读取到的最后一条回复为空"
+    }
+
+    if (-not [string]::IsNullOrWhiteSpace($FallbackReply)) {
+        $fallbackTrimmed = $FallbackReply.Trim()
+        if ($copied -eq "下一步" -or ($fallbackTrimmed.Length -gt 200 -and $copied.Length -lt [Math]::Min(120, [int]($fallbackTrimmed.Length * 0.2)))) {
+            throw "读取到的内容不像完整回复，长度: $($copied.Length)，DOM 回复长度: $($fallbackTrimmed.Length)"
         }
     }
 
-    try {
-        Add-Type -AssemblyName System.Windows.Forms -ErrorAction SilentlyContinue
-        [System.Windows.Forms.Clipboard]::SetText($Text)
-        return
-    }
-    catch {
-        throw "剪贴板写入失败: $lastError; fallback: $($_.Exception.Message)"
-    }
+    return $copied
 }
 
 function Wait-MessageAccepted {
@@ -758,33 +907,29 @@ function Send-ChatGPTMessage {
     )
 
     Focus-ChatGPTEditor
-    $pasteAttempts = if ($LargePayload) { 4 } else { 3 }
-    $pasted = $false
+    $writeAttempts = if ($LargePayload) { 4 } else { 3 }
+    $written = $false
 
-    for ($pasteAttempt = 1; $pasteAttempt -le $pasteAttempts; $pasteAttempt++) {
-        Set-ClipboardReliable -Text $Message
-        Start-Sleep -Seconds 1
-        Focus-ChatGPTEditor
-        Invoke-XBRun "press" "Control+A" | Out-Null
-        Invoke-XBRun "press" "Control+V" | Out-Null
+    for ($writeAttempt = 1; $writeAttempt -le $writeAttempts; $writeAttempt++) {
+        Set-ChatGPTEditorText -Text $Message
 
-        $pasteWaitSeconds = if ($LargePayload) { [Math]::Max($LargePayloadDelay, 12) } else { 5 }
-        if (Wait-EditorTextReady -ExpectedText $Message -LargePayload:$LargePayload -TimeoutSeconds $pasteWaitSeconds) {
-            $pasted = $true
+        $writeWaitSeconds = if ($LargePayload) { [Math]::Max($LargePayloadDelay, 12) } else { 5 }
+        if (Wait-EditorTextReady -ExpectedText $Message -LargePayload:$LargePayload -TimeoutSeconds $writeWaitSeconds) {
+            $written = $true
             break
         }
 
-        Write-Host "  粘贴内容未确认，重试粘贴 ($pasteAttempt/$pasteAttempts)..." -ForegroundColor Yellow
+        Write-Host "  输入框内容未确认，重试写入 ($writeAttempt/$writeAttempts)..." -ForegroundColor Yellow
         Start-Sleep -Seconds 2
     }
 
-    if (-not $pasted) {
+    if (-not $written) {
         $composerState = Get-ChatGPTComposerState
-        throw "粘贴未确认，输入框长度: $($composerState.editorLength)，composer长度: $($composerState.composerLength)，附件状态: $($composerState.hasAttachment)，发送按钮可用: $($composerState.sendEnabled)，预期长度: $($Message.Length)"
+        throw "写入未确认，输入框长度: $($composerState.editorLength)，composer长度: $($composerState.composerLength)，附件状态: $($composerState.hasAttachment)，发送按钮可用: $($composerState.sendEnabled)，预期长度: $($Message.Length)"
     }
 
     if ($LargePayload) {
-        Write-Host "  大文本已确认粘贴，等待 $LargePayloadDelay 秒后发送..." -ForegroundColor Gray
+        Write-Host "  大文本已确认写入，等待 $LargePayloadDelay 秒后发送..." -ForegroundColor Gray
         Start-Sleep -Seconds $LargePayloadDelay
     }
     else {
@@ -828,11 +973,29 @@ function Wait-ChatGPTReplyComplete {
         }
         elseif ($reply.Length -gt 0 -and -not $state.isGenerating -and $state.inputReady -and $stableSince -and ((Get-Date) - $stableSince).TotalSeconds -ge $ReplyStabilityDelay) {
             Start-Sleep -Seconds $PostReplyDelay
-            return @{ Ok = $true; Status = ""; Remark = ""; Reply = $reply }
+            $copyRemark = ""
+            try {
+                $reply = Copy-LastChatGPTReplyMarkdown -FallbackReply $reply
+                $copyRemark = "页面DOM读取"
+            }
+            catch {
+                Write-Host "  页面DOM读取失败，降级使用状态文本: $($_.Exception.Message)" -ForegroundColor Yellow
+                $copyRemark = "页面文本fallback"
+            }
+            return @{ Ok = $true; Status = ""; Remark = ""; Reply = $reply; CopySource = $copyRemark }
         }
         elseif ($reply.Length -gt 0 -and -not $state.isGenerating -and $stableSince -and ((Get-Date) - $stableSince).TotalSeconds -ge ($ReplyStabilityDelay + 8)) {
             Start-Sleep -Seconds $PostReplyDelay
-            return @{ Ok = $true; Status = ""; Remark = ""; Reply = $reply }
+            $copyRemark = ""
+            try {
+                $reply = Copy-LastChatGPTReplyMarkdown -FallbackReply $reply
+                $copyRemark = "页面DOM读取"
+            }
+            catch {
+                Write-Host "  页面DOM读取失败，降级使用状态文本: $($_.Exception.Message)" -ForegroundColor Yellow
+                $copyRemark = "页面文本fallback"
+            }
+            return @{ Ok = $true; Status = ""; Remark = ""; Reply = $reply; CopySource = $copyRemark }
         }
 
         Start-Sleep -Seconds 2
@@ -884,8 +1047,12 @@ function Process-TSVFile {
 
         $requirementContent = Get-Content $RequirementPath -Raw -Encoding UTF8
         $tsvContent = Get-Content $TSVFile.FullName -Raw -Encoding UTF8
+        $taskTitle = "【全量表更新】$($TSVFile.BaseName)"
         $minimumFullTableRows = [Math]::Max(0, (@($tsvContent -split "`r?`n" | Where-Object { -not [string]::IsNullOrWhiteSpace($_) }).Count - 1))
         $message = @"
+【任务名称】
+$taskTitle
+
 【任务要求】
 $requirementContent
 
@@ -923,7 +1090,7 @@ $tsvContent
                 $previousReply = $reply
                 $nextCount++
                 $round++
-                Send-ChatGPTMessage -Message "下一步"
+                Send-ChatGPTMessage -Message $ContinueMessage
                 $sendCount++
                 continue
             }
@@ -943,7 +1110,7 @@ $tsvContent
                 $previousReply = $reply
                 $nextCount++
                 $round++
-                Send-ChatGPTMessage -Message "给我当前批次更新后的完整可替换 TSV。必须包含未变更、已修改、新增/拆分后的全部记录；不要只给变化部分或摘要。年份是范围时，参考车型必须覆盖起止年份，例如 2002-2004 Audi A6 Avant，不能只写 2002 Audi A6 Avant。仍有待终核/待补强行时不要说完成，请继续补强。表格后单独输出：本批次完成。"
+                Send-ChatGPTMessage -Message $FullTableRequestMessage
                 $sendCount++
                 continue
             }
@@ -965,7 +1132,22 @@ $tsvContent
                 $previousReply = $reply
                 $nextCount++
                 $round++
-                Send-ChatGPTMessage -Message "你刚才给了完成信号，但当前批次完整可替换 TSV 不完整、年份范围行的参考车型没有覆盖起止年份，或仍有待终核/待补强行。请继续补强；只有全部行都可入库时，才输出当前批次更新后的完整可替换 TSV。年份是 2002-2004 这类范围时，参考车型必须类似 2002-2004 Audi A6 Avant 或同时包含 2002 和 2004，不能只写 2002。最终表格后单独输出：本批次完成。"
+                Send-ChatGPTMessage -Message $CompletionFixMessage
+                $sendCount++
+                continue
+            }
+
+            if (-not (Test-ReplyHasRoundProgressSignals -Reply $reply)) {
+                Write-Host "  回复缺少 TSV 或推进信号，发送格式纠偏提示..." -ForegroundColor Yellow
+                if ($nextCount -ge $MaxNextSteps) {
+                    $status = "偏离终止"
+                    $remarks = "回复缺少 TSV / 更新点 / 当前进度 / 下一步方向等正常推进信号"
+                    break
+                }
+                $previousReply = $reply
+                $nextCount++
+                $round++
+                Send-ChatGPTMessage -Message $MissingSignalsMessage
                 $sendCount++
                 continue
             }
@@ -993,7 +1175,7 @@ $tsvContent
             $round++
 
             Write-Host "  继续发送 下一步 ($nextCount/$MaxNextSteps)..." -ForegroundColor Yellow
-            Send-ChatGPTMessage -Message "下一步"
+            Send-ChatGPTMessage -Message $ContinueMessage
             $sendCount++
         }
     }
@@ -1012,6 +1194,16 @@ function Generate-Summary {
     $rows = @()
     try { $rows = @(Import-Csv -Path $LogPath -Encoding UTF8) } catch { }
 
+    $latestByFile = @{}
+    foreach ($row in $rows) {
+        $fileName = $row."文件名"
+        if (-not $fileName) { $fileName = $row.FileName }
+        if ([string]::IsNullOrWhiteSpace($fileName)) { continue }
+        $latestByFile[$fileName] = $row
+    }
+
+    $currentRows = @($latestByFile.Values | Sort-Object { $_."文件名" }, { $_.FileName })
+
     $count = @{
         "成功" = 0
         "重复终止" = 0
@@ -1021,15 +1213,45 @@ function Generate-Summary {
         "偏离终止" = 0
     }
 
-    foreach ($row in $rows) {
+    foreach ($row in $currentRows) {
         $status = $row."状态"
         if (-not $status) { $status = $row.Status }
         if ($count.ContainsKey($status)) { $count[$status]++ }
     }
 
     $failed = $count["重复终止"] + $count["次数上限终止"] + $count["页面错误"] + $count["登录失效"] + $count["偏离终止"]
+    $unsuccessfulRows = @(
+        $currentRows |
+            Where-Object {
+                $status = $_."状态"
+                if (-not $status) { $status = $_.Status }
+                $status -ne "成功"
+            } |
+            Sort-Object { $_."文件名" }, { $_.FileName }
+    )
+
+    $unsuccessfulText = if ($unsuccessfulRows.Count -eq 0) {
+        "无"
+    }
+    else {
+        ($unsuccessfulRows | ForEach-Object {
+            $fileName = $_."文件名"
+            if (-not $fileName) { $fileName = $_.FileName }
+            $status = $_."状态"
+            if (-not $status) { $status = $_.Status }
+            $remarks = $_."备注"
+            if (-not $remarks) { $remarks = $_.Remarks }
+            if ([string]::IsNullOrWhiteSpace($remarks)) {
+                " - $fileName [$status]"
+            }
+            else {
+                " - $fileName [$status] $remarks"
+            }
+        }) -join "`r`n"
+    }
+
     $summary = @"
-总文件数：$($rows.Count)
+总文件数：$($currentRows.Count)
 成功数：$($count["成功"])
 重复终止数：$($count["重复终止"])
 次数上限终止数：$($count["次数上限终止"])
@@ -1037,6 +1259,9 @@ function Generate-Summary {
 登录失效数：$($count["登录失效"])
 偏离终止数：$($count["偏离终止"])
 失败数：$failed
+当前未成功的文件数：$($unsuccessfulRows.Count)
+当前未成功的文件：
+$unsuccessfulText
 输出目录：$OutputDir
 完成时间：$(Get-Date -Format "yyyy-MM-dd HH:mm:ss")
 "@

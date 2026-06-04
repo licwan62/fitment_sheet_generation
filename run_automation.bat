@@ -7,7 +7,7 @@ echo 2. 不要移动鼠标或操作键盘直到脚本完成
 echo.
 pause
 
-powershell -NoProfile -ExecutionPolicy Bypass -File "D:\Home\Scripts\fitment_sheet_generation\qclaw_fitment_automation.ps1"
+powershell -NoProfile -ExecutionPolicy Bypass -File "D:\Home\Scripts\fitment_sheet_generation\qclaw_fitment_automation.ps1" %*
 
 echo.
 echo 脚本执行完成！

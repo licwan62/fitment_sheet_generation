@@ -9,6 +9,7 @@ from pathlib import Path
 ROUND_RE = re.compile(r"^---\s*Round\s+(\d+)\s*/\s*(?:下一步|首次发送)\s*---\s*$")
 RESULT_RE_TEMPLATE = r"^{base}_result(?:_(\d+))?\.md$"
 HEADER = "来源文件\t主车型\t品牌\t分类\t结构\t版本\t代际\t年份\tmax_length_in\tmax_width_in (w/o)\tmax_height_in\t参考车型\t备注\t迭代状态"
+PART_SUFFIX_RE = re.compile(r"_part_\d+$")
 
 
 @dataclass
@@ -106,27 +107,36 @@ def sort_key(path: Path) -> tuple:
     return tuple(int(part) if part.isdigit() else part for part in parts)
 
 
+def merged_basename(origin_files: list[Path]) -> str:
+    if not origin_files:
+        return "merged"
+    base = PART_SUFFIX_RE.sub("", origin_files[0].stem)
+    return base or origin_files[0].stem
+
+
 def main() -> int:
     script_dir = Path(__file__).resolve().parent
-    default_origin_dir = script_dir / "input_sheets" / "0530_split_origin"
+    default_origin_dir = script_dir / "input_sheets"
     default_results_dir = script_dir / "output_sheets"
-    default_output = script_dir / "output_merged" / "0530_split_origin_final_round_merged.tsv"
-    default_log = script_dir / "output_merged" / "0530_split_origin_final_round_merged.log"
+    default_output_dir = script_dir / "output_merged"
+    default_log_dir = script_dir / "output_merged"
 
     parser = argparse.ArgumentParser(
         description="Merge the last Round / 下一步 section from the latest result markdown for each origin TSV."
     )
     parser.add_argument("--origin-dir", type=Path, default=default_origin_dir)
     parser.add_argument("--results-dir", type=Path, default=default_results_dir)
-    parser.add_argument("--output", type=Path, default=default_output)
-    parser.add_argument("--log", type=Path, default=default_log)
+    parser.add_argument("--output-dir", type=Path, default=default_output_dir)
+    parser.add_argument("--log-dir", type=Path, default=default_log_dir)
+    parser.add_argument("--output", type=Path, help="Optional explicit merged TSV output path.")
+    parser.add_argument("--log", type=Path, help="Optional explicit log output path.")
     parser.add_argument("--no-header", action="store_true", help="Do not write the merged TSV header row.")
     args = parser.parse_args()
 
     origin_dir = args.origin_dir.resolve()
     results_dir = args.results_dir.resolve()
-    output_path = args.output.resolve()
-    log_path = args.log.resolve()
+    output_dir = args.output_dir.resolve()
+    log_dir = args.log_dir.resolve()
 
     if not origin_dir.exists():
         raise FileNotFoundError(f"origin dir not found: {origin_dir}")
@@ -134,6 +144,10 @@ def main() -> int:
         raise FileNotFoundError(f"results dir not found: {results_dir}")
 
     origin_files = sorted(origin_dir.glob("*.tsv"), key=sort_key)
+    output_stem = merged_basename(origin_files)
+    output_path = args.output.resolve() if args.output else (output_dir / f"{output_stem}_merged.tsv").resolve()
+    log_path = args.log.resolve() if args.log else (log_dir / f"{output_stem}_merged.log").resolve()
+
     merged_lines: list[str] = []
     log_lines: list[str] = []
 
