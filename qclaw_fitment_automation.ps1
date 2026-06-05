@@ -2,7 +2,9 @@
 # 通过 QClaw xbrowser 控制 ChatGPT 网页版，遍历 TSV，多轮发送“下一步”，保存结果。
 
 param(
+    [Alias("input_dir")]
     [string]$InputDir = (Join-Path $PSScriptRoot "input_sheets"),
+    [Alias("output_dir")]
     [string]$OutputDir = (Join-Path $PSScriptRoot "output_sheets"),
     [string]$LogPath = (Join-Path $PSScriptRoot "log.csv"),
     [string]$SummaryPath = (Join-Path $PSScriptRoot "summary.txt"),
@@ -16,6 +18,8 @@ param(
     [int]$LargePayloadDelay = 8,
     [int]$PostReplyDelay = 2,
     [int]$MaxReplyWaitSeconds = 900,
+    [int]$XBrowserRetryCount = 2,
+    [int]$XBrowserRecoverDelay = 3,
     [double]$SimilarityThreshold = 0.95,
     [int]$MinNewChars = 100,
     [string[]]$OnlyFiles = @(),
@@ -38,10 +42,10 @@ else {
 }
 $SkipStatuses = @("成功")
 $ProgressKeywords = @("更新点", "当前批次进度", "下一步优先核对", "待终核", "可入库", "数据抓取过程", "全量表", "TSV", "新增/拆出记录", "主要数值修改", "🟢", "🟡", "🔴")
-$ContinueMessage = "继续补强当前批次，并严格按以下格式回复：1) 更新点；2) 当前批次进度；3) 本轮更新后的 TSV（必须是真正更新过的 TSV，不能只写计划或说明，字段顺序必须与原表一致）；4) 下一步优先核对；5) 若仍未完成，在末尾单独输出：下一步。不要只描述这一轮将要做什么而不给 TSV，不要连续重复上一轮内容。"
-$MissingSignalsMessage = "你的上一轮回复缺少正常推进信号。请立刻继续当前批次，并严格补齐以下内容：更新点、当前批次进度、本轮更新后的 TSV、下一步优先核对；如果还没完成，末尾单独输出“下一步”。不得只给说明、计划、摘要或重复上一轮文本，必须给一个更新过的 TSV。"
-$FullTableRequestMessage = "给我当前批次更新后的完整可替换 TSV。必须包含未变更、已修改、新增/拆分后的全部记录；不要只给变化部分或摘要。年份是范围时，参考车型必须覆盖起止年份，例如 2002-2004 Audi A6 Avant，不能只写 2002 Audi A6 Avant。若版本列含有 2dr、4dr、2-door、4-door、两门、四门 或其他门数口径，必须按不同门数拆成独立多条记录，不能合并。仍有待终核/待补强行时不要说完成，请继续补强。表格后单独输出：本批次完成。"
-$CompletionFixMessage = "你刚才给了完成信号，但当前批次完整可替换 TSV 不完整、年份范围行的参考车型没有覆盖起止年份，或仍有待终核/待补强行。请继续补强；只有全部行都可入库时，才输出当前批次更新后的完整可替换 TSV。年份是 2002-2004 这类范围时，参考车型必须类似 2002-2004 Audi A6 Avant 或同时包含 2002 和 2004，不能只写 2002。若版本列含有 2dr、4dr、2-door、4-door、两门、四门 或其他门数口径，必须按不同门数拆成独立多条记录，不能合并。未完成时仍需带上：更新点、当前批次进度、本轮更新后的 TSV、下一步优先核对，并在末尾单独输出：下一步。最终表格后单独输出：本批次完成。"
+$ContinueMessage = "继续补强当前批次，并严格按以下格式回复：1) 更新点；2) 当前批次进度；3) 本轮更新后的 TSV（必须是真正更新过的 TSV，不能只写计划或说明，字段顺序必须与原表一致）；4) 下一步优先核对；5) 若仍未完成，在末尾单独输出：下一步。不要新增当前 TSV 范围外的年代、代际或车型行；拆分后的年份合集不得超出原记录年份范围；最终 TSV 顺序必须保持当前 split 第一条到最后一条的边界。不要只描述这一轮将要做什么而不给 TSV，不要连续重复上一轮内容。"
+$MissingSignalsMessage = '你的上一轮回复缺少正常推进信号。请立刻继续当前批次，并严格补齐以下内容：更新点、当前批次进度、本轮更新后的 TSV、下一步优先核对；如果还没完成，末尾单独输出“下一步”。不得只给说明、计划、摘要或重复上一轮文本，必须给一个更新过的 TSV。'
+$FullTableRequestMessage = "给我当前批次更新后的完整可替换 TSV。必须包含未变更、已修改、在当前记录年份范围内拆分后的全部记录；不要只给变化部分、摘要或说明。不要新增当前 TSV 范围外的年代、代际或车型行，输出顺序必须保持当前 split 第一条到最后一条的边界。"
+$CompletionFixMessage = "你刚才给了完成信号，但当前回复没有可直接入库的完整 TSV。若本批次其实还没完成，请继续补齐，并带上：更新点、当前批次进度、本轮更新后的 TSV、下一步优先核对，并在末尾单独输出：下一步。"
 
 function Invoke-XB {
     param([Parameter(ValueFromRemainingArguments = $true)][string[]]$Args)
@@ -63,26 +67,122 @@ function Invoke-XB {
     }
 }
 
+function Get-XBErrorDetail {
+    param($Result)
+
+    $parts = @()
+    if ($Result -and $Result.error) { $parts += [string]$Result.error }
+    if ($Result -and $Result.hint) { $parts += [string]$Result.hint }
+    if ($Result -and $Result.data -and $Result.data.raw_error) { $parts += [string]$Result.data.raw_error }
+    elseif ($Result -and $Result.data -and $Result.data.result -and $Result.data.result.error) { $parts += [string]$Result.data.result.error }
+    if ($parts.Count -eq 0) { return "" }
+    return ($parts -join " ")
+}
+
+function Test-XBRecoverableError {
+    param([string]$Detail)
+
+    if ([string]::IsNullOrWhiteSpace($Detail)) { return $false }
+
+    $recoverablePatterns = @(
+        "Unknown error",
+        "Session with given id not found",
+        "Target closed",
+        "No target with given id found",
+        "Protocol error",
+        "CDP",
+        "browser has disconnected",
+        "websocket",
+        "ECONNRESET",
+        "ECONNREFUSED",
+        "ERR_ABORTED"
+    )
+
+    foreach ($pattern in $recoverablePatterns) {
+        if ($Detail -like "*$pattern*") { return $true }
+    }
+
+    return $false
+}
+
+function Repair-XBrowserSession {
+    param([string]$Reason)
+
+    Write-Host "  xbrowser 会话异常，尝试恢复: $Reason" -ForegroundColor Yellow
+    try {
+        Invoke-XB "cleanup" | Out-Null
+    }
+    catch {
+        Write-Host "  cleanup 失败，继续重新初始化: $($_.Exception.Message)" -ForegroundColor Yellow
+    }
+
+    Start-Sleep -Seconds $XBrowserRecoverDelay
+    Initialize-XBrowser
+
+    try {
+        $reopen = Invoke-XB "run" "--browser" $Browser "open" $ChatGptUrl
+        if (-not $reopen.ok) {
+            $detail = Get-XBErrorDetail -Result $reopen
+            Write-Host "  恢复后重新打开 ChatGPT 未确认成功: $detail" -ForegroundColor Yellow
+        }
+        else {
+            Start-Sleep -Seconds 3
+        }
+    }
+    catch {
+        Write-Host "  恢复后重新打开 ChatGPT 失败，稍后由原操作重试: $($_.Exception.Message)" -ForegroundColor Yellow
+    }
+}
+
 function Invoke-XBRun {
     param([Parameter(ValueFromRemainingArguments = $true)][string[]]$ActionArgs)
 
     $xbArgs = @("run", "--browser", $Browser) + $ActionArgs
-    $result = Invoke-XB @xbArgs
-    if (-not $result.ok) {
-        $hint = if ($result.hint) { " 提示: $($result.hint)" } else { "" }
-        $detail = ""
-        if ($result.data -and $result.data.raw_error) {
-            $detail = " 原始错误: $($result.data.raw_error)"
+    $maxAttempts = [Math]::Max(1, $XBrowserRetryCount + 1)
+    $lastResult = $null
+
+    for ($attempt = 1; $attempt -le $maxAttempts; $attempt++) {
+        try {
+            $result = Invoke-XB @xbArgs
         }
-        elseif ($result.data -and $result.data.result -and $result.data.result.error) {
-            $detail = " 原始错误: $($result.data.result.error)"
+        catch {
+            $detailText = $_.Exception.Message
+            if (($attempt -lt $maxAttempts) -and (Test-XBRecoverableError -Detail $detailText)) {
+                Write-Host "  xbrowser 执行异常，准备重试 ($attempt/$($maxAttempts - 1)): $detailText" -ForegroundColor Yellow
+                Repair-XBrowserSession -Reason $detailText
+                continue
+            }
+            throw
         }
-        elseif ($result.data -and $result.data.browser_running) {
-            $detail = " 请先手动关闭 $Browser 浏览器窗口，然后重新运行。"
+
+        $lastResult = $result
+
+        if ($result.ok) {
+            return $result.data.result
         }
-        throw "xbrowser 操作失败: $($result.error)$hint$detail"
+
+        $detailText = Get-XBErrorDetail -Result $result
+        if (($attempt -lt $maxAttempts) -and (Test-XBRecoverableError -Detail $detailText)) {
+            Write-Host "  xbrowser 操作失败，准备重试 ($attempt/$($maxAttempts - 1)): $detailText" -ForegroundColor Yellow
+            Repair-XBrowserSession -Reason $detailText
+            continue
+        }
+
+        break
     }
-    return $result.data.result
+
+    $hint = if ($lastResult.hint) { " 提示: $($lastResult.hint)" } else { "" }
+    $detail = ""
+    if ($lastResult.data -and $lastResult.data.raw_error) {
+        $detail = " 原始错误: $($lastResult.data.raw_error)"
+    }
+    elseif ($lastResult.data -and $lastResult.data.result -and $lastResult.data.result.error) {
+        $detail = " 原始错误: $($lastResult.data.result.error)"
+    }
+    elseif ($lastResult.data -and $lastResult.data.browser_running) {
+        $detail = " 请先手动关闭 $Browser 浏览器窗口，然后重新运行。"
+    }
+    throw "xbrowser 操作失败: $($lastResult.error)$hint$detail"
 }
 
 function Get-XBValue {
@@ -475,13 +575,7 @@ function Open-ChatGPT {
         $openResult = Invoke-XB @openArgs
         if ($openResult.ok) { break }
 
-        $rawError = ""
-        if ($openResult.data -and $openResult.data.raw_error) {
-            $rawError = [string]$openResult.data.raw_error
-        }
-        elseif ($openResult.data -and $openResult.data.result -and $openResult.data.result.error) {
-            $rawError = [string]$openResult.data.result.error
-        }
+        $rawError = Get-XBErrorDetail -Result $openResult
 
         $currentUrl = ""
         try {
@@ -500,12 +594,7 @@ function Open-ChatGPT {
             break
         }
 
-        $isSessionLost = (
-            $rawError -like "*Session with given id not found*" -or
-            $rawError -like "*Target closed*" -or
-            $rawError -like "*No target with given id found*" -or
-            $openResult.error -like "*CDP*"
-        )
+        $isSessionLost = Test-XBRecoverableError -Detail $rawError
         if ($allowCleanupRetry -and $isSessionLost) {
             Write-Host "检测到 xbrowser/CDP 会话失联，执行 cleanup 后重试一次..." -ForegroundColor Yellow
             try {
@@ -1096,11 +1185,8 @@ $tsvContent
             }
 
             $hasFullTable = Test-ReplyContainsFullTable -Reply $reply -MinimumRows $minimumFullTableRows
-            $hasCoveredYearRefs = Test-YearRangeReferencesCovered -Reply $reply
-            $hasPendingRows = Test-ReplyHasPendingRows -Reply $reply
-
-            if ((Test-FullTableRequestSignal -Text $reply) -and ((-not $hasFullTable) -or (-not $hasCoveredYearRefs) -or $hasPendingRows)) {
-                Write-Host "  检测到全部/所有可入库，但完整表或年份参考覆盖不足，发送完整全量表请求..." -ForegroundColor Yellow
+            if ((Test-FullTableRequestSignal -Text $reply) -and (-not $hasFullTable)) {
+                Write-Host "  检测到全部/所有可入库，但未给完整表，发送完整全量表请求..." -ForegroundColor Yellow
                 if ($nextCount -ge $MaxNextSteps) {
                     $status = "次数上限终止"
                     $remarks = "达到最大下一步次数: $MaxNextSteps"
@@ -1116,25 +1202,14 @@ $tsvContent
             }
 
             if (Test-CompletionSignal -Text $reply) {
-                if ($hasFullTable -and $hasCoveredYearRefs -and (-not $hasPendingRows)) {
-                    $status = "成功"
-                    $remarks = "检测到明确批次完成信号且包含完整表"
-                    break
+                $status = "成功"
+                $remarks = if ($hasFullTable) {
+                    "检测到明确批次完成信号且包含完整表"
                 }
-
-                Write-Host "  检测到完成信号，但表格不完整、年份参考覆盖不足或仍有待补强行，继续请求完整全量表..." -ForegroundColor Yellow
-                if ($nextCount -ge $MaxNextSteps) {
-                    $status = "次数上限终止"
-                    $remarks = "完成信号未附完整表、年份参考覆盖不足或仍有待补强行，且达到最大下一步次数: $MaxNextSteps"
-                    break
+                else {
+                    "检测到明确批次完成信号"
                 }
-                $requestedFullTable = $true
-                $previousReply = $reply
-                $nextCount++
-                $round++
-                Send-ChatGPTMessage -Message $CompletionFixMessage
-                $sendCount++
-                continue
+                break
             }
 
             if (-not (Test-ReplyHasRoundProgressSignals -Reply $reply)) {

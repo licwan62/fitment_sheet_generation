@@ -8,14 +8,19 @@ from pathlib import Path
 
 ROUND_RE = re.compile(r"^---\s*Round\s+(\d+)\s*/\s*(?:下一步|首次发送)\s*---\s*$")
 RESULT_RE_TEMPLATE = r"^{base}_result(?:_(\d+))?\.md$"
-HEADER = "来源文件\t主车型\t品牌\t分类\t结构\t版本\t代际\t年份\tmax_length_in\tmax_width_in (w/o)\tmax_height_in\t参考车型\t备注\t迭代状态"
 PART_SUFFIX_RE = re.compile(r"_part_\d+$")
+HEADER_ALIASES = {
+    "年份": "年份区间",
+    "货斗长度 (ft)": "货斗长度_ft",
+    "状态": "迭代状态",
+}
 
 
 @dataclass
 class ExtractedResult:
     source: Path
     round_number: int
+    header: list[str]
     lines: list[str]
 
 
@@ -52,54 +57,81 @@ def extract_last_round(path: Path) -> ExtractedResult | None:
     if not round_indexes:
         return None
 
-    def clean_content(content: list[str]) -> list[str]:
-        table_segments: list[list[str]] = []
-        current: list[str] | None = None
+    def clean_content(content: list[str]) -> tuple[list[str], list[str]]:
+        table_segments: list[tuple[list[str], list[str]]] = []
+        current_header: list[str] | None = None
+        current_rows: list[str] | None = None
 
         for line in content:
             stripped = line.strip()
             if not stripped:
-                if current:
-                    table_segments.append(current)
-                    current = None
+                if current_header and current_rows:
+                    table_segments.append((current_header, current_rows))
+                current_header = None
+                current_rows = None
                 continue
             if stripped in {"本批次完成。", "本批次完成"}:
                 continue
             if stripped.startswith("```"):
                 continue
             if stripped.startswith("主车型\t"):
-                if current:
-                    table_segments.append(current)
-                current = []
+                if current_header and current_rows:
+                    table_segments.append((current_header, current_rows))
+                current_header = stripped.split("\t")
+                current_rows = []
                 continue
-            if current is None:
+            if current_header is None or current_rows is None:
                 continue
             if "\t" not in line:
-                if current:
-                    table_segments.append(current)
-                    current = None
+                if current_rows:
+                    table_segments.append((current_header, current_rows))
+                current_header = None
+                current_rows = None
                 continue
-            columns = line.rstrip().split("\t")
-            if len(columns) >= 13:
-                current.append(line.rstrip())
-            elif current:
-                table_segments.append(current)
-                current = None
+            columns = line.rstrip("\r").split("\t")
+            if len(columns) >= 2:
+                current_rows.append(line.rstrip("\r"))
+            elif current_rows:
+                table_segments.append((current_header, current_rows))
+                current_header = None
+                current_rows = None
 
-        if current:
-            table_segments.append(current)
+        if current_header and current_rows:
+            table_segments.append((current_header, current_rows))
 
-        return table_segments[-1] if table_segments else []
+        return table_segments[-1] if table_segments else ([], [])
 
     for position in range(len(round_indexes) - 1, -1, -1):
         start_index, round_number = round_indexes[position]
         end_index = round_indexes[position + 1][0] if position + 1 < len(round_indexes) else len(lines)
-        cleaned = clean_content(lines[start_index + 1 : end_index])
+        header, cleaned = clean_content(lines[start_index + 1 : end_index])
         if cleaned:
-            return ExtractedResult(source=path, round_number=round_number, lines=cleaned)
+            return ExtractedResult(source=path, round_number=round_number, header=header, lines=cleaned)
 
     start_index, round_number = round_indexes[-1]
-    return ExtractedResult(source=path, round_number=round_number, lines=[])
+    return ExtractedResult(source=path, round_number=round_number, header=[], lines=[])
+
+
+def read_origin_header(origin_files: list[Path]) -> list[str]:
+    for origin_file in origin_files:
+        for line in origin_file.read_text(encoding="utf-8-sig").splitlines():
+            if line.strip():
+                return line.rstrip("\r").split("\t")
+    return []
+
+
+def normalize_header_name(name: str) -> str:
+    return HEADER_ALIASES.get(name.strip(), name.strip())
+
+
+def align_result_line(result_header: list[str], output_header: list[str], line: str) -> str:
+    values = line.rstrip("\r").split("\t")
+    normalized_result_header = [normalize_header_name(name) for name in result_header]
+    row_by_header = {
+        header: values[index] if index < len(values) else ""
+        for index, header in enumerate(normalized_result_header)
+    }
+    return "\t".join(row_by_header.get(header, "") for header in output_header)
 
 
 def sort_key(path: Path) -> tuple:
@@ -144,6 +176,7 @@ def main() -> int:
         raise FileNotFoundError(f"results dir not found: {results_dir}")
 
     origin_files = sorted(origin_dir.glob("*.tsv"), key=sort_key)
+    origin_header = read_origin_header(origin_files)
     output_stem = merged_basename(origin_files)
     output_path = args.output.resolve() if args.output else (output_dir / f"{output_stem}_merged.tsv").resolve()
     log_path = args.log.resolve() if args.log else (log_dir / f"{output_stem}_merged.log").resolve()
@@ -152,8 +185,8 @@ def main() -> int:
     log_lines: list[str] = []
 
     if not args.no_header:
-        merged_lines.append(HEADER)
-        log_lines.append("HEADER\tdefault")
+        merged_lines.append("\t".join(["来源文件", *origin_header]))
+        log_lines.append(f"HEADER\torigin-dir\t{origin_header and origin_files[0].name or '(none)'}")
 
     stats = {"origin": len(origin_files), "merged_files": 0, "missing": 0, "no_round": 0, "rows": 0}
 
@@ -172,7 +205,10 @@ def main() -> int:
             continue
 
         if extracted.lines:
-            merged_lines.extend(f"{latest_result.name}\t{line}" for line in extracted.lines)
+            merged_lines.extend(
+                f"{latest_result.name}\t{align_result_line(extracted.header, origin_header, line)}"
+                for line in extracted.lines
+            )
             stats["rows"] += len(extracted.lines)
             stats["merged_files"] += 1
             log_lines.append(

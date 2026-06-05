@@ -1,3 +1,6 @@
 {
-    "powerquery.client.additionalSymbolsDirectories": []
+    "powerquery.client.additionalSymbolsDirectories": [],
+    "files.associations": {
+        "*.log": "plaintext"
+    }
 }

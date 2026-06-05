@@ -33,6 +33,12 @@ powershell -NoProfile -ExecutionPolicy Bypass -File $ScriptPath `
   -RequirementPath $RequirementPath
 ```
 
+当前完成判定规则：
+
+- 只要最后一轮回复明确出现 `本批次完成` 一类完成信号，就记为完成
+- 如果同一轮同时带有更新后的完整 TSV，会在日志里额外记为“包含完整表”
+- 不再因为年份参考覆盖不足、仍有 `待补强` / `待终核` 字样，或最后一步未附完整 TSV 而单独拦截完成判定
+
 只打开 ChatGPT 页面，不开始批量处理：
 
 ```powershell
