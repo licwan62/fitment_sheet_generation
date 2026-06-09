@@ -152,3 +152,6 @@ python .\merge_final_round_results.py `
 # 不写表头
 python .\merge_final_round_results.py --no-header
 ```
+
+
+powershell -NoProfile -ExecutionPolicy Bypass -File ".\qclaw_fitment_automation.ps1" -MaxRounds 100 --input_dir .\projects\0604补强\input\ -output_dir .\projects\0604补强\output 
