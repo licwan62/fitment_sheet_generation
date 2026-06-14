@@ -1,33 +1,135 @@
 ﻿# qclaw 全量表补强自动化脚本
 # 通过 QClaw xbrowser 控制 ChatGPT 网页版，遍历 TSV，多轮发送“下一步”，保存结果。
 
+[CmdletBinding(PositionalBinding = $false)]
 param(
-    [Alias("input_dir")]
-    [string]$InputDir = (Join-Path $PSScriptRoot "input_sheets"),
-    [Alias("output_dir")]
-    [string]$OutputDir = (Join-Path $PSScriptRoot "output_sheets"),
-    [string]$LogPath = (Join-Path $PSScriptRoot "log.csv"),
-    [string]$SummaryPath = (Join-Path $PSScriptRoot "summary.txt"),
-    [string]$RequirementPath = (Join-Path $PSScriptRoot "requirement.md"),
+    [Alias("project_dir", "project-dir")]
+    [string]$Project = "",
+    [Alias("input_dir", "input-dir")]
+    [string]$InputDir = "",
+    [Alias("output_dir", "output-dir")]
+    [string]$OutputDir = "",
+    [Alias("log_path", "log-path")]
+    [string]$LogPath = "",
+    [Alias("summary_path", "summary-path")]
+    [string]$SummaryPath = "",
+    [Alias("requirement_path", "requirement-path")]
+    [string]$RequirementPath = "",
     [string]$ChatGptUrl = "https://chatgpt.com/",
     [string]$Browser = "edge",
-    [Alias("MaxRounds")]
+    [Alias("MaxRounds", "max-rounds", "max_rounds")]
     [int]$MaxNextSteps = 30,
     [int]$ReplyStabilityDelay = 10,
     [int]$OperationDelay = 2,
     [int]$LargePayloadDelay = 8,
     [int]$PostReplyDelay = 2,
     [int]$MaxReplyWaitSeconds = 900,
+    [int]$StuckGeneratingGraceSeconds = 35,
     [int]$XBrowserRetryCount = 2,
     [int]$XBrowserRecoverDelay = 3,
     [double]$SimilarityThreshold = 0.95,
     [int]$MinNewChars = 100,
     [string[]]$OnlyFiles = @(),
     [switch]$ConfigureXBrowserQuick,
-    [switch]$OpenOnly
+    [switch]$OpenOnly,
+    [Parameter(ValueFromRemainingArguments = $true)]
+    [string[]]$ExtraArgs = @()
 )
 
 $ErrorActionPreference = "Stop"
+
+$ExplicitParameters = New-Object "System.Collections.Generic.HashSet[string]" ([StringComparer]::OrdinalIgnoreCase)
+foreach ($key in $PSBoundParameters.Keys) {
+    if ($key -ne "ExtraArgs") { [void]$ExplicitParameters.Add($key) }
+}
+
+$ScriptRoot = if (-not [string]::IsNullOrWhiteSpace($PSScriptRoot)) {
+    $PSScriptRoot
+}
+elseif (-not [string]::IsNullOrWhiteSpace($PSCommandPath)) {
+    Split-Path -Parent $PSCommandPath
+}
+else {
+    (Get-Location).Path
+}
+
+function Set-ArgumentValue {
+    param(
+        [string]$Name,
+        [string]$Value
+    )
+
+    $normalized = ($Name.TrimStart("-") -replace "-", "_").ToLowerInvariant()
+    switch ($normalized) {
+        "project" { $script:Project = $Value; [void]$script:ExplicitParameters.Add("Project") }
+        "project_dir" { $script:Project = $Value; [void]$script:ExplicitParameters.Add("Project") }
+        "input_dir" { $script:InputDir = $Value; [void]$script:ExplicitParameters.Add("InputDir") }
+        "inputdir" { $script:InputDir = $Value; [void]$script:ExplicitParameters.Add("InputDir") }
+        "output_dir" { $script:OutputDir = $Value; [void]$script:ExplicitParameters.Add("OutputDir") }
+        "outputdir" { $script:OutputDir = $Value; [void]$script:ExplicitParameters.Add("OutputDir") }
+        "log_path" { $script:LogPath = $Value; [void]$script:ExplicitParameters.Add("LogPath") }
+        "logpath" { $script:LogPath = $Value; [void]$script:ExplicitParameters.Add("LogPath") }
+        "summary_path" { $script:SummaryPath = $Value; [void]$script:ExplicitParameters.Add("SummaryPath") }
+        "summarypath" { $script:SummaryPath = $Value; [void]$script:ExplicitParameters.Add("SummaryPath") }
+        "requirement_path" { $script:RequirementPath = $Value; [void]$script:ExplicitParameters.Add("RequirementPath") }
+        "requirementpath" { $script:RequirementPath = $Value; [void]$script:ExplicitParameters.Add("RequirementPath") }
+        "max_rounds" { $script:MaxNextSteps = [int]$Value; [void]$script:ExplicitParameters.Add("MaxNextSteps") }
+        "maxrounds" { $script:MaxNextSteps = [int]$Value; [void]$script:ExplicitParameters.Add("MaxNextSteps") }
+        "max_next_steps" { $script:MaxNextSteps = [int]$Value; [void]$script:ExplicitParameters.Add("MaxNextSteps") }
+        "only_files" { $script:OnlyFiles = @($Value -split "," | ForEach-Object { $_.Trim() } | Where-Object { $_ }); [void]$script:ExplicitParameters.Add("OnlyFiles") }
+        "onlyfiles" { $script:OnlyFiles = @($Value -split "," | ForEach-Object { $_.Trim() } | Where-Object { $_ }); [void]$script:ExplicitParameters.Add("OnlyFiles") }
+        "open_only" { $script:OpenOnly = [switch]::Present; [void]$script:ExplicitParameters.Add("OpenOnly") }
+        "openonly" { $script:OpenOnly = [switch]::Present; [void]$script:ExplicitParameters.Add("OpenOnly") }
+        default { throw "未知参数: $Name" }
+    }
+}
+
+function Read-GnuStyleArguments {
+    if (-not $ExtraArgs -or $ExtraArgs.Count -eq 0) { return }
+
+    for ($i = 0; $i -lt $ExtraArgs.Count; $i++) {
+        $name = $ExtraArgs[$i]
+        if (-not $name.StartsWith("-")) {
+            throw "无法识别的位置参数: $name"
+        }
+
+        $normalized = ($name.TrimStart("-") -replace "-", "_").ToLowerInvariant()
+        $isSwitch = $normalized -in @("open_only", "openonly")
+        if ($isSwitch) {
+            Set-ArgumentValue -Name $name -Value "true"
+            continue
+        }
+
+        if ($i + 1 -ge $ExtraArgs.Count -or $ExtraArgs[$i + 1].StartsWith("-")) {
+            throw "参数 $name 缺少值"
+        }
+
+        Set-ArgumentValue -Name $name -Value $ExtraArgs[$i + 1]
+        $i++
+    }
+}
+
+function Set-DefaultPaths {
+    if ([string]::IsNullOrWhiteSpace($InputDir)) { $script:InputDir = Join-Path $ScriptRoot "input_sheets" }
+    if ([string]::IsNullOrWhiteSpace($OutputDir)) { $script:OutputDir = Join-Path $ScriptRoot "output_sheets" }
+    if ([string]::IsNullOrWhiteSpace($LogPath)) { $script:LogPath = Join-Path $ScriptRoot "log.csv" }
+    if ([string]::IsNullOrWhiteSpace($SummaryPath)) { $script:SummaryPath = Join-Path $ScriptRoot "summary.txt" }
+    if ([string]::IsNullOrWhiteSpace($RequirementPath)) { $script:RequirementPath = Join-Path $ScriptRoot "requirement.md" }
+}
+
+function Resolve-ProjectPaths {
+    if ([string]::IsNullOrWhiteSpace($Project)) { return }
+
+    $projectRoot = $ExecutionContext.SessionState.Path.GetUnresolvedProviderPathFromPSPath($Project)
+    if (-not $ExplicitParameters.Contains("InputDir")) { $script:InputDir = Join-Path $projectRoot "input" }
+    if (-not $ExplicitParameters.Contains("OutputDir")) { $script:OutputDir = Join-Path $projectRoot "output" }
+    if (-not $ExplicitParameters.Contains("LogPath")) { $script:LogPath = Join-Path $projectRoot "log.csv" }
+    if (-not $ExplicitParameters.Contains("SummaryPath")) { $script:SummaryPath = Join-Path $projectRoot "summary.txt" }
+}
+
+Read-GnuStyleArguments
+Set-DefaultPaths
+Resolve-ProjectPaths
 
 $XBrowserScript = "C:\Program Files\QClaw\v0.2.23.532\resources\openclaw\config\skills\xbrowser\scripts\xb.cjs"
 $BundledNode = "C:\Program Files\QClaw\v0.2.23.532\resources\node\node.exe"
@@ -41,11 +143,14 @@ else {
     "node"
 }
 $SkipStatuses = @("成功")
-$ProgressKeywords = @("更新点", "当前批次进度", "下一步优先核对", "待终核", "可入库", "数据抓取过程", "全量表", "TSV", "新增/拆出记录", "主要数值修改", "🟢", "🟡", "🔴")
-$ContinueMessage = "继续补强当前批次，并严格按以下格式回复：1) 更新点；2) 当前批次进度；3) 本轮更新后的 TSV（必须是真正更新过的 TSV，不能只写计划或说明，字段顺序必须与原表一致）；4) 下一步优先核对；5) 若仍未完成，在末尾单独输出：下一步。不要新增当前 TSV 范围外的年代、代际或车型行；拆分后的年份合集不得超出原记录年份范围；最终 TSV 顺序必须保持当前 split 第一条到最后一条的边界。不要只描述这一轮将要做什么而不给 TSV，不要连续重复上一轮内容。"
-$MissingSignalsMessage = '你的上一轮回复缺少正常推进信号。请立刻继续当前批次，并严格补齐以下内容：更新点、当前批次进度、本轮更新后的 TSV、下一步优先核对；如果还没完成，末尾单独输出“下一步”。不得只给说明、计划、摘要或重复上一轮文本，必须给一个更新过的 TSV。'
-$FullTableRequestMessage = "给我当前批次更新后的完整可替换 TSV。必须包含未变更、已修改、在当前记录年份范围内拆分后的全部记录；不要只给变化部分、摘要或说明。不要新增当前 TSV 范围外的年代、代际或车型行，输出顺序必须保持当前 split 第一条到最后一条的边界。"
-$CompletionFixMessage = "你刚才给了完成信号，但当前回复没有可直接入库的完整 TSV。若本批次其实还没完成，请继续补齐，并带上：更新点、当前批次进度、本轮更新后的 TSV、下一步优先核对，并在末尾单独输出：下一步。"
+$ProgressKeywords = @("更新点", "当前批次进度", "下一步优先处理", "下一步优先补缺失", "下一步优先核对", "待终核", "可入库", "数据抓取过程", "全量表", "TSV", "新增/拆出记录", "主要数值修改", "🟢", "🟡", "🔴")
+$RequiredTsvHeader = "主车型`t分类`t品牌`t车型名`t结构`t版本`t门数`t代际`t代际说明`t年份区间`t区间最小年份`t区间最大年份`t驾驶室类型`t货斗长度_ft`tmax_length_in`tmax_width_in`tmax_height_in`t参考车型`t备注`t迭代状态"
+$HeaderReminder = "TSV 表头必须使用新版字段顺序：$RequiredTsvHeader。门数信息如 2dr/4dr/2-door/4-door/两门/四门必须写入门数列，不要写在版本列；版本列只写有必要分开考虑的特殊版本。代际只写 gen1/gen2 等短代号，原先跟在代际后的说明写入代际说明；区间最小年份、区间最大年份是自动字段，必须保留两列但值留空。"
+$PhaseOrderReminder = '执行顺序必须固定为：第一阶段先解决数据缺失，优先补齐缺失年份、缺失结构/版本/门数/驾驶室/货斗、缺失尺寸、缺失参考车型等会阻塞成表的数据；第二阶段才解决核对问题，逐年核对参考车型覆盖、尺寸口径和迭代状态。只要仍存在任何数据缺失，不要把主要精力转到核对问题，也不要写全部可入库或本批次完成。回复中的下一步方向请按阶段写：有缺失时写“下一步优先补缺失”，缺失已补齐后再写“下一步优先核对”。'
+$ContinueMessage = '继续补强当前批次，并严格按以下格式回复：1) 更新点；2) 当前批次进度；3) 本轮更新后的 TSV（必须是真正更新过的 TSV，不能只写计划或说明，' + $HeaderReminder + '）；4) 下一步优先处理（有数据缺失时必须写下一步优先补缺失，缺失补齐后再写下一步优先核对）；5) 若仍未完成，在末尾单独输出：下一步。' + $PhaseOrderReminder + '不要新增当前 TSV 范围外的年代、代际或车型行；拆分后的年份合集不得超出原记录年份范围；最终 TSV 顺序必须保持当前 split 第一条到最后一条的边界。不要只描述这一轮将要做什么而不给 TSV，不要连续重复上一轮内容。'
+$MissingSignalsMessage = '你的上一轮回复缺少正常推进信号。请立刻继续当前批次，并严格补齐以下内容：更新点、当前批次进度、本轮更新后的 TSV、下一步优先处理；如果还没完成，末尾单独输出：下一步。不得只给说明、计划、摘要或重复上一轮文本，必须给一个更新过的 TSV。' + $PhaseOrderReminder + $HeaderReminder
+$FullTableRequestMessage = '给我当前批次更新后的完整可替换 TSV。必须包含未变更、已修改、在当前记录年份范围内拆分后的全部记录；不要只给变化部分、摘要或说明。若仍有数据缺失，先继续补缺失，不要提前转为最终核对或完成。不要新增当前 TSV 范围外的年代、代际或车型行，输出顺序必须保持当前 split 第一条到最后一条的边界。' + $PhaseOrderReminder + $HeaderReminder
+$CompletionFixMessage = '你刚才给了完成信号，但当前回复没有可直接入库的完整 TSV，或仍可能存在未先解决的数据缺失。若本批次其实还没完成，请先补齐数据缺失，再做核对，并带上：更新点、当前批次进度、本轮更新后的 TSV、下一步优先处理，并在末尾单独输出：下一步。' + $PhaseOrderReminder + $HeaderReminder
 
 function Invoke-XB {
     param([Parameter(ValueFromRemainingArguments = $true)][string[]]$Args)
@@ -255,6 +360,10 @@ function Test-Prerequisites {
     if (-not (Test-Path $OutputDir)) {
         New-Item -ItemType Directory -Path $OutputDir -Force | Out-Null
     }
+    $logParent = Split-Path -Path $LogPath -Parent
+    if ($logParent -and -not (Test-Path $logParent)) {
+        New-Item -ItemType Directory -Path $logParent -Force | Out-Null
+    }
     if ((-not (Test-Path $LogPath)) -or [string]::IsNullOrWhiteSpace((Get-Content -Path $LogPath -Raw -ErrorAction SilentlyContinue))) {
         "文件名,开始时间,结束时间,状态,发送次数,输出文件名,备注" | Set-Content -Path $LogPath -Encoding UTF8
     }
@@ -304,16 +413,17 @@ function Add-LogEntry {
         [string]$Remarks
     )
 
-    $line = '"{0}","{1}","{2}","{3}",{4},"{5}","{6}"' -f `
-        ($FileName -replace '"', '""'),
-        ($StartTime -replace '"', '""'),
-        ($EndTime -replace '"', '""'),
-        ($Status -replace '"', '""'),
-        $SendCount,
-        ((Split-Path $OutputFile -Leaf) -replace '"', '""'),
-        ($Remarks -replace '"', '""')
+    $entry = [PSCustomObject]@{
+        "文件名" = $FileName
+        "开始时间" = $StartTime
+        "结束时间" = $EndTime
+        "状态" = $Status
+        "发送次数" = $SendCount
+        "输出文件名" = (Split-Path $OutputFile -Leaf)
+        "备注" = (($Remarks -replace "`r`n", " ") -replace "`n", " ")
+    }
 
-    Add-Content -Path $LogPath -Value $line -Encoding UTF8
+    $entry | Export-Csv -Path $LogPath -Append -NoTypeInformation -Encoding UTF8
 }
 
 function Test-ContainsAny {
@@ -367,13 +477,17 @@ function Get-TSVDataRowCountFromText {
     if ([string]::IsNullOrWhiteSpace($Text)) { return 0 }
 
     $lines = $Text -split "`r?`n"
-    $headerPattern = "^主车型`t品牌`t分类`t结构`t版本`t代际`t年份`tmax_length_in`tmax_width_in \(w/o\)`tmax_height_in`t参考车型`t备注`t迭代状态\s*$"
+    $isHeader = {
+        param([string]$Line)
+        $columns = $Line.Trim() -split "`t"
+        return ($columns.Count -ge 12 -and $columns[0] -eq "主车型" -and ($columns -contains "max_length_in") -and ($columns -contains "迭代状态"))
+    }
     $inTable = $false
     $count = 0
 
     foreach ($line in $lines) {
         $trimmed = $line.Trim()
-        if ($trimmed -match $headerPattern) {
+        if (& $isHeader $trimmed) {
             $inTable = $true
             continue
         }
@@ -383,10 +497,25 @@ function Get-TSVDataRowCountFromText {
             continue
         }
         if ($trimmed -like "---*") { break }
-        if (($trimmed -split "`t").Count -ge 13) { $count++ }
+        if (($trimmed -split "`t").Count -ge 12) { $count++ }
     }
 
     return $count
+}
+
+function Format-CapturedReplyMarkdown {
+    param([string]$Text)
+
+    if ([string]::IsNullOrWhiteSpace($Text)) { return "" }
+
+    $normalized = $Text -replace "`r`n", "`n"
+    $normalized = $normalized -replace "[ \t]+`n", "`n"
+    $normalized = $normalized -replace "`n{3,}", "`n`n"
+    $normalized = $normalized -replace "(?m)^```[ \t]*`n(tsv|csv|markdown|md)[ \t]*`n", ('```$1' + "`n")
+    $normalized = $normalized -replace "(?m)^tsv[ \t]*`n(主车型`t分类`t品牌)", ('```tsv' + "`n" + '$1')
+    $normalized = $normalized -replace "(?m)(迭代状态[^\n]*`n(?:[^\n]*`t[^\n]*`n)+)(?!(?:[^\n]*`t[^\n]*`n)|```)", ('$1```' + "`n")
+
+    return $normalized.Trim()
 }
 
 function Get-TSVDataRowsFromText {
@@ -396,12 +525,18 @@ function Get-TSVDataRowsFromText {
     if ([string]::IsNullOrWhiteSpace($Text)) { return $rows }
 
     $lines = $Text -split "`r?`n"
-    $headerPattern = "^主车型`t品牌`t分类`t结构`t版本`t代际`t年份`tmax_length_in`tmax_width_in \(w/o\)`tmax_height_in`t参考车型`t备注`t迭代状态\s*$"
+    $isHeader = {
+        param([string]$Line)
+        $columns = $Line.Trim() -split "`t"
+        return ($columns.Count -ge 12 -and $columns[0] -eq "主车型" -and ($columns -contains "max_length_in") -and ($columns -contains "迭代状态"))
+    }
+    $headerColumns = @()
     $inTable = $false
 
     foreach ($line in $lines) {
         $trimmed = $line.Trim()
-        if ($trimmed -match $headerPattern) {
+        if (& $isHeader $trimmed) {
+            $headerColumns = @($trimmed -split "`t")
             $inTable = $true
             continue
         }
@@ -413,12 +548,17 @@ function Get-TSVDataRowsFromText {
         if ($trimmed -like "---*") { break }
 
         $columns = $trimmed -split "`t"
-        if ($columns.Count -ge 13) {
+        if ($columns.Count -ge 12) {
+            $yearIndex = [array]::IndexOf($headerColumns, "年份区间")
+            if ($yearIndex -lt 0) { $yearIndex = [array]::IndexOf($headerColumns, "年份") }
+            $referenceIndex = [array]::IndexOf($headerColumns, "参考车型")
+            $remarksIndex = [array]::IndexOf($headerColumns, "备注")
+            $statusIndex = [array]::IndexOf($headerColumns, "迭代状态")
             $rows += [PSCustomObject]@{
-                Year = [string]$columns[6]
-                Reference = [string]$columns[10]
-                Remarks = [string]$columns[11]
-                Status = [string]$columns[12]
+                Year = if ($yearIndex -ge 0 -and $yearIndex -lt $columns.Count) { [string]$columns[$yearIndex] } else { "" }
+                Reference = if ($referenceIndex -ge 0 -and $referenceIndex -lt $columns.Count) { [string]$columns[$referenceIndex] } else { "" }
+                Remarks = if ($remarksIndex -ge 0 -and $remarksIndex -lt $columns.Count) { [string]$columns[$remarksIndex] } else { "" }
+                Status = if ($statusIndex -ge 0 -and $statusIndex -lt $columns.Count) { [string]$columns[$statusIndex] } else { "" }
             }
         }
     }
@@ -481,9 +621,13 @@ function Test-ReplyHasNextDirection {
     if ([string]::IsNullOrWhiteSpace($Reply)) { return $false }
 
     $patterns = @(
+        "下一步优先处理",
+        "下一步优先补缺失",
+        "下一步优先补齐",
         "下一步优先核对",
         "(^|[\r\n])\s*下一步[：:]?",
         "后续优先",
+        "继续补缺失",
         "继续核对",
         "继续补强",
         "优先处理"
@@ -507,6 +651,13 @@ function Test-ReplyHasRoundProgressSignals {
     $hasNextDirection = Test-ReplyHasNextDirection -Reply $Reply
 
     return ($hasTsv -and $hasUpdate -and $hasProgress -and $hasNextDirection)
+}
+
+function Test-CapturedReplyShellOnly {
+    param([string]$Reply)
+
+    if ([string]::IsNullOrWhiteSpace($Reply)) { return $true }
+    return ($Reply.Trim() -match "^(ChatGPT\s*(说|said)?|更新点|当前批次进度|下一步方向)\s*[:：]?\s*$")
 }
 
 function Test-ForceNextSignal {
@@ -651,6 +802,88 @@ function Get-ChatGPTState {
     $script = @'
 (() => {
   const textOf = el => (el && (el.innerText || el.textContent || el.value || '') || '').trim();
+  const normalizeText = text => (text || '')
+    .replace(/\r\n/g, '\n')
+    .replace(/[ \t]+\n/g, '\n')
+    .replace(/\n{3,}/g, '\n\n')
+    .trim();
+  const cleanReplyText = text => (text || '')
+    .replace(/\r\n/g, '\n')
+    .split('\n')
+    .map(line => line.trimEnd())
+    .filter(line => !/^\s*(ChatGPT\s*(说|said)?|You said|你说)\s*[:：]?\s*$/.test(line))
+    .join('\n')
+    .trim();
+  const serializeTable = table => {
+    const rows = Array.from(table.querySelectorAll('tr')).map(tr =>
+      Array.from(tr.querySelectorAll('th,td')).map(cell => cleanReplyText(textOf(cell)).replace(/\|/g, '\\|'))
+    ).filter(row => row.length > 0);
+    if (!rows.length) return '';
+    const header = rows[0];
+    const divider = header.map(() => '---');
+    return [header, divider, ...rows.slice(1)].map(row => `| ${row.join(' | ')} |`).join('\n');
+  };
+  const serializeNode = node => {
+    if (!node) return '';
+    if (node.nodeType === Node.TEXT_NODE) return node.textContent || '';
+    if (node.nodeType !== Node.ELEMENT_NODE) return '';
+    const tag = node.tagName.toLowerCase();
+    if (['script', 'style', 'button', 'svg', 'form', 'textarea'].includes(tag)) return '';
+    if (node.matches('[contenteditable="true"], [role="button"], [aria-hidden="true"]')) return '';
+    if (tag === 'pre') {
+      const code = node.querySelector('code');
+      const codeText = normalizeText((code && (code.innerText || code.textContent)) || node.innerText || node.textContent || '');
+      if (!codeText) return '';
+      const langClass = code ? Array.from(code.classList).find(c => /^language-/.test(c)) : '';
+      const lang = langClass ? langClass.replace(/^language-/, '') : (/主车型\t分类\t品牌/.test(codeText) ? 'tsv' : '');
+      return `\`\`\`${lang}\n${codeText}\n\`\`\``;
+    }
+    if (tag === 'code' && !node.closest('pre')) return '`' + cleanReplyText(textOf(node)) + '`';
+    if (tag === 'table') return serializeTable(node);
+    if (tag === 'br') return '\n';
+    if (tag === 'li') {
+      const nested = Array.from(node.childNodes).map(serializeNode).join('').trim();
+      return nested ? `- ${nested}` : '';
+    }
+    const childText = Array.from(node.childNodes).map(serializeNode).join('');
+    const cleaned = cleanReplyText(childText || textOf(node));
+    if (!cleaned) return '';
+    if (/^h[1-6]$/.test(tag)) return `${'#'.repeat(Number(tag[1]))} ${cleaned}`;
+    if (['p', 'div', 'section', 'article', 'ul', 'ol', 'blockquote'].includes(tag)) return cleaned;
+    return cleaned;
+  };
+  const serializeMarkdown = root => {
+    const source = root.querySelector('[data-testid="markdown"], [class*="markdown"], .markdown, [data-message-content]') || root;
+    const blocks = Array.from(source.children).map(serializeNode).map(normalizeText).filter(Boolean);
+    const text = blocks.length ? blocks.join('\n\n') : serializeNode(source);
+    return cleanReplyText(normalizeText(text));
+  };
+  const extractReplyText = node => {
+    if (!node) return '';
+    const container = node.closest('article') || node.closest('[data-testid*="conversation-turn"]') || node;
+    const selectors = [
+      '[data-message-content]',
+      '[data-testid="markdown"]',
+      '[class*="markdown"]',
+      '.markdown',
+      '[data-message-author-role="assistant"]'
+    ];
+    const candidates = [];
+    for (const selector of selectors) {
+      container.querySelectorAll(selector).forEach(el => {
+        const markdown = serializeMarkdown(el);
+        if (markdown) candidates.push(markdown);
+        const text = cleanReplyText(textOf(el));
+        if (text) candidates.push(text);
+      });
+    }
+    const clone = container.cloneNode(true);
+    clone.querySelectorAll('button, svg, form, textarea, [contenteditable="true"], [role="button"], [aria-hidden="true"]').forEach(el => el.remove());
+    const containerText = cleanReplyText(textOf(clone));
+    if (containerText) candidates.push(containerText);
+    if (!candidates.length) return '';
+    return candidates.sort((a, b) => b.length - a.length)[0];
+  };
   const isVisible = el => {
     if (!el) return false;
     const style = window.getComputedStyle(el);
@@ -669,7 +902,7 @@ function Get-ChatGPTState {
   if (assistantNodes.length === 0) {
     assistantNodes = Array.from(document.querySelectorAll('main [class*="markdown"]'));
   }
-  const assistantTexts = assistantNodes.map(textOf).filter(t => t.length > 0);
+  const assistantTexts = assistantNodes.map(extractReplyText).filter(t => t.length > 0);
   const reply = assistantTexts.length ? assistantTexts[assistantTexts.length - 1] : '';
   const editor = findEditor();
   const buttons = Array.from(document.querySelectorAll('button'));
@@ -855,6 +1088,87 @@ function Copy-LastChatGPTReplyMarkdown {
     $script = @'
 (() => {
   const textOf = el => (el && (el.innerText || el.textContent || '') || '').trim();
+  const normalizeText = text => (text || '')
+    .replace(/\r\n/g, '\n')
+    .replace(/[ \t]+\n/g, '\n')
+    .replace(/\n{3,}/g, '\n\n')
+    .trim();
+  const cleanReplyText = text => (text || '')
+    .replace(/\r\n/g, '\n')
+    .split('\n')
+    .map(line => line.trimEnd())
+    .filter(line => !/^\s*(ChatGPT\s*(说|said)?|You said|你说)\s*[:：]?\s*$/.test(line))
+    .join('\n')
+    .trim();
+  const serializeTable = table => {
+    const rows = Array.from(table.querySelectorAll('tr')).map(tr =>
+      Array.from(tr.querySelectorAll('th,td')).map(cell => cleanReplyText(textOf(cell)).replace(/\|/g, '\\|'))
+    ).filter(row => row.length > 0);
+    if (!rows.length) return '';
+    const header = rows[0];
+    const divider = header.map(() => '---');
+    return [header, divider, ...rows.slice(1)].map(row => `| ${row.join(' | ')} |`).join('\n');
+  };
+  const serializeNode = node => {
+    if (!node) return '';
+    if (node.nodeType === Node.TEXT_NODE) return node.textContent || '';
+    if (node.nodeType !== Node.ELEMENT_NODE) return '';
+    const tag = node.tagName.toLowerCase();
+    if (['script', 'style', 'button', 'svg', 'form', 'textarea'].includes(tag)) return '';
+    if (node.matches('[contenteditable="true"], [role="button"], [aria-hidden="true"]')) return '';
+    if (tag === 'pre') {
+      const code = node.querySelector('code');
+      const codeText = normalizeText((code && (code.innerText || code.textContent)) || node.innerText || node.textContent || '');
+      if (!codeText) return '';
+      const langClass = code ? Array.from(code.classList).find(c => /^language-/.test(c)) : '';
+      const lang = langClass ? langClass.replace(/^language-/, '') : (/主车型\t分类\t品牌/.test(codeText) ? 'tsv' : '');
+      return `\`\`\`${lang}\n${codeText}\n\`\`\``;
+    }
+    if (tag === 'code' && !node.closest('pre')) return '`' + cleanReplyText(textOf(node)) + '`';
+    if (tag === 'table') return serializeTable(node);
+    if (tag === 'br') return '\n';
+    if (tag === 'li') {
+      const nested = Array.from(node.childNodes).map(serializeNode).join('').trim();
+      return nested ? `- ${nested}` : '';
+    }
+    const childText = Array.from(node.childNodes).map(serializeNode).join('');
+    const cleaned = cleanReplyText(childText || textOf(node));
+    if (!cleaned) return '';
+    if (/^h[1-6]$/.test(tag)) return `${'#'.repeat(Number(tag[1]))} ${cleaned}`;
+    if (['p', 'div', 'section', 'article', 'ul', 'ol', 'blockquote'].includes(tag)) return cleaned;
+    return cleaned;
+  };
+  const serializeMarkdown = root => {
+    const source = root.querySelector('[data-testid="markdown"], [class*="markdown"], .markdown, [data-message-content]') || root;
+    const blocks = Array.from(source.children).map(serializeNode).map(normalizeText).filter(Boolean);
+    const text = blocks.length ? blocks.join('\n\n') : serializeNode(source);
+    return cleanReplyText(normalizeText(text));
+  };
+  const extractReplyText = node => {
+    const container = node.closest('article') || node.closest('[data-testid*="conversation-turn"]') || node;
+    const selectors = [
+      '[data-message-content]',
+      '[data-testid="markdown"]',
+      '[class*="markdown"]',
+      '.markdown',
+      '[data-message-author-role="assistant"]'
+    ];
+    const candidates = [];
+    for (const selector of selectors) {
+      container.querySelectorAll(selector).forEach(el => {
+        const markdown = serializeMarkdown(el);
+        if (markdown) candidates.push(markdown);
+        const text = cleanReplyText(textOf(el));
+        if (text) candidates.push(text);
+      });
+    }
+    const clone = container.cloneNode(true);
+    clone.querySelectorAll('button, svg, form, textarea, [contenteditable="true"], [role="button"], [aria-hidden="true"]').forEach(el => el.remove());
+    const containerText = cleanReplyText(textOf(clone));
+    if (containerText) candidates.push(containerText);
+    if (!candidates.length) return '';
+    return candidates.sort((a, b) => b.length - a.length)[0];
+  };
   let assistantNodes = Array.from(document.querySelectorAll('[data-message-author-role="assistant"]'));
   if (assistantNodes.length === 0) {
     assistantNodes = Array.from(document.querySelectorAll('article')).filter(el => {
@@ -865,12 +1179,15 @@ function Copy-LastChatGPTReplyMarkdown {
   if (assistantNodes.length === 0) return { ok: false, reason: 'no-assistant-node' };
   const last = assistantNodes[assistantNodes.length - 1];
   last.scrollIntoView({ block: 'center' });
-  const text = textOf(last);
+  const text = extractReplyText(last);
   if (!text) {
     const container = last.closest('article') || last.closest('[data-testid*="conversation-turn"]') || last;
-    const articleText = textOf(container);
+    const articleText = extractReplyText(container);
     if (!articleText) return { ok: false, reason: 'empty-reply' };
     return { ok: true, text: articleText };
+  }
+  if (/^(ChatGPT\s*(说|said)?|更新点|当前批次进度|下一步方向)\s*[:：]?\s*$/i.test(text)) {
+    return { ok: false, reason: 'reply-shell-only' };
   }
   return { ok: true, text };
 })()
@@ -1050,6 +1367,26 @@ function Wait-ChatGPTReplyComplete {
     $lastReply = ""
     $stableSince = $null
 
+    function Complete-WaitWithReply {
+        param(
+            [string]$Reply,
+            [string]$CopyRemark
+        )
+
+        Start-Sleep -Seconds $PostReplyDelay
+        try {
+            $copiedReply = Copy-LastChatGPTReplyMarkdown -FallbackReply $Reply
+            return @{ Ok = $true; Status = ""; Remark = "页面DOM读取"; Reply = $copiedReply; CopySource = "页面DOM读取" }
+        }
+        catch {
+            Write-Host "  页面DOM读取失败，降级使用状态文本: $($_.Exception.Message)" -ForegroundColor Yellow
+            if (Test-CapturedReplyShellOnly -Reply $Reply) {
+                return @{ Ok = $false; Status = "继续等待"; Remark = "状态文本只是回复外壳"; Reply = "" }
+            }
+            return @{ Ok = $true; Status = ""; Remark = $CopyRemark; Reply = $Reply; CopySource = $CopyRemark }
+        }
+    }
+
     while ((Get-Date) -lt $deadline) {
         $state = Get-ChatGPTState
         if ($state.loggedOut) { return @{ Ok = $false; Status = "登录失效"; Remark = "ChatGPT 页面显示未登录"; Reply = "" } }
@@ -1060,31 +1397,25 @@ function Wait-ChatGPTReplyComplete {
             $lastReply = $reply
             $stableSince = Get-Date
         }
-        elseif ($reply.Length -gt 0 -and -not $state.isGenerating -and $state.inputReady -and $stableSince -and ((Get-Date) - $stableSince).TotalSeconds -ge $ReplyStabilityDelay) {
-            Start-Sleep -Seconds $PostReplyDelay
-            $copyRemark = ""
-            try {
-                $reply = Copy-LastChatGPTReplyMarkdown -FallbackReply $reply
-                $copyRemark = "页面DOM读取"
+        elseif ($reply.Length -gt 0 -and $stableSince) {
+            $stableSeconds = ((Get-Date) - $stableSince).TotalSeconds
+            $hasReadyState = (-not $state.isGenerating) -and $state.inputReady -and ($stableSeconds -ge $ReplyStabilityDelay)
+            $hasFallbackReadyState = (-not $state.isGenerating) -and ($stableSeconds -ge ($ReplyStabilityDelay + 8))
+            $looksLikeUsableReply = (Test-CompletionSignal -Text $reply) -or (Test-ReplyContainsTSV -Reply $reply) -or (Test-ReplyHasNextDirection -Reply $reply) -or ($reply.Length -ge 500)
+            $stuckButStable = $looksLikeUsableReply -and ($stableSeconds -ge $StuckGeneratingGraceSeconds)
+
+            if ($hasReadyState -or $hasFallbackReadyState -or $stuckButStable) {
+                if ($stuckButStable -and $state.isGenerating) {
+                    Write-Host "  回复文本已稳定 $([int]$stableSeconds) 秒，但页面仍显示生成中；先捕捉当前回复并落盘。" -ForegroundColor Yellow
+                }
+                $copyRemark = if ($stuckButStable -and $state.isGenerating) { "页面状态疑似卡住，使用稳定文本" } else { "页面文本fallback" }
+                $completed = Complete-WaitWithReply -Reply $reply -CopyRemark $copyRemark
+                if ($completed.Ok) { return $completed }
+                $lastReply = ""
+                $stableSince = $null
+                Start-Sleep -Seconds 2
+                continue
             }
-            catch {
-                Write-Host "  页面DOM读取失败，降级使用状态文本: $($_.Exception.Message)" -ForegroundColor Yellow
-                $copyRemark = "页面文本fallback"
-            }
-            return @{ Ok = $true; Status = ""; Remark = ""; Reply = $reply; CopySource = $copyRemark }
-        }
-        elseif ($reply.Length -gt 0 -and -not $state.isGenerating -and $stableSince -and ((Get-Date) - $stableSince).TotalSeconds -ge ($ReplyStabilityDelay + 8)) {
-            Start-Sleep -Seconds $PostReplyDelay
-            $copyRemark = ""
-            try {
-                $reply = Copy-LastChatGPTReplyMarkdown -FallbackReply $reply
-                $copyRemark = "页面DOM读取"
-            }
-            catch {
-                Write-Host "  页面DOM读取失败，降级使用状态文本: $($_.Exception.Message)" -ForegroundColor Yellow
-                $copyRemark = "页面文本fallback"
-            }
-            return @{ Ok = $true; Status = ""; Remark = ""; Reply = $reply; CopySource = $copyRemark }
         }
 
         Start-Sleep -Seconds 2
@@ -1145,6 +1476,9 @@ $taskTitle
 【任务要求】
 $requirementContent
 
+【执行顺序】
+$PhaseOrderReminder
+
 【当前文件名】
 $fileName
 
@@ -1158,7 +1492,7 @@ $tsvContent
         while ($true) {
             Write-Host "  等待第 $round 轮回复完成..." -ForegroundColor Gray
             $wait = Wait-ChatGPTReplyComplete
-            $reply = [string]$wait.Reply
+            $reply = Format-CapturedReplyMarkdown -Text ([string]$wait.Reply)
 
             $roundTitle = if ($round -eq 1) { "--- Round 1 / 首次发送 ---" } else { "--- Round $round / 下一步 ---" }
             Add-Content -Path $outputFile -Value "`r`n$roundTitle`r`n$reply`r`n" -Encoding UTF8
@@ -1202,13 +1536,23 @@ $tsvContent
             }
 
             if (Test-CompletionSignal -Text $reply) {
+                if (-not $hasFullTable) {
+                    Write-Host "  检测到完成信号，但完整 TSV 行数不足，发送补表请求..." -ForegroundColor Yellow
+                    if ($nextCount -ge $MaxNextSteps) {
+                        $status = "次数上限终止"
+                        $remarks = "完成信号缺少完整 TSV，且达到最大下一步次数: $MaxNextSteps"
+                        break
+                    }
+                    $requestedFullTable = $true
+                    $previousReply = $reply
+                    $nextCount++
+                    $round++
+                    Send-ChatGPTMessage -Message $CompletionFixMessage
+                    $sendCount++
+                    continue
+                }
                 $status = "成功"
-                $remarks = if ($hasFullTable) {
-                    "检测到明确批次完成信号且包含完整表"
-                }
-                else {
-                    "检测到明确批次完成信号"
-                }
+                $remarks = "检测到明确批次完成信号且包含完整表"
                 break
             }
 
@@ -1341,6 +1685,10 @@ $unsuccessfulText
 完成时间：$(Get-Date -Format "yyyy-MM-dd HH:mm:ss")
 "@
 
+    $summaryParent = Split-Path -Path $SummaryPath -Parent
+    if ($summaryParent -and -not (Test-Path $summaryParent)) {
+        New-Item -ItemType Directory -Path $summaryParent -Force | Out-Null
+    }
     Set-Content -Path $SummaryPath -Value $summary -Encoding UTF8
 }
 

@@ -9,11 +9,70 @@ from pathlib import Path
 ROUND_RE = re.compile(r"^---\s*Round\s+(\d+)\s*/\s*(?:下一步|首次发送)\s*---\s*$")
 RESULT_RE_TEMPLATE = r"^{base}_result(?:_(\d+))?\.md$"
 PART_SUFFIX_RE = re.compile(r"_part_\d+$")
+MIN_FITMENT_COLUMNS = 12
 HEADER_ALIASES = {
     "年份": "年份区间",
     "货斗长度 (ft)": "货斗长度_ft",
     "状态": "迭代状态",
+    "子车系": "车型名",
+    "max_width_in (w/o)": "max_width_in",
 }
+STANDARD_HEADER = [
+    "主车型",
+    "分类",
+    "品牌",
+    "车型名",
+    "结构",
+    "版本",
+    "代际",
+    "代际说明",
+    "年份区间",
+    "区间最小年份",
+    "区间最大年份",
+    "驾驶室类型",
+    "货斗长度_ft",
+    "max_length_in",
+    "max_width_in",
+    "max_height_in",
+    "参考车型",
+    "备注",
+    "迭代状态",
+]
+LEGACY_HEADERS = [
+    [
+        "主车型",
+        "分类",
+        "品牌",
+        "车型名",
+        "结构",
+        "版本",
+        "代际",
+        "年份区间",
+        "驾驶室类型",
+        "货斗长度_ft",
+        "max_length_in",
+        "max_width_in",
+        "max_height_in",
+        "参考车型",
+        "备注",
+        "迭代状态",
+    ],
+    [
+        "主车型",
+        "品牌",
+        "分类",
+        "结构",
+        "版本",
+        "代际",
+        "年份区间",
+        "max_length_in",
+        "max_width_in",
+        "max_height_in",
+        "参考车型",
+        "备注",
+        "迭代状态",
+    ],
+]
 
 
 @dataclass
@@ -61,76 +120,132 @@ def extract_last_round(path: Path) -> ExtractedResult | None:
         table_segments: list[tuple[list[str], list[str]]] = []
         current_header: list[str] | None = None
         current_rows: list[str] | None = None
+        accepts_unheaded_rows = False
+
+        def flush_current() -> None:
+            nonlocal current_header, current_rows, accepts_unheaded_rows
+            if current_header is not None and current_rows:
+                table_segments.append((current_header, current_rows))
+            current_header = None
+            current_rows = None
+            accepts_unheaded_rows = False
 
         for line in content:
             stripped = line.strip()
             if not stripped:
-                if current_header and current_rows:
-                    table_segments.append((current_header, current_rows))
-                current_header = None
-                current_rows = None
+                flush_current()
                 continue
             if stripped in {"本批次完成。", "本批次完成"}:
                 continue
             if stripped.startswith("```"):
+                if stripped.lower() in {"```tsv", "```text"}:
+                    flush_current()
+                    current_header = []
+                    current_rows = []
+                    accepts_unheaded_rows = True
+                continue
+            if stripped.lower() == "tsv":
+                flush_current()
+                current_header = []
+                current_rows = []
+                accepts_unheaded_rows = True
                 continue
             if stripped.startswith("主车型\t"):
-                if current_header and current_rows:
-                    table_segments.append((current_header, current_rows))
+                flush_current()
                 current_header = stripped.split("\t")
                 current_rows = []
                 continue
-            if current_header is None or current_rows is None:
-                continue
             if "\t" not in line:
-                if current_rows:
-                    table_segments.append((current_header, current_rows))
-                current_header = None
-                current_rows = None
+                flush_current()
                 continue
             columns = line.rstrip("\r").split("\t")
-            if len(columns) >= 2:
+            if len(columns) >= MIN_FITMENT_COLUMNS:
+                if current_header is None or current_rows is None:
+                    current_header = []
+                    current_rows = []
                 current_rows.append(line.rstrip("\r"))
             elif current_rows:
-                table_segments.append((current_header, current_rows))
-                current_header = None
-                current_rows = None
+                flush_current()
 
-        if current_header and current_rows:
-            table_segments.append((current_header, current_rows))
+        flush_current()
 
         return table_segments[-1] if table_segments else ([], [])
 
-    for position in range(len(round_indexes) - 1, -1, -1):
-        start_index, round_number = round_indexes[position]
-        end_index = round_indexes[position + 1][0] if position + 1 < len(round_indexes) else len(lines)
-        header, cleaned = clean_content(lines[start_index + 1 : end_index])
-        if cleaned:
-            return ExtractedResult(source=path, round_number=round_number, header=header, lines=cleaned)
-
     start_index, round_number = round_indexes[-1]
-    return ExtractedResult(source=path, round_number=round_number, header=[], lines=[])
+    header, cleaned = clean_content(lines[start_index + 1 :])
+    return ExtractedResult(source=path, round_number=round_number, header=header, lines=cleaned)
 
 
 def read_origin_header(origin_files: list[Path]) -> list[str]:
     for origin_file in origin_files:
         for line in origin_file.read_text(encoding="utf-8-sig").splitlines():
             if line.strip():
-                return line.rstrip("\r").split("\t")
-    return []
+                columns = line.rstrip("\r").split("\t")
+                if normalize_header_name(columns[0]) == "主车型":
+                    return upgrade_header([normalize_header_name(column) for column in columns])
+                full_tsv = origin_file.parent.parent / "full.tsv"
+                if full_tsv.exists():
+                    for full_line in full_tsv.read_text(encoding="utf-8-sig").splitlines():
+                        if full_line.strip():
+                            full_columns = full_line.rstrip("\r").split("\t")
+                            if normalize_header_name(full_columns[0]) == "主车型":
+                                return upgrade_header([normalize_header_name(column) for column in full_columns])
+                            break
+                return STANDARD_HEADER
+    return STANDARD_HEADER.copy()
 
 
 def normalize_header_name(name: str) -> str:
     return HEADER_ALIASES.get(name.strip(), name.strip())
 
 
+def upgrade_header(header: list[str]) -> list[str]:
+    if header == STANDARD_HEADER:
+        return header
+    return STANDARD_HEADER.copy()
+
+
+def split_generation(value: str) -> tuple[str, str]:
+    value = value.strip()
+    match = re.match(r"^(gen\d+[a-zA-Z]?)\s+(.+)$", value)
+    if not match:
+        return value, ""
+    return match.group(1), match.group(2)
+
+
+def infer_result_header(values: list[str]) -> list[str]:
+    normalized_legacy_headers = [
+        [normalize_header_name(column) for column in header]
+        for header in LEGACY_HEADERS
+    ]
+    for header in normalized_legacy_headers:
+        if len(values) == len(header):
+            return header
+    if len(values) == len(STANDARD_HEADER):
+        return STANDARD_HEADER.copy()
+    return []
+
+
 def align_result_line(result_header: list[str], output_header: list[str], line: str) -> str:
     values = line.rstrip("\r").split("\t")
+    if not result_header:
+        result_header = infer_result_header(values)
+        if not result_header:
+            if not output_header:
+                return line.rstrip("\r")
+            return "\t".join((values + [""] * len(output_header))[: len(output_header)])
+
     normalized_result_header = [normalize_header_name(name) for name in result_header]
     row_by_header = {
         header: values[index] if index < len(values) else ""
         for index, header in enumerate(normalized_result_header)
     }
+    if row_by_header.get("代际") and not row_by_header.get("代际说明"):
+        generation, generation_note = split_generation(row_by_header["代际"])
+        row_by_header["代际"] = generation
+        row_by_header["代际说明"] = generation_note
+    row_by_header["区间最小年份"] = ""
+    row_by_header["区间最大年份"] = ""
     return "\t".join(row_by_header.get(header, "") for header in output_header)
 
 
@@ -156,19 +271,27 @@ def main() -> int:
     parser = argparse.ArgumentParser(
         description="Merge the last Round / 下一步 section from the latest result markdown for each origin TSV."
     )
-    parser.add_argument("--origin-dir", type=Path, default=default_origin_dir)
-    parser.add_argument("--results-dir", type=Path, default=default_results_dir)
-    parser.add_argument("--output-dir", type=Path, default=default_output_dir)
-    parser.add_argument("--log-dir", type=Path, default=default_log_dir)
+    parser.add_argument("--project", "--project-dir", "--project_dir", type=Path)
+    parser.add_argument("--origin-dir", "--origin_dir", type=Path)
+    parser.add_argument("--results-dir", "--results_dir", type=Path)
+    parser.add_argument("--output-dir", "--output_dir", type=Path)
+    parser.add_argument("--log-dir", "--log_dir", type=Path)
     parser.add_argument("--output", type=Path, help="Optional explicit merged TSV output path.")
     parser.add_argument("--log", type=Path, help="Optional explicit log output path.")
     parser.add_argument("--no-header", action="store_true", help="Do not write the merged TSV header row.")
     args = parser.parse_args()
 
-    origin_dir = args.origin_dir.resolve()
-    results_dir = args.results_dir.resolve()
-    output_dir = args.output_dir.resolve()
-    log_dir = args.log_dir.resolve()
+    project_dir = args.project.resolve() if args.project else None
+    if project_dir:
+        origin_dir = (args.origin_dir or (project_dir / "input")).resolve()
+        results_dir = (args.results_dir or (project_dir / "output")).resolve()
+        output_dir = (args.output_dir or project_dir).resolve()
+        log_dir = (args.log_dir or project_dir).resolve()
+    else:
+        origin_dir = (args.origin_dir or default_origin_dir).resolve()
+        results_dir = (args.results_dir or default_results_dir).resolve()
+        output_dir = (args.output_dir or default_output_dir).resolve()
+        log_dir = (args.log_dir or default_log_dir).resolve()
 
     if not origin_dir.exists():
         raise FileNotFoundError(f"origin dir not found: {origin_dir}")
