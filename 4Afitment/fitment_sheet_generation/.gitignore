@@ -1,0 +1,4 @@
+.auth/
+output/
+node_modules/
+.env
