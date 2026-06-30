@@ -6,21 +6,25 @@
 - 仍未完成时，末尾单独写“下一步”。
 
 输出格式：
-- TSV 字段顺序必须固定如下，不增删改名：
-主车型	分类	品牌	车型名	结构	版本	门数	代际	代际说明	年份区间	区间最小年份	区间最大年份	驾驶室类型	货斗长度_ft	max_length_in	max_width_in	max_height_in	参考车型	备注	迭代状态
-- 每轮建议顺序：更新点 / 当前批次进度 / 本轮更新后的 TSV / 下一步优先处理 / 下一步。
-- 最后一轮必须输出当前批次完整可替换 TSV，再单独写“本批次完成”。
+- 全量 TSV 字段顺序必须固定如下，不增删改名：
+主车型	年份区间	结构	对应尺码	品牌	前台车型	排序依据车型	子车系	分类	版本	门数	代际	区间最小年份	区间最大年份	max_length_in	max_width_in	max_height_in	max_length_cm	max_width_cm	max_height_cm	驾驶室类型	货斗长度_ft	长度余量	无尺码原因	参考车型	备注	迭代状态
+- 每轮还必须维护一个子车系匹配表，字段顺序固定如下，不增删改名：
+Year	主车型	结构	版本	候选车型	匹配数量
+- 每轮建议顺序：更新点 / 当前批次进度 / 本轮更新后的全量 TSV / 本轮更新后的子车系匹配表 / 下一步优先处理 / 下一步。
+- 最后一轮必须输出当前批次完整可替换全量 TSV 和子车系匹配表，再单独写“本批次完成”。
 
 字段规则：
 - 分类：普通车只填 三厢车 / 两厢车 / 跑车 / 越野车；皮卡固定填 皮卡。
-- 车型名：填写主车型或具体子车系，如 Accord / 3 Series / F-150 / Silverado 1500。
+- 前台车型：填写主车型或具体前台展示车型，如 Accord / 3 Series / F-150 / Silverado 1500。
+- 对应尺码、排序依据车型、子车系、区间最小年份、区间最大年份、max_length_cm、max_width_cm、max_height_cm、长度余量、无尺码原因：自动字段，必须保留列但值留空。
+- 子车系匹配表里的匹配数量：自动字段，必须保留列但值留空。
+- 子车系匹配表用于维护当前批次全量表记录与候选子车系的匹配关系：Year 填具体年份，主车型/结构/版本与全量表对应，候选车型填可匹配的候选车型名；没有候选时保留表头。
 - 结构：填写单一结构，如 Sedan / Coupe / Convertible / Wagon / Hatchback / SUV / CUV / Pickup。
 - 版本：只写有必要单独考虑的特殊版本，如 Type S / A-Spec / Hybrid / EV / PHEV / Raptor / Tremor / Lightning / DRW / TRD Pro / ZR2 / AT4X；普通版留空。
 - 门数：专门填写 2dr / 4dr / 2-door / 4-door / 两门 / 四门 等门数信息；这些信息不要写在版本列。
 - 同一车型/代际/年份段存在多个门数时必须拆行；混合写法如 2dr/4dr 必须拆成独立记录。
 - 代际：只写 gen1 / gen2 / gen3 等短代号。
-- 代际说明：填写车身类型或定位说明，如 compact hatchback / midsize sedan / HD pickup；没有则留空。
-- 区间最小年份、区间最大年份：自动字段，必须保留两列但值留空。
+- 车身类型、定位说明或代际补充说明可写入备注，如 compact hatchback / midsize sedan / HD pickup。
 - 皮卡结构固定写 Pickup；驾驶室类型写 Regular Cab / Extended Cab / SuperCab / Crew Cab / SuperCrew 等；货斗长度_ft 写 5.5 / 6.5 / 8.0 等数字。
 
 批次范围：

@@ -14,31 +14,74 @@ HEADER_ALIASES = {
     "年份": "年份区间",
     "货斗长度 (ft)": "货斗长度_ft",
     "状态": "迭代状态",
-    "子车系": "车型名",
+    "车型名": "前台车型",
     "max_width_in (w/o)": "max_width_in",
 }
 STANDARD_HEADER = [
     "主车型",
-    "分类",
-    "品牌",
-    "车型名",
-    "结构",
-    "版本",
-    "代际",
-    "代际说明",
     "年份区间",
+    "结构",
+    "对应尺码",
+    "品牌",
+    "前台车型",
+    "排序依据车型",
+    "子车系",
+    "分类",
+    "版本",
+    "门数",
+    "代际",
     "区间最小年份",
     "区间最大年份",
-    "驾驶室类型",
-    "货斗长度_ft",
     "max_length_in",
     "max_width_in",
     "max_height_in",
+    "max_length_cm",
+    "max_width_cm",
+    "max_height_cm",
+    "驾驶室类型",
+    "货斗长度_ft",
+    "长度余量",
+    "无尺码原因",
     "参考车型",
     "备注",
     "迭代状态",
 ]
+MATCH_HEADER = ["Year", "主车型", "结构", "版本", "候选车型", "匹配数量"]
+AUTO_BLANK_FIELDS = {
+    "对应尺码",
+    "排序依据车型",
+    "子车系",
+    "区间最小年份",
+    "区间最大年份",
+    "max_length_cm",
+    "max_width_cm",
+    "max_height_cm",
+    "长度余量",
+    "无尺码原因",
+}
 LEGACY_HEADERS = [
+    [
+        "主车型",
+        "分类",
+        "品牌",
+        "车型名",
+        "结构",
+        "版本",
+        "门数",
+        "代际",
+        "代际说明",
+        "年份区间",
+        "区间最小年份",
+        "区间最大年份",
+        "驾驶室类型",
+        "货斗长度_ft",
+        "max_length_in",
+        "max_width_in",
+        "max_height_in",
+        "参考车型",
+        "备注",
+        "迭代状态",
+    ],
     [
         "主车型",
         "分类",
@@ -81,6 +124,8 @@ class ExtractedResult:
     round_number: int
     header: list[str]
     lines: list[str]
+    match_header: list[str]
+    match_lines: list[str]
 
 
 def version_number(path: Path, base: str) -> int:
@@ -116,18 +161,24 @@ def extract_last_round(path: Path) -> ExtractedResult | None:
     if not round_indexes:
         return None
 
-    def clean_content(content: list[str]) -> tuple[list[str], list[str]]:
+    def clean_content(content: list[str]) -> tuple[list[str], list[str], list[str], list[str]]:
         table_segments: list[tuple[list[str], list[str]]] = []
+        match_segments: list[tuple[list[str], list[str]]] = []
         current_header: list[str] | None = None
         current_rows: list[str] | None = None
+        current_kind: str | None = None
         accepts_unheaded_rows = False
 
         def flush_current() -> None:
-            nonlocal current_header, current_rows, accepts_unheaded_rows
+            nonlocal current_header, current_rows, current_kind, accepts_unheaded_rows
             if current_header is not None and current_rows:
-                table_segments.append((current_header, current_rows))
+                if current_kind == "match":
+                    match_segments.append((current_header, current_rows))
+                else:
+                    table_segments.append((current_header, current_rows))
             current_header = None
             current_rows = None
+            current_kind = None
             accepts_unheaded_rows = False
 
         for line in content:
@@ -142,38 +193,59 @@ def extract_last_round(path: Path) -> ExtractedResult | None:
                     flush_current()
                     current_header = []
                     current_rows = []
+                    current_kind = None
                     accepts_unheaded_rows = True
                 continue
             if stripped.lower() == "tsv":
                 flush_current()
                 current_header = []
                 current_rows = []
+                current_kind = None
                 accepts_unheaded_rows = True
                 continue
             if stripped.startswith("主车型\t"):
                 flush_current()
                 current_header = stripped.split("\t")
                 current_rows = []
+                current_kind = "fitment"
+                continue
+            if stripped.startswith("Year\t主车型\t"):
+                flush_current()
+                current_header = stripped.split("\t")
+                current_rows = []
+                current_kind = "match"
                 continue
             if "\t" not in line:
                 flush_current()
                 continue
             columns = line.rstrip("\r").split("\t")
-            if len(columns) >= MIN_FITMENT_COLUMNS:
+            if current_kind == "match" and len(columns) >= len(MATCH_HEADER):
+                current_rows.append(line.rstrip("\r"))
+            elif len(columns) >= MIN_FITMENT_COLUMNS:
                 if current_header is None or current_rows is None:
                     current_header = []
                     current_rows = []
+                    current_kind = "fitment"
                 current_rows.append(line.rstrip("\r"))
             elif current_rows:
                 flush_current()
 
         flush_current()
 
-        return table_segments[-1] if table_segments else ([], [])
+        fitment_header, fitment_rows = table_segments[-1] if table_segments else ([], [])
+        match_header, match_rows = match_segments[-1] if match_segments else ([], [])
+        return fitment_header, fitment_rows, match_header, match_rows
 
     start_index, round_number = round_indexes[-1]
-    header, cleaned = clean_content(lines[start_index + 1 :])
-    return ExtractedResult(source=path, round_number=round_number, header=header, lines=cleaned)
+    header, cleaned, match_header, match_lines = clean_content(lines[start_index + 1 :])
+    return ExtractedResult(
+        source=path,
+        round_number=round_number,
+        header=header,
+        lines=cleaned,
+        match_header=match_header,
+        match_lines=match_lines,
+    )
 
 
 def read_origin_header(origin_files: list[Path]) -> list[str]:
@@ -244,9 +316,30 @@ def align_result_line(result_header: list[str], output_header: list[str], line: 
         generation, generation_note = split_generation(row_by_header["代际"])
         row_by_header["代际"] = generation
         row_by_header["代际说明"] = generation_note
-    row_by_header["区间最小年份"] = ""
-    row_by_header["区间最大年份"] = ""
+    if row_by_header.get("代际说明"):
+        if row_by_header.get("备注"):
+            row_by_header["备注"] = f"{row_by_header['备注']}；{row_by_header['代际说明']}"
+        else:
+            row_by_header["备注"] = row_by_header["代际说明"]
+    for field in AUTO_BLANK_FIELDS:
+        row_by_header[field] = ""
     return "\t".join(row_by_header.get(header, "") for header in output_header)
+
+
+def align_match_line(match_header: list[str], line: str) -> str:
+    values = line.rstrip("\r").split("\t")
+    normalized_header = [name.strip() for name in match_header]
+    if not normalized_header and len(values) == len(MATCH_HEADER):
+        normalized_header = MATCH_HEADER.copy()
+    if not normalized_header:
+        return "\t".join((values + [""] * len(MATCH_HEADER))[: len(MATCH_HEADER)])
+
+    row_by_header = {
+        header: values[index] if index < len(values) else ""
+        for index, header in enumerate(normalized_header)
+    }
+    row_by_header["匹配数量"] = ""
+    return "\t".join(row_by_header.get(header, "") for header in MATCH_HEADER)
 
 
 def sort_key(path: Path) -> tuple:
@@ -303,12 +396,15 @@ def main() -> int:
     output_stem = merged_basename(origin_files)
     output_path = args.output.resolve() if args.output else (output_dir / f"{output_stem}_merged.tsv").resolve()
     log_path = args.log.resolve() if args.log else (log_dir / f"{output_stem}_merged.log").resolve()
+    match_output_path = (output_path.parent / f"{output_path.stem}_subseries_match.tsv").resolve()
 
     merged_lines: list[str] = []
+    match_lines: list[str] = []
     log_lines: list[str] = []
 
     if not args.no_header:
         merged_lines.append("\t".join(["来源文件", *origin_header]))
+        match_lines.append("\t".join(MATCH_HEADER))
         log_lines.append(f"HEADER\torigin-dir\t{origin_header and origin_files[0].name or '(none)'}")
 
     stats = {"origin": len(origin_files), "merged_files": 0, "missing": 0, "no_round": 0, "rows": 0}
@@ -334,6 +430,11 @@ def main() -> int:
             )
             stats["rows"] += len(extracted.lines)
             stats["merged_files"] += 1
+            if extracted.match_lines:
+                match_lines.extend(
+                    align_match_line(extracted.match_header, line)
+                    for line in extracted.match_lines
+                )
             log_lines.append(
                 f"MERGED\t{base}\t{latest_result.name}\tRound {extracted.round_number}\t{len(extracted.lines)} rows"
             )
@@ -343,6 +444,7 @@ def main() -> int:
     output_path.parent.mkdir(parents=True, exist_ok=True)
     log_path.parent.mkdir(parents=True, exist_ok=True)
     output_path.write_text("\n".join(merged_lines) + ("\n" if merged_lines else ""), encoding="utf-8")
+    match_output_path.write_text("\n".join(match_lines) + ("\n" if match_lines else ""), encoding="utf-8")
     log_path.write_text("\n".join(log_lines) + ("\n" if log_lines else ""), encoding="utf-8")
 
     print(f"origin files: {stats['origin']}")
@@ -351,6 +453,7 @@ def main() -> int:
     print(f"missing result md: {stats['missing']}")
     print(f"no round marker: {stats['no_round']}")
     print(f"output: {output_path}")
+    print(f"subseries match output: {match_output_path}")
     print(f"log: {log_path}")
     return 0
 

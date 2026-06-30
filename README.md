@@ -160,7 +160,8 @@ python .\merge_final_round_results.py --project .\projects\0610
 - 按 `origin-dir` 下的 `*.tsv` 分片顺序逐个处理
 - 每个分片会在 `results-dir` 中查找同名结果文件，优先选择最新版本，例如 `xxx_result_2.md` 会覆盖 `xxx_result.md`
 - 每个结果文件只提取最后一个有效 Round 里的 TSV 数据
-- 合并输出统一使用新版表头：`代际` 只保留 `gen1/gen2` 等短代号，说明写入 `代际说明`；`区间最小年份`、`区间最大年份` 会保留为空
+- 合并输出统一使用新版全量表头；`对应尺码`、`排序依据车型`、`子车系`、`区间最小年份`、`区间最大年份`、`max_length_cm`、`max_width_cm`、`max_height_cm`、`长度余量`、`无尺码原因` 会保留为空
+- 如果结果中包含 `Year	主车型	结构	版本	候选车型	匹配数量` 子车系匹配表，合并时会额外生成 `*_subseries_match.tsv`，其中 `匹配数量` 会保留为空
 - 默认输出文件名取 `origin-dir` 中第一个 TSV 的文件名，去掉结尾的 `_part_n` 后再拼接后缀
 - 例如第一个输入文件是 `待补强_part_27.tsv`，则默认输出 `待补强_merged.tsv` 和 `待补强_merged.log`
 - 输出 TSV 时会在每行前面补一列来源文件名

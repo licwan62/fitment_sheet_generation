@@ -144,13 +144,14 @@ else {
 }
 $SkipStatuses = @("成功")
 $ProgressKeywords = @("更新点", "当前批次进度", "下一步优先处理", "下一步优先补缺失", "下一步优先核对", "待终核", "可入库", "数据抓取过程", "全量表", "TSV", "新增/拆出记录", "主要数值修改", "🟢", "🟡", "🔴")
-$RequiredTsvHeader = "主车型`t分类`t品牌`t车型名`t结构`t版本`t门数`t代际`t代际说明`t年份区间`t区间最小年份`t区间最大年份`t驾驶室类型`t货斗长度_ft`tmax_length_in`tmax_width_in`tmax_height_in`t参考车型`t备注`t迭代状态"
-$HeaderReminder = "TSV 表头必须使用新版字段顺序：$RequiredTsvHeader。门数信息如 2dr/4dr/2-door/4-door/两门/四门必须写入门数列，不要写在版本列；版本列只写有必要分开考虑的特殊版本。代际只写 gen1/gen2 等短代号，原先跟在代际后的说明写入代际说明；区间最小年份、区间最大年份是自动字段，必须保留两列但值留空。"
+$RequiredTsvHeader = "主车型`t年份区间`t结构`t对应尺码`t品牌`t前台车型`t排序依据车型`t子车系`t分类`t版本`t门数`t代际`t区间最小年份`t区间最大年份`tmax_length_in`tmax_width_in`tmax_height_in`tmax_length_cm`tmax_width_cm`tmax_height_cm`t驾驶室类型`t货斗长度_ft`t长度余量`t无尺码原因`t参考车型`t备注`t迭代状态"
+$RequiredSubseriesMatchHeader = "Year`t主车型`t结构`t版本`t候选车型`t匹配数量"
+$HeaderReminder = "全量 TSV 表头必须使用新版字段顺序：$RequiredTsvHeader。对应尺码、排序依据车型、子车系、区间最小年份、区间最大年份、max_length_cm、max_width_cm、max_height_cm、长度余量、无尺码原因都是自动字段，必须保留列但值留空。另需维护子车系匹配表，表头固定为：$RequiredSubseriesMatchHeader，其中匹配数量为自动字段，必须保留列但值留空。门数信息如 2dr/4dr/2-door/4-door/两门/四门必须写入门数列，不要写在版本列；版本列只写有必要分开考虑的特殊版本。代际只写 gen1/gen2 等短代号，车身类型或定位说明可写入备注。"
 $PhaseOrderReminder = '执行顺序必须固定为：第一阶段先解决数据缺失，优先补齐缺失年份、缺失结构/版本/门数/驾驶室/货斗、缺失尺寸、缺失参考车型等会阻塞成表的数据；第二阶段才解决核对问题，逐年核对参考车型覆盖、尺寸口径和迭代状态。只要仍存在任何数据缺失，不要把主要精力转到核对问题，也不要写全部可入库或本批次完成。回复中的下一步方向请按阶段写：有缺失时写“下一步优先补缺失”，缺失已补齐后再写“下一步优先核对”。'
-$ContinueMessage = '继续补强当前批次，并严格按以下格式回复：1) 更新点；2) 当前批次进度；3) 本轮更新后的 TSV（必须是真正更新过的 TSV，不能只写计划或说明，' + $HeaderReminder + '）；4) 下一步优先处理（有数据缺失时必须写下一步优先补缺失，缺失补齐后再写下一步优先核对）；5) 若仍未完成，在末尾单独输出：下一步。' + $PhaseOrderReminder + '不要新增当前 TSV 范围外的年代、代际或车型行；拆分后的年份合集不得超出原记录年份范围；最终 TSV 顺序必须保持当前 split 第一条到最后一条的边界。不要只描述这一轮将要做什么而不给 TSV，不要连续重复上一轮内容。'
-$MissingSignalsMessage = '你的上一轮回复缺少正常推进信号。请立刻继续当前批次，并严格补齐以下内容：更新点、当前批次进度、本轮更新后的 TSV、下一步优先处理；如果还没完成，末尾单独输出：下一步。不得只给说明、计划、摘要或重复上一轮文本，必须给一个更新过的 TSV。' + $PhaseOrderReminder + $HeaderReminder
-$FullTableRequestMessage = '给我当前批次更新后的完整可替换 TSV。必须包含未变更、已修改、在当前记录年份范围内拆分后的全部记录；不要只给变化部分、摘要或说明。若仍有数据缺失，先继续补缺失，不要提前转为最终核对或完成。不要新增当前 TSV 范围外的年代、代际或车型行，输出顺序必须保持当前 split 第一条到最后一条的边界。' + $PhaseOrderReminder + $HeaderReminder
-$CompletionFixMessage = '你刚才给了完成信号，但当前回复没有可直接入库的完整 TSV，或仍可能存在未先解决的数据缺失。若本批次其实还没完成，请先补齐数据缺失，再做核对，并带上：更新点、当前批次进度、本轮更新后的 TSV、下一步优先处理，并在末尾单独输出：下一步。' + $PhaseOrderReminder + $HeaderReminder
+$ContinueMessage = '继续补强当前批次，并严格按以下格式回复：1) 更新点；2) 当前批次进度；3) 本轮更新后的全量 TSV（必须是真正更新过的 TSV，不能只写计划或说明，' + $HeaderReminder + '）；4) 本轮更新后的子车系匹配表；5) 下一步优先处理（有数据缺失时必须写下一步优先补缺失，缺失补齐后再写下一步优先核对）；6) 若仍未完成，在末尾单独输出：下一步。' + $PhaseOrderReminder + '不要新增当前 TSV 范围外的年代、代际或车型行；拆分后的年份合集不得超出原记录年份范围；最终 TSV 顺序必须保持当前 split 第一条到最后一条的边界。不要只描述这一轮将要做什么而不给 TSV，不要连续重复上一轮内容。'
+$MissingSignalsMessage = '你的上一轮回复缺少正常推进信号。请立刻继续当前批次，并严格补齐以下内容：更新点、当前批次进度、本轮更新后的全量 TSV、本轮更新后的子车系匹配表、下一步优先处理；如果还没完成，末尾单独输出：下一步。不得只给说明、计划、摘要或重复上一轮文本，必须给一个更新过的全量 TSV。' + $PhaseOrderReminder + $HeaderReminder
+$FullTableRequestMessage = '给我当前批次更新后的完整可替换全量 TSV，并给出子车系匹配表。全量 TSV 必须包含未变更、已修改、在当前记录年份范围内拆分后的全部记录；不要只给变化部分、摘要或说明。若仍有数据缺失，先继续补缺失，不要提前转为最终核对或完成。不要新增当前 TSV 范围外的年代、代际或车型行，输出顺序必须保持当前 split 第一条到最后一条的边界。' + $PhaseOrderReminder + $HeaderReminder
+$CompletionFixMessage = '你刚才给了完成信号，但当前回复没有可直接入库的完整全量 TSV、缺少子车系匹配表，或仍可能存在未先解决的数据缺失。若本批次其实还没完成，请先补齐数据缺失，再做核对，并带上：更新点、当前批次进度、本轮更新后的全量 TSV、本轮更新后的子车系匹配表、下一步优先处理，并在末尾单独输出：下一步。' + $PhaseOrderReminder + $HeaderReminder
 
 function Invoke-XB {
     param([Parameter(ValueFromRemainingArguments = $true)][string[]]$Args)
