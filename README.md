@@ -2,14 +2,77 @@
 
 以下命令默认在 PowerShell 中执行。
 
+## 推荐：使用 config.yaml 工作
+
+默认入口是 `run_from_config.ps1`，不再要求每次传 `-Project`。它默认读取同目录的 `config.yaml`，且未指定模式时使用 `mode: work`。
+
+正式工作：
+
+```powershell
+powershell -NoProfile -ExecutionPolicy Bypass -File ".\run_from_config.ps1"
+```
+
+只检查配置、目录和 OpenClaw 页面控制，不发送消息：
+
+```powershell
+powershell -NoProfile -ExecutionPolicy Bypass -File ".\run_from_config.ps1" -Mode check
+```
+
+只显示将要遍历的项目：
+
+```powershell
+powershell -NoProfile -ExecutionPolicy Bypass -File ".\run_from_config.ps1" -Mode dry_run
+```
+
+使用另一份配置：
+
+```powershell
+powershell -NoProfile -ExecutionPolicy Bypass -File ".\run_from_config.ps1" -ConfigPath ".\configs\production.yaml"
+```
+
+`config.yaml` 分为以下几部分：
+
+- `mode`：`work`、`check` 或 `dry_run`，默认 `work`
+- `workspace.traversal`：选择 `directories`、`glob` 或 `explicit` 遍历方式，并可设置包含、排除、排序及最大项目数
+- `project_layout`：定义每个工作目录里的 `input`、`output`、日志和汇总文件位置
+- `runtime`：定义最大轮数、浏览器、失败后是否继续以及只处理哪些 TSV
+- `runtime.input_files`：定义输入文件通配符、按名称或修改时间排序，以及是否跳过日志中已成功的文件
+- `data_contract.requirement`：requirement 文件地址；相对路径按 config.yaml 所在目录解析，也可以写绝对路径
+- `data_contract.full_table`：全量 TSV 的列顺序和必须留空的自动列
+- `data_contract.subseries_match`：子车系匹配表的列顺序和自动列
+- `data_contract.instructions`：附加到每轮提示中的全量数据约束
+
+遍历示例：
+
+```yaml
+workspace:
+  root: ./projects
+  traversal:
+    strategy: glob
+    include: ["0610-*", "production-*"]
+    exclude: ["*.disabled", "_*"]
+    order: name_asc
+    max_projects: 0
+```
+
+`run_automation.bat` 也已经改为使用 `config.yaml`。命令行直接运行旧的 `qclaw_fitment_automation.ps1 -Project ...` 仍然兼容。
+
 ## 进入项目目录
 
 ```powershell
-$ProjectRoot = "D:\Home\Scripts\fitment_sheet_generation"
+$ProjectRoot = "D:\Home\Scripts\fitment_sheet_generation\fitment_sheet_generation"
 Set-Location $ProjectRoot
 ```
 
-## 运行 QClaw / xbrowser 自动化
+## 运行 OpenClaw 浏览器自动化
+
+当前版本不再依赖 QClaw 安装目录中的 `xb.cjs`，而是使用本机已经部署的 OpenClaw。请先确认以下命令可用：
+
+```powershell
+openclaw --version
+```
+
+脚本会读取 `%USERPROFILE%\.openclaw\openclaw.json`，并在需要时自动启动本机 Gateway 和 browser control 服务。第一次使用前，OpenClaw 配置需要启用 `browser.enabled` 和 browser 插件；ChatGPT 登录状态保存在 OpenClaw 自己的浏览器配置中。
 
 设置当前版本使用的路径参数：
 
@@ -48,37 +111,46 @@ powershell -NoProfile -ExecutionPolicy Bypass -File $ScriptPath `
 powershell -NoProfile -ExecutionPolicy Bypass -File $ScriptPath -OpenOnly
 ```
 
-# 只打开 ChatGPT 页面，不开始批量处理：
+成功时会显示 `OpenClaw 页面控制验证成功`。如果 ChatGPT 尚未登录，在打开的 OpenClaw 浏览器中完成登录，再运行正式命令。
+
+可选的 OpenClaw 连接参数：
+
+- `-OpenClawCommand`：OpenClaw 命令路径，默认自动查找 `openclaw.cmd` / `openclaw`
+- `-OpenClawConfigPath`：配置文件路径，默认 `%USERPROFILE%\.openclaw\openclaw.json`
+- `-OpenClawGatewayUrl`：Gateway 地址，默认按配置端口使用本机地址
+- `-OpenClawBrowserUrl`：browser control 地址，默认是 Gateway 端口加 2
+
+### 只打开 ChatGPT 页面，不开始批量处理
 
 ```powershell
 powershell -NoProfile -ExecutionPolicy Bypass -File ".\qclaw_fitment_automation.ps1" -OpenOnly
 ```
 
-# 直接运行当前版本进行批量处理
+### 直接运行当前版本进行批量处理
 
 ```powershell
 powershell -NoProfile -ExecutionPolicy Bypass -File ".\qclaw_fitment_automation.ps1"
 ```
 
-# 指定更高的轮次上限
+### 指定更高的轮次上限
 
 ```powershell
 powershell -NoProfile -ExecutionPolicy Bypass -File ".\qclaw_fitment_automation.ps1" -MaxRounds 80
 ```
 
-# 使用项目目录默认路径
+### 使用项目目录默认路径
 
 ```powershell
 powershell -NoProfile -ExecutionPolicy Bypass -File ".\qclaw_fitment_automation.ps1" -Project .\projects\0610 -MaxRounds 150
 ```
 
-# 使用批处理并透传参数
+### 使用批处理并透传参数
 
 ```powershell
 .\run_automation.bat -MaxRounds 80
 ```
 
-# 直接使用 PowerShell 命令并透传参数 80 作为轮次上限
+### 直接使用 PowerShell 命令并透传参数 80 作为轮次上限
 
 ```powershell
 powershell -NoProfile -ExecutionPolicy Bypass -File ".\qclaw_fitment_automation.ps1" -MaxRounds 80

@@ -2,7 +2,11 @@
 
 param(
     [string]$ChatGptUrl = "https://chatgpt.com/",
-    [string]$Browser = "edge",
+    [string]$Browser = "openclaw",
+    [string]$OpenClawCommand = "openclaw.cmd",
+    [string]$OpenClawConfigPath = "",
+    [string]$OpenClawGatewayUrl = "",
+    [string]$OpenClawBrowserUrl = "",
     [int]$MaxNextSteps = 100,
     [string]$NextMessage = "下一步",
     [int]$ReplyStabilityDelay = 10,
@@ -22,36 +26,28 @@ if (-not [string]::IsNullOrWhiteSpace($TranscriptDir) -and -not (Test-Path $Tran
     New-Item -ItemType Directory -Path $TranscriptDir | Out-Null
 }
 
-$XBrowserScript = "C:\Program Files\QClaw\v0.2.23.532\resources\openclaw\config\skills\xbrowser\scripts\xb.cjs"
-$BundledNode = "C:\Program Files\QClaw\v0.2.23.532\resources\node\node.exe"
-$NodeBinary = if ($env:QCLAW_CLI_NODE_BINARY) {
-    $env:QCLAW_CLI_NODE_BINARY
+$oldLibraryOnly = $env:FITMENT_OPENCLAW_LIBRARY_ONLY
+try {
+    $env:FITMENT_OPENCLAW_LIBRARY_ONLY = "1"
+    . (Join-Path $PSScriptRoot "qclaw_fitment_automation.ps1") `
+        -ChatGptUrl $ChatGptUrl `
+        -Browser $Browser `
+        -OpenClawCommand $OpenClawCommand `
+        -OpenClawConfigPath $OpenClawConfigPath `
+        -OpenClawGatewayUrl $OpenClawGatewayUrl `
+        -OpenClawBrowserUrl $OpenClawBrowserUrl `
+        -MaxNextSteps $MaxNextSteps `
+        -ReplyStabilityDelay $ReplyStabilityDelay `
+        -OperationDelay $OperationDelay `
+        -PostReplyDelay $PostReplyDelay `
+        -MaxReplyWaitSeconds $MaxReplyWaitSeconds `
+        -XBrowserRetryCount $XBrowserRetryCount `
+        -XBrowserRecoverDelay $XBrowserRecoverDelay `
+        -OpenOnly:$OpenOnly
 }
-elseif (Test-Path $BundledNode) {
-    $BundledNode
-}
-else {
-    "node"
-}
-
-function Invoke-XB {
-    param([Parameter(ValueFromRemainingArguments = $true)][string[]]$Args)
-
-    if (-not (Test-Path $XBrowserScript)) {
-        throw "找不到 xbrowser 脚本: $XBrowserScript"
-    }
-
-    $raw = & $NodeBinary $XBrowserScript @Args
-    if ($LASTEXITCODE -ne 0 -and [string]::IsNullOrWhiteSpace($raw)) {
-        throw "xbrowser 执行失败: xb $($Args -join ' ')"
-    }
-
-    try {
-        return ($raw | ConvertFrom-Json)
-    }
-    catch {
-        throw "xbrowser 返回内容不是 JSON: $raw"
-    }
+finally {
+    if ($null -eq $oldLibraryOnly) { Remove-Item Env:FITMENT_OPENCLAW_LIBRARY_ONLY -ErrorAction SilentlyContinue }
+    else { $env:FITMENT_OPENCLAW_LIBRARY_ONLY = $oldLibraryOnly }
 }
 
 function Get-XBErrorDetail {
@@ -180,21 +176,14 @@ function Get-XBValue {
 }
 
 function Initialize-XBrowser {
-    Write-Host "初始化 xbrowser..." -ForegroundColor Yellow
+    Write-Host "初始化 OpenClaw browser..." -ForegroundColor Yellow
     $init = Invoke-XB "init"
 
-    if (-not $init.ok -and $init.error -like "*未安装*") {
-        Write-Host "xbrowser 未安装，正在安装..." -ForegroundColor Yellow
-        $setup = Invoke-XB "setup"
-        if (-not $setup.ok) { throw "xbrowser 安装失败: $($setup.error)" }
-        $init = Invoke-XB "init"
-    }
-
     if (-not $init.ok) {
-        throw "xbrowser 初始化失败: $($init.error) $($init.hint)"
+        throw "OpenClaw browser 初始化失败: $($init.error) $($init.hint)"
     }
 
-    Write-Host "xbrowser 就绪。" -ForegroundColor Green
+    Write-Host "OpenClaw browser 就绪。" -ForegroundColor Green
 }
 
 function Open-ChatGPT {
@@ -564,7 +553,8 @@ Initialize-XBrowser
 Open-ChatGPT
 
 if ($OpenOnly) {
-    Write-Host "已打开 ChatGPT。" -ForegroundColor Green
+    $checkUrl = [string](Invoke-OpenClawEvaluate -Expression "(() => location.href)()")
+    Write-Host "OpenClaw 页面控制验证成功: $checkUrl" -ForegroundColor Green
     exit 0
 }
 

@@ -16,7 +16,11 @@ param(
     [Alias("requirement_path", "requirement-path")]
     [string]$RequirementPath = "",
     [string]$ChatGptUrl = "https://chatgpt.com/",
-    [string]$Browser = "edge",
+    [string]$Browser = "openclaw",
+    [string]$OpenClawCommand = "openclaw.cmd",
+    [string]$OpenClawConfigPath = "",
+    [string]$OpenClawGatewayUrl = "",
+    [string]$OpenClawBrowserUrl = "",
     [Alias("MaxRounds", "max-rounds", "max_rounds")]
     [int]$MaxNextSteps = 30,
     [int]$ReplyStabilityDelay = 10,
@@ -131,22 +135,21 @@ Read-GnuStyleArguments
 Set-DefaultPaths
 Resolve-ProjectPaths
 
-$XBrowserScript = "C:\Program Files\QClaw\v0.2.23.532\resources\openclaw\config\skills\xbrowser\scripts\xb.cjs"
-$BundledNode = "C:\Program Files\QClaw\v0.2.23.532\resources\node\node.exe"
-$NodeBinary = if ($env:QCLAW_CLI_NODE_BINARY) {
-    $env:QCLAW_CLI_NODE_BINARY
-}
-elseif (Test-Path $BundledNode) {
-    $BundledNode
-}
-else {
-    "node"
-}
+$OpenClawConfig = $null
+$OpenClawAuthToken = ""
+$OpenClawTargetId = ""
+$OpenClawResolvedCommand = ""
 $SkipStatuses = @("成功")
+$InputFilePattern = if ($env:FITMENT_INPUT_PATTERN) { $env:FITMENT_INPUT_PATTERN } else { "*.tsv" }
+$InputFileOrder = if ($env:FITMENT_INPUT_ORDER) { $env:FITMENT_INPUT_ORDER } else { "name_asc" }
+$SkipProcessedFiles = ($env:FITMENT_SKIP_PROCESSED -ne "false")
 $ProgressKeywords = @("更新点", "当前批次进度", "下一步优先处理", "下一步优先补缺失", "下一步优先核对", "待终核", "可入库", "数据抓取过程", "全量表", "TSV", "新增/拆出记录", "主要数值修改", "🟢", "🟡", "🔴")
-$RequiredTsvHeader = "主车型`t年份区间`t结构`t对应尺码`t品牌`t前台车型`t排序依据车型`t子车系`t分类`t版本`t门数`t代际`t区间最小年份`t区间最大年份`tmax_length_in`tmax_width_in`tmax_height_in`tmax_length_cm`tmax_width_cm`tmax_height_cm`t驾驶室类型`t货斗长度_ft`t长度余量`t无尺码原因`t参考车型`t备注`t迭代状态"
-$RequiredSubseriesMatchHeader = "Year`t主车型`t结构`t版本`t候选车型`t匹配数量"
-$HeaderReminder = "全量 TSV 表头必须使用新版字段顺序：$RequiredTsvHeader。对应尺码、排序依据车型、子车系、区间最小年份、区间最大年份、max_length_cm、max_width_cm、max_height_cm、长度余量、无尺码原因都是自动字段，必须保留列但值留空。另需维护子车系匹配表，表头固定为：$RequiredSubseriesMatchHeader，其中匹配数量为自动字段，必须保留列但值留空。门数信息如 2dr/4dr/2-door/4-door/两门/四门必须写入门数列，不要写在版本列；版本列只写有必要分开考虑的特殊版本。代际只写 gen1/gen2 等短代号，车身类型或定位说明可写入备注。"
+$RequiredTsvHeader = if ($env:FITMENT_TSV_HEADER) { $env:FITMENT_TSV_HEADER } else { "主车型`t年份区间`t结构`t对应尺码`t品牌`t前台车型`t排序依据车型`t子车系`t分类`t版本`t门数`t代际`t区间最小年份`t区间最大年份`tmax_length_in`tmax_width_in`tmax_height_in`tmax_length_cm`tmax_width_cm`tmax_height_cm`t驾驶室类型`t货斗长度_ft`t长度余量`t无尺码原因`t参考车型`t备注`t迭代状态" }
+$RequiredSubseriesMatchHeader = if ($env:FITMENT_SUBSERIES_HEADER) { $env:FITMENT_SUBSERIES_HEADER } else { "Year`t主车型`t结构`t版本`t候选车型`t匹配数量" }
+$AutoEmptyColumns = if ($env:FITMENT_AUTO_EMPTY_COLUMNS) { $env:FITMENT_AUTO_EMPTY_COLUMNS } else { "对应尺码、排序依据车型、子车系、区间最小年份、区间最大年份、max_length_cm、max_width_cm、max_height_cm、长度余量、无尺码原因" }
+$SubseriesAutoEmptyColumns = if ($env:FITMENT_SUBSERIES_AUTO_EMPTY_COLUMNS) { $env:FITMENT_SUBSERIES_AUTO_EMPTY_COLUMNS } else { "匹配数量" }
+$ExtraDataInstructions = if ($env:FITMENT_DATA_INSTRUCTIONS) { $env:FITMENT_DATA_INSTRUCTIONS } else { "" }
+$HeaderReminder = "全量 TSV 表头必须严格使用指定字段顺序：$RequiredTsvHeader。以下自动字段必须保留列但值留空：$AutoEmptyColumns。另需维护子车系匹配表，表头固定为：$RequiredSubseriesMatchHeader；以下自动字段必须保留列但值留空：$SubseriesAutoEmptyColumns。门数信息如 2dr/4dr/2-door/4-door/两门/四门必须写入门数列，不要写在版本列；版本列只写有必要分开考虑的特殊版本。代际只写 gen1/gen2 等短代号，车身类型或定位说明可写入备注。$ExtraDataInstructions"
 $PhaseOrderReminder = '执行顺序必须固定为：第一阶段先解决数据缺失，优先补齐缺失年份、缺失结构/版本/门数/驾驶室/货斗、缺失尺寸、缺失参考车型等会阻塞成表的数据；第二阶段才解决核对问题，逐年核对参考车型覆盖、尺寸口径和迭代状态。只要仍存在任何数据缺失，不要把主要精力转到核对问题，也不要写全部可入库或本批次完成。回复中的下一步方向请按阶段写：有缺失时写“下一步优先补缺失”，缺失已补齐后再写“下一步优先核对”。'
 $ContinueMessage = '继续补强当前批次，并严格按以下格式回复：1) 更新点；2) 当前批次进度；3) 本轮更新后的全量 TSV（必须是真正更新过的 TSV，不能只写计划或说明，' + $HeaderReminder + '）；4) 本轮更新后的子车系匹配表；5) 下一步优先处理（有数据缺失时必须写下一步优先补缺失，缺失补齐后再写下一步优先核对）；6) 若仍未完成，在末尾单独输出：下一步。' + $PhaseOrderReminder + '不要新增当前 TSV 范围外的年代、代际或车型行；拆分后的年份合集不得超出原记录年份范围；最终 TSV 顺序必须保持当前 split 第一条到最后一条的边界。不要只描述这一轮将要做什么而不给 TSV，不要连续重复上一轮内容。'
 $MissingSignalsMessage = '你的上一轮回复缺少正常推进信号。请立刻继续当前批次，并严格补齐以下内容：更新点、当前批次进度、本轮更新后的全量 TSV、本轮更新后的子车系匹配表、下一步优先处理；如果还没完成，末尾单独输出：下一步。不得只给说明、计划、摘要或重复上一轮文本，必须给一个更新过的全量 TSV。' + $PhaseOrderReminder + $HeaderReminder
@@ -156,21 +159,286 @@ $CompletionFixMessage = '你刚才给了完成信号，但当前回复没有可�
 function Invoke-XB {
     param([Parameter(ValueFromRemainingArguments = $true)][string[]]$Args)
 
-    if (-not (Test-Path $XBrowserScript)) {
-        throw "找不到 xbrowser 脚本: $XBrowserScript"
+    if (-not $Args -or $Args.Count -eq 0) { throw "OpenClaw 浏览器命令为空" }
+
+    $command = $Args[0]
+    if ($command -eq "init") {
+        Initialize-OpenClawRuntime
+        $status = Invoke-OpenClawBrowserHttp -Method "GET" -Path "/"
+        if (-not $status.enabled) {
+            return [pscustomobject]@{ ok = $false; error = "OpenClaw browser 未启用"; hint = "请启用 browser.enabled 和 browser 插件" }
+        }
+        Invoke-OpenClawBrowserHttp -Method "POST" -Path "/start" | Out-Null
+        Set-OpenClawTargetFromTabs
+        return New-XBSuccess -Result $status
     }
 
-    $raw = & $NodeBinary $XBrowserScript @Args
-    if ($LASTEXITCODE -ne 0 -and [string]::IsNullOrWhiteSpace($raw)) {
-        throw "xbrowser 执行失败: xb $($Args -join ' ')"
+    if ($command -eq "cleanup") {
+        Initialize-OpenClawRuntime
+        $result = Invoke-OpenClawBrowserHttp -Method "POST" -Path "/stop"
+        $script:OpenClawTargetId = ""
+        return New-XBSuccess -Result $result
     }
 
+    if ($command -ne "run") {
+        return [pscustomobject]@{ ok = $false; error = "不支持的 OpenClaw 兼容命令: $command"; hint = "脚本已不再使用 QClaw xbrowser" }
+    }
+
+    $actionArgs = @($Args[1..($Args.Count - 1)])
+    if ($actionArgs.Count -ge 2 -and $actionArgs[0] -eq "--browser") {
+        $script:Browser = $actionArgs[1]
+        $actionArgs = if ($actionArgs.Count -gt 2) { @($actionArgs[2..($actionArgs.Count - 1)]) } else { @() }
+    }
+    if ($actionArgs.Count -eq 0) { throw "OpenClaw 浏览器 action 为空" }
+
+    Initialize-OpenClawRuntime
+    $action = $actionArgs[0]
+    switch ($action) {
+        "open" {
+            $result = Invoke-OpenClawBrowserHttp -Method "POST" -Path "/tabs/open" -Body @{ url = [string]$actionArgs[1] }
+            $script:OpenClawTargetId = [string]$result.targetId
+            return New-XBSuccess -Result $result
+        }
+        "get" {
+            if ($actionArgs.Count -lt 2 -or $actionArgs[1] -ne "url") { throw "不支持的 get 命令" }
+            return New-XBSuccess -Result (Invoke-OpenClawEvaluate -Expression "(() => location.href)()")
+        }
+        "tab" {
+            if ($actionArgs.Count -eq 1) { return New-XBSuccess -Result (Get-OpenClawTabs) }
+            if ($actionArgs[1] -eq "new") {
+                $url = if ($actionArgs.Count -gt 2) { [string]$actionArgs[2] } else { "about:blank" }
+                $result = Invoke-OpenClawBrowserHttp -Method "POST" -Path "/tabs/open" -Body @{ url = $url }
+                $script:OpenClawTargetId = [string]$result.targetId
+                return New-XBSuccess -Result $result
+            }
+            $index = [int]$actionArgs[1]
+            $tabs = @((Get-OpenClawTabs).tabs)
+            if ($index -lt 0 -or $index -ge $tabs.Count) { throw "OpenClaw 标签页索引超出范围: $index" }
+            $selectedTab = $tabs[$index]
+            $result = Invoke-OpenClawBrowserHttp -Method "POST" -Path "/tabs/focus" -Body @{ targetId = [string]$selectedTab.targetId }
+            $script:OpenClawTargetId = [string]$selectedTab.targetId
+            return New-XBSuccess -Result $result
+        }
+        "wait" {
+            $deadline = (Get-Date).AddSeconds(20)
+            do {
+                try {
+                    $readyState = [string](Invoke-OpenClawEvaluate -Expression "(() => document.readyState)()")
+                    if ($readyState -in @("interactive", "complete")) { break }
+                }
+                catch { }
+                Start-Sleep -Milliseconds 300
+            } while ((Get-Date) -lt $deadline)
+            return New-XBSuccess -Result ([pscustomobject]@{ success = $true })
+        }
+        "eval" { return New-XBSuccess -Result (Invoke-OpenClawEvaluate -Expression ([string]$actionArgs[1])) }
+        "press" {
+            Invoke-OpenClawKeyPress -Key ([string]$actionArgs[1])
+            return New-XBSuccess -Result ([pscustomobject]@{ success = $true })
+        }
+        default { throw "不支持的 OpenClaw 浏览器 action: $action" }
+    }
+}
+
+function New-XBSuccess {
+    param($Result)
+    return [pscustomobject]@{ ok = $true; data = [pscustomobject]@{ result = $Result } }
+}
+
+function Test-LocalTcpPort {
+    param([string]$HostName, [int]$Port, [int]$TimeoutMs = 500)
+    $client = New-Object System.Net.Sockets.TcpClient
     try {
-        return ($raw | ConvertFrom-Json)
+        $task = $client.ConnectAsync($HostName, $Port)
+        return $task.Wait($TimeoutMs) -and $client.Connected
     }
+    catch { return $false }
+    finally { $client.Dispose() }
+}
+
+function Initialize-OpenClawRuntime {
+    if (-not [string]::IsNullOrWhiteSpace($script:OpenClawAuthToken) -and
+        -not [string]::IsNullOrWhiteSpace($script:OpenClawBrowserUrl) -and
+        (Test-LocalTcpPort -HostName ([uri]$script:OpenClawBrowserUrl).Host -Port ([uri]$script:OpenClawBrowserUrl).Port)) { return }
+
+    if ([string]::IsNullOrWhiteSpace($script:OpenClawResolvedCommand)) {
+        $commandInfo = Get-Command $OpenClawCommand -ErrorAction SilentlyContinue
+        if (-not $commandInfo) { throw "找不到 OpenClaw 命令: $OpenClawCommand。请先确认 openclaw --version 可用。" }
+        $script:OpenClawResolvedCommand = $commandInfo.Source
+    }
+
+    if ([string]::IsNullOrWhiteSpace($script:OpenClawConfigPath)) {
+        $script:OpenClawConfigPath = if ($env:OPENCLAW_CONFIG_PATH) { $env:OPENCLAW_CONFIG_PATH } else { Join-Path $HOME ".openclaw\openclaw.json" }
+    }
+    if (-not (Test-Path -LiteralPath $script:OpenClawConfigPath)) { throw "找不到 OpenClaw 配置: $($script:OpenClawConfigPath)" }
+
+    $script:OpenClawConfig = Get-Content -LiteralPath $script:OpenClawConfigPath -Raw | ConvertFrom-Json
+    $script:OpenClawAuthToken = if ($env:OPENCLAW_GATEWAY_TOKEN) { $env:OPENCLAW_GATEWAY_TOKEN } else { [string]$script:OpenClawConfig.gateway.auth.token }
+    if ([string]::IsNullOrWhiteSpace($script:OpenClawAuthToken)) { throw "OpenClaw gateway.auth.token 未配置" }
+
+    $gatewayPort = if ($script:OpenClawConfig.gateway.port) { [int]$script:OpenClawConfig.gateway.port } else { 18789 }
+    if ([string]::IsNullOrWhiteSpace($script:OpenClawGatewayUrl)) { $script:OpenClawGatewayUrl = "http://127.0.0.1:$gatewayPort" }
+    if ([string]::IsNullOrWhiteSpace($script:OpenClawBrowserUrl)) { $script:OpenClawBrowserUrl = "http://127.0.0.1:$($gatewayPort + 2)" }
+
+    $gatewayUri = [uri]$script:OpenClawGatewayUrl
+    $browserUri = [uri]$script:OpenClawBrowserUrl
+    if (-not (Test-LocalTcpPort -HostName $gatewayUri.Host -Port $gatewayUri.Port)) {
+        Write-Host "OpenClaw Gateway 未运行，正在后台启动..." -ForegroundColor Yellow
+        $oldEager = $env:OPENCLAW_EAGER_BROWSER_CONTROL_SERVER
+        try {
+            $env:OPENCLAW_EAGER_BROWSER_CONTROL_SERVER = "1"
+            Start-Process -FilePath $script:OpenClawResolvedCommand -ArgumentList @("gateway", "run") -WindowStyle Hidden | Out-Null
+        }
+        finally {
+            if ($null -eq $oldEager) { Remove-Item Env:OPENCLAW_EAGER_BROWSER_CONTROL_SERVER -ErrorAction SilentlyContinue }
+            else { $env:OPENCLAW_EAGER_BROWSER_CONTROL_SERVER = $oldEager }
+        }
+        for ($i = 0; $i -lt 40; $i++) {
+            if (Test-LocalTcpPort -HostName $browserUri.Host -Port $browserUri.Port) { break }
+            Start-Sleep -Milliseconds 500
+        }
+    }
+    elseif (-not (Test-LocalTcpPort -HostName $browserUri.Host -Port $browserUri.Port)) {
+        Restart-LocalOpenClawGatewayWithBrowser
+        for ($i = 0; $i -lt 40; $i++) {
+            if (Test-LocalTcpPort -HostName $browserUri.Host -Port $browserUri.Port) { break }
+            Start-Sleep -Milliseconds 500
+        }
+    }
+
+    if (-not (Test-LocalTcpPort -HostName $browserUri.Host -Port $browserUri.Port)) {
+        throw "OpenClaw Gateway 已运行，但 browser control 服务未启动。请重启 Gateway，或设置 OPENCLAW_EAGER_BROWSER_CONTROL_SERVER=1 后再启动。"
+    }
+}
+
+function Restart-LocalOpenClawGatewayWithBrowser {
+    $gatewayUri = [uri]$script:OpenClawGatewayUrl
+    if ($gatewayUri.Host -notin @("127.0.0.1", "localhost", "::1")) {
+        throw "远程 OpenClaw Gateway 未暴露 browser control 服务，无法由本脚本重启: $gatewayUri"
+    }
+
+    $connection = Get-NetTCPConnection -LocalPort $gatewayUri.Port -State Listen -ErrorAction SilentlyContinue | Select-Object -First 1
+    if (-not $connection) { return }
+    $process = Get-CimInstance Win32_Process -Filter "ProcessId=$($connection.OwningProcess)" -ErrorAction SilentlyContinue
+    if (-not $process -or [string]$process.CommandLine -notmatch "openclaw.*gateway") {
+        throw "端口 $($gatewayUri.Port) 上的进程不是可识别的 OpenClaw Gateway，为避免误停已取消自动重启。"
+    }
+
+    Write-Host "OpenClaw browser control 未启动，正在重启本机 Gateway 并启用浏览器服务..." -ForegroundColor Yellow
+    Stop-Process -Id $process.ProcessId -Force
+    Start-Sleep -Seconds 1
+    $oldEager = $env:OPENCLAW_EAGER_BROWSER_CONTROL_SERVER
+    try {
+        $env:OPENCLAW_EAGER_BROWSER_CONTROL_SERVER = "1"
+        Start-Process -FilePath $script:OpenClawResolvedCommand -ArgumentList @("gateway", "run") -WindowStyle Hidden | Out-Null
+    }
+    finally {
+        if ($null -eq $oldEager) { Remove-Item Env:OPENCLAW_EAGER_BROWSER_CONTROL_SERVER -ErrorAction SilentlyContinue }
+        else { $env:OPENCLAW_EAGER_BROWSER_CONTROL_SERVER = $oldEager }
+    }
+}
+
+function Invoke-OpenClawBrowserHttp {
+    param([string]$Method, [string]$Path, $Body = $null)
+    $separator = if ($Path.Contains("?")) { "&" } else { "?" }
+    $uri = "$($script:OpenClawBrowserUrl)$Path$separator" + "profile=$([uri]::EscapeDataString($Browser))"
+    $headers = @{ Authorization = "Bearer $($script:OpenClawAuthToken)" }
+    $params = @{ Uri = $uri; Method = $Method; Headers = $headers; TimeoutSec = 90; UseBasicParsing = $true }
+    if ($null -ne $Body) {
+        $headers["Content-Type"] = "application/json"
+        $params.Body = $Body | ConvertTo-Json -Depth 30 -Compress
+    }
+    try { return Invoke-RestMethod @params }
     catch {
-        throw "xbrowser 返回内容不是 JSON: $raw"
+        $detail = if ($_.ErrorDetails -and $_.ErrorDetails.Message) { $_.ErrorDetails.Message } else { $_.Exception.Message }
+        throw "OpenClaw browser HTTP 请求失败 ($Method $Path): $detail"
     }
+}
+
+function Get-OpenClawTabs {
+    $response = Invoke-OpenClawBrowserHttp -Method "GET" -Path "/tabs"
+    $tabs = @()
+    $index = 0
+    foreach ($tab in @($response.tabs)) {
+        if ([string]$tab.type -ne "page") { continue }
+        $tabs += [pscustomobject]@{ index = $index; targetId = $tab.targetId; tabId = $tab.tabId; label = $tab.label; title = $tab.title; url = $tab.url; wsUrl = $tab.wsUrl }
+        $index++
+    }
+    return [pscustomobject]@{ tabs = $tabs }
+}
+
+function Set-OpenClawTargetFromTabs {
+    param([int]$PreferredIndex = -1)
+    $tabs = @((Get-OpenClawTabs).tabs)
+    if ($tabs.Count -eq 0) { $script:OpenClawTargetId = ""; return }
+    $selected = if ($PreferredIndex -ge 0 -and $PreferredIndex -lt $tabs.Count) { $tabs[$PreferredIndex] } else { $tabs | Where-Object { $_.url -like "https://chatgpt.com*" } | Select-Object -First 1 }
+    if (-not $selected) { $selected = $tabs[0] }
+    $script:OpenClawTargetId = [string]$selected.targetId
+}
+
+function Get-OpenClawTargetWebSocketUrl {
+    if ([string]::IsNullOrWhiteSpace($script:OpenClawTargetId)) { Set-OpenClawTargetFromTabs }
+    $target = @((Get-OpenClawTabs).tabs) | Where-Object { $_.targetId -eq $script:OpenClawTargetId } | Select-Object -First 1
+    if (-not $target) {
+        Set-OpenClawTargetFromTabs
+        $target = @((Get-OpenClawTabs).tabs) | Where-Object { $_.targetId -eq $script:OpenClawTargetId } | Select-Object -First 1
+    }
+    if (-not $target -or [string]::IsNullOrWhiteSpace([string]$target.wsUrl)) { throw "OpenClaw 当前没有可控制的页面标签" }
+    return [string]$target.wsUrl
+}
+
+function Invoke-OpenClawCdpCommand {
+    param([string]$Method, $Parameters = @{})
+    $socket = New-Object System.Net.WebSockets.ClientWebSocket
+    $stream = New-Object System.IO.MemoryStream
+    try {
+        $socket.ConnectAsync([uri](Get-OpenClawTargetWebSocketUrl), [Threading.CancellationToken]::None).GetAwaiter().GetResult()
+        $requestJson = @{ id = 1; method = $Method; params = $Parameters } | ConvertTo-Json -Depth 40 -Compress
+        $requestBytes = [Text.Encoding]::UTF8.GetBytes($requestJson)
+        $requestSegment = New-Object 'System.ArraySegment[byte]' -ArgumentList (, $requestBytes)
+        $socket.SendAsync($requestSegment, [Net.WebSockets.WebSocketMessageType]::Text, $true, [Threading.CancellationToken]::None).GetAwaiter().GetResult()
+        $buffer = New-Object byte[] 65536
+        while ($socket.State -eq [Net.WebSockets.WebSocketState]::Open) {
+            $segment = New-Object 'System.ArraySegment[byte]' -ArgumentList (, $buffer)
+            $received = $socket.ReceiveAsync($segment, [Threading.CancellationToken]::None).GetAwaiter().GetResult()
+            if ($received.MessageType -eq [Net.WebSockets.WebSocketMessageType]::Close) { throw "CDP 连接被浏览器关闭" }
+            $stream.Write($buffer, 0, $received.Count)
+            if (-not $received.EndOfMessage) { continue }
+            $json = [Text.Encoding]::UTF8.GetString($stream.ToArray())
+            $stream.SetLength(0)
+            $response = $json | ConvertFrom-Json
+            if ($response.id -ne 1) { continue }
+            if ($response.error) { throw "CDP $Method 失败: $($response.error.message)" }
+            return $response.result
+        }
+        throw "CDP 连接意外结束"
+    }
+    finally {
+        $stream.Dispose()
+        if ($socket.State -eq [Net.WebSockets.WebSocketState]::Open) {
+            $socket.CloseAsync([Net.WebSockets.WebSocketCloseStatus]::NormalClosure, "done", [Threading.CancellationToken]::None).GetAwaiter().GetResult()
+        }
+        $socket.Dispose()
+    }
+}
+
+function Invoke-OpenClawEvaluate {
+    param([string]$Expression)
+    $result = Invoke-OpenClawCdpCommand -Method "Runtime.evaluate" -Parameters @{ expression = $Expression; returnByValue = $true; awaitPromise = $true; userGesture = $true }
+    if ($result.exceptionDetails) { throw "页面 JavaScript 执行失败: $($result.exceptionDetails.text)" }
+    return $result.result.value
+}
+
+function Invoke-OpenClawKeyPress {
+    param([string]$Key)
+    $keyCode = switch ($Key) { "Enter" { 13 } "Escape" { 27 } "Tab" { 9 } default { 0 } }
+    $common = @{ key = $Key; code = $Key; windowsVirtualKeyCode = $keyCode; nativeVirtualKeyCode = $keyCode }
+    if ($Key -eq "Enter") { $common.text = "`r" }
+    $down = @{ type = "keyDown" }
+    $up = @{ type = "keyUp" }
+    foreach ($name in $common.Keys) { $down[$name] = $common[$name]; $up[$name] = $common[$name] }
+    Invoke-OpenClawCdpCommand -Method "Input.dispatchKeyEvent" -Parameters $down | Out-Null
+    Invoke-OpenClawCdpCommand -Method "Input.dispatchKeyEvent" -Parameters $up | Out-Null
 }
 
 function Get-XBErrorDetail {
@@ -308,49 +576,14 @@ function Get-XBValue {
 }
 
 function Initialize-XBrowser {
-    Write-Host "初始化 xbrowser..." -ForegroundColor Yellow
+    Write-Host "初始化 OpenClaw browser..." -ForegroundColor Yellow
     $init = Invoke-XB "init"
 
     if (-not $init.ok) {
-        if ($init.error -like "*未安装*") {
-            Write-Host "xbrowser 未安装，正在安装..." -ForegroundColor Yellow
-            $setup = Invoke-XB "setup"
-            if (-not $setup.ok) { throw "xbrowser 安装失败: $($setup.error)" }
-            $init = Invoke-XB "init"
-        }
+        throw "OpenClaw browser 初始化失败: $($init.error) $($init.hint)"
     }
 
-    if (-not $init.ok) {
-        if ($init.error -like "*需要配置*" -or $init.hint -like "*guide config*") {
-            if ($ConfigureXBrowserQuick) {
-                Write-Host "按参数 -ConfigureXBrowserQuick 执行 xbrowser 快速配置..." -ForegroundColor Yellow
-                $config = Invoke-XB "config" "reset"
-                if (-not $config.ok) {
-                    throw "xbrowser 快速配置失败: $($config.error) $($config.hint)"
-                }
-                $init = Invoke-XB "init"
-            }
-            else {
-                throw @"
-xbrowser 首次使用需要配置。
-
-可选方式：
-1. 快速开始：使用 QClaw 内置浏览器，干净环境，立即可用。
-   运行：
-   powershell -NoProfile -ExecutionPolicy Bypass -File "$PSCommandPath" -ConfigureXBrowserQuick -OpenOnly
-
-2. 自定义设置：选择 Chrome / Edge / QQ 浏览器及显示模式。
-   请在 QClaw 内部完成 xbrowser 配置引导后，再重新运行本脚本。
-"@
-            }
-        }
-    }
-
-    if (-not $init.ok) {
-        throw "xbrowser 初始化失败: $($init.error) $($init.hint)"
-    }
-
-    Write-Host "xbrowser 就绪。" -ForegroundColor Green
+    Write-Host "OpenClaw browser 就绪。" -ForegroundColor Green
 }
 
 function Test-Prerequisites {
@@ -1695,7 +1928,7 @@ $unsuccessfulText
 
 function Main {
     Write-Host "========================================" -ForegroundColor Cyan
-    Write-Host "qclaw 全量表补强自动化" -ForegroundColor Cyan
+    Write-Host "OpenClaw 全量表补强自动化" -ForegroundColor Cyan
     Write-Host "========================================" -ForegroundColor Cyan
 
     Test-Prerequisites
@@ -1703,7 +1936,16 @@ function Main {
     Open-ChatGPT
 
     if ($OpenOnly) {
-        Write-Host "已打开 ChatGPT。请登录完成后重新运行脚本开始处理。" -ForegroundColor Yellow
+        try {
+            $checkUrl = [string](Invoke-OpenClawEvaluate -Expression "(() => location.href)()")
+            $checkTitle = [string](Invoke-OpenClawEvaluate -Expression "(() => document.title)()")
+            if ([string]::IsNullOrWhiteSpace($checkUrl)) { throw "页面 URL 为空" }
+            Write-Host "OpenClaw 页面控制验证成功: $checkTitle ($checkUrl)" -ForegroundColor Green
+        }
+        catch {
+            throw "ChatGPT 已打开，但 OpenClaw 页面读取验证失败: $($_.Exception.Message)"
+        }
+        Write-Host "如页面尚未登录，请登录完成后重新运行脚本开始处理。" -ForegroundColor Yellow
         return
     }
 
@@ -1713,7 +1955,11 @@ function Main {
         exit 1
     }
 
-    $tsvFiles = @(Get-ChildItem -Path $InputDir -Filter "*.tsv" | Sort-Object Name)
+    $tsvFiles = @(Get-ChildItem -Path $InputDir -Filter $InputFilePattern -File)
+    if ($InputFileOrder -eq "name_desc") { $tsvFiles = @($tsvFiles | Sort-Object Name -Descending) }
+    elseif ($InputFileOrder -eq "modified_asc") { $tsvFiles = @($tsvFiles | Sort-Object LastWriteTime) }
+    elseif ($InputFileOrder -eq "modified_desc") { $tsvFiles = @($tsvFiles | Sort-Object LastWriteTime -Descending) }
+    else { $tsvFiles = @($tsvFiles | Sort-Object Name) }
     if ($OnlyFiles.Count -gt 0) {
         $onlySet = New-Object "System.Collections.Generic.HashSet[string]" ([StringComparer]::OrdinalIgnoreCase)
         foreach ($onlyFile in $OnlyFiles) {
@@ -1727,7 +1973,7 @@ function Main {
         $tsvFiles = @($tsvFiles | Where-Object { $onlySet.Contains($_.Name) })
     }
     $processedSet = New-Object "System.Collections.Generic.HashSet[string]"
-    if ($OnlyFiles.Count -eq 0) {
+    if ($OnlyFiles.Count -eq 0 -and $SkipProcessedFiles) {
         $processedSet = Get-ProcessedFileSet
     }
     Write-Host "找到 $($tsvFiles.Count) 个 TSV 文件。" -ForegroundColor Green
@@ -1746,4 +1992,6 @@ function Main {
     Write-Host "`n全部处理完成。汇总文件: $SummaryPath" -ForegroundColor Green
 }
 
-Main
+if ($env:FITMENT_OPENCLAW_LIBRARY_ONLY -ne "1") {
+    Main
+}
