@@ -1,12 +1,216 @@
-# Command Demo
+# Fitment Agent
 
-以下命令默认在 PowerShell 中执行。
+车型全量表补强 Agent —— 非技术团队成员只需编辑两个 YAML 文件即可驱动 LLM 完成车辆数据补强。
 
-## 推荐：使用 config.yaml 工作
+## 快速开始
 
-默认入口是 `run_from_config.ps1`，不再要求每次传 `-Project`。它默认读取同目录的 `config.yaml`，且未指定模式时使用 `mode: work`。
+### 1. 安装依赖
 
-正式工作：
+```bash
+pip install typer pydantic pyyaml rich openai httpx
+```
+
+### 2. 初始化配置文件
+
+```bash
+PYTHONPATH=src python -m fitment_agent init --template us_edmunds
+```
+
+这会在当前目录生成两个文件：
+
+- `requirement.yaml` —— 控制 LLM **如何处理**数据（选模板 + 填参数）
+- `input_list.yaml` —— 指定**处理哪些**车型（只需填品牌 + 车型名）
+
+### 3. 编辑配置文件
+
+**requirement.yaml**
+
+```yaml
+template: us_edmunds          # 或 eu_autodata
+
+params:
+  market: US
+  data_sources: [Edmunds, KBB, NHTSA]
+  focus_fields: [dimensions, year_range, generation]
+  extra_instructions: []
+
+  # 可选覆盖
+  # max_rounds: 150
+  # chunk_size: 50
+  # model: gpt-4o
+```
+
+可选模板：
+
+| 模板 | 市场 | 数据源 |
+|------|------|--------|
+| `us_edmunds` | 美国 | Edmunds / KBB / NHTSA |
+| `eu_autodata` | 欧洲 | Auto-Data / Car.info / UltimateSpecs |
+
+**input_list.yaml**
+
+```yaml
+vehicles:
+  - make: Chevrolet
+    model: Silverado 2500HD
+  - make: Ford
+    model: F-150
+  - make: Toyota
+    model: Tacoma
+
+# 可选：限制展开范围
+#   year_from: 2001
+#   year_to: 2024
+#   body_styles: [Pickup]
+#   generations: [gen1, gen2]
+
+# 或直接使用已有的 TSV 文件
+# prebuilt_tsv: ./my_data.tsv
+```
+
+### 4. 设置 API Key
+
+```bash
+export OPENAI_API_KEY=sk-...
+```
+
+### 5. 运行
+
+```bash
+PYTHONPATH=src python -m fitment_agent run
+```
+
+## CLI 命令
+
+```
+fitment run        运行完整的补强流水线（展开 → 拆分 → 处理 → 合并）
+fitment validate   仅校验 requirement.yaml 和 input_list.yaml
+fitment init       生成示例配置文件
+fitment expand     预览车辆展开结果（不调用 LLM）
+```
+
+### run
+
+```bash
+PYTHONPATH=src python -m fitment_agent run \
+  --requirement requirement.yaml \
+  --input input_list.yaml \
+  --project-dir ./work \
+  --backend openai \
+  --chunk-size 50 \
+  --max-rounds 150
+```
+
+常用参数：
+
+| 参数 | 说明 | 默认值 |
+|------|------|--------|
+| `-r / --requirement` | requirement.yaml 路径 | `./requirement.yaml` |
+| `-i / --input` | input_list.yaml 路径 | `./input_list.yaml` |
+| `-p / --project-dir` | 工作目录 | `./work` |
+| `-b / --backend` | LLM 后端：`openai` 或 `browser` | `openai` |
+| `--chunk-size` | 每个分片的行数 | `50` |
+| `--max-rounds` | 每个分片最大对话轮数 | `150` |
+| `--dry-run` | 仅显示执行计划，不实际运行 | `false` |
+| `--resume` | 从上次断点继续 | `false` |
+
+### validate
+
+```bash
+PYTHONPATH=src python -m fitment_agent validate
+```
+
+校验两个 YAML 文件是否合法，不执行任何处理。
+
+### init
+
+```bash
+PYTHONPATH=src python -m fitment_agent init --template eu_autodata --output-dir ./my_project
+```
+
+生成指定模板的示例 `requirement.yaml` 和 `input_list.yaml`。
+
+### expand
+
+```bash
+PYTHONPATH=src python -m fitment_agent expand --output expanded_preview.tsv
+```
+
+预览品牌 + 车型名会展开为哪些行（不调用 LLM）。
+
+## 运行流水线
+
+`fitment run` 会自动执行以下步骤：
+
+1. **车辆展开** —— 将每个 `make + model` 通过 LLM 展开为所有代际、年份区间、车身形式
+2. **TSV 拆分** —— 按 `chunk_size` 拆分为多个分片
+3. **逐片处理** —— 每个分片启动独立 LLM 对话，多轮迭代直到完成
+4. **结果合并** —— 从每个分片的最终轮次提取 TSV，合并为一张总表
+5. **生成摘要** —— 输出 `summary.txt` 汇总成功/失败/偏离情况
+
+处理过程中会生成 `checkpoint.json`，支持 `--resume` 断点续跑。
+
+### 输出目录结构
+
+```
+work/
+├── input/                  # 拆分后的 TSV 分片
+│   ├── split_part_01.tsv
+│   └── split_part_02.tsv
+├── output/                 # 每个分片的多轮对话结果
+│   ├── split_part_01_result.md
+│   └── split_part_02_result.md
+├── checkpoint.json         # 断点续跑状态
+└── summary.txt             # 运行摘要
+```
+
+## 运行测试
+
+```bash
+PYTHONPATH=src python -m pytest tests/ -v
+```
+
+## 项目结构
+
+```
+src/fitment_agent/
+├── cli.py                   # CLI 入口
+├── config/
+│   ├── models.py            # requirement.yaml + input_list.yaml 数据模型
+│   └── loader.py            # YAML 加载与校验
+├── templates/
+│   ├── base.py              # 模板抽象基类
+│   ├── registry.py          # 模板注册表
+│   ├── us_edmunds.py        # US Edmunds 模板
+│   ├── eu_autodata.py       # EU AutoData 模板
+│   └── prompts/             # 内置 requirement 文档
+├── vehicle/
+│   ├── expander.py          # 品牌+车型 → 种子 TSV
+│   └── tsv_splitter.py      # TSV 拆分
+├── llm/
+│   ├── protocol.py          # LLM 后端抽象接口
+│   └── openai_api.py        # OpenAI API 实现
+├── agent/
+│   ├── orchestrator.py      # 流水线编排
+│   ├── shard_worker.py      # 分片多轮 Agent 循环
+│   ├── signals.py           # 完成/重复/偏离信号检测
+│   ├── messages.py          # 上下文感知消息构建
+│   └── state.py             # 分片状态机
+├── merger/
+│   └── result_merger.py     # 结果合并
+└── io/
+    └── project.py           # 项目目录管理
+```
+
+---
+
+## Legacy: PowerShell 自动化
+
+以下是基于 PowerShell + OpenClaw 浏览器自动化的旧版用法，仍然兼容。
+
+### 使用 config.yaml 工作
+
+默认入口是 `run_from_config.ps1`，读取同目录的 `config.yaml`。
 
 ```powershell
 powershell -NoProfile -ExecutionPolicy Bypass -File ".\run_from_config.ps1"
@@ -24,243 +228,38 @@ powershell -NoProfile -ExecutionPolicy Bypass -File ".\run_from_config.ps1" -Mod
 powershell -NoProfile -ExecutionPolicy Bypass -File ".\run_from_config.ps1" -Mode dry_run
 ```
 
-使用另一份配置：
-
-```powershell
-powershell -NoProfile -ExecutionPolicy Bypass -File ".\run_from_config.ps1" -ConfigPath ".\configs\production.yaml"
-```
-
-`config.yaml` 分为以下几部分：
+`config.yaml` 各部分说明：
 
 - `mode`：`work`、`check` 或 `dry_run`，默认 `work`
-- `workspace.traversal`：选择 `directories`、`glob` 或 `explicit` 遍历方式，并可设置包含、排除、排序及最大项目数
-- `project_layout`：定义每个工作目录里的 `input`、`output`、日志和汇总文件位置
-- `runtime`：定义最大轮数、浏览器、失败后是否继续以及只处理哪些 TSV
-- `runtime.input_files`：定义输入文件通配符、按名称或修改时间排序，以及是否跳过日志中已成功的文件
-- `data_contract.requirement`：requirement 文件地址；相对路径按 config.yaml 所在目录解析，也可以写绝对路径
-- `data_contract.full_table`：全量 TSV 的列顺序和必须留空的自动列
-- `data_contract.subseries_match`：子车系匹配表的列顺序和自动列
-- `data_contract.instructions`：附加到每轮提示中的全量数据约束
+- `workspace.traversal`：选择 `directories`、`glob` 或 `explicit` 遍历方式
+- `project_layout`：定义 `input`、`output`、日志和汇总文件位置
+- `runtime`：定义最大轮数、浏览器、失败后是否继续
+- `data_contract.requirement`：requirement 文件地址
+- `data_contract.full_table`：全量 TSV 列顺序和自动留空列
+- `data_contract.subseries_match`：子车系匹配表列顺序和自动列
 
-遍历示例：
-
-```yaml
-workspace:
-  root: ./projects
-  traversal:
-    strategy: glob
-    include: ["0610-*", "production-*"]
-    exclude: ["*.disabled", "_*"]
-    order: name_asc
-    max_projects: 0
-```
-
-`run_automation.bat` 也已经改为使用 `config.yaml`。命令行直接运行旧的 `qclaw_fitment_automation.ps1 -Project ...` 仍然兼容。
-
-## 进入项目目录
-
-```powershell
-$ProjectRoot = "D:\Home\Scripts\fitment_sheet_generation\fitment_sheet_generation"
-Set-Location $ProjectRoot
-```
-
-## 运行 OpenClaw 浏览器自动化
-
-当前版本不再依赖 QClaw 安装目录中的 `xb.cjs`，而是使用本机已经部署的 OpenClaw。请先确认以下命令可用：
-
-```powershell
-openclaw --version
-```
-
-脚本会读取 `%USERPROFILE%\.openclaw\openclaw.json`，并在需要时自动启动本机 Gateway 和 browser control 服务。第一次使用前，OpenClaw 配置需要启用 `browser.enabled` 和 browser 插件；ChatGPT 登录状态保存在 OpenClaw 自己的浏览器配置中。
-
-设置当前版本使用的路径参数：
-
-```powershell
-$ScriptPath = Join-Path $ProjectRoot "qclaw_fitment_automation.ps1"
-$WorkProject = Join-Path $ProjectRoot "projects\0610"
-$RequirementPath = Join-Path $ProjectRoot "requirement.md"
-```
-
-运行当前版本：
-
-```powershell
-powershell -NoProfile -ExecutionPolicy Bypass -File $ScriptPath `
-  -Project $WorkProject `
-  -RequirementPath $RequirementPath
-```
-
-`-Project` 会把未显式指定的路径默认到项目目录下：
-
-- 输入目录：`<Project>\input`
-- 输出目录：`<Project>\output`
-- 日志文件：`<Project>\log.csv`
-- 汇总文件：`<Project>\summary.txt`
-
-也可以继续用 `-InputDir`、`-OutputDir`、`-LogPath`、`-SummaryPath` 单独覆盖。脚本同时兼容 `--input_dir`、`--output_dir`、`--log-path`、`--summary-path` 这类写法。
-
-当前完成判定规则：
-
-- 只要最后一轮回复明确出现 `本批次完成` 一类完成信号，就记为完成
-- 如果同一轮同时带有更新后的完整 TSV，会在日志里额外记为“包含完整表”
-- 不再因为年份参考覆盖不足、仍有 `待补强` / `待终核` 字样，或最后一步未附完整 TSV 而单独拦截完成判定
-
-只打开 ChatGPT 页面，不开始批量处理：
-
-```powershell
-powershell -NoProfile -ExecutionPolicy Bypass -File $ScriptPath -OpenOnly
-```
-
-成功时会显示 `OpenClaw 页面控制验证成功`。如果 ChatGPT 尚未登录，在打开的 OpenClaw 浏览器中完成登录，再运行正式命令。
-
-可选的 OpenClaw 连接参数：
-
-- `-OpenClawCommand`：OpenClaw 命令路径，默认自动查找 `openclaw.cmd` / `openclaw`
-- `-OpenClawConfigPath`：配置文件路径，默认 `%USERPROFILE%\.openclaw\openclaw.json`
-- `-OpenClawGatewayUrl`：Gateway 地址，默认按配置端口使用本机地址
-- `-OpenClawBrowserUrl`：browser control 地址，默认是 Gateway 端口加 2
-
-### 只打开 ChatGPT 页面，不开始批量处理
-
-```powershell
-powershell -NoProfile -ExecutionPolicy Bypass -File ".\qclaw_fitment_automation.ps1" -OpenOnly
-```
-
-### 直接运行当前版本进行批量处理
-
-```powershell
-powershell -NoProfile -ExecutionPolicy Bypass -File ".\qclaw_fitment_automation.ps1"
-```
-
-### 指定更高的轮次上限
-
-```powershell
-powershell -NoProfile -ExecutionPolicy Bypass -File ".\qclaw_fitment_automation.ps1" -MaxRounds 80
-```
-
-### 使用项目目录默认路径
+### 直接运行自动化脚本
 
 ```powershell
 powershell -NoProfile -ExecutionPolicy Bypass -File ".\qclaw_fitment_automation.ps1" -Project .\projects\0610 -MaxRounds 150
 ```
 
-### 使用批处理并透传参数
-
-```powershell
-.\run_automation.bat -MaxRounds 80
-```
-
-### 直接使用 PowerShell 命令并透传参数 80 作为轮次上限
-
-```powershell
-powershell -NoProfile -ExecutionPolicy Bypass -File ".\qclaw_fitment_automation.ps1" -MaxRounds 80
-```
-
-## 手动首轮后自动发送下一步
-
-先打开脚本：
+### 手动首轮后自动发送下一步
 
 ```powershell
 powershell -NoProfile -ExecutionPolicy Bypass -File ".\auto_next_until_done.ps1"
 ```
 
-脚本打开 ChatGPT 后，先在页面里手动写完并发送初始 prompt；确认已经发出后，回到 PowerShell 窗口按 Enter。之后脚本会等待每轮回复稳定，未检测到完成信号就继续发送 `下一步`，直到出现 `本批次完成`、`全部完成`、`可入库全量表` 等完成信号，或达到 `-MaxNextSteps` 上限。
+脚本打开 ChatGPT 后，手动发送初始 prompt，按 Enter 后脚本自动循环发送 `下一步`。
 
-自动下一步的记录文件默认保存在 `transcripts\auto_next_transcript_*.md`。
-
-常用参数：
-
-```powershell
-powershell -NoProfile -ExecutionPolicy Bypass -File ".\auto_next_until_done.ps1" -MaxNextSteps 200
-powershell -NoProfile -ExecutionPolicy Bypass -File ".\auto_next_until_done.ps1" -NextMessage "继续补强当前批次"
-```
-
-## 拆分原始 TSV
-
-使用 `split_origin_tsv.py` 可以把一个 TSV 按固定行数拆成多个 `split` 文件。
-
-例如，把项目根目录下的 `full.tsv` 按每份约 `20` 行拆到 `input_sheets` 目录：
+### 拆分原始 TSV
 
 ```powershell
 python .\split_origin_tsv.py --origin .\full.tsv --output-dir .\input_sheets --prefix split --chunk-size 20 --write
 ```
 
-生成的文件名类似：
-
-```text
-split_part_01.tsv
-split_part_02.tsv
-split_part_03.tsv
-```
-
-常用参数说明：
-
-- `--origin`：原始 TSV 文件路径
-- `--output-dir`：拆分后文件的输出目录
-- `--prefix`：输出文件名前缀
-- `--chunk-size`：每个拆分文件包含的数据行数，原表第一行表头会自动放入每个拆分文件且不计入该数量
-- `--write`：执行写入
-- `--force`：如果输出目录下已有同名前缀文件，则先覆盖
-
-如果需要覆盖已有的 `split_part_*.tsv` 文件：
-
-```powershell
-python .\split_origin_tsv.py --origin .\full.tsv --output-dir .\input_sheets --prefix split --chunk-size 20 --write --force
-```
-
-## 合并最终 Round 结果
-
-使用 `merge_final_round_results.py` 可以从每个分片对应的最新结果 Markdown 中，提取最后一个包含 TSV 表格的 `--- Round N / 下一步 ---` 或 `--- Round N / 首次发送 ---` 段落，并合并成一个总 TSV。
-
-最常用命令：
+### 合并最终 Round 结果
 
 ```powershell
 python .\merge_final_round_results.py --project .\projects\0610
 ```
-
-默认路径：
-
-- 不带 `--project` 时保持旧默认：`.\input_sheets`、`.\output_sheets`、`.\output_merged`
-- 带 `--project .\projects\0610` 时默认：
-  - `--origin-dir`：`.\projects\0610\input`
-  - `--results-dir`：`.\projects\0610\output`
-  - `--output-dir`：`.\projects\0610`
-  - `--log-dir`：`.\projects\0610`
-
-脚本行为说明：
-
-- 按 `origin-dir` 下的 `*.tsv` 分片顺序逐个处理
-- 每个分片会在 `results-dir` 中查找同名结果文件，优先选择最新版本，例如 `xxx_result_2.md` 会覆盖 `xxx_result.md`
-- 每个结果文件只提取最后一个有效 Round 里的 TSV 数据
-- 合并输出统一使用新版全量表头；`对应尺码`、`排序依据车型`、`子车系`、`区间最小年份`、`区间最大年份`、`max_length_cm`、`max_width_cm`、`max_height_cm`、`长度余量`、`无尺码原因` 会保留为空
-- 如果结果中包含 `Year	主车型	结构	版本	候选车型	匹配数量` 子车系匹配表，合并时会额外生成 `*_subseries_match.tsv`，其中 `匹配数量` 会保留为空
-- 默认输出文件名取 `origin-dir` 中第一个 TSV 的文件名，去掉结尾的 `_part_n` 后再拼接后缀
-- 例如第一个输入文件是 `待补强_part_27.tsv`，则默认输出 `待补强_merged.tsv` 和 `待补强_merged.log`
-- 输出 TSV 时会在每行前面补一列来源文件名
-- 默认会写入表头；如果不需要表头，可以加 `--no-header`
-- 同时生成 `.log` 文件，记录 `MERGED`、`MISSING`、`NO_ROUND`、`EMPTY_ROUND` 等状态
-
-常用示例：
-
-```powershell
-# 使用项目目录默认路径合并
-python .\merge_final_round_results.py --project .\projects\0610
-
-# 指定输入和输出目录
-python .\merge_final_round_results.py `
-  --project .\projects\0610 `
-  --origin-dir .\input_sheets\my_batch `
-  --results-dir .\output_sheets `
-  --output-dir .\output_merged `
-  --log-dir .\output_merged
-
-# 显式指定输出文件路径
-python .\merge_final_round_results.py `
-  --output .\output_merged\my_batch_merged.tsv `
-  --log .\output_merged\my_batch_merged.log
-
-# 不写表头
-python .\merge_final_round_results.py --no-header
-```
-
-powershell -NoProfile -ExecutionPolicy Bypass -File ".\qclaw_fitment_automation.ps1" -Project .\projects\0604补强 -MaxRounds 100
