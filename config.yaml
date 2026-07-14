@@ -9,7 +9,7 @@ workspace:
     # directories: 遍历 root 的直接子目录；glob: 使用 include 通配；explicit: 使用 projects 清单。
     strategy: explicit
     projects:
-      - 0610-缺失年份补完
+      - 0713-test
     include:
       - "*"
     exclude:
@@ -35,7 +35,7 @@ runtime:
     skip_processed: true
 
 data_contract:
-  requirement: ./requirement.md
+  requirement: requirements\eu_autodata.md
   full_table:
     columns:
       - 主车型
