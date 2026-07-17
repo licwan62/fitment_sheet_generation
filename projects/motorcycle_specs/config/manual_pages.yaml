@@ -1,0 +1,8 @@
+manual_pages:
+  - page_url: "https://www.motorcyclespecs.co.za/model/bmw/bmw-f900gs-adventure-2024.html"
+    page_title: "BMW F 900 GS Adventure 2024"
+    brand_guess: "BMW"
+    model_guess: "F 900 GS Adventure"
+    year_guess: "2024"
+    version_guess: "Adventure"
+    discovered_from: "MANUAL_CONFIG"

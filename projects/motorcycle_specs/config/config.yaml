@@ -1,0 +1,37 @@
+site:
+  base_url: "https://www.motorcyclespecs.co.za/"
+  user_agent: "MotorcycleDimensionResearchBot/1.0 (configure contact in config.yaml)"
+  obey_robots_txt: true
+crawler:
+  max_concurrency: 1
+  request_delay_min_seconds: 2
+  request_delay_max_seconds: 5
+  connect_timeout_seconds: 20
+  read_timeout_seconds: 40
+  max_retries: 3
+  retry_delays_seconds: [5, 15, 45]
+  cache_enabled: true
+matching:
+  exact_threshold: 95
+  trusted_score_threshold: 80
+  likely_threshold: 85
+  review_threshold: 70
+  multiple_score_gap: 5
+  require_brand_match: true
+  enforce_number_tokens: true
+  ignored_model_words: ["equipada"]
+dimension:
+  standard_unit: "mm"
+  group_tolerance_mm: {length: 5, width: 5, height: 5}
+validation:
+  length_min_mm: 900
+  length_max_mm: 3500
+  width_min_mm: 300
+  width_max_mm: 2000
+  height_min_mm: 400
+  height_max_mm: 2500
+  metric_imperial_conflict_percent: 5
+input_columns:
+  make: ["MAKE", "品牌", "make"]
+  model: ["MODEL", "车型", "model"]
+  vehicle_type: ["车辆类型", "VEHICLE_TYPE", "vehicle_type"]

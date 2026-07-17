@@ -1,0 +1,4 @@
+model_aliases:
+  "bmw|c evolution": ["c-evolution", "cevolution"]
+  "bmw|c400gt": ["c 400 gt", "c-400-gt"]
+
