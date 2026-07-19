@@ -1,0 +1,21 @@
+{
+  "decision": "MATCH",
+  "selected_candidate": "Pulsar NS200",
+  "confidence": "HIGH",
+  "match_basis": "MARKET_ALIAS",
+  "explanation": "The model 'Pulsar 200 NS FI ABS' is a market-specific naming variant of the Pulsar NS200, with '200' indicating displacement, 'NS' denoting the model series, and 'FI ABS' being equipment features. The name 'Pulsar 200 NS FI ABS' is a regional or marketing designation for the same underlying motorcycle as the catalog candidate 'Pulsar NS200'.",
+  "canonical_model_alias": "Pulsar NS200",
+  "configuration_tokens": [
+    "FI",
+    "ABS"
+  ],
+  "brand_aliases": [],
+  "model_aliases": [
+    "Pulsar NS200"
+  ],
+  "status": "SUCCESS",
+  "prompt_version": "motorcycle-candidate-resolution-v4",
+  "model": "qwen-flash",
+  "make": "Bajaj",
+  "model_name": "Pulsar 200 NS FI ABS"
+}

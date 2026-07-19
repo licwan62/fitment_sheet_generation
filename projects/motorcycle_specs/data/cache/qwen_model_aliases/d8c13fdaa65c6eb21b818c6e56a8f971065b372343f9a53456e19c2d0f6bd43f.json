@@ -1,0 +1,21 @@
+{
+  "decision": "MATCH",
+  "selected_candidate": "DL \n\t\t800RE V-Strom Tour",
+  "confidence": "HIGH",
+  "match_basis": "MARKET_ALIAS",
+  "explanation": "The input 'DL800 V-Strom 800 Touring' refers to the same underlying model as 'DL 800RE V-Strom Tour'. The 'RE' in the catalog title stands for 'Rally Edition', a market-specific designation used for the touring variant of the DL800 V-Strom. This is a known regional or marketing variation, not a different model. The displacement (800) and core model (V-Strom) are identical.",
+  "canonical_model_alias": "DL 800RE V-Strom Tour",
+  "configuration_tokens": [
+    "RE",
+    "Tour"
+  ],
+  "brand_aliases": [],
+  "model_aliases": [
+    "DL 800RE V-Strom Tour"
+  ],
+  "status": "SUCCESS",
+  "prompt_version": "motorcycle-candidate-resolution-v4",
+  "model": "qwen-flash",
+  "make": "Suzuki",
+  "model_name": "DL800 V-Strom 800 Touring"
+}

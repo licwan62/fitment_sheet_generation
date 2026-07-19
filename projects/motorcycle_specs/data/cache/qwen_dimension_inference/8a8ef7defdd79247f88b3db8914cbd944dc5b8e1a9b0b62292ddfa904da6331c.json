@@ -1,0 +1,16 @@
+{
+  "decision": "INFER|UNKNOWN",
+  "confidence": "LOW",
+  "length_mm": null,
+  "width_mm": null,
+  "height_mm": null,
+  "wheelbase_mm": null,
+  "seat_height_mm": null,
+  "ground_clearance_mm": null,
+  "explanation": "The Gas Gas TXT Pro 280 Replica Factory is a limited-production off-road motorcycle with no publicly available official dimensions. Model-specific data varies significantly by year and market, and no consistent catalog source confirms exact measurements. Dimensions are inferred from similar models (e.g., TXT Pro 250/300 series) but may not reflect the Replica Factory variant accurately. Therefore, values are uncertain and marked as unknown.",
+  "status": "SUCCESS",
+  "prompt_version": "motorcycle-dimension-inference-v1",
+  "model": "qwen-flash",
+  "make": "Gas Gas",
+  "model_name": "TXT Pro 280 Replica Factory"
+}

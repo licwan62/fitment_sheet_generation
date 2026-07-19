@@ -1,0 +1,20 @@
+{
+  "decision": "MATCH",
+  "selected_candidate": "Suzuki GSX-S150",
+  "confidence": "HIGH",
+  "match_basis": "SAME_NAME",
+  "explanation": "The input model 'GSX-S150 MotoGP' refers to the same motorcycle as the catalog candidate 'Suzuki GSX-S150', with 'MotoGP' being a special edition or marketing designation that does not change the core model identity. The displacement (150) and platform (GSX-S) are identical.",
+  "canonical_model_alias": "GSX-S150",
+  "configuration_tokens": [
+    "MotoGP"
+  ],
+  "brand_aliases": [],
+  "model_aliases": [
+    "GSX-S150"
+  ],
+  "status": "SUCCESS",
+  "prompt_version": "motorcycle-candidate-resolution-v4",
+  "model": "qwen-flash",
+  "make": "Suzuki",
+  "model_name": "GSX-S150 MotoGP"
+}

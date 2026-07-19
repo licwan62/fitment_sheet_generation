@@ -1,0 +1,18 @@
+{
+  "decision": "MATCH",
+  "selected_candidate": "VF 1100S Sabre \n\t\tV65",
+  "confidence": "HIGH",
+  "match_basis": "SAME_NAME",
+  "explanation": "The input 'VF1100S V65 Sabre' and the candidate 'VF 1100S Sabre V65' refer to the same motorcycle model, with only minor formatting differences in spacing and order of tokens. The displacement (1100), engine configuration (V65), and model name (Sabre) are identical, confirming they represent the same underlying motorcycle.",
+  "canonical_model_alias": "VF 1100S Sabre V65",
+  "configuration_tokens": [],
+  "brand_aliases": [],
+  "model_aliases": [
+    "VF 1100S Sabre V65"
+  ],
+  "status": "SUCCESS",
+  "prompt_version": "motorcycle-candidate-resolution-v4",
+  "model": "qwen-flash",
+  "make": "Honda",
+  "model_name": "VF1100S V65 Sabre"
+}

@@ -1,0 +1,18 @@
+{
+  "decision": "MATCH",
+  "selected_candidate": "Suzuki V-Strom 800DE Adventure",
+  "confidence": "HIGH",
+  "match_basis": "SAME_NAME",
+  "explanation": "The input model 'DL800 V-Strom 800DE Adventure' is a direct reference to the same motorcycle identified in the candidate 'Suzuki V-Strom 800DE Adventure', with no meaningful differences in model identity, displacement, or configuration. The manufacturer and year are excluded per instructions, and the core model name matches exactly.",
+  "canonical_model_alias": "V-Strom 800DE Adventure",
+  "configuration_tokens": [],
+  "brand_aliases": [],
+  "model_aliases": [
+    "V-Strom 800DE Adventure"
+  ],
+  "status": "SUCCESS",
+  "prompt_version": "motorcycle-candidate-resolution-v4",
+  "model": "qwen-flash",
+  "make": "Suzuki",
+  "model_name": "DL800 V-Strom 800DE Adventure"
+}

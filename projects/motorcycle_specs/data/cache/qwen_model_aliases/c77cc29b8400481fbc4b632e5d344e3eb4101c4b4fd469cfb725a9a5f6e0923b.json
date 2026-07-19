@@ -1,0 +1,18 @@
+{
+  "decision": "NO_MATCH",
+  "selected_candidate": "",
+  "confidence": "HIGH",
+  "match_basis": "NONE",
+  "explanation": "The input model 'R1100GS SE' includes a 'SE' suffix denoting a special edition, which is not present in the catalog candidates 'R 1100GS' or 'BMW R 1100 GS'. The SE variant is a distinct configuration with unique features and production run, making it a different model from the base R1100GS. Therefore, no match is valid.",
+  "canonical_model_alias": "",
+  "configuration_tokens": [
+    "SE"
+  ],
+  "brand_aliases": [],
+  "model_aliases": [],
+  "status": "SUCCESS",
+  "prompt_version": "motorcycle-candidate-resolution-v4",
+  "model": "qwen-flash",
+  "make": "BMW",
+  "model_name": "R1100GS SE"
+}

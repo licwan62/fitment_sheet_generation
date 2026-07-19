@@ -1,0 +1,16 @@
+{
+  "decision": "NO_MATCH",
+  "selected_candidate": "",
+  "confidence": "HIGH",
+  "match_basis": "NONE",
+  "explanation": "The R1100RTL is a distinct model variant with a specific 'L' suffix denoting a long wheelbase and touring configuration. The catalog candidates 'R 1100RT' and 'R 1100RS' are different models: the RT is a touring model, and the RS is a sport-touring model. Neither matches the R1100RTL in configuration or identity.",
+  "canonical_model_alias": "",
+  "configuration_tokens": [],
+  "brand_aliases": [],
+  "model_aliases": [],
+  "status": "SUCCESS",
+  "prompt_version": "motorcycle-candidate-resolution-v4",
+  "model": "qwen-flash",
+  "make": "BMW",
+  "model_name": "R1100RTL"
+}

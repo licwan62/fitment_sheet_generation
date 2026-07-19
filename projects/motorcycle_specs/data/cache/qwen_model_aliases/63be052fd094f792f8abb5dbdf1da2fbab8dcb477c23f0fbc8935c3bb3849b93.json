@@ -1,0 +1,18 @@
+{
+  "decision": "MATCH",
+  "selected_candidate": "Suzuki AX4 115",
+  "confidence": "HIGH",
+  "match_basis": "SAME_NAME",
+  "explanation": "The input 'GD115 AX4' is a known model designation for the Suzuki AX4 115, where 'GD115' refers to the engine and model code, and 'AX4' is the model name. The catalog candidate 'Suzuki AX4 115' matches exactly in model name and displacement, confirming it is the same motorcycle.",
+  "canonical_model_alias": "AX4 115",
+  "configuration_tokens": [],
+  "brand_aliases": [],
+  "model_aliases": [
+    "AX4 115"
+  ],
+  "status": "SUCCESS",
+  "prompt_version": "motorcycle-candidate-resolution-v4",
+  "model": "qwen-flash",
+  "make": "Suzuki",
+  "model_name": "GD115 AX4"
+}

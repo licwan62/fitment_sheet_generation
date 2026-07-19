@@ -1,0 +1,18 @@
+{
+  "decision": "MATCH",
+  "selected_candidate": "Suzuki Boulevard M90",
+  "confidence": "HIGH",
+  "match_basis": "SAME_NAME",
+  "explanation": "The input 'M90 Boulevard' refers to the same motorcycle model as 'Suzuki Boulevard M90', with only a reordering of words. The model identity is unchanged, and the manufacturer is consistent.",
+  "canonical_model_alias": "Boulevard M90",
+  "configuration_tokens": [],
+  "brand_aliases": [],
+  "model_aliases": [
+    "Boulevard M90"
+  ],
+  "status": "SUCCESS",
+  "prompt_version": "motorcycle-candidate-resolution-v4",
+  "model": "qwen-flash",
+  "make": "Suzuki",
+  "model_name": "M90 Boulevard"
+}

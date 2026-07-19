@@ -1,0 +1,16 @@
+{
+  "decision": "NO_MATCH",
+  "selected_candidate": "",
+  "confidence": "HIGH",
+  "match_basis": "NONE",
+  "explanation": "The model 'S3T Thunderbolt' by Buell does not match any of the provided catalog candidates, and no known alias or variant of this model exists in the candidate list. The S3T Thunderbolt is a specific high-performance motorcycle model from Buell's lineup, and without any matching entries in the catalog, a definitive match cannot be established.",
+  "canonical_model_alias": "",
+  "configuration_tokens": [],
+  "brand_aliases": [],
+  "model_aliases": [],
+  "status": "SUCCESS",
+  "prompt_version": "motorcycle-candidate-resolution-v4",
+  "model": "qwen-flash",
+  "make": "Buell",
+  "model_name": "S3T Thunderbolt"
+}

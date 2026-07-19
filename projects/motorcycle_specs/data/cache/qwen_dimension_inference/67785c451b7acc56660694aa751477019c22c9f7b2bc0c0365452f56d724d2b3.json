@@ -1,0 +1,16 @@
+{
+  "decision": "UNKNOWN",
+  "confidence": "LOW",
+  "length_mm": null,
+  "width_mm": null,
+  "height_mm": null,
+  "wheelbase_mm": null,
+  "seat_height_mm": null,
+  "ground_clearance_mm": null,
+  "explanation": "The Cleveland Model 31 is not a widely recognized or documented motorcycle model, and no reliable specifications are available for it. Without clear historical data, catalog references, or verified sources, dimensions cannot be reliably inferred. The model identity and its variations across years or markets remain uncertain.",
+  "status": "SUCCESS",
+  "prompt_version": "motorcycle-dimension-inference-v1",
+  "model": "qwen-flash",
+  "make": "Cleveland",
+  "model_name": "Model 31"
+}

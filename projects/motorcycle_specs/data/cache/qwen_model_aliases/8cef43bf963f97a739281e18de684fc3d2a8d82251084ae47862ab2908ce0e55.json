@@ -1,0 +1,16 @@
+{
+  "decision": "MATCH",
+  "selected_candidate": "BMW R nineT 100 Years",
+  "confidence": "HIGH",
+  "match_basis": "SAME_NAME",
+  "explanation": "The input 'R nine T 100 Years' is a direct and accurate representation of the catalog candidate 'BMW R nineT 100 Years', with only minor spacing and capitalization differences. The model name, displacement (implied by R nineT), and commemorative designation (100 Years) are identical. No other model in the list matches this specific identity.",
+  "canonical_model_alias": "R nineT 100 Years",
+  "configuration_tokens": [],
+  "brand_aliases": [],
+  "model_aliases": [],
+  "status": "SUCCESS",
+  "prompt_version": "motorcycle-candidate-resolution-v4",
+  "model": "qwen-flash",
+  "make": "BMW",
+  "model_name": "R nine T 100 Years"
+}

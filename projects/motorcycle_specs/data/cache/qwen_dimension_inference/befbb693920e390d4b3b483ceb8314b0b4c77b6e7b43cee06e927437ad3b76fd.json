@@ -1,0 +1,16 @@
+{
+  "decision": "INFER|UNKNOWN",
+  "confidence": "MEDIUM|LOW",
+  "length_mm": null,
+  "width_mm": null,
+  "height_mm": null,
+  "wheelbase_mm": null,
+  "seat_height_mm": null,
+  "ground_clearance_mm": null,
+  "explanation": "E-TON Beamer II is a lightweight electric motorcycle primarily marketed for youth or entry-level riders. No official dimensions are available in public catalogs, and model variations by year or regional market may exist. Without verified specifications or visual reference, dimensions cannot be reliably inferred. The model's design shares similarities with other E-TON electric models, but direct extrapolation is not justified due to potential differences in frame geometry and component layout.",
+  "status": "SUCCESS",
+  "prompt_version": "motorcycle-dimension-inference-v1",
+  "model": "qwen-flash",
+  "make": "E-TON",
+  "model_name": "Beamer II"
+}

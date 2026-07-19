@@ -1,0 +1,16 @@
+{
+  "decision": "NO_MATCH",
+  "selected_candidate": "",
+  "confidence": "HIGH",
+  "match_basis": "NONE",
+  "explanation": "The Honda PS250 Big Ruckus is a distinct model from all catalog candidates. It is a 250cc cruiser-style motorcycle with a unique design and engine configuration, not related to the CB 250RS, NSS 250 Jazz, CBR 250 R, or other listed models. None of the candidates share the same underlying identity, displacement, or model lineage. The name 'Big Ruckus' is specific to this model and does not correspond to any known alias, market variant, or typo of the listed candidates.",
+  "canonical_model_alias": "",
+  "configuration_tokens": [],
+  "brand_aliases": [],
+  "model_aliases": [],
+  "status": "SUCCESS",
+  "prompt_version": "motorcycle-candidate-resolution-v4",
+  "model": "qwen-flash",
+  "make": "Honda",
+  "model_name": "PS250 Big Ruckus"
+}

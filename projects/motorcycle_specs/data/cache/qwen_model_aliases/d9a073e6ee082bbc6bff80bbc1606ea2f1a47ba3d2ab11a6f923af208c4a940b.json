@@ -1,0 +1,21 @@
+{
+  "decision": "MATCH",
+  "selected_candidate": "gasgas contact estart 250",
+  "confidence": "HIGH",
+  "match_basis": "MARKET_ALIAS",
+  "explanation": "The input 'Contact 250 ES' is a market-specific designation (ES likely indicating 'E-Start') for the same model as 'gasgas contact estart 250', which is a known variant in the Gas Gas catalog. The displacement and core model name match exactly, and 'ES' aligns with 'e-start' in the candidate title.",
+  "canonical_model_alias": "contact estart 250",
+  "configuration_tokens": [
+    "estart"
+  ],
+  "brand_aliases": [],
+  "model_aliases": [
+    "gasgas contact estart 250",
+    "contact estart 250"
+  ],
+  "status": "SUCCESS",
+  "prompt_version": "motorcycle-candidate-resolution-v4",
+  "model": "qwen-flash",
+  "make": "Gas Gas",
+  "model_name": "Contact 250 ES"
+}

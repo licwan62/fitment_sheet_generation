@@ -1,0 +1,20 @@
+{
+  "decision": "MATCH",
+  "selected_candidate": "gasgas ec 250 cami",
+  "confidence": "HIGH",
+  "match_basis": "SAME_NAME",
+  "explanation": "The input 'EC 250 Cami' directly matches the catalog candidate 'gasgas ec 250 cami' in name, model, displacement, and configuration. 'Cami' is a known market-specific designation (likely for 'Camping' or 'Commercial' variant) but refers to the same underlying model. No other candidate shares this exact combination.",
+  "canonical_model_alias": "ec 250 cami",
+  "configuration_tokens": [
+    "cami"
+  ],
+  "brand_aliases": [],
+  "model_aliases": [
+    "gasgas ec 250 cami"
+  ],
+  "status": "SUCCESS",
+  "prompt_version": "motorcycle-candidate-resolution-v4",
+  "model": "qwen-flash",
+  "make": "Gas Gas",
+  "model_name": "EC 250 Cami"
+}

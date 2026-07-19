@@ -1,0 +1,21 @@
+{
+  "decision": "MATCH",
+  "selected_candidate": "Suzuki SV650 ABS",
+  "confidence": "HIGH",
+  "match_basis": "SAME_NAME",
+  "explanation": "The input model 'SV650A ABS' is a known market variant (A suffix often denotes a specific configuration or market version) of the Suzuki SV650 ABS, and the core motorcycle identity remains unchanged. The catalog candidate 'Suzuki SV650 ABS' matches the underlying model.",
+  "canonical_model_alias": "SV650 ABS",
+  "configuration_tokens": [
+    "A",
+    "ABS"
+  ],
+  "brand_aliases": [],
+  "model_aliases": [
+    "SV650 ABS"
+  ],
+  "status": "SUCCESS",
+  "prompt_version": "motorcycle-candidate-resolution-v4",
+  "model": "qwen-flash",
+  "make": "Suzuki",
+  "model_name": "SV650A ABS"
+}

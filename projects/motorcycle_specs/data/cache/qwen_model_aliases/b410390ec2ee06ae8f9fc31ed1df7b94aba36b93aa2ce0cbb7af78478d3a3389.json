@@ -1,0 +1,16 @@
+{
+  "decision": "NO_MATCH",
+  "selected_candidate": "",
+  "confidence": "HIGH",
+  "match_basis": "NONE",
+  "explanation": "The input model 'MRT2604E Montesa Cota 4RT Race Replica' is a Honda motorcycle with a Montesa Cota 4RT race replica designation, but Montesa is a Spanish brand historically associated with trials and off-road motorcycles, not a Honda model. The name 'Montesa Cota 4RT' does not correspond to any known Honda motorcycle model in the catalog. There is no evidence of a Honda-produced 'Montesa Cota 4RT Race Replica' under any market or configuration alias. The combination of manufacturer (Honda) and model name (Montesa Cota 4RT) is inconsistent with known product lines, indicating a mismatch.",
+  "canonical_model_alias": "",
+  "configuration_tokens": [],
+  "brand_aliases": [],
+  "model_aliases": [],
+  "status": "SUCCESS",
+  "prompt_version": "motorcycle-candidate-resolution-v4",
+  "model": "qwen-flash",
+  "make": "Honda",
+  "model_name": "MRT2604E Montesa Cota 4RT Race Replica"
+}

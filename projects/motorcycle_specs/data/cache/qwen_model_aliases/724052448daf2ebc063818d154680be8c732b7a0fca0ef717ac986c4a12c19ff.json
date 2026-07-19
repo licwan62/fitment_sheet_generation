@@ -1,0 +1,16 @@
+{
+  "decision": "NO_MATCH",
+  "selected_candidate": "",
+  "confidence": "HIGH",
+  "match_basis": "NONE",
+  "explanation": "The model 'Bandit' is not found in the catalog candidates for American IronHorse. No known variant, market name, abbreviation, or typo of 'Bandit' matches any listed candidate. The name does not correspond to any documented American IronHorse motorcycle model.",
+  "canonical_model_alias": "",
+  "configuration_tokens": [],
+  "brand_aliases": [],
+  "model_aliases": [],
+  "status": "SUCCESS",
+  "prompt_version": "motorcycle-candidate-resolution-v4",
+  "model": "qwen-flash",
+  "make": "American IronHorse",
+  "model_name": "Bandit"
+}

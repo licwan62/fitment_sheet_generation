@@ -1,0 +1,18 @@
+{
+  "decision": "MATCH",
+  "selected_candidate": "R 1250GS 40 Years Edition",
+  "confidence": "HIGH",
+  "match_basis": "SAME_NAME",
+  "explanation": "The input 'R1250GS 40 Years GS Edition' and the candidate 'R 1250GS 40 Years Edition' refer to the same limited-edition motorcycle model, with only minor formatting differences (spacing and omission of 'GS' in the title). The 40 Years Edition is a known commemorative variant of the R1250GS, and no other model in the list matches this specific configuration.",
+  "canonical_model_alias": "R 1250GS 40 Years Edition",
+  "configuration_tokens": [],
+  "brand_aliases": [],
+  "model_aliases": [
+    "R 1250GS 40 Years Edition"
+  ],
+  "status": "SUCCESS",
+  "prompt_version": "motorcycle-candidate-resolution-v4",
+  "model": "qwen-flash",
+  "make": "BMW",
+  "model_name": "R1250GS 40 Years GS Edition"
+}

@@ -1,0 +1,22 @@
+{
+  "decision": "MATCH",
+  "selected_candidate": "Harley-Davidson FLHTCUSE Screamin Eagle Ultra Classic Electra Glide",
+  "confidence": "HIGH",
+  "match_basis": "MARKET_ALIAS",
+  "explanation": "The input 'FLHTCSE Screamin Eagle Electra Glide' is a market-specific or catalog variant of the FLHTCUSE model, where 'S' and 'SE' are interchangeable designations for the same high-end Screamin' Eagle trim level. The core model identity (FLHTCUSE) and the Electra Glide name are consistent across both names.",
+  "canonical_model_alias": "FLHTCUSE Screamin Eagle Ultra Classic Electra Glide",
+  "configuration_tokens": [
+    "Screamin Eagle",
+    "Ultra Classic"
+  ],
+  "brand_aliases": [],
+  "model_aliases": [
+    "Screamin Eagle Ultra Classic Electra Glide",
+    "FLHTCUSE Screamin Eagle Ultra Classic Electra Glide"
+  ],
+  "status": "SUCCESS",
+  "prompt_version": "motorcycle-candidate-resolution-v4",
+  "model": "qwen-flash",
+  "make": "Harley-Davidson",
+  "model_name": "FLHTCSE Screamin Eagle Electra Glide"
+}

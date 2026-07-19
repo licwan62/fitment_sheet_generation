@@ -1,0 +1,16 @@
+{
+  "decision": "INFER|UNKNOWN",
+  "confidence": "LOW",
+  "length_mm": null,
+  "width_mm": null,
+  "height_mm": null,
+  "wheelbase_mm": null,
+  "seat_height_mm": null,
+  "ground_clearance_mm": null,
+  "explanation": "The Honda CL160 Scrambler was produced in limited numbers with variations across model years and markets. No consistent, verified dimensions are available from official sources for this specific model. Dimensions may vary significantly between early and later versions, and no definitive catalog data is accessible. Therefore, inferred values cannot be reliably determined without risk of inaccuracy.",
+  "status": "SUCCESS",
+  "prompt_version": "motorcycle-dimension-inference-v1",
+  "model": "qwen-flash",
+  "make": "Honda",
+  "model_name": "CL160 Scrambler"
+}

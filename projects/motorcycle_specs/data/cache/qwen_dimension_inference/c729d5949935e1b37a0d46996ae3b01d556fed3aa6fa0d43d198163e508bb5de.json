@@ -1,0 +1,16 @@
+{
+  "decision": "INFER|UNKNOWN",
+  "confidence": "LOW",
+  "length_mm": null,
+  "width_mm": null,
+  "height_mm": null,
+  "wheelbase_mm": null,
+  "seat_height_mm": null,
+  "ground_clearance_mm": null,
+  "explanation": "The Big Bear Choppers G.T.X. 117 X-Wedge is a custom motorcycle model with limited public documentation. No verified dimensions are available in open sources, and the model's specifications may vary significantly by year, configuration, or market. Without access to official catalog data or physical measurements, dimensional estimates cannot be reliably inferred. Therefore, all dimensions are marked as unknown.",
+  "status": "SUCCESS",
+  "prompt_version": "motorcycle-dimension-inference-v1",
+  "model": "qwen-flash",
+  "make": "Big Bear Choppers",
+  "model_name": "G.T.X. 117 X-Wedge"
+}

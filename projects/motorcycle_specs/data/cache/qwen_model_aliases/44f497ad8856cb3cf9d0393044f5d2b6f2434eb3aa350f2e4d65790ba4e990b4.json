@@ -1,0 +1,16 @@
+{
+  "decision": "NO_MATCH",
+  "selected_candidate": "",
+  "confidence": "HIGH",
+  "match_basis": "NONE",
+  "explanation": "The model 'MRT300L Montesa Cota 301RR' is not a Honda motorcycle; Montesa is a separate Spanish motorcycle brand. The MRT300L appears to be a misattributed or fictional name combining Honda and Montesa branding. No catalog candidate matches this exact model, and the combination of Honda manufacturer with Montesa Cota 301RR is inconsistent with known product lines.",
+  "canonical_model_alias": "",
+  "configuration_tokens": [],
+  "brand_aliases": [],
+  "model_aliases": [],
+  "status": "SUCCESS",
+  "prompt_version": "motorcycle-candidate-resolution-v4",
+  "model": "qwen-flash",
+  "make": "Honda",
+  "model_name": "MRT300L Montesa Cota 301RR"
+}

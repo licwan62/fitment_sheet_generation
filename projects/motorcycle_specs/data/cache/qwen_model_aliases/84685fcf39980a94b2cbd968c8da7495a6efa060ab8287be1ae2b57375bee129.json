@@ -1,0 +1,20 @@
+{
+  "decision": "MATCH",
+  "selected_candidate": "GSX-R 600",
+  "confidence": "HIGH",
+  "match_basis": "MARKET_ALIAS",
+  "explanation": "The model 'GSX-R600Z' is a market-specific designation (likely for the Japanese domestic market) of the same underlying motorcycle as the GSX-R 600, with 'Z' serving as a configuration or market suffix. The core model identity, displacement, and platform are identical.",
+  "canonical_model_alias": "GSX-R 600",
+  "configuration_tokens": [
+    "Z"
+  ],
+  "brand_aliases": [],
+  "model_aliases": [
+    "GSX-R 600"
+  ],
+  "status": "SUCCESS",
+  "prompt_version": "motorcycle-candidate-resolution-v4",
+  "model": "qwen-flash",
+  "make": "Suzuki",
+  "model_name": "GSX-R600Z"
+}

@@ -1,0 +1,20 @@
+{
+  "decision": "MATCH",
+  "selected_candidate": "EC 300 Enduro GP \n\t\tReplica",
+  "confidence": "HIGH",
+  "match_basis": "MARKET_ALIAS",
+  "explanation": "The 'Enduro GP 300' is a market-specific naming for the same model as 'EC 300 Enduro GP Replica', with 'GP' and 'Replica' being configuration or marketing labels. The displacement (300) and core model identity match exactly, and 'Enduro GP' is a known variant name used in certain markets. The catalog title 'EC 300 Enduro GP Replica' represents the same underlying motorcycle.",
+  "canonical_model_alias": "EC 300 Enduro GP Replica",
+  "configuration_tokens": [
+    "Replica"
+  ],
+  "brand_aliases": [],
+  "model_aliases": [
+    "EC 300 Enduro GP Replica"
+  ],
+  "status": "SUCCESS",
+  "prompt_version": "motorcycle-candidate-resolution-v4",
+  "model": "qwen-flash",
+  "make": "Gas Gas",
+  "model_name": "Enduro GP 300"
+}

@@ -1,0 +1,16 @@
+{
+  "decision": "NO_MATCH",
+  "selected_candidate": "",
+  "confidence": "HIGH",
+  "match_basis": "NONE",
+  "explanation": "The input model 'CL72 Scrambler 250' is a vintage Honda scrambler from the 1960s with a 250cc engine, while all catalog candidates are modern models with different designations, displacements, or purposes (e.g., CBR 250, CRF250L, CRM 250AR). None of the candidates match the CL72 Scrambler 250 in identity, displacement, or model lineage. The CL72 is not a variant or market name of any listed candidate.",
+  "canonical_model_alias": "",
+  "configuration_tokens": [],
+  "brand_aliases": [],
+  "model_aliases": [],
+  "status": "SUCCESS",
+  "prompt_version": "motorcycle-candidate-resolution-v4",
+  "model": "qwen-flash",
+  "make": "Honda",
+  "model_name": "CL72 Scrambler 250"
+}

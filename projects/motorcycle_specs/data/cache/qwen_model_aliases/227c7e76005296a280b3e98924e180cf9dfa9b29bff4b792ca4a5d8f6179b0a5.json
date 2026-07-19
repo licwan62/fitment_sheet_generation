@@ -1,0 +1,18 @@
+{
+  "decision": "MATCH",
+  "selected_candidate": "benelli leoncino 250",
+  "confidence": "HIGH",
+  "match_basis": "MARKET_ALIAS",
+  "explanation": "The Benelli Velvet 250 is a market-specific name for the Benelli Leoncino 250, used primarily in certain regions like India and Southeast Asia. The model shares identical engine, chassis, and specifications. The name 'Velvet' is a regional branding variant of the Leoncino 250, not a different model.",
+  "canonical_model_alias": "leoncino 250",
+  "configuration_tokens": [],
+  "brand_aliases": [],
+  "model_aliases": [
+    "leoncino 250"
+  ],
+  "status": "SUCCESS",
+  "prompt_version": "motorcycle-candidate-resolution-v4",
+  "model": "qwen-flash",
+  "make": "Benelli",
+  "model_name": "Velvet 250"
+}

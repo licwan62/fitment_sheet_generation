@@ -1,0 +1,16 @@
+{
+  "decision": "NO_MATCH",
+  "selected_candidate": "",
+  "confidence": "HIGH",
+  "match_basis": "NONE",
+  "explanation": "The input 'CARGO 125 TOOL' does not correspond to any of the catalog candidates. It appears to be a non-standard or fictional name, possibly referencing a utility or cargo variant, but no such model exists in the provided list. The candidates are all standard Honda motorcycle models with different names and designations (e.g., Rebel, CG, CGL, XR, CB, SH), none of which match the 'CARGO 125 TOOL' designation in identity, market name, or plausible typo. No known market alias, abbreviation, or historical name for any candidate matches this input.",
+  "canonical_model_alias": "",
+  "configuration_tokens": [],
+  "brand_aliases": [],
+  "model_aliases": [],
+  "status": "SUCCESS",
+  "prompt_version": "motorcycle-candidate-resolution-v4",
+  "model": "qwen-flash",
+  "make": "Honda",
+  "model_name": "CARGO 125 TOOL"
+}

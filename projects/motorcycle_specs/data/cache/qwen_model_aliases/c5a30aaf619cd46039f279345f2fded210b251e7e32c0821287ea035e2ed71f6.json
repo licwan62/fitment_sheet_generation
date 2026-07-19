@@ -1,0 +1,20 @@
+{
+  "decision": "MATCH",
+  "selected_candidate": "Honda XL 100",
+  "confidence": "HIGH",
+  "match_basis": "MARKET_ALIAS",
+  "explanation": "The 'XL100S' is a market-specific designation for the Honda XL100, with 'S' likely denoting a special or sport variant in certain regions. The core model identity (XL100) matches exactly, and the 'S' suffix is consistent with known configuration labeling practices for this model.",
+  "canonical_model_alias": "XL 100",
+  "configuration_tokens": [
+    "S"
+  ],
+  "brand_aliases": [],
+  "model_aliases": [
+    "XL 100"
+  ],
+  "status": "SUCCESS",
+  "prompt_version": "motorcycle-candidate-resolution-v4",
+  "model": "qwen-flash",
+  "make": "Honda",
+  "model_name": "XL100S"
+}

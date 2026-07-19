@@ -1,0 +1,18 @@
+{
+  "decision": "MATCH",
+  "selected_candidate": "GB 500TT Clubman Tourist Trophy",
+  "confidence": "HIGH",
+  "match_basis": "MARKET_ALIAS",
+  "explanation": "The input 'GB500' refers to the Honda GB500 model, which was marketed in certain regions as the 'GB 500TT Clubman Tourist Trophy', a variant name emphasizing its TT-inspired styling and touring configuration. This is a known market-specific naming convention for the same underlying motorcycle model.",
+  "canonical_model_alias": "GB 500TT Clubman Tourist Trophy",
+  "configuration_tokens": [],
+  "brand_aliases": [],
+  "model_aliases": [
+    "GB 500TT Clubman Tourist Trophy"
+  ],
+  "status": "SUCCESS",
+  "prompt_version": "motorcycle-candidate-resolution-v4",
+  "model": "qwen-flash",
+  "make": "Honda",
+  "model_name": "GB500"
+}

@@ -1,0 +1,16 @@
+{
+  "decision": "NO_MATCH",
+  "selected_candidate": "",
+  "confidence": "HIGH",
+  "match_basis": "NONE",
+  "explanation": "The model 'ALP X 350' is not equivalent to any of the catalog candidates. The ALP X 350 is a specific Beta enduro motorcycle with a unique designation, while the listed candidates refer to different models (e.g., RS 350, RR 350 Enduro, RX 350 2T), none of which match the ALP X 350 in name, configuration, or known market aliases. No evidence supports that any candidate is a variant or alternate name for the ALP X 350.",
+  "canonical_model_alias": "",
+  "configuration_tokens": [],
+  "brand_aliases": [],
+  "model_aliases": [],
+  "status": "SUCCESS",
+  "prompt_version": "motorcycle-candidate-resolution-v4",
+  "model": "qwen-flash",
+  "make": "Beta",
+  "model_name": "ALP X 350"
+}

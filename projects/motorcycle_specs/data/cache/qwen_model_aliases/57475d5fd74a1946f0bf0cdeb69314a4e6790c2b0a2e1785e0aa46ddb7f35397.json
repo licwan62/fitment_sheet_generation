@@ -1,0 +1,12 @@
+{
+  "status": "API_ERROR",
+  "prompt_version": "motorcycle-candidate-resolution-v3",
+  "model": "qwen-flash",
+  "make": "Honda",
+  "model_name": "Dax 125",
+  "candidate_titles": [
+    "ST 125 \n\t\tDax",
+    "ST 125 Dax"
+  ],
+  "error_type": "HTTPStatusError"
+}

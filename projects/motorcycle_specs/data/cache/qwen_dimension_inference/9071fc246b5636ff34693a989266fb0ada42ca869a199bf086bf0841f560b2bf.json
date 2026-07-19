@@ -1,0 +1,16 @@
+{
+  "decision": "INFER",
+  "confidence": "LOW",
+  "length_mm": 2100,
+  "width_mm": 750,
+  "height_mm": 1100,
+  "wheelbase_mm": 1350,
+  "seat_height_mm": 780,
+  "ground_clearance_mm": 160,
+  "explanation": "Inferred based on typical dimensions of similar mid-sized dual-sport motorcycles from the early 2000s with comparable engine displacement (500cc) and ATK's design language. No official catalog data available for the 500 DT model. Dimensions are approximate and may vary by year or market.",
+  "status": "SUCCESS",
+  "prompt_version": "motorcycle-dimension-inference-v1",
+  "model": "qwen-flash",
+  "make": "ATK",
+  "model_name": "500 DT"
+}

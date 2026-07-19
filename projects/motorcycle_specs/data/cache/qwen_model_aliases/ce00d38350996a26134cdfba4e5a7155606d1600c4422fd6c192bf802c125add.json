@@ -1,0 +1,18 @@
+{
+  "decision": "MATCH",
+  "selected_candidate": "beta minitrial electric 16",
+  "confidence": "HIGH",
+  "match_basis": "SAME_NAME",
+  "explanation": "The input model 'Minitrail Electric 16' exactly matches the catalog candidate 'beta minitrial electric 16' in name, displacement, and model series. The casing and minor formatting differences do not affect identity.",
+  "canonical_model_alias": "beta minitrial electric 16",
+  "configuration_tokens": [],
+  "brand_aliases": [],
+  "model_aliases": [
+    "minitrial electric 16"
+  ],
+  "status": "SUCCESS",
+  "prompt_version": "motorcycle-candidate-resolution-v4",
+  "model": "qwen-flash",
+  "make": "Beta",
+  "model_name": "Minitrail Electric 16"
+}

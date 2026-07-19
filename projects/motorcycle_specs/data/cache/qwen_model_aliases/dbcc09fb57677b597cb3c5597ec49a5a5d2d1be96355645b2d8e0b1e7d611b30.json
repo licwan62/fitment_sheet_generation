@@ -1,0 +1,19 @@
+{
+  "decision": "MATCH",
+  "selected_candidate": "Harley-Davidson Heritage Classic 117",
+  "confidence": "HIGH",
+  "match_basis": "SAME_NAME",
+  "explanation": "The input model 'FLHC Heritage Classic 117' is a valid designation for the same motorcycle as 'Harley-Davidson Heritage Classic 117', with 'FLHC' being the model code (FL series, Heritage Classic) and matching displacement (117). The catalog candidate exactly matches the intended model.",
+  "canonical_model_alias": "Heritage Classic 117",
+  "configuration_tokens": [],
+  "brand_aliases": [],
+  "model_aliases": [
+    "Classic 117",
+    "Heritage Classic 117"
+  ],
+  "status": "SUCCESS",
+  "prompt_version": "motorcycle-candidate-resolution-v4",
+  "model": "qwen-flash",
+  "make": "Harley-Davidson",
+  "model_name": "FLHC Heritage Classic 117"
+}

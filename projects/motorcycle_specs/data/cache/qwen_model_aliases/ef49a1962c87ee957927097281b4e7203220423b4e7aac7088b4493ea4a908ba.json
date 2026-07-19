@@ -1,0 +1,22 @@
+{
+  "decision": "MATCH",
+  "selected_candidate": "gasgas contact estart 250",
+  "confidence": "HIGH",
+  "match_basis": "MARKET_ALIAS",
+  "explanation": "The 'Contact RR 250' is a market-specific designation for the same model as 'gasgas contact estart 250', with 'RR' likely denoting a racing or high-performance variant, and 'eStart' indicating the electric start feature. This aligns with known Gas Gas naming conventions where 'RR' and 'eStart' are configuration labels for the Contact series. The displacement (250) and core model (Contact) match exactly.",
+  "canonical_model_alias": "contact estart 250",
+  "configuration_tokens": [
+    "eStart",
+    "RR"
+  ],
+  "brand_aliases": [],
+  "model_aliases": [
+    "gasgas contact estart 250",
+    "contact estart 250"
+  ],
+  "status": "SUCCESS",
+  "prompt_version": "motorcycle-candidate-resolution-v4",
+  "model": "qwen-flash",
+  "make": "Gas Gas",
+  "model_name": "Contact RR 250"
+}

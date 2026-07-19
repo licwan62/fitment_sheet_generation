@@ -1,0 +1,16 @@
+{
+  "decision": "MATCH",
+  "selected_candidate": "XB9R Firebolt",
+  "confidence": "HIGH",
+  "match_basis": "SAME_NAME",
+  "explanation": "The input model 'XB9R Firebolt' exactly matches the catalog candidate title, representing the same underlying motorcycle model produced by Buell.",
+  "canonical_model_alias": "XB9R Firebolt",
+  "configuration_tokens": [],
+  "brand_aliases": [],
+  "model_aliases": [],
+  "status": "SUCCESS",
+  "prompt_version": "motorcycle-candidate-resolution-v4",
+  "model": "qwen-flash",
+  "make": "Buell",
+  "model_name": "XB9R Firebolt"
+}

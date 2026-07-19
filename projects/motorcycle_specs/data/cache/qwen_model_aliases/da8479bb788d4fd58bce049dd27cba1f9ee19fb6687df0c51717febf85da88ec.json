@@ -1,0 +1,18 @@
+{
+  "decision": "MATCH",
+  "selected_candidate": "gasgas mc 50",
+  "confidence": "HIGH",
+  "match_basis": "SAME_NAME",
+  "explanation": "The input 'MC Boy 50' is a known market or marketing name for the Gas Gas MC 50 model, with 'Boy' being a regional or stylistic designation. The core model identity (MC 50) matches exactly.",
+  "canonical_model_alias": "gasgas mc 50",
+  "configuration_tokens": [],
+  "brand_aliases": [],
+  "model_aliases": [
+    "gasgas mc 50"
+  ],
+  "status": "SUCCESS",
+  "prompt_version": "motorcycle-candidate-resolution-v4",
+  "model": "qwen-flash",
+  "make": "Gas Gas",
+  "model_name": "MC Boy 50"
+}

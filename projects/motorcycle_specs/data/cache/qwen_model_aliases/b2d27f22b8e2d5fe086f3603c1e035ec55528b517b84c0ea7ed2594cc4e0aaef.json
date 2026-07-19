@@ -1,0 +1,16 @@
+{
+  "decision": "MATCH",
+  "selected_candidate": "Honda CBR1000RR-R Fireblade SP",
+  "confidence": "HIGH",
+  "match_basis": "SAME_NAME",
+  "explanation": "The input 'CBR10SPM CBR1000RR-R Fireblade SP' is a variant of the same model, with 'CBR10SPM' likely being a misinterpretation or typo for 'CBR1000RR-R Fireblade SP'. The core model identity matches exactly with the candidate 'Honda CBR1000RR-R Fireblade SP', including displacement, engine configuration, and trim level. No other candidate shares this exact identity.",
+  "canonical_model_alias": "CBR1000RR-R Fireblade SP",
+  "configuration_tokens": [],
+  "brand_aliases": [],
+  "model_aliases": [],
+  "status": "SUCCESS",
+  "prompt_version": "motorcycle-candidate-resolution-v4",
+  "model": "qwen-flash",
+  "make": "Honda",
+  "model_name": "CBR10SPM CBR1000RR-R Fireblade SP"
+}

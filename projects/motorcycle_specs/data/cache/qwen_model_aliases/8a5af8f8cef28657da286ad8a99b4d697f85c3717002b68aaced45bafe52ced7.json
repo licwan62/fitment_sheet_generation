@@ -1,0 +1,16 @@
+{
+  "decision": "NO_MATCH",
+  "selected_candidate": "",
+  "confidence": "HIGH",
+  "match_basis": "NONE",
+  "explanation": "The input model 'Chinchilla 450' is not present in the catalog candidates. The closest candidates are 'Chinchilla 300', 'Chinchilla 125', 'Chinchilla 500', and 'Chinchilla 350 cvt', but none match the 450 displacement. No evidence suggests that 'Chinchilla 450' is a market name, historical alias, abbreviation, or typo for any of the listed models. Therefore, it is not a match.",
+  "canonical_model_alias": "",
+  "configuration_tokens": [],
+  "brand_aliases": [],
+  "model_aliases": [],
+  "status": "SUCCESS",
+  "prompt_version": "motorcycle-candidate-resolution-v4",
+  "model": "qwen-flash",
+  "make": "Benda",
+  "model_name": "Chinchilla 450"
+}

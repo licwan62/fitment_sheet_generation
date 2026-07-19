@@ -1,0 +1,18 @@
+{
+  "decision": "MATCH",
+  "selected_candidate": "Honda CH 250 Spacy - Elite",
+  "confidence": "HIGH",
+  "match_basis": "MARKET_ALIAS",
+  "explanation": "The 'CH250 Elite' is a market-specific name for the Honda CH 250 Spacy, with 'Elite' being a regional or marketing designation. The CH 250 Spacy - Elite is the same underlying model.",
+  "canonical_model_alias": "CH 250 Spacy - Elite",
+  "configuration_tokens": [],
+  "brand_aliases": [],
+  "model_aliases": [
+    "CH 250 Spacy - Elite"
+  ],
+  "status": "SUCCESS",
+  "prompt_version": "motorcycle-candidate-resolution-v4",
+  "model": "qwen-flash",
+  "make": "Honda",
+  "model_name": "CH250 Elite"
+}

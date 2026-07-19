@@ -1,0 +1,16 @@
+{
+  "decision": "INFER|UNKNOWN",
+  "confidence": "MEDIUM|LOW",
+  "length_mm": null,
+  "width_mm": null,
+  "height_mm": null,
+  "wheelbase_mm": null,
+  "seat_height_mm": null,
+  "ground_clearance_mm": null,
+  "explanation": "The Honda CB190R Repsol is a limited edition variant with no official published dimensions. While the standard CB190R shares common dimensions across markets, the Repsol version may feature subtle changes in styling or components that could affect overall dimensions. Without confirmed data from Honda or verified sources, precise measurements cannot be reliably inferred. Dimensions are uncertain due to potential variations by market and lack of model-specific documentation.",
+  "status": "SUCCESS",
+  "prompt_version": "motorcycle-dimension-inference-v1",
+  "model": "qwen-flash",
+  "make": "Honda",
+  "model_name": "CB190R Repsol"
+}

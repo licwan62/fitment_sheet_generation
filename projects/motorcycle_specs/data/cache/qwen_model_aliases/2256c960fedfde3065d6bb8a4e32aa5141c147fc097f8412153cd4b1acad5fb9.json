@@ -1,0 +1,20 @@
+{
+  "decision": "MATCH",
+  "selected_candidate": "Pulsar NS200",
+  "confidence": "HIGH",
+  "match_basis": "SAME_NAME",
+  "explanation": "The input 'Pulsar 200 NS FI' refers to the same motorcycle model as 'Pulsar NS200', with 'FI' indicating fuel injection, which is standard on this model. The naming variation is due to marketing or catalog formatting differences, but both refer to the identical underlying motorcycle.",
+  "canonical_model_alias": "Pulsar NS200",
+  "configuration_tokens": [
+    "FI"
+  ],
+  "brand_aliases": [],
+  "model_aliases": [
+    "Pulsar NS200"
+  ],
+  "status": "SUCCESS",
+  "prompt_version": "motorcycle-candidate-resolution-v4",
+  "model": "qwen-flash",
+  "make": "Bajaj",
+  "model_name": "Pulsar 200 NS FI"
+}

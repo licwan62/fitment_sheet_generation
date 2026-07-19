@@ -1,0 +1,16 @@
+{
+  "decision": "UNKNOWN",
+  "confidence": "LOW",
+  "length_mm": null,
+  "width_mm": null,
+  "height_mm": null,
+  "wheelbase_mm": null,
+  "seat_height_mm": null,
+  "ground_clearance_mm": null,
+  "explanation": "Cobra CX65 C.A.R.D. is not a widely recognized or documented motorcycle model in public sources; no reliable dimensions are available for inference, and the model name may be fictional, experimental, or misidentified. Dimensions cannot be reliably estimated without further verification.",
+  "status": "SUCCESS",
+  "prompt_version": "motorcycle-dimension-inference-v1",
+  "model": "qwen-flash",
+  "make": "Cobra",
+  "model_name": "CX65 C.A.R.D."
+}

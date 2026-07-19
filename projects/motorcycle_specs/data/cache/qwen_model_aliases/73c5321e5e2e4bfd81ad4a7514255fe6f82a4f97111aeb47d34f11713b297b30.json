@@ -1,0 +1,20 @@
+{
+  "decision": "MATCH",
+  "selected_candidate": "RR 350 4T Enduro",
+  "confidence": "HIGH",
+  "match_basis": "MARKET_ALIAS",
+  "explanation": "The 'RR X-Pro 4T 350' is a market-specific naming variant of the same underlying Beta RR 350 4T Enduro model, with 'X-Pro' denoting a high-performance configuration commonly used in certain regions. The displacement (350), engine type (4T), and core model name (RR) align exactly, confirming identity.",
+  "canonical_model_alias": "RR 350 4T Enduro",
+  "configuration_tokens": [
+    "X-Pro"
+  ],
+  "brand_aliases": [],
+  "model_aliases": [
+    "RR 350 4T Enduro"
+  ],
+  "status": "SUCCESS",
+  "prompt_version": "motorcycle-candidate-resolution-v4",
+  "model": "qwen-flash",
+  "make": "Beta",
+  "model_name": "RR X-Pro 4T 350"
+}

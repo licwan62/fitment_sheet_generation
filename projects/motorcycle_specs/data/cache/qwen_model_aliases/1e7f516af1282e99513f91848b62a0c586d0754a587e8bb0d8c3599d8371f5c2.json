@@ -1,0 +1,16 @@
+{
+  "decision": "NO_MATCH",
+  "selected_candidate": "",
+  "confidence": "HIGH",
+  "match_basis": "NONE",
+  "explanation": "The input model CR80R has a displacement of 80cc, while the catalog candidate CR 480R has a displacement of 480cc, indicating a fundamentally different motorcycle model. Displacement is an identity-bearing numeric token, and no known market name, abbreviation, or typo would equate an 80cc model with a 480cc model.",
+  "canonical_model_alias": "",
+  "configuration_tokens": [],
+  "brand_aliases": [],
+  "model_aliases": [],
+  "status": "SUCCESS",
+  "prompt_version": "motorcycle-candidate-resolution-v4",
+  "model": "qwen-flash",
+  "make": "Honda",
+  "model_name": "CR80R"
+}

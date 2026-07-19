@@ -1,0 +1,21 @@
+{
+  "decision": "MATCH",
+  "selected_candidate": "gasgas txt 125",
+  "confidence": "HIGH",
+  "match_basis": "MARKET_ALIAS",
+  "explanation": "'Contact JTR125' is a market-specific name for the Gas Gas TXT 125, with 'JTR' likely denoting a configuration or racing variant. The core model identity matches the 'txt 125' variant in the catalog.",
+  "canonical_model_alias": "txt 125",
+  "configuration_tokens": [
+    "JTR"
+  ],
+  "brand_aliases": [],
+  "model_aliases": [
+    "gasgas txt 125",
+    "txt 125"
+  ],
+  "status": "SUCCESS",
+  "prompt_version": "motorcycle-candidate-resolution-v4",
+  "model": "qwen-flash",
+  "make": "Gas Gas",
+  "model_name": "Contact JTR125"
+}

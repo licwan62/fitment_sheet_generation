@@ -1,0 +1,16 @@
+{
+  "decision": "UNKNOWN",
+  "confidence": "LOW",
+  "length_mm": null,
+  "width_mm": null,
+  "height_mm": null,
+  "wheelbase_mm": null,
+  "seat_height_mm": null,
+  "ground_clearance_mm": null,
+  "explanation": "No verifiable catalog or technical data available for the Big Bear Choppers G.T.X.-F. 117 X-Wedge model. Model identity and dimensional specifications are uncertain, with no reliable source confirming dimensions. Dimensions may vary significantly by year or market configuration.",
+  "status": "SUCCESS",
+  "prompt_version": "motorcycle-dimension-inference-v1",
+  "model": "qwen-flash",
+  "make": "Big Bear Choppers",
+  "model_name": "G.T.X.-F. 117 X-Wedge"
+}

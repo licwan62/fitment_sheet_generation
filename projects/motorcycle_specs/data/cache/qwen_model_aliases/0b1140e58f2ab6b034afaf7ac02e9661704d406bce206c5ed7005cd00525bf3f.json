@@ -1,0 +1,20 @@
+{
+  "decision": "MATCH",
+  "selected_candidate": "Honda CB110",
+  "confidence": "HIGH",
+  "match_basis": "SAME_NAME",
+  "explanation": "The input 'CB110 STD' refers to the same underlying motorcycle model as 'Honda CB110', with 'STD' being a configuration label (standard) that does not change the core model identity. The displacement and base model name match exactly.",
+  "canonical_model_alias": "CB110",
+  "configuration_tokens": [
+    "STD"
+  ],
+  "brand_aliases": [],
+  "model_aliases": [
+    "CB110"
+  ],
+  "status": "SUCCESS",
+  "prompt_version": "motorcycle-candidate-resolution-v4",
+  "model": "qwen-flash",
+  "make": "Honda",
+  "model_name": "CB110 STD"
+}

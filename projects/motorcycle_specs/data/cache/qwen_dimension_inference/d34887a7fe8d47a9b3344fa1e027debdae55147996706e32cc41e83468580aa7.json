@@ -1,0 +1,16 @@
+{
+  "decision": "INFER|UNKNOWN",
+  "confidence": "MEDIUM|LOW",
+  "length_mm": null,
+  "width_mm": null,
+  "height_mm": null,
+  "wheelbase_mm": null,
+  "seat_height_mm": null,
+  "ground_clearance_mm": null,
+  "explanation": "The Benelli TNT150i is a lightweight sport motorcycle with a 150cc engine, but specific dimensions are not consistently documented across sources. Variations in model year and regional specifications may affect measurements. Without access to an official catalog or verified technical data sheet, precise dimensions cannot be reliably determined. Inference is limited due to insufficient public data.",
+  "status": "SUCCESS",
+  "prompt_version": "motorcycle-dimension-inference-v1",
+  "model": "qwen-flash",
+  "make": "Benelli",
+  "model_name": "TNT150i"
+}

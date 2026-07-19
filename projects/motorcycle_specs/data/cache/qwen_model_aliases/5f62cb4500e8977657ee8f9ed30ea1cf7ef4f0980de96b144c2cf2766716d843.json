@@ -1,0 +1,18 @@
+{
+  "decision": "MATCH",
+  "selected_candidate": "cfmoto cx 2e",
+  "confidence": "HIGH",
+  "match_basis": "MARKET_ALIAS",
+  "explanation": "CFX-2E is a market-specific naming variant of the CFMOTO CX 2E, commonly used in certain regions. The model shares identical platform, engine, and specifications, with only the name differing due to regional branding.",
+  "canonical_model_alias": "cx 2e",
+  "configuration_tokens": [],
+  "brand_aliases": [],
+  "model_aliases": [
+    "cx 2e"
+  ],
+  "status": "SUCCESS",
+  "prompt_version": "motorcycle-candidate-resolution-v4",
+  "model": "qwen-flash",
+  "make": "CFMOTO",
+  "model_name": "CFX-2E"
+}

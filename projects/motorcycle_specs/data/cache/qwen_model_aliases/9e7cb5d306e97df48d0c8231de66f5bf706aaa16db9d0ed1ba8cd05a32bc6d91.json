@@ -1,0 +1,18 @@
+{
+  "decision": "MATCH",
+  "selected_candidate": "EC 515 FSR",
+  "confidence": "HIGH",
+  "match_basis": "SAME_NAME",
+  "explanation": "The input 'Enducross EC 515' refers to the same motorcycle model as 'EC 515 FSR', with 'Enducross' being a marketing name for Gas Gas's enduro line and 'FSR' denoting the specific configuration. The core model identity (EC 515) is identical, and the variation in naming is due to regional or configurational labeling.",
+  "canonical_model_alias": "EC 515 FSR",
+  "configuration_tokens": [],
+  "brand_aliases": [],
+  "model_aliases": [
+    "EC 515 FSR"
+  ],
+  "status": "SUCCESS",
+  "prompt_version": "motorcycle-candidate-resolution-v4",
+  "model": "qwen-flash",
+  "make": "Gas Gas",
+  "model_name": "Enducross EC 515"
+}

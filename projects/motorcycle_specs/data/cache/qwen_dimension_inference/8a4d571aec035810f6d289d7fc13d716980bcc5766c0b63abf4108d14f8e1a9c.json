@@ -1,0 +1,16 @@
+{
+  "decision": "INFER|UNKNOWN",
+  "confidence": "MEDIUM|LOW",
+  "length_mm": null,
+  "width_mm": null,
+  "height_mm": null,
+  "wheelbase_mm": null,
+  "seat_height_mm": null,
+  "ground_clearance_mm": null,
+  "explanation": "The Beta 498 RR-Race Edition is a high-performance motocross model, but specific dimensions vary significantly by year and market configuration. Without access to an official catalog or verified technical documentation for this exact variant, precise measurements cannot be reliably inferred. The model's design shares similarities with other RR-series models, but material differences in frame geometry, suspension setup, and component selection prevent confident estimation. Therefore, all dimensions are marked as unknown.",
+  "status": "SUCCESS",
+  "prompt_version": "motorcycle-dimension-inference-v1",
+  "model": "qwen-flash",
+  "make": "Beta",
+  "model_name": "498 RR-Race Edition"
+}

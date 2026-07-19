@@ -1,0 +1,16 @@
+{
+  "decision": "NO_MATCH",
+  "selected_candidate": "",
+  "confidence": "HIGH",
+  "match_basis": "NONE",
+  "explanation": "The input 'CARGO 150 GL DS' is not a known model name in Honda's catalog. The candidates are all distinct models, none of which match the input in identity, displacement, or configuration. 'CARGO 150 GL DS' does not correspond to any official Honda motorcycle model, including variants of CRF150L, PCX150, or others listed.",
+  "canonical_model_alias": "",
+  "configuration_tokens": [],
+  "brand_aliases": [],
+  "model_aliases": [],
+  "status": "SUCCESS",
+  "prompt_version": "motorcycle-candidate-resolution-v4",
+  "model": "qwen-flash",
+  "make": "Honda",
+  "model_name": "CARGO 150 GL DS"
+}

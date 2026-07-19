@@ -1,0 +1,21 @@
+{
+  "decision": "MATCH",
+  "selected_candidate": "Suzuki V-Strom 650XT ABS",
+  "confidence": "HIGH",
+  "match_basis": "SAME_NAME",
+  "explanation": "The input model 'DL650A V-Strom XT ABS' is the same motorcycle as 'Suzuki V-Strom 650XT ABS', with 'DL650A' being the model code and 'V-Strom XT ABS' the marketing name. The catalog candidate matches exactly in model name, displacement, configuration (XT ABS), and brand. The 'DL650A' designation aligns with the V-Strom 650XT ABS variant.",
+  "canonical_model_alias": "V-Strom 650XT ABS",
+  "configuration_tokens": [
+    "XT",
+    "ABS"
+  ],
+  "brand_aliases": [],
+  "model_aliases": [
+    "V-Strom 650XT ABS"
+  ],
+  "status": "SUCCESS",
+  "prompt_version": "motorcycle-candidate-resolution-v4",
+  "model": "qwen-flash",
+  "make": "Suzuki",
+  "model_name": "DL650A V-Strom XT ABS"
+}

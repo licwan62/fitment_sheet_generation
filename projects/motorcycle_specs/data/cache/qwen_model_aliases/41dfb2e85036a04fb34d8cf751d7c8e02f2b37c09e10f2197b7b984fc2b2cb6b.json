@@ -1,0 +1,18 @@
+{
+  "decision": "MATCH",
+  "selected_candidate": "honda cb650f",
+  "confidence": "HIGH",
+  "match_basis": "SAME_NAME",
+  "explanation": "The input 'CB650F ABS' and the candidate 'honda cb650f' refer to the same motorcycle model, with only minor casing and formatting differences. The 'ABS' feature is present in both, and no other model variants are indicated. The candidate 'CB 650F' is also a valid alias but less precise due to spacing; 'Honda CBR650F ABS' is a different model (CBR series) and thus excluded.",
+  "canonical_model_alias": "cb650f abs",
+  "configuration_tokens": [],
+  "brand_aliases": [],
+  "model_aliases": [
+    "cb650f"
+  ],
+  "status": "SUCCESS",
+  "prompt_version": "motorcycle-candidate-resolution-v4",
+  "model": "qwen-flash",
+  "make": "Honda",
+  "model_name": "CB650F ABS"
+}

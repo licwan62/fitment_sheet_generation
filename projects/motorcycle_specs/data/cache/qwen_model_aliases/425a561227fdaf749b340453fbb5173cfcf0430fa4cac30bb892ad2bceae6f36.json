@@ -1,0 +1,18 @@
+{
+  "decision": "MATCH",
+  "selected_candidate": "harley davidson softail deluxe flde",
+  "confidence": "HIGH",
+  "match_basis": "SAME_NAME",
+  "explanation": "The input 'FLDE Deluxe 107' corresponds directly to the model code 'FLDE' and displacement '107', which is the exact identifier for the Harley-Davidson Softail Deluxe 107. The candidate 'harley davidson softail deluxe flde' matches both the model name and model code exactly, with only lowercase formatting differences. The displacement '107' is consistent across both.",
+  "canonical_model_alias": "softail deluxe flde",
+  "configuration_tokens": [
+    "107"
+  ],
+  "brand_aliases": [],
+  "model_aliases": [],
+  "status": "SUCCESS",
+  "prompt_version": "motorcycle-candidate-resolution-v4",
+  "model": "qwen-flash",
+  "make": "Harley-Davidson",
+  "model_name": "FLDE Deluxe 107"
+}

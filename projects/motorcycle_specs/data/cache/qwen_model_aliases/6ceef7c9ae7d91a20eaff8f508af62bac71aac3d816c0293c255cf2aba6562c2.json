@@ -1,0 +1,16 @@
+{
+  "decision": "NO_MATCH",
+  "selected_candidate": "",
+  "confidence": "HIGH",
+  "match_basis": "NONE",
+  "explanation": "The 'Tesi 40th Anniversary' is a specific commemorative variant of the Bimota Tesi series, but none of the catalog candidates match its exact model identity, displacement, or configuration. The candidates include different models (e.g., Tesi H2, Tesi ID 906 variants, Superleggera), which are distinct in design, engine, and platform. No candidate represents the 40th Anniversary edition with confirmed identity.",
+  "canonical_model_alias": "",
+  "configuration_tokens": [],
+  "brand_aliases": [],
+  "model_aliases": [],
+  "status": "SUCCESS",
+  "prompt_version": "motorcycle-candidate-resolution-v4",
+  "model": "qwen-flash",
+  "make": "Bimota",
+  "model_name": "Tesi 40th Anniversary"
+}

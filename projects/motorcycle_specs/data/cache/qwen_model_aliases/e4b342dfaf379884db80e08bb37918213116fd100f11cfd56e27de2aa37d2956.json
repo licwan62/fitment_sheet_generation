@@ -1,0 +1,20 @@
+{
+  "decision": "MATCH",
+  "selected_candidate": "Suzuki gsx r1000r",
+  "confidence": "HIGH",
+  "match_basis": "SAME_NAME",
+  "explanation": "The input 'GSX-R1000R GP' refers to the same underlying motorcycle model as 'Suzuki gsx r1000r', with 'GP' being a configuration or trim designation (e.g., Grand Prix edition) that does not alter the core model identity. The catalog candidate 'Suzuki gsx r1000r' is the canonical form of the model, and all other candidates are variations of the same name with minor formatting differences.",
+  "canonical_model_alias": "gsx r1000r",
+  "configuration_tokens": [
+    "GP"
+  ],
+  "brand_aliases": [],
+  "model_aliases": [
+    "gsx r1000r"
+  ],
+  "status": "SUCCESS",
+  "prompt_version": "motorcycle-candidate-resolution-v4",
+  "model": "qwen-flash",
+  "make": "Suzuki",
+  "model_name": "GSX-R1000R GP"
+}

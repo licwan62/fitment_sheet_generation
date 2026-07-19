@@ -1,0 +1,21 @@
+{
+  "decision": "MATCH",
+  "selected_candidate": "Honda VT1300CR ABS",
+  "confidence": "HIGH",
+  "match_basis": "MARKET_ALIAS",
+  "explanation": "The input 'VT1300CRA Stateline ABS' refers to the same model as 'Honda VT1300CR ABS', where 'Stateline' is a market-specific name for the VT1300CR in certain regions, and 'A' is a configuration suffix often used interchangeably with 'ABS' in Honda's naming. The core model identity (VT1300CR) and displacement (1300) are identical.",
+  "canonical_model_alias": "VT1300CR ABS",
+  "configuration_tokens": [
+    "Stateline",
+    "ABS"
+  ],
+  "brand_aliases": [],
+  "model_aliases": [
+    "VT1300CR ABS"
+  ],
+  "status": "SUCCESS",
+  "prompt_version": "motorcycle-candidate-resolution-v4",
+  "model": "qwen-flash",
+  "make": "Honda",
+  "model_name": "VT1300CRA Stateline ABS"
+}

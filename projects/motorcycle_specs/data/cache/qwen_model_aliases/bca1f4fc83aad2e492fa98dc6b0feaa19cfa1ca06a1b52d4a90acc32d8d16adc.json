@@ -1,0 +1,18 @@
+{
+  "decision": "MATCH",
+  "selected_candidate": "Avenger 220 \n\tDTS-i",
+  "confidence": "HIGH",
+  "match_basis": "MARKET_ALIAS",
+  "explanation": "The 'Avenger Cruise 220' is a market-specific name for the same motorcycle model as the 'Avenger 220 DTS-i', with 'Cruise' being a marketing designation used in certain regions. The displacement (220) and core model (Avenger) are identical, confirming it is the same underlying motorcycle.",
+  "canonical_model_alias": "Avenger 220 DTS-i",
+  "configuration_tokens": [],
+  "brand_aliases": [],
+  "model_aliases": [
+    "Avenger 220 DTS-i"
+  ],
+  "status": "SUCCESS",
+  "prompt_version": "motorcycle-candidate-resolution-v4",
+  "model": "qwen-flash",
+  "make": "Bajaj",
+  "model_name": "Avenger Cruise 220"
+}

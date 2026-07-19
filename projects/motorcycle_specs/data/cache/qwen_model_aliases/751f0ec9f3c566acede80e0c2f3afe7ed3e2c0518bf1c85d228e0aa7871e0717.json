@@ -1,0 +1,20 @@
+{
+  "decision": "MATCH",
+  "selected_candidate": "BMW R 1100 GS",
+  "confidence": "HIGH",
+  "match_basis": "SAME_NAME",
+  "explanation": "The input 'R1100GS ABS' refers to the same motorcycle model as 'BMW R 1100 GS', with 'ABS' being a configuration feature (anti-lock braking system) that does not change the core model identity. The catalog candidate 'BMW R 1100 GS' is the canonical form of the model.",
+  "canonical_model_alias": "R 1100 GS",
+  "configuration_tokens": [
+    "ABS"
+  ],
+  "brand_aliases": [],
+  "model_aliases": [
+    "R 1100 GS"
+  ],
+  "status": "SUCCESS",
+  "prompt_version": "motorcycle-candidate-resolution-v4",
+  "model": "qwen-flash",
+  "make": "BMW",
+  "model_name": "R1100GS ABS"
+}

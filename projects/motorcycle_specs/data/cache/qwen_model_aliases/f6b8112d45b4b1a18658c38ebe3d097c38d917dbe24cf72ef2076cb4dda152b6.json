@@ -1,0 +1,16 @@
+{
+  "decision": "NO_MATCH",
+  "selected_candidate": "",
+  "confidence": "HIGH",
+  "match_basis": "NONE",
+  "explanation": "The input model 'CB100 Super Sport' is a known Honda motorcycle, but the catalog candidate 'CB Concept Super Sport' refers to a different model—specifically, a concept or prototype variant not matching the production CB100 Super Sport in displacement, specifications, or market release. The name difference is significant and not attributable to a known market alias, abbreviation, or typo. No evidence supports that they are the same underlying motorcycle.",
+  "canonical_model_alias": "",
+  "configuration_tokens": [],
+  "brand_aliases": [],
+  "model_aliases": [],
+  "status": "SUCCESS",
+  "prompt_version": "motorcycle-candidate-resolution-v4",
+  "model": "qwen-flash",
+  "make": "Honda",
+  "model_name": "CB100 Super Sport"
+}

@@ -1,0 +1,16 @@
+{
+  "decision": "NO_MATCH",
+  "selected_candidate": "",
+  "confidence": "HIGH",
+  "match_basis": "NONE",
+  "explanation": "The model 'Boxer' is not a known variant or alias of any of the listed Big Dog catalog candidates, which are all named after dog breeds or related terms. None of the candidates match the 'Boxer' name in identity, market naming, or plausible typo. The 'Boxer' model does not appear to be a valid Big Dog motorcycle model in the provided list.",
+  "canonical_model_alias": "",
+  "configuration_tokens": [],
+  "brand_aliases": [],
+  "model_aliases": [],
+  "status": "SUCCESS",
+  "prompt_version": "motorcycle-candidate-resolution-v4",
+  "model": "qwen-flash",
+  "make": "Big Dog",
+  "model_name": "Boxer"
+}

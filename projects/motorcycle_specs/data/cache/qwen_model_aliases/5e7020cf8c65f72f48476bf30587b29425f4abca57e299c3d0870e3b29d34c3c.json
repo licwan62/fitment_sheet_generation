@@ -1,0 +1,18 @@
+{
+  "decision": "MATCH",
+  "selected_candidate": "Honda CRF450R 50 Anniversary",
+  "confidence": "HIGH",
+  "match_basis": "SAME_NAME",
+  "explanation": "The input 'CRF450R 50th Anniversary Edition' and the candidate 'Honda CRF450R 50 Anniversary' refer to the same motorcycle model, with only minor variations in phrasing (e.g., '50th' vs '50', 'Edition' vs omitted). The displacement (450R), model series (CRF), and anniversary designation are identical. The omission of 'Edition' and slight abbreviation of '50th' do not change the underlying identity.",
+  "canonical_model_alias": "CRF450R 50 Anniversary",
+  "configuration_tokens": [],
+  "brand_aliases": [],
+  "model_aliases": [
+    "CRF450R 50 Anniversary"
+  ],
+  "status": "SUCCESS",
+  "prompt_version": "motorcycle-candidate-resolution-v4",
+  "model": "qwen-flash",
+  "make": "Honda",
+  "model_name": "CRF450R 50th Anniversary Edition"
+}

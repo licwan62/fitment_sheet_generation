@@ -1,0 +1,18 @@
+{
+  "decision": "MATCH",
+  "selected_candidate": "Suzuki V-Strom 800",
+  "confidence": "HIGH",
+  "match_basis": "SAME_NAME",
+  "explanation": "The input model 'DL800 V-Strom 800' is the same motorcycle as the candidate 'Suzuki V-Strom 800', with no differences in displacement, model identity, or configuration. The catalog title is a standard, canonical expression of the model.",
+  "canonical_model_alias": "V-Strom 800",
+  "configuration_tokens": [],
+  "brand_aliases": [],
+  "model_aliases": [
+    "V-Strom 800"
+  ],
+  "status": "SUCCESS",
+  "prompt_version": "motorcycle-candidate-resolution-v4",
+  "model": "qwen-flash",
+  "make": "Suzuki",
+  "model_name": "DL800 V-Strom 800"
+}

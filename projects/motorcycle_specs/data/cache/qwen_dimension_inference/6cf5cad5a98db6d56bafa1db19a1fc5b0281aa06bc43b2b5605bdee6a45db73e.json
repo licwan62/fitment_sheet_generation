@@ -1,0 +1,16 @@
+{
+  "decision": "INFER|UNKNOWN",
+  "confidence": "MEDIUM|LOW",
+  "length_mm": null,
+  "width_mm": null,
+  "height_mm": null,
+  "wheelbase_mm": null,
+  "seat_height_mm": null,
+  "ground_clearance_mm": null,
+  "explanation": "The Aprilia SR Motard 150 is a limited-production model with no widely available official dimensions. Variations by market and model year may affect dimensions, and no reliable catalog or verified source provides consistent measurements. Inference is uncertain due to lack of verifiable data.",
+  "status": "SUCCESS",
+  "prompt_version": "motorcycle-dimension-inference-v1",
+  "model": "qwen-flash",
+  "make": "Aprilia",
+  "model_name": "SR Motard 150"
+}

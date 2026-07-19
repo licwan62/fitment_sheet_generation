@@ -1,0 +1,16 @@
+{
+  "decision": "INFER|UNKNOWN",
+  "confidence": "MEDIUM|LOW",
+  "length_mm": null,
+  "width_mm": null,
+  "height_mm": null,
+  "wheelbase_mm": null,
+  "seat_height_mm": null,
+  "ground_clearance_mm": null,
+  "explanation": "The Gas Gas MC 450F is a motocross motorcycle, but exact dimensions vary significantly by model year and market configuration. Without access to a specific catalog or official specification sheet for the exact variant, precise measurements cannot be reliably inferred. Dimensions from similar models (e.g., KTM 450 SX-F) are not directly transferable due to potential differences in frame design, suspension setup, and component placement. Therefore, all dimensions are marked as unknown with medium to low confidence.",
+  "status": "SUCCESS",
+  "prompt_version": "motorcycle-dimension-inference-v1",
+  "model": "qwen-flash",
+  "make": "Gas Gas",
+  "model_name": "MC 450F"
+}

@@ -1,0 +1,18 @@
+{
+  "decision": "MATCH",
+  "selected_candidate": "Honda SL 125 S",
+  "confidence": "HIGH",
+  "match_basis": "MARKET_ALIAS",
+  "explanation": "The 'SS125' is a market-specific designation for the Honda SL 125 S, particularly in certain regions where 'SS' was used as a model code or marketing name. The displacement (125) and core model identity match exactly. The 'SL 125 S' is the official catalog title, and 'SS125' is a known regional or configurational shorthand.",
+  "canonical_model_alias": "SL 125 S",
+  "configuration_tokens": [],
+  "brand_aliases": [],
+  "model_aliases": [
+    "SL 125 S"
+  ],
+  "status": "SUCCESS",
+  "prompt_version": "motorcycle-candidate-resolution-v4",
+  "model": "qwen-flash",
+  "make": "Honda",
+  "model_name": "SS125"
+}

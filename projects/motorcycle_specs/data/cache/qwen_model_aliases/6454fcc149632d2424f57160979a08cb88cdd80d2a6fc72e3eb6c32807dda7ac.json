@@ -1,0 +1,20 @@
+{
+  "decision": "MATCH",
+  "selected_candidate": "CBF 125 \n\t\tStunner",
+  "confidence": "HIGH",
+  "match_basis": "MARKET_ALIAS",
+  "explanation": "The 'CBF125F Twister' and 'CBF 125 Stunner' refer to the same underlying motorcycle model, with 'Twister' being a market-specific name (e.g., in some regions) and 'Stunner' being an alternative marketing name used for the same CBF125 model. The displacement (125), platform (CBF), and engine configuration are identical. The 'F' suffix in 'Twister' is a configuration label (likely for fuel-injected version) that does not alter the core model identity.",
+  "canonical_model_alias": "CBF 125 Stunner",
+  "configuration_tokens": [
+    "F"
+  ],
+  "brand_aliases": [],
+  "model_aliases": [
+    "CBF 125 Stunner"
+  ],
+  "status": "SUCCESS",
+  "prompt_version": "motorcycle-candidate-resolution-v4",
+  "model": "qwen-flash",
+  "make": "Honda",
+  "model_name": "CBF125F Twister"
+}

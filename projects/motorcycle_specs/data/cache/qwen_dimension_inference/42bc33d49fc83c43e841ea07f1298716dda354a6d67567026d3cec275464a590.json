@@ -1,0 +1,16 @@
+{
+  "decision": "INFER",
+  "confidence": "MEDIUM",
+  "length_mm": 2100,
+  "width_mm": 850,
+  "height_mm": 1350,
+  "wheelbase_mm": 1450,
+  "seat_height_mm": 870,
+  "ground_clearance_mm": 280,
+  "explanation": "Inferred from Beta EVO 300's positioning as a mid-sized enduro motorcycle, similar to the EVO 250 and EVO 400 models. Dimensions are estimated based on typical proportions for this class of bike, with seat height and ground clearance consistent with off-road utility. No official catalog data available for confirmation.",
+  "status": "SUCCESS",
+  "prompt_version": "motorcycle-dimension-inference-v1",
+  "model": "qwen-flash",
+  "make": "Beta",
+  "model_name": "EVO 300"
+}

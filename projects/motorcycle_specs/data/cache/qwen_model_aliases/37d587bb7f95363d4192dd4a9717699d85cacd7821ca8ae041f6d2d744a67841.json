@@ -1,0 +1,20 @@
+{
+  "decision": "MATCH",
+  "selected_candidate": "CTX 700N / DCT",
+  "confidence": "HIGH",
+  "match_basis": "SAME_NAME",
+  "explanation": "The input model 'CTX700N DCT ABS' matches the catalog candidate 'CTX 700N / DCT' as the same underlying motorcycle, with only minor formatting differences and the addition of 'ABS' in the input, which is a configuration feature not altering the core model identity. The displacement (700), model name (CTX), variant (N), and transmission (DCT) are identical.",
+  "canonical_model_alias": "CTX 700N / DCT",
+  "configuration_tokens": [
+    "ABS"
+  ],
+  "brand_aliases": [],
+  "model_aliases": [
+    "CTX 700N / DCT"
+  ],
+  "status": "SUCCESS",
+  "prompt_version": "motorcycle-candidate-resolution-v4",
+  "model": "qwen-flash",
+  "make": "Honda",
+  "model_name": "CTX700N DCT ABS"
+}

@@ -1,0 +1,16 @@
+{
+  "decision": "MATCH",
+  "selected_candidate": "VT 1300CX Fury",
+  "confidence": "HIGH",
+  "match_basis": "SAME_NAME",
+  "explanation": "The input 'VT13CX Fury' is a direct match in meaning and identity to the catalog candidate 'VT 1300CX Fury', with only a minor typographical variation (missing space and digit '0') that is a known and plausible typo for the model name. The displacement (1300), model code (CX), and name (Fury) are identical.",
+  "canonical_model_alias": "VT 1300CX Fury",
+  "configuration_tokens": [],
+  "brand_aliases": [],
+  "model_aliases": [],
+  "status": "SUCCESS",
+  "prompt_version": "motorcycle-candidate-resolution-v4",
+  "model": "qwen-flash",
+  "make": "Honda",
+  "model_name": "VT13CX Fury"
+}

@@ -1,0 +1,19 @@
+{
+  "decision": "MATCH",
+  "selected_candidate": "gasgas ec 250 sixdays",
+  "confidence": "HIGH",
+  "match_basis": "MARKET_ALIAS",
+  "explanation": "'EC 250 Six Days Chile 18' refers to the same model as 'gasgas ec 250 sixdays', with 'Chile 18' indicating a regional market variant and year, not a different model. 'Six Days' is the correct historical name for this model in international markets, and 'Chile' is a known regional designation. The displacement (250) and engine type (2T) match exactly.",
+  "canonical_model_alias": "ec 250 sixdays",
+  "configuration_tokens": [
+    "chile",
+    "18"
+  ],
+  "brand_aliases": [],
+  "model_aliases": [],
+  "status": "SUCCESS",
+  "prompt_version": "motorcycle-candidate-resolution-v4",
+  "model": "qwen-flash",
+  "make": "Gas Gas",
+  "model_name": "EC 250 Six Days Chile 18"
+}

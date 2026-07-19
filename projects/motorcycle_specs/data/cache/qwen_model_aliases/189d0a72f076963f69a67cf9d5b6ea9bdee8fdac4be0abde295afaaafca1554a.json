@@ -1,0 +1,15 @@
+{
+  "decision": "MATCH",
+  "selected_candidate": "R nineT Urban G/S 40 Years Edition",
+  "canonical_model_alias": "R nineT Urban G/S 40 Years Edition",
+  "configuration_tokens": [],
+  "brand_aliases": [],
+  "model_aliases": [
+    "R nineT Urban G/S 40 Years Edition"
+  ],
+  "status": "SUCCESS",
+  "prompt_version": "motorcycle-candidate-resolution-v3",
+  "model": "qwen-flash",
+  "make": "BMW",
+  "model_name": "R nine T Urban G/S 40 Years GS Edition"
+}

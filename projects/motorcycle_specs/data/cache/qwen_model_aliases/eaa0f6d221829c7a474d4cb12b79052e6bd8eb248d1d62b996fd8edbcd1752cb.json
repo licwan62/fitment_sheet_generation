@@ -1,0 +1,20 @@
+{
+  "decision": "MATCH",
+  "selected_candidate": "beta evo 200 2t",
+  "confidence": "HIGH",
+  "match_basis": "MARKET_ALIAS",
+  "explanation": "The input 'EVO 2T Factory 200' refers to the Beta EVO 200 2T model, which was marketed as the 'Factory' variant in certain regions or configurations. The catalog candidate 'beta evo 200 2t' represents the same underlying motorcycle model, with 'Factory' being a configuration or market-specific label rather than a distinct model. The displacement (200), engine type (2T), and core model (EVO) are identical.",
+  "canonical_model_alias": "beta evo 200 2t",
+  "configuration_tokens": [
+    "Factory"
+  ],
+  "brand_aliases": [],
+  "model_aliases": [
+    "evo 200 2t"
+  ],
+  "status": "SUCCESS",
+  "prompt_version": "motorcycle-candidate-resolution-v4",
+  "model": "qwen-flash",
+  "make": "Beta",
+  "model_name": "EVO 2T Factory 200"
+}

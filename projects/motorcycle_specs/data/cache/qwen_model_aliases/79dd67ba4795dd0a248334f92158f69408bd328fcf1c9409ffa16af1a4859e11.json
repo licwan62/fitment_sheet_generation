@@ -1,0 +1,14 @@
+{
+  "prompt_version": "motorcycle-brand-model-aliases-v2",
+  "model": "qwen3.7-plus",
+  "make": "BMW",
+  "model_name": "G310GS",
+  "brand_aliases": [
+    "Bayerische Motoren Werke",
+    "Bayerische Motoren Werke AG",
+    "BMW AG",
+    "BMW Motorrad",
+    "BMW Motorcycles"
+  ],
+  "model_aliases": []
+}

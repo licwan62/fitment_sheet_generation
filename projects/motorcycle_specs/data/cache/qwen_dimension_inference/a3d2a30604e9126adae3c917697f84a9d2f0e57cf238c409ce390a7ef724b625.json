@@ -1,0 +1,16 @@
+{
+  "decision": "INFER|UNKNOWN",
+  "confidence": "LOW",
+  "length_mm": null,
+  "width_mm": null,
+  "height_mm": null,
+  "wheelbase_mm": null,
+  "seat_height_mm": null,
+  "ground_clearance_mm": null,
+  "explanation": "No publicly available catalog or verified specifications for the Big Bear Choppers Paradox V111 EFI model. Dimensions cannot be reliably inferred due to lack of consistent data sources and potential variation across years or markets. Model identity is uncertain, and no direct reference exists for dimensional attributes.",
+  "status": "SUCCESS",
+  "prompt_version": "motorcycle-dimension-inference-v1",
+  "model": "qwen-flash",
+  "make": "Big Bear Choppers",
+  "model_name": "Paradox V111 EFI"
+}

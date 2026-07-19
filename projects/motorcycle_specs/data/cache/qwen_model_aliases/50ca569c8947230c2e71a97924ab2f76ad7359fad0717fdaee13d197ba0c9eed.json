@@ -1,0 +1,19 @@
+{
+  "decision": "MATCH",
+  "selected_candidate": "BMW R 1300 GS Adventure",
+  "confidence": "HIGH",
+  "match_basis": "MARKET_ALIAS",
+  "explanation": "The input 'R1300GS Adventure Option 719 Karakorum' refers to a special edition of the BMW R 1300 GS Adventure, with 'Karakorum' being a market-specific name for the Option 719 variant. This is a known configuration label used in certain regions, and the core model identity remains unchanged. The catalog candidate 'BMW R 1300 GS Adventure' matches the base model.",
+  "canonical_model_alias": "R 1300 GS Adventure",
+  "configuration_tokens": [
+    "Option 719",
+    "Karakorum"
+  ],
+  "brand_aliases": [],
+  "model_aliases": [],
+  "status": "SUCCESS",
+  "prompt_version": "motorcycle-candidate-resolution-v4",
+  "model": "qwen-flash",
+  "make": "BMW",
+  "model_name": "R1300GS Adventure Option 719 Karakorum"
+}

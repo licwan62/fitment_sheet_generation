@@ -1,0 +1,20 @@
+{
+  "decision": "MATCH",
+  "selected_candidate": "GSX-R 1000R",
+  "confidence": "HIGH",
+  "match_basis": "MARKET_ALIAS",
+  "explanation": "The 'GSX-R1000RZ' is a known market-specific designation (likely for Japan or a regional variant) of the GSX-R 1000R, with 'RZ' serving as a configuration or market suffix. The core model identity remains the GSX-R 1000R, and no displacement or fundamental platform change is indicated.",
+  "canonical_model_alias": "GSX-R 1000R",
+  "configuration_tokens": [
+    "RZ"
+  ],
+  "brand_aliases": [],
+  "model_aliases": [
+    "GSX-R 1000R"
+  ],
+  "status": "SUCCESS",
+  "prompt_version": "motorcycle-candidate-resolution-v4",
+  "model": "qwen-flash",
+  "make": "Suzuki",
+  "model_name": "GSX-R1000RZ"
+}

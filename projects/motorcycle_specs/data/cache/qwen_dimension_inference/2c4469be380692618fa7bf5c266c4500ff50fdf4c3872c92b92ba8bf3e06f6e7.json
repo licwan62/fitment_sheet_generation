@@ -1,0 +1,16 @@
+{
+  "decision": "INFER|UNKNOWN",
+  "confidence": "LOW",
+  "length_mm": null,
+  "width_mm": null,
+  "height_mm": null,
+  "wheelbase_mm": null,
+  "seat_height_mm": null,
+  "ground_clearance_mm": null,
+  "explanation": "The Aprilia Tuono V4 Factory is a high-performance naked motorcycle with variations across model years and markets. Without access to a specific catalog page or official technical documentation, precise dimensions cannot be reliably confirmed. Known variants (e.g., 2015–2018) suggest approximate dimensions in the range of 2,100–2,150 mm in length, 800–830 mm in width, 1,100–1,130 mm in height, wheelbase ~1,430 mm, seat height ~820–830 mm, and ground clearance ~130–140 mm, but these are not guaranteed due to model-specific changes. Due to uncertainty in exact year/market configuration and potential variation, dimensions are marked as unknown.",
+  "status": "SUCCESS",
+  "prompt_version": "motorcycle-dimension-inference-v1",
+  "model": "qwen-flash",
+  "make": "Aprilia",
+  "model_name": "Tuono V4 Factory"
+}

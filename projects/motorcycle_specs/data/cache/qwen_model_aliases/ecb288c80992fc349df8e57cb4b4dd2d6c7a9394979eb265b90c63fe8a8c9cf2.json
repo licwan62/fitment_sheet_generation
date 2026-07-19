@@ -1,0 +1,18 @@
+{
+  "decision": "MATCH",
+  "selected_candidate": "VT 750RS / \n\t\tS \n\t\tShadow",
+  "confidence": "HIGH",
+  "match_basis": "MARKET_ALIAS",
+  "explanation": "The VT750RS Shadow RS is a market-specific name for the same underlying model as the VT750RS / S Shadow, with 'RS' and 'S' being interchangeable designations in different regions or catalogs. The displacement (750) and core model identity are identical.",
+  "canonical_model_alias": "VT 750RS / S Shadow",
+  "configuration_tokens": [],
+  "brand_aliases": [],
+  "model_aliases": [
+    "VT 750RS / S Shadow"
+  ],
+  "status": "SUCCESS",
+  "prompt_version": "motorcycle-candidate-resolution-v4",
+  "model": "qwen-flash",
+  "make": "Honda",
+  "model_name": "VT750RS Shadow RS"
+}

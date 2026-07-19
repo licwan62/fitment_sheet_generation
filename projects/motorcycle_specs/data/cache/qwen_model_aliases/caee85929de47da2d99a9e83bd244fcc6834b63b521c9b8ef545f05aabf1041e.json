@@ -1,0 +1,16 @@
+{
+  "decision": "NO_MATCH",
+  "selected_candidate": "",
+  "confidence": "HIGH",
+  "match_basis": "NONE",
+  "explanation": "The input model 'RR 50 Motard' has a 50cc displacement, while the catalog candidate 'RR 450 Motard' has a 450cc displacement. Displacement is an identity-bearing numeric token; differing displacements indicate different models. No known market name, typo, or configuration variant justifies equating a 50cc with a 450cc model.",
+  "canonical_model_alias": "",
+  "configuration_tokens": [],
+  "brand_aliases": [],
+  "model_aliases": [],
+  "status": "SUCCESS",
+  "prompt_version": "motorcycle-candidate-resolution-v4",
+  "model": "qwen-flash",
+  "make": "Beta",
+  "model_name": "RR 50 Motard"
+}

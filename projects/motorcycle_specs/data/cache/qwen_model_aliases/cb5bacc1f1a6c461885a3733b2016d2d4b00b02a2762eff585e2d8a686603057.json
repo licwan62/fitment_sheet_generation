@@ -1,0 +1,18 @@
+{
+  "decision": "MATCH",
+  "selected_candidate": "TS 125R",
+  "confidence": "HIGH",
+  "match_basis": "MARKET_ALIAS",
+  "explanation": "The 'T125R' is a known market-specific naming variant of the Suzuki TS 125R, particularly in European and Australian markets. The 'T' prefix is used interchangeably with 'TS' in certain regions, and the 'R' suffix denotes the same sport-oriented configuration. This is a documented historical naming variation.",
+  "canonical_model_alias": "TS 125R",
+  "configuration_tokens": [],
+  "brand_aliases": [],
+  "model_aliases": [
+    "TS 125R"
+  ],
+  "status": "SUCCESS",
+  "prompt_version": "motorcycle-candidate-resolution-v4",
+  "model": "qwen-flash",
+  "make": "Suzuki",
+  "model_name": "T125R"
+}

@@ -1,0 +1,20 @@
+{
+  "decision": "MATCH",
+  "selected_candidate": "Honda CRF125FB",
+  "confidence": "HIGH",
+  "match_basis": "MARKET_ALIAS",
+  "explanation": "The 'CRF125FB Big Wheel' is a known market-specific naming variant of the CRF125FB model, with 'Big Wheel' being a descriptive marketing label rather than a distinct model identifier. The core model identity (CRF125FB) matches exactly between the input and candidate.",
+  "canonical_model_alias": "CRF125FB",
+  "configuration_tokens": [
+    "Big Wheel"
+  ],
+  "brand_aliases": [],
+  "model_aliases": [
+    "CRF125FB"
+  ],
+  "status": "SUCCESS",
+  "prompt_version": "motorcycle-candidate-resolution-v4",
+  "model": "qwen-flash",
+  "make": "Honda",
+  "model_name": "CRF125FB Big Wheel"
+}

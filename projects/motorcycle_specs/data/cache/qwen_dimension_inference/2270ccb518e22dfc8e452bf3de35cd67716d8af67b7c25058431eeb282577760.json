@@ -1,0 +1,16 @@
+{
+  "decision": "INFER",
+  "confidence": "LOW",
+  "length_mm": 2600,
+  "width_mm": 900,
+  "height_mm": 1100,
+  "wheelbase_mm": 1550,
+  "seat_height_mm": 780,
+  "ground_clearance_mm": 130,
+  "explanation": "Inferred from typical dimensions of custom chopper motorcycles in the Big Bear Choppers product line, with no official catalog data available for the Athena Chopper V111 Carb. Dimensions are estimated based on similar models and general design trends for large displacement carbureted choppers, but may vary significantly by year or market configuration.",
+  "status": "SUCCESS",
+  "prompt_version": "motorcycle-dimension-inference-v1",
+  "model": "qwen-flash",
+  "make": "Big Bear Choppers",
+  "model_name": "Athena Chopper V111 Carb"
+}

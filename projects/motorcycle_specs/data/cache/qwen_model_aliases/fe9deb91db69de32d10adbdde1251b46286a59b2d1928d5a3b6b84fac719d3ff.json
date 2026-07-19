@@ -1,0 +1,18 @@
+{
+  "decision": "MATCH",
+  "selected_candidate": "Suzuki GSX-R600 30th Anniversary",
+  "confidence": "HIGH",
+  "match_basis": "SAME_NAME",
+  "explanation": "The input 'GSX-R600 30 Years' refers to the 30th anniversary edition of the Suzuki GSX-R600, which is explicitly named 'Suzuki GSX-R600 30th Anniversary' in the catalog. The phrasing '30 Years' is a common informal reference to the 30th anniversary model, and this candidate is the only one that matches both the model (GSX-R600) and the commemorative context.",
+  "canonical_model_alias": "GSX-R600 30th Anniversary",
+  "configuration_tokens": [],
+  "brand_aliases": [],
+  "model_aliases": [
+    "GSX-R600 30th Anniversary"
+  ],
+  "status": "SUCCESS",
+  "prompt_version": "motorcycle-candidate-resolution-v4",
+  "model": "qwen-flash",
+  "make": "Suzuki",
+  "model_name": "GSX-R600 30 Years"
+}

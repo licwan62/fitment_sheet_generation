@@ -1,0 +1,16 @@
+{
+  "decision": "MATCH",
+  "selected_candidate": "beta evo 290 2t",
+  "confidence": "HIGH",
+  "match_basis": "SAME_NAME",
+  "explanation": "The input 'EVO 290' matches the catalog candidate 'beta evo 290 2t' in model name and displacement, with the 2T designation consistent with the EVO 290's known two-stroke engine. The absence of 'my10' in the input does not alter the core identity.",
+  "canonical_model_alias": "evo 290 2t",
+  "configuration_tokens": [],
+  "brand_aliases": [],
+  "model_aliases": [],
+  "status": "SUCCESS",
+  "prompt_version": "motorcycle-candidate-resolution-v4",
+  "model": "qwen-flash",
+  "make": "Beta",
+  "model_name": "EVO 290"
+}

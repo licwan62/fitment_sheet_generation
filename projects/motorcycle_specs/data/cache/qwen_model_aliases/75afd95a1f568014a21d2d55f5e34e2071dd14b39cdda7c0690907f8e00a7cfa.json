@@ -1,0 +1,20 @@
+{
+  "decision": "MATCH",
+  "selected_candidate": "GL 1200 Gold Wing Aspencade",
+  "confidence": "HIGH",
+  "match_basis": "SAME_NAME",
+  "explanation": "The input 'GL1200A Gold Wing Aspencade' refers to the same model as 'GL 1200 Gold Wing Aspencade', with 'A' being a known market or configuration designation for the Aspencade variant in some regions, and the core model identity (GL1200 Aspencade) is preserved. The catalog candidate matches exactly in name and displacement.",
+  "canonical_model_alias": "GL 1200 Gold Wing Aspencade",
+  "configuration_tokens": [
+    "Aspencade"
+  ],
+  "brand_aliases": [],
+  "model_aliases": [
+    "GL 1200 Gold Wing Aspencade"
+  ],
+  "status": "SUCCESS",
+  "prompt_version": "motorcycle-candidate-resolution-v4",
+  "model": "qwen-flash",
+  "make": "Honda",
+  "model_name": "GL1200A Gold Wing Aspencade"
+}

@@ -1,0 +1,16 @@
+{
+  "decision": "NO_MATCH",
+  "selected_candidate": "",
+  "confidence": "HIGH",
+  "match_basis": "NONE",
+  "explanation": "The Cobra CX65 Limited Edition is a distinct model from the Intruder M1800R Cobra Special. The displacement (65cc vs 1800cc), manufacturer (Cobra vs Suzuki), and model lineage are unrelated. No known market, historical, or typographical equivalence exists between them.",
+  "canonical_model_alias": "",
+  "configuration_tokens": [],
+  "brand_aliases": [],
+  "model_aliases": [],
+  "status": "SUCCESS",
+  "prompt_version": "motorcycle-candidate-resolution-v4",
+  "model": "qwen-flash",
+  "make": "Cobra",
+  "model_name": "CX65 Limited Edition"
+}

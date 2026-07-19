@@ -1,0 +1,18 @@
+{
+  "decision": "MATCH",
+  "selected_candidate": "Monkey Z50R",
+  "confidence": "HIGH",
+  "match_basis": "MARKET_ALIAS",
+  "explanation": "The Honda Z50R is commonly known as the 'Monkey' in global markets, particularly in North America and Europe. The 'Monkey Z50R' is a well-documented market-specific name for the same model, with identical engine displacement, platform, and design. This is a recognized regional alias.",
+  "canonical_model_alias": "Monkey Z50R",
+  "configuration_tokens": [],
+  "brand_aliases": [],
+  "model_aliases": [
+    "Monkey Z50R"
+  ],
+  "status": "SUCCESS",
+  "prompt_version": "motorcycle-candidate-resolution-v4",
+  "model": "qwen-flash",
+  "make": "Honda",
+  "model_name": "Z50R"
+}

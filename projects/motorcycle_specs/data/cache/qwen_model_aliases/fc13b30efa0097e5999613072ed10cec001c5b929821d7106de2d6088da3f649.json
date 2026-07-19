@@ -1,0 +1,20 @@
+{
+  "decision": "MATCH",
+  "selected_candidate": "Harley-Davidson Fat Boy",
+  "confidence": "HIGH",
+  "match_basis": "MARKET_ALIAS",
+  "explanation": "The input 'F' is a well-known market nickname for the Harley-Davidson Fat Boy, which was originally designated as the FXDXT model. The name 'Fat Boy' is the established commercial and market alias for this model, and 'F' is a recognized shorthand in motorcycle culture. The catalog candidate 'Harley-Davidson Fat Boy' correctly identifies the same underlying motorcycle.",
+  "canonical_model_alias": "Fat Boy",
+  "configuration_tokens": [],
+  "brand_aliases": [],
+  "model_aliases": [
+    "Boy",
+    "Fat Boy",
+    "FXDXT"
+  ],
+  "status": "SUCCESS",
+  "prompt_version": "motorcycle-candidate-resolution-v4",
+  "model": "qwen-flash",
+  "make": "Harley-Davidson",
+  "model_name": "F"
+}

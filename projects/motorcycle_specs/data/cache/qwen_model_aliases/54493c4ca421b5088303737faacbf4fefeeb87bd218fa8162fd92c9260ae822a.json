@@ -1,0 +1,19 @@
+{
+  "decision": "MATCH",
+  "selected_candidate": "Harley-Davidson Deluxe",
+  "confidence": "HIGH",
+  "match_basis": "HISTORICAL_ALIAS",
+  "explanation": "The 'DL' model designation refers to the Harley-Davidson Deluxe, a historically recognized model name from the 1950s and 1960s. 'Model DL' is a direct variant of the same model, and 'Deluxe' is the standard English name for this motorcycle. The abbreviation 'DL' is a well-documented historical alias for the Deluxe model.",
+  "canonical_model_alias": "Deluxe",
+  "configuration_tokens": [],
+  "brand_aliases": [],
+  "model_aliases": [
+    "Deluxe",
+    "Model DL"
+  ],
+  "status": "SUCCESS",
+  "prompt_version": "motorcycle-candidate-resolution-v4",
+  "model": "qwen-flash",
+  "make": "Harley-Davidson",
+  "model_name": "DL"
+}

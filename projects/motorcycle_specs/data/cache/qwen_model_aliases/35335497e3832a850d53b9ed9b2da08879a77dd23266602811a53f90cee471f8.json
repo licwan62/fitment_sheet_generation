@@ -1,0 +1,16 @@
+{
+  "decision": "MATCH",
+  "selected_candidate": "beta rr 2t 250",
+  "confidence": "HIGH",
+  "match_basis": "SAME_NAME",
+  "explanation": "The input 'Rev3 250' is a known market or marketing name for the Beta RR 2T 250, with 'Rev3' being a branding variant of the RR series. The displacement (250) and two-stroke engine (2T) match exactly. The model is identical despite the name variation.",
+  "canonical_model_alias": "beta rr 2t 250",
+  "configuration_tokens": [],
+  "brand_aliases": [],
+  "model_aliases": [],
+  "status": "SUCCESS",
+  "prompt_version": "motorcycle-candidate-resolution-v4",
+  "model": "qwen-flash",
+  "make": "Beta",
+  "model_name": "Rev3 250"
+}

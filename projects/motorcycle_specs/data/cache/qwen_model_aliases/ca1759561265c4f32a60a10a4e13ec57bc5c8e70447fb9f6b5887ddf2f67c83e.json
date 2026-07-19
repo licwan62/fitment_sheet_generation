@@ -1,0 +1,19 @@
+{
+  "decision": "MATCH",
+  "selected_candidate": "gasgas t12",
+  "confidence": "HIGH",
+  "match_basis": "MARKET_ALIAS",
+  "explanation": "The 'Contact JT12' is a market-specific name for the Gas Gas T12 model, with 'JT' likely denoting a regional or distributor variant. The displacement (12) and model series align exactly, confirming identity.",
+  "canonical_model_alias": "t12",
+  "configuration_tokens": [],
+  "brand_aliases": [],
+  "model_aliases": [
+    "gasgas t12",
+    "t12"
+  ],
+  "status": "SUCCESS",
+  "prompt_version": "motorcycle-candidate-resolution-v4",
+  "model": "qwen-flash",
+  "make": "Gas Gas",
+  "model_name": "Contact JT12"
+}

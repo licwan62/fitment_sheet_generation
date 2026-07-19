@@ -1,0 +1,16 @@
+{
+  "decision": "MATCH",
+  "selected_candidate": "gasgas ec 450f",
+  "confidence": "HIGH",
+  "match_basis": "SAME_NAME",
+  "explanation": "The input 'EC 450 4T' refers to the same motorcycle model as 'gasgas ec 450f', where '4T' and 'F' are equivalent designations for a four-stroke engine. The brand name 'Gas Gas' is consistent, and the displacement '450' matches exactly. The variation in suffix ('F' vs '4T') reflects common industry shorthand for four-stroke models, with 'F' being standard in Gas Gas nomenclature.",
+  "canonical_model_alias": "ec 450f",
+  "configuration_tokens": [],
+  "brand_aliases": [],
+  "model_aliases": [],
+  "status": "SUCCESS",
+  "prompt_version": "motorcycle-candidate-resolution-v4",
+  "model": "qwen-flash",
+  "make": "Gas Gas",
+  "model_name": "EC 450 4T"
+}

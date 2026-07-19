@@ -1,0 +1,19 @@
+{
+  "decision": "MATCH",
+  "selected_candidate": "gasgas txt 125 pro racing",
+  "confidence": "HIGH",
+  "match_basis": "SAME_NAME",
+  "explanation": "The input 'TXT Pro 125 Racing' is a direct match in meaning and structure to the catalog candidate 'gasgas txt 125 pro racing', with only minor casing and spacing differences. The model identity, displacement, and configuration are identical.",
+  "canonical_model_alias": "txt 125 pro racing",
+  "configuration_tokens": [],
+  "brand_aliases": [],
+  "model_aliases": [
+    "gasgas txt 125 pro racing",
+    "txt 125 pro racing"
+  ],
+  "status": "SUCCESS",
+  "prompt_version": "motorcycle-candidate-resolution-v4",
+  "model": "qwen-flash",
+  "make": "Gas Gas",
+  "model_name": "TXT Pro 125 Racing"
+}

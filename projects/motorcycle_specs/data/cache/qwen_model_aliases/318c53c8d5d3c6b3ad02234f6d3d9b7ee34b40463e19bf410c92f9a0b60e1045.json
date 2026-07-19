@@ -1,0 +1,19 @@
+{
+  "decision": "MATCH",
+  "selected_candidate": "gasgas fse 450",
+  "confidence": "HIGH",
+  "match_basis": "MARKET_ALIAS",
+  "explanation": "The 'Nomada 450' is a market-specific name for the Gas Gas FSE 450, used in certain regions. The model identity, displacement, and configuration align exactly with the FSE 450, making it a known regional variant.",
+  "canonical_model_alias": "fse 450",
+  "configuration_tokens": [],
+  "brand_aliases": [],
+  "model_aliases": [
+    "gasgas fse 450",
+    "fse 450"
+  ],
+  "status": "SUCCESS",
+  "prompt_version": "motorcycle-candidate-resolution-v4",
+  "model": "qwen-flash",
+  "make": "Gas Gas",
+  "model_name": "Nomada 450"
+}

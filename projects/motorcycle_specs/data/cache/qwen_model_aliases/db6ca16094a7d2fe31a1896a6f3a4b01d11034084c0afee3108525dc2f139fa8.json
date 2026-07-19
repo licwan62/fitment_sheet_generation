@@ -1,0 +1,21 @@
+{
+  "decision": "MATCH",
+  "selected_candidate": "gasgas ec 200 hobby",
+  "confidence": "HIGH",
+  "match_basis": "MARKET_ALIAS",
+  "explanation": "The 'TXT Pro 200' is a market-specific name for the Gas Gas EC 200 hobby model, with 'TXT Pro' being a regional or marketing designation for the same underlying motorcycle. The 'hobby' suffix denotes a configuration variant but does not change the core model identity.",
+  "canonical_model_alias": "ec 200 hobby",
+  "configuration_tokens": [
+    "hobby"
+  ],
+  "brand_aliases": [],
+  "model_aliases": [
+    "gasgas ec 200 hobby",
+    "ec 200 hobby"
+  ],
+  "status": "SUCCESS",
+  "prompt_version": "motorcycle-candidate-resolution-v4",
+  "model": "qwen-flash",
+  "make": "Gas Gas",
+  "model_name": "TXT Pro 200"
+}

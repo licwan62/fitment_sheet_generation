@@ -1,0 +1,20 @@
+{
+  "decision": "MATCH",
+  "selected_candidate": "CR 125",
+  "confidence": "HIGH",
+  "match_basis": "MARKET_ALIAS",
+  "explanation": "The 'CR125R' is a known market-specific designation for the Honda CR125 model, with the 'R' denoting a racing or high-performance variant commonly used in North American and European markets. The catalog candidate 'CR 125' represents the same underlying motorcycle model, differing only in the omission of the 'R' suffix, which is a configuration label rather than a distinct model identity.",
+  "canonical_model_alias": "CR 125",
+  "configuration_tokens": [
+    "R"
+  ],
+  "brand_aliases": [],
+  "model_aliases": [
+    "CR 125"
+  ],
+  "status": "SUCCESS",
+  "prompt_version": "motorcycle-candidate-resolution-v4",
+  "model": "qwen-flash",
+  "make": "Honda",
+  "model_name": "CR125R"
+}

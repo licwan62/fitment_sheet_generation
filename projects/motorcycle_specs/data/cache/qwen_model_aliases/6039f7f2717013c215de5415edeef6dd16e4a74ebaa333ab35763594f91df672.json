@@ -1,0 +1,18 @@
+{
+  "decision": "MATCH",
+  "selected_candidate": "bigdog coyote",
+  "confidence": "HIGH",
+  "match_basis": "SAME_NAME",
+  "explanation": "The input model 'Coyote' exactly matches the catalog candidate 'bigdog coyote' in name and identity, with no variation in displacement or configuration. The manufacturer is consistent, and no other candidate shares this exact model identity.",
+  "canonical_model_alias": "coyote",
+  "configuration_tokens": [],
+  "brand_aliases": [],
+  "model_aliases": [
+    "bigdog coyote"
+  ],
+  "status": "SUCCESS",
+  "prompt_version": "motorcycle-candidate-resolution-v4",
+  "model": "qwen-flash",
+  "make": "Big Dog",
+  "model_name": "Coyote"
+}

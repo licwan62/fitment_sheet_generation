@@ -1,0 +1,16 @@
+{
+  "decision": "NO_MATCH",
+  "selected_candidate": "",
+  "confidence": "HIGH",
+  "match_basis": "NONE",
+  "explanation": "The input model 'Halley 325' specifies a 325cc displacement, but all catalog candidates are either 125cc, 450cc, or 250cc variants. No candidate matches the 325cc displacement, and there is no known variant of the Halley series with that displacement. The name 'Halley' is shared, but the displacement difference confirms distinct models.",
+  "canonical_model_alias": "",
+  "configuration_tokens": [],
+  "brand_aliases": [],
+  "model_aliases": [],
+  "status": "SUCCESS",
+  "prompt_version": "motorcycle-candidate-resolution-v4",
+  "model": "qwen-flash",
+  "make": "Gas Gas",
+  "model_name": "Halley 325"
+}

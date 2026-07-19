@@ -1,0 +1,19 @@
+{
+  "decision": "MATCH",
+  "selected_candidate": "gasgas txt gp 250",
+  "confidence": "HIGH",
+  "match_basis": "MARKET_ALIAS",
+  "explanation": "The 'Enducross TT 250' is a market-specific name for the same motorcycle model as the 'TXT GP 250', with 'Enducross' being a regional or marketing designation for the TXT GP series in certain markets. The displacement (250) and core model identity match exactly.",
+  "canonical_model_alias": "txt gp 250",
+  "configuration_tokens": [],
+  "brand_aliases": [],
+  "model_aliases": [
+    "gasgas txt gp 250",
+    "txt gp 250"
+  ],
+  "status": "SUCCESS",
+  "prompt_version": "motorcycle-candidate-resolution-v4",
+  "model": "qwen-flash",
+  "make": "Gas Gas",
+  "model_name": "Enducross TT 250"
+}

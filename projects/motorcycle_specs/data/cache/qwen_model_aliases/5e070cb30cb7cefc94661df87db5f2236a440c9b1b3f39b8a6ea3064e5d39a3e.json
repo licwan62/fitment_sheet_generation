@@ -1,0 +1,16 @@
+{
+  "decision": "NO_MATCH",
+  "selected_candidate": "",
+  "confidence": "HIGH",
+  "match_basis": "NONE",
+  "explanation": "The model 'Delta GT32' is not present in the catalog candidates, and none of the candidates correspond to a known variant or market name of the Delta GT32. The candidates listed are from different model lines (TXT series, EC series) with distinct displacements and configurations, and no evidence suggests they are aliases or typos for the Delta GT32.",
+  "canonical_model_alias": "",
+  "configuration_tokens": [],
+  "brand_aliases": [],
+  "model_aliases": [],
+  "status": "SUCCESS",
+  "prompt_version": "motorcycle-candidate-resolution-v4",
+  "model": "qwen-flash",
+  "make": "Gas Gas",
+  "model_name": "Delta GT32"
+}

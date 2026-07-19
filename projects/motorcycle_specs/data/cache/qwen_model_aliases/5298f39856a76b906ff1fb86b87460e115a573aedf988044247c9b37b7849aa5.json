@@ -1,0 +1,17 @@
+{
+  "status": "TIMEOUT",
+  "prompt_version": "motorcycle-candidate-resolution-v4",
+  "model": "qwen-flash",
+  "make": "Honda",
+  "model_name": "CBR600F F2",
+  "candidate_titles": [
+    "CBR 600F2",
+    "CBR \n      600F4i",
+    "CBR 600F4i",
+    "honda cbf 600",
+    "honda cbr 600 f"
+  ],
+  "error_type": "ReadTimeout",
+  "status_code": null,
+  "retryable": true
+}

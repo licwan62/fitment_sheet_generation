@@ -1,0 +1,16 @@
+{
+  "decision": "NO_MATCH",
+  "selected_candidate": "",
+  "confidence": "HIGH",
+  "match_basis": "NONE",
+  "explanation": "The input model 'M109RZ Boulevard Limited' is not found in the catalog candidates, and no known market name, historical alias, abbreviation, or plausible typo matches any candidate. The combination of 'M109RZ' and 'Boulevard Limited' does not correspond to any valid Suzuki motorcycle model in the provided catalog. The M109R is a known Suzuki model, but 'M109RZ' with 'Boulevard Limited' is not a recognized variant or configuration in the standard Suzuki lineup.",
+  "canonical_model_alias": "",
+  "configuration_tokens": [],
+  "brand_aliases": [],
+  "model_aliases": [],
+  "status": "SUCCESS",
+  "prompt_version": "motorcycle-candidate-resolution-v4",
+  "model": "qwen-flash",
+  "make": "Suzuki",
+  "model_name": "M109RZ Boulevard Limited"
+}

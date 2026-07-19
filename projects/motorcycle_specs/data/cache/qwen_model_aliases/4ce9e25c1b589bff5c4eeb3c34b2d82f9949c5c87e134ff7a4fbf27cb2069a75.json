@@ -1,0 +1,18 @@
+{
+  "decision": "MATCH",
+  "selected_candidate": "RR 350 4T Enduro",
+  "confidence": "HIGH",
+  "match_basis": "SAME_NAME",
+  "explanation": "The input '350 RR' and the candidate 'RR 350 4T Enduro' refer to the same underlying Beta motorcycle model, with the displacement and model name matching exactly. The '4T' designation is a standard specification for this model and does not alter the core identity. The order of 'RR' and '350' in the input versus the candidate is a common variation in naming conventions.",
+  "canonical_model_alias": "RR 350 4T Enduro",
+  "configuration_tokens": [
+    "4T"
+  ],
+  "brand_aliases": [],
+  "model_aliases": [],
+  "status": "SUCCESS",
+  "prompt_version": "motorcycle-candidate-resolution-v4",
+  "model": "qwen-flash",
+  "make": "Beta",
+  "model_name": "350 RR"
+}

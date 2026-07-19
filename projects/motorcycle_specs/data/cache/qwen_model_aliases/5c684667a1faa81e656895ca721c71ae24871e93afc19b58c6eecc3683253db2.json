@@ -1,0 +1,18 @@
+{
+  "decision": "MATCH",
+  "selected_candidate": "CB 450T",
+  "confidence": "HIGH",
+  "match_basis": "SAME_NAME",
+  "explanation": "The input 'CB450T Hawk' refers to the same motorcycle model as 'CB 450T', with 'Hawk' being a marketing or nickname used for the CB450T in certain markets, particularly in North America. The core model identity (CB450T) is identical.",
+  "canonical_model_alias": "CB 450T",
+  "configuration_tokens": [],
+  "brand_aliases": [],
+  "model_aliases": [
+    "CB 450T"
+  ],
+  "status": "SUCCESS",
+  "prompt_version": "motorcycle-candidate-resolution-v4",
+  "model": "qwen-flash",
+  "make": "Honda",
+  "model_name": "CB450T Hawk"
+}

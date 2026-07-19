@@ -1,0 +1,21 @@
+{
+  "decision": "MATCH",
+  "selected_candidate": "GSX-R 750Z 40th \n\t\tAnniversary Edition",
+  "confidence": "HIGH",
+  "match_basis": "SAME_NAME",
+  "explanation": "The input 'GSX-R750Z 40th Anniversary' and the catalog candidate 'GSX-R 750Z 40th \\n\\t\\tAnniversary Edition' refer to the same motorcycle model, with only minor formatting differences (spacing, line break, and use of 'Edition'). The displacement, model name, and anniversary designation are identical. No other model identity is altered.",
+  "canonical_model_alias": "GSX-R 750Z 40th Anniversary Edition",
+  "configuration_tokens": [
+    "40th",
+    "Anniversary Edition"
+  ],
+  "brand_aliases": [],
+  "model_aliases": [
+    "GSX-R 750Z 40th Anniversary Edition"
+  ],
+  "status": "SUCCESS",
+  "prompt_version": "motorcycle-candidate-resolution-v4",
+  "model": "qwen-flash",
+  "make": "Suzuki",
+  "model_name": "GSX-R750Z 40th Anniversary"
+}

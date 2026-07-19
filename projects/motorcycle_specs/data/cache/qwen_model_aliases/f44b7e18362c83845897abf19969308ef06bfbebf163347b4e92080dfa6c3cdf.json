@@ -1,0 +1,20 @@
+{
+  "decision": "MATCH",
+  "selected_candidate": "Gixxer SF250",
+  "confidence": "HIGH",
+  "match_basis": "MARKET_ALIAS",
+  "explanation": "'Gixxer SF250 Edicion Limitada' is a limited edition variant of the Gixxer SF250, marketed specifically in certain regions with 'Edicion Limitada' as a regional or promotional label. The core model identity remains the Gixxer SF250.",
+  "canonical_model_alias": "Gixxer SF250",
+  "configuration_tokens": [
+    "Edicion Limitada"
+  ],
+  "brand_aliases": [],
+  "model_aliases": [
+    "Gixxer SF250"
+  ],
+  "status": "SUCCESS",
+  "prompt_version": "motorcycle-candidate-resolution-v4",
+  "model": "qwen-flash",
+  "make": "Suzuki",
+  "model_name": "Gixxer SF250 Edicion Limitada"
+}

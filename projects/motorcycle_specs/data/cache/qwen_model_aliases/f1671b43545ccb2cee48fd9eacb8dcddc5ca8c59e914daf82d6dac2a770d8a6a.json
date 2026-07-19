@@ -1,0 +1,16 @@
+{
+  "decision": "MATCH",
+  "selected_candidate": "Lightning CityX XB9SX",
+  "confidence": "HIGH",
+  "match_basis": "SAME_NAME",
+  "explanation": "The input model 'Lightning CityX XB9SX' exactly matches the catalog candidate title, with no discrepancies in name, displacement, or configuration. It is a known Buell model from the Lightning series.",
+  "canonical_model_alias": "Lightning CityX XB9SX",
+  "configuration_tokens": [],
+  "brand_aliases": [],
+  "model_aliases": [],
+  "status": "SUCCESS",
+  "prompt_version": "motorcycle-candidate-resolution-v4",
+  "model": "qwen-flash",
+  "make": "Buell",
+  "model_name": "Lightning CityX XB9SX"
+}

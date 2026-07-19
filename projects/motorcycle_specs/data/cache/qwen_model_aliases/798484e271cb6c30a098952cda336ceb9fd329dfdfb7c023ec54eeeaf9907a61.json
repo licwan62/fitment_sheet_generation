@@ -1,0 +1,20 @@
+{
+  "decision": "MATCH",
+  "selected_candidate": "CRF 250 \n\t\tRally",
+  "confidence": "HIGH",
+  "match_basis": "SAME_NAME",
+  "explanation": "The input 'CRF250L Rally ABS' and the candidate 'CRF 250 \n\t\tRally' refer to the same underlying motorcycle model. The 'L' in 'CRF250L' is a standard designation for the model's engine configuration and is commonly used interchangeably with '250' in catalog listings. The 'ABS' feature is a configuration detail not altering the core model identity. The candidate 'CRF 250 \n\t\tRally' is a valid canonical form of the same model.",
+  "canonical_model_alias": "CRF 250 Rally",
+  "configuration_tokens": [
+    "ABS"
+  ],
+  "brand_aliases": [],
+  "model_aliases": [
+    "CRF 250 Rally"
+  ],
+  "status": "SUCCESS",
+  "prompt_version": "motorcycle-candidate-resolution-v4",
+  "model": "qwen-flash",
+  "make": "Honda",
+  "model_name": "CRF250L Rally ABS"
+}

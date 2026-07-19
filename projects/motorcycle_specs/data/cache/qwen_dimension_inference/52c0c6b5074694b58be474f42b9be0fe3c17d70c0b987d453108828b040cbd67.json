@@ -1,0 +1,16 @@
+{
+  "decision": "UNKNOWN",
+  "confidence": "LOW",
+  "length_mm": null,
+  "width_mm": null,
+  "height_mm": null,
+  "wheelbase_mm": null,
+  "seat_height_mm": null,
+  "ground_clearance_mm": null,
+  "explanation": "Cleveland Model 42 is not a widely documented motorcycle model, and no reliable specifications are available in public sources. The manufacturer 'Cleveland' may refer to a lesser-known or historical brand, and the model designation 'Model 42' lacks verifiable context. Without clear references or consistent data across years or markets, dimensions cannot be reliably inferred.",
+  "status": "SUCCESS",
+  "prompt_version": "motorcycle-dimension-inference-v1",
+  "model": "qwen-flash",
+  "make": "Cleveland",
+  "model_name": "Model 42"
+}

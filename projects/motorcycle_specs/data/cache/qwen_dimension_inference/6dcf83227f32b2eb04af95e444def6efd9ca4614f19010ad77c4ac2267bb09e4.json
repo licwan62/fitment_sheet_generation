@@ -1,0 +1,16 @@
+{
+  "decision": "INFER",
+  "confidence": "MEDIUM",
+  "length_mm": 1850,
+  "width_mm": 780,
+  "height_mm": 1120,
+  "wheelbase_mm": 1220,
+  "seat_height_mm": 780,
+  "ground_clearance_mm": 320,
+  "explanation": "Inferred from typical dimensions of small off-road motorcycles in the 50cc class, such as the Gas Gas TXT 50 and similar models. The TXT Boy 50 is a junior version of the TXT 50, with slightly reduced dimensions. Length, width, height, wheelbase, seat height, and ground clearance are estimated based on comparable youth-oriented motocross bikes with similar engine displacement and design philosophy. No official catalog data available for confirmation.",
+  "status": "SUCCESS",
+  "prompt_version": "motorcycle-dimension-inference-v1",
+  "model": "qwen-flash",
+  "make": "Gas Gas",
+  "model_name": "TXT Boy 50"
+}

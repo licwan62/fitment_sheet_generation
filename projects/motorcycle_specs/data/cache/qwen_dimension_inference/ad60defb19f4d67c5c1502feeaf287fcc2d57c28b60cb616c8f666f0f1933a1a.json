@@ -1,0 +1,16 @@
+{
+  "decision": "UNKNOWN",
+  "confidence": "LOW",
+  "length_mm": null,
+  "width_mm": null,
+  "height_mm": null,
+  "wheelbase_mm": null,
+  "seat_height_mm": null,
+  "ground_clearance_mm": null,
+  "explanation": "The American IronHorse Stalker model lacks consistent public dimension data across years and markets; variations in design and configuration make reliable inference uncertain. No definitive source confirms standardized dimensions, and model-specific details are not reliably documented.",
+  "status": "SUCCESS",
+  "prompt_version": "motorcycle-dimension-inference-v1",
+  "model": "qwen-flash",
+  "make": "American IronHorse",
+  "model_name": "Stalker"
+}

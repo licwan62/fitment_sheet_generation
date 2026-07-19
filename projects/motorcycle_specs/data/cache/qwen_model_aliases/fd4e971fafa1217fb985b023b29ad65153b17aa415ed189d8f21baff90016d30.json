@@ -1,0 +1,16 @@
+{
+  "decision": "NO_MATCH",
+  "selected_candidate": "",
+  "confidence": "HIGH",
+  "match_basis": "NONE",
+  "explanation": "The input model 'CB72 Hawk 250' is not a valid or recognized Honda motorcycle model. The 'CB72' designation does not correspond to any known Honda CB series model, and 'Hawk' is not a standard Honda model name for a 250cc motorcycle. The catalog candidates are all distinct models, none of which match the input in identity, displacement, or naming convention. The closest candidate, 'CB 250 Nighthawk', is a different model entirely, with no evidence of being a market variant or typo of the input.",
+  "canonical_model_alias": "",
+  "configuration_tokens": [],
+  "brand_aliases": [],
+  "model_aliases": [],
+  "status": "SUCCESS",
+  "prompt_version": "motorcycle-candidate-resolution-v4",
+  "model": "qwen-flash",
+  "make": "Honda",
+  "model_name": "CB72 Hawk 250"
+}

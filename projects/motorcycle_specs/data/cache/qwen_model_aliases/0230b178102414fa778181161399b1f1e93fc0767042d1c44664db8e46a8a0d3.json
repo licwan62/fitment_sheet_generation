@@ -1,0 +1,21 @@
+{
+  "decision": "MATCH",
+  "selected_candidate": "RSV4 Factory APRC",
+  "confidence": "HIGH",
+  "match_basis": "MARKET_ALIAS",
+  "explanation": "The input 'RSV4 Factory SE' refers to the same model as 'RSV4 Factory APRC', where 'SE' stands for 'Special Edition' and is a known market designation for the APRC (Aprilia Racing Performance Center) version. The APRC variant is the official factory homologation model used in Superbike racing, and 'SE' is a common configuration label for this edition. The core model identity (RSV4 Factory) and displacement are identical.",
+  "canonical_model_alias": "RSV4 Factory APRC",
+  "configuration_tokens": [
+    "APRC",
+    "SE"
+  ],
+  "brand_aliases": [],
+  "model_aliases": [
+    "RSV4 Factory APRC"
+  ],
+  "status": "SUCCESS",
+  "prompt_version": "motorcycle-candidate-resolution-v4",
+  "model": "qwen-flash",
+  "make": "Aprilia",
+  "model_name": "RSV4 Factory SE"
+}

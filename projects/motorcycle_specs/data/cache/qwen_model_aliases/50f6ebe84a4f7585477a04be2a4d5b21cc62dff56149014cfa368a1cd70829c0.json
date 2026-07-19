@@ -1,0 +1,16 @@
+{
+  "decision": "NO_MATCH",
+  "selected_candidate": "",
+  "confidence": "HIGH",
+  "match_basis": "NONE",
+  "explanation": "The Bajaj Boxer 150 is not a known model in Bajaj's catalog, and none of the listed candidates match its identity. The candidates are distinct models with different names, configurations, and identities. The 'Boxer 150' does not correspond to any variant of Discover 150, Chetak 150, Pulsar 150, Pulsar NS 150, Avenger 160, or Dominar 250. No evidence supports that 'Boxer 150' is a market name, historical alias, abbreviation, or typo for any of these models.",
+  "canonical_model_alias": "",
+  "configuration_tokens": [],
+  "brand_aliases": [],
+  "model_aliases": [],
+  "status": "SUCCESS",
+  "prompt_version": "motorcycle-candidate-resolution-v4",
+  "model": "qwen-flash",
+  "make": "Bajaj",
+  "model_name": "Boxer 150"
+}

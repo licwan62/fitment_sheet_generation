@@ -1,0 +1,16 @@
+{
+  "decision": "NO_MATCH",
+  "selected_candidate": "",
+  "confidence": "HIGH",
+  "match_basis": "NONE",
+  "explanation": "The input model 'SR 50 R Replica SBK' is a special edition or homologation variant of the Aprilia SR 50, featuring a replica design inspired by the Superbike racing series. The catalog candidates 'SR 50 Factory' and 'SR Motard 50' are distinct models with different configurations and purposes: 'SR 50 Factory' is a high-performance version aimed at track use, while 'SR Motard 50' is a motard-styled urban motorcycle. Neither matches the 'R Replica SBK' designation in name, intended use, or identity. No known market alias, abbreviation, or typo links them to the same underlying model.",
+  "canonical_model_alias": "",
+  "configuration_tokens": [],
+  "brand_aliases": [],
+  "model_aliases": [],
+  "status": "SUCCESS",
+  "prompt_version": "motorcycle-candidate-resolution-v4",
+  "model": "qwen-flash",
+  "make": "Aprilia",
+  "model_name": "SR 50 R Replica SBK"
+}

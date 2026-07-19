@@ -1,0 +1,16 @@
+{
+  "decision": "NO_MATCH",
+  "selected_candidate": "",
+  "confidence": "HIGH",
+  "match_basis": "NONE",
+  "explanation": "The input 'D' does not correspond to any valid Harley-Davidson model in the catalog candidates. 'Dyna' is a model line but not equivalent to 'D'. 'FXDXT' is a specific variant of the Dyna series, not a synonym for 'D'. 'Harley-Davidson Bad Boy', 'Model D', 'V-Rod', 'Street Rod', and 'EDT600R' are distinct models with no evidence linking them to a generic 'D'. No known market name, abbreviation, or typo of 'D' matches any candidate. Therefore, no match exists.",
+  "canonical_model_alias": "",
+  "configuration_tokens": [],
+  "brand_aliases": [],
+  "model_aliases": [],
+  "status": "SUCCESS",
+  "prompt_version": "motorcycle-candidate-resolution-v4",
+  "model": "qwen-flash",
+  "make": "Harley-Davidson",
+  "model_name": "D"
+}

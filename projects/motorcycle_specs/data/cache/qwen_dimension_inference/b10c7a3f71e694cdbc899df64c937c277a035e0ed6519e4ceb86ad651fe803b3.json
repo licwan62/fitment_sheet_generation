@@ -1,0 +1,16 @@
+{
+  "decision": "INFER|UNKNOWN",
+  "confidence": "MEDIUM|LOW",
+  "length_mm": null,
+  "width_mm": null,
+  "height_mm": null,
+  "wheelbase_mm": null,
+  "seat_height_mm": null,
+  "ground_clearance_mm": null,
+  "explanation": "The Honda XL80S is a vintage off-road motorcycle from the early 1980s, but precise factory dimensions are not consistently documented in public sources. Model variations across years and markets (e.g., US vs. European) may affect dimensions. Without access to original factory specifications or verified catalog data, reliable inference is limited. Dimensions are estimated as unknown due to uncertainty in model identity and potential variation.",
+  "status": "SUCCESS",
+  "prompt_version": "motorcycle-dimension-inference-v1",
+  "model": "qwen-flash",
+  "make": "Honda",
+  "model_name": "XL80S"
+}

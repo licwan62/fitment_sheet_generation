@@ -1,0 +1,17 @@
+{
+  "status": "API_ERROR",
+  "prompt_version": "motorcycle-candidate-resolution-v3",
+  "model": "qwen-flash",
+  "make": "BMW",
+  "model_name": "R1300GS Adventure Equipada",
+  "candidate_titles": [
+    "R 1300GS \n\t\tAdventure Dark (France only)",
+    "R 1300GS \n\t\tAdventure/Trophy/Triple Black",
+    "R \n\t\t1300R Roadster",
+    "R \n\t\t1300GS",
+    "R \n\t\t1300RS",
+    "R 1300RT",
+    "R \n\t\t1300R Superhooligan"
+  ],
+  "error_type": "HTTPStatusError"
+}

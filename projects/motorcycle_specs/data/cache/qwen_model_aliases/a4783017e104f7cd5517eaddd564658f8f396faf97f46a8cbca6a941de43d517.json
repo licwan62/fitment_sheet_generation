@@ -1,0 +1,18 @@
+{
+  "decision": "MATCH",
+  "selected_candidate": "DB6 \n\t\tDelirio 1100",
+  "confidence": "HIGH",
+  "match_basis": "HISTORICAL_ALIAS",
+  "explanation": "The Bimota DBX 1100 is a variant of the Bimota Delirio 1100 series, with 'DBX' being a model designation used in certain markets or configurations. The 'DB6 Delirio 1100' is a known historical alias for the same motorcycle platform, sharing the same engine, chassis, and core identity. The name 'DBX' is a configuration label within the Delirio line, not a distinct model.",
+  "canonical_model_alias": "DB6 Delirio 1100",
+  "configuration_tokens": [],
+  "brand_aliases": [],
+  "model_aliases": [
+    "Delirio 1100"
+  ],
+  "status": "SUCCESS",
+  "prompt_version": "motorcycle-candidate-resolution-v4",
+  "model": "qwen-flash",
+  "make": "Bimota",
+  "model_name": "DBX 1100"
+}

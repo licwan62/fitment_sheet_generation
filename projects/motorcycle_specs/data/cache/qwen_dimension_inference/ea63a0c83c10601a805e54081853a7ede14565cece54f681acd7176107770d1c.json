@@ -1,0 +1,16 @@
+{
+  "decision": "INFER|UNKNOWN",
+  "confidence": "MEDIUM|LOW",
+  "length_mm": null,
+  "width_mm": null,
+  "height_mm": null,
+  "wheelbase_mm": null,
+  "seat_height_mm": null,
+  "ground_clearance_mm": null,
+  "explanation": "The Gas Gas TXT GP 300 is a motocross-focused model, but specific dimensions are not consistently documented across all markets and model years. Without access to an official catalog or verified technical specification sheet for this exact variant, reliable inference is limited. Dimensions may vary significantly between production years and regional configurations, leading to uncertainty in estimation.",
+  "status": "SUCCESS",
+  "prompt_version": "motorcycle-dimension-inference-v1",
+  "model": "qwen-flash",
+  "make": "Gas Gas",
+  "model_name": "TXT GP 300"
+}

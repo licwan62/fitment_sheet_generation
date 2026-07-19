@@ -1,0 +1,18 @@
+{
+  "decision": "MATCH",
+  "selected_candidate": "RSV4 Factory",
+  "confidence": "HIGH",
+  "match_basis": "MARKET_ALIAS",
+  "explanation": "'RSV4 FW-GP' is a market-specific designation for the RSV4 Factory model, referencing its Grand Prix-inspired development and homologation. 'FW-GP' stands for 'Factory World GP', a marketing name used by Aprilia to denote the high-performance variant of the RSV4 Factory intended for track use and racing heritage. This is a known market alias for the RSV4 Factory.",
+  "canonical_model_alias": "RSV4 Factory",
+  "configuration_tokens": [],
+  "brand_aliases": [],
+  "model_aliases": [
+    "RSV4 Factory"
+  ],
+  "status": "SUCCESS",
+  "prompt_version": "motorcycle-candidate-resolution-v4",
+  "model": "qwen-flash",
+  "make": "Aprilia",
+  "model_name": "RSV4 FW-GP"
+}

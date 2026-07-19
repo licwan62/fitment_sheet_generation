@@ -1,0 +1,16 @@
+{
+  "decision": "MATCH",
+  "selected_candidate": "gasgas contact estart 250",
+  "confidence": "HIGH",
+  "match_basis": "MARKET_ALIAS",
+  "explanation": "The input 'Contact JT25' is a market-specific designation for the same motorcycle model as 'gasgas contact estart 250'. The 'JT25' suffix is a regional or internal model code used in certain markets, while 'eStart 250' is the standard catalog name. Both refer to the identical 250cc two-stroke motorcycle with electric start, confirming they are the same underlying model.",
+  "canonical_model_alias": "contact estart 250",
+  "configuration_tokens": [],
+  "brand_aliases": [],
+  "model_aliases": [],
+  "status": "SUCCESS",
+  "prompt_version": "motorcycle-candidate-resolution-v4",
+  "model": "qwen-flash",
+  "make": "Gas Gas",
+  "model_name": "Contact JT25"
+}

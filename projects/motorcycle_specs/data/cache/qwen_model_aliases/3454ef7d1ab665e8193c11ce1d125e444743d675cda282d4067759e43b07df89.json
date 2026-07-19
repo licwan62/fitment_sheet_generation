@@ -1,0 +1,16 @@
+{
+  "decision": "NO_MATCH",
+  "selected_candidate": "",
+  "confidence": "HIGH",
+  "match_basis": "NONE",
+  "explanation": "The input model 'MRT260N Montesa Cota 4RT 260R' is a Honda motorcycle with a Montesa-branded nameplate, but Montesa is a separate Spanish motorcycle marque historically associated with trials bikes. The 'Montesa Cota 4RT 260R' is not a Honda model; it is a product of Montesa (owned by GasGas), and the 'MRT260N' appears to be a misattributed or incorrectly combined identifier. No catalog candidate matches this exact configuration or identity.",
+  "canonical_model_alias": "",
+  "configuration_tokens": [],
+  "brand_aliases": [],
+  "model_aliases": [],
+  "status": "SUCCESS",
+  "prompt_version": "motorcycle-candidate-resolution-v4",
+  "model": "qwen-flash",
+  "make": "Honda",
+  "model_name": "MRT260N Montesa Cota 4RT 260R"
+}

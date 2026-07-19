@@ -1,0 +1,16 @@
+{
+  "decision": "MATCH",
+  "selected_candidate": "buell xb12stt",
+  "confidence": "HIGH",
+  "match_basis": "MARKET_ALIAS",
+  "explanation": "The 'S3T Thunderbolt' is a market-specific name for the Buell XB12STT, with 'S3T' being an internal or regional designation for the Thunderbolt variant. The model shares the same platform, engine (1200cc), and identity as the XB12STT, confirming it as a known market alias.",
+  "canonical_model_alias": "xb12stt",
+  "configuration_tokens": [],
+  "brand_aliases": [],
+  "model_aliases": [],
+  "status": "SUCCESS",
+  "prompt_version": "motorcycle-candidate-resolution-v4",
+  "model": "qwen-flash",
+  "make": "Buell",
+  "model_name": "S3T Thunderbolt"
+}

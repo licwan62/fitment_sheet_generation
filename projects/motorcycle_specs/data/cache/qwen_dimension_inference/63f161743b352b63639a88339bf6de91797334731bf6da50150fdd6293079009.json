@@ -1,0 +1,16 @@
+{
+  "decision": "INFER",
+  "confidence": "MEDIUM",
+  "length_mm": 2100,
+  "width_mm": 850,
+  "height_mm": 1350,
+  "wheelbase_mm": 1450,
+  "seat_height_mm": 870,
+  "ground_clearance_mm": 220,
+  "explanation": "Inferred from typical dimensions of similar off-road motocross bikes in the 160cc class, such as the Gas Gas MC160 and KTM SX160. The Contact JTR160 is a junior race model with scaled-down proportions relative to adult models. Dimensions are estimated based on standard geometries for youth motocross bikes, but exact values may vary by year or market.",
+  "status": "SUCCESS",
+  "prompt_version": "motorcycle-dimension-inference-v1",
+  "model": "qwen-flash",
+  "make": "Gas Gas",
+  "model_name": "Contact JTR160"
+}

@@ -1,0 +1,16 @@
+{
+  "decision": "INFER|UNKNOWN",
+  "confidence": "MEDIUM|LOW",
+  "length_mm": null,
+  "width_mm": null,
+  "height_mm": null,
+  "wheelbase_mm": null,
+  "seat_height_mm": null,
+  "ground_clearance_mm": null,
+  "explanation": "The 200 RR-Race Edition by Beta is a limited-production off-road motorcycle with no publicly available official dimensions. While Beta's 200 RR models share general design traits with other motocross bikes in the range, variations in frame geometry, suspension setup, and model-specific tuning across years or markets make precise dimension estimation unreliable without direct data. No catalog or technical documentation confirms exact measurements, and extrapolation from similar models (e.g., 250 RR) may not apply due to differing component layouts. Therefore, dimensions are inferred as unknown with medium to low confidence.",
+  "status": "SUCCESS",
+  "prompt_version": "motorcycle-dimension-inference-v1",
+  "model": "qwen-flash",
+  "make": "Beta",
+  "model_name": "200 RR-Race Edition"
+}

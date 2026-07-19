@@ -1,0 +1,18 @@
+{
+  "decision": "MATCH",
+  "selected_candidate": "CB 750F \n\t\tIntegra",
+  "confidence": "HIGH",
+  "match_basis": "MARKET_ALIAS",
+  "explanation": "The 'CB750F Super Sport' is a known market designation for the CB750F Integra, particularly in European and Australian markets where 'Super Sport' was used as a trim or model variant name. The 'Integra' variant is the correct underlying model with the same engine, frame, and specifications. The name difference is due to regional marketing, not a different motorcycle.",
+  "canonical_model_alias": "CB 750F Integra",
+  "configuration_tokens": [],
+  "brand_aliases": [],
+  "model_aliases": [
+    "CB 750F Integra"
+  ],
+  "status": "SUCCESS",
+  "prompt_version": "motorcycle-candidate-resolution-v4",
+  "model": "qwen-flash",
+  "make": "Honda",
+  "model_name": "CB750F Super Sport"
+}

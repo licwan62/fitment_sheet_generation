@@ -1,0 +1,18 @@
+{
+  "decision": "MATCH",
+  "selected_candidate": "BMW R 1200 C Montauk",
+  "confidence": "HIGH",
+  "match_basis": "MARKET_ALIAS",
+  "explanation": "The 'Montana' in 'R1200C Montana' is a market-specific name for the same model known as 'Montauk' in other regions, particularly in North America. This is a well-documented regional naming variation for the BMW R1200C. The displacement and model structure are identical.",
+  "canonical_model_alias": "R 1200 C Montauk",
+  "configuration_tokens": [],
+  "brand_aliases": [],
+  "model_aliases": [
+    "R 1200 C Montauk"
+  ],
+  "status": "SUCCESS",
+  "prompt_version": "motorcycle-candidate-resolution-v4",
+  "model": "qwen-flash",
+  "make": "BMW",
+  "model_name": "R1200C Montana"
+}

@@ -1,0 +1,20 @@
+{
+  "decision": "MATCH",
+  "selected_candidate": "Bajaj pulsar ns 160",
+  "confidence": "HIGH",
+  "match_basis": "MARKET_ALIAS",
+  "explanation": "The input 'Pulsar 160 NS TD' refers to the Bajaj Pulsar NS 160, where 'TD' is a market-specific designation (likely for 'Touring Deluxe' or similar configuration) and does not alter the core model identity. The catalog candidate 'Bajaj pulsar ns 160' matches the same underlying motorcycle with a known regional/variant label.",
+  "canonical_model_alias": "pulsar ns 160",
+  "configuration_tokens": [
+    "TD"
+  ],
+  "brand_aliases": [],
+  "model_aliases": [
+    "pulsar ns 160"
+  ],
+  "status": "SUCCESS",
+  "prompt_version": "motorcycle-candidate-resolution-v4",
+  "model": "qwen-flash",
+  "make": "Bajaj",
+  "model_name": "Pulsar 160 NS TD"
+}

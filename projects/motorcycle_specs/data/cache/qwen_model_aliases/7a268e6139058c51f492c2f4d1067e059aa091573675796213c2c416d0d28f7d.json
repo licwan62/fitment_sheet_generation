@@ -1,0 +1,16 @@
+{
+  "decision": "NO_MATCH",
+  "selected_candidate": "",
+  "confidence": "HIGH",
+  "match_basis": "NONE",
+  "explanation": "The input model 'NC50' refers to a 50cc motorcycle, while all catalog candidates are NC750 series models with 750cc engines. The displacement difference is significant and indicates fundamentally different motorcycles. No known market name, historical alias, abbreviation, or typo connects NC50 to any NC750 model.",
+  "canonical_model_alias": "",
+  "configuration_tokens": [],
+  "brand_aliases": [],
+  "model_aliases": [],
+  "status": "SUCCESS",
+  "prompt_version": "motorcycle-candidate-resolution-v4",
+  "model": "qwen-flash",
+  "make": "Honda",
+  "model_name": "NC50"
+}

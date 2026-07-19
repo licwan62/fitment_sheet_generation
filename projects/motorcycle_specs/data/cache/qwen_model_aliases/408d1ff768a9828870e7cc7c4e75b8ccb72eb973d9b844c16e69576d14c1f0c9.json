@@ -1,0 +1,20 @@
+{
+  "decision": "MATCH",
+  "selected_candidate": "CB 350G Disc",
+  "confidence": "HIGH",
+  "match_basis": "MARKET_ALIAS",
+  "explanation": "The 'CB350G Super Sport' is a known market-specific name for the CB350G model, particularly in European and Australian markets. The candidate 'CB 350G Disc' refers to the same base model with a disc brake upgrade, which was a common configuration of the CB350G Super Sport. The name 'Super Sport' is a marketing designation used for this variant, and 'Disc' indicates a specific equipment version. Both refer to the same underlying motorcycle model.",
+  "canonical_model_alias": "CB 350G Disc",
+  "configuration_tokens": [
+    "Disc"
+  ],
+  "brand_aliases": [],
+  "model_aliases": [
+    "CB 350G Disc"
+  ],
+  "status": "SUCCESS",
+  "prompt_version": "motorcycle-candidate-resolution-v4",
+  "model": "qwen-flash",
+  "make": "Honda",
+  "model_name": "CB350G Super Sport"
+}

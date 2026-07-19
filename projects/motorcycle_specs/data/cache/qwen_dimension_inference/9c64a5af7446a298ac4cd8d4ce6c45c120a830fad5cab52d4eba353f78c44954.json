@@ -1,0 +1,16 @@
+{
+  "decision": "INFER",
+  "confidence": "MEDIUM",
+  "length_mm": 2150,
+  "width_mm": 850,
+  "height_mm": 1380,
+  "wheelbase_mm": 1450,
+  "seat_height_mm": 960,
+  "ground_clearance_mm": 300,
+  "explanation": "Inferred from comparable 300cc off-road motocross bikes in the Gas Gas TXT series, particularly the TXT 300 model. Dimensions are estimated based on typical proportions for this class and market segment. The 'Replica Factory' variant suggests a race-oriented design with minimal styling deviations from the base model. No official catalog data available for this exact model name.",
+  "status": "SUCCESS",
+  "prompt_version": "motorcycle-dimension-inference-v1",
+  "model": "qwen-flash",
+  "make": "Gas Gas",
+  "model_name": "TXT Pro 300 Replica Factory"
+}

@@ -1,0 +1,20 @@
+{
+  "decision": "MATCH",
+  "selected_candidate": "honda vt 750 c2 shadow spirit",
+  "confidence": "HIGH",
+  "match_basis": "SAME_NAME",
+  "explanation": "The input model 'VT750C2 Shadow Spirit ABS' is identical to the catalog candidate 'honda vt 750 c2 shadow spirit' in core identity, with only the 'ABS' suffix differing. The 'ABS' is a configuration feature (safety system) and does not alter the fundamental model identity. All other candidates are variations or minor rebrandings of the same underlying motorcycle.",
+  "canonical_model_alias": "vt 750 c2 shadow spirit",
+  "configuration_tokens": [
+    "ABS"
+  ],
+  "brand_aliases": [],
+  "model_aliases": [
+    "vt 750 c2 shadow spirit"
+  ],
+  "status": "SUCCESS",
+  "prompt_version": "motorcycle-candidate-resolution-v4",
+  "model": "qwen-flash",
+  "make": "Honda",
+  "model_name": "VT750C2 Shadow Spirit ABS"
+}

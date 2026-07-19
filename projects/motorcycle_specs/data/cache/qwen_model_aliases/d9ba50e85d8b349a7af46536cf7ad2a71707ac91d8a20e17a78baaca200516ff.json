@@ -1,0 +1,23 @@
+{
+  "decision": "MATCH",
+  "selected_candidate": "TNT 1130 Sport EVO",
+  "confidence": "HIGH",
+  "match_basis": "MARKET_ALIAS",
+  "explanation": "The input 'Tornado Naked Tre 1130 Sport Evo' refers to the same motorcycle as 'TNT 1130 Sport EVO', where 'TNT' is the market and model designation for Benelli's Tornado series, and 'Sport EVO' is a configuration variant. The name 'Tornado Naked Tre' is a descriptive marketing title, while 'TNT' is the official model code used in catalogs. Displacement (1130) matches exactly.",
+  "canonical_model_alias": "TNT 1130 Sport EVO",
+  "configuration_tokens": [
+    "Sport EVO"
+  ],
+  "brand_aliases": [],
+  "model_aliases": [
+    "TNT 1130 Sport EVO",
+    "TNT 1130 Sport",
+    "Tornado Tre 1130",
+    "TNT 1130"
+  ],
+  "status": "SUCCESS",
+  "prompt_version": "motorcycle-candidate-resolution-v4",
+  "model": "qwen-flash",
+  "make": "Benelli",
+  "model_name": "Tornado Naked Tre 1130 Sport Evo"
+}

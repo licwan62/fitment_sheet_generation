@@ -1,0 +1,16 @@
+{
+  "decision": "NO_MATCH",
+  "selected_candidate": "",
+  "confidence": "HIGH",
+  "match_basis": "NONE",
+  "explanation": "The input model 'F900R Dybanuc' is not a recognized variant or market name for any of the catalog candidates. 'Dybanuc' appears to be a non-standard or fictional suffix with no known association to BMW F 900R models. The catalog candidates include valid F 900R variants, but none match the input's unique identifier.",
+  "canonical_model_alias": "",
+  "configuration_tokens": [],
+  "brand_aliases": [],
+  "model_aliases": [],
+  "status": "SUCCESS",
+  "prompt_version": "motorcycle-candidate-resolution-v4",
+  "model": "qwen-flash",
+  "make": "BMW",
+  "model_name": "F900R Dybanuc"
+}

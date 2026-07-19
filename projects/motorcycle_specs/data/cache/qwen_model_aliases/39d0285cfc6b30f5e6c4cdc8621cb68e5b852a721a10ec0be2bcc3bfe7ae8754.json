@@ -1,0 +1,16 @@
+{
+  "decision": "NO_MATCH",
+  "selected_candidate": "",
+  "confidence": "HIGH",
+  "match_basis": "NONE",
+  "explanation": "The F650CS and F 650GS are distinct BMW motorcycle models with different designations, intended uses, and configurations. The F650CS is a street-focused model with a unique chassis and styling, while the F 650GS is an adventure-touring model. They differ in geometry, suspension, and market positioning despite sharing a similar engine displacement.",
+  "canonical_model_alias": "",
+  "configuration_tokens": [],
+  "brand_aliases": [],
+  "model_aliases": [],
+  "status": "SUCCESS",
+  "prompt_version": "motorcycle-candidate-resolution-v4",
+  "model": "qwen-flash",
+  "make": "BMW",
+  "model_name": "F650CS"
+}

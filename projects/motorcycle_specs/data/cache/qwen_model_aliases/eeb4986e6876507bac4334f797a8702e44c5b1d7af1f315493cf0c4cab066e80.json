@@ -1,0 +1,18 @@
+{
+  "decision": "MATCH",
+  "selected_candidate": "Honda CB77 Super Hawk",
+  "confidence": "HIGH",
+  "match_basis": "MARKET_ALIAS",
+  "explanation": "The input 'CB77 SuperHawk 305' refers to the Honda CB77 Super Hawk, a model marketed in North America with the 'SuperHawk' name. The variant '305' denotes displacement, which is consistent with the CB77's 305cc engine. The catalog candidate 'Honda CB77 Super Hawk' uses the same model identity with a minor spelling variation ('Hawk' vs 'Hawk'), which is a known market-specific spelling variant. No other candidate matches this model.",
+  "canonical_model_alias": "CB77 Super Hawk",
+  "configuration_tokens": [
+    "305"
+  ],
+  "brand_aliases": [],
+  "model_aliases": [],
+  "status": "SUCCESS",
+  "prompt_version": "motorcycle-candidate-resolution-v4",
+  "model": "qwen-flash",
+  "make": "Honda",
+  "model_name": "CB77 SuperHawk 305"
+}

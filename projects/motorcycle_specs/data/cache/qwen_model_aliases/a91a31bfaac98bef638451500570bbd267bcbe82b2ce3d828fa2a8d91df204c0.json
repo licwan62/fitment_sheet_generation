@@ -1,0 +1,18 @@
+{
+  "decision": "MATCH",
+  "selected_candidate": "DR 350SE",
+  "confidence": "HIGH",
+  "match_basis": "MARKET_ALIAS",
+  "explanation": "The DR 350S and DR 350SE are the same underlying motorcycle model, with 'SE' being a market-specific configuration label (likely for 'Standard Edition' or 'Special Edition') in certain regions, while 'S' is a common abbreviation. The core model identity (DR350) is unchanged, and both refer to the same Suzuki DR350 variant.",
+  "canonical_model_alias": "DR 350SE",
+  "configuration_tokens": [],
+  "brand_aliases": [],
+  "model_aliases": [
+    "DR 350SE"
+  ],
+  "status": "SUCCESS",
+  "prompt_version": "motorcycle-candidate-resolution-v4",
+  "model": "qwen-flash",
+  "make": "Suzuki",
+  "model_name": "DR350"
+}

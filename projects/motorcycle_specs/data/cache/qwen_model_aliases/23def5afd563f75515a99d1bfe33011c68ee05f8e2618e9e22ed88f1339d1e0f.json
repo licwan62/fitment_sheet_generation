@@ -1,0 +1,16 @@
+{
+  "decision": "NO_MATCH",
+  "selected_candidate": "",
+  "confidence": "HIGH",
+  "match_basis": "NONE",
+  "explanation": "The model 'CL77 Scrambler 305' is a known Honda motorcycle, but no catalog candidates were provided for comparison. Without any candidates to evaluate, a match cannot be confirmed or rejected based on identity. Therefore, NO_MATCH is returned due to lack of input data.",
+  "canonical_model_alias": "",
+  "configuration_tokens": [],
+  "brand_aliases": [],
+  "model_aliases": [],
+  "status": "SUCCESS",
+  "prompt_version": "motorcycle-candidate-resolution-v4",
+  "model": "qwen-flash",
+  "make": "Honda",
+  "model_name": "CL77 Scrambler 305"
+}

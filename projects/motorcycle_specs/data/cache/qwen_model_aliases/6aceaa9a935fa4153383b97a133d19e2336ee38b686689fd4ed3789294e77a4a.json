@@ -1,0 +1,20 @@
+{
+  "decision": "MATCH",
+  "selected_candidate": "GS 450T",
+  "confidence": "HIGH",
+  "match_basis": "MARKET_ALIAS",
+  "explanation": "The input 'GS450TX' is a variant of the GS 450T model, with 'X' likely denoting a market-specific or configuration suffix (e.g., export or special trim). The core model identity (GS 450T) matches exactly with a catalog candidate. Suzuki used 'T' as the base model designation for this series, and 'TX' is a known market or configuration variant in some regions, particularly in Europe and Asia. The displacement (450) and engine type (inline twin) are consistent across both.",
+  "canonical_model_alias": "GS 450T",
+  "configuration_tokens": [
+    "X"
+  ],
+  "brand_aliases": [],
+  "model_aliases": [
+    "GS 450T"
+  ],
+  "status": "SUCCESS",
+  "prompt_version": "motorcycle-candidate-resolution-v4",
+  "model": "qwen-flash",
+  "make": "Suzuki",
+  "model_name": "GS450TX"
+}

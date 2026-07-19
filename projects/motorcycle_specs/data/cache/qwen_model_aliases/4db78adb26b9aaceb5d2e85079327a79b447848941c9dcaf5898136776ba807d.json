@@ -1,0 +1,19 @@
+{
+  "decision": "MATCH",
+  "selected_candidate": "gasgas t12",
+  "confidence": "HIGH",
+  "match_basis": "ABBREVIATION",
+  "explanation": "'Contact GT12' is a market-specific name for the Gas Gas T12 model; 'GT' likely denotes a configuration or trim level, while 'T12' matches the core model identifier. The catalog candidate 'gasgas t12' represents the same underlying motorcycle with a standard naming convention.",
+  "canonical_model_alias": "t12",
+  "configuration_tokens": [],
+  "brand_aliases": [],
+  "model_aliases": [
+    "gasgas t12",
+    "t12"
+  ],
+  "status": "SUCCESS",
+  "prompt_version": "motorcycle-candidate-resolution-v4",
+  "model": "qwen-flash",
+  "make": "Gas Gas",
+  "model_name": "Contact GT12"
+}

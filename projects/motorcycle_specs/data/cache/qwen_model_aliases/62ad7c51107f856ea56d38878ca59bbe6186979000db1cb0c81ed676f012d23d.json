@@ -1,0 +1,20 @@
+{
+  "decision": "MATCH",
+  "selected_candidate": "BMW K1200LT",
+  "confidence": "HIGH",
+  "match_basis": "SAME_NAME",
+  "explanation": "The input 'K1200LT Exodus' refers to the BMW K1200LT model, with 'Exodus' being a special edition or configuration label. The core model identity matches exactly with 'BMW K1200LT' in the catalog candidates. The other candidates are variations of the same model name with spacing or casing differences, but all refer to the same underlying motorcycle.",
+  "canonical_model_alias": "K1200LT",
+  "configuration_tokens": [
+    "Exodus"
+  ],
+  "brand_aliases": [],
+  "model_aliases": [
+    "K1200LT"
+  ],
+  "status": "SUCCESS",
+  "prompt_version": "motorcycle-candidate-resolution-v4",
+  "model": "qwen-flash",
+  "make": "BMW",
+  "model_name": "K1200LT Exodus"
+}

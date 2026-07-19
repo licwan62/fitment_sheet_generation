@@ -1,0 +1,20 @@
+{
+  "decision": "MATCH",
+  "selected_candidate": "ducati monster 400s",
+  "confidence": "HIGH",
+  "match_basis": "MARKET_ALIAS",
+  "explanation": "The 'Monster 400 Dark' is a market-specific variant of the Monster 400, with 'Dark' referring to a color or trim configuration. The 'Monster 400s' model is a known market designation for the same base motorcycle, where 's' may denote a special edition or styling variant. Displacement (400) and model lineage match exactly.",
+  "canonical_model_alias": "monster 400s",
+  "configuration_tokens": [
+    "Dark"
+  ],
+  "brand_aliases": [],
+  "model_aliases": [
+    "monster 400s"
+  ],
+  "status": "SUCCESS",
+  "prompt_version": "motorcycle-candidate-resolution-v4",
+  "model": "qwen-flash",
+  "make": "Ducati",
+  "model_name": "Monster 400 Dark"
+}

@@ -1,0 +1,16 @@
+{
+  "decision": "MATCH",
+  "selected_candidate": "beta rx 300 2t",
+  "confidence": "HIGH",
+  "match_basis": "SAME_NAME",
+  "explanation": "The input '300 RX' and the candidate 'beta rx 300 2t' refer to the same motorcycle model, with only minor differences in word order and the inclusion of '2t' (two-stroke), which is standard for this model. The displacement and core model name match exactly.",
+  "canonical_model_alias": "rx 300 2t",
+  "configuration_tokens": [],
+  "brand_aliases": [],
+  "model_aliases": [],
+  "status": "SUCCESS",
+  "prompt_version": "motorcycle-candidate-resolution-v4",
+  "model": "qwen-flash",
+  "make": "Beta",
+  "model_name": "300 RX"
+}

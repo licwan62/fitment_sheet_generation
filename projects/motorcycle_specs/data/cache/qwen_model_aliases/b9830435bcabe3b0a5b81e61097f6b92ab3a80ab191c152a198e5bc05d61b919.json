@@ -1,0 +1,16 @@
+{
+  "decision": "NO_MATCH",
+  "selected_candidate": "",
+  "confidence": "HIGH",
+  "match_basis": "NONE",
+  "explanation": "The model 'TR33' is not equivalent to any of the catalog candidates. Beta's TR33 is a distinct model line, and none of the listed candidates (RS 350, RS 390, RS 430, Xtrainer 300, RR 390, RR 430, RR 300 2T) match its identity in displacement, platform, or naming convention. The 'TR' designation is specific to Beta's trail and enduro series, while the candidates are from different series (RS, RR, Xtrainer). No known market alias, abbreviation, or typo links TR33 to any of these.",
+  "canonical_model_alias": "",
+  "configuration_tokens": [],
+  "brand_aliases": [],
+  "model_aliases": [],
+  "status": "SUCCESS",
+  "prompt_version": "motorcycle-candidate-resolution-v4",
+  "model": "qwen-flash",
+  "make": "Beta",
+  "model_name": "TR33"
+}

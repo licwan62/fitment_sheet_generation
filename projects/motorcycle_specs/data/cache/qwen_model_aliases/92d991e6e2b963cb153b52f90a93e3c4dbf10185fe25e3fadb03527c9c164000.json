@@ -1,0 +1,16 @@
+{
+  "decision": "NO_MATCH",
+  "selected_candidate": "",
+  "confidence": "HIGH",
+  "match_basis": "NONE",
+  "explanation": "The input model 'K100LT ABS' is a distinct variant with a specific 'LT' designation for touring, while the candidates are K100RS (sport) and K100RT (touring), which differ in model type and configuration. The 'LT' suffix is not interchangeable with 'RT' or 'RS'. No known market alias, abbreviation, or typo links 'K100LT' to any of the listed candidates.",
+  "canonical_model_alias": "",
+  "configuration_tokens": [],
+  "brand_aliases": [],
+  "model_aliases": [],
+  "status": "SUCCESS",
+  "prompt_version": "motorcycle-candidate-resolution-v4",
+  "model": "qwen-flash",
+  "make": "BMW",
+  "model_name": "K100LT ABS"
+}

@@ -1,0 +1,16 @@
+{
+  "decision": "UNKNOWN",
+  "confidence": "LOW",
+  "length_mm": null,
+  "width_mm": null,
+  "height_mm": null,
+  "wheelbase_mm": null,
+  "seat_height_mm": null,
+  "ground_clearance_mm": null,
+  "explanation": "The model 'Merc Softail V111 Carb' is not a widely recognized or documented production motorcycle from Big Bear Choppers. No reliable sources or specifications are available for this specific model, and the name suggests a custom or limited-run build with potential variation by builder or market. Without verifiable data or official catalog details, dimensions cannot be reliably inferred.",
+  "status": "SUCCESS",
+  "prompt_version": "motorcycle-dimension-inference-v1",
+  "model": "qwen-flash",
+  "make": "Big Bear Choppers",
+  "model_name": "Merc Softail V111 Carb"
+}

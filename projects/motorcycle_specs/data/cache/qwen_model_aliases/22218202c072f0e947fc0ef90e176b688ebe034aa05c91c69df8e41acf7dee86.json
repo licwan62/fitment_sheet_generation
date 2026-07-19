@@ -1,0 +1,18 @@
+{
+  "decision": "MATCH",
+  "selected_candidate": "Honda CB125 CL",
+  "confidence": "HIGH",
+  "match_basis": "HISTORICAL_ALIAS",
+  "explanation": "The Honda CL125A is a historical model from the 1960s, and 'CB125 CL' is a known catalog reference that identifies the same underlying motorcycle, with 'CL' being the original model designation. The 'CB125 CL' variant is a documented market or catalog alias for the CL125A, particularly in certain regions or listings.",
+  "canonical_model_alias": "CB125 CL",
+  "configuration_tokens": [],
+  "brand_aliases": [],
+  "model_aliases": [
+    "CB125 CL"
+  ],
+  "status": "SUCCESS",
+  "prompt_version": "motorcycle-candidate-resolution-v4",
+  "model": "qwen-flash",
+  "make": "Honda",
+  "model_name": "CL125A"
+}

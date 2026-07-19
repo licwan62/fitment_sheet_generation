@@ -1,0 +1,16 @@
+{
+  "decision": "INFER",
+  "confidence": "LOW",
+  "length_mm": null,
+  "width_mm": null,
+  "height_mm": null,
+  "wheelbase_mm": null,
+  "seat_height_mm": null,
+  "ground_clearance_mm": null,
+  "explanation": "The Big Bear Choppers Devils Advocate ProStreet V111 Carb is a custom chopper with no publicly available official dimensions. As a custom build, dimensions may vary significantly by build configuration and year. No reliable source or catalog data was found to confirm specific measurements. Inference is limited due to lack of verifiable data.",
+  "status": "SUCCESS",
+  "prompt_version": "motorcycle-dimension-inference-v1",
+  "model": "qwen-flash",
+  "make": "Big Bear Choppers",
+  "model_name": "Devils Advocate ProStreet V111 Carb"
+}

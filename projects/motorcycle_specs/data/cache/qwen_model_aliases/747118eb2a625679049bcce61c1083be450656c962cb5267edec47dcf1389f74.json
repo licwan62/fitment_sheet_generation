@@ -1,0 +1,20 @@
+{
+  "decision": "MATCH",
+  "selected_candidate": "GS 550",
+  "confidence": "HIGH",
+  "match_basis": "SAME_NAME",
+  "explanation": "The input 'GS550M' refers to the Suzuki GS550 model, and 'GS 550' is the canonical catalog title for the same motorcycle. The 'M' suffix in 'GS550M' is a known market or configuration designation (e.g., for the US market) but does not alter the core model identity. All candidates are variations of the same underlying model.",
+  "canonical_model_alias": "GS 550",
+  "configuration_tokens": [
+    "M"
+  ],
+  "brand_aliases": [],
+  "model_aliases": [
+    "GS 550"
+  ],
+  "status": "SUCCESS",
+  "prompt_version": "motorcycle-candidate-resolution-v4",
+  "model": "qwen-flash",
+  "make": "Suzuki",
+  "model_name": "GS550M"
+}

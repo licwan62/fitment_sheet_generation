@@ -1,0 +1,11 @@
+{
+  "status": "API_ERROR",
+  "prompt_version": "motorcycle-candidate-resolution-v3",
+  "model": "qwen-flash",
+  "make": "Honda",
+  "model_name": "CBR600RR",
+  "candidate_titles": [
+    "CBR 1000RR Track \n      Special"
+  ],
+  "error_type": "HTTPStatusError"
+}

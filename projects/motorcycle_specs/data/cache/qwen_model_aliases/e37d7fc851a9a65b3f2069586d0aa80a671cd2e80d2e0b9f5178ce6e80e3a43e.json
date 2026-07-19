@@ -1,0 +1,20 @@
+{
+  "decision": "MATCH",
+  "selected_candidate": "DR 250S",
+  "confidence": "HIGH",
+  "match_basis": "SAME_NAME",
+  "explanation": "The input model 'DR250' is the same underlying motorcycle as the catalog candidate 'DR 250S', where the 'S' denotes a standard or street version, which is a common configuration label for this model. The core model identity (DR250) is preserved, and no displacement or platform change is indicated.",
+  "canonical_model_alias": "DR 250S",
+  "configuration_tokens": [
+    "S"
+  ],
+  "brand_aliases": [],
+  "model_aliases": [
+    "DR 250S"
+  ],
+  "status": "SUCCESS",
+  "prompt_version": "motorcycle-candidate-resolution-v4",
+  "model": "qwen-flash",
+  "make": "Suzuki",
+  "model_name": "DR250"
+}

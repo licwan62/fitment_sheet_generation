@@ -1,0 +1,16 @@
+{
+  "decision": "NO_MATCH",
+  "selected_candidate": "",
+  "confidence": "HIGH",
+  "match_basis": "NONE",
+  "explanation": "The input model 'Pulsar N 250 FI UG' is not found in the catalog candidates, and no matching or known alias exists among the provided candidates. The model appears to be a specific variant of the Bajaj Pulsar N250 series with features like FI (Fuel Injection) and UG (likely a market-specific or configuration label), but no candidate in the list corresponds to this exact model or a recognized variant.",
+  "canonical_model_alias": "",
+  "configuration_tokens": [],
+  "brand_aliases": [],
+  "model_aliases": [],
+  "status": "SUCCESS",
+  "prompt_version": "motorcycle-candidate-resolution-v4",
+  "model": "qwen-flash",
+  "make": "Bajaj",
+  "model_name": "Pulsar N 250 FI UG"
+}

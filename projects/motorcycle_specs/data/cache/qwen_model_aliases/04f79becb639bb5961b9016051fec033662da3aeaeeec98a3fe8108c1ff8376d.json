@@ -1,0 +1,16 @@
+{
+  "decision": "NO_MATCH",
+  "selected_candidate": "",
+  "confidence": "HIGH",
+  "match_basis": "NONE",
+  "explanation": "The input model 'VFR800A Interceptor ABS' refers to a specific variant with an 'A' designation, which is not present in any of the catalog candidates. The candidates all feature 'VFR 800F' as the model identifier, indicating a different model generation or configuration. The 'A' suffix likely denotes a distinct model line (e.g., a market-specific or engineering variant) not reflected in the provided candidates. No known market alias, historical name, abbreviation, or typo equates 'VFR800A' to 'VFR800F'. Therefore, no match exists.",
+  "canonical_model_alias": "",
+  "configuration_tokens": [],
+  "brand_aliases": [],
+  "model_aliases": [],
+  "status": "SUCCESS",
+  "prompt_version": "motorcycle-candidate-resolution-v4",
+  "model": "qwen-flash",
+  "make": "Honda",
+  "model_name": "VFR800A Interceptor ABS"
+}

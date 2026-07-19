@@ -1,0 +1,18 @@
+{
+  "decision": "MATCH",
+  "selected_candidate": "996 Monoposta",
+  "confidence": "HIGH",
+  "match_basis": "TYPO",
+  "explanation": "'Monoposto' is the correct Italian term for 'single-seat' configuration, and 'Monoposta' is a common typographical variant or transliteration error in catalog listings. Both refer to the same Ducati 996 model with a single-seat design, differing only in spelling.",
+  "canonical_model_alias": "996 Monoposta",
+  "configuration_tokens": [],
+  "brand_aliases": [],
+  "model_aliases": [
+    "996 Monoposta"
+  ],
+  "status": "SUCCESS",
+  "prompt_version": "motorcycle-candidate-resolution-v4",
+  "model": "qwen-flash",
+  "make": "Ducati",
+  "model_name": "996 Monoposto"
+}

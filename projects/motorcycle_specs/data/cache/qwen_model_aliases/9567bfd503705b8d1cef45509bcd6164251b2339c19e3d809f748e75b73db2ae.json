@@ -1,0 +1,16 @@
+{
+  "decision": "MATCH",
+  "selected_candidate": "Suzuki RM-Z 250",
+  "confidence": "HIGH",
+  "match_basis": "MARKET_ALIAS",
+  "explanation": "The input 'RMZ250' is a common market shorthand for the Suzuki RM-Z 250, which is the official model name used in North America and other regions. The 'Z' in RM-Z denotes the model's motocross-specific designation, and the absence of a space or hyphen in 'RMZ250' is a typical abbreviation. All candidates with 'RM-Z 250' or 'RM 250' refer to the same motorcycle model when displacement and configuration are considered.",
+  "canonical_model_alias": "RM-Z 250",
+  "configuration_tokens": [],
+  "brand_aliases": [],
+  "model_aliases": [],
+  "status": "SUCCESS",
+  "prompt_version": "motorcycle-candidate-resolution-v4",
+  "model": "qwen-flash",
+  "make": "Suzuki",
+  "model_name": "RMZ250"
+}

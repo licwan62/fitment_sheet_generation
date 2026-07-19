@@ -1,0 +1,18 @@
+{
+  "decision": "MATCH",
+  "selected_candidate": "Honda CRF300 Rally",
+  "confidence": "HIGH",
+  "match_basis": "MARKET_ALIAS",
+  "explanation": "The XRE300 Rally is the Brazilian market name for the Honda CRF300 Rally, a model sold under different names in different regions. The displacement (300), model type (Rally), and underlying motorcycle identity are identical.",
+  "canonical_model_alias": "CRF300 Rally",
+  "configuration_tokens": [],
+  "brand_aliases": [],
+  "model_aliases": [
+    "CRF300 Rally"
+  ],
+  "status": "SUCCESS",
+  "prompt_version": "motorcycle-candidate-resolution-v4",
+  "model": "qwen-flash",
+  "make": "Honda",
+  "model_name": "XRE300 Rally"
+}

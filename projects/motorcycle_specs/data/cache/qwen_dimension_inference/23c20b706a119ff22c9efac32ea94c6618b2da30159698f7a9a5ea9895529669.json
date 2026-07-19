@@ -1,0 +1,16 @@
+{
+  "decision": "INFER|UNKNOWN",
+  "confidence": "MEDIUM|LOW",
+  "length_mm": null,
+  "width_mm": null,
+  "height_mm": null,
+  "wheelbase_mm": null,
+  "seat_height_mm": null,
+  "ground_clearance_mm": null,
+  "explanation": "No official catalog data available for Bimota DBX 1100; model details vary significantly by year and market. Dimensions cannot be reliably inferred without verified sources. Known to share platform with other Bimota models but not directly comparable due to unique frame and component integration.",
+  "status": "SUCCESS",
+  "prompt_version": "motorcycle-dimension-inference-v1",
+  "model": "qwen-flash",
+  "make": "Bimota",
+  "model_name": "DBX 1100"
+}

@@ -1,0 +1,16 @@
+{
+  "decision": "NO_MATCH",
+  "selected_candidate": "",
+  "confidence": "HIGH",
+  "match_basis": "NONE",
+  "explanation": "The model 'GSX-R1000 1 Million C.E.' is a special edition commemorative motorcycle released by Suzuki, but it does not appear in the provided catalog candidates. No matching candidate exists in the list, and no known alias or variant of this specific model is present. Therefore, no match can be made.",
+  "canonical_model_alias": "",
+  "configuration_tokens": [],
+  "brand_aliases": [],
+  "model_aliases": [],
+  "status": "SUCCESS",
+  "prompt_version": "motorcycle-candidate-resolution-v4",
+  "model": "qwen-flash",
+  "make": "Suzuki",
+  "model_name": "GSX-R1000 1 Million C.E."
+}

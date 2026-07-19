@@ -1,0 +1,20 @@
+{
+  "decision": "MATCH",
+  "selected_candidate": "Monster 796",
+  "confidence": "HIGH",
+  "match_basis": "SAME_NAME",
+  "explanation": "The input 'Monster 796 ABS' refers to the same underlying motorcycle model as 'Monster 796', with 'ABS' being a configuration feature (anti-lock braking system) that does not change the core model identity. The catalog candidate 'Monster 796' is the canonical form of the base model.",
+  "canonical_model_alias": "Monster 796",
+  "configuration_tokens": [
+    "ABS"
+  ],
+  "brand_aliases": [],
+  "model_aliases": [
+    "Monster 796"
+  ],
+  "status": "SUCCESS",
+  "prompt_version": "motorcycle-candidate-resolution-v4",
+  "model": "qwen-flash",
+  "make": "Ducati",
+  "model_name": "Monster 796 ABS"
+}

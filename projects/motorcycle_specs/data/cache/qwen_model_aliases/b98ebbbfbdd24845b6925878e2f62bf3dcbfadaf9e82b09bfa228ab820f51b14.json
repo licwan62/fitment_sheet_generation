@@ -1,0 +1,20 @@
+{
+  "decision": "MATCH",
+  "selected_candidate": "F 800GS",
+  "confidence": "HIGH",
+  "match_basis": "MARKET_ALIAS",
+  "explanation": "The 'F800GS Dynamic' is a market-specific configuration of the F 800GS, with 'Dynamic' being a trim level or equipment designation rather than a distinct model. The core motorcycle identity remains unchanged.",
+  "canonical_model_alias": "F 800GS",
+  "configuration_tokens": [
+    "Dynamic"
+  ],
+  "brand_aliases": [],
+  "model_aliases": [
+    "F 800GS"
+  ],
+  "status": "SUCCESS",
+  "prompt_version": "motorcycle-candidate-resolution-v4",
+  "model": "qwen-flash",
+  "make": "BMW",
+  "model_name": "F800GS Dynamic"
+}

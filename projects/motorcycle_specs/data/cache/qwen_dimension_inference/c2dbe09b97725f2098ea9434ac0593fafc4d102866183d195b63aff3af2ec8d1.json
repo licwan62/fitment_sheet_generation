@@ -1,0 +1,16 @@
+{
+  "decision": "INFER|UNKNOWN",
+  "confidence": "LOW",
+  "length_mm": null,
+  "width_mm": null,
+  "height_mm": null,
+  "wheelbase_mm": null,
+  "seat_height_mm": null,
+  "ground_clearance_mm": null,
+  "explanation": "The K75A model is not a standard or widely recognized BMW motorcycle designation. It may be a misidentification or a non-standard variant. Without a confirmed catalog reference or clear model year/market context, dimensions cannot be reliably inferred. The K75 series (e.g., K75S, K75C) exists, but the 'A' suffix is ambiguous. Therefore, dimensions are unknown.",
+  "status": "SUCCESS",
+  "prompt_version": "motorcycle-dimension-inference-v1",
+  "model": "qwen-flash",
+  "make": "BMW",
+  "model_name": "K75A"
+}

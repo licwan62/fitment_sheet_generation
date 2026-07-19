@@ -1,0 +1,20 @@
+{
+  "decision": "MATCH",
+  "selected_candidate": "RR 350 Enduro",
+  "confidence": "HIGH",
+  "match_basis": "MARKET_ALIAS",
+  "explanation": "The '350 RR X-Pro' is a market-specific configuration of the Beta RR 350 Enduro, with 'X-Pro' denoting an enhanced or special edition variant. The core model identity (RR 350 Enduro) matches exactly across both names.",
+  "canonical_model_alias": "RR 350 Enduro",
+  "configuration_tokens": [
+    "X-Pro"
+  ],
+  "brand_aliases": [],
+  "model_aliases": [
+    "RR 350 Enduro"
+  ],
+  "status": "SUCCESS",
+  "prompt_version": "motorcycle-candidate-resolution-v4",
+  "model": "qwen-flash",
+  "make": "Beta",
+  "model_name": "350 RR X-Pro"
+}

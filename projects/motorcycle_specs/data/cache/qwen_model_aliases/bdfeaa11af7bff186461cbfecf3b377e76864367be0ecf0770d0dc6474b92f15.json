@@ -1,0 +1,20 @@
+{
+  "decision": "MATCH",
+  "selected_candidate": "Honda CL 175",
+  "confidence": "HIGH",
+  "match_basis": "SAME_NAME",
+  "explanation": "The input 'CL175 Scrambler' refers to the same motorcycle model as 'Honda CL 175', with 'Scrambler' being a configuration or styling descriptor and not altering the core model identity. The displacement (175) and model series (CL) match exactly.",
+  "canonical_model_alias": "CL 175",
+  "configuration_tokens": [
+    "Scrambler"
+  ],
+  "brand_aliases": [],
+  "model_aliases": [
+    "CL 175"
+  ],
+  "status": "SUCCESS",
+  "prompt_version": "motorcycle-candidate-resolution-v4",
+  "model": "qwen-flash",
+  "make": "Honda",
+  "model_name": "CL175 Scrambler"
+}

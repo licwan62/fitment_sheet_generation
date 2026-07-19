@@ -1,0 +1,21 @@
+{
+  "decision": "MATCH",
+  "selected_candidate": "gasgas mc 450f factory edition",
+  "confidence": "HIGH",
+  "match_basis": "MARKET_ALIAS",
+  "explanation": "The 'MC 450F Troy Lee Designs' is a market-specific edition of the Gas Gas MC 450F, with 'Troy Lee Designs' being a well-known livery and sponsorship partner. The 'Factory Edition' in the catalog candidate represents the same model with a branded configuration, making it a valid market alias.",
+  "canonical_model_alias": "mc 450f factory edition",
+  "configuration_tokens": [
+    "factory edition"
+  ],
+  "brand_aliases": [],
+  "model_aliases": [
+    "gasgas mc 450f factory edition",
+    "mc 450f factory edition"
+  ],
+  "status": "SUCCESS",
+  "prompt_version": "motorcycle-candidate-resolution-v4",
+  "model": "qwen-flash",
+  "make": "Gas Gas",
+  "model_name": "MC 450F Troy Lee Designs"
+}

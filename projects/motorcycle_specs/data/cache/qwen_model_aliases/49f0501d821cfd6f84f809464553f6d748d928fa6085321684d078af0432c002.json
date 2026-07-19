@@ -1,0 +1,21 @@
+{
+  "decision": "MATCH",
+  "selected_candidate": "gasgas ec 200",
+  "confidence": "HIGH",
+  "match_basis": "MARKET_ALIAS",
+  "explanation": "The 'TXT Pro 200 Raga' is a market-specific name for the Gas Gas EC 200 model, with 'Raga' being a regional or marketing designation. The core model identity (EC 200) matches exactly, and no displacement or fundamental configuration differs.",
+  "canonical_model_alias": "ec 200",
+  "configuration_tokens": [
+    "Raga"
+  ],
+  "brand_aliases": [],
+  "model_aliases": [
+    "gasgas ec 200",
+    "ec 200"
+  ],
+  "status": "SUCCESS",
+  "prompt_version": "motorcycle-candidate-resolution-v4",
+  "model": "qwen-flash",
+  "make": "Gas Gas",
+  "model_name": "TXT Pro 200 Raga"
+}

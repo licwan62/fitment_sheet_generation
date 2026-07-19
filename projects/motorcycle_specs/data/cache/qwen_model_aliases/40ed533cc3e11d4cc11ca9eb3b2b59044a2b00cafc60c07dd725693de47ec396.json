@@ -1,0 +1,18 @@
+{
+  "decision": "MATCH",
+  "selected_candidate": "C 125 \n\t\tSuper Cub",
+  "confidence": "HIGH",
+  "match_basis": "SAME_NAME",
+  "explanation": "The input 'C125A Super Cub' and the candidate 'C 125 \n\t\tSuper Cub' refer to the same underlying motorcycle model, with only minor formatting differences (spacing, capitalization, and the presence of 'A' in the model code). The 'A' suffix is a known market or configuration label for the C125 Super Cub, and does not denote a different model. The displacement (125) and core model name ('Super Cub') are identical.",
+  "canonical_model_alias": "C 125 Super Cub",
+  "configuration_tokens": [],
+  "brand_aliases": [],
+  "model_aliases": [
+    "C 125 Super Cub"
+  ],
+  "status": "SUCCESS",
+  "prompt_version": "motorcycle-candidate-resolution-v4",
+  "model": "qwen-flash",
+  "make": "Honda",
+  "model_name": "C125A Super Cub"
+}

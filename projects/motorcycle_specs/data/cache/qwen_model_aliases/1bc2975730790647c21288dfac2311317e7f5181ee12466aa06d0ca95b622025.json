@@ -1,0 +1,16 @@
+{
+  "decision": "NO_MATCH",
+  "selected_candidate": "",
+  "confidence": "HIGH",
+  "match_basis": "NONE",
+  "explanation": "The input model 'Beamer' does not correspond to any of the catalog candidates, which are all variants of E-TON's 'Challenger', 'E MO', or 'Viper' series. 'Beamer' is not a known market name, historical alias, abbreviation, or typo for any of these models. There is no evidence linking 'Beamer' to a specific E-TON motorcycle in the provided list.",
+  "canonical_model_alias": "",
+  "configuration_tokens": [],
+  "brand_aliases": [],
+  "model_aliases": [],
+  "status": "SUCCESS",
+  "prompt_version": "motorcycle-candidate-resolution-v4",
+  "model": "qwen-flash",
+  "make": "E-TON",
+  "model_name": "Beamer"
+}

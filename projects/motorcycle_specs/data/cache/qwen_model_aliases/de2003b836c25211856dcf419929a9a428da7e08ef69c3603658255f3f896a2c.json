@@ -1,0 +1,16 @@
+{
+  "decision": "MATCH",
+  "selected_candidate": "TNT 135",
+  "confidence": "HIGH",
+  "match_basis": "TYPO",
+  "explanation": "The input 'TNT150i' is likely a typo for 'TNT135', as Benelli's TNT series includes the TNT 135 model, and the displacement 135cc is close to 150cc. The 'i' suffix in 'TNT150i' may be a misinterpretation or typo of the actual model designation. No other candidate matches the TNT 135 in name or identity. The model is not a different displacement or configuration variant.",
+  "canonical_model_alias": "TNT 135",
+  "configuration_tokens": [],
+  "brand_aliases": [],
+  "model_aliases": [],
+  "status": "SUCCESS",
+  "prompt_version": "motorcycle-candidate-resolution-v4",
+  "model": "qwen-flash",
+  "make": "Benelli",
+  "model_name": "TNT150i"
+}

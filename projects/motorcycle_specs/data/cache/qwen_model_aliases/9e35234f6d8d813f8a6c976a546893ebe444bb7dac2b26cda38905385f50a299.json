@@ -1,0 +1,20 @@
+{
+  "decision": "MATCH",
+  "selected_candidate": "Discover 125 DTS-i",
+  "confidence": "HIGH",
+  "match_basis": "MARKET_ALIAS",
+  "explanation": "The 'ST' in Discover 125 ST is a market-specific designation (likely for Sport Touring or similar), while 'DTS-i' refers to the fuel-injected engine variant. Both are variants of the same underlying Discover 125 model, with 'ST' being a configuration label and 'DTS-i' a technical specification. The core model identity remains unchanged.",
+  "canonical_model_alias": "Discover 125 DTS-i",
+  "configuration_tokens": [
+    "ST"
+  ],
+  "brand_aliases": [],
+  "model_aliases": [
+    "Discover 125 DTS-i"
+  ],
+  "status": "SUCCESS",
+  "prompt_version": "motorcycle-candidate-resolution-v4",
+  "model": "qwen-flash",
+  "make": "Bajaj",
+  "model_name": "Discover 125 ST"
+}

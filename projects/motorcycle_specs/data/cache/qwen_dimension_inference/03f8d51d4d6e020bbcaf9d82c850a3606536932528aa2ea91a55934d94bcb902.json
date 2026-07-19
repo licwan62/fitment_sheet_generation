@@ -1,0 +1,16 @@
+{
+  "decision": "UNKNOWN",
+  "confidence": "LOW",
+  "length_mm": null,
+  "width_mm": null,
+  "height_mm": null,
+  "wheelbase_mm": null,
+  "seat_height_mm": null,
+  "ground_clearance_mm": null,
+  "explanation": "No publicly available specifications for the Big Bear Choppers Devils Advocate Chopper V111 Carb are accessible. Model details, including dimensions, vary significantly across custom builds and lack standardized data. Without verified catalog or technical documentation, dimensions cannot be reliably inferred.",
+  "status": "SUCCESS",
+  "prompt_version": "motorcycle-dimension-inference-v1",
+  "model": "qwen-flash",
+  "make": "Big Bear Choppers",
+  "model_name": "Devils Advocate Chopper V111 Carb"
+}

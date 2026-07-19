@@ -1,0 +1,18 @@
+{
+  "decision": "MATCH",
+  "selected_candidate": "Honda CBR1000RR ABS",
+  "confidence": "HIGH",
+  "match_basis": "MARKET_ALIAS",
+  "explanation": "The CBR1000RA ABS is a market-specific designation (likely for the North American or European market) of the same underlying model as the CBR1000RR ABS. The 'RA' suffix is a known regional or marketing variant of the CBR1000RR, with no change in core motorcycle identity, engine, or platform. The ABS feature is consistent across both names.",
+  "canonical_model_alias": "CBR1000RR ABS",
+  "configuration_tokens": [],
+  "brand_aliases": [],
+  "model_aliases": [
+    "CBR1000RR ABS"
+  ],
+  "status": "SUCCESS",
+  "prompt_version": "motorcycle-candidate-resolution-v4",
+  "model": "qwen-flash",
+  "make": "Honda",
+  "model_name": "CBR1000RA ABS"
+}

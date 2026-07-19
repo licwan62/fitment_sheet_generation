@@ -1,0 +1,18 @@
+{
+  "decision": "MATCH",
+  "selected_candidate": "gasgas ec 300",
+  "confidence": "HIGH",
+  "match_basis": "MARKET_ALIAS",
+  "explanation": "The 'MC 300' is a market-specific designation for the Gas Gas EC 300, commonly used in certain regions. The EC 300 is the correct model name in the catalog, and 'MC' is a known regional or marketing alias for this model.",
+  "canonical_model_alias": "gasgas ec 300",
+  "configuration_tokens": [],
+  "brand_aliases": [],
+  "model_aliases": [
+    "gasgas ec 300"
+  ],
+  "status": "SUCCESS",
+  "prompt_version": "motorcycle-candidate-resolution-v4",
+  "model": "qwen-flash",
+  "make": "Gas Gas",
+  "model_name": "MC 300"
+}

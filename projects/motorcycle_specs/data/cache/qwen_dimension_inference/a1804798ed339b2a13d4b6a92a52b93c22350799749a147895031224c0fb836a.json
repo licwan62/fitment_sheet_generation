@@ -1,0 +1,16 @@
+{
+  "decision": "INFER",
+  "confidence": "MEDIUM",
+  "length_mm": 2150,
+  "width_mm": 900,
+  "height_mm": 1150,
+  "wheelbase_mm": 1400,
+  "seat_height_mm": 880,
+  "ground_clearance_mm": 270,
+  "explanation": "Inferred based on typical dimensions for 450cc enduro motorcycles from similar manufacturers (e.g., KTM, Husqvarna) in the same class, considering ATK's historical design trends and common engineering practices for off-road bikes of this displacement. Dimensions are approximate and not confirmed by official sources.",
+  "status": "SUCCESS",
+  "prompt_version": "motorcycle-dimension-inference-v1",
+  "model": "qwen-flash",
+  "make": "ATK",
+  "model_name": "450 Enduro"
+}

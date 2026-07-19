@@ -1,0 +1,21 @@
+{
+  "decision": "MATCH",
+  "selected_candidate": "gasgas contact estart 250",
+  "confidence": "HIGH",
+  "match_basis": "MARKET_ALIAS",
+  "explanation": "The 'Contact TX250' is a market-specific naming for the Gas Gas Contact Estart 250, with 'TX' being a configuration or regional designation that aligns with the 'Estart' variant in the catalog. The displacement (250) and model series (Contact) are identical, confirming the same underlying motorcycle.",
+  "canonical_model_alias": "contact estart 250",
+  "configuration_tokens": [
+    "estart"
+  ],
+  "brand_aliases": [],
+  "model_aliases": [
+    "gasgas contact estart 250",
+    "contact estart 250"
+  ],
+  "status": "SUCCESS",
+  "prompt_version": "motorcycle-candidate-resolution-v4",
+  "model": "qwen-flash",
+  "make": "Gas Gas",
+  "model_name": "Contact TX250"
+}

@@ -1,0 +1,16 @@
+{
+  "decision": "INFER|UNKNOWN",
+  "confidence": "LOW",
+  "length_mm": null,
+  "width_mm": null,
+  "height_mm": null,
+  "wheelbase_mm": null,
+  "seat_height_mm": null,
+  "ground_clearance_mm": null,
+  "explanation": "Model identity and specific dimensions for the Big Bear Choppers Devils Advocate Chopper V111 EFI are not reliably documented in public sources. Without verified catalog data or physical measurements, dimensional estimates cannot be confidently provided. Variations by year, market, or custom build may significantly affect dimensions. Inference is limited due to insufficient model-specific information.",
+  "status": "SUCCESS",
+  "prompt_version": "motorcycle-dimension-inference-v1",
+  "model": "qwen-flash",
+  "make": "Big Bear Choppers",
+  "model_name": "Devils Advocate Chopper V111 EFI"
+}

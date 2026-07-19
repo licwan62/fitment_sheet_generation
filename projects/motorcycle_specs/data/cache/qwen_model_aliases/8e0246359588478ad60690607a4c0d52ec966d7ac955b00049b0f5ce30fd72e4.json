@@ -1,0 +1,20 @@
+{
+  "decision": "MATCH",
+  "selected_candidate": "bigdog mastiff",
+  "confidence": "HIGH",
+  "match_basis": "SAME_NAME",
+  "explanation": "The input 'Mastiff EFI' directly matches the catalog candidate 'bigdog mastiff', with 'EFI' being a configuration detail (fuel injection) that does not alter the core model identity. The name is identical in substance and widely recognized as the same model.",
+  "canonical_model_alias": "bigdog mastiff",
+  "configuration_tokens": [
+    "efi"
+  ],
+  "brand_aliases": [],
+  "model_aliases": [
+    "bigdog mastiff"
+  ],
+  "status": "SUCCESS",
+  "prompt_version": "motorcycle-candidate-resolution-v4",
+  "model": "qwen-flash",
+  "make": "Big Dog",
+  "model_name": "Mastiff EFI"
+}

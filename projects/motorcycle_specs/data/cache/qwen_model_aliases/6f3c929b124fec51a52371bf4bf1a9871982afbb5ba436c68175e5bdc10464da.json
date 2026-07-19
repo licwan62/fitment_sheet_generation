@@ -1,0 +1,16 @@
+{
+  "decision": "NO_MATCH",
+  "selected_candidate": "",
+  "confidence": "HIGH",
+  "match_basis": "NONE",
+  "explanation": "The input model 'Tornado Tre LE' is a 650cc motorcycle with specific features (LE = Limited Edition), while the catalog candidates are either different displacements (125, 302) or different variants (S, S2) of the 650 Tornado. None match the exact model identity including displacement and special edition designation.",
+  "canonical_model_alias": "",
+  "configuration_tokens": [],
+  "brand_aliases": [],
+  "model_aliases": [],
+  "status": "SUCCESS",
+  "prompt_version": "motorcycle-candidate-resolution-v4",
+  "model": "qwen-flash",
+  "make": "Benelli",
+  "model_name": "Tornado Tre LE"
+}

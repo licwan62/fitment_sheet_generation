@@ -1,0 +1,16 @@
+{
+  "decision": "INFER|UNKNOWN",
+  "confidence": "MEDIUM|LOW",
+  "length_mm": null,
+  "width_mm": null,
+  "height_mm": null,
+  "wheelbase_mm": null,
+  "seat_height_mm": null,
+  "ground_clearance_mm": null,
+  "explanation": "Model identity and dimensional data for Beta 350 RR are uncertain due to limited public documentation and potential variations across model years and markets. No reliable catalog or verified source confirms exact dimensions, and the model may share platform elements with other Beta enduro or motocross models without consistent dimension reporting. Inference is not sufficiently confident to assign specific values.",
+  "status": "SUCCESS",
+  "prompt_version": "motorcycle-dimension-inference-v1",
+  "model": "qwen-flash",
+  "make": "Beta",
+  "model_name": "350 RR"
+}

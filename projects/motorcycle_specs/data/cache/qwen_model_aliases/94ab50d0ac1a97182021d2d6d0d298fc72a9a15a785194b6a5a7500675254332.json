@@ -1,0 +1,16 @@
+{
+  "decision": "NO_MATCH",
+  "selected_candidate": "",
+  "confidence": "HIGH",
+  "match_basis": "NONE",
+  "explanation": "The Bultaco Pursang 370 is a known model, but no catalog candidates were provided for comparison. Without any candidate titles to evaluate, a match cannot be confirmed or rejected based on identity. Therefore, the decision is NO_MATCH due to lack of candidates.",
+  "canonical_model_alias": "",
+  "configuration_tokens": [],
+  "brand_aliases": [],
+  "model_aliases": [],
+  "status": "SUCCESS",
+  "prompt_version": "motorcycle-candidate-resolution-v4",
+  "model": "qwen-flash",
+  "make": "Bultaco",
+  "model_name": "Pursang 370"
+}

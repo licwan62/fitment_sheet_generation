@@ -1,0 +1,16 @@
+{
+  "decision": "INFER",
+  "confidence": "MEDIUM",
+  "length_mm": 2050,
+  "width_mm": 800,
+  "height_mm": 1100,
+  "wheelbase_mm": 1350,
+  "seat_height_mm": 780,
+  "ground_clearance_mm": 160,
+  "explanation": "Inferred based on typical dimensions of similar 150cc off-road and dual-sport motorcycles in the E-TON Beamer series, with average proportions for engine displacement and intended use. No official catalog data available for Beamer R4 (150). Dimensions are estimated from comparable models and general design trends.",
+  "status": "SUCCESS",
+  "prompt_version": "motorcycle-dimension-inference-v1",
+  "model": "qwen-flash",
+  "make": "E-TON",
+  "model_name": "Beamer R4 (150)"
+}

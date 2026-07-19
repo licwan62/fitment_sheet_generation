@@ -1,0 +1,16 @@
+{
+  "decision": "INFER|UNKNOWN",
+  "confidence": "LOW",
+  "length_mm": null,
+  "width_mm": null,
+  "height_mm": null,
+  "wheelbase_mm": null,
+  "seat_height_mm": null,
+  "ground_clearance_mm": null,
+  "explanation": "The Suzuki GSX-R600 100th Anniversary Edition is a limited edition model with no publicly documented official dimensions beyond standard GSX-R600 specifications. Variations in design, components, or special trim may affect overall dimensions, and without confirmed data from Suzuki or verified sources, precise measurements cannot be reliably inferred. Dimensions are therefore uncertain.",
+  "status": "SUCCESS",
+  "prompt_version": "motorcycle-dimension-inference-v1",
+  "model": "qwen-flash",
+  "make": "Suzuki",
+  "model_name": "GSX-R600 100th Anniversary Edition"
+}

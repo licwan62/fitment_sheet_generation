@@ -1,0 +1,21 @@
+{
+  "decision": "MATCH",
+  "selected_candidate": "NT \n\t\t700V Deauville",
+  "confidence": "HIGH",
+  "match_basis": "MARKET_ALIAS",
+  "explanation": "The NT700VA ABS is a variant of the Honda NT700V Deauville, with 'VA' denoting the specific configuration (likely ABS and European market), while 'Deauville' is the established model name. The catalog candidate 'NT 700V Deauville' refers to the same underlying motorcycle model, with 'VA' being a configuration suffix rather than a different model.",
+  "canonical_model_alias": "NT 700V Deauville",
+  "configuration_tokens": [
+    "VA",
+    "ABS"
+  ],
+  "brand_aliases": [],
+  "model_aliases": [
+    "NT 700V Deauville"
+  ],
+  "status": "SUCCESS",
+  "prompt_version": "motorcycle-candidate-resolution-v4",
+  "model": "qwen-flash",
+  "make": "Honda",
+  "model_name": "NT700VA ABS"
+}

@@ -1,0 +1,16 @@
+{
+  "decision": "INFER|UNKNOWN",
+  "confidence": "MEDIUM|LOW",
+  "length_mm": null,
+  "width_mm": null,
+  "height_mm": null,
+  "wheelbase_mm": null,
+  "seat_height_mm": null,
+  "ground_clearance_mm": null,
+  "explanation": "No publicly available specifications for the Big Bear Choppers Paradox 117 X-Wedge are confirmed in reliable sources. Dimensions may vary significantly by production year and market. Model identity is uncertain due to limited documentation and potential custom builds. Inference not supported by verifiable data.",
+  "status": "SUCCESS",
+  "prompt_version": "motorcycle-dimension-inference-v1",
+  "model": "qwen-flash",
+  "make": "Big Bear Choppers",
+  "model_name": "Paradox 117 X-Wedge"
+}

@@ -1,0 +1,16 @@
+{
+  "decision": "INFER|UNKNOWN",
+  "confidence": "MEDIUM|LOW",
+  "length_mm": null,
+  "width_mm": null,
+  "height_mm": null,
+  "wheelbase_mm": null,
+  "seat_height_mm": null,
+  "ground_clearance_mm": null,
+  "explanation": "The Beta Mini 50 R10 is a small off-road motorcycle intended for youth or entry-level riders, but specific dimensional data is not consistently documented in public sources. Without access to official specifications or verified catalog data, and due to potential variations by model year or regional market, reliable inference of exact dimensions cannot be made with confidence. Dimensions are therefore marked as unknown.",
+  "status": "SUCCESS",
+  "prompt_version": "motorcycle-dimension-inference-v1",
+  "model": "qwen-flash",
+  "make": "Beta",
+  "model_name": "Mini 50 R10"
+}

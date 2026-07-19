@@ -1,0 +1,20 @@
+{
+  "decision": "MATCH",
+  "selected_candidate": "Honda CRF1100L Africa Twin",
+  "confidence": "HIGH",
+  "match_basis": "MARKET_ALIAS",
+  "explanation": "The input 'CRF1100D Africa Twin' refers to the same motorcycle model as 'CRF1100L Africa Twin', where 'D' is a market-specific designation (likely for European or specific regional variant) and 'L' is the standard model code. The core model identity, displacement, and name are identical; the difference in suffix is a known regional/variant label, not a distinct model.",
+  "canonical_model_alias": "CRF1100L Africa Twin",
+  "configuration_tokens": [
+    "D"
+  ],
+  "brand_aliases": [],
+  "model_aliases": [
+    "CRF1100L Africa Twin"
+  ],
+  "status": "SUCCESS",
+  "prompt_version": "motorcycle-candidate-resolution-v4",
+  "model": "qwen-flash",
+  "make": "Honda",
+  "model_name": "CRF1100D Africa Twin"
+}

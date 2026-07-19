@@ -1,0 +1,16 @@
+{
+  "decision": "MATCH",
+  "selected_candidate": "CBR1000RR-R Fireblade SP",
+  "confidence": "HIGH",
+  "match_basis": "SAME_NAME",
+  "explanation": "The input 'CBR10SPM CBR1000RR-R Fireblade SP' is a valid representation of the same model, with 'CBR10SPM' likely being a misinterpretation or typo of 'CBR1000RR-R', and 'Fireblade SP' confirming the exact model variant. The core identity matches the catalog candidate.",
+  "canonical_model_alias": "CBR1000RR-R Fireblade SP",
+  "configuration_tokens": [],
+  "brand_aliases": [],
+  "model_aliases": [],
+  "status": "SUCCESS",
+  "prompt_version": "motorcycle-candidate-resolution-v4",
+  "model": "qwen-flash",
+  "make": "Honda",
+  "model_name": "CBR10SPM CBR1000RR-R Fireblade SP"
+}

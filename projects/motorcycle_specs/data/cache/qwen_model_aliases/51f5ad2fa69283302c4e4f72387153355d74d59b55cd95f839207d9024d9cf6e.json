@@ -1,0 +1,20 @@
+{
+  "decision": "MATCH",
+  "selected_candidate": "R 1300GS \n\t\tAdventure/Trophy/Triple Black",
+  "confidence": "HIGH",
+  "match_basis": "MARKET_ALIAS",
+  "explanation": "The input 'R1300GS Adventure Triple Black' refers to the same model as the catalog candidate 'R 1300GS Adventure/Trophy/Triple Black', where 'Triple Black' is a known market-specific configuration name for the R 1300GS Adventure in certain regions, including the UK and Europe. The model identity (R 1300GS Adventure) and displacement are identical, and 'Triple Black' is a branding variant, not a different model.",
+  "canonical_model_alias": "R 1300GS Adventure/Trophy/Triple Black",
+  "configuration_tokens": [
+    "Triple Black"
+  ],
+  "brand_aliases": [],
+  "model_aliases": [
+    "R 1300GS Adventure/Trophy/Triple Black"
+  ],
+  "status": "SUCCESS",
+  "prompt_version": "motorcycle-candidate-resolution-v4",
+  "model": "qwen-flash",
+  "make": "BMW",
+  "model_name": "R1300GS Adventure Triple Black"
+}

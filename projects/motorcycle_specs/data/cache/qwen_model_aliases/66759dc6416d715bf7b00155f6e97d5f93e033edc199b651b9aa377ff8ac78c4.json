@@ -1,0 +1,18 @@
+{
+  "decision": "MATCH",
+  "selected_candidate": "buell xb 9sx",
+  "confidence": "HIGH",
+  "match_basis": "MARKET_ALIAS",
+  "explanation": "The Buell XB9R Firebolt and XB9SX are the same underlying motorcycle model, with 'XB9R' being the U.S. market designation and 'XB9SX' the European/International market name. The displacement (900cc) and core model identity are identical; only the suffix differs due to regional marketing.",
+  "canonical_model_alias": "xb 9sx",
+  "configuration_tokens": [],
+  "brand_aliases": [],
+  "model_aliases": [
+    "xb 9sx"
+  ],
+  "status": "SUCCESS",
+  "prompt_version": "motorcycle-candidate-resolution-v4",
+  "model": "qwen-flash",
+  "make": "Buell",
+  "model_name": "XB9R Firebolt"
+}

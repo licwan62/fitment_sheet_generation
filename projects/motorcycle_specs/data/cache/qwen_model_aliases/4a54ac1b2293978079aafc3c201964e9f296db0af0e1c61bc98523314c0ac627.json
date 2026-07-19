@@ -1,0 +1,16 @@
+{
+  "decision": "NO_MATCH",
+  "selected_candidate": "",
+  "confidence": "HIGH",
+  "match_basis": "NONE",
+  "explanation": "The input 'MRT2603E Montesa Cota 4RT 260R' is not a valid Honda motorcycle model. Montesa is a Spanish motorcycle brand, not a Honda marque. The model name combines elements from different brands and does not correspond to any known Honda catalog title. No candidate in the list matches this description.",
+  "canonical_model_alias": "",
+  "configuration_tokens": [],
+  "brand_aliases": [],
+  "model_aliases": [],
+  "status": "SUCCESS",
+  "prompt_version": "motorcycle-candidate-resolution-v4",
+  "model": "qwen-flash",
+  "make": "Honda",
+  "model_name": "MRT2603E Montesa Cota 4RT 260R"
+}

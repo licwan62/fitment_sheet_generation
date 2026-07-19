@@ -1,0 +1,20 @@
+{
+  "decision": "MATCH",
+  "selected_candidate": "Tuono V4 R \n\t\tAPRC",
+  "confidence": "HIGH",
+  "match_basis": "MARKET_ALIAS",
+  "explanation": "The input 'Tuono V4 R APRC ABS' refers to the same motorcycle model as 'Tuono V4 R APRC', where 'APRC' denotes the Aprilia Racing Championship version, and 'ABS' is a configuration feature. The presence of ABS does not change the core model identity; it is a standard equipment option for this variant. The catalog candidate 'Tuono V4 R APRC' is the canonical form of the model in the list.",
+  "canonical_model_alias": "Tuono V4 R APRC",
+  "configuration_tokens": [
+    "ABS"
+  ],
+  "brand_aliases": [],
+  "model_aliases": [
+    "Tuono V4 R APRC"
+  ],
+  "status": "SUCCESS",
+  "prompt_version": "motorcycle-candidate-resolution-v4",
+  "model": "qwen-flash",
+  "make": "Aprilia",
+  "model_name": "Tuono V4 R APRC ABS"
+}

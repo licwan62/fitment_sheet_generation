@@ -33,6 +33,8 @@ class Candidate:
     status: str = "REVIEW"
     reason: str = ""
     discovery_method: str = "INDEX"
+    source_name: str = "motorcyclespecs"
+    source_priority: int = 1
 
 
 @dataclass(slots=True)

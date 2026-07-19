@@ -1,0 +1,21 @@
+{
+  "decision": "MATCH",
+  "selected_candidate": "Harley-Davidson FLHX Street Glide",
+  "confidence": "HIGH",
+  "match_basis": "SAME_NAME",
+  "explanation": "FLHXST Street Glide ST is the same model as FLHX Street Glide with a configuration suffix 'ST' indicating a specific variant, but the core model identity remains FLHX Street Glide. The 'ST' suffix is a known market or configuration label for this model, not a different underlying motorcycle.",
+  "canonical_model_alias": "FLHX Street Glide",
+  "configuration_tokens": [
+    "ST"
+  ],
+  "brand_aliases": [],
+  "model_aliases": [
+    "Street Glide",
+    "FLHX Street Glide"
+  ],
+  "status": "SUCCESS",
+  "prompt_version": "motorcycle-candidate-resolution-v4",
+  "model": "qwen-flash",
+  "make": "Harley-Davidson",
+  "model_name": "FLHXST Street Glide ST"
+}

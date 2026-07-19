@@ -1,0 +1,16 @@
+{
+  "decision": "NO_MATCH",
+  "selected_candidate": "",
+  "confidence": "HIGH",
+  "match_basis": "NONE",
+  "explanation": "The model 'S2 Thunderbolt' is not a known Buell motorcycle. The Buell S2 Thunderbolt does not exist in the manufacturer's catalog. The provided candidates are all distinct models, none of which match the S2 Thunderbolt in name, displacement, or configuration. No plausible alias, market variant, or typo links the input to any candidate.",
+  "canonical_model_alias": "",
+  "configuration_tokens": [],
+  "brand_aliases": [],
+  "model_aliases": [],
+  "status": "SUCCESS",
+  "prompt_version": "motorcycle-candidate-resolution-v4",
+  "model": "qwen-flash",
+  "make": "Buell",
+  "model_name": "S2 Thunderbolt"
+}

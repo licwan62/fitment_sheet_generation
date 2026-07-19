@@ -1,0 +1,18 @@
+{
+  "decision": "MATCH",
+  "selected_candidate": "CL 360",
+  "confidence": "HIGH",
+  "match_basis": "SAME_NAME",
+  "explanation": "The input 'CL360 Scrambler' and the candidate 'CL 360' refer to the same underlying motorcycle model, with the catalog title omitting the 'Scrambler' descriptor but retaining the exact model designation. The CL360 is a known Honda scrambler model from the 1970s, and 'CL 360' is its canonical catalog name.",
+  "canonical_model_alias": "CL 360",
+  "configuration_tokens": [],
+  "brand_aliases": [],
+  "model_aliases": [
+    "CL 360"
+  ],
+  "status": "SUCCESS",
+  "prompt_version": "motorcycle-candidate-resolution-v4",
+  "model": "qwen-flash",
+  "make": "Honda",
+  "model_name": "CL360 Scrambler"
+}

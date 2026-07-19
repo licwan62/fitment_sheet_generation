@@ -1,0 +1,20 @@
+{
+  "decision": "MATCH",
+  "selected_candidate": "ETV 1200 \n\t\tCaponord Rally",
+  "confidence": "HIGH",
+  "match_basis": "MARKET_ALIAS",
+  "explanation": "The 'Caponord 1200 Rally' is a market-specific naming variant of the ETV 1200 Caponord Rally, with 'Rally' denoting a configuration or trim level. The model identity is identical across both names.",
+  "canonical_model_alias": "ETV 1200 Caponord Rally",
+  "configuration_tokens": [
+    "Rally"
+  ],
+  "brand_aliases": [],
+  "model_aliases": [
+    "ETV 1200 Caponord Rally"
+  ],
+  "status": "SUCCESS",
+  "prompt_version": "motorcycle-candidate-resolution-v4",
+  "model": "qwen-flash",
+  "make": "Aprilia",
+  "model_name": "Caponord 1200 Rally"
+}

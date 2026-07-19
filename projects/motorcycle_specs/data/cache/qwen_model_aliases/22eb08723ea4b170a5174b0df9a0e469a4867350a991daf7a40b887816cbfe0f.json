@@ -1,0 +1,21 @@
+{
+  "decision": "MATCH",
+  "selected_candidate": "CTX 700N / DCT",
+  "confidence": "HIGH",
+  "match_basis": "MARKET_ALIAS",
+  "explanation": "CTX700 DCT ABS is the same model as CTX 700N / DCT; 'N' denotes the North American market variant, and 'DCT ABS' is the full specification including dual-clutch transmission and anti-lock braking system. The model identity is unchanged.",
+  "canonical_model_alias": "CTX 700N / DCT",
+  "configuration_tokens": [
+    "DCT",
+    "ABS"
+  ],
+  "brand_aliases": [],
+  "model_aliases": [
+    "CTX 700N / DCT"
+  ],
+  "status": "SUCCESS",
+  "prompt_version": "motorcycle-candidate-resolution-v4",
+  "model": "qwen-flash",
+  "make": "Honda",
+  "model_name": "CTX700 DCT ABS"
+}

@@ -1,0 +1,20 @@
+{
+  "decision": "MATCH",
+  "selected_candidate": "Suzuki Gixxer SF SP",
+  "confidence": "HIGH",
+  "match_basis": "MARKET_ALIAS",
+  "explanation": "The input 'Gixxer SF GP' is a known market-specific variant (likely for the Japanese domestic market) of the Gixxer SF SP model. The 'GP' suffix in this context denotes a special edition or configuration, not a distinct model. The core motorcycle identity matches the Gixxer SF SP.",
+  "canonical_model_alias": "Suzuki Gixxer SF SP",
+  "configuration_tokens": [
+    "GP"
+  ],
+  "brand_aliases": [],
+  "model_aliases": [
+    "Gixxer SF SP"
+  ],
+  "status": "SUCCESS",
+  "prompt_version": "motorcycle-candidate-resolution-v4",
+  "model": "qwen-flash",
+  "make": "Suzuki",
+  "model_name": "Gixxer SF GP"
+}

@@ -1,0 +1,16 @@
+{
+  "decision": "NO_MATCH",
+  "selected_candidate": "",
+  "confidence": "HIGH",
+  "match_basis": "NONE",
+  "explanation": "The input model TXT321 has a displacement of 321cc, which does not match any of the catalog candidates. The candidates are all 125cc, 200cc, 280cc, or 250cc models, and none are known variants or market names of a 321cc TXT model. There is no evidence of a typo, abbreviation, or configuration that would equate TXT321 to any of these.",
+  "canonical_model_alias": "",
+  "configuration_tokens": [],
+  "brand_aliases": [],
+  "model_aliases": [],
+  "status": "SUCCESS",
+  "prompt_version": "motorcycle-candidate-resolution-v4",
+  "model": "qwen-flash",
+  "make": "Gas Gas",
+  "model_name": "TXT321"
+}

@@ -1,0 +1,18 @@
+{
+  "decision": "MATCH",
+  "selected_candidate": "Honda RVF 750 - RC 45",
+  "confidence": "HIGH",
+  "match_basis": "SAME_NAME",
+  "explanation": "The input 'RVF750R RC45' refers to the same motorcycle model as 'Honda RVF 750 - RC 45', with identical displacement (750), engine configuration (V4), and model designation (RC45). The variation in spacing and hyphenation is a minor formatting difference.",
+  "canonical_model_alias": "RVF 750 - RC 45",
+  "configuration_tokens": [],
+  "brand_aliases": [],
+  "model_aliases": [
+    "RVF 750 - RC 45"
+  ],
+  "status": "SUCCESS",
+  "prompt_version": "motorcycle-candidate-resolution-v4",
+  "model": "qwen-flash",
+  "make": "Honda",
+  "model_name": "RVF750R RC45"
+}

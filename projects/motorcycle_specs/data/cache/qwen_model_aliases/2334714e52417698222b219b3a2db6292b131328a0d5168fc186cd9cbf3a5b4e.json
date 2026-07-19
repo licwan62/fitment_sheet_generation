@@ -1,0 +1,16 @@
+{
+  "decision": "MATCH",
+  "selected_candidate": "RR 480 4T Enduro",
+  "confidence": "HIGH",
+  "match_basis": "MARKET_ALIAS",
+  "explanation": "The model '480 RR' is a known market designation for the Beta RR 480 4T Enduro, with 'RR' indicating the racing-oriented enduro variant and '480' denoting engine displacement. The catalog candidate matches the same underlying motorcycle model despite differing word order and additional descriptors like '4T Enduro', which are standard in Beta's naming convention.",
+  "canonical_model_alias": "RR 480 4T Enduro",
+  "configuration_tokens": [],
+  "brand_aliases": [],
+  "model_aliases": [],
+  "status": "SUCCESS",
+  "prompt_version": "motorcycle-candidate-resolution-v4",
+  "model": "qwen-flash",
+  "make": "Beta",
+  "model_name": "480 RR"
+}

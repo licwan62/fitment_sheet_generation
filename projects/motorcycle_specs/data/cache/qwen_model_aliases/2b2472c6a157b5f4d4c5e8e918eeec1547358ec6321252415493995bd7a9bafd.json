@@ -1,0 +1,16 @@
+{
+  "decision": "NO_MATCH",
+  "selected_candidate": "",
+  "confidence": "HIGH",
+  "match_basis": "NONE",
+  "explanation": "The model 'RS175' is not equivalent to any of the catalog candidates. The candidates include different displacements (125cc), different model lines (RM, DR, SV, Access), and no variant matches the RS175 designation. There is no known market alias, historical name, abbreviation, or typo that links RS175 to any of these models. The Suzuki RS175 was a specific racing-oriented 175cc motorcycle from the 1970s, distinct from the listed 125cc models.",
+  "canonical_model_alias": "",
+  "configuration_tokens": [],
+  "brand_aliases": [],
+  "model_aliases": [],
+  "status": "SUCCESS",
+  "prompt_version": "motorcycle-candidate-resolution-v4",
+  "model": "qwen-flash",
+  "make": "Suzuki",
+  "model_name": "RS175"
+}

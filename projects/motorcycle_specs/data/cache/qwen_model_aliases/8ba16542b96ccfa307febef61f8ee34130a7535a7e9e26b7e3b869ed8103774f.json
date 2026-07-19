@@ -1,0 +1,20 @@
+{
+  "decision": "MATCH",
+  "selected_candidate": "VS 700GL Intruder",
+  "confidence": "HIGH",
+  "match_basis": "SAME_NAME",
+  "explanation": "The input 'VS700 Intruder' is a direct match in name and model designation to the catalog candidate 'VS 700GL Intruder', with only a minor variation in spacing and the addition of the 'GL' suffix, which denotes a configuration variant but does not change the core model identity. The VS700 Intruder is a known model in Suzuki's lineup, and 'VS 700GL Intruder' is its official catalog title.",
+  "canonical_model_alias": "VS 700GL Intruder",
+  "configuration_tokens": [
+    "GL"
+  ],
+  "brand_aliases": [],
+  "model_aliases": [
+    "VS 700GL Intruder"
+  ],
+  "status": "SUCCESS",
+  "prompt_version": "motorcycle-candidate-resolution-v4",
+  "model": "qwen-flash",
+  "make": "Suzuki",
+  "model_name": "VS700 Intruder"
+}

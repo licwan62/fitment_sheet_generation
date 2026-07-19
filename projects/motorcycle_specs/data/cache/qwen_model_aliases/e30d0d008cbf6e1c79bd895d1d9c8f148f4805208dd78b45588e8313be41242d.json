@@ -1,0 +1,21 @@
+{
+  "decision": "MATCH",
+  "selected_candidate": "Ducati Monster 1000 DARK i.e.",
+  "confidence": "HIGH",
+  "match_basis": "MARKET_ALIAS",
+  "explanation": "The 'Monster 1000 Dark' is a known market-specific configuration of the Ducati Monster 1000, with 'Dark' denoting a special trim or color scheme. The 'i.e.' suffix is a common catalog designation for this variant in certain markets, and the model identity remains unchanged. The candidate 'Ducati Monster 1000 DARK i.e.' correctly represents the same underlying motorcycle.",
+  "canonical_model_alias": "Monster 1000 DARK i.e.",
+  "configuration_tokens": [
+    "DARK",
+    "i.e."
+  ],
+  "brand_aliases": [],
+  "model_aliases": [
+    "Monster 1000 DARK i.e."
+  ],
+  "status": "SUCCESS",
+  "prompt_version": "motorcycle-candidate-resolution-v4",
+  "model": "qwen-flash",
+  "make": "Ducati",
+  "model_name": "Monster 1000 Dark"
+}

@@ -1,0 +1,16 @@
+{
+  "decision": "NO_MATCH",
+  "selected_candidate": "",
+  "confidence": "HIGH",
+  "match_basis": "NONE",
+  "explanation": "CRF450RWE is not a known variant of any of the listed candidates (CRF 450RL, CRF 450L, CRF 450X). The 'RWE' suffix does not correspond to any documented Honda CRF450 model configuration, market name, or typo variant. The candidates differ in model designation and intended use (e.g., RL for dual-sport, L for off-road, X for motocross), and none match the RWE designation.",
+  "canonical_model_alias": "",
+  "configuration_tokens": [],
+  "brand_aliases": [],
+  "model_aliases": [],
+  "status": "SUCCESS",
+  "prompt_version": "motorcycle-candidate-resolution-v4",
+  "model": "qwen-flash",
+  "make": "Honda",
+  "model_name": "CRF450RWE"
+}

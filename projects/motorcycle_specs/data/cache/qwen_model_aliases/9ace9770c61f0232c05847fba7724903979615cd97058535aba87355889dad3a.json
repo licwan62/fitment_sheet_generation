@@ -1,0 +1,16 @@
+{
+  "decision": "MATCH",
+  "selected_candidate": "CBR 900RR Fireblade (CBR 954RR)",
+  "confidence": "HIGH",
+  "match_basis": "HISTORICAL_ALIAS",
+  "explanation": "The CBR954RR is a known model designation for the Honda CBR 900RR Fireblade, specifically the 1992–2002 version. The '954' in the name refers to the engine displacement (approximately 954cc), and it was marketed as the CBR 900RR Fireblade in some regions. This is a historical alias used interchangeably in motorcycle catalogs and enthusiast communities.",
+  "canonical_model_alias": "CBR 900RR Fireblade (CBR 954RR)",
+  "configuration_tokens": [],
+  "brand_aliases": [],
+  "model_aliases": [],
+  "status": "SUCCESS",
+  "prompt_version": "motorcycle-candidate-resolution-v4",
+  "model": "qwen-flash",
+  "make": "Honda",
+  "model_name": "CBR954RR"
+}

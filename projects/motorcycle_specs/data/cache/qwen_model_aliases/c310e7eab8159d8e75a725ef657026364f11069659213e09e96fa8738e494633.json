@@ -1,0 +1,20 @@
+{
+  "decision": "MATCH",
+  "selected_candidate": "Suzuki GN 125",
+  "confidence": "HIGH",
+  "match_basis": "SAME_NAME",
+  "explanation": "The input model 'GN125F' and the candidate 'Suzuki GN 125' refer to the same underlying motorcycle model, with the 'F' suffix likely denoting a market-specific configuration or minor variant not altering the core model identity. The catalog candidate 'Suzuki GN 125' is the canonical form of the model, matching the base model name and displacement exactly.",
+  "canonical_model_alias": "GN 125",
+  "configuration_tokens": [
+    "F"
+  ],
+  "brand_aliases": [],
+  "model_aliases": [
+    "GN 125"
+  ],
+  "status": "SUCCESS",
+  "prompt_version": "motorcycle-candidate-resolution-v4",
+  "model": "qwen-flash",
+  "make": "Suzuki",
+  "model_name": "GN125F"
+}

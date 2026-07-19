@@ -1,0 +1,20 @@
+{
+  "decision": "MATCH",
+  "selected_candidate": "BMW K 100 LT",
+  "confidence": "HIGH",
+  "match_basis": "SAME_NAME",
+  "explanation": "The input 'K100LT ABS' refers to the same motorcycle model as 'BMW K 100 LT', with 'ABS' being a configuration feature not altering the core model identity. The catalog candidate 'BMW K 100 LT' is the canonical form, and 'K 100LT' is a valid abbreviation. Both represent the identical underlying model.",
+  "canonical_model_alias": "K 100 LT",
+  "configuration_tokens": [
+    "ABS"
+  ],
+  "brand_aliases": [],
+  "model_aliases": [
+    "K 100 LT"
+  ],
+  "status": "SUCCESS",
+  "prompt_version": "motorcycle-candidate-resolution-v4",
+  "model": "qwen-flash",
+  "make": "BMW",
+  "model_name": "K100LT ABS"
+}

@@ -1,0 +1,21 @@
+{
+  "decision": "MATCH",
+  "selected_candidate": "Honda FJS600 Silver Wing",
+  "confidence": "HIGH",
+  "match_basis": "MARKET_ALIAS",
+  "explanation": "The input 'FSC600A Silver Wing ABS' is a market-specific variant (likely European or Japanese) of the Honda FJS600 Silver Wing, with 'FSC' being a regional or internal designation for the same model. The 'A' and 'ABS' are configuration tokens (e.g., ABS version), but the core model is identical to the FJS600 Silver Wing. The name 'Silver Wing 600' is consistent across variants.",
+  "canonical_model_alias": "FJS600 Silver Wing",
+  "configuration_tokens": [
+    "A",
+    "ABS"
+  ],
+  "brand_aliases": [],
+  "model_aliases": [
+    "FJS600 Silver Wing"
+  ],
+  "status": "SUCCESS",
+  "prompt_version": "motorcycle-candidate-resolution-v4",
+  "model": "qwen-flash",
+  "make": "Honda",
+  "model_name": "FSC600A Silver Wing ABS"
+}

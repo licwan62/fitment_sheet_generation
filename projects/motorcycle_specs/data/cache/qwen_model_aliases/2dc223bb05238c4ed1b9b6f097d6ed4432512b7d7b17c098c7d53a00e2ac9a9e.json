@@ -1,0 +1,16 @@
+{
+  "decision": "NO_MATCH",
+  "selected_candidate": "",
+  "confidence": "HIGH",
+  "match_basis": "NONE",
+  "explanation": "The Honda C70 is a vintage single-cylinder motorcycle from the 1960s, while the catalog candidates are unrelated models: the C 70 Super Cub Scooter is a scooter variant with a different design and purpose, the VT 700C Shadow is a V-twin cruiser, and the VF 700C Magna is a V4 engine model. None share the same underlying motorcycle identity, displacement, or platform.",
+  "canonical_model_alias": "",
+  "configuration_tokens": [],
+  "brand_aliases": [],
+  "model_aliases": [],
+  "status": "SUCCESS",
+  "prompt_version": "motorcycle-candidate-resolution-v4",
+  "model": "qwen-flash",
+  "make": "Honda",
+  "model_name": "C70"
+}

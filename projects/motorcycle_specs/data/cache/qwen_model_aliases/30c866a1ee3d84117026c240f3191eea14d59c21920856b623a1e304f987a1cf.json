@@ -1,0 +1,16 @@
+{
+  "decision": "MATCH",
+  "selected_candidate": "benelli tornado naked tre 889",
+  "confidence": "HIGH",
+  "match_basis": "SAME_NAME",
+  "explanation": "The input model 'Tornado Naked Tre 889' matches the catalog candidate 'benelli tornado naked tre 889' exactly in name and displacement, with no conflicting or differing identity tokens. The brand is consistent, and the model designation aligns precisely.",
+  "canonical_model_alias": "tornado naked tre 889",
+  "configuration_tokens": [],
+  "brand_aliases": [],
+  "model_aliases": [],
+  "status": "SUCCESS",
+  "prompt_version": "motorcycle-candidate-resolution-v4",
+  "model": "qwen-flash",
+  "make": "Benelli",
+  "model_name": "Tornado Naked Tre 889"
+}

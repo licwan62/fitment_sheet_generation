@@ -1,0 +1,19 @@
+{
+  "decision": "MATCH",
+  "selected_candidate": "beta evo 300 2t ss",
+  "confidence": "HIGH",
+  "match_basis": "SAME_NAME",
+  "explanation": "The input 'EVO 300 SS Super Smooth' refers to the same motorcycle model as 'beta evo 300 2t ss', with 'SS Super Smooth' being a marketing or descriptive term for the same configuration. The displacement (300), engine type (2T), and model series (EVO) match exactly, and 'SS' is a known designation for this variant.",
+  "canonical_model_alias": "beta evo 300 2t ss",
+  "configuration_tokens": [
+    "ss",
+    "super smooth"
+  ],
+  "brand_aliases": [],
+  "model_aliases": [],
+  "status": "SUCCESS",
+  "prompt_version": "motorcycle-candidate-resolution-v4",
+  "model": "qwen-flash",
+  "make": "Beta",
+  "model_name": "EVO 300 SS Super Smooth"
+}

@@ -1,0 +1,21 @@
+{
+  "decision": "MATCH",
+  "selected_candidate": "CX 500 Deluxe",
+  "confidence": "HIGH",
+  "match_basis": "MARKET_ALIAS",
+  "explanation": "The 'CX500D Deluxe' is a market-specific designation (likely for the U.S. or European market) for the same model known as the 'CX 500 Deluxe' in the catalog. The 'D' suffix is a known configuration or market label variant, not a different model. The displacement and core model identity are identical.",
+  "canonical_model_alias": "CX 500 Deluxe",
+  "configuration_tokens": [
+    "D",
+    "Deluxe"
+  ],
+  "brand_aliases": [],
+  "model_aliases": [
+    "CX 500 Deluxe"
+  ],
+  "status": "SUCCESS",
+  "prompt_version": "motorcycle-candidate-resolution-v4",
+  "model": "qwen-flash",
+  "make": "Honda",
+  "model_name": "CX500D Deluxe"
+}

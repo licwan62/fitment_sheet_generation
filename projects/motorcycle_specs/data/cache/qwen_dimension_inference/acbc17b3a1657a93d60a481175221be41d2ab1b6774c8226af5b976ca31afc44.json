@@ -1,0 +1,16 @@
+{
+  "decision": "INFER|UNKNOWN",
+  "confidence": "LOW",
+  "length_mm": null,
+  "width_mm": null,
+  "height_mm": null,
+  "wheelbase_mm": null,
+  "seat_height_mm": null,
+  "ground_clearance_mm": null,
+  "explanation": "The Suzuki TS50 is a vintage mini-motorcycle from the 1970s, with no standardized dimensions across variants. Model identity and configuration (e.g., frame type, wheel size) vary significantly by year and market. Without access to specific catalog data or physical reference, reliable dimension inference is not feasible. Dimensions may differ materially between versions.",
+  "status": "SUCCESS",
+  "prompt_version": "motorcycle-dimension-inference-v1",
+  "model": "qwen-flash",
+  "make": "Suzuki",
+  "model_name": "TS50"
+}

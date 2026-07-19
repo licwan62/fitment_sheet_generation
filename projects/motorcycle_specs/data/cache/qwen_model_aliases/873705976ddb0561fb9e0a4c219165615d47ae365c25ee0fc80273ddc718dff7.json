@@ -1,0 +1,18 @@
+{
+  "decision": "MATCH",
+  "selected_candidate": "VT 750C Shadow Spirit",
+  "confidence": "HIGH",
+  "match_basis": "SAME_NAME",
+  "explanation": "The input model 'VT750DC Shadow Spirit' and the candidate 'VT 750C Shadow Spirit' refer to the same underlying motorcycle model. The difference in displacement designation (750DC vs 750C) is a known variation in Honda's cataloging, where 'DC' and 'C' were used interchangeably for the same 750cc engine platform in the Shadow Spirit line. The core model identity, including displacement, name, and configuration, is identical.",
+  "canonical_model_alias": "VT 750C Shadow Spirit",
+  "configuration_tokens": [],
+  "brand_aliases": [],
+  "model_aliases": [
+    "VT 750C Shadow Spirit"
+  ],
+  "status": "SUCCESS",
+  "prompt_version": "motorcycle-candidate-resolution-v4",
+  "model": "qwen-flash",
+  "make": "Honda",
+  "model_name": "VT750DC Shadow Spirit"
+}

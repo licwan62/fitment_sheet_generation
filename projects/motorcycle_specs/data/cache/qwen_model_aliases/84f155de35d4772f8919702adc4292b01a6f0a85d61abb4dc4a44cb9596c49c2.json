@@ -1,0 +1,20 @@
+{
+  "decision": "MATCH",
+  "selected_candidate": "CMX \n\t\t1100 Rebel / DCT",
+  "confidence": "HIGH",
+  "match_basis": "MARKET_ALIAS",
+  "explanation": "The 'SE' in CMX1100 Rebel 1100 SE is a market-specific configuration label (likely for Special Edition), while the catalog candidate 'CMX 1100 Rebel / DCT' represents the same underlying model with a dual-clutch transmission, which is a known variant of the Rebel 1100. The core model identity (CMX1100 Rebel) is identical, and the differences are configuration-based, not model-level.",
+  "canonical_model_alias": "CMX 1100 Rebel / DCT",
+  "configuration_tokens": [
+    "DCT"
+  ],
+  "brand_aliases": [],
+  "model_aliases": [
+    "CMX 1100 Rebel / DCT"
+  ],
+  "status": "SUCCESS",
+  "prompt_version": "motorcycle-candidate-resolution-v4",
+  "model": "qwen-flash",
+  "make": "Honda",
+  "model_name": "CMX1100 Rebel 1100 SE"
+}

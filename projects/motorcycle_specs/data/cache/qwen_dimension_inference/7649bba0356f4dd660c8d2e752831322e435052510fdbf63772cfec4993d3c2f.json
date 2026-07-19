@@ -1,0 +1,16 @@
+{
+  "decision": "INFER",
+  "confidence": "MEDIUM",
+  "length_mm": 2150,
+  "width_mm": 900,
+  "height_mm": 1380,
+  "wheelbase_mm": 1470,
+  "seat_height_mm": 850,
+  "ground_clearance_mm": 170,
+  "explanation": "Inferred from typical dimensions of the R1100GS platform (1999–2005), with SE variant likely sharing core dimensions. Seat height and ground clearance reflect standard GS off-road metrics. No catalog confirmation available; variations by model year or market possible.",
+  "status": "SUCCESS",
+  "prompt_version": "motorcycle-dimension-inference-v1",
+  "model": "qwen-flash",
+  "make": "BMW",
+  "model_name": "R1100GS SE"
+}

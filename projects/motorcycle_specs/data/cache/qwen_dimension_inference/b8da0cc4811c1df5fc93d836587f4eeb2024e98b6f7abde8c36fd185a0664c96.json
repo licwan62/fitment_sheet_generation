@@ -1,0 +1,16 @@
+{
+  "decision": "INFER|UNKNOWN",
+  "confidence": "LOW",
+  "length_mm": null,
+  "width_mm": null,
+  "height_mm": null,
+  "wheelbase_mm": null,
+  "seat_height_mm": null,
+  "ground_clearance_mm": null,
+  "explanation": "The model identity 'CBR10SPM CBR1000RR-R Fireblade SP' appears to be a non-standard or misidentified designation. The correct model name is typically 'CBR1000RR-R Fireblade SP' (often referred to as the 2023–2024 model). However, due to uncertainty in the exact variant and potential variation across markets and model years, dimensions cannot be reliably inferred without official documentation. No catalog page was found, and cross-referencing with known specifications is inconclusive. Therefore, all dimensions are marked as unknown.",
+  "status": "SUCCESS",
+  "prompt_version": "motorcycle-dimension-inference-v1",
+  "model": "qwen-flash",
+  "make": "Honda",
+  "model_name": "CBR10SPM CBR1000RR-R Fireblade SP"
+}

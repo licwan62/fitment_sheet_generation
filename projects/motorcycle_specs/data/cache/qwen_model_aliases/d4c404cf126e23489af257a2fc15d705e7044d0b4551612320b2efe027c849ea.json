@@ -1,0 +1,20 @@
+{
+  "decision": "MATCH",
+  "selected_candidate": "GSX 1300R Hayabusa",
+  "confidence": "HIGH",
+  "match_basis": "SAME_NAME",
+  "explanation": "The input 'GSX1300RA Hayabusa' and the candidate 'GSX 1300R Hayabusa' refer to the same motorcycle model. The 'A' in 'GSX1300RA' is a known market or configuration suffix (often used for specific regional variants), but the core model identity remains unchanged. The spacing and minor formatting differences are negligible. Both names identify the 1300cc Hayabusa variant with the GSX1300R designation.",
+  "canonical_model_alias": "GSX 1300R Hayabusa",
+  "configuration_tokens": [
+    "A"
+  ],
+  "brand_aliases": [],
+  "model_aliases": [
+    "GSX 1300R Hayabusa"
+  ],
+  "status": "SUCCESS",
+  "prompt_version": "motorcycle-candidate-resolution-v4",
+  "model": "qwen-flash",
+  "make": "Suzuki",
+  "model_name": "GSX1300RA  Hayabusa"
+}

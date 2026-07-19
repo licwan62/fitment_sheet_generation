@@ -1,0 +1,20 @@
+{
+  "decision": "MATCH",
+  "selected_candidate": "CBR 600RR C-ABS",
+  "confidence": "HIGH",
+  "match_basis": "MARKET_ALIAS",
+  "explanation": "The input 'CBR600RR ABS' and the candidate 'CBR 600RR C-ABS' refer to the same underlying motorcycle model. 'C-ABS' is a market-specific designation (common in European catalogs) for the ABS-equipped version, while 'ABS' is the standard naming in other regions. The displacement (600), model name (CBR600RR), and key features (ABS) are identical. The difference in suffix is a known regional labeling variation.",
+  "canonical_model_alias": "CBR 600RR C-ABS",
+  "configuration_tokens": [
+    "C-ABS"
+  ],
+  "brand_aliases": [],
+  "model_aliases": [
+    "CBR 600RR C-ABS"
+  ],
+  "status": "SUCCESS",
+  "prompt_version": "motorcycle-candidate-resolution-v4",
+  "model": "qwen-flash",
+  "make": "Honda",
+  "model_name": "CBR600RR ABS"
+}

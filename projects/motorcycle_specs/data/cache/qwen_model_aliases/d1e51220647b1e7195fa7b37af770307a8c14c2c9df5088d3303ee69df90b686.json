@@ -1,0 +1,21 @@
+{
+  "decision": "MATCH",
+  "selected_candidate": "Pulsar NS200",
+  "confidence": "HIGH",
+  "match_basis": "MARKET_ALIAS",
+  "explanation": "The Pulsar 200 NS FI ABS is a variant of the Pulsar NS200 with fuel injection (FI) and ABS features. The 'NS' in the model name denotes the same platform, and '200' matches the displacement. The addition of FI and ABS are configuration enhancements, not changes to the core model identity. The catalog candidate 'Pulsar NS200' represents the base model that includes this variant.",
+  "canonical_model_alias": "Pulsar NS200",
+  "configuration_tokens": [
+    "FI",
+    "ABS"
+  ],
+  "brand_aliases": [],
+  "model_aliases": [
+    "Pulsar NS200"
+  ],
+  "status": "SUCCESS",
+  "prompt_version": "motorcycle-candidate-resolution-v4",
+  "model": "qwen-flash",
+  "make": "Bajaj",
+  "model_name": "Pulsar 200 NS FI ABS"
+}

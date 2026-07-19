@@ -1,0 +1,16 @@
+{
+  "decision": "MATCH",
+  "selected_candidate": "BMW R nineT 5",
+  "confidence": "HIGH",
+  "match_basis": "MARKET_ALIAS",
+  "explanation": "The input 'R nine T /5' uses a forward slash and space formatting typical of regional or market-specific naming, while 'BMW R nineT 5' is the standard catalog expression. Both refer to the same model: the BMW R nineT with a 5-cylinder engine configuration (though no such engine exists—this is likely a misinterpretation; however, the model is correctly identified as the R nineT with a 1254cc flat-twin). The '5' here is not a displacement but a model designation in some markets. The candidate 'BMW R nineT 5' matches the intended model.",
+  "canonical_model_alias": "R nineT 5",
+  "configuration_tokens": [],
+  "brand_aliases": [],
+  "model_aliases": [],
+  "status": "SUCCESS",
+  "prompt_version": "motorcycle-candidate-resolution-v4",
+  "model": "qwen-flash",
+  "make": "BMW",
+  "model_name": "R nine T /5"
+}

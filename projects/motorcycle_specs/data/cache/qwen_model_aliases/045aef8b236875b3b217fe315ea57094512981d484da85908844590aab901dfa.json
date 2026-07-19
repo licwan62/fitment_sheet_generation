@@ -1,0 +1,13 @@
+{
+  "status": "API_ERROR",
+  "prompt_version": "motorcycle-candidate-resolution-v3",
+  "model": "qwen-flash",
+  "make": "Honda",
+  "model_name": "Grom",
+  "candidate_titles": [
+    "MSX 125 Grom",
+    "MSX 125 / Grom",
+    "MSX 125 AKA \n\t\t/ Grom"
+  ],
+  "error_type": "HTTPStatusError"
+}

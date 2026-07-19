@@ -1,0 +1,18 @@
+{
+  "decision": "MATCH",
+  "selected_candidate": "buell xb12stt",
+  "confidence": "HIGH",
+  "match_basis": "SAME_NAME",
+  "explanation": "The input model 'XB12STT Lightning' is the same motorcycle as 'buell xb12stt' in the catalog, with 'Lightning' being a common marketing name for Buell's XB series. The core model identifier 'xb12stt' matches exactly, and no other model in the list shares this exact displacement and configuration.",
+  "canonical_model_alias": "xb12stt",
+  "configuration_tokens": [],
+  "brand_aliases": [],
+  "model_aliases": [
+    "xb12stt"
+  ],
+  "status": "SUCCESS",
+  "prompt_version": "motorcycle-candidate-resolution-v4",
+  "model": "qwen-flash",
+  "make": "Buell",
+  "model_name": "XB12STT Lightning"
+}

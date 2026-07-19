@@ -1,0 +1,18 @@
+{
+  "decision": "MATCH",
+  "selected_candidate": "Harley-Davidson LiveWire",
+  "confidence": "HIGH",
+  "match_basis": "SAME_NAME",
+  "explanation": "The input 'ELW LiveWire' refers to the same motorcycle model as 'Harley-Davidson LiveWire', with 'ELW' being a known internal or market designation for the LiveWire model. The base model identity is unchanged.",
+  "canonical_model_alias": "LiveWire",
+  "configuration_tokens": [],
+  "brand_aliases": [],
+  "model_aliases": [
+    "LiveWire"
+  ],
+  "status": "SUCCESS",
+  "prompt_version": "motorcycle-candidate-resolution-v4",
+  "model": "qwen-flash",
+  "make": "Harley-Davidson",
+  "model_name": "ELW LiveWire"
+}

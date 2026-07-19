@@ -1,0 +1,16 @@
+{
+  "decision": "INFER",
+  "confidence": "LOW",
+  "length_mm": 2050,
+  "width_mm": 780,
+  "height_mm": 1080,
+  "wheelbase_mm": 1340,
+  "seat_height_mm": 790,
+  "ground_clearance_mm": 150,
+  "explanation": "Inferred from similar Honda SL series motorcycles (e.g., SL100, SL110) with comparable engine displacement and design language. The SL90 is a vintage model with limited public data; dimensions are estimated based on typical proportions of 1970s-era Honda street bikes. Actual values may vary by year and market.",
+  "status": "SUCCESS",
+  "prompt_version": "motorcycle-dimension-inference-v1",
+  "model": "qwen-flash",
+  "make": "Honda",
+  "model_name": "SL90"
+}

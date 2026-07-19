@@ -1,0 +1,18 @@
+{
+  "decision": "MATCH",
+  "selected_candidate": "R nineT 100th \nAnniversary",
+  "confidence": "HIGH",
+  "match_basis": "MARKET_ALIAS",
+  "explanation": "The input 'R nine T 100 Years' refers to the BMW R nineT 100th Anniversary model, which is a special edition commemorating 100 years of BMW Motorrad. The catalog candidate 'R nineT 100th \nAnniversary' is the official and canonical name for this model, with '100 Years' being a descriptive phrase equivalent to '100th Anniversary'. This is a known market and historical naming convention for the same motorcycle.",
+  "canonical_model_alias": "R nineT 100th Anniversary",
+  "configuration_tokens": [],
+  "brand_aliases": [],
+  "model_aliases": [
+    "R nineT 100th Anniversary"
+  ],
+  "status": "SUCCESS",
+  "prompt_version": "motorcycle-candidate-resolution-v4",
+  "model": "qwen-flash",
+  "make": "BMW",
+  "model_name": "R nine T 100 Years"
+}

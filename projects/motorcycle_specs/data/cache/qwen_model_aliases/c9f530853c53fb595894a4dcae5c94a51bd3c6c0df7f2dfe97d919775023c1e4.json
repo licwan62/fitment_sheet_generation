@@ -1,0 +1,18 @@
+{
+  "decision": "MATCH",
+  "selected_candidate": "Suzuki V-Strom 650XT Adventure",
+  "confidence": "HIGH",
+  "match_basis": "SAME_NAME",
+  "explanation": "The input model 'DL650A V-Strom 650XT Adventure' is the same motorcycle as the catalog candidate 'Suzuki V-Strom 650XT Adventure', with 'DL650A' being the model code and 'V-Strom 650XT Adventure' the official name. The manufacturer is consistent, and the displacement and configuration match exactly.",
+  "canonical_model_alias": "V-Strom 650XT Adventure",
+  "configuration_tokens": [],
+  "brand_aliases": [],
+  "model_aliases": [
+    "V-Strom 650XT Adventure"
+  ],
+  "status": "SUCCESS",
+  "prompt_version": "motorcycle-candidate-resolution-v4",
+  "model": "qwen-flash",
+  "make": "Suzuki",
+  "model_name": "DL650A V-Strom 650XT Adventure"
+}

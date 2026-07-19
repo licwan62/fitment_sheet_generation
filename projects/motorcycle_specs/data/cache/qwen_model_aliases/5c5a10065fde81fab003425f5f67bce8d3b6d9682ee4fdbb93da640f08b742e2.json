@@ -1,0 +1,17 @@
+{
+  "decision": "MATCH",
+  "selected_candidate": "CB 650R",
+  "canonical_model_alias": "CB 650R",
+  "configuration_tokens": [
+    "ABS"
+  ],
+  "brand_aliases": [],
+  "model_aliases": [
+    "CB 650R"
+  ],
+  "status": "SUCCESS",
+  "prompt_version": "motorcycle-candidate-resolution-v3",
+  "model": "qwen-flash",
+  "make": "Honda",
+  "model_name": "CB650R ABS"
+}

@@ -1,0 +1,16 @@
+{
+  "decision": "INFER|UNKNOWN",
+  "confidence": "LOW",
+  "length_mm": null,
+  "width_mm": null,
+  "height_mm": null,
+  "wheelbase_mm": null,
+  "seat_height_mm": null,
+  "ground_clearance_mm": null,
+  "explanation": "The Honda NH125 Aero is not a widely documented or officially recognized model in Honda's public catalog. Without confirmed specifications or a reliable source, dimensions cannot be reliably inferred. The model name may be confused with similar Honda models like the NH series or other 125cc scooters. Due to uncertainty in model identity and potential variation by market/year, all dimensions are marked as unknown.",
+  "status": "SUCCESS",
+  "prompt_version": "motorcycle-dimension-inference-v1",
+  "model": "qwen-flash",
+  "make": "Honda",
+  "model_name": "NH125 Aero"
+}

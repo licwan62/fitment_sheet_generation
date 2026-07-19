@@ -1,0 +1,18 @@
+{
+  "decision": "MATCH",
+  "selected_candidate": "998S Bayliss Replica",
+  "confidence": "HIGH",
+  "match_basis": "MARKET_ALIAS",
+  "explanation": "The '998S Bayliss' is a limited edition model named after rider Troy Bayliss, and '998S Bayliss Replica' is the official catalog title for the same model. The term 'Replica' is a common suffix used in Ducati's naming for special editions, making it a market or marketing alias for the same underlying motorcycle.",
+  "canonical_model_alias": "998S Bayliss Replica",
+  "configuration_tokens": [],
+  "brand_aliases": [],
+  "model_aliases": [
+    "998S Bayliss Replica"
+  ],
+  "status": "SUCCESS",
+  "prompt_version": "motorcycle-candidate-resolution-v4",
+  "model": "qwen-flash",
+  "make": "Ducati",
+  "model_name": "998S Bayliss"
+}

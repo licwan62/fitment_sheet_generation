@@ -1,0 +1,20 @@
+{
+  "decision": "MATCH",
+  "selected_candidate": "GV 1200GLF Madura",
+  "confidence": "HIGH",
+  "match_basis": "MARKET_ALIAS",
+  "explanation": "The 'GV1200 Madura' is a known market designation for the Suzuki GV 1200GLF Madura, with 'GLF' denoting a specific configuration (Genuine Luxury Frame) and regional marketing. The model is identical in platform, engine, and specifications despite the variation in naming.",
+  "canonical_model_alias": "GV 1200GLF Madura",
+  "configuration_tokens": [
+    "GLF"
+  ],
+  "brand_aliases": [],
+  "model_aliases": [
+    "GV 1200GLF Madura"
+  ],
+  "status": "SUCCESS",
+  "prompt_version": "motorcycle-candidate-resolution-v4",
+  "model": "qwen-flash",
+  "make": "Suzuki",
+  "model_name": "GV1200 Madura"
+}

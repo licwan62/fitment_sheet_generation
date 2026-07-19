@@ -1,0 +1,20 @@
+{
+  "decision": "MATCH",
+  "selected_candidate": "Honda CTX700D",
+  "confidence": "HIGH",
+  "match_basis": "MARKET_ALIAS",
+  "explanation": "CTX700ND is a variant of the CTX700D marketed in certain regions with 'N' denoting a specific configuration or market designation. The core model identity remains unchanged, and 'ND' is a known regional or configuration suffix for the CTX700D.",
+  "canonical_model_alias": "CTX700D",
+  "configuration_tokens": [
+    "ND"
+  ],
+  "brand_aliases": [],
+  "model_aliases": [
+    "CTX700D"
+  ],
+  "status": "SUCCESS",
+  "prompt_version": "motorcycle-candidate-resolution-v4",
+  "model": "qwen-flash",
+  "make": "Honda",
+  "model_name": "CTX700ND"
+}

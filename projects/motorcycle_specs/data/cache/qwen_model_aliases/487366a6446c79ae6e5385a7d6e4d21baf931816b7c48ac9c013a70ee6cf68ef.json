@@ -1,0 +1,20 @@
+{
+  "decision": "MATCH",
+  "selected_candidate": "Honda CTX1300 Deluxe",
+  "confidence": "HIGH",
+  "match_basis": "MARKET_ALIAS",
+  "explanation": "'CTX1300D Deluxe' uses 'D' as a market or configuration designation (commonly used in European and Japanese markets for deluxe variants), which aligns with 'Deluxe' in the catalog candidate. The core model CTX1300 is identical across all entries, and 'DLX' is a known abbreviation for 'Deluxe'. The displacement and platform are unchanged.",
+  "canonical_model_alias": "CTX1300 Deluxe",
+  "configuration_tokens": [
+    "Deluxe"
+  ],
+  "brand_aliases": [],
+  "model_aliases": [
+    "CTX1300 Deluxe"
+  ],
+  "status": "SUCCESS",
+  "prompt_version": "motorcycle-candidate-resolution-v4",
+  "model": "qwen-flash",
+  "make": "Honda",
+  "model_name": "CTX1300D Deluxe"
+}

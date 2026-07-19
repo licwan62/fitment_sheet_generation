@@ -1,0 +1,17 @@
+{
+  "decision": "MATCH",
+  "selected_candidate": "R 18 Classic \n\t\tFirst Edition",
+  "canonical_model_alias": "R 18 Classic First Edition",
+  "configuration_tokens": [
+    "First Edition"
+  ],
+  "brand_aliases": [],
+  "model_aliases": [
+    "R 18 Classic First Edition"
+  ],
+  "status": "SUCCESS",
+  "prompt_version": "motorcycle-candidate-resolution-v3",
+  "model": "qwen-flash",
+  "make": "BMW",
+  "model_name": "R 18 First Edition"
+}

@@ -1,0 +1,16 @@
+{
+  "decision": "INFER|UNKNOWN",
+  "confidence": "LOW",
+  "length_mm": null,
+  "width_mm": null,
+  "height_mm": null,
+  "wheelbase_mm": null,
+  "seat_height_mm": null,
+  "ground_clearance_mm": null,
+  "explanation": "No reliable catalog or technical data available for the American IronHorse Ranger model. Dimensions vary significantly across years and markets, and no consistent reference exists to support accurate inference. Model identity is uncertain without additional context.",
+  "status": "SUCCESS",
+  "prompt_version": "motorcycle-dimension-inference-v1",
+  "model": "qwen-flash",
+  "make": "American IronHorse",
+  "model_name": "Ranger"
+}

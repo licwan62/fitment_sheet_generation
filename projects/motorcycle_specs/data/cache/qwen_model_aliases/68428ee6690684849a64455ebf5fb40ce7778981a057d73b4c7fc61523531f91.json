@@ -1,0 +1,16 @@
+{
+  "decision": "NO_MATCH",
+  "selected_candidate": "",
+  "confidence": "HIGH",
+  "match_basis": "NONE",
+  "explanation": "The input 'CARGO 150' does not correspond to any of the catalog candidates. The Honda CARGO 150 is a scooter model, while all listed candidates are motorcycle models (CRF 150F, CBR 150R, PCX150), with different configurations and purposes. None are known market names, historical aliases, or typographical variants of the CARGO 150.",
+  "canonical_model_alias": "",
+  "configuration_tokens": [],
+  "brand_aliases": [],
+  "model_aliases": [],
+  "status": "SUCCESS",
+  "prompt_version": "motorcycle-candidate-resolution-v4",
+  "model": "qwen-flash",
+  "make": "Honda",
+  "model_name": "CARGO 150"
+}

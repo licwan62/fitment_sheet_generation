@@ -1,0 +1,18 @@
+{
+  "decision": "MATCH",
+  "selected_candidate": "gasgas mc 50",
+  "confidence": "HIGH",
+  "match_basis": "MARKET_ALIAS",
+  "explanation": "'SM 50' and 'gasgas mc 50' refer to the same motorcycle model, with 'MC' being a common market designation for motocross models in Gas Gas catalogs; the displacement (50cc) matches exactly, and no other candidate shares this exact displacement or model lineage.",
+  "canonical_model_alias": "gasgas mc 50",
+  "configuration_tokens": [],
+  "brand_aliases": [],
+  "model_aliases": [
+    "gasgas mc 50"
+  ],
+  "status": "SUCCESS",
+  "prompt_version": "motorcycle-candidate-resolution-v4",
+  "model": "qwen-flash",
+  "make": "Gas Gas",
+  "model_name": "SM 50"
+}

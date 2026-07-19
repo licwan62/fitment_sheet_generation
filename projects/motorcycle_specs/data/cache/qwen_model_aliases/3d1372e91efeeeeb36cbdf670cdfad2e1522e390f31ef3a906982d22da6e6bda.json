@@ -1,0 +1,21 @@
+{
+  "decision": "MATCH",
+  "selected_candidate": "gasgas txt 250 pro replica",
+  "confidence": "HIGH",
+  "match_basis": "SAME_NAME",
+  "explanation": "The input model 'TXT Pro 250 Replica Factory' is a variant of the 'TXT 250 Pro Replica' model, with 'Factory' being a configuration or edition label that does not change the core model identity. The catalog candidate 'gasgas txt 250 pro replica' matches the base model exactly and is the canonical expression for this motorcycle.",
+  "canonical_model_alias": "txt 250 pro replica",
+  "configuration_tokens": [
+    "Factory"
+  ],
+  "brand_aliases": [],
+  "model_aliases": [
+    "gasgas txt 250 pro replica",
+    "txt 250 pro replica"
+  ],
+  "status": "SUCCESS",
+  "prompt_version": "motorcycle-candidate-resolution-v4",
+  "model": "qwen-flash",
+  "make": "Gas Gas",
+  "model_name": "TXT Pro 250 Replica Factory"
+}

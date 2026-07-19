@@ -1,0 +1,19 @@
+{
+  "decision": "MATCH",
+  "selected_candidate": "gasgas halley 450 sm",
+  "confidence": "HIGH",
+  "match_basis": "SAME_NAME",
+  "explanation": "The input 'SM Halley 450' is a direct match in meaning and structure to the catalog candidate 'gasgas halley 450 sm', with only minor casing and word order differences. The model identity, displacement, and configuration are identical.",
+  "canonical_model_alias": "halley 450 sm",
+  "configuration_tokens": [],
+  "brand_aliases": [],
+  "model_aliases": [
+    "gasgas halley 450 sm",
+    "halley 450 sm"
+  ],
+  "status": "SUCCESS",
+  "prompt_version": "motorcycle-candidate-resolution-v4",
+  "model": "qwen-flash",
+  "make": "Gas Gas",
+  "model_name": "SM Halley 450"
+}

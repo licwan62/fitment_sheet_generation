@@ -17,6 +17,16 @@ CREATE TABLE IF NOT EXISTS errors (id INTEGER PRIMARY KEY AUTOINCREMENT, phase T
 """
 
 
+def clear_checkpoint(path: Path) -> list[Path]:
+    """Remove the SQLite checkpoint and any SQLite sidecar files."""
+    removed = []
+    for target in (path, Path(f"{path}-wal"), Path(f"{path}-shm")):
+        if target.exists():
+            target.unlink()
+            removed.append(target)
+    return removed
+
+
 class StateDB:
     def __init__(self, path: Path):
         path.parent.mkdir(parents=True, exist_ok=True)
@@ -65,6 +75,12 @@ class StateDB:
 
     def parsed(self, input_id: str, url: str) -> bool:
         return self.conn.execute("SELECT 1 FROM dimension_results WHERE input_id=? AND url=?", (input_id, url)).fetchone() is not None
+
+    def clear_input_candidates(self, input_id: str, commit: bool = True) -> None:
+        """Remove stale candidates before replacing one input's checkpoint result."""
+        self.conn.execute("DELETE FROM candidate_pages WHERE input_id=?", (input_id,))
+        if commit:
+            self.conn.commit()
 
     def error(self, phase: str, message: str, created_at: str, input_id: str = "", url: str = "") -> None:
         self.conn.execute("INSERT INTO errors(phase,input_id,url,message,created_at) VALUES(?,?,?,?,?)", (phase,input_id,url,message,created_at))

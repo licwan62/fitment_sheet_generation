@@ -1,0 +1,17 @@
+{
+  "decision": "MATCH",
+  "selected_candidate": "G 310GS 40 Years Edition",
+  "canonical_model_alias": "G 310GS",
+  "configuration_tokens": [
+    "40 Years Edition"
+  ],
+  "brand_aliases": [],
+  "model_aliases": [
+    "G 310GS 40 Years Edition"
+  ],
+  "status": "SUCCESS",
+  "prompt_version": "motorcycle-candidate-resolution-v3",
+  "model": "qwen-flash",
+  "make": "BMW",
+  "model_name": "G310GS 40 Years GS Edition"
+}

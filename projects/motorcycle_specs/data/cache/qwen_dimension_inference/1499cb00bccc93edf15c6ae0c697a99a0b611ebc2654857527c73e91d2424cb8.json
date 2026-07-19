@@ -1,0 +1,16 @@
+{
+  "decision": "INFER|UNKNOWN",
+  "confidence": "LOW",
+  "length_mm": null,
+  "width_mm": null,
+  "height_mm": null,
+  "wheelbase_mm": null,
+  "seat_height_mm": null,
+  "ground_clearance_mm": null,
+  "explanation": "No publicly available catalog or verified specifications for the Big Bear Choppers Athena Chopper V111 EFI. Model identity and dimensional details are uncertain due to lack of reliable sources. Dimensions may vary by year, market, or custom build. Inference not feasible with confidence.",
+  "status": "SUCCESS",
+  "prompt_version": "motorcycle-dimension-inference-v1",
+  "model": "qwen-flash",
+  "make": "Big Bear Choppers",
+  "model_name": "Athena Chopper V111 EFI"
+}

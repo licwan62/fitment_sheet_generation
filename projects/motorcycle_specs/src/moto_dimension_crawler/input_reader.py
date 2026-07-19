@@ -35,12 +35,14 @@ def read_input(path: Path, cfg: dict, sheet: str | None = None, start_row: int =
             raise ValueError(f"Missing input column: {kind}")
         return None
     make_col, model_col, type_col = find("make"), find("model"), find("vehicle_type", False)
+    input_id_col = find("input_id", False)
     start = max(0, start_row - 1)
     selected = df.iloc[start : start + limit if limit else None]
     records: list[InputRecord] = []
     for pos, (_, row) in enumerate(selected.iterrows(), start=start + 1):
         make, model = str(row[make_col]).strip(), str(row[model_col]).strip()
-        rec = InputRecord(f"{pos:06d}", make, model, str(row[type_col]).strip() if type_col else "")
+        supplied_input_id = str(row[input_id_col]).strip() if input_id_col else ""
+        rec = InputRecord(supplied_input_id or f"{pos:06d}", make, model, str(row[type_col]).strip() if type_col else "")
         rec.make_normalized = normalize_name(make)
         rec.model_normalized = normalize_name(model)
         rec.model_compact = compact_name(model)

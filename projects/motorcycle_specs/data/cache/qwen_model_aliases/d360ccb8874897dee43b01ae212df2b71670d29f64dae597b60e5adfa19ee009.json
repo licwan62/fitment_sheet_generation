@@ -1,0 +1,18 @@
+{
+  "decision": "MATCH",
+  "selected_candidate": "PS 50 \n\t\tRuckus",
+  "confidence": "HIGH",
+  "match_basis": "MARKET_ALIAS",
+  "explanation": "The Honda NPS50 Ruckus is a known market-specific name for the PS50 Ruckus, with 'NPS50' being the model code used in some regions and 'PS50' the standard catalog designation. The Ruckus name is consistent across both, confirming they are the same motorcycle model.",
+  "canonical_model_alias": "PS 50 Ruckus",
+  "configuration_tokens": [],
+  "brand_aliases": [],
+  "model_aliases": [
+    "PS 50 Ruckus"
+  ],
+  "status": "SUCCESS",
+  "prompt_version": "motorcycle-candidate-resolution-v4",
+  "model": "qwen-flash",
+  "make": "Honda",
+  "model_name": "NPS50 Ruckus"
+}

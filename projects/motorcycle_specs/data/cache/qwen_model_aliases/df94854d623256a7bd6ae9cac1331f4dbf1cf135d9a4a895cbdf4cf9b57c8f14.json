@@ -1,0 +1,18 @@
+{
+  "decision": "MATCH",
+  "selected_candidate": "F 650GS",
+  "confidence": "HIGH",
+  "match_basis": "MARKET_ALIAS",
+  "explanation": "The input 'F650' refers to the same underlying motorcycle model as the catalog candidate 'F 650GS', which is a well-known market and model designation for BMW's F650 series. The 'GS' suffix denotes the adventure/enduro variant, but the core model identity (F650) is preserved. This is a recognized market naming convention where 'F650' is used informally to refer to the F 650 GS.",
+  "canonical_model_alias": "F 650GS",
+  "configuration_tokens": [],
+  "brand_aliases": [],
+  "model_aliases": [
+    "F 650GS"
+  ],
+  "status": "SUCCESS",
+  "prompt_version": "motorcycle-candidate-resolution-v4",
+  "model": "qwen-flash",
+  "make": "BMW",
+  "model_name": "F650"
+}

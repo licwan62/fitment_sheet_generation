@@ -1,0 +1,20 @@
+{
+  "decision": "MATCH",
+  "selected_candidate": "T 305 Raider",
+  "confidence": "HIGH",
+  "match_basis": "MARKET_ALIAS",
+  "explanation": "The Suzuki T305 is a known model, and 'T 305 Raider' is a market-specific or configurational name for the same motorcycle, commonly used in certain regions or catalogs. The core model identity (T305) is preserved, with 'Raider' indicating a styling or configuration variant, not a different underlying model.",
+  "canonical_model_alias": "T 305 Raider",
+  "configuration_tokens": [
+    "Raider"
+  ],
+  "brand_aliases": [],
+  "model_aliases": [
+    "T 305 Raider"
+  ],
+  "status": "SUCCESS",
+  "prompt_version": "motorcycle-candidate-resolution-v4",
+  "model": "qwen-flash",
+  "make": "Suzuki",
+  "model_name": "T305"
+}

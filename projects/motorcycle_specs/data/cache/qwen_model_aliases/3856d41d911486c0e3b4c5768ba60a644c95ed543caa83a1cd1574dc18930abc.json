@@ -1,0 +1,18 @@
+{
+  "decision": "MATCH",
+  "selected_candidate": "Tuono V4 1100 Factory",
+  "confidence": "HIGH",
+  "match_basis": "MARKET_ALIAS",
+  "explanation": "The 'Tuono V4 Factory' is a known market-specific name for the Tuono V4 1100 Factory model, with 'Factory' denoting the high-performance variant. The candidate 'Tuono V4 1100 Factory' matches the underlying motorcycle identity, including displacement and configuration, despite the absence of 'R' in the input. The 'R' in other candidates refers to a different trim level (e.g., Tuono V4 R), but the 'Factory' designation aligns with the 1100cc version.",
+  "canonical_model_alias": "Tuono V4 1100 Factory",
+  "configuration_tokens": [
+    "Factory"
+  ],
+  "brand_aliases": [],
+  "model_aliases": [],
+  "status": "SUCCESS",
+  "prompt_version": "motorcycle-candidate-resolution-v4",
+  "model": "qwen-flash",
+  "make": "Aprilia",
+  "model_name": "Tuono V4 Factory"
+}

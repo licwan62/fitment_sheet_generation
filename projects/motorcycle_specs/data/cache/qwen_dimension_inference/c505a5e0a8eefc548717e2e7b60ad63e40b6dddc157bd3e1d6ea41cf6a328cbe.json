@@ -1,0 +1,16 @@
+{
+  "decision": "INFER|UNKNOWN",
+  "confidence": "LOW",
+  "length_mm": null,
+  "width_mm": null,
+  "height_mm": null,
+  "wheelbase_mm": null,
+  "seat_height_mm": null,
+  "ground_clearance_mm": null,
+  "explanation": "The Gas Gas XC 300 Racing is a specialized off-road motorcycle model, but its exact dimensions are not consistently documented across all markets and model years. Without access to official specifications or verified catalog data, precise measurements cannot be reliably determined. Inferred dimensions from similar models may vary significantly due to design updates or regional variations. Therefore, the decision is marked as UNKNOWN with low confidence.",
+  "status": "SUCCESS",
+  "prompt_version": "motorcycle-dimension-inference-v1",
+  "model": "qwen-flash",
+  "make": "Gas Gas",
+  "model_name": "XC 300 Racing"
+}

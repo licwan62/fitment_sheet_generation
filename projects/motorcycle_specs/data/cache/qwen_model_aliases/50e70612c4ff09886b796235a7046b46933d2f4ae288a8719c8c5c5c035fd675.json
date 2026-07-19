@@ -1,0 +1,20 @@
+{
+  "decision": "MATCH",
+  "selected_candidate": "Road King Screaming Eagle CVO FLHR-SE2",
+  "confidence": "HIGH",
+  "match_basis": "SAME_NAME",
+  "explanation": "The input 'FLHRSEI2 Screamin Eagle Road King 2' refers to the same model as 'Road King Screaming Eagle CVO FLHR-SE2', with identical displacement, engine type, and configuration. The naming variations are due to marketing phrasing and minor suffix formatting differences (e.g., SEI2 vs SE2), but both identify the exact same motorcycle model in the Harley-Davidson catalog.",
+  "canonical_model_alias": "Road King Screaming Eagle CVO FLHR-SE2",
+  "configuration_tokens": [
+    "SE2"
+  ],
+  "brand_aliases": [],
+  "model_aliases": [
+    "Road King Screaming Eagle CVO FLHR-SE2"
+  ],
+  "status": "SUCCESS",
+  "prompt_version": "motorcycle-candidate-resolution-v4",
+  "model": "qwen-flash",
+  "make": "Harley-Davidson",
+  "model_name": "FLHRSEI2 Screamin Eagle Road King 2"
+}

@@ -1,0 +1,19 @@
+{
+  "decision": "MATCH",
+  "selected_candidate": "gasgas txt boy 50",
+  "confidence": "HIGH",
+  "match_basis": "MARKET_ALIAS",
+  "explanation": "The 'Contact 50' is a market-specific name for the same model as 'txt boy 50', which was marketed in certain regions as a youth-oriented version of the Contact series. The displacement (50) and core model identity align exactly.",
+  "canonical_model_alias": "txt boy 50",
+  "configuration_tokens": [],
+  "brand_aliases": [],
+  "model_aliases": [
+    "gasgas txt boy 50",
+    "txt boy 50"
+  ],
+  "status": "SUCCESS",
+  "prompt_version": "motorcycle-candidate-resolution-v4",
+  "model": "qwen-flash",
+  "make": "Gas Gas",
+  "model_name": "Contact 50"
+}

@@ -1,0 +1,20 @@
+{
+  "decision": "MATCH",
+  "selected_candidate": "Boulevard C90 B.O.S.S.",
+  "confidence": "HIGH",
+  "match_basis": "MARKET_ALIAS",
+  "explanation": "The input 'C90B Boulevard' refers to the Suzuki Boulevard C90 with a B.O.S.S. (Boulevard Optimized for Speed and Style) configuration, which is a known market-specific branding variant. The catalog candidate 'Boulevard C90 B.O.S.S.' is the official title for this model in certain markets, confirming it as a valid alias.",
+  "canonical_model_alias": "Boulevard C90 B.O.S.S.",
+  "configuration_tokens": [
+    "B.O.S.S."
+  ],
+  "brand_aliases": [],
+  "model_aliases": [
+    "Boulevard C90 B.O.S.S."
+  ],
+  "status": "SUCCESS",
+  "prompt_version": "motorcycle-candidate-resolution-v4",
+  "model": "qwen-flash",
+  "make": "Suzuki",
+  "model_name": "C90B Boulevard"
+}

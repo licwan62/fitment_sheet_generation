@@ -1,0 +1,16 @@
+{
+  "decision": "MATCH",
+  "selected_candidate": "Frontera 250",
+  "confidence": "HIGH",
+  "match_basis": "SAME_NAME",
+  "explanation": "The input model 'Frontera 250' exactly matches the catalog candidate 'Frontera 250', despite the presence of an additional '380' that appears to be a catalog or batch identifier, not part of the model name. The core model identity is unchanged.",
+  "canonical_model_alias": "Frontera 250",
+  "configuration_tokens": [],
+  "brand_aliases": [],
+  "model_aliases": [],
+  "status": "SUCCESS",
+  "prompt_version": "motorcycle-candidate-resolution-v4",
+  "model": "qwen-flash",
+  "make": "Bultaco",
+  "model_name": "Frontera 250"
+}

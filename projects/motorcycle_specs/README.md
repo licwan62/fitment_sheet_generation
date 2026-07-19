@@ -8,7 +8,9 @@
 
 这两项配置只解决页面发现和名称匹配，不会补造页面没有提供的尺寸。缺少整体高度时，`H-MM` 保持为空，`PARSE_STATUS` 为 `PARTIAL`。
 
-这是一个面向 `https://www.motorcyclespecs.co.za/` 的定向采集子项目。它按输入品牌/车型建立站内目录索引，保留同车型不同年份页面，提取长、宽、高及辅助尺寸，并输出可追溯的 CSV、Excel、SQLite 状态和运行报告。它不是整站镜像工具；匹配失败时不会自动采用“最相似”页面。
+这是一个多来源定向采集子项目。默认来源顺序为 MotorcycleSpecs、1000PS、BikeDekho、Bikez。它按输入品牌/车型建立站内目录索引，保留同车型不同年份页面，提取长、宽、高及辅助尺寸，并输出可追溯的 CSV、Excel、SQLite 状态和运行报告。它不是整站镜像工具；匹配失败时不会自动采用“最相似”页面。
+
+来源优先级配置在 `config/config.yaml` 的 `sources`。程序保留所有来源的可信候选，先比较尺寸完整度，再以 `priority`（数值越小越优先）决定同等数据的采用顺序：原来源数据完整时继续使用原来源；缺少长宽高时依次采用 1000PS、BikeDekho、Bikez。输出会保留数据来源和页面 URL，便于追溯。
 
 ## 安装
 
@@ -77,7 +79,8 @@ python -m moto_dimension_crawler run --help
 | `--output PATH` | 否 | `output/` | CSV、Excel 和运行报告输出目录。 |
 | `--config PATH` | 否 | `config/config.yaml` | 主配置文件路径。别名文件从该文件所在目录读取。 |
 | `--sheet NAME` | 否 | 第一个工作表 | Excel 工作表名称；CSV/TSV 忽略。 |
-| `--resume / --no-resume` | 否 | `--resume` | 使用现有索引、缓存和 SQLite 进度；`--no-resume` 重新建立本次流程状态。 |
+| `--resume / --no-resume` | 否 | `--resume` | 使用现有索引、缓存、SQLite 进度和上次成功导出；checkpoint 中品牌/车型一致且已有可信匹配的输入会立即 `SKIP` 匹配和 Qwen。已有尺寸结果时直接恢复，尚未抓取时只继续抓取/解析。重跑 MISS 子集时替换这些输入的旧行，并保留未重跑的 OK 行。`--no-resume` 不合并旧输出。 |
+| `--clear-checkpoint` | 否 | 关闭 | 运行前删除 `data/checkpoints/state.sqlite3` 及 SQLite 辅助文件；保留页面缓存和网站索引。 |
 | `--force-refetch` | 否 | 关闭 | 忽略已有 HTML 缓存并重新请求页面。会增加站点访问量。 |
 | `--force-reparse` | 否 | 关闭 | 重新解析页面；仍优先读取本地 HTML 缓存。解析规则修改后使用。 |
 | `--limit N` | 否 | 全部 | 从起始位置最多处理 N 条，适合小批量验证。 |
@@ -92,6 +95,8 @@ python -m moto_dimension_crawler run --help
 
 - 正常首次运行：使用 `--resume`，无需指定强制参数。
 - 中断后继续：保持输入文件和行顺序不变，再次使用相同命令及 `--resume`。
+- 只重跑之前的 MISS：输入文件可以只包含待重试行并继续写入同一 `--output`，但必须保留原 `INPUT_ID` 列；新结果按 `INPUT_ID` 覆盖旧 MISS，其他已成功行会从 `logs/run_details.jsonl` 合并保留。若不提供 `INPUT_ID`，请使用原始完整输入以及 `--start-row`/`--limit`，以保持原行号 ID。
+- 彻底丢弃 SQLite 解析进度并从缓存重新处理：增加 `--clear-checkpoint`；该 checkpoint 为项目级，会清除其他输入任务共用的进度。
 - 修改了解析代码：添加 `--force-reparse`，避免重新下载网页。
 - 怀疑缓存网页已过期：同时添加 `--force-refetch --force-reparse`。
 - 先验证数据格式和匹配效果：使用 `--limit 10` 或 `--limit 50`。
@@ -168,6 +173,34 @@ python -m moto_dimension_crawler run `
 
 品牌和市场别名分别维护在 `config/brand_aliases.yaml`、`config/model_aliases.yaml`。普通空格、连字符和字母数字边界差异无需配置；只为真实市场名、历史名或特殊别名增加条目。
 
+### 使用 Qwen 生成车型口径词
+
+可选的 `qwen_aliases` 功能会为每条输入判断网站候选是否属于同一底层车型，并识别跨市场名称、历史营销名、简称、音译和合理输入错误。AI 复核候选会按来源轮询选取，覆盖所有已启用来源，避免被单个大型目录占满。AI 选中候选后，其网站车型名会作为别名重新进入本地匹配和抓取流程；品牌与排量等关键数字约束仍然保留。判断置信度、依据和简短说明写入 `generated_aliases.json`，生成结果缓存在 `data/cache/qwen_model_aliases/`，并同步写入 `logs/run_details.jsonl`。
+
+先设置 API Key：
+
+```powershell
+$env:QWEN_API_KEY = "你的 Qwen API Key"
+```
+
+也可以不预设环境变量：当 Qwen 已启用且找不到 `api_key_env` 指定的变量时，`run`、`match`、`fetch`、`parse`、`summarize` 或 `export` 会在 PowerShell 中遮蔽输入并询问 API Key。程序会先用一次最小请求验证 Key 和模型，验证成功后才继续；失败时允许重新输入，最多三次。密钥只保留在本次 Python 进程中，不写入配置、输出或日志；`build-index` 不需要密钥，因此不会询问。
+
+然后在 `config/config.yaml` 中设置：
+
+```yaml
+qwen_aliases:
+  enabled: true
+  base_url: "https://dashscope.aliyuncs.com/compatible-mode/v1"
+  model: "qwen-flash"
+  max_aliases: 12
+  max_candidates: 8
+  failure_cache_seconds: 3600
+```
+
+不同地域或第三方兼容服务可修改 `base_url` 和 `model`；不要把 API Key 写入 YAML 或提交到版本库。接口失败时程序记录警告并回退到原有确定性匹配。`config/brand_aliases.yaml` 和 `config/model_aliases.yaml` 仅作为可选离线兜底，不要求日常维护；启用 Qwen 后，每次实际生成并采用的品牌、车型口径词以 `generated_aliases.json` 为准。
+
+匹配采用三级策略：先执行本地严格匹配；没有可信结果时，从所有启用来源的本地索引按品牌、数字型号和模糊相似度建立来源均衡的候选池交给 Qwen；所有来源仍无可信页面时，若 `infer_dimensions_when_missing: true`，允许 Qwen 给出长宽高等推断值。推断结果使用 `DATA_SOURCE=QWEN_INFERENCE`、`MATCH_STATUS=INFERRED`、`CONFIDENCE=LOW`，没有来源 URL，并始终写入人工复核，绝不伪装为网站实证数据。推断缓存位于 `data/cache/qwen_dimension_inference/`。超时或接口错误会缓存 `failure_cache_seconds` 秒，期间重跑不会再次等待同一失败请求。
+
 ## 尺寸解析与校验
 
 解析器按字段语义读取表格、定义列表和普通文本，支持：单值、范围、`L x W x H`、公制与英制。标准单位为毫米：`1 cm = 10 mm`、`1 in = 25.4 mm`。换算值保留一位小数，不人为凑整。范围同时写入 MIN/MAX；兼容单值字段 `L-MM`、`W-MM`、`H-MM` 使用 MAX。原始文本保存在 `L_RAW`、`W_RAW`、`H_RAW`、`UNIT_RAW`、`DIMENSION_RAW`。
@@ -178,25 +211,30 @@ python -m moto_dimension_crawler run `
 
 ## 缓存、断点续传与访问纪律
 
-成功 HTML 和 JSON 元数据按 URL 的 SHA-256 分别写入 `data/cache/html`、`data/cache/metadata`；状态即时写入 `data/checkpoints/state.sqlite3`。默认 `--resume`：有效缓存不重新下载，已解析的输入/URL 对不重复解析。`--force-reparse` 只重解析缓存；`--force-refetch` 才重新访问页面。
+成功 HTML 和 JSON 元数据按 URL 的 SHA-256 分别写入 `data/cache/html`、`data/cache/metadata`；每条输入完成匹配后立即提交到 `data/checkpoints/state.sqlite3`，无需等整个批次结束。默认 `--resume`：可信匹配在候选计算前直接恢复，终端显示 `checkpoint=MATCH_OK`；尺寸也已完成时显示 `checkpoint=OK`。`--force-reparse` 或 `--force-refetch` 会禁用整条跳过，分别重新解析缓存或重新访问页面。
 
-程序读取并遵守 `robots.txt`，默认单并发、请求间隔 2–5 秒，最多允许并发 2。只对 429、500、502、503、504 和临时网络错误退避重试；不绕过验证码、登录或访问限制，不下载图片和视频。请在正式运行前把 `site.user_agent` 改为带真实联系方式的标识。
+程序分别读取并遵守每个来源的 `robots.txt`，默认单并发、请求间隔 2–5 秒，最多允许并发 2。只对 429、500、502、503、504 和临时网络错误退避重试；不绕过验证码、登录或访问限制，不下载图片和视频。请在正式运行前把 `site.user_agent` 改为带真实联系方式的标识。
 
 常见故障：持续 403/429 时停止任务并稍后恢复；网络失败会成为 `FETCH_FAILED`；站点结构变化导致尺寸区无法识别时进入 `PARSE_FAILED`/`NO_DIMENSION`；编码或字段错误会在输入阶段明确报错。详细日志见 `logs/crawler.log` 和 `logs/errors.log`。
+
+正常的 HTTP 200 请求不会逐条输出到终端，但仍保留在 `logs/crawler.log` 中。终端不显示时间戳和模块名，每个输入车型只输出一条聚合结果，例如：`OK   BMW / K1600GT Sport -> K 1600 GT Sport | matches=3`；未匹配时显示 `MISS Honda / CR125M | closest=CR 125 | ai=api-error(cached)`。`matches` 只统计 `EXACT`、`LIKELY` 或 `MULTIPLE` 状态的可信候选页面，`closest` 只是最接近的候选，并非成功匹配。
+
+输入包含尚未建立索引的品牌时，终端会显示 `INDEXING_BRAND=Aprilia, PROGRESS=1/37` 和完成后的页面数量。索引在每个品牌完成后立即保存到 `data/index/pages.json`，品牌清单同步保存到 `data/index/brands.json`；任务中断后重新使用 `--resume` 会从下一个未完成品牌继续，而不是重建已经完成的品牌。
+
+疑难车型的 Qwen 状态合并在该车型的单行结果中；完整候选数量、API 状态和选择结果仍写入 `generated_aliases.json`。抓取阶段继续显示 `FETCH_PROGRESS=1/500`、当前车型、缓存状态及解析状态。
 
 ## 输出
 
 输出目录包含：
 
-- `fitment_dimensions.csv`：与输入一一对应的一行一车型视图，优先展示最佳可信来源的 `L-MM`、`W-MM`、`H-MM`、匹配置信度和来源 URL。
-- `input_normalized.csv`：原始输入与规范化 token。
-- `candidate_pages.csv`：全部候选、评分、状态和发现方式。
-- `dimensions_raw.csv`：每个可信输入/来源页的原始尺寸、毫米值、年份、URL、哈希和状态。
+- `candidate_pages.csv`：输入 `MODEL` 与 `CANDIDATE_TITLE` 的对应关系、URL、评分、置信度和匹配状态。无可信匹配的输入会额外写入 `MATCH_STATUS=NOT_FOUND`；`MATCH_REASON` 仅保留在结构化日志中。
 - `dimensions_summary.csv`：在车型、版本、口径、附件状态一致且尺寸容差内的尺寸组；非连续年份保留为 `YEARS` 列表，不伪造连续范围。
-- `review_needed.csv`：不确定匹配、缺失尺寸、未知年份、抓取/解析失败和异常。
-- `not_found.csv`：完全没有可信候选的输入。
-- 默认只生成 CSV 和 `run_report.json`，不再生成 XLSX。`fitment_dimensions.csv` 用于按原始输入逐行查看可信长宽高；`dimensions_raw.csv` 保留全部可信年份来源。
-- `run_report.json`：数量、缓存、匹配、解析、分组和错误统计。
+- `logs/run_details.jsonl`：逐行 JSON 结构化日志，保存标准化输入、候选诊断（含 `MATCH_REASON`）、原始尺寸、复核项、未找到项及运行统计。
+- `logs/run_report.json`：数量、缓存、匹配、解析、分组和错误统计。
+
+默认只生成上述两个 CSV；设置 `MOTO_EXPORT_XLSX=1` 时，`motorcycle_dimensions.xlsx` 也只包含 `CANDIDATE_PAGES` 和 `DIMENSIONS_SUMMARY` 两个工作表。再次导出到旧目录时，程序会清理此前版本产生的多余 CSV/XLSX，避免把历史文件误认为本次结果。
+
+`candidate_pages.csv` 不输出 `MODEL_MISMATCH` 等低相关候选：存在可信匹配时保留全部可信年份页面；没有可信匹配时最多保留一个最高分 `REVIEW` 候选，并附加 `NOT_FOUND`。所有被过滤的候选评分仍保存在 `logs/run_details.jsonl` 的 `CANDIDATE_DIAGNOSTIC` 记录中。候选评分在本地索引上完成，不会为低相关候选逐页发送 HTTP 请求。
 
 ## 测试与当前样例
 
@@ -212,6 +250,6 @@ python -m pytest -q
 
 - 站点目录的链接标题可能只给车型而不含完整版本，低分候选仍需人工复核。
 - 两位年份只在页面正文能找到明确四位年份时采用，不根据相邻页面推测。
-- 当前不启用外部搜索 API，也不抓取搜索引擎结果；目录未收录的页面可能标记为 `NOT_FOUND`。
+- 当前不抓取通用搜索引擎结果；候选来自所有已启用来源的站点索引。目录仍无可信页面时可输出明确标记、低置信度的 Qwen 推断值，或在模型不确定时继续标记为 `NOT_FOUND`。
 - 多个尺寸组合、同一字段多组公英制冲突的进一步语义消歧仍需人工复核。
 - SQLite 状态库由本子项目共享；正式批次应使用稳定输入顺序，避免在同一状态库中并行启动多个进程。

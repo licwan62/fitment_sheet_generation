@@ -1,0 +1,16 @@
+{
+  "decision": "MATCH",
+  "selected_candidate": "Ducati Supersport S",
+  "confidence": "HIGH",
+  "match_basis": "SAME_NAME",
+  "explanation": "The input 'Super Sport S' is a variant of the same model as 'Ducati Supersport S', with only minor capitalization and spacing differences. The model name 'Supersport S' is the correct canonical form used in Ducati's catalog, and all candidates with 'Supersport S' refer to the same motorcycle. The variation in capitalization and spacing does not indicate a different model.",
+  "canonical_model_alias": "Supersport S",
+  "configuration_tokens": [],
+  "brand_aliases": [],
+  "model_aliases": [],
+  "status": "SUCCESS",
+  "prompt_version": "motorcycle-candidate-resolution-v4",
+  "model": "qwen-flash",
+  "make": "Ducati",
+  "model_name": "Super Sport S"
+}

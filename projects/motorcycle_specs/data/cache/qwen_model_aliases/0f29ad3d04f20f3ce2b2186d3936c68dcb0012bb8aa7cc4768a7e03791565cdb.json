@@ -1,0 +1,18 @@
+{
+  "decision": "MATCH",
+  "selected_candidate": "Honda MB50",
+  "confidence": "HIGH",
+  "match_basis": "MARKET_ALIAS",
+  "explanation": "The 'MR50' is a known market-specific name for the Honda MB50, particularly in certain regions where the model was marketed under the MR designation. The MB50 and MR50 refer to the same underlying motorcycle model with identical specifications and engine displacement.",
+  "canonical_model_alias": "MB50",
+  "configuration_tokens": [],
+  "brand_aliases": [],
+  "model_aliases": [
+    "MB50"
+  ],
+  "status": "SUCCESS",
+  "prompt_version": "motorcycle-candidate-resolution-v4",
+  "model": "qwen-flash",
+  "make": "Honda",
+  "model_name": "MR50"
+}

@@ -1,0 +1,19 @@
+{
+  "decision": "MATCH",
+  "selected_candidate": "gasgas txt 250 contact",
+  "confidence": "HIGH",
+  "match_basis": "MARKET_ALIAS",
+  "explanation": "The 'TXT Edition 250' is a market-specific naming variant of the 'TXT 250 Contact' model, with 'Edition' being a common marketing label for special configurations. Both refer to the same underlying motorcycle model with identical displacement and platform.",
+  "canonical_model_alias": "txt 250 contact",
+  "configuration_tokens": [],
+  "brand_aliases": [],
+  "model_aliases": [
+    "gasgas txt 250 contact",
+    "txt 250 contact"
+  ],
+  "status": "SUCCESS",
+  "prompt_version": "motorcycle-candidate-resolution-v4",
+  "model": "qwen-flash",
+  "make": "Gas Gas",
+  "model_name": "TXT Edition 250"
+}

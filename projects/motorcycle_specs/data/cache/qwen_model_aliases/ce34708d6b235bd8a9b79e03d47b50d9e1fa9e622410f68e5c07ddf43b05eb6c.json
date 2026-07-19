@@ -1,0 +1,16 @@
+{
+  "decision": "NO_MATCH",
+  "selected_candidate": "",
+  "confidence": "HIGH",
+  "match_basis": "NONE",
+  "explanation": "The input model 'Aprilia Scarabeo 250' is not present in the catalog candidates. The only similar candidate is 'Aprilia scarabeo 50', which differs in displacement (50 vs 250). No other candidate matches the Scarabeo 250 in name, displacement, or known aliases. The Scarabeo 250 was a real model, but it is not listed among the provided candidates.",
+  "canonical_model_alias": "",
+  "configuration_tokens": [],
+  "brand_aliases": [],
+  "model_aliases": [],
+  "status": "SUCCESS",
+  "prompt_version": "motorcycle-candidate-resolution-v4",
+  "model": "qwen-flash",
+  "make": "Aprilia",
+  "model_name": "Scarabeo 250"
+}

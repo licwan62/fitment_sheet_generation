@@ -1,0 +1,16 @@
+{
+  "decision": "NO_MATCH",
+  "selected_candidate": "",
+  "confidence": "HIGH",
+  "match_basis": "NONE",
+  "explanation": "The CM450C Custom is a distinct model from the CM 450T. The CM450C is a custom-style motorcycle with a 450cc engine, while the CM 450T is a different variant (typically a touring or standard model) with a different design and intended use. The model numbers differ in suffix (C vs T), and there is no evidence that they represent the same underlying motorcycle. No known market alias, abbreviation, or typo links them.",
+  "canonical_model_alias": "",
+  "configuration_tokens": [],
+  "brand_aliases": [],
+  "model_aliases": [],
+  "status": "SUCCESS",
+  "prompt_version": "motorcycle-candidate-resolution-v4",
+  "model": "qwen-flash",
+  "make": "Honda",
+  "model_name": "CM450C Custom"
+}

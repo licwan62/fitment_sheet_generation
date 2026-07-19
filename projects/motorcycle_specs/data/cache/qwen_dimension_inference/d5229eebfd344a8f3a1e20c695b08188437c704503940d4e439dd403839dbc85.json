@@ -1,0 +1,16 @@
+{
+  "decision": "INFER|UNKNOWN",
+  "confidence": "MEDIUM|LOW",
+  "length_mm": null,
+  "width_mm": null,
+  "height_mm": null,
+  "wheelbase_mm": null,
+  "seat_height_mm": null,
+  "ground_clearance_mm": null,
+  "explanation": "The model identity 'MRT2604F Montesa Cota 4RT260' appears to be a misidentification or non-standard designation. Montesa is a Spanish motorcycle brand, and the Honda MRT2604F does not correspond to any known Honda model. The combination suggests confusion between brands or model codes. Without reliable catalog data or verified specifications for this specific variant, dimensions cannot be reliably inferred. Therefore, all dimensions are marked as unknown.",
+  "status": "SUCCESS",
+  "prompt_version": "motorcycle-dimension-inference-v1",
+  "model": "qwen-flash",
+  "make": "Honda",
+  "model_name": "MRT2604F Montesa Cota 4RT260"
+}

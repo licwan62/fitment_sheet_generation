@@ -1,0 +1,21 @@
+{
+  "decision": "MATCH",
+  "selected_candidate": "RR 350 4T Enduro",
+  "confidence": "HIGH",
+  "match_basis": "MARKET_ALIAS",
+  "explanation": "The 'RR Race 4T 350' is a market-specific naming variant of the same model as 'RR 350 4T Enduro', with 'Race' indicating a performance-oriented configuration in certain markets, while 'Enduro' denotes the intended use. The displacement (350), engine type (4T), and core model (RR) are identical, confirming they represent the same underlying motorcycle.",
+  "canonical_model_alias": "RR 350 4T Enduro",
+  "configuration_tokens": [
+    "Race",
+    "Enduro"
+  ],
+  "brand_aliases": [],
+  "model_aliases": [
+    "RR 350 4T Enduro"
+  ],
+  "status": "SUCCESS",
+  "prompt_version": "motorcycle-candidate-resolution-v4",
+  "model": "qwen-flash",
+  "make": "Beta",
+  "model_name": "RR Race 4T 350"
+}

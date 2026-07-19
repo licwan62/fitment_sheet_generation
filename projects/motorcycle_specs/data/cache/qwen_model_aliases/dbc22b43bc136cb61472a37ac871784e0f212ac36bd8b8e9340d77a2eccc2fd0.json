@@ -1,0 +1,20 @@
+{
+  "decision": "MATCH",
+  "selected_candidate": "CRF 300 L",
+  "confidence": "HIGH",
+  "match_basis": "MARKET_ALIAS",
+  "explanation": "CRF300LS is a market-specific designation (likely for 'Street' or 'Light Sport') of the same underlying model as CRF 300 L. The 'S' suffix is a configuration label for a street-legal variant, not a different model. The base motorcycle identity remains unchanged.",
+  "canonical_model_alias": "CRF 300 L",
+  "configuration_tokens": [
+    "LS"
+  ],
+  "brand_aliases": [],
+  "model_aliases": [
+    "CRF 300 L"
+  ],
+  "status": "SUCCESS",
+  "prompt_version": "motorcycle-candidate-resolution-v4",
+  "model": "qwen-flash",
+  "make": "Honda",
+  "model_name": "CRF300LS"
+}

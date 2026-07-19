@@ -1,0 +1,19 @@
+{
+  "decision": "MATCH",
+  "selected_candidate": "beta rr x pro 2t 125",
+  "confidence": "HIGH",
+  "match_basis": "SAME_NAME",
+  "explanation": "The input model '125 RR X-Pro' matches the catalog candidate 'beta rr x pro 2t 125' in name, displacement (125), engine type (2T), and model series (RR X-Pro). The absence of '2T' in the input is a known omission in common usage, but the full specification confirms identity. No other candidate shares both 125cc displacement and RR X-Pro designation.",
+  "canonical_model_alias": "rr x pro 2t 125",
+  "configuration_tokens": [
+    "2t",
+    "125"
+  ],
+  "brand_aliases": [],
+  "model_aliases": [],
+  "status": "SUCCESS",
+  "prompt_version": "motorcycle-candidate-resolution-v4",
+  "model": "qwen-flash",
+  "make": "Beta",
+  "model_name": "125 RR X-Pro"
+}

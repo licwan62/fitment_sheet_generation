@@ -1,0 +1,16 @@
+{
+  "decision": "MATCH",
+  "selected_candidate": "CB600F",
+  "confidence": "HIGH",
+  "match_basis": "MARKET_ALIAS",
+  "explanation": "The input 'CB600F 599' refers to the Honda CB600F, where '599' is a common approximation of the engine displacement (approximately 599cc), often used in marketing or user references. The model is widely known as the CB600F in official catalogs, and this variation is a recognized market/numerical shorthand for the same motorcycle.",
+  "canonical_model_alias": "CB600F",
+  "configuration_tokens": [],
+  "brand_aliases": [],
+  "model_aliases": [],
+  "status": "SUCCESS",
+  "prompt_version": "motorcycle-candidate-resolution-v4",
+  "model": "qwen-flash",
+  "make": "Honda",
+  "model_name": "CB600F 599"
+}

@@ -1,0 +1,21 @@
+{
+  "decision": "MATCH",
+  "selected_candidate": "R 1200GS LC TE Exclusive",
+  "confidence": "HIGH",
+  "match_basis": "MARKET_ALIAS",
+  "explanation": "The 'R1200GS Exclusive' is a market-specific designation for the R 1200GS LC TE Exclusive model, which includes the same core motorcycle platform, engine (LC), and key features. The 'TE' in the catalog title stands for 'Touring Edition', a known configuration label used in certain markets, while 'Exclusive' is a marketing term applied to high-end variants. The displacement and engine type are identical, and no other model in the list shares this exact identity.",
+  "canonical_model_alias": "R 1200GS LC TE Exclusive",
+  "configuration_tokens": [
+    "TE",
+    "Exclusive"
+  ],
+  "brand_aliases": [],
+  "model_aliases": [
+    "R 1200GS LC TE Exclusive"
+  ],
+  "status": "SUCCESS",
+  "prompt_version": "motorcycle-candidate-resolution-v4",
+  "model": "qwen-flash",
+  "make": "BMW",
+  "model_name": "R1200GS Exclusive"
+}

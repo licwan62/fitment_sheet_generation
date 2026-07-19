@@ -1,0 +1,20 @@
+{
+  "decision": "MATCH",
+  "selected_candidate": "Discover 125 M",
+  "confidence": "HIGH",
+  "match_basis": "MARKET_ALIAS",
+  "explanation": "The 'Discover 125 M' is a known market-specific variant of the Discover 125, with 'M' denoting a configuration or regional specification. It represents the same underlying model as the input 'Discover 125', differing only in a minor suffix used for market differentiation.",
+  "canonical_model_alias": "Discover 125 M",
+  "configuration_tokens": [
+    "M"
+  ],
+  "brand_aliases": [],
+  "model_aliases": [
+    "Discover 125 M"
+  ],
+  "status": "SUCCESS",
+  "prompt_version": "motorcycle-candidate-resolution-v4",
+  "model": "qwen-flash",
+  "make": "Bajaj",
+  "model_name": "Discover 125"
+}

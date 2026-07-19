@@ -1,0 +1,15 @@
+{
+  "decision": "MATCH",
+  "selected_candidate": "CMX \n\t\t1100T Rebel / DCT",
+  "canonical_model_alias": "CMX1100T Rebel / DCT",
+  "configuration_tokens": [],
+  "brand_aliases": [],
+  "model_aliases": [
+    "CMX 1100T Rebel / DCT"
+  ],
+  "status": "SUCCESS",
+  "prompt_version": "motorcycle-candidate-resolution-v3",
+  "model": "qwen-flash",
+  "make": "Honda",
+  "model_name": "CMX1100 Rebel 1100T"
+}

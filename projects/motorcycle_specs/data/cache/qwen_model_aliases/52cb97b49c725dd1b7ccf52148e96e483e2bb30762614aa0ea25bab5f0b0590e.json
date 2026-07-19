@@ -1,0 +1,16 @@
+{
+  "decision": "NO_MATCH",
+  "selected_candidate": "",
+  "confidence": "HIGH",
+  "match_basis": "NONE",
+  "explanation": "The input 'TM100' refers to a Suzuki motorcycle model, but none of the catalog candidates match the TM100 in identity. The RM 100 is a different model (a motocross bike), and other candidates like the V-Strom or GSX-S series are entirely different models with distinct platforms, displacements, and purposes. No known market alias, abbreviation, or typo links 'TM100' to any of the listed candidates.",
+  "canonical_model_alias": "",
+  "configuration_tokens": [],
+  "brand_aliases": [],
+  "model_aliases": [],
+  "status": "SUCCESS",
+  "prompt_version": "motorcycle-candidate-resolution-v4",
+  "model": "qwen-flash",
+  "make": "Suzuki",
+  "model_name": "TM100"
+}

@@ -1,0 +1,16 @@
+{
+  "decision": "INFER|UNKNOWN",
+  "confidence": "MEDIUM|LOW",
+  "length_mm": null,
+  "width_mm": null,
+  "height_mm": null,
+  "wheelbase_mm": null,
+  "seat_height_mm": null,
+  "ground_clearance_mm": null,
+  "explanation": "The Suzuki GSX-R600Z 40th Anniversary model is a limited edition variant with no official catalog documentation available for precise dimensional data. While based on the standard GSX-R600 platform, modifications for the anniversary edition may affect dimensions. Without verified specifications or direct measurements, dimensions cannot be reliably inferred. Model identity and variations by market/year introduce uncertainty, warranting 'UNKNOWN' status.",
+  "status": "SUCCESS",
+  "prompt_version": "motorcycle-dimension-inference-v1",
+  "model": "qwen-flash",
+  "make": "Suzuki",
+  "model_name": "GSX-R600Z 40th Anniversary"
+}

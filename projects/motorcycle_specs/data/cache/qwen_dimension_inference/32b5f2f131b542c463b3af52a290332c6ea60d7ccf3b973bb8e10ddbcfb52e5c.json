@@ -1,0 +1,16 @@
+{
+  "decision": "INFER|UNKNOWN",
+  "confidence": "MEDIUM|LOW",
+  "length_mm": null,
+  "width_mm": null,
+  "height_mm": null,
+  "wheelbase_mm": null,
+  "seat_height_mm": null,
+  "ground_clearance_mm": null,
+  "explanation": "The Beta 520 RR is a motocross motorcycle, but specific dimensions vary significantly across model years and markets. Without access to a catalog page or definitive model-specific data, accurate inference of exact dimensions is not reliable. Known Beta 500/520 models typically have wheelbases around 1,480–1,500 mm, seat heights near 960–980 mm, and overall lengths near 2,200–2,300 mm, but these are approximations. Due to potential variations and lack of confirmed source data, dimensions are marked as unknown.",
+  "status": "SUCCESS",
+  "prompt_version": "motorcycle-dimension-inference-v1",
+  "model": "qwen-flash",
+  "make": "Beta",
+  "model_name": "520 RR"
+}

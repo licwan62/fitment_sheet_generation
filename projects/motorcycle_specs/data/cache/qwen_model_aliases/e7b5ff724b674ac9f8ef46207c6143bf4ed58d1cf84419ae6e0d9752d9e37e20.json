@@ -1,0 +1,21 @@
+{
+  "decision": "MATCH",
+  "selected_candidate": "NT1100",
+  "confidence": "HIGH",
+  "match_basis": "SAME_NAME",
+  "explanation": "The input model 'NT1100 DCT' refers to the same underlying motorcycle as the catalog candidate 'NT1100', with 'DCT' being a configuration (dual-clutch transmission) that does not change the core model identity. The candidate 'NT1100 / Electronic Suspension' is also the same model with additional equipment, but the base model remains NT1100.",
+  "canonical_model_alias": "NT1100",
+  "configuration_tokens": [
+    "DCT",
+    "Electronic Suspension"
+  ],
+  "brand_aliases": [],
+  "model_aliases": [
+    "NT1100"
+  ],
+  "status": "SUCCESS",
+  "prompt_version": "motorcycle-candidate-resolution-v4",
+  "model": "qwen-flash",
+  "make": "Honda",
+  "model_name": "NT1100 DCT"
+}

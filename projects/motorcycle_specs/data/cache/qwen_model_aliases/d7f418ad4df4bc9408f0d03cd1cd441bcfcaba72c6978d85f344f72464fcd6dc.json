@@ -1,0 +1,16 @@
+{
+  "decision": "NO_MATCH",
+  "selected_candidate": "",
+  "confidence": "HIGH",
+  "match_basis": "NONE",
+  "explanation": "The model 'G.T.X. V111 EFI' from Big Bear Choppers does not match any of the catalog candidates provided, and no known market name, historical alias, abbreviation, or plausible typo of this model exists in the candidate list. The manufacturer and model details are specific and not found among the available options.",
+  "canonical_model_alias": "",
+  "configuration_tokens": [],
+  "brand_aliases": [],
+  "model_aliases": [],
+  "status": "SUCCESS",
+  "prompt_version": "motorcycle-candidate-resolution-v4",
+  "model": "qwen-flash",
+  "make": "Big Bear Choppers",
+  "model_name": "G.T.X. V111 EFI"
+}

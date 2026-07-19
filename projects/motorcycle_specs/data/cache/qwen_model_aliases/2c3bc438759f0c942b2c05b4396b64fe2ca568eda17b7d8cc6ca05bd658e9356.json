@@ -1,0 +1,16 @@
+{
+  "decision": "NO_MATCH",
+  "selected_candidate": "",
+  "confidence": "HIGH",
+  "match_basis": "NONE",
+  "explanation": "The input model 'R1200GS HP2' is a specific high-performance variant of the R1200GS, distinguished by its HP2 designation, which denotes a unique configuration with enhanced performance and features. None of the catalog candidates match this exact model, as they are either base models (e.g., 'R 1200GS'), different displacement models (e.g., 'R 1300 GS'), or different model lines (e.g., 'F 900 GS'). The HP2 suffix is not merely a configuration token but a distinct model identifier. Therefore, no candidate matches the input model.",
+  "canonical_model_alias": "",
+  "configuration_tokens": [],
+  "brand_aliases": [],
+  "model_aliases": [],
+  "status": "SUCCESS",
+  "prompt_version": "motorcycle-candidate-resolution-v4",
+  "model": "qwen-flash",
+  "make": "BMW",
+  "model_name": "R1200GS HP2"
+}

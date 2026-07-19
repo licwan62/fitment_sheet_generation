@@ -1,0 +1,18 @@
+{
+  "decision": "MATCH",
+  "selected_candidate": "beta urban 125",
+  "confidence": "HIGH",
+  "match_basis": "MARKET_ALIAS",
+  "explanation": "The 'Techno 125' is a market-specific name for the Beta Urban 125, used in certain regions to denote the same model with similar specifications and design. The Urban 125 is the correct catalog designation and matches the underlying motorcycle identity.",
+  "canonical_model_alias": "urban 125",
+  "configuration_tokens": [],
+  "brand_aliases": [],
+  "model_aliases": [
+    "urban 125"
+  ],
+  "status": "SUCCESS",
+  "prompt_version": "motorcycle-candidate-resolution-v4",
+  "model": "qwen-flash",
+  "make": "Beta",
+  "model_name": "Techno 125"
+}

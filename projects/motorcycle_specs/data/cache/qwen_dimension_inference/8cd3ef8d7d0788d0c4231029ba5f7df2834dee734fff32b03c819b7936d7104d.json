@@ -1,0 +1,16 @@
+{
+  "decision": "UNKNOWN",
+  "confidence": "LOW",
+  "length_mm": null,
+  "width_mm": null,
+  "height_mm": null,
+  "wheelbase_mm": null,
+  "seat_height_mm": null,
+  "ground_clearance_mm": null,
+  "explanation": "Cleveland Model 43 is not a well-documented motorcycle model, and no reliable historical or technical data is available to infer its dimensions. The manufacturer Cleveland is associated with early 20th-century motorcycles, but specific details for the Model 43 are uncertain. Dimensions may vary significantly by year and market, and no definitive source confirms them.",
+  "status": "SUCCESS",
+  "prompt_version": "motorcycle-dimension-inference-v1",
+  "model": "qwen-flash",
+  "make": "Cleveland",
+  "model_name": "Model 43"
+}

@@ -1,0 +1,18 @@
+{
+  "decision": "MATCH",
+  "selected_candidate": "A 100",
+  "confidence": "HIGH",
+  "match_basis": "MARKET_ALIAS",
+  "explanation": "The Suzuki AX100 is a known market-specific name for the Suzuki A 100 model, commonly used in certain regions. The model shares the same engine displacement, platform, and identity despite differing naming conventions.",
+  "canonical_model_alias": "A 100",
+  "configuration_tokens": [],
+  "brand_aliases": [],
+  "model_aliases": [
+    "A 100"
+  ],
+  "status": "SUCCESS",
+  "prompt_version": "motorcycle-candidate-resolution-v4",
+  "model": "qwen-flash",
+  "make": "Suzuki",
+  "model_name": "AX100"
+}

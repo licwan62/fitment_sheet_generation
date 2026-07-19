@@ -1,0 +1,18 @@
+{
+  "decision": "MATCH",
+  "selected_candidate": "gasgas econtact",
+  "confidence": "HIGH",
+  "match_basis": "MARKET_ALIAS",
+  "explanation": "'Contact JT16' is a market-specific naming for the 'econtact' model, with 'JT16' likely indicating a configuration or variant label. The 'econtact' is the correct catalog title for this model in Gas Gas's lineup.",
+  "canonical_model_alias": "econtact",
+  "configuration_tokens": [
+    "JT16"
+  ],
+  "brand_aliases": [],
+  "model_aliases": [],
+  "status": "SUCCESS",
+  "prompt_version": "motorcycle-candidate-resolution-v4",
+  "model": "qwen-flash",
+  "make": "Gas Gas",
+  "model_name": "Contact JT16"
+}

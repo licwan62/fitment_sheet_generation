@@ -1,0 +1,16 @@
+{
+  "decision": "MATCH",
+  "selected_candidate": "TNT \n\t\t1130 Titanium",
+  "confidence": "HIGH",
+  "match_basis": "SAME_NAME",
+  "explanation": "The input 'Titanium 05' refers to the Benelli TNT 1130 Titanium model, which was marketed with the 'Titanium' designation and a 1130cc engine. The catalog candidate 'TNT \n\t\t1130 Titanium' is the correct and canonical title for this model, matching both displacement and name exactly. The '05' in the input likely refers to the model year (2005), which is not part of the canonical model alias.",
+  "canonical_model_alias": "TNT 1130 Titanium",
+  "configuration_tokens": [],
+  "brand_aliases": [],
+  "model_aliases": [],
+  "status": "SUCCESS",
+  "prompt_version": "motorcycle-candidate-resolution-v4",
+  "model": "qwen-flash",
+  "make": "Benelli",
+  "model_name": "Titanium 05"
+}

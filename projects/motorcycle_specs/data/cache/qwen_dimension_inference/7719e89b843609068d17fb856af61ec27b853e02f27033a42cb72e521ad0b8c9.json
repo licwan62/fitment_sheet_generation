@@ -1,0 +1,16 @@
+{
+  "decision": "INFER|UNKNOWN",
+  "confidence": "MEDIUM|LOW",
+  "length_mm": null,
+  "width_mm": null,
+  "height_mm": null,
+  "wheelbase_mm": null,
+  "seat_height_mm": null,
+  "ground_clearance_mm": null,
+  "explanation": "The Venom ProStreet V111 EFI by Big Bear Choppers is a custom motorcycle with no publicly available official dimensions. Model-specific data is not consistently documented, and variations may exist across production years or custom builds. Without verified catalog or technical specifications, dimensions cannot be reliably inferred. Therefore, all values are marked as unknown.",
+  "status": "SUCCESS",
+  "prompt_version": "motorcycle-dimension-inference-v1",
+  "model": "qwen-flash",
+  "make": "Big Bear Choppers",
+  "model_name": "Venom ProStreet V111 EFI"
+}

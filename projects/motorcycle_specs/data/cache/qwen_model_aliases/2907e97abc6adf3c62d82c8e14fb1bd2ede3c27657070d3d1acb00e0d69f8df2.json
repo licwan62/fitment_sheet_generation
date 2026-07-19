@@ -1,0 +1,18 @@
+{
+  "decision": "MATCH",
+  "selected_candidate": "beta evo 200 2t",
+  "confidence": "HIGH",
+  "match_basis": "MARKET_ALIAS",
+  "explanation": "The 'EVO 200 Sport' is a market-specific name for the Beta EVO 200 2T model, with 'Sport' denoting a performance configuration. The core model identity matches exactly, including displacement and engine type.",
+  "canonical_model_alias": "beta evo 200 2t",
+  "configuration_tokens": [
+    "sport"
+  ],
+  "brand_aliases": [],
+  "model_aliases": [],
+  "status": "SUCCESS",
+  "prompt_version": "motorcycle-candidate-resolution-v4",
+  "model": "qwen-flash",
+  "make": "Beta",
+  "model_name": "EVO 200 Sport"
+}

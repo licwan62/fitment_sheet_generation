@@ -1,0 +1,16 @@
+{
+  "decision": "UNKNOWN",
+  "confidence": "LOW",
+  "length_mm": null,
+  "width_mm": null,
+  "height_mm": null,
+  "wheelbase_mm": null,
+  "seat_height_mm": null,
+  "ground_clearance_mm": null,
+  "explanation": "Doohan IDOU is a limited-production electric motorcycle with no publicly available official dimensions. Model identity and specifications vary significantly across markets and years, and no reliable catalog or verified source provides consistent dimensional data. Inference cannot be made with confidence due to lack of verifiable information.",
+  "status": "SUCCESS",
+  "prompt_version": "motorcycle-dimension-inference-v1",
+  "model": "qwen-flash",
+  "make": "Doohan",
+  "model_name": "IDOU"
+}

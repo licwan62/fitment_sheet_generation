@@ -1,0 +1,16 @@
+{
+  "decision": "INFER|UNKNOWN",
+  "confidence": "MEDIUM|LOW",
+  "length_mm": null,
+  "width_mm": null,
+  "height_mm": null,
+  "wheelbase_mm": null,
+  "seat_height_mm": null,
+  "ground_clearance_mm": null,
+  "explanation": "The model identity 'MRT2603E Montesa Cota 4RT260' is ambiguous and not a standard Honda motorcycle designation. Montesa is a Spanish brand, and the 'Cota 4RT260' appears to be a Montesa model rather than a Honda product. No verifiable Honda model matches this name, and no reliable dimensions are available for this configuration. Therefore, dimensions cannot be reliably inferred.",
+  "status": "SUCCESS",
+  "prompt_version": "motorcycle-dimension-inference-v1",
+  "model": "qwen-flash",
+  "make": "Honda",
+  "model_name": "MRT2603E Montesa Cota 4RT260"
+}

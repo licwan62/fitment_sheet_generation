@@ -1,0 +1,20 @@
+{
+  "decision": "MATCH",
+  "selected_candidate": "Platina 125 DTS-Si",
+  "confidence": "HIGH",
+  "match_basis": "MARKET_ALIAS",
+  "explanation": "The 'Platina 125 NS' is a market-specific variant (likely for North America or specific regional sales) of the same underlying Platina 125 DTS-Si model, with 'NS' likely denoting a configuration or regional designation. The core model identity, displacement, and platform are identical.",
+  "canonical_model_alias": "Platina 125 DTS-Si",
+  "configuration_tokens": [
+    "NS"
+  ],
+  "brand_aliases": [],
+  "model_aliases": [
+    "Platina 125 DTS-Si"
+  ],
+  "status": "SUCCESS",
+  "prompt_version": "motorcycle-candidate-resolution-v4",
+  "model": "qwen-flash",
+  "make": "Bajaj",
+  "model_name": "Platina 125 NS"
+}

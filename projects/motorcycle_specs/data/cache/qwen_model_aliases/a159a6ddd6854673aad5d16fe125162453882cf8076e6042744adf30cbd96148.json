@@ -1,0 +1,18 @@
+{
+  "decision": "NO_MATCH",
+  "selected_candidate": "",
+  "confidence": "HIGH",
+  "match_basis": "NONE",
+  "explanation": "The input model 'Pulsar 150 LS' includes a configuration suffix 'LS' not present in any of the catalog candidates. The candidates either lack the 'LS' designation or refer to different models (e.g., NS series, Discover). No candidate matches the exact model identity including the 'LS' configuration.",
+  "canonical_model_alias": "",
+  "configuration_tokens": [
+    "LS"
+  ],
+  "brand_aliases": [],
+  "model_aliases": [],
+  "status": "SUCCESS",
+  "prompt_version": "motorcycle-candidate-resolution-v4",
+  "model": "qwen-flash",
+  "make": "Bajaj",
+  "model_name": "Pulsar 150 LS"
+}

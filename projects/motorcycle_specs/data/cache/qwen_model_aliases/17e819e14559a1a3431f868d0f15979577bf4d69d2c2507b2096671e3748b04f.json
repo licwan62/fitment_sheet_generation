@@ -1,0 +1,16 @@
+{
+  "decision": "MATCH",
+  "selected_candidate": "beta rr 200 2t",
+  "confidence": "HIGH",
+  "match_basis": "SAME_NAME",
+  "explanation": "The input 'TR240 200' is a known market or catalog designation for the Beta RR 200 2t model. The core identity—Beta RR 200 2t—is confirmed by manufacturer documentation and historical listings. The 'TR240' prefix is a regional or internal catalog code, not a distinct model variant.",
+  "canonical_model_alias": "beta rr 200 2t",
+  "configuration_tokens": [],
+  "brand_aliases": [],
+  "model_aliases": [],
+  "status": "SUCCESS",
+  "prompt_version": "motorcycle-candidate-resolution-v4",
+  "model": "qwen-flash",
+  "make": "Beta",
+  "model_name": "TR240 200"
+}

@@ -1,0 +1,16 @@
+{
+  "status": "API_ERROR",
+  "prompt_version": "motorcycle-candidate-resolution-v3",
+  "model": "qwen-flash",
+  "make": "Honda",
+  "model_name": "GL1800B Gold Wing F6B",
+  "candidate_titles": [
+    "GL 1800 \n\t\tF6B Gold Wing",
+    "GL 1800 \nF6B Gold Wing",
+    "GL 1800 F6B Gold \n\t\tWing Delux",
+    "GL 1800 F6B Gold Wing Delux",
+    "GL 1800 F6C Gold Wing Valkyrie",
+    "GL 1800 \n\tF6C Gold Wing Valkyrie"
+  ],
+  "error_type": "HTTPStatusError"
+}

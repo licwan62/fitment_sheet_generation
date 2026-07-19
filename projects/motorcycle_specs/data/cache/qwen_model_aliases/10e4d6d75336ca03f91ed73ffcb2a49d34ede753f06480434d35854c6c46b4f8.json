@@ -1,0 +1,18 @@
+{
+  "decision": "MATCH",
+  "selected_candidate": "GL \n      1200 Gold Wing Aspencade",
+  "confidence": "HIGH",
+  "match_basis": "SAME_NAME",
+  "explanation": "The input model 'GL1200A Gold Wing Aspencade' is the same motorcycle as the candidate 'GL 1200 Gold Wing Aspencade', with the 'A' in the model number being a known variant identifier for the 1986–1987 model year, which is consistent with the Aspencade trim. The catalog candidate matches exactly in name and displacement, and 'Aspencade' is the correct trim level. The formatting difference (line breaks) does not affect identity.",
+  "canonical_model_alias": "GL 1200 Gold Wing Aspencade",
+  "configuration_tokens": [],
+  "brand_aliases": [],
+  "model_aliases": [
+    "GL 1200 Gold Wing Aspencade"
+  ],
+  "status": "SUCCESS",
+  "prompt_version": "motorcycle-candidate-resolution-v4",
+  "model": "qwen-flash",
+  "make": "Honda",
+  "model_name": "GL1200A Gold Wing Aspencade"
+}

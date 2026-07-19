@@ -1,0 +1,23 @@
+{
+  "decision": "MATCH",
+  "selected_candidate": "Suzuki V-Strom 650 ABS Adventure",
+  "confidence": "HIGH",
+  "match_basis": "SAME_NAME",
+  "explanation": "The input model 'DL650A V-Strom ABS Adventure' is the same motorcycle as 'Suzuki V-Strom 650 ABS Adventure'—the DL650A is the model code, and 'V-Strom 650 ABS Adventure' is the catalog name. The displacement (650), configuration (ABS Adventure), and brand (Suzuki) are identical. The model code DL650A is a known internal designation for this variant.",
+  "canonical_model_alias": "V-Strom 650 ABS Adventure",
+  "configuration_tokens": [
+    "ABS",
+    "Adventure"
+  ],
+  "brand_aliases": [],
+  "model_aliases": [
+    "V-Strom 650 ABS Adventure",
+    "DL 650 V-Strom Adventure",
+    "DL650 V-Strom ABS Adventure"
+  ],
+  "status": "SUCCESS",
+  "prompt_version": "motorcycle-candidate-resolution-v4",
+  "model": "qwen-flash",
+  "make": "Suzuki",
+  "model_name": "DL650A V-Strom ABS Adventure"
+}

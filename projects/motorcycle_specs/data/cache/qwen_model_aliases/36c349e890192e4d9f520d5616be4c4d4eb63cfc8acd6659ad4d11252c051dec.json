@@ -1,0 +1,18 @@
+{
+  "decision": "MATCH",
+  "selected_candidate": "cfmoto cx 5e",
+  "confidence": "HIGH",
+  "match_basis": "MARKET_ALIAS",
+  "explanation": "CFX-5E is a market-specific naming variant of the CFMOTO CX 5E, commonly used in certain regions. The model shares identical displacement, engine, and platform. The 'X' in CFX is a known regional or marketing variation for the CX series.",
+  "canonical_model_alias": "cx 5e",
+  "configuration_tokens": [],
+  "brand_aliases": [],
+  "model_aliases": [
+    "cx 5e"
+  ],
+  "status": "SUCCESS",
+  "prompt_version": "motorcycle-candidate-resolution-v4",
+  "model": "qwen-flash",
+  "make": "CFMOTO",
+  "model_name": "CFX-5E"
+}

@@ -1,0 +1,20 @@
+{
+  "decision": "MATCH",
+  "selected_candidate": "Suzuki GZ 150",
+  "confidence": "HIGH",
+  "match_basis": "MARKET_ALIAS",
+  "explanation": "The input 'GZ150-A' is a variant of the Suzuki GZ150, where 'A' likely denotes a market-specific configuration or model year suffix. The catalog candidate 'Suzuki GZ 150' represents the same underlying motorcycle model, with 'GZ150-A' being a regional or configuration variant. The displacement (150) and model series (GZ) are identical, confirming identity.",
+  "canonical_model_alias": "GZ 150",
+  "configuration_tokens": [
+    "A"
+  ],
+  "brand_aliases": [],
+  "model_aliases": [
+    "GZ 150"
+  ],
+  "status": "SUCCESS",
+  "prompt_version": "motorcycle-candidate-resolution-v4",
+  "model": "qwen-flash",
+  "make": "Suzuki",
+  "model_name": "GZ150-A"
+}

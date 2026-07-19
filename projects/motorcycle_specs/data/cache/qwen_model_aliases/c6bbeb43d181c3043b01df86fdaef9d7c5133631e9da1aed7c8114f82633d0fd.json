@@ -1,0 +1,16 @@
+{
+  "decision": "NO_MATCH",
+  "selected_candidate": "",
+  "confidence": "HIGH",
+  "match_basis": "NONE",
+  "explanation": "The model 'Beamer Matrix' is not a known variant or alias of any of the listed E-TON catalog candidates. None of the candidates share naming patterns, displacements, configurations, or historical references that would indicate they are the same motorcycle. The name 'Beamer Matrix' does not correspond to any documented E-TON model, including regional or market-specific variants.",
+  "canonical_model_alias": "",
+  "configuration_tokens": [],
+  "brand_aliases": [],
+  "model_aliases": [],
+  "status": "SUCCESS",
+  "prompt_version": "motorcycle-candidate-resolution-v4",
+  "model": "qwen-flash",
+  "make": "E-TON",
+  "model_name": "Beamer Matrix"
+}

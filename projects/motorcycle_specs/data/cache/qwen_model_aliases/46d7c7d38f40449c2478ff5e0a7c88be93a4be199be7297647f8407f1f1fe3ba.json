@@ -1,0 +1,16 @@
+{
+  "decision": "MATCH",
+  "selected_candidate": "gasgas ec 300",
+  "confidence": "HIGH",
+  "match_basis": "SAME_NAME",
+  "explanation": "The input 'EC 300 2T' refers to the same motorcycle model as 'gasgas ec 300', with '2T' indicating two-stroke engine, which is inherent to the EC 300 series. The candidate 'gasgas ec 300' is the canonical catalog expression for this model.",
+  "canonical_model_alias": "ec 300",
+  "configuration_tokens": [],
+  "brand_aliases": [],
+  "model_aliases": [],
+  "status": "SUCCESS",
+  "prompt_version": "motorcycle-candidate-resolution-v4",
+  "model": "qwen-flash",
+  "make": "Gas Gas",
+  "model_name": "EC 300 2T"
+}

@@ -1,0 +1,16 @@
+{
+  "decision": "MATCH",
+  "selected_candidate": "Scrambler 800 Italia Independent Limited Edition",
+  "confidence": "HIGH",
+  "match_basis": "MARKET_ALIAS",
+  "explanation": "The input 'Scrambler Italia Independent Ltd Edition' is a variant of the 'Scrambler 800 Italia Independent Limited Edition' with 'Ltd' as a regional abbreviation for 'Limited', commonly used in UK and European markets. The core model identity, including displacement (800), name ('Italia Independent'), and edition status, is identical.",
+  "canonical_model_alias": "Scrambler 800 Italia Independent Limited Edition",
+  "configuration_tokens": [],
+  "brand_aliases": [],
+  "model_aliases": [],
+  "status": "SUCCESS",
+  "prompt_version": "motorcycle-candidate-resolution-v4",
+  "model": "qwen-flash",
+  "make": "Ducati",
+  "model_name": "Scrambler Italia Independent Ltd Edition"
+}

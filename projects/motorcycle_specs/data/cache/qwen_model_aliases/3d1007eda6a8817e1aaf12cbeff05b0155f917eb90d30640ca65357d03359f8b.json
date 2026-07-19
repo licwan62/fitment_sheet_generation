@@ -1,0 +1,20 @@
+{
+  "decision": "MATCH",
+  "selected_candidate": "suzuki rm z250",
+  "confidence": "HIGH",
+  "match_basis": "MARKET_ALIAS",
+  "explanation": "The 'RMZ250 RM Army Edition' is a special edition of the Suzuki RM-Z250, with 'Army Edition' being a market-specific configuration label. The core model identity (RM-Z250) matches the candidate 'suzuki rm z250'. The name variation is due to a regional/edition suffix, not a different motorcycle.",
+  "canonical_model_alias": "rm z250",
+  "configuration_tokens": [
+    "Army Edition"
+  ],
+  "brand_aliases": [],
+  "model_aliases": [
+    "rm z250"
+  ],
+  "status": "SUCCESS",
+  "prompt_version": "motorcycle-candidate-resolution-v4",
+  "model": "qwen-flash",
+  "make": "Suzuki",
+  "model_name": "RMZ250 RM Army Edition"
+}

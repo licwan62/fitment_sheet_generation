@@ -1,0 +1,21 @@
+{
+  "decision": "MATCH",
+  "selected_candidate": "bigdog k 9",
+  "confidence": "HIGH",
+  "match_basis": "MARKET_ALIAS",
+  "explanation": "The input 'K-9 EFI' is a known market or configuration name for the Big Dog K-9 model, and 'bigdog k 9' in the catalog candidate list represents the same underlying motorcycle. The 'EFI' suffix denotes fuel injection, which is standard on this model and does not constitute a different model. The variation in capitalization and hyphenation is consistent with common naming practices.",
+  "canonical_model_alias": "k 9",
+  "configuration_tokens": [
+    "EFI"
+  ],
+  "brand_aliases": [],
+  "model_aliases": [
+    "bigdog k 9",
+    "k 9"
+  ],
+  "status": "SUCCESS",
+  "prompt_version": "motorcycle-candidate-resolution-v4",
+  "model": "qwen-flash",
+  "make": "Big Dog",
+  "model_name": "K-9 EFI"
+}

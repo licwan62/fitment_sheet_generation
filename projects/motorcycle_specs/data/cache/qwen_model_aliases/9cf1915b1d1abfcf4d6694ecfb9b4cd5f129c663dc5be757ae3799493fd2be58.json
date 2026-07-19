@@ -1,0 +1,13 @@
+{
+  "decision": "MATCH",
+  "selected_candidate": "VT 1300CX Fury",
+  "canonical_model_alias": "VT 1300CX Fury",
+  "configuration_tokens": [],
+  "brand_aliases": [],
+  "model_aliases": [],
+  "status": "SUCCESS",
+  "prompt_version": "motorcycle-candidate-resolution-v3",
+  "model": "qwen-flash",
+  "make": "Honda",
+  "model_name": "VT13CX Fury"
+}

@@ -1,0 +1,16 @@
+{
+  "decision": "NO_MATCH",
+  "selected_candidate": "",
+  "confidence": "HIGH",
+  "match_basis": "NONE",
+  "explanation": "The F650CS ABS is a distinct model from the F 650GS. The F650CS (Clubman Sport) was a street-focused model with a different design, suspension, and intended use compared to the F 650GS, which is an adventure-touring motorcycle. Despite sharing the same engine displacement and platform lineage, they are different models with distinct identities, configurations, and market positioning. No known alias relationship exists between them.",
+  "canonical_model_alias": "",
+  "configuration_tokens": [],
+  "brand_aliases": [],
+  "model_aliases": [],
+  "status": "SUCCESS",
+  "prompt_version": "motorcycle-candidate-resolution-v4",
+  "model": "qwen-flash",
+  "make": "BMW",
+  "model_name": "F650CS ABS"
+}

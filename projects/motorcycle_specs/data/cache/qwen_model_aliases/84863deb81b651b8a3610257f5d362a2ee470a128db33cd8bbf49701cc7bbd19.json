@@ -1,0 +1,20 @@
+{
+  "decision": "MATCH",
+  "selected_candidate": "Honda CRF1000L Africa Twin",
+  "confidence": "HIGH",
+  "match_basis": "SAME_NAME",
+  "explanation": "The input model 'CRF1000L Africa Twin ABS' is functionally identical to the catalog candidate 'Honda CRF1000L Africa Twin', with 'ABS' being a configuration feature not altering the core model identity. The name match is exact except for the inclusion of 'ABS' in the input, which is a standard safety feature and does not constitute a different model.",
+  "canonical_model_alias": "CRF1000L Africa Twin",
+  "configuration_tokens": [
+    "ABS"
+  ],
+  "brand_aliases": [],
+  "model_aliases": [
+    "CRF1000L Africa Twin"
+  ],
+  "status": "SUCCESS",
+  "prompt_version": "motorcycle-candidate-resolution-v4",
+  "model": "qwen-flash",
+  "make": "Honda",
+  "model_name": "CRF1000L Africa Twin ABS"
+}

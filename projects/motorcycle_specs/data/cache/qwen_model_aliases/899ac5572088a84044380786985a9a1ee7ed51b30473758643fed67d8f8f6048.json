@@ -1,0 +1,16 @@
+{
+  "decision": "NO_MATCH",
+  "selected_candidate": "",
+  "confidence": "HIGH",
+  "match_basis": "NONE",
+  "explanation": "The Aprilia Mojito 150 is a distinct model from all catalog candidates. None of the listed candidates match the Mojito 150 in displacement, name, or model lineage. The Mojito 150 is a specific 150cc scooter-style motorcycle, while the candidates include different models such as the Leonardo ST/SP 150 (a different platform), SR Motard 50, Storm 125, SX 50 Supermoto, and Tuono 660 — none of which are variants or aliases of the Mojito 150.",
+  "canonical_model_alias": "",
+  "configuration_tokens": [],
+  "brand_aliases": [],
+  "model_aliases": [],
+  "status": "SUCCESS",
+  "prompt_version": "motorcycle-candidate-resolution-v4",
+  "model": "qwen-flash",
+  "make": "Aprilia",
+  "model_name": "Mojito 150"
+}

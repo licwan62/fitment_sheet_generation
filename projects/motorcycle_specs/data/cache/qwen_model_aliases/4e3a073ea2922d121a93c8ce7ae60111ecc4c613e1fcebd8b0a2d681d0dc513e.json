@@ -1,0 +1,16 @@
+{
+  "decision": "NO_MATCH",
+  "selected_candidate": "",
+  "confidence": "HIGH",
+  "match_basis": "NONE",
+  "explanation": "The model 'GL1500CT Valkyrie Tour' is not present in the catalog candidates. No matching or known alias of this specific model exists in the provided list, and no evidence suggests it is equivalent to any candidate. The GL1500CT Valkyrie Tour is a distinct model with unique configuration and market designation.",
+  "canonical_model_alias": "",
+  "configuration_tokens": [],
+  "brand_aliases": [],
+  "model_aliases": [],
+  "status": "SUCCESS",
+  "prompt_version": "motorcycle-candidate-resolution-v4",
+  "model": "qwen-flash",
+  "make": "Honda",
+  "model_name": "GL1500CT Valkyrie Tour"
+}

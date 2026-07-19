@@ -1,0 +1,16 @@
+{
+  "decision": "INFER",
+  "confidence": "MEDIUM",
+  "length_mm": 2150,
+  "width_mm": 820,
+  "height_mm": 1120,
+  "wheelbase_mm": 1460,
+  "seat_height_mm": 930,
+  "ground_clearance_mm": 370,
+  "explanation": "Inferred from typical dimensions of 250cc off-road motocross bikes in the same class (e.g., KTM 250 SX Factory, Husqvarna FC 250), considering Gas Gas EC 250 Replica Factory's design lineage and shared platform with KTM. Dimensions are consistent with high-performance factory-replica motocross models from the early 2020s.",
+  "status": "SUCCESS",
+  "prompt_version": "motorcycle-dimension-inference-v1",
+  "model": "qwen-flash",
+  "make": "Gas Gas",
+  "model_name": "EC 250 Replica Factory"
+}

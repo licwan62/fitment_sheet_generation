@@ -1,0 +1,16 @@
+{
+  "decision": "MATCH",
+  "selected_candidate": "EC 250 \n\t2T Cervantes Replica",
+  "confidence": "HIGH",
+  "match_basis": "MARKET_ALIAS",
+  "explanation": "The 'EC 250 Replica' is a known market-specific name for the Gas Gas EC 250 2T Cervantes Replica, a limited edition model marketed in certain regions. The 'Cervantes Replica' designation aligns with historical naming conventions for special editions of the EC 250 series, and 'Replica' is a consistent descriptor across both input and candidate. Displacement (250), engine type (2T), and model series (EC) are identical.",
+  "canonical_model_alias": "EC 250 2T Cervantes Replica",
+  "configuration_tokens": [],
+  "brand_aliases": [],
+  "model_aliases": [],
+  "status": "SUCCESS",
+  "prompt_version": "motorcycle-candidate-resolution-v4",
+  "model": "qwen-flash",
+  "make": "Gas Gas",
+  "model_name": "EC 250 Replica"
+}

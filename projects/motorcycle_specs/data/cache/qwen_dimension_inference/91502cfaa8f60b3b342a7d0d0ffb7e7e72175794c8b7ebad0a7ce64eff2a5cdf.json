@@ -1,0 +1,16 @@
+{
+  "decision": "INFER",
+  "confidence": "MEDIUM",
+  "length_mm": 1850,
+  "width_mm": 680,
+  "height_mm": 1020,
+  "wheelbase_mm": 1220,
+  "seat_height_mm": 780,
+  "ground_clearance_mm": 130,
+  "explanation": "Inferred from typical dimensions of 1970s Suzuki sport motorcycles in the 125-175cc class, such as the GS125 and GT185. The RS175 was a lightweight racing-oriented model with a compact frame and upright riding position. Dimensions are estimated based on similar models' proportions and historical data, but exact specifications are not consistently documented.",
+  "status": "SUCCESS",
+  "prompt_version": "motorcycle-dimension-inference-v1",
+  "model": "qwen-flash",
+  "make": "Suzuki",
+  "model_name": "RS175"
+}

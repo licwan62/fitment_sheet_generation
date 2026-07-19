@@ -1,0 +1,20 @@
+{
+  "decision": "MATCH",
+  "selected_candidate": "Honda CBF 150",
+  "confidence": "HIGH",
+  "match_basis": "MARKET_ALIAS",
+  "explanation": "The 'CBF150S' is a market-specific designation (likely for 'Street' or 'Standard' variant) of the Honda CBF150, which is known to be marketed under different suffixes in various regions. The core model identity, including displacement and platform, matches exactly with 'Honda CBF 150'.",
+  "canonical_model_alias": "CBF 150",
+  "configuration_tokens": [
+    "S"
+  ],
+  "brand_aliases": [],
+  "model_aliases": [
+    "CBF 150"
+  ],
+  "status": "SUCCESS",
+  "prompt_version": "motorcycle-candidate-resolution-v4",
+  "model": "qwen-flash",
+  "make": "Honda",
+  "model_name": "CBF150S"
+}

@@ -1,0 +1,21 @@
+{
+  "decision": "MATCH",
+  "selected_candidate": "gasgas ec 250 racing",
+  "confidence": "HIGH",
+  "match_basis": "MARKET_ALIAS",
+  "explanation": "'XC 250 Racing E-Start' is a market-specific naming variant of the 'EC 250 Racing' model, with 'XC' likely denoting a cross-country or racing configuration and 'E-Start' indicating electric start—features consistent with the EC 250 Racing. The displacement (250) and core model (EC 250 Racing) match exactly; 'E-Start' is a configuration detail not altering the base model identity.",
+  "canonical_model_alias": "ec 250 racing",
+  "configuration_tokens": [
+    "e-start"
+  ],
+  "brand_aliases": [],
+  "model_aliases": [
+    "gasgas ec 250 racing",
+    "ec 250 racing"
+  ],
+  "status": "SUCCESS",
+  "prompt_version": "motorcycle-candidate-resolution-v4",
+  "model": "qwen-flash",
+  "make": "Gas Gas",
+  "model_name": "XC 250 Racing E-Start"
+}

@@ -12,7 +12,7 @@ RANGE = rf"{NUM}\s*(?:-|–|—|to)\s*{NUM}\s*{UNIT}"
 SINGLE = rf"{NUM}\s*{UNIT}"
 LABELS = {
     "l": r"(?:overall\s+)?length",
-    "w": r"(?:overall\s+)?width",
+    "w": r"(?<!tyre\s)(?<!tire\s)(?:overall\s+)?width",
     "h": r"(?<!seat\s)(?<!saddle\s)(?:overall\s+)?height",
     "wheelbase": r"wheel\s*base|wheelbase",
     "seat_height": r"seat\s*height",

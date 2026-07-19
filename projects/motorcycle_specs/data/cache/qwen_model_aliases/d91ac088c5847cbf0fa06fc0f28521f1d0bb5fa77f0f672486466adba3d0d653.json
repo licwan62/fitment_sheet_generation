@@ -1,0 +1,19 @@
+{
+  "decision": "MATCH",
+  "selected_candidate": "gasgas ec 200",
+  "confidence": "HIGH",
+  "match_basis": "MARKET_ALIAS",
+  "explanation": "'Contact JTX200' is a market-specific name for the Gas Gas EC 200 model, with 'Contact' being a regional or marketing designation and 'JTX' likely a typo or variant of 'EC'. The displacement (200) and manufacturer (Gas Gas) match exactly. The EC 200 is the correct underlying model.",
+  "canonical_model_alias": "ec 200",
+  "configuration_tokens": [],
+  "brand_aliases": [],
+  "model_aliases": [
+    "gasgas ec 200",
+    "ec 200"
+  ],
+  "status": "SUCCESS",
+  "prompt_version": "motorcycle-candidate-resolution-v4",
+  "model": "qwen-flash",
+  "make": "Gas Gas",
+  "model_name": "Contact JTX200"
+}

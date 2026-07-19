@@ -1,0 +1,16 @@
+{
+  "decision": "NO_MATCH",
+  "selected_candidate": "",
+  "confidence": "HIGH",
+  "match_basis": "NONE",
+  "explanation": "The input model 'Rev3 270' is not equivalent to any of the catalog candidates. The Beta Rev3 270 is a distinct model with a 270cc displacement, while all candidates are either different displacements (e.g., 250, 290, 300, 350, 390, 430) or unrelated models (RS series). No known market name, abbreviation, or typo links 'Rev3 270' to any candidate. The model names and displacements do not align.",
+  "canonical_model_alias": "",
+  "configuration_tokens": [],
+  "brand_aliases": [],
+  "model_aliases": [],
+  "status": "SUCCESS",
+  "prompt_version": "motorcycle-candidate-resolution-v4",
+  "model": "qwen-flash",
+  "make": "Beta",
+  "model_name": "Rev3 270"
+}

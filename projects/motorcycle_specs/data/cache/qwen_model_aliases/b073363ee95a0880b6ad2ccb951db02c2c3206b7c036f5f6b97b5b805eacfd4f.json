@@ -1,0 +1,16 @@
+{
+  "decision": "NO_MATCH",
+  "selected_candidate": "",
+  "confidence": "HIGH",
+  "match_basis": "NONE",
+  "explanation": "The input model 'DL250L8 V-Strom ABS' is not found in the catalog candidates list. No matching or aliasing motorcycle model exists in the provided candidate set, and no known market name, historical alias, abbreviation, or typo of this model is present. The model's specific configuration (DL250L8) and features (V-Strom ABS) are unique and not represented among the candidates.",
+  "canonical_model_alias": "",
+  "configuration_tokens": [],
+  "brand_aliases": [],
+  "model_aliases": [],
+  "status": "SUCCESS",
+  "prompt_version": "motorcycle-candidate-resolution-v4",
+  "model": "qwen-flash",
+  "make": "Suzuki",
+  "model_name": "DL250L8 V-Strom ABS"
+}

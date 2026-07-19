@@ -1,0 +1,18 @@
+{
+  "decision": "MATCH",
+  "selected_candidate": "TF 125",
+  "confidence": "HIGH",
+  "match_basis": "MARKET_ALIAS",
+  "explanation": "The Suzuki TC125 is a known market name for the TF 125 in certain regions, particularly in Europe and Asia. The model shares identical engine, chassis, and specifications, with only the model designation differing due to regional marketing. This is a well-documented case of a market-specific model name.",
+  "canonical_model_alias": "TF 125",
+  "configuration_tokens": [],
+  "brand_aliases": [],
+  "model_aliases": [
+    "TF 125"
+  ],
+  "status": "SUCCESS",
+  "prompt_version": "motorcycle-candidate-resolution-v4",
+  "model": "qwen-flash",
+  "make": "Suzuki",
+  "model_name": "TC125"
+}

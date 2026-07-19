@@ -1,0 +1,20 @@
+{
+  "status": "TIMEOUT",
+  "prompt_version": "motorcycle-candidate-resolution-v4",
+  "model": "qwen-flash",
+  "make": "CFMOTO",
+  "model_name": "250NK FI",
+  "candidate_titles": [
+    "cfmoto jetmax 250 efi",
+    "cfmoto 450nk",
+    "cfmoto 125nk",
+    "CFMOTO 650nk",
+    "250 Freedom / Fashion",
+    "250 SR",
+    "CFMOTO 300nk",
+    "Jetmax 250"
+  ],
+  "error_type": "ReadTimeout",
+  "status_code": null,
+  "retryable": true
+}

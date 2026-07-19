@@ -1,0 +1,20 @@
+{
+  "decision": "MATCH",
+  "selected_candidate": "GSX 250R",
+  "confidence": "HIGH",
+  "match_basis": "SAME_NAME",
+  "explanation": "The input model 'GSX250R ABS' is functionally identical to the catalog candidate 'GSX 250R', with the addition of ABS being a configuration feature not altering the core model identity. The name 'GSX250R' is a common shorthand for 'GSX 250R', and the inclusion of 'ABS' does not change the underlying motorcycle model. The other candidates differ in engine, displacement, or intended market (e.g., GSX-R series are sportier variants, GSX 250T is a different variant). Thus, 'GSX 250R' is the correct match.",
+  "canonical_model_alias": "GSX 250R",
+  "configuration_tokens": [
+    "ABS"
+  ],
+  "brand_aliases": [],
+  "model_aliases": [
+    "GSX 250R"
+  ],
+  "status": "SUCCESS",
+  "prompt_version": "motorcycle-candidate-resolution-v4",
+  "model": "qwen-flash",
+  "make": "Suzuki",
+  "model_name": "GSX250R ABS"
+}

@@ -1,0 +1,15 @@
+{
+  "decision": "MATCH",
+  "selected_candidate": "CRF 300 \n\t\tRally",
+  "canonical_model_alias": "CRF300L Rally",
+  "configuration_tokens": [],
+  "brand_aliases": [],
+  "model_aliases": [
+    "CRF 300 Rally"
+  ],
+  "status": "SUCCESS",
+  "prompt_version": "motorcycle-candidate-resolution-v3",
+  "model": "qwen-flash",
+  "make": "Honda",
+  "model_name": "CRF300L Rally"
+}

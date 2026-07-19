@@ -1,0 +1,18 @@
+{
+  "decision": "MATCH",
+  "selected_candidate": "RR 350 Enduro",
+  "confidence": "HIGH",
+  "match_basis": "MARKET_ALIAS",
+  "explanation": "The '350 RR EFI' and 'RR 350 Enduro' refer to the same Beta motorcycle model, with 'Enduro' being a market-specific designation for the RR 350 series in certain regions, particularly in Europe and off-road markets. The displacement (350), model line (RR), and engine fuel injection (EFI) are consistent across both names. The difference in suffix is due to regional naming conventions, not a different model.",
+  "canonical_model_alias": "RR 350 Enduro",
+  "configuration_tokens": [],
+  "brand_aliases": [],
+  "model_aliases": [
+    "RR 350 Enduro"
+  ],
+  "status": "SUCCESS",
+  "prompt_version": "motorcycle-candidate-resolution-v4",
+  "model": "qwen-flash",
+  "make": "Beta",
+  "model_name": "350 RR EFI"
+}

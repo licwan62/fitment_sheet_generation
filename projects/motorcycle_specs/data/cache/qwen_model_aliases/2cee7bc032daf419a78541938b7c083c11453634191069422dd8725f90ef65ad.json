@@ -1,0 +1,18 @@
+{
+  "decision": "MATCH",
+  "selected_candidate": "CRF 250 \n\t\tRally",
+  "confidence": "HIGH",
+  "match_basis": "SAME_NAME",
+  "explanation": "The input 'CRF250L Rally' and the candidate 'CRF 250 \n\t\tRally' refer to the same motorcycle model, with only minor formatting differences (spacing, line break) and the 'L' in the input being a standard part of the model designation that is omitted in this candidate but understood as equivalent. The displacement (250), model series (CRF), and variant (Rally) are identical.",
+  "canonical_model_alias": "CRF 250 Rally",
+  "configuration_tokens": [],
+  "brand_aliases": [],
+  "model_aliases": [
+    "CRF 250 Rally"
+  ],
+  "status": "SUCCESS",
+  "prompt_version": "motorcycle-candidate-resolution-v4",
+  "model": "qwen-flash",
+  "make": "Honda",
+  "model_name": "CRF250L Rally"
+}

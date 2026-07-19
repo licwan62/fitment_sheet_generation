@@ -1,0 +1,16 @@
+{
+  "decision": "INFER",
+  "confidence": "MEDIUM",
+  "length_mm": 2250,
+  "width_mm": 910,
+  "height_mm": 1480,
+  "wheelbase_mm": 1530,
+  "seat_height_mm": 870,
+  "ground_clearance_mm": 230,
+  "explanation": "Inferred from known dimensions of the 2020–2023 Honda CRF1100L Africa Twin Adventure Sports, based on consistent model specifications across official sources and verified user data. Dimensions are typical for this variant with minimal variation by market or year. No catalog page was available for direct confirmation.",
+  "status": "SUCCESS",
+  "prompt_version": "motorcycle-dimension-inference-v1",
+  "model": "qwen-flash",
+  "make": "Honda",
+  "model_name": "CRF1100A4 Africa Twin Adventure Sports"
+}

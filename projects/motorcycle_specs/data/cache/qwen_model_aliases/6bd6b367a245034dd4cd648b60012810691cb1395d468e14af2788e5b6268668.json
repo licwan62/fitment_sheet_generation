@@ -1,0 +1,16 @@
+{
+  "decision": "NO_MATCH",
+  "selected_candidate": "",
+  "confidence": "HIGH",
+  "match_basis": "NONE",
+  "explanation": "The input model 'R1300GS Tramuntana' is a special edition variant of the R1300GS with a unique name and visual identity, not present in the catalog candidates. None of the listed candidates are the same underlying motorcycle model, as they either represent different models (e.g., RT, Roadster, Superhooligan, RS) or standard Adventure variants without the Tramuntana designation. The Tramuntana is a distinct configuration with specific styling and limited availability.",
+  "canonical_model_alias": "",
+  "configuration_tokens": [],
+  "brand_aliases": [],
+  "model_aliases": [],
+  "status": "SUCCESS",
+  "prompt_version": "motorcycle-candidate-resolution-v4",
+  "model": "qwen-flash",
+  "make": "BMW",
+  "model_name": "R1300GS Tramuntana"
+}

@@ -1,0 +1,16 @@
+{
+  "decision": "NO_MATCH",
+  "selected_candidate": "",
+  "confidence": "HIGH",
+  "match_basis": "NONE",
+  "explanation": "The input model XL80S has a displacement of 80cc, while all catalog candidates are 185cc, 250cc, or 500cc models. The XL80S is not a known variant of any listed candidate, and no market name, historical alias, abbreviation, or typo connects it to any of them. The Honda XR 80 R is a different model line entirely, with a different engine and purpose.",
+  "canonical_model_alias": "",
+  "configuration_tokens": [],
+  "brand_aliases": [],
+  "model_aliases": [],
+  "status": "SUCCESS",
+  "prompt_version": "motorcycle-candidate-resolution-v4",
+  "model": "qwen-flash",
+  "make": "Honda",
+  "model_name": "XL80S"
+}

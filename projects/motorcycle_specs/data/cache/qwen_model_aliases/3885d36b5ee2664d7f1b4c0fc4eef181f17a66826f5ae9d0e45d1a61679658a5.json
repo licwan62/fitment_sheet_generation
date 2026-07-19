@@ -1,0 +1,20 @@
+{
+  "decision": "MATCH",
+  "selected_candidate": "cfmoto 450mt",
+  "confidence": "HIGH",
+  "match_basis": "SAME_NAME",
+  "explanation": "The input '450MT Low Fender' refers to the same model as 'cfmoto 450mt', with 'Low Fender' being a configuration descriptor not altering the core model identity. The catalog candidate 'cfmoto 450mt' is the canonical expression of this model.",
+  "canonical_model_alias": "450mt",
+  "configuration_tokens": [
+    "Low Fender"
+  ],
+  "brand_aliases": [],
+  "model_aliases": [
+    "450mt"
+  ],
+  "status": "SUCCESS",
+  "prompt_version": "motorcycle-candidate-resolution-v4",
+  "model": "qwen-flash",
+  "make": "CFMOTO",
+  "model_name": "450MT Low Fender"
+}

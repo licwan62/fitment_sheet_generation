@@ -1,0 +1,18 @@
+{
+  "decision": "MATCH",
+  "selected_candidate": "HP4 Race",
+  "confidence": "HIGH",
+  "match_basis": "HISTORICAL_ALIAS",
+  "explanation": "The HP4 Competition is a limited-edition, track-focused variant of the HP4 Race, sharing the same core platform and engine. While 'HP4 Competition' is a special configuration, it is fundamentally the same motorcycle model as the HP4 Race, with only minor equipment and homologation differences. The name 'HP4 Race' is the canonical catalog title for this model line.",
+  "canonical_model_alias": "HP4 Race",
+  "configuration_tokens": [],
+  "brand_aliases": [],
+  "model_aliases": [
+    "HP4 Race"
+  ],
+  "status": "SUCCESS",
+  "prompt_version": "motorcycle-candidate-resolution-v4",
+  "model": "qwen-flash",
+  "make": "BMW",
+  "model_name": "HP4 Competition"
+}

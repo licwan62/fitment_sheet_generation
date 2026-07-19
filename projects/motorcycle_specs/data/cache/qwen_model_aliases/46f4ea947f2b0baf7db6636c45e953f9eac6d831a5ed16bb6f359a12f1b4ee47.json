@@ -1,0 +1,20 @@
+{
+  "decision": "MATCH",
+  "selected_candidate": "RR 250 Enduro",
+  "confidence": "HIGH",
+  "match_basis": "MARKET_ALIAS",
+  "explanation": "The '250 RR-Race Edition' is a race-oriented variant of the Beta RR 250 Enduro, marketed as a special edition with performance enhancements. The catalog candidate 'RR 250 Enduro' represents the base model, and the 'Race Edition' is a configuration label rather than a distinct model. The core identity (RR 250 Enduro) is preserved.",
+  "canonical_model_alias": "RR 250 Enduro",
+  "configuration_tokens": [
+    "Race Edition"
+  ],
+  "brand_aliases": [],
+  "model_aliases": [
+    "RR 250 Enduro"
+  ],
+  "status": "SUCCESS",
+  "prompt_version": "motorcycle-candidate-resolution-v4",
+  "model": "qwen-flash",
+  "make": "Beta",
+  "model_name": "250 RR-Race Edition"
+}

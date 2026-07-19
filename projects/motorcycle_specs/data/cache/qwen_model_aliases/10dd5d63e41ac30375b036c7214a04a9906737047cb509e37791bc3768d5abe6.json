@@ -1,0 +1,20 @@
+{
+  "decision": "MATCH",
+  "selected_candidate": "honda cmx1100t rebel",
+  "confidence": "HIGH",
+  "match_basis": "SAME_NAME",
+  "explanation": "The input 'CMX1100 Rebel 1100T' matches the catalog candidate 'honda cmx1100t rebel' in model name, displacement, and configuration. The 'T' suffix is consistent across both, and 'Rebel' is the correct model series. The casing and minor formatting differences do not alter identity.",
+  "canonical_model_alias": "cmx1100t rebel",
+  "configuration_tokens": [
+    "1100T"
+  ],
+  "brand_aliases": [],
+  "model_aliases": [
+    "cmx1100t rebel"
+  ],
+  "status": "SUCCESS",
+  "prompt_version": "motorcycle-candidate-resolution-v4",
+  "model": "qwen-flash",
+  "make": "Honda",
+  "model_name": "CMX1100 Rebel 1100T"
+}

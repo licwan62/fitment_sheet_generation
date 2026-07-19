@@ -1,0 +1,16 @@
+{
+  "decision": "NO_MATCH",
+  "selected_candidate": "",
+  "confidence": "HIGH",
+  "match_basis": "NONE",
+  "explanation": "The Honda MR50 is a small-displacement motorcycle, likely a 50cc model, while the MR 250 Elsinore is a larger, 250cc off-road motorcycle. The displacement difference (50cc vs 250cc) confirms they are different models. No known market name, historical alias, abbreviation, or typo links them. The names do not match in identity or configuration.",
+  "canonical_model_alias": "",
+  "configuration_tokens": [],
+  "brand_aliases": [],
+  "model_aliases": [],
+  "status": "SUCCESS",
+  "prompt_version": "motorcycle-candidate-resolution-v4",
+  "model": "qwen-flash",
+  "make": "Honda",
+  "model_name": "MR50"
+}

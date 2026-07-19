@@ -1,0 +1,21 @@
+{
+  "decision": "MATCH",
+  "selected_candidate": "DL 650XT \n\t\tV-Strom GT",
+  "confidence": "HIGH",
+  "match_basis": "MARKET_ALIAS",
+  "explanation": "The input 'DL650XA V-Strom XT ABS' refers to the DL650XT V-Strom GT model with ABS, which is a market-specific configuration (A for 'Adventure' or 'ABS') and variant of the DL650XT V-Strom GT. The candidate 'DL 650XT V-Strom GT' is the correct catalog title for this model, with 'A' in the input being a market/trim designation that does not change the core model identity.",
+  "canonical_model_alias": "DL 650XT V-Strom GT",
+  "configuration_tokens": [
+    "ABS",
+    "A"
+  ],
+  "brand_aliases": [],
+  "model_aliases": [
+    "DL 650XT V-Strom GT"
+  ],
+  "status": "SUCCESS",
+  "prompt_version": "motorcycle-candidate-resolution-v4",
+  "model": "qwen-flash",
+  "make": "Suzuki",
+  "model_name": "DL650XA V-Strom XT ABS"
+}

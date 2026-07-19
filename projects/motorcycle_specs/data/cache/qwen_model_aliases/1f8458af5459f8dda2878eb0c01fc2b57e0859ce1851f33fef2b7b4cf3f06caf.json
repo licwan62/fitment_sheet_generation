@@ -1,0 +1,18 @@
+{
+  "decision": "MATCH",
+  "selected_candidate": "Honda Montesa Cota 4RT 301RR",
+  "confidence": "HIGH",
+  "match_basis": "SAME_NAME",
+  "explanation": "The input model 'MRT301N Montesa Cota 4RT 301RR' is a Honda-branded version of the Montesa Cota 4RT 301RR, with 'MRT301N' being a model code that aligns with the catalog title. The name 'Montesa Cota 4RT 301RR' is the correct and canonical designation for this motorcycle, and the input matches it exactly in model identity, displacement, and configuration.",
+  "canonical_model_alias": "Montesa Cota 4RT 301RR",
+  "configuration_tokens": [],
+  "brand_aliases": [],
+  "model_aliases": [
+    "Montesa Cota 4RT 301RR"
+  ],
+  "status": "SUCCESS",
+  "prompt_version": "motorcycle-candidate-resolution-v4",
+  "model": "qwen-flash",
+  "make": "Honda",
+  "model_name": "MRT301N Montesa Cota 4RT 301RR"
+}

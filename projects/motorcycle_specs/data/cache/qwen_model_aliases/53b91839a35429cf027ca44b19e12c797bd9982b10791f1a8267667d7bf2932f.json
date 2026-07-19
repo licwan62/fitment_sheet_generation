@@ -1,0 +1,18 @@
+{
+  "decision": "MATCH",
+  "selected_candidate": "Ducati Monster 1200 25 Anniversario",
+  "confidence": "HIGH",
+  "match_basis": "SAME_NAME",
+  "explanation": "The input 'Monster 1200 25th Anniversario' is a direct variant of the catalog candidate 'Ducati Monster 1200 25 Anniversario', with only minor differences in ordinal formatting ('25th' vs '25') and capitalization. Both refer to the same limited-edition model celebrating the 25th anniversary of the Ducati Monster line, with identical displacement and commemorative branding.",
+  "canonical_model_alias": "Monster 1200 25 Anniversario",
+  "configuration_tokens": [],
+  "brand_aliases": [],
+  "model_aliases": [
+    "Monster 1200 25 Anniversario"
+  ],
+  "status": "SUCCESS",
+  "prompt_version": "motorcycle-candidate-resolution-v4",
+  "model": "qwen-flash",
+  "make": "Ducati",
+  "model_name": "Monster 1200 25th Anniversario"
+}

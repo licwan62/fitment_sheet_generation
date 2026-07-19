@@ -1,0 +1,20 @@
+{
+  "decision": "MATCH",
+  "selected_candidate": "RR 525 \n\tMotard",
+  "confidence": "HIGH",
+  "match_basis": "MARKET_ALIAS",
+  "explanation": "The '525 RS Super Moto' is a market-specific name for the Beta RR 525 Motard model, where 'Super Moto' denotes the riding style and configuration. The core model identity (RR 525) and displacement (525cc) match exactly. 'Motard' is the European/technical term for Super Moto, making this a known market alias.",
+  "canonical_model_alias": "RR 525 Motard",
+  "configuration_tokens": [
+    "Motard"
+  ],
+  "brand_aliases": [],
+  "model_aliases": [
+    "RR 525 Motard"
+  ],
+  "status": "SUCCESS",
+  "prompt_version": "motorcycle-candidate-resolution-v4",
+  "model": "qwen-flash",
+  "make": "Beta",
+  "model_name": "525 RS Super Moto"
+}

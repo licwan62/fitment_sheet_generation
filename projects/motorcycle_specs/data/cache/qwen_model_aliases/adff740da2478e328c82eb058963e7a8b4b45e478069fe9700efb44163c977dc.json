@@ -1,0 +1,16 @@
+{
+  "decision": "NO_MATCH",
+  "selected_candidate": "",
+  "confidence": "HIGH",
+  "match_basis": "NONE",
+  "explanation": "The input model NSR50 is a 50cc motorcycle, while the catalog candidates NSR 150R and NSR 250R are 150cc and 250cc models respectively. Displacement is a core identity-bearing attribute; differing displacements indicate fundamentally different motorcycles. No known market name, historical alias, abbreviation, or typo links NSR50 to either candidate.",
+  "canonical_model_alias": "",
+  "configuration_tokens": [],
+  "brand_aliases": [],
+  "model_aliases": [],
+  "status": "SUCCESS",
+  "prompt_version": "motorcycle-candidate-resolution-v4",
+  "model": "qwen-flash",
+  "make": "Honda",
+  "model_name": "NSR50"
+}

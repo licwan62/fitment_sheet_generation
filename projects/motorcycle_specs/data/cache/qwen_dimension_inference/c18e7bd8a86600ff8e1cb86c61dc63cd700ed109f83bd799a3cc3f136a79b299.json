@@ -1,0 +1,16 @@
+{
+  "decision": "INFER",
+  "confidence": "MEDIUM",
+  "length_mm": 2150,
+  "width_mm": 850,
+  "height_mm": 1120,
+  "wheelbase_mm": 1380,
+  "seat_height_mm": 940,
+  "ground_clearance_mm": 300,
+  "explanation": "Inferred from Beta TR33's positioning as a motocross-oriented enduro model with similar dimensions to other Beta 330cc models (e.g., TR330), based on typical proportions for this class and market segment. Dimensions are estimated using known Beta model scaling patterns, but exact values may vary by year or region.",
+  "status": "SUCCESS",
+  "prompt_version": "motorcycle-dimension-inference-v1",
+  "model": "qwen-flash",
+  "make": "Beta",
+  "model_name": "TR33"
+}

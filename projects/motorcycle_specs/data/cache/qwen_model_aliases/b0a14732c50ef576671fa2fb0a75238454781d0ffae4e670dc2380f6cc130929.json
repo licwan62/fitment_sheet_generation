@@ -1,0 +1,20 @@
+{
+  "decision": "MATCH",
+  "selected_candidate": "Honda VT1300CS ABS",
+  "confidence": "HIGH",
+  "match_basis": "MARKET_ALIAS",
+  "explanation": "The input 'VT1300CSA Sabre ABS' is a variant of the Honda VT1300CS Sabre with ABS, where 'A' likely denotes the ABS configuration. The catalog candidate 'Honda VT1300CS ABS' matches the core model identity (VT1300CS Sabre) and includes the ABS feature, which is consistent with the input. The 'A' suffix in the input is a known market or configuration label for ABS-equipped models in certain regions, making this a valid alias.",
+  "canonical_model_alias": "VT1300CS ABS",
+  "configuration_tokens": [
+    "ABS"
+  ],
+  "brand_aliases": [],
+  "model_aliases": [
+    "VT1300CS ABS"
+  ],
+  "status": "SUCCESS",
+  "prompt_version": "motorcycle-candidate-resolution-v4",
+  "model": "qwen-flash",
+  "make": "Honda",
+  "model_name": "VT1300CSA Sabre ABS"
+}

@@ -1,0 +1,18 @@
+{
+  "decision": "MATCH",
+  "selected_candidate": "ST 125 Dax",
+  "confidence": "HIGH",
+  "match_basis": "MARKET_ALIAS",
+  "explanation": "The 'Dax 125' is a known market name for the Honda ST 125 Dax, with 'ST' being the model series and 'Dax' the marketing name used in certain regions. The displacement (125) matches exactly, and the model is identical across both catalog entries.",
+  "canonical_model_alias": "ST 125 Dax",
+  "configuration_tokens": [],
+  "brand_aliases": [],
+  "model_aliases": [
+    "ST 125 Dax"
+  ],
+  "status": "SUCCESS",
+  "prompt_version": "motorcycle-candidate-resolution-v4",
+  "model": "qwen-flash",
+  "make": "Honda",
+  "model_name": "Dax 125"
+}

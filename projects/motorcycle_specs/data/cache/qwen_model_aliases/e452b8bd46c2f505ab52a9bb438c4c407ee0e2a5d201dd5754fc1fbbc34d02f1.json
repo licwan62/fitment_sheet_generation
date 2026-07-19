@@ -1,0 +1,16 @@
+{
+  "decision": "NO_MATCH",
+  "selected_candidate": "",
+  "confidence": "HIGH",
+  "match_basis": "NONE",
+  "explanation": "The input model 'RS 50' has a displacement of 50cc, while all catalog candidates ('RS 125', 'RS 250', 'RS4 50') have different displacements or are distinct models. The 'RS4 50' candidate shares the 50cc displacement but is not a known variant or market alias of the RS 50; no evidence links it to the same underlying motorcycle. Therefore, no match exists.",
+  "canonical_model_alias": "",
+  "configuration_tokens": [],
+  "brand_aliases": [],
+  "model_aliases": [],
+  "status": "SUCCESS",
+  "prompt_version": "motorcycle-candidate-resolution-v4",
+  "model": "qwen-flash",
+  "make": "Aprilia",
+  "model_name": "RS 50"
+}

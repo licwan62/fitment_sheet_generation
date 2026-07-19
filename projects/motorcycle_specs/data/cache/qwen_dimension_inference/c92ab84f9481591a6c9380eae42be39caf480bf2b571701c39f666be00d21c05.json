@@ -1,0 +1,16 @@
+{
+  "decision": "INFER|UNKNOWN",
+  "confidence": "MEDIUM|LOW",
+  "length_mm": null,
+  "width_mm": null,
+  "height_mm": null,
+  "wheelbase_mm": null,
+  "seat_height_mm": null,
+  "ground_clearance_mm": null,
+  "explanation": "The Aprilia SR Motard 160 is a lightweight urban motorcycle with limited publicly available dimensional data. Without access to official specifications or verified catalog sources, precise dimensions cannot be reliably determined. Variations by market and model year further reduce confidence in inferred values. Dimensions from similar models (e.g., Aprilia RS 160) are not directly applicable due to differing design intent and geometry.",
+  "status": "SUCCESS",
+  "prompt_version": "motorcycle-dimension-inference-v1",
+  "model": "qwen-flash",
+  "make": "Aprilia",
+  "model_name": "SR Motard 160"
+}

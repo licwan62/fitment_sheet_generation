@@ -1,0 +1,18 @@
+{
+  "decision": "MATCH",
+  "selected_candidate": "VF 1100C Magna V65",
+  "confidence": "HIGH",
+  "match_basis": "SAME_NAME",
+  "explanation": "The input 'VF1100C V65 Magna' and the candidate 'VF 1100C Magna V65' refer to the same motorcycle model with identical displacement, engine configuration, and market designation. The order of tokens and minor spacing differences do not alter the identity.",
+  "canonical_model_alias": "VF 1100C Magna V65",
+  "configuration_tokens": [],
+  "brand_aliases": [],
+  "model_aliases": [
+    "VF 1100C Magna V65"
+  ],
+  "status": "SUCCESS",
+  "prompt_version": "motorcycle-candidate-resolution-v4",
+  "model": "qwen-flash",
+  "make": "Honda",
+  "model_name": "VF1100C V65 Magna"
+}

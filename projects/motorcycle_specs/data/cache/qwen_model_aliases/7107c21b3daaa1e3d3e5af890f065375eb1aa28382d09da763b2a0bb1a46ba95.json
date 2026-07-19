@@ -1,0 +1,18 @@
+{
+  "decision": "MATCH",
+  "selected_candidate": "beta rr 350 4t",
+  "confidence": "HIGH",
+  "match_basis": "SAME_NAME",
+  "explanation": "The input '350 RR EFI' refers to the same model as 'beta rr 350 4t', which is a known catalog title for the 350cc four-stroke Enduro model from Beta with EFI. The 'RR' designation, displacement (350), and 4T engine are consistent across both names. 'EFI' is a feature of this model but not part of the core name; the canonical alias omits it as a configuration detail.",
+  "canonical_model_alias": "beta rr 350 4t",
+  "configuration_tokens": [
+    "EFI"
+  ],
+  "brand_aliases": [],
+  "model_aliases": [],
+  "status": "SUCCESS",
+  "prompt_version": "motorcycle-candidate-resolution-v4",
+  "model": "qwen-flash",
+  "make": "Beta",
+  "model_name": "350 RR EFI"
+}

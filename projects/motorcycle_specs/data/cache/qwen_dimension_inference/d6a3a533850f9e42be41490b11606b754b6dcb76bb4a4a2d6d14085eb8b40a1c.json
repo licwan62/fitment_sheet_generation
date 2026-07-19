@@ -1,0 +1,16 @@
+{
+  "decision": "INFER|UNKNOWN",
+  "confidence": "LOW",
+  "length_mm": null,
+  "width_mm": null,
+  "height_mm": null,
+  "wheelbase_mm": null,
+  "seat_height_mm": null,
+  "ground_clearance_mm": null,
+  "explanation": "The Evobike VMPS5 is not a widely documented model in public sources, and no official specifications or catalog data are available. Without verified dimensions or clear visual references, dimensional inference cannot be reliably performed. Model identity and variations by year/market remain uncertain.",
+  "status": "SUCCESS",
+  "prompt_version": "motorcycle-dimension-inference-v1",
+  "model": "qwen-flash",
+  "make": "Evobike",
+  "model_name": "VMPS5"
+}

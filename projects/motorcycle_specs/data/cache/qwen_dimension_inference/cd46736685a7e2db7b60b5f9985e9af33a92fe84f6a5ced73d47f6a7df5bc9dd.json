@@ -1,0 +1,16 @@
+{
+  "decision": "INFER",
+  "confidence": "MEDIUM",
+  "length_mm": 2300,
+  "width_mm": 900,
+  "height_mm": 1150,
+  "wheelbase_mm": 1500,
+  "seat_height_mm": 760,
+  "ground_clearance_mm": 140,
+  "explanation": "Inferred based on typical American cruiser dimensions for similar 2000s-era models from American IronHorse, with average proportions for a heavy motorcycle in the Bandit class. Dimensions are estimated within plausible ranges for comparable factory-built cruisers, but exact values may vary by model year and market.",
+  "status": "SUCCESS",
+  "prompt_version": "motorcycle-dimension-inference-v1",
+  "model": "qwen-flash",
+  "make": "American IronHorse",
+  "model_name": "Bandit"
+}

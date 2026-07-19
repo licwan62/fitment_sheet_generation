@@ -1,0 +1,16 @@
+{
+  "decision": "INFER",
+  "confidence": "MEDIUM",
+  "length_mm": 2150,
+  "width_mm": 860,
+  "height_mm": 1320,
+  "wheelbase_mm": 1470,
+  "seat_height_mm": 960,
+  "ground_clearance_mm": 300,
+  "explanation": "Inferred from typical Beta Rev3 200 dimensions based on similar models in the lineup, such as the Rev3 250 and Rev3 300, which share platform architecture. Dimensions are estimated using known proportions of off-road motocross bikes in this class, with adjustments for the 200cc engine size. No official catalog data available for the Rev3 200 specifically.",
+  "status": "SUCCESS",
+  "prompt_version": "motorcycle-dimension-inference-v1",
+  "model": "qwen-flash",
+  "make": "Beta",
+  "model_name": "Rev3 200"
+}

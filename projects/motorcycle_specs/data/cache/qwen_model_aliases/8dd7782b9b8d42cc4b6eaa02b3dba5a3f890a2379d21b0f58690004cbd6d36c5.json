@@ -1,0 +1,16 @@
+{
+  "decision": "MATCH",
+  "selected_candidate": "Bajaj pulsar ns200",
+  "confidence": "HIGH",
+  "match_basis": "TYPO",
+  "explanation": "The input 'Pulsar NS 250' is a plausible typo or misremembered version of the actual model 'Pulsar NS200', which is the correct 250cc model in Bajaj's Pulsar lineup. The displacement and model name are consistent with the NS series, and 'NS 250' likely results from confusion with the NS200's 200cc displacement and the common 250cc engine size in similar models. No other candidate matches this identity.",
+  "canonical_model_alias": "Pulsar NS200",
+  "configuration_tokens": [],
+  "brand_aliases": [],
+  "model_aliases": [],
+  "status": "SUCCESS",
+  "prompt_version": "motorcycle-candidate-resolution-v4",
+  "model": "qwen-flash",
+  "make": "Bajaj",
+  "model_name": "Pulsar NS 250"
+}

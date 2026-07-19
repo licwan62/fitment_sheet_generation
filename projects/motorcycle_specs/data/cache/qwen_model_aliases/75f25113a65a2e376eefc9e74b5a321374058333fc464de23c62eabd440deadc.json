@@ -1,0 +1,16 @@
+{
+  "decision": "NO_MATCH",
+  "selected_candidate": "",
+  "confidence": "HIGH",
+  "match_basis": "NONE",
+  "explanation": "The input model 'Devils Advocate Two-Up V111 Carb' is not found in the catalog candidates, and no known market name, historical alias, abbreviation, or plausible typo matches it to any candidate. The model's unique combination of name, configuration (Two-Up), engine (V111), and carburetor specification does not align with any available catalog entry.",
+  "canonical_model_alias": "",
+  "configuration_tokens": [],
+  "brand_aliases": [],
+  "model_aliases": [],
+  "status": "SUCCESS",
+  "prompt_version": "motorcycle-candidate-resolution-v4",
+  "model": "qwen-flash",
+  "make": "Big Bear Choppers",
+  "model_name": "Devils Advocate Two-Up V111 Carb"
+}

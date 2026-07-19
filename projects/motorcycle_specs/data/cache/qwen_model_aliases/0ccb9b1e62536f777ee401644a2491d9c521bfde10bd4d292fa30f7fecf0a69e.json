@@ -1,0 +1,18 @@
+{
+  "decision": "MATCH",
+  "selected_candidate": "Boulevard M50 Limited",
+  "confidence": "HIGH",
+  "match_basis": "MARKET_ALIAS",
+  "explanation": "The input 'M50 Boulevard Limited' refers to the same motorcycle model as 'Boulevard M50 Limited', with the model name reordered and a minor formatting difference. The displacement (M50) and trim level (Limited) are identical, and this is a known market or catalog variation of the same model.",
+  "canonical_model_alias": "Boulevard M50 Limited",
+  "configuration_tokens": [],
+  "brand_aliases": [],
+  "model_aliases": [
+    "Boulevard M50 Limited"
+  ],
+  "status": "SUCCESS",
+  "prompt_version": "motorcycle-candidate-resolution-v4",
+  "model": "qwen-flash",
+  "make": "Suzuki",
+  "model_name": "M50 Boulevard Limited"
+}

@@ -1,0 +1,20 @@
+{
+  "decision": "MATCH",
+  "selected_candidate": "Suzuki GS450",
+  "confidence": "HIGH",
+  "match_basis": "MARKET_ALIAS",
+  "explanation": "GS450GA is a known market-specific designation for the Suzuki GS450, with 'GA' likely denoting a regional or configuration variant. The core model identity (GS450) matches exactly, and no displacement or fundamental design differences exist. The candidate 'Suzuki GS450' represents the standard catalog title for this model.",
+  "canonical_model_alias": "GS450",
+  "configuration_tokens": [
+    "GA"
+  ],
+  "brand_aliases": [],
+  "model_aliases": [
+    "GS450"
+  ],
+  "status": "SUCCESS",
+  "prompt_version": "motorcycle-candidate-resolution-v4",
+  "model": "qwen-flash",
+  "make": "Suzuki",
+  "model_name": "GS450GA"
+}

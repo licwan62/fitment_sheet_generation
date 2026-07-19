@@ -1,0 +1,16 @@
+{
+  "decision": "NO_MATCH",
+  "selected_candidate": "",
+  "confidence": "HIGH",
+  "match_basis": "NONE",
+  "explanation": "The input model 'CR60R' is not a valid Honda motorcycle model, and none of the catalog candidates match its name or identity. The candidates are all CBR models with displacements of 150cc to 650cc, but 'CR60R' does not correspond to any known Honda model in this list. There is no evidence of a market alias, historical name, abbreviation, or typo linking 'CR60R' to any candidate.",
+  "canonical_model_alias": "",
+  "configuration_tokens": [],
+  "brand_aliases": [],
+  "model_aliases": [],
+  "status": "SUCCESS",
+  "prompt_version": "motorcycle-candidate-resolution-v4",
+  "model": "qwen-flash",
+  "make": "Honda",
+  "model_name": "CR60R"
+}

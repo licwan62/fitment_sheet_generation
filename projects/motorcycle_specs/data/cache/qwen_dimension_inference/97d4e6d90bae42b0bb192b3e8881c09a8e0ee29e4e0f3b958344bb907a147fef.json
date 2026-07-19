@@ -1,0 +1,16 @@
+{
+  "decision": "INFER|UNKNOWN",
+  "confidence": "MEDIUM|LOW",
+  "length_mm": null,
+  "width_mm": null,
+  "height_mm": null,
+  "wheelbase_mm": null,
+  "seat_height_mm": null,
+  "ground_clearance_mm": null,
+  "explanation": "The Gas Gas TXT Pro 125 Racing is a specialized racing model with limited public documentation on exact dimensions. Variations in year-specific design, market-specific configurations, and lack of official catalog data prevent reliable inference. Dimensions may differ significantly from standard models or related variants. No definitive source confirms these measurements, so all values are marked as unknown.",
+  "status": "SUCCESS",
+  "prompt_version": "motorcycle-dimension-inference-v1",
+  "model": "qwen-flash",
+  "make": "Gas Gas",
+  "model_name": "TXT Pro 125 Racing"
+}

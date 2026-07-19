@@ -1,0 +1,16 @@
+{
+  "decision": "INFER",
+  "confidence": "MEDIUM",
+  "length_mm": 2180,
+  "width_mm": 905,
+  "height_mm": 1460,
+  "wheelbase_mm": 1430,
+  "seat_height_mm": 870,
+  "ground_clearance_mm": 220,
+  "explanation": "Inferred from typical dimensions of the Honda CRF1100L Africa Twin (2016–2023) and the DCT variant's similar chassis and bodywork. The Adventure Sports DCT model shares core structural dimensions with the standard CRF1100L, with minor variations in weight and suspension tuning. No official catalog data available for this specific variant.",
+  "status": "SUCCESS",
+  "prompt_version": "motorcycle-dimension-inference-v1",
+  "model": "qwen-flash",
+  "make": "Honda",
+  "model_name": "CRF1100D4 Africa Twin Adventure Sports DCT"
+}

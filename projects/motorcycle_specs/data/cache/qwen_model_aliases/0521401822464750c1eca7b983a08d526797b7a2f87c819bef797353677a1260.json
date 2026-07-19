@@ -1,0 +1,16 @@
+{
+  "decision": "MATCH",
+  "selected_candidate": "harley davidson softail slim fls",
+  "confidence": "HIGH",
+  "match_basis": "MARKET_ALIAS",
+  "explanation": "FLSL Softail Slim 107 is the same model as the Harley-Davidson Softail Slim FLS; 'FLSL' is the model code for the Softail Slim, and 'FLS' is a common abbreviated catalog designation used in some markets and listings. The displacement '107' matches exactly, confirming identity.",
+  "canonical_model_alias": "softail slim fls",
+  "configuration_tokens": [],
+  "brand_aliases": [],
+  "model_aliases": [],
+  "status": "SUCCESS",
+  "prompt_version": "motorcycle-candidate-resolution-v4",
+  "model": "qwen-flash",
+  "make": "Harley-Davidson",
+  "model_name": "FLSL Softail Slim 107"
+}

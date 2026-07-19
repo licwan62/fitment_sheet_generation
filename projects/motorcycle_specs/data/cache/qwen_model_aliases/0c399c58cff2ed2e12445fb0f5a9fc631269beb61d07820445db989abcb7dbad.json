@@ -1,0 +1,21 @@
+{
+  "decision": "MATCH",
+  "selected_candidate": "harley davidson softail fat boy 114 flfbs",
+  "confidence": "HIGH",
+  "match_basis": "MARKET_ALIAS",
+  "explanation": "FLFBS is the model code for the Harley-Davidson Softail Fat Boy 114, and 'Softail Fat Boy' is the correct catalog name for this model. The input 'FLFBS Fat Boy 114' uses the model code and common name, which aligns with the candidate that includes both the full model name and the model code.",
+  "canonical_model_alias": "softail fat boy 114",
+  "configuration_tokens": [
+    "flfbs"
+  ],
+  "brand_aliases": [],
+  "model_aliases": [
+    "softail fat boy 114 flfbs",
+    "softail fat boy 114"
+  ],
+  "status": "SUCCESS",
+  "prompt_version": "motorcycle-candidate-resolution-v4",
+  "model": "qwen-flash",
+  "make": "Harley-Davidson",
+  "model_name": "FLFBS Fat Boy 114"
+}

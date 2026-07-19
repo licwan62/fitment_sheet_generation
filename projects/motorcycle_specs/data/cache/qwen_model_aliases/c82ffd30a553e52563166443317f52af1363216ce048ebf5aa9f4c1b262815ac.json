@@ -1,0 +1,17 @@
+{
+  "decision": "MATCH",
+  "selected_candidate": "NC 750X / DCT",
+  "canonical_model_alias": "NC 750X",
+  "configuration_tokens": [
+    "DCT"
+  ],
+  "brand_aliases": [],
+  "model_aliases": [
+    "NC 750X / DCT"
+  ],
+  "status": "SUCCESS",
+  "prompt_version": "motorcycle-candidate-resolution-v3",
+  "model": "qwen-flash",
+  "make": "Honda",
+  "model_name": "NC750X"
+}

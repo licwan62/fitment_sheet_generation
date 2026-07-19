@@ -1,0 +1,18 @@
+{
+  "decision": "MATCH",
+  "selected_candidate": "CBR 600 Hurricane",
+  "confidence": "HIGH",
+  "match_basis": "MARKET_ALIAS",
+  "explanation": "The CBR600F Hurricane is the same motorcycle as the CBR 600 Hurricane, with 'Hurricane' being the market-specific name used in certain regions for the CBR600F model. The model designation and displacement are identical, confirming it is the same underlying motorcycle.",
+  "canonical_model_alias": "CBR 600 Hurricane",
+  "configuration_tokens": [],
+  "brand_aliases": [],
+  "model_aliases": [
+    "CBR 600 Hurricane"
+  ],
+  "status": "SUCCESS",
+  "prompt_version": "motorcycle-candidate-resolution-v4",
+  "model": "qwen-flash",
+  "make": "Honda",
+  "model_name": "CBR600F Hurricane"
+}

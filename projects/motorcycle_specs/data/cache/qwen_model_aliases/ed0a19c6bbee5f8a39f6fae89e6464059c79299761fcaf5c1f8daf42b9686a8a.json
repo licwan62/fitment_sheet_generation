@@ -1,0 +1,20 @@
+{
+  "decision": "MATCH",
+  "selected_candidate": "Suzuki Gixxer 250",
+  "confidence": "HIGH",
+  "match_basis": "SAME_NAME",
+  "explanation": "The input 'Gixxer 250 ABS' refers to the same motorcycle model as 'Suzuki Gixxer 250', with 'ABS' being a configuration feature not altering the core model identity. The catalog candidate 'Suzuki Gixxer 250' is the canonical expression of this model.",
+  "canonical_model_alias": "Gixxer 250",
+  "configuration_tokens": [
+    "ABS"
+  ],
+  "brand_aliases": [],
+  "model_aliases": [
+    "Gixxer 250"
+  ],
+  "status": "SUCCESS",
+  "prompt_version": "motorcycle-candidate-resolution-v4",
+  "model": "qwen-flash",
+  "make": "Suzuki",
+  "model_name": "Gixxer 250 ABS"
+}

@@ -1,0 +1,20 @@
+{
+  "decision": "MATCH",
+  "selected_candidate": "Tuono V4 1100RR",
+  "confidence": "HIGH",
+  "match_basis": "SAME_NAME",
+  "explanation": "The input 'Tuono V4 1100 RR ABS' and the candidate 'Tuono V4 1100RR' refer to the same underlying motorcycle model. The absence of 'ABS' in the candidate is a configuration difference, but the core model identity (Tuono V4 1100) is identical. The omission of 'ABS' does not indicate a different model; it is a feature variant. The candidate 'Tuono V4 1100RR' is the canonical form used in Aprilia's catalog.",
+  "canonical_model_alias": "Tuono V4 1100RR",
+  "configuration_tokens": [
+    "ABS"
+  ],
+  "brand_aliases": [],
+  "model_aliases": [
+    "Tuono V4 1100RR"
+  ],
+  "status": "SUCCESS",
+  "prompt_version": "motorcycle-candidate-resolution-v4",
+  "model": "qwen-flash",
+  "make": "Aprilia",
+  "model_name": "Tuono V4 1100 RR ABS"
+}

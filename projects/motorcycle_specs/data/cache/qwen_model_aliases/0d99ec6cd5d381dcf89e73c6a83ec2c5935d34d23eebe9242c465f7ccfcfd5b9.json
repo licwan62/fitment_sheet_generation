@@ -1,0 +1,18 @@
+{
+  "decision": "MATCH",
+  "selected_candidate": "Suzuki TR 50 SD",
+  "confidence": "HIGH",
+  "match_basis": "MARKET_ALIAS",
+  "explanation": "The Suzuki MT50 is a known market-specific name for the Suzuki TR 50 SD, which was marketed as the MT50 in certain regions. The model shares identical engine displacement, platform, and specifications. The 'MT' designation in this context refers to a marketing variant of the TR 50 series.",
+  "canonical_model_alias": "TR 50 SD",
+  "configuration_tokens": [],
+  "brand_aliases": [],
+  "model_aliases": [
+    "TR 50 SD"
+  ],
+  "status": "SUCCESS",
+  "prompt_version": "motorcycle-candidate-resolution-v4",
+  "model": "qwen-flash",
+  "make": "Suzuki",
+  "model_name": "MT50"
+}

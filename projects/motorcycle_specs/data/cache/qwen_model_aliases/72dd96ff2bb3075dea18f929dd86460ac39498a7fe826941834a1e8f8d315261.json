@@ -1,0 +1,18 @@
+{
+  "decision": "MATCH",
+  "selected_candidate": "gasgas ec 250 e",
+  "confidence": "HIGH",
+  "match_basis": "SAME_NAME",
+  "explanation": "The input 'EC 250E' is a direct match in name and displacement to the catalog candidate 'gasgas ec 250 e', with only case variation and minor spacing difference. The 'E' suffix is consistent across both, indicating the same model variant.",
+  "canonical_model_alias": "ec 250 e",
+  "configuration_tokens": [],
+  "brand_aliases": [],
+  "model_aliases": [
+    "gasgas ec 250 e"
+  ],
+  "status": "SUCCESS",
+  "prompt_version": "motorcycle-candidate-resolution-v4",
+  "model": "qwen-flash",
+  "make": "Gas Gas",
+  "model_name": "EC 250E"
+}

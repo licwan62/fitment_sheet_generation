@@ -1,0 +1,21 @@
+{
+  "decision": "MATCH",
+  "selected_candidate": "XN 85D Turbo",
+  "confidence": "HIGH",
+  "match_basis": "MARKET_ALIAS",
+  "explanation": "The input 'XN85 Turbo' refers to the Suzuki XN85D Turbo, a known model in the Suzuki motorcycle lineup. The catalog candidate 'XN 85D Turbo' is the correct and canonical expression of the same model, with only minor formatting differences (space insertion). The 'D' suffix denotes a specific configuration or market variant, but the core identity remains unchanged. No other candidates match this model.",
+  "canonical_model_alias": "XN 85D Turbo",
+  "configuration_tokens": [
+    "D",
+    "Turbo"
+  ],
+  "brand_aliases": [],
+  "model_aliases": [
+    "XN 85D Turbo"
+  ],
+  "status": "SUCCESS",
+  "prompt_version": "motorcycle-candidate-resolution-v4",
+  "model": "qwen-flash",
+  "make": "Suzuki",
+  "model_name": "XN85 Turbo"
+}

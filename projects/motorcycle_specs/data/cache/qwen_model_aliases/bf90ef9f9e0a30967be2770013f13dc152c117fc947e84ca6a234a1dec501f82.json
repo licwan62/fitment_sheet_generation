@@ -1,0 +1,13 @@
+{
+  "status": "TIMEOUT",
+  "prompt_version": "motorcycle-candidate-resolution-v3",
+  "model": "qwen-flash",
+  "make": "Honda",
+  "model_name": "CA125A Super Cub",
+  "candidate_titles": [
+    "CA 125 Rebel"
+  ],
+  "error_type": "ReadTimeout",
+  "status_code": null,
+  "retryable": true
+}

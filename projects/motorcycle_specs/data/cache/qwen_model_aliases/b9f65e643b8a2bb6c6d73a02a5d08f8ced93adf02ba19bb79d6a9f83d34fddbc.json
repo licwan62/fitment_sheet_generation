@@ -1,0 +1,18 @@
+{
+  "decision": "MATCH",
+  "selected_candidate": "beta evo 125 2t factory",
+  "confidence": "HIGH",
+  "match_basis": "SAME_NAME",
+  "explanation": "The input model 'EVO 125 Factory' is a direct reference to the same motorcycle as the catalog candidate 'beta evo 125 2t factory', with '2T' being a standard designation for two-stroke engines, which is implied by the EVO series. The name and displacement match exactly, and 'Factory' is a known configuration label consistent across Beta's model nomenclature.",
+  "canonical_model_alias": "beta evo 125 2t factory",
+  "configuration_tokens": [
+    "factory"
+  ],
+  "brand_aliases": [],
+  "model_aliases": [],
+  "status": "SUCCESS",
+  "prompt_version": "motorcycle-candidate-resolution-v4",
+  "model": "qwen-flash",
+  "make": "Beta",
+  "model_name": "EVO 125 Factory"
+}

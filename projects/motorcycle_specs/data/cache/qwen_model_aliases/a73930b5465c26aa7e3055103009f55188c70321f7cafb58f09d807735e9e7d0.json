@@ -1,0 +1,19 @@
+{
+  "decision": "MATCH",
+  "selected_candidate": "BMW K 1600 Grand America Midnight",
+  "confidence": "HIGH",
+  "match_basis": "SAME_NAME",
+  "explanation": "The input 'K1600 Grand America Option 719 Midnight' refers to the same motorcycle model as 'BMW K 1600 Grand America Midnight', with 'Option 719' being a configuration identifier for the Midnight color variant, which is already included in the catalog candidate. The core model identity, displacement (1600), and name are identical.",
+  "canonical_model_alias": "K 1600 Grand America Midnight",
+  "configuration_tokens": [
+    "Option 719",
+    "Midnight"
+  ],
+  "brand_aliases": [],
+  "model_aliases": [],
+  "status": "SUCCESS",
+  "prompt_version": "motorcycle-candidate-resolution-v4",
+  "model": "qwen-flash",
+  "make": "BMW",
+  "model_name": "K1600 Grand America Option 719 Midnight"
+}

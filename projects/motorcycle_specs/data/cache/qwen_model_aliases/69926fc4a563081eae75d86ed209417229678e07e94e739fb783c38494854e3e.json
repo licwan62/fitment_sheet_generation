@@ -1,0 +1,20 @@
+{
+  "decision": "MATCH",
+  "selected_candidate": "CBR 650R",
+  "confidence": "HIGH",
+  "match_basis": "MARKET_ALIAS",
+  "explanation": "The 'CBR650R E-Clutch' is a market-specific configuration of the CBR 650R with an optional e-clutch feature; the base model remains identical. The 'E-Clutch' designation is a feature label, not a distinct model variant.",
+  "canonical_model_alias": "CBR 650R",
+  "configuration_tokens": [
+    "E-Clutch"
+  ],
+  "brand_aliases": [],
+  "model_aliases": [
+    "CBR 650R"
+  ],
+  "status": "SUCCESS",
+  "prompt_version": "motorcycle-candidate-resolution-v4",
+  "model": "qwen-flash",
+  "make": "Honda",
+  "model_name": "CBR650R E-Clutch"
+}

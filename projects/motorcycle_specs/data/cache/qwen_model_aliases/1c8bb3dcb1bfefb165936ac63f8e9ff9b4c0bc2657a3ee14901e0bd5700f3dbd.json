@@ -1,0 +1,16 @@
+{
+  "decision": "NO_MATCH",
+  "selected_candidate": "",
+  "confidence": "HIGH",
+  "match_basis": "NONE",
+  "explanation": "The input model 'ST90' does not correspond to any of the catalog candidates. The ST90 is a Honda motorcycle model, but none of the listed candidates match its identity in terms of name, displacement, or known market variants. The candidates include models like CT90, SW-T series, TRX90X, and others that are distinct in design, displacement, or purpose (e.g., trail, scooter). No known alias, abbreviation, or typo links 'ST90' to any of these entries.",
+  "canonical_model_alias": "",
+  "configuration_tokens": [],
+  "brand_aliases": [],
+  "model_aliases": [],
+  "status": "SUCCESS",
+  "prompt_version": "motorcycle-candidate-resolution-v4",
+  "model": "qwen-flash",
+  "make": "Honda",
+  "model_name": "ST90"
+}

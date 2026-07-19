@@ -1,0 +1,18 @@
+{
+  "decision": "MATCH",
+  "selected_candidate": "bigdog bulldog",
+  "confidence": "HIGH",
+  "match_basis": "SAME_NAME",
+  "explanation": "The input model 'Bulldog' exactly matches the catalog candidate 'bigdog bulldog' in name and identity, with no discrepancy in displacement, configuration, or market variant.",
+  "canonical_model_alias": "bulldog",
+  "configuration_tokens": [],
+  "brand_aliases": [],
+  "model_aliases": [
+    "bigdog bulldog"
+  ],
+  "status": "SUCCESS",
+  "prompt_version": "motorcycle-candidate-resolution-v4",
+  "model": "qwen-flash",
+  "make": "Big Dog",
+  "model_name": "Bulldog"
+}

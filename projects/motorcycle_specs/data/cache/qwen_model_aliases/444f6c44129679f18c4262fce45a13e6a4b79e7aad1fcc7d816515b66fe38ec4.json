@@ -1,0 +1,16 @@
+{
+  "decision": "NO_MATCH",
+  "selected_candidate": "",
+  "confidence": "HIGH",
+  "match_basis": "NONE",
+  "explanation": "The model 'Origin' is not found in the catalog candidates, and no known variant, market name, historical alias, abbreviation, or plausible typo of a candidate matches this input. The manufacturer 'Can-Am' is specified, but no valid matching motorcycle model exists in the provided catalog list.",
+  "canonical_model_alias": "",
+  "configuration_tokens": [],
+  "brand_aliases": [],
+  "model_aliases": [],
+  "status": "SUCCESS",
+  "prompt_version": "motorcycle-candidate-resolution-v4",
+  "model": "qwen-flash",
+  "make": "Can-Am",
+  "model_name": "Origin"
+}

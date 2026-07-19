@@ -1,0 +1,20 @@
+{
+  "decision": "MATCH",
+  "selected_candidate": "Honda CBF600 S",
+  "confidence": "HIGH",
+  "match_basis": "SAME_NAME",
+  "explanation": "The input model 'CBF600SA' is a variant of the CBF600 S, with 'SA' likely denoting a market-specific configuration or trim level. The core model identity 'CBF600 S' matches exactly with the catalog candidate 'Honda CBF600 S'. The absence of 'SA' in the candidate does not imply a different model, as 'SA' is a configuration token and not a distinct model identifier.",
+  "canonical_model_alias": "CBF600 S",
+  "configuration_tokens": [
+    "SA"
+  ],
+  "brand_aliases": [],
+  "model_aliases": [
+    "CBF600 S"
+  ],
+  "status": "SUCCESS",
+  "prompt_version": "motorcycle-candidate-resolution-v4",
+  "model": "qwen-flash",
+  "make": "Honda",
+  "model_name": "CBF600SA"
+}

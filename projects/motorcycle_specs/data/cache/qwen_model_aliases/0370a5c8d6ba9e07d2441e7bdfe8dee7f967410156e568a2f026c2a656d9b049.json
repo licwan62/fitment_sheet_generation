@@ -1,0 +1,16 @@
+{
+  "decision": "NO_MATCH",
+  "selected_candidate": "",
+  "confidence": "HIGH",
+  "match_basis": "NONE",
+  "explanation": "The input model 'R1100RSL' is not a valid variant of either 'R 1100RS' or 'R 1100RT'. The 'RSL' suffix does not correspond to any known BMW R1100 series model, and no market, configuration, or typographical variation of the listed candidates matches it. The R1100RS and R1100RT are distinct models with different intended uses and configurations.",
+  "canonical_model_alias": "",
+  "configuration_tokens": [],
+  "brand_aliases": [],
+  "model_aliases": [],
+  "status": "SUCCESS",
+  "prompt_version": "motorcycle-candidate-resolution-v4",
+  "model": "qwen-flash",
+  "make": "BMW",
+  "model_name": "R1100RSL"
+}

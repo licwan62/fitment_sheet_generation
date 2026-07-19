@@ -1,0 +1,16 @@
+{
+  "decision": "NO_MATCH",
+  "selected_candidate": "",
+  "confidence": "HIGH",
+  "match_basis": "NONE",
+  "explanation": "The model 'Mutt' is not present in the catalog candidates, and none of the listed candidates are known variants or aliases of a 'Mutt' model. The candidates are distinct Big Dog models (e.g., Mastiff, Coyote, Pitbull), but 'Mutt' does not correspond to any of them by name, market designation, historical alias, abbreviation, or plausible typo.",
+  "canonical_model_alias": "",
+  "configuration_tokens": [],
+  "brand_aliases": [],
+  "model_aliases": [],
+  "status": "SUCCESS",
+  "prompt_version": "motorcycle-candidate-resolution-v4",
+  "model": "qwen-flash",
+  "make": "Big Dog",
+  "model_name": "Mutt"
+}

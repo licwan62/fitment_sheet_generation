@@ -1,0 +1,16 @@
+{
+  "decision": "MATCH",
+  "selected_candidate": "R nineT Urban G/S",
+  "confidence": "HIGH",
+  "match_basis": "SAME_NAME",
+  "explanation": "The input model 'R nine T Urban G/S' exactly matches the catalog candidate 'R nineT Urban G/S' in name, displacement, and configuration. The other candidates are distinct variants with additional suffixes or different designations.",
+  "canonical_model_alias": "R nineT Urban G/S",
+  "configuration_tokens": [],
+  "brand_aliases": [],
+  "model_aliases": [],
+  "status": "SUCCESS",
+  "prompt_version": "motorcycle-candidate-resolution-v4",
+  "model": "qwen-flash",
+  "make": "BMW",
+  "model_name": "R nine T Urban G/S"
+}

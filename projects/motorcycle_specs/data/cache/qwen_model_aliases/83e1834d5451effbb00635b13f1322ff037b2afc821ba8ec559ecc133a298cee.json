@@ -1,0 +1,16 @@
+{
+  "decision": "MATCH",
+  "selected_candidate": "gasgas xc 250",
+  "confidence": "HIGH",
+  "match_basis": "MARKET_ALIAS",
+  "explanation": "The input 'XC 250 4T' is a valid market-specific designation for the same model as 'gasgas xc 250', with 'XC' being the standard model line and '250 4T' indicating displacement and engine type. The candidate 'gasgas xc 250' matches the core identity, with '4T' implied in the context of modern Gas Gas XC models. No other candidate shares this exact model identity.",
+  "canonical_model_alias": "xc 250",
+  "configuration_tokens": [],
+  "brand_aliases": [],
+  "model_aliases": [],
+  "status": "SUCCESS",
+  "prompt_version": "motorcycle-candidate-resolution-v4",
+  "model": "qwen-flash",
+  "make": "Gas Gas",
+  "model_name": "XC 250 4T"
+}

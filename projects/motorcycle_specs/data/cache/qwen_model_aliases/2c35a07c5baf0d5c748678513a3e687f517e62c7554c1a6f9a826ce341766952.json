@@ -1,0 +1,20 @@
+{
+  "decision": "MATCH",
+  "selected_candidate": "EC 300 \n      Nambotin R replica",
+  "confidence": "HIGH",
+  "match_basis": "MARKET_ALIAS",
+  "explanation": "The input 'EC 300 Replica Nambotin' refers to a special edition of the EC 300 model named after rider Nambotin, with 'Nambotin R' being a known market or configuration variant. The candidate 'EC 300 Nambotin R replica' is the canonical catalog expression for this specific model, matching both identity and naming convention.",
+  "canonical_model_alias": "EC 300 Nambotin R replica",
+  "configuration_tokens": [
+    "Nambotin R replica"
+  ],
+  "brand_aliases": [],
+  "model_aliases": [
+    "EC 300 Nambotin R replica"
+  ],
+  "status": "SUCCESS",
+  "prompt_version": "motorcycle-candidate-resolution-v4",
+  "model": "qwen-flash",
+  "make": "Gas Gas",
+  "model_name": "EC 300 Replica Nambotin"
+}

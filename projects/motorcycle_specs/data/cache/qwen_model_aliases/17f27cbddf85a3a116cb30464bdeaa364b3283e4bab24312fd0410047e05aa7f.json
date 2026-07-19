@@ -1,0 +1,16 @@
+{
+  "decision": "NO_MATCH",
+  "selected_candidate": "",
+  "confidence": "HIGH",
+  "match_basis": "NONE",
+  "explanation": "The input model 'Contact JTR160' is a specific variant of the Gas Gas Contact series with a 160cc engine and JTR designation, which is not present in any of the catalog candidates. The candidates either have different displacements (250, 280, 300), different model names (eContact, TXT, EC), or are unrelated variants (Cross Country, Cervantes Replica, Nambotin R). No candidate matches the exact model identity including displacement and model suffix.",
+  "canonical_model_alias": "",
+  "configuration_tokens": [],
+  "brand_aliases": [],
+  "model_aliases": [],
+  "status": "SUCCESS",
+  "prompt_version": "motorcycle-candidate-resolution-v4",
+  "model": "qwen-flash",
+  "make": "Gas Gas",
+  "model_name": "Contact JTR160"
+}

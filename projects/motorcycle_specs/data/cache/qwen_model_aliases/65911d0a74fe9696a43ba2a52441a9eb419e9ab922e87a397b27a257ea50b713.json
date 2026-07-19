@@ -1,0 +1,16 @@
+{
+  "decision": "NO_MATCH",
+  "selected_candidate": "",
+  "confidence": "HIGH",
+  "match_basis": "NONE",
+  "explanation": "The input model 'CARGO 150 GL' does not correspond to any of the catalog candidates. 'Cargo' is not a known Honda motorcycle model name, and 'CARGO 150 GL' is not a variant of any listed CRF, XR, CBR, or PCX series. The candidates are all established models with different names and purposes (e.g., CRF150L is a dual-sport, XR150L is an off-road model, PCX150 is a scooter). No evidence supports that 'CARGO 150 GL' is a market-specific, historical, or typographical variant of any candidate.",
+  "canonical_model_alias": "",
+  "configuration_tokens": [],
+  "brand_aliases": [],
+  "model_aliases": [],
+  "status": "SUCCESS",
+  "prompt_version": "motorcycle-candidate-resolution-v4",
+  "model": "qwen-flash",
+  "make": "Honda",
+  "model_name": "CARGO 150 GL"
+}

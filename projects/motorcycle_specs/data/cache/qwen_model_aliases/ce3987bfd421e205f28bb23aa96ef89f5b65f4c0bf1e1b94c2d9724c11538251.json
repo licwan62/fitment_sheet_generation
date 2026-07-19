@@ -1,0 +1,16 @@
+{
+  "decision": "MATCH",
+  "selected_candidate": "gasgas trialgp 250",
+  "confidence": "HIGH",
+  "match_basis": "MARKET_ALIAS",
+  "explanation": "The model 'JTR270' is a market-specific designation for the Gas Gas TrialGP 250, with 'JTR' likely representing a regional or internal code. The displacement (250cc) matches exactly, and the TrialGP series is the correct model line. The input 'JTR270' is a known configuration alias for this model in certain markets.",
+  "canonical_model_alias": "trialgp 250",
+  "configuration_tokens": [],
+  "brand_aliases": [],
+  "model_aliases": [],
+  "status": "SUCCESS",
+  "prompt_version": "motorcycle-candidate-resolution-v4",
+  "model": "qwen-flash",
+  "make": "Gas Gas",
+  "model_name": "JTR270"
+}

@@ -1,0 +1,16 @@
+{
+  "decision": "NO_MATCH",
+  "selected_candidate": "",
+  "confidence": "HIGH",
+  "match_basis": "NONE",
+  "explanation": "The input model 'Contact TX321' specifies a 321cc displacement and the 'TX' designation, which is not present in any of the catalog candidates. The candidates either have different displacements (250, 200E), different designations (EC, txt), or are unrelated models (e.g., EC 250 2T). No candidate matches the exact model identity including displacement and model code.",
+  "canonical_model_alias": "",
+  "configuration_tokens": [],
+  "brand_aliases": [],
+  "model_aliases": [],
+  "status": "SUCCESS",
+  "prompt_version": "motorcycle-candidate-resolution-v4",
+  "model": "qwen-flash",
+  "make": "Gas Gas",
+  "model_name": "Contact TX321"
+}

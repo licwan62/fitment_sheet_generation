@@ -1,0 +1,18 @@
+{
+  "decision": "MATCH",
+  "selected_candidate": "NT 700V Deauville",
+  "confidence": "HIGH",
+  "match_basis": "MARKET_ALIAS",
+  "explanation": "The input 'NT700V' is the standard model designation for the Honda NT700V Deauville, and 'NT 700V Deauville' is the full catalog title used in official listings. The spacing and formatting variation are minor and do not affect model identity. The name 'Deauville' is the established market name for this model in certain regions, making it a valid alias.",
+  "canonical_model_alias": "NT 700V Deauville",
+  "configuration_tokens": [],
+  "brand_aliases": [],
+  "model_aliases": [
+    "NT 700V Deauville"
+  ],
+  "status": "SUCCESS",
+  "prompt_version": "motorcycle-candidate-resolution-v4",
+  "model": "qwen-flash",
+  "make": "Honda",
+  "model_name": "NT700V"
+}

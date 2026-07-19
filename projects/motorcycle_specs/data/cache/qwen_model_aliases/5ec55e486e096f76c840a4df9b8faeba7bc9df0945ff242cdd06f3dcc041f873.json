@@ -1,0 +1,20 @@
+{
+  "decision": "MATCH",
+  "selected_candidate": "beta rr motard 125 4t",
+  "confidence": "HIGH",
+  "match_basis": "SAME_NAME",
+  "explanation": "The input 'RR 125 4T Motard R' is a direct variation of the catalog candidate 'beta rr motard 125 4t', with only minor differences in capitalization, spacing, and the inclusion of 'R' as a suffix. The 'R' suffix is consistent with Beta's naming convention for certain configurations, and the core model identity—RR 125 4T Motard—is unambiguously identical.",
+  "canonical_model_alias": "beta rr motard 125 4t",
+  "configuration_tokens": [
+    "R"
+  ],
+  "brand_aliases": [],
+  "model_aliases": [
+    "rr motard 125 4t"
+  ],
+  "status": "SUCCESS",
+  "prompt_version": "motorcycle-candidate-resolution-v4",
+  "model": "qwen-flash",
+  "make": "Beta",
+  "model_name": "RR 125 4T Motard R"
+}

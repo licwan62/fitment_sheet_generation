@@ -1,0 +1,20 @@
+{
+  "decision": "MATCH",
+  "selected_candidate": "450 MT (IBEX)",
+  "confidence": "HIGH",
+  "match_basis": "MARKET_ALIAS",
+  "explanation": "The '450MT High Fender' is a market-specific configuration of the CFMOTO 450 MT, with 'High Fender' being a styling variant commonly associated with the IBEX trim in certain markets. The core model identity remains unchanged, and 'IBEX' is a known market designation for this high-fender version.",
+  "canonical_model_alias": "450 MT (IBEX)",
+  "configuration_tokens": [
+    "High Fender"
+  ],
+  "brand_aliases": [],
+  "model_aliases": [
+    "450 MT (IBEX)"
+  ],
+  "status": "SUCCESS",
+  "prompt_version": "motorcycle-candidate-resolution-v4",
+  "model": "qwen-flash",
+  "make": "CFMOTO",
+  "model_name": "450MT High Fender"
+}

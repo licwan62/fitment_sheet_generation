@@ -1,0 +1,18 @@
+{
+  "decision": "MATCH",
+  "selected_candidate": "Tre 900RS Tornado",
+  "confidence": "HIGH",
+  "match_basis": "SAME_NAME",
+  "explanation": "The input model 'Tornado Tre 900 RS' and the catalog candidate 'Tre 900RS Tornado' refer to the same motorcycle, with only a reordering of the name components. The core identifiers—'Tre 900RS' and 'Tornado'—are preserved, and the order does not change the underlying model identity.",
+  "canonical_model_alias": "Tre 900RS Tornado",
+  "configuration_tokens": [],
+  "brand_aliases": [],
+  "model_aliases": [
+    "Tre 900RS Tornado"
+  ],
+  "status": "SUCCESS",
+  "prompt_version": "motorcycle-candidate-resolution-v4",
+  "model": "qwen-flash",
+  "make": "Benelli",
+  "model_name": "Tornado Tre 900 RS"
+}

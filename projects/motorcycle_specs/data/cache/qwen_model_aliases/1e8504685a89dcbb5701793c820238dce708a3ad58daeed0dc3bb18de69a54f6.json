@@ -1,0 +1,15 @@
+{
+  "decision": "MATCH",
+  "selected_candidate": "F 650GS Dakar",
+  "canonical_model_alias": "F 650GS Dakar",
+  "configuration_tokens": [],
+  "brand_aliases": [],
+  "model_aliases": [
+    "F 650GS Dakar"
+  ],
+  "status": "SUCCESS",
+  "prompt_version": "motorcycle-candidate-resolution-v3",
+  "model": "qwen-flash",
+  "make": "BMW",
+  "model_name": "F650GS Dakar ABS"
+}

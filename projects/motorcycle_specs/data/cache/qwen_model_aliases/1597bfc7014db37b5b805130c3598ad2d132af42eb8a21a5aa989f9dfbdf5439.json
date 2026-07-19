@@ -1,0 +1,18 @@
+{
+  "decision": "MATCH",
+  "selected_candidate": "GT \n      750 L",
+  "confidence": "HIGH",
+  "match_basis": "MARKET_ALIAS",
+  "explanation": "The 'GT750 Le Mans' is a known market-specific name for the Suzuki GT750L, with 'Le Mans' referencing the model's racing heritage and marketing in certain regions. The 'L' suffix aligns with the GT750L variant, which is the correct designation for this model. Other candidates differ in suffix or are unrelated variants.",
+  "canonical_model_alias": "GT 750 L",
+  "configuration_tokens": [],
+  "brand_aliases": [],
+  "model_aliases": [
+    "GT 750 L"
+  ],
+  "status": "SUCCESS",
+  "prompt_version": "motorcycle-candidate-resolution-v4",
+  "model": "qwen-flash",
+  "make": "Suzuki",
+  "model_name": "GT750 Le Mans"
+}

@@ -1,0 +1,16 @@
+{
+  "decision": "INFER|UNKNOWN",
+  "confidence": "MEDIUM|LOW",
+  "length_mm": null,
+  "width_mm": null,
+  "height_mm": null,
+  "wheelbase_mm": null,
+  "seat_height_mm": null,
+  "ground_clearance_mm": null,
+  "explanation": "The Suzuki GS300L is not a widely documented model in public sources, and no official specifications or catalog data are available to confirm its dimensions. Without verified data or clear model year/market context, dimensional estimates cannot be reliably inferred. Dimensions may vary significantly across different markets or production years, leading to uncertainty.",
+  "status": "SUCCESS",
+  "prompt_version": "motorcycle-dimension-inference-v1",
+  "model": "qwen-flash",
+  "make": "Suzuki",
+  "model_name": "GS300L"
+}

@@ -1,0 +1,20 @@
+{
+  "decision": "MATCH",
+  "selected_candidate": "ST 1100 Pan European",
+  "confidence": "HIGH",
+  "match_basis": "MARKET_ALIAS",
+  "explanation": "The 'ST1100 ABS' model is a known variant of the Honda ST1100 Pan European, with 'ABS' referring to the anti-lock braking system added in later production. The 'Pan European' designation is the official market name for this model in Europe and other regions, and 'ST1100 ABS' is a common way to refer to the same motorcycle with added safety features. The core model identity remains unchanged.",
+  "canonical_model_alias": "ST 1100 Pan European",
+  "configuration_tokens": [
+    "ABS"
+  ],
+  "brand_aliases": [],
+  "model_aliases": [
+    "ST 1100 Pan European"
+  ],
+  "status": "SUCCESS",
+  "prompt_version": "motorcycle-candidate-resolution-v4",
+  "model": "qwen-flash",
+  "make": "Honda",
+  "model_name": "ST1100 ABS"
+}

@@ -1,0 +1,18 @@
+{
+  "decision": "MATCH",
+  "selected_candidate": "VX 800 Highlander",
+  "confidence": "HIGH",
+  "match_basis": "MARKET_ALIAS",
+  "explanation": "The input 'VX800' refers to the Suzuki VX800 motorcycle, which was marketed as the 'Highlander' in certain regions. The variation in spacing and capitalization ('VX 800 Highlander' vs. 'VX 800 Highlander') is a minor formatting difference; both refer to the same model. The term 'Highlander' is a known market-specific name for this model.",
+  "canonical_model_alias": "VX 800 Highlander",
+  "configuration_tokens": [],
+  "brand_aliases": [],
+  "model_aliases": [
+    "VX 800 Highlander"
+  ],
+  "status": "SUCCESS",
+  "prompt_version": "motorcycle-candidate-resolution-v4",
+  "model": "qwen-flash",
+  "make": "Suzuki",
+  "model_name": "VX800"
+}

@@ -1,0 +1,19 @@
+{
+  "decision": "MATCH",
+  "selected_candidate": "Harley-Davidson Street Glide Special",
+  "confidence": "HIGH",
+  "match_basis": "SAME_NAME",
+  "explanation": "The input model 'FLHXS Street Glide Special' is a direct match in identity to the catalog candidate 'Harley-Davidson Street Glide Special', as both refer to the same motorcycle model with identical displacement, configuration, and market designation. The FLHXS designation is the model code for the Street Glide Special, and the name is consistent across catalogs.",
+  "canonical_model_alias": "Street Glide Special",
+  "configuration_tokens": [],
+  "brand_aliases": [],
+  "model_aliases": [
+    "Glide Special",
+    "Street Glide Special"
+  ],
+  "status": "SUCCESS",
+  "prompt_version": "motorcycle-candidate-resolution-v4",
+  "model": "qwen-flash",
+  "make": "Harley-Davidson",
+  "model_name": "FLHXS Street Glide Special"
+}

@@ -1,0 +1,16 @@
+{
+  "decision": "NO_MATCH",
+  "selected_candidate": "",
+  "confidence": "HIGH",
+  "match_basis": "NONE",
+  "explanation": "The input model XR80 is not present in the catalog candidates, and none of the candidates (XR 250, XR 500, XR 200 / R) are the same underlying motorcycle. The displacement differs significantly, and there is no known market name, historical alias, abbreviation, or typo that equates XR80 to any of these models.",
+  "canonical_model_alias": "",
+  "configuration_tokens": [],
+  "brand_aliases": [],
+  "model_aliases": [],
+  "status": "SUCCESS",
+  "prompt_version": "motorcycle-candidate-resolution-v4",
+  "model": "qwen-flash",
+  "make": "Honda",
+  "model_name": "XR80"
+}

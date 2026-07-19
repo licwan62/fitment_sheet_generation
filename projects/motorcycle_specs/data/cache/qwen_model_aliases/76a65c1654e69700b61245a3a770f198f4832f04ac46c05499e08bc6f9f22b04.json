@@ -1,0 +1,21 @@
+{
+  "decision": "MATCH",
+  "selected_candidate": "VFR 800F Interceptor",
+  "confidence": "HIGH",
+  "match_basis": "MARKET_ALIAS",
+  "explanation": "The VFR800D Interceptor DLX is a market-specific configuration of the VFR800F Interceptor, with 'D' and 'DLX' denoting a European or specific regional variant. The core model identity (VFR800F Interceptor) is unchanged; 'D' and 'DLX' are configuration or market labels, not distinct model identifiers.",
+  "canonical_model_alias": "VFR 800F Interceptor",
+  "configuration_tokens": [
+    "D",
+    "DLX"
+  ],
+  "brand_aliases": [],
+  "model_aliases": [
+    "VFR 800F Interceptor"
+  ],
+  "status": "SUCCESS",
+  "prompt_version": "motorcycle-candidate-resolution-v4",
+  "model": "qwen-flash",
+  "make": "Honda",
+  "model_name": "VFR800D Interceptor DLX"
+}

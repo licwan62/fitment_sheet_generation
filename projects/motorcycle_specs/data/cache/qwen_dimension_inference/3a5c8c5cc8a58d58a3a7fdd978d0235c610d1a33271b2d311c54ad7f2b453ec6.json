@@ -1,0 +1,16 @@
+{
+  "decision": "INFER|UNKNOWN",
+  "confidence": "MEDIUM|LOW",
+  "length_mm": null,
+  "width_mm": null,
+  "height_mm": null,
+  "wheelbase_mm": null,
+  "seat_height_mm": null,
+  "ground_clearance_mm": null,
+  "explanation": "Honda CB600F 599 model dimensions vary across years and markets; no definitive catalog reference available for precise inference. Dimensions may differ between early (2008–2010) and later (2011–2017) models, particularly in frame geometry and seat design. Without confirmed model-specific data, accurate estimation is not reliable.",
+  "status": "SUCCESS",
+  "prompt_version": "motorcycle-dimension-inference-v1",
+  "model": "qwen-flash",
+  "make": "Honda",
+  "model_name": "CB600F 599"
+}

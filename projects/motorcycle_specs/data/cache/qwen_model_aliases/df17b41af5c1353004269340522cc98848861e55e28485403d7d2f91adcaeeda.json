@@ -1,0 +1,18 @@
+{
+  "decision": "MATCH",
+  "selected_candidate": "Honda CB 100",
+  "confidence": "HIGH",
+  "match_basis": "MARKET_ALIAS",
+  "explanation": "The Honda CA100 is a known market-specific designation for the Honda CB100, particularly in certain regional catalogs. The model shares identical engine, frame, and specifications, with 'CA100' being a variant label used in some markets. This is a documented market alias.",
+  "canonical_model_alias": "CB 100",
+  "configuration_tokens": [],
+  "brand_aliases": [],
+  "model_aliases": [
+    "CB 100"
+  ],
+  "status": "SUCCESS",
+  "prompt_version": "motorcycle-candidate-resolution-v4",
+  "model": "qwen-flash",
+  "make": "Honda",
+  "model_name": "CA100"
+}

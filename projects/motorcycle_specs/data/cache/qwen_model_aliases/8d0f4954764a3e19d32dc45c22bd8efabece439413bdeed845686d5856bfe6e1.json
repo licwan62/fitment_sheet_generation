@@ -1,0 +1,19 @@
+{
+  "decision": "MATCH",
+  "selected_candidate": "Harley-Davidson FLD Dyna Switchback",
+  "confidence": "HIGH",
+  "match_basis": "MARKET_ALIAS",
+  "explanation": "The model 'FLD Switchback' is a market-specific designation for the Harley-Davidson Dyna Switchback, with 'FLD' being the model code used in certain catalogs and regions. The catalog candidate 'Harley-Davidson FLD Dyna Switchback' correctly identifies the same underlying motorcycle with the proper model code and name.",
+  "canonical_model_alias": "FLD Dyna Switchback",
+  "configuration_tokens": [],
+  "brand_aliases": [],
+  "model_aliases": [
+    "Dyna Switchback",
+    "FLD Dyna Switchback"
+  ],
+  "status": "SUCCESS",
+  "prompt_version": "motorcycle-candidate-resolution-v4",
+  "model": "qwen-flash",
+  "make": "Harley-Davidson",
+  "model_name": "FLD Switchback"
+}

@@ -1,0 +1,16 @@
+{
+  "decision": "NO_MATCH",
+  "selected_candidate": "",
+  "confidence": "HIGH",
+  "match_basis": "NONE",
+  "explanation": "The input model 'QuattroNove X off road' does not match any of the catalog candidates. 'QuattroNove' appears to be a fictional or incorrect name; the closest candidate is '250 Quattro' or '254 Quattro', but these are not equivalent to a 'QuattroNove X off road' model. No known Benelli model matches this name, and no market alias, abbreviation, or typo explains the discrepancy. The displacement (e.g., 250, 254) and the 'X off road' configuration are not present in any candidate.",
+  "canonical_model_alias": "",
+  "configuration_tokens": [],
+  "brand_aliases": [],
+  "model_aliases": [],
+  "status": "SUCCESS",
+  "prompt_version": "motorcycle-candidate-resolution-v4",
+  "model": "qwen-flash",
+  "make": "Benelli",
+  "model_name": "QuattroNove X off road"
+}

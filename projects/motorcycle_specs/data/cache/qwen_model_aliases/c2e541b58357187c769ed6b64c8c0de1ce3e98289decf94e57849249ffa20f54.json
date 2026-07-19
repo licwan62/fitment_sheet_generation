@@ -1,0 +1,23 @@
+{
+  "decision": "MATCH",
+  "selected_candidate": "harley davidson electra glide ultra limited low flhtkl",
+  "confidence": "HIGH",
+  "match_basis": "MARKET_ALIAS",
+  "explanation": "The input 'FLHTKL Ultra Limited Low' is a model designation for the Harley-Davidson Electra Glide Ultra Limited Low, where FLHTKL is the model code. 'Ultra Limited Low' is a configuration label used in marketing and cataloging, and 'Electra Glide' is the model series name. The candidate 'harley davidson electra glide ultra limited low flhtkl' matches exactly in identity, including displacement and configuration, despite differing word order and capitalization.",
+  "canonical_model_alias": "electra glide ultra limited low flhtkl",
+  "configuration_tokens": [
+    "ultra limited",
+    "low"
+  ],
+  "brand_aliases": [],
+  "model_aliases": [
+    "electra glide ultra limited low flhtkl",
+    "flhtkl",
+    "ultra limited low"
+  ],
+  "status": "SUCCESS",
+  "prompt_version": "motorcycle-candidate-resolution-v4",
+  "model": "qwen-flash",
+  "make": "Harley-Davidson",
+  "model_name": "FLHTKL Ultra Limited Low"
+}

@@ -1,0 +1,16 @@
+{
+  "decision": "MATCH",
+  "selected_candidate": "Harley-Davidson FLHRSE Screamin` Eagle Road King",
+  "confidence": "HIGH",
+  "match_basis": "MARKET_ALIAS",
+  "explanation": "The input 'FLHRSE4 Screamin Eagle Road King' is a valid market-specific designation for the same model as 'FLHRSE Screamin` Eagle Road King', with '4' being a plausible typo or variant of the model suffix. The core model identity (FLHRSE) and name (Screamin' Eagle Road King) are identical, and the '4' does not alter the fundamental motorcycle identity.",
+  "canonical_model_alias": "FLHRSE Screamin` Eagle Road King",
+  "configuration_tokens": [],
+  "brand_aliases": [],
+  "model_aliases": [],
+  "status": "SUCCESS",
+  "prompt_version": "motorcycle-candidate-resolution-v4",
+  "model": "qwen-flash",
+  "make": "Harley-Davidson",
+  "model_name": "FLHRSE4 Screamin Eagle Road King"
+}

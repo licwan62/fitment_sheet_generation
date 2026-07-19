@@ -1,0 +1,20 @@
+{
+  "decision": "MATCH",
+  "selected_candidate": "Honda CM 450 Custom",
+  "confidence": "HIGH",
+  "match_basis": "SAME_NAME",
+  "explanation": "The input 'CM450C Custom' refers to the same motorcycle model as 'Honda CM 450 Custom', with only minor variations in formatting and suffix (C vs. no suffix). The 'C' in CM450C is a known market or configuration designation for the Custom variant, and the model is identical in displacement, engine, and design. No other candidate matches this identity.",
+  "canonical_model_alias": "CM 450 Custom",
+  "configuration_tokens": [
+    "Custom"
+  ],
+  "brand_aliases": [],
+  "model_aliases": [
+    "CM 450 Custom"
+  ],
+  "status": "SUCCESS",
+  "prompt_version": "motorcycle-candidate-resolution-v4",
+  "model": "qwen-flash",
+  "make": "Honda",
+  "model_name": "CM450C Custom"
+}

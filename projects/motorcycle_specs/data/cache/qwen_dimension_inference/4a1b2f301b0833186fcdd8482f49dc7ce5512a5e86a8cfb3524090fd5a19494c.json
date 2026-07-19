@@ -1,0 +1,16 @@
+{
+  "decision": "INFER|UNKNOWN",
+  "confidence": "LOW",
+  "length_mm": null,
+  "width_mm": null,
+  "height_mm": null,
+  "wheelbase_mm": null,
+  "seat_height_mm": null,
+  "ground_clearance_mm": null,
+  "explanation": "Bultaco Pursang 250 model details are uncertain due to limited public documentation and potential variations across production years and markets. No reliable source confirms consistent dimensions, so inference is not reliable enough for precise values.",
+  "status": "SUCCESS",
+  "prompt_version": "motorcycle-dimension-inference-v1",
+  "model": "qwen-flash",
+  "make": "Bultaco",
+  "model_name": "Pursang 250"
+}

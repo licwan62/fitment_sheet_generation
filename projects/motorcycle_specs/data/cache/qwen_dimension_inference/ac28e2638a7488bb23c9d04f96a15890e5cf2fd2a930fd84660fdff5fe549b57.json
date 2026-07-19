@@ -1,0 +1,16 @@
+{
+  "decision": "UNKNOWN",
+  "confidence": "LOW",
+  "length_mm": null,
+  "width_mm": null,
+  "height_mm": null,
+  "wheelbase_mm": null,
+  "seat_height_mm": null,
+  "ground_clearance_mm": null,
+  "explanation": "The Big Bear Choppers Merc Rigid V111 Carb is a custom motorcycle with no publicly available standardized dimensions. Model variations by year and market, combined with the lack of official specifications or catalog data, prevent reliable inference. Dimensions may vary significantly based on custom builds.",
+  "status": "SUCCESS",
+  "prompt_version": "motorcycle-dimension-inference-v1",
+  "model": "qwen-flash",
+  "make": "Big Bear Choppers",
+  "model_name": "Merc Rigid V111 Carb"
+}

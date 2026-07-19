@@ -1,0 +1,19 @@
+{
+  "decision": "MATCH",
+  "selected_candidate": "gasgas ec 125",
+  "confidence": "HIGH",
+  "match_basis": "MARKET_ALIAS",
+  "explanation": "The 'Enducross 125' is a market-specific name for the Gas Gas EC 125, with 'Enducross' being the model's branding in certain regions. The EC 125 is the standard catalog designation, and 'Enducross' is a known marketing variant of the same model.",
+  "canonical_model_alias": "ec 125",
+  "configuration_tokens": [],
+  "brand_aliases": [],
+  "model_aliases": [
+    "gasgas ec 125",
+    "ec 125"
+  ],
+  "status": "SUCCESS",
+  "prompt_version": "motorcycle-candidate-resolution-v4",
+  "model": "qwen-flash",
+  "make": "Gas Gas",
+  "model_name": "Enducross 125"
+}

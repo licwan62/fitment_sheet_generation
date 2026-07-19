@@ -1,0 +1,16 @@
+{
+  "decision": "NO_MATCH",
+  "selected_candidate": "",
+  "confidence": "HIGH",
+  "match_basis": "NONE",
+  "explanation": "The input 'Synt.' is a likely abbreviation for 'Sincro', but none of the catalog candidates match the exact model 'Beta Sincro 2T' with the same displacement and configuration. The candidates include different models (e.g., RS series, RR 50) that are not the same underlying motorcycle. No known market alias, historical name, or typo variant of 'Synt.' maps to any of these candidates.",
+  "canonical_model_alias": "",
+  "configuration_tokens": [],
+  "brand_aliases": [],
+  "model_aliases": [],
+  "status": "SUCCESS",
+  "prompt_version": "motorcycle-candidate-resolution-v4",
+  "model": "qwen-flash",
+  "make": "Beta",
+  "model_name": "Synt."
+}

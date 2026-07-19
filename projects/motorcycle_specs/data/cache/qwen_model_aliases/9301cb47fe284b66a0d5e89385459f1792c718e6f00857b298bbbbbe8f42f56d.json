@@ -1,0 +1,18 @@
+{
+  "decision": "MATCH",
+  "selected_candidate": "Mettraler 250",
+  "confidence": "HIGH",
+  "match_basis": "TYPO",
+  "explanation": "'Metralla 250' is a known misspelling or typographical variant of 'Mettraler 250', which was the correct model name for Bultaco's 250cc motorcycle. The spelling difference is consistent with common input errors and historical naming variations.",
+  "canonical_model_alias": "Mettraler 250",
+  "configuration_tokens": [],
+  "brand_aliases": [],
+  "model_aliases": [
+    "Mettraler 250"
+  ],
+  "status": "SUCCESS",
+  "prompt_version": "motorcycle-candidate-resolution-v4",
+  "model": "qwen-flash",
+  "make": "Bultaco",
+  "model_name": "Metralla 250"
+}

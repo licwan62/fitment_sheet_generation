@@ -1,0 +1,20 @@
+{
+  "decision": "MATCH",
+  "selected_candidate": "Honda GL 1500 Gold Wing SE",
+  "confidence": "HIGH",
+  "match_basis": "MARKET_ALIAS",
+  "explanation": "The 'GL1500SE Gold Wing Special Edition' is a market-specific designation for the same model as the 'Honda GL 1500 Gold Wing SE', with 'Special Edition' being a configuration label that does not alter the core motorcycle identity. The base model and displacement (1500) are identical, and 'SE' is the standard designation for this variant.",
+  "canonical_model_alias": "GL 1500 Gold Wing SE",
+  "configuration_tokens": [
+    "Special Edition"
+  ],
+  "brand_aliases": [],
+  "model_aliases": [
+    "GL 1500 Gold Wing SE"
+  ],
+  "status": "SUCCESS",
+  "prompt_version": "motorcycle-candidate-resolution-v4",
+  "model": "qwen-flash",
+  "make": "Honda",
+  "model_name": "GL1500SE Gold Wing Special Edition"
+}

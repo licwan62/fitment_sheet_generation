@@ -1,0 +1,16 @@
+{
+  "decision": "NO_MATCH",
+  "selected_candidate": "",
+  "confidence": "HIGH",
+  "match_basis": "NONE",
+  "explanation": "The input model 'GSX-S150 GP' is a distinct motorcycle variant from the catalog candidates. The 'GSX-S150' series is a different model line than the 'GSX-R 150' or 'GSX 150 Bandit', and the 'GP' suffix indicates a specific performance or racing-inspired configuration not present in any of the listed candidates. None of the candidates match the GSX-S150 GP in model identity, engine layout, or intended market positioning.",
+  "canonical_model_alias": "",
+  "configuration_tokens": [],
+  "brand_aliases": [],
+  "model_aliases": [],
+  "status": "SUCCESS",
+  "prompt_version": "motorcycle-candidate-resolution-v4",
+  "model": "qwen-flash",
+  "make": "Suzuki",
+  "model_name": "GSX-S150 GP"
+}

@@ -1,0 +1,18 @@
+{
+  "decision": "MATCH",
+  "selected_candidate": "Suzuki Boulevard C90T B.O.S.S.",
+  "confidence": "HIGH",
+  "match_basis": "SAME_NAME",
+  "explanation": "The input 'C90T Boulevard B.O.S.S.' and the candidate 'Suzuki Boulevard C90T B.O.S.S.' refer to the same motorcycle model, with only minor differences in word order and inclusion of the manufacturer name. The displacement (C90T) and model designation (B.O.S.S.) are identical, confirming they represent the same underlying motorcycle.",
+  "canonical_model_alias": "Boulevard C90T B.O.S.S.",
+  "configuration_tokens": [],
+  "brand_aliases": [],
+  "model_aliases": [
+    "Boulevard C90T B.O.S.S."
+  ],
+  "status": "SUCCESS",
+  "prompt_version": "motorcycle-candidate-resolution-v4",
+  "model": "qwen-flash",
+  "make": "Suzuki",
+  "model_name": "C90T Boulevard B.O.S.S."
+}

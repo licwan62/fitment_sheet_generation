@@ -1,0 +1,16 @@
+{
+  "decision": "INFER",
+  "confidence": "MEDIUM",
+  "length_mm": 2150,
+  "width_mm": 800,
+  "height_mm": 1100,
+  "wheelbase_mm": 1400,
+  "seat_height_mm": 790,
+  "ground_clearance_mm": 160,
+  "explanation": "Inferred from typical Buell Blast dimensions based on model knowledge; known for a compact, upright design with a high seat and short wheelbase. Dimensions are consistent across most production years but may vary slightly by market or model year.",
+  "status": "SUCCESS",
+  "prompt_version": "motorcycle-dimension-inference-v1",
+  "model": "qwen-flash",
+  "make": "Buell",
+  "model_name": "Blast"
+}

@@ -1,0 +1,16 @@
+{
+  "decision": "NO_MATCH",
+  "selected_candidate": "",
+  "confidence": "HIGH",
+  "match_basis": "NONE",
+  "explanation": "The Honda CL125 Scrambler is a distinct model from all listed candidates, which are different motorcycles with no shared identity in name, displacement, configuration, or market designation. None of the candidates match the CL125 Scrambler's specific scrambler identity, engine layout, or historical model lineage.",
+  "canonical_model_alias": "",
+  "configuration_tokens": [],
+  "brand_aliases": [],
+  "model_aliases": [],
+  "status": "SUCCESS",
+  "prompt_version": "motorcycle-candidate-resolution-v4",
+  "model": "qwen-flash",
+  "make": "Honda",
+  "model_name": "CL125 Scrambler"
+}

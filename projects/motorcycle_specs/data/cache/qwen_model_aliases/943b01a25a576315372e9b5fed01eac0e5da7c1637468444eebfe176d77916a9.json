@@ -1,0 +1,16 @@
+{
+  "decision": "NO_MATCH",
+  "selected_candidate": "",
+  "confidence": "HIGH",
+  "match_basis": "NONE",
+  "explanation": "The input model 'X1W White Lightning' does not correspond to any of the catalog candidates, as 'X1W' is not a known model designation for Buell, and 'White Lightning' is not a recognized name for any of the listed Buell Lightning or Firebolt models. The candidates are all variants of the Buell Lightning XB12 series, but none match the input in name, displacement, or configuration.",
+  "canonical_model_alias": "",
+  "configuration_tokens": [],
+  "brand_aliases": [],
+  "model_aliases": [],
+  "status": "SUCCESS",
+  "prompt_version": "motorcycle-candidate-resolution-v4",
+  "model": "qwen-flash",
+  "make": "Buell",
+  "model_name": "X1W White Lightning"
+}

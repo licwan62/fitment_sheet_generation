@@ -1,0 +1,17 @@
+{
+  "decision": "MATCH",
+  "selected_candidate": "K 1300S 30th Anniversary Edition",
+  "canonical_model_alias": "K1300S",
+  "configuration_tokens": [
+    "30 Jahre K-Modelle"
+  ],
+  "brand_aliases": [],
+  "model_aliases": [
+    "K 1300S 30th Anniversary Edition"
+  ],
+  "status": "SUCCESS",
+  "prompt_version": "motorcycle-candidate-resolution-v3",
+  "model": "qwen-flash",
+  "make": "BMW",
+  "model_name": "K1300S 30 Jahre K-Modelle"
+}

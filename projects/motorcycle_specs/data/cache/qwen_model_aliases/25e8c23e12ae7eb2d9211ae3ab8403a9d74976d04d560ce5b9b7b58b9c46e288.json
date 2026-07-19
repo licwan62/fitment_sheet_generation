@@ -1,0 +1,18 @@
+{
+  "decision": "MATCH",
+  "selected_candidate": "beta minicross r12",
+  "confidence": "HIGH",
+  "match_basis": "MARKET_ALIAS",
+  "explanation": "'Mini 50 R12' is a market-specific naming variant of the Beta Minicross R12, with 'Mini' indicating the mini-cross (younger rider) segment and 'R12' denoting the model year or configuration. The catalog candidate 'beta minicross r12' is the correct and canonical expression for this model.",
+  "canonical_model_alias": "beta minicross r12",
+  "configuration_tokens": [
+    "r12"
+  ],
+  "brand_aliases": [],
+  "model_aliases": [],
+  "status": "SUCCESS",
+  "prompt_version": "motorcycle-candidate-resolution-v4",
+  "model": "qwen-flash",
+  "make": "Beta",
+  "model_name": "Mini 50 R12"
+}

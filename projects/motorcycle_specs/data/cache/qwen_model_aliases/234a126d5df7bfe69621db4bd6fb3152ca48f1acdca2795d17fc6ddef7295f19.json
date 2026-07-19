@@ -1,0 +1,18 @@
+{
+  "decision": "MATCH",
+  "selected_candidate": "GSX 1300 B-King",
+  "confidence": "HIGH",
+  "match_basis": "SAME_NAME",
+  "explanation": "The input model 'GSX1300BK B-King' is a direct match in identity with the catalog candidate 'GSX 1300 B-King', with 'BK' being a standard abbreviation for 'B-King'. The displacement and model name are identical, and no configuration or variant differences are indicated.",
+  "canonical_model_alias": "GSX 1300 B-King",
+  "configuration_tokens": [],
+  "brand_aliases": [],
+  "model_aliases": [
+    "GSX 1300 B-King"
+  ],
+  "status": "SUCCESS",
+  "prompt_version": "motorcycle-candidate-resolution-v4",
+  "model": "qwen-flash",
+  "make": "Suzuki",
+  "model_name": "GSX1300BK B-King"
+}

@@ -1,0 +1,16 @@
+{
+  "decision": "NO_MATCH",
+  "selected_candidate": "",
+  "confidence": "HIGH",
+  "match_basis": "NONE",
+  "explanation": "The input model 'R 107-4T' is a Beta motorcycle with a 107cc engine, while all catalog candidates are either different displacements (e.g., 125cc, 200cc) or different model lines (e.g., RE, RR, ALP). No candidate matches the 107cc displacement or the 'R' series designation. The 'R' in R 107-4T likely refers to a specific Beta model line not represented in the candidates.",
+  "canonical_model_alias": "",
+  "configuration_tokens": [],
+  "brand_aliases": [],
+  "model_aliases": [],
+  "status": "SUCCESS",
+  "prompt_version": "motorcycle-candidate-resolution-v4",
+  "model": "qwen-flash",
+  "make": "Beta",
+  "model_name": "R 107-4T"
+}

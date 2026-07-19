@@ -1,0 +1,18 @@
+{
+  "decision": "MATCH",
+  "selected_candidate": "CBR 900RR Fireblade",
+  "confidence": "HIGH",
+  "match_basis": "MARKET_ALIAS",
+  "explanation": "The CBR900RR Fireblade is the same underlying motorcycle model as the Honda CBR900RR, with 'Fireblade' being the marketing name used in certain markets, particularly the UK and Europe. The model designation CBR900RR is consistent across all variants.",
+  "canonical_model_alias": "CBR 900RR Fireblade",
+  "configuration_tokens": [],
+  "brand_aliases": [],
+  "model_aliases": [
+    "CBR 900RR Fireblade"
+  ],
+  "status": "SUCCESS",
+  "prompt_version": "motorcycle-candidate-resolution-v4",
+  "model": "qwen-flash",
+  "make": "Honda",
+  "model_name": "CBR900RR"
+}

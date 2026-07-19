@@ -1,0 +1,16 @@
+{
+  "decision": "NO_MATCH",
+  "selected_candidate": "",
+  "confidence": "HIGH",
+  "match_basis": "NONE",
+  "explanation": "No catalog candidates were provided for comparison, and the model 'G.T.X.-F. 117 X-Wedge' by Big Bear Choppers does not correspond to any known motorcycle model in standard motorcycle catalogs. The name appears to be fictional or non-standard, with no verifiable historical, market, or typographical match among real-world models.",
+  "canonical_model_alias": "",
+  "configuration_tokens": [],
+  "brand_aliases": [],
+  "model_aliases": [],
+  "status": "SUCCESS",
+  "prompt_version": "motorcycle-candidate-resolution-v4",
+  "model": "qwen-flash",
+  "make": "Big Bear Choppers",
+  "model_name": "G.T.X.-F. 117 X-Wedge"
+}

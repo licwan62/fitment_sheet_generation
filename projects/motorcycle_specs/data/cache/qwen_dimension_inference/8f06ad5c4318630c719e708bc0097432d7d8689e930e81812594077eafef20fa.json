@@ -1,0 +1,16 @@
+{
+  "decision": "INFER|UNKNOWN",
+  "confidence": "MEDIUM|LOW",
+  "length_mm": null,
+  "width_mm": null,
+  "height_mm": null,
+  "wheelbase_mm": null,
+  "seat_height_mm": null,
+  "ground_clearance_mm": null,
+  "explanation": "The Beta 350 RR EFI is a motocross model, but specific dimensions vary significantly by year and market. Without access to a catalog or official specifications, and due to potential variations in frame geometry and component fit across model years, precise dimensions cannot be reliably inferred. No definitive data source is available for verification.",
+  "status": "SUCCESS",
+  "prompt_version": "motorcycle-dimension-inference-v1",
+  "model": "qwen-flash",
+  "make": "Beta",
+  "model_name": "350 RR EFI"
+}

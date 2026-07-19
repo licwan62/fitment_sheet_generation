@@ -1,0 +1,20 @@
+{
+  "decision": "MATCH",
+  "selected_candidate": "800 MT",
+  "confidence": "HIGH",
+  "match_basis": "MARKET_ALIAS",
+  "explanation": "The '800MT-X' is a market-specific variant of the CFMOTO 800 MT, with 'X' denoting a configuration or trim level. The core model identity remains the 800 MT, and 'MT-X' is a known regional or configurational designation for the same underlying motorcycle.",
+  "canonical_model_alias": "800 MT",
+  "configuration_tokens": [
+    "X"
+  ],
+  "brand_aliases": [],
+  "model_aliases": [
+    "800 MT"
+  ],
+  "status": "SUCCESS",
+  "prompt_version": "motorcycle-candidate-resolution-v4",
+  "model": "qwen-flash",
+  "make": "CFMOTO",
+  "model_name": "800MT-X"
+}

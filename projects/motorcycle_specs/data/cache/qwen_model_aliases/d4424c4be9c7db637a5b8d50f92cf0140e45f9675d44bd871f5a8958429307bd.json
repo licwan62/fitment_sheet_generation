@@ -1,0 +1,16 @@
+{
+  "decision": "NO_MATCH",
+  "selected_candidate": "",
+  "confidence": "HIGH",
+  "match_basis": "NONE",
+  "explanation": "The input model 'Napoleonbob 250' by manufacturer 'Benda' does not correspond to any known motorcycle model in the catalog candidates. No plausible market name, historical alias, abbreviation, or typo match exists for this model. Benda is not a recognized motorcycle manufacturer in mainstream motorcycle history, and 'Napoleonbob 250' appears to be fictional or non-existent.",
+  "canonical_model_alias": "",
+  "configuration_tokens": [],
+  "brand_aliases": [],
+  "model_aliases": [],
+  "status": "SUCCESS",
+  "prompt_version": "motorcycle-candidate-resolution-v4",
+  "model": "qwen-flash",
+  "make": "Benda",
+  "model_name": "Napoleonbob 250"
+}

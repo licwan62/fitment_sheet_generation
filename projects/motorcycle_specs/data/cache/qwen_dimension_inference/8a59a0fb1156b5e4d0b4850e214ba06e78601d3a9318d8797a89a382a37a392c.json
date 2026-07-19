@@ -1,0 +1,16 @@
+{
+  "decision": "INFER|UNKNOWN",
+  "confidence": "MEDIUM|LOW",
+  "length_mm": null,
+  "width_mm": null,
+  "height_mm": null,
+  "wheelbase_mm": null,
+  "seat_height_mm": null,
+  "ground_clearance_mm": null,
+  "explanation": "The Beta 250 RR X-Pro is a motocross model, but specific dimensions vary significantly by year and market configuration. Without access to an official catalog or verified technical documentation for this exact variant, precise measurements cannot be reliably inferred. Model identity and dimensional consistency are uncertain due to potential variations in frame design, suspension setup, and component sourcing across production years.",
+  "status": "SUCCESS",
+  "prompt_version": "motorcycle-dimension-inference-v1",
+  "model": "qwen-flash",
+  "make": "Beta",
+  "model_name": "250 RR X-Pro"
+}

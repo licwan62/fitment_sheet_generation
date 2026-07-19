@@ -1,0 +1,21 @@
+{
+  "decision": "MATCH",
+  "selected_candidate": "XRE 300 \n\t\tSahara",
+  "confidence": "HIGH",
+  "match_basis": "MARKET_ALIAS",
+  "explanation": "The input 'XRE300 ABS DLX' refers to the Honda XRE300, with 'DLX' likely indicating a premium or equipped configuration. The catalog candidate 'XRE 300 Sahara' is a known market-specific variant of the same model, marketed as 'Sahara' in certain regions (e.g., India), representing the same underlying motorcycle with regional branding. Displacement and core model identity match exactly.",
+  "canonical_model_alias": "XRE 300 Sahara",
+  "configuration_tokens": [
+    "ABS",
+    "DLX"
+  ],
+  "brand_aliases": [],
+  "model_aliases": [
+    "XRE 300 Sahara"
+  ],
+  "status": "SUCCESS",
+  "prompt_version": "motorcycle-candidate-resolution-v4",
+  "model": "qwen-flash",
+  "make": "Honda",
+  "model_name": "XRE300 ABS DLX"
+}

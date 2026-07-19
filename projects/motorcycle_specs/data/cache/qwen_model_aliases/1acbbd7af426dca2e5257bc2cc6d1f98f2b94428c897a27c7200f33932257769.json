@@ -1,0 +1,18 @@
+{
+  "decision": "MATCH",
+  "selected_candidate": "beta evo 200 2t",
+  "confidence": "HIGH",
+  "match_basis": "SAME_NAME",
+  "explanation": "The input 'EVO 200 Factory' refers to the same model as 'beta evo 200 2t', with 'Factory' being a configuration or trim level that does not alter the core model identity. The displacement (200), engine type (2T), and model name (EVO) are identical, and 'Factory' is a known configuration label for this model.",
+  "canonical_model_alias": "beta evo 200 2t",
+  "configuration_tokens": [
+    "Factory"
+  ],
+  "brand_aliases": [],
+  "model_aliases": [],
+  "status": "SUCCESS",
+  "prompt_version": "motorcycle-candidate-resolution-v4",
+  "model": "qwen-flash",
+  "make": "Beta",
+  "model_name": "EVO 200 Factory"
+}

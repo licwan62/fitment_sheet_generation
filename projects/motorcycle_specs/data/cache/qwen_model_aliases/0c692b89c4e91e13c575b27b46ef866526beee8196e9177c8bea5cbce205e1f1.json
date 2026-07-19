@@ -1,0 +1,19 @@
+{
+  "decision": "MATCH",
+  "selected_candidate": "gasgas contact estart 280",
+  "confidence": "HIGH",
+  "match_basis": "MARKET_ALIAS",
+  "explanation": "The 'Contact RR 280' is a market-specific name for the same model as 'gasgas contact estart 280', where 'RR' denotes the racing/recreational variant and 'eStart' is the electric start feature, commonly used in European and North American catalogs. The displacement (280) matches exactly, and both refer to the same underlying motorcycle model with identical engine and platform.",
+  "canonical_model_alias": "contact estart 280",
+  "configuration_tokens": [],
+  "brand_aliases": [],
+  "model_aliases": [
+    "gasgas contact estart 280",
+    "contact estart 280"
+  ],
+  "status": "SUCCESS",
+  "prompt_version": "motorcycle-candidate-resolution-v4",
+  "model": "qwen-flash",
+  "make": "Gas Gas",
+  "model_name": "Contact RR 280"
+}

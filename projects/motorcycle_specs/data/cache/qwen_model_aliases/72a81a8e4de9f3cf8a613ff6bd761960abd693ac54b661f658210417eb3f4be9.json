@@ -1,0 +1,16 @@
+{
+  "decision": "NO_MATCH",
+  "selected_candidate": "",
+  "confidence": "HIGH",
+  "match_basis": "NONE",
+  "explanation": "The input model 'Gixxer Bi-Tono' is not a valid or recognized variant of the Suzuki Gixxer SF250 or its editions. 'Bi-Tono' suggests a two-tone paint scheme, which is a cosmetic configuration, but no official Suzuki model named 'Gixxer Bi-Tono' exists in the catalog. The candidates are distinct models with different names and identities.",
+  "canonical_model_alias": "",
+  "configuration_tokens": [],
+  "brand_aliases": [],
+  "model_aliases": [],
+  "status": "SUCCESS",
+  "prompt_version": "motorcycle-candidate-resolution-v4",
+  "model": "qwen-flash",
+  "make": "Suzuki",
+  "model_name": "Gixxer Bi-Tono"
+}

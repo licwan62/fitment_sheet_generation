@@ -1,0 +1,18 @@
+{
+  "decision": "MATCH",
+  "selected_candidate": "CBR 250R Repsol",
+  "confidence": "HIGH",
+  "match_basis": "SAME_NAME",
+  "explanation": "The input 'CBR250 Repsol' refers to the same motorcycle model as 'CBR 250R Repsol', with only a minor formatting difference (missing 'R' in the displacement). The 'R' is standard in Honda's naming for this model and is implied in common usage. No other model variants or different displacements are involved.",
+  "canonical_model_alias": "CBR 250R Repsol",
+  "configuration_tokens": [],
+  "brand_aliases": [],
+  "model_aliases": [
+    "CBR 250R Repsol"
+  ],
+  "status": "SUCCESS",
+  "prompt_version": "motorcycle-candidate-resolution-v4",
+  "model": "qwen-flash",
+  "make": "Honda",
+  "model_name": "CBR250 Repsol"
+}

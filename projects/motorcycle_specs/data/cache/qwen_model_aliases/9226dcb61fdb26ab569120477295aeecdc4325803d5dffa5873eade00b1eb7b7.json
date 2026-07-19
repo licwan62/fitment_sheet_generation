@@ -1,0 +1,18 @@
+{
+  "decision": "MATCH",
+  "selected_candidate": "888SPS",
+  "confidence": "HIGH",
+  "match_basis": "MARKET_ALIAS",
+  "explanation": "The '888 SPO' is a known market-specific designation for the Ducati 888 SPS, with 'SPO' being a regional or marketing abbreviation for 'SPS'. Both refer to the same model with identical specifications and production history.",
+  "canonical_model_alias": "888SPS",
+  "configuration_tokens": [],
+  "brand_aliases": [],
+  "model_aliases": [
+    "888SPS"
+  ],
+  "status": "SUCCESS",
+  "prompt_version": "motorcycle-candidate-resolution-v4",
+  "model": "qwen-flash",
+  "make": "Ducati",
+  "model_name": "888 SPO"
+}

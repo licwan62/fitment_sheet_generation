@@ -1,0 +1,11 @@
+{
+  "status": "API_ERROR",
+  "prompt_version": "motorcycle-candidate-resolution-v3",
+  "model": "qwen-flash",
+  "make": "Honda",
+  "model_name": "GL1800 Gold Wing 50th Anniversary",
+  "candidate_titles": [
+    "GL 1800 \n\t\tGold Wing 5 0th Anniversary"
+  ],
+  "error_type": "HTTPStatusError"
+}

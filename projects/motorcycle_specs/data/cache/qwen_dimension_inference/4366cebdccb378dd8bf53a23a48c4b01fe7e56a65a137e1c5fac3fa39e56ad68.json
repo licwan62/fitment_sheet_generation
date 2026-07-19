@@ -1,0 +1,16 @@
+{
+  "decision": "INFER|UNKNOWN",
+  "confidence": "LOW",
+  "length_mm": null,
+  "width_mm": null,
+  "height_mm": null,
+  "wheelbase_mm": null,
+  "seat_height_mm": null,
+  "ground_clearance_mm": null,
+  "explanation": "The model 'Intruder ABS' is ambiguous without a specific year or variant (e.g., M1000, M1200). Suzuki's Intruder lineup includes multiple models with varying dimensions. Without definitive model identification or catalog reference, dimensions cannot be reliably inferred. Variations by market and year further reduce confidence.",
+  "status": "SUCCESS",
+  "prompt_version": "motorcycle-dimension-inference-v1",
+  "model": "qwen-flash",
+  "make": "Suzuki",
+  "model_name": "Intruder ABS"
+}

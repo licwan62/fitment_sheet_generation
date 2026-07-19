@@ -1,0 +1,20 @@
+{
+  "decision": "MATCH",
+  "selected_candidate": "R \n\t\t1250GS Adventure",
+  "confidence": "HIGH",
+  "match_basis": "MARKET_ALIAS",
+  "explanation": "The input 'R1250GS Adventure Rallye' is a market-specific variant (likely for the UK or EU) of the standard R1250GS Adventure, with 'Rallye' serving as a configuration or marketing label rather than indicating a different model. The core motorcycle identity remains unchanged.",
+  "canonical_model_alias": "R 1250GS Adventure",
+  "configuration_tokens": [
+    "Rallye"
+  ],
+  "brand_aliases": [],
+  "model_aliases": [
+    "R 1250GS Adventure"
+  ],
+  "status": "SUCCESS",
+  "prompt_version": "motorcycle-candidate-resolution-v4",
+  "model": "qwen-flash",
+  "make": "BMW",
+  "model_name": "R1250GS Adventure Rallye"
+}

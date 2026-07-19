@@ -1,0 +1,20 @@
+{
+  "decision": "MATCH",
+  "selected_candidate": "CB 650F",
+  "confidence": "HIGH",
+  "match_basis": "SAME_NAME",
+  "explanation": "The input 'CB650F ABS' refers to the same motorcycle model as 'CB 650F', with 'ABS' being a configuration feature not altering the core model identity. The catalog candidate 'CB 650F' is the canonical form of the model name, and the presence of ABS does not constitute a different model.",
+  "canonical_model_alias": "CB 650F",
+  "configuration_tokens": [
+    "ABS"
+  ],
+  "brand_aliases": [],
+  "model_aliases": [
+    "CB 650F"
+  ],
+  "status": "SUCCESS",
+  "prompt_version": "motorcycle-candidate-resolution-v4",
+  "model": "qwen-flash",
+  "make": "Honda",
+  "model_name": "CB650F ABS"
+}

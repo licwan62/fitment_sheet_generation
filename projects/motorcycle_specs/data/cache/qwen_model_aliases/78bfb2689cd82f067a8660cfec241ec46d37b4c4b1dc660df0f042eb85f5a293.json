@@ -1,0 +1,16 @@
+{
+  "decision": "MATCH",
+  "selected_candidate": "Bajaj pulsar 150",
+  "confidence": "HIGH",
+  "match_basis": "MARKET_ALIAS",
+  "explanation": "The Bajaj V15 is a market-specific name for the Bajaj Pulsar 150 in certain regions, particularly in India. The model shares the same engine, platform, and core specifications. 'V15' is a marketing designation used to highlight the 150cc displacement and performance-oriented branding, but it refers to the same underlying motorcycle as the Pulsar 150.",
+  "canonical_model_alias": "Pulsar 150",
+  "configuration_tokens": [],
+  "brand_aliases": [],
+  "model_aliases": [],
+  "status": "SUCCESS",
+  "prompt_version": "motorcycle-candidate-resolution-v4",
+  "model": "qwen-flash",
+  "make": "Bajaj",
+  "model_name": "V15"
+}

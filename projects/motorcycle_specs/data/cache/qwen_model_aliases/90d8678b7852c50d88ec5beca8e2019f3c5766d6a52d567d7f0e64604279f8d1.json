@@ -1,0 +1,20 @@
+{
+  "decision": "MATCH",
+  "selected_candidate": "Suzuki VL 1500 Intruder LC",
+  "confidence": "HIGH",
+  "match_basis": "SAME_NAME",
+  "explanation": "The input 'VL1500 Intruder' refers to the same underlying motorcycle model as the candidate 'Suzuki VL 1500 Intruder LC', with the 'LC' suffix being a configuration identifier for fuel-injected models. The core model identity (VL1500 Intruder) is preserved, and 'LC' is a known market/technical designation for this variant. No other model variants are implied.",
+  "canonical_model_alias": "VL 1500 Intruder LC",
+  "configuration_tokens": [
+    "LC"
+  ],
+  "brand_aliases": [],
+  "model_aliases": [
+    "VL 1500 Intruder LC"
+  ],
+  "status": "SUCCESS",
+  "prompt_version": "motorcycle-candidate-resolution-v4",
+  "model": "qwen-flash",
+  "make": "Suzuki",
+  "model_name": "VL1500 Intruder"
+}

@@ -1,0 +1,16 @@
+{
+  "decision": "INFER|UNKNOWN",
+  "confidence": "MEDIUM|LOW",
+  "length_mm": null,
+  "width_mm": null,
+  "height_mm": null,
+  "wheelbase_mm": null,
+  "seat_height_mm": null,
+  "ground_clearance_mm": null,
+  "explanation": "The R1100SA was produced from 2000 to 2005 with minor variations across model years and markets. Without access to a specific catalog page or definitive source, dimensions cannot be reliably confirmed. Inferred values may vary significantly by year and regional specification, so no precise figures can be provided with confidence.",
+  "status": "SUCCESS",
+  "prompt_version": "motorcycle-dimension-inference-v1",
+  "model": "qwen-flash",
+  "make": "BMW",
+  "model_name": "R1100SA"
+}

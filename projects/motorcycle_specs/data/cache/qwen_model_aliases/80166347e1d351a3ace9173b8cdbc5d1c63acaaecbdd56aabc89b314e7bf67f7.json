@@ -1,0 +1,18 @@
+{
+  "decision": "MATCH",
+  "selected_candidate": "Suzuki V-Strom 1050DE",
+  "confidence": "HIGH",
+  "match_basis": "SAME_NAME",
+  "explanation": "The input model 'DL1050 V-Strom 1050DE' is a direct variant of the catalog candidate 'Suzuki V-Strom 1050DE', with 'DL1050' being the model designation used by Suzuki for this motorcycle. The name 'V-Strom 1050DE' is the standard catalog title, and 'DL1050' is the internal model code. The candidate 'Suzuki V-Strom 1050DE' matches exactly in model identity, displacement, and configuration.",
+  "canonical_model_alias": "V-Strom 1050DE",
+  "configuration_tokens": [],
+  "brand_aliases": [],
+  "model_aliases": [
+    "V-Strom 1050DE"
+  ],
+  "status": "SUCCESS",
+  "prompt_version": "motorcycle-candidate-resolution-v4",
+  "model": "qwen-flash",
+  "make": "Suzuki",
+  "model_name": "DL1050 V-Strom 1050DE"
+}

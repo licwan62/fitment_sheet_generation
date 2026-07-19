@@ -1,0 +1,21 @@
+{
+  "decision": "MATCH",
+  "selected_candidate": "gasgas ec 250",
+  "confidence": "HIGH",
+  "match_basis": "SAME_NAME",
+  "explanation": "The input model 'EC 250 R' is a variant of the 'EC 250' series, and 'gasgas ec 250' is the canonical catalog title for the same underlying motorcycle. The 'R' suffix denotes a racing or road version, which is consistent with the EC 250's configuration lineage. No other candidate matches the core identity exactly.",
+  "canonical_model_alias": "ec 250",
+  "configuration_tokens": [
+    "R"
+  ],
+  "brand_aliases": [],
+  "model_aliases": [
+    "gasgas ec 250",
+    "ec 250"
+  ],
+  "status": "SUCCESS",
+  "prompt_version": "motorcycle-candidate-resolution-v4",
+  "model": "qwen-flash",
+  "make": "Gas Gas",
+  "model_name": "EC 250 R"
+}

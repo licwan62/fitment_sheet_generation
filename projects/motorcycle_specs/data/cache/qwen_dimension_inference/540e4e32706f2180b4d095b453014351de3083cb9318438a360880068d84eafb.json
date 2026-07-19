@@ -1,0 +1,16 @@
+{
+  "decision": "INFER|UNKNOWN",
+  "confidence": "LOW",
+  "length_mm": null,
+  "width_mm": null,
+  "height_mm": null,
+  "wheelbase_mm": null,
+  "seat_height_mm": null,
+  "ground_clearance_mm": null,
+  "explanation": "The Aprilia SR 160 Carbon is a limited-edition variant with no publicly documented official dimensions. Without access to a catalog page or verified specifications, and due to potential variations in design or trim across markets or model years, dimension estimation is uncertain. Inferred dimensions from similar models (e.g., standard SR 160) may not apply accurately. Therefore, all values are marked as unknown.",
+  "status": "SUCCESS",
+  "prompt_version": "motorcycle-dimension-inference-v1",
+  "model": "qwen-flash",
+  "make": "Aprilia",
+  "model_name": "SR 160 Carbon"
+}

@@ -1,0 +1,16 @@
+{
+  "decision": "INFER|UNKNOWN",
+  "confidence": "MEDIUM|LOW",
+  "length_mm": null,
+  "width_mm": null,
+  "height_mm": null,
+  "wheelbase_mm": null,
+  "seat_height_mm": null,
+  "ground_clearance_mm": null,
+  "explanation": "The Gas Gas Enducross EC 250 is a motocross motorcycle, but specific dimensional data for this exact model variant (particularly the EC 250) is not consistently documented in public sources. Dimensions may vary by year and market configuration. Without access to official specifications or verified catalog data, accurate inference is uncertain. The model's identity and dimensions are not reliably distinguishable from similar models like the Gas Gas MC 250 or Enduro variants.",
+  "status": "SUCCESS",
+  "prompt_version": "motorcycle-dimension-inference-v1",
+  "model": "qwen-flash",
+  "make": "Gas Gas",
+  "model_name": "Enducross EC 250"
+}

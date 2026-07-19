@@ -1,0 +1,18 @@
+{
+  "decision": "NO_MATCH",
+  "selected_candidate": "",
+  "confidence": "HIGH",
+  "match_basis": "NONE",
+  "explanation": "The model 'GSX-R600Z 40th Anniversary' is a special edition variant of the Suzuki GSX-R600, but no matching catalog candidate exists in the provided list. The 40th Anniversary designation is a commemorative configuration not present in the candidate set, and no equivalent or known alias for this specific model is found among the candidates.",
+  "canonical_model_alias": "",
+  "configuration_tokens": [
+    "40th Anniversary"
+  ],
+  "brand_aliases": [],
+  "model_aliases": [],
+  "status": "SUCCESS",
+  "prompt_version": "motorcycle-candidate-resolution-v4",
+  "model": "qwen-flash",
+  "make": "Suzuki",
+  "model_name": "GSX-R600Z 40th Anniversary"
+}

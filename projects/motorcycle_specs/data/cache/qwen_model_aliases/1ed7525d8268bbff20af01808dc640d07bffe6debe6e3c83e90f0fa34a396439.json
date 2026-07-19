@@ -1,0 +1,21 @@
+{
+  "decision": "MATCH",
+  "selected_candidate": "Suzuki RF 900 RS",
+  "confidence": "HIGH",
+  "match_basis": "SAME_NAME",
+  "explanation": "The input 'RF900' refers to the same underlying motorcycle model as 'Suzuki RF 900 RS', with 'RS' being a standard configuration suffix for this model. The other candidates are variations or typographical forms of the same model, with no change in core identity.",
+  "canonical_model_alias": "RF 900 RS",
+  "configuration_tokens": [
+    "RS"
+  ],
+  "brand_aliases": [],
+  "model_aliases": [
+    "RF 900 RS",
+    "RF 900R"
+  ],
+  "status": "SUCCESS",
+  "prompt_version": "motorcycle-candidate-resolution-v4",
+  "model": "qwen-flash",
+  "make": "Suzuki",
+  "model_name": "RF900"
+}

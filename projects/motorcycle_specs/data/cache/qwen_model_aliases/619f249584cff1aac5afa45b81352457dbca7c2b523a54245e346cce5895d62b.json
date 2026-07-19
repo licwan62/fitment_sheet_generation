@@ -1,0 +1,20 @@
+{
+  "decision": "MATCH",
+  "selected_candidate": "SR 50 Factory",
+  "confidence": "HIGH",
+  "match_basis": "SAME_NAME",
+  "explanation": "The input 'SR 50' and the candidate 'SR 50 Factory' refer to the same underlying motorcycle model, with 'Factory' being a configuration or trim level that does not change the core identity of the SR 50. The displacement (50) and model name (SR) are identical, and 'Factory' is a known variant within the SR 50 lineup.",
+  "canonical_model_alias": "SR 50 Factory",
+  "configuration_tokens": [
+    "Factory"
+  ],
+  "brand_aliases": [],
+  "model_aliases": [
+    "SR 50 Factory"
+  ],
+  "status": "SUCCESS",
+  "prompt_version": "motorcycle-candidate-resolution-v4",
+  "model": "qwen-flash",
+  "make": "Aprilia",
+  "model_name": "SR 50"
+}

@@ -1,0 +1,20 @@
+{
+  "decision": "MATCH",
+  "selected_candidate": "Bajaj pulsar n250",
+  "confidence": "HIGH",
+  "match_basis": "SAME_NAME",
+  "explanation": "The input 'Pulsar N 250 FI' is a direct variant of the catalog candidate 'Bajaj pulsar n250', with 'FI' being a standard fuel injection designation commonly associated with this model. The name 'N 250' matches 'n250' in the candidate, and 'FI' is a known configuration detail not altering the core model identity. No other candidate shares the same displacement and model series.",
+  "canonical_model_alias": "pulsar n250",
+  "configuration_tokens": [
+    "FI"
+  ],
+  "brand_aliases": [],
+  "model_aliases": [
+    "pulsar n250"
+  ],
+  "status": "SUCCESS",
+  "prompt_version": "motorcycle-candidate-resolution-v4",
+  "model": "qwen-flash",
+  "make": "Bajaj",
+  "model_name": "Pulsar N 250 FI"
+}

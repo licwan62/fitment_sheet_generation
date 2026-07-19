@@ -1,0 +1,19 @@
+{
+  "decision": "MATCH",
+  "selected_candidate": "gasgas txt 125",
+  "confidence": "HIGH",
+  "match_basis": "SAME_NAME",
+  "explanation": "The input 'Contact TX125' is a known market-specific name for the Gas Gas TXT 125 model. The catalog candidate 'gasgas txt 125' matches exactly in model identity, displacement, and configuration, with 'Contact' being a regional or marketing designation for the same motorcycle.",
+  "canonical_model_alias": "txt 125",
+  "configuration_tokens": [],
+  "brand_aliases": [],
+  "model_aliases": [
+    "gasgas txt 125",
+    "txt 125"
+  ],
+  "status": "SUCCESS",
+  "prompt_version": "motorcycle-candidate-resolution-v4",
+  "model": "qwen-flash",
+  "make": "Gas Gas",
+  "model_name": "Contact TX125"
+}

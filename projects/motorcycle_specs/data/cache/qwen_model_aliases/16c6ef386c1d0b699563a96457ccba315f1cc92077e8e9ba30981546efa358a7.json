@@ -1,0 +1,19 @@
+{
+  "decision": "MATCH",
+  "selected_candidate": "CT 70 Dax",
+  "confidence": "HIGH",
+  "match_basis": "HISTORICAL_ALIAS",
+  "explanation": "The Honda XL70 is a historical model known in some markets as the CT70 Dax. The CT70 Dax is the same underlying motorcycle, with 'Dax' being the European market name for the CT70 series. The XL70 and CT70 are identical models with different naming conventions across regions.",
+  "canonical_model_alias": "CT 70 Dax",
+  "configuration_tokens": [],
+  "brand_aliases": [],
+  "model_aliases": [
+    "CT 70 Dax",
+    "CT70"
+  ],
+  "status": "SUCCESS",
+  "prompt_version": "motorcycle-candidate-resolution-v4",
+  "model": "qwen-flash",
+  "make": "Honda",
+  "model_name": "XL70"
+}

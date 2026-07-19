@@ -1,0 +1,16 @@
+{
+  "decision": "NO_MATCH",
+  "selected_candidate": "",
+  "confidence": "HIGH",
+  "match_basis": "NONE",
+  "explanation": "The model 'GS1100S Katana' is a distinct variant of the Suzuki GS1100 series, featuring a sportier design and specific market positioning. The catalog candidates 'GS 1100GK', 'GS 1100G', and 'GS 1100GL' are different models within the same family but do not match the GS1100S Katana in name, configuration, or identity. The 'S' in GS1100S denotes a specific trim (Katana), which is not present in any of the listed candidates. No known market alias, abbreviation, or typo links these candidates to the GS1100S Katana.",
+  "canonical_model_alias": "",
+  "configuration_tokens": [],
+  "brand_aliases": [],
+  "model_aliases": [],
+  "status": "SUCCESS",
+  "prompt_version": "motorcycle-candidate-resolution-v4",
+  "model": "qwen-flash",
+  "make": "Suzuki",
+  "model_name": "GS1100S Katana"
+}

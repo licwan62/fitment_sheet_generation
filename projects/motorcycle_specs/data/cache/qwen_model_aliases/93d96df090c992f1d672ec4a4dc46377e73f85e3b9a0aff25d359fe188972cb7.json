@@ -1,0 +1,16 @@
+{
+  "decision": "MATCH",
+  "selected_candidate": "beta rr 200 2t",
+  "confidence": "HIGH",
+  "match_basis": "SAME_NAME",
+  "explanation": "The input '200 RR' corresponds directly to the catalog candidate 'beta rr 200 2t', which is the correct model name for the 200cc two-stroke Beta RR. The displacement and engine type (2T) are consistent, and no other candidate matches this specific model.",
+  "canonical_model_alias": "beta rr 200 2t",
+  "configuration_tokens": [],
+  "brand_aliases": [],
+  "model_aliases": [],
+  "status": "SUCCESS",
+  "prompt_version": "motorcycle-candidate-resolution-v4",
+  "model": "qwen-flash",
+  "make": "Beta",
+  "model_name": "200 RR"
+}

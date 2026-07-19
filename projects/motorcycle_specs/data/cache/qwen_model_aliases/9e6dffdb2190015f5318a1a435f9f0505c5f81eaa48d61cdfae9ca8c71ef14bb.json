@@ -1,0 +1,20 @@
+{
+  "decision": "MATCH",
+  "selected_candidate": "Tuareg 660 Factory",
+  "confidence": "HIGH",
+  "match_basis": "HISTORICAL_ALIAS",
+  "explanation": "The 'Tuareg 660 Factory' is a special edition configuration of the Tuareg 660, marketed as a high-performance variant. While not explicitly listed in the candidates, 'Tuareg 660 Rally' is a known variant with similar identity and purpose, but 'Factory' is a distinct configuration label. However, given that both are variants of the same base model (Tuareg 660) and 'Factory' is a known market/trim designation for the 660, it aligns closely with the core model identity. The candidate 'Tuareg 660' is the base model, and 'Tuareg 660 Rally' is a derivative. Since 'Factory' is not a separate model but a configuration, and no exact match exists in the list, the closest valid candidate is 'Tuareg 660', which represents the core model. However, 'Tuareg 660 Factory' is not a standard catalog title in the provided list, so the best available match is 'Tuareg 660'.",
+  "canonical_model_alias": "Tuareg 660",
+  "configuration_tokens": [
+    "Factory"
+  ],
+  "brand_aliases": [],
+  "model_aliases": [
+    "Tuareg 660"
+  ],
+  "status": "SUCCESS",
+  "prompt_version": "motorcycle-candidate-resolution-v4",
+  "model": "qwen-flash",
+  "make": "Aprilia",
+  "model_name": "Tuareg 660 Factory"
+}

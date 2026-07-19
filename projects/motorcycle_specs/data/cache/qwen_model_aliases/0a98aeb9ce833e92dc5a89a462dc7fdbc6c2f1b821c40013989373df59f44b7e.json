@@ -1,0 +1,20 @@
+{
+  "decision": "MATCH",
+  "selected_candidate": "F 900R",
+  "confidence": "HIGH",
+  "match_basis": "MARKET_ALIAS",
+  "explanation": "The 'LWR' suffix in 'F900R LWR' is a known market-specific configuration label (likely for 'Low Weight Road' or similar), not a distinct model variant. The core motorcycle identity matches the standard F 900R. The catalog candidate 'F 900R' represents the same underlying model.",
+  "canonical_model_alias": "F 900R",
+  "configuration_tokens": [
+    "LWR"
+  ],
+  "brand_aliases": [],
+  "model_aliases": [
+    "F 900R"
+  ],
+  "status": "SUCCESS",
+  "prompt_version": "motorcycle-candidate-resolution-v4",
+  "model": "qwen-flash",
+  "make": "BMW",
+  "model_name": "F900R LWR"
+}

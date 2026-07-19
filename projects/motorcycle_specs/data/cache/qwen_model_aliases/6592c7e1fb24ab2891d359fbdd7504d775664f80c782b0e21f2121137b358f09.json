@@ -1,0 +1,18 @@
+{
+  "decision": "MATCH",
+  "selected_candidate": "PCX 125 Scooter",
+  "confidence": "HIGH",
+  "match_basis": "SAME_NAME",
+  "explanation": "The input 'PCX125' is a direct and exact match for the catalog candidate 'PCX 125 Scooter' in terms of model name and displacement, with only minor formatting differences. The absence of a space in the input is a common typographical variation.",
+  "canonical_model_alias": "PCX 125 Scooter",
+  "configuration_tokens": [],
+  "brand_aliases": [],
+  "model_aliases": [
+    "PCX 125 Scooter"
+  ],
+  "status": "SUCCESS",
+  "prompt_version": "motorcycle-candidate-resolution-v4",
+  "model": "qwen-flash",
+  "make": "Honda",
+  "model_name": "PCX125"
+}

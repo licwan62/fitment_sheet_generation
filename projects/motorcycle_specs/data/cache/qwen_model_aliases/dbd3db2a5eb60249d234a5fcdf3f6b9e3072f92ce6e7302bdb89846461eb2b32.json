@@ -1,0 +1,20 @@
+{
+  "decision": "MATCH",
+  "selected_candidate": "CB 1100 Del Lux",
+  "confidence": "HIGH",
+  "match_basis": "MARKET_ALIAS",
+  "explanation": "'CB1100 DLX' is a market-specific designation (DLX) for the CB1100 Del Lux model, which is a premium variant of the standard CB1100. The 'DLX' suffix is a known marketing label for the deluxe version in certain regions, and 'Del Lux' is the full spelling of the same model. This is a direct market name variation of the same underlying motorcycle.",
+  "canonical_model_alias": "CB 1100 Del Lux",
+  "configuration_tokens": [
+    "DLX"
+  ],
+  "brand_aliases": [],
+  "model_aliases": [
+    "CB 1100 Del Lux"
+  ],
+  "status": "SUCCESS",
+  "prompt_version": "motorcycle-candidate-resolution-v4",
+  "model": "qwen-flash",
+  "make": "Honda",
+  "model_name": "CB1100 DLX"
+}

@@ -1,0 +1,20 @@
+{
+  "decision": "MATCH",
+  "selected_candidate": "K 100RS",
+  "confidence": "HIGH",
+  "match_basis": "MARKET_ALIAS",
+  "explanation": "'K100RS FL' is a market-specific designation (FL likely denoting 'Full Light' or a European configuration) for the same K 100RS model, commonly used in catalogs and known variants. The core model identity remains unchanged.",
+  "canonical_model_alias": "K 100RS",
+  "configuration_tokens": [
+    "FL"
+  ],
+  "brand_aliases": [],
+  "model_aliases": [
+    "K 100RS"
+  ],
+  "status": "SUCCESS",
+  "prompt_version": "motorcycle-candidate-resolution-v4",
+  "model": "qwen-flash",
+  "make": "BMW",
+  "model_name": "K100RS FL"
+}

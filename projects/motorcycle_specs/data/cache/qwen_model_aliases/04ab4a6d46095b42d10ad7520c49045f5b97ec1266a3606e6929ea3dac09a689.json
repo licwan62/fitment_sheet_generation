@@ -1,0 +1,18 @@
+{
+  "decision": "MATCH",
+  "selected_candidate": "Suzuki Boulevard M109R",
+  "confidence": "HIGH",
+  "match_basis": "SAME_NAME",
+  "explanation": "The input 'M109R Boulevard' refers to the same motorcycle model as 'Suzuki Boulevard M109R', with the brand and model name correctly ordered. The variant 'Boulevard C109R' is a different model designation, but 'Suzuki Boulevard M109R' matches the input's core identity.",
+  "canonical_model_alias": "Boulevard M109R",
+  "configuration_tokens": [],
+  "brand_aliases": [],
+  "model_aliases": [
+    "Boulevard M109R"
+  ],
+  "status": "SUCCESS",
+  "prompt_version": "motorcycle-candidate-resolution-v4",
+  "model": "qwen-flash",
+  "make": "Suzuki",
+  "model_name": "M109R Boulevard"
+}

@@ -1,0 +1,20 @@
+{
+  "decision": "MATCH",
+  "selected_candidate": "beta evo 300 2t ss",
+  "confidence": "HIGH",
+  "match_basis": "SAME_NAME",
+  "explanation": "The input 'EVO 300 SS (2 Stroke)' corresponds directly to the catalog candidate 'beta evo 300 2t ss', with 'SS' interpreted as a configuration label for the same model. The displacement (300), engine type (2 Stroke), and model series (EVO) match exactly. The term 'SS' is a known market or trim designation for this variant, not a different model.",
+  "canonical_model_alias": "beta evo 300 2t ss",
+  "configuration_tokens": [
+    "ss"
+  ],
+  "brand_aliases": [],
+  "model_aliases": [
+    "evo 300 2t ss"
+  ],
+  "status": "SUCCESS",
+  "prompt_version": "motorcycle-candidate-resolution-v4",
+  "model": "qwen-flash",
+  "make": "Beta",
+  "model_name": "EVO 300 SS (2 Stroke)"
+}

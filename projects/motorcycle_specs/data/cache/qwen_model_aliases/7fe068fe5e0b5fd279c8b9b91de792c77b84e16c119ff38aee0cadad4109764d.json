@@ -1,0 +1,18 @@
+{
+  "decision": "MATCH",
+  "selected_candidate": "harley davidson touring road king special flhrxs",
+  "confidence": "HIGH",
+  "match_basis": "MARKET_ALIAS",
+  "explanation": "The input 'FLHRXS Road King Special' is a known model designation for the Harley-Davidson Road King Special with the FLHRXS chassis code. The candidate 'harley davidson touring road king special flhrxs' uses the same model identifier (FLHRXS) and matches the core model name, with 'touring' being a market or descriptive label consistent with the Road King Special's positioning. The displacement and configuration are identical.",
+  "canonical_model_alias": "touring road king special flhrxs",
+  "configuration_tokens": [],
+  "brand_aliases": [],
+  "model_aliases": [
+    "touring road king special flhrxs"
+  ],
+  "status": "SUCCESS",
+  "prompt_version": "motorcycle-candidate-resolution-v4",
+  "model": "qwen-flash",
+  "make": "Harley-Davidson",
+  "model_name": "FLHRXS Road King Special"
+}

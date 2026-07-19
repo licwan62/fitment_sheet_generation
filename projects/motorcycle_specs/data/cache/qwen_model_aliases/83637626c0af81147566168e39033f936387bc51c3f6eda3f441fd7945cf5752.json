@@ -1,0 +1,20 @@
+{
+  "decision": "MATCH",
+  "selected_candidate": "Discover 125 M",
+  "confidence": "HIGH",
+  "match_basis": "MARKET_ALIAS",
+  "explanation": "The 'Discover 125 M' is a market-specific variant of the Discover 125, with 'M' denoting a configuration or trim level in certain regions. The 'Discover 125 DTS-i' is a different engine technology variant (DTS-i = Digital Twin Spark Ignition), which represents a distinct model with different ignition system and performance characteristics. Therefore, only 'Discover 125 M' matches the base model identity.",
+  "canonical_model_alias": "Discover 125 M",
+  "configuration_tokens": [
+    "M"
+  ],
+  "brand_aliases": [],
+  "model_aliases": [
+    "Discover 125 M"
+  ],
+  "status": "SUCCESS",
+  "prompt_version": "motorcycle-candidate-resolution-v4",
+  "model": "qwen-flash",
+  "make": "Bajaj",
+  "model_name": "Discover 125"
+}

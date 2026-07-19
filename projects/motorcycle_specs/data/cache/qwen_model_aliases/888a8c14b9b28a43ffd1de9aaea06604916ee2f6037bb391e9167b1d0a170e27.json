@@ -1,0 +1,18 @@
+{
+  "decision": "MATCH",
+  "selected_candidate": "VF 700S Sabre V40",
+  "confidence": "HIGH",
+  "match_basis": "SAME_NAME",
+  "explanation": "The input 'VF700S Sabre' and the candidate 'VF 700S Sabre V40' refer to the same underlying motorcycle model. The 'V40' suffix is a configuration or market-specific identifier (commonly used for European or special edition variants) but does not alter the core model identity. The displacement (700), engine type (V4), and name (Sabre) are identical, confirming it is the same model.",
+  "canonical_model_alias": "VF 700S Sabre",
+  "configuration_tokens": [
+    "V40"
+  ],
+  "brand_aliases": [],
+  "model_aliases": [],
+  "status": "SUCCESS",
+  "prompt_version": "motorcycle-candidate-resolution-v4",
+  "model": "qwen-flash",
+  "make": "Honda",
+  "model_name": "VF700S Sabre"
+}

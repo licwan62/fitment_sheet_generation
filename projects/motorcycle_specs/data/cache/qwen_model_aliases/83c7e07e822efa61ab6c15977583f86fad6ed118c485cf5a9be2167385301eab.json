@@ -1,0 +1,18 @@
+{
+  "decision": "MATCH",
+  "selected_candidate": "beta evo 250 4takt",
+  "confidence": "HIGH",
+  "match_basis": "MARKET_ALIAS",
+  "explanation": "The input 'EVO 250 Sport (4 Stroke)' and the candidate 'beta evo 250 4takt' refer to the same model; '4takt' is the German term for '4 stroke', commonly used in European catalogs, making it a market-specific variant of the same motorcycle. The displacement, engine type, and model series match exactly.",
+  "canonical_model_alias": "beta evo 250 4takt",
+  "configuration_tokens": [],
+  "brand_aliases": [],
+  "model_aliases": [
+    "evo 250 4takt"
+  ],
+  "status": "SUCCESS",
+  "prompt_version": "motorcycle-candidate-resolution-v4",
+  "model": "qwen-flash",
+  "make": "Beta",
+  "model_name": "EVO 250 Sport (4 Stroke)"
+}

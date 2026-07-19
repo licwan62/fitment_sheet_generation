@@ -1,0 +1,16 @@
+{
+  "decision": "NO_MATCH",
+  "selected_candidate": "",
+  "confidence": "HIGH",
+  "match_basis": "NONE",
+  "explanation": "The model 'RSS1200' is not a known Buell motorcycle model. Buell did produce a 1200cc model, but it was the 'Buell Lightning 1200' (also known as the 'Buell XB12X'), and there is no official or documented 'RSS1200' variant in Buell's catalog. The input name does not match any known catalog candidate, nor is it a recognized market alias, abbreviation, or plausible typo for an existing Buell model.",
+  "canonical_model_alias": "",
+  "configuration_tokens": [],
+  "brand_aliases": [],
+  "model_aliases": [],
+  "status": "SUCCESS",
+  "prompt_version": "motorcycle-candidate-resolution-v4",
+  "model": "qwen-flash",
+  "make": "Buell",
+  "model_name": "RSS1200"
+}

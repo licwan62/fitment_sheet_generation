@@ -1,0 +1,18 @@
+{
+  "decision": "MATCH",
+  "selected_candidate": "beta rx 350 2t",
+  "confidence": "HIGH",
+  "match_basis": "MARKET_ALIAS",
+  "explanation": "The input '350 RX' refers to the Beta 350 RX model, which is known in some markets as the 'beta rx 350 2t' due to its two-stroke engine configuration. The term 'RX' is consistent across both names, and '2t' specifies the engine type, which is a standard identifier for this model. This is a recognized market-specific catalog variant.",
+  "canonical_model_alias": "beta rx 350 2t",
+  "configuration_tokens": [
+    "2t"
+  ],
+  "brand_aliases": [],
+  "model_aliases": [],
+  "status": "SUCCESS",
+  "prompt_version": "motorcycle-candidate-resolution-v4",
+  "model": "qwen-flash",
+  "make": "Beta",
+  "model_name": "350 RX"
+}

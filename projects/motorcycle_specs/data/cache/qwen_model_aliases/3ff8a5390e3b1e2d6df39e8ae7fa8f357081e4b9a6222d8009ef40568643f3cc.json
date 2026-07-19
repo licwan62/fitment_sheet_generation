@@ -1,0 +1,18 @@
+{
+  "decision": "MATCH",
+  "selected_candidate": "GT 380J",
+  "confidence": "HIGH",
+  "match_basis": "SAME_NAME",
+  "explanation": "The input 'GT380' matches the core model identity of 'GT 380J' as both refer to the same Suzuki motorcycle model with identical displacement and platform. The suffix 'J' is a valid configuration variant within the GT380 series, and no evidence suggests a different underlying model. Other candidates are variants of the same model line.",
+  "canonical_model_alias": "GT 380J",
+  "configuration_tokens": [],
+  "brand_aliases": [],
+  "model_aliases": [
+    "GT 380J"
+  ],
+  "status": "SUCCESS",
+  "prompt_version": "motorcycle-candidate-resolution-v4",
+  "model": "qwen-flash",
+  "make": "Suzuki",
+  "model_name": "GT380"
+}

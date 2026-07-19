@@ -1,0 +1,16 @@
+{
+  "decision": "NO_MATCH",
+  "selected_candidate": "",
+  "confidence": "HIGH",
+  "match_basis": "NONE",
+  "explanation": "The model 'SCL500' is not a known Honda motorcycle model in the catalog. No valid candidates match this designation, and there is no evidence of a market name, historical alias, abbreviation, or typo that would link it to a real Honda motorcycle. The SCL500 does not correspond to any documented Honda model with similar displacement or naming convention.",
+  "canonical_model_alias": "",
+  "configuration_tokens": [],
+  "brand_aliases": [],
+  "model_aliases": [],
+  "status": "SUCCESS",
+  "prompt_version": "motorcycle-candidate-resolution-v4",
+  "model": "qwen-flash",
+  "make": "Honda",
+  "model_name": "SCL500"
+}

@@ -1,0 +1,21 @@
+{
+  "decision": "MATCH",
+  "selected_candidate": "gasgas ec 125",
+  "confidence": "HIGH",
+  "match_basis": "SAME_NAME",
+  "explanation": "The input 'EC 125 Racing' and the candidate 'gasgas ec 125' refer to the same underlying motorcycle model, with 'Racing' being a configuration descriptor not altering the core model identity. The displacement (125) and model series (EC) match exactly.",
+  "canonical_model_alias": "ec 125",
+  "configuration_tokens": [
+    "Racing"
+  ],
+  "brand_aliases": [],
+  "model_aliases": [
+    "gasgas ec 125",
+    "ec 125"
+  ],
+  "status": "SUCCESS",
+  "prompt_version": "motorcycle-candidate-resolution-v4",
+  "model": "qwen-flash",
+  "make": "Gas Gas",
+  "model_name": "EC 125 Racing"
+}

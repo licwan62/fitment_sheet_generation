@@ -1,0 +1,16 @@
+{
+  "decision": "INFER|UNKNOWN",
+  "confidence": "MEDIUM|LOW",
+  "length_mm": null,
+  "width_mm": null,
+  "height_mm": null,
+  "wheelbase_mm": null,
+  "seat_height_mm": null,
+  "ground_clearance_mm": null,
+  "explanation": "The R1200GS Exclusive model's dimensions may vary by year and market, and without access to a specific catalog page or definitive source, accurate inference is uncertain. While general R1200GS dimensions exist, the Exclusive variant includes unique features that could affect overall size and clearance. Therefore, dimensions are marked as unknown with medium to low confidence.",
+  "status": "SUCCESS",
+  "prompt_version": "motorcycle-dimension-inference-v1",
+  "model": "qwen-flash",
+  "make": "BMW",
+  "model_name": "R1200GS Exclusive"
+}

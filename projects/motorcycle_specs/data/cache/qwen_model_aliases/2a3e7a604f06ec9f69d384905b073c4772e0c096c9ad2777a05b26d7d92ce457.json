@@ -1,0 +1,20 @@
+{
+  "decision": "MATCH",
+  "selected_candidate": "Tesi 3D",
+  "confidence": "HIGH",
+  "match_basis": "SAME_NAME",
+  "explanation": "The input 'Tesi 3D Biposto' refers to the same underlying motorcycle model as 'Tesi 3D', with 'Biposto' being a configuration descriptor (two-seater) rather than a distinct model. The core model identity is unchanged.",
+  "canonical_model_alias": "Tesi 3D",
+  "configuration_tokens": [
+    "Biposto"
+  ],
+  "brand_aliases": [],
+  "model_aliases": [
+    "Tesi 3D"
+  ],
+  "status": "SUCCESS",
+  "prompt_version": "motorcycle-candidate-resolution-v4",
+  "model": "qwen-flash",
+  "make": "Bimota",
+  "model_name": "Tesi 3D Biposto"
+}

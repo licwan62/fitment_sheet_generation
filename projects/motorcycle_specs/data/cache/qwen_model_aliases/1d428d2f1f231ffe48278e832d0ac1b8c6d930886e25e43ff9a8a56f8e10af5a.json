@@ -1,0 +1,19 @@
+{
+  "decision": "MATCH",
+  "selected_candidate": "Aprilia sr 160 bs6",
+  "confidence": "HIGH",
+  "match_basis": "MARKET_ALIAS",
+  "explanation": "The input 'SR 160 Carbon' is a market-specific configuration of the Aprilia SR 160, with 'Carbon' denoting a premium trim or styling variant. The candidate 'Aprilia sr 160 bs6' represents the same underlying model, with 'BS6' indicating compliance with Indian emission standards—commonly used in markets like India where the SR 160 was sold with such designations. The core model (SR 160) and displacement (160cc) are identical; 'Carbon' and 'BS6' are configuration-level labels, not identity-changing features.",
+  "canonical_model_alias": "sr 160 bs6",
+  "configuration_tokens": [
+    "carbon",
+    "bs6"
+  ],
+  "brand_aliases": [],
+  "model_aliases": [],
+  "status": "SUCCESS",
+  "prompt_version": "motorcycle-candidate-resolution-v4",
+  "model": "qwen-flash",
+  "make": "Aprilia",
+  "model_name": "SR 160 Carbon"
+}

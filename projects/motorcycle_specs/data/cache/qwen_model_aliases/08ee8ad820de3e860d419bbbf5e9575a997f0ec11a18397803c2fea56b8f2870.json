@@ -1,0 +1,18 @@
+{
+  "decision": "MATCH",
+  "selected_candidate": "Gixxer SF250 MotoGP Edition",
+  "confidence": "HIGH",
+  "match_basis": "MARKET_ALIAS",
+  "explanation": "The 'Gixxer 250 ABS' is a market-specific naming for the Gixxer SF250 MotoGP Edition, which shares the same platform, engine, and core identity. The 'ABS' feature is standard on the MotoGP Edition in certain markets, and 'Gixxer 250' is a common regional or simplified reference to the SF250 model. This is a known market alias with no functional or structural difference.",
+  "canonical_model_alias": "Gixxer SF250 MotoGP Edition",
+  "configuration_tokens": [],
+  "brand_aliases": [],
+  "model_aliases": [
+    "Gixxer SF250 MotoGP Edition"
+  ],
+  "status": "SUCCESS",
+  "prompt_version": "motorcycle-candidate-resolution-v4",
+  "model": "qwen-flash",
+  "make": "Suzuki",
+  "model_name": "Gixxer 250 ABS"
+}

@@ -6,7 +6,7 @@ from pathlib import Path
 from .utils import utc_now
 
 
-FIELDS = ["started_at","finished_at","input_count","processed_count","candidate_page_count","fetched_page_count","cache_hit_count","exact_match_count","likely_match_count","review_count","not_found_count","parsed_complete_count","parsed_partial_count","parse_failed_count","dimension_group_count","error_count"]
+FIELDS = ["started_at","finished_at","input_count","processed_count","candidate_page_count","fetched_page_count","cache_hit_count","exact_match_count","likely_match_count","inferred_count","review_count","not_found_count","parsed_complete_count","parsed_partial_count","parse_failed_count","dimension_group_count","error_count"]
 
 
 def make_report(started_at: str, inputs: list[dict], candidates: list[dict], raw: list[dict], groups: list[dict], errors: list[dict], fetched: int = 0, cache_hits: int = 0) -> dict:
@@ -15,8 +15,9 @@ def make_report(started_at: str, inputs: list[dict], candidates: list[dict], raw
         "candidate_page_count": len(candidates), "fetched_page_count": fetched, "cache_hit_count": cache_hits,
         "exact_match_count": sum(x.get("MATCH_STATUS") == "EXACT" for x in candidates),
         "likely_match_count": sum(x.get("MATCH_STATUS") == "LIKELY" for x in candidates),
+        "inferred_count": sum(x.get("MATCH_STATUS") == "INFERRED" for x in candidates),
         "review_count": sum(x.get("MATCH_STATUS") in {"REVIEW", "MULTIPLE"} for x in candidates),
-        "not_found_count": len({x["INPUT_ID"] for x in inputs} - {x["INPUT_ID"] for x in candidates if x.get("MATCH_SCORE", 0) >= 70}),
+        "not_found_count": len({x["INPUT_ID"] for x in inputs} - {x["INPUT_ID"] for x in candidates if x.get("MATCH_SCORE", 0) >= 70 or x.get("MATCH_STATUS") == "INFERRED"}),
         "parsed_complete_count": sum(x.get("PARSE_STATUS") == "COMPLETE" for x in raw),
         "parsed_partial_count": sum(x.get("PARSE_STATUS") == "PARTIAL" for x in raw),
         "parse_failed_count": sum(x.get("PARSE_STATUS") in {"PARSE_FAILED", "FETCH_FAILED"} for x in raw),

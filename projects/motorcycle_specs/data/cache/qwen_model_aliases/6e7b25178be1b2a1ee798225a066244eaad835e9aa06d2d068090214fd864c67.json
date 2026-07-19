@@ -1,0 +1,18 @@
+{
+  "decision": "MATCH",
+  "selected_candidate": "Honda FJS600 Silver Wing",
+  "confidence": "HIGH",
+  "match_basis": "MARKET_ALIAS",
+  "explanation": "FSC600 is a market-specific designation for the same model as FJS600 Silver Wing; both refer to the Honda Silver Wing 600 with identical engine and platform, differing only in regional naming conventions.",
+  "canonical_model_alias": "FJS600 Silver Wing",
+  "configuration_tokens": [],
+  "brand_aliases": [],
+  "model_aliases": [
+    "FJS600 Silver Wing"
+  ],
+  "status": "SUCCESS",
+  "prompt_version": "motorcycle-candidate-resolution-v4",
+  "model": "qwen-flash",
+  "make": "Honda",
+  "model_name": "FSC600 Silver Wing"
+}

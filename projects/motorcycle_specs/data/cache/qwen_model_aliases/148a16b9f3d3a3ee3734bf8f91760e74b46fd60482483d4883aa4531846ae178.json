@@ -1,0 +1,20 @@
+{
+  "status": "TIMEOUT",
+  "prompt_version": "motorcycle-candidate-resolution-v4",
+  "model": "qwen-flash",
+  "make": "Gas Gas",
+  "model_name": "EC 250 Racing E-Start",
+  "candidate_titles": [
+    "gasgas ec 250 racing",
+    "gasgas ec 250 f racing",
+    "gasgas contact estart 250",
+    "EC 250 \n\t2T Cervantes Replica",
+    "EC 250E \n\t2T",
+    "EC 250 \n\t2T Cross Country",
+    "gasgas txt gp 250",
+    "SM 250"
+  ],
+  "error_type": "ReadTimeout",
+  "status_code": null,
+  "retryable": true
+}

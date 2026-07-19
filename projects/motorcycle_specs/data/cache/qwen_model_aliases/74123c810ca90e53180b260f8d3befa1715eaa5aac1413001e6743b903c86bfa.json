@@ -1,0 +1,18 @@
+{
+  "decision": "MATCH",
+  "selected_candidate": "Honda VTR 1000 F Super Hawk",
+  "confidence": "HIGH",
+  "match_basis": "SAME_NAME",
+  "explanation": "The input 'VTR1000 Super Hawk' directly matches the core model identity of the selected candidate, which is the standard catalog name for this motorcycle. The other candidates include additional descriptors like 'Firestorm' or variations in capitalization and spacing, but all refer to the same underlying model. The canonical alias excludes manufacturer and year as required.",
+  "canonical_model_alias": "VTR 1000 F Super Hawk",
+  "configuration_tokens": [],
+  "brand_aliases": [],
+  "model_aliases": [
+    "VTR 1000 F Super Hawk"
+  ],
+  "status": "SUCCESS",
+  "prompt_version": "motorcycle-candidate-resolution-v4",
+  "model": "qwen-flash",
+  "make": "Honda",
+  "model_name": "VTR1000 Super Hawk"
+}

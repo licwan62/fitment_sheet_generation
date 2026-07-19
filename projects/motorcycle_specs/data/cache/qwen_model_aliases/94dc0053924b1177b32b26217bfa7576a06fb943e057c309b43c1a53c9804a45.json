@@ -1,0 +1,18 @@
+{
+  "decision": "MATCH",
+  "selected_candidate": "Ducati Sport 1000 S",
+  "confidence": "HIGH",
+  "match_basis": "SAME_NAME",
+  "explanation": "The input 'Sport 1000' refers to the Ducati Sport 1000 S model, which is explicitly listed in the catalog candidates. The variation in spacing and capitalization ('ducati sport 1000 s', 'Ducati Sport 1000 S', 'Ducati Sport 1000S') are known typographical and formatting variants of the same model. The 'Biposto' and 'Monoposto' versions are different configurations but share the same base model identity. However, since the input does not specify configuration, the most direct match is the standard 'S' version.",
+  "canonical_model_alias": "Sport 1000 S",
+  "configuration_tokens": [],
+  "brand_aliases": [],
+  "model_aliases": [
+    "Sport 1000 S"
+  ],
+  "status": "SUCCESS",
+  "prompt_version": "motorcycle-candidate-resolution-v4",
+  "model": "qwen-flash",
+  "make": "Ducati",
+  "model_name": "Sport 1000"
+}

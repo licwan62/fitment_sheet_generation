@@ -1,0 +1,16 @@
+{
+  "decision": "NO_MATCH",
+  "selected_candidate": "",
+  "confidence": "HIGH",
+  "match_basis": "NONE",
+  "explanation": "The model 'P50' is a small, lightweight scooter produced by Honda, while the catalog candidates 'VFR 750F-P' and 'CBX 750P Police' are entirely different motorcycles with distinct engine displacements, configurations, and purposes. The 'P50' does not match any of these candidates in identity, displacement, or model lineage.",
+  "canonical_model_alias": "",
+  "configuration_tokens": [],
+  "brand_aliases": [],
+  "model_aliases": [],
+  "status": "SUCCESS",
+  "prompt_version": "motorcycle-candidate-resolution-v4",
+  "model": "qwen-flash",
+  "make": "Honda",
+  "model_name": "P50"
+}

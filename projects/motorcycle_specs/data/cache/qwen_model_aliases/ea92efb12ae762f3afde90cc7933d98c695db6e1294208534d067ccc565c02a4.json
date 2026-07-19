@@ -1,0 +1,21 @@
+{
+  "decision": "MATCH",
+  "selected_candidate": "SFV 650 Gladius",
+  "confidence": "HIGH",
+  "match_basis": "MARKET_ALIAS",
+  "explanation": "The input 'SFV650' refers to the Suzuki SFV650 Gladius, a model marketed as 'Gladius' in certain regions. The candidates 'SFV 650 G' and 'SFV 650 Gladius Trophy Replica' are variants or configurations of the same base model, with 'G' being a known market designation for the Gladius. 'Gladius Trophy Replica' is a special edition configuration but shares the core identity of the SFV650 Gladius.",
+  "canonical_model_alias": "SFV 650 Gladius",
+  "configuration_tokens": [
+    "G",
+    "Trophy Replica"
+  ],
+  "brand_aliases": [],
+  "model_aliases": [
+    "SFV 650 Gladius"
+  ],
+  "status": "SUCCESS",
+  "prompt_version": "motorcycle-candidate-resolution-v4",
+  "model": "qwen-flash",
+  "make": "Suzuki",
+  "model_name": "SFV650"
+}

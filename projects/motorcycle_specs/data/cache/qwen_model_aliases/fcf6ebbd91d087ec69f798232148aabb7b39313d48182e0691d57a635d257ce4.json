@@ -1,0 +1,20 @@
+{
+  "decision": "MATCH",
+  "selected_candidate": "CRF 1100L Africa Twin / DCT",
+  "confidence": "HIGH",
+  "match_basis": "SAME_NAME",
+  "explanation": "The input 'CRF1100D Africa Twin' refers to the same motorcycle model as 'CRF 1100L Africa Twin / DCT'. The 'D' in the input is a known market or configuration label (likely denoting the DCT variant), and 'L' in the candidate is the standard displacement designation. Both models are identical in core identity, with the DCT transmission being the key feature. The naming variation is consistent with Honda's regional and marketing practices.",
+  "canonical_model_alias": "CRF 1100L Africa Twin / DCT",
+  "configuration_tokens": [
+    "DCT"
+  ],
+  "brand_aliases": [],
+  "model_aliases": [
+    "CRF 1100L Africa Twin / DCT"
+  ],
+  "status": "SUCCESS",
+  "prompt_version": "motorcycle-candidate-resolution-v4",
+  "model": "qwen-flash",
+  "make": "Honda",
+  "model_name": "CRF1100D Africa Twin"
+}

@@ -1,0 +1,18 @@
+{
+  "decision": "MATCH",
+  "selected_candidate": "GSX 1300R Hayabusa \n\t\t25th Anniversary Edition",
+  "confidence": "HIGH",
+  "match_basis": "SAME_NAME",
+  "explanation": "The input 'GSX1300R Hayabusa 25th Anniversary' directly matches the catalog candidate 'GSX 1300R Hayabusa 25th Anniversary Edition' in model name, displacement, and anniversary designation. The slight variation in spacing and inclusion of 'Edition' is a known catalog formatting difference and does not indicate a different model.",
+  "canonical_model_alias": "GSX 1300R Hayabusa 25th Anniversary Edition",
+  "configuration_tokens": [],
+  "brand_aliases": [],
+  "model_aliases": [
+    "GSX 1300R Hayabusa 25th Anniversary Edition"
+  ],
+  "status": "SUCCESS",
+  "prompt_version": "motorcycle-candidate-resolution-v4",
+  "model": "qwen-flash",
+  "make": "Suzuki",
+  "model_name": "GSX1300R Hayabusa 25th Anniversary"
+}

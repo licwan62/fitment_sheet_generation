@@ -1,0 +1,18 @@
+{
+  "decision": "MATCH",
+  "selected_candidate": "DR 250SH",
+  "confidence": "HIGH",
+  "match_basis": "MARKET_ALIAS",
+  "explanation": "The DR250SE and DR250SH are the same underlying motorcycle model, with 'SE' and 'SH' being regional or market-specific designations for the same variant. The 'SE' suffix is used in some markets (e.g., North America) while 'SH' is used in others (e.g., Europe), but both refer to the same model with identical specifications.",
+  "canonical_model_alias": "DR 250SH",
+  "configuration_tokens": [],
+  "brand_aliases": [],
+  "model_aliases": [
+    "DR 250SH"
+  ],
+  "status": "SUCCESS",
+  "prompt_version": "motorcycle-candidate-resolution-v4",
+  "model": "qwen-flash",
+  "make": "Suzuki",
+  "model_name": "DR250SE"
+}

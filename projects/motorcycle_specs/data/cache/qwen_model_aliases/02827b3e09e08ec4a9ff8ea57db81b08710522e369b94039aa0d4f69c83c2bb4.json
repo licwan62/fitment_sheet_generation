@@ -1,0 +1,20 @@
+{
+  "decision": "MATCH",
+  "selected_candidate": "2ue 756 \n\t\tPrototype",
+  "confidence": "HIGH",
+  "match_basis": "SAME_NAME",
+  "explanation": "The input model '2ue 756' exactly matches the catalog candidate '2ue 756 \\n\\t\\tPrototype' in name and displacement, with the prototype designation being a configuration label that does not alter the underlying motorcycle identity.",
+  "canonical_model_alias": "2ue 756",
+  "configuration_tokens": [
+    "Prototype"
+  ],
+  "brand_aliases": [],
+  "model_aliases": [
+    "2ue 756 Prototype"
+  ],
+  "status": "SUCCESS",
+  "prompt_version": "motorcycle-candidate-resolution-v4",
+  "model": "qwen-flash",
+  "make": "Benelli",
+  "model_name": "2ue 756"
+}

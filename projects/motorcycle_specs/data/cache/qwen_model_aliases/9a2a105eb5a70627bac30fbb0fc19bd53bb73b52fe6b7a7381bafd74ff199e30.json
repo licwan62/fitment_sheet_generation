@@ -1,0 +1,20 @@
+{
+  "decision": "MATCH",
+  "selected_candidate": "XR 150L",
+  "confidence": "HIGH",
+  "match_basis": "MARKET_ALIAS",
+  "explanation": "XR150LE is a market-specific designation (likely for European or specific regional markets) of the same underlying model as XR 150L, with 'LE' likely denoting a configuration or emission standard variant. The core model identity, displacement, and platform are identical.",
+  "canonical_model_alias": "XR 150L",
+  "configuration_tokens": [
+    "LE"
+  ],
+  "brand_aliases": [],
+  "model_aliases": [
+    "XR 150L"
+  ],
+  "status": "SUCCESS",
+  "prompt_version": "motorcycle-candidate-resolution-v4",
+  "model": "qwen-flash",
+  "make": "Honda",
+  "model_name": "XR150LE"
+}

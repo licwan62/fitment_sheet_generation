@@ -1,0 +1,16 @@
+{
+  "decision": "NO_MATCH",
+  "selected_candidate": "",
+  "confidence": "HIGH",
+  "match_basis": "NONE",
+  "explanation": "The input model 'GL1500CT Valkyrie Tour' is a distinct variant with a unique designation (CT) and name (Valkyrie Tour), which does not correspond to any of the listed Gold Wing SE, Aspencade, or SE Gold Wing models. The Valkyrie Tour is a different model line from the Gold Wing series, despite shared platform elements. No candidate matches the specific model identity.",
+  "canonical_model_alias": "",
+  "configuration_tokens": [],
+  "brand_aliases": [],
+  "model_aliases": [],
+  "status": "SUCCESS",
+  "prompt_version": "motorcycle-candidate-resolution-v4",
+  "model": "qwen-flash",
+  "make": "Honda",
+  "model_name": "GL1500CT Valkyrie Tour"
+}

@@ -1,0 +1,20 @@
+{
+  "decision": "MATCH",
+  "selected_candidate": "M 1000RR \n\t50 Years M Edition",
+  "confidence": "HIGH",
+  "match_basis": "SAME_NAME",
+  "explanation": "The input 'M1000RR 50 Years M' and the candidate 'M 1000RR \\n\\t50 Years M Edition' refer to the same limited-edition motorcycle model, with only minor formatting differences and the addition of 'Edition' in the catalog title, which is a common descriptive suffix. The core model identity, displacement, and commemorative designation are identical.",
+  "canonical_model_alias": "M 1000RR 50 Years M Edition",
+  "configuration_tokens": [
+    "50 Years M Edition"
+  ],
+  "brand_aliases": [],
+  "model_aliases": [
+    "M 1000RR 50 Years M Edition"
+  ],
+  "status": "SUCCESS",
+  "prompt_version": "motorcycle-candidate-resolution-v4",
+  "model": "qwen-flash",
+  "make": "BMW",
+  "model_name": "M1000RR 50 Years M"
+}

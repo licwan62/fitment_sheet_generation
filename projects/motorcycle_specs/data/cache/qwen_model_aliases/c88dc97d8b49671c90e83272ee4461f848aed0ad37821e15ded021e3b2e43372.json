@@ -1,0 +1,16 @@
+{
+  "decision": "NO_MATCH",
+  "selected_candidate": "",
+  "confidence": "HIGH",
+  "match_basis": "NONE",
+  "explanation": "The input model 'FD110' is not a known variant or alias of any of the catalog candidates. The Suzuki FD110 does not correspond to any of the listed models, including the Suzuki Address 110, GD 110, or other GSX series models, which are distinct in design, displacement, and market positioning. No evidence supports that 'FD110' refers to any of these models under a different name, abbreviation, or typo.",
+  "canonical_model_alias": "",
+  "configuration_tokens": [],
+  "brand_aliases": [],
+  "model_aliases": [],
+  "status": "SUCCESS",
+  "prompt_version": "motorcycle-candidate-resolution-v4",
+  "model": "qwen-flash",
+  "make": "Suzuki",
+  "model_name": "FD110"
+}

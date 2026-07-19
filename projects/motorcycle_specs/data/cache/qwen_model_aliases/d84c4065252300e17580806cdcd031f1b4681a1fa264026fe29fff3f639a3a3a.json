@@ -1,0 +1,20 @@
+{
+  "decision": "MATCH",
+  "selected_candidate": "TU 250X",
+  "confidence": "HIGH",
+  "match_basis": "MARKET_ALIAS",
+  "explanation": "The 'TU250' input refers to the same underlying motorcycle model as the 'TU 250X' catalog candidate, with 'X' being a market-specific or configuration designation (e.g., export or enhanced version) that does not alter the core model identity. The TU250X is a known variant of the TU250 series marketed in certain regions, and the naming difference is consistent with Suzuki's historical use of suffixes for regional or trim variations.",
+  "canonical_model_alias": "TU 250X",
+  "configuration_tokens": [
+    "X"
+  ],
+  "brand_aliases": [],
+  "model_aliases": [
+    "TU 250X"
+  ],
+  "status": "SUCCESS",
+  "prompt_version": "motorcycle-candidate-resolution-v4",
+  "model": "qwen-flash",
+  "make": "Suzuki",
+  "model_name": "TU250"
+}

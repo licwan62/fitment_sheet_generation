@@ -1,0 +1,16 @@
+{
+  "decision": "MATCH",
+  "selected_candidate": "EC 250 \n\t2T Cervantes Replica",
+  "confidence": "HIGH",
+  "match_basis": "MARKET_ALIAS",
+  "explanation": "The 'XC 250 Cervantes Replica' is a market-specific name for the EC 250 2T Cervantes Replica, a limited edition model produced by Gas Gas to commemorate the Cervantes racing legacy. The model shares the same engine displacement (250cc), two-stroke configuration, and identity as the EC 250 2T Cervantes Replica, with 'XC' being a regional or marketing designation for the same motorcycle.",
+  "canonical_model_alias": "EC 250 2T Cervantes Replica",
+  "configuration_tokens": [],
+  "brand_aliases": [],
+  "model_aliases": [],
+  "status": "SUCCESS",
+  "prompt_version": "motorcycle-candidate-resolution-v4",
+  "model": "qwen-flash",
+  "make": "Gas Gas",
+  "model_name": "XC 250 Cervantes Replica"
+}

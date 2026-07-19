@@ -1,0 +1,16 @@
+{
+  "decision": "MATCH",
+  "selected_candidate": "R nineT",
+  "confidence": "HIGH",
+  "match_basis": "SAME_NAME",
+  "explanation": "The input 'R nine T' is a direct match to the catalog candidate 'R nineT' in name and model identity, with no differing displacement, configuration, or market-specific variation. The spacing difference ('nine T' vs 'nineT') is a minor typographical variation that does not alter the model identity.",
+  "canonical_model_alias": "R nineT",
+  "configuration_tokens": [],
+  "brand_aliases": [],
+  "model_aliases": [],
+  "status": "SUCCESS",
+  "prompt_version": "motorcycle-candidate-resolution-v4",
+  "model": "qwen-flash",
+  "make": "BMW",
+  "model_name": "R nine T"
+}

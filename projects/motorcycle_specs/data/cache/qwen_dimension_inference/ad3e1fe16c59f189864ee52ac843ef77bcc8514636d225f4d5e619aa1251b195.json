@@ -1,0 +1,16 @@
+{
+  "decision": "INFER",
+  "confidence": "MEDIUM",
+  "length_mm": 1850,
+  "width_mm": 680,
+  "height_mm": 1080,
+  "wheelbase_mm": 1250,
+  "seat_height_mm": 780,
+  "ground_clearance_mm": 130,
+  "explanation": "Inferred based on typical dimensions of small-displacement scooters in the 50cc class, similar to other Benelli models like the Pepe 125 and comparable urban scooters from manufacturers such as Piaggio and Vespa. The Pepe 50 is a compact city scooter with a lightweight frame, suggesting a short wheelbase and low seat height for ease of use. Dimensions are estimated within expected ranges for this category, but exact values are not publicly documented.",
+  "status": "SUCCESS",
+  "prompt_version": "motorcycle-dimension-inference-v1",
+  "model": "qwen-flash",
+  "make": "Benelli",
+  "model_name": "Pepe 50"
+}

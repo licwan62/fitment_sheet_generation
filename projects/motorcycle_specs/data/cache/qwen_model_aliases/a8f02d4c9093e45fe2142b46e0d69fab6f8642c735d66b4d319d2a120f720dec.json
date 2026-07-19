@@ -1,0 +1,18 @@
+{
+  "decision": "MATCH",
+  "selected_candidate": "Harley-Davidson FLHTCUSE Screamin Eagle Ultra Classic Electra Glide",
+  "confidence": "HIGH",
+  "match_basis": "SAME_NAME",
+  "explanation": "The input model 'FLHTCUSE2 Screamin Eagle Ultra Classic Electra Glide' is a direct match to the catalog candidate 'Harley-Davidson FLHTCUSE Screamin Eagle Ultra Classic Electra Glide', with only a minor variation in the suffix (SE2 vs. no suffix) and diacritic difference (´ vs. '). The SE2 designation is a configuration label for the 2014 model year, which is consistent across both entries. The core model identity, including displacement, engine, and platform, is identical.",
+  "canonical_model_alias": "FLHTCUSE Screamin Eagle Ultra Classic Electra Glide",
+  "configuration_tokens": [
+    "SE2"
+  ],
+  "brand_aliases": [],
+  "model_aliases": [],
+  "status": "SUCCESS",
+  "prompt_version": "motorcycle-candidate-resolution-v4",
+  "model": "qwen-flash",
+  "make": "Harley-Davidson",
+  "model_name": "FLHTCUSE2 Screamin Eagle Ultra Classic Electra Glide"
+}

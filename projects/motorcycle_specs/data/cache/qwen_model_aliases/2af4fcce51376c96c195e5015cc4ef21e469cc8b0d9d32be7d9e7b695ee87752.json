@@ -1,0 +1,16 @@
+{
+  "decision": "MATCH",
+  "selected_candidate": "gasgas contact estart 250",
+  "confidence": "HIGH",
+  "match_basis": "MARKET_ALIAS",
+  "explanation": "'Contact T25' is a market-specific naming for the Gas Gas Contact Estart 250, where 'T25' refers to the 250cc two-stroke engine and 'Estart' denotes electric start. The candidate 'gasgas contact estart 250' matches the same underlying model with correct displacement and configuration.",
+  "canonical_model_alias": "contact estart 250",
+  "configuration_tokens": [],
+  "brand_aliases": [],
+  "model_aliases": [],
+  "status": "SUCCESS",
+  "prompt_version": "motorcycle-candidate-resolution-v4",
+  "model": "qwen-flash",
+  "make": "Gas Gas",
+  "model_name": "Contact T25"
+}

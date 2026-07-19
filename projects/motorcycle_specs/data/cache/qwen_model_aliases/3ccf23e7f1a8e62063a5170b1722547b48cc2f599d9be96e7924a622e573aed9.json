@@ -1,0 +1,21 @@
+{
+  "decision": "MATCH",
+  "selected_candidate": "CBR 1000F",
+  "confidence": "HIGH",
+  "match_basis": "SAME_NAME",
+  "explanation": "The input 'CBR1000F Hurricane' refers to the same motorcycle model as 'CBR 1000F' in the catalog, with 'Hurricane' being a historical marketing name for this model. The displacement (1000F) and model series (CBR) are identical, confirming it is the same underlying motorcycle.",
+  "canonical_model_alias": "CBR 1000F",
+  "configuration_tokens": [],
+  "brand_aliases": [],
+  "model_aliases": [
+    "CBR 1000F",
+    "CBR 1000F (Japan Spec)",
+    "CBR 1000F (US Model)",
+    "CBR 1000F (European)"
+  ],
+  "status": "SUCCESS",
+  "prompt_version": "motorcycle-candidate-resolution-v4",
+  "model": "qwen-flash",
+  "make": "Honda",
+  "model_name": "CBR1000F Hurricane"
+}

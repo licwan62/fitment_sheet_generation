@@ -1,0 +1,16 @@
+{
+  "decision": "MATCH",
+  "selected_candidate": "harley davidson cvo road king flhrse",
+  "confidence": "HIGH",
+  "match_basis": "MARKET_ALIAS",
+  "explanation": "The input 'FLHRSE5 CVO Road King' and the candidate 'harley davidson cvo road king flhrse' refer to the same model. 'FLHRSE5' is the full model code, and 'CVO Road King' is the official name. The candidate uses a common market shorthand ('cvo road king flhrse') that matches the input's core identity, with only minor casing and token ordering differences. No displacement or configuration changes are present.",
+  "canonical_model_alias": "cvo road king flhrse",
+  "configuration_tokens": [],
+  "brand_aliases": [],
+  "model_aliases": [],
+  "status": "SUCCESS",
+  "prompt_version": "motorcycle-candidate-resolution-v4",
+  "model": "qwen-flash",
+  "make": "Harley-Davidson",
+  "model_name": "FLHRSE5 CVO Road King"
+}

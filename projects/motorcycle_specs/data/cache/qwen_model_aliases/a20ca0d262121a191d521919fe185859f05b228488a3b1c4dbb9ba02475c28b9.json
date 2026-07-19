@@ -1,0 +1,18 @@
+{
+  "decision": "MATCH",
+  "selected_candidate": "aprilia tuareg 660 factory",
+  "confidence": "HIGH",
+  "match_basis": "SAME_NAME",
+  "explanation": "The input 'Tuareg 660 Factory' and the candidate 'aprilia tuareg 660 factory' refer to the same motorcycle model, with only minor casing and formatting differences. The brand is consistent, and the model name and configuration are identical.",
+  "canonical_model_alias": "tuareg 660 factory",
+  "configuration_tokens": [
+    "factory"
+  ],
+  "brand_aliases": [],
+  "model_aliases": [],
+  "status": "SUCCESS",
+  "prompt_version": "motorcycle-candidate-resolution-v4",
+  "model": "qwen-flash",
+  "make": "Aprilia",
+  "model_name": "Tuareg 660 Factory"
+}

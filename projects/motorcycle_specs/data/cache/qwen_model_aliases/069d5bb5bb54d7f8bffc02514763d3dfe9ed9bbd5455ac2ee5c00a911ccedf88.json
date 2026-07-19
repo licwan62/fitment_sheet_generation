@@ -1,0 +1,20 @@
+{
+  "decision": "MATCH",
+  "selected_candidate": "GN 400E",
+  "confidence": "HIGH",
+  "match_basis": "MARKET_ALIAS",
+  "explanation": "The 'GN400' model is a well-known Suzuki motorcycle, and 'GN 400E' is a recognized market-specific variant (commonly used in European catalogs) of the same underlying model. The 'E' suffix denotes a configuration or market designation but does not change the core model identity. This is a known regional naming convention for the GN400 series.",
+  "canonical_model_alias": "GN 400E",
+  "configuration_tokens": [
+    "E"
+  ],
+  "brand_aliases": [],
+  "model_aliases": [
+    "GN 400E"
+  ],
+  "status": "SUCCESS",
+  "prompt_version": "motorcycle-candidate-resolution-v4",
+  "model": "qwen-flash",
+  "make": "Suzuki",
+  "model_name": "GN400"
+}

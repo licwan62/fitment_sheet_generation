@@ -1,0 +1,16 @@
+{
+  "decision": "INFER",
+  "confidence": "MEDIUM",
+  "length_mm": 2150,
+  "width_mm": 860,
+  "height_mm": 1120,
+  "wheelbase_mm": 1480,
+  "seat_height_mm": 870,
+  "ground_clearance_mm": 230,
+  "explanation": "Inferred based on typical dimensions of similar off-road motocross bikes in the 370cc class from Gas Gas, such as the Contact series. The Contact JTR370 is a high-performance enduro model with a design consistent with other models in this category, which generally have wheelbases around 1480mm, seat heights near 870mm, and ground clearance above 220mm. Length, width, and height are estimated within expected ranges for comparable motorcycles, but exact figures are not publicly documented.",
+  "status": "SUCCESS",
+  "prompt_version": "motorcycle-dimension-inference-v1",
+  "model": "qwen-flash",
+  "make": "Gas Gas",
+  "model_name": "Contact JTR370"
+}

@@ -1,0 +1,20 @@
+{
+  "decision": "MATCH",
+  "selected_candidate": "BMW R 1250 GS Adventure Edition 40 Years GS",
+  "confidence": "HIGH",
+  "match_basis": "SAME_NAME",
+  "explanation": "The input model 'R1250GS Adventure 40 Years GS Edition' is functionally identical to the candidate 'BMW R 1250 GS Adventure Edition 40 Years GS', differing only in minor formatting and word order. The core identity—R1250GS Adventure with 40 Years GS Edition—matches exactly, including displacement, model type, and commemorative edition. No other model variants are implied.",
+  "canonical_model_alias": "R 1250 GS Adventure Edition 40 Years GS",
+  "configuration_tokens": [
+    "40 Years GS Edition"
+  ],
+  "brand_aliases": [],
+  "model_aliases": [
+    "R 1250 GS Adventure Edition 40 Years GS"
+  ],
+  "status": "SUCCESS",
+  "prompt_version": "motorcycle-candidate-resolution-v4",
+  "model": "qwen-flash",
+  "make": "BMW",
+  "model_name": "R1250GS Adventure 40 Years GS Edition"
+}

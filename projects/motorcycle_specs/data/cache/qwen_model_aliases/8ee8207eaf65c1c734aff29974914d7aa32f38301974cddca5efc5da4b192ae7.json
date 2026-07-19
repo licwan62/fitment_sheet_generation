@@ -1,0 +1,21 @@
+{
+  "decision": "MATCH",
+  "selected_candidate": "CRF 300 \n\t\tRally",
+  "confidence": "HIGH",
+  "match_basis": "MARKET_ALIAS",
+  "explanation": "The input 'CRF300L Rally ABS' refers to the same motorcycle model as 'CRF 300 Rally', with 'L' and 'ABS' being configuration or market-specific identifiers. The 'L' in CRF300L denotes a specific variant (likely 'Light' or 'Long travel'), and 'ABS' is an equipment feature. The catalog candidate 'CRF 300 \\n\\t\\tRally' matches the core model identity, with the 'L' and 'ABS' being non-identity-bearing configuration tokens. This is a known market/variant labeling difference.",
+  "canonical_model_alias": "CRF 300 Rally",
+  "configuration_tokens": [
+    "L",
+    "ABS"
+  ],
+  "brand_aliases": [],
+  "model_aliases": [
+    "CRF 300 Rally"
+  ],
+  "status": "SUCCESS",
+  "prompt_version": "motorcycle-candidate-resolution-v4",
+  "model": "qwen-flash",
+  "make": "Honda",
+  "model_name": "CRF300L Rally ABS"
+}

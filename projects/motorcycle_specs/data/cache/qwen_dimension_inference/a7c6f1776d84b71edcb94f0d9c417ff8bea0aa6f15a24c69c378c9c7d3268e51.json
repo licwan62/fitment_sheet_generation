@@ -1,0 +1,16 @@
+{
+  "decision": "INFER|UNKNOWN",
+  "confidence": "MEDIUM|LOW",
+  "length_mm": null,
+  "width_mm": null,
+  "height_mm": null,
+  "wheelbase_mm": null,
+  "seat_height_mm": null,
+  "ground_clearance_mm": null,
+  "explanation": "The model identity is uncertain due to limited public documentation and no verified catalog data available. Dimensions may vary significantly by year, market, or custom build. No reliable source confirms specific measurements for the Devils Advocate Two-Up V111 EFI. Inference cannot be made with confidence.",
+  "status": "SUCCESS",
+  "prompt_version": "motorcycle-dimension-inference-v1",
+  "model": "qwen-flash",
+  "make": "Big Bear Choppers",
+  "model_name": "Devils Advocate Two-Up V111 EFI"
+}

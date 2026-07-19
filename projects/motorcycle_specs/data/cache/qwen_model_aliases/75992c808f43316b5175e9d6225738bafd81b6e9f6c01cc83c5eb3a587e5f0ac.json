@@ -1,0 +1,18 @@
+{
+  "decision": "MATCH",
+  "selected_candidate": "CB 400SS Super Sport",
+  "confidence": "HIGH",
+  "match_basis": "MARKET_ALIAS",
+  "explanation": "The input 'CB400F Super Sport' and the candidate 'CB 400SS Super Sport' refer to the same underlying motorcycle model. The 'F' in CB400F is a market-specific designation (likely for 'Four' or 'Fifth generation') used in some regions, while 'SS' stands for 'Super Sport'—a common alternate naming convention for the same model. This is a known regional/market variation of the same model, not a different motorcycle.",
+  "canonical_model_alias": "CB 400SS Super Sport",
+  "configuration_tokens": [],
+  "brand_aliases": [],
+  "model_aliases": [
+    "CB 400SS Super Sport"
+  ],
+  "status": "SUCCESS",
+  "prompt_version": "motorcycle-candidate-resolution-v4",
+  "model": "qwen-flash",
+  "make": "Honda",
+  "model_name": "CB400F Super Sport"
+}

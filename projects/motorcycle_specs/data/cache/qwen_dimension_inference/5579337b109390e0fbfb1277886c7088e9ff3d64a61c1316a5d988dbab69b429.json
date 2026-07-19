@@ -1,0 +1,16 @@
+{
+  "decision": "INFER|UNKNOWN",
+  "confidence": "LOW",
+  "length_mm": null,
+  "width_mm": null,
+  "height_mm": null,
+  "wheelbase_mm": null,
+  "seat_height_mm": null,
+  "ground_clearance_mm": null,
+  "explanation": "The Honda XL75 is a vintage off-road motorcycle from the 1970s, but exact dimensions vary significantly across model years and markets. Without access to a specific catalog or verified source for a given variant, precise measurements cannot be reliably determined. Dimensions may differ between early and later versions, and no consistent data is available in public records. Therefore, all dimensions are marked as unknown.",
+  "status": "SUCCESS",
+  "prompt_version": "motorcycle-dimension-inference-v1",
+  "model": "qwen-flash",
+  "make": "Honda",
+  "model_name": "XL75"
+}

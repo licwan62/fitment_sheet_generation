@@ -1,0 +1,18 @@
+{
+  "decision": "MATCH",
+  "selected_candidate": "Suzuki Boulevard M95",
+  "confidence": "HIGH",
+  "match_basis": "SAME_NAME",
+  "explanation": "The input 'M95 Boulevard' refers to the same motorcycle model as 'Suzuki Boulevard M95', with the brand and model identifier matching exactly. The order of words does not change the identity, and no other candidate shares this exact displacement and model lineage.",
+  "canonical_model_alias": "Boulevard M95",
+  "configuration_tokens": [],
+  "brand_aliases": [],
+  "model_aliases": [
+    "Boulevard M95"
+  ],
+  "status": "SUCCESS",
+  "prompt_version": "motorcycle-candidate-resolution-v4",
+  "model": "qwen-flash",
+  "make": "Suzuki",
+  "model_name": "M95 Boulevard"
+}

@@ -1,0 +1,20 @@
+{
+  "decision": "MATCH",
+  "selected_candidate": "RR 125 Enduro",
+  "confidence": "HIGH",
+  "match_basis": "MARKET_ALIAS",
+  "explanation": "The '125 RR-S' is a market-specific designation (S for 'Sport' or 'Special') of the Beta RR 125 Enduro, commonly used in European and North American markets. The 'S' suffix denotes a high-performance configuration within the same model line, not a different motorcycle. The core model identity remains the RR 125 Enduro.",
+  "canonical_model_alias": "RR 125 Enduro",
+  "configuration_tokens": [
+    "S"
+  ],
+  "brand_aliases": [],
+  "model_aliases": [
+    "RR 125 Enduro"
+  ],
+  "status": "SUCCESS",
+  "prompt_version": "motorcycle-candidate-resolution-v4",
+  "model": "qwen-flash",
+  "make": "Beta",
+  "model_name": "125 RR-S"
+}

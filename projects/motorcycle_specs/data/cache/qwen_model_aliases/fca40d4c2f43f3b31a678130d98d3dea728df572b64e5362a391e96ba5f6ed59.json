@@ -1,0 +1,20 @@
+{
+  "decision": "MATCH",
+  "selected_candidate": "DR 500S",
+  "confidence": "HIGH",
+  "match_basis": "MARKET_ALIAS",
+  "explanation": "The input 'DR500' and the candidate 'DR 500S' refer to the same underlying motorcycle model, with 'S' being a market or configuration suffix commonly used for the Suzuki DR500 in certain regions or trims. The core model identity (DR500) is preserved, and the 'S' does not indicate a different model.",
+  "canonical_model_alias": "DR 500S",
+  "configuration_tokens": [
+    "S"
+  ],
+  "brand_aliases": [],
+  "model_aliases": [
+    "DR 500S"
+  ],
+  "status": "SUCCESS",
+  "prompt_version": "motorcycle-candidate-resolution-v4",
+  "model": "qwen-flash",
+  "make": "Suzuki",
+  "model_name": "DR500"
+}

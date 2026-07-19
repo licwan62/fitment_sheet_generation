@@ -1,0 +1,16 @@
+{
+  "decision": "NO_MATCH",
+  "selected_candidate": "",
+  "confidence": "HIGH",
+  "match_basis": "NONE",
+  "explanation": "The input model 'CB72 Hawk 250' does not match any known catalog candidate for Honda motorcycles. The CB72 is a real model, but it was a 1969–1970 250cc twin-cylinder motorcycle marketed as the 'Hawk' in some regions; however, no exact catalog candidate matches this name format. The combination of 'CB72 Hawk 250' is not found in standard Honda model listings, and no plausible alias or variant exists in the provided candidate list. Therefore, no match can be confirmed.",
+  "canonical_model_alias": "",
+  "configuration_tokens": [],
+  "brand_aliases": [],
+  "model_aliases": [],
+  "status": "SUCCESS",
+  "prompt_version": "motorcycle-candidate-resolution-v4",
+  "model": "qwen-flash",
+  "make": "Honda",
+  "model_name": "CB72 Hawk 250"
+}

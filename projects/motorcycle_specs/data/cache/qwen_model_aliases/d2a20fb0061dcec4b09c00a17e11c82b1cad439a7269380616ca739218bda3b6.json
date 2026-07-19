@@ -1,0 +1,16 @@
+{
+  "decision": "NO_MATCH",
+  "selected_candidate": "",
+  "confidence": "HIGH",
+  "match_basis": "NONE",
+  "explanation": "The input model 'MRT2604F Montesa Cota 4RT260' is not a valid Honda motorcycle and does not match any catalog candidate. Montesa is a separate Spanish motorcycle brand, not a Honda marque. The model name combines elements from Montesa (Cota 4RT260) with a Honda-like alphanumeric code (MRT2604F), but no such Honda model exists in the catalog. The combination suggests a misattribution or fictional entry.",
+  "canonical_model_alias": "",
+  "configuration_tokens": [],
+  "brand_aliases": [],
+  "model_aliases": [],
+  "status": "SUCCESS",
+  "prompt_version": "motorcycle-candidate-resolution-v4",
+  "model": "qwen-flash",
+  "make": "Honda",
+  "model_name": "MRT2604F Montesa Cota 4RT260"
+}

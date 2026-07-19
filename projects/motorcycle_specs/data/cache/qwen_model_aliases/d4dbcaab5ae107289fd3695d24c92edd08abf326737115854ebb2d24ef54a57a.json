@@ -1,0 +1,20 @@
+{
+  "decision": "MATCH",
+  "selected_candidate": "PS 50 \n\t\tRuckus",
+  "confidence": "HIGH",
+  "match_basis": "MARKET_ALIAS",
+  "explanation": "The Honda NPS50S Ruckus is a market-specific variant of the PS50 Ruckus, with 'NPS50S' being the model code used in certain regions (e.g., North America), while 'PS50' is the standard catalog designation. The suffix 'S' denotes a specific configuration but does not change the underlying model identity. This is a known regional naming variation.",
+  "canonical_model_alias": "PS 50 Ruckus",
+  "configuration_tokens": [
+    "S"
+  ],
+  "brand_aliases": [],
+  "model_aliases": [
+    "PS 50 Ruckus"
+  ],
+  "status": "SUCCESS",
+  "prompt_version": "motorcycle-candidate-resolution-v4",
+  "model": "qwen-flash",
+  "make": "Honda",
+  "model_name": "NPS50S Ruckus"
+}

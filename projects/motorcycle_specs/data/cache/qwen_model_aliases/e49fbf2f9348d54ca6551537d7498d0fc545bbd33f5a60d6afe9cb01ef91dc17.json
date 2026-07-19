@@ -1,0 +1,18 @@
+{
+  "decision": "MATCH",
+  "selected_candidate": "Pampera 280 \n\t\t& 280 & 320",
+  "confidence": "HIGH",
+  "match_basis": "MARKET_ALIAS",
+  "explanation": "The input 'Pampera 280' matches the catalog candidate 'Pampera 280 \\n\\t\\t& 280 & 320', which includes the 280 displacement as a configuration option. The presence of multiple displacements in a single listing is common for regional or market-specific model groupings, and 'Pampera 280' is a valid subset of that model line. No other candidate shares the exact displacement and model name.",
+  "canonical_model_alias": "Pampera 280 \\n\\t\\t& 280 & 320",
+  "configuration_tokens": [
+    "280"
+  ],
+  "brand_aliases": [],
+  "model_aliases": [],
+  "status": "SUCCESS",
+  "prompt_version": "motorcycle-candidate-resolution-v4",
+  "model": "qwen-flash",
+  "make": "Gas Gas",
+  "model_name": "Pampera 280"
+}

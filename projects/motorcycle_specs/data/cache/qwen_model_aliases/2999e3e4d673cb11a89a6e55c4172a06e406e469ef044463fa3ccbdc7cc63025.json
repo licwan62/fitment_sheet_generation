@@ -1,0 +1,20 @@
+{
+  "decision": "MATCH",
+  "selected_candidate": "GSX-R 150 MotoGP \n\t\tEdition",
+  "confidence": "HIGH",
+  "match_basis": "MARKET_ALIAS",
+  "explanation": "The input 'GSX-R150 MotoGP' refers to the limited-edition model marketed as the 'MotoGP Edition', a known configuration of the GSX-R 150. The catalog candidate 'GSX-R 150 MotoGP Edition' is the official title for this variant, with 'MotoGP' serving as a market and promotional designation rather than a distinct model identifier.",
+  "canonical_model_alias": "GSX-R 150 MotoGP Edition",
+  "configuration_tokens": [
+    "MotoGP Edition"
+  ],
+  "brand_aliases": [],
+  "model_aliases": [
+    "GSX-R 150 MotoGP Edition"
+  ],
+  "status": "SUCCESS",
+  "prompt_version": "motorcycle-candidate-resolution-v4",
+  "model": "qwen-flash",
+  "make": "Suzuki",
+  "model_name": "GSX-R150 MotoGP"
+}

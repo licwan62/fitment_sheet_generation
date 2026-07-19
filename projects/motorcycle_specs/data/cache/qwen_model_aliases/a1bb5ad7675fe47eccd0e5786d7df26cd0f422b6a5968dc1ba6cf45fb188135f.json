@@ -1,0 +1,16 @@
+{
+  "decision": "MATCH",
+  "selected_candidate": "XR70R",
+  "confidence": "HIGH",
+  "match_basis": "SAME_NAME",
+  "explanation": "The input model 'XR70R' exactly matches the catalog candidate 'XR70R', which is a known vintage Honda off-road motorcycle. No aliasing, abbreviation, or typo is needed; it is a direct match.",
+  "canonical_model_alias": "XR70R",
+  "configuration_tokens": [],
+  "brand_aliases": [],
+  "model_aliases": [],
+  "status": "SUCCESS",
+  "prompt_version": "motorcycle-candidate-resolution-v4",
+  "model": "qwen-flash",
+  "make": "Honda",
+  "model_name": "XR70R"
+}

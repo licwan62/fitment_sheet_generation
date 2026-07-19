@@ -1,0 +1,16 @@
+{
+  "decision": "INFER|UNKNOWN",
+  "confidence": "LOW",
+  "length_mm": null,
+  "width_mm": null,
+  "height_mm": null,
+  "wheelbase_mm": null,
+  "seat_height_mm": null,
+  "ground_clearance_mm": null,
+  "explanation": "Cobra CX1E 16 is not a widely recognized or documented motorcycle model in public databases or manufacturer catalogs. No reliable dimensions are available for this specific model, and the model name may be ambiguous or incorrectly referenced. Without verifiable sources or official specifications, dimensions cannot be reliably inferred. The model identity remains uncertain.",
+  "status": "SUCCESS",
+  "prompt_version": "motorcycle-dimension-inference-v1",
+  "model": "qwen-flash",
+  "make": "Cobra",
+  "model_name": "CX1E 16"
+}

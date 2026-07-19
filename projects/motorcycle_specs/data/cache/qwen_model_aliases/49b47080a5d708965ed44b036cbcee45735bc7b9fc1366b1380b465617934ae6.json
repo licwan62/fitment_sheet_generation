@@ -1,0 +1,21 @@
+{
+  "decision": "MATCH",
+  "selected_candidate": "Honda NSS 250 Reflex",
+  "confidence": "HIGH",
+  "match_basis": "SAME_NAME",
+  "explanation": "The input 'NSS250S Reflex Sport' is a variant of the Honda NSS 250 Reflex, with 'S' likely indicating a sport configuration and 'Reflex Sport' being a marketing descriptor. The core model identity matches exactly with 'Honda NSS 250 Reflex' in the catalog. Displacement (250), model series (NSS), and name (Reflex) are identical.",
+  "canonical_model_alias": "NSS 250 Reflex",
+  "configuration_tokens": [
+    "S",
+    "Sport"
+  ],
+  "brand_aliases": [],
+  "model_aliases": [
+    "NSS 250 Reflex"
+  ],
+  "status": "SUCCESS",
+  "prompt_version": "motorcycle-candidate-resolution-v4",
+  "model": "qwen-flash",
+  "make": "Honda",
+  "model_name": "NSS250S Reflex Sport"
+}

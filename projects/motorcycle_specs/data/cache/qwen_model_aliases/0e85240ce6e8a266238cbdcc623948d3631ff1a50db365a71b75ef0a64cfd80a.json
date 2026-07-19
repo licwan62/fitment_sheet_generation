@@ -1,0 +1,18 @@
+{
+  "decision": "MATCH",
+  "selected_candidate": "GSXR 600 100th Anniversary Edition",
+  "confidence": "HIGH",
+  "match_basis": "MARKET_ALIAS",
+  "explanation": "The input 'GSX-R600 100th Anniversary Edition' is a valid market-specific naming variant of the same motorcycle model as 'GSXR 600 100th Anniversary Edition'. 'GSXR' is the commonly used market alias for 'GSX-R' in many regions, particularly in North America and Europe. The displacement (600), anniversary edition (100th), and model series are identical. No other model parameters differ.",
+  "canonical_model_alias": "GSXR 600 100th Anniversary Edition",
+  "configuration_tokens": [
+    "100th Anniversary Edition"
+  ],
+  "brand_aliases": [],
+  "model_aliases": [],
+  "status": "SUCCESS",
+  "prompt_version": "motorcycle-candidate-resolution-v4",
+  "model": "qwen-flash",
+  "make": "Suzuki",
+  "model_name": "GSX-R600 100th Anniversary Edition"
+}

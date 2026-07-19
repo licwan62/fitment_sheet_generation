@@ -1,0 +1,20 @@
+{
+  "status": "TIMEOUT",
+  "prompt_version": "motorcycle-candidate-resolution-v4",
+  "model": "qwen-flash",
+  "make": "Honda",
+  "model_name": "CL90 Scrambler",
+  "candidate_titles": [
+    "C 90 Super \n\t\tCub Scooter",
+    "CT 90 Trail 90",
+    "Honda cl500 scrambler",
+    "Honda cb350 cruiser",
+    "honda cmx1100 rebel se",
+    "honda xl 1000 v varadero",
+    "Honda TRX90X SporTrax",
+    "Honda TRX90X"
+  ],
+  "error_type": "ReadTimeout",
+  "status_code": null,
+  "retryable": true
+}

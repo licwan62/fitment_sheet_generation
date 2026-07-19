@@ -1,0 +1,18 @@
+{
+  "decision": "MATCH",
+  "selected_candidate": "Honda VFR800 Interceptor ABS",
+  "confidence": "HIGH",
+  "match_basis": "SAME_NAME",
+  "explanation": "The input model 'VFR800A Interceptor ABS' is a valid market-specific designation for the same underlying motorcycle as 'Honda VFR800 Interceptor ABS', with 'A' likely denoting a regional or configuration variant that does not alter the core model identity. The displacement, name, and key features (Interceptor, ABS) match exactly.",
+  "canonical_model_alias": "VFR800 Interceptor ABS",
+  "configuration_tokens": [],
+  "brand_aliases": [],
+  "model_aliases": [
+    "VFR800 Interceptor ABS"
+  ],
+  "status": "SUCCESS",
+  "prompt_version": "motorcycle-candidate-resolution-v4",
+  "model": "qwen-flash",
+  "make": "Honda",
+  "model_name": "VFR800A Interceptor ABS"
+}

@@ -1,0 +1,18 @@
+{
+  "decision": "MATCH",
+  "selected_candidate": "Honda XR 80 R",
+  "confidence": "HIGH",
+  "match_basis": "SAME_NAME",
+  "explanation": "The input 'XR80' is a direct reference to the Honda XR 80 R model, which is explicitly listed in the catalog candidates. The model name matches exactly when considering standard naming conventions and common shorthand for the XR 80 R.",
+  "canonical_model_alias": "XR 80 R",
+  "configuration_tokens": [],
+  "brand_aliases": [],
+  "model_aliases": [
+    "XR 80 R"
+  ],
+  "status": "SUCCESS",
+  "prompt_version": "motorcycle-candidate-resolution-v4",
+  "model": "qwen-flash",
+  "make": "Honda",
+  "model_name": "XR80"
+}

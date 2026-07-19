@@ -1,0 +1,20 @@
+{
+  "decision": "MATCH",
+  "selected_candidate": "GSX 250R",
+  "confidence": "HIGH",
+  "match_basis": "MARKET_ALIAS",
+  "explanation": "The 'GSX250R MotoGP' is a market-specific naming variant of the GSX 250R, with 'MotoGP' indicating a special edition or promotional name used in certain regions. The core model identity (GSX 250R) matches exactly. The 'MotoGP' suffix is a configuration label for a limited edition, not a different underlying motorcycle.",
+  "canonical_model_alias": "GSX 250R",
+  "configuration_tokens": [
+    "MotoGP"
+  ],
+  "brand_aliases": [],
+  "model_aliases": [
+    "GSX 250R"
+  ],
+  "status": "SUCCESS",
+  "prompt_version": "motorcycle-candidate-resolution-v4",
+  "model": "qwen-flash",
+  "make": "Suzuki",
+  "model_name": "GSX250R MotoGP"
+}

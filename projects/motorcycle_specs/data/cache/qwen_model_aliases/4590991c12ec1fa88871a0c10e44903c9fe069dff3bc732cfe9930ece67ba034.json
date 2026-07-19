@@ -1,0 +1,20 @@
+{
+  "decision": "MATCH",
+  "selected_candidate": "cfmoto 450mt",
+  "confidence": "HIGH",
+  "match_basis": "SAME_NAME",
+  "explanation": "The input '450MT High Fender' refers to the same underlying motorcycle model as 'cfmoto 450mt', with 'High Fender' being a configuration detail not altering the core model identity. The name '450MT' is consistent across both, and 'High Fender' is a known variant feature of this model.",
+  "canonical_model_alias": "450mt",
+  "configuration_tokens": [
+    "High Fender"
+  ],
+  "brand_aliases": [],
+  "model_aliases": [
+    "450mt"
+  ],
+  "status": "SUCCESS",
+  "prompt_version": "motorcycle-candidate-resolution-v4",
+  "model": "qwen-flash",
+  "make": "CFMOTO",
+  "model_name": "450MT High Fender"
+}

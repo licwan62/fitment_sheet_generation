@@ -1,0 +1,19 @@
+{
+  "decision": "MATCH",
+  "selected_candidate": "gasgas ec 200",
+  "confidence": "HIGH",
+  "match_basis": "MARKET_ALIAS",
+  "explanation": "The 'TXT200' is a market-specific name for the same model as the 'EC 200' in Gas Gas's catalog. The TXT designation is used in certain regions (e.g., North America) to denote the enduro competition model, while EC is the standard European naming. Both refer to the identical underlying motorcycle with the same engine and specifications.",
+  "canonical_model_alias": "ec 200",
+  "configuration_tokens": [],
+  "brand_aliases": [],
+  "model_aliases": [
+    "gasgas ec 200",
+    "ec 200"
+  ],
+  "status": "SUCCESS",
+  "prompt_version": "motorcycle-candidate-resolution-v4",
+  "model": "qwen-flash",
+  "make": "Gas Gas",
+  "model_name": "TXT200"
+}

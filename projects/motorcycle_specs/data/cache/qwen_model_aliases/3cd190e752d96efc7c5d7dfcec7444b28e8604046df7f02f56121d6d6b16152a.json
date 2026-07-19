@@ -1,0 +1,18 @@
+{
+  "decision": "MATCH",
+  "selected_candidate": "XR 200R",
+  "confidence": "HIGH",
+  "match_basis": "SAME_NAME",
+  "explanation": "The input 'XR200' and the candidate 'XR 200R' refer to the same underlying motorcycle model. The 'R' suffix in 'XR 200R' is a standard designation for the model variant, commonly used in Honda's cataloging. The absence of the 'R' in the input does not indicate a different model; it is a common shorthand or omission in user input. Both names identify the identical 200cc dual-sport motorcycle produced by Honda.",
+  "canonical_model_alias": "XR 200R",
+  "configuration_tokens": [],
+  "brand_aliases": [],
+  "model_aliases": [
+    "XR 200R"
+  ],
+  "status": "SUCCESS",
+  "prompt_version": "motorcycle-candidate-resolution-v4",
+  "model": "qwen-flash",
+  "make": "Honda",
+  "model_name": "XR200"
+}

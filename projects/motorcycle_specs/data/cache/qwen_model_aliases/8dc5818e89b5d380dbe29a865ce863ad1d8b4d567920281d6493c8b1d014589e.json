@@ -1,0 +1,16 @@
+{
+  "decision": "NO_MATCH",
+  "selected_candidate": "",
+  "confidence": "HIGH",
+  "match_basis": "NONE",
+  "explanation": "The input model CBR1000RA ABS is not the same as either CBR 1000RR-SP or CBR 1000RR-R-SP. The model name 'CBR1000RA' does not match any known variant of the CBR1000RR series, and the displacement (1000cc) and suffixes (RA vs RR-SP/R-SP) indicate different models. The RA designation is not a recognized variant in Honda's CBR1000RR lineage, and no evidence supports that it is a market alias, abbreviation, or typo for either candidate. Therefore, no match is valid.",
+  "canonical_model_alias": "",
+  "configuration_tokens": [],
+  "brand_aliases": [],
+  "model_aliases": [],
+  "status": "SUCCESS",
+  "prompt_version": "motorcycle-candidate-resolution-v4",
+  "model": "qwen-flash",
+  "make": "Honda",
+  "model_name": "CBR1000RA ABS"
+}

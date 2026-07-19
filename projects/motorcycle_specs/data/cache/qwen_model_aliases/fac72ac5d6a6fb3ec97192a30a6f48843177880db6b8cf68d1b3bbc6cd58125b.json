@@ -1,0 +1,16 @@
+{
+  "decision": "NO_MATCH",
+  "selected_candidate": "",
+  "confidence": "HIGH",
+  "match_basis": "NONE",
+  "explanation": "The model 'R1200GS HP2' is not a known variant in BMW's official motorcycle catalog. The R1200GS was produced with various configurations (e.g., standard, Adventure, Rally), but 'HP2' is not a recognized trim or model designation for this platform. The HP2 designation belongs to the R1200S HP2 Evolution, a different model line. No candidate in the list matches this exact model identity.",
+  "canonical_model_alias": "",
+  "configuration_tokens": [],
+  "brand_aliases": [],
+  "model_aliases": [],
+  "status": "SUCCESS",
+  "prompt_version": "motorcycle-candidate-resolution-v4",
+  "model": "qwen-flash",
+  "make": "BMW",
+  "model_name": "R1200GS HP2"
+}

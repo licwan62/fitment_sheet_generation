@@ -1,0 +1,16 @@
+{
+  "decision": "NO_MATCH",
+  "selected_candidate": "",
+  "confidence": "HIGH",
+  "match_basis": "NONE",
+  "explanation": "The input model 'CL200 Scrambler' is a distinct Honda motorcycle with a specific engine displacement and body style. None of the catalog candidates match this model in terms of displacement, name, or configuration. The CL200 Scrambler is a vintage scrambler model, while all candidates either have different displacements (e.g., CD200, CTX200), different names (e.g., Roadmaster, Rebel), or are unrelated models (e.g., CB300R). No known market alias, historical name, abbreviation, or typo links any candidate to the CL200 Scrambler.",
+  "canonical_model_alias": "",
+  "configuration_tokens": [],
+  "brand_aliases": [],
+  "model_aliases": [],
+  "status": "SUCCESS",
+  "prompt_version": "motorcycle-candidate-resolution-v4",
+  "model": "qwen-flash",
+  "make": "Honda",
+  "model_name": "CL200 Scrambler"
+}

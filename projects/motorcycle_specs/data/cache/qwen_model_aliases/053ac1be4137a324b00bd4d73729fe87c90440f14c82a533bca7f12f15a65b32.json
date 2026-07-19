@@ -1,0 +1,18 @@
+{
+  "decision": "MATCH",
+  "selected_candidate": "CRF 450RL",
+  "confidence": "HIGH",
+  "match_basis": "MARKET_ALIAS",
+  "explanation": "The 'CRF450R' and 'CRF 450RL' refer to the same underlying motorcycle model, with 'L' denoting a market-specific configuration (likely for left-hand drive or European market), but not a different model. The core identity remains unchanged.",
+  "canonical_model_alias": "CRF 450RL",
+  "configuration_tokens": [],
+  "brand_aliases": [],
+  "model_aliases": [
+    "CRF 450RL"
+  ],
+  "status": "SUCCESS",
+  "prompt_version": "motorcycle-candidate-resolution-v4",
+  "model": "qwen-flash",
+  "make": "Honda",
+  "model_name": "CRF450R"
+}

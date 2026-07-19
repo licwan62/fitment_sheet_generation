@@ -1,0 +1,22 @@
+{
+  "decision": "MATCH",
+  "selected_candidate": "GL 1800 Gold Wing Tour / DCT Airbag DCT",
+  "confidence": "HIGH",
+  "match_basis": "SAME_NAME",
+  "explanation": "The input 'GL1800HP Gold Wing Audio/Comfort' refers to the GL1800 Gold Wing Tour model with DCT transmission and airbag, which is explicitly listed in the candidates. 'HP' likely denotes a high-performance or premium trim, consistent with the Audio/Comfort features. The candidate 'GL 1800 Gold Wing Tour / DCT Airbag DCT' matches the core model identity (GL1800 Gold Wing Tour with DCT) and includes the airbag feature, aligning with the implied premium configuration. No other candidate matches this exact combination of features and model designation.",
+  "canonical_model_alias": "GL 1800 Gold Wing Tour / DCT Airbag DCT",
+  "configuration_tokens": [
+    "Tour",
+    "DCT",
+    "Airbag DCT"
+  ],
+  "brand_aliases": [],
+  "model_aliases": [
+    "GL 1800 Gold Wing Tour / DCT Airbag DCT"
+  ],
+  "status": "SUCCESS",
+  "prompt_version": "motorcycle-candidate-resolution-v4",
+  "model": "qwen-flash",
+  "make": "Honda",
+  "model_name": "GL1800HP Gold Wing Audio/Comfort"
+}

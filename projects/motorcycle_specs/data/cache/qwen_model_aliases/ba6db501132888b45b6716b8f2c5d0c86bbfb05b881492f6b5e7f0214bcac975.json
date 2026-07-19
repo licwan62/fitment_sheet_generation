@@ -1,0 +1,18 @@
+{
+  "decision": "MATCH",
+  "selected_candidate": "Raptor V 650",
+  "confidence": "HIGH",
+  "match_basis": "SAME_NAME",
+  "explanation": "The input 'V Raptor 650' and the candidate 'Raptor V 650' represent the same motorcycle model with identical displacement and name structure, differing only in word order, which is a known variation in catalog listings. The 'V' prefix is part of the model's official designation and not a typo or mislabel.",
+  "canonical_model_alias": "Raptor V 650",
+  "configuration_tokens": [],
+  "brand_aliases": [],
+  "model_aliases": [
+    "Raptor V 650"
+  ],
+  "status": "SUCCESS",
+  "prompt_version": "motorcycle-candidate-resolution-v4",
+  "model": "qwen-flash",
+  "make": "Cagiva",
+  "model_name": "V Raptor 650"
+}

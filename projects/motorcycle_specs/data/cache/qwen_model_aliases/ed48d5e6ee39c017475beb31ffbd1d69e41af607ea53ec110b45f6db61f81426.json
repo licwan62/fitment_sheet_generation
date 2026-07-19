@@ -1,0 +1,18 @@
+{
+  "decision": "MATCH",
+  "selected_candidate": "RV 200 VanVan",
+  "confidence": "HIGH",
+  "match_basis": "SAME_NAME",
+  "explanation": "The input 'VanVan 200' refers to the same motorcycle model as 'RV 200 VanVan', with 'RV' being Suzuki's model designation for the VanVan series. The displacement (200) matches exactly, and 'VanVan' is the consistent name across both. The candidate 'RV 125 VanVan' is a different displacement and thus not the same model.",
+  "canonical_model_alias": "RV 200 VanVan",
+  "configuration_tokens": [],
+  "brand_aliases": [],
+  "model_aliases": [
+    "RV 200 VanVan"
+  ],
+  "status": "SUCCESS",
+  "prompt_version": "motorcycle-candidate-resolution-v4",
+  "model": "qwen-flash",
+  "make": "Suzuki",
+  "model_name": "VanVan 200"
+}

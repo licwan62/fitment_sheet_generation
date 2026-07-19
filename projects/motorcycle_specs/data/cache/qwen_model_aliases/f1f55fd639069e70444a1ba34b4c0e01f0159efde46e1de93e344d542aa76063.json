@@ -1,0 +1,16 @@
+{
+  "decision": "NO_MATCH",
+  "selected_candidate": "",
+  "confidence": "HIGH",
+  "match_basis": "NONE",
+  "explanation": "The model 'Endutrail 250' is not a recognized or documented Gas Gas motorcycle model. The catalog candidates include 'EnduroGP 250', 'TrialGP 250', and various EC 250 variants, but none match the 'Endutrail 250' name in official Gas Gas product lines. 'Endutrail' does not correspond to any known Gas Gas model designation, and no evidence links it to any of the listed candidates.",
+  "canonical_model_alias": "",
+  "configuration_tokens": [],
+  "brand_aliases": [],
+  "model_aliases": [],
+  "status": "SUCCESS",
+  "prompt_version": "motorcycle-candidate-resolution-v4",
+  "model": "qwen-flash",
+  "make": "Gas Gas",
+  "model_name": "Endutrail 250"
+}

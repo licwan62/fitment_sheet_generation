@@ -1,0 +1,16 @@
+{
+  "decision": "NO_MATCH",
+  "selected_candidate": "",
+  "confidence": "HIGH",
+  "match_basis": "NONE",
+  "explanation": "The input model 'RS1200' is not equivalent to any of the catalog candidates. The Buell RS1200 was a distinct model with a different engine configuration and design compared to the listed candidates, which are based on the 1125cc engine platform. No known market name, abbreviation, or typo links 'RS1200' to any of these models.",
+  "canonical_model_alias": "",
+  "configuration_tokens": [],
+  "brand_aliases": [],
+  "model_aliases": [],
+  "status": "SUCCESS",
+  "prompt_version": "motorcycle-candidate-resolution-v4",
+  "model": "qwen-flash",
+  "make": "Buell",
+  "model_name": "RS1200"
+}

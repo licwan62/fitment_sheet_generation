@@ -1,0 +1,16 @@
+{
+  "decision": "INFER",
+  "confidence": "MEDIUM",
+  "length_mm": 1850,
+  "width_mm": 820,
+  "height_mm": 1080,
+  "wheelbase_mm": 1240,
+  "seat_height_mm": 860,
+  "ground_clearance_mm": 320,
+  "explanation": "Inferred based on typical dimensions of entry-level motocross bikes in the 50cc class, such as the KTM SX 50 and Husqvarna TC 50, which share platform and design language with Gas Gas EC Rookie models. The EC Rookie 50 is designed for young riders, so dimensions are scaled accordingly. Values reflect common ranges for similar models, but exact specifications are not publicly documented.",
+  "status": "SUCCESS",
+  "prompt_version": "motorcycle-dimension-inference-v1",
+  "model": "qwen-flash",
+  "make": "Gas Gas",
+  "model_name": "EC Rookie 50"
+}

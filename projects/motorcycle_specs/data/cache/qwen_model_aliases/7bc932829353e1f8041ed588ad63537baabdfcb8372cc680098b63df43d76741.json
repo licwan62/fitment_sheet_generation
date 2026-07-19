@@ -1,0 +1,20 @@
+{
+  "decision": "MATCH",
+  "selected_candidate": "996S",
+  "confidence": "HIGH",
+  "match_basis": "MARKET_ALIAS",
+  "explanation": "The input '996S Monoposto' refers to the Ducati 996S model marketed in certain regions as 'Monoposto', a term denoting the single-seat configuration. The candidate '996S' is the correct and canonical designation for this model, with 'Monoposto' being a configuration label rather than a distinct model identifier. The displacement and core model identity are unchanged.",
+  "canonical_model_alias": "996S",
+  "configuration_tokens": [
+    "Monoposto"
+  ],
+  "brand_aliases": [],
+  "model_aliases": [
+    "996S"
+  ],
+  "status": "SUCCESS",
+  "prompt_version": "motorcycle-candidate-resolution-v4",
+  "model": "qwen-flash",
+  "make": "Ducati",
+  "model_name": "996S Monoposto"
+}

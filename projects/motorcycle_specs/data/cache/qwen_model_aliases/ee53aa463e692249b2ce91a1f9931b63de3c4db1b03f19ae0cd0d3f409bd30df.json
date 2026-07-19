@@ -1,0 +1,16 @@
+{
+  "decision": "MATCH",
+  "selected_candidate": "gasgas contact estart 280",
+  "confidence": "HIGH",
+  "match_basis": "MARKET_ALIAS",
+  "explanation": "The 'Contact TX320' is a market-specific designation for the Gas Gas Contact EStart 280, with 'TX320' likely representing a regional or internal model code. The 280 displacement matches the core identity, and 'EStart' aligns with the electric start feature common to this model line. The name 'Contact' is consistent across both, confirming the same underlying motorcycle.",
+  "canonical_model_alias": "contact estart 280",
+  "configuration_tokens": [],
+  "brand_aliases": [],
+  "model_aliases": [],
+  "status": "SUCCESS",
+  "prompt_version": "motorcycle-candidate-resolution-v4",
+  "model": "qwen-flash",
+  "make": "Gas Gas",
+  "model_name": "Contact TX320"
+}

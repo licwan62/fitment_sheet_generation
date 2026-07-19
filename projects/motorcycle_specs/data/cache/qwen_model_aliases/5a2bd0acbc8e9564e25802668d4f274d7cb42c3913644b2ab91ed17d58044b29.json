@@ -1,0 +1,16 @@
+{
+  "decision": "NO_MATCH",
+  "selected_candidate": "",
+  "confidence": "HIGH",
+  "match_basis": "NONE",
+  "explanation": "The input model 'F800GS Explorer LWR' is not equivalent to any of the catalog candidates. The 'Explorer LWR' designation is a specific configuration (likely a long-wheelbase, low-seat version) not present in the candidates. The candidates include 'Triple Black' and 'Trophy LS' variants, which are distinct models with different equipment and intended use. No candidate matches the exact model identity including displacement, name, and configuration.",
+  "canonical_model_alias": "",
+  "configuration_tokens": [],
+  "brand_aliases": [],
+  "model_aliases": [],
+  "status": "SUCCESS",
+  "prompt_version": "motorcycle-candidate-resolution-v4",
+  "model": "qwen-flash",
+  "make": "BMW",
+  "model_name": "F800GS Explorer LWR"
+}

@@ -1,0 +1,16 @@
+{
+  "decision": "NO_MATCH",
+  "selected_candidate": "",
+  "confidence": "HIGH",
+  "match_basis": "NONE",
+  "explanation": "The input model 'F900R Urban' is not a known variant or market-specific name for any of the catalog candidates. The F 900R is a base model, but 'Urban' is not a recognized configuration or alias in BMW's official naming. The candidates include different models (e.g., F 900R Force, F 900R Cup, F 900XR, F 900GS, F 900GS Adventure), none of which match the F900R Urban identity. No evidence supports that 'Urban' refers to a valid variant of any listed candidate.",
+  "canonical_model_alias": "",
+  "configuration_tokens": [],
+  "brand_aliases": [],
+  "model_aliases": [],
+  "status": "SUCCESS",
+  "prompt_version": "motorcycle-candidate-resolution-v4",
+  "model": "qwen-flash",
+  "make": "BMW",
+  "model_name": "F900R Urban"
+}

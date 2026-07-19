@@ -1,0 +1,18 @@
+{
+  "decision": "MATCH",
+  "selected_candidate": "GT 550J",
+  "confidence": "HIGH",
+  "match_basis": "SAME_NAME",
+  "explanation": "The input 'GT550' refers to the Suzuki GT550 model, and 'GT 550J' is a valid catalog candidate with the same core model identity. The 'J' suffix denotes a specific production variant within the GT550 series, consistent with Suzuki's naming convention for this model. No evidence suggests a different underlying motorcycle.",
+  "canonical_model_alias": "GT 550J",
+  "configuration_tokens": [],
+  "brand_aliases": [],
+  "model_aliases": [
+    "GT 550J"
+  ],
+  "status": "SUCCESS",
+  "prompt_version": "motorcycle-candidate-resolution-v4",
+  "model": "qwen-flash",
+  "make": "Suzuki",
+  "model_name": "GT550"
+}

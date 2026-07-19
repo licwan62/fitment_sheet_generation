@@ -1,0 +1,20 @@
+{
+  "decision": "MATCH",
+  "selected_candidate": "Avenger 220 \n\tDTS-i",
+  "confidence": "HIGH",
+  "match_basis": "SAME_NAME",
+  "explanation": "The input 'Avenger 220' directly matches the catalog candidate 'Avenger 220 DTS-i', which is the full official name of the same motorcycle model. The DTS-i suffix is a known configuration label for this model and does not alter the core identity.",
+  "canonical_model_alias": "Avenger 220 DTS-i",
+  "configuration_tokens": [
+    "DTS-i"
+  ],
+  "brand_aliases": [],
+  "model_aliases": [
+    "Avenger 220 DTS-i"
+  ],
+  "status": "SUCCESS",
+  "prompt_version": "motorcycle-candidate-resolution-v4",
+  "model": "qwen-flash",
+  "make": "Bajaj",
+  "model_name": "Avenger 220"
+}

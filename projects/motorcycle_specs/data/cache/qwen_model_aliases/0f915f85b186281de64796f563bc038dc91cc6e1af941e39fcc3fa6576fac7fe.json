@@ -1,0 +1,18 @@
+{
+  "decision": "MATCH",
+  "selected_candidate": "EC 300 \n\tEnduro",
+  "confidence": "HIGH",
+  "match_basis": "SAME_NAME",
+  "explanation": "The input 'Enducross EC 300' refers to the same model as 'EC 300 Enduro', with 'Enducross' being a marketing name for Gas Gas's enduro line, and 'EC 300 Enduro' being the standard catalog designation. The displacement (300) and core model (EC 300) match exactly.",
+  "canonical_model_alias": "EC 300 Enduro",
+  "configuration_tokens": [],
+  "brand_aliases": [],
+  "model_aliases": [
+    "EC 300 Enduro"
+  ],
+  "status": "SUCCESS",
+  "prompt_version": "motorcycle-candidate-resolution-v4",
+  "model": "qwen-flash",
+  "make": "Gas Gas",
+  "model_name": "Enducross EC 300"
+}

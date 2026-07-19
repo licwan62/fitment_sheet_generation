@@ -1,0 +1,16 @@
+{
+  "decision": "NO_MATCH",
+  "selected_candidate": "",
+  "confidence": "HIGH",
+  "match_basis": "NONE",
+  "explanation": "The input model 'MRT2604F Montesa Cota 4RT Repsol Ed.' is a Montesa Cota 4RT Repsol edition, which is a motorcycle produced by Montesa, a Spanish brand historically associated with Honda but not a Honda-branded model. The catalog candidates include Honda models only, and none match the Montesa Cota 4RT Repsol Ed. in identity, even though it may share engine or platform lineage. The name 'Montesa Cota 4RT' does not appear in the candidates as a Honda model, and no candidate represents this specific configuration or marque.",
+  "canonical_model_alias": "",
+  "configuration_tokens": [],
+  "brand_aliases": [],
+  "model_aliases": [],
+  "status": "SUCCESS",
+  "prompt_version": "motorcycle-candidate-resolution-v4",
+  "model": "qwen-flash",
+  "make": "Honda",
+  "model_name": "MRT2604F Montesa Cota 4RT Repsol Ed."
+}

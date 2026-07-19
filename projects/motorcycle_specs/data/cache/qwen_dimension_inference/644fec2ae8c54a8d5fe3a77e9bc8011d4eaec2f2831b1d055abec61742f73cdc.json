@@ -1,0 +1,16 @@
+{
+  "decision": "INFER|UNKNOWN",
+  "confidence": "LOW",
+  "length_mm": null,
+  "width_mm": null,
+  "height_mm": null,
+  "wheelbase_mm": null,
+  "seat_height_mm": null,
+  "ground_clearance_mm": null,
+  "explanation": "The Benelli Titanium 05 is a limited-production motorcycle with no publicly available official dimensions. Model details are inconsistent across sources, and variations by year or market are possible. Without verified catalog data or reliable reference, dimensions cannot be confidently inferred.",
+  "status": "SUCCESS",
+  "prompt_version": "motorcycle-dimension-inference-v1",
+  "model": "qwen-flash",
+  "make": "Benelli",
+  "model_name": "Titanium 05"
+}

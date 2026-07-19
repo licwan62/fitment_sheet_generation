@@ -1,0 +1,16 @@
+{
+  "decision": "INFER|UNKNOWN",
+  "confidence": "MEDIUM|LOW",
+  "length_mm": null,
+  "width_mm": null,
+  "height_mm": null,
+  "wheelbase_mm": null,
+  "seat_height_mm": null,
+  "ground_clearance_mm": null,
+  "explanation": "The FLHC Heritage Classic 107 is a variant of the Harley-Davidson Heritage Classic series, but exact dimensions vary significantly by model year and market configuration. Without access to a specific catalog page or definitive source for this exact model, precise dimensions cannot be reliably inferred. Variations in frame design, suspension setup, and optional equipment contribute to dimensional differences. Therefore, dimensions are marked as unknown with medium to low confidence.",
+  "status": "SUCCESS",
+  "prompt_version": "motorcycle-dimension-inference-v1",
+  "model": "qwen-flash",
+  "make": "Harley-Davidson",
+  "model_name": "FLHC Heritage Classic 107"
+}

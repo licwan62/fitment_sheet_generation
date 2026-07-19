@@ -1,0 +1,21 @@
+{
+  "decision": "MATCH",
+  "selected_candidate": "gasgas ec 125",
+  "confidence": "HIGH",
+  "match_basis": "SAME_NAME",
+  "explanation": "The input 'Enducross EC 125' is a variant of the Gas Gas EC 125 model, with 'Enducross' being a marketing name for the same model in certain markets. The core model identity (EC 125) matches exactly with the catalog candidate.",
+  "canonical_model_alias": "ec 125",
+  "configuration_tokens": [
+    "Enducross"
+  ],
+  "brand_aliases": [],
+  "model_aliases": [
+    "gasgas ec 125",
+    "ec 125"
+  ],
+  "status": "SUCCESS",
+  "prompt_version": "motorcycle-candidate-resolution-v4",
+  "model": "qwen-flash",
+  "make": "Gas Gas",
+  "model_name": "Enducross EC 125"
+}

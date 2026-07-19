@@ -1,0 +1,18 @@
+{
+  "decision": "MATCH",
+  "selected_candidate": "gasgas mc 250f factory edition",
+  "confidence": "HIGH",
+  "match_basis": "SAME_NAME",
+  "explanation": "The input model 'MC 250F Factory Edition' matches the catalog candidate 'gasgas mc 250f factory edition' exactly in name, displacement, and configuration, with no conflicting or differing identity tokens.",
+  "canonical_model_alias": "mc 250f factory edition",
+  "configuration_tokens": [],
+  "brand_aliases": [],
+  "model_aliases": [
+    "gasgas mc 250f factory edition"
+  ],
+  "status": "SUCCESS",
+  "prompt_version": "motorcycle-candidate-resolution-v4",
+  "model": "qwen-flash",
+  "make": "Gas Gas",
+  "model_name": "MC 250F Factory Edition"
+}

@@ -1,0 +1,20 @@
+{
+  "decision": "MATCH",
+  "selected_candidate": "Honda CB300R",
+  "confidence": "HIGH",
+  "match_basis": "SAME_NAME",
+  "explanation": "The input 'CB300R ABS' is the same model as 'Honda CB300R' when considering that 'ABS' is a configuration feature and not a model identifier. The core model identity (CB300R) matches exactly, and 'ABS' is a common equipment variant included in the full model name. The candidate 'Honda CB300R' is the canonical form without redundant or extraneous tokens.",
+  "canonical_model_alias": "CB300R",
+  "configuration_tokens": [
+    "ABS"
+  ],
+  "brand_aliases": [],
+  "model_aliases": [
+    "CB300R"
+  ],
+  "status": "SUCCESS",
+  "prompt_version": "motorcycle-candidate-resolution-v4",
+  "model": "qwen-flash",
+  "make": "Honda",
+  "model_name": "CB300R ABS"
+}

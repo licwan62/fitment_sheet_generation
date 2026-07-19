@@ -1,0 +1,16 @@
+{
+  "decision": "INFER",
+  "confidence": "MEDIUM",
+  "length_mm": 2150,
+  "width_mm": 850,
+  "height_mm": 1200,
+  "wheelbase_mm": 1450,
+  "seat_height_mm": 960,
+  "ground_clearance_mm": 370,
+  "explanation": "Inferred from typical dimensions of similar off-road motocross bikes in the 150cc class, such as KTM SX 150 and Husqvarna FC 150. Gas Gas MC 150 shares platform and design lineage with these models. Dimensions are approximate and based on general industry standards for this segment.",
+  "status": "SUCCESS",
+  "prompt_version": "motorcycle-dimension-inference-v1",
+  "model": "qwen-flash",
+  "make": "Gas Gas",
+  "model_name": "MC 150"
+}

@@ -1,0 +1,16 @@
+{
+  "decision": "NO_MATCH",
+  "selected_candidate": "",
+  "confidence": "HIGH",
+  "match_basis": "NONE",
+  "explanation": "The input model 'Chopper BDM' does not correspond to any of the catalog candidates, which are all named after dog breeds (e.g., Coyote, Bulldog). 'Chopper BDM' suggests a chopper-style motorcycle with a BDM designation, but none of the listed candidates match this name or implied model identity. The candidates are distinct models in Big Dog's lineup, and no known market alias, historical name, abbreviation, or typo links 'Chopper BDM' to any of them.",
+  "canonical_model_alias": "",
+  "configuration_tokens": [],
+  "brand_aliases": [],
+  "model_aliases": [],
+  "status": "SUCCESS",
+  "prompt_version": "motorcycle-candidate-resolution-v4",
+  "model": "qwen-flash",
+  "make": "Big Dog",
+  "model_name": "Chopper BDM"
+}

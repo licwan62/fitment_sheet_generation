@@ -1,0 +1,21 @@
+{
+  "decision": "MATCH",
+  "selected_candidate": "Bajaj pulsar n250",
+  "confidence": "HIGH",
+  "match_basis": "MARKET_ALIAS",
+  "explanation": "The input 'Pulsar N 250 FI UG' is a market-specific variant of the Bajaj Pulsar N250, with 'FI UG' denoting fuel injection and urban/gross (market-specific) configuration. The core model identity matches exactly with 'Bajaj pulsar n250'.",
+  "canonical_model_alias": "pulsar n250",
+  "configuration_tokens": [
+    "FI",
+    "UG"
+  ],
+  "brand_aliases": [],
+  "model_aliases": [
+    "pulsar n250"
+  ],
+  "status": "SUCCESS",
+  "prompt_version": "motorcycle-candidate-resolution-v4",
+  "model": "qwen-flash",
+  "make": "Bajaj",
+  "model_name": "Pulsar N 250 FI UG"
+}

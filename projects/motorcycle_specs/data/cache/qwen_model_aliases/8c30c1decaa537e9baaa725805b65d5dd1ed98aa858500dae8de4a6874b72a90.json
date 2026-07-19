@@ -1,0 +1,18 @@
+{
+  "decision": "MATCH",
+  "selected_candidate": "Honda CB450SC Nighthawk",
+  "confidence": "HIGH",
+  "match_basis": "MARKET_ALIAS",
+  "explanation": "The 'CB450T Hawk' is a market-specific name for the Honda CB450SC Nighthawk. The 'Hawk' designation was used in certain regions, particularly in North America, as a marketing name for the CB450SC model. The displacement (450cc) and model structure align exactly with the CB450SC Nighthawk.",
+  "canonical_model_alias": "CB450SC Nighthawk",
+  "configuration_tokens": [],
+  "brand_aliases": [],
+  "model_aliases": [
+    "CB450SC Nighthawk"
+  ],
+  "status": "SUCCESS",
+  "prompt_version": "motorcycle-candidate-resolution-v4",
+  "model": "qwen-flash",
+  "make": "Honda",
+  "model_name": "CB450T Hawk"
+}

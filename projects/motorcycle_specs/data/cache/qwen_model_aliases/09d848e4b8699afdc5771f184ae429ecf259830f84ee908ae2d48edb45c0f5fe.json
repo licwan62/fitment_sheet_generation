@@ -1,0 +1,18 @@
+{
+  "decision": "MATCH",
+  "selected_candidate": "benelli tornado naked tre 1130 sport",
+  "confidence": "HIGH",
+  "match_basis": "MARKET_ALIAS",
+  "explanation": "The input 'Tornado Naked Tre 1130 Sport' is a market-specific naming variant of the same model as 'benelli tornado naked tre 1130 sport', with 'Naked' and 'Sport' being descriptive terms used in marketing. The core model identity (Tornado TRE 1130) is identical, and 'TNT 1130 Sport' is a known alternate name for this model in certain markets. The displacement (1130) and engine configuration are unchanged.",
+  "canonical_model_alias": "benelli tornado naked tre 1130 sport",
+  "configuration_tokens": [
+    "sport"
+  ],
+  "brand_aliases": [],
+  "model_aliases": [],
+  "status": "SUCCESS",
+  "prompt_version": "motorcycle-candidate-resolution-v4",
+  "model": "qwen-flash",
+  "make": "Benelli",
+  "model_name": "Tornado Naked Tre 1130 Sport"
+}

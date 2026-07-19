@@ -1,0 +1,15 @@
+{
+  "decision": "MATCH",
+  "selected_candidate": "F 800GS",
+  "canonical_model_alias": "F 800GS",
+  "configuration_tokens": [],
+  "brand_aliases": [],
+  "model_aliases": [
+    "F 800GS"
+  ],
+  "status": "SUCCESS",
+  "prompt_version": "motorcycle-candidate-resolution-v3",
+  "model": "qwen-flash",
+  "make": "BMW",
+  "model_name": "F800GS Dynamic"
+}

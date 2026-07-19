@@ -1,0 +1,16 @@
+{
+  "decision": "NO_MATCH",
+  "selected_candidate": "",
+  "confidence": "HIGH",
+  "match_basis": "NONE",
+  "explanation": "The input model TR34 260 is a Beta motorcycle with a 260cc engine, while all catalog candidates are different models with distinct displacements (350cc, 390cc, 400cc, etc.) and do not match the TR34 260 in displacement or model designation. No known market name, abbreviation, or typo links TR34 260 to any of these candidates.",
+  "canonical_model_alias": "",
+  "configuration_tokens": [],
+  "brand_aliases": [],
+  "model_aliases": [],
+  "status": "SUCCESS",
+  "prompt_version": "motorcycle-candidate-resolution-v4",
+  "model": "qwen-flash",
+  "make": "Beta",
+  "model_name": "TR34 260"
+}

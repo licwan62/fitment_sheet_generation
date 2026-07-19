@@ -1,0 +1,16 @@
+{
+  "decision": "INFER",
+  "confidence": "MEDIUM",
+  "length_mm": 2150,
+  "width_mm": 860,
+  "height_mm": 1240,
+  "wheelbase_mm": 1470,
+  "seat_height_mm": 960,
+  "ground_clearance_mm": 320,
+  "explanation": "Inferred from comparable off-road motocross models in the 250cc class, such as KTM 250 SX-F and Husqvarna FC 250, with similar design philosophy and performance characteristics. Dimensions are estimated based on typical proportions for this segment, but exact values may vary by model year or market.",
+  "status": "SUCCESS",
+  "prompt_version": "motorcycle-dimension-inference-v1",
+  "model": "qwen-flash",
+  "make": "Gas Gas",
+  "model_name": "EC 250 R"
+}

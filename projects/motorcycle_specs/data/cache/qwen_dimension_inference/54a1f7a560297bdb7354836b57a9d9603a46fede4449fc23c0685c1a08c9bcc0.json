@@ -1,0 +1,16 @@
+{
+  "decision": "INFER|UNKNOWN",
+  "confidence": "MEDIUM|LOW",
+  "length_mm": null,
+  "width_mm": null,
+  "height_mm": null,
+  "wheelbase_mm": null,
+  "seat_height_mm": null,
+  "ground_clearance_mm": null,
+  "explanation": "The Benelli Velvet 150 is a relatively new model with limited public data on exact dimensions. While some general specifications are available, variations by market and model year may exist. Without access to official technical documentation or verified catalog data, precise measurements cannot be reliably determined. Inferred dimensions from similar models are not applicable due to potential design differences.",
+  "status": "SUCCESS",
+  "prompt_version": "motorcycle-dimension-inference-v1",
+  "model": "qwen-flash",
+  "make": "Benelli",
+  "model_name": "Velvet 150"
+}

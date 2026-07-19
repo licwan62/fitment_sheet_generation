@@ -1,0 +1,20 @@
+{
+  "decision": "MATCH",
+  "selected_candidate": "F 650GS",
+  "confidence": "HIGH",
+  "match_basis": "MARKET_ALIAS",
+  "explanation": "The input 'F650GS ABS' refers to the same motorcycle model as 'F 650GS', with 'ABS' being a configuration feature (anti-lock braking system) rather than a distinct model. The core model identity is unchanged, and 'F650GS' is a common shorthand for 'F 650GS' in BMW's catalog. The catalog candidate 'F 650GS' is the canonical form.",
+  "canonical_model_alias": "F 650GS",
+  "configuration_tokens": [
+    "ABS"
+  ],
+  "brand_aliases": [],
+  "model_aliases": [
+    "F 650GS"
+  ],
+  "status": "SUCCESS",
+  "prompt_version": "motorcycle-candidate-resolution-v4",
+  "model": "qwen-flash",
+  "make": "BMW",
+  "model_name": "F650GS ABS"
+}

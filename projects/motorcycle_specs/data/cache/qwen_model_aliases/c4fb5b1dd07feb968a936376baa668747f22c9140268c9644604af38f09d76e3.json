@@ -1,0 +1,16 @@
+{
+  "decision": "NO_MATCH",
+  "selected_candidate": "",
+  "confidence": "HIGH",
+  "match_basis": "NONE",
+  "explanation": "The model 'RL250' is not a known variant or alias of any of the listed catalog candidates. The Suzuki RL250 does not exist in Suzuki's official motorcycle lineup, and none of the candidates match its identity. The closest candidates (e.g., RG 250, RH 250) are distinct models with different designations and engine configurations. No evidence supports that 'RL250' refers to any of these models under a market name, abbreviation, or typo.",
+  "canonical_model_alias": "",
+  "configuration_tokens": [],
+  "brand_aliases": [],
+  "model_aliases": [],
+  "status": "SUCCESS",
+  "prompt_version": "motorcycle-candidate-resolution-v4",
+  "model": "qwen-flash",
+  "make": "Suzuki",
+  "model_name": "RL250"
+}

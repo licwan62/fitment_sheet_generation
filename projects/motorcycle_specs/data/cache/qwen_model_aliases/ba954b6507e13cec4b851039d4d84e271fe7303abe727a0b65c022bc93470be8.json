@@ -1,0 +1,18 @@
+{
+  "decision": "MATCH",
+  "selected_candidate": "AC 50 Colt",
+  "confidence": "HIGH",
+  "match_basis": "HISTORICAL_ALIAS",
+  "explanation": "The Suzuki AC50 is a known historical model, and 'AC 50 Colt' is a documented alternate name for the same motorcycle, reflecting its market or marketing designation. The displacement (50cc) and model series (AC) align exactly.",
+  "canonical_model_alias": "AC 50 Colt",
+  "configuration_tokens": [],
+  "brand_aliases": [],
+  "model_aliases": [
+    "AC 50 Colt"
+  ],
+  "status": "SUCCESS",
+  "prompt_version": "motorcycle-candidate-resolution-v4",
+  "model": "qwen-flash",
+  "make": "Suzuki",
+  "model_name": "AC50"
+}

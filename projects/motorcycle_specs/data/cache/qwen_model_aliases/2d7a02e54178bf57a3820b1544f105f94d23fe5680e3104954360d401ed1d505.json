@@ -1,0 +1,21 @@
+{
+  "decision": "MATCH",
+  "selected_candidate": "gasgas ec 125",
+  "confidence": "HIGH",
+  "match_basis": "MARKET_ALIAS",
+  "explanation": "The 'Trial School 125' is a market-specific configuration of the Gas Gas EC 125, marketed as a training or school model. The EC 125 is the base model, and 'Trial School' is a known variant label used in certain markets for the same underlying motorcycle.",
+  "canonical_model_alias": "ec 125",
+  "configuration_tokens": [
+    "trial school"
+  ],
+  "brand_aliases": [],
+  "model_aliases": [
+    "gasgas ec 125",
+    "ec 125"
+  ],
+  "status": "SUCCESS",
+  "prompt_version": "motorcycle-candidate-resolution-v4",
+  "model": "qwen-flash",
+  "make": "Gas Gas",
+  "model_name": "Trial School 125"
+}

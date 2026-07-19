@@ -1,0 +1,18 @@
+{
+  "decision": "MATCH",
+  "selected_candidate": "benda lfc 700",
+  "confidence": "HIGH",
+  "match_basis": "TYPO",
+  "explanation": "'LFS 700' is a likely typo or variant spelling of 'LFC 700', with 'F' and 'S' being visually or phonetically similar in some fonts or handwriting. Both share the same displacement (700) and are from the same manufacturer (Benda), indicating the same underlying model.",
+  "canonical_model_alias": "lfc 700",
+  "configuration_tokens": [],
+  "brand_aliases": [],
+  "model_aliases": [
+    "lfc 700"
+  ],
+  "status": "SUCCESS",
+  "prompt_version": "motorcycle-candidate-resolution-v4",
+  "model": "qwen-flash",
+  "make": "Benda",
+  "model_name": "LFS 700"
+}

@@ -1,0 +1,18 @@
+{
+  "decision": "MATCH",
+  "selected_candidate": "beta rr 520 4t",
+  "confidence": "HIGH",
+  "match_basis": "SAME_NAME",
+  "explanation": "The input '520 RR' and the candidate 'beta rr 520 4t' refer to the same underlying motorcycle model, with 'RR' indicating the racing-oriented variant and '520' denoting displacement. The addition of '4t' (four-stroke) is a standard specification detail that does not change the core model identity. The order of terms and presence of '4t' are common catalog variations.",
+  "canonical_model_alias": "beta rr 520 4t",
+  "configuration_tokens": [
+    "4t"
+  ],
+  "brand_aliases": [],
+  "model_aliases": [],
+  "status": "SUCCESS",
+  "prompt_version": "motorcycle-candidate-resolution-v4",
+  "model": "qwen-flash",
+  "make": "Beta",
+  "model_name": "520 RR"
+}

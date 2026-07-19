@@ -1,0 +1,16 @@
+{
+  "decision": "NO_MATCH",
+  "selected_candidate": "",
+  "confidence": "HIGH",
+  "match_basis": "NONE",
+  "explanation": "The input 'GZ150HC GZ150' does not match any of the provided catalog candidates, and no known market name, historical alias, abbreviation, or typo variant of a Suzuki GZ150 model is present in the candidate list. The model designation appears to be incomplete or incorrectly formatted for matching against a standard catalog entry.",
+  "canonical_model_alias": "",
+  "configuration_tokens": [],
+  "brand_aliases": [],
+  "model_aliases": [],
+  "status": "SUCCESS",
+  "prompt_version": "motorcycle-candidate-resolution-v4",
+  "model": "qwen-flash",
+  "make": "Suzuki",
+  "model_name": "GZ150HC GZ150"
+}

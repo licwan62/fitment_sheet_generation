@@ -1,0 +1,22 @@
+{
+  "decision": "MATCH",
+  "selected_candidate": "BMW F 900 GS Adventure 2024",
+  "confidence": "HIGH",
+  "match_basis": "SAME_NAME",
+  "explanation": "The input 'F900GS Adventure Touring' refers to the same motorcycle model as 'BMW F 900 GS Adventure 2024', with 'Adventure Touring' being a descriptive designation consistent with the model's intended use. The core model identity (F 900 GS Adventure) is identical, and the year is within the valid range for this model. No other model in the list shares this exact configuration.",
+  "canonical_model_alias": "F 900 GS Adventure",
+  "configuration_tokens": [
+    "Adventure",
+    "Touring"
+  ],
+  "brand_aliases": [],
+  "model_aliases": [
+    "F 900 GS Adventure",
+    "f 900 gs"
+  ],
+  "status": "SUCCESS",
+  "prompt_version": "motorcycle-candidate-resolution-v4",
+  "model": "qwen-flash",
+  "make": "BMW",
+  "model_name": "F900GS Adventure Touring"
+}

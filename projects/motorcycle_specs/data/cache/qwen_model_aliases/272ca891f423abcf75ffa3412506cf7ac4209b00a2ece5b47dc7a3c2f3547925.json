@@ -1,0 +1,18 @@
+{
+  "decision": "MATCH",
+  "selected_candidate": "CHF \n\t\t50 M etropolitan Scooter",
+  "confidence": "HIGH",
+  "match_basis": "TYPO",
+  "explanation": "The input 'CHF50 Metropolitan' is a typographical variant of the catalog candidate 'CHF 50 Metropolitan Scooter', with a missing space and an extra 'Scooter' in the candidate. The core model identifier 'CHF50 Metropolitan' matches exactly, and 'Scooter' is a common descriptive addition not altering the model identity.",
+  "canonical_model_alias": "CHF 50 Metropolitan Scooter",
+  "configuration_tokens": [],
+  "brand_aliases": [],
+  "model_aliases": [
+    "CHF 50 M etropolitan Scooter"
+  ],
+  "status": "SUCCESS",
+  "prompt_version": "motorcycle-candidate-resolution-v4",
+  "model": "qwen-flash",
+  "make": "Honda",
+  "model_name": "CHF50 Metropolitan"
+}

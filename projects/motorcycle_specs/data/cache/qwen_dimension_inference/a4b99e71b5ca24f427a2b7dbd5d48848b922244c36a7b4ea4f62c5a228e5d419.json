@@ -1,0 +1,16 @@
+{
+  "decision": "INFER",
+  "confidence": "MEDIUM",
+  "length_mm": 2150,
+  "width_mm": 880,
+  "height_mm": 1380,
+  "wheelbase_mm": 1420,
+  "seat_height_mm": 790,
+  "ground_clearance_mm": 180,
+  "explanation": "Inferred from CFMOTO 250 Dual and similar mid-sized dual-sport models; dimensions are approximate based on typical design trends for this class of motorcycle. Model year and market variations may affect actual measurements.",
+  "status": "SUCCESS",
+  "prompt_version": "motorcycle-dimension-inference-v1",
+  "model": "qwen-flash",
+  "make": "CFMOTO",
+  "model_name": "230 Dual"
+}

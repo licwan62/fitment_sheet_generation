@@ -1,0 +1,16 @@
+{
+  "decision": "NO_MATCH",
+  "selected_candidate": "",
+  "confidence": "HIGH",
+  "match_basis": "NONE",
+  "explanation": "The input model 'GL150RLA Intruder ABS' is a 150cc Suzuki Intruder with ABS, while all catalog candidates either refer to different displacement models (e.g., M1500, 250), different model lines (e.g., Gixxer), or are unrelated variants. None match the specific 150cc Intruder with ABS and GL150RLA designation.",
+  "canonical_model_alias": "",
+  "configuration_tokens": [],
+  "brand_aliases": [],
+  "model_aliases": [],
+  "status": "SUCCESS",
+  "prompt_version": "motorcycle-candidate-resolution-v4",
+  "model": "qwen-flash",
+  "make": "Suzuki",
+  "model_name": "GL150RLA Intruder ABS"
+}

@@ -1,0 +1,16 @@
+{
+  "decision": "NO_MATCH",
+  "selected_candidate": "",
+  "confidence": "HIGH",
+  "match_basis": "NONE",
+  "explanation": "The model 'MT125' is not a known variant or market name for any of the listed Honda catalog candidates. The candidates include different models such as CT125, MSX125, Monkey 125, and CB125 Hornet, which are distinct in design, platform, and intended use. The MT125 does not correspond to any of these models under known aliases, historical names, abbreviations, or plausible typos. No evidence supports that MT125 refers to any of the listed models.",
+  "canonical_model_alias": "",
+  "configuration_tokens": [],
+  "brand_aliases": [],
+  "model_aliases": [],
+  "status": "SUCCESS",
+  "prompt_version": "motorcycle-candidate-resolution-v4",
+  "model": "qwen-flash",
+  "make": "Honda",
+  "model_name": "MT125"
+}

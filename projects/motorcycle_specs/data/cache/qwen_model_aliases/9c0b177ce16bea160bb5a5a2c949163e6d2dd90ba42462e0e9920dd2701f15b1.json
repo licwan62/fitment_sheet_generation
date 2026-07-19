@@ -1,0 +1,19 @@
+{
+  "decision": "MATCH",
+  "selected_candidate": "gasgas txt boy 50",
+  "confidence": "HIGH",
+  "match_basis": "MARKET_ALIAS",
+  "explanation": "The model 'TX50 Boy' is a market-specific name for the Gas Gas TXT 50, where 'Boy' refers to the youth or entry-level variant. The catalog candidate 'gasgas txt boy 50' is the correct and canonical expression of this model.",
+  "canonical_model_alias": "txt boy 50",
+  "configuration_tokens": [],
+  "brand_aliases": [],
+  "model_aliases": [
+    "gasgas txt boy 50",
+    "txt boy 50"
+  ],
+  "status": "SUCCESS",
+  "prompt_version": "motorcycle-candidate-resolution-v4",
+  "model": "qwen-flash",
+  "make": "Gas Gas",
+  "model_name": "TX50 Boy"
+}

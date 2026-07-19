@@ -1,0 +1,16 @@
+{
+  "decision": "NO_MATCH",
+  "selected_candidate": "",
+  "confidence": "HIGH",
+  "match_basis": "NONE",
+  "explanation": "The input model 'Tornado Naked Tre 889 s' has a displacement of 889cc, which does not match any of the catalog candidates. The closest candidates are the 900cc and 1130cc models, but these are different displacements and thus different underlying motorcycles. No known market name, abbreviation, or typo bridges the 889cc to any listed candidate.",
+  "canonical_model_alias": "",
+  "configuration_tokens": [],
+  "brand_aliases": [],
+  "model_aliases": [],
+  "status": "SUCCESS",
+  "prompt_version": "motorcycle-candidate-resolution-v4",
+  "model": "qwen-flash",
+  "make": "Benelli",
+  "model_name": "Tornado Naked Tre 889 s"
+}

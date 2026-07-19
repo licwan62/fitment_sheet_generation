@@ -1,0 +1,18 @@
+{
+  "decision": "MATCH",
+  "selected_candidate": "beta evo 200 2t my10",
+  "confidence": "HIGH",
+  "match_basis": "SAME_NAME",
+  "explanation": "The input 'EVO 200' matches the core model identity of 'beta evo 200 2t my10', which is the same underlying motorcycle with a minor configuration (MY10) and displacement specification (2T). The term 'EVO 200' is the primary name for this model, and the candidate includes all identity-bearing elements including displacement and year.",
+  "canonical_model_alias": "beta evo 200 2t",
+  "configuration_tokens": [
+    "my10"
+  ],
+  "brand_aliases": [],
+  "model_aliases": [],
+  "status": "SUCCESS",
+  "prompt_version": "motorcycle-candidate-resolution-v4",
+  "model": "qwen-flash",
+  "make": "Beta",
+  "model_name": "EVO 200"
+}

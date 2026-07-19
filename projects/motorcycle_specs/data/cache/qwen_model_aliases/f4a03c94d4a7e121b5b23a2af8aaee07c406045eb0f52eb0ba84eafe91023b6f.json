@@ -1,0 +1,21 @@
+{
+  "decision": "MATCH",
+  "selected_candidate": "GSX-S 1000",
+  "confidence": "HIGH",
+  "match_basis": "MARKET_ALIAS",
+  "explanation": "The GSX-S1000S Katana is a market-specific variant of the GSX-S1000, with 'S' denoting a sportier configuration and 'Katana' being a branding element for the model in certain regions. The core motorcycle identity (GSX-S1000) is preserved, and 'Katana' is a known marketing name used for this model in some markets. The candidate 'GSX-S 1000' represents the base model without additional suffixes, making it the canonical form.",
+  "canonical_model_alias": "GSX-S 1000",
+  "configuration_tokens": [
+    "S",
+    "Katana"
+  ],
+  "brand_aliases": [],
+  "model_aliases": [
+    "GSX-S 1000"
+  ],
+  "status": "SUCCESS",
+  "prompt_version": "motorcycle-candidate-resolution-v4",
+  "model": "qwen-flash",
+  "make": "Suzuki",
+  "model_name": "GSX-S1000S Katana"
+}

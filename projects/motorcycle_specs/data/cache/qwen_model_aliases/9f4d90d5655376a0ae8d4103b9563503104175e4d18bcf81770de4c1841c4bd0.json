@@ -1,0 +1,18 @@
+{
+  "decision": "MATCH",
+  "selected_candidate": "Tre 900RS Tornado",
+  "confidence": "HIGH",
+  "match_basis": "MARKET_ALIAS",
+  "explanation": "The input 'Tornado Tre 900' refers to the same underlying model as 'Tre 900RS Tornado', which is a market-specific configuration of the Benelli Tornado Tre 900 series. The RS variant is a known performance-oriented version marketed under this name in certain regions, and the naming convention aligns with Benelli's historical use of 'RS' for high-performance variants. The displacement (900) and core model (Tre Tornado) are identical.",
+  "canonical_model_alias": "Tre 900RS Tornado",
+  "configuration_tokens": [],
+  "brand_aliases": [],
+  "model_aliases": [
+    "Tre 900RS Tornado"
+  ],
+  "status": "SUCCESS",
+  "prompt_version": "motorcycle-candidate-resolution-v4",
+  "model": "qwen-flash",
+  "make": "Benelli",
+  "model_name": "Tornado Tre 900"
+}

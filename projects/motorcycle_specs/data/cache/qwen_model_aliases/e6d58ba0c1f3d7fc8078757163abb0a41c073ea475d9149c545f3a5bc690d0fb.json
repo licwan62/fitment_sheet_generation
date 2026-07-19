@@ -1,0 +1,20 @@
+{
+  "decision": "MATCH",
+  "selected_candidate": "F 900XR",
+  "confidence": "HIGH",
+  "match_basis": "MARKET_ALIAS",
+  "explanation": "The 'F900XR LWR' is a market-specific configuration (likely 'LWR' for a low windscreen or special trim) of the F 900XR, which is a known variant in BMW's catalog. The core model identity remains unchanged; 'LWR' is a configuration label, not a different model.",
+  "canonical_model_alias": "F 900XR",
+  "configuration_tokens": [
+    "LWR"
+  ],
+  "brand_aliases": [],
+  "model_aliases": [
+    "F 900XR"
+  ],
+  "status": "SUCCESS",
+  "prompt_version": "motorcycle-candidate-resolution-v4",
+  "model": "qwen-flash",
+  "make": "BMW",
+  "model_name": "F900XR LWR"
+}

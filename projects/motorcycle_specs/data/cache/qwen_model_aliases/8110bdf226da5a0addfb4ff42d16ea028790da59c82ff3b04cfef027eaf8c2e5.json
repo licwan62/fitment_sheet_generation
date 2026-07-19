@@ -1,0 +1,18 @@
+{
+  "decision": "MATCH",
+  "selected_candidate": "Honda Ape 50",
+  "confidence": "HIGH",
+  "match_basis": "MARKET_ALIAS",
+  "explanation": "The model 'QA50' is a known market-specific designation for the Honda Ape 50, particularly in certain regional catalogs. The QA50 designation refers to the same underlying motorcycle as the Ape 50, with 'QA' being a model code used in specific markets. Displacement (50cc) and model identity are identical.",
+  "canonical_model_alias": "Ape 50",
+  "configuration_tokens": [],
+  "brand_aliases": [],
+  "model_aliases": [
+    "Ape 50"
+  ],
+  "status": "SUCCESS",
+  "prompt_version": "motorcycle-candidate-resolution-v4",
+  "model": "qwen-flash",
+  "make": "Honda",
+  "model_name": "QA50"
+}

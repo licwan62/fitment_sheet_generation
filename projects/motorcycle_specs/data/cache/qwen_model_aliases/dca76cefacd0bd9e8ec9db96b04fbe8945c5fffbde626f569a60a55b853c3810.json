@@ -1,0 +1,21 @@
+{
+  "decision": "MATCH",
+  "selected_candidate": "F 850GS Adventure 40 Years Edition",
+  "confidence": "HIGH",
+  "match_basis": "MARKET_ALIAS",
+  "explanation": "The input 'F850GS Adventure 40 Years GS Edition' and the candidate 'F 850GS Adventure 40 Years Edition' refer to the same motorcycle model, with the only difference being the spacing and omission of 'GS' in the model name. The 'Adventure' variant is a known configuration of the F 850GS, and '40 Years GS Edition' is a commemorative naming convention used by BMW for this specific model. The absence of 'GS' in the candidate's title is a known market or catalog variation, not a different model.",
+  "canonical_model_alias": "F 850GS Adventure 40 Years Edition",
+  "configuration_tokens": [
+    "Adventure",
+    "40 Years Edition"
+  ],
+  "brand_aliases": [],
+  "model_aliases": [
+    "F 850GS Adventure 40 Years Edition"
+  ],
+  "status": "SUCCESS",
+  "prompt_version": "motorcycle-candidate-resolution-v4",
+  "model": "qwen-flash",
+  "make": "BMW",
+  "model_name": "F850GS Adventure 40 Years GS Edition"
+}

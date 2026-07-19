@@ -1,0 +1,18 @@
+{
+  "decision": "MATCH",
+  "selected_candidate": "honda vision 50",
+  "confidence": "HIGH",
+  "match_basis": "MARKET_ALIAS",
+  "explanation": "Honda NU50 is a market-specific designation for the Honda Vision 50, a popular small-displacement scooter sold in various regions. The NU50 model code aligns with the Vision 50's production and marketing history, confirming it as a regional name for the same motorcycle.",
+  "canonical_model_alias": "honda vision 50",
+  "configuration_tokens": [],
+  "brand_aliases": [],
+  "model_aliases": [
+    "vision 50"
+  ],
+  "status": "SUCCESS",
+  "prompt_version": "motorcycle-candidate-resolution-v4",
+  "model": "qwen-flash",
+  "make": "Honda",
+  "model_name": "NU50"
+}

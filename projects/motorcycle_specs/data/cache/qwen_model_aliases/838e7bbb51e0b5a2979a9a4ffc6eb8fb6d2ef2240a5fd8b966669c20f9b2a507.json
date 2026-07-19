@@ -1,0 +1,19 @@
+{
+  "decision": "MATCH",
+  "selected_candidate": "beta rr x pro 4t 430",
+  "confidence": "HIGH",
+  "match_basis": "SAME_NAME",
+  "explanation": "The input '430 RR X-Pro' corresponds directly to the catalog candidate 'beta rr x pro 4t 430', with identical displacement, model series, and configuration. The term 'X-Pro' is a known market-specific designation for the high-performance version of the RR 430, and '4T' denotes the four-stroke engine, which is consistent across both names.",
+  "canonical_model_alias": "rr x pro 4t 430",
+  "configuration_tokens": [
+    "x pro",
+    "4t"
+  ],
+  "brand_aliases": [],
+  "model_aliases": [],
+  "status": "SUCCESS",
+  "prompt_version": "motorcycle-candidate-resolution-v4",
+  "model": "qwen-flash",
+  "make": "Beta",
+  "model_name": "430 RR X-Pro"
+}

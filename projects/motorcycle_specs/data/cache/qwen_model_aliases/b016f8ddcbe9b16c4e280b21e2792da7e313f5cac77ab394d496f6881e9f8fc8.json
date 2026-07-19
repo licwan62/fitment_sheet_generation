@@ -1,0 +1,16 @@
+{
+  "decision": "NO_MATCH",
+  "selected_candidate": "",
+  "confidence": "HIGH",
+  "match_basis": "NONE",
+  "explanation": "The input model '200 RR' specifies a 200cc displacement, but all catalog candidates are either 125cc or 400cc models. No candidate matches the 200cc displacement, and there is no known market name, historical alias, abbreviation, or typo that would equate a 200 RR to any of these listed models.",
+  "canonical_model_alias": "",
+  "configuration_tokens": [],
+  "brand_aliases": [],
+  "model_aliases": [],
+  "status": "SUCCESS",
+  "prompt_version": "motorcycle-candidate-resolution-v4",
+  "model": "qwen-flash",
+  "make": "Beta",
+  "model_name": "200 RR"
+}

@@ -1,0 +1,16 @@
+{
+  "decision": "INFER|UNKNOWN",
+  "confidence": "MEDIUM|LOW",
+  "length_mm": null,
+  "width_mm": null,
+  "height_mm": null,
+  "wheelbase_mm": null,
+  "seat_height_mm": null,
+  "ground_clearance_mm": null,
+  "explanation": "The Aprilia Scarabeo 250 is a limited-production model with no widely available official specifications. Variations in design across potential production years and markets introduce uncertainty. Without access to verified catalog data or physical measurements, dimensions cannot be reliably inferred. Model identity and configuration details remain ambiguous.",
+  "status": "SUCCESS",
+  "prompt_version": "motorcycle-dimension-inference-v1",
+  "model": "qwen-flash",
+  "make": "Aprilia",
+  "model_name": "Scarabeo 250"
+}

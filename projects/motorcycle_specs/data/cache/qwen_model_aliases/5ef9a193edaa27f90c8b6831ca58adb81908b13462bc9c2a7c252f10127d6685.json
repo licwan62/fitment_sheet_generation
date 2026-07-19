@@ -1,0 +1,18 @@
+{
+  "decision": "MATCH",
+  "selected_candidate": "gasgas mc 85 19 16",
+  "confidence": "HIGH",
+  "match_basis": "SAME_NAME",
+  "explanation": "The input 'MC 85 19/16' matches the catalog candidate 'gasgas mc 85 19 16' exactly in model name, displacement (85), and year (19/16 likely denotes 2019–2016, but the core model identity is unchanged). The format difference (slash vs. space) is a minor presentation variation.",
+  "canonical_model_alias": "mc 85 19 16",
+  "configuration_tokens": [],
+  "brand_aliases": [],
+  "model_aliases": [
+    "gasgas mc 85 19 16"
+  ],
+  "status": "SUCCESS",
+  "prompt_version": "motorcycle-candidate-resolution-v4",
+  "model": "qwen-flash",
+  "make": "Gas Gas",
+  "model_name": "MC 85 19/16"
+}

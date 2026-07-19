@@ -1,0 +1,20 @@
+{
+  "decision": "MATCH",
+  "selected_candidate": "DL 1000 V-Strom Adventure",
+  "confidence": "HIGH",
+  "match_basis": "SAME_NAME",
+  "explanation": "The input 'DL1000 V-Strom ABS Adventure' refers to the same motorcycle model as 'DL 1000 V-Strom Adventure', with 'ABS' being a standard feature included in the model's configuration but not altering the core identity. The catalog candidate matches the base model name exactly, including displacement and trim level.",
+  "canonical_model_alias": "DL 1000 V-Strom Adventure",
+  "configuration_tokens": [
+    "ABS"
+  ],
+  "brand_aliases": [],
+  "model_aliases": [
+    "DL 1000 V-Strom Adventure"
+  ],
+  "status": "SUCCESS",
+  "prompt_version": "motorcycle-candidate-resolution-v4",
+  "model": "qwen-flash",
+  "make": "Suzuki",
+  "model_name": "DL1000 V-Strom ABS Adventure"
+}

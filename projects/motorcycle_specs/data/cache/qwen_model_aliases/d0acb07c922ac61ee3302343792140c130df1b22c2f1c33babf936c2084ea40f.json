@@ -1,0 +1,16 @@
+{
+  "decision": "NO_MATCH",
+  "selected_candidate": "",
+  "confidence": "HIGH",
+  "match_basis": "NONE",
+  "explanation": "The input model 'CBR1000S1' does not match any candidate in the catalog list. The candidate 'CBR 1000RR Urban Tiger Fireblade S.E.' is a different model with distinct displacement (1000RR), name variation (Fireblade), and configuration (Urban Tiger, S.E.), indicating it is not the same underlying motorcycle. No known market alias, historical name, abbreviation, or typo links 'CBR1000S1' to this candidate. Displacement and model identity differ significantly.",
+  "canonical_model_alias": "",
+  "configuration_tokens": [],
+  "brand_aliases": [],
+  "model_aliases": [],
+  "status": "SUCCESS",
+  "prompt_version": "motorcycle-candidate-resolution-v4",
+  "model": "qwen-flash",
+  "make": "Honda",
+  "model_name": "CBR1000S1"
+}

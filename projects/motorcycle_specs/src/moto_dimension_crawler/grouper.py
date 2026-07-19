@@ -9,7 +9,7 @@ def group_dimensions(rows: list[dict], cfg: dict) -> list[dict]:
     tolerances = cfg["dimension"]["group_tolerance_mm"]
     by_input: dict[tuple[str, str], list[dict]] = defaultdict(list)
     for row in rows:
-        if row.get("MATCH_STATUS") in {"EXACT", "LIKELY", "MULTIPLE"} and any(row.get(k) not in (None, "") for k in ("L-MM", "W-MM", "H-MM")):
+        if row.get("MATCH_STATUS") in {"EXACT", "LIKELY", "MULTIPLE", "INFERRED"} and any(row.get(k) not in (None, "") for k in ("L-MM", "W-MM", "H-MM")):
             by_input[(row["MAKE"], row["MODEL"])].append(row)
     output: list[dict] = []
     for (make, model), items in by_input.items():
@@ -38,7 +38,9 @@ def group_dimensions(rows: list[dict], cfg: dict) -> list[dict]:
                 "YEAR_END": max(ends) if ends and years and len(years) == max(ends)-min(starts)+1 else "",
                 "L-MM": ref.get("L-MM"), "W-MM": ref.get("W-MM"), "H-MM-MIN": ref.get("H-MM-MIN"), "H-MM-MAX": ref.get("H-MM-MAX"),
                 "WIDTH_SCOPE": ref.get("WIDTH_SCOPE"), "HEIGHT_SCOPE": ref.get("HEIGHT_SCOPE"), "ACCESSORY_STATUS": ref.get("ACCESSORY_STATUS"),
-                "SOURCE_COUNT": len(group), "SOURCE_URLS": " | ".join(x["SOURCE_URL"] for x in group),
+                "SOURCE_COUNT": len(group),
+                "DATA_SOURCES": " | ".join(dict.fromkeys(x.get("DATA_SOURCE", "") for x in group if x.get("DATA_SOURCE"))),
+                "SOURCE_URLS": " | ".join(x["SOURCE_URL"] for x in group),
                 "CONFIDENCE": min((x.get("CONFIDENCE", "LOW") for x in group), key=lambda x: {"LOW":0,"MEDIUM":1,"HIGH":2}.get(x,0)),
                 "REVIEW_STATUS": "REVIEW" if any(x.get("CONFIDENCE") != "HIGH" for x in group) else "CONFIRMED",
             })

@@ -1,0 +1,21 @@
+{
+  "decision": "MATCH",
+  "selected_candidate": "DL 650 V-Strom",
+  "confidence": "HIGH",
+  "match_basis": "SAME_NAME",
+  "explanation": "The input model 'DL650A V-Strom 650 ABS' and the candidate 'DL 650 V-Strom' refer to the same underlying motorcycle model, with minor differences in formatting and suffixes that do not alter the core identity. The 'A' and 'ABS' are configuration or market-specific labels, not changes to the base model. The catalog candidate is a valid canonical representation.",
+  "canonical_model_alias": "DL 650 V-Strom",
+  "configuration_tokens": [
+    "A",
+    "ABS"
+  ],
+  "brand_aliases": [],
+  "model_aliases": [
+    "DL 650 V-Strom"
+  ],
+  "status": "SUCCESS",
+  "prompt_version": "motorcycle-candidate-resolution-v4",
+  "model": "qwen-flash",
+  "make": "Suzuki",
+  "model_name": "DL650A V-Strom 650 ABS"
+}

@@ -1,0 +1,16 @@
+{
+  "decision": "NO_MATCH",
+  "selected_candidate": "",
+  "confidence": "HIGH",
+  "match_basis": "NONE",
+  "explanation": "The R1100SA is a sport-touring motorcycle with a distinct chassis, engine tuning, and features compared to the R1100RS, which is a sport bike. Despite sharing the same engine displacement and platform lineage, they are different models with different geometries, suspension setups, and intended use cases. The R1100SA was not marketed as a variant of the R1100RS, nor is it a known market or configuration alias.",
+  "canonical_model_alias": "",
+  "configuration_tokens": [],
+  "brand_aliases": [],
+  "model_aliases": [],
+  "status": "SUCCESS",
+  "prompt_version": "motorcycle-candidate-resolution-v4",
+  "model": "qwen-flash",
+  "make": "BMW",
+  "model_name": "R1100SA"
+}

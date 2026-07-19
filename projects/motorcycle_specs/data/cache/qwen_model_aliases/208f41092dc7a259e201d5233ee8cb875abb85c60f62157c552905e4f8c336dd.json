@@ -1,0 +1,18 @@
+{
+  "decision": "MATCH",
+  "selected_candidate": "beta minicross r10",
+  "confidence": "HIGH",
+  "match_basis": "MARKET_ALIAS",
+  "explanation": "The 'Mini 50 R10' is a market-specific name for the Beta Minicross R10, with 'R10' indicating the model's displacement and racing configuration. The catalog candidate 'beta minicross r10' is the correct and canonical expression of the same motorcycle model.",
+  "canonical_model_alias": "beta minicross r10",
+  "configuration_tokens": [
+    "r10"
+  ],
+  "brand_aliases": [],
+  "model_aliases": [],
+  "status": "SUCCESS",
+  "prompt_version": "motorcycle-candidate-resolution-v4",
+  "model": "qwen-flash",
+  "make": "Beta",
+  "model_name": "Mini 50 R10"
+}

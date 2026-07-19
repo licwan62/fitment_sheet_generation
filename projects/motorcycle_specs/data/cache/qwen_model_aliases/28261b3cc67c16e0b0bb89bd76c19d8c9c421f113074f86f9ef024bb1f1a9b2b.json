@@ -1,0 +1,20 @@
+{
+  "decision": "MATCH",
+  "selected_candidate": "K 1200RS",
+  "confidence": "HIGH",
+  "match_basis": "SAME_NAME",
+  "explanation": "The input model 'K1200RS Dakar' refers to the same underlying motorcycle as the catalog candidate 'K 1200RS', with 'Dakar' being a configuration or trim variant (not a different model). The core model identity is unchanged, and 'K 1200RS' is the canonical form of the model name.",
+  "canonical_model_alias": "K 1200RS",
+  "configuration_tokens": [
+    "Dakar"
+  ],
+  "brand_aliases": [],
+  "model_aliases": [
+    "K 1200RS"
+  ],
+  "status": "SUCCESS",
+  "prompt_version": "motorcycle-candidate-resolution-v4",
+  "model": "qwen-flash",
+  "make": "BMW",
+  "model_name": "K1200RS Dakar"
+}

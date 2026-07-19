@@ -1,0 +1,18 @@
+{
+  "decision": "MATCH",
+  "selected_candidate": "BMW R 1150 R Rockster",
+  "confidence": "HIGH",
+  "match_basis": "MARKET_ALIAS",
+  "explanation": "The input 'R1150R Roadster' and the candidate 'BMW R 1150 R Rockster' refer to the same motorcycle model; 'Rockster' is a known market-specific or marketing alias for the R1150R Roadster, particularly in certain regions. The displacement (1150), model type (R), and configuration are identical.",
+  "canonical_model_alias": "R 1150 R Rockster",
+  "configuration_tokens": [],
+  "brand_aliases": [],
+  "model_aliases": [
+    "R 1150 R Rockster"
+  ],
+  "status": "SUCCESS",
+  "prompt_version": "motorcycle-candidate-resolution-v4",
+  "model": "qwen-flash",
+  "make": "BMW",
+  "model_name": "R1150R Roadster"
+}

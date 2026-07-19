@@ -1,0 +1,16 @@
+{
+  "decision": "NO_MATCH",
+  "selected_candidate": "",
+  "confidence": "HIGH",
+  "match_basis": "NONE",
+  "explanation": "The input model FLHX Electra Glide Special is a distinct variant from the catalog candidates. The FLHX Street Glide is a different model line than the Electra Glide, even though both share the FLHX platform. The Electra Glide Special is not a configuration of the Street Glide; it is a separate model with different styling, purpose, and identity. The candidates listed are either incorrect model names or refer to different models entirely.",
+  "canonical_model_alias": "",
+  "configuration_tokens": [],
+  "brand_aliases": [],
+  "model_aliases": [],
+  "status": "SUCCESS",
+  "prompt_version": "motorcycle-candidate-resolution-v4",
+  "model": "qwen-flash",
+  "make": "Harley-Davidson",
+  "model_name": "FLHX Electra Glide Special"
+}

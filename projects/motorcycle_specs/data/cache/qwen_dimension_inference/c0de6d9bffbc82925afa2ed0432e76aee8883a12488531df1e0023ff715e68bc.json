@@ -1,0 +1,16 @@
+{
+  "decision": "INFER|UNKNOWN",
+  "confidence": "LOW",
+  "length_mm": null,
+  "width_mm": null,
+  "height_mm": null,
+  "wheelbase_mm": null,
+  "seat_height_mm": null,
+  "ground_clearance_mm": null,
+  "explanation": "The F800GS Explorer LWR is a variant of the F800GS series, but specific dimensions for this exact trim are not consistently documented. The 'LWR' designation may refer to a special or limited edition configuration with potential variations in geometry. Without confirmed catalog data or official specifications, dimensions cannot be reliably inferred. Model-specific differences in frame, suspension, and accessories may alter key measurements. Therefore, the identity and dimensions remain uncertain.",
+  "status": "SUCCESS",
+  "prompt_version": "motorcycle-dimension-inference-v1",
+  "model": "qwen-flash",
+  "make": "BMW",
+  "model_name": "F800GS Explorer LWR"
+}

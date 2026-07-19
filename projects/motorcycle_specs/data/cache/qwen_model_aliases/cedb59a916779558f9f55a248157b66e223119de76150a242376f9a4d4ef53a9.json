@@ -1,0 +1,16 @@
+{
+  "decision": "NO_MATCH",
+  "selected_candidate": "",
+  "confidence": "HIGH",
+  "match_basis": "NONE",
+  "explanation": "The Pulsar RS 200 and Pulsar NS200 are distinct models with different designations, target markets, and specifications. The RS 200 is a sportier, track-focused variant with a different chassis, suspension, and styling compared to the NS200, which is a more standard naked street bike. Despite shared platform elements and engine architecture, they are not the same underlying motorcycle model.",
+  "canonical_model_alias": "",
+  "configuration_tokens": [],
+  "brand_aliases": [],
+  "model_aliases": [],
+  "status": "SUCCESS",
+  "prompt_version": "motorcycle-candidate-resolution-v4",
+  "model": "qwen-flash",
+  "make": "Bajaj",
+  "model_name": "Pulsar RS 200"
+}

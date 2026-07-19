@@ -1,0 +1,20 @@
+{
+  "decision": "MATCH",
+  "selected_candidate": "R 850R",
+  "confidence": "HIGH",
+  "match_basis": "SAME_NAME",
+  "explanation": "The input model 'R850R ABS' is identical to the catalog candidate 'R 850R' in base model identity, with 'ABS' being a configuration feature (anti-lock braking system) that does not change the core model identity. The presence of ABS is consistent with later production variants of the R 850R.",
+  "canonical_model_alias": "R 850R",
+  "configuration_tokens": [
+    "ABS"
+  ],
+  "brand_aliases": [],
+  "model_aliases": [
+    "R 850R"
+  ],
+  "status": "SUCCESS",
+  "prompt_version": "motorcycle-candidate-resolution-v4",
+  "model": "qwen-flash",
+  "make": "BMW",
+  "model_name": "R850R ABS"
+}

@@ -1,0 +1,18 @@
+{
+  "decision": "MATCH",
+  "selected_candidate": "Honda CR 85 R Expert",
+  "confidence": "HIGH",
+  "match_basis": "SAME_NAME",
+  "explanation": "The input 'CR85RB Expert' and the candidate 'Honda CR 85 R Expert' refer to the same motorcycle model, with the 'B' in 'CR85RB' likely being a market or configuration variant that does not alter the core model identity. The name 'CR 85 R Expert' is the standard catalog expression for this model.",
+  "canonical_model_alias": "CR 85 R Expert",
+  "configuration_tokens": [],
+  "brand_aliases": [],
+  "model_aliases": [
+    "CR 85 R Expert"
+  ],
+  "status": "SUCCESS",
+  "prompt_version": "motorcycle-candidate-resolution-v4",
+  "model": "qwen-flash",
+  "make": "Honda",
+  "model_name": "CR85RB Expert"
+}

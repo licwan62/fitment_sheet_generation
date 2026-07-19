@@ -1,0 +1,18 @@
+{
+  "decision": "MATCH",
+  "selected_candidate": "can am outlander max 400 xt",
+  "confidence": "HIGH",
+  "match_basis": "MARKET_ALIAS",
+  "explanation": "The input '400 MX-6' is a market-specific or configuration-labeled name for the Can-Am Outlander MAX 400 XT. The 'MX-6' suffix aligns with the 'XT' designation in the catalog candidate, and the displacement (400) matches exactly. The Outlander MAX 400 XT is the correct model variant marketed under this nomenclature in certain regions.",
+  "canonical_model_alias": "outlander max 400 xt",
+  "configuration_tokens": [
+    "xt"
+  ],
+  "brand_aliases": [],
+  "model_aliases": [],
+  "status": "SUCCESS",
+  "prompt_version": "motorcycle-candidate-resolution-v4",
+  "model": "qwen-flash",
+  "make": "Can-Am",
+  "model_name": "400 MX-6"
+}

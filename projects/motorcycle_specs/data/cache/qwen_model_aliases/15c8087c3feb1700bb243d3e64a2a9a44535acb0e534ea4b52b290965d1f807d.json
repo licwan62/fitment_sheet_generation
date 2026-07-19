@@ -1,0 +1,18 @@
+{
+  "decision": "MATCH",
+  "selected_candidate": "CX 650 Custom",
+  "confidence": "HIGH",
+  "match_basis": "SAME_NAME",
+  "explanation": "The input 'CX650C Custom' is a direct match in meaning and model identity to 'CX 650 Custom', with 'C' likely denoting 'Custom' as a configuration label. The catalog candidate 'CX 650 Custom' is the canonical expression of the same motorcycle model.",
+  "canonical_model_alias": "CX 650 Custom",
+  "configuration_tokens": [],
+  "brand_aliases": [],
+  "model_aliases": [
+    "CX 650 Custom"
+  ],
+  "status": "SUCCESS",
+  "prompt_version": "motorcycle-candidate-resolution-v4",
+  "model": "qwen-flash",
+  "make": "Honda",
+  "model_name": "CX650C Custom"
+}

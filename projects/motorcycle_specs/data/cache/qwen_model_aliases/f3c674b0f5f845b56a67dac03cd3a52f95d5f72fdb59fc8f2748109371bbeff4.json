@@ -1,0 +1,18 @@
+{
+  "decision": "NO_MATCH",
+  "selected_candidate": "",
+  "confidence": "HIGH",
+  "match_basis": "NONE",
+  "explanation": "The input model 'K1200RS Dakar' is a specific variant of the K1200RS with off-road or adventure-oriented features, while all catalog candidates are different models: K1200RS (base), K1200R (different chassis and engine layout), and K1200S (sport naked). The 'Dakar' suffix indicates a distinct configuration not present in any candidate. No candidate matches the K1200RS Dakar model.",
+  "canonical_model_alias": "",
+  "configuration_tokens": [
+    "Dakar"
+  ],
+  "brand_aliases": [],
+  "model_aliases": [],
+  "status": "SUCCESS",
+  "prompt_version": "motorcycle-candidate-resolution-v4",
+  "model": "qwen-flash",
+  "make": "BMW",
+  "model_name": "K1200RS Dakar"
+}

@@ -1,0 +1,16 @@
+{
+  "decision": "NO_MATCH",
+  "selected_candidate": "",
+  "confidence": "HIGH",
+  "match_basis": "NONE",
+  "explanation": "The model 'GL150RLA Intruder ABS' is not present in the catalog candidates, and no known alias or variant of this specific model exists within the provided list. The combination of model number (GL150RLA), name (Intruder ABS), and manufacturer (Suzuki) does not match any candidate.",
+  "canonical_model_alias": "",
+  "configuration_tokens": [],
+  "brand_aliases": [],
+  "model_aliases": [],
+  "status": "SUCCESS",
+  "prompt_version": "motorcycle-candidate-resolution-v4",
+  "model": "qwen-flash",
+  "make": "Suzuki",
+  "model_name": "GL150RLA Intruder ABS"
+}

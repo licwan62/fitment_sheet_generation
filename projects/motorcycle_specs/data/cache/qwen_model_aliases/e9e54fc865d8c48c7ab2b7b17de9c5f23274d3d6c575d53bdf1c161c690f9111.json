@@ -1,0 +1,20 @@
+{
+  "decision": "MATCH",
+  "selected_candidate": "Honda PCX150",
+  "confidence": "HIGH",
+  "match_basis": "SAME_NAME",
+  "explanation": "The input 'PCX150 ABS' and the candidate 'Honda PCX150' refer to the same underlying motorcycle model, with 'ABS' being a configuration feature not altering the core model identity. The catalog candidate matches exactly in name and displacement, and 'ABS' is a known equipment variant of the PCX150.",
+  "canonical_model_alias": "PCX150",
+  "configuration_tokens": [
+    "ABS"
+  ],
+  "brand_aliases": [],
+  "model_aliases": [
+    "PCX150"
+  ],
+  "status": "SUCCESS",
+  "prompt_version": "motorcycle-candidate-resolution-v4",
+  "model": "qwen-flash",
+  "make": "Honda",
+  "model_name": "PCX150 ABS"
+}

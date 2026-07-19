@@ -1,0 +1,16 @@
+{
+  "decision": "MATCH",
+  "selected_candidate": "gasgas contact estart 280",
+  "confidence": "HIGH",
+  "match_basis": "TYPO",
+  "explanation": "The input 'Contact TX270' is a variant of the 'Contact eStart 280' model, with 'TX' likely being a typo or misinterpretation of 'eStart', and '270' closely matching '280' as a plausible displacement rounding or cataloging variation. The core model identity (Contact eStart) and displacement are consistent with known Gas Gas model naming conventions.",
+  "canonical_model_alias": "contact estart 280",
+  "configuration_tokens": [],
+  "brand_aliases": [],
+  "model_aliases": [],
+  "status": "SUCCESS",
+  "prompt_version": "motorcycle-candidate-resolution-v4",
+  "model": "qwen-flash",
+  "make": "Gas Gas",
+  "model_name": "Contact TX270"
+}

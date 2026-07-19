@@ -1,0 +1,20 @@
+{
+  "decision": "MATCH",
+  "selected_candidate": "Ducati Monster 800 DARK i.e.",
+  "confidence": "HIGH",
+  "match_basis": "MARKET_ALIAS",
+  "explanation": "The input 'Monster 800 Dark' refers to the Ducati Monster 800 with a dark color scheme, which is a market-specific configuration. The catalog candidate 'Ducati Monster 800 DARK i.e.' uses 'DARK' as a configuration label and 'i.e.' as the model designation, matching the same underlying motorcycle model. The term 'Dark' is a known market or visual configuration label for this model, and 'i.e.' is the correct model identifier for the 2013–2016 Monster 800 series. No displacement or core model difference exists.",
+  "canonical_model_alias": "Monster 800 DARK i.e.",
+  "configuration_tokens": [
+    "DARK"
+  ],
+  "brand_aliases": [],
+  "model_aliases": [
+    "Monster 800 DARK i.e."
+  ],
+  "status": "SUCCESS",
+  "prompt_version": "motorcycle-candidate-resolution-v4",
+  "model": "qwen-flash",
+  "make": "Ducati",
+  "model_name": "Monster 800 Dark"
+}

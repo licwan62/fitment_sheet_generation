@@ -1,0 +1,16 @@
+{
+  "decision": "INFER",
+  "confidence": "MEDIUM",
+  "length_mm": 2150,
+  "width_mm": 850,
+  "height_mm": 1100,
+  "wheelbase_mm": 1380,
+  "seat_height_mm": 940,
+  "ground_clearance_mm": 320,
+  "explanation": "Inferred from typical dimensions of 2020s Gas Gas MC 300 motocross bikes based on similar models (e.g., KTM 300 SX-F), with adjustments for Gas Gas's slightly more compact design. Length, width, and height reflect standard motocross bike proportions. Wheelbase and seat height align with mid-range off-road standards. Ground clearance is estimated for aggressive terrain use.",
+  "status": "SUCCESS",
+  "prompt_version": "motorcycle-dimension-inference-v1",
+  "model": "qwen-flash",
+  "make": "Gas Gas",
+  "model_name": "MC 300"
+}

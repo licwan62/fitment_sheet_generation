@@ -1,0 +1,20 @@
+{
+  "decision": "MATCH",
+  "selected_candidate": "CRF 300L",
+  "confidence": "HIGH",
+  "match_basis": "MARKET_ALIAS",
+  "explanation": "The input 'CRF300F' is a variant of the CRF300L model, with 'F' denoting a specific market or configuration (e.g., 'F' for 'Factory' or 'Fuel-injected' in some regional markets). The core model identity (CRF300L) is preserved, and 'CRF 300L' is a canonical representation of the same motorcycle. The variation in suffix is consistent with known market-specific naming conventions.",
+  "canonical_model_alias": "CRF 300L",
+  "configuration_tokens": [
+    "F"
+  ],
+  "brand_aliases": [],
+  "model_aliases": [
+    "CRF 300L"
+  ],
+  "status": "SUCCESS",
+  "prompt_version": "motorcycle-candidate-resolution-v4",
+  "model": "qwen-flash",
+  "make": "Honda",
+  "model_name": "CRF300F"
+}

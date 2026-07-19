@@ -1,0 +1,16 @@
+{
+  "decision": "NO_MATCH",
+  "selected_candidate": "",
+  "confidence": "HIGH",
+  "match_basis": "NONE",
+  "explanation": "The input model 'RM370' is a Suzuki motocross motorcycle, while all catalog candidates are different models: DR 370 (dual-sport), SR 370 (street), RM250 (smaller motocross), RMZ250/450 (enduro/motocross), and DR Z70 (smaller dual-sport). None match the RM370 in displacement, intended use, or model lineage. No known market alias, abbreviation, or typo links RM370 to any candidate.",
+  "canonical_model_alias": "",
+  "configuration_tokens": [],
+  "brand_aliases": [],
+  "model_aliases": [],
+  "status": "SUCCESS",
+  "prompt_version": "motorcycle-candidate-resolution-v4",
+  "model": "qwen-flash",
+  "make": "Suzuki",
+  "model_name": "RM370"
+}

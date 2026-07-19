@@ -1,0 +1,18 @@
+{
+  "decision": "MATCH",
+  "selected_candidate": "CR 250M",
+  "confidence": "HIGH",
+  "match_basis": "MARKET_ALIAS",
+  "explanation": "The Honda CR250R and CR 250M refer to the same underlying motorcycle model, with 'M' denoting a market-specific or configuration variant (e.g., European or domestic market version) of the CR250R. The displacement (250) and core model identity are identical; the suffix difference is a known regional or configurational label, not a distinct model.",
+  "canonical_model_alias": "CR 250M",
+  "configuration_tokens": [],
+  "brand_aliases": [],
+  "model_aliases": [
+    "CR 250M"
+  ],
+  "status": "SUCCESS",
+  "prompt_version": "motorcycle-candidate-resolution-v4",
+  "model": "qwen-flash",
+  "make": "Honda",
+  "model_name": "CR250R"
+}

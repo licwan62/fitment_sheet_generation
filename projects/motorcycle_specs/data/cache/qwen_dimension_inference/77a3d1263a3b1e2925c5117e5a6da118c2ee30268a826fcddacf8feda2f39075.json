@@ -1,0 +1,16 @@
+{
+  "decision": "INFER|UNKNOWN",
+  "confidence": "MEDIUM|LOW",
+  "length_mm": null,
+  "width_mm": null,
+  "height_mm": null,
+  "wheelbase_mm": null,
+  "seat_height_mm": null,
+  "ground_clearance_mm": null,
+  "explanation": "The Gas Gas XC 250 Cervantes Replica is a limited-edition off-road motorcycle model with no publicly available official dimensions. Variations in design across years and markets, combined with the lack of verified specifications from reliable sources, prevent accurate inference. Dimensions are uncertain and may differ significantly between model years or regional variants.",
+  "status": "SUCCESS",
+  "prompt_version": "motorcycle-dimension-inference-v1",
+  "model": "qwen-flash",
+  "make": "Gas Gas",
+  "model_name": "XC 250 Cervantes Replica"
+}

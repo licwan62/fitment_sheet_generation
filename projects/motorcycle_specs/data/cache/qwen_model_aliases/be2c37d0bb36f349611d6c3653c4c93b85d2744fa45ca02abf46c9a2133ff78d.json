@@ -1,0 +1,18 @@
+{
+  "decision": "MATCH",
+  "selected_candidate": "beta minitrial electric 20",
+  "confidence": "HIGH",
+  "match_basis": "SAME_NAME",
+  "explanation": "The input 'Minitrials Electric 20in.' refers to the same model as 'beta minitrial electric 20' in the catalog, with '20in.' being a common way to denote the 20-inch wheel size, which is consistent with the model's designation. The name matches exactly except for the unit abbreviation, which is a standard and acceptable variation.",
+  "canonical_model_alias": "beta minitrial electric 20",
+  "configuration_tokens": [],
+  "brand_aliases": [],
+  "model_aliases": [
+    "minitrial electric 20"
+  ],
+  "status": "SUCCESS",
+  "prompt_version": "motorcycle-candidate-resolution-v4",
+  "model": "qwen-flash",
+  "make": "Beta",
+  "model_name": "Minitrials Electric 20in."
+}

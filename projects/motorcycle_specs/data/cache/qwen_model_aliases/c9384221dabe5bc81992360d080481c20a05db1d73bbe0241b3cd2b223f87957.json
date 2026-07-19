@@ -1,0 +1,15 @@
+{
+  "decision": "MATCH",
+  "selected_candidate": "ST 1100 Pan European",
+  "canonical_model_alias": "ST 1100 Pan European",
+  "configuration_tokens": [],
+  "brand_aliases": [],
+  "model_aliases": [
+    "ST 1100 Pan European"
+  ],
+  "status": "SUCCESS",
+  "prompt_version": "motorcycle-candidate-resolution-v3",
+  "model": "qwen-flash",
+  "make": "Honda",
+  "model_name": "ST1100 ABS"
+}

@@ -1,0 +1,19 @@
+{
+  "decision": "MATCH",
+  "selected_candidate": "SFV 650 Gladius",
+  "confidence": "HIGH",
+  "match_basis": "SAME_NAME",
+  "explanation": "The input 'Gladius' refers to the same underlying motorcycle model as the catalog candidate 'SFV 650 Gladius'. The other candidates are variants with additional configuration labels (Sport, Black Edition), but they share the core model identity. The base model is unambiguously the SFV 650 Gladius.",
+  "canonical_model_alias": "SFV 650 Gladius",
+  "configuration_tokens": [
+    "Sport",
+    "Black Edition"
+  ],
+  "brand_aliases": [],
+  "model_aliases": [],
+  "status": "SUCCESS",
+  "prompt_version": "motorcycle-candidate-resolution-v4",
+  "model": "qwen-flash",
+  "make": "Suzuki",
+  "model_name": "Gladius"
+}

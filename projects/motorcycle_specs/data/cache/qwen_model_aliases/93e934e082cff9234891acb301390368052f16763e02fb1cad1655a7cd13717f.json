@@ -1,0 +1,21 @@
+{
+  "decision": "MATCH",
+  "selected_candidate": "AN 400 Burgman",
+  "confidence": "HIGH",
+  "match_basis": "MARKET_ALIAS",
+  "explanation": "The 'AN400S Burgman Type S' is a market-specific configuration of the AN400 Burgman, with 'Type S' being a variant designation used in certain regions. The core model identity remains the AN400 Burgman, and 'S' is a known configuration suffix rather than a distinct model.",
+  "canonical_model_alias": "AN 400 Burgman",
+  "configuration_tokens": [
+    "S",
+    "Type S"
+  ],
+  "brand_aliases": [],
+  "model_aliases": [
+    "AN 400 Burgman"
+  ],
+  "status": "SUCCESS",
+  "prompt_version": "motorcycle-candidate-resolution-v4",
+  "model": "qwen-flash",
+  "make": "Suzuki",
+  "model_name": "AN400S Burgman Type S"
+}

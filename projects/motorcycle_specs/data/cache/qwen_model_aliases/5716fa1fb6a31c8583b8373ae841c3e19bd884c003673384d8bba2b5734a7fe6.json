@@ -1,0 +1,18 @@
+{
+  "decision": "MATCH",
+  "selected_candidate": "ST 1100 Pan European",
+  "confidence": "HIGH",
+  "match_basis": "MARKET_ALIAS",
+  "explanation": "'ST 1100 Pan' and 'ST 1100 Pan European' refer to the same underlying motorcycle model; 'Pan European' is the official market-specific name for the ST1100 in Europe, while 'Pan' is a commonly used shorthand. Both are variants of the same model with identical core specifications.",
+  "canonical_model_alias": "ST 1100 Pan European",
+  "configuration_tokens": [],
+  "brand_aliases": [],
+  "model_aliases": [
+    "ST 1100 Pan European"
+  ],
+  "status": "SUCCESS",
+  "prompt_version": "motorcycle-candidate-resolution-v4",
+  "model": "qwen-flash",
+  "make": "Honda",
+  "model_name": "ST1100"
+}

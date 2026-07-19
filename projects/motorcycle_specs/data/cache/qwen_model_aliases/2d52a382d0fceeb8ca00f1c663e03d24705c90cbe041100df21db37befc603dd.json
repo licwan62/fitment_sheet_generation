@@ -1,0 +1,25 @@
+{
+  "decision": "MATCH",
+  "selected_candidate": "Ducati Superbike 1098R Bayliss LE",
+  "confidence": "HIGH",
+  "match_basis": "SAME_NAME",
+  "explanation": "The input '1098 R Bayliss LE' refers to the same limited-edition Ducati 1098R model as the catalog candidate 'Ducati Superbike 1098R Bayliss LE', with 'Sukerbike' being a known marketing name for the 1098R series in certain markets. The model identity, displacement (1098), variant (R), and special edition (Bayliss LE) are identical.",
+  "canonical_model_alias": "1098R Bayliss Limited Edition",
+  "configuration_tokens": [
+    "Bayliss LE"
+  ],
+  "brand_aliases": [],
+  "model_aliases": [
+    "Superbike 1098R Bayliss LE",
+    "1098R Bayliss Limited Edition",
+    "1098R Puma Limited Edition",
+    "1098R",
+    "1098S Corse",
+    "1098 s tricolore"
+  ],
+  "status": "SUCCESS",
+  "prompt_version": "motorcycle-candidate-resolution-v4",
+  "model": "qwen-flash",
+  "make": "Ducati",
+  "model_name": "1098 R Bayliss LE"
+}

@@ -1,0 +1,20 @@
+{
+  "decision": "MATCH",
+  "selected_candidate": "ST 1300 Pan European",
+  "confidence": "HIGH",
+  "match_basis": "MARKET_ALIAS",
+  "explanation": "The 'ST1300 ABS' model is the same motorcycle as the 'ST 1300 Pan European', which was Honda's marketing name for the ST1300 in certain markets, particularly Europe. The 'ABS' designation refers to the braking system, not a different model. The core model identity (ST1300) and displacement (1300cc) are identical.",
+  "canonical_model_alias": "ST 1300 Pan European",
+  "configuration_tokens": [
+    "ABS"
+  ],
+  "brand_aliases": [],
+  "model_aliases": [
+    "ST 1300 Pan European"
+  ],
+  "status": "SUCCESS",
+  "prompt_version": "motorcycle-candidate-resolution-v4",
+  "model": "qwen-flash",
+  "make": "Honda",
+  "model_name": "ST1300 ABS"
+}

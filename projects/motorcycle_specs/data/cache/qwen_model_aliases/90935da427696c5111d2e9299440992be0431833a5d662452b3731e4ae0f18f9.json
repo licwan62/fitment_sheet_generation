@@ -1,0 +1,20 @@
+{
+  "decision": "MATCH",
+  "selected_candidate": "Ducati Diavel 1260 Lamborghini",
+  "confidence": "HIGH",
+  "match_basis": "SAME_NAME",
+  "explanation": "The input 'Diavel 1260 S Lamborghini' refers to the same motorcycle model as 'Ducati Diavel 1260 Lamborghini', with 'S' being a configuration label that does not alter the core identity. The 'S' variant is a known trim level for this model, and the name 'Lamborghini' is part of the official limited-edition naming. All candidates share the same displacement, engine, platform, and branding.",
+  "canonical_model_alias": "Diavel 1260 Lamborghini",
+  "configuration_tokens": [
+    "S"
+  ],
+  "brand_aliases": [],
+  "model_aliases": [
+    "Diavel 1260 Lamborghini"
+  ],
+  "status": "SUCCESS",
+  "prompt_version": "motorcycle-candidate-resolution-v4",
+  "model": "qwen-flash",
+  "make": "Ducati",
+  "model_name": "Diavel 1260 S Lamborghini"
+}

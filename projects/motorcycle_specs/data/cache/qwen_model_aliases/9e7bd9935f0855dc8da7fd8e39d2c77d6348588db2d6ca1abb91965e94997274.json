@@ -1,0 +1,21 @@
+{
+  "decision": "MATCH",
+  "selected_candidate": "Ducati 748 Biposto",
+  "confidence": "HIGH",
+  "match_basis": "MARKET_ALIAS",
+  "explanation": "The '748R Biposto' is a market-specific configuration of the Ducati 748R, with 'Biposto' denoting the two-seat variant commonly used in European markets. The catalog candidate 'Ducati 748 Biposto' refers to the same model, differing only in naming convention and regional labeling. Displacement and core model identity are identical.",
+  "canonical_model_alias": "748 Biposto",
+  "configuration_tokens": [
+    "Biposto"
+  ],
+  "brand_aliases": [],
+  "model_aliases": [
+    "748 Biposto",
+    "748R"
+  ],
+  "status": "SUCCESS",
+  "prompt_version": "motorcycle-candidate-resolution-v4",
+  "model": "qwen-flash",
+  "make": "Ducati",
+  "model_name": "748R Biposto"
+}

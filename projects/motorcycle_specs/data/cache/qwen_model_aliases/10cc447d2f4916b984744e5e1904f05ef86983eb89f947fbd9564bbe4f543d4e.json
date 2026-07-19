@@ -1,0 +1,16 @@
+{
+  "decision": "NO_MATCH",
+  "selected_candidate": "",
+  "confidence": "HIGH",
+  "match_basis": "NONE",
+  "explanation": "The input model 'SL90' refers to a Honda motorcycle with a 90cc engine, while the catalog candidate 'SL 99 Motosport 90' has a 99cc engine, indicating a different displacement and thus a distinct model. The difference in displacement is identity-bearing and not merely a configuration or market variation.",
+  "canonical_model_alias": "",
+  "configuration_tokens": [],
+  "brand_aliases": [],
+  "model_aliases": [],
+  "status": "SUCCESS",
+  "prompt_version": "motorcycle-candidate-resolution-v4",
+  "model": "qwen-flash",
+  "make": "Honda",
+  "model_name": "SL90"
+}

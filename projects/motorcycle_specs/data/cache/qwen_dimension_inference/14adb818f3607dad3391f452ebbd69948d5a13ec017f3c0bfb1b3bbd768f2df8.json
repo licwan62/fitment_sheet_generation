@@ -1,0 +1,16 @@
+{
+  "decision": "INFER",
+  "confidence": "LOW",
+  "length_mm": 2800,
+  "width_mm": 950,
+  "height_mm": 1100,
+  "wheelbase_mm": 1650,
+  "seat_height_mm": 780,
+  "ground_clearance_mm": 120,
+  "explanation": "Inferred dimensions based on typical Big Dog Chopper design characteristics and similar cruiser motorcycles; actual values may vary by model year and configuration. No official catalog data available for verification.",
+  "status": "SUCCESS",
+  "prompt_version": "motorcycle-dimension-inference-v1",
+  "model": "qwen-flash",
+  "make": "Big Dog",
+  "model_name": "Chopper"
+}

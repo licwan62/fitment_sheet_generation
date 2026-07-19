@@ -1,0 +1,21 @@
+{
+  "decision": "MATCH",
+  "selected_candidate": "GL 1800 Gold Wing Tour / DCT Airbag DCT",
+  "confidence": "HIGH",
+  "match_basis": "SAME_NAME",
+  "explanation": "The input 'GL1800 Gold Wing Tour' matches the core model identity of the selected candidate, which includes the same displacement (GL1800), model name (Gold Wing Tour), and is a known configuration variant with DCT and airbag features. The variation in spacing and formatting does not alter the underlying motorcycle identity.",
+  "canonical_model_alias": "GL 1800 Gold Wing Tour / DCT Airbag DCT",
+  "configuration_tokens": [
+    "DCT",
+    "Airbag DCT"
+  ],
+  "brand_aliases": [],
+  "model_aliases": [
+    "GL 1800 Gold Wing Tour / DCT Airbag DCT"
+  ],
+  "status": "SUCCESS",
+  "prompt_version": "motorcycle-candidate-resolution-v4",
+  "model": "qwen-flash",
+  "make": "Honda",
+  "model_name": "GL1800 Gold Wing Tour"
+}

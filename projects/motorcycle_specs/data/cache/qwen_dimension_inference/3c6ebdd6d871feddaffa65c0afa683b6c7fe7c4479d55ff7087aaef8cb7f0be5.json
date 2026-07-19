@@ -1,0 +1,16 @@
+{
+  "decision": "INFER|UNKNOWN",
+  "confidence": "MEDIUM|LOW",
+  "length_mm": null,
+  "width_mm": null,
+  "height_mm": null,
+  "wheelbase_mm": null,
+  "seat_height_mm": null,
+  "ground_clearance_mm": null,
+  "explanation": "The Honda NSA700 DN-01 is not a recognized or officially documented model in Honda's public product lineup. The model name appears to be speculative or misidentified. Without verifiable data from official sources or reliable catalog references, dimensions cannot be reliably inferred. Variations by market or year are also unknown. Therefore, the result is marked as UNKNOWN with low confidence.",
+  "status": "SUCCESS",
+  "prompt_version": "motorcycle-dimension-inference-v1",
+  "model": "qwen-flash",
+  "make": "Honda",
+  "model_name": "NSA700 DN-01"
+}

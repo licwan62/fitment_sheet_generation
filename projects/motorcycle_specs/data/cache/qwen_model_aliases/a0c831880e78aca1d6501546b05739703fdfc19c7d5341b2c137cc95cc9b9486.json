@@ -1,0 +1,18 @@
+{
+  "decision": "MATCH",
+  "selected_candidate": "gasgas econtact",
+  "confidence": "HIGH",
+  "match_basis": "MARKET_ALIAS",
+  "explanation": "The input 'Contact GT16' refers to a specific model in the Gas Gas eContact series, and 'gasgas econtact' is the correct catalog title for this model. The 'GT16' designation aligns with the 16-inch wheel configuration or market-specific variant, which is consistent with the eContact line. This is a known market/configuration variant of the eContact model, not a different underlying motorcycle.",
+  "canonical_model_alias": "econtact",
+  "configuration_tokens": [
+    "GT16"
+  ],
+  "brand_aliases": [],
+  "model_aliases": [],
+  "status": "SUCCESS",
+  "prompt_version": "motorcycle-candidate-resolution-v4",
+  "model": "qwen-flash",
+  "make": "Gas Gas",
+  "model_name": "Contact GT16"
+}

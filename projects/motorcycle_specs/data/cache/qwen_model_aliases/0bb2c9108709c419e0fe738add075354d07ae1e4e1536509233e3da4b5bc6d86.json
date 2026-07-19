@@ -1,0 +1,20 @@
+{
+  "decision": "MATCH",
+  "selected_candidate": "RSV4 Factory APRC",
+  "confidence": "HIGH",
+  "match_basis": "SAME_NAME",
+  "explanation": "The input model 'RSV4 Factory APRC ABS' is functionally identical to the catalog candidate 'RSV4 Factory APRC', with 'ABS' being a standard equipment feature not altering the core model identity. The presence of 'ABS' in the input does not constitute a different model, and the candidate is a direct match in name and configuration.",
+  "canonical_model_alias": "RSV4 Factory APRC",
+  "configuration_tokens": [
+    "ABS"
+  ],
+  "brand_aliases": [],
+  "model_aliases": [
+    "RSV4 Factory APRC"
+  ],
+  "status": "SUCCESS",
+  "prompt_version": "motorcycle-candidate-resolution-v4",
+  "model": "qwen-flash",
+  "make": "Aprilia",
+  "model_name": "RSV4 Factory APRC ABS"
+}

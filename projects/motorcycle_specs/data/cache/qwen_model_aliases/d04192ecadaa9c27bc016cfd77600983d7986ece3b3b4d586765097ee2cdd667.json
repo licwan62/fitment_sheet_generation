@@ -1,0 +1,21 @@
+{
+  "decision": "MATCH",
+  "selected_candidate": "Dominar 400 BS",
+  "confidence": "HIGH",
+  "match_basis": "MARKET_ALIAS",
+  "explanation": "The 'UG Touring' designation is a market-specific configuration label for the Dominar 400 in certain regions, while 'BS' refers to Bharat Stage emission compliance, a standard regulatory label. Both refer to the same underlying motorcycle model with identical engine and platform. The name difference is due to regional marketing and compliance labeling, not a different model.",
+  "canonical_model_alias": "Dominar 400 BS",
+  "configuration_tokens": [
+    "UG Touring",
+    "BS"
+  ],
+  "brand_aliases": [],
+  "model_aliases": [
+    "Dominar 400 BS"
+  ],
+  "status": "SUCCESS",
+  "prompt_version": "motorcycle-candidate-resolution-v4",
+  "model": "qwen-flash",
+  "make": "Bajaj",
+  "model_name": "Dominar 400 UG Touring"
+}

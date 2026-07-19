@@ -1,0 +1,16 @@
+{
+  "decision": "INFER|UNKNOWN",
+  "confidence": "MEDIUM|LOW",
+  "length_mm": null,
+  "width_mm": null,
+  "height_mm": null,
+  "wheelbase_mm": null,
+  "seat_height_mm": null,
+  "ground_clearance_mm": null,
+  "explanation": "The Bultaco Metralla 250 GT is a rare and vintage model with limited publicly available dimensional data. No definitive catalog or technical specifications were found to confirm exact dimensions. Variations by production year and market are possible, and no reliable source confirms consistent measurements across all units. Therefore, dimensions are inferred as unknown with medium to low confidence.",
+  "status": "SUCCESS",
+  "prompt_version": "motorcycle-dimension-inference-v1",
+  "model": "qwen-flash",
+  "make": "Bultaco",
+  "model_name": "Metralla 250 GT"
+}

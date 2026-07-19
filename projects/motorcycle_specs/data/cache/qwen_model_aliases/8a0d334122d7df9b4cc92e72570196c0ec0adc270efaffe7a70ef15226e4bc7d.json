@@ -1,0 +1,16 @@
+{
+  "decision": "NO_MATCH",
+  "selected_candidate": "",
+  "confidence": "HIGH",
+  "match_basis": "NONE",
+  "explanation": "The model 'Husky' is not a known name for any of the listed Big Dog catalog candidates. None of the candidates ('k 9', 'coyote', 'pitbull', 'bulldog', 'mastiff', 'ridgeback', 'wolf') are recognized as alternate names or variants of a 'Husky' model. The names are distinct and refer to different Big Dog motorcycle models.",
+  "canonical_model_alias": "",
+  "configuration_tokens": [],
+  "brand_aliases": [],
+  "model_aliases": [],
+  "status": "SUCCESS",
+  "prompt_version": "motorcycle-candidate-resolution-v4",
+  "model": "qwen-flash",
+  "make": "Big Dog",
+  "model_name": "Husky"
+}

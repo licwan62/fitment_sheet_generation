@@ -1,0 +1,16 @@
+{
+  "decision": "NO_MATCH",
+  "selected_candidate": "",
+  "confidence": "HIGH",
+  "match_basis": "NONE",
+  "explanation": "The input model GSX-S150 is a distinct motorcycle from the listed candidates. The GSX-S150 is a street-fighter styled model in Suzuki's GSX-S series, while the candidates are either sport bikes (GSX-R 150), naked bikes (GSX 150 Bandit), or variants of the Gixxer SF150, all of which differ in design, platform, and intended use. No known market alias, historical name, abbreviation, or typo links GSX-S150 to any of these candidates.",
+  "canonical_model_alias": "",
+  "configuration_tokens": [],
+  "brand_aliases": [],
+  "model_aliases": [],
+  "status": "SUCCESS",
+  "prompt_version": "motorcycle-candidate-resolution-v4",
+  "model": "qwen-flash",
+  "make": "Suzuki",
+  "model_name": "GSX-S150"
+}

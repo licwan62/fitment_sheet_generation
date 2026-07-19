@@ -1,0 +1,19 @@
+{
+  "decision": "MATCH",
+  "selected_candidate": "Harley-Davidson Hydra-Glide Revival",
+  "confidence": "HIGH",
+  "match_basis": "SAME_NAME",
+  "explanation": "The input 'FLIHYDRA Hydra-Glide Revival' refers to the same motorcycle model as 'Harley-Davidson Hydra-Glide Revival', with 'FLIHYDRA' being a likely internal or catalog code variant. The core model name matches exactly, and no displacement or configuration difference is indicated. The manufacturer is consistent, and the model identity is unambiguous.",
+  "canonical_model_alias": "Hydra-Glide Revival",
+  "configuration_tokens": [],
+  "brand_aliases": [],
+  "model_aliases": [
+    "Revival",
+    "Hydra-Glide Revival"
+  ],
+  "status": "SUCCESS",
+  "prompt_version": "motorcycle-candidate-resolution-v4",
+  "model": "qwen-flash",
+  "make": "Harley-Davidson",
+  "model_name": "FLIHYDRA Hydra-Glide Revival"
+}

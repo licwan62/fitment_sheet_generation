@@ -1,0 +1,14 @@
+{
+  "status": "API_ERROR",
+  "prompt_version": "motorcycle-candidate-resolution-v3",
+  "model": "qwen-flash",
+  "make": "Honda",
+  "model_name": "GL1200A Gold Wing Aspencade",
+  "candidate_titles": [
+    "GL \n      1200 Gold Wing Aspencade",
+    "GL 1200 \n\t\tGold Wing",
+    "GL 1200 Gold Wing Interstate",
+    "GL \n      1200 Gold Wing Aspencade SE-i Limited Edition"
+  ],
+  "error_type": "HTTPStatusError"
+}

@@ -1,0 +1,16 @@
+{
+  "decision": "NO_MATCH",
+  "selected_candidate": "",
+  "confidence": "HIGH",
+  "match_basis": "NONE",
+  "explanation": "The model 'CB190R Repsol' is not present in the catalog candidates, and no known variant or alias of this specific motorcycle (including market-specific names, historical names, abbreviations, or plausible typos) matches any candidate. The combination of displacement (190cc), model line (CB190R), and special edition (Repsol) uniquely identifies a distinct model not found in the provided list.",
+  "canonical_model_alias": "",
+  "configuration_tokens": [],
+  "brand_aliases": [],
+  "model_aliases": [],
+  "status": "SUCCESS",
+  "prompt_version": "motorcycle-candidate-resolution-v4",
+  "model": "qwen-flash",
+  "make": "Honda",
+  "model_name": "CB190R Repsol"
+}

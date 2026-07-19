@@ -1,0 +1,19 @@
+{
+  "decision": "MATCH",
+  "selected_candidate": "gasgas randonne 125",
+  "confidence": "HIGH",
+  "match_basis": "MARKET_ALIAS",
+  "explanation": "The model 'TX 125 Randonne' is a market-specific naming variant of the 'Randonne 125' model produced by Gas Gas, with 'Randonne' being a regional or marketing name for the same underlying motorcycle. The displacement (125) and manufacturer (Gas Gas) match exactly, and no other candidate shares this identity.",
+  "canonical_model_alias": "randonne 125",
+  "configuration_tokens": [],
+  "brand_aliases": [],
+  "model_aliases": [
+    "gasgas randonne 125",
+    "randonne 125"
+  ],
+  "status": "SUCCESS",
+  "prompt_version": "motorcycle-candidate-resolution-v4",
+  "model": "qwen-flash",
+  "make": "Gas Gas",
+  "model_name": "TX 125 Randonne"
+}

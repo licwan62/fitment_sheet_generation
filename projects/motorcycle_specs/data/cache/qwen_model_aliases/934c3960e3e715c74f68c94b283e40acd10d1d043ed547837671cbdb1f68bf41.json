@@ -1,0 +1,18 @@
+{
+  "decision": "MATCH",
+  "selected_candidate": "CM \n      250 Custom",
+  "confidence": "HIGH",
+  "match_basis": "MARKET_ALIAS",
+  "explanation": "The input 'CM250C Custom' refers to the Honda CM250C, a model marketed as 'Custom' in certain regions. The candidate 'CM \n      250 Custom' is a valid catalog representation of the same model, with the 'C' suffix being a common market designation for the Custom variant. The name variation is due to regional marketing and formatting, not a different motorcycle.",
+  "canonical_model_alias": "CM 250 Custom",
+  "configuration_tokens": [],
+  "brand_aliases": [],
+  "model_aliases": [
+    "CM 250 Custom"
+  ],
+  "status": "SUCCESS",
+  "prompt_version": "motorcycle-candidate-resolution-v4",
+  "model": "qwen-flash",
+  "make": "Honda",
+  "model_name": "CM250C Custom"
+}

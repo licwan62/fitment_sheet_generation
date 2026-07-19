@@ -1,0 +1,21 @@
+{
+  "decision": "MATCH",
+  "selected_candidate": "Suzuki TC 100 K Blazer",
+  "confidence": "HIGH",
+  "match_basis": "MARKET_ALIAS",
+  "explanation": "The model 'TC100' is a known market-specific designation for the Suzuki TC 100 K Blazer, which was marketed under the TC series in certain regions. The 'K Blazer' suffix denotes a specific configuration, but the core model identity matches exactly.",
+  "canonical_model_alias": "TC 100 K Blazer",
+  "configuration_tokens": [
+    "K",
+    "Blazer"
+  ],
+  "brand_aliases": [],
+  "model_aliases": [
+    "TC 100 K Blazer"
+  ],
+  "status": "SUCCESS",
+  "prompt_version": "motorcycle-candidate-resolution-v4",
+  "model": "qwen-flash",
+  "make": "Suzuki",
+  "model_name": "TC100"
+}

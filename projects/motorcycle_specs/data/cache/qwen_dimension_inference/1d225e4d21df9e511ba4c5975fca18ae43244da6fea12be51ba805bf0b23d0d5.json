@@ -1,0 +1,16 @@
+{
+  "decision": "INFER|UNKNOWN",
+  "confidence": "LOW",
+  "length_mm": null,
+  "width_mm": null,
+  "height_mm": null,
+  "wheelbase_mm": null,
+  "seat_height_mm": null,
+  "ground_clearance_mm": null,
+  "explanation": "The Big Bear Choppers Redemption V111 Carb is a custom chopper with no publicly available standardized dimensions. Without access to official specifications or verified catalog data, and due to the highly variable nature of custom motorcycle builds, reliable dimension estimation cannot be made with confidence. Dimensions may vary significantly by build year, market, or individual customization.",
+  "status": "SUCCESS",
+  "prompt_version": "motorcycle-dimension-inference-v1",
+  "model": "qwen-flash",
+  "make": "Big Bear Choppers",
+  "model_name": "Redemption V111 Carb"
+}

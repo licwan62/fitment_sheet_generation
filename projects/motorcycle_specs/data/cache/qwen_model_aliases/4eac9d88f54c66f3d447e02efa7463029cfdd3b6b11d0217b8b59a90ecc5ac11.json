@@ -1,0 +1,18 @@
+{
+  "decision": "MATCH",
+  "selected_candidate": "400SS",
+  "confidence": "HIGH",
+  "match_basis": "SAME_NAME",
+  "explanation": "The input '400' refers to the Ducati 400SS, a well-known model in Ducati's history. The candidate '400SS' is the canonical name for this motorcycle and matches the core identity of the model. Other candidates either differ in displacement (e.g., 450 TS), are different models (e.g., Monster 400), or include configuration-specific suffixes not present in the input.",
+  "canonical_model_alias": "400SS",
+  "configuration_tokens": [],
+  "brand_aliases": [],
+  "model_aliases": [
+    "400SS"
+  ],
+  "status": "SUCCESS",
+  "prompt_version": "motorcycle-candidate-resolution-v4",
+  "model": "qwen-flash",
+  "make": "Ducati",
+  "model_name": "400"
+}

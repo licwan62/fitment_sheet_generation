@@ -1,0 +1,16 @@
+{
+  "decision": "INFER|UNKNOWN",
+  "confidence": "LOW",
+  "length_mm": null,
+  "width_mm": null,
+  "height_mm": null,
+  "wheelbase_mm": null,
+  "seat_height_mm": null,
+  "ground_clearance_mm": null,
+  "explanation": "The Gas Gas EC 125 Six Days is a vintage enduro motorcycle with no consistent public documentation of exact dimensions across all model years and markets. Variations in frame design, suspension setup, and component sourcing over time make precise dimension estimation unreliable without direct measurement or official specifications. Therefore, dimensions are inferred as unknown due to uncertainty and potential variation.",
+  "status": "SUCCESS",
+  "prompt_version": "motorcycle-dimension-inference-v1",
+  "model": "qwen-flash",
+  "make": "Gas Gas",
+  "model_name": "EC 125 Six Days"
+}

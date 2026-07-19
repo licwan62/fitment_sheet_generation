@@ -1,0 +1,16 @@
+{
+  "decision": "UNKNOWN",
+  "confidence": "LOW",
+  "length_mm": null,
+  "width_mm": null,
+  "height_mm": null,
+  "wheelbase_mm": null,
+  "seat_height_mm": null,
+  "ground_clearance_mm": null,
+  "explanation": "The Benelli Titanium 07 is not a widely documented or officially recognized model in Benelli's known product lineup. There is insufficient reliable information to confirm its existence or specifications. Dimensions cannot be reliably inferred due to uncertainty in model identity and potential variation across markets or years.",
+  "status": "SUCCESS",
+  "prompt_version": "motorcycle-dimension-inference-v1",
+  "model": "qwen-flash",
+  "make": "Benelli",
+  "model_name": "Titanium 07"
+}

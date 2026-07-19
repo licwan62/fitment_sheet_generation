@@ -1,0 +1,18 @@
+{
+  "decision": "MATCH",
+  "selected_candidate": "DL 1000 V-Strom",
+  "confidence": "HIGH",
+  "match_basis": "SAME_NAME",
+  "explanation": "All catalog candidates represent the same underlying motorcycle model with identical displacement, name, and features. The variations in whitespace formatting do not alter the model identity.",
+  "canonical_model_alias": "DL 1000 V-Strom",
+  "configuration_tokens": [],
+  "brand_aliases": [],
+  "model_aliases": [
+    "DL 1000 V-Strom"
+  ],
+  "status": "SUCCESS",
+  "prompt_version": "motorcycle-candidate-resolution-v4",
+  "model": "qwen-flash",
+  "make": "Suzuki",
+  "model_name": "DL1000 V-Strom ABS"
+}

@@ -1,0 +1,16 @@
+{
+  "decision": "NO_MATCH",
+  "selected_candidate": "",
+  "confidence": "HIGH",
+  "match_basis": "NONE",
+  "explanation": "The input model 'GS750T' is not equivalent to any of the catalog candidates. The 'T' suffix in GS750T denotes a specific configuration (likely a touring or trail variant), which is not present in any of the listed candidates. None of the candidates match the exact model identity, including known market names, historical aliases, abbreviations, or plausible typos. The GS750TZ is the closest in naming but differs by suffix and is a distinct model variant.",
+  "canonical_model_alias": "",
+  "configuration_tokens": [],
+  "brand_aliases": [],
+  "model_aliases": [],
+  "status": "SUCCESS",
+  "prompt_version": "motorcycle-candidate-resolution-v4",
+  "model": "qwen-flash",
+  "make": "Suzuki",
+  "model_name": "GS750T"
+}

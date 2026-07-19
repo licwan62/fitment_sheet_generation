@@ -1,0 +1,16 @@
+{
+  "decision": "INFER|UNKNOWN",
+  "confidence": "MEDIUM|LOW",
+  "length_mm": null,
+  "width_mm": null,
+  "height_mm": null,
+  "wheelbase_mm": null,
+  "seat_height_mm": null,
+  "ground_clearance_mm": null,
+  "explanation": "The Beta EVO 300 SS Super Smooth is a limited-production enduro motorcycle with no publicly available official dimensions. Model variations by year and market (e.g., European vs. North American) may affect dimensions significantly. Without access to a catalog or verified technical documentation, accurate inference is not reliable. Dimensions from similar models (e.g., Beta 300 RR) are not directly transferable due to differing frame geometry and suspension setup.",
+  "status": "SUCCESS",
+  "prompt_version": "motorcycle-dimension-inference-v1",
+  "model": "qwen-flash",
+  "make": "Beta",
+  "model_name": "EVO 300 SS Super Smooth"
+}

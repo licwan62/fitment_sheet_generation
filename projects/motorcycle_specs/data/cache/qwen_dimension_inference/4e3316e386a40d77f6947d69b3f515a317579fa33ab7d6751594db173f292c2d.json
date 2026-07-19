@@ -1,0 +1,16 @@
+{
+  "decision": "INFER",
+  "confidence": "MEDIUM",
+  "length_mm": 2700,
+  "width_mm": 950,
+  "height_mm": 1150,
+  "wheelbase_mm": 1650,
+  "seat_height_mm": 780,
+  "ground_clearance_mm": 140,
+  "explanation": "Inferred from typical American IronHorse Legend dimensions based on similar large cruiser models; actual values may vary by year and market. No official catalog data available for confirmation.",
+  "status": "SUCCESS",
+  "prompt_version": "motorcycle-dimension-inference-v1",
+  "model": "qwen-flash",
+  "make": "American IronHorse",
+  "model_name": "Legend"
+}

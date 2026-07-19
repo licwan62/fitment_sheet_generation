@@ -1,0 +1,16 @@
+{
+  "decision": "INFER|UNKNOWN",
+  "confidence": "LOW",
+  "length_mm": null,
+  "width_mm": null,
+  "height_mm": null,
+  "wheelbase_mm": null,
+  "seat_height_mm": null,
+  "ground_clearance_mm": null,
+  "explanation": "The Gas Gas ES 500 is a motocross motorcycle, but specific dimensions are not reliably available in public sources. Model variations by year and market may affect dimensions. Without access to official specifications or verified catalog data, accurate inference is uncertain. Dimensions from similar models (e.g., KTM 500 SX-F) are not directly transferable due to potential differences in design and engineering.",
+  "status": "SUCCESS",
+  "prompt_version": "motorcycle-dimension-inference-v1",
+  "model": "qwen-flash",
+  "make": "Gas Gas",
+  "model_name": "ES 500"
+}

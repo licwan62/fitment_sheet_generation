@@ -1,0 +1,16 @@
+{
+  "decision": "NO_MATCH",
+  "selected_candidate": "",
+  "confidence": "HIGH",
+  "match_basis": "NONE",
+  "explanation": "The input model 'TXT Pro Series' does not match any of the catalog candidates in terms of model name, displacement, or configuration. The candidates include different model lines (EC, RX) and displacements (80, 125, 250, 280) that do not align with a 'TXT Pro Series' designation. No known market alias, historical variant, abbreviation, or typo links 'TXT Pro Series' to any candidate.",
+  "canonical_model_alias": "",
+  "configuration_tokens": [],
+  "brand_aliases": [],
+  "model_aliases": [],
+  "status": "SUCCESS",
+  "prompt_version": "motorcycle-candidate-resolution-v4",
+  "model": "qwen-flash",
+  "make": "Gas Gas",
+  "model_name": "TXT Pro Series"
+}

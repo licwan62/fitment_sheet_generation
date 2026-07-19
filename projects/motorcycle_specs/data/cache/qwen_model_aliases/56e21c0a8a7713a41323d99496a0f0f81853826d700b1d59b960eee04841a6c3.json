@@ -1,0 +1,19 @@
+{
+  "decision": "MATCH",
+  "selected_candidate": "gasgas ec 500f",
+  "confidence": "HIGH",
+  "match_basis": "MARKET_ALIAS",
+  "explanation": "The input 'ES 500' is a known market or catalog designation for the Gas Gas EC 500F, with 'ES' being a regional or marketing variant of 'EC' in certain markets. The displacement (500) matches exactly, and the model is the same underlying motorcycle.",
+  "canonical_model_alias": "ec 500f",
+  "configuration_tokens": [],
+  "brand_aliases": [],
+  "model_aliases": [
+    "gasgas ec 500f",
+    "ec 500f"
+  ],
+  "status": "SUCCESS",
+  "prompt_version": "motorcycle-candidate-resolution-v4",
+  "model": "qwen-flash",
+  "make": "Gas Gas",
+  "model_name": "ES 500"
+}

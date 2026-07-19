@@ -1,0 +1,23 @@
+{
+  "decision": "MATCH",
+  "selected_candidate": "Honda GL1800 Gold Wing DCT",
+  "confidence": "HIGH",
+  "match_basis": "MARKET_ALIAS",
+  "explanation": "The input 'GL1800HPNA Gold Wing Audio/Comfort/Navi/ABS' refers to the Honda GL1800 Gold Wing with DCT, audio, comfort features, navigation, and ABS. The model 'Honda GL1800 Gold Wing DCT' is the canonical catalog title for this configuration, with 'HPNA' being a market-specific or internal code for the high-end, fully equipped variant including navigation, audio, comfort, and ABS. The DCT transmission is the defining feature, and all other elements are standard in this configuration. The candidate matches exactly in model identity and includes the key features implied by the input.",
+  "canonical_model_alias": "GL1800 Gold Wing DCT",
+  "configuration_tokens": [
+    "Audio",
+    "Comfort",
+    "Navi",
+    "ABS"
+  ],
+  "brand_aliases": [],
+  "model_aliases": [
+    "GL1800 Gold Wing DCT"
+  ],
+  "status": "SUCCESS",
+  "prompt_version": "motorcycle-candidate-resolution-v4",
+  "model": "qwen-flash",
+  "make": "Honda",
+  "model_name": "GL1800HPNA Gold Wing Audio/Comfort/Navi/ABS"
+}

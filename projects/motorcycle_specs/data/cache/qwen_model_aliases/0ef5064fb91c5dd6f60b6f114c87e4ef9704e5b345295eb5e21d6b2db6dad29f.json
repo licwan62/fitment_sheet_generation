@@ -1,0 +1,18 @@
+{
+  "decision": "MATCH",
+  "selected_candidate": "Suzuki GSX-R1000 Moto GP",
+  "confidence": "HIGH",
+  "match_basis": "MARKET_ALIAS",
+  "explanation": "The input 'GSX-R1000 A MotoGP' refers to the Suzuki GSX-R1000 MotoGP model, with 'A' likely indicating a market or configuration variant. The candidate 'Suzuki GSX-R1000 Moto GP' is the correct catalog title for this model, using standard capitalization and spacing. 'MotoGP' and 'Moto \n\t\tGP' are equivalent in context, and 'R' in '1000R' is consistent with the model's designation. No displacement or core identity change exists.",
+  "canonical_model_alias": "GSX-R 1000 Moto GP",
+  "configuration_tokens": [],
+  "brand_aliases": [],
+  "model_aliases": [
+    "GSX-R1000 Moto GP"
+  ],
+  "status": "SUCCESS",
+  "prompt_version": "motorcycle-candidate-resolution-v4",
+  "model": "qwen-flash",
+  "make": "Suzuki",
+  "model_name": "GSX-R1000 A MotoGP"
+}

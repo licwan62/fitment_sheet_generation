@@ -1,0 +1,21 @@
+{
+  "decision": "MATCH",
+  "selected_candidate": "Honda GB 500 Clubman",
+  "confidence": "HIGH",
+  "match_basis": "MARKET_ALIAS",
+  "explanation": "The Honda GB500 is a market-specific name for the Honda CB500F, marketed as the 'GB 500 Clubman' in certain regions. The model shares the same platform, engine, and core specifications, with the 'GB' designation being a regional or marketing variant of the CB500F. The 'Clubman' suffix denotes a configuration but does not alter the underlying motorcycle identity.",
+  "canonical_model_alias": "CB 500F",
+  "configuration_tokens": [
+    "Clubman"
+  ],
+  "brand_aliases": [],
+  "model_aliases": [
+    "GB 500 Clubman",
+    "CB 500F"
+  ],
+  "status": "SUCCESS",
+  "prompt_version": "motorcycle-candidate-resolution-v4",
+  "model": "qwen-flash",
+  "make": "Honda",
+  "model_name": "GB500"
+}

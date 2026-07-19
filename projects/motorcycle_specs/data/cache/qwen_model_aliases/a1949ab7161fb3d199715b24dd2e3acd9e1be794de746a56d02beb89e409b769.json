@@ -1,0 +1,15 @@
+{
+  "decision": "MATCH",
+  "selected_candidate": "CN 250 Helix / Fusion",
+  "canonical_model_alias": "CN 250 Helix",
+  "configuration_tokens": [],
+  "brand_aliases": [],
+  "model_aliases": [
+    "CN 250 Helix / Fusion"
+  ],
+  "status": "SUCCESS",
+  "prompt_version": "motorcycle-candidate-resolution-v3",
+  "model": "qwen-flash",
+  "make": "Honda",
+  "model_name": "CN250 Helix"
+}

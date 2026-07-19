@@ -1,0 +1,16 @@
+{
+  "decision": "NO_MATCH",
+  "selected_candidate": "",
+  "confidence": "HIGH",
+  "match_basis": "NONE",
+  "explanation": "The model 'EN125HUZ Huracan' is not found in the catalog candidates, and no known variant or alias of this model exists in the provided list. The name 'Huracan' does not correspond to any official Suzuki motorcycle model in the EN125 series, and 'EN125HUZ' appears to be a non-standard or fabricated designation. No matching candidate is available.",
+  "canonical_model_alias": "",
+  "configuration_tokens": [],
+  "brand_aliases": [],
+  "model_aliases": [],
+  "status": "SUCCESS",
+  "prompt_version": "motorcycle-candidate-resolution-v4",
+  "model": "qwen-flash",
+  "make": "Suzuki",
+  "model_name": "EN125HUZ Huracan"
+}

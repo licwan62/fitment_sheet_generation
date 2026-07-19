@@ -1,0 +1,18 @@
+{
+  "decision": "MATCH",
+  "selected_candidate": "GS 650G Katana",
+  "confidence": "HIGH",
+  "match_basis": "MARKET_ALIAS",
+  "explanation": "The input 'GS650G' refers to the Suzuki GS650G, a model marketed in some regions as the 'Katana' variant. The 'GS 650G Katana' is a known market-specific name for the same motorcycle, with the 'G' designation and 650cc displacement confirming identity. The presence of 'Katana' in the candidate title aligns with historical marketing naming for this model in certain markets.",
+  "canonical_model_alias": "GS 650G Katana",
+  "configuration_tokens": [],
+  "brand_aliases": [],
+  "model_aliases": [
+    "GS 650G Katana"
+  ],
+  "status": "SUCCESS",
+  "prompt_version": "motorcycle-candidate-resolution-v4",
+  "model": "qwen-flash",
+  "make": "Suzuki",
+  "model_name": "GS650G"
+}

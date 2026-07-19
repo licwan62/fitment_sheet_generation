@@ -1,0 +1,16 @@
+{
+  "decision": "MATCH",
+  "selected_candidate": "buell firebolt xb 12r",
+  "confidence": "HIGH",
+  "match_basis": "MARKET_ALIAS",
+  "explanation": "The 'S3 Thunderbolt' is a market-specific name for the Buell Firebolt XB 12R, which was marketed as the 'Thunderbolt' in certain regions or campaigns. The model identity, including displacement (1200cc), platform (XB), and engine configuration, is identical.",
+  "canonical_model_alias": "firebolt xb 12r",
+  "configuration_tokens": [],
+  "brand_aliases": [],
+  "model_aliases": [],
+  "status": "SUCCESS",
+  "prompt_version": "motorcycle-candidate-resolution-v4",
+  "model": "qwen-flash",
+  "make": "Buell",
+  "model_name": "S3 Thunderbolt"
+}

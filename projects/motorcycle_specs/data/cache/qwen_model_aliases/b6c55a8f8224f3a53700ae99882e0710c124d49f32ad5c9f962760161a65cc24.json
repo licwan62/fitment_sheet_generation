@@ -1,0 +1,20 @@
+{
+  "decision": "MATCH",
+  "selected_candidate": "beta rr 4t 125 r",
+  "confidence": "HIGH",
+  "match_basis": "SAME_NAME",
+  "explanation": "The input 'RR 125 4T Enduro R' and the candidate 'beta rr 4t 125 r' refer to the same motorcycle model, with only minor variations in word order and capitalization. The displacement (125), engine type (4T), and model series (RR) are identical. The 'Enduro' descriptor is consistent across both, and the suffix 'R' is a standard configuration identifier for this model. No other model in the list matches this exact identity.",
+  "canonical_model_alias": "rr 4t 125 r",
+  "configuration_tokens": [
+    "r"
+  ],
+  "brand_aliases": [],
+  "model_aliases": [
+    "rr 4t 125 r"
+  ],
+  "status": "SUCCESS",
+  "prompt_version": "motorcycle-candidate-resolution-v4",
+  "model": "qwen-flash",
+  "make": "Beta",
+  "model_name": "RR 125 4T Enduro R"
+}

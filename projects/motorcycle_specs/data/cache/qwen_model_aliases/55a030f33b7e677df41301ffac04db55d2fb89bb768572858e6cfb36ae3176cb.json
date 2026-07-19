@@ -1,0 +1,16 @@
+{
+  "decision": "MATCH",
+  "selected_candidate": "MB 50 / MB 5 Bobcat",
+  "confidence": "HIGH",
+  "match_basis": "MARKET_ALIAS",
+  "explanation": "The 'MB5' input refers to the Honda MB50, a model marketed as the 'MB 5 Bobcat' in certain regions, particularly the U.S. The name 'Bobcat' is a well-documented market-specific nickname for this model. The displacement (50cc) and model designation (MB5/MB50) are consistent across both names.",
+  "canonical_model_alias": "MB 50 / MB 5 Bobcat",
+  "configuration_tokens": [],
+  "brand_aliases": [],
+  "model_aliases": [],
+  "status": "SUCCESS",
+  "prompt_version": "motorcycle-candidate-resolution-v4",
+  "model": "qwen-flash",
+  "make": "Honda",
+  "model_name": "MB5"
+}

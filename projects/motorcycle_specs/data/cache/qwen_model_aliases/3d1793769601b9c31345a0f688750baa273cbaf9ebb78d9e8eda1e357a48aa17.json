@@ -1,0 +1,18 @@
+{
+  "decision": "MATCH",
+  "selected_candidate": "beta rr 525",
+  "confidence": "HIGH",
+  "match_basis": "SAME_NAME",
+  "explanation": "The input '525 RS' is a direct match in displacement and model designation with the catalog candidate 'beta rr 525', which is the correct and canonical name for this model. The 'RS' suffix is a known market or configuration label for this model, consistent with Beta's naming convention.",
+  "canonical_model_alias": "rr 525",
+  "configuration_tokens": [],
+  "brand_aliases": [],
+  "model_aliases": [
+    "rr 525"
+  ],
+  "status": "SUCCESS",
+  "prompt_version": "motorcycle-candidate-resolution-v4",
+  "model": "qwen-flash",
+  "make": "Beta",
+  "model_name": "525 RS"
+}

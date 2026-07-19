@@ -1,0 +1,20 @@
+{
+  "decision": "MATCH",
+  "selected_candidate": "CB 125T",
+  "confidence": "HIGH",
+  "match_basis": "MARKET_ALIAS",
+  "explanation": "The model 'CB125TT' is a variant of the CB125T, with the 'TT' suffix likely denoting a specific market or configuration (e.g., 'Touring' or 'Trail' in certain regions), but the core model identity remains the CB125T. The catalog candidate 'CB 125T' represents the same underlying motorcycle model.",
+  "canonical_model_alias": "CB 125T",
+  "configuration_tokens": [
+    "TT"
+  ],
+  "brand_aliases": [],
+  "model_aliases": [
+    "CB 125T"
+  ],
+  "status": "SUCCESS",
+  "prompt_version": "motorcycle-candidate-resolution-v4",
+  "model": "qwen-flash",
+  "make": "Honda",
+  "model_name": "CB125TT"
+}

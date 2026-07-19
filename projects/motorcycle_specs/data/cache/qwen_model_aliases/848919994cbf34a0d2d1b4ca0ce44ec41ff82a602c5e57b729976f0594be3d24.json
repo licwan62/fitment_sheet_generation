@@ -1,0 +1,20 @@
+{
+  "decision": "MATCH",
+  "selected_candidate": "C 125 \n\t\tSuper Cub",
+  "confidence": "HIGH",
+  "match_basis": "MARKET_ALIAS",
+  "explanation": "The input 'C125A Super Cub' is a known market-specific designation for the Honda C125 Super Cub, where 'A' denotes a specific configuration or regional variant. The catalog candidate 'C 125 Super Cub' represents the same underlying model with identical displacement and core identity, differing only in the omission of the 'A' suffix, which is a common market or configuration label rather than a distinct model identifier.",
+  "canonical_model_alias": "C 125 Super Cub",
+  "configuration_tokens": [
+    "A"
+  ],
+  "brand_aliases": [],
+  "model_aliases": [
+    "C 125 Super Cub"
+  ],
+  "status": "SUCCESS",
+  "prompt_version": "motorcycle-candidate-resolution-v4",
+  "model": "qwen-flash",
+  "make": "Honda",
+  "model_name": "C125A Super Cub"
+}

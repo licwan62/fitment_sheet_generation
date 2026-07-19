@@ -1,0 +1,16 @@
+{
+  "decision": "NO_MATCH",
+  "selected_candidate": "",
+  "confidence": "HIGH",
+  "match_basis": "NONE",
+  "explanation": "The input model 'TNT180S' has a displacement of 180cc, which is significantly different from all catalog candidates, none of which are 180cc models. The candidates include various TNT models with displacements of 1130, 899, 160, 125, 302, and 302S, but no 180cc variant exists in the list. Therefore, no match is possible.",
+  "canonical_model_alias": "",
+  "configuration_tokens": [],
+  "brand_aliases": [],
+  "model_aliases": [],
+  "status": "SUCCESS",
+  "prompt_version": "motorcycle-candidate-resolution-v4",
+  "model": "qwen-flash",
+  "make": "Benelli",
+  "model_name": "TNT180S"
+}

@@ -1,0 +1,18 @@
+{
+  "decision": "MATCH",
+  "selected_candidate": "Ducati Monster 800 S i.e.",
+  "confidence": "HIGH",
+  "match_basis": "MARKET_ALIAS",
+  "explanation": "The input 'Monster 800s' is a common market shorthand for the Ducati Monster 800 S i.e., where 's' stands for 'S' (standard or sport variant). The model is identical in platform, engine, and core specification. The variation in capitalization and spacing ('800s' vs '800 S i.e.') is a known regional or marketing abbreviation.",
+  "canonical_model_alias": "Monster 800 S i.e.",
+  "configuration_tokens": [],
+  "brand_aliases": [],
+  "model_aliases": [
+    "Monster 800 S i.e."
+  ],
+  "status": "SUCCESS",
+  "prompt_version": "motorcycle-candidate-resolution-v4",
+  "model": "qwen-flash",
+  "make": "Ducati",
+  "model_name": "Monster 800s"
+}

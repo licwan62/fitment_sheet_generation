@@ -1,0 +1,20 @@
+{
+  "decision": "MATCH",
+  "selected_candidate": "R nineT Urban G/S 40 Years Edition",
+  "confidence": "HIGH",
+  "match_basis": "SAME_NAME",
+  "explanation": "The input model 'R nine T Urban G/S 40 Years GS Edition' and the candidate 'R nineT Urban G/S 40 Years Edition' refer to the same motorcycle model, with only minor variations in spacing and capitalization. The 'GS' in the input is a known configuration identifier for the model, and the '40 Years' suffix aligns exactly. No other model in the list matches this specific combination of R nineT, Urban G/S, and 40 Years edition.",
+  "canonical_model_alias": "R nineT Urban G/S 40 Years Edition",
+  "configuration_tokens": [
+    "40 Years Edition"
+  ],
+  "brand_aliases": [],
+  "model_aliases": [
+    "R nineT Urban G/S 40 Years Edition"
+  ],
+  "status": "SUCCESS",
+  "prompt_version": "motorcycle-candidate-resolution-v4",
+  "model": "qwen-flash",
+  "make": "BMW",
+  "model_name": "R nine T Urban G/S 40 Years GS Edition"
+}

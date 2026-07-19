@@ -1,0 +1,20 @@
+{
+  "decision": "MATCH",
+  "selected_candidate": "AN 400 Burgman",
+  "confidence": "HIGH",
+  "match_basis": "SAME_NAME",
+  "explanation": "The input 'AN400 Burgman ABS' refers to the same motorcycle model as the catalog candidate 'AN 400 Burgman', with 'ABS' being a configuration feature (anti-lock braking system) that does not change the core model identity. The displacement (400) and name (Burgman) match exactly, and 'AN400' is a standard notation for this model. No ambiguity exists.",
+  "canonical_model_alias": "AN 400 Burgman",
+  "configuration_tokens": [
+    "ABS"
+  ],
+  "brand_aliases": [],
+  "model_aliases": [
+    "AN 400 Burgman"
+  ],
+  "status": "SUCCESS",
+  "prompt_version": "motorcycle-candidate-resolution-v4",
+  "model": "qwen-flash",
+  "make": "Suzuki",
+  "model_name": "AN400 Burgman ABS"
+}

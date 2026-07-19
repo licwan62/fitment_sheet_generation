@@ -1,0 +1,20 @@
+{
+  "decision": "MATCH",
+  "selected_candidate": "RS 450",
+  "confidence": "HIGH",
+  "match_basis": "SAME_NAME",
+  "explanation": "The input model '450 RS Super Moto' and the candidate 'RS 450' refer to the same underlying motorcycle model, with 'Super Moto' being a configuration or variant designation that does not change the core model identity. The displacement (450) and primary model name (RS) match exactly.",
+  "canonical_model_alias": "RS 450",
+  "configuration_tokens": [
+    "Super Moto"
+  ],
+  "brand_aliases": [],
+  "model_aliases": [
+    "RS 450"
+  ],
+  "status": "SUCCESS",
+  "prompt_version": "motorcycle-candidate-resolution-v4",
+  "model": "qwen-flash",
+  "make": "Beta",
+  "model_name": "450 RS Super Moto"
+}

@@ -1,0 +1,20 @@
+{
+  "decision": "MATCH",
+  "selected_candidate": "Honda C 70",
+  "confidence": "HIGH",
+  "match_basis": "MARKET_ALIAS",
+  "explanation": "The 'C70M' is a known market-specific designation for the Honda C 70, with 'M' denoting a configuration or market variant (e.g., European or specific trim). The core model identity remains the same as the standard Honda C 70.",
+  "canonical_model_alias": "C 70",
+  "configuration_tokens": [
+    "M"
+  ],
+  "brand_aliases": [],
+  "model_aliases": [
+    "C 70"
+  ],
+  "status": "SUCCESS",
+  "prompt_version": "motorcycle-candidate-resolution-v4",
+  "model": "qwen-flash",
+  "make": "Honda",
+  "model_name": "C70M"
+}

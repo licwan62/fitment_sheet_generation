@@ -1,0 +1,18 @@
+{
+  "decision": "MATCH",
+  "selected_candidate": "CB 750 KA",
+  "confidence": "HIGH",
+  "match_basis": "MARKET_ALIAS",
+  "explanation": "The 'CB750K' is a known market designation for the CB 750 KA, particularly in North America. The 'K' suffix in 'CB750K' corresponds to the 'KA' model variant, which was marketed under different naming conventions in various regions. The displacement and core model identity are identical.",
+  "canonical_model_alias": "CB 750 KA",
+  "configuration_tokens": [],
+  "brand_aliases": [],
+  "model_aliases": [
+    "CB 750 KA"
+  ],
+  "status": "SUCCESS",
+  "prompt_version": "motorcycle-candidate-resolution-v4",
+  "model": "qwen-flash",
+  "make": "Honda",
+  "model_name": "CB750K"
+}

@@ -1,0 +1,18 @@
+{
+  "decision": "MATCH",
+  "selected_candidate": "CM 400T",
+  "confidence": "HIGH",
+  "match_basis": "MARKET_ALIAS",
+  "explanation": "The CM400E and CM 400T refer to the same underlying Honda motorcycle model, with 'E' and 'T' being market-specific designations (e.g., 'E' for European/Export, 'T' for other regional markets), but identical in displacement, engine, and platform. This is a known regional naming variation.",
+  "canonical_model_alias": "CM 400T",
+  "configuration_tokens": [],
+  "brand_aliases": [],
+  "model_aliases": [
+    "CM 400T"
+  ],
+  "status": "SUCCESS",
+  "prompt_version": "motorcycle-candidate-resolution-v4",
+  "model": "qwen-flash",
+  "make": "Honda",
+  "model_name": "CM400E"
+}

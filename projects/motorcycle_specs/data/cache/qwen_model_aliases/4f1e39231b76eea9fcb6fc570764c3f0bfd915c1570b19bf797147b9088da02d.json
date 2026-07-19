@@ -1,0 +1,21 @@
+{
+  "decision": "MATCH",
+  "selected_candidate": "Harley-Davidson Fat Boy 117",
+  "confidence": "HIGH",
+  "match_basis": "SAME_NAME",
+  "explanation": "The input 'FLFB Fat Boy 117' is the official model designation for the Harley-Davidson Fat Boy 117, and 'Harley-Davidson Fat Boy 117' is the canonical catalog title. The FLFB code is a factory model code for this specific variant, confirming identity.",
+  "canonical_model_alias": "Fat Boy 117",
+  "configuration_tokens": [],
+  "brand_aliases": [],
+  "model_aliases": [
+    "Boy 117",
+    "Fat Boy 117",
+    "Softail Fat Boy 117",
+    "Softail Fat Boy 117 Gray Ghost"
+  ],
+  "status": "SUCCESS",
+  "prompt_version": "motorcycle-candidate-resolution-v4",
+  "model": "qwen-flash",
+  "make": "Harley-Davidson",
+  "model_name": "FLFB Fat Boy 117"
+}

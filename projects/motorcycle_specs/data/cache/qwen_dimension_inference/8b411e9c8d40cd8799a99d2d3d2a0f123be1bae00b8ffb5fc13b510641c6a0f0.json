@@ -1,0 +1,16 @@
+{
+  "decision": "INFER",
+  "confidence": "MEDIUM",
+  "length_mm": 1950,
+  "width_mm": 820,
+  "height_mm": 1100,
+  "wheelbase_mm": 1320,
+  "seat_height_mm": 880,
+  "ground_clearance_mm": 320,
+  "explanation": "Inferred from typical dimensions of similar 50cc motocross motorcycles in the ATK 50 MXE class, based on common design trends for lightweight off-road bikes with comparable engine size and intended use. Dimensions are estimates derived from model knowledge and not verified by official sources.",
+  "status": "SUCCESS",
+  "prompt_version": "motorcycle-dimension-inference-v1",
+  "model": "qwen-flash",
+  "make": "ATK",
+  "model_name": "50 MXE"
+}

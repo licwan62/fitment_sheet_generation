@@ -1,0 +1,20 @@
+{
+  "decision": "MATCH",
+  "selected_candidate": "Ducati 998 S",
+  "confidence": "HIGH",
+  "match_basis": "MARKET_ALIAS",
+  "explanation": "The input '998 Biposto' refers to the Ducati 998 S in its two-seater (Biposto) configuration, a known market-specific designation. The 'S' in '998 S' denotes the sport variant, and 'Biposto' is a configuration label for the two-seat version, not a different model. This is a standard market naming convention for the 998 S.",
+  "canonical_model_alias": "998 S",
+  "configuration_tokens": [
+    "Biposto"
+  ],
+  "brand_aliases": [],
+  "model_aliases": [
+    "998 S"
+  ],
+  "status": "SUCCESS",
+  "prompt_version": "motorcycle-candidate-resolution-v4",
+  "model": "qwen-flash",
+  "make": "Ducati",
+  "model_name": "998 Biposto"
+}

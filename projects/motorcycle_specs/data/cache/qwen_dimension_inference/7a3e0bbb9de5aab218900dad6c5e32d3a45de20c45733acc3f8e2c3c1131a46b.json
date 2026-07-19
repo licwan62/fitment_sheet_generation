@@ -1,0 +1,16 @@
+{
+  "decision": "INFER|UNKNOWN",
+  "confidence": "LOW",
+  "length_mm": null,
+  "width_mm": null,
+  "height_mm": null,
+  "wheelbase_mm": null,
+  "seat_height_mm": null,
+  "ground_clearance_mm": null,
+  "explanation": "The Honda GL1500CF Valkyrie Interstate was produced from 1998 to 2003, with variations in dimensions across model years and markets. Without access to a specific catalog page or definitive source for this exact variant, precise dimensions cannot be reliably confirmed. Inferred values may differ materially by year and regional specification, leading to uncertainty.",
+  "status": "SUCCESS",
+  "prompt_version": "motorcycle-dimension-inference-v1",
+  "model": "qwen-flash",
+  "make": "Honda",
+  "model_name": "GL1500CF Valkyrie Interstate"
+}

@@ -1,0 +1,20 @@
+{
+  "decision": "MATCH",
+  "selected_candidate": "XR 150L",
+  "confidence": "HIGH",
+  "match_basis": "MARKET_ALIAS",
+  "explanation": "XR150L Rally is a market-specific configuration of the XR 150L model, with 'Rally' denoting a variant or trim level rather than a distinct model. The core motorcycle identity remains unchanged.",
+  "canonical_model_alias": "XR 150L",
+  "configuration_tokens": [
+    "Rally"
+  ],
+  "brand_aliases": [],
+  "model_aliases": [
+    "XR 150L"
+  ],
+  "status": "SUCCESS",
+  "prompt_version": "motorcycle-candidate-resolution-v4",
+  "model": "qwen-flash",
+  "make": "Honda",
+  "model_name": "XR150L Rally"
+}

@@ -1,0 +1,18 @@
+{
+  "decision": "MATCH",
+  "selected_candidate": "e ton viper 50",
+  "confidence": "HIGH",
+  "match_basis": "SAME_NAME",
+  "explanation": "The input 'Sport 50' is a known market or marketing name for the E-TON Viper 50 model, which is identical in specification and identity to the catalog candidate 'e ton viper 50'. The term 'Sport' is used as a configuration or branding descriptor but does not denote a different model.",
+  "canonical_model_alias": "e ton viper 50",
+  "configuration_tokens": [],
+  "brand_aliases": [],
+  "model_aliases": [
+    "viper 50"
+  ],
+  "status": "SUCCESS",
+  "prompt_version": "motorcycle-candidate-resolution-v4",
+  "model": "qwen-flash",
+  "make": "E-TON",
+  "model_name": "Sport 50"
+}

@@ -1,0 +1,16 @@
+{
+  "decision": "NO_MATCH",
+  "selected_candidate": "",
+  "confidence": "HIGH",
+  "match_basis": "NONE",
+  "explanation": "The input model R1200C Classic is a cruiser motorcycle with a distinct design and platform. The catalog candidates are different models: R1200R Classic (a sport-tourer), R1200CL (a variant of the R1200C with updated features, but not identical), and R1200GS LC (an adventure touring model). None of these are the same underlying motorcycle as the R1200C Classic, despite shared displacement and brand. Displacement alone does not imply identity.",
+  "canonical_model_alias": "",
+  "configuration_tokens": [],
+  "brand_aliases": [],
+  "model_aliases": [],
+  "status": "SUCCESS",
+  "prompt_version": "motorcycle-candidate-resolution-v4",
+  "model": "qwen-flash",
+  "make": "BMW",
+  "model_name": "R1200C Classic"
+}

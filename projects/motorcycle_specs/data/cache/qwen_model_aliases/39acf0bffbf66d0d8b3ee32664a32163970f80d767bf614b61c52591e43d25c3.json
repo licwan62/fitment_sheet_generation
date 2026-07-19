@@ -1,0 +1,18 @@
+{
+  "decision": "MATCH",
+  "selected_candidate": "Honda PC50",
+  "confidence": "HIGH",
+  "match_basis": "MARKET_ALIAS",
+  "explanation": "The input 'PC50' is a known market-specific designation for the Honda C50, particularly in certain regions where the model was marketed as PC50. The underlying motorcycle is identical, with the same displacement and platform.",
+  "canonical_model_alias": "PC50",
+  "configuration_tokens": [],
+  "brand_aliases": [],
+  "model_aliases": [
+    "C50"
+  ],
+  "status": "SUCCESS",
+  "prompt_version": "motorcycle-candidate-resolution-v4",
+  "model": "qwen-flash",
+  "make": "Honda",
+  "model_name": "PC50"
+}

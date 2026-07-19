@@ -1,0 +1,18 @@
+{
+  "decision": "MATCH",
+  "selected_candidate": "F 650 Funduro",
+  "confidence": "HIGH",
+  "match_basis": "MARKET_ALIAS",
+  "explanation": "The F650 Enduro is a market-specific name for the F 650 Funduro, which was marketed as 'Enduro' in certain regions. The model shares identical platform, engine, and specifications, with only the name differing by regional branding.",
+  "canonical_model_alias": "F 650 Funduro",
+  "configuration_tokens": [],
+  "brand_aliases": [],
+  "model_aliases": [
+    "F 650 Funduro"
+  ],
+  "status": "SUCCESS",
+  "prompt_version": "motorcycle-candidate-resolution-v4",
+  "model": "qwen-flash",
+  "make": "BMW",
+  "model_name": "F650 Enduro"
+}

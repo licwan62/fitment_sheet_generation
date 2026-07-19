@@ -1,0 +1,20 @@
+{
+  "decision": "MATCH",
+  "selected_candidate": "BMW K 100 RS",
+  "confidence": "HIGH",
+  "match_basis": "SAME_NAME",
+  "explanation": "The input 'K100RS FL' refers to the same motorcycle model as 'BMW K 100 RS', with 'FL' likely being a configuration or market-specific label not altering the core model identity. The catalog candidate 'BMW K 100 RS' is the canonical form.",
+  "canonical_model_alias": "K 100 RS",
+  "configuration_tokens": [
+    "FL"
+  ],
+  "brand_aliases": [],
+  "model_aliases": [
+    "K 100 RS"
+  ],
+  "status": "SUCCESS",
+  "prompt_version": "motorcycle-candidate-resolution-v4",
+  "model": "qwen-flash",
+  "make": "BMW",
+  "model_name": "K100RS FL"
+}

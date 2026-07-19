@@ -1,0 +1,16 @@
+{
+  "decision": "INFER|UNKNOWN",
+  "confidence": "MEDIUM|LOW",
+  "length_mm": null,
+  "width_mm": null,
+  "height_mm": null,
+  "wheelbase_mm": null,
+  "seat_height_mm": null,
+  "ground_clearance_mm": null,
+  "explanation": "The Gas Gas TXT Cadet 80 is a youth motocross bike, but specific dimensions are not consistently documented across all model years or markets. Without access to a catalog page or official specifications, and due to potential variations by year and region, reliable inference is limited. Dimensions from similar models (e.g., other 80cc youth bikes) cannot be directly applied due to design differences. Therefore, dimensions are marked as unknown with medium to low confidence.",
+  "status": "SUCCESS",
+  "prompt_version": "motorcycle-dimension-inference-v1",
+  "model": "qwen-flash",
+  "make": "Gas Gas",
+  "model_name": "TXT Cadet 80"
+}

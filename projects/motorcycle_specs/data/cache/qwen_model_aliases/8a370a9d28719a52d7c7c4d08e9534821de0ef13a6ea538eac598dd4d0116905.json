@@ -1,0 +1,19 @@
+{
+  "decision": "MATCH",
+  "selected_candidate": "gasgas ec 350f",
+  "confidence": "HIGH",
+  "match_basis": "MARKET_ALIAS",
+  "explanation": "The model 'ES 350' is a market-specific designation for the same motorcycle identified as 'EC 350F' in the catalog, with 'ES' likely representing a regional or commercial variant of the EC 350F. The displacement (350) and engine configuration align exactly.",
+  "canonical_model_alias": "ec 350f",
+  "configuration_tokens": [],
+  "brand_aliases": [],
+  "model_aliases": [
+    "gasgas ec 350f",
+    "ec 350f"
+  ],
+  "status": "SUCCESS",
+  "prompt_version": "motorcycle-candidate-resolution-v4",
+  "model": "qwen-flash",
+  "make": "Gas Gas",
+  "model_name": "ES 350"
+}

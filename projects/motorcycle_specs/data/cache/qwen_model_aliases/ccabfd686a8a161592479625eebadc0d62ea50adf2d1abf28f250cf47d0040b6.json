@@ -1,0 +1,18 @@
+{
+  "decision": "MATCH",
+  "selected_candidate": "Honda S-Wing 125",
+  "confidence": "HIGH",
+  "match_basis": "MARKET_ALIAS",
+  "explanation": "The 'CRUISING 125' is a market-specific name for the Honda S-Wing 125, particularly used in certain regions like Southeast Asia and India. The model shares the same platform, engine, and design identity. The name 'Cruising 125' refers to the same motorcycle marketed under different names.",
+  "canonical_model_alias": "S-Wing 125",
+  "configuration_tokens": [],
+  "brand_aliases": [],
+  "model_aliases": [
+    "S-Wing 125"
+  ],
+  "status": "SUCCESS",
+  "prompt_version": "motorcycle-candidate-resolution-v4",
+  "model": "qwen-flash",
+  "make": "Honda",
+  "model_name": "CRUISING 125"
+}

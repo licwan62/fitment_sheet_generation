@@ -1,0 +1,20 @@
+{
+  "decision": "MATCH",
+  "selected_candidate": "Suzuki GSX-S150",
+  "confidence": "HIGH",
+  "match_basis": "MARKET_ALIAS",
+  "explanation": "The 'GSX-S150 GP' is a market-specific naming variant of the standard GSX-S150, with 'GP' denoting a special edition or styling theme common in Suzuki's marketing; it refers to the same underlying model.",
+  "canonical_model_alias": "GSX-S150",
+  "configuration_tokens": [
+    "GP"
+  ],
+  "brand_aliases": [],
+  "model_aliases": [
+    "GSX-S150"
+  ],
+  "status": "SUCCESS",
+  "prompt_version": "motorcycle-candidate-resolution-v4",
+  "model": "qwen-flash",
+  "make": "Suzuki",
+  "model_name": "GSX-S150 GP"
+}

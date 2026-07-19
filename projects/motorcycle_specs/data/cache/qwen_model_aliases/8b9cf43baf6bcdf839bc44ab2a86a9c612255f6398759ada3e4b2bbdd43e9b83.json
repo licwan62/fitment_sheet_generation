@@ -1,0 +1,18 @@
+{
+  "decision": "MATCH",
+  "selected_candidate": "AN 125 Burgman",
+  "confidence": "HIGH",
+  "match_basis": "MARKET_ALIAS",
+  "explanation": "The Suzuki AN125 is the same motorcycle as the AN 125 Burgman, with 'Burgman' being the market-specific name used in certain regions for this model. The displacement and model code (AN125) are identical, confirming it is the same underlying motorcycle.",
+  "canonical_model_alias": "AN 125 Burgman",
+  "configuration_tokens": [],
+  "brand_aliases": [],
+  "model_aliases": [
+    "AN 125 Burgman"
+  ],
+  "status": "SUCCESS",
+  "prompt_version": "motorcycle-candidate-resolution-v4",
+  "model": "qwen-flash",
+  "make": "Suzuki",
+  "model_name": "AN125"
+}

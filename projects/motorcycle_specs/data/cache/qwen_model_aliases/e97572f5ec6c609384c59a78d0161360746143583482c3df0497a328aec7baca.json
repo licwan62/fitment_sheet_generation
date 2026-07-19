@@ -1,0 +1,16 @@
+{
+  "decision": "MATCH",
+  "selected_candidate": "EC 125 2T Six-Days",
+  "confidence": "HIGH",
+  "match_basis": "MARKET_ALIAS",
+  "explanation": "The input 'EC 125 Six Days' is a market-specific naming variant of the same model as 'EC 125 2T Six-Days', with 'Six Days' being a common marketing name for the off-road racing variant in certain regions. The displacement (125), engine type (2T), and model series (EC) are identical, confirming it is the same underlying motorcycle.",
+  "canonical_model_alias": "EC 125 2T Six-Days",
+  "configuration_tokens": [],
+  "brand_aliases": [],
+  "model_aliases": [],
+  "status": "SUCCESS",
+  "prompt_version": "motorcycle-candidate-resolution-v4",
+  "model": "qwen-flash",
+  "make": "Gas Gas",
+  "model_name": "EC 125 Six Days"
+}

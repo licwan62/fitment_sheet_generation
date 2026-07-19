@@ -1,0 +1,18 @@
+{
+  "decision": "MATCH",
+  "selected_candidate": "Honda CB 175",
+  "confidence": "HIGH",
+  "match_basis": "MARKET_ALIAS",
+  "explanation": "The 'CA175' is a known market-specific designation for the Honda CB 175, particularly in certain international markets where model codes differ from standard naming. The CA175 and CB175 refer to the same motorcycle model with identical engine displacement, frame, and specifications, differing only in internal or regional model coding.",
+  "canonical_model_alias": "CB 175",
+  "configuration_tokens": [],
+  "brand_aliases": [],
+  "model_aliases": [
+    "CB 175"
+  ],
+  "status": "SUCCESS",
+  "prompt_version": "motorcycle-candidate-resolution-v4",
+  "model": "qwen-flash",
+  "make": "Honda",
+  "model_name": "CA175"
+}

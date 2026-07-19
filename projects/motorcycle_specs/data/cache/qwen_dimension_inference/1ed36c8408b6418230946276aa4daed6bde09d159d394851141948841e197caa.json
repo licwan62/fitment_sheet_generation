@@ -1,0 +1,16 @@
+{
+  "decision": "UNKNOWN",
+  "confidence": "LOW",
+  "length_mm": null,
+  "width_mm": null,
+  "height_mm": null,
+  "wheelbase_mm": null,
+  "seat_height_mm": null,
+  "ground_clearance_mm": null,
+  "explanation": "The Benelli QuattroNove X off-road model is not a widely documented or standardized production model. No reliable public specifications exist for this exact variant, and the name may be a misinterpretation or non-official designation. Without verifiable data from official sources or consistent catalog references, dimensions cannot be reliably inferred. Model identity and configuration vary significantly across markets and years, leading to uncertainty.",
+  "status": "SUCCESS",
+  "prompt_version": "motorcycle-dimension-inference-v1",
+  "model": "qwen-flash",
+  "make": "Benelli",
+  "model_name": "QuattroNove X off road"
+}

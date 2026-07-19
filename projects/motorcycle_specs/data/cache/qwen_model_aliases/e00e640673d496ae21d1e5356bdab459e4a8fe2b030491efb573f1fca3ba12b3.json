@@ -1,0 +1,16 @@
+{
+  "decision": "MATCH",
+  "selected_candidate": "Gixxer SF250",
+  "confidence": "HIGH",
+  "match_basis": "SAME_NAME",
+  "explanation": "The input 'Gixxer' refers to the Gixxer SF250 model, which is a well-known variant in Suzuki's lineup. The other candidates either include different displacements (e.g., 150F) or special editions (MotoGP Edition), but the core model identity matches the Gixxer SF250 as the primary reference. The 'RB 50 GAG Gixxer' is a different model entirely and not a valid alias.",
+  "canonical_model_alias": "Gixxer SF250",
+  "configuration_tokens": [],
+  "brand_aliases": [],
+  "model_aliases": [],
+  "status": "SUCCESS",
+  "prompt_version": "motorcycle-candidate-resolution-v4",
+  "model": "qwen-flash",
+  "make": "Suzuki",
+  "model_name": "Gixxer"
+}

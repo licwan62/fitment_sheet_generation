@@ -1,0 +1,16 @@
+{
+  "decision": "NO_MATCH",
+  "selected_candidate": "",
+  "confidence": "HIGH",
+  "match_basis": "NONE",
+  "explanation": "The Suzuki EN125HU Huracan is a distinct model from the listed candidates. The Burgman 125, VanVan 125, Access 125, and Gixxer 250 are different motorcycle models with no evidence of being the same underlying motorcycle. The EN125HU Huracan is not a known market or historical alias for any of these models.",
+  "canonical_model_alias": "",
+  "configuration_tokens": [],
+  "brand_aliases": [],
+  "model_aliases": [],
+  "status": "SUCCESS",
+  "prompt_version": "motorcycle-candidate-resolution-v4",
+  "model": "qwen-flash",
+  "make": "Suzuki",
+  "model_name": "EN125HU Huracan"
+}

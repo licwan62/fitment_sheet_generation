@@ -1,0 +1,20 @@
+{
+  "decision": "MATCH",
+  "selected_candidate": "Ducati 996 SPS",
+  "confidence": "HIGH",
+  "match_basis": "MARKET_ALIAS",
+  "explanation": "The '996 SPS Fogarty' is a special edition of the Ducati 996 SPS, named after rider Michael Fogarty. This model is officially known as the 996 SPS with a commemorative designation, and 'Fogarty' is a configuration label rather than a distinct model. The core identity remains the 996 SPS.",
+  "canonical_model_alias": "996 SPS",
+  "configuration_tokens": [
+    "Fogarty"
+  ],
+  "brand_aliases": [],
+  "model_aliases": [
+    "996 SPS"
+  ],
+  "status": "SUCCESS",
+  "prompt_version": "motorcycle-candidate-resolution-v4",
+  "model": "qwen-flash",
+  "make": "Ducati",
+  "model_name": "996 SPS Fogarty"
+}

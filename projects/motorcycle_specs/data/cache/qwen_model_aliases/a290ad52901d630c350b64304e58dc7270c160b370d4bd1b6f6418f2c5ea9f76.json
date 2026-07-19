@@ -1,0 +1,19 @@
+{
+  "decision": "MATCH",
+  "selected_candidate": "aprilia sportcity 50 one 2t",
+  "confidence": "HIGH",
+  "match_basis": "MARKET_ALIAS",
+  "explanation": "The 'Sportcity 50' is a known model name used in certain markets, and 'Sportcity 50 One 2T' is a configuration variant of the same underlying motorcycle. The 'One' designation and '2T' (two-stroke) are market-specific labeling for the base Sportcity 50 model, which aligns with historical naming conventions for Aprilia's 50cc models. The core identity—Sportcity 50—is preserved.",
+  "canonical_model_alias": "sportcity 50 one 2t",
+  "configuration_tokens": [
+    "one",
+    "2t"
+  ],
+  "brand_aliases": [],
+  "model_aliases": [],
+  "status": "SUCCESS",
+  "prompt_version": "motorcycle-candidate-resolution-v4",
+  "model": "qwen-flash",
+  "make": "Aprilia",
+  "model_name": "Sportcity 50"
+}

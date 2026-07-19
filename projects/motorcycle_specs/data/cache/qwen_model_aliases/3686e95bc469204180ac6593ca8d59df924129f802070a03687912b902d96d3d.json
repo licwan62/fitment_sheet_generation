@@ -1,0 +1,21 @@
+{
+  "decision": "MATCH",
+  "selected_candidate": "DBX",
+  "confidence": "HIGH",
+  "match_basis": "HISTORICAL_ALIAS",
+  "explanation": "The model 'DBX RE B.Motard' is a variant of the Bimota DBX, with 'B.Motard' being a market or configuration label for the motard version. The core model identity is the DBX, and 'RE' likely denotes a specific engine or specification. The catalog candidate 'bimota dbx' matches the underlying motorcycle model despite naming differences.",
+  "canonical_model_alias": "DBX",
+  "configuration_tokens": [
+    "RE",
+    "B.Motard"
+  ],
+  "brand_aliases": [],
+  "model_aliases": [
+    "DBX"
+  ],
+  "status": "SUCCESS",
+  "prompt_version": "motorcycle-candidate-resolution-v4",
+  "model": "qwen-flash",
+  "make": "Bimota",
+  "model_name": "DBX RE B.Motard"
+}

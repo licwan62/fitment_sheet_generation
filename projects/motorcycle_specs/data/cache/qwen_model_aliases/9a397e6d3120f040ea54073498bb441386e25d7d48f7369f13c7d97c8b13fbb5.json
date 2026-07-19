@@ -1,0 +1,19 @@
+{
+  "decision": "MATCH",
+  "selected_candidate": "Harley-Davidson EL",
+  "confidence": "HIGH",
+  "match_basis": "HISTORICAL_ALIAS",
+  "explanation": "The 'Model E' is a historical designation for the Harley-Davidson EL, which was marketed as the 'EL' model in the 1980s. The name 'E' is a known abbreviation for the EL model, and 'Model E' is a valid historical alias.",
+  "canonical_model_alias": "EL",
+  "configuration_tokens": [],
+  "brand_aliases": [],
+  "model_aliases": [
+    "EL",
+    "Model E"
+  ],
+  "status": "SUCCESS",
+  "prompt_version": "motorcycle-candidate-resolution-v4",
+  "model": "qwen-flash",
+  "make": "Harley-Davidson",
+  "model_name": "E"
+}

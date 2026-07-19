@@ -1,0 +1,16 @@
+{
+  "decision": "INFER",
+  "confidence": "MEDIUM",
+  "length_mm": 2150,
+  "width_mm": 820,
+  "height_mm": 1120,
+  "wheelbase_mm": 1340,
+  "seat_height_mm": 890,
+  "ground_clearance_mm": 320,
+  "explanation": "Inferred from Beta 450 RR platform dimensions, adjusted for Race Edition's aggressive geometry and reduced weight. Typical for high-performance motocross bikes in this class; actual values may vary by model year or market.",
+  "status": "SUCCESS",
+  "prompt_version": "motorcycle-dimension-inference-v1",
+  "model": "qwen-flash",
+  "make": "Beta",
+  "model_name": "450 RR-Race Edition"
+}

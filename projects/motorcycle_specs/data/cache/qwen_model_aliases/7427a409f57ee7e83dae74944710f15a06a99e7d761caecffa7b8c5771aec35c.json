@@ -1,0 +1,20 @@
+{
+  "decision": "MATCH",
+  "selected_candidate": "450 CL-C \n\t\tBobber",
+  "confidence": "HIGH",
+  "match_basis": "SAME_NAME",
+  "explanation": "The input model '450CL-C' exactly matches the core identity of the catalog candidate '450 CL-C Bobber', with the suffix 'Bobber' being a configuration label that does not alter the underlying motorcycle model. The displacement and base model name are identical.",
+  "canonical_model_alias": "450 CL-C",
+  "configuration_tokens": [
+    "Bobber"
+  ],
+  "brand_aliases": [],
+  "model_aliases": [
+    "450 CL-C Bobber"
+  ],
+  "status": "SUCCESS",
+  "prompt_version": "motorcycle-candidate-resolution-v4",
+  "model": "qwen-flash",
+  "make": "CFMOTO",
+  "model_name": "450CL-C"
+}

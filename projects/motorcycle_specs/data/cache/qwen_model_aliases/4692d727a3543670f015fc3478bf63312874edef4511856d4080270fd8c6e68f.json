@@ -1,0 +1,16 @@
+{
+  "decision": "MATCH",
+  "selected_candidate": "DN-01",
+  "confidence": "HIGH",
+  "match_basis": "SAME_NAME",
+  "explanation": "The input 'NSA700 DN-01' refers to the Honda DN-01 motorcycle, which is a known model in the NC700 series. The 'NSA700' designation appears to be a misinterpretation or non-standard variant label, but the core model identifier 'DN-01' directly matches a confirmed catalog title. The DN-01 is the correct name for this model, and no other candidate represents a different underlying motorcycle.",
+  "canonical_model_alias": "DN-01",
+  "configuration_tokens": [],
+  "brand_aliases": [],
+  "model_aliases": [],
+  "status": "SUCCESS",
+  "prompt_version": "motorcycle-candidate-resolution-v4",
+  "model": "qwen-flash",
+  "make": "Honda",
+  "model_name": "NSA700 DN-01"
+}

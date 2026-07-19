@@ -1,0 +1,16 @@
+{
+  "decision": "MATCH",
+  "selected_candidate": "doohan itank 45",
+  "confidence": "HIGH",
+  "match_basis": "TYPO",
+  "explanation": "'IDOU' is a likely typo for 'ITANK', and 'doohan itank 45' matches the displacement and model lineage. The other candidates differ in displacement or name variants that do not align with the input.",
+  "canonical_model_alias": "itank 45",
+  "configuration_tokens": [],
+  "brand_aliases": [],
+  "model_aliases": [],
+  "status": "SUCCESS",
+  "prompt_version": "motorcycle-candidate-resolution-v4",
+  "model": "qwen-flash",
+  "make": "Doohan",
+  "model_name": "IDOU"
+}

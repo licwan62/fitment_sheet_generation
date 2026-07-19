@@ -1,0 +1,20 @@
+{
+  "decision": "MATCH",
+  "selected_candidate": "GSX-S 1000GX / GX",
+  "confidence": "HIGH",
+  "match_basis": "MARKET_ALIAS",
+  "explanation": "The input 'GSX-S1000GX+' is a variant of the GSX-S 1000GX model, with '+' likely indicating a special edition or configuration label. The catalog candidate 'GSX-S 1000GX / GX' represents the same underlying motorcycle model, where the '/' and space formatting are standard variations in naming. The '+' suffix is a known configuration marker used in marketing for enhanced versions, not a distinct model.",
+  "canonical_model_alias": "GSX-S 1000GX / GX",
+  "configuration_tokens": [
+    "+"
+  ],
+  "brand_aliases": [],
+  "model_aliases": [
+    "GSX-S 1000GX / GX"
+  ],
+  "status": "SUCCESS",
+  "prompt_version": "motorcycle-candidate-resolution-v4",
+  "model": "qwen-flash",
+  "make": "Suzuki",
+  "model_name": "GSX-S1000GX+"
+}

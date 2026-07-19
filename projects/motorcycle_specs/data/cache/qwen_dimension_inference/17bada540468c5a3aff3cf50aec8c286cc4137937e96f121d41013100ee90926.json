@@ -1,0 +1,16 @@
+{
+  "decision": "INFER|UNKNOWN",
+  "confidence": "LOW",
+  "length_mm": null,
+  "width_mm": null,
+  "height_mm": null,
+  "wheelbase_mm": null,
+  "seat_height_mm": null,
+  "ground_clearance_mm": null,
+  "explanation": "The American IronHorse Ranger T is a custom motorcycle with no publicly available standardized dimensions. Model variations across years and markets may significantly affect overall dimensions. Without access to a catalog page or verified specifications, accurate inference is not possible. Dimensions from similar models cannot be reliably applied due to potential design differences.",
+  "status": "SUCCESS",
+  "prompt_version": "motorcycle-dimension-inference-v1",
+  "model": "qwen-flash",
+  "make": "American IronHorse",
+  "model_name": "Ranger T"
+}

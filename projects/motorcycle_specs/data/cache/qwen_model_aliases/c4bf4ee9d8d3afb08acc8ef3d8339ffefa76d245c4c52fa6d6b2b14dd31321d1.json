@@ -1,0 +1,20 @@
+{
+  "decision": "MATCH",
+  "selected_candidate": "Suzuki GS 400",
+  "confidence": "HIGH",
+  "match_basis": "SAME_NAME",
+  "explanation": "The input model 'GS400X' is a variant of the Suzuki GS 400, with 'X' likely denoting a market-specific or configuration label. The core model identity (GS 400) matches exactly with the candidate 'Suzuki GS 400'. Other candidates either differ in engine designation (e.g., GSX), have different suffixes (T, S), or are not standard catalog titles for this model. The candidate 'Suzuki GS 400' is the canonical expression for the base model.",
+  "canonical_model_alias": "GS 400",
+  "configuration_tokens": [
+    "X"
+  ],
+  "brand_aliases": [],
+  "model_aliases": [
+    "GS 400"
+  ],
+  "status": "SUCCESS",
+  "prompt_version": "motorcycle-candidate-resolution-v4",
+  "model": "qwen-flash",
+  "make": "Suzuki",
+  "model_name": "GS400X"
+}

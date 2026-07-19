@@ -1,0 +1,18 @@
+{
+  "decision": "MATCH",
+  "selected_candidate": "K 1300S 30th Anniversary Edition",
+  "confidence": "HIGH",
+  "match_basis": "HISTORICAL_ALIAS",
+  "explanation": "The input 'K1300S 30 Jahre K-Modelle' refers to the 30th anniversary of BMW's K-series motorcycles, which is the same commemorative model as the 'K 1300S 30th Anniversary Edition'. The naming convention aligns with BMW's historical marketing for milestone editions, and both titles identify the exact same motorcycle model with identical displacement, configuration, and commemorative intent.",
+  "canonical_model_alias": "K 1300S 30th Anniversary Edition",
+  "configuration_tokens": [],
+  "brand_aliases": [],
+  "model_aliases": [
+    "K 1300S 30th Anniversary Edition"
+  ],
+  "status": "SUCCESS",
+  "prompt_version": "motorcycle-candidate-resolution-v4",
+  "model": "qwen-flash",
+  "make": "BMW",
+  "model_name": "K1300S 30 Jahre K-Modelle"
+}

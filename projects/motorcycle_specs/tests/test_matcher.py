@@ -89,3 +89,23 @@ def test_trusted_threshold_does_not_bypass_primary_model_constraint():
     result = score_candidate(record("Indian", "FTR S"), "Chieftain Jack Daniel's L.E.",
                              "https://example.invalid", cfg, source_make="Indian")
     assert result.status == "MODEL_MISMATCH"
+
+
+def test_generated_alias_can_match_different_catalog_expression():
+    aliases = {"Honda|VFR 800 Interceptor": ["VFR 800 F"]}
+    result = score_candidate(
+        record("Honda", "VFR 800 Interceptor"), "Honda VFR 800 F 2018",
+        "https://example.invalid", CFG, model_aliases=aliases, source_make="Honda",
+    )
+    assert result.status == "EXACT"
+    assert "model_variant=vfr 800 f" in result.reason
+
+
+def test_ai_market_alias_can_promote_funduro_catalog_page():
+    aliases = {"BMW|F650 Enduro": ["F 650 Funduro"]}
+    result = score_candidate(
+        record("BMW", "F650 Enduro"), "F 650 Funduro",
+        "https://example.invalid", CFG, model_aliases=aliases, source_make="BMW",
+    )
+    assert result.status == "EXACT"
+    assert "model_variant=f 650 funduro" in result.reason

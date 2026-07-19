@@ -4,6 +4,7 @@ import logging
 import random
 import time
 from pathlib import Path
+from urllib.parse import urlparse
 
 import httpx
 
@@ -19,8 +20,16 @@ class Crawler:
         self.cfg, self.cache, self.db = crawl, cache, db
         timeout = httpx.Timeout(crawl["read_timeout_seconds"], connect=crawl["connect_timeout_seconds"])
         self.client = httpx.Client(headers={"User-Agent": site["user_agent"]}, timeout=timeout, follow_redirects=True)
-        self.robots = RobotsPolicy(site["base_url"], site["user_agent"], site.get("obey_robots_txt", True))
-        self.robots.load(self.client)
+        configured_sites = cfg.get("sources") or [site]
+        self.robots: dict[str, RobotsPolicy] = {}
+        for configured in configured_sites:
+            host = urlparse(configured["base_url"]).netloc.casefold()
+            policy = RobotsPolicy(
+                configured["base_url"], site["user_agent"],
+                configured.get("obey_robots_txt", site.get("obey_robots_txt", True)),
+            )
+            policy.load(self.client)
+            self.robots[host] = policy
         self.cache_hits = self.fetched = 0
 
     def close(self) -> None:
@@ -30,7 +39,8 @@ class Crawler:
         if not force and self.cache.valid(url):
             self.cache_hits += 1
             return self.cache.read(url), self.db.cached(url), True
-        if not self.robots.allowed(url):
+        policy = self.robots.get(urlparse(url).netloc.casefold())
+        if policy is None or not policy.allowed(url):
             self.db.error("FETCH", "Blocked by robots.txt", utc_now(), url=url)
             return None, None, False
         delays = self.cfg.get("retry_delays_seconds", [5, 15, 45])

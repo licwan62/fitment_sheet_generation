@@ -1,0 +1,16 @@
+{
+  "decision": "NO_MATCH",
+  "selected_candidate": "",
+  "confidence": "HIGH",
+  "match_basis": "NONE",
+  "explanation": "The model CB190R 2.0 is not equivalent to any of the catalog candidates. The candidates either have different displacements (e.g., CBR150R, CBR500R), different model lines (e.g., CRF150R2, CBF190TR), or are unrelated models (e.g., CBR1000RR SP2, VTR1000SP2). No known market alias, historical name, abbreviation, or typo links CB190R 2.0 to any candidate. The '2.0' suffix may indicate a revision or variant, but no matching base model exists in the list.",
+  "canonical_model_alias": "",
+  "configuration_tokens": [],
+  "brand_aliases": [],
+  "model_aliases": [],
+  "status": "SUCCESS",
+  "prompt_version": "motorcycle-candidate-resolution-v4",
+  "model": "qwen-flash",
+  "make": "Honda",
+  "model_name": "CB190R 2.0"
+}

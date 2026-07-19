@@ -1,0 +1,16 @@
+{
+  "decision": "INFER|UNKNOWN",
+  "confidence": "LOW",
+  "length_mm": null,
+  "width_mm": null,
+  "height_mm": null,
+  "wheelbase_mm": null,
+  "seat_height_mm": null,
+  "ground_clearance_mm": null,
+  "explanation": "The Gas Gas TXT 321 is a motocross motorcycle, but specific dimensional data for this model variant is not consistently documented across sources. Dimensions may vary by model year and market configuration. Without access to a definitive catalog or technical specification sheet, precise measurements cannot be reliably inferred. The model's identity and dimensions are uncertain due to limited verifiable data.",
+  "status": "SUCCESS",
+  "prompt_version": "motorcycle-dimension-inference-v1",
+  "model": "qwen-flash",
+  "make": "Gas Gas",
+  "model_name": "TXT 321"
+}

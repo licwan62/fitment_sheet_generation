@@ -1,0 +1,21 @@
+{
+  "decision": "MATCH",
+  "selected_candidate": "gasgas contact estart 280",
+  "confidence": "HIGH",
+  "match_basis": "MARKET_ALIAS",
+  "explanation": "The 'Contact 280 ES' is a known market variant of the 'gasgas contact estart 280', where 'ES' denotes the European specification (electric start), which is a standard configuration label. The model identity, displacement, and core design are identical.",
+  "canonical_model_alias": "contact estart 280",
+  "configuration_tokens": [
+    "ES"
+  ],
+  "brand_aliases": [],
+  "model_aliases": [
+    "gasgas contact estart 280",
+    "contact estart 280"
+  ],
+  "status": "SUCCESS",
+  "prompt_version": "motorcycle-candidate-resolution-v4",
+  "model": "qwen-flash",
+  "make": "Gas Gas",
+  "model_name": "Contact 280 ES"
+}

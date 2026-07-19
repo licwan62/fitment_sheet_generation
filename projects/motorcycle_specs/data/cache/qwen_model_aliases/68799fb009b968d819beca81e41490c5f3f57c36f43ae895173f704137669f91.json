@@ -1,0 +1,16 @@
+{
+  "decision": "NO_MATCH",
+  "selected_candidate": "",
+  "confidence": "HIGH",
+  "match_basis": "NONE",
+  "explanation": "The input model '175 MX-3' is a vintage or discontinued motorcycle with a 175cc engine, while all catalog candidates are modern Can-Am models (e.g., Maverick X3, Outlander, Spyder) with larger displacements (650cc, 1000cc) and different configurations. There is no overlap in engine size, model type, or known aliases. The name 'MX-3' does not correspond to any of the listed models, and no plausible market name, abbreviation, or typo links it to a candidate.",
+  "canonical_model_alias": "",
+  "configuration_tokens": [],
+  "brand_aliases": [],
+  "model_aliases": [],
+  "status": "SUCCESS",
+  "prompt_version": "motorcycle-candidate-resolution-v4",
+  "model": "qwen-flash",
+  "make": "Can-Am",
+  "model_name": "175 MX-3"
+}

@@ -1,0 +1,20 @@
+{
+  "decision": "MATCH",
+  "selected_candidate": "Suzuki DR-Z400E",
+  "confidence": "HIGH",
+  "match_basis": "MARKET_ALIAS",
+  "explanation": "The input 'DR400' is a common shorthand for the Suzuki DR-Z400E, which was marketed in certain regions as DR400. The DR-Z400E is the same model as the DR400S in terms of platform and engine, with differences only in minor configuration or market-specific naming. The catalog candidate 'Suzuki DR-Z400E' matches the underlying motorcycle identity.",
+  "canonical_model_alias": "DR-Z400E",
+  "configuration_tokens": [],
+  "brand_aliases": [],
+  "model_aliases": [
+    "DR-Z400E",
+    "DR 400S",
+    "DR-Z 400"
+  ],
+  "status": "SUCCESS",
+  "prompt_version": "motorcycle-candidate-resolution-v4",
+  "model": "qwen-flash",
+  "make": "Suzuki",
+  "model_name": "DR400"
+}

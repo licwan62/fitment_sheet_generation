@@ -1,0 +1,16 @@
+{
+  "decision": "UNKNOWN",
+  "confidence": "LOW",
+  "length_mm": null,
+  "width_mm": null,
+  "height_mm": null,
+  "wheelbase_mm": null,
+  "seat_height_mm": null,
+  "ground_clearance_mm": null,
+  "explanation": "The ATK 605 Enduro model is not widely documented, and reliable dimension data is unavailable. Variations by year and market are possible, and no consistent source confirms specific dimensions. Without verified catalog or technical specifications, accurate inference is not feasible.",
+  "status": "SUCCESS",
+  "prompt_version": "motorcycle-dimension-inference-v1",
+  "model": "qwen-flash",
+  "make": "ATK",
+  "model_name": "605 Enduro"
+}

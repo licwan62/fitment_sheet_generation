@@ -1,0 +1,22 @@
+{
+  "decision": "MATCH",
+  "selected_candidate": "Honda Rebel 500 ABS SE",
+  "confidence": "HIGH",
+  "match_basis": "SAME_NAME",
+  "explanation": "The input model 'CMX500 Rebel 500 ABS SE' is the same motorcycle as 'Honda Rebel 500 ABS SE'—the CMX500 is the model code used by Honda for this specific variant, and the name 'Rebel 500 ABS SE' matches exactly in content and configuration. The manufacturer prefix is consistent across both, and the displacement, equipment (ABS), and trim level (SE) are identical.",
+  "canonical_model_alias": "Rebel 500 ABS SE",
+  "configuration_tokens": [
+    "ABS",
+    "SE"
+  ],
+  "brand_aliases": [],
+  "model_aliases": [
+    "Rebel 500 ABS SE",
+    "CMX500"
+  ],
+  "status": "SUCCESS",
+  "prompt_version": "motorcycle-candidate-resolution-v4",
+  "model": "qwen-flash",
+  "make": "Honda",
+  "model_name": "CMX500 Rebel 500 ABS SE"
+}

@@ -1,0 +1,18 @@
+{
+  "decision": "MATCH",
+  "selected_candidate": "Honda CB 100 SS",
+  "confidence": "HIGH",
+  "match_basis": "MARKET_ALIAS",
+  "explanation": "The input 'CB100 Super Sport' refers to the same motorcycle as 'Honda CB 100 SS', where 'Super Sport' is a market or marketing designation used interchangeably with 'SS' in Honda's catalog. The displacement (100) and model type (CB) are identical, and 'SS' is a well-documented abbreviation for Super Sport in this context.",
+  "canonical_model_alias": "CB 100 SS",
+  "configuration_tokens": [],
+  "brand_aliases": [],
+  "model_aliases": [
+    "CB 100 SS"
+  ],
+  "status": "SUCCESS",
+  "prompt_version": "motorcycle-candidate-resolution-v4",
+  "model": "qwen-flash",
+  "make": "Honda",
+  "model_name": "CB100 Super Sport"
+}

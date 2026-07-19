@@ -1,0 +1,17 @@
+{
+  "decision": "MATCH",
+  "selected_candidate": "F 750GS 40 Years Edition",
+  "canonical_model_alias": "F 750GS",
+  "configuration_tokens": [
+    "40 Years Edition"
+  ],
+  "brand_aliases": [],
+  "model_aliases": [
+    "F 750GS 40 Years Edition"
+  ],
+  "status": "SUCCESS",
+  "prompt_version": "motorcycle-candidate-resolution-v3",
+  "model": "qwen-flash",
+  "make": "BMW",
+  "model_name": "F750GS 40 Years GS Edition"
+}

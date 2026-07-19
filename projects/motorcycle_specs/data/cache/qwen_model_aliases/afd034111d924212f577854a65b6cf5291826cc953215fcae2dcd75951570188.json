@@ -1,0 +1,18 @@
+{
+  "decision": "MATCH",
+  "selected_candidate": "beta minitrial electric 16",
+  "confidence": "HIGH",
+  "match_basis": "SAME_NAME",
+  "explanation": "The input 'Minitrials Electric 16in.' refers to the Beta Minitrial Electric 16, with '16in.' being a clear reference to the 16-inch wheel size. The catalog candidate 'beta minitrial electric 16' matches exactly in model name and displacement, with no conflicting configuration or variant differences.",
+  "canonical_model_alias": "beta minitrial electric 16",
+  "configuration_tokens": [],
+  "brand_aliases": [],
+  "model_aliases": [
+    "minitrial electric 16"
+  ],
+  "status": "SUCCESS",
+  "prompt_version": "motorcycle-candidate-resolution-v4",
+  "model": "qwen-flash",
+  "make": "Beta",
+  "model_name": "Minitrials Electric 16in."
+}

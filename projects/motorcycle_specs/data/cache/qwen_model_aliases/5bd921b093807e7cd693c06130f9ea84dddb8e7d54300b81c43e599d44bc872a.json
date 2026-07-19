@@ -1,0 +1,18 @@
+{
+  "decision": "MATCH",
+  "selected_candidate": "Suzuki V-Strom 1050XT",
+  "confidence": "HIGH",
+  "match_basis": "SAME_NAME",
+  "explanation": "The input model 'DL1050 V-Strom 1050XT' is the same motorcycle as the candidate 'Suzuki V-Strom 1050XT', with the manufacturer and displacement matching exactly. The DL1050 designation is the model code for the 1050XT variant, and 'V-Strom 1050XT' is the official catalog name used by Suzuki for this model. The variation in naming format (DL1050 vs. V-Strom 1050XT) reflects internal coding versus marketing nomenclature, but both refer to the identical model.",
+  "canonical_model_alias": "V-Strom 1050XT",
+  "configuration_tokens": [],
+  "brand_aliases": [],
+  "model_aliases": [
+    "V-Strom 1050XT"
+  ],
+  "status": "SUCCESS",
+  "prompt_version": "motorcycle-candidate-resolution-v4",
+  "model": "qwen-flash",
+  "make": "Suzuki",
+  "model_name": "DL1050 V-Strom 1050XT"
+}

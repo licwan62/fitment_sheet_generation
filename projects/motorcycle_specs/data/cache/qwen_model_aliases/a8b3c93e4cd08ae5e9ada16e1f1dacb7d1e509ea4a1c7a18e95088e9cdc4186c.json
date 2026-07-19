@@ -1,0 +1,20 @@
+{
+  "decision": "MATCH",
+  "selected_candidate": "Boulevard M109R B.O.S.S.",
+  "confidence": "HIGH",
+  "match_basis": "MARKET_ALIAS",
+  "explanation": "The input 'M109R Boulevard B.O.S.S.' refers to the same motorcycle model as 'Boulevard M109R B.O.S.S.', with the name order reversed but identical components. 'B.O.S.S.' is a known market-specific branding for the Suzuki M109R, and the model designation matches exactly including displacement and configuration. The variation in naming order is a common presentation difference in marketing and cataloging.",
+  "canonical_model_alias": "Boulevard M109R B.O.S.S.",
+  "configuration_tokens": [
+    "B.O.S.S."
+  ],
+  "brand_aliases": [],
+  "model_aliases": [
+    "Boulevard M109R B.O.S.S."
+  ],
+  "status": "SUCCESS",
+  "prompt_version": "motorcycle-candidate-resolution-v4",
+  "model": "qwen-flash",
+  "make": "Suzuki",
+  "model_name": "M109R Boulevard B.O.S.S."
+}

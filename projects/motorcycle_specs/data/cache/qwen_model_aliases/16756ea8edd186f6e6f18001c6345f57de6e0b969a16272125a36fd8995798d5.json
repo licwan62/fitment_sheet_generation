@@ -1,0 +1,16 @@
+{
+  "decision": "MATCH",
+  "selected_candidate": "MSX 125 Grom",
+  "confidence": "HIGH",
+  "match_basis": "MARKET_ALIAS",
+  "explanation": "The 'Grom' is the marketing name for the Honda MSX125 in certain markets, particularly North America. The MSX125 Grom is the same motorcycle model under different naming conventions.",
+  "canonical_model_alias": "MSX 125 Grom",
+  "configuration_tokens": [],
+  "brand_aliases": [],
+  "model_aliases": [],
+  "status": "SUCCESS",
+  "prompt_version": "motorcycle-candidate-resolution-v4",
+  "model": "qwen-flash",
+  "make": "Honda",
+  "model_name": "Grom"
+}

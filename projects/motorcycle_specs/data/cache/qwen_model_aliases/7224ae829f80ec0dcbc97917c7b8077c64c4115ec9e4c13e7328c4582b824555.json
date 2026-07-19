@@ -1,0 +1,18 @@
+{
+  "decision": "MATCH",
+  "selected_candidate": "Navi 110",
+  "confidence": "HIGH",
+  "match_basis": "MARKET_ALIAS",
+  "explanation": "The input 'NVA110B Navi' refers to the Honda Navi 110, a model marketed as 'Navi' in certain regions, particularly in Asia. The 'NVA110B' is the model code, and 'Navi' is the market-specific name for this motorcycle. The candidate 'Navi 110' is the correct catalog title for the same underlying model.",
+  "canonical_model_alias": "Navi 110",
+  "configuration_tokens": [],
+  "brand_aliases": [],
+  "model_aliases": [
+    "Navi 110"
+  ],
+  "status": "SUCCESS",
+  "prompt_version": "motorcycle-candidate-resolution-v4",
+  "model": "qwen-flash",
+  "make": "Honda",
+  "model_name": "NVA110B Navi"
+}

@@ -1,0 +1,16 @@
+{
+  "decision": "NO_MATCH",
+  "selected_candidate": "",
+  "confidence": "HIGH",
+  "match_basis": "NONE",
+  "explanation": "The input model 'NHX110 Elite' does not match any of the catalog candidates. 'NHX110 Lead' is a different model with a distinct name and identity, despite similar displacement. 'Elite' is not a known market or configuration alias for any of the listed Honda 110cc models. The other candidates are unrelated models from different product lines (e.g., BeAT, Wave, Shine, Rebel). No evidence supports that 'NHX110 Elite' refers to any of these models.",
+  "canonical_model_alias": "",
+  "configuration_tokens": [],
+  "brand_aliases": [],
+  "model_aliases": [],
+  "status": "SUCCESS",
+  "prompt_version": "motorcycle-candidate-resolution-v4",
+  "model": "qwen-flash",
+  "make": "Honda",
+  "model_name": "NHX110 Elite"
+}

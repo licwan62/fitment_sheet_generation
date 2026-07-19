@@ -1,0 +1,16 @@
+{
+  "decision": "INFER|UNKNOWN",
+  "confidence": "LOW",
+  "length_mm": null,
+  "width_mm": null,
+  "height_mm": null,
+  "wheelbase_mm": null,
+  "seat_height_mm": null,
+  "ground_clearance_mm": null,
+  "explanation": "The Honda VT750RS Shadow RS is a limited-production model with no consistent public catalog data across years and markets. Dimensions vary significantly between model years and regional variants, and no definitive source provides standardized measurements. Inference is unreliable due to lack of verifiable data.",
+  "status": "SUCCESS",
+  "prompt_version": "motorcycle-dimension-inference-v1",
+  "model": "qwen-flash",
+  "make": "Honda",
+  "model_name": "VT750RS Shadow RS"
+}

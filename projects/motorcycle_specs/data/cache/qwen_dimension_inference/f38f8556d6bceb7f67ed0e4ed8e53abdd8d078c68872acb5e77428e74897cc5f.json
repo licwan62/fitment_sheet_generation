@@ -1,0 +1,16 @@
+{
+  "decision": "INFER|UNKNOWN",
+  "confidence": "MEDIUM|LOW",
+  "length_mm": null,
+  "width_mm": null,
+  "height_mm": null,
+  "wheelbase_mm": null,
+  "seat_height_mm": null,
+  "ground_clearance_mm": null,
+  "explanation": "The Gas Gas Enducross TT 80 is a specialized electric motocross bike, but detailed factory dimensions are not publicly available in standard sources. Model-specific variations by year and market may affect dimensions significantly. Without access to official specifications or verified catalog data, accurate inference is uncertain. Dimensions are inferred as unknown due to lack of reliable reference.",
+  "status": "SUCCESS",
+  "prompt_version": "motorcycle-dimension-inference-v1",
+  "model": "qwen-flash",
+  "make": "Gas Gas",
+  "model_name": "Enducross TT 80"
+}

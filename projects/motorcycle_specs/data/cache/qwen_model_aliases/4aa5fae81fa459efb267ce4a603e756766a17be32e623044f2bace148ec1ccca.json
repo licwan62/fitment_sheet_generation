@@ -1,0 +1,16 @@
+{
+  "decision": "MATCH",
+  "selected_candidate": "CL 77",
+  "confidence": "HIGH",
+  "match_basis": "SAME_NAME",
+  "explanation": "The input 'CL77 Scrambler 305' refers to the same motorcycle model as 'CL 77', which is a known catalog title for the Honda CL77 Scrambler 305. The displacement (305cc) and configuration (Scrambler) are consistent with the model, and 'CL 77' is the canonical catalog name for this model.",
+  "canonical_model_alias": "CL 77",
+  "configuration_tokens": [],
+  "brand_aliases": [],
+  "model_aliases": [],
+  "status": "SUCCESS",
+  "prompt_version": "motorcycle-candidate-resolution-v4",
+  "model": "qwen-flash",
+  "make": "Honda",
+  "model_name": "CL77 Scrambler 305"
+}

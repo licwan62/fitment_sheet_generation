@@ -1,0 +1,16 @@
+{
+  "decision": "INFER|UNKNOWN",
+  "confidence": "MEDIUM|LOW",
+  "length_mm": null,
+  "width_mm": null,
+  "height_mm": null,
+  "wheelbase_mm": null,
+  "seat_height_mm": null,
+  "ground_clearance_mm": null,
+  "explanation": "The Benelli Tornado Naked Tre 1130 Sport is a limited-production model with no publicly available official dimensions. Variations in design across years and markets, combined with lack of verified data, prevent accurate inference. Dimensions from related models (e.g., Tornado 1130) may not apply due to differing chassis and styling. Therefore, all dimensions are marked as unknown.",
+  "status": "SUCCESS",
+  "prompt_version": "motorcycle-dimension-inference-v1",
+  "model": "qwen-flash",
+  "make": "Benelli",
+  "model_name": "Tornado Naked Tre 1130 Sport"
+}

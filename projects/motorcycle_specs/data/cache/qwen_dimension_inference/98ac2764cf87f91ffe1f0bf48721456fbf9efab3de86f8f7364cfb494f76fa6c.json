@@ -1,0 +1,16 @@
+{
+  "decision": "INFER|UNKNOWN",
+  "confidence": "MEDIUM|LOW",
+  "length_mm": null,
+  "width_mm": null,
+  "height_mm": null,
+  "wheelbase_mm": null,
+  "seat_height_mm": null,
+  "ground_clearance_mm": null,
+  "explanation": "The Aprilia Tuareg 660 Factory is a limited-edition variant with no official catalog data available for precise dimensions. While the standard Tuareg 660 has known dimensions, the Factory model may feature subtle changes in geometry or components that affect overall measurements. Without verified documentation or direct measurement data, dimensional inference is uncertain. Model identity and variations by market/year further reduce confidence.",
+  "status": "SUCCESS",
+  "prompt_version": "motorcycle-dimension-inference-v1",
+  "model": "qwen-flash",
+  "make": "Aprilia",
+  "model_name": "Tuareg 660 Factory"
+}

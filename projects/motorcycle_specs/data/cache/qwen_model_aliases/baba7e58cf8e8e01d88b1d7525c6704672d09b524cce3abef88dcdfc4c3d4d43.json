@@ -1,0 +1,18 @@
+{
+  "decision": "MATCH",
+  "selected_candidate": "F 750GS 40 Years Edition",
+  "confidence": "HIGH",
+  "match_basis": "SAME_NAME",
+  "explanation": "Both the input and the selected candidate refer to the same limited-edition motorcycle model, with identical displacement (750), model type (GS), and commemorative designation (40 Years). The order of 'F 750GS' vs. 'F750GS' and '40 Years GS Edition' vs. '40 Years Edition' are equivalent expressions for the same model, with no change in identity-bearing tokens.",
+  "canonical_model_alias": "F 750GS 40 Years Edition",
+  "configuration_tokens": [],
+  "brand_aliases": [],
+  "model_aliases": [
+    "F 750GS 40 Years Edition"
+  ],
+  "status": "SUCCESS",
+  "prompt_version": "motorcycle-candidate-resolution-v4",
+  "model": "qwen-flash",
+  "make": "BMW",
+  "model_name": "F750GS 40 Years GS Edition"
+}

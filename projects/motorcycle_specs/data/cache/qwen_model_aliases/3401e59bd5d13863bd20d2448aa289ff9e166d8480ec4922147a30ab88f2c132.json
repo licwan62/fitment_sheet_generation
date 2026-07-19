@@ -1,0 +1,16 @@
+{
+  "decision": "MATCH",
+  "selected_candidate": "Pampera 400 \n\t\t& 450",
+  "confidence": "HIGH",
+  "match_basis": "SAME_NAME",
+  "explanation": "The input 'Pampera 400' directly matches the displacement and model name in the candidate 'Pampera 400 & 450', which includes the Pampera 400 as a variant. The presence of '450' does not negate the existence of the 400 model, and the catalog title is a known listing that groups both displacements under the same model line.",
+  "canonical_model_alias": "Pampera 400 & 450",
+  "configuration_tokens": [],
+  "brand_aliases": [],
+  "model_aliases": [],
+  "status": "SUCCESS",
+  "prompt_version": "motorcycle-candidate-resolution-v4",
+  "model": "qwen-flash",
+  "make": "Gas Gas",
+  "model_name": "Pampera 400"
+}

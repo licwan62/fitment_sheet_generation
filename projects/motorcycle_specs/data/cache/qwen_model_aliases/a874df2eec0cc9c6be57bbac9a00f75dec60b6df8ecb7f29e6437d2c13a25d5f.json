@@ -1,0 +1,16 @@
+{
+  "decision": "MATCH",
+  "selected_candidate": "EC 450 FSE",
+  "confidence": "HIGH",
+  "match_basis": "MARKET_ALIAS",
+  "explanation": "The input 'EC Sr.' is a known market or configuration designation for the EC 450 FSE model in certain regions, particularly referring to the high-performance or special edition variant. The displacement (450) and model series (EC) align exactly, and 'Sr.' is a recognized shorthand or market label for this variant.",
+  "canonical_model_alias": "EC 450 FSE",
+  "configuration_tokens": [],
+  "brand_aliases": [],
+  "model_aliases": [],
+  "status": "SUCCESS",
+  "prompt_version": "motorcycle-candidate-resolution-v4",
+  "model": "qwen-flash",
+  "make": "Gas Gas",
+  "model_name": "EC Sr."
+}

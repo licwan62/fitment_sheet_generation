@@ -1,0 +1,18 @@
+{
+  "decision": "MATCH",
+  "selected_candidate": "beta evo 300 4takt",
+  "confidence": "HIGH",
+  "match_basis": "MARKET_ALIAS",
+  "explanation": "The input 'EVO 4T 300' corresponds to the same motorcycle model as 'beta evo 300 4takt', where '4T' and '4takt' are equivalent designations for a four-stroke engine. The term '4takt' is a common Germanic market variant of '4T', used in European catalogs. Displacement (300) and model name (EVO) match exactly.",
+  "canonical_model_alias": "beta evo 300 4takt",
+  "configuration_tokens": [],
+  "brand_aliases": [],
+  "model_aliases": [
+    "evo 300 4takt"
+  ],
+  "status": "SUCCESS",
+  "prompt_version": "motorcycle-candidate-resolution-v4",
+  "model": "qwen-flash",
+  "make": "Beta",
+  "model_name": "EVO 4T 300"
+}

@@ -1,0 +1,16 @@
+{
+  "decision": "NO_MATCH",
+  "selected_candidate": "",
+  "confidence": "HIGH",
+  "match_basis": "NONE",
+  "explanation": "The model TC305 is not a known Suzuki motorcycle. The catalog candidates do not include any variant of a TC305, and none of the listed models match the TC305 in displacement, name, or configuration. The Suzuki GT 380 and GT 380C are close in naming but differ in displacement (380 vs 305) and are distinct models.",
+  "canonical_model_alias": "",
+  "configuration_tokens": [],
+  "brand_aliases": [],
+  "model_aliases": [],
+  "status": "SUCCESS",
+  "prompt_version": "motorcycle-candidate-resolution-v4",
+  "model": "qwen-flash",
+  "make": "Suzuki",
+  "model_name": "TC305"
+}

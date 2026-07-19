@@ -8,18 +8,27 @@ from pathlib import Path
 from .cache import PageCache
 from .config import load_aliases, load_config, load_manual_pages
 from .crawler import Crawler
-from .database import StateDB
+from .database import StateDB, clear_checkpoint
 from .exporter import export_all
 from .grouper import group_dimensions
-from .index_builder import build_index, load_index, save_index
+from .index_builder import build_1000ps_index, build_bikedekho_index, build_bikez_index, build_index, load_index, save_index
 from .input_reader import read_input
 from .matcher import rank_candidates
-from .normalizer import compact_name
-from .page_discovery import targeted_pages
+from .models import Candidate
+from .normalizer import compact_name, normalize_name
+from .page_discovery import cross_source_candidate_pages, fallback_pages, targeted_pages
 from .parser import parse_page
+from .qwen_aliases import GeneratedAliases, GeneratedDimensions, QwenAliasGenerator
 from .reporter import make_report, save_report
 from .utils import project_root, utc_now
 from .validator import validate
+
+
+class _TerminalNoiseFilter(logging.Filter):
+    def filter(self, record: logging.LogRecord) -> bool:
+        is_http_transport = record.name == "httpx" or record.name.startswith("httpcore")
+        is_qwen_detail = record.name == "moto_dimension_crawler.qwen_aliases"
+        return not ((is_http_transport and record.levelno < logging.WARNING) or is_qwen_detail)
 
 
 def setup_logging(level: str) -> None:
@@ -29,9 +38,56 @@ def setup_logging(level: str) -> None:
     root.handlers.clear()
     root.setLevel(level.upper())
     formatter = logging.Formatter("%(asctime)s %(levelname)s %(name)s %(message)s")
-    console = logging.StreamHandler(); console.setFormatter(formatter); root.addHandler(console)
+    console_formatter = logging.Formatter("%(message)s")
+    console = logging.StreamHandler(); console.setFormatter(console_formatter); console.addFilter(_TerminalNoiseFilter()); root.addHandler(console)
     normal = logging.FileHandler(log_dir / "crawler.log", encoding="utf-8"); normal.setFormatter(formatter); root.addHandler(normal)
     errors = logging.FileHandler(log_dir / "errors.log", encoding="utf-8"); errors.setLevel(logging.ERROR); errors.setFormatter(formatter); root.addHandler(errors)
+    # Keep request details in crawler.log, but hide successful transport noise
+    # from the terminal. Reset explicit levels in case logging is reconfigured.
+    logging.getLogger("httpx").setLevel(logging.NOTSET)
+    logging.getLogger("httpcore").setLevel(logging.NOTSET)
+
+
+def _ai_status_label(generated: GeneratedAliases | None) -> str:
+    if generated is None or generated.status in {"DISABLED", "SKIPPED_CONFIDENT"}:
+        return ""
+    labels = {
+        "CACHED_SUCCESS": "cache",
+        "CACHED_TIMEOUT": "timeout(cached)",
+        "CACHED_API_ERROR": "api-error(cached)",
+        "TIMEOUT": "timeout",
+        "API_ERROR": "api-error",
+    }
+    if generated.status in {"SUCCESS", "CACHED_SUCCESS"}:
+        source = labels.get(generated.status, "api")
+        decision = generated.decision.lower().replace("_", "-")
+        detail = ""
+        if generated.decision == "MATCH" and generated.match_basis:
+            detail = f"({generated.match_basis.lower()},{generated.confidence.lower()})"
+        return f"{source}:{decision}{detail}"
+    return labels.get(generated.status, generated.status.lower())
+
+
+def log_match_summary(record, ranked, generated: GeneratedAliases | None = None,
+                      position: int | None = None, total: int | None = None,
+                      inferred: GeneratedDimensions | None = None) -> None:
+    matched = [candidate for candidate in ranked if candidate.status in {"EXACT", "LIKELY", "MULTIPLE"}]
+    best = matched[0] if matched else ranked[0] if ranked else None
+    ai = _ai_status_label(generated)
+    progress = f"[{position}/{total}] " if position is not None and total is not None else ""
+    if inferred is not None and inferred.decision == "INFER":
+        present = "/".join(key.removesuffix("_mm") for key, value in inferred.values.items() if value is not None)
+        message = f"{progress}INFER {record.make} / {record.model} | fields={present or 'none'} | confidence={inferred.confidence.lower()}"
+        inference_source = "cache" if inferred.status == "CACHED_SUCCESS" else "api"
+        ai = f"{inference_source}:dimension-inference"
+    elif matched:
+        message = f"{progress}OK   {record.make} / {record.model} -> {best.title} | matches={len(matched)}"
+    else:
+        closest = best.title if best else "none"
+        message = f"{progress}MISS {record.make} / {record.model} | closest={closest}"
+    if ai:
+        message += f" | ai={ai}"
+    logging.getLogger(__name__).info(message)
 
 
 def input_rows(records) -> list[dict]:
@@ -59,8 +115,115 @@ def best_review_candidate(rows: list[dict], input_id: str, review_threshold: int
                  and "primary_alpha=yes" in row.get("MATCH_REASON", "")), {})
 
 
+def preferred_source_rows(rows: list[dict]) -> list[dict]:
+    """Keep the most complete row per input/year, using configured source order as tie-breaker."""
+    confidence_rank = {"HIGH": 3, "MEDIUM": 2, "LOW": 1, "": 0}
+    selected: dict[tuple[str, str], tuple[tuple, dict]] = {}
+    for row in rows:
+        year_key = str(row.get("YEAR_START") or row.get("YEAR") or row.get("SOURCE_URL", ""))
+        key = (row["INPUT_ID"], year_key)
+        completeness = sum(row.get(field) not in (None, "") for field in ("L-MM", "W-MM", "H-MM"))
+        rank = (
+            completeness,
+            row.get("PARSE_STATUS") == "COMPLETE",
+            confidence_rank.get(row.get("MATCH_CONFIDENCE", ""), 0),
+            float(row.get("MATCH_SCORE") or 0),
+            -int(row.get("SOURCE_PRIORITY") or 99),
+        )
+        previous = selected.get(key)
+        if previous is None or rank > previous[0]:
+            selected[key] = (rank, row)
+    return [value[1] for value in selected.values()]
+
+
+def load_resume_snapshot(output: Path) -> dict[str, list[dict]]:
+    """Load the last successful export so a partial resume can preserve untouched rows."""
+    path = output / "logs" / "run_details.jsonl"
+    datasets: dict[str, list[dict]] = {}
+    if not path.exists():
+        return datasets
+    for line in path.read_text(encoding="utf-8").splitlines():
+        if not line.strip():
+            continue
+        try:
+            item = json.loads(line)
+        except json.JSONDecodeError:
+            continue
+        record_type, payload = item.get("record_type"), item.get("payload")
+        if record_type and isinstance(payload, dict):
+            datasets.setdefault(record_type, []).append(payload)
+    return datasets
+
+
+def merge_resumed_rows(previous: list[dict], current: list[dict], replaced_ids: set[str]) -> list[dict]:
+    """Replace rows for retried inputs while retaining rows outside the current slice."""
+    return [row for row in previous if row.get("INPUT_ID") not in replaced_ids] + current
+
+
+def checkpoint_ok_rows(record, candidate_rows: list[dict], dimension_rows: list[dict]) -> tuple[list[dict], list[dict]]:
+    """Return restorable rows only when every trusted checkpoint candidate finished parsing."""
+    same_input_candidates = [
+        row for row in candidate_rows
+        if row.get("INPUT_ID") == record.input_id
+        and normalize_name(str(row.get("MAKE", ""))) == record.make_normalized
+        and compact_name(str(row.get("MODEL", ""))) == record.model_compact
+    ]
+    credible = [row for row in same_input_candidates
+                if row.get("MATCH_STATUS") in {"EXACT", "LIKELY", "MULTIPLE"}]
+    if not credible:
+        return [], []
+    dimensions_by_url = {
+        str(row.get("SOURCE_URL") or row.get("url") or ""): row
+        for row in dimension_rows
+        if row.get("INPUT_ID") == record.input_id
+        and normalize_name(str(row.get("MAKE", ""))) == record.make_normalized
+        and compact_name(str(row.get("MODEL", ""))) == record.model_compact
+    }
+    restored_dimensions = []
+    for candidate in credible:
+        url = str(candidate.get("CANDIDATE_URL") or candidate.get("url") or "")
+        parsed = dimensions_by_url.get(url)
+        if parsed is None or parsed.get("PARSE_STATUS") not in {"COMPLETE", "PARTIAL"}:
+            return [], []
+        restored_dimensions.append({
+            key: value for key, value in parsed.items()
+            if key not in {"input_id", "url", "parsed_at"}
+        })
+    restored_candidates = [{
+        key: value for key, value in row.items() if key not in {"input_id", "url"}
+    } for row in same_input_candidates]
+    return restored_candidates, restored_dimensions
+
+
+def checkpoint_match_rows(record, candidate_rows: list[dict]) -> list[dict]:
+    """Restore a completed trustworthy match even if page parsing is still pending."""
+    same_input = [
+        row for row in candidate_rows
+        if row.get("INPUT_ID") == record.input_id
+        and normalize_name(str(row.get("MAKE", ""))) == record.make_normalized
+        and compact_name(str(row.get("MODEL", ""))) == record.model_compact
+    ]
+    if not any(row.get("MATCH_STATUS") in {"EXACT", "LIKELY", "MULTIPLE"} for row in same_input):
+        return []
+    return [{key: value for key, value in row.items() if key not in {"input_id", "url"}} for row in same_input]
+
+
+def candidate_from_checkpoint(row: dict) -> Candidate:
+    return Candidate(
+        input_id=str(row["INPUT_ID"]), title=str(row.get("CANDIDATE_TITLE", "")),
+        url=str(row.get("CANDIDATE_URL", "")), source_make=str(row.get("SOURCE_MAKE", "")),
+        source_model=str(row.get("SOURCE_MODEL", "")), source_version=str(row.get("SOURCE_VERSION", "")),
+        source_year=str(row.get("SOURCE_YEAR", "")), score=int(float(row.get("MATCH_SCORE") or 0)),
+        status=str(row.get("MATCH_STATUS", "REVIEW")), reason=str(row.get("MATCH_REASON", "")),
+        discovery_method=str(row.get("DISCOVERY_METHOD", "CHECKPOINT")),
+        source_name=str(row.get("DATA_SOURCE", "motorcyclespecs")),
+        source_priority=int(row.get("SOURCE_PRIORITY") or 99),
+    )
+
+
 def run_pipeline(*, input_path: Path, output: Path, config_path: Path, sheet: str | None = None,
                  resume: bool = True, force_refetch: bool = False, force_reparse: bool = False,
+                 clear_checkpoint_before_run: bool = False,
                  max_concurrency: int | None = None, request_delay_min: float | None = None,
                  request_delay_max: float | None = None, limit: int | None = None, start_row: int = 1,
                  trusted_score_threshold: int | None = None,
@@ -79,7 +242,15 @@ def run_pipeline(*, input_path: Path, output: Path, config_path: Path, sheet: st
         raise ValueError("request-delay-min cannot exceed request-delay-max")
     records = read_input(input_path, cfg, sheet, start_row, limit)
     root = project_root(); output = output.resolve()
-    db = StateDB(root / "data" / "checkpoints" / "state.sqlite3")
+    resume_snapshot = load_resume_snapshot(output) if resume else {}
+    current_input_ids = {record.input_id for record in records}
+    checkpoint_path = root / "data" / "checkpoints" / "state.sqlite3"
+    if clear_checkpoint_before_run:
+        removed = clear_checkpoint(checkpoint_path)
+        logging.getLogger(__name__).info(
+            "CHECKPOINT_CLEARED=%s, FILES_REMOVED=%d", checkpoint_path, len(removed),
+        )
+    db = StateDB(checkpoint_path)
     for record in records:
         db.upsert_json("input_records", {"input_id": record.input_id}, record.dict(), commit=False)
     db.conn.commit()
@@ -90,57 +261,302 @@ def run_pipeline(*, input_path: Path, output: Path, config_path: Path, sheet: st
         index_path = root / "data" / "index" / "pages.json"
         manifest_path = root / "data" / "index" / "brands.json"
         requested_brands = {r.make for r in records}
-        indexed_brands = set(json.loads(manifest_path.read_text(encoding="utf-8"))) if resume and manifest_path.exists() and not force_refetch else set()
         index = load_index(index_path) if resume and index_path.exists() and not force_refetch else []
-        if not index or not {compact_name(x) for x in requested_brands} <= {compact_name(x) for x in indexed_brands}:
-            index = build_index(crawler, cfg["site"]["base_url"], requested_brands)
+        for page in index:
+            page.setdefault("source_name", "motorcyclespecs")
+            page.setdefault("source_priority", 1)
+        raw_manifest = json.loads(manifest_path.read_text(encoding="utf-8")) if resume and manifest_path.exists() and not force_refetch else {}
+        manifests = ({"motorcyclespecs": raw_manifest} if isinstance(raw_manifest, list) else raw_manifest)
+        sources = sorted(
+            (source for source in cfg.get("sources", [dict(cfg["site"], name="motorcyclespecs", index_type="motorcyclespecs", priority=1)])
+             if source.get("enabled", True)),
+            key=lambda source: int(source.get("priority", 99)),
+        )
+        builders = {
+            "motorcyclespecs": build_index,
+            "1000ps": build_1000ps_index,
+            "bikedekho": build_bikedekho_index,
+            "bikez": build_bikez_index,
+        }
+        for source in sources:
+            source_name = source["name"]
+            indexed_brands = set(manifests.get(source_name, []))
+            indexed_compact = {compact_name(value) for value in indexed_brands}
+            missing_brands = {brand for brand in requested_brands if compact_name(brand) not in indexed_compact}
+            if not missing_brands:
+                continue
+            logging.getLogger(__name__).info(
+                "INDEXING_SOURCE=%s, BRANDS=%d, INDEX_PAGES=%d", source_name, len(missing_brands), len(index),
+            )
+            builder = builders[source.get("index_type", source_name)]
+            if builder is build_index:
+                source_index = builder(crawler, source["base_url"], missing_brands)
+            else:
+                source_index = builder(crawler, source["base_url"], missing_brands, int(source.get("priority", 99)))
+            index = list({page["page_url"]: page for page in [*index, *source_index]}.values())
+            for brand in missing_brands:
+                if any(compact_name(page.get("brand_guess", "")) == compact_name(brand) for page in source_index):
+                    indexed_brands.add(brand)
+                else:
+                    logging.getLogger(__name__).warning(
+                        "INDEXING_SOURCE=%s, BRAND=%s produced no pages; it will be retried", source_name, brand,
+                    )
+            manifests[source_name] = sorted(indexed_brands)
             save_index(index, index_path)
-            manifest_path.write_text(json.dumps(sorted(requested_brands), ensure_ascii=False, indent=2), encoding="utf-8")
+            manifest_path.parent.mkdir(parents=True, exist_ok=True)
+            manifest_path.write_text(json.dumps(manifests, ensure_ascii=False, indent=2), encoding="utf-8")
+            logging.getLogger(__name__).info(
+                "INDEXED_SOURCE=%s, SOURCE_PAGES=%d, INDEX_PAGES=%d", source_name, len(source_index), len(index),
+            )
         manual_pages = load_manual_pages(config_path.parent)
         index = list({page["page_url"]: page for page in [*index, *manual_pages]}.values())
         if stop_after == "build-index":
             return {"index_count": len(index), "index_path": str(index_path)}
         brand_aliases, model_aliases = load_aliases(config_path.parent)
-        candidates_out, selected = [], []
-        for record in records:
-            ranked = rank_candidates(record, targeted_pages(record, index), cfg, brand_aliases, model_aliases)
-            for candidate in ranked:
-                row = {
+        runtime_brand_aliases = {key: list(values) for key, values in brand_aliases.items()}
+        runtime_model_aliases = {key: list(values) for key, values in model_aliases.items()}
+        qwen_aliases = QwenAliasGenerator(cfg.get("qwen_aliases", {}), root / "data" / "cache")
+        generated_alias_records = []
+        candidates_out, selected, inferred_rows, checkpoint_raw_rows = [], [], [], []
+        checkpoint_candidates_by_input: dict[str, list[dict]] = {}
+        checkpoint_dimensions_by_input: dict[str, list[dict]] = {}
+        if resume and not force_refetch and not force_reparse:
+            for row in db.rows("candidate_pages"):
+                checkpoint_candidates_by_input.setdefault(str(row.get("INPUT_ID") or row.get("input_id") or ""), []).append(row)
+            for row in db.rows("dimension_results"):
+                checkpoint_dimensions_by_input.setdefault(str(row.get("INPUT_ID") or row.get("input_id") or ""), []).append(row)
+        try:
+            for match_position, record in enumerate(records, start=1):
+                restored_candidates = checkpoint_match_rows(
+                    record, checkpoint_candidates_by_input.get(record.input_id, []),
+                )
+                if restored_candidates:
+                    candidates_out.extend(restored_candidates)
+                    saved_dimensions = {
+                        str(row.get("SOURCE_URL") or row.get("url") or ""): row
+                        for row in checkpoint_dimensions_by_input.get(record.input_id, [])
+                        if row.get("PARSE_STATUS") in {"COMPLETE", "PARTIAL"}
+                    }
+                    restored_dimensions, pending_candidates = [], []
+                    for row in restored_candidates:
+                        if row.get("MATCH_STATUS") not in {"EXACT", "LIKELY", "MULTIPLE"}:
+                            continue
+                        url = str(row.get("CANDIDATE_URL") or "")
+                        if url in saved_dimensions:
+                            restored_dimensions.append({
+                                key: value for key, value in saved_dimensions[url].items()
+                                if key not in {"input_id", "url", "parsed_at"}
+                            })
+                        else:
+                            pending_candidates.append(candidate_from_checkpoint(row))
+                    selected.extend((record, candidate) for candidate in pending_candidates)
+                    checkpoint_raw_rows.extend(restored_dimensions)
+                    input_row = next(item for item in inputs if item["INPUT_ID"] == record.input_id)
+                    input_row["QWEN_BRAND_ALIASES"] = ""
+                    input_row["QWEN_MODEL_ALIASES"] = ""
+                    generated_alias_records.append({
+                        "INPUT_ID": record.input_id, "MAKE": record.make, "MODEL": record.model,
+                        "PROVIDER": "CHECKPOINT", "API_MODEL": qwen_aliases.model,
+                        "API_STATUS": "SKIPPED_CHECKPOINT_MATCH", "DECISION": "MATCH",
+                        "REVIEWED_CANDIDATES": [], "SELECTED_CANDIDATE": "",
+                        "AI_CONFIDENCE": "", "MATCH_BASIS": "CHECKPOINT",
+                        "AI_EXPLANATION": "Trusted candidates and parsed dimensions restored from SQLite checkpoint.",
+                        "CONFIGURATION_TOKENS": [], "BRAND_ALIASES": [], "MODEL_ALIASES": [],
+                        "INFERENCE_STATUS": "SKIPPED_CHECKPOINT_MATCH", "INFERENCE_DECISION": "",
+                        "INFERENCE_CONFIDENCE": "", "INFERENCE_VALUES": {}, "INFERENCE_EXPLANATION": "",
+                    })
+                    logging.getLogger(__name__).info(
+                        "[%d/%d] SKIP %s / %s | checkpoint=%s | candidates=%d | dimensions=%d | fetch_pending=%d",
+                        match_position, len(records), record.make, record.model,
+                        "OK" if not pending_candidates else "MATCH_OK",
+                        len(restored_candidates), len(restored_dimensions), len(pending_candidates),
+                    )
+                    continue
+                alias_key = f"{record.make}|{record.model}"
+                static_aliases = [
+                    alias
+                    for key, values in model_aliases.items()
+                    for alias in values
+                    if normalize_name(key.partition("|")[0]) == record.make_normalized
+                    and compact_name(key.partition("|")[2]) == record.model_compact
+                ]
+                static_brand_aliases = [
+                    alias
+                    for key, values in brand_aliases.items()
+                    for alias in values
+                    if normalize_name(key) == record.make_normalized
+                ]
+                aliases = list(dict.fromkeys(static_aliases))
+                brand_values = list(dict.fromkeys(static_brand_aliases))
+                runtime_model_aliases[alias_key] = aliases
+                runtime_brand_aliases[record.make_normalized] = brand_values
+                ignored_words = cfg.get("matching", {}).get("ignored_model_words", [])
+                strict_pages = targeted_pages(record, index, aliases, ignored_words, brand_values)
+                ranked = rank_candidates(
+                    record, strict_pages, cfg, runtime_brand_aliases, runtime_model_aliases,
+                )
+                credible = [item for item in ranked if item.status in {"EXACT", "LIKELY", "MULTIPLE"}]
+
+                if credible or not qwen_aliases.enabled:
+                    generated = GeneratedAliases(
+                        [], [], "SKIPPED_CONFIDENT" if credible else "DISABLED",
+                        "MATCH" if credible else "AMBIGUOUS",
+                        credible[0].title if credible else "", [],
+                    )
+                    reviewed_titles = []
+                else:
+                    broad_pages = fallback_pages(record, index, brand_values, ignored_words)
+                    cross_source_pages = cross_source_candidate_pages(
+                        record, index, brand_values, ignored_words, qwen_aliases.max_candidates,
+                    )
+                    review_pages = list({
+                        page["page_url"]: page
+                        for page in [*strict_pages, *broad_pages, *cross_source_pages]
+                    }.values())
+                    preliminary = rank_candidates(
+                        record, review_pages, cfg, runtime_brand_aliases, runtime_model_aliases,
+                    )
+                    reviewed_titles = [item.title for item in preliminary[:qwen_aliases.max_candidates]]
+                    generated = (qwen_aliases.generate(record, reviewed_titles) if reviewed_titles else GeneratedAliases(
+                        [], [], "SKIPPED_NO_CANDIDATES", "NO_MATCH", "", [],
+                        "LOW", "NONE", "No catalog candidates were available for comparison.",
+                    ))
+                    aliases = list(dict.fromkeys([*aliases, *generated.model_aliases]))
+                    brand_values = list(dict.fromkeys([*brand_values, *generated.brand_aliases]))
+                    runtime_model_aliases[alias_key] = aliases
+                    runtime_brand_aliases[record.make_normalized] = brand_values
+                    strict_pages = targeted_pages(record, index, aliases, ignored_words, brand_values)
+                    broad_pages = fallback_pages(record, index, brand_values, ignored_words)
+                    cross_source_pages = cross_source_candidate_pages(
+                        record, index, brand_values, ignored_words, qwen_aliases.max_candidates,
+                    )
+                    final_pages = list({
+                        page["page_url"]: page
+                        for page in [*strict_pages, *broad_pages, *cross_source_pages]
+                    }.values())
+                    ranked = rank_candidates(
+                        record, final_pages, cfg, runtime_brand_aliases, runtime_model_aliases,
+                    )
+
+                credible = [item for item in ranked if item.status in {"EXACT", "LIKELY", "MULTIPLE"}]
+                inferred = GeneratedDimensions(status="SKIPPED_CONFIDENT" if credible else "DISABLED")
+                if not credible:
+                    inferred = qwen_aliases.infer_dimensions(record, cfg.get("validation", {}))
+                    if inferred.decision == "INFER":
+                        values = inferred.values
+                        core_values = [values.get("length_mm"), values.get("width_mm"), values.get("height_mm")]
+                        parse_status = "COMPLETE" if all(value is not None for value in core_values) else "PARTIAL"
+                        inferred_rows.append({
+                            "INPUT_ID": record.input_id, "MAKE": record.make, "MODEL": record.model,
+                            "车辆类型": record.vehicle_type, "DATA_SOURCE": "QWEN_INFERENCE", "SOURCE_PRIORITY": 99,
+                            "SOURCE_MAKE": record.make, "SOURCE_MODEL": record.model, "SOURCE_VERSION": "",
+                            "YEAR": "", "YEAR_START": "", "YEAR_END": "", "PAGE_TITLE": f"{record.make} {record.model}",
+                            "SOURCE_URL": "", "L_RAW": "", "W_RAW": "", "H_RAW": "", "UNIT_RAW": "mm",
+                            "L-MM-MIN": values.get("length_mm"), "L-MM-MAX": values.get("length_mm"),
+                            "W-MM-MIN": values.get("width_mm"), "W-MM-MAX": values.get("width_mm"),
+                            "H-MM-MIN": values.get("height_mm"), "H-MM-MAX": values.get("height_mm"),
+                            "L-MM": values.get("length_mm"), "W-MM": values.get("width_mm"), "H-MM": values.get("height_mm"),
+                            "WHEELBASE-MM": values.get("wheelbase_mm"), "SEAT-HEIGHT-MM": values.get("seat_height_mm"),
+                            "GROUND-CLEARANCE-MM": values.get("ground_clearance_mm"), "WIDTH_SCOPE": "UNKNOWN",
+                            "HEIGHT_SCOPE": "UNKNOWN", "ACCESSORY_STATUS": "UNKNOWN",
+                            "DIMENSION_RAW": json.dumps(values, ensure_ascii=False), "MODEL_SIMILARITY": "",
+                            "MATCH_SCORE": 0, "MATCH_CONFIDENCE": "LOW", "MATCH_STATUS": "INFERRED",
+                            "PARSE_STATUS": parse_status, "CONFIDENCE": "LOW", "ANOMALY_FLAGS": "AI_INFERRED",
+                            "NOTES": f"Unverified Qwen inference: {inferred.explanation}",
+                            "FETCHED_AT": utc_now(), "CONTENT_HASH": "",
+                        })
+
+                input_row = next(item for item in inputs if item["INPUT_ID"] == record.input_id)
+                input_row["QWEN_BRAND_ALIASES"] = "|".join(generated.brand_aliases)
+                input_row["QWEN_MODEL_ALIASES"] = "|".join(generated.model_aliases)
+                generated_alias_records.append({
                     "INPUT_ID": record.input_id, "MAKE": record.make, "MODEL": record.model,
-                    "CANDIDATE_TITLE": candidate.title, "CANDIDATE_URL": candidate.url,
-                    "SOURCE_MAKE": candidate.source_make, "SOURCE_MODEL": candidate.source_model,
-                    "SOURCE_VERSION": candidate.source_version, "SOURCE_YEAR": candidate.source_year,
-                    "MATCH_SCORE": candidate.score, "MATCH_STATUS": candidate.status,
-                    "MODEL_SIMILARITY": next((part.split("=",1)[1] for part in candidate.reason.split("; ") if part.startswith("model_similarity=")), ""),
-                    "MATCH_CONFIDENCE": "HIGH" if candidate.status == "EXACT" else "MEDIUM" if candidate.status == "LIKELY" else "LOW",
-                    "MATCH_REASON": candidate.reason, "DISCOVERY_METHOD": "MANUAL_CONFIG" if candidate.url in {p["page_url"] for p in manual_pages} else candidate.discovery_method,
-                }
-                candidates_out.append(row)
-                db.upsert_json("candidate_pages", {"input_id": record.input_id, "url": candidate.url}, row, commit=False)
-                if candidate.status in {"EXACT", "LIKELY", "MULTIPLE"}:
-                    selected.append((record, candidate))
+                    "PROVIDER": "QWEN" if qwen_aliases.enabled else "DISABLED", "API_MODEL": qwen_aliases.model,
+                    "API_STATUS": generated.status, "DECISION": generated.decision,
+                    "REVIEWED_CANDIDATES": reviewed_titles, "SELECTED_CANDIDATE": generated.selected_candidate,
+                    "AI_CONFIDENCE": generated.confidence, "MATCH_BASIS": generated.match_basis,
+                    "AI_EXPLANATION": generated.explanation,
+                    "INFERENCE_STATUS": inferred.status, "INFERENCE_DECISION": inferred.decision,
+                    "INFERENCE_CONFIDENCE": inferred.confidence, "INFERENCE_VALUES": inferred.values,
+                    "INFERENCE_EXPLANATION": inferred.explanation,
+                    "CONFIGURATION_TOKENS": generated.configuration_tokens,
+                    "BRAND_ALIASES": generated.brand_aliases, "MODEL_ALIASES": generated.model_aliases,
+                })
+                db.clear_input_candidates(record.input_id, commit=False)
+                for candidate in ranked:
+                    row = {
+                        "INPUT_ID": record.input_id, "MAKE": record.make, "MODEL": record.model,
+                        "CANDIDATE_TITLE": candidate.title, "CANDIDATE_URL": candidate.url,
+                        "DATA_SOURCE": candidate.source_name, "SOURCE_PRIORITY": candidate.source_priority,
+                        "SOURCE_MAKE": candidate.source_make, "SOURCE_MODEL": candidate.source_model,
+                        "SOURCE_VERSION": candidate.source_version, "SOURCE_YEAR": candidate.source_year,
+                        "MATCH_SCORE": candidate.score, "MATCH_STATUS": candidate.status,
+                        "MODEL_SIMILARITY": next((part.split("=",1)[1] for part in candidate.reason.split("; ") if part.startswith("model_similarity=")), ""),
+                        "MATCH_CONFIDENCE": "HIGH" if candidate.status == "EXACT" else "MEDIUM" if candidate.status == "LIKELY" else "LOW",
+                        "MATCH_REASON": candidate.reason, "DISCOVERY_METHOD": "MANUAL_CONFIG" if candidate.url in {p["page_url"] for p in manual_pages} else candidate.discovery_method,
+                    }
+                    candidates_out.append(row)
+                    db.upsert_json("candidate_pages", {"input_id": record.input_id, "url": candidate.url}, row, commit=False)
+                    if candidate.status in {"EXACT", "LIKELY", "MULTIPLE"}:
+                        selected.append((record, candidate))
+                if inferred.decision == "INFER":
+                    candidates_out.append({
+                        "INPUT_ID": record.input_id, "MAKE": record.make, "MODEL": record.model,
+                        "CANDIDATE_TITLE": f"Qwen inference: {record.make} {record.model}", "CANDIDATE_URL": "",
+                        "DATA_SOURCE": "QWEN_INFERENCE", "SOURCE_PRIORITY": 99, "SOURCE_MAKE": record.make,
+                        "SOURCE_MODEL": record.model, "SOURCE_VERSION": "", "SOURCE_YEAR": "",
+                        "MATCH_SCORE": 0, "MATCH_STATUS": "INFERRED", "MODEL_SIMILARITY": "",
+                        "MATCH_CONFIDENCE": "LOW", "MATCH_REASON": inferred.explanation,
+                        "DISCOVERY_METHOD": "QWEN_INFERENCE",
+                    })
+                # Persist one input atomically as soon as its match result is
+                # known, so an interrupted long run can skip it next time.
+                db.conn.commit()
+                log_match_summary(record, ranked, generated, match_position, len(records), inferred)
+        finally:
+            qwen_aliases.close()
+        generated_alias_path = output / "generated_aliases.json"
+        if qwen_aliases.enabled:
+            output.mkdir(parents=True, exist_ok=True)
+            generated_alias_path.write_text(
+                json.dumps(generated_alias_records, ensure_ascii=False, indent=2), encoding="utf-8"
+            )
+        else:
+            generated_alias_path.unlink(missing_ok=True)
         db.conn.commit()
         if stop_after == "match":
-            return {"candidate_count": len(candidates_out), "credible_page_count": len(selected),
-                    "credible_input_count": len({record.input_id for record, _ in selected})}
-        raw_out = []
-        for record, candidate in selected:
+            credible_checkpoint = [row for row in candidates_out if row.get("MATCH_STATUS") in {"EXACT", "LIKELY", "MULTIPLE"}]
+            return {"candidate_count": len(candidates_out), "credible_page_count": len(credible_checkpoint),
+                    "credible_input_count": len({row["INPUT_ID"] for row in credible_checkpoint}),
+                    "inferred_input_count": len(inferred_rows)}
+        raw_out = [*checkpoint_raw_rows, *inferred_rows]
+        for fetch_position, (record, candidate) in enumerate(selected, start=1):
+            logging.getLogger(__name__).info(
+                "FETCH_PROGRESS=%d/%d, BRAND=%s, MODEL=%s, PAGE_TITLE=%s",
+                fetch_position, len(selected), record.make, record.model, candidate.title,
+            )
             if resume and not force_reparse and db.parsed(record.input_id, candidate.url):
                 previous = next((x for x in db.rows("dimension_results") if x["input_id"] == record.input_id and x["url"] == candidate.url), None)
                 if previous:
                     restored = {k:v for k,v in previous.items() if k not in {"input_id","url","parsed_at"}}
                     restored.update({
                         "SOURCE_MAKE": candidate.source_make, "SOURCE_MODEL": candidate.source_model,
+                        "DATA_SOURCE": candidate.source_name, "SOURCE_PRIORITY": candidate.source_priority,
                         "MODEL_SIMILARITY": next((part.split("=",1)[1] for part in candidate.reason.split("; ") if part.startswith("model_similarity=")), ""),
                         "MATCH_SCORE": candidate.score, "MATCH_CONFIDENCE": "HIGH" if candidate.status == "EXACT" else "MEDIUM" if candidate.status == "LIKELY" else "LOW",
                         "MATCH_STATUS": candidate.status,
                     })
                     raw_out.append(restored)
+                    logging.getLogger(__name__).info(
+                        "FETCH_PROGRESS=%d/%d, STATUS=RESTORED_FROM_CHECKPOINT",
+                        fetch_position, len(selected),
+                    )
                     continue
-            html, meta, _ = crawler.fetch(candidate.url, force_refetch)
+            html, meta, from_cache = crawler.fetch(candidate.url, force_refetch)
             if html is None:
                 parsed_row = {
                     "INPUT_ID":record.input_id,"MAKE":record.make,"MODEL":record.model,"车辆类型":record.vehicle_type,
+                    "DATA_SOURCE":candidate.source_name,"SOURCE_PRIORITY":candidate.source_priority,
                     "SOURCE_MAKE":candidate.source_make,"SOURCE_MODEL":candidate.source_model,"SOURCE_VERSION":candidate.source_version,
                     "PAGE_TITLE":candidate.title,"SOURCE_URL":candidate.url,"MATCH_SCORE":candidate.score,"MATCH_STATUS":candidate.status,
                     "PARSE_STATUS":"FETCH_FAILED","CONFIDENCE":"LOW","ANOMALY_FLAGS":"","NOTES":"Page fetch failed",
@@ -150,6 +566,7 @@ def run_pipeline(*, input_path: Path, output: Path, config_path: Path, sheet: st
                 vals, raws = dim.values, dim.raw
                 parsed_row = {
                     "INPUT_ID":record.input_id,"MAKE":record.make,"MODEL":record.model,"车辆类型":record.vehicle_type,
+                    "DATA_SOURCE":candidate.source_name,"SOURCE_PRIORITY":candidate.source_priority,
                     "SOURCE_MAKE":candidate.source_make,"SOURCE_MODEL":candidate.source_model,"SOURCE_VERSION":candidate.source_version,
                     "YEAR":page["year"],"YEAR_START":page["year_start"],"YEAR_END":page["year_end"],"PAGE_TITLE":page["page_title"],"SOURCE_URL":candidate.url,
                     "L_RAW":raws.get("l",""),"W_RAW":raws.get("w",""),"H_RAW":raws.get("h",""),"UNIT_RAW":raws.get("unit",""),
@@ -164,12 +581,25 @@ def run_pipeline(*, input_path: Path, output: Path, config_path: Path, sheet: st
                 }
             raw_out.append(parsed_row)
             db.upsert_json("dimension_results", {"input_id":record.input_id,"url":candidate.url}, parsed_row, {"parsed_at":utc_now()})
+            logging.getLogger(__name__).info(
+                "FETCH_PROGRESS=%d/%d, STATUS=%s, PARSE_STATUS=%s",
+                fetch_position, len(selected),
+                "CACHE_HIT" if from_cache else "FETCHED" if html is not None else "FETCH_FAILED",
+                parsed_row.get("PARSE_STATUS", ""),
+            )
         if stop_after in {"fetch", "parse"}:
             return {"selected_count":len(selected),"result_count":len(raw_out),"fetched":crawler.fetched,"cache_hits":crawler.cache_hits}
-        groups = group_dimensions(raw_out, cfg)
+        if resume_snapshot:
+            inputs = merge_resumed_rows(resume_snapshot.get("INPUT_NORMALIZED", []), inputs, current_input_ids)
+            candidates_out = merge_resumed_rows(
+                resume_snapshot.get("CANDIDATE_DIAGNOSTIC", []), candidates_out, current_input_ids,
+            )
+            raw_out = merge_resumed_rows(resume_snapshot.get("DIMENSIONS_RAW", []), raw_out, current_input_ids)
+        effective_raw = preferred_source_rows(raw_out)
+        groups = group_dimensions(effective_raw, cfg)
         if stop_after == "summarize":
             return {"dimension_group_count": len(groups)}
-        credible_ids = {r["INPUT_ID"] for r in candidates_out if r["MATCH_STATUS"] in {"EXACT","LIKELY","MULTIPLE"}}
+        credible_ids = {r["INPUT_ID"] for r in candidates_out if r["MATCH_STATUS"] in {"EXACT","LIKELY","MULTIPLE","INFERRED"}}
         review = []
         for candidate_row in candidates_out:
             if candidate_row.get("MATCH_STATUS") == "REVIEW":
@@ -180,6 +610,7 @@ def run_pipeline(*, input_path: Path, output: Path, config_path: Path, sheet: st
                     "NOTES":candidate_row.get("MATCH_REASON", "")})
         for row in raw_out:
             issues = []
+            if row.get("MATCH_STATUS") == "INFERRED": issues.append("AI_INFERRED_DIMENSION")
             if row.get("PARSE_STATUS") == "FETCH_FAILED": issues.append("FETCH_FAILED")
             elif row.get("PARSE_STATUS") == "NO_DIMENSION": issues.append("DIMENSION_MISSING")
             elif row.get("PARSE_STATUS") == "PARTIAL": issues.append("PARTIAL_DIMENSION")
@@ -191,16 +622,17 @@ def run_pipeline(*, input_path: Path, output: Path, config_path: Path, sheet: st
                     "CANDIDATE_URLS":row.get("SOURCE_URL",""),"RAW_VALUE":row.get("DIMENSION_RAW",""),"MATCH_SCORE":row.get("MATCH_SCORE",""),
                     "ANOMALY_FLAGS":row.get("ANOMALY_FLAGS",""),"RECOMMENDED_ACTION":"Verify source page manually","NOTES":row.get("NOTES","")})
         not_found = []
-        for record in records:
-            if record.input_id not in credible_ids:
-                best = best_review_candidate(candidates_out, record.input_id, cfg["matching"]["review_threshold"])
-                not_found.append({"INPUT_ID":record.input_id,"MAKE":record.make,"MODEL":record.model,"车辆类型":record.vehicle_type,
-                    "SEARCH_TERMS_USED":f"{record.make} {record.model}","BEST_CANDIDATE":best.get("CANDIDATE_URL",""),"BEST_SCORE":best.get("MATCH_SCORE",""),"NOTES":"No credible candidate; no automatic fallback selected"})
-                review.append({"INPUT_ID":record.input_id,"MAKE":record.make,"MODEL":record.model,"ISSUE_TYPE":"NOT_FOUND","CANDIDATE_URLS":"","RAW_VALUE":"","MATCH_SCORE":best.get("MATCH_SCORE",""),"ANOMALY_FLAGS":"","RECOMMENDED_ACTION":"Search catalog manually","NOTES":""})
+        for item in inputs:
+            input_id = item["INPUT_ID"]
+            if input_id not in credible_ids:
+                best = best_review_candidate(candidates_out, input_id, cfg["matching"]["review_threshold"])
+                not_found.append({"INPUT_ID":input_id,"MAKE":item["MAKE"],"MODEL":item["MODEL"],"车辆类型":item.get("车辆类型", ""),
+                    "SEARCH_TERMS_USED":f"{item['MAKE']} {item['MODEL']}","BEST_CANDIDATE":best.get("CANDIDATE_URL",""),"BEST_SCORE":best.get("MATCH_SCORE",""),"NOTES":"No credible candidate; no automatic fallback selected"})
+                review.append({"INPUT_ID":input_id,"MAKE":item["MAKE"],"MODEL":item["MODEL"],"ISSUE_TYPE":"NOT_FOUND","CANDIDATE_URLS":"","RAW_VALUE":"","MATCH_SCORE":best.get("MATCH_SCORE",""),"ANOMALY_FLAGS":"","RECOMMENDED_ACTION":"Search catalog manually","NOTES":""})
         report = make_report(started, inputs, candidates_out, raw_out, groups, db.rows("errors"), crawler.fetched, crawler.cache_hits)
         report["not_found_count"] = len(not_found)
         report["review_count"] = len(review)
-        save_report(report, output / "run_report.json")
+        save_report(report, output / "logs" / "run_report.json")
         export_all(output, inputs, candidates_out, raw_out, groups, review, not_found, report)
         return report
     finally:

@@ -1,0 +1,21 @@
+{
+  "decision": "MATCH",
+  "selected_candidate": "GSX-R1000Rs 40th \n\t\tAnniversary",
+  "confidence": "HIGH",
+  "match_basis": "MARKET_ALIAS",
+  "explanation": "The input 'GSX-R1000 40th Anniversary' refers to the same motorcycle model as the candidate 'GSX-R1000Rs 40th \n\t\tAnniversary', with the plural 'Rs' being a common market or catalog variation for the 'R' suffix in Suzuki's naming (e.g., GSX-R1000R). The 40th Anniversary designation confirms identical model identity. No displacement or core configuration differs.",
+  "canonical_model_alias": "GSX-R1000Rs 40th \n\t\tAnniversary",
+  "configuration_tokens": [
+    "40th",
+    "Anniversary"
+  ],
+  "brand_aliases": [],
+  "model_aliases": [
+    "GSX-R1000Rs 40th Anniversary"
+  ],
+  "status": "SUCCESS",
+  "prompt_version": "motorcycle-candidate-resolution-v4",
+  "model": "qwen-flash",
+  "make": "Suzuki",
+  "model_name": "GSX-R1000 40th Anniversary"
+}

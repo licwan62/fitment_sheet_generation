@@ -1,0 +1,16 @@
+{
+  "decision": "INFER",
+  "confidence": "MEDIUM",
+  "length_mm": 2150,
+  "width_mm": 850,
+  "height_mm": 1300,
+  "wheelbase_mm": 1450,
+  "seat_height_mm": 960,
+  "ground_clearance_mm": 270,
+  "explanation": "Inferred from typical dimensions of similar off-road motocross bikes in the 250-350cc range, such as the KTM 300 EXC, with which the Gas Gas EX 300 shares platform and design lineage. Dimensions are approximate and based on general industry standards for this class; exact values may vary by model year or market.",
+  "status": "SUCCESS",
+  "prompt_version": "motorcycle-dimension-inference-v1",
+  "model": "qwen-flash",
+  "make": "Gas Gas",
+  "model_name": "EX 300"
+}

@@ -1,0 +1,20 @@
+{
+  "decision": "MATCH",
+  "selected_candidate": "gasgas halley 450 r",
+  "confidence": "HIGH",
+  "match_basis": "SAME_NAME",
+  "explanation": "The input 'Halley 450 R' matches the catalog candidate 'gasgas halley 450 r' exactly in model name, displacement, and configuration suffix, with only case and formatting differences.",
+  "canonical_model_alias": "halley 450 r",
+  "configuration_tokens": [
+    "r"
+  ],
+  "brand_aliases": [],
+  "model_aliases": [
+    "gasgas halley 450 r"
+  ],
+  "status": "SUCCESS",
+  "prompt_version": "motorcycle-candidate-resolution-v4",
+  "model": "qwen-flash",
+  "make": "Gas Gas",
+  "model_name": "Halley 450 R"
+}

@@ -1,0 +1,16 @@
+{
+  "decision": "NO_MATCH",
+  "selected_candidate": "",
+  "confidence": "HIGH",
+  "match_basis": "NONE",
+  "explanation": "The model 'Paradox V111 Carb' from Big Bear Choppers does not match any entries in the catalog candidates list. No known market name, historical alias, abbreviation, or plausible typo of this model exists in the provided candidate set. The displacement (V111) and carburetor configuration are specific identifiers that do not align with any listed candidates.",
+  "canonical_model_alias": "",
+  "configuration_tokens": [],
+  "brand_aliases": [],
+  "model_aliases": [],
+  "status": "SUCCESS",
+  "prompt_version": "motorcycle-candidate-resolution-v4",
+  "model": "qwen-flash",
+  "make": "Big Bear Choppers",
+  "model_name": "Paradox V111 Carb"
+}

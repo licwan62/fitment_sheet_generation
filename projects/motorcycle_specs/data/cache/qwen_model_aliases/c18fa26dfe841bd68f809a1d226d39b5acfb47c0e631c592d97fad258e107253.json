@@ -1,0 +1,19 @@
+{
+  "decision": "MATCH",
+  "selected_candidate": "R 1300GS \n\t\tAdventure/Trophy/Triple Black",
+  "canonical_model_alias": "R 1300GS Adventure/Trophy/Triple Black",
+  "configuration_tokens": [
+    "Adventure",
+    "Trophy",
+    "Triple Black"
+  ],
+  "brand_aliases": [],
+  "model_aliases": [
+    "R 1300GS Adventure/Trophy/Triple Black"
+  ],
+  "status": "SUCCESS",
+  "prompt_version": "motorcycle-candidate-resolution-v3",
+  "model": "qwen-flash",
+  "make": "BMW",
+  "model_name": "R1300GS Trophy"
+}

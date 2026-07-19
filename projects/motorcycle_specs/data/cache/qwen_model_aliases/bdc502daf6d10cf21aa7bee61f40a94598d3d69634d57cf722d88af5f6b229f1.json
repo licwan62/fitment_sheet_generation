@@ -1,0 +1,19 @@
+{
+  "decision": "MATCH",
+  "selected_candidate": "gasgas ec 500f",
+  "confidence": "HIGH",
+  "match_basis": "MARKET_ALIAS",
+  "explanation": "The input 'EW 500F' is a known market-specific naming variant for the Gas Gas EC 500F, where 'EW' stands for 'Enduro World' and is used in certain regions. The displacement (500F) and model series (EC) match exactly, confirming it is the same underlying motorcycle.",
+  "canonical_model_alias": "ec 500f",
+  "configuration_tokens": [],
+  "brand_aliases": [],
+  "model_aliases": [
+    "gasgas ec 500f",
+    "ec 500f"
+  ],
+  "status": "SUCCESS",
+  "prompt_version": "motorcycle-candidate-resolution-v4",
+  "model": "qwen-flash",
+  "make": "Gas Gas",
+  "model_name": "EW 500F"
+}

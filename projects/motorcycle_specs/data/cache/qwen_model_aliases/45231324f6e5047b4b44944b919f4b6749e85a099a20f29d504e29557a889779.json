@@ -1,0 +1,16 @@
+{
+  "decision": "NO_MATCH",
+  "selected_candidate": "",
+  "confidence": "HIGH",
+  "match_basis": "NONE",
+  "explanation": "The catalog candidate 'Pulsar 150' is a different model from the input 'Pulsar 150 NS'. The 'NS' suffix denotes a specific variant (likely with enhanced suspension, styling, or performance features) that distinguishes it as a distinct configuration. Since the candidates do not match in name or identity, and no known alias relationship exists between 'Pulsar 150' and 'Pulsar 150 NS', they are considered different models.",
+  "canonical_model_alias": "",
+  "configuration_tokens": [],
+  "brand_aliases": [],
+  "model_aliases": [],
+  "status": "SUCCESS",
+  "prompt_version": "motorcycle-candidate-resolution-v4",
+  "model": "qwen-flash",
+  "make": "Bajaj",
+  "model_name": "Pulsar 150 NS"
+}

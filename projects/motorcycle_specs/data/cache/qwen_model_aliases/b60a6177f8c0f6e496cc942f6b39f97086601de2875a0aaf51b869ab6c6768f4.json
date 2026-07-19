@@ -1,0 +1,18 @@
+{
+  "decision": "MATCH",
+  "selected_candidate": "SM 125 Halley",
+  "confidence": "HIGH",
+  "match_basis": "SAME_NAME",
+  "explanation": "The input 'SM Halley 125' and the candidate 'SM 125 Halley' refer to the same motorcycle model, with only a minor word order difference that does not change the identity. The displacement (125) and model name (SM Halley) are identical.",
+  "canonical_model_alias": "SM 125 Halley",
+  "configuration_tokens": [],
+  "brand_aliases": [],
+  "model_aliases": [
+    "SM 125 Halley"
+  ],
+  "status": "SUCCESS",
+  "prompt_version": "motorcycle-candidate-resolution-v4",
+  "model": "qwen-flash",
+  "make": "Gas Gas",
+  "model_name": "SM Halley 125"
+}

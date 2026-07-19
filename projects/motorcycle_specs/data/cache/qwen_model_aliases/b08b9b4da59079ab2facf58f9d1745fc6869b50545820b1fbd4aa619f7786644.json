@@ -1,0 +1,16 @@
+{
+  "decision": "NO_MATCH",
+  "selected_candidate": "",
+  "confidence": "HIGH",
+  "match_basis": "NONE",
+  "explanation": "The input model 'K1100RS SE' is a specific variant of the K1100RS with a Special Edition designation, while all catalog candidates are K1100LT models, which are a different motorcycle line with distinct design, purpose, and specifications. The K1100LT is a touring model, whereas the K1100RS is a sport-touring model. No candidate matches the K1100RS SE in model identity.",
+  "canonical_model_alias": "",
+  "configuration_tokens": [],
+  "brand_aliases": [],
+  "model_aliases": [],
+  "status": "SUCCESS",
+  "prompt_version": "motorcycle-candidate-resolution-v4",
+  "model": "qwen-flash",
+  "make": "BMW",
+  "model_name": "K1100RS SE"
+}

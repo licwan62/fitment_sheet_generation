@@ -1,0 +1,20 @@
+{
+  "decision": "MATCH",
+  "selected_candidate": "Honda XR190CT",
+  "confidence": "HIGH",
+  "match_basis": "MARKET_ALIAS",
+  "explanation": "The 'XR190 STD' is a standard configuration of the Honda XR190, and 'XR190CT' is a known market-specific variant (likely for the Chinese or Asian market) that shares the same underlying model identity. The 'CT' suffix is a common configuration label used in regional markets without changing the core model. Displacement (190) and platform are identical.",
+  "canonical_model_alias": "XR190CT",
+  "configuration_tokens": [
+    "CT"
+  ],
+  "brand_aliases": [],
+  "model_aliases": [
+    "XR190CT"
+  ],
+  "status": "SUCCESS",
+  "prompt_version": "motorcycle-candidate-resolution-v4",
+  "model": "qwen-flash",
+  "make": "Honda",
+  "model_name": "XR190 STD"
+}

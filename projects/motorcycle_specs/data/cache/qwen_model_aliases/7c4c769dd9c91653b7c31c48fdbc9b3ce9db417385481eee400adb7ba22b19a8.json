@@ -1,0 +1,18 @@
+{
+  "decision": "MATCH",
+  "selected_candidate": "Rebel CMX 300",
+  "confidence": "HIGH",
+  "match_basis": "SAME_NAME",
+  "explanation": "The input 'CMX300 Rebel 300' and the candidate 'Rebel CMX 300' refer to the same motorcycle model, with only the order of name components swapped. The displacement (300) and model code (CMX) are identical, confirming the same underlying motorcycle.",
+  "canonical_model_alias": "Rebel CMX 300",
+  "configuration_tokens": [],
+  "brand_aliases": [],
+  "model_aliases": [
+    "Rebel CMX 300"
+  ],
+  "status": "SUCCESS",
+  "prompt_version": "motorcycle-candidate-resolution-v4",
+  "model": "qwen-flash",
+  "make": "Honda",
+  "model_name": "CMX300 Rebel 300"
+}

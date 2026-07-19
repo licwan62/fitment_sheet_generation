@@ -1,0 +1,16 @@
+{
+  "decision": "MATCH",
+  "selected_candidate": "VT800C Shadow",
+  "confidence": "HIGH",
+  "match_basis": "SAME_NAME",
+  "explanation": "The input model 'VT800C Shadow' exactly matches the catalog candidate 'VT800C Shadow' in name, displacement, and model designation.",
+  "canonical_model_alias": "VT800C Shadow",
+  "configuration_tokens": [],
+  "brand_aliases": [],
+  "model_aliases": [],
+  "status": "SUCCESS",
+  "prompt_version": "motorcycle-candidate-resolution-v4",
+  "model": "qwen-flash",
+  "make": "Honda",
+  "model_name": "VT800C Shadow"
+}

@@ -1,0 +1,18 @@
+{
+  "decision": "MATCH",
+  "selected_candidate": "beta minitrial",
+  "confidence": "HIGH",
+  "match_basis": "SAME_NAME",
+  "explanation": "The input 'Mini Trials' is a direct reference to the Beta Minitrial model, and 'beta minitrial' is the canonical catalog expression. The other candidates either represent different models (e.g., electric variants, Motard, Cruiser) or are unrelated. The core model identity matches exactly.",
+  "canonical_model_alias": "beta minitrial",
+  "configuration_tokens": [],
+  "brand_aliases": [],
+  "model_aliases": [
+    "minitrial"
+  ],
+  "status": "SUCCESS",
+  "prompt_version": "motorcycle-candidate-resolution-v4",
+  "model": "qwen-flash",
+  "make": "Beta",
+  "model_name": "Mini Trials"
+}

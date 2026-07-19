@@ -1,0 +1,18 @@
+{
+  "decision": "MATCH",
+  "selected_candidate": "M4 Motard",
+  "confidence": "HIGH",
+  "match_basis": "MARKET_ALIAS",
+  "explanation": "'M4-4T' is a market-specific designation for the Beta M4 Motard model, with '4T' indicating the 4-stroke engine configuration. The catalog candidate 'M4 Motard' refers to the same underlying motorcycle model, differing only in naming convention and suffix usage.",
+  "canonical_model_alias": "M4 Motard",
+  "configuration_tokens": [],
+  "brand_aliases": [],
+  "model_aliases": [
+    "M4 Motard"
+  ],
+  "status": "SUCCESS",
+  "prompt_version": "motorcycle-candidate-resolution-v4",
+  "model": "qwen-flash",
+  "make": "Beta",
+  "model_name": "M4-4T"
+}

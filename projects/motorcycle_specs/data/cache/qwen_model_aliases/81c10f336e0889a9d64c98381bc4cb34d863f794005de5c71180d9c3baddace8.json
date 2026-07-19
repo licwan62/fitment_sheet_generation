@@ -1,0 +1,18 @@
+{
+  "decision": "MATCH",
+  "selected_candidate": "Electra Glide Highway King",
+  "confidence": "HIGH",
+  "match_basis": "MARKET_ALIAS",
+  "explanation": "FLHFB is the model code for the Electra Glide Highway King, a specific configuration of the Electra Glide line marketed as 'Highway King' in certain regions or years. The catalog candidate 'Electra Glide Highway King' matches this model exactly, despite the input including 'FLHFB' and 'Harley-Davidson'. This is a known market-specific name variant for the same underlying motorcycle.",
+  "canonical_model_alias": "Electra Glide Highway King",
+  "configuration_tokens": [],
+  "brand_aliases": [],
+  "model_aliases": [
+    "Electra Glide Highway King"
+  ],
+  "status": "SUCCESS",
+  "prompt_version": "motorcycle-candidate-resolution-v4",
+  "model": "qwen-flash",
+  "make": "Harley-Davidson",
+  "model_name": "FLHFB Electra Glide Highway King"
+}

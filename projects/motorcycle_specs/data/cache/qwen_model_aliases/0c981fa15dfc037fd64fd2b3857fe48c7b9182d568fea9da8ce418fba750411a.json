@@ -1,0 +1,16 @@
+{
+  "decision": "NO_MATCH",
+  "selected_candidate": "",
+  "confidence": "HIGH",
+  "match_basis": "NONE",
+  "explanation": "The input model CRF250F is a dual-sport motorcycle with a specific configuration, while the catalog candidates CRF 250L, CRF 250M, and CRF 250X are distinct models with different designations and intended uses. The 'F' in CRF250F denotes a specific variant (e.g., for off-road or factory use), which is not equivalent to the L, M, or X variants. No known market name, historical alias, abbreviation, or typo links CRF250F to any of the listed candidates. Therefore, no match exists.",
+  "canonical_model_alias": "",
+  "configuration_tokens": [],
+  "brand_aliases": [],
+  "model_aliases": [],
+  "status": "SUCCESS",
+  "prompt_version": "motorcycle-candidate-resolution-v4",
+  "model": "qwen-flash",
+  "make": "Honda",
+  "model_name": "CRF250F"
+}

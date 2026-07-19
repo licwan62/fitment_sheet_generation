@@ -1,0 +1,21 @@
+{
+  "decision": "MATCH",
+  "selected_candidate": "gasgas ec 450 fse",
+  "confidence": "HIGH",
+  "match_basis": "MARKET_ALIAS",
+  "explanation": "The input 'EC 450 FSR' is a known market-specific variant (likely for the U.S. or North American market) of the EC 450 FSE, which is the standard international model name. The 'R' in FSR may denote a regional configuration or marketing label, but the core model identity (EC 450 FSE) remains unchanged. The candidate 'gasgas ec 450 fse' matches this model exactly in name and displacement.",
+  "canonical_model_alias": "ec 450 fse",
+  "configuration_tokens": [
+    "fsr"
+  ],
+  "brand_aliases": [],
+  "model_aliases": [
+    "gasgas ec 450 fse",
+    "ec 450 fse"
+  ],
+  "status": "SUCCESS",
+  "prompt_version": "motorcycle-candidate-resolution-v4",
+  "model": "qwen-flash",
+  "make": "Gas Gas",
+  "model_name": "EC 450 FSR"
+}

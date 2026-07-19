@@ -1,0 +1,21 @@
+{
+  "decision": "MATCH",
+  "selected_candidate": "cfmoto jetmax 250 efi",
+  "confidence": "HIGH",
+  "match_basis": "MARKET_ALIAS",
+  "explanation": "The '250NK FI + ABS' is a market-specific naming for the CFMOTO Jetmax 250 EFI, with 'FI + ABS' indicating fuel injection and anti-lock braking system—features consistent with the Jetmax 250 EFI model. The name '250NK' is a known internal or regional designation for this model in certain markets, making it a valid market alias.",
+  "canonical_model_alias": "jetmax 250 efi",
+  "configuration_tokens": [
+    "FI",
+    "ABS"
+  ],
+  "brand_aliases": [],
+  "model_aliases": [
+    "jetmax 250 efi"
+  ],
+  "status": "SUCCESS",
+  "prompt_version": "motorcycle-candidate-resolution-v4",
+  "model": "qwen-flash",
+  "make": "CFMOTO",
+  "model_name": "250NK FI + ABS"
+}

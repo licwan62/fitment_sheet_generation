@@ -1,0 +1,16 @@
+{
+  "decision": "NO_MATCH",
+  "selected_candidate": "",
+  "confidence": "HIGH",
+  "match_basis": "NONE",
+  "explanation": "The input model 'ALP 4.0 350' specifies a Beta ALP 4.0 with a 350cc engine, but none of the catalog candidates match this exact model. The candidates either have different displacements (e.g., 200, 430), are different model lines (e.g., RR X Pro, RR Race), or lack the 350cc specification. No known market name, abbreviation, or typo links the ALP 4.0 350 to any of these candidates.",
+  "canonical_model_alias": "",
+  "configuration_tokens": [],
+  "brand_aliases": [],
+  "model_aliases": [],
+  "status": "SUCCESS",
+  "prompt_version": "motorcycle-candidate-resolution-v4",
+  "model": "qwen-flash",
+  "make": "Beta",
+  "model_name": "ALP 4.0 350"
+}

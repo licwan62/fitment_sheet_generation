@@ -1,0 +1,16 @@
+{
+  "decision": "MATCH",
+  "selected_candidate": "GL 1800 F6C Gold Wing Valkyrie",
+  "confidence": "HIGH",
+  "match_basis": "MARKET_ALIAS",
+  "explanation": "The 'GL1800 Valkyrie' is a known market-specific name for the GL 1800 F6C Gold Wing Valkyrie model, particularly in North America. The F6C designation identifies the same motorcycle with the Valkyrie trim and features. The catalog candidate matches exactly in displacement, model code, and naming convention.",
+  "canonical_model_alias": "GL 1800 F6C Gold Wing Valkyrie",
+  "configuration_tokens": [],
+  "brand_aliases": [],
+  "model_aliases": [],
+  "status": "SUCCESS",
+  "prompt_version": "motorcycle-candidate-resolution-v4",
+  "model": "qwen-flash",
+  "make": "Honda",
+  "model_name": "GL1800 Valkyrie"
+}

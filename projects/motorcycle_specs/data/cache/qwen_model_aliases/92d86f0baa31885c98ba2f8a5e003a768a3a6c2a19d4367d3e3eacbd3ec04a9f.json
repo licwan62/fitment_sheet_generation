@@ -1,0 +1,18 @@
+{
+  "decision": "MATCH",
+  "selected_candidate": "SMV 750 Dorsoduro",
+  "confidence": "HIGH",
+  "match_basis": "MARKET_ALIAS",
+  "explanation": "The 'SMV 750 Dorsoduro' is a known market-specific catalog name for the Aprilia Dorsoduro 750, with 'SMV' denoting a variant or regional designation. The displacement (750) and model name (Dorsoduro) are identical, confirming it refers to the same underlying motorcycle.",
+  "canonical_model_alias": "SMV 750 Dorsoduro",
+  "configuration_tokens": [],
+  "brand_aliases": [],
+  "model_aliases": [
+    "SMV 750 Dorsoduro"
+  ],
+  "status": "SUCCESS",
+  "prompt_version": "motorcycle-candidate-resolution-v4",
+  "model": "qwen-flash",
+  "make": "Aprilia",
+  "model_name": "Dorsoduro 750"
+}

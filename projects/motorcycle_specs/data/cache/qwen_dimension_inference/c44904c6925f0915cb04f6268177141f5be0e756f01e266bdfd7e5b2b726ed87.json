@@ -1,0 +1,16 @@
+{
+  "decision": "INFER|UNKNOWN",
+  "confidence": "MEDIUM|LOW",
+  "length_mm": null,
+  "width_mm": null,
+  "height_mm": null,
+  "wheelbase_mm": null,
+  "seat_height_mm": null,
+  "ground_clearance_mm": null,
+  "explanation": "The Honda NC700J NM4 is a variant of the NC700 series, but specific dimensions for the NM4 model are not consistently documented in public sources. While similar models like the NC700X and NC700D share common platform traits, the NM4's unique design and potential variations by market or year make precise dimension inference uncertain. Without definitive catalog data or official specifications, dimensions cannot be reliably inferred.",
+  "status": "SUCCESS",
+  "prompt_version": "motorcycle-dimension-inference-v1",
+  "model": "qwen-flash",
+  "make": "Honda",
+  "model_name": "NC700J NM4"
+}

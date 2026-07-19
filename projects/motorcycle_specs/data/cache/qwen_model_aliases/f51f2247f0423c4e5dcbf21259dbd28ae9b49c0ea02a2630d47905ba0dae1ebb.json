@@ -1,0 +1,20 @@
+{
+  "decision": "MATCH",
+  "selected_candidate": "XR 150L",
+  "confidence": "HIGH",
+  "match_basis": "SAME_NAME",
+  "explanation": "The input 'XR150L Rally' refers to the same motorcycle model as 'XR 150L', with 'Rally' being a configuration or market-specific designation that does not alter the core model identity. The base model 'XR 150L' is explicitly listed in the catalog candidates and matches the underlying motorcycle.",
+  "canonical_model_alias": "XR 150L",
+  "configuration_tokens": [
+    "Rally"
+  ],
+  "brand_aliases": [],
+  "model_aliases": [
+    "XR 150L"
+  ],
+  "status": "SUCCESS",
+  "prompt_version": "motorcycle-candidate-resolution-v4",
+  "model": "qwen-flash",
+  "make": "Honda",
+  "model_name": "XR150L Rally"
+}

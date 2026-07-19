@@ -1,0 +1,20 @@
+{
+  "decision": "MATCH",
+  "selected_candidate": "GSX-S \n\t\t750Z",
+  "confidence": "HIGH",
+  "match_basis": "SAME_NAME",
+  "explanation": "The input model 'GSX-S750Z ABS' matches the catalog candidate 'GSX-S \\n\\t\\t750Z' exactly in name and displacement, with 'ABS' being a configuration feature not altering the core model identity. The whitespace formatting difference is negligible.",
+  "canonical_model_alias": "GSX-S 750Z",
+  "configuration_tokens": [
+    "ABS"
+  ],
+  "brand_aliases": [],
+  "model_aliases": [
+    "GSX-S 750Z"
+  ],
+  "status": "SUCCESS",
+  "prompt_version": "motorcycle-candidate-resolution-v4",
+  "model": "qwen-flash",
+  "make": "Suzuki",
+  "model_name": "GSX-S750Z ABS"
+}

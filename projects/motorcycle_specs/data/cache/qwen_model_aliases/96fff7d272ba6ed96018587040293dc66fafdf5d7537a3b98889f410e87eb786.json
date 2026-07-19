@@ -1,0 +1,21 @@
+{
+  "decision": "MATCH",
+  "selected_candidate": "beta rr motard 125 4t",
+  "confidence": "HIGH",
+  "match_basis": "SAME_NAME",
+  "explanation": "The input 'RR 125 4T Motard T' is a direct match in meaning and configuration to 'beta rr motard 125 4t', with only minor casing and spacing differences. The 'T' suffix is consistent with the model's designation as a 'Motard T' variant, and no other candidate represents a different underlying motorcycle.",
+  "canonical_model_alias": "beta rr motard 125 4t",
+  "configuration_tokens": [
+    "motard",
+    "t"
+  ],
+  "brand_aliases": [],
+  "model_aliases": [
+    "rr motard 125 4t"
+  ],
+  "status": "SUCCESS",
+  "prompt_version": "motorcycle-candidate-resolution-v4",
+  "model": "qwen-flash",
+  "make": "Beta",
+  "model_name": "RR 125 4T Motard T"
+}

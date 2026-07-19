@@ -1,0 +1,18 @@
+{
+  "decision": "MATCH",
+  "selected_candidate": "Honda Elite 80",
+  "confidence": "HIGH",
+  "match_basis": "SAME_NAME",
+  "explanation": "The input 'CH80 Elite' is a known market or catalog shorthand for the Honda Elite 80, with 'CH80' representing the model's displacement and internal designation. The candidate 'Honda Elite 80' is the canonical title for the same motorcycle model.",
+  "canonical_model_alias": "Elite 80",
+  "configuration_tokens": [],
+  "brand_aliases": [],
+  "model_aliases": [
+    "Elite 80"
+  ],
+  "status": "SUCCESS",
+  "prompt_version": "motorcycle-candidate-resolution-v4",
+  "model": "qwen-flash",
+  "make": "Honda",
+  "model_name": "CH80 Elite"
+}

@@ -1,0 +1,16 @@
+{
+  "decision": "MATCH",
+  "selected_candidate": "Honda Montesa Cota 4RT Race Replica",
+  "confidence": "HIGH",
+  "match_basis": "MARKET_ALIAS",
+  "explanation": "The input 'MRT2604E Montesa Cota 4RT Race Replica' is a catalog identifier for the Honda Montesa Cota 4RT Race Replica, with 'MRT2604E' likely being an internal or regional model code. The core model name matches exactly with the candidate 'Honda Montesa Cota 4RT Race Replica', and the Montesa Cota 4RT was marketed under Honda's ownership as a race replica. The displacement (301cc) is implied in the model name but not explicitly stated in the input, yet the identity is confirmed by historical context and naming conventions.",
+  "canonical_model_alias": "Montesa Cota 4RT Race Replica",
+  "configuration_tokens": [],
+  "brand_aliases": [],
+  "model_aliases": [],
+  "status": "SUCCESS",
+  "prompt_version": "motorcycle-candidate-resolution-v4",
+  "model": "qwen-flash",
+  "make": "Honda",
+  "model_name": "MRT2604E Montesa Cota 4RT Race Replica"
+}

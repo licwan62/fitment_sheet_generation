@@ -1,0 +1,16 @@
+{
+  "decision": "INFER|UNKNOWN",
+  "confidence": "LOW",
+  "length_mm": null,
+  "width_mm": null,
+  "height_mm": null,
+  "wheelbase_mm": null,
+  "seat_height_mm": null,
+  "ground_clearance_mm": null,
+  "explanation": "The Bajaj V15 is a relatively new model with limited publicly available dimensional data. While some specifications are known (e.g., engine displacement, power output), exact factory dimensions vary by market and year, and no consistent catalog source confirms precise measurements. Without verified documentation or official data, dimensions cannot be reliably inferred. Therefore, the result is marked as UNKNOWN with low confidence.",
+  "status": "SUCCESS",
+  "prompt_version": "motorcycle-dimension-inference-v1",
+  "model": "qwen-flash",
+  "make": "Bajaj",
+  "model_name": "V15"
+}

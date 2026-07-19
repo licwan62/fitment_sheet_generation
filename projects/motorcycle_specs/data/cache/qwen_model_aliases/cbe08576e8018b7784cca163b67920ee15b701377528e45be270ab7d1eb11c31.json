@@ -1,0 +1,18 @@
+{
+  "decision": "MATCH",
+  "selected_candidate": "VT \n\t\t750C Shadow Ace",
+  "confidence": "HIGH",
+  "match_basis": "MARKET_ALIAS",
+  "explanation": "The input 'VT750C/CD Shadow ACE' refers to the same motorcycle model as 'VT 750C Shadow Ace', with 'ACE' being a market-specific name for the 750C variant. The model designation VT750C is consistent, and 'Shadow ACE' is a known marketing name for this model in certain regions.",
+  "canonical_model_alias": "VT 750C Shadow Ace",
+  "configuration_tokens": [],
+  "brand_aliases": [],
+  "model_aliases": [
+    "VT 750C Shadow Ace"
+  ],
+  "status": "SUCCESS",
+  "prompt_version": "motorcycle-candidate-resolution-v4",
+  "model": "qwen-flash",
+  "make": "Honda",
+  "model_name": "VT750C/CD Shadow ACE"
+}

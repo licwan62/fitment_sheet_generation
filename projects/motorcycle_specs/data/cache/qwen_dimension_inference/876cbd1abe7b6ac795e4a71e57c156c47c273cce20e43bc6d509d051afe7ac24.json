@@ -1,0 +1,16 @@
+{
+  "decision": "INFER",
+  "confidence": "MEDIUM",
+  "length_mm": 2150,
+  "width_mm": 860,
+  "height_mm": 1140,
+  "wheelbase_mm": 1370,
+  "seat_height_mm": 970,
+  "ground_clearance_mm": 300,
+  "explanation": "Inferred from typical dimensions of Gas Gas EC 250 models (2020–2023) and similar off-road motocross bikes. The Cervantes Replica variant shares the same platform but may have minor cosmetic differences. Dimensions are estimated based on standard EC 250 specifications, with seat height adjusted for replica model ergonomics. No official catalog data available for this specific variant.",
+  "status": "SUCCESS",
+  "prompt_version": "motorcycle-dimension-inference-v1",
+  "model": "qwen-flash",
+  "make": "Gas Gas",
+  "model_name": "EC 250 Cervantes Replica"
+}

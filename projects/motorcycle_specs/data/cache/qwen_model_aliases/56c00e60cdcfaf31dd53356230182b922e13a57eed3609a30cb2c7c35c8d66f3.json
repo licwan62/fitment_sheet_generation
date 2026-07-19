@@ -1,0 +1,20 @@
+{
+  "decision": "MATCH",
+  "selected_candidate": "RR 498 \n\tEnduro",
+  "confidence": "HIGH",
+  "match_basis": "MARKET_ALIAS",
+  "explanation": "The '498 RR-Race Edition' is a market-specific naming variant of the Beta RR 498 Enduro, with 'Race Edition' indicating a performance configuration. The core model identity (RR 498 Enduro) matches exactly in the catalog candidate.",
+  "canonical_model_alias": "RR 498 Enduro",
+  "configuration_tokens": [
+    "Race Edition"
+  ],
+  "brand_aliases": [],
+  "model_aliases": [
+    "RR 498 Enduro"
+  ],
+  "status": "SUCCESS",
+  "prompt_version": "motorcycle-candidate-resolution-v4",
+  "model": "qwen-flash",
+  "make": "Beta",
+  "model_name": "498 RR-Race Edition"
+}

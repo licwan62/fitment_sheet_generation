@@ -1,0 +1,16 @@
+{
+  "decision": "INFER|UNKNOWN",
+  "confidence": "MEDIUM|LOW",
+  "length_mm": null,
+  "width_mm": null,
+  "height_mm": null,
+  "wheelbase_mm": null,
+  "seat_height_mm": null,
+  "ground_clearance_mm": null,
+  "explanation": "The model identity 'EC 250 Six Days Chile 18' is highly specific and not widely documented. Variations by market (e.g., Chile) and year (2018) may affect dimensions. No reliable catalog or verified source confirms these details, and cross-model inference is unreliable due to potential design differences. Therefore, dimensions cannot be confidently inferred.",
+  "status": "SUCCESS",
+  "prompt_version": "motorcycle-dimension-inference-v1",
+  "model": "qwen-flash",
+  "make": "Gas Gas",
+  "model_name": "EC 250 Six Days Chile 18"
+}

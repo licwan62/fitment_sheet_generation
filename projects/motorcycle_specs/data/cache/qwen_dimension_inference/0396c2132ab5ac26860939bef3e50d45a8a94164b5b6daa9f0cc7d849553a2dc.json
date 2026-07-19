@@ -1,0 +1,16 @@
+{
+  "decision": "INFER",
+  "confidence": "MEDIUM",
+  "length_mm": 2050,
+  "width_mm": 780,
+  "height_mm": 1100,
+  "wheelbase_mm": 1360,
+  "seat_height_mm": 790,
+  "ground_clearance_mm": 140,
+  "explanation": "Inferred based on typical dimensions of similar 180cc sport motorcycles in Benelli's TNT lineup, such as the TNT 125 and TNT 132, scaled proportionally for the larger engine displacement. The TNT180S is expected to be slightly larger than smaller variants but within standard sport motorcycle proportions. Dimensions are estimates derived from model class trends and manufacturer design language.",
+  "status": "SUCCESS",
+  "prompt_version": "motorcycle-dimension-inference-v1",
+  "model": "qwen-flash",
+  "make": "Benelli",
+  "model_name": "TNT180S"
+}

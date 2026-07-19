@@ -45,6 +45,11 @@ def test_seat_height_is_not_overall_height():
     assert result.values["h"] == 1437
 
 
+def test_tyre_width_is_not_overall_width():
+    result = parse_dimensions("Front tyre width 120 mm Rear tyre width 150 mm Length 2210 mm Width 835 mm Height 1437 mm")
+    assert result.values["w"] == 835
+
+
 def test_spaced_dimension_digits_from_html_text_are_joined():
     result = parse_dimensions("Dimensions Length 2 300 mm Width 9 39 mm Wheelbase 1 585 mm Seat Height 8 75 mm")
     assert result.values["l"] == 2300

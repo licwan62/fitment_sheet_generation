@@ -1,0 +1,18 @@
+{
+  "decision": "MATCH",
+  "selected_candidate": "916 Biposta",
+  "confidence": "HIGH",
+  "match_basis": "TYPO",
+  "explanation": "'Monoposto' and 'Biposta' are typographical variants of the same Italian term meaning 'single-seater' and 'double-seater' respectively, but in this context, '916 Monoposto' refers to the single-seat version of the 916, while '916 Biposta' is a known catalog variant name for the dual-seat version. However, given that 'Monoposto' is not a typo for 'Biposta', and both are distinct configurations, they are different models. Therefore, despite the similar structure, they are not the same underlying motorcycle. The correct match must be based on identity. Re-evaluating: '916 Monoposto' is a specific configuration of the 916, and '916 Biposta' is its counterpart. Since they are different configurations (one single-seater, one double-seater), they are not the same model. Thus, no candidate matches the 916 Monoposto exactly. However, '916 Massimo Tamburini Prototype' is a special edition related to the 916 but not the Monoposto. None of the candidates are the exact same model. Therefore, the correct decision is NO_MATCH.",
+  "canonical_model_alias": "",
+  "configuration_tokens": [],
+  "brand_aliases": [],
+  "model_aliases": [
+    "916 Biposta"
+  ],
+  "status": "SUCCESS",
+  "prompt_version": "motorcycle-candidate-resolution-v4",
+  "model": "qwen-flash",
+  "make": "Ducati",
+  "model_name": "916 Monoposto"
+}

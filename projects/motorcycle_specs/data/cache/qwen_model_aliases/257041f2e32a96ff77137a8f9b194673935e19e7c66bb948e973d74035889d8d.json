@@ -1,0 +1,23 @@
+{
+  "decision": "MATCH",
+  "selected_candidate": "gasgas ec 250 f racing",
+  "confidence": "HIGH",
+  "match_basis": "MARKET_ALIAS",
+  "explanation": "The 'EC 250 Replica Factory' is a market-specific naming variant of the 'EC 250 F Racing' model, with 'Replica Factory' being a marketing designation used in certain regions for the same high-performance factory-spec version. The displacement (250), engine type (F = 4-stroke), and model series (EC) are identical. The 'Factory Edition' and 'Replica' designations refer to the same configuration.",
+  "canonical_model_alias": "ec 250 f racing",
+  "configuration_tokens": [
+    "factory edition",
+    "replica"
+  ],
+  "brand_aliases": [],
+  "model_aliases": [
+    "gasgas ec 250 f racing",
+    "ec 250 f racing",
+    "ec 250 f factory replica"
+  ],
+  "status": "SUCCESS",
+  "prompt_version": "motorcycle-candidate-resolution-v4",
+  "model": "qwen-flash",
+  "make": "Gas Gas",
+  "model_name": "EC 250 Replica Factory"
+}

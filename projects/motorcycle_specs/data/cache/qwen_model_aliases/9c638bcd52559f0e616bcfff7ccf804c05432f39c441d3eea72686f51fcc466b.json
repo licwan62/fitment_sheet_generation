@@ -1,0 +1,16 @@
+{
+  "decision": "NO_MATCH",
+  "selected_candidate": "",
+  "confidence": "HIGH",
+  "match_basis": "NONE",
+  "explanation": "The Suzuki GS750S Katana is a distinct model with a unique identity, including the 'S' designation and 'Katana' name. None of the catalog candidates match this specific model in name, configuration, or historical identity. The candidates listed are different variants or versions of the GS750 series but do not correspond to the GS750S Katana.",
+  "canonical_model_alias": "",
+  "configuration_tokens": [],
+  "brand_aliases": [],
+  "model_aliases": [],
+  "status": "SUCCESS",
+  "prompt_version": "motorcycle-candidate-resolution-v4",
+  "model": "qwen-flash",
+  "make": "Suzuki",
+  "model_name": "GS750S Katana"
+}

@@ -1,0 +1,16 @@
+{
+  "decision": "UNKNOWN",
+  "confidence": "LOW",
+  "length_mm": null,
+  "width_mm": null,
+  "height_mm": null,
+  "wheelbase_mm": null,
+  "seat_height_mm": null,
+  "ground_clearance_mm": null,
+  "explanation": "Cobra PW3 is not a widely recognized or documented motorcycle model in public sources. Limited information exists about its specifications, and no reliable data on dimensions could be confirmed. Model identity and variations by year/market are uncertain, leading to insufficient basis for inference.",
+  "status": "SUCCESS",
+  "prompt_version": "motorcycle-dimension-inference-v1",
+  "model": "qwen-flash",
+  "make": "Cobra",
+  "model_name": "PW3"
+}

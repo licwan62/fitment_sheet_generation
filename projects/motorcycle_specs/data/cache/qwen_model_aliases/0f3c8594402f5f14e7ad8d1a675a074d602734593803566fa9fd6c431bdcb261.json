@@ -1,0 +1,16 @@
+{
+  "decision": "NO_MATCH",
+  "selected_candidate": "",
+  "confidence": "HIGH",
+  "match_basis": "NONE",
+  "explanation": "The input model 'Tuono V4 Factory' is a distinct motorcycle from the candidates listed, which are all variants of the RSV4 Factory or Tuono V4 R. The Tuono V4 Factory is a different model line with unique design, engine tuning, and market positioning compared to the RSV4 Factory and Tuono V4 R. No candidate matches the Tuono V4 Factory in identity, displacement, or configuration.",
+  "canonical_model_alias": "",
+  "configuration_tokens": [],
+  "brand_aliases": [],
+  "model_aliases": [],
+  "status": "SUCCESS",
+  "prompt_version": "motorcycle-candidate-resolution-v4",
+  "model": "qwen-flash",
+  "make": "Aprilia",
+  "model_name": "Tuono V4 Factory"
+}

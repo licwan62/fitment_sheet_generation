@@ -1,0 +1,20 @@
+{
+  "decision": "MATCH",
+  "selected_candidate": "700 CL-X Sport",
+  "confidence": "HIGH",
+  "match_basis": "MARKET_ALIAS",
+  "explanation": "The '700CL-X' model is marketed as '700 CL-X Sport' in certain regions, indicating a configuration or market-specific naming variation of the same underlying motorcycle. The displacement (700), platform (CL-X), and core identity remain unchanged.",
+  "canonical_model_alias": "700 CL-X Sport",
+  "configuration_tokens": [
+    "Sport"
+  ],
+  "brand_aliases": [],
+  "model_aliases": [
+    "700 CL-X Sport"
+  ],
+  "status": "SUCCESS",
+  "prompt_version": "motorcycle-candidate-resolution-v4",
+  "model": "qwen-flash",
+  "make": "CFMOTO",
+  "model_name": "700CL-X"
+}

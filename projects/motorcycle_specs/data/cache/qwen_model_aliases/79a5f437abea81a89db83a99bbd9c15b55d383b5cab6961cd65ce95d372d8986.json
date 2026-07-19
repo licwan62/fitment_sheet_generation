@@ -1,0 +1,16 @@
+{
+  "decision": "NO_MATCH",
+  "selected_candidate": "",
+  "confidence": "HIGH",
+  "match_basis": "NONE",
+  "explanation": "The model CB1100F is a distinct variant with specific features and market positioning. Neither CB 1100 nor CB 1100EX represents the same underlying motorcycle model, as they differ in design, engine tuning, and intended market. The CB1100F is a more modern, refined version with a different frame, suspension, and styling compared to the older CB 1100 and the CB 1100EX, which is a different configuration focused on adventure touring.",
+  "canonical_model_alias": "",
+  "configuration_tokens": [],
+  "brand_aliases": [],
+  "model_aliases": [],
+  "status": "SUCCESS",
+  "prompt_version": "motorcycle-candidate-resolution-v4",
+  "model": "qwen-flash",
+  "make": "Honda",
+  "model_name": "CB1100F"
+}

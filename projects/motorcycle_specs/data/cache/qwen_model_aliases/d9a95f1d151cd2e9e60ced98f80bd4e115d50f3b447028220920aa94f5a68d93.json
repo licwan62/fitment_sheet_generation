@@ -1,0 +1,16 @@
+{
+  "decision": "NO_MATCH",
+  "selected_candidate": "",
+  "confidence": "HIGH",
+  "match_basis": "NONE",
+  "explanation": "The model 'Chopper RT' is not a known variant or market name for any of the listed Big Dog catalog candidates, which are all distinct model names (e.g., Coyote, Pitbull, Wolf) and do not correspond to a 'Chopper RT' configuration or historical designation. No evidence supports that 'Chopper RT' refers to any of these models.",
+  "canonical_model_alias": "",
+  "configuration_tokens": [],
+  "brand_aliases": [],
+  "model_aliases": [],
+  "status": "SUCCESS",
+  "prompt_version": "motorcycle-candidate-resolution-v4",
+  "model": "qwen-flash",
+  "make": "Big Dog",
+  "model_name": "Chopper RT"
+}

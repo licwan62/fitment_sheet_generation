@@ -1,0 +1,20 @@
+{
+  "decision": "MATCH",
+  "selected_candidate": "CB 550K Four",
+  "confidence": "HIGH",
+  "match_basis": "MARKET_ALIAS",
+  "explanation": "The 'CB550K' is a market-specific designation for the CB 550K Four, which was marketed as the 'K Four' in some regions. The model is identical across variants, with 'K' denoting a specific configuration or market variant of the CB 550 Four. The other candidates are different models: the SC Nighthawk and F Super Sport are distinct variants with different styling, tuning, and intended use.",
+  "canonical_model_alias": "CB 550K Four",
+  "configuration_tokens": [
+    "K"
+  ],
+  "brand_aliases": [],
+  "model_aliases": [
+    "CB 550K Four"
+  ],
+  "status": "SUCCESS",
+  "prompt_version": "motorcycle-candidate-resolution-v4",
+  "model": "qwen-flash",
+  "make": "Honda",
+  "model_name": "CB550K"
+}

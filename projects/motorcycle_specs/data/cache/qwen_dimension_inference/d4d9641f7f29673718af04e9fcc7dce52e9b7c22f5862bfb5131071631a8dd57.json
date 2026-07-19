@@ -1,0 +1,16 @@
+{
+  "decision": "INFER",
+  "confidence": "MEDIUM",
+  "length_mm": 2300,
+  "width_mm": 900,
+  "height_mm": 1100,
+  "wheelbase_mm": 1500,
+  "seat_height_mm": 780,
+  "ground_clearance_mm": 140,
+  "explanation": "Inferred based on typical Big Dog Bulldog model proportions from 2000s-era custom motorcycles with similar styling, engine size (typically 100+ cu in V-twin), and frame design. Dimensions are estimated within expected ranges for large cruiser bikes of that era, but exact values may vary by year and market.",
+  "status": "SUCCESS",
+  "prompt_version": "motorcycle-dimension-inference-v1",
+  "model": "qwen-flash",
+  "make": "Big Dog",
+  "model_name": "Bulldog"
+}

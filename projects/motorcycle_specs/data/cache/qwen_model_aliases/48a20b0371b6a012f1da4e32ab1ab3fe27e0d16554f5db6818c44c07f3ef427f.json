@@ -1,0 +1,19 @@
+{
+  "decision": "MATCH",
+  "selected_candidate": "gasgas txt 280 pro racing",
+  "confidence": "HIGH",
+  "match_basis": "MARKET_ALIAS",
+  "explanation": "The 'TXT Pro 280 Raga' is a market-specific name for the same model as 'gasgas txt 280 pro racing', with 'Raga' being a regional or marketing designation for the racing variant. The displacement (280), model series (TXT Pro), and core identity align exactly.",
+  "canonical_model_alias": "txt 280 pro racing",
+  "configuration_tokens": [],
+  "brand_aliases": [],
+  "model_aliases": [
+    "gasgas txt 280 pro racing",
+    "txt 280 pro racing"
+  ],
+  "status": "SUCCESS",
+  "prompt_version": "motorcycle-candidate-resolution-v4",
+  "model": "qwen-flash",
+  "make": "Gas Gas",
+  "model_name": "TXT Pro 280 Raga"
+}

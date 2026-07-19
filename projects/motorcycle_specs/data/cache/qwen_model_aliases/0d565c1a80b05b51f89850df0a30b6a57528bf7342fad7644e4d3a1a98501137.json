@@ -1,0 +1,20 @@
+{
+  "decision": "MATCH",
+  "selected_candidate": "GSX-R1000",
+  "confidence": "HIGH",
+  "match_basis": "MARKET_ALIAS",
+  "explanation": "The 'GSX-R1000 A GP' is a market-specific or special edition designation for the GSX-R1000, with 'A GP' likely referring to a configuration or limited edition variant. The core model identity remains the GSX-R1000.",
+  "canonical_model_alias": "GSX-R1000",
+  "configuration_tokens": [
+    "A GP"
+  ],
+  "brand_aliases": [],
+  "model_aliases": [
+    "GSX-R1000"
+  ],
+  "status": "SUCCESS",
+  "prompt_version": "motorcycle-candidate-resolution-v4",
+  "model": "qwen-flash",
+  "make": "Suzuki",
+  "model_name": "GSX-R1000 A GP"
+}

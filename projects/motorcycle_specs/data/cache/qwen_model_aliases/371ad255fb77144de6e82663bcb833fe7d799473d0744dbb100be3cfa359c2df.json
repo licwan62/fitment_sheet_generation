@@ -1,0 +1,16 @@
+{
+  "decision": "NO_MATCH",
+  "selected_candidate": "",
+  "confidence": "HIGH",
+  "match_basis": "NONE",
+  "explanation": "The input model 'M2L Cyclone' does not correspond to any of the catalog candidates. The Buell M2L Cyclone is not a known model in Buell's history, and none of the listed candidates match its name, displacement, or configuration. The closest candidate, 'buell m2 cyclone', is not a valid model; Buell did not produce an M2 Cyclone. The M2L designation is not associated with any official Buell model. Therefore, no match exists.",
+  "canonical_model_alias": "",
+  "configuration_tokens": [],
+  "brand_aliases": [],
+  "model_aliases": [],
+  "status": "SUCCESS",
+  "prompt_version": "motorcycle-candidate-resolution-v4",
+  "model": "qwen-flash",
+  "make": "Buell",
+  "model_name": "M2L Cyclone"
+}

@@ -1,0 +1,18 @@
+{
+  "decision": "MATCH",
+  "selected_candidate": "Honda XR190CT",
+  "confidence": "HIGH",
+  "match_basis": "MARKET_ALIAS",
+  "explanation": "The 'XR190L' is a market-specific designation (likely for the Latin American or European market) of the same underlying model as the 'XR190CT', which is the official catalog name. The 'L' suffix is a known regional variant label, and both refer to the identical motorcycle model with 190cc displacement and XR platform. The CT designation is the standard global model code.",
+  "canonical_model_alias": "XR190CT",
+  "configuration_tokens": [],
+  "brand_aliases": [],
+  "model_aliases": [
+    "XR190CT"
+  ],
+  "status": "SUCCESS",
+  "prompt_version": "motorcycle-candidate-resolution-v4",
+  "model": "qwen-flash",
+  "make": "Honda",
+  "model_name": "XR190L"
+}

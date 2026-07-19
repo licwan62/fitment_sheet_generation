@@ -1,0 +1,18 @@
+{
+  "decision": "MATCH",
+  "selected_candidate": "buell xb12stt",
+  "confidence": "HIGH",
+  "match_basis": "MARKET_ALIAS",
+  "explanation": "The input 'XB12STT Lightning Super TT' is a marketing name for the Buell XB12STT model, with 'Super TT' being a performance-oriented market designation. The catalog candidate 'buell xb12stt' matches the core model identity exactly, with no displacement or configuration differences. The suffix 'TT' is consistent across both names and denotes the same model variant.",
+  "canonical_model_alias": "xb12stt",
+  "configuration_tokens": [],
+  "brand_aliases": [],
+  "model_aliases": [
+    "xb12stt"
+  ],
+  "status": "SUCCESS",
+  "prompt_version": "motorcycle-candidate-resolution-v4",
+  "model": "qwen-flash",
+  "make": "Buell",
+  "model_name": "XB12STT Lightning Super TT"
+}
