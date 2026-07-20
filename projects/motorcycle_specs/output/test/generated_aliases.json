@@ -1,0 +1,72 @@
+[
+  {
+    "INPUT_ID": "000140",
+    "MAKE": "BMW",
+    "MODEL": "R100/7",
+    "PROVIDER": "QWEN",
+    "API_MODEL": "qwen-flash",
+    "API_STATUS": "SKIPPED_CONFIDENT",
+    "DECISION": "MATCH",
+    "REVIEWED_CANDIDATES": [],
+    "SELECTED_CANDIDATE": "R 100/7",
+    "CONFIGURATION_TOKENS": [],
+    "BRAND_ALIASES": [],
+    "MODEL_ALIASES": []
+  },
+  {
+    "INPUT_ID": "000141",
+    "MAKE": "BMW",
+    "MODEL": "R100CS",
+    "PROVIDER": "QWEN",
+    "API_MODEL": "qwen-flash",
+    "API_STATUS": "SKIPPED_CONFIDENT",
+    "DECISION": "MATCH",
+    "REVIEWED_CANDIDATES": [],
+    "SELECTED_CANDIDATE": "R 100CS",
+    "CONFIGURATION_TOKENS": [],
+    "BRAND_ALIASES": [],
+    "MODEL_ALIASES": []
+  },
+  {
+    "INPUT_ID": "000142",
+    "MAKE": "BMW",
+    "MODEL": "R100GS",
+    "PROVIDER": "QWEN",
+    "API_MODEL": "qwen-flash",
+    "API_STATUS": "SKIPPED_CONFIDENT",
+    "DECISION": "MATCH",
+    "REVIEWED_CANDIDATES": [],
+    "SELECTED_CANDIDATE": "bmw r100gs",
+    "CONFIGURATION_TOKENS": [],
+    "BRAND_ALIASES": [],
+    "MODEL_ALIASES": []
+  },
+  {
+    "INPUT_ID": "000143",
+    "MAKE": "BMW",
+    "MODEL": "R100GS Paris-Dakar",
+    "PROVIDER": "QWEN",
+    "API_MODEL": "qwen-flash",
+    "API_STATUS": "SKIPPED_CONFIDENT",
+    "DECISION": "MATCH",
+    "REVIEWED_CANDIDATES": [],
+    "SELECTED_CANDIDATE": "R 100GS Paris Dakar",
+    "CONFIGURATION_TOKENS": [],
+    "BRAND_ALIASES": [],
+    "MODEL_ALIASES": []
+  },
+  {
+    "INPUT_ID": "000144",
+    "MAKE": "BMW",
+    "MODEL": "R100R",
+    "PROVIDER": "QWEN",
+    "API_MODEL": "qwen-flash",
+    "API_STATUS": "SKIPPED_CONFIDENT",
+    "DECISION": "MATCH",
+    "REVIEWED_CANDIDATES": [],
+    "SELECTED_CANDIDATE": "R 100R",
+    "CONFIGURATION_TOKENS": [],
+    "BRAND_ALIASES": [],
+    "MODEL_ALIASES": []
+  }
+]

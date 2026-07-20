@@ -8,6 +8,4 @@ data/cache/html/*
 data/cache/metadata/*
 data/checkpoints/*
 data/index/*
-logs/*.log
-output/*
 !output/.gitkeep
