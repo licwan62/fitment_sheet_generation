@@ -1,0 +1,16 @@
+{
+  "decision": "NO_MATCH",
+  "selected_candidate": "",
+  "confidence": "HIGH",
+  "match_basis": "NONE",
+  "explanation": "VLDJ is not a recognized model identifier for any of the listed Harley-Davidson catalog candidates. The candidates include CVO Limited, Road Glide, Street Glide, and V-Rod variants (N, VRSca, VRScb), but none correspond to a model with the designation VLDJ. VLDJ does not match any known model name, market variant, or plausible typo of the provided candidates.",
+  "canonical_model_alias": "",
+  "configuration_tokens": [],
+  "brand_aliases": [],
+  "model_aliases": [],
+  "status": "SUCCESS",
+  "prompt_version": "motorcycle-candidate-resolution-v4",
+  "model": "qwen-flash",
+  "make": "Harley-Davidson",
+  "model_name": "VLDJ"
+}

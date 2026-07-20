@@ -1,0 +1,21 @@
+{
+  "decision": "MATCH",
+  "selected_candidate": "Harley-Davidson FLSTS Heritage Springer",
+  "confidence": "HIGH",
+  "match_basis": "SAME_NAME",
+  "explanation": "The input model 'FLSTSI Heritage Springer' is a known variant of the 'FLSTS Heritage Springer' with a minor suffix difference (SI vs S), which is a common market or configuration label. Both refer to the same underlying motorcycle model in the Softail Heritage Springer lineup, with identical displacement, platform, and design. The catalog candidate matches exactly in name and model code when accounting for plausible suffix variation.",
+  "canonical_model_alias": "FLSTS Heritage Springer",
+  "configuration_tokens": [
+    "SI"
+  ],
+  "brand_aliases": [],
+  "model_aliases": [
+    "Heritage Springer",
+    "FLSTS Heritage Springer"
+  ],
+  "status": "SUCCESS",
+  "prompt_version": "motorcycle-candidate-resolution-v4",
+  "model": "qwen-flash",
+  "make": "Harley-Davidson",
+  "model_name": "FLSTSI Heritage Springer"
+}

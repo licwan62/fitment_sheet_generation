@@ -1,0 +1,16 @@
+{
+  "decision": "INFER|UNKNOWN",
+  "confidence": "MEDIUM|LOW",
+  "length_mm": null,
+  "width_mm": null,
+  "height_mm": null,
+  "wheelbase_mm": null,
+  "seat_height_mm": null,
+  "ground_clearance_mm": null,
+  "explanation": "The Indian Roadmaster Limited Audio Package is a limited-edition model with no publicly available official dimensions. Variations in year-specific design, optional accessories, and market-specific configurations make precise dimension estimation uncertain. Without access to a catalog page or verified technical documentation, dimensions cannot be reliably inferred.",
+  "status": "SUCCESS",
+  "prompt_version": "motorcycle-dimension-inference-v1",
+  "model": "qwen-flash",
+  "make": "Indian",
+  "model_name": "Roadmaster Limited Audio Package"
+}

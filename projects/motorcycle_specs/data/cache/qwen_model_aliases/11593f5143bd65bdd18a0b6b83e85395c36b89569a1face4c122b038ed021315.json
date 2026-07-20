@@ -1,0 +1,18 @@
+{
+  "decision": "MATCH",
+  "selected_candidate": "Chief Vintage L.E.",
+  "confidence": "HIGH",
+  "match_basis": "MARKET_ALIAS",
+  "explanation": "The input 'Chief Vintage LE' is a market-specific or marketing designation for the same model as 'Chief Vintage L.E.', where 'LE' stands for Limited Edition. The variation in spacing and punctuation does not alter the underlying motorcycle identity, and 'LE' is a known configuration label used interchangeably with 'L.E.' in official Indian Motorcycle cataloging.",
+  "canonical_model_alias": "Chief Vintage L.E.",
+  "configuration_tokens": [
+    "LE"
+  ],
+  "brand_aliases": [],
+  "model_aliases": [],
+  "status": "SUCCESS",
+  "prompt_version": "motorcycle-candidate-resolution-v4",
+  "model": "qwen-flash",
+  "make": "Indian",
+  "model_name": "Chief Vintage LE"
+}

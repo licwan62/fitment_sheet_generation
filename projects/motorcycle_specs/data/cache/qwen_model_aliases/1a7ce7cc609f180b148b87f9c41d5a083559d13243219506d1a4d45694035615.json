@@ -1,0 +1,19 @@
+{
+  "decision": "MATCH",
+  "selected_candidate": "Harley-Davidson FXD Dyna Super Glide",
+  "confidence": "HIGH",
+  "match_basis": "MARKET_ALIAS",
+  "explanation": "The 'FX Super Glide' is a known market and historical name for the Harley-Davidson FXD Dyna Super Glide, which was marketed under the simplified 'Super Glide' name in certain regions and eras. The FXD model is the correct platform for this designation.",
+  "canonical_model_alias": "FXD Dyna Super Glide",
+  "configuration_tokens": [],
+  "brand_aliases": [],
+  "model_aliases": [
+    "Dyna Super Glide",
+    "FXD Dyna Super Glide"
+  ],
+  "status": "SUCCESS",
+  "prompt_version": "motorcycle-candidate-resolution-v4",
+  "model": "qwen-flash",
+  "make": "Harley-Davidson",
+  "model_name": "FX Super Glide"
+}

@@ -1,0 +1,16 @@
+{
+  "decision": "INFER|UNKNOWN",
+  "confidence": "LOW",
+  "length_mm": null,
+  "width_mm": null,
+  "height_mm": null,
+  "wheelbase_mm": null,
+  "seat_height_mm": null,
+  "ground_clearance_mm": null,
+  "explanation": "Husqvarna HUV 4213 is not a recognized motorcycle model in available public records or manufacturer documentation. The model designation appears inconsistent with Husqvarna's known product naming conventions for motorcycles. Without verifiable data or a catalog reference, dimensions cannot be reliably inferred. The identity of the model remains uncertain.",
+  "status": "SUCCESS",
+  "prompt_version": "motorcycle-dimension-inference-v1",
+  "model": "qwen-flash",
+  "make": "Husqvarna",
+  "model_name": "HUV 4213"
+}

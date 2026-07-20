@@ -1,0 +1,18 @@
+{
+  "decision": "MATCH",
+  "selected_candidate": "FXRD Sports \n      Glide Grand Touring",
+  "confidence": "HIGH",
+  "match_basis": "MARKET_ALIAS",
+  "explanation": "The input 'FXRD Sport Glide Grand Touring' is a variant of the FXRD model, and 'FXRD Sports Glide Grand Touring' is a known market or catalog variation with the same underlying motorcycle identity. The difference in word order ('Sport' vs 'Sports') is a common typographical or formatting variation in catalogs, not a different model.",
+  "canonical_model_alias": "FXRD Sports Glide Grand Touring",
+  "configuration_tokens": [],
+  "brand_aliases": [],
+  "model_aliases": [
+    "FXRD Sports Glide Grand Touring"
+  ],
+  "status": "SUCCESS",
+  "prompt_version": "motorcycle-candidate-resolution-v4",
+  "model": "qwen-flash",
+  "make": "Harley-Davidson",
+  "model_name": "FXRD Sport Glide Grand Touring"
+}

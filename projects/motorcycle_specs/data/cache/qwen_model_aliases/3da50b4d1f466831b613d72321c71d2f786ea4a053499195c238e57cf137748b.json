@@ -1,0 +1,16 @@
+{
+  "decision": "NO_MATCH",
+  "selected_candidate": "",
+  "confidence": "HIGH",
+  "match_basis": "NONE",
+  "explanation": "The model CR360 is a specific Husqvarna enduro motorcycle with a 360cc engine. None of the catalog candidates match this exact model in displacement, name, or configuration. WR 360 is a different model (WR series), and other candidates either have incorrect displacements (CR 50, CR 65, WR 300, TXC 310 R) or are unrelated variants (360 Automatic, 360C Sportsman Enduro). No known market alias, historical name, abbreviation, or typo links any candidate to CR360.",
+  "canonical_model_alias": "",
+  "configuration_tokens": [],
+  "brand_aliases": [],
+  "model_aliases": [],
+  "status": "SUCCESS",
+  "prompt_version": "motorcycle-candidate-resolution-v4",
+  "model": "qwen-flash",
+  "make": "Husqvarna",
+  "model_name": "CR360"
+}

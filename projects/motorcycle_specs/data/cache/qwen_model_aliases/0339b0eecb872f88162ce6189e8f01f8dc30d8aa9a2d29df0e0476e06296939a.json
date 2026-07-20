@@ -1,0 +1,18 @@
+{
+  "decision": "MATCH",
+  "selected_candidate": "FE 600 \n\t\tEnduro",
+  "confidence": "HIGH",
+  "match_basis": "MARKET_ALIAS",
+  "explanation": "The model 'FC600' is a market-specific designation for the Husaberg FE 600 Enduro, with 'FC' being a regional or marketing variant of 'FE'. The displacement (600) and intended use (Enduro) align exactly. The candidate 'FE 600 Enduro' is the correct catalog title for this model.",
+  "canonical_model_alias": "FE 600 Enduro",
+  "configuration_tokens": [],
+  "brand_aliases": [],
+  "model_aliases": [
+    "FE 600 Enduro"
+  ],
+  "status": "SUCCESS",
+  "prompt_version": "motorcycle-candidate-resolution-v4",
+  "model": "qwen-flash",
+  "make": "Husaberg",
+  "model_name": "FC600"
+}

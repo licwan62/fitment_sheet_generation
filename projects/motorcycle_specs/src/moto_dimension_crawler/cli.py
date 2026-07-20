@@ -7,6 +7,7 @@ from typing import Optional
 
 import httpx
 import typer
+from dotenv import load_dotenv
 
 from .config import load_config
 from .pipeline import run_pipeline
@@ -48,6 +49,7 @@ def validate_qwen_api_key(qwen: dict, api_key: str) -> None:
 def ensure_qwen_api_key(config_path: Path, stage: str) -> None:
     if stage == "build-index":
         return
+    load_dotenv(ROOT / ".env", override=False)
     config = load_config(config_path)
     qwen = config.get("qwen_aliases", {})
     if not qwen.get("enabled", False):

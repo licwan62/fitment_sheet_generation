@@ -1,0 +1,16 @@
+{
+  "decision": "NO_MATCH",
+  "selected_candidate": "",
+  "confidence": "HIGH",
+  "match_basis": "NONE",
+  "explanation": "The input model 'CRE 50' has a displacement of 50cc, while all catalog candidates are 125cc or higher. The 'CRE 125' variants are different models entirely, and no candidate matches the 50cc displacement. No known market alias, historical name, or typo connects 'CRE 50' to any 125cc model.",
+  "canonical_model_alias": "",
+  "configuration_tokens": [],
+  "brand_aliases": [],
+  "model_aliases": [],
+  "status": "SUCCESS",
+  "prompt_version": "motorcycle-candidate-resolution-v4",
+  "model": "qwen-flash",
+  "make": "HM",
+  "model_name": "CRE 50"
+}

@@ -1,0 +1,20 @@
+{
+  "decision": "MATCH",
+  "selected_candidate": "Chief Vintage",
+  "confidence": "HIGH",
+  "match_basis": "SAME_NAME",
+  "explanation": "The input 'Chief Vintage FE' refers to the same underlying motorcycle model as 'Chief Vintage' in the catalog candidates. The 'FE' suffix is a configuration or market-specific designation (e.g., for European or special edition) but does not alter the core model identity. The base model remains Chief Vintage.",
+  "canonical_model_alias": "Chief Vintage",
+  "configuration_tokens": [
+    "FE"
+  ],
+  "brand_aliases": [],
+  "model_aliases": [
+    "Chief Vintage"
+  ],
+  "status": "SUCCESS",
+  "prompt_version": "motorcycle-candidate-resolution-v4",
+  "model": "qwen-flash",
+  "make": "Indian",
+  "model_name": "Chief Vintage FE"
+}

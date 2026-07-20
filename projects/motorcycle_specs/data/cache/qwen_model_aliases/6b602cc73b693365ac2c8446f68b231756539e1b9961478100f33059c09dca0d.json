@@ -1,0 +1,18 @@
+{
+  "decision": "MATCH",
+  "selected_candidate": "hyosung newtee up 50",
+  "confidence": "HIGH",
+  "match_basis": "MARKET_ALIAS",
+  "explanation": "'TE50' is a market-specific or marketing name for the Hyosung Newtee Up 50, a 50cc scooter model produced by Hyosung. The 'TE50' designation aligns with the model's displacement and known regional naming conventions.",
+  "canonical_model_alias": "newtee up 50",
+  "configuration_tokens": [],
+  "brand_aliases": [],
+  "model_aliases": [
+    "newtee up 50"
+  ],
+  "status": "SUCCESS",
+  "prompt_version": "motorcycle-candidate-resolution-v4",
+  "model": "qwen-flash",
+  "make": "Hyosung",
+  "model_name": "TE50"
+}

@@ -1,0 +1,16 @@
+{
+  "decision": "INFER|UNKNOWN",
+  "confidence": "LOW",
+  "length_mm": null,
+  "width_mm": null,
+  "height_mm": null,
+  "wheelbase_mm": null,
+  "seat_height_mm": null,
+  "ground_clearance_mm": null,
+  "explanation": "The Islo Urban 200 is a small-displacement urban motorcycle, but specific dimensions are not publicly documented in reliable sources. Without access to official specifications or verified catalog data, and given potential variations by market or model year, accurate inference is uncertain. Dimensions from similar models cannot be reliably applied due to the risk of material variation.",
+  "status": "SUCCESS",
+  "prompt_version": "motorcycle-dimension-inference-v1",
+  "model": "qwen-flash",
+  "make": "Islo",
+  "model_name": "Urban 200"
+}

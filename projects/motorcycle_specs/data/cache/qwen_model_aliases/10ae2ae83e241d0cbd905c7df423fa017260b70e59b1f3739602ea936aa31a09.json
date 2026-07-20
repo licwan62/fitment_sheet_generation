@@ -1,0 +1,21 @@
+{
+  "decision": "MATCH",
+  "selected_candidate": "Indian scout classic",
+  "confidence": "HIGH",
+  "match_basis": "MARKET_ALIAS",
+  "explanation": "The input 'Scout Classic Limited +Tech' refers to a special configuration of the Indian Scout Classic, with 'Limited' and '+Tech' indicating a premium trim level. The catalog candidate 'Indian scout classic' represents the base model, which is the same underlying motorcycle. The suffixes are configuration tokens that do not change the core model identity.",
+  "canonical_model_alias": "Indian scout classic",
+  "configuration_tokens": [
+    "Limited",
+    "+Tech"
+  ],
+  "brand_aliases": [],
+  "model_aliases": [
+    "scout classic"
+  ],
+  "status": "SUCCESS",
+  "prompt_version": "motorcycle-candidate-resolution-v4",
+  "model": "qwen-flash",
+  "make": "Indian",
+  "model_name": "Scout Classic Limited +Tech"
+}

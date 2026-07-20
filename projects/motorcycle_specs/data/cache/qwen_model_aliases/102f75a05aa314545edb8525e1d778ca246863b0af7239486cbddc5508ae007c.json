@@ -1,0 +1,21 @@
+{
+  "decision": "MATCH",
+  "selected_candidate": "Harley-Davidson XL883R Sportster 883 R Roadster",
+  "confidence": "HIGH",
+  "match_basis": "SAME_NAME",
+  "explanation": "The input model 'XL883R Sportster 883 Roadster' is functionally identical to the candidate 'Harley-Davidson XL883R Sportster 883 R Roadster', with only minor variations in spacing and the inclusion of 'R' in the displacement. The 'R' suffix is a known market or configuration label for the Roadster variant, not a different model. All other candidates either omit key identifiers or introduce inconsistencies.",
+  "canonical_model_alias": "XL883R Sportster 883 R Roadster",
+  "configuration_tokens": [
+    "R"
+  ],
+  "brand_aliases": [],
+  "model_aliases": [
+    "Sportster 883 R Roadster",
+    "XL883R Sportster 883 R Roadster"
+  ],
+  "status": "SUCCESS",
+  "prompt_version": "motorcycle-candidate-resolution-v4",
+  "model": "qwen-flash",
+  "make": "Harley-Davidson",
+  "model_name": "XL883R Sportster 883 Roadster"
+}

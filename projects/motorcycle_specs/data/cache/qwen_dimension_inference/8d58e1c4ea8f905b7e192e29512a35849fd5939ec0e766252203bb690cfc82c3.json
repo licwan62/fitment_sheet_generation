@@ -1,0 +1,16 @@
+{
+  "decision": "INFER",
+  "confidence": "MEDIUM",
+  "length_mm": 2286,
+  "width_mm": 914,
+  "height_mm": 1143,
+  "wheelbase_mm": 1575,
+  "seat_height_mm": 762,
+  "ground_clearance_mm": 127,
+  "explanation": "Estimated based on typical dimensions for the Harley-Davidson FXEF Fat Bob (2006–2017 model years), using known design trends and factory specifications from public sources. Length, width, and height reflect standard Fat Bob proportions; wheelbase and seat height align with comparable models in the line. Ground clearance is inferred as typical for a low-riding cruiser with minimal suspension travel.",
+  "status": "SUCCESS",
+  "prompt_version": "motorcycle-dimension-inference-v1",
+  "model": "qwen-flash",
+  "make": "Harley-Davidson",
+  "model_name": "FXEF Fat Bob"
+}

@@ -1,0 +1,18 @@
+{
+  "decision": "MATCH",
+  "selected_candidate": "Challenger \n\tLimited",
+  "confidence": "HIGH",
+  "match_basis": "MARKET_ALIAS",
+  "explanation": "The 'Challenger Limited 108 Audio Package' is a configuration of the Indian Challenger Limited model, with 'Audio Package' being a feature bundle. The core model identity is the Challenger Limited, and 'Limited' is the standard designation. The '108' refers to engine displacement (108ci), which aligns with the Challenger Limited's engine size. 'Audio Package' is a configuration label, not a model variant change. The candidate 'Challenger Limited' matches the base model exactly, with no conflicting identity tokens.",
+  "canonical_model_alias": "Challenger Limited",
+  "configuration_tokens": [
+    "108 Audio Package"
+  ],
+  "brand_aliases": [],
+  "model_aliases": [],
+  "status": "SUCCESS",
+  "prompt_version": "motorcycle-candidate-resolution-v4",
+  "model": "qwen-flash",
+  "make": "Indian",
+  "model_name": "Challenger Limited 108 Audio Package"
+}

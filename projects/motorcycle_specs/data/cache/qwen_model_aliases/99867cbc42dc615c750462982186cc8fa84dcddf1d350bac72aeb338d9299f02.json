@@ -1,0 +1,18 @@
+{
+  "decision": "MATCH",
+  "selected_candidate": "husqvarna sm 450 r",
+  "confidence": "HIGH",
+  "match_basis": "MARKET_ALIAS",
+  "explanation": "'SMR 450' is a market-specific or marketing designation for the Husqvarna SM 450 R, commonly used in certain regions or catalogs. The model identity, displacement (450), and platform are identical; 'SMR' is a known variant label for the SM 450 R in some markets.",
+  "canonical_model_alias": "sm 450 r",
+  "configuration_tokens": [],
+  "brand_aliases": [],
+  "model_aliases": [
+    "sm 450 r"
+  ],
+  "status": "SUCCESS",
+  "prompt_version": "motorcycle-candidate-resolution-v4",
+  "model": "qwen-flash",
+  "make": "Husqvarna",
+  "model_name": "SMR 450"
+}

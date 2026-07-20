@@ -1,0 +1,18 @@
+{
+  "decision": "MATCH",
+  "selected_candidate": "Sportster 1250S",
+  "confidence": "HIGH",
+  "match_basis": "SAME_NAME",
+  "explanation": "The input 'RH1250S Sportster S' refers to the same motorcycle model as 'Sportster 1250S', with 'RH1250S' being a model code or internal designation used by Harley-Davidson for the 1250cc Sportster S. The name 'Sportster 1250S' is the standard catalog title and matches the core identity of the motorcycle.",
+  "canonical_model_alias": "Sportster 1250S",
+  "configuration_tokens": [],
+  "brand_aliases": [],
+  "model_aliases": [
+    "Sportster 1250S"
+  ],
+  "status": "SUCCESS",
+  "prompt_version": "motorcycle-candidate-resolution-v4",
+  "model": "qwen-flash",
+  "make": "Harley-Davidson",
+  "model_name": "RH1250S Sportster S"
+}

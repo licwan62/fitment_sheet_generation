@@ -1,0 +1,16 @@
+{
+  "decision": "INFER|UNKNOWN",
+  "confidence": "LOW",
+  "length_mm": null,
+  "width_mm": null,
+  "height_mm": null,
+  "wheelbase_mm": null,
+  "seat_height_mm": null,
+  "ground_clearance_mm": null,
+  "explanation": "The Husqvarna CR500 is a vintage motocross model from the 1980s, with no standardized or publicly documented dimensions available. Variations across model years and markets make precise inference unreliable. Dimensions are uncertain due to lack of consistent data and potential design changes over time.",
+  "status": "SUCCESS",
+  "prompt_version": "motorcycle-dimension-inference-v1",
+  "model": "qwen-flash",
+  "make": "Husqvarna",
+  "model_name": "CR500"
+}

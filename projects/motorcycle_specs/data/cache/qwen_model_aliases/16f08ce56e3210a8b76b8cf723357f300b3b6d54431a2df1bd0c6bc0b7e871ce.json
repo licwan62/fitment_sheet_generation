@@ -1,0 +1,18 @@
+{
+  "decision": "MATCH",
+  "selected_candidate": "harley davidson dyna low rider s fxdls",
+  "confidence": "HIGH",
+  "match_basis": "MARKET_ALIAS",
+  "explanation": "FXDLS is the model code for the Harley-Davidson Low Rider S, and 'Dyna Low Rider S' is a known market and catalog designation for the same motorcycle. The variant name 'FXDLS Low Rider S' matches the core identity of the candidate 'harley davidson dyna low rider s fxdls', with 'FXDLS' being the official model identifier. The term 'Dyna' in the catalog title refers to the model lineage, which is consistent across marketing materials.",
+  "canonical_model_alias": "dyna low rider s fxdls",
+  "configuration_tokens": [],
+  "brand_aliases": [],
+  "model_aliases": [
+    "dyna low rider s fxdls"
+  ],
+  "status": "SUCCESS",
+  "prompt_version": "motorcycle-candidate-resolution-v4",
+  "model": "qwen-flash",
+  "make": "Harley-Davidson",
+  "model_name": "FXDLS Low Rider S"
+}

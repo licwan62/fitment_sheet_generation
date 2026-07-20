@@ -1,0 +1,18 @@
+{
+  "decision": "MATCH",
+  "selected_candidate": "Harley-Davidson FXST Softail Standard",
+  "confidence": "HIGH",
+  "match_basis": "SAME_NAME",
+  "explanation": "The input model 'FXST Softail Standard 107' is identical to the catalog candidate 'Harley-Davidson FXST Softail Standard' in name, model code (FXST), and configuration (107). The displacement is consistent, and no distinguishing configuration or market variant alters the core identity. The candidate is a direct match.",
+  "canonical_model_alias": "FXST Softail Standard",
+  "configuration_tokens": [
+    "107"
+  ],
+  "brand_aliases": [],
+  "model_aliases": [],
+  "status": "SUCCESS",
+  "prompt_version": "motorcycle-candidate-resolution-v4",
+  "model": "qwen-flash",
+  "make": "Harley-Davidson",
+  "model_name": "FXST Softail Standard 107"
+}

@@ -1,0 +1,16 @@
+{
+  "decision": "NO_MATCH",
+  "selected_candidate": "",
+  "confidence": "HIGH",
+  "match_basis": "NONE",
+  "explanation": "HUV 4420 G is not a recognized Husqvarna motorcycle model name. The catalog candidates are all real Husqvarna models, but none match the identifier HUV 4420 G in terms of model lineage, displacement, or naming convention. HUV 4420 G appears to be an industrial or non-motorcycle product code, not a motorcycle model.",
+  "canonical_model_alias": "",
+  "configuration_tokens": [],
+  "brand_aliases": [],
+  "model_aliases": [],
+  "status": "SUCCESS",
+  "prompt_version": "motorcycle-candidate-resolution-v4",
+  "model": "qwen-flash",
+  "make": "Husqvarna",
+  "model_name": "HUV 4420 G"
+}

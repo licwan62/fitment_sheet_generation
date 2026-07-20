@@ -1,0 +1,16 @@
+{
+  "decision": "NO_MATCH",
+  "selected_candidate": "",
+  "confidence": "HIGH",
+  "match_basis": "NONE",
+  "explanation": "The input model 'HUV 4421 GXL' does not correspond to any of the catalog candidates, which are all Husqvarna 401 or 701 models. The input contains a non-standard identifier (HUV 4421 GXL) that does not match known Husqvarna model naming conventions for the 401 or 701 series. No known market name, historical alias, abbreviation, or typo links this to any candidate.",
+  "canonical_model_alias": "",
+  "configuration_tokens": [],
+  "brand_aliases": [],
+  "model_aliases": [],
+  "status": "SUCCESS",
+  "prompt_version": "motorcycle-candidate-resolution-v4",
+  "model": "qwen-flash",
+  "make": "Husqvarna",
+  "model_name": "HUV 4421 GXL"
+}

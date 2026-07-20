@@ -1,0 +1,18 @@
+{
+  "decision": "MATCH",
+  "selected_candidate": "indian roadmaster powerplus limited",
+  "confidence": "HIGH",
+  "match_basis": "SAME_NAME",
+  "explanation": "The input 'Roadmaster PowerPlus Limited 108' refers to the same model as 'indian roadmaster powerplus limited', with the displacement '108' being a configuration detail not present in the candidate title but consistent with the PowerPlus Limited variant. The candidate is the canonical name for this model, and the absence of displacement in the candidate does not indicate a different model.",
+  "canonical_model_alias": "indian roadmaster powerplus limited",
+  "configuration_tokens": [
+    "108"
+  ],
+  "brand_aliases": [],
+  "model_aliases": [],
+  "status": "SUCCESS",
+  "prompt_version": "motorcycle-candidate-resolution-v4",
+  "model": "qwen-flash",
+  "make": "Indian",
+  "model_name": "Roadmaster PowerPlus Limited 108"
+}

@@ -1,6 +1,6 @@
 from moto_dimension_crawler.models import InputRecord
 from moto_dimension_crawler.normalizer import compact_name, normalize_name, number_tokens, word_tokens
-from moto_dimension_crawler.page_discovery import cross_source_candidate_pages, fallback_pages, targeted_pages
+from moto_dimension_crawler.page_discovery import BrandPageLookup, cross_source_candidate_pages, fallback_pages, targeted_pages
 
 
 def record(make, model):
@@ -58,3 +58,20 @@ def test_cross_source_pool_keeps_nearby_models_from_each_catalog():
     found = cross_source_candidate_pages(record("Honda", "CB190R"), pages, max_total=2)
     assert [page["source_name"] for page in found] == ["one", "two"]
     assert {page["page_title"] for page in found} == {"Honda CBF 190TR", "Honda CB 190X"}
+
+
+def test_brand_page_lookup_preserves_full_scan_behavior_and_caches_alias_sets():
+    pages = [
+        {"brand_guess": "BMW", "page_title": "BMW C Evolution", "page_url": "https://example/bmw/c-evolution"},
+        {"brand_guess": "Honda", "page_title": "Honda CB190R", "page_url": "https://example/honda/cb190r"},
+        # The original filter also accepts a make found in the URL when a site's brand guess is wrong.
+        {"brand_guess": "Baiai", "page_title": "Pulsar 200NS", "page_url": "https://example/bajaj/pulsar-200ns"},
+    ]
+    lookup = BrandPageLookup(pages)
+
+    bmw = lookup.pages_for("BMW Motorrad", ["BMW"])
+    same_cached_result = lookup.pages_for("BMW Motorrad", ["BMW"])
+
+    assert bmw == pages[:1]
+    assert same_cached_result is bmw
+    assert lookup.pages_for("Bajaj") == pages[2:]

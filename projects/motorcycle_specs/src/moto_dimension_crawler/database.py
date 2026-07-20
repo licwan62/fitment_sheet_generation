@@ -30,8 +30,16 @@ def clear_checkpoint(path: Path) -> list[Path]:
 class StateDB:
     def __init__(self, path: Path):
         path.parent.mkdir(parents=True, exist_ok=True)
-        self.conn = sqlite3.connect(path)
+        # Fetch workers share this connection, while Crawler serializes their
+        # short metadata writes with a lock.
+        self.conn = sqlite3.connect(path, check_same_thread=False)
         self.conn.row_factory = sqlite3.Row
+        # WAL avoids rewriting the main database on every small checkpoint
+        # transaction. NORMAL retains crash recovery while reducing fsync load.
+        self.conn.execute("PRAGMA journal_mode=WAL")
+        self.conn.execute("PRAGMA synchronous=NORMAL")
+        self.conn.execute("PRAGMA temp_store=MEMORY")
+        self.conn.execute("PRAGMA busy_timeout=5000")
         self.conn.executescript(SCHEMA)
         self.conn.commit()
 
@@ -60,6 +68,23 @@ class StateDB:
             if item.get("payload"):
                 item.update(json.loads(item.pop("payload")))
             result.append(item)
+        return result
+
+    def rows_for_input_ids(self, table: str, input_ids: Iterable[str]) -> list[dict[str, Any]]:
+        """Load only the requested task slice, chunking around SQLite variable limits."""
+        allowed = {"candidate_pages", "dimension_results"}
+        if table not in allowed:
+            raise ValueError(table)
+        values = list(dict.fromkeys(str(value) for value in input_ids))
+        result: list[dict[str, Any]] = []
+        for start in range(0, len(values), 900):
+            chunk = values[start:start + 900]
+            marks = ",".join("?" for _ in chunk)
+            for row in self.conn.execute(f"SELECT * FROM {table} WHERE input_id IN ({marks})", chunk):
+                item = dict(row)
+                if item.get("payload"):
+                    item.update(json.loads(item.pop("payload")))
+                result.append(item)
         return result
 
     def cached(self, url: str) -> dict[str, Any] | None:

@@ -29,3 +29,23 @@ def test_clear_input_candidates_replaces_stale_match_rows(tmp_path):
     db.clear_input_candidates("1")
     assert {(row["input_id"], row["url"]) for row in db.rows("candidate_pages")} == {("2", "kept")}
     db.close()
+
+
+def test_state_database_uses_wal_with_normal_synchronous_mode(tmp_path):
+    db = StateDB(tmp_path / "state.sqlite3")
+
+    assert db.conn.execute("PRAGMA journal_mode").fetchone()[0].casefold() == "wal"
+    assert db.conn.execute("PRAGMA synchronous").fetchone()[0] == 1
+
+    db.close()
+
+
+def test_rows_for_input_ids_does_not_load_unrelated_checkpoint_rows(tmp_path):
+    db = StateDB(tmp_path / "state.sqlite3")
+    db.upsert_json("candidate_pages", {"input_id": "1", "url": "one"}, {"INPUT_ID": "1"})
+    db.upsert_json("candidate_pages", {"input_id": "2", "url": "two"}, {"INPUT_ID": "2"})
+
+    rows = db.rows_for_input_ids("candidate_pages", {"2"})
+
+    assert [(row["input_id"], row["url"]) for row in rows] == [("2", "two")]
+    db.close()

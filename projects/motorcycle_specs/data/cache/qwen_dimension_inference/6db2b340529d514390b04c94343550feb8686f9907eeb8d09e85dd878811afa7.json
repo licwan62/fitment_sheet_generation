@@ -1,0 +1,16 @@
+{
+  "decision": "INFER|UNKNOWN",
+  "confidence": "LOW",
+  "length_mm": null,
+  "width_mm": null,
+  "height_mm": null,
+  "wheelbase_mm": null,
+  "seat_height_mm": null,
+  "ground_clearance_mm": null,
+  "explanation": "The Husqvarna TC500 is a motocross motorcycle, but its exact dimensions vary significantly across model years and markets. Without access to a specific catalog page or definitive model year data, precise dimensions cannot be reliably inferred. The model's identity and specifications are subject to change over time, making accurate estimation uncertain.",
+  "status": "SUCCESS",
+  "prompt_version": "motorcycle-dimension-inference-v1",
+  "model": "qwen-flash",
+  "make": "Husqvarna",
+  "model_name": "TC500"
+}

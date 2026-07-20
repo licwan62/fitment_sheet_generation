@@ -1,0 +1,16 @@
+{
+  "decision": "NO_MATCH",
+  "selected_candidate": "",
+  "confidence": "HIGH",
+  "match_basis": "NONE",
+  "explanation": "The input model 'Chieftain PowerPlus' is not a known variant or market name for any of the catalog candidates. The 'PowerPlus' designation is specific to a high-output version of the Indian Chieftain introduced in 2017, which is distinct from the 'Elite', 'Dark Horse', or base 'Chieftain' models listed. None of the candidates match the PowerPlus configuration, and no evidence suggests that 'PowerPlus' is a synonym or typo for any of them.",
+  "canonical_model_alias": "",
+  "configuration_tokens": [],
+  "brand_aliases": [],
+  "model_aliases": [],
+  "status": "SUCCESS",
+  "prompt_version": "motorcycle-candidate-resolution-v4",
+  "model": "qwen-flash",
+  "make": "Indian",
+  "model_name": "Chieftain PowerPlus"
+}

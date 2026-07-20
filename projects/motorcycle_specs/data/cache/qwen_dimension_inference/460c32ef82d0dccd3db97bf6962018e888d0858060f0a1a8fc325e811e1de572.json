@@ -1,0 +1,16 @@
+{
+  "decision": "INFER|UNKNOWN",
+  "confidence": "MEDIUM|LOW",
+  "length_mm": null,
+  "width_mm": null,
+  "height_mm": null,
+  "wheelbase_mm": null,
+  "seat_height_mm": null,
+  "ground_clearance_mm": null,
+  "explanation": "Husqvarna XC400 is a motocross motorcycle, but exact dimensions vary significantly by model year and market configuration. Without access to a specific catalog page or definitive source, precise measurements cannot be reliably determined. Inferred values may not reflect actual variations across production years or regional variants.",
+  "status": "SUCCESS",
+  "prompt_version": "motorcycle-dimension-inference-v1",
+  "model": "qwen-flash",
+  "make": "Husqvarna",
+  "model_name": "XC400"
+}

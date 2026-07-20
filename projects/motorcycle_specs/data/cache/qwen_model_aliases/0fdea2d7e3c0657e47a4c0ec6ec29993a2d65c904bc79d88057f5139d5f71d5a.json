@@ -1,0 +1,20 @@
+{
+  "decision": "MATCH",
+  "selected_candidate": "Indian scout sixty classic",
+  "confidence": "HIGH",
+  "match_basis": "MARKET_ALIAS",
+  "explanation": "The input 'Scout Sixty Classic Limited' is a market-specific variant of the 'Scout Sixty Classic', with 'Limited' denoting a special edition or configuration. The core model identity (Scout Sixty Classic) matches exactly with the catalog candidate, and 'Limited' is a known configuration suffix rather than a distinct model.",
+  "canonical_model_alias": "indian scout sixty classic",
+  "configuration_tokens": [
+    "Limited"
+  ],
+  "brand_aliases": [],
+  "model_aliases": [
+    "scout sixty classic"
+  ],
+  "status": "SUCCESS",
+  "prompt_version": "motorcycle-candidate-resolution-v4",
+  "model": "qwen-flash",
+  "make": "Indian",
+  "model_name": "Scout Sixty Classic Limited"
+}

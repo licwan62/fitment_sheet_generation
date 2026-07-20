@@ -42,6 +42,24 @@ def test_existing_qwen_key_does_not_prompt(tmp_path, monkeypatch):
     assert validated == ["already-set"]
 
 
+def test_qwen_key_is_loaded_from_project_dotenv(tmp_path, monkeypatch):
+    config = tmp_path / "config.yaml"
+    write_config(config, enabled=True)
+    (tmp_path / ".env").write_text("QWEN_API_KEY=dotenv-key\n", encoding="utf-8")
+    monkeypatch.setattr("moto_dimension_crawler.cli.ROOT", tmp_path)
+    monkeypatch.delenv("QWEN_API_KEY", raising=False)
+    validated = []
+    monkeypatch.setattr("moto_dimension_crawler.cli.validate_qwen_api_key", lambda qwen, key: validated.append(key))
+    monkeypatch.setattr(
+        "moto_dimension_crawler.cli.typer.prompt",
+        lambda *args, **kwargs: (_ for _ in ()).throw(AssertionError("should not prompt")),
+    )
+
+    ensure_qwen_api_key(config, "export")
+
+    assert validated == ["dotenv-key"]
+
+
 def test_build_index_does_not_need_qwen_key(tmp_path, monkeypatch):
     config = tmp_path / "config.yaml"
     write_config(config, enabled=True)

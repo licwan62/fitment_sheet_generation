@@ -1,0 +1,22 @@
+{
+  "decision": "MATCH",
+  "selected_candidate": "indian chieftain powerplus dark horse with 112 package",
+  "confidence": "HIGH",
+  "match_basis": "SAME_NAME",
+  "explanation": "The input 'Chieftain PowerPlus Dark Horse 112' matches the catalog candidate 'indian chieftain powerplus dark horse with 112 package' in model name, configuration (PowerPlus), special edition (Dark Horse), and engine displacement (112). The casing and minor wording differences are consistent with catalog variations. No other model variants or displacements are involved.",
+  "canonical_model_alias": "chieftain powerplus dark horse with 112 package",
+  "configuration_tokens": [
+    "powerplus",
+    "dark horse",
+    "112 package"
+  ],
+  "brand_aliases": [],
+  "model_aliases": [
+    "chieftain powerplus dark horse with 112 package"
+  ],
+  "status": "SUCCESS",
+  "prompt_version": "motorcycle-candidate-resolution-v4",
+  "model": "qwen-flash",
+  "make": "Indian",
+  "model_name": "Chieftain PowerPlus Dark Horse 112"
+}

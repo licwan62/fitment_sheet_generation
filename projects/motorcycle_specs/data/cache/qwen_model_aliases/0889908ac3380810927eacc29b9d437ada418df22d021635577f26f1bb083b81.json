@@ -1,0 +1,16 @@
+{
+  "decision": "NO_MATCH",
+  "selected_candidate": "",
+  "confidence": "HIGH",
+  "match_basis": "NONE",
+  "explanation": "The input model 'TE570' is not present in the catalog candidates, and no candidate matches it by identity, market name, historical alias, abbreviation, or typo. The closest candidate, 'TE 570e', differs in suffix ('e' vs. no suffix), and other candidates are different models (e.g., TE 150, TE 250, SM 570R, Vitpilen 250). No evidence supports that any candidate is the same underlying motorcycle as TE570.",
+  "canonical_model_alias": "",
+  "configuration_tokens": [],
+  "brand_aliases": [],
+  "model_aliases": [],
+  "status": "SUCCESS",
+  "prompt_version": "motorcycle-candidate-resolution-v4",
+  "model": "qwen-flash",
+  "make": "Husqvarna",
+  "model_name": "TE570"
+}

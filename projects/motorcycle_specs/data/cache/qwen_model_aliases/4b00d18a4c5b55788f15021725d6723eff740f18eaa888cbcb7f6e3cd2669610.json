@@ -1,0 +1,18 @@
+{
+  "decision": "MATCH",
+  "selected_candidate": "husqvarna txc 250 r",
+  "confidence": "HIGH",
+  "match_basis": "MARKET_ALIAS",
+  "explanation": "The model 'TC250R' is a racing-oriented version of the Husqvarna TC 250, and 'TXC 250 R' is a known market-specific or catalog variant name for the same motorcycle, particularly in certain regions or years. The 'TXC' designation is a recognized alternate naming for the TC 250R in some catalogs, indicating the same underlying model with identical displacement and core specifications.",
+  "canonical_model_alias": "txc 250 r",
+  "configuration_tokens": [],
+  "brand_aliases": [],
+  "model_aliases": [
+    "txc 250 r"
+  ],
+  "status": "SUCCESS",
+  "prompt_version": "motorcycle-candidate-resolution-v4",
+  "model": "qwen-flash",
+  "make": "Husqvarna",
+  "model_name": "TC250R"
+}

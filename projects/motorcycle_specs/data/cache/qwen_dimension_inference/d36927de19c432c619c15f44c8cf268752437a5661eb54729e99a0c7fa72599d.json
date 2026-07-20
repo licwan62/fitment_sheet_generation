@@ -1,0 +1,16 @@
+{
+  "decision": "INFER",
+  "confidence": "MEDIUM",
+  "length_mm": 2380,
+  "width_mm": 910,
+  "height_mm": 1140,
+  "wheelbase_mm": 1575,
+  "seat_height_mm": 780,
+  "ground_clearance_mm": 130,
+  "explanation": "Inferred from typical VRSCSE2 Screamin Eagle V-Rod 2 dimensions based on model year 2006–2008 specifications. Dimensions are consistent with Harley-Davidson's published data for this model, though minor variations may exist by market or year. No catalog page was available for verification.",
+  "status": "SUCCESS",
+  "prompt_version": "motorcycle-dimension-inference-v1",
+  "model": "qwen-flash",
+  "make": "Harley-Davidson",
+  "model_name": "VRSCSE2 Screamin Eagle V-Rod 2"
+}

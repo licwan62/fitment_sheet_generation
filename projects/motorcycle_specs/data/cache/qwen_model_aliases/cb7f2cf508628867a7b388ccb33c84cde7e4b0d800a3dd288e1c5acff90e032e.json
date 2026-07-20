@@ -1,0 +1,16 @@
+{
+  "decision": "NO_MATCH",
+  "selected_candidate": "",
+  "confidence": "HIGH",
+  "match_basis": "NONE",
+  "explanation": "The input model 'WXE 410' is not a known variant of any of the catalog candidates. The 'WXE' designation does not correspond to any Husqvarna motorcycle model in the provided list, and no candidate matches the displacement (410) or naming pattern. The 'TE 410' and 'TE 410e' are similar in displacement but differ in model series (TE vs WXE), and 'FE 450' and others are different displacements or model lines. No evidence supports that 'WXE 410' is a valid alias for any listed model.",
+  "canonical_model_alias": "",
+  "configuration_tokens": [],
+  "brand_aliases": [],
+  "model_aliases": [],
+  "status": "SUCCESS",
+  "prompt_version": "motorcycle-candidate-resolution-v4",
+  "model": "qwen-flash",
+  "make": "Husqvarna",
+  "model_name": "WXE 410"
+}

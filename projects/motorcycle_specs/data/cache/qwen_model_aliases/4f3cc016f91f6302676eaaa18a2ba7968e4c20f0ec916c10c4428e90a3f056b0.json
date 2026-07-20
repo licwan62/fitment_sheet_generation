@@ -1,0 +1,16 @@
+{
+  "decision": "NO_MATCH",
+  "selected_candidate": "",
+  "confidence": "HIGH",
+  "match_basis": "NONE",
+  "explanation": "AE430 is not a valid Husqvarna model name; the closest candidates are WR 430 and 430CR, but neither matches AE430 in identity. The FE 350, FE 450, TE 300, and Svartpilen 401 are different displacement or model types. No candidate corresponds to a 430cc model with 'AE' designation.",
+  "canonical_model_alias": "",
+  "configuration_tokens": [],
+  "brand_aliases": [],
+  "model_aliases": [],
+  "status": "SUCCESS",
+  "prompt_version": "motorcycle-candidate-resolution-v4",
+  "model": "qwen-flash",
+  "make": "Husqvarna",
+  "model_name": "AE430"
+}

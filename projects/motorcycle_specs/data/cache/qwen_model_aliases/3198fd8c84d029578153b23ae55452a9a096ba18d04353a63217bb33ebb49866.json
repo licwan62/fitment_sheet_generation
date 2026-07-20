@@ -1,0 +1,16 @@
+{
+  "decision": "MATCH",
+  "selected_candidate": "Harley-Davidson FXEF 1340 Fat Bob",
+  "confidence": "HIGH",
+  "match_basis": "SAME_NAME",
+  "explanation": "The input 'FXEF Fat Bob' matches the catalog candidate 'Harley-Davidson FXEF 1340 Fat Bob' exactly in model designation and name, with only the displacement (1340) missing in the input. The FXEF is a known model code for the Fat Bob series, and the 1340 displacement is consistent with the model's production history. No other candidate shares this exact model code.",
+  "canonical_model_alias": "FXEF 1340 Fat Bob",
+  "configuration_tokens": [],
+  "brand_aliases": [],
+  "model_aliases": [],
+  "status": "SUCCESS",
+  "prompt_version": "motorcycle-candidate-resolution-v4",
+  "model": "qwen-flash",
+  "make": "Harley-Davidson",
+  "model_name": "FXEF Fat Bob"
+}

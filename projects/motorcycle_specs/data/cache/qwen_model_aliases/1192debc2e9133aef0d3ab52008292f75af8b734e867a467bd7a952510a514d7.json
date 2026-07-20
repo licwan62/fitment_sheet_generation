@@ -1,0 +1,16 @@
+{
+  "decision": "NO_MATCH",
+  "selected_candidate": "",
+  "confidence": "HIGH",
+  "match_basis": "NONE",
+  "explanation": "The input model 'ECO 150 Cargo' is a cargo-focused variant of Hero's ECO series, while all catalog candidates are distinct models with different names, displacements, or configurations. None match the ECO 150 Cargo in identity, including market-specific variants or typos. The 'Hero emaestro' is a different model line, and others are unrelated scooters, adventure bikes, or concept vehicles.",
+  "canonical_model_alias": "",
+  "configuration_tokens": [],
+  "brand_aliases": [],
+  "model_aliases": [],
+  "status": "SUCCESS",
+  "prompt_version": "motorcycle-candidate-resolution-v4",
+  "model": "qwen-flash",
+  "make": "Hero",
+  "model_name": "ECO 150 Cargo"
+}

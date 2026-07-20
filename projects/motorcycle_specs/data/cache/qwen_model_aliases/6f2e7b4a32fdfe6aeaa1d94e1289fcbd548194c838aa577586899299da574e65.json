@@ -1,0 +1,16 @@
+{
+  "decision": "MATCH",
+  "selected_candidate": "Challenger \n\tDark Horse",
+  "confidence": "HIGH",
+  "match_basis": "SAME_NAME",
+  "explanation": "The input 'Challenger Dark Horse 108' refers to the Indian Challenger Dark Horse model with a 108 cubic inch engine. The candidate 'Challenger \n\tDark Horse' is a direct match in name and model identity, with the newline formatting being a minor presentation difference. The displacement is implied by the model's known configuration, and no other candidate matches this specific model.",
+  "canonical_model_alias": "Challenger Dark Horse",
+  "configuration_tokens": [],
+  "brand_aliases": [],
+  "model_aliases": [],
+  "status": "SUCCESS",
+  "prompt_version": "motorcycle-candidate-resolution-v4",
+  "model": "qwen-flash",
+  "make": "Indian",
+  "model_name": "Challenger Dark Horse 108"
+}

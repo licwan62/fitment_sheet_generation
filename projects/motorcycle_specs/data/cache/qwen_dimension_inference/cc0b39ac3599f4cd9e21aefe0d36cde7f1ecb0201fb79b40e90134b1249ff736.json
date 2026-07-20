@@ -1,0 +1,16 @@
+{
+  "decision": "INFER|UNKNOWN",
+  "confidence": "MEDIUM|LOW",
+  "length_mm": null,
+  "width_mm": null,
+  "height_mm": null,
+  "wheelbase_mm": null,
+  "seat_height_mm": null,
+  "ground_clearance_mm": null,
+  "explanation": "The Husqvarna WR240 is a motocross motorcycle, but specific dimensional data varies across model years and markets. Without access to a catalog page or definitive source, precise dimensions cannot be reliably inferred. Known variants may differ in wheelbase, seat height, and ground clearance due to suspension setup and frame design changes. Therefore, dimensions are marked as unknown with medium to low confidence.",
+  "status": "SUCCESS",
+  "prompt_version": "motorcycle-dimension-inference-v1",
+  "model": "qwen-flash",
+  "make": "Husqvarna",
+  "model_name": "WR240"
+}

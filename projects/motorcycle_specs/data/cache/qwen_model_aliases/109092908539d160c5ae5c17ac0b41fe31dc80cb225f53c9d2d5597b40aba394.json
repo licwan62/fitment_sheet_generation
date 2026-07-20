@@ -1,0 +1,19 @@
+{
+  "decision": "MATCH",
+  "selected_candidate": "Harley-Davidson FXDC Dyna Super Glide Custom",
+  "confidence": "HIGH",
+  "match_basis": "MARKET_ALIAS",
+  "explanation": "The input 'FXDC Super Glide Custom' is a known market or catalog shorthand for the full model 'FXDC Dyna Super Glide Custom'. The 'Dyna' prefix is part of the official model designation and is consistently used in Harley-Davidson's catalog. The absence of 'Dyna' in the input is a common omission in informal references, but the displacement and model identity remain unchanged.",
+  "canonical_model_alias": "FXDC Dyna Super Glide Custom",
+  "configuration_tokens": [],
+  "brand_aliases": [],
+  "model_aliases": [
+    "Dyna Super Glide Custom",
+    "FXDC Dyna Super Glide Custom"
+  ],
+  "status": "SUCCESS",
+  "prompt_version": "motorcycle-candidate-resolution-v4",
+  "model": "qwen-flash",
+  "make": "Harley-Davidson",
+  "model_name": "FXDC Super Glide Custom"
+}

@@ -1,0 +1,16 @@
+{
+  "decision": "NO_MATCH",
+  "selected_candidate": "",
+  "confidence": "HIGH",
+  "match_basis": "NONE",
+  "explanation": "'VLH' is not a recognized Harley-Davidson model name, and none of the catalog candidates match this identifier. The candidates are all CVO (Custom Vehicle Operations) models, which are distinct from any known 'VLH' designation. No evidence supports that 'VLH' refers to any of these models as a market alias, historical name, abbreviation, or typo.",
+  "canonical_model_alias": "",
+  "configuration_tokens": [],
+  "brand_aliases": [],
+  "model_aliases": [],
+  "status": "SUCCESS",
+  "prompt_version": "motorcycle-candidate-resolution-v4",
+  "model": "qwen-flash",
+  "make": "Harley-Davidson",
+  "model_name": "VLH"
+}

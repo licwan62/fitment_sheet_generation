@@ -1,0 +1,18 @@
+{
+  "decision": "MATCH",
+  "selected_candidate": "FXRS 1340 Low Rider Sport",
+  "confidence": "HIGH",
+  "match_basis": "SAME_NAME",
+  "explanation": "The input 'FXRS-SP Low Rider Sport' is a valid market or configuration variant of the FXRS 1340 Low Rider Sport model. The 'SP' suffix is a known designation for the Sport edition, and the core model identity (FXRS 1340 Low Rider Sport) matches exactly with the candidate. Displacement (1340cc), model series (FXRS), and name (Low Rider Sport) are identical.",
+  "canonical_model_alias": "FXRS 1340 Low Rider Sport",
+  "configuration_tokens": [
+    "SP"
+  ],
+  "brand_aliases": [],
+  "model_aliases": [],
+  "status": "SUCCESS",
+  "prompt_version": "motorcycle-candidate-resolution-v4",
+  "model": "qwen-flash",
+  "make": "Harley-Davidson",
+  "model_name": "FXRS-SP Low Rider Sport"
+}

@@ -1,0 +1,16 @@
+{
+  "decision": "INFER|UNKNOWN",
+  "confidence": "MEDIUM|LOW",
+  "length_mm": null,
+  "width_mm": null,
+  "height_mm": null,
+  "wheelbase_mm": null,
+  "seat_height_mm": null,
+  "ground_clearance_mm": null,
+  "explanation": "The Islo Black Wing 150 is a lesser-known model with limited publicly available specifications. No official catalog or verified data source confirms its dimensions. Variations across markets or model years may exist, and no reliable reference exists to infer accurate measurements. Therefore, dimensions are uncertain and cannot be reliably estimated.",
+  "status": "SUCCESS",
+  "prompt_version": "motorcycle-dimension-inference-v1",
+  "model": "qwen-flash",
+  "make": "Islo",
+  "model_name": "Black Wing 150"
+}

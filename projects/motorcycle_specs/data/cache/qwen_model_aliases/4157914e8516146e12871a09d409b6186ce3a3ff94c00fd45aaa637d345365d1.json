@@ -1,0 +1,18 @@
+{
+  "decision": "MATCH",
+  "selected_candidate": "Challenger \n\tLimited",
+  "confidence": "HIGH",
+  "match_basis": "SAME_NAME",
+  "explanation": "The input 'Challenger Limited 108' refers to the Indian Challenger Limited model with a 108 cubic inch engine, which is directly matched by the candidate 'Challenger \n\tLimited' in the catalog. The displacement (108) is implied in the model name and consistent with the Challenger Limited variant. No other candidate matches this specific configuration exactly.",
+  "canonical_model_alias": "Challenger Limited",
+  "configuration_tokens": [
+    "108"
+  ],
+  "brand_aliases": [],
+  "model_aliases": [],
+  "status": "SUCCESS",
+  "prompt_version": "motorcycle-candidate-resolution-v4",
+  "model": "qwen-flash",
+  "make": "Indian",
+  "model_name": "Challenger Limited 108"
+}

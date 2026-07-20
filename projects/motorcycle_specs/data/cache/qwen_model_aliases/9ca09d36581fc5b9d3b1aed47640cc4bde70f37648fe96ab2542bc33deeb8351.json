@@ -1,0 +1,18 @@
+{
+  "decision": "MATCH",
+  "selected_candidate": "Harley-Davidson Model K",
+  "confidence": "HIGH",
+  "match_basis": "HISTORICAL_ALIAS",
+  "explanation": "The input 'K' refers to the historic Harley-Davidson Model K, a 1917–1920 model that was one of the first mass-produced motorcycles by Harley-Davidson. The other candidates are unrelated: the 11-KR is a modern model with a different engine and platform; the KR 750 is a racing variant; breakout and Road King are later models with distinct identities. 'Model K' is the correct historical designation for the K series.",
+  "canonical_model_alias": "Model K",
+  "configuration_tokens": [],
+  "brand_aliases": [],
+  "model_aliases": [
+    "Model K"
+  ],
+  "status": "SUCCESS",
+  "prompt_version": "motorcycle-candidate-resolution-v4",
+  "model": "qwen-flash",
+  "make": "Harley-Davidson",
+  "model_name": "K"
+}

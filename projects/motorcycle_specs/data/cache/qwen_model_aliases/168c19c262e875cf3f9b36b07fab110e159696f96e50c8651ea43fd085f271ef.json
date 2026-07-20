@@ -1,0 +1,18 @@
+{
+  "decision": "MATCH",
+  "selected_candidate": "hyosung gv 650i",
+  "confidence": "HIGH",
+  "match_basis": "MARKET_ALIAS",
+  "explanation": "The input 'GV650' refers to the same underlying motorcycle model as 'hyosung gv 650i', which is a market-specific naming variation. The 'i' in GV650i denotes fuel injection, a standard feature on this model, and is commonly used in marketing and cataloging. The core model identity (GV650) matches exactly with the 'i' variant, making it a valid market alias.",
+  "canonical_model_alias": "gv 650i",
+  "configuration_tokens": [],
+  "brand_aliases": [],
+  "model_aliases": [
+    "gv 650i"
+  ],
+  "status": "SUCCESS",
+  "prompt_version": "motorcycle-candidate-resolution-v4",
+  "model": "qwen-flash",
+  "make": "Hyosung",
+  "model_name": "GV650"
+}

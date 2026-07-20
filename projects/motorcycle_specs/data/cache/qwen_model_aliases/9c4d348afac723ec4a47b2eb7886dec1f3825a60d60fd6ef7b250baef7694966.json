@@ -1,0 +1,16 @@
+{
+  "decision": "NO_MATCH",
+  "selected_candidate": "",
+  "confidence": "HIGH",
+  "match_basis": "NONE",
+  "explanation": "The input model FC470 is not present in the catalog candidates, and no candidate matches the FC470 displacement (470cc) or naming pattern. The closest candidates are FS 450 and FE 450, but these are 450cc models, not 470cc. Husaberg did not produce a FC470 model; the FC series was used for different models, and the 470cc displacement does not align with any listed candidate. Therefore, no valid match exists.",
+  "canonical_model_alias": "",
+  "configuration_tokens": [],
+  "brand_aliases": [],
+  "model_aliases": [],
+  "status": "SUCCESS",
+  "prompt_version": "motorcycle-candidate-resolution-v4",
+  "model": "qwen-flash",
+  "make": "Husaberg",
+  "model_name": "FC470"
+}

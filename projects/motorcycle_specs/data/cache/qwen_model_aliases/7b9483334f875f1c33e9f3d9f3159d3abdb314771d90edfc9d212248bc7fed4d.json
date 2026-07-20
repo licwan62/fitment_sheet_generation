@@ -1,0 +1,19 @@
+{
+  "decision": "MATCH",
+  "selected_candidate": "indian roadmaster powerplus limited",
+  "confidence": "HIGH",
+  "match_basis": "MARKET_ALIAS",
+  "explanation": "The 'PowerPlus Limited 108 Audio Package' is a configuration of the Indian Roadmaster PowerPlus Limited model with a 108ci engine and audio package. The catalog candidate 'indian roadmaster powerplus limited' represents the base model, and the 108ci displacement and audio package are configuration-specific additions not altering the core model identity. The term 'Audio Package' is a known market-specific feature label, and the model is otherwise identical.",
+  "canonical_model_alias": "roadmaster powerplus limited",
+  "configuration_tokens": [
+    "108",
+    "audio package"
+  ],
+  "brand_aliases": [],
+  "model_aliases": [],
+  "status": "SUCCESS",
+  "prompt_version": "motorcycle-candidate-resolution-v4",
+  "model": "qwen-flash",
+  "make": "Indian",
+  "model_name": "Roadmaster PowerPlus Limited 108 Audio Package"
+}

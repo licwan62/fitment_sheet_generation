@@ -1,0 +1,16 @@
+{
+  "decision": "INFER",
+  "confidence": "MEDIUM",
+  "length_mm": 2200,
+  "width_mm": 850,
+  "height_mm": 1380,
+  "wheelbase_mm": 1480,
+  "seat_height_mm": 920,
+  "ground_clearance_mm": 300,
+  "explanation": "Inferred from Husqvarna CR360's typical dimensions based on similar off-road motocross models in the 350-400cc range, such as the KTM 350 SX-F. Dimensions are approximate and consistent with factory motorcycle design norms for this class. No official catalog data available for confirmation.",
+  "status": "SUCCESS",
+  "prompt_version": "motorcycle-dimension-inference-v1",
+  "model": "qwen-flash",
+  "make": "Husqvarna",
+  "model_name": "CR360"
+}

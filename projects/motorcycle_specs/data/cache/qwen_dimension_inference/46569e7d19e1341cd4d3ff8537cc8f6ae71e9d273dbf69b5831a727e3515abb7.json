@@ -1,0 +1,16 @@
+{
+  "decision": "INFER|UNKNOWN",
+  "confidence": "MEDIUM|LOW",
+  "length_mm": null,
+  "width_mm": null,
+  "height_mm": null,
+  "wheelbase_mm": null,
+  "seat_height_mm": null,
+  "ground_clearance_mm": null,
+  "explanation": "The Indian Roadmaster PowerPlus Limited 108 Audio Package is a limited-edition model with no publicly available official dimensions. Variations in production years, market-specific configurations, and custom features may affect overall dimensions. Without access to a catalog page or verified technical specifications, accurate inference is uncertain. Dimensions from related models (e.g., standard Roadmaster) cannot be reliably applied due to potential differences in frame, suspension, and accessories.",
+  "status": "SUCCESS",
+  "prompt_version": "motorcycle-dimension-inference-v1",
+  "model": "qwen-flash",
+  "make": "Indian",
+  "model_name": "Roadmaster PowerPlus Limited 108 Audio Package"
+}

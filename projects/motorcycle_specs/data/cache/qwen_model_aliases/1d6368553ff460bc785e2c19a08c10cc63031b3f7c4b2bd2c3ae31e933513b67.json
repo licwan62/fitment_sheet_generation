@@ -1,0 +1,19 @@
+{
+  "decision": "MATCH",
+  "selected_candidate": "Harley-Davidson FLTRXSE CVO Road Glide Custom",
+  "confidence": "HIGH",
+  "match_basis": "MARKET_ALIAS",
+  "explanation": "The input 'FLTRXSE2 CVO Road Glide Custom' and the candidate 'FLTRXSE CVO Road Glide Custom' refer to the same underlying motorcycle model. The '2' in the input is a plausible typo or variant notation for the model year, but the core model identifier (FLTRXSE) and configuration (CVO Road Glide Custom) are identical. This is a known market or catalog variation where the year digit may be inconsistently appended.",
+  "canonical_model_alias": "FLTRXSE CVO Road Glide Custom",
+  "configuration_tokens": [
+    "CVO",
+    "Road Glide Custom"
+  ],
+  "brand_aliases": [],
+  "model_aliases": [],
+  "status": "SUCCESS",
+  "prompt_version": "motorcycle-candidate-resolution-v4",
+  "model": "qwen-flash",
+  "make": "Harley-Davidson",
+  "model_name": "FLTRXSE2 CVO Road Glide Custom"
+}

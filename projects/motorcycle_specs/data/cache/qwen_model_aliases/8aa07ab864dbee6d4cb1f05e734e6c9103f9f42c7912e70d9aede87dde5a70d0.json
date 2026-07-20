@@ -1,0 +1,19 @@
+{
+  "decision": "MATCH",
+  "selected_candidate": "Harley-Davidson Low Rider",
+  "confidence": "HIGH",
+  "match_basis": "MARKET_ALIAS",
+  "explanation": "The input 'RLDR' is a known market or catalog abbreviation for the Harley-Davidson Low Rider, particularly used in some regional or internal naming systems. The model identity matches exactly, including displacement and platform, despite the abbreviated form.",
+  "canonical_model_alias": "Low Rider",
+  "configuration_tokens": [],
+  "brand_aliases": [],
+  "model_aliases": [
+    "Rider",
+    "Low Rider"
+  ],
+  "status": "SUCCESS",
+  "prompt_version": "motorcycle-candidate-resolution-v4",
+  "model": "qwen-flash",
+  "make": "Harley-Davidson",
+  "model_name": "RLDR"
+}

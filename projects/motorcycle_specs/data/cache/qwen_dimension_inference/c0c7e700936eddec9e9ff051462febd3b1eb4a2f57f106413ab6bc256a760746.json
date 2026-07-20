@@ -1,0 +1,16 @@
+{
+  "decision": "INFER|UNKNOWN",
+  "confidence": "LOW",
+  "length_mm": null,
+  "width_mm": null,
+  "height_mm": null,
+  "wheelbase_mm": null,
+  "seat_height_mm": null,
+  "ground_clearance_mm": null,
+  "explanation": "The model 'HUV 4210 EXP' does not correspond to any known Husqvarna motorcycle or factory-produced vehicle in public records. No reliable data exists for this model's dimensions, and the name appears inconsistent with Husqvarna's naming conventions. Without a verified catalog reference or physical specification source, dimensions cannot be reliably inferred.",
+  "status": "SUCCESS",
+  "prompt_version": "motorcycle-dimension-inference-v1",
+  "model": "qwen-flash",
+  "make": "Husqvarna",
+  "model_name": "HUV 4210 EXP"
+}

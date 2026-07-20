@@ -1,0 +1,16 @@
+{
+  "decision": "NO_MATCH",
+  "selected_candidate": "",
+  "confidence": "HIGH",
+  "match_basis": "NONE",
+  "explanation": "The input model 'TX125' does not correspond to any of the catalog candidates. Harley-Davidson did not produce a model named TX125, and none of the listed candidates match its name, displacement, or known model lineage. The closest candidate, 'Harley-Davidson SXT 125', is a different model designation with no evidence of being a market or historical alias for TX125.",
+  "canonical_model_alias": "",
+  "configuration_tokens": [],
+  "brand_aliases": [],
+  "model_aliases": [],
+  "status": "SUCCESS",
+  "prompt_version": "motorcycle-candidate-resolution-v4",
+  "model": "qwen-flash",
+  "make": "Harley-Davidson",
+  "model_name": "TX125"
+}

@@ -1,0 +1,19 @@
+{
+  "decision": "MATCH",
+  "selected_candidate": "WLA Army",
+  "confidence": "HIGH",
+  "match_basis": "HISTORICAL_ALIAS",
+  "explanation": "The 'WL' model is a known historical designation for the Harley-Davidson WLA, the military version of the Model W introduced during World War II. 'WLA Army' is the correct catalog name for this model, and 'WL' is a common shorthand or misreference to it.",
+  "canonical_model_alias": "WLA Army",
+  "configuration_tokens": [],
+  "brand_aliases": [],
+  "model_aliases": [
+    "WLA Army",
+    "WLA"
+  ],
+  "status": "SUCCESS",
+  "prompt_version": "motorcycle-candidate-resolution-v4",
+  "model": "qwen-flash",
+  "make": "Harley-Davidson",
+  "model_name": "WL"
+}

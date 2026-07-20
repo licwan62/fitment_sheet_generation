@@ -1,0 +1,16 @@
+{
+  "decision": "NO_MATCH",
+  "selected_candidate": "",
+  "confidence": "HIGH",
+  "match_basis": "NONE",
+  "explanation": "The input model 'Chieftain PowerPlus Limited 108 Audio Package' specifies a 108ci engine and an 'Audio Package' configuration. None of the catalog candidates match both the displacement (108 vs 112/116) and the specific 'Audio Package' feature. The candidates either have different displacements or lack the audio package, and no known market alias, historical name, or typo accounts for this combination.",
+  "canonical_model_alias": "",
+  "configuration_tokens": [],
+  "brand_aliases": [],
+  "model_aliases": [],
+  "status": "SUCCESS",
+  "prompt_version": "motorcycle-candidate-resolution-v4",
+  "model": "qwen-flash",
+  "make": "Indian",
+  "model_name": "Chieftain PowerPlus Limited 108 Audio Package"
+}

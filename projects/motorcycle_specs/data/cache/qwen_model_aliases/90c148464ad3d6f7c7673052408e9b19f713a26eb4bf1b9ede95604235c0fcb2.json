@@ -1,0 +1,20 @@
+{
+  "decision": "MATCH",
+  "selected_candidate": "husqvarna tc 150",
+  "confidence": "HIGH",
+  "match_basis": "MARKET_ALIAS",
+  "explanation": "'TC150 Heritage' is a market-specific naming variant of the Husqvarna TC 150, with 'Heritage' denoting a styling or trim configuration. The core model identity (TC 150) matches exactly, and 'Heritage' is a known configuration label, not a different model.",
+  "canonical_model_alias": "tc 150",
+  "configuration_tokens": [
+    "heritage"
+  ],
+  "brand_aliases": [],
+  "model_aliases": [
+    "tc 150"
+  ],
+  "status": "SUCCESS",
+  "prompt_version": "motorcycle-candidate-resolution-v4",
+  "model": "qwen-flash",
+  "make": "Husqvarna",
+  "model_name": "TC150 Heritage"
+}

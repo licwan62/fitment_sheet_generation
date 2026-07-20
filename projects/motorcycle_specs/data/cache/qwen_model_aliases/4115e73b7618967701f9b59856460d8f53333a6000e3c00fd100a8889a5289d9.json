@@ -1,0 +1,16 @@
+{
+  "decision": "NO_MATCH",
+  "selected_candidate": "",
+  "confidence": "HIGH",
+  "match_basis": "NONE",
+  "explanation": "The input model 'U' does not correspond to any known Harley-Davidson motorcycle model in the catalog candidates. 'Harley-Davidson Model U' is a historical reference but not a valid or recognized model in current or recent catalogs. None of the candidates match the identity of a real, existing Harley-Davidson model named 'U'.",
+  "canonical_model_alias": "",
+  "configuration_tokens": [],
+  "brand_aliases": [],
+  "model_aliases": [],
+  "status": "SUCCESS",
+  "prompt_version": "motorcycle-candidate-resolution-v4",
+  "model": "qwen-flash",
+  "make": "Harley-Davidson",
+  "model_name": "U"
+}

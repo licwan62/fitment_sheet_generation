@@ -1,0 +1,16 @@
+{
+  "decision": "NO_MATCH",
+  "selected_candidate": "",
+  "confidence": "HIGH",
+  "match_basis": "NONE",
+  "explanation": "The input model 'FXR4' does not match any of the catalog candidates. The FXR4 is a known model from Harley-Davidson's FXR series, but none of the candidates list an FXR4. The closest candidate, 'Harley-Davidson FXR 1340 Super Glide', refers to a different displacement (1340cc) and is a distinct model variant. 'FXDR 114' is a different model line entirely. No known market alias, abbreviation, or typo connects 'FXR4' to any of the listed candidates.",
+  "canonical_model_alias": "",
+  "configuration_tokens": [],
+  "brand_aliases": [],
+  "model_aliases": [],
+  "status": "SUCCESS",
+  "prompt_version": "motorcycle-candidate-resolution-v4",
+  "model": "qwen-flash",
+  "make": "Harley-Davidson",
+  "model_name": "FXR4"
+}

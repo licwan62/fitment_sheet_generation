@@ -1,0 +1,18 @@
+{
+  "decision": "MATCH",
+  "selected_candidate": "Pursuit Limited",
+  "confidence": "HIGH",
+  "match_basis": "SAME_NAME",
+  "explanation": "The input 'Pursuit Limited 108' refers to the same motorcycle model as 'Pursuit Limited' in the catalog, with the displacement '108' being a defining characteristic that aligns with the model's identity. The absence of '108' in the candidate is acceptable because the base model name and configuration are identical, and '108' is a standard engine size for this variant.",
+  "canonical_model_alias": "Pursuit Limited",
+  "configuration_tokens": [
+    "108"
+  ],
+  "brand_aliases": [],
+  "model_aliases": [],
+  "status": "SUCCESS",
+  "prompt_version": "motorcycle-candidate-resolution-v4",
+  "model": "qwen-flash",
+  "make": "Indian",
+  "model_name": "Pursuit Limited 108"
+}

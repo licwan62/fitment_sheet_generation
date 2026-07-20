@@ -1,0 +1,18 @@
+{
+  "decision": "MATCH",
+  "selected_candidate": "Harley-Davidson Model RL",
+  "confidence": "HIGH",
+  "match_basis": "HISTORICAL_ALIAS",
+  "explanation": "The 'RL' model is a historical designation for Harley-Davidson's 1930s-era Model RL, which was a touring motorcycle produced during the early 20th century. The catalog candidate 'Harley-Davidson Model RL' directly matches this historical model, despite the input 'RL' being a short form. No other candidates refer to this specific vintage model.",
+  "canonical_model_alias": "Model RL",
+  "configuration_tokens": [],
+  "brand_aliases": [],
+  "model_aliases": [
+    "Model RL"
+  ],
+  "status": "SUCCESS",
+  "prompt_version": "motorcycle-candidate-resolution-v4",
+  "model": "qwen-flash",
+  "make": "Harley-Davidson",
+  "model_name": "RL"
+}

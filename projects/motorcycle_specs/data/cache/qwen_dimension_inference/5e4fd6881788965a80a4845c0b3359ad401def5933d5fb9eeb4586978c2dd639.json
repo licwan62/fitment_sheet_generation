@@ -1,0 +1,16 @@
+{
+  "decision": "INFER|UNKNOWN",
+  "confidence": "LOW",
+  "length_mm": null,
+  "width_mm": null,
+  "height_mm": null,
+  "wheelbase_mm": null,
+  "seat_height_mm": null,
+  "ground_clearance_mm": null,
+  "explanation": "The Indian Pursuit Dark Horse Premium Package is a limited-edition variant with no publicly available official dimensions. Model-specific details are not consistently documented, and variations by year or market are possible. Without verified catalog data or direct measurement references, dimensions cannot be reliably inferred. The model's premium package status may include aesthetic or accessory changes that do not affect core dimensions, but this remains speculative.",
+  "status": "SUCCESS",
+  "prompt_version": "motorcycle-dimension-inference-v1",
+  "model": "qwen-flash",
+  "make": "Indian",
+  "model_name": "Pursuit Dark Horse Premium Package"
+}

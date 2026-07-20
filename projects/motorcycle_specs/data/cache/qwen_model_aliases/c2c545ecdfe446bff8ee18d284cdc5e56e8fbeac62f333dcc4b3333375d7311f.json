@@ -1,0 +1,19 @@
+{
+  "decision": "MATCH",
+  "selected_candidate": "Harley-Davidson Low Rider",
+  "confidence": "HIGH",
+  "match_basis": "MARKET_ALIAS",
+  "explanation": "'WLDR' is a known market or catalog abbreviation for the Harley-Davidson Low Rider, commonly used in parts and service contexts. The model name 'Low Rider' is the correct and canonical designation, with 'WLDR' representing a shortened form used internally or in regional markets.",
+  "canonical_model_alias": "Low Rider",
+  "configuration_tokens": [],
+  "brand_aliases": [],
+  "model_aliases": [
+    "Rider",
+    "Low Rider"
+  ],
+  "status": "SUCCESS",
+  "prompt_version": "motorcycle-candidate-resolution-v4",
+  "model": "qwen-flash",
+  "make": "Harley-Davidson",
+  "model_name": "WLDR"
+}

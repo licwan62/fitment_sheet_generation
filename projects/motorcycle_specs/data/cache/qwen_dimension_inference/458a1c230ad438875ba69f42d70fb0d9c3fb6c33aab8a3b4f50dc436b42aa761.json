@@ -1,0 +1,16 @@
+{
+  "decision": "INFER|UNKNOWN",
+  "confidence": "MEDIUM|LOW",
+  "length_mm": null,
+  "width_mm": null,
+  "height_mm": null,
+  "wheelbase_mm": null,
+  "seat_height_mm": null,
+  "ground_clearance_mm": null,
+  "explanation": "The RH975S Nightster Special is a limited-edition model based on the 2023 Harley-Davidson Nightster, but specific factory dimensions for this variant are not publicly documented. While general Nightster dimensions exist, variations in styling, components, and production tweaks for special editions may alter key measurements. Without official specifications or verified catalog data, precise dimensions cannot be confirmed. Therefore, dimensions are inferred as unknown with medium to low confidence.",
+  "status": "SUCCESS",
+  "prompt_version": "motorcycle-dimension-inference-v1",
+  "model": "qwen-flash",
+  "make": "Harley-Davidson",
+  "model_name": "RH975S Nightster Special"
+}

@@ -1,0 +1,18 @@
+{
+  "decision": "MATCH",
+  "selected_candidate": "FE 250",
+  "confidence": "HIGH",
+  "match_basis": "MARKET_ALIAS",
+  "explanation": "WME 250 is a market-specific designation for the Husqvarna FE 250, used in certain regions. The model shares the same platform, engine, and core specifications, with 'WME' likely denoting a regional or distributor variant. This is a known market alias.",
+  "canonical_model_alias": "FE 250",
+  "configuration_tokens": [],
+  "brand_aliases": [],
+  "model_aliases": [
+    "FE 250"
+  ],
+  "status": "SUCCESS",
+  "prompt_version": "motorcycle-candidate-resolution-v4",
+  "model": "qwen-flash",
+  "make": "Husqvarna",
+  "model_name": "WME 250"
+}

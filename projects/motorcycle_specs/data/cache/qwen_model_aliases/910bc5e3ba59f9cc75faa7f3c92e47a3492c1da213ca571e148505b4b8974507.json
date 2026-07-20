@@ -1,0 +1,18 @@
+{
+  "decision": "MATCH",
+  "selected_candidate": "Harley-Davidson FLSTFSE Screamin Eagle Fat Boy",
+  "confidence": "HIGH",
+  "match_basis": "SAME_NAME",
+  "explanation": "The input model 'FLSTFSE2 Screamin Eagle Fat Boy' is functionally identical to the catalog candidate 'Harley-Davidson FLSTFSE Screamin Eagle Fat Boy', with the only difference being the trailing '2' in the input, which is likely a typo or misinterpretation of the model year or configuration. The core model identity (FLSTFSE Screamin Eagle Fat Boy) matches exactly.",
+  "canonical_model_alias": "FLSTFSE Screamin Eagle Fat Boy",
+  "configuration_tokens": [
+    "SE2"
+  ],
+  "brand_aliases": [],
+  "model_aliases": [],
+  "status": "SUCCESS",
+  "prompt_version": "motorcycle-candidate-resolution-v4",
+  "model": "qwen-flash",
+  "make": "Harley-Davidson",
+  "model_name": "FLSTFSE2 Screamin Eagle Fat Boy"
+}

@@ -1,0 +1,21 @@
+{
+  "decision": "MATCH",
+  "selected_candidate": "Harley-Davidson FLHTCUTG Tri Glide Ultra Classic",
+  "confidence": "HIGH",
+  "match_basis": "MARKET_ALIAS",
+  "explanation": "FLTCU Tour Glide Ultra Classic is a market-specific name for the same model as FLHTCUTG Tri Glide Ultra Classic. 'Tour Glide' and 'Tri Glide' are alternate marketing names for the same motorcycle, with 'Tri Glide' being the official model designation used in Harley-Davidson's catalog. The displacement and configuration are identical.",
+  "canonical_model_alias": "FLHTCUTG Tri Glide Ultra Classic",
+  "configuration_tokens": [],
+  "brand_aliases": [],
+  "model_aliases": [
+    "Tri Glide Ultra Classic",
+    "FLHTCUTG Tri Glide Ultra Classic",
+    "Electra Glide Ultra Classic",
+    "electra glide ultra classic flhtcu"
+  ],
+  "status": "SUCCESS",
+  "prompt_version": "motorcycle-candidate-resolution-v4",
+  "model": "qwen-flash",
+  "make": "Harley-Davidson",
+  "model_name": "FLTCU Tour Glide Ultra Classic"
+}

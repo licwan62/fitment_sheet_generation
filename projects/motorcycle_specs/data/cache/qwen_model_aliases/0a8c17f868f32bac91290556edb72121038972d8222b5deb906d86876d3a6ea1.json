@@ -1,0 +1,18 @@
+{
+  "decision": "MATCH",
+  "selected_candidate": "Harley-Davidson FXR 1340 Super Glide II",
+  "confidence": "HIGH",
+  "match_basis": "MARKET_ALIAS",
+  "explanation": "FXR2 is a known market or configuration designation for the Harley-Davidson FXR 1340 Super Glide II, which was marketed with variant suffixes like 'II' to denote model revisions. The core model identity matches exactly, including displacement and platform.",
+  "canonical_model_alias": "FXR 1340 Super Glide II",
+  "configuration_tokens": [
+    "II"
+  ],
+  "brand_aliases": [],
+  "model_aliases": [],
+  "status": "SUCCESS",
+  "prompt_version": "motorcycle-candidate-resolution-v4",
+  "model": "qwen-flash",
+  "make": "Harley-Davidson",
+  "model_name": "FXR2"
+}

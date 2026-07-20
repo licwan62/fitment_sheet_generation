@@ -1,0 +1,18 @@
+{
+  "decision": "MATCH",
+  "selected_candidate": "Husqvarna vitpilen 250",
+  "confidence": "HIGH",
+  "match_basis": "SAME_NAME",
+  "explanation": "The input 'Svartpilen 250' is the Swedish name for 'Vitpilen 250', with 'Svart' meaning black and 'Vit' meaning white, referring to the color scheme. The model is identical across both names. The catalog candidate 'Husqvarna vitpilen 250' matches the same underlying motorcycle.",
+  "canonical_model_alias": "vitpilen 250",
+  "configuration_tokens": [],
+  "brand_aliases": [],
+  "model_aliases": [
+    "vitpilen 250"
+  ],
+  "status": "SUCCESS",
+  "prompt_version": "motorcycle-candidate-resolution-v4",
+  "model": "qwen-flash",
+  "make": "Husqvarna",
+  "model_name": "Svartpilen 250"
+}

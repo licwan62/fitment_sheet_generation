@@ -1,0 +1,20 @@
+{
+  "decision": "MATCH",
+  "selected_candidate": "husqvarna txc 310 r",
+  "confidence": "HIGH",
+  "match_basis": "MARKET_ALIAS",
+  "explanation": "The model 'TXC 310' is a market-specific designation for the same motorcycle as 'TXC 310 R', with 'R' denoting a race or road-legal variant commonly used in certain markets. The core model identity, displacement (310), and manufacturer (Husqvarna) are identical. The 'R' suffix is a configuration label but does not change the underlying model.",
+  "canonical_model_alias": "txc 310 r",
+  "configuration_tokens": [
+    "r"
+  ],
+  "brand_aliases": [],
+  "model_aliases": [
+    "txc 310 r"
+  ],
+  "status": "SUCCESS",
+  "prompt_version": "motorcycle-candidate-resolution-v4",
+  "model": "qwen-flash",
+  "make": "Husqvarna",
+  "model_name": "TXC 310"
+}

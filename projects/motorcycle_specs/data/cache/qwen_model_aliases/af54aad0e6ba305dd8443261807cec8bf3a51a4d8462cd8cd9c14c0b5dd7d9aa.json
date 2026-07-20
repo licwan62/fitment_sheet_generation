@@ -1,0 +1,16 @@
+{
+  "decision": "NO_MATCH",
+  "selected_candidate": "",
+  "confidence": "HIGH",
+  "match_basis": "NONE",
+  "explanation": "The input model 'ECO 150 MAX' is not equivalent to any of the catalog candidates. The Hero ECO 150 MAX is a distinct model with a 150cc engine, while all listed candidates are different models with varying displacements, names, and configurations. No known market alias, historical name, abbreviation, or typo links the input to any candidate.",
+  "canonical_model_alias": "",
+  "configuration_tokens": [],
+  "brand_aliases": [],
+  "model_aliases": [],
+  "status": "SUCCESS",
+  "prompt_version": "motorcycle-candidate-resolution-v4",
+  "model": "qwen-flash",
+  "make": "Hero",
+  "model_name": "ECO 150 MAX"
+}

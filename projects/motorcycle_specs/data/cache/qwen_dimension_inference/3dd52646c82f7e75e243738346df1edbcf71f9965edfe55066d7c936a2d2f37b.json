@@ -1,0 +1,16 @@
+{
+  "decision": "INFER|UNKNOWN",
+  "confidence": "LOW",
+  "length_mm": null,
+  "width_mm": null,
+  "height_mm": null,
+  "wheelbase_mm": null,
+  "seat_height_mm": null,
+  "ground_clearance_mm": null,
+  "explanation": "The Indian Pursuit Limited 108 Audio Package is a limited-edition model with no publicly available official dimensions. Variations in production years, market-specific configurations, and lack of detailed technical documentation prevent reliable inference. Dimensions may differ from standard Pursuit models. Without verified data or direct measurement references, accurate estimation is not feasible.",
+  "status": "SUCCESS",
+  "prompt_version": "motorcycle-dimension-inference-v1",
+  "model": "qwen-flash",
+  "make": "Indian",
+  "model_name": "Pursuit Limited 108 Audio Package"
+}

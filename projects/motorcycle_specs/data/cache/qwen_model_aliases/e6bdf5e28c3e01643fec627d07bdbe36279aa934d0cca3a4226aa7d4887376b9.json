@@ -1,0 +1,20 @@
+{
+  "decision": "MATCH",
+  "selected_candidate": "Harley-Davidson Low Rider ST",
+  "confidence": "HIGH",
+  "match_basis": "MARKET_ALIAS",
+  "explanation": "FXLRST is the model code for the Low Rider ST, and 'Low Rider ST' is the standard catalog name used by Harley-Davidson for this model. The input 'FXLRST Low Rider ST' refers to the same motorcycle as the candidate 'Harley-Davidson Low Rider ST', with the model code being a known internal designation. The variation in naming format (model code vs. full name) does not indicate a different model.",
+  "canonical_model_alias": "Low Rider ST",
+  "configuration_tokens": [],
+  "brand_aliases": [],
+  "model_aliases": [
+    "Rider ST",
+    "Low Rider ST",
+    "FXLRST"
+  ],
+  "status": "SUCCESS",
+  "prompt_version": "motorcycle-candidate-resolution-v4",
+  "model": "qwen-flash",
+  "make": "Harley-Davidson",
+  "model_name": "FXLRST Low Rider ST"
+}

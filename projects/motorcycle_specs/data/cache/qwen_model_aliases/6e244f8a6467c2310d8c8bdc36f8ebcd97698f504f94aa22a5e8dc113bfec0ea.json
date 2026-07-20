@@ -1,0 +1,16 @@
+{
+  "decision": "NO_MATCH",
+  "selected_candidate": "",
+  "confidence": "HIGH",
+  "match_basis": "NONE",
+  "explanation": "The input model 'HUV 4210 E' does not correspond to any of the catalog candidates. 'HUV 4210 E' is not a known Husqvarna model name, and none of the listed candidates match its displacement (4210 cc), which is implausibly high for a motorcycle. The candidates are all in the 250–450 cc range, indicating a different model family entirely.",
+  "canonical_model_alias": "",
+  "configuration_tokens": [],
+  "brand_aliases": [],
+  "model_aliases": [],
+  "status": "SUCCESS",
+  "prompt_version": "motorcycle-candidate-resolution-v4",
+  "model": "qwen-flash",
+  "make": "Husqvarna",
+  "model_name": "HUV 4210 E"
+}

@@ -1,0 +1,16 @@
+{
+  "decision": "NO_MATCH",
+  "selected_candidate": "",
+  "confidence": "HIGH",
+  "match_basis": "NONE",
+  "explanation": "The input 'XLT' does not correspond to any of the catalog candidates as a valid model identifier. None of the candidates are known variants, market names, or typographical equivalents of a 'Harley-Davidson XLT' model. The closest candidates involve different model lines (e.g., Sportster, Softail) and do not share the 'XLT' designation in any recognized form.",
+  "canonical_model_alias": "",
+  "configuration_tokens": [],
+  "brand_aliases": [],
+  "model_aliases": [],
+  "status": "SUCCESS",
+  "prompt_version": "motorcycle-candidate-resolution-v4",
+  "model": "qwen-flash",
+  "make": "Harley-Davidson",
+  "model_name": "XLT"
+}

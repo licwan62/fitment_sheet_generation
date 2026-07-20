@@ -1,0 +1,20 @@
+{
+  "decision": "MATCH",
+  "selected_candidate": "FE 501S",
+  "confidence": "HIGH",
+  "match_basis": "MARKET_ALIAS",
+  "explanation": "'FE501S Heritage' and 'FE 501S' refer to the same model; 'Heritage' is a configuration or trim label, not a distinct model. The displacement (501) and suffix (S) are identical, confirming identity.",
+  "canonical_model_alias": "FE 501S",
+  "configuration_tokens": [
+    "Heritage"
+  ],
+  "brand_aliases": [],
+  "model_aliases": [
+    "FE 501S"
+  ],
+  "status": "SUCCESS",
+  "prompt_version": "motorcycle-candidate-resolution-v4",
+  "model": "qwen-flash",
+  "make": "Husqvarna",
+  "model_name": "FE501S Heritage"
+}

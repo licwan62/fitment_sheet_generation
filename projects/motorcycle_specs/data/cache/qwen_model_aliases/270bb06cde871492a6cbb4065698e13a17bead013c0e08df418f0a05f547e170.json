@@ -1,0 +1,18 @@
+{
+  "decision": "MATCH",
+  "selected_candidate": "indian ftr x rsd super hooligan",
+  "confidence": "HIGH",
+  "match_basis": "TYPO",
+  "explanation": "'RDS' is a plausible typo or variant spelling of 'RSD', both referring to the same model configuration. The core model identity (FTR X RSD Super Hooligan) is preserved, and no other distinguishing features differ.",
+  "canonical_model_alias": "ftr x rsd super hooligan",
+  "configuration_tokens": [],
+  "brand_aliases": [],
+  "model_aliases": [
+    "ftr x rsd super hooligan"
+  ],
+  "status": "SUCCESS",
+  "prompt_version": "motorcycle-candidate-resolution-v4",
+  "model": "qwen-flash",
+  "make": "Indian",
+  "model_name": "FTR X RDS Super Hooligan"
+}

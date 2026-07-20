@@ -1,0 +1,16 @@
+{
+  "decision": "MATCH",
+  "selected_candidate": "Harley-Davidson FLTRXSE CVO Road Glide",
+  "confidence": "HIGH",
+  "match_basis": "SAME_NAME",
+  "explanation": "The input model 'FLTRXSE CVO Road Glide' exactly matches the catalog candidate 'Harley-Davidson FLTRXSE CVO Road Glide' in all identity-bearing tokens, including displacement, configuration, and model code. The presence of 'CVO' and 'FLTRXSE' confirms it is the same high-end variant.",
+  "canonical_model_alias": "FLTRXSE CVO Road Glide",
+  "configuration_tokens": [],
+  "brand_aliases": [],
+  "model_aliases": [],
+  "status": "SUCCESS",
+  "prompt_version": "motorcycle-candidate-resolution-v4",
+  "model": "qwen-flash",
+  "make": "Harley-Davidson",
+  "model_name": "FLTRXSE CVO Road Glide"
+}

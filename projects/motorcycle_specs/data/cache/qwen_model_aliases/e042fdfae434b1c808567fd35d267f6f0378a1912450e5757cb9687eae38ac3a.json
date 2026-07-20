@@ -1,0 +1,16 @@
+{
+  "decision": "NO_MATCH",
+  "selected_candidate": "",
+  "confidence": "HIGH",
+  "match_basis": "NONE",
+  "explanation": "The input model 'TC500' is a motocross motorcycle, while all catalog candidates either belong to different model lines (e.g., 500XC, WR 500), are different displacements (e.g., TC 150, TC 250, TC 50), or are entirely different types of motorcycles (e.g., Vitpilen 250). None of the candidates represent the same underlying motorcycle model as TC500.",
+  "canonical_model_alias": "",
+  "configuration_tokens": [],
+  "brand_aliases": [],
+  "model_aliases": [],
+  "status": "SUCCESS",
+  "prompt_version": "motorcycle-candidate-resolution-v4",
+  "model": "qwen-flash",
+  "make": "Husqvarna",
+  "model_name": "TC500"
+}

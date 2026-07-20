@@ -1,0 +1,20 @@
+{
+  "decision": "MATCH",
+  "selected_candidate": "Pursuit Limited",
+  "confidence": "HIGH",
+  "match_basis": "SAME_NAME",
+  "explanation": "The input 'Pursuit Limited Premium Package' refers to the same model as 'Pursuit Limited' in the catalog, with 'Premium Package' being a configuration label that does not change the core model identity. The base model name matches exactly.",
+  "canonical_model_alias": "Pursuit Limited",
+  "configuration_tokens": [
+    "Premium Package"
+  ],
+  "brand_aliases": [],
+  "model_aliases": [
+    "Pursuit Limited"
+  ],
+  "status": "SUCCESS",
+  "prompt_version": "motorcycle-candidate-resolution-v4",
+  "model": "qwen-flash",
+  "make": "Indian",
+  "model_name": "Pursuit Limited Premium Package"
+}

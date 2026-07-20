@@ -28,7 +28,7 @@ sources:
     enabled: true
     obey_robots_txt: true
 crawler:
-  max_concurrency: 1
+  max_concurrency: 2
   request_delay_min_seconds: 2
   request_delay_max_seconds: 5
   connect_timeout_seconds: 20
@@ -36,6 +36,10 @@ crawler:
   max_retries: 3
   retry_delays_seconds: [5, 15, 45]
   cache_enabled: true
+  failure_cache_seconds: 21600
+  permanent_failure_cache_seconds: 604800
+  fetch_strategy: adaptive
+  adaptive_max_same_title_pages: 3
 matching:
   exact_threshold: 95
   trusted_score_threshold: 80

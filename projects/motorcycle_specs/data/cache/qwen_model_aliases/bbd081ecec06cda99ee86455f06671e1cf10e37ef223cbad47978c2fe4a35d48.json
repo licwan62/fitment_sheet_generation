@@ -1,0 +1,18 @@
+{
+  "decision": "MATCH",
+  "selected_candidate": "Harley-Davidson XLX 1000-61",
+  "confidence": "HIGH",
+  "match_basis": "SAME_NAME",
+  "explanation": "The input 'XLX 1000' matches the catalog candidate 'Harley-Davidson XLX 1000-61' as the same underlying motorcycle model, with the '-61' suffix being a configuration or production variant that does not alter the core model identity. The name 'XLX 1000' is a known market or catalog designation for this model.",
+  "canonical_model_alias": "XLX 1000-61",
+  "configuration_tokens": [
+    "-61"
+  ],
+  "brand_aliases": [],
+  "model_aliases": [],
+  "status": "SUCCESS",
+  "prompt_version": "motorcycle-candidate-resolution-v4",
+  "model": "qwen-flash",
+  "make": "Harley-Davidson",
+  "model_name": "XLX 1000"
+}

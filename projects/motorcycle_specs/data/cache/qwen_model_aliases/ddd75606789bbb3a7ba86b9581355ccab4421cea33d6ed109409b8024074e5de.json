@@ -1,0 +1,20 @@
+{
+  "decision": "MATCH",
+  "selected_candidate": "Dyna Glide Sturgis FXDB",
+  "confidence": "HIGH",
+  "match_basis": "MARKET_ALIAS",
+  "explanation": "The input 'FXDB-S Dyna Glide Sturgis' refers to the Harley-Davidson Dyna Glide Sturgis model, which was marketed as a special edition with the FXDB chassis. The 'S' suffix denotes the Sturgis edition, and the catalog candidate 'Dyna Glide Sturgis FXDB' is the canonical form of the same model, with the model code and name correctly aligned. The order of elements differs but identifies the same motorcycle.",
+  "canonical_model_alias": "Dyna Glide Sturgis FXDB",
+  "configuration_tokens": [
+    "S"
+  ],
+  "brand_aliases": [],
+  "model_aliases": [
+    "Dyna Glide Sturgis FXDB"
+  ],
+  "status": "SUCCESS",
+  "prompt_version": "motorcycle-candidate-resolution-v4",
+  "model": "qwen-flash",
+  "make": "Harley-Davidson",
+  "model_name": "FXDB-S Dyna Glide Sturgis"
+}

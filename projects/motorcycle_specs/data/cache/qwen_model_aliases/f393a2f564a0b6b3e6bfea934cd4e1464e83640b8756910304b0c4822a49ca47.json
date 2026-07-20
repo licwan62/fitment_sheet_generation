@@ -1,0 +1,18 @@
+{
+  "decision": "MATCH",
+  "selected_candidate": "Harley-Davidson Sportster XLCH",
+  "confidence": "HIGH",
+  "match_basis": "SAME_NAME",
+  "explanation": "The input model 'XLCH' is a known variant of the Harley-Davidson Sportster series, and the catalog candidate 'Harley-Davidson Sportster XLCH' is the exact canonical title for this model. The name matches directly with no ambiguity.",
+  "canonical_model_alias": "Sportster XLCH",
+  "configuration_tokens": [],
+  "brand_aliases": [],
+  "model_aliases": [
+    "Sportster XLCH"
+  ],
+  "status": "SUCCESS",
+  "prompt_version": "motorcycle-candidate-resolution-v4",
+  "model": "qwen-flash",
+  "make": "Harley-Davidson",
+  "model_name": "XLCH"
+}

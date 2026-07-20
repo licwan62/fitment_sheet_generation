@@ -1,0 +1,16 @@
+{
+  "decision": "NO_MATCH",
+  "selected_candidate": "",
+  "confidence": "HIGH",
+  "match_basis": "NONE",
+  "explanation": "The input 'XLC' does not correspond to any of the catalog candidates. None of the listed models are known variants or market names for a 'XLC' model, and there is no evidence of abbreviation, typo, or historical alias linking 'XLC' to any candidate. The candidates include Sportster XL1200CA/CB, CVO, Softail C, Model C, X350, and X500, none of which match the 'XLC' designation in name, displacement, or configuration.",
+  "canonical_model_alias": "",
+  "configuration_tokens": [],
+  "brand_aliases": [],
+  "model_aliases": [],
+  "status": "SUCCESS",
+  "prompt_version": "motorcycle-candidate-resolution-v4",
+  "model": "qwen-flash",
+  "make": "Harley-Davidson",
+  "model_name": "XLC"
+}

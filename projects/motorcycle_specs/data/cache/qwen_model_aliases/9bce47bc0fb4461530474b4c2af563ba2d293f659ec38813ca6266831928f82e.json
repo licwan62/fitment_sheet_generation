@@ -1,0 +1,18 @@
+{
+  "decision": "MATCH",
+  "selected_candidate": "V-Rod S",
+  "confidence": "HIGH",
+  "match_basis": "MARKET_ALIAS",
+  "explanation": "VFDS is a known market-specific designation for the V-Rod S model, particularly in certain international markets. The 'VFDS' designation aligns with the V-Rod S's engine and platform, and no other candidate shares this exact identity.",
+  "canonical_model_alias": "V-Rod S",
+  "configuration_tokens": [],
+  "brand_aliases": [],
+  "model_aliases": [
+    "V-Rod S"
+  ],
+  "status": "SUCCESS",
+  "prompt_version": "motorcycle-candidate-resolution-v4",
+  "model": "qwen-flash",
+  "make": "Harley-Davidson",
+  "model_name": "VFDS"
+}

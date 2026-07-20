@@ -1,0 +1,16 @@
+{
+  "decision": "INFER|UNKNOWN",
+  "confidence": "MEDIUM|LOW",
+  "length_mm": null,
+  "width_mm": null,
+  "height_mm": null,
+  "wheelbase_mm": null,
+  "seat_height_mm": null,
+  "ground_clearance_mm": null,
+  "explanation": "The Husqvarna HUV 4210 GXP is not a recognized motorcycle model in available public databases or manufacturer catalogs. It may be a misidentification, a non-motorcycle utility vehicle, or a model with limited market presence. Without verifiable data or official specifications, dimensions cannot be reliably inferred. Model identity remains uncertain.",
+  "status": "SUCCESS",
+  "prompt_version": "motorcycle-dimension-inference-v1",
+  "model": "qwen-flash",
+  "make": "Husqvarna",
+  "model_name": "HUV 4210 GXP"
+}

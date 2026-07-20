@@ -1,0 +1,16 @@
+{
+  "decision": "NO_MATCH",
+  "selected_candidate": "",
+  "confidence": "HIGH",
+  "match_basis": "NONE",
+  "explanation": "ULH is not a recognized model name for any of the listed Harley-Davidson catalog candidates. The candidates include various models like Knucklehead (a vintage model), EL (a 1970s model), V-Rod Muscle, Road King, Breakout, and Low Rider S, none of which are known by the designation ULH. ULH does not correspond to any known market name, abbreviation, or typo for these models. No match is found.",
+  "canonical_model_alias": "",
+  "configuration_tokens": [],
+  "brand_aliases": [],
+  "model_aliases": [],
+  "status": "SUCCESS",
+  "prompt_version": "motorcycle-candidate-resolution-v4",
+  "model": "qwen-flash",
+  "make": "Harley-Davidson",
+  "model_name": "ULH"
+}

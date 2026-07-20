@@ -1,0 +1,18 @@
+{
+  "decision": "MATCH",
+  "selected_candidate": "harley davidson softail breakout fxsb",
+  "confidence": "HIGH",
+  "match_basis": "ABBREVIATION",
+  "explanation": "FXSB is the model code for the Breakout, and 'Softail Breakout' is a known configuration name used by Harley-Davidson. The candidate 'harley davidson softail breakout fxsb' correctly identifies the same motorcycle with the exact model identifier FXSB, confirming it as the canonical form.",
+  "canonical_model_alias": "softail breakout fxsb",
+  "configuration_tokens": [],
+  "brand_aliases": [],
+  "model_aliases": [
+    "softail breakout fxsb"
+  ],
+  "status": "SUCCESS",
+  "prompt_version": "motorcycle-candidate-resolution-v4",
+  "model": "qwen-flash",
+  "make": "Harley-Davidson",
+  "model_name": "FXSB Breakout"
+}

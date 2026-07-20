@@ -1,0 +1,18 @@
+{
+  "decision": "MATCH",
+  "selected_candidate": "indian pursuit dark horse",
+  "confidence": "HIGH",
+  "match_basis": "SAME_NAME",
+  "explanation": "The input 'Pursuit Dark Horse 108' refers to the Indian Pursuit Dark Horse model with a 108 cubic inch engine, which is explicitly matched by the catalog candidate 'indian pursuit dark horse'. The displacement (108) is consistent with the model's known configuration, and no other candidate shares this exact identity. The candidate 'indian pursuit dark horse' is the canonical representation of this model.",
+  "canonical_model_alias": "pursuit dark horse",
+  "configuration_tokens": [
+    "108"
+  ],
+  "brand_aliases": [],
+  "model_aliases": [],
+  "status": "SUCCESS",
+  "prompt_version": "motorcycle-candidate-resolution-v4",
+  "model": "qwen-flash",
+  "make": "Indian",
+  "model_name": "Pursuit Dark Horse 108"
+}

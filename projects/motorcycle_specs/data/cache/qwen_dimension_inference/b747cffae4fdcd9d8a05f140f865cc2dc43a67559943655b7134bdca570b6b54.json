@@ -1,0 +1,16 @@
+{
+  "decision": "INFER",
+  "confidence": "MEDIUM",
+  "length_mm": 2150,
+  "width_mm": 900,
+  "height_mm": 1250,
+  "wheelbase_mm": 1380,
+  "seat_height_mm": 970,
+  "ground_clearance_mm": 340,
+  "explanation": "Inferred from typical dimensions of Husqvarna XC series motorcycles in the 125cc class, based on similar models like the FC125 and TC125, with adjustments for the XC's off-road geometry and weight distribution. Dimensions are approximate and not confirmed by official sources.",
+  "status": "SUCCESS",
+  "prompt_version": "motorcycle-dimension-inference-v1",
+  "model": "qwen-flash",
+  "make": "Husqvarna",
+  "model_name": "XC125"
+}

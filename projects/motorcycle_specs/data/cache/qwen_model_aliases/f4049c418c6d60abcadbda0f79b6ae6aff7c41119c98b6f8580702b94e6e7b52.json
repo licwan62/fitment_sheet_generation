@@ -1,0 +1,16 @@
+{
+  "decision": "NO_MATCH",
+  "selected_candidate": "",
+  "confidence": "HIGH",
+  "match_basis": "NONE",
+  "explanation": "The WXC 350 is a motocross enduro model, while all catalog candidates are either motocross (FC 350), dual-sport (FX 350), or standard off-road (FE 350) models. The WXC 350 is a distinct model line with different geometry, suspension tuning, and intended use compared to the FC, FX, and FE series. No candidate shares the same underlying motorcycle identity.",
+  "canonical_model_alias": "",
+  "configuration_tokens": [],
+  "brand_aliases": [],
+  "model_aliases": [],
+  "status": "SUCCESS",
+  "prompt_version": "motorcycle-candidate-resolution-v4",
+  "model": "qwen-flash",
+  "make": "Husqvarna",
+  "model_name": "WXC 350"
+}

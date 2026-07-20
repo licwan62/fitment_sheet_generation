@@ -1,0 +1,18 @@
+{
+  "decision": "MATCH",
+  "selected_candidate": "harley davidson sportster xl 1200cx roadster",
+  "confidence": "HIGH",
+  "match_basis": "SAME_NAME",
+  "explanation": "The input model 'XL1200CX Roadster' is a direct variant of the catalog candidate 'harley davidson sportster xl 1200cx roadster', with identical displacement, model code, and name. The term 'Sportster' is the correct model series for this motorcycle, and 'XL1200CX Roadster' is a valid configuration within that series. The capitalization and spacing differences are minor formatting variations.",
+  "canonical_model_alias": "sportster xl 1200cx roadster",
+  "configuration_tokens": [],
+  "brand_aliases": [],
+  "model_aliases": [
+    "sportster xl 1200cx roadster"
+  ],
+  "status": "SUCCESS",
+  "prompt_version": "motorcycle-candidate-resolution-v4",
+  "model": "qwen-flash",
+  "make": "Harley-Davidson",
+  "model_name": "XL1200CX Roadster"
+}

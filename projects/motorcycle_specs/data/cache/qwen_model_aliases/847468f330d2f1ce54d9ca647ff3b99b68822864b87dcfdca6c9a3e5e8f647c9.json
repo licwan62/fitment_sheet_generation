@@ -1,0 +1,16 @@
+{
+  "decision": "MATCH",
+  "selected_candidate": "hyosung gt 650s sport",
+  "confidence": "HIGH",
+  "match_basis": "MARKET_ALIAS",
+  "explanation": "The input 'SF50R/Rally' is a misidentification; Hyosung does not produce an SF50R model. The correct model is the GT 650S, with 'Rally' likely referring to a configuration or market-specific name. 'GT 650S Sport' is a known variant of the GT 650S lineup, and 'SF50R' appears to be a typo or confusion with another brand's model. The displacement (650) and model series (GT 650S) confirm identity.",
+  "canonical_model_alias": "gt 650s sport",
+  "configuration_tokens": [],
+  "brand_aliases": [],
+  "model_aliases": [],
+  "status": "SUCCESS",
+  "prompt_version": "motorcycle-candidate-resolution-v4",
+  "model": "qwen-flash",
+  "make": "Hyosung",
+  "model_name": "SF50R/Rally"
+}

@@ -1,0 +1,16 @@
+{
+  "decision": "INFER|UNKNOWN",
+  "confidence": "LOW",
+  "length_mm": null,
+  "width_mm": null,
+  "height_mm": null,
+  "wheelbase_mm": null,
+  "seat_height_mm": null,
+  "ground_clearance_mm": null,
+  "explanation": "The Husqvarna WXE 410 is a motocross motorcycle, but specific dimensional data is not consistently documented in public sources. Model variations across years and markets may result in significant differences. Without access to an official catalog or verified technical specification sheet, dimensions cannot be reliably inferred. Therefore, all values are marked as unknown with low confidence.",
+  "status": "SUCCESS",
+  "prompt_version": "motorcycle-dimension-inference-v1",
+  "model": "qwen-flash",
+  "make": "Husqvarna",
+  "model_name": "WXE 410"
+}

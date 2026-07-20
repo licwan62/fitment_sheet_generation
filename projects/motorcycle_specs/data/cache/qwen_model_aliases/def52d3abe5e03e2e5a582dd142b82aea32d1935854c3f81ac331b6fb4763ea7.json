@@ -1,0 +1,16 @@
+{
+  "decision": "NO_MATCH",
+  "selected_candidate": "",
+  "confidence": "HIGH",
+  "match_basis": "NONE",
+  "explanation": "The model 'Chief Standard' is distinct from the catalog candidates, which are all variants of the 'Chieftain' line. The Chief Standard is a separate model in Indian's lineup with different design, engine placement, and positioning. None of the candidates represent the Chief Standard, even as market names, historical aliases, or typographical variants.",
+  "canonical_model_alias": "",
+  "configuration_tokens": [],
+  "brand_aliases": [],
+  "model_aliases": [],
+  "status": "SUCCESS",
+  "prompt_version": "motorcycle-candidate-resolution-v4",
+  "model": "qwen-flash",
+  "make": "Indian",
+  "model_name": "Chief Standard"
+}

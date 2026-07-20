@@ -1,0 +1,19 @@
+{
+  "decision": "MATCH",
+  "selected_candidate": "Chieftain Dark \n\t\tHorse",
+  "confidence": "HIGH",
+  "match_basis": "MARKET_ALIAS",
+  "explanation": "The input 'Chieftain PowerPlus Dark Horse 108 Audio Package' refers to a specific configuration of the Indian Chieftain Dark Horse model with a 108ci engine and audio package. The catalog candidate 'Chieftain Dark Horse' is the base model name, and 'PowerPlus' and 'Audio Package' are known configuration or market-specific designations for this variant. 'Dark Horse' is the established model name used in Indian's catalog, and the 108 displacement aligns with the standard Chieftain Dark Horse engine size. The candidate matches the underlying motorcycle despite minor phrasing differences.",
+  "canonical_model_alias": "Chieftain Dark Horse",
+  "configuration_tokens": [
+    "108 Audio Package",
+    "PowerPlus"
+  ],
+  "brand_aliases": [],
+  "model_aliases": [],
+  "status": "SUCCESS",
+  "prompt_version": "motorcycle-candidate-resolution-v4",
+  "model": "qwen-flash",
+  "make": "Indian",
+  "model_name": "Chieftain PowerPlus Dark Horse 108 Audio Package"
+}

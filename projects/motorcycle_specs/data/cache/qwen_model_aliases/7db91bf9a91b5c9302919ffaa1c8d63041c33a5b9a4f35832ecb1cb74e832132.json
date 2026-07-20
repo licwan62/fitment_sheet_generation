@@ -1,0 +1,21 @@
+{
+  "decision": "MATCH",
+  "selected_candidate": "harley davidson cvo road glide st fltrxstse",
+  "confidence": "HIGH",
+  "match_basis": "SAME_NAME",
+  "explanation": "The input model 'FLTRXSTSE CVO Road Glide ST' is a direct match in name and configuration to the candidate 'harley davidson cvo road glide st fltrxstse', with only case variation and minor spacing differences. The displacement, model code, and special edition designation (CVO, ST) are identical.",
+  "canonical_model_alias": "cvo road glide st fltrxstse",
+  "configuration_tokens": [
+    "CVO",
+    "ST"
+  ],
+  "brand_aliases": [],
+  "model_aliases": [
+    "cvo road glide st fltrxstse"
+  ],
+  "status": "SUCCESS",
+  "prompt_version": "motorcycle-candidate-resolution-v4",
+  "model": "qwen-flash",
+  "make": "Harley-Davidson",
+  "model_name": "FLTRXSTSE CVO Road Glide ST"
+}

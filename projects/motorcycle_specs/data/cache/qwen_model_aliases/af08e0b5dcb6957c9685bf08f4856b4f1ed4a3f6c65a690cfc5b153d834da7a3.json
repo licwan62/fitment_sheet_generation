@@ -1,0 +1,18 @@
+{
+  "decision": "MATCH",
+  "selected_candidate": "Harley-Davidson XL 883L Police",
+  "confidence": "HIGH",
+  "match_basis": "MARKET_ALIAS",
+  "explanation": "The input 'XL' refers to the Harley-Davidson XL series, specifically the XL 883L model. The candidate 'Harley-Davidson XL 883L Police' is a market-specific configuration (police variant) of the same underlying XL 883L model. The displacement (883cc) and model code (XL) are identical, confirming it as the same motorcycle with a configuration suffix.",
+  "canonical_model_alias": "XL 883L Police",
+  "configuration_tokens": [
+    "Police"
+  ],
+  "brand_aliases": [],
+  "model_aliases": [],
+  "status": "SUCCESS",
+  "prompt_version": "motorcycle-candidate-resolution-v4",
+  "model": "qwen-flash",
+  "make": "Harley-Davidson",
+  "model_name": "XL"
+}

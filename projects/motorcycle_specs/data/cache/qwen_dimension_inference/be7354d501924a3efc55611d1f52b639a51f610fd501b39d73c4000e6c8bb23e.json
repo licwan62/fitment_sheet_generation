@@ -1,0 +1,16 @@
+{
+  "decision": "INFER|UNKNOWN",
+  "confidence": "LOW",
+  "length_mm": null,
+  "width_mm": null,
+  "height_mm": null,
+  "wheelbase_mm": null,
+  "seat_height_mm": null,
+  "ground_clearance_mm": null,
+  "explanation": "The Indian Chieftain PowerPlus Dark Horse 108 Audio Package is a limited edition variant with no publicly documented official dimensions. While the base Chieftain model has known dimensions, variations in trim, audio integration, and custom bodywork for this special edition introduce uncertainty. Without verified specifications from Indian Motorcycle or an official catalog page, dimensional estimates cannot be reliably inferred. Therefore, all values are marked as unknown.",
+  "status": "SUCCESS",
+  "prompt_version": "motorcycle-dimension-inference-v1",
+  "model": "qwen-flash",
+  "make": "Indian",
+  "model_name": "Chieftain PowerPlus Dark Horse 108 Audio Package"
+}

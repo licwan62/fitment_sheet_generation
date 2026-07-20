@@ -1,0 +1,16 @@
+{
+  "decision": "INFER|UNKNOWN",
+  "confidence": "MEDIUM|LOW",
+  "length_mm": null,
+  "width_mm": null,
+  "height_mm": null,
+  "wheelbase_mm": null,
+  "seat_height_mm": null,
+  "ground_clearance_mm": null,
+  "explanation": "The Husqvarna OR250 is a motocross motorcycle, but specific dimensions are not reliably available in public sources for this model. Without a confirmed catalog reference or consistent data across years and markets, dimension estimation carries uncertainty. Variations by model year and regional configuration further reduce confidence in inferred values.",
+  "status": "SUCCESS",
+  "prompt_version": "motorcycle-dimension-inference-v1",
+  "model": "qwen-flash",
+  "make": "Husqvarna",
+  "model_name": "OR250"
+}

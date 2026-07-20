@@ -1,0 +1,18 @@
+{
+  "decision": "MATCH",
+  "selected_candidate": "husqvarna te 449",
+  "confidence": "HIGH",
+  "match_basis": "MARKET_ALIAS",
+  "explanation": "The 'TXC 449' is a market-specific designation for the Husqvarna TE 449, used primarily in certain regions. The model shares the same engine displacement, platform, and core specifications as the TE 449, with 'TXC' being a regional or commercial variant name rather than a distinct model.",
+  "canonical_model_alias": "te 449",
+  "configuration_tokens": [],
+  "brand_aliases": [],
+  "model_aliases": [
+    "te 449"
+  ],
+  "status": "SUCCESS",
+  "prompt_version": "motorcycle-candidate-resolution-v4",
+  "model": "qwen-flash",
+  "make": "Husqvarna",
+  "model_name": "TXC 449"
+}

@@ -1,0 +1,16 @@
+{
+  "decision": "NO_MATCH",
+  "selected_candidate": "",
+  "confidence": "HIGH",
+  "match_basis": "NONE",
+  "explanation": "The model TE450S is not equivalent to any of the catalog candidates. The Hyosung TE450S is a specific model with a 450cc engine, while the candidates include different displacements (e.g., GT 650S, GD450N Concept), different configurations (e.g., quad), or unrelated models (e.g., GT 250). No known market alias, abbreviation, or typo links TE450S to any candidate.",
+  "canonical_model_alias": "",
+  "configuration_tokens": [],
+  "brand_aliases": [],
+  "model_aliases": [],
+  "status": "SUCCESS",
+  "prompt_version": "motorcycle-candidate-resolution-v4",
+  "model": "qwen-flash",
+  "make": "Hyosung",
+  "model_name": "TE450S"
+}

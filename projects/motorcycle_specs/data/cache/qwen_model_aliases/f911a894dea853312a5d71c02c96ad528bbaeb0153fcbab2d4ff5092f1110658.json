@@ -1,0 +1,21 @@
+{
+  "decision": "MATCH",
+  "selected_candidate": "Harley-Davidson XLH Sportster 883 De Luxe",
+  "confidence": "HIGH",
+  "match_basis": "MARKET_ALIAS",
+  "explanation": "'XLH883DLX Sportster 883 Deluxe' is a market-specific or catalog variation of the 'XLH Sportster 883 De Luxe' model, with 'DLX' being a common abbreviation for 'De Luxe' in Harley-Davidson's naming convention. The displacement (883), platform (XLH), and core model (Sportster) are identical, and no configuration differences are indicated. The term 'Deluxe' is synonymous with 'De Luxe' in this context.",
+  "canonical_model_alias": "XLH Sportster 883 De Luxe",
+  "configuration_tokens": [
+    "DLX"
+  ],
+  "brand_aliases": [],
+  "model_aliases": [
+    "Sportster 883 De Luxe",
+    "XLH Sportster 883 De Luxe"
+  ],
+  "status": "SUCCESS",
+  "prompt_version": "motorcycle-candidate-resolution-v4",
+  "model": "qwen-flash",
+  "make": "Harley-Davidson",
+  "model_name": "XLH883DLX Sportster 883 Deluxe"
+}

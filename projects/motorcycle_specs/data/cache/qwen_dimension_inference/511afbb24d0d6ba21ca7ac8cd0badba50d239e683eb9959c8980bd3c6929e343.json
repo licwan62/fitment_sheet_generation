@@ -1,0 +1,16 @@
+{
+  "decision": "INFER|UNKNOWN",
+  "confidence": "MEDIUM|LOW",
+  "length_mm": null,
+  "width_mm": null,
+  "height_mm": null,
+  "wheelbase_mm": null,
+  "seat_height_mm": null,
+  "ground_clearance_mm": null,
+  "explanation": "The Islo Black Wing 250 is a limited-production or niche motorcycle with no widely available official specifications. Model identity and dimensional consistency across variants or markets are uncertain, and no reliable catalog or technical documentation was found to support accurate inference. Dimensions may vary significantly by year or regional configuration.",
+  "status": "SUCCESS",
+  "prompt_version": "motorcycle-dimension-inference-v1",
+  "model": "qwen-flash",
+  "make": "Islo",
+  "model_name": "Black Wing 250"
+}

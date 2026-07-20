@@ -1,0 +1,16 @@
+{
+  "decision": "NO_MATCH",
+  "selected_candidate": "",
+  "confidence": "HIGH",
+  "match_basis": "NONE",
+  "explanation": "The input model 'HUV 4210 G' does not correspond to any of the catalog candidates. 'HUV 4210 G' is not a valid Husqvarna motorcycle model designation, and none of the listed candidates match its name, displacement, or known model series. The candidate '401' is unrelated in both name and context. No plausible alias, typo, or market variant connects 'HUV 4210 G' to any of the provided models.",
+  "canonical_model_alias": "",
+  "configuration_tokens": [],
+  "brand_aliases": [],
+  "model_aliases": [],
+  "status": "SUCCESS",
+  "prompt_version": "motorcycle-candidate-resolution-v4",
+  "model": "qwen-flash",
+  "make": "Husqvarna",
+  "model_name": "HUV 4210 G"
+}

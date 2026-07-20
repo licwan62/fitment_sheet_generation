@@ -1,0 +1,16 @@
+{
+  "decision": "INFER|UNKNOWN",
+  "confidence": "MEDIUM|LOW",
+  "length_mm": null,
+  "width_mm": null,
+  "height_mm": null,
+  "wheelbase_mm": null,
+  "seat_height_mm": null,
+  "ground_clearance_mm": null,
+  "explanation": "The Indian Roadmaster PowerPlus Dark Horse 108 Audio Package is a limited-edition variant with no publicly available official dimensions. Model-specific variations in trim, audio components, and custom bodywork may affect overall dimensions. Without verified data from Indian Motorcycle or a reliable source, dimensions cannot be reliably inferred. Use of related models (e.g., standard Roadmaster) is avoided per instructions. Therefore, all values are marked as unknown.",
+  "status": "SUCCESS",
+  "prompt_version": "motorcycle-dimension-inference-v1",
+  "model": "qwen-flash",
+  "make": "Indian",
+  "model_name": "Roadmaster PowerPlus Dark Horse 108 Audio Package"
+}

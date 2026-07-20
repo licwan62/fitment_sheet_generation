@@ -1,0 +1,18 @@
+{
+  "decision": "MATCH",
+  "selected_candidate": "husqvarna sm 610",
+  "confidence": "HIGH",
+  "match_basis": "SAME_NAME",
+  "explanation": "The input 'SMR 610' is a known market or catalog variant of the Husqvarna SM 610, with 'SMR' being a regional or historical designation for the same model. The core identity (SM 610) matches exactly in the candidate list.",
+  "canonical_model_alias": "sm 610",
+  "configuration_tokens": [],
+  "brand_aliases": [],
+  "model_aliases": [
+    "sm 610"
+  ],
+  "status": "SUCCESS",
+  "prompt_version": "motorcycle-candidate-resolution-v4",
+  "model": "qwen-flash",
+  "make": "Husqvarna",
+  "model_name": "SMR 610"
+}

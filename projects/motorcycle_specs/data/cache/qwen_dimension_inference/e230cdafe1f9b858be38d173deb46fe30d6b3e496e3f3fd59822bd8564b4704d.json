@@ -1,0 +1,16 @@
+{
+  "decision": "INFER|UNKNOWN",
+  "confidence": "LOW",
+  "length_mm": null,
+  "width_mm": null,
+  "height_mm": null,
+  "wheelbase_mm": null,
+  "seat_height_mm": null,
+  "ground_clearance_mm": null,
+  "explanation": "The Hero ECO 150 MAX is a lesser-known or possibly discontinued model with limited public documentation. No reliable source confirms its dimensions, and variations across markets or years may exist. Without access to official specifications or verified images, accurate inference is not feasible.",
+  "status": "SUCCESS",
+  "prompt_version": "motorcycle-dimension-inference-v1",
+  "model": "qwen-flash",
+  "make": "Hero",
+  "model_name": "ECO 150 MAX"
+}

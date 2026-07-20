@@ -1,0 +1,16 @@
+{
+  "decision": "INFER|UNKNOWN",
+  "confidence": "LOW",
+  "length_mm": null,
+  "width_mm": null,
+  "height_mm": null,
+  "wheelbase_mm": null,
+  "seat_height_mm": null,
+  "ground_clearance_mm": null,
+  "explanation": "The Islo Kraken 90 is a small off-road or trail motorcycle, but specific dimensions are not publicly documented in reliable sources. Without access to official specifications or verified catalog data, and given the model's limited market presence, dimension estimates cannot be reliably inferred. Variations by year or regional configuration further reduce confidence in any estimation.",
+  "status": "SUCCESS",
+  "prompt_version": "motorcycle-dimension-inference-v1",
+  "model": "qwen-flash",
+  "make": "Islo",
+  "model_name": "Kraken 90"
+}

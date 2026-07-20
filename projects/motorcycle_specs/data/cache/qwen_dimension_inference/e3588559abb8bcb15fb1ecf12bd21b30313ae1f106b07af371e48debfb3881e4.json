@@ -1,0 +1,16 @@
+{
+  "decision": "INFER|UNKNOWN",
+  "confidence": "LOW",
+  "length_mm": null,
+  "width_mm": null,
+  "height_mm": null,
+  "wheelbase_mm": null,
+  "seat_height_mm": null,
+  "ground_clearance_mm": null,
+  "explanation": "The FXRS-SP Low Rider Sport is a limited-edition variant of the Harley-Davidson FXRS, but specific dimensions are not consistently documented across sources. Variations in model year and market-specific configurations may affect overall dimensions. Without access to official catalog data or verified measurements for this exact variant, reliable inference is not possible.",
+  "status": "SUCCESS",
+  "prompt_version": "motorcycle-dimension-inference-v1",
+  "model": "qwen-flash",
+  "make": "Harley-Davidson",
+  "model_name": "FXRS-SP Low Rider Sport"
+}

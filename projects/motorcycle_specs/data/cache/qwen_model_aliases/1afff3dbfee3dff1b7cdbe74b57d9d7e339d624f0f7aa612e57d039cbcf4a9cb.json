@@ -1,0 +1,16 @@
+{
+  "decision": "NO_MATCH",
+  "selected_candidate": "",
+  "confidence": "HIGH",
+  "match_basis": "NONE",
+  "explanation": "The model 'XC400' is a Husqvarna enduro motorcycle, while all catalog candidates are different models: TE 400 (enduro), WR 400 (motocross), 400 Cross (likely a variant of TE/WR), and others are TC 300, TC 450, FC 450, FX 450, SM 400 R—all distinct in displacement, intended use, and model line. None match the XC400's specific identity as a 400cc enduro model with XC designation.",
+  "canonical_model_alias": "",
+  "configuration_tokens": [],
+  "brand_aliases": [],
+  "model_aliases": [],
+  "status": "SUCCESS",
+  "prompt_version": "motorcycle-candidate-resolution-v4",
+  "model": "qwen-flash",
+  "make": "Husqvarna",
+  "model_name": "XC400"
+}

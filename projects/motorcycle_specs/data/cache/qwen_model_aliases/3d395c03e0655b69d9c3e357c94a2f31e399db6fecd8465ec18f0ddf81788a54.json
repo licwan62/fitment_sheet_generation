@@ -1,0 +1,19 @@
+{
+  "decision": "MATCH",
+  "selected_candidate": "Harley-Davidson FLSTSB Softail Cross Bones",
+  "confidence": "HIGH",
+  "match_basis": "SAME_NAME",
+  "explanation": "The input 'FLSTSB Cross Bones' matches the catalog candidate 'Harley-Davidson FLSTSB Softail Cross Bones' exactly in model code and name, with only minor variation in phrasing. The term 'Softail Cross Bones' is a standard designation for this model, and the inclusion of 'Harley-Davidson' in the candidate does not alter the underlying motorcycle identity.",
+  "canonical_model_alias": "FLSTSB Softail Cross Bones",
+  "configuration_tokens": [],
+  "brand_aliases": [],
+  "model_aliases": [
+    "Softail Cross Bones",
+    "FLSTSB Softail Cross Bones"
+  ],
+  "status": "SUCCESS",
+  "prompt_version": "motorcycle-candidate-resolution-v4",
+  "model": "qwen-flash",
+  "make": "Harley-Davidson",
+  "model_name": "FLSTSB Cross Bones"
+}

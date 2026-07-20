@@ -1,0 +1,16 @@
+{
+  "decision": "INFER|UNKNOWN",
+  "confidence": "LOW",
+  "length_mm": null,
+  "width_mm": null,
+  "height_mm": null,
+  "wheelbase_mm": null,
+  "seat_height_mm": null,
+  "ground_clearance_mm": null,
+  "explanation": "The 'XL' model designation is ambiguous and not a recognized Harley-Davidson model name. Harley-Davidson uses specific model names like Sportster, Softail, Touring, etc., and 'XL' may refer to an internal or historical code without clear public documentation. Without definitive model identification or year/market context, dimensions cannot be reliably inferred. Therefore, the result is marked as UNKNOWN with low confidence.",
+  "status": "SUCCESS",
+  "prompt_version": "motorcycle-dimension-inference-v1",
+  "model": "qwen-flash",
+  "make": "Harley-Davidson",
+  "model_name": "XL"
+}

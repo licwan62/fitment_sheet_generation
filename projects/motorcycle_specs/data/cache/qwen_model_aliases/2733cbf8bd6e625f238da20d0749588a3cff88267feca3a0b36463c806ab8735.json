@@ -1,0 +1,18 @@
+{
+  "decision": "MATCH",
+  "selected_candidate": "husqvarna sm 630",
+  "confidence": "HIGH",
+  "match_basis": "SAME_NAME",
+  "explanation": "The input 'SMS 630' is a known market or catalog variant of the Husqvarna SM 630, where 'SMS' is an accepted abbreviation or regional designation for the SM 630 model. The displacement and core model identity are identical.",
+  "canonical_model_alias": "sm 630",
+  "configuration_tokens": [],
+  "brand_aliases": [],
+  "model_aliases": [
+    "sm 630"
+  ],
+  "status": "SUCCESS",
+  "prompt_version": "motorcycle-candidate-resolution-v4",
+  "model": "qwen-flash",
+  "make": "Husqvarna",
+  "model_name": "SMS 630"
+}

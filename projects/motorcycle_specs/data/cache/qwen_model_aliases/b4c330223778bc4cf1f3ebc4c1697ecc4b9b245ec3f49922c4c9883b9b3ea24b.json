@@ -1,0 +1,21 @@
+{
+  "decision": "MATCH",
+  "selected_candidate": "Harley-Davidson FXDFSE2 CVO Fat Bob",
+  "confidence": "HIGH",
+  "match_basis": "SAME_NAME",
+  "explanation": "The input model 'FXDFSE2 CVO Dyna Fat Bob' is functionally identical to the candidate 'Harley-Davidson FXDFSE2 CVO Fat Bob', with only minor naming variation ('Dyna' omitted in input but implied by model code). The model code FXDFSE2 and CVO designation confirm the same underlying motorcycle. 'Dyna' is a series identifier, not a distinct model name.",
+  "canonical_model_alias": "FXDFSE2 CVO Fat Bob",
+  "configuration_tokens": [
+    "CVO",
+    "FXDFSE2"
+  ],
+  "brand_aliases": [],
+  "model_aliases": [
+    "FXDFSE2 CVO Fat Bob"
+  ],
+  "status": "SUCCESS",
+  "prompt_version": "motorcycle-candidate-resolution-v4",
+  "model": "qwen-flash",
+  "make": "Harley-Davidson",
+  "model_name": "FXDFSE2 CVO Dyna Fat Bob"
+}

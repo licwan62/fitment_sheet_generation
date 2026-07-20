@@ -1,0 +1,16 @@
+{
+  "decision": "INFER|UNKNOWN",
+  "confidence": "MEDIUM|LOW",
+  "length_mm": null,
+  "width_mm": null,
+  "height_mm": null,
+  "wheelbase_mm": null,
+  "seat_height_mm": null,
+  "ground_clearance_mm": null,
+  "explanation": "The Indian Scout Bobber Limited +Tech model's exact dimensions are not reliably documented in public sources, and variations may exist across years or markets. Without access to official specifications or a catalog page, precise inference is uncertain. Dimensions from similar models (e.g., standard Scout Bobber) cannot be directly applied due to potential differences in geometry, styling, or component fitment.",
+  "status": "SUCCESS",
+  "prompt_version": "motorcycle-dimension-inference-v1",
+  "model": "qwen-flash",
+  "make": "Indian",
+  "model_name": "Scout Bobber Limited +Tech"
+}

@@ -1,0 +1,16 @@
+{
+  "decision": "NO_MATCH",
+  "selected_candidate": "",
+  "confidence": "HIGH",
+  "match_basis": "NONE",
+  "explanation": "The input model OR390 is not equivalent to any of the catalog candidates. OR390 refers to a specific Husqvarna enduro motorcycle, while the candidates include different models such as WR 300, 390CR, and others with distinct displacements, configurations, or model lines. None match OR390 in identity, displacement, or intended use.",
+  "canonical_model_alias": "",
+  "configuration_tokens": [],
+  "brand_aliases": [],
+  "model_aliases": [],
+  "status": "SUCCESS",
+  "prompt_version": "motorcycle-candidate-resolution-v4",
+  "model": "qwen-flash",
+  "make": "Husqvarna",
+  "model_name": "OR390"
+}

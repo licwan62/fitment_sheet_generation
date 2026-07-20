@@ -1,0 +1,16 @@
+{
+  "decision": "INFER",
+  "confidence": "MEDIUM",
+  "length_mm": 2750,
+  "width_mm": 980,
+  "height_mm": 1150,
+  "wheelbase_mm": 1640,
+  "seat_height_mm": 780,
+  "ground_clearance_mm": 130,
+  "explanation": "Inferred from comparable Indian Chieftain models with similar engine displacement (108ci) and Dark Horse trim, using typical dimensional ranges for cruiser motorcycles in this class. Dimensions are estimates based on model lineage and visual proportions; exact values may vary by year and market.",
+  "status": "SUCCESS",
+  "prompt_version": "motorcycle-dimension-inference-v1",
+  "model": "qwen-flash",
+  "make": "Indian",
+  "model_name": "Chieftain PowerPlus Dark Horse 108"
+}

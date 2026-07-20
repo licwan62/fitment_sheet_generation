@@ -1,0 +1,22 @@
+{
+  "decision": "MATCH",
+  "selected_candidate": "Harley-Davidson XLH Sportster 883",
+  "confidence": "HIGH",
+  "match_basis": "SAME_NAME",
+  "explanation": "The input 'XLH883' directly matches the core model identifier in the candidate 'Harley-Davidson XLH Sportster 883'. The other candidates are variations in capitalization or include additional configuration labels (e.g., 'De Luxe'), but all refer to the same underlying motorcycle model. The base model identity, including displacement and platform, is unchanged.",
+  "canonical_model_alias": "XLH Sportster 883",
+  "configuration_tokens": [],
+  "brand_aliases": [],
+  "model_aliases": [
+    "Sportster 883",
+    "XLH Sportster 883",
+    "883",
+    "sportster xl 883",
+    "xl 883"
+  ],
+  "status": "SUCCESS",
+  "prompt_version": "motorcycle-candidate-resolution-v4",
+  "model": "qwen-flash",
+  "make": "Harley-Davidson",
+  "model_name": "XLH883"
+}

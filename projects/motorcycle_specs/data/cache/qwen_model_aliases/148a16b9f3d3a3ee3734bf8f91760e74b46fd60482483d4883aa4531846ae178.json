@@ -1,20 +1,21 @@
 {
-  "status": "TIMEOUT",
+  "decision": "MATCH",
+  "selected_candidate": "gasgas ec 250 racing",
+  "confidence": "HIGH",
+  "match_basis": "MARKET_ALIAS",
+  "explanation": "'EC 250 Racing E-Start' is a market-specific configuration of the EC 250 Racing model, with 'E-Start' indicating electric start—commonly used in certain regions. The core model identity (EC 250 Racing) matches exactly with the candidate 'gasgas ec 250 racing'. The addition of 'E-Start' is a configuration detail, not a different model.",
+  "canonical_model_alias": "ec 250 racing",
+  "configuration_tokens": [
+    "e-start"
+  ],
+  "brand_aliases": [],
+  "model_aliases": [
+    "gasgas ec 250 racing",
+    "ec 250 racing"
+  ],
+  "status": "SUCCESS",
   "prompt_version": "motorcycle-candidate-resolution-v4",
   "model": "qwen-flash",
   "make": "Gas Gas",
-  "model_name": "EC 250 Racing E-Start",
-  "candidate_titles": [
-    "gasgas ec 250 racing",
-    "gasgas ec 250 f racing",
-    "gasgas contact estart 250",
-    "EC 250 \n\t2T Cervantes Replica",
-    "EC 250E \n\t2T",
-    "EC 250 \n\t2T Cross Country",
-    "gasgas txt gp 250",
-    "SM 250"
-  ],
-  "error_type": "ReadTimeout",
-  "status_code": null,
-  "retryable": true
+  "model_name": "EC 250 Racing E-Start"
 }

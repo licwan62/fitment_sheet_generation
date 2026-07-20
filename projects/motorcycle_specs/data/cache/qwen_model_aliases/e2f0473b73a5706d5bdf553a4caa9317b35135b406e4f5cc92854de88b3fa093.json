@@ -1,0 +1,19 @@
+{
+  "decision": "MATCH",
+  "selected_candidate": "Harley-Davidson VRSCX V-Rod",
+  "confidence": "HIGH",
+  "match_basis": "SAME_NAME",
+  "explanation": "The input 'VRSCX Screamin Eagle V-Rod' and the candidate 'Harley-Davidson VRSCX V-Rod' refer to the same model, with only minor variations in phrasing ('Screamin Eagle' vs. 'V-Rod' as standalone descriptor). The VRSCX is a specific model designation within the V-Rod lineup, and 'Screamin Eagle' is a performance trim that does not alter the core model identity. The catalog title matches the underlying motorcycle exactly.",
+  "canonical_model_alias": "VRSCX V-Rod",
+  "configuration_tokens": [],
+  "brand_aliases": [],
+  "model_aliases": [
+    "V-Rod",
+    "VRSCX V-Rod"
+  ],
+  "status": "SUCCESS",
+  "prompt_version": "motorcycle-candidate-resolution-v4",
+  "model": "qwen-flash",
+  "make": "Harley-Davidson",
+  "model_name": "VRSCX Screamin Eagle V-Rod"
+}

@@ -1,0 +1,18 @@
+{
+  "decision": "MATCH",
+  "selected_candidate": "Softail Bad Boy FXSTSB",
+  "confidence": "HIGH",
+  "match_basis": "MARKET_ALIAS",
+  "explanation": "FXSTSB is the model code for the Harley-Davidson Bad Boy, a variant of the Softail line marketed as 'Bad Boy' in certain regions and catalogs. The name 'Bad Boy' is a known market-specific branding for this model, and FXSTSB is the correct model identifier.",
+  "canonical_model_alias": "Softail Bad Boy FXSTSB",
+  "configuration_tokens": [],
+  "brand_aliases": [],
+  "model_aliases": [
+    "Softail Bad Boy FXSTSB"
+  ],
+  "status": "SUCCESS",
+  "prompt_version": "motorcycle-candidate-resolution-v4",
+  "model": "qwen-flash",
+  "make": "Harley-Davidson",
+  "model_name": "FXSTSB Bad Boy"
+}

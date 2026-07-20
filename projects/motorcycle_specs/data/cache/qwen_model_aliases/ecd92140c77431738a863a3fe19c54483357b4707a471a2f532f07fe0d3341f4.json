@@ -1,0 +1,20 @@
+{
+  "decision": "MATCH",
+  "selected_candidate": "indian chieftain powerplus limited with 112 package",
+  "confidence": "HIGH",
+  "match_basis": "SAME_NAME",
+  "explanation": "The input 'Chieftain PowerPlus Limited 112' matches the catalog candidate 'indian chieftain powerplus limited with 112 package' in model name, configuration (112), and trim level (PowerPlus Limited), with only minor wording differences. The term 'with 112 package' is a valid phrasing for the 112 cubic inch engine displacement. No other candidate shares both the exact model name and displacement.",
+  "canonical_model_alias": "chieftain powerplus limited with 112 package",
+  "configuration_tokens": [
+    "112 package"
+  ],
+  "brand_aliases": [],
+  "model_aliases": [
+    "chieftain powerplus limited with 112 package"
+  ],
+  "status": "SUCCESS",
+  "prompt_version": "motorcycle-candidate-resolution-v4",
+  "model": "qwen-flash",
+  "make": "Indian",
+  "model_name": "Chieftain PowerPlus Limited 112"
+}

@@ -1,0 +1,16 @@
+{
+  "decision": "NO_MATCH",
+  "selected_candidate": "",
+  "confidence": "HIGH",
+  "match_basis": "NONE",
+  "explanation": "The input model 'WOW90' does not correspond to any of the catalog candidates. Hyosung does not produce a model named 'WOW90', and none of the listed candidates are related to this name in terms of displacement, engine type, or model lineage. The candidates include various GV and GT series models with 300cc, 650cc displacements, but no 90cc model exists under the WOW90 designation.",
+  "canonical_model_alias": "",
+  "configuration_tokens": [],
+  "brand_aliases": [],
+  "model_aliases": [],
+  "status": "SUCCESS",
+  "prompt_version": "motorcycle-candidate-resolution-v4",
+  "model": "qwen-flash",
+  "make": "Hyosung",
+  "model_name": "WOW90"
+}

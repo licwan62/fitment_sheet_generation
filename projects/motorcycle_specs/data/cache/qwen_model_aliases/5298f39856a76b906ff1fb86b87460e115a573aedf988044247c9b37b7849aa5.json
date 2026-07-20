@@ -1,17 +1,18 @@
 {
-  "status": "TIMEOUT",
+  "decision": "MATCH",
+  "selected_candidate": "CBR 600F2",
+  "confidence": "HIGH",
+  "match_basis": "SAME_NAME",
+  "explanation": "The input 'CBR600F F2' and the candidate 'CBR 600F2' refer to the same motorcycle model, with only minor spacing and formatting differences. The displacement (600), model series (CBR), and variant (F2) are identical, confirming they represent the same underlying motorcycle.",
+  "canonical_model_alias": "CBR 600F2",
+  "configuration_tokens": [],
+  "brand_aliases": [],
+  "model_aliases": [
+    "CBR 600F2"
+  ],
+  "status": "SUCCESS",
   "prompt_version": "motorcycle-candidate-resolution-v4",
   "model": "qwen-flash",
   "make": "Honda",
-  "model_name": "CBR600F F2",
-  "candidate_titles": [
-    "CBR 600F2",
-    "CBR \n      600F4i",
-    "CBR 600F4i",
-    "honda cbf 600",
-    "honda cbr 600 f"
-  ],
-  "error_type": "ReadTimeout",
-  "status_code": null,
-  "retryable": true
+  "model_name": "CBR600F F2"
 }

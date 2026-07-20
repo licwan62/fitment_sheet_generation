@@ -1,0 +1,16 @@
+{
+  "decision": "NO_MATCH",
+  "selected_candidate": "",
+  "confidence": "HIGH",
+  "match_basis": "NONE",
+  "explanation": "The input 'VLD' does not correspond to any known model name, market alias, historical name, abbreviation, or typo for the listed Harley-Davidson catalog candidates. The candidates are all distinct models with different designations (e.g., CVO Limited, V-Rod N, V-Rod VRSCA/B), and none match the identifier 'VLD' in any recognized form.",
+  "canonical_model_alias": "",
+  "configuration_tokens": [],
+  "brand_aliases": [],
+  "model_aliases": [],
+  "status": "SUCCESS",
+  "prompt_version": "motorcycle-candidate-resolution-v4",
+  "model": "qwen-flash",
+  "make": "Harley-Davidson",
+  "model_name": "VLD"
+}

@@ -1,0 +1,16 @@
+{
+  "decision": "NO_MATCH",
+  "selected_candidate": "",
+  "confidence": "HIGH",
+  "match_basis": "NONE",
+  "explanation": "The input model 'WR390' is not present in the catalog candidates. The closest candidate, '390CR', differs in model designation and does not match the WR390's identity. Other candidates are different models with distinct displacements (e.g., 250, 300, 310) or different model lines (TE, TXC). No evidence supports that any candidate is the same underlying motorcycle as WR390.",
+  "canonical_model_alias": "",
+  "configuration_tokens": [],
+  "brand_aliases": [],
+  "model_aliases": [],
+  "status": "SUCCESS",
+  "prompt_version": "motorcycle-candidate-resolution-v4",
+  "model": "qwen-flash",
+  "make": "Husqvarna",
+  "model_name": "WR390"
+}

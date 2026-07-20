@@ -1,0 +1,18 @@
+{
+  "decision": "MATCH",
+  "selected_candidate": "husaberg fe 400 e",
+  "confidence": "HIGH",
+  "match_basis": "MARKET_ALIAS",
+  "explanation": "The input 'FC400' is a known market-specific designation for the Husaberg FE 400 E, where 'FC' stands for 'Enduro Competition' in certain markets. The model shares identical engine displacement, platform, and specifications with the FE 400 E. The variation in naming is due to regional marketing terminology.",
+  "canonical_model_alias": "fe 400 e",
+  "configuration_tokens": [],
+  "brand_aliases": [],
+  "model_aliases": [
+    "fe 400 e"
+  ],
+  "status": "SUCCESS",
+  "prompt_version": "motorcycle-candidate-resolution-v4",
+  "model": "qwen-flash",
+  "make": "Husaberg",
+  "model_name": "FC400"
+}

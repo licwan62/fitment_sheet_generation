@@ -1,0 +1,18 @@
+{
+  "decision": "MATCH",
+  "selected_candidate": "Dyna W",
+  "confidence": "HIGH",
+  "match_basis": "MARKET_ALIAS",
+  "explanation": "The input 'W' refers to the Harley-Davidson Dyna W, a known market designation for the Dyna model with a W-series engine configuration. The 'W' is a historical and market-specific identifier for this model line, and 'Dyna W' is the canonical catalog title.",
+  "canonical_model_alias": "Dyna W",
+  "configuration_tokens": [],
+  "brand_aliases": [],
+  "model_aliases": [
+    "Dyna W"
+  ],
+  "status": "SUCCESS",
+  "prompt_version": "motorcycle-candidate-resolution-v4",
+  "model": "qwen-flash",
+  "make": "Harley-Davidson",
+  "model_name": "W"
+}

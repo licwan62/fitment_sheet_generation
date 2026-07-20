@@ -1,0 +1,20 @@
+{
+  "decision": "MATCH",
+  "selected_candidate": "FE 600e \n\t\tEnduro",
+  "confidence": "HIGH",
+  "match_basis": "SAME_NAME",
+  "explanation": "The input model 'FE600E' matches the catalog candidate 'FE 600e \n\t\tEnduro' in all identity-bearing elements: model name (FE 600e), displacement (600), and configuration (Enduro). The capitalization and spacing differences are minor formatting variations. No other model in the list shares the same displacement and core model designation.",
+  "canonical_model_alias": "FE 600e Enduro",
+  "configuration_tokens": [
+    "Enduro"
+  ],
+  "brand_aliases": [],
+  "model_aliases": [
+    "FE 600e Enduro"
+  ],
+  "status": "SUCCESS",
+  "prompt_version": "motorcycle-candidate-resolution-v4",
+  "model": "qwen-flash",
+  "make": "Husaberg",
+  "model_name": "FE600E"
+}

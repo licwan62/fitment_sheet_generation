@@ -1,0 +1,18 @@
+{
+  "decision": "MATCH",
+  "selected_candidate": "FE 600e \n\t\tEnduro",
+  "confidence": "HIGH",
+  "match_basis": "MARKET_ALIAS",
+  "explanation": "Husaberg FS600E is the same model as FE 600e Enduro; 'FS' and 'FE' are alternate designations used by Husaberg for the same enduro model, with 'FS' being a market-specific or internal designation. The displacement (600) and suffix (e) match exactly, and 'Enduro' confirms the model type.",
+  "canonical_model_alias": "FE 600e Enduro",
+  "configuration_tokens": [],
+  "brand_aliases": [],
+  "model_aliases": [
+    "FE 600e Enduro"
+  ],
+  "status": "SUCCESS",
+  "prompt_version": "motorcycle-candidate-resolution-v4",
+  "model": "qwen-flash",
+  "make": "Husaberg",
+  "model_name": "FS600E"
+}

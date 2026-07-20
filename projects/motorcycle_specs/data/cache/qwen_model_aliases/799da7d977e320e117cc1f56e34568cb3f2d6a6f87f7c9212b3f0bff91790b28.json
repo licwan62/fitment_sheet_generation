@@ -1,0 +1,18 @@
+{
+  "decision": "MATCH",
+  "selected_candidate": "Street 750",
+  "confidence": "HIGH",
+  "match_basis": "SAME_NAME",
+  "explanation": "The input model 'XG750 Street 750' is a Harley-Davidson motorcycle with the same core identity as 'Street 750' in the catalog, where 'XG750' denotes the model code and displacement. The name 'Street 750' is the canonical designation for this model.",
+  "canonical_model_alias": "Street 750",
+  "configuration_tokens": [],
+  "brand_aliases": [],
+  "model_aliases": [
+    "Street 750"
+  ],
+  "status": "SUCCESS",
+  "prompt_version": "motorcycle-candidate-resolution-v4",
+  "model": "qwen-flash",
+  "make": "Harley-Davidson",
+  "model_name": "XG750 Street 750"
+}

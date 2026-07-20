@@ -1,0 +1,16 @@
+{
+  "decision": "NO_MATCH",
+  "selected_candidate": "",
+  "confidence": "HIGH",
+  "match_basis": "NONE",
+  "explanation": "The model 'WXC 360' is a specific enduro motorcycle from Husqvarna, while all catalog candidates either represent different displacement models (e.g., WR 360, WR 300), different model lines (e.g., FC 350, FX 350), or unrelated variants (e.g., 360 Automatic, TXC 310 R). None of the candidates match the WXC 360 in displacement, model series, or intended use. The 'WXC' designation is distinct from 'WR', 'FC', 'FX', or 'TXC' series.",
+  "canonical_model_alias": "",
+  "configuration_tokens": [],
+  "brand_aliases": [],
+  "model_aliases": [],
+  "status": "SUCCESS",
+  "prompt_version": "motorcycle-candidate-resolution-v4",
+  "model": "qwen-flash",
+  "make": "Husqvarna",
+  "model_name": "WXC 360"
+}

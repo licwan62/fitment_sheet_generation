@@ -1,0 +1,16 @@
+{
+  "decision": "NO_MATCH",
+  "selected_candidate": "",
+  "confidence": "HIGH",
+  "match_basis": "NONE",
+  "explanation": "The input model 'AE500' does not correspond to any of the catalog candidates. None of the listed models are known variants or aliases of a 'AE500' Husqvarna motorcycle. The 'AE500' is not a recognized Husqvarna model name in any market or historical context, and no candidate matches it by displacement, configuration, or naming convention.",
+  "canonical_model_alias": "",
+  "configuration_tokens": [],
+  "brand_aliases": [],
+  "model_aliases": [],
+  "status": "SUCCESS",
+  "prompt_version": "motorcycle-candidate-resolution-v4",
+  "model": "qwen-flash",
+  "make": "Husqvarna",
+  "model_name": "AE500"
+}

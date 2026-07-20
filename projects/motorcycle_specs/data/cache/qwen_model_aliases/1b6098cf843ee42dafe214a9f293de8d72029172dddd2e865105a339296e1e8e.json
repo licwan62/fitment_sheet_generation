@@ -1,0 +1,16 @@
+{
+  "decision": "NO_MATCH",
+  "selected_candidate": "",
+  "confidence": "HIGH",
+  "match_basis": "NONE",
+  "explanation": "The model 'WXE 610' is not a known variant or market name for any of the listed Husqvarna catalog candidates. The 'WXE' designation does not correspond to any official Husqvarna motorcycle model in the provided list, and no candidate matches the WXE 610 in identity, displacement, or configuration. The closest candidates are TE 610 series models, but the WXE prefix is not a recognized alias or typo for those models.",
+  "canonical_model_alias": "",
+  "configuration_tokens": [],
+  "brand_aliases": [],
+  "model_aliases": [],
+  "status": "SUCCESS",
+  "prompt_version": "motorcycle-candidate-resolution-v4",
+  "model": "qwen-flash",
+  "make": "Husqvarna",
+  "model_name": "WXE 610"
+}

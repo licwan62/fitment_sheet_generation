@@ -1,0 +1,16 @@
+{
+  "decision": "UNKNOWN",
+  "confidence": "LOW",
+  "length_mm": null,
+  "width_mm": null,
+  "height_mm": null,
+  "wheelbase_mm": null,
+  "seat_height_mm": null,
+  "ground_clearance_mm": null,
+  "explanation": "The Husaberg FC470E is a rare or limited-production model with no widely available official specifications. Variations in design across years and markets, combined with lack of consistent documentation, make accurate dimension estimation uncertain. No reliable source confirms dimensions, and the model's identity may be confused with similar Husaberg FC series bikes. Therefore, dimensions cannot be reliably inferred.",
+  "status": "SUCCESS",
+  "prompt_version": "motorcycle-dimension-inference-v1",
+  "model": "qwen-flash",
+  "make": "Husaberg",
+  "model_name": "FC470E"
+}

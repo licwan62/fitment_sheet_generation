@@ -1,0 +1,18 @@
+{
+  "decision": "MATCH",
+  "selected_candidate": "husqvarna te 610",
+  "confidence": "HIGH",
+  "match_basis": "MARKET_ALIAS",
+  "explanation": "The input 'TC610' refers to the same motorcycle as 'TE 610', with 'TC' being a market-specific or configuration label for the model otherwise known as the TE 610 in Husqvarna's catalog. The displacement (610) and brand (Husqvarna) are identical, and the difference in suffix is a known market or naming variation.",
+  "canonical_model_alias": "te 610",
+  "configuration_tokens": [],
+  "brand_aliases": [],
+  "model_aliases": [
+    "te 610"
+  ],
+  "status": "SUCCESS",
+  "prompt_version": "motorcycle-candidate-resolution-v4",
+  "model": "qwen-flash",
+  "make": "Husqvarna",
+  "model_name": "TC610"
+}

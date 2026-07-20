@@ -1,0 +1,18 @@
+{
+  "decision": "MATCH",
+  "selected_candidate": "harley davidson road glide limited fltrk",
+  "confidence": "HIGH",
+  "match_basis": "SAME_NAME",
+  "explanation": "The input model 'FLTRK Road Glide Limited' is the same motorcycle as the candidate 'harley davidson road glide limited fltrk', with the only difference being the casing and the explicit inclusion of the model code in the candidate. The FLTRK designation is the correct model code for the Road Glide Limited, and the candidate matches exactly in name, displacement, and configuration.",
+  "canonical_model_alias": "road glide limited fltrk",
+  "configuration_tokens": [],
+  "brand_aliases": [],
+  "model_aliases": [
+    "road glide limited fltrk"
+  ],
+  "status": "SUCCESS",
+  "prompt_version": "motorcycle-candidate-resolution-v4",
+  "model": "qwen-flash",
+  "make": "Harley-Davidson",
+  "model_name": "FLTRK Road Glide Limited"
+}

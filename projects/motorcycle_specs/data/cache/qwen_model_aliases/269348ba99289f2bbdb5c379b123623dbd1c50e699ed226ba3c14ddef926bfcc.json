@@ -1,0 +1,20 @@
+{
+  "decision": "MATCH",
+  "selected_candidate": "Softail Fat \n\t\tBoy S",
+  "confidence": "HIGH",
+  "match_basis": "MARKET_ALIAS",
+  "explanation": "The input 'FLSTFBS Fat Boy S' is a valid model designation for the Harley-Davidson Softail Fat Boy S, with 'FLSTFBS' being the model code and 'S' indicating a specific configuration. The catalog candidate 'Softail Fat Boy S' is a known market and retail naming variant of the same model, with the 'S' suffix preserved. The base model identity (Softail Fat Boy) and displacement/configuration (S) are identical.",
+  "canonical_model_alias": "Softail Fat Boy S",
+  "configuration_tokens": [
+    "S"
+  ],
+  "brand_aliases": [],
+  "model_aliases": [
+    "Softail Fat Boy S"
+  ],
+  "status": "SUCCESS",
+  "prompt_version": "motorcycle-candidate-resolution-v4",
+  "model": "qwen-flash",
+  "make": "Harley-Davidson",
+  "model_name": "FLSTFBS Fat Boy S"
+}

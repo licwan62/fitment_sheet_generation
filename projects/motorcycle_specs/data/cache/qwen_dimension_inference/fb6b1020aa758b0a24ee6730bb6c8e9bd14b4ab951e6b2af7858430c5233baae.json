@@ -1,0 +1,16 @@
+{
+  "decision": "INFER|UNKNOWN",
+  "confidence": "LOW",
+  "length_mm": null,
+  "width_mm": null,
+  "height_mm": null,
+  "wheelbase_mm": null,
+  "seat_height_mm": null,
+  "ground_clearance_mm": null,
+  "explanation": "The Harley-Davidson Z90 is not a recognized model in official Harley-Davidson product lines. It may be a misidentification or confusion with another model (e.g., the Zephyr series or a different manufacturer's bike). Without verifiable model data, dimensions cannot be reliably inferred. No catalog or technical documentation confirms this model's existence or specifications.",
+  "status": "SUCCESS",
+  "prompt_version": "motorcycle-dimension-inference-v1",
+  "model": "qwen-flash",
+  "make": "Harley-Davidson",
+  "model_name": "Z90"
+}

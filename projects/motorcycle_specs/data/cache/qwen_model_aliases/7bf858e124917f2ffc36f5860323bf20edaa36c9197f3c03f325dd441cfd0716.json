@@ -1,0 +1,16 @@
+{
+  "decision": "NO_MATCH",
+  "selected_candidate": "",
+  "confidence": "HIGH",
+  "match_basis": "NONE",
+  "explanation": "The input model 'TC570' is a motocross motorcycle from Husqvarna, while all catalog candidates either represent different displacement models (e.g., TC 150, TC 250, TC 50), different product lines (e.g., Vitpilen 250, SM 570R), or electric/other variants (TE 570e, TE 510LC) that do not match the TC570 in engine size, intended use, or model lineage. No candidate represents the same underlying motorcycle model.",
+  "canonical_model_alias": "",
+  "configuration_tokens": [],
+  "brand_aliases": [],
+  "model_aliases": [],
+  "status": "SUCCESS",
+  "prompt_version": "motorcycle-candidate-resolution-v4",
+  "model": "qwen-flash",
+  "make": "Husqvarna",
+  "model_name": "TC570"
+}

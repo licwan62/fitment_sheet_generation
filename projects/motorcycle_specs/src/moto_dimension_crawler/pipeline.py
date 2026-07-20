@@ -1,7 +1,11 @@
 from __future__ import annotations
 
+import gc
 import logging
 import json
+import re
+from collections import defaultdict, deque
+from concurrent.futures import ThreadPoolExecutor, as_completed
 from dataclasses import asdict
 from pathlib import Path
 
@@ -14,10 +18,11 @@ from .grouper import group_dimensions
 from .index_builder import build_1000ps_index, build_bikedekho_index, build_bikez_index, build_index, load_index, save_index
 from .input_reader import read_input
 from .matcher import rank_candidates
-from .models import Candidate
+from .models import Candidate, DimensionResult
 from .normalizer import compact_name, normalize_name
-from .page_discovery import cross_source_candidate_pages, fallback_pages, targeted_pages
+from .page_discovery import BrandPageLookup, cross_source_candidate_pages, fallback_pages, targeted_pages
 from .parser import parse_page
+from .progress import ProgressFiles
 from .qwen_aliases import GeneratedAliases, GeneratedDimensions, QwenAliasGenerator
 from .reporter import make_report, save_report
 from .utils import project_root, utc_now
@@ -221,6 +226,56 @@ def candidate_from_checkpoint(row: dict) -> Candidate:
     )
 
 
+def _candidate_fetch_order(item: tuple) -> tuple:
+    """Prefer trustworthy matches and configured sources before weaker fallbacks."""
+    _, candidate = item
+    status_rank = {"EXACT": 0, "LIKELY": 1, "MULTIPLE": 2}
+    year_values = re.findall(r"(?:19|20)\d{2}", candidate.source_year or candidate.url)
+    newest_year = max((int(value) for value in year_values), default=0)
+    return (
+        status_rank.get(candidate.status, 9),
+        int(candidate.source_priority or 99),
+        -int(candidate.score or 0),
+        -newest_year,
+        candidate.url,
+    )
+
+
+def adaptive_candidate_plan(selected: list[tuple], max_same_title_pages: int = 3) -> list[tuple]:
+    """Bound yearly fan-out while retaining early/middle/late representative pages."""
+    grouped: dict[tuple[str, str, str], list[tuple]] = defaultdict(list)
+    for item in selected:
+        record, candidate = item
+        title_key = compact_name(candidate.title) or candidate.url
+        grouped[(record.input_id, candidate.source_name, title_key)].append(item)
+
+    kept: list[tuple] = []
+    cap = max(1, int(max_same_title_pages))
+    for items in grouped.values():
+        ordered = sorted(items, key=_candidate_fetch_order)
+        if len(ordered) <= cap:
+            kept.extend(ordered)
+            continue
+        chronological = sorted(
+            ordered,
+            key=lambda item: (
+                max((int(value) for value in re.findall(r"(?:19|20)\d{2}", item[1].source_year or item[1].url)), default=0),
+                item[1].url,
+            ),
+        )
+        indexes = [round(index * (len(chronological) - 1) / (cap - 1)) for index in range(cap)] if cap > 1 else [len(chronological) - 1]
+        kept.extend(chronological[index] for index in dict.fromkeys(indexes))
+    return sorted(kept, key=lambda item: (item[0].input_id, *_candidate_fetch_order(item)))
+
+
+def _is_reliable_complete(candidate: Candidate, dim: DimensionResult) -> bool:
+    return (
+        candidate.status in {"EXACT", "LIKELY"}
+        and dim.parse_status == "COMPLETE"
+        and not dim.anomaly_flags
+    )
+
+
 def run_pipeline(*, input_path: Path, output: Path, config_path: Path, sheet: str | None = None,
                  resume: bool = True, force_refetch: bool = False, force_reparse: bool = False,
                  clear_checkpoint_before_run: bool = False,
@@ -257,6 +312,7 @@ def run_pipeline(*, input_path: Path, output: Path, config_path: Path, sheet: st
     inputs = input_rows(records)
     cache = PageCache(root / "data" / "cache")
     crawler = Crawler(cfg, cache, db)
+    progress_files: ProgressFiles | None = None
     try:
         index_path = root / "data" / "index" / "pages.json"
         manifest_path = root / "data" / "index" / "brands.json"
@@ -312,9 +368,11 @@ def run_pipeline(*, input_path: Path, output: Path, config_path: Path, sheet: st
         index = list({page["page_url"]: page for page in [*index, *manual_pages]}.values())
         if stop_after == "build-index":
             return {"index_count": len(index), "index_path": str(index_path)}
+        progress_files = ProgressFiles(output)
         brand_aliases, model_aliases = load_aliases(config_path.parent)
         runtime_brand_aliases = {key: list(values) for key, values in brand_aliases.items()}
         runtime_model_aliases = {key: list(values) for key, values in model_aliases.items()}
+        page_lookup = BrandPageLookup(index)
         qwen_aliases = QwenAliasGenerator(cfg.get("qwen_aliases", {}), root / "data" / "cache")
         generated_alias_records = []
         candidates_out, selected, inferred_rows, checkpoint_raw_rows = [], [], [], []
@@ -349,6 +407,22 @@ def run_pipeline(*, input_path: Path, output: Path, config_path: Path, sheet: st
                             })
                         else:
                             pending_candidates.append(candidate_from_checkpoint(row))
+                    if (
+                        cfg["crawler"].get("fetch_strategy", "adaptive") == "adaptive"
+                        and any(
+                            row.get("PARSE_STATUS") == "COMPLETE"
+                            and not row.get("ANOMALY_FLAGS")
+                            and row.get("CONFIDENCE") in {"HIGH", "MEDIUM"}
+                            for row in saved_dimensions.values()
+                        )
+                    ):
+                        # One reliable completed page satisfies an adaptive task;
+                        # do not fetch every remaining year on the next resume.
+                        restored_dimensions = [{
+                            key: value for key, value in row.items()
+                            if key not in {"input_id", "url", "parsed_at"}
+                        } for row in saved_dimensions.values()]
+                        pending_candidates = []
                     selected.extend((record, candidate) for candidate in pending_candidates)
                     checkpoint_raw_rows.extend(restored_dimensions)
                     input_row = next(item for item in inputs if item["INPUT_ID"] == record.input_id)
@@ -371,6 +445,19 @@ def run_pipeline(*, input_path: Path, output: Path, config_path: Path, sheet: st
                         "OK" if not pending_candidates else "MATCH_OK",
                         len(restored_candidates), len(restored_dimensions), len(pending_candidates),
                     )
+                    restored_credible = [
+                        row for row in restored_candidates
+                        if row.get("MATCH_STATUS") in {"EXACT", "LIKELY", "MULTIPLE"}
+                    ]
+                    progress_files.match.write({
+                        "POSITION": match_position, "TOTAL": len(records), "COMPLETED_AT": utc_now(),
+                        "INPUT_ID": record.input_id, "MAKE": record.make, "MODEL": record.model,
+                        "STATUS": "SKIP", "BEST_PAGE_TITLE": (
+                            restored_credible[0].get("CANDIDATE_TITLE", "") if restored_credible else ""
+                        ),
+                        "MATCHES": len(restored_credible), "CANDIDATE_COUNT": len(restored_candidates),
+                        "CHECKPOINT": "OK" if not pending_candidates else "MATCH_OK", "AI_STATUS": "",
+                    })
                     continue
                 alias_key = f"{record.make}|{record.model}"
                 static_aliases = [
@@ -391,7 +478,8 @@ def run_pipeline(*, input_path: Path, output: Path, config_path: Path, sheet: st
                 runtime_model_aliases[alias_key] = aliases
                 runtime_brand_aliases[record.make_normalized] = brand_values
                 ignored_words = cfg.get("matching", {}).get("ignored_model_words", [])
-                strict_pages = targeted_pages(record, index, aliases, ignored_words, brand_values)
+                brand_index_pages = page_lookup.pages_for(record.make, brand_values)
+                strict_pages = targeted_pages(record, brand_index_pages, aliases, ignored_words, brand_values)
                 ranked = rank_candidates(
                     record, strict_pages, cfg, runtime_brand_aliases, runtime_model_aliases,
                 )
@@ -405,9 +493,9 @@ def run_pipeline(*, input_path: Path, output: Path, config_path: Path, sheet: st
                     )
                     reviewed_titles = []
                 else:
-                    broad_pages = fallback_pages(record, index, brand_values, ignored_words)
+                    broad_pages = fallback_pages(record, brand_index_pages, brand_values, ignored_words)
                     cross_source_pages = cross_source_candidate_pages(
-                        record, index, brand_values, ignored_words, qwen_aliases.max_candidates,
+                        record, brand_index_pages, brand_values, ignored_words, qwen_aliases.max_candidates,
                     )
                     review_pages = list({
                         page["page_url"]: page
@@ -425,10 +513,11 @@ def run_pipeline(*, input_path: Path, output: Path, config_path: Path, sheet: st
                     brand_values = list(dict.fromkeys([*brand_values, *generated.brand_aliases]))
                     runtime_model_aliases[alias_key] = aliases
                     runtime_brand_aliases[record.make_normalized] = brand_values
-                    strict_pages = targeted_pages(record, index, aliases, ignored_words, brand_values)
-                    broad_pages = fallback_pages(record, index, brand_values, ignored_words)
+                    brand_index_pages = page_lookup.pages_for(record.make, brand_values)
+                    strict_pages = targeted_pages(record, brand_index_pages, aliases, ignored_words, brand_values)
+                    broad_pages = fallback_pages(record, brand_index_pages, brand_values, ignored_words)
                     cross_source_pages = cross_source_candidate_pages(
-                        record, index, brand_values, ignored_words, qwen_aliases.max_candidates,
+                        record, brand_index_pages, brand_values, ignored_words, qwen_aliases.max_candidates,
                     )
                     final_pages = list({
                         page["page_url"]: page
@@ -513,6 +602,21 @@ def run_pipeline(*, input_path: Path, output: Path, config_path: Path, sheet: st
                 # known, so an interrupted long run can skip it next time.
                 db.conn.commit()
                 log_match_summary(record, ranked, generated, match_position, len(records), inferred)
+                matched = [
+                    candidate for candidate in ranked
+                    if candidate.status in {"EXACT", "LIKELY", "MULTIPLE"}
+                ]
+                best = matched[0] if matched else ranked[0] if ranked else None
+                progress_files.match.write({
+                    "POSITION": match_position, "TOTAL": len(records), "COMPLETED_AT": utc_now(),
+                    "INPUT_ID": record.input_id, "MAKE": record.make, "MODEL": record.model,
+                    "STATUS": "INFER" if inferred.decision == "INFER" else "OK" if matched else "MISS",
+                    "BEST_PAGE_TITLE": best.title if best else "", "MATCHES": len(matched),
+                    "CANDIDATE_COUNT": len(ranked), "CHECKPOINT": "",
+                    "AI_STATUS": (
+                        "dimension-inference" if inferred.decision == "INFER" else _ai_status_label(generated)
+                    ),
+                })
         finally:
             qwen_aliases.close()
         generated_alias_path = output / "generated_aliases.json"
@@ -524,36 +628,197 @@ def run_pipeline(*, input_path: Path, output: Path, config_path: Path, sheet: st
         else:
             generated_alias_path.unlink(missing_ok=True)
         db.conn.commit()
+        inferred_candidate_rows = [
+            row for row in candidates_out if row.get("MATCH_STATUS") == "INFERRED"
+        ]
         if stop_after == "match":
             credible_checkpoint = [row for row in candidates_out if row.get("MATCH_STATUS") in {"EXACT", "LIKELY", "MULTIPLE"}]
             return {"candidate_count": len(candidates_out), "credible_page_count": len(credible_checkpoint),
                     "credible_input_count": len({row["INPUT_ID"] for row in credible_checkpoint}),
-                    "inferred_input_count": len(inferred_rows)}
+                    "inferred_input_count": len(inferred_rows),
+                    "progress_file": str((output / "match_progress.csv").resolve())}
+        # The remaining stages use selected candidates and checkpoint rows only.
+        # Drop the full catalog and matching caches before loading page bodies.
+        index = []
+        manual_pages = []
+        page_lookup = None
+        checkpoint_candidates_by_input.clear()
+        checkpoint_dimensions_by_input.clear()
+        runtime_brand_aliases.clear()
+        runtime_model_aliases.clear()
+        brand_aliases.clear()
+        model_aliases.clear()
+        generated_alias_records.clear()
+        candidates_out.clear()
+        qwen_aliases = None
+        generated = None
+        inferred = None
+        ranked = []
+        credible = []
+        strict_pages = []
+        broad_pages = []
+        cross_source_pages = []
+        preliminary = []
+        final_pages = []
+        brand_index_pages = []
+        source_index = []
+        gc.collect()
         raw_out = [*checkpoint_raw_rows, *inferred_rows]
-        for fetch_position, (record, candidate) in enumerate(selected, start=1):
-            logging.getLogger(__name__).info(
-                "FETCH_PROGRESS=%d/%d, BRAND=%s, MODEL=%s, PAGE_TITLE=%s",
-                fetch_position, len(selected), record.make, record.model, candidate.title,
+        fetch_strategy = cfg["crawler"].get("fetch_strategy", "adaptive")
+        if fetch_strategy not in {"adaptive", "exhaustive"}:
+            raise ValueError("crawler.fetch_strategy must be adaptive or exhaustive")
+        planned_selected = (
+            adaptive_candidate_plan(
+                selected, cfg["crawler"].get("adaptive_max_same_title_pages", 3),
             )
-            if resume and not force_reparse and db.parsed(record.input_id, candidate.url):
-                previous = next((x for x in db.rows("dimension_results") if x["input_id"] == record.input_id and x["url"] == candidate.url), None)
-                if previous:
-                    restored = {k:v for k,v in previous.items() if k not in {"input_id","url","parsed_at"}}
-                    restored.update({
-                        "SOURCE_MAKE": candidate.source_make, "SOURCE_MODEL": candidate.source_model,
-                        "DATA_SOURCE": candidate.source_name, "SOURCE_PRIORITY": candidate.source_priority,
-                        "MODEL_SIMILARITY": next((part.split("=",1)[1] for part in candidate.reason.split("; ") if part.startswith("model_similarity=")), ""),
-                        "MATCH_SCORE": candidate.score, "MATCH_CONFIDENCE": "HIGH" if candidate.status == "EXACT" else "MEDIUM" if candidate.status == "LIKELY" else "LOW",
-                        "MATCH_STATUS": candidate.status,
-                    })
-                    raw_out.append(restored)
-                    logging.getLogger(__name__).info(
-                        "FETCH_PROGRESS=%d/%d, STATUS=RESTORED_FROM_CHECKPOINT",
-                        fetch_position, len(selected),
-                    )
-                    continue
-            html, meta, from_cache = crawler.fetch(candidate.url, force_refetch)
-            if html is None:
+            if fetch_strategy == "adaptive" else sorted(selected, key=_candidate_fetch_order)
+        )
+        fetch_results: dict[tuple[str, str], tuple[bool, dict | None, str]] = {}
+        fetched_by_url: dict[str, tuple[str | None, dict | None, bool]] = {}
+        preview_parsed_pages_by_url: dict[str, tuple[dict, DimensionResult]] = {}
+        attempted_selected: list[tuple] = []
+        fetch_total = len(checkpoint_raw_rows) + len(inferred_rows) + len(planned_selected)
+        fetch_position = 0
+        for row in checkpoint_raw_rows:
+            fetch_position += 1
+            progress_files.fetch.write({
+                "POSITION": fetch_position, "TOTAL": fetch_total, "COMPLETED_AT": utc_now(),
+                "INPUT_ID": row.get("INPUT_ID", ""), "MAKE": row.get("MAKE", ""),
+                "MODEL": row.get("MODEL", ""), "STATUS": "SKIPPED_PARSED_CHECKPOINT",
+                "PAGE_TITLE": row.get("PAGE_TITLE", ""), "SOURCE_URL": row.get("SOURCE_URL", ""),
+                "DATA_SOURCE": row.get("DATA_SOURCE", ""), "FETCHED_AT": row.get("FETCHED_AT", ""),
+                "CONTENT_HASH": row.get("CONTENT_HASH", ""),
+            })
+        for row in inferred_rows:
+            fetch_position += 1
+            progress_files.fetch.write({
+                "POSITION": fetch_position, "TOTAL": fetch_total, "COMPLETED_AT": utc_now(),
+                "INPUT_ID": row.get("INPUT_ID", ""), "MAKE": row.get("MAKE", ""),
+                "MODEL": row.get("MODEL", ""), "STATUS": "NOT_REQUIRED_INFERENCE",
+                "PAGE_TITLE": row.get("PAGE_TITLE", ""), "SOURCE_URL": "",
+                "DATA_SOURCE": row.get("DATA_SOURCE", ""), "FETCHED_AT": row.get("FETCHED_AT", ""),
+                "CONTENT_HASH": "",
+            })
+        queues: dict[str, deque] = defaultdict(deque)
+        for item in planned_selected:
+            queues[item[0].input_id].append(item)
+        active_ids = set(queues)
+        reported_urls: set[str] = set()
+        max_workers = max(1, int(cfg["crawler"].get("max_concurrency", 1)))
+        while active_ids:
+            round_items = [queues[input_id].popleft() for input_id in sorted(active_ids) if queues[input_id]]
+            if not round_items:
+                break
+            new_urls = {
+                candidate.url: candidate
+                for _, candidate in round_items
+                if candidate.url not in fetched_by_url
+            }
+            if new_urls:
+                with ThreadPoolExecutor(max_workers=max_workers, thread_name_prefix="page-fetch") as executor:
+                    futures = {
+                        executor.submit(crawler.fetch, url, force_refetch): url for url in new_urls
+                    }
+                    for future in as_completed(futures):
+                        url = futures[future]
+                        try:
+                            fetched_by_url[url] = future.result()
+                        except Exception as exc:  # keep one worker failure from aborting the run
+                            logging.getLogger(__name__).exception("Fetch worker failed for %s", url)
+                            fetched_by_url[url] = (None, {"error": str(exc)}, False)
+
+            resolved_this_round: set[str] = set()
+            for record, candidate in round_items:
+                attempted_selected.append((record, candidate))
+                fetch_position += 1
+                html, meta, from_cache = fetched_by_url[candidate.url]
+                fetch_ok = html is not None
+                if candidate.url in reported_urls:
+                    fetch_status = "REUSED_URL" if fetch_ok else "REUSED_FETCH_FAILED"
+                elif fetch_ok:
+                    fetch_status = "CACHE_HIT" if from_cache else "FETCHED"
+                elif (meta or {}).get("failure_cached"):
+                    fetch_status = "FAILURE_CACHE_HIT"
+                else:
+                    fetch_status = "FETCH_FAILED"
+                reported_urls.add(candidate.url)
+                fetch_results[(record.input_id, candidate.url)] = (fetch_ok, meta, fetch_status)
+                progress_files.fetch.write({
+                    "POSITION": fetch_position, "TOTAL": fetch_total, "COMPLETED_AT": utc_now(),
+                    "INPUT_ID": record.input_id, "MAKE": record.make, "MODEL": record.model,
+                    "STATUS": fetch_status, "PAGE_TITLE": candidate.title, "SOURCE_URL": candidate.url,
+                    "DATA_SOURCE": candidate.source_name, "FETCHED_AT": (meta or {}).get("fetched_at", ""),
+                    "CONTENT_HASH": (meta or {}).get("content_hash", ""),
+                })
+                logging.getLogger(__name__).info(
+                    "FETCH_PROGRESS=%d/%d, BRAND=%s, MODEL=%s, PAGE_TITLE=%s, STATUS=%s",
+                    fetch_position, fetch_total, record.make, record.model, candidate.title, fetch_status,
+                )
+                if fetch_strategy == "adaptive" and fetch_ok:
+                    if candidate.url not in preview_parsed_pages_by_url:
+                        page = parse_page(html, candidate.url)
+                        preview_parsed_pages_by_url[candidate.url] = (page, validate(page["dimensions"], cfg))
+                    _, dim = preview_parsed_pages_by_url[candidate.url]
+                    if _is_reliable_complete(candidate, dim):
+                        resolved_this_round.add(record.input_id)
+
+            for input_id in list(active_ids):
+                if input_id in resolved_this_round or not queues[input_id]:
+                    active_ids.discard(input_id)
+
+        attempted_keys = {(record.input_id, candidate.url) for record, candidate in attempted_selected}
+        adaptive_skipped_count = 0
+        for record, candidate in planned_selected:
+            if (record.input_id, candidate.url) in attempted_keys:
+                continue
+            adaptive_skipped_count += 1
+            fetch_position += 1
+            progress_files.fetch.write({
+                "POSITION": fetch_position, "TOTAL": fetch_total, "COMPLETED_AT": utc_now(),
+                "INPUT_ID": record.input_id, "MAKE": record.make, "MODEL": record.model,
+                "STATUS": "SKIPPED_ADAPTIVE", "PAGE_TITLE": candidate.title,
+                "SOURCE_URL": candidate.url, "DATA_SOURCE": candidate.source_name,
+                "FETCHED_AT": "", "CONTENT_HASH": "",
+            })
+        selected = attempted_selected
+        if stop_after == "fetch":
+            return {
+                "selected_count": len(selected), "planned_count": len(planned_selected),
+                "adaptive_skipped_count": adaptive_skipped_count,
+                "fetch_result_count": len(fetch_results),
+                "unique_url_count": len(fetched_by_url),
+                "fetched": crawler.fetched, "cache_hits": crawler.cache_hits,
+                "failure_cache_hits": crawler.failure_cache_hits,
+                "progress_file": str((output / "fetch_progress.csv").resolve()),
+            }
+        unique_fetch_url_count = len(fetched_by_url)
+        fetched_by_url.clear()
+        gc.collect()
+
+        parse_total = len(checkpoint_raw_rows) + len(inferred_rows) + len(selected)
+        parse_position = 0
+        for row in checkpoint_raw_rows:
+            parse_position += 1
+            progress_files.parse.write({
+                "POSITION": parse_position, "TOTAL": parse_total, "COMPLETED_AT": utc_now(),
+                "STATUS": "RESTORED_FROM_CHECKPOINT", **row,
+            })
+        for row in inferred_rows:
+            parse_position += 1
+            progress_files.parse.write({
+                "POSITION": parse_position, "TOTAL": parse_total, "COMPLETED_AT": utc_now(),
+                "STATUS": "INFERRED", **row,
+            })
+        parsed_pages_by_url: dict[str, tuple[dict, DimensionResult]] = preview_parsed_pages_by_url
+        for record, candidate in selected:
+            parse_position += 1
+            logging.getLogger(__name__).info(
+                "PARSE_PROGRESS=%d/%d, BRAND=%s, MODEL=%s, PAGE_TITLE=%s",
+                parse_position, parse_total, record.make, record.model, candidate.title,
+            )
+            fetch_ok, meta, fetch_status = fetch_results[(record.input_id, candidate.url)]
+            if not fetch_ok:
+                parse_action = fetch_status
                 parsed_row = {
                     "INPUT_ID":record.input_id,"MAKE":record.make,"MODEL":record.model,"车辆类型":record.vehicle_type,
                     "DATA_SOURCE":candidate.source_name,"SOURCE_PRIORITY":candidate.source_priority,
@@ -562,7 +827,14 @@ def run_pipeline(*, input_path: Path, output: Path, config_path: Path, sheet: st
                     "PARSE_STATUS":"FETCH_FAILED","CONFIDENCE":"LOW","ANOMALY_FLAGS":"","NOTES":"Page fetch failed",
                 }
             else:
-                page = parse_page(html, candidate.url); dim = validate(page["dimensions"], cfg)
+                if candidate.url in parsed_pages_by_url:
+                    page, dim = parsed_pages_by_url[candidate.url]
+                    parse_action = "REUSED_PARSED_URL"
+                else:
+                    html = cache.read(candidate.url)
+                    page = parse_page(html, candidate.url); dim = validate(page["dimensions"], cfg)
+                    parsed_pages_by_url[candidate.url] = (page, dim)
+                    parse_action = "PARSED"
                 vals, raws = dim.values, dim.raw
                 parsed_row = {
                     "INPUT_ID":record.input_id,"MAKE":record.make,"MODEL":record.model,"车辆类型":record.vehicle_type,
@@ -581,14 +853,39 @@ def run_pipeline(*, input_path: Path, output: Path, config_path: Path, sheet: st
                 }
             raw_out.append(parsed_row)
             db.upsert_json("dimension_results", {"input_id":record.input_id,"url":candidate.url}, parsed_row, {"parsed_at":utc_now()})
+            progress_files.parse.write({
+                "POSITION": parse_position, "TOTAL": parse_total, "COMPLETED_AT": utc_now(),
+                "STATUS": parse_action, **parsed_row,
+            })
             logging.getLogger(__name__).info(
-                "FETCH_PROGRESS=%d/%d, STATUS=%s, PARSE_STATUS=%s",
-                fetch_position, len(selected),
-                "CACHE_HIT" if from_cache else "FETCHED" if html is not None else "FETCH_FAILED",
+                "PARSE_PROGRESS=%d/%d, STATUS=%s, PARSE_STATUS=%s",
+                parse_position, parse_total, parse_action,
                 parsed_row.get("PARSE_STATUS", ""),
             )
-        if stop_after in {"fetch", "parse"}:
-            return {"selected_count":len(selected),"result_count":len(raw_out),"fetched":crawler.fetched,"cache_hits":crawler.cache_hits}
+        if stop_after == "parse":
+            return {
+                "selected_count": len(selected), "result_count": len(raw_out),
+                "unique_url_count": len(parsed_pages_by_url),
+                "fetched": crawler.fetched, "cache_hits": crawler.cache_hits,
+                "progress_file": str((output / "parse_progress.csv").resolve()),
+            }
+        unique_parse_url_count = len(parsed_pages_by_url)
+        parsed_pages_by_url.clear()
+        fetch_results.clear()
+        selected.clear()
+        gc.collect()
+        candidates_out = [
+            {key: value for key, value in row.items() if key not in {"input_id", "url"}}
+            for row in db.rows_for_input_ids("candidate_pages", current_input_ids)
+        ]
+        candidates_out.extend(inferred_candidate_rows)
+        input_order = {record.input_id: position for position, record in enumerate(records)}
+        candidates_out.sort(key=lambda row: (
+            input_order.get(str(row.get("INPUT_ID", "")), len(input_order)),
+            -float(row.get("MATCH_SCORE") or 0),
+            int(row.get("SOURCE_PRIORITY") or 99),
+            str(row.get("CANDIDATE_URL", "")),
+        ))
         if resume_snapshot:
             inputs = merge_resumed_rows(resume_snapshot.get("INPUT_NORMALIZED", []), inputs, current_input_ids)
             candidates_out = merge_resumed_rows(
@@ -632,8 +929,22 @@ def run_pipeline(*, input_path: Path, output: Path, config_path: Path, sheet: st
         report = make_report(started, inputs, candidates_out, raw_out, groups, db.rows("errors"), crawler.fetched, crawler.cache_hits)
         report["not_found_count"] = len(not_found)
         report["review_count"] = len(review)
+        report["performance"] = {
+            "candidate_page_relationship_count": parse_total,
+            "planned_fetch_relationship_count": len(planned_selected),
+            "adaptive_skipped_count": adaptive_skipped_count,
+            "unique_fetched_url_count": unique_fetch_url_count,
+            "unique_parsed_url_count": unique_parse_url_count,
+        }
+        report["progress_files"] = {
+            "match": str((output / "match_progress.csv").resolve()),
+            "fetch": str((output / "fetch_progress.csv").resolve()),
+            "parse": str((output / "parse_progress.csv").resolve()),
+        }
         save_report(report, output / "logs" / "run_report.json")
         export_all(output, inputs, candidates_out, raw_out, groups, review, not_found, report)
         return report
     finally:
+        if progress_files is not None:
+            progress_files.close()
         crawler.close(); db.close()

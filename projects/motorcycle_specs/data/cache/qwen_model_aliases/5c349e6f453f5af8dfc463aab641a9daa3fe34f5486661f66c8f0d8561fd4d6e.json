@@ -1,0 +1,22 @@
+{
+  "decision": "MATCH",
+  "selected_candidate": "Harley-Davidson FXDSE CVO Screaming Eagle Dyna",
+  "confidence": "HIGH",
+  "match_basis": "SAME_NAME",
+  "explanation": "The input 'FXDSE Screamin Eagle Dyna' is a direct subset of the catalog candidate 'Harley-Davidson FXDSE CVO Screaming Eagle Dyna', with only minor variation in capitalization and omission of 'CVO'. The model identity, displacement, and configuration are identical. 'Screamin Eagle' is a known performance branding for Harley-Davidson's high-end models, and 'FXDSE' is the correct model code for this variant.",
+  "canonical_model_alias": "FXDSE CVO Screaming Eagle Dyna",
+  "configuration_tokens": [
+    "CVO",
+    "Screaming Eagle"
+  ],
+  "brand_aliases": [],
+  "model_aliases": [
+    "CVO Screaming Eagle Dyna",
+    "FXDSE CVO Screaming Eagle Dyna"
+  ],
+  "status": "SUCCESS",
+  "prompt_version": "motorcycle-candidate-resolution-v4",
+  "model": "qwen-flash",
+  "make": "Harley-Davidson",
+  "model_name": "FXDSE Screamin Eagle Dyna"
+}

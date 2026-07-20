@@ -1,0 +1,16 @@
+{
+  "decision": "NO_MATCH",
+  "selected_candidate": "",
+  "confidence": "HIGH",
+  "match_basis": "NONE",
+  "explanation": "The input model 'Z90' does not correspond to any of the catalog candidates, as none match the Harley-Davidson Z90, which is a known model. The candidates listed are unrelated models, including different displacements, names, and configurations. No candidate represents the Z90 under any known market name, abbreviation, or typo.",
+  "canonical_model_alias": "",
+  "configuration_tokens": [],
+  "brand_aliases": [],
+  "model_aliases": [],
+  "status": "SUCCESS",
+  "prompt_version": "motorcycle-candidate-resolution-v4",
+  "model": "qwen-flash",
+  "make": "Harley-Davidson",
+  "model_name": "Z90"
+}

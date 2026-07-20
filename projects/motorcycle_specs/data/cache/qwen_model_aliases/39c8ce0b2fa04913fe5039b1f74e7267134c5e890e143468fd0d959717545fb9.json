@@ -1,0 +1,19 @@
+{
+  "decision": "MATCH",
+  "selected_candidate": "Harley-Davidson FXDL Dyna Low Rider",
+  "confidence": "HIGH",
+  "match_basis": "SAME_NAME",
+  "explanation": "The input 'FXDL Low Rider' refers to the same underlying motorcycle model as the catalog candidate 'Harley-Davidson FXDL Dyna Low Rider'. The term 'Dyna' is part of the official model designation and is standard in the catalog. The input omits 'Dyna' but is a common shorthand used in the market, and both names identify the exact same model with identical displacement, platform, and configuration.",
+  "canonical_model_alias": "FXDL Dyna Low Rider",
+  "configuration_tokens": [],
+  "brand_aliases": [],
+  "model_aliases": [
+    "Dyna Low Rider",
+    "FXDL Dyna Low Rider"
+  ],
+  "status": "SUCCESS",
+  "prompt_version": "motorcycle-candidate-resolution-v4",
+  "model": "qwen-flash",
+  "make": "Harley-Davidson",
+  "model_name": "FXDL Low Rider"
+}

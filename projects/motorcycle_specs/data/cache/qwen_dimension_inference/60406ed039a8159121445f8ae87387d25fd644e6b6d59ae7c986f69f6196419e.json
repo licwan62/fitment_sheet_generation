@@ -1,0 +1,16 @@
+{
+  "decision": "INFER|UNKNOWN",
+  "confidence": "MEDIUM|LOW",
+  "length_mm": null,
+  "width_mm": null,
+  "height_mm": null,
+  "wheelbase_mm": null,
+  "seat_height_mm": null,
+  "ground_clearance_mm": null,
+  "explanation": "The Hyosung LT160 is a lightweight motorcycle model, but specific dimensions vary significantly across model years and markets. Without access to an official catalog or verified specifications for the exact variant, accurate dimension estimation cannot be reliably made. Therefore, dimensions are marked as unknown.",
+  "status": "SUCCESS",
+  "prompt_version": "motorcycle-dimension-inference-v1",
+  "model": "qwen-flash",
+  "make": "Hyosung",
+  "model_name": "LT160"
+}

@@ -1,0 +1,16 @@
+{
+  "decision": "UNKNOWN",
+  "confidence": "LOW",
+  "length_mm": null,
+  "width_mm": null,
+  "height_mm": null,
+  "wheelbase_mm": null,
+  "seat_height_mm": null,
+  "ground_clearance_mm": null,
+  "explanation": "The 'XLC' model is not a recognized Harley-Davidson motorcycle model. Harley-Davidson has models such as the XLH, XLT, and Sportster series, but 'XLC' does not correspond to any known production model. Without clear model identity or additional context (e.g., year, variant), dimensions cannot be reliably inferred.",
+  "status": "SUCCESS",
+  "prompt_version": "motorcycle-dimension-inference-v1",
+  "model": "qwen-flash",
+  "make": "Harley-Davidson",
+  "model_name": "XLC"
+}

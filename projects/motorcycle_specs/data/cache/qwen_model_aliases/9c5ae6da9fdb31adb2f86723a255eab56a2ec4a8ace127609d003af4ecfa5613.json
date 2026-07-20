@@ -1,0 +1,21 @@
+{
+  "decision": "MATCH",
+  "selected_candidate": "Harley-Davidson FLTRX Road Glide Custom",
+  "confidence": "HIGH",
+  "match_basis": "MARKET_ALIAS",
+  "explanation": "FLTRX Road Glide is a specific model designation for the Road Glide Custom variant in Harley-Davidson's catalog. The 'Custom' suffix is a known market configuration label for this model, and the base model identity (FLTRX Road Glide) matches exactly. The candidate title includes the full model designation with the correct displacement and configuration.",
+  "canonical_model_alias": "FLTRX Road Glide Custom",
+  "configuration_tokens": [
+    "Custom"
+  ],
+  "brand_aliases": [],
+  "model_aliases": [
+    "Road Glide Custom",
+    "FLTRX Road Glide Custom"
+  ],
+  "status": "SUCCESS",
+  "prompt_version": "motorcycle-candidate-resolution-v4",
+  "model": "qwen-flash",
+  "make": "Harley-Davidson",
+  "model_name": "FLTRX Road Glide"
+}

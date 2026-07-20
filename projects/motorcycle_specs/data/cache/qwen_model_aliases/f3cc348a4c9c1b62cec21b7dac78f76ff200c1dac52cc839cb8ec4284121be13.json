@@ -1,0 +1,21 @@
+{
+  "decision": "MATCH",
+  "selected_candidate": "Harley-Davidson XLH 883 Sportster 883 Hugger",
+  "confidence": "HIGH",
+  "match_basis": "SAME_NAME",
+  "explanation": "The input model 'XLH883HUG Sportster 883 Hugger' is a direct variant of the catalog candidate 'Harley-Davidson XLH 883 Sportster 883 Hugger', with the same displacement (883), model code (XLH), and name (Hugger). The absence of the 'HUG' suffix in the candidate is due to standard catalog formatting; 'HUG' is a known market or configuration label for the Hugger model, not a distinct model identity. The base motorcycle is identical.",
+  "canonical_model_alias": "XLH 883 Sportster 883 Hugger",
+  "configuration_tokens": [
+    "Hugger"
+  ],
+  "brand_aliases": [],
+  "model_aliases": [
+    "883 Sportster 883 Hugger",
+    "XLH 883 Sportster 883 Hugger"
+  ],
+  "status": "SUCCESS",
+  "prompt_version": "motorcycle-candidate-resolution-v4",
+  "model": "qwen-flash",
+  "make": "Harley-Davidson",
+  "model_name": "XLH883HUG Sportster 883 Hugger"
+}

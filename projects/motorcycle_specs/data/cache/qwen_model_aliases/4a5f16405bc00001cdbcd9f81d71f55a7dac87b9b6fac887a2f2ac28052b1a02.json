@@ -1,0 +1,16 @@
+{
+  "decision": "NO_MATCH",
+  "selected_candidate": "",
+  "confidence": "HIGH",
+  "match_basis": "NONE",
+  "explanation": "The model OR250 is not a known variant of any listed Husqvarna motorcycle. The candidates include enduro (WR 250), motocross (TE 250R), trail (TXC 250R), and street (Vitpilen 250) models, but none match the OR250 designation. There is no evidence that OR250 refers to a real or historical Husqvarna model in the catalog. The name OR250 does not align with any known naming convention, market alias, abbreviation, or typo for the listed models.",
+  "canonical_model_alias": "",
+  "configuration_tokens": [],
+  "brand_aliases": [],
+  "model_aliases": [],
+  "status": "SUCCESS",
+  "prompt_version": "motorcycle-candidate-resolution-v4",
+  "model": "qwen-flash",
+  "make": "Husqvarna",
+  "model_name": "OR250"
+}

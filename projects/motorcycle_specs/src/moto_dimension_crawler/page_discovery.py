@@ -9,6 +9,35 @@ from .models import InputRecord
 from .normalizer import compact_name, normalize_name, number_tokens, word_tokens
 
 
+class BrandPageLookup:
+    """Cache the expensive full-index brand filter across models of one make."""
+
+    def __init__(self, index: list[dict]):
+        self._pages = [
+            (
+                page,
+                compact_name(
+                    page.get("brand_guess", "") + " "
+                    + page.get("page_title", "") + " "
+                    + page.get("page_url", "")
+                ),
+            )
+            for page in index
+        ]
+        self._cache: dict[tuple[str, ...], list[dict]] = {}
+
+    def pages_for(self, make: str, aliases: list[str] | None = None) -> list[dict]:
+        variants = tuple(sorted({
+            compact_name(value) for value in (make, *(aliases or [])) if compact_name(value)
+        }))
+        if variants not in self._cache:
+            self._cache[variants] = [
+                page for page, haystack in self._pages
+                if any(variant in haystack for variant in variants)
+            ]
+        return self._cache[variants]
+
+
 def targeted_pages(record: InputRecord, index: list[dict], model_aliases: list[str] | None = None,
                    ignored_model_words: list[str] | None = None,
                    brand_aliases: list[str] | None = None) -> list[dict]:

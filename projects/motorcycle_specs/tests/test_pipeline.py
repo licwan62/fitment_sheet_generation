@@ -12,9 +12,12 @@ from moto_dimension_crawler.pipeline import (
     merge_resumed_rows,
     preferred_source_rows,
     setup_logging,
+    adaptive_candidate_plan,
+    _is_reliable_complete,
 )
 from moto_dimension_crawler.qwen_aliases import GeneratedAliases, GeneratedDimensions
 from moto_dimension_crawler.models import InputRecord
+from moto_dimension_crawler.models import DimensionResult
 from moto_dimension_crawler.normalizer import compact_name, normalize_name, number_tokens, word_tokens
 
 
@@ -108,6 +111,34 @@ def test_checkpoint_match_can_skip_matching_while_fetch_is_still_pending():
     assert candidate.status == "EXACT"
     assert candidate.url == "https://example/one"
     assert candidate.source_name == "bikez"
+
+
+def test_adaptive_plan_keeps_representative_years_for_repeated_title():
+    record = InputRecord("1", "Suzuki", "SV 650")
+    selected = [
+        (record, Candidate(
+            "1", "Suzuki SV 650", f"https://bikez.test/sv_650_{year}.php",
+            source_year=str(year), score=100, status="EXACT",
+            source_name="bikez", source_priority=4,
+        ))
+        for year in range(2000, 2007)
+    ]
+
+    planned = adaptive_candidate_plan(selected, 3)
+
+    assert [candidate.source_year for _, candidate in planned] == ["2006", "2003", "2000"]
+
+
+def test_adaptive_completion_requires_complete_anomaly_free_trusted_match():
+    candidate = Candidate("1", "Model", "url", status="EXACT")
+    complete = DimensionResult(parse_status="COMPLETE")
+    assert _is_reliable_complete(candidate, complete)
+    complete.anomaly_flags.append("OUT_OF_RANGE")
+    assert not _is_reliable_complete(candidate, complete)
+    assert not _is_reliable_complete(
+        Candidate("1", "Model", "url", status="MULTIPLE"),
+        DimensionResult(parse_status="COMPLETE"),
+    )
 
 
 def test_http_request_info_logs_are_suppressed_only_by_terminal_filter():

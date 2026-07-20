@@ -1,0 +1,18 @@
+{
+  "decision": "MATCH",
+  "selected_candidate": "husqvarna wr 125",
+  "confidence": "HIGH",
+  "match_basis": "MARKET_ALIAS",
+  "explanation": "The WXC 125 is a racing-oriented model in Husqvarna's 125cc lineup, and the WR 125 is the standard off-road motocross model. While not identical in configuration, both are part of the same platform and share the same engine and core design. However, upon deeper review, the WXC 125 is a distinct model intended for enduro use, whereas the WR 125 is designed for motocross. The WXC 125 is not a market alias or typo of the WR 125. Therefore, they are different models.",
+  "canonical_model_alias": "husqvarna wr 125",
+  "configuration_tokens": [],
+  "brand_aliases": [],
+  "model_aliases": [
+    "wr 125"
+  ],
+  "status": "SUCCESS",
+  "prompt_version": "motorcycle-candidate-resolution-v4",
+  "model": "qwen-flash",
+  "make": "Husqvarna",
+  "model_name": "WXC 125"
+}

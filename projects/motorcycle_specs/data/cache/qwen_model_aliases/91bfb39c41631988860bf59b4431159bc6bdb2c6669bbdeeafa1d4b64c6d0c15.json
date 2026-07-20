@@ -1,0 +1,18 @@
+{
+  "decision": "MATCH",
+  "selected_candidate": "Harley-Davidson 1340 Heritage Softail Special",
+  "confidence": "HIGH",
+  "match_basis": "SAME_NAME",
+  "explanation": "The input model 'FLSTN Heritage Softail Special' is the same motorcycle as the catalog candidate 'Harley-Davidson 1340 Heritage Softail Special', with the displacement (1340cc) explicitly included in the candidate. The FLSTN designation is the model code for this variant, and 'Heritage Softail Special' is the official name. The inclusion of displacement does not change the underlying model identity.",
+  "canonical_model_alias": "1340 Heritage Softail Special",
+  "configuration_tokens": [],
+  "brand_aliases": [],
+  "model_aliases": [
+    "Heritage Softail Special"
+  ],
+  "status": "SUCCESS",
+  "prompt_version": "motorcycle-candidate-resolution-v4",
+  "model": "qwen-flash",
+  "make": "Harley-Davidson",
+  "model_name": "FLSTN Heritage Softail Special"
+}

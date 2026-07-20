@@ -1,0 +1,20 @@
+{
+  "decision": "MATCH",
+  "selected_candidate": "harley davidson cvo pro street breakout fxse",
+  "confidence": "HIGH",
+  "match_basis": "SAME_NAME",
+  "explanation": "The input model 'FXSE CVO Pro Street Breakout' is a direct variant of the catalog candidate 'harley davidson cvo pro street breakout fxse', with identical displacement, configuration, and model lineage. The FXSE suffix denotes the specific engine and model configuration, and the name matches exactly in content and order, with only case variation.",
+  "canonical_model_alias": "cvo pro street breakout fxse",
+  "configuration_tokens": [
+    "fxse"
+  ],
+  "brand_aliases": [],
+  "model_aliases": [
+    "cvo pro street breakout fxse"
+  ],
+  "status": "SUCCESS",
+  "prompt_version": "motorcycle-candidate-resolution-v4",
+  "model": "qwen-flash",
+  "make": "Harley-Davidson",
+  "model_name": "FXSE CVO Pro Street Breakout"
+}

@@ -1,0 +1,20 @@
+{
+  "decision": "MATCH",
+  "selected_candidate": "indian pursuit limited with 112 package",
+  "confidence": "HIGH",
+  "match_basis": "SAME_NAME",
+  "explanation": "The input 'Pursuit Limited 112' directly matches the catalog candidate 'indian pursuit limited with 112 package' in model name and displacement, with only minor casing and phrasing differences. The '112 package' refers to the 112 cubic inch engine, confirming identity.",
+  "canonical_model_alias": "pursuit limited with 112 package",
+  "configuration_tokens": [
+    "112 package"
+  ],
+  "brand_aliases": [],
+  "model_aliases": [
+    "pursuit limited with 112 package"
+  ],
+  "status": "SUCCESS",
+  "prompt_version": "motorcycle-candidate-resolution-v4",
+  "model": "qwen-flash",
+  "make": "Indian",
+  "model_name": "Pursuit Limited 112"
+}

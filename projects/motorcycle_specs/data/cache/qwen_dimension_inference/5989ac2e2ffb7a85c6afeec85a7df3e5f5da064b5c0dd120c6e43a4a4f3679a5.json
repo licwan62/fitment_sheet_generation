@@ -1,0 +1,16 @@
+{
+  "decision": "INFER|UNKNOWN",
+  "confidence": "LOW",
+  "length_mm": null,
+  "width_mm": null,
+  "height_mm": null,
+  "wheelbase_mm": null,
+  "seat_height_mm": null,
+  "ground_clearance_mm": null,
+  "explanation": "Husqvarna HUV 4210 E is not a recognized motorcycle model; it may be a misidentification or a non-motorcycle product (e.g., a utility vehicle or industrial machine). Without clear model confirmation or official specifications, dimensions cannot be reliably inferred. No known Husqvarna motorcycle matches this designation.",
+  "status": "SUCCESS",
+  "prompt_version": "motorcycle-dimension-inference-v1",
+  "model": "qwen-flash",
+  "make": "Husqvarna",
+  "model_name": "HUV 4210 E"
+}

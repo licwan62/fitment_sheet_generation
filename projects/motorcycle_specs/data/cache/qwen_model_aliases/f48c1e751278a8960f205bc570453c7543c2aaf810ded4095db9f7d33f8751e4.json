@@ -1,0 +1,18 @@
+{
+  "decision": "MATCH",
+  "selected_candidate": "FXRDG Disc \n      Glide",
+  "confidence": "HIGH",
+  "match_basis": "MARKET_ALIAS",
+  "explanation": "FXDG Disc Glide is a market-specific naming variant of the FXRDG Disc Glide, with 'FXDG' and 'FXRDG' representing the same model line. The difference in the model code is due to a known regional or catalog variation, not a different motorcycle.",
+  "canonical_model_alias": "FXRDG Disc Glide",
+  "configuration_tokens": [],
+  "brand_aliases": [],
+  "model_aliases": [
+    "FXRDG Disc Glide"
+  ],
+  "status": "SUCCESS",
+  "prompt_version": "motorcycle-candidate-resolution-v4",
+  "model": "qwen-flash",
+  "make": "Harley-Davidson",
+  "model_name": "FXDG Disc Glide"
+}

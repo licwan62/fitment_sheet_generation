@@ -1,0 +1,20 @@
+{
+  "decision": "MATCH",
+  "selected_candidate": "husaberg fs 650 e",
+  "confidence": "HIGH",
+  "match_basis": "MARKET_ALIAS",
+  "explanation": "The input 'FS650C' is a variant of the Husaberg FS 650 E, where 'C' likely denotes a market-specific configuration or trim level (e.g., European or custom), consistent with known regional naming practices. The core model identity (FS 650 E) matches exactly with the candidate.",
+  "canonical_model_alias": "fs 650 e",
+  "configuration_tokens": [
+    "c"
+  ],
+  "brand_aliases": [],
+  "model_aliases": [
+    "fs 650 e"
+  ],
+  "status": "SUCCESS",
+  "prompt_version": "motorcycle-candidate-resolution-v4",
+  "model": "qwen-flash",
+  "make": "Husaberg",
+  "model_name": "FS650C"
+}

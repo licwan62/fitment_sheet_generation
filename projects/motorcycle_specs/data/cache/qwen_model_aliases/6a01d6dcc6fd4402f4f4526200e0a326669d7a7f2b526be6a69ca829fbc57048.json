@@ -1,0 +1,19 @@
+{
+  "decision": "MATCH",
+  "selected_candidate": "Harley-Davidson pan america 1250",
+  "confidence": "HIGH",
+  "match_basis": "SAME_NAME",
+  "explanation": "The input model 'RA1250 Pan America 1250' refers to the same motorcycle as the catalog candidate 'Harley-Davidson pan america 1250', with 'RA1250' being a model code or internal designation. The name 'Pan America 1250' is the standard catalog name, and the manufacturer prefix is consistent across all candidates.",
+  "canonical_model_alias": "pan america 1250",
+  "configuration_tokens": [],
+  "brand_aliases": [],
+  "model_aliases": [
+    "america 1250",
+    "pan america 1250"
+  ],
+  "status": "SUCCESS",
+  "prompt_version": "motorcycle-candidate-resolution-v4",
+  "model": "qwen-flash",
+  "make": "Harley-Davidson",
+  "model_name": "RA1250 Pan America 1250"
+}

@@ -1,0 +1,19 @@
+{
+  "decision": "MATCH",
+  "selected_candidate": "Harley-Davidson XLH 900 Sportster",
+  "confidence": "HIGH",
+  "match_basis": "SAME_NAME",
+  "explanation": "The input model 'XLH900' directly matches the catalog candidate 'Harley-Davidson XLH 900 Sportster' in name and displacement. The XLH series is a known Harley-Davidson Sportster variant from the 1970s, and the 900 designation confirms identical displacement. No configuration or market variation alters the core identity.",
+  "canonical_model_alias": "XLH 900 Sportster",
+  "configuration_tokens": [],
+  "brand_aliases": [],
+  "model_aliases": [
+    "900 Sportster",
+    "XLH 900 Sportster"
+  ],
+  "status": "SUCCESS",
+  "prompt_version": "motorcycle-candidate-resolution-v4",
+  "model": "qwen-flash",
+  "make": "Harley-Davidson",
+  "model_name": "XLH900"
+}

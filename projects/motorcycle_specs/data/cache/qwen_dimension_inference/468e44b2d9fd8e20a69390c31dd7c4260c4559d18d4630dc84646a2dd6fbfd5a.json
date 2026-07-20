@@ -1,0 +1,16 @@
+{
+  "decision": "INFER|UNKNOWN",
+  "confidence": "LOW",
+  "length_mm": null,
+  "width_mm": null,
+  "height_mm": null,
+  "wheelbase_mm": null,
+  "seat_height_mm": null,
+  "ground_clearance_mm": null,
+  "explanation": "Husaberg FC470 is a vintage motocross motorcycle from the early 2000s. Exact dimensions are not reliably documented in public sources, and variations across model years (2001–2005) and markets make precise inference uncertain. Without access to original factory specifications or verified physical measurements, dimensions cannot be confidently estimated.",
+  "status": "SUCCESS",
+  "prompt_version": "motorcycle-dimension-inference-v1",
+  "model": "qwen-flash",
+  "make": "Husaberg",
+  "model_name": "FC470"
+}

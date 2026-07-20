@@ -1,0 +1,20 @@
+{
+  "decision": "MATCH",
+  "selected_candidate": "husaberg fe 550 e",
+  "confidence": "HIGH",
+  "match_basis": "MARKET_ALIAS",
+  "explanation": "FC550 is a market-specific designation for the Husaberg FE 550e Enduro model, with 'FC' being a regional or marketing variant of 'FE'. The displacement (550) and engine type (e) match exactly, confirming identity.",
+  "canonical_model_alias": "fe 550 e",
+  "configuration_tokens": [
+    "Enduro"
+  ],
+  "brand_aliases": [],
+  "model_aliases": [
+    "fe 550 e"
+  ],
+  "status": "SUCCESS",
+  "prompt_version": "motorcycle-candidate-resolution-v4",
+  "model": "qwen-flash",
+  "make": "Husaberg",
+  "model_name": "FC550"
+}

@@ -1,0 +1,19 @@
+{
+  "decision": "MATCH",
+  "selected_candidate": "Harley-Davidson Breakout 117",
+  "confidence": "HIGH",
+  "match_basis": "SAME_NAME",
+  "explanation": "The input 'FXBB Breakout 117' is the official model designation for the Harley-Davidson Breakout 117, and 'Harley-Davidson Breakout 117' is the canonical catalog title. The FXBB code is a factory model identifier that corresponds directly to this model.",
+  "canonical_model_alias": "Breakout 117",
+  "configuration_tokens": [],
+  "brand_aliases": [],
+  "model_aliases": [
+    "117",
+    "Breakout 117"
+  ],
+  "status": "SUCCESS",
+  "prompt_version": "motorcycle-candidate-resolution-v4",
+  "model": "qwen-flash",
+  "make": "Harley-Davidson",
+  "model_name": "FXBB Breakout 117"
+}

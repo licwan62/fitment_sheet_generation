@@ -1,0 +1,20 @@
+{
+  "decision": "MATCH",
+  "selected_candidate": "Softail Low Rider S 117 FXLRS",
+  "confidence": "HIGH",
+  "match_basis": "SAME_NAME",
+  "explanation": "The input 'FXLRST Low Rider ST 117' is a variant of the 'Softail Low Rider S 117 FXLRS' model, with 'ST' likely referring to the same model's designation in certain markets or configurations. The displacement '117' and model code 'FXLRS' match exactly, confirming it is the same underlying motorcycle.",
+  "canonical_model_alias": "Softail Low Rider S 117 FXLRS",
+  "configuration_tokens": [
+    "ST"
+  ],
+  "brand_aliases": [],
+  "model_aliases": [
+    "Softail Low Rider S 117 FXLRS"
+  ],
+  "status": "SUCCESS",
+  "prompt_version": "motorcycle-candidate-resolution-v4",
+  "model": "qwen-flash",
+  "make": "Harley-Davidson",
+  "model_name": "FXLRST Low Rider ST 117"
+}

@@ -1,0 +1,16 @@
+{
+  "decision": "INFER|UNKNOWN",
+  "confidence": "MEDIUM|LOW",
+  "length_mm": null,
+  "width_mm": null,
+  "height_mm": null,
+  "wheelbase_mm": null,
+  "seat_height_mm": null,
+  "ground_clearance_mm": null,
+  "explanation": "The Italika 125Z is a low-displacement motorcycle model, but specific dimensional data is not consistently documented across sources. Without access to official specifications or verified catalog pages, and due to potential variations by year and market, dimensions cannot be reliably inferred. Therefore, all values are marked as unknown with medium to low confidence.",
+  "status": "SUCCESS",
+  "prompt_version": "motorcycle-dimension-inference-v1",
+  "model": "qwen-flash",
+  "make": "Italika",
+  "model_name": "125Z"
+}

@@ -1,0 +1,16 @@
+{
+  "decision": "UNKNOWN",
+  "confidence": "LOW",
+  "length_mm": null,
+  "width_mm": null,
+  "height_mm": null,
+  "wheelbase_mm": null,
+  "seat_height_mm": null,
+  "ground_clearance_mm": null,
+  "explanation": "Insufficient publicly available data on the Hyosung ST-E3 EVA model; no reliable dimensions found in manufacturer documentation or trusted sources. Model identity and specifications may vary by year and market, making accurate inference uncertain.",
+  "status": "SUCCESS",
+  "prompt_version": "motorcycle-dimension-inference-v1",
+  "model": "qwen-flash",
+  "make": "Hyosung",
+  "model_name": "ST-E3 EVA"
+}
