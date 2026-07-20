@@ -5,7 +5,7 @@ import logging
 import json
 import re
 from collections import defaultdict, deque
-from concurrent.futures import ThreadPoolExecutor, as_completed
+from concurrent.futures import FIRST_COMPLETED, ThreadPoolExecutor, wait
 from dataclasses import asdict
 from pathlib import Path
 
@@ -674,7 +674,7 @@ def run_pipeline(*, input_path: Path, output: Path, config_path: Path, sheet: st
             if fetch_strategy == "adaptive" else sorted(selected, key=_candidate_fetch_order)
         )
         fetch_results: dict[tuple[str, str], tuple[bool, dict | None, str]] = {}
-        fetched_by_url: dict[str, tuple[str | None, dict | None, bool]] = {}
+        fetched_by_url: dict[str, tuple[bool, dict | None, bool]] = {}
         preview_parsed_pages_by_url: dict[str, tuple[dict, DimensionResult]] = {}
         attempted_selected: list[tuple] = []
         fetch_total = len(checkpoint_raw_rows) + len(inferred_rows) + len(planned_selected)
@@ -702,69 +702,97 @@ def run_pipeline(*, input_path: Path, output: Path, config_path: Path, sheet: st
         queues: dict[str, deque] = defaultdict(deque)
         for item in planned_selected:
             queues[item[0].input_id].append(item)
-        active_ids = set(queues)
+        ready_inputs = deque(sorted(queues))
         reported_urls: set[str] = set()
         max_workers = max(1, int(cfg["crawler"].get("max_concurrency", 1)))
-        while active_ids:
-            round_items = [queues[input_id].popleft() for input_id in sorted(active_ids) if queues[input_id]]
-            if not round_items:
-                break
-            new_urls = {
-                candidate.url: candidate
-                for _, candidate in round_items
-                if candidate.url not in fetched_by_url
-            }
-            if new_urls:
-                with ThreadPoolExecutor(max_workers=max_workers, thread_name_prefix="page-fetch") as executor:
-                    futures = {
-                        executor.submit(crawler.fetch, url, force_refetch): url for url in new_urls
-                    }
-                    for future in as_completed(futures):
-                        url = futures[future]
-                        try:
-                            fetched_by_url[url] = future.result()
-                        except Exception as exc:  # keep one worker failure from aborting the run
-                            logging.getLogger(__name__).exception("Fetch worker failed for %s", url)
-                            fetched_by_url[url] = (None, {"error": str(exc)}, False)
+        def record_fetch_result(item: tuple, html: str | None, meta: dict | None,
+                                from_cache: bool) -> bool:
+            """Persist one relationship immediately and return adaptive completion."""
+            nonlocal fetch_position
+            record, candidate = item
+            attempted_selected.append(item)
+            fetch_position += 1
+            fetch_ok = html is not None or fetched_by_url.get(candidate.url, (False, None, False))[0]
+            if candidate.url in reported_urls:
+                fetch_status = "REUSED_URL" if fetch_ok else "REUSED_FETCH_FAILED"
+            elif fetch_ok:
+                fetch_status = "CACHE_HIT" if from_cache else "FETCHED"
+            elif (meta or {}).get("failure_cached"):
+                fetch_status = "FAILURE_CACHE_HIT"
+            else:
+                fetch_status = "FETCH_FAILED"
+            reported_urls.add(candidate.url)
+            fetch_results[(record.input_id, candidate.url)] = (fetch_ok, meta, fetch_status)
+            progress_files.fetch.write({
+                "POSITION": fetch_position, "TOTAL": fetch_total, "COMPLETED_AT": utc_now(),
+                "INPUT_ID": record.input_id, "MAKE": record.make, "MODEL": record.model,
+                "STATUS": fetch_status, "PAGE_TITLE": candidate.title, "SOURCE_URL": candidate.url,
+                "DATA_SOURCE": candidate.source_name, "FETCHED_AT": (meta or {}).get("fetched_at", ""),
+                "CONTENT_HASH": (meta or {}).get("content_hash", ""),
+            })
+            logging.getLogger(__name__).info(
+                "FETCH_PROGRESS=%d/%d, BRAND=%s, MODEL=%s, PAGE_TITLE=%s, STATUS=%s",
+                fetch_position, fetch_total, record.make, record.model, candidate.title, fetch_status,
+            )
+            if fetch_strategy != "adaptive" or not fetch_ok:
+                return False
+            if candidate.url not in preview_parsed_pages_by_url:
+                page_html = html if html is not None else cache.read(candidate.url)
+                page = parse_page(page_html, candidate.url)
+                preview_parsed_pages_by_url[candidate.url] = (page, validate(page["dimensions"], cfg))
+            _, dim = preview_parsed_pages_by_url[candidate.url]
+            return _is_reliable_complete(candidate, dim)
 
-            resolved_this_round: set[str] = set()
-            for record, candidate in round_items:
-                attempted_selected.append((record, candidate))
-                fetch_position += 1
-                html, meta, from_cache = fetched_by_url[candidate.url]
-                fetch_ok = html is not None
-                if candidate.url in reported_urls:
-                    fetch_status = "REUSED_URL" if fetch_ok else "REUSED_FETCH_FAILED"
-                elif fetch_ok:
-                    fetch_status = "CACHE_HIT" if from_cache else "FETCHED"
-                elif (meta or {}).get("failure_cached"):
-                    fetch_status = "FAILURE_CACHE_HIT"
-                else:
-                    fetch_status = "FETCH_FAILED"
-                reported_urls.add(candidate.url)
-                fetch_results[(record.input_id, candidate.url)] = (fetch_ok, meta, fetch_status)
-                progress_files.fetch.write({
-                    "POSITION": fetch_position, "TOTAL": fetch_total, "COMPLETED_AT": utc_now(),
-                    "INPUT_ID": record.input_id, "MAKE": record.make, "MODEL": record.model,
-                    "STATUS": fetch_status, "PAGE_TITLE": candidate.title, "SOURCE_URL": candidate.url,
-                    "DATA_SOURCE": candidate.source_name, "FETCHED_AT": (meta or {}).get("fetched_at", ""),
-                    "CONTENT_HASH": (meta or {}).get("content_hash", ""),
-                })
-                logging.getLogger(__name__).info(
-                    "FETCH_PROGRESS=%d/%d, BRAND=%s, MODEL=%s, PAGE_TITLE=%s, STATUS=%s",
-                    fetch_position, fetch_total, record.make, record.model, candidate.title, fetch_status,
+        future_to_url = {}
+        inflight_by_url = {}
+        waiters_by_url: dict[str, list[tuple]] = defaultdict(list)
+        with ThreadPoolExecutor(max_workers=max_workers, thread_name_prefix="page-fetch") as executor:
+            while ready_inputs or future_to_url:
+                while ready_inputs and len(future_to_url) < max_workers:
+                    input_id = ready_inputs.popleft()
+                    if not queues[input_id]:
+                        continue
+                    item = queues[input_id].popleft()
+                    _, candidate = item
+                    if candidate.url in fetched_by_url:
+                        fetch_ok, meta, from_cache = fetched_by_url[candidate.url]
+                        resolved = record_fetch_result(item, None, meta, from_cache)
+                        if not resolved and queues[input_id]:
+                            ready_inputs.append(input_id)
+                    elif candidate.url in inflight_by_url:
+                        waiters_by_url[candidate.url].append(item)
+                    else:
+                        future = executor.submit(crawler.fetch, candidate.url, force_refetch)
+                        future_to_url[future] = candidate.url
+                        inflight_by_url[candidate.url] = future
+                        waiters_by_url[candidate.url].append(item)
+
+                if not future_to_url:
+                    continue
+                completed, _ = wait(
+                    tuple(future_to_url), timeout=15, return_when=FIRST_COMPLETED,
                 )
-                if fetch_strategy == "adaptive" and fetch_ok:
-                    if candidate.url not in preview_parsed_pages_by_url:
-                        page = parse_page(html, candidate.url)
-                        preview_parsed_pages_by_url[candidate.url] = (page, validate(page["dimensions"], cfg))
-                    _, dim = preview_parsed_pages_by_url[candidate.url]
-                    if _is_reliable_complete(candidate, dim):
-                        resolved_this_round.add(record.input_id)
-
-            for input_id in list(active_ids):
-                if input_id in resolved_this_round or not queues[input_id]:
-                    active_ids.discard(input_id)
+                if not completed:
+                    logging.getLogger(__name__).info(
+                        "FETCH_HEARTBEAT=%d/%d, INFLIGHT=%d, READY_INPUTS=%d, UNIQUE_URLS=%d",
+                        fetch_position, fetch_total, len(future_to_url),
+                        len(ready_inputs), len(fetched_by_url),
+                    )
+                    continue
+                for future in completed:
+                    url = future_to_url.pop(future)
+                    inflight_by_url.pop(url, None)
+                    try:
+                        html, meta, from_cache = future.result()
+                    except Exception as exc:  # unexpected worker bugs remain isolated
+                        logging.getLogger(__name__).exception("Fetch worker failed for %s", url)
+                        html, meta, from_cache = None, {"error": str(exc)}, False
+                    fetched_by_url[url] = (html is not None, meta, from_cache)
+                    for item in waiters_by_url.pop(url, []):
+                        record, _ = item
+                        resolved = record_fetch_result(item, html, meta, from_cache)
+                        if not resolved and queues[record.input_id]:
+                            ready_inputs.append(record.input_id)
 
         attempted_keys = {(record.input_id, candidate.url) for record, candidate in attempted_selected}
         adaptive_skipped_count = 0
