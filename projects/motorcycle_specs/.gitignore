@@ -6,4 +6,3 @@ __pycache__/
 .env
 data/
 !output/.gitkeep
-migration_packages/
