@@ -4,8 +4,6 @@ __pycache__/
 .pytest_cache/
 .venv/
 .env
-data/cache/html/*
-data/cache/metadata/*
-data/checkpoints/*
-data/index/*
+data/
 !output/.gitkeep
+migration_packages/
