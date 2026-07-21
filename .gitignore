@@ -1,2 +1,1 @@
-
-migration_packages/
+migration_packages/*.tar.gz
