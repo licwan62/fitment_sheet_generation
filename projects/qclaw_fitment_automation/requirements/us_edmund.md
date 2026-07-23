@@ -2,6 +2,29 @@
 
 本任务用于补强当前批次的车型全量表。
 
+<!-- fitment-data-contract
+full_table:
+  columns:
+    - MAKE
+    - MODEL
+    - 代际
+    - YEAR
+    - 结构
+    - 版本
+    - 分类
+    - CAB
+    - BED
+    - L-IN
+    - W-IN
+    - H-IN
+    - 参考车型
+    - 备注
+    - 迭代状态
+  auto_empty_columns: []
+subseries_match:
+  enabled: false
+-->
+
 本任务不再使用旧版全量表字段、自动字段和子车系匹配表。
 车型范围、拆分方式和需要查询的数据，以以下两项为准：
 

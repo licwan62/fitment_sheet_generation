@@ -1,1 +1,3 @@
 migration_packages/*.tar.gz
+__pycache__/
+*.pyc

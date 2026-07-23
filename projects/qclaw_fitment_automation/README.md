@@ -38,9 +38,11 @@ powershell -NoProfile -ExecutionPolicy Bypass -File ".\run_from_config.ps1" -Con
 - `runtime`：定义最大轮数、浏览器、失败后是否继续以及只处理哪些 TSV
 - `runtime.input_files`：定义输入文件通配符、按名称或修改时间排序，以及是否跳过日志中已成功的文件
 - `data_contract.requirement`：requirement 文件地址；相对路径按 config.yaml 所在目录解析，也可以写绝对路径
-- `data_contract.full_table`：全量 TSV 的列顺序和必须留空的自动列
-- `data_contract.subseries_match`：子车系匹配表的列顺序和自动列
 - `data_contract.instructions`：附加到每轮提示中的全量数据约束
+
+全量表固定字段、自动留空字段及是否输出子车系匹配表，只在 requirement
+文件的 `<!-- fitment-data-contract ... -->` 区块中配置，不要在
+`config.yaml` 中重复设置。字段定义重复出现在 config 时会直接报错，防止两处配置漂移。
 
 遍历示例：
 

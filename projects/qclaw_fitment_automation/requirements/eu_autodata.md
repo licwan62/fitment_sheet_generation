@@ -1,5 +1,59 @@
 # Ktype、尺寸组与车型年份表规则
 
+<!-- fitment-data-contract
+full_table:
+  columns:
+    - 主车型
+    - 年份区间
+    - 结构
+    - 对应尺码
+    - 品牌
+    - 前台车型
+    - 排序依据车型
+    - 子车系
+    - 分类
+    - 版本
+    - 门数
+    - 代际
+    - 区间最小年份
+    - 区间最大年份
+    - max_length_in
+    - max_width_in
+    - max_height_in
+    - max_length_cm
+    - max_width_cm
+    - max_height_cm
+    - 驾驶室类型
+    - 货斗长度_ft
+    - 长度余量
+    - 无尺码原因
+    - 参考车型
+    - 备注
+    - 迭代状态
+  auto_empty_columns:
+    - 对应尺码
+    - 排序依据车型
+    - 子车系
+    - 区间最小年份
+    - 区间最大年份
+    - max_length_cm
+    - max_width_cm
+    - max_height_cm
+    - 长度余量
+    - 无尺码原因
+subseries_match:
+  enabled: true
+  columns:
+    - Year
+    - 主车型
+    - 结构
+    - 版本
+    - 候选车型
+    - 匹配数量
+  auto_empty_columns:
+    - 匹配数量
+-->
+
 ## 一、数据模型
 
 本任务使用三个相互关联的数据表：

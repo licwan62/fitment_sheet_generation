@@ -1,4 +1,4 @@
-[CmdletBinding(PositionalBinding = $false)]
+﻿[CmdletBinding(PositionalBinding = $false)]
 param(
     [string]$ConfigPath = "",
     [ValidateSet("", "work", "check", "dry_run")]
@@ -74,16 +74,20 @@ if ($projects.Count -eq 0) { throw "遍历结果为空，请检查 workspace.tra
 $layout = $config.project_layout
 $runtime = $config.runtime
 $contract = $config.data_contract
-$requirementPath = Resolve-ConfigPath ([string]$contract.requirement) $configDir
+$requirementPath = [string]$config._meta.requirement_path
 if (-not (Test-Path -LiteralPath $requirementPath -PathType Leaf)) { throw "requirement 文件不存在: $requirementPath" }
 
 $fullColumns = @($contract.full_table.columns | ForEach-Object { [string]$_ })
-$subseriesColumns = @($contract.subseries_match.columns | ForEach-Object { [string]$_ })
+$subseriesEnabled = [bool](Get-Value $contract.subseries_match "enabled" $false)
+$subseriesColumns = if ($subseriesEnabled) { @($contract.subseries_match.columns | ForEach-Object { [string]$_ }) } else { @() }
 $oldEnvironment = @{}
 $environmentMap = @{
     FITMENT_TSV_HEADER = $fullColumns -join "`t"
+    FITMENT_AUTO_EMPTY_COLUMNS_DEFINED = "true"
     FITMENT_AUTO_EMPTY_COLUMNS = @($contract.full_table.auto_empty_columns) -join "、"
+    FITMENT_SUBSERIES_ENABLED = $subseriesEnabled.ToString().ToLowerInvariant()
     FITMENT_SUBSERIES_HEADER = $subseriesColumns -join "`t"
+    FITMENT_SUBSERIES_AUTO_EMPTY_COLUMNS_DEFINED = "true"
     FITMENT_SUBSERIES_AUTO_EMPTY_COLUMNS = @($contract.subseries_match.auto_empty_columns) -join "、"
     FITMENT_DATA_INSTRUCTIONS = @($contract.instructions) -join "；"
     FITMENT_INPUT_PATTERN = [string](Get-Value $runtime.input_files "pattern" "*.tsv")
@@ -98,7 +102,7 @@ foreach ($key in $environmentMap.Keys) {
 Write-Host "配置: $resolvedConfig" -ForegroundColor Cyan
 Write-Host "模式: $effectiveMode；项目数: $($projects.Count)" -ForegroundColor Cyan
 Write-Host "Requirement: $requirementPath" -ForegroundColor DarkCyan
-Write-Host "全量表列数: $($fullColumns.Count)；子车系匹配表列数: $($subseriesColumns.Count)" -ForegroundColor DarkCyan
+Write-Host "全量表列数: $($fullColumns.Count)；子车系匹配表: $(if ($subseriesEnabled) { "$($subseriesColumns.Count) 列" } else { "禁用" })" -ForegroundColor DarkCyan
 foreach ($project in $projects) { Write-Host "  - $($project.FullName)" }
 if ($effectiveMode -eq "dry_run") { exit 0 }
 
