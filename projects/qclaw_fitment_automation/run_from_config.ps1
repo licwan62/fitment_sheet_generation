@@ -28,7 +28,7 @@ function Test-AnyPattern {
 }
 
 $resolvedConfig = $ExecutionContext.SessionState.Path.GetUnresolvedProviderPathFromPSPath($ConfigPath)
-$loader = Join-Path $PSScriptRoot "load_fitment_config.py"
+$loader = Join-Path $PSScriptRoot "src\load_fitment_config.py"
 $json = & python $loader $resolvedConfig
 if ($LASTEXITCODE -ne 0) { throw "读取 config.yaml 失败" }
 $config = $json | ConvertFrom-Json

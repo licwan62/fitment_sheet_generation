@@ -90,6 +90,3 @@ data_contract:
     audit_columns:
       - 参考车型
       - 备注
-  instructions:
-    - 不得新增当前 TSV 年份范围外的年代、代际或车型行
-    - 输出顺序必须保持输入 split 第一条到最后一条的边界

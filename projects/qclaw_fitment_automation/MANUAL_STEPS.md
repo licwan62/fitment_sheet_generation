@@ -66,7 +66,7 @@
 在 `D:\Home\Scripts` 下运行：
 
 ```powershell
-python .\projects\qclaw_fitment_automation\merge_final_round_results.py
+python .\projects\qclaw_fitment_automation\src\merge_final_round_results.py
 ```
 
 默认会读取：

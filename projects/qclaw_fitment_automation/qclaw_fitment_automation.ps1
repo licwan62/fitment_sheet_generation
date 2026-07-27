@@ -201,9 +201,9 @@ $ConfiguredTaskRulesReminder = if ($ConfiguredTaskRules) { "`n$ConfiguredTaskRul
 $HeaderReminder = "全量 TSV 表头必须严格使用 requirement 指定的字段顺序：$RequiredTsvHeader。$AutoEmptyReminder$SubseriesReminder$ConfiguredTaskRulesReminder"
 $PhaseOrderReminder = '执行顺序必须固定为：第一阶段先解决数据缺失，优先补齐缺失年份、缺失结构/版本/门数/驾驶室/货斗、缺失尺寸、缺失参考车型等会阻塞成表的数据；第二阶段才解决核对问题，逐年核对参考车型覆盖、尺寸口径和迭代状态。只要仍存在任何数据缺失，不要把主要精力转到核对问题，也不要写全部可入库或本批次完成。回复中的下一步方向请按阶段写：有缺失时写“下一步优先补缺失”，缺失已补齐后再写“下一步优先核对”。'
 $SubseriesOutputItem = if ($SubseriesEnabled) { "；4) 本轮更新后的子车系匹配表" } else { "" }
-$ContinueMessage = '继续补强当前批次，并严格按以下格式回复：1) 更新点；2) 当前批次进度；3) 本轮更新后的全量 TSV（必须是真正更新过的 TSV，不能只写计划或说明，' + $HeaderReminder + '）' + $SubseriesOutputItem + '；5) 下一步优先处理（有数据缺失时必须写下一步优先补缺失，缺失补齐后再写下一步优先核对）；6) 若仍未完成，TSV 代码块外最后一行必须单独输出“推进信号：CONTINUE”；全部完成时最后一行单独输出“推进信号：COMPLETE”。' + $PhaseOrderReminder + '不要新增当前 TSV 范围外的年代、代际或车型行；拆分后的年份合集不得超出原记录年份范围；最终 TSV 顺序必须保持当前 split 第一条到最后一条的边界。不要只描述这一轮将要做什么而不给 TSV，不要连续重复上一轮内容。'
+$ContinueMessage = '继续补强当前批次，并严格按以下格式回复：1) 更新点；2) 当前批次进度；3) 本轮更新后的全量 TSV（必须是真正更新过的 TSV，不能只写计划或说明，' + $HeaderReminder + '）' + $SubseriesOutputItem + '；5) 下一步优先处理（有数据缺失时必须写下一步优先补缺失，缺失补齐后再写下一步优先核对）；6) 若仍未完成，TSV 代码块外最后一行必须单独输出“推进信号：CONTINUE”；全部完成时最后一行单独输出“推进信号：COMPLETE”。' + $PhaseOrderReminder + '若输入记录已有年份范围，拆分后的年份合集不得超出该范围；若输入未提供年份，只可补入可靠来源明确支持的生产年份。不得新增输入不存在的 MAKE/MODEL；最终 TSV 顺序必须保持当前 split 第一条到最后一条的边界。不要只描述这一轮将要做什么而不给 TSV，不要连续重复上一轮内容。'
 $MissingSignalsMessage = '你的上一轮回复缺少正常推进信号。请立刻继续当前批次，并严格补齐以下内容：更新点、当前批次进度、本轮更新后的全量 TSV' + $(if ($SubseriesEnabled) { "、本轮更新后的子车系匹配表" } else { "" }) + '、下一步优先处理；如果还没完成，TSV 代码块外最后一行单独输出“推进信号：CONTINUE”；全部完成则输出“推进信号：COMPLETE”。不得只给说明、计划、摘要或重复上一轮文本，必须给一个更新过的全量 TSV。' + $PhaseOrderReminder + $HeaderReminder
-$FullTableRequestMessage = '给我当前批次更新后的完整可替换全量 TSV' + $(if ($SubseriesEnabled) { "，并给出子车系匹配表" } else { "" }) + '。全量 TSV 必须包含未变更、已修改、在当前记录年份范围内拆分后的全部记录；不要只给变化部分、摘要或说明。若仍有数据缺失，先继续补缺失，不要提前转为最终核对或完成。TSV 代码块外最后一行必须输出“推进信号：CONTINUE”或“推进信号：COMPLETE”。不要新增当前 TSV 范围外的年代、代际或车型行，输出顺序必须保持当前 split 第一条到最后一条的边界。' + $PhaseOrderReminder + $HeaderReminder
+$FullTableRequestMessage = '给我当前批次更新后的完整可替换全量 TSV' + $(if ($SubseriesEnabled) { "，并给出子车系匹配表" } else { "" }) + '。全量 TSV 必须包含未变更、已修改，以及按输入已有年份范围（输入无年份时按可靠来源支持的生产年份）拆分后的全部记录；不要只给变化部分、摘要或说明。若仍有数据缺失，先继续补缺失，不要提前转为最终核对或完成。TSV 代码块外最后一行必须输出“推进信号：CONTINUE”或“推进信号：COMPLETE”。不得新增输入不存在的 MAKE/MODEL，输出顺序必须保持当前 split 第一条到最后一条的边界。' + $PhaseOrderReminder + $HeaderReminder
 $CompletionFixMessage = '你刚才给了完成信号，但当前回复没有可直接入库的完整全量 TSV' + $(if ($SubseriesEnabled) { "、缺少子车系匹配表" } else { "" }) + '，或仍可能存在未先解决的数据缺失。若本批次其实还没完成，请先补齐数据缺失，再做核对，并带上：更新点、当前批次进度、本轮更新后的全量 TSV' + $(if ($SubseriesEnabled) { "、本轮更新后的子车系匹配表" } else { "" }) + '、下一步优先处理，并在 TSV 代码块外最后一行输出“推进信号：CONTINUE”；确认全部完成才输出“推进信号：COMPLETE”。' + $PhaseOrderReminder + $HeaderReminder
 
 function Invoke-XB {
@@ -1118,14 +1118,34 @@ function Save-TaskCheckpoint {
         [int]$SendCount,
         [string]$OutputFile,
         [string]$ConversationUrl,
-        [string]$Remarks = ""
+        [string]$Remarks = "",
+        [object[]]$ConversationLineage
     )
 
     if (-not (Test-Path -LiteralPath $CheckpointDir)) {
         New-Item -ItemType Directory -Path $CheckpointDir -Force | Out-Null
     }
+    $existing = Get-TaskCheckpoint -Task $Task
+    $lineage = @(
+        if ($PSBoundParameters.ContainsKey("ConversationLineage")) {
+            $ConversationLineage | Where-Object { $null -ne $_ }
+        }
+        elseif ($existing -and $existing.PSObject.Properties.Name -contains "conversation_lineage") {
+            $existing.conversation_lineage | Where-Object { $null -ne $_ }
+        }
+    )
+    if ($lineage.Count -eq 0 -and (Test-ChatGPTConversationUrl -Url $ConversationUrl)) {
+        $lineage = @([pscustomobject]@{
+            branch_index = 0
+            url = $ConversationUrl
+            parent_url = ""
+            trigger = "initial"
+            round = $Round
+            created_at = Get-Date -Format "yyyy-MM-dd HH:mm:ss"
+        })
+    }
     $checkpoint = [ordered]@{
-        version = 1
+        version = 2
         task_id = $Task.TaskId
         task_name = $Task.DisplayName
         vehicle = $Task.DisplayName
@@ -1136,6 +1156,8 @@ function Save-TaskCheckpoint {
         send_count = $SendCount
         output_file = $OutputFile
         conversation_url = $ConversationUrl
+        conversation_branch_count = [Math]::Max(0, $lineage.Count - 1)
+        conversation_lineage = $lineage
         remarks = $Remarks
         updated_at = Get-Date -Format "yyyy-MM-dd HH:mm:ss"
     }
@@ -1646,6 +1668,8 @@ function Get-ChatGPTState {
   const isGenerating = !!(directStop && !directStop.disabled && isVisible(directStop)) ||
     buttons.some(b => /stop|停止/.test(buttonText(b)) && !b.disabled && isVisible(b));
   const pageText = document.body.innerText || '';
+  const conversationLimitPattern = /maximum length for this (conversation|chat)|conversation.{0,40}(maximum length|length limit|too long)|start a new chat to continue|reached.{0,40}(conversation|chat).{0,20}limit|对话.{0,30}(最大长度|长度上限|已达上限|达到上限)|聊天.{0,30}(最大长度|长度上限|已达上限|达到上限)|开始新(聊天|对话).{0,20}继续/i;
+  const conversationLimitReached = conversationLimitPattern.test(pageText);
   const authControls = Array.from(document.querySelectorAll('a, button')).filter(isVisible);
   const hasLoginControl = authControls.some(el => {
     const text = ((el.innerText || '') + ' ' + (el.getAttribute('aria-label') || '')).toLowerCase().trim();
@@ -1658,7 +1682,8 @@ function Get-ChatGPTState {
     isGenerating,
     hasStopButton: isGenerating,
     loggedOut: hasLoginControl || (/log in|sign up|登录|注册/.test(pageText) && !editor),
-    pageError: /something went wrong|network error|页面错误|网络错误|出错了/.test(pageText)
+    pageError: /something went wrong|network error|页面错误|网络错误|出错了/.test(pageText),
+    conversationLimitReached
   };
 })()
 '@
@@ -2142,6 +2167,7 @@ function Wait-ChatGPTConversationIdle {
         $state = Get-ChatGPTState
         $lastState = $state
         if ($state.loggedOut) { throw "ChatGPT 页面显示未登录" }
+        if ($state.conversationLimitReached) { throw "ChatGPT 对话已达到长度上限，需要在新聊天中创建分支" }
         if ($state.pageError) { throw "ChatGPT 页面出现错误提示" }
 
         if (-not $state.isGenerating -and $state.inputReady) {
@@ -2234,6 +2260,98 @@ function Start-ChatGPTNewConversation {
     try { Invoke-XBRun "wait" "--load" "networkidle" | Out-Null } catch { }
 }
 
+function Start-ChatGPTConversationBranch {
+    param([string]$ParentUrl)
+
+    Ensure-ChatGPTActive
+    Write-Host "  对话达到长度上限，正在执行【在新聊天中分支】..." -ForegroundColor Yellow
+    $openMenuScript = @'
+(() => {
+  const visible = el => {
+    if (!el) return false;
+    const style = getComputedStyle(el);
+    const rect = el.getBoundingClientRect();
+    return style.display !== 'none' && style.visibility !== 'hidden' && rect.width > 0 && rect.height > 0;
+  };
+  const textOf = el => ((el.innerText || el.textContent || '') + ' ' + (el.getAttribute('aria-label') || '')).trim();
+  const branchPattern = /branch in new chat|branch to new chat|在新聊天中分支|在新对话中分支|分支到新聊天/i;
+  const direct = Array.from(document.querySelectorAll('button, a, [role="menuitem"]'))
+    .find(el => visible(el) && branchPattern.test(textOf(el)));
+  if (direct) {
+    direct.click();
+    return 'branch-clicked';
+  }
+
+  const turns = Array.from(document.querySelectorAll('article, [data-testid*="conversation-turn"]'));
+  for (const turn of turns.reverse()) {
+    const ownRole = turn.getAttribute('data-message-author-role') || '';
+    const hasUser = ownRole === 'user' || !!turn.querySelector('[data-message-author-role="user"]');
+    const hasAssistant = ownRole === 'assistant' || !!turn.querySelector('[data-message-author-role="assistant"]');
+    if (!hasUser && hasAssistant) continue;
+    turn.dispatchEvent(new MouseEvent('mouseover', { bubbles: true }));
+    turn.dispatchEvent(new MouseEvent('mouseenter', { bubbles: true }));
+    const buttons = Array.from(turn.querySelectorAll('button')).filter(visible);
+    const menu = buttons.reverse().find(button => {
+      const label = textOf(button);
+      const testId = button.getAttribute('data-testid') || '';
+      return /more|更多|操作|actions?/i.test(label) || /more|actions?/i.test(testId);
+    });
+    if (menu) {
+      menu.click();
+      return 'menu-opened';
+    }
+  }
+  return 'not-found';
+})()
+'@
+    $menuResult = [string](Get-XBValue (Invoke-XBRun "eval" $openMenuScript))
+    if ($menuResult -eq "menu-opened") {
+        Start-Sleep -Seconds 1
+        $clickBranchScript = @'
+(() => {
+  const visible = el => {
+    if (!el) return false;
+    const style = getComputedStyle(el);
+    const rect = el.getBoundingClientRect();
+    return style.display !== 'none' && style.visibility !== 'hidden' && rect.width > 0 && rect.height > 0;
+  };
+  const textOf = el => ((el.innerText || el.textContent || '') + ' ' + (el.getAttribute('aria-label') || '')).trim();
+  const pattern = /branch in new chat|branch to new chat|在新聊天中分支|在新对话中分支|分支到新聊天/i;
+  const item = Array.from(document.querySelectorAll('[role="menuitem"], button, a'))
+    .find(el => visible(el) && pattern.test(textOf(el)));
+  if (!item) return false;
+  item.click();
+  return true;
+})()
+'@
+        $branchClicked = Get-XBValue (Invoke-XBRun "eval" $clickBranchScript)
+        if (-not $branchClicked) {
+            throw "已打开消息操作菜单，但没有找到【在新聊天中分支】"
+        }
+    }
+    elseif ($menuResult -ne "branch-clicked") {
+        throw "没有找到最后一条用户消息的【在新聊天中分支】入口"
+    }
+
+    $deadline = (Get-Date).AddSeconds(30)
+    do {
+        Start-Sleep -Seconds 1
+        try {
+            $newUrl = Get-CurrentChatGPTUrl
+            if (
+                (Test-ChatGPTConversationUrl -Url $newUrl) -and
+                -not [string]::Equals($newUrl, $ParentUrl, [StringComparison]::OrdinalIgnoreCase)
+            ) {
+                Write-Host "  已创建新聊天分支: $newUrl" -ForegroundColor Green
+                return $newUrl
+            }
+        }
+        catch { }
+    } while ((Get-Date) -lt $deadline)
+
+    throw "已点击【在新聊天中分支】，但 30 秒内未取得新的对话 URL"
+}
+
 function Send-ChatGPTMessage {
     param(
         [string]$Message,
@@ -2321,6 +2439,15 @@ function Wait-ChatGPTReplyComplete {
     while ((Get-Date) -lt $deadline) {
         $state = Get-ChatGPTState
         if ($state.loggedOut) { return @{ Ok = $false; Status = "登录失效"; Remark = "ChatGPT 页面显示未登录"; Reply = "" } }
+        if ($state.conversationLimitReached) {
+            return @{
+                Ok = $false
+                Status = "对话长度限制"
+                Remark = "ChatGPT 对话已达到长度上限"
+                Reply = ""
+                ConversationLimitReached = $true
+            }
+        }
         if ($state.pageError) { return @{ Ok = $false; Status = "页面错误"; Remark = "页面出现错误提示"; Reply = [string]$state.reply } }
 
         $reply = [string]$state.reply
@@ -2412,6 +2539,66 @@ function Wait-CurrentChatGPTConversationUrl {
         Start-Sleep -Seconds 1
     } while ((Get-Date) -lt $deadline)
     return ""
+}
+
+function Ensure-TaskConversationCapacity {
+    param(
+        $Task,
+        [string]$OutputFile,
+        [int]$Round,
+        [int]$SendCount,
+        [string]$ConversationUrl
+    )
+
+    $state = Get-ChatGPTState
+    if (-not $state.conversationLimitReached) { return $ConversationUrl }
+
+    $parentUrl = Get-CurrentChatGPTUrl
+    if (-not (Test-ChatGPTConversationUrl -Url $parentUrl)) {
+        $parentUrl = $ConversationUrl
+    }
+    if (-not (Test-ChatGPTConversationUrl -Url $parentUrl)) {
+        throw "检测到对话长度上限，但无法取得父对话 URL"
+    }
+
+    $newUrl = Start-ChatGPTConversationBranch -ParentUrl $parentUrl
+    $checkpoint = Get-TaskCheckpoint -Task $Task
+    $lineage = @(
+        if ($checkpoint -and $checkpoint.PSObject.Properties.Name -contains "conversation_lineage") {
+            $checkpoint.conversation_lineage | Where-Object { $null -ne $_ }
+        }
+    )
+    if ($lineage.Count -eq 0) {
+        $lineage += [pscustomobject]@{
+            branch_index = 0
+            url = $parentUrl
+            parent_url = ""
+            trigger = "initial"
+            round = [Math]::Max(1, $Round)
+            created_at = if ($checkpoint -and $checkpoint.updated_at) { [string]$checkpoint.updated_at } else { Get-Date -Format "yyyy-MM-dd HH:mm:ss" }
+        }
+    }
+    $lineage += [pscustomobject]@{
+        branch_index = $lineage.Count
+        url = $newUrl
+        parent_url = $parentUrl
+        trigger = "conversation_length_limit"
+        round = $Round
+        created_at = Get-Date -Format "yyyy-MM-dd HH:mm:ss"
+    }
+
+    Add-Content -LiteralPath $OutputFile -Value @"
+
+--- 对话分支 / Round $Round ---
+触发原因：ChatGPT 对话长度上限
+父对话：$parentUrl
+新分支：$newUrl
+"@ -Encoding UTF8
+    Save-TaskCheckpoint -Task $Task -Status "进行中" -Phase "waiting_reply" `
+        -Round $Round -SendCount $SendCount -OutputFile $OutputFile `
+        -ConversationUrl $newUrl -Remarks "已因对话长度限制自动创建新聊天分支" `
+        -ConversationLineage $lineage
+    return $newUrl
 }
 
 function Test-ChatGPTConversationUrl {
@@ -2538,6 +2725,7 @@ function Process-TSVTask {
     $conversationUrl = ""
     $checkpoint = Get-TaskCheckpoint -Task $Task
     $resumeFromCheckpoint = $false
+    $finishWithoutReplyLoop = $false
     $outputFile = ""
 
     if ($checkpoint -and [string]$checkpoint.status -eq "成功") {
@@ -2573,10 +2761,33 @@ function Process-TSVTask {
             Start-Sleep -Seconds 3
             try { Invoke-XBRun "wait" "--load" "networkidle" | Out-Null } catch { }
             if ([string]$checkpoint.phase -ne "waiting_reply") {
-                $round++
-                Send-TrackedChatGPTMessage -OutputFile $outputFile -Label "checkpoint 续跑到 Round $round" -Message $ContinueMessage
-                $sendCount++
-                Save-TaskCheckpoint -Task $Task -Status "进行中" -Phase "waiting_reply" -Round $round -SendCount $sendCount -OutputFile $outputFile -ConversationUrl $conversationUrl
+                $conversationUrl = Ensure-TaskConversationCapacity -Task $Task -OutputFile $outputFile `
+                    -Round $round -SendCount $sendCount -ConversationUrl $conversationUrl
+                $idleState = Wait-ChatGPTConversationIdle -TimeoutSeconds $MaxReplyWaitSeconds
+                try {
+                    $resumeReply = Copy-LastChatGPTReplyMarkdown -FallbackReply ([string]$idleState.reply)
+                }
+                catch {
+                    Write-Host "  checkpoint 回复读取失败，使用状态文本: $($_.Exception.Message)" -ForegroundColor Yellow
+                    $resumeReply = [string]$idleState.reply
+                }
+                $resumeReply = Format-CapturedReplyMarkdown -Text $resumeReply
+                $resumeHasFullTable = Test-ReplyContainsFullTable -Reply $resumeReply -MinimumRows $minimumFullTableRows
+
+                if ((Test-CompletionSignal -Text $resumeReply) -and $resumeHasFullTable) {
+                    Write-Host "  checkpoint 最后一轮已明确完成；结束留痕，不再发送继续指令。" -ForegroundColor Green
+                    $status = "成功"
+                    $remarks = "恢复时检测到明确批次完成信号且包含完整表"
+                    $finishWithoutReplyLoop = $true
+                }
+                else {
+                    $round++
+                    $resumeMessage = if (Test-CompletionSignal -Text $resumeReply) { $CompletionFixMessage } else { $ContinueMessage }
+                    $resumeLabel = if (Test-CompletionSignal -Text $resumeReply) { "checkpoint 完成信号纠偏到 Round $round" } else { "checkpoint 续跑到 Round $round" }
+                    Send-TrackedChatGPTMessage -OutputFile $outputFile -Label $resumeLabel -Message $resumeMessage
+                    $sendCount++
+                    Save-TaskCheckpoint -Task $Task -Status "进行中" -Phase "waiting_reply" -Round $round -SendCount $sendCount -OutputFile $outputFile -ConversationUrl $conversationUrl
+                }
             }
         }
         elseif ($ConversationMode -eq "new") {
@@ -2599,6 +2810,9 @@ function Process-TSVTask {
             }
 
             Write-Host "  已接管所选对话，检查当前对话是否仍在生成..." -ForegroundColor Gray
+            try { $conversationUrl = Get-CurrentChatGPTUrl } catch { }
+            $conversationUrl = Ensure-TaskConversationCapacity -Task $Task -OutputFile $outputFile `
+                -Round $round -SendCount $sendCount -ConversationUrl $conversationUrl
             $idleState = Wait-ChatGPTConversationIdle -TimeoutSeconds $MaxReplyWaitSeconds
             Write-Host "  对话已空闲，保存当前最后一条回复..." -ForegroundColor Green
             try {
@@ -2610,17 +2824,34 @@ function Process-TSVTask {
             }
             $previousReply = Format-CapturedReplyMarkdown -Text $existingReply
             Add-Content -Path $outputFile -Value "`r`n--- 恢复现场 / 已有回复 ---`r`n$previousReply`r`n" -Encoding UTF8
-            Write-Host "  当前回复已完成并保存，正在发送继续指令..." -ForegroundColor Green
-            Send-TrackedChatGPTMessage -OutputFile $outputFile -Label "存档续跑" -Message $ContinueMessage
-            Write-Host "  继续指令已发送，进入自动推进。" -ForegroundColor Green
-            $sendCount++
             try { $conversationUrl = Get-CurrentChatGPTUrl } catch { }
-            Save-TaskCheckpoint -Task $Task -Status "进行中" -Phase "waiting_reply" -Round $round -SendCount $sendCount -OutputFile $outputFile -ConversationUrl $conversationUrl
+            $existingHasFullTable = Test-ReplyContainsFullTable -Reply $previousReply -MinimumRows $minimumFullTableRows
+            if ((Test-CompletionSignal -Text $previousReply) -and $existingHasFullTable) {
+                Write-Host "  恢复现场最后一轮已明确完成；结束留痕，不再发送继续指令。" -ForegroundColor Green
+                $status = "成功"
+                $remarks = "恢复现场检测到明确批次完成信号且包含完整表"
+                $finishWithoutReplyLoop = $true
+            }
+            else {
+                $resumeMessage = if (Test-CompletionSignal -Text $previousReply) { $CompletionFixMessage } else { $ContinueMessage }
+                $resumeLabel = if (Test-CompletionSignal -Text $previousReply) { "存档完成信号纠偏" } else { "存档续跑" }
+                Write-Host "  当前回复已完成并保存，正在发送后续指令..." -ForegroundColor Green
+                Send-TrackedChatGPTMessage -OutputFile $outputFile -Label $resumeLabel -Message $resumeMessage
+                Write-Host "  后续指令已发送，进入自动推进。" -ForegroundColor Green
+                $sendCount++
+                Save-TaskCheckpoint -Task $Task -Status "进行中" -Phase "waiting_reply" -Round $round -SendCount $sendCount -OutputFile $outputFile -ConversationUrl $conversationUrl
+            }
         }
 
-        while ($true) {
+        while (-not $finishWithoutReplyLoop) {
             Write-Host "  等待第 $round 轮回复完成..." -ForegroundColor Gray
             $wait = Wait-ChatGPTReplyComplete
+            if ($wait.ConversationLimitReached) {
+                $conversationUrl = Ensure-TaskConversationCapacity -Task $Task -OutputFile $outputFile `
+                    -Round $round -SendCount $sendCount -ConversationUrl $conversationUrl
+                Write-Host "  已切换到新聊天分支，继续等待第 $round 轮回复..." -ForegroundColor Cyan
+                continue
+            }
             $reply = Format-CapturedReplyMarkdown -Text ([string]$wait.Reply)
 
             $roundTitle = if ($resumeFromCheckpoint) { "--- Round $round / checkpoint 续跑 ---" } elseif ($round -eq 1 -and $ConversationMode -eq "new") { "--- Round 1 / 首次发送 ---" } elseif ($round -eq 1) { "--- Round 1 / 存档续跑 ---" } else { "--- Round $round / 下一步 ---" }
@@ -2633,22 +2864,6 @@ function Process-TSVTask {
                 $status = $wait.Status
                 $remarks = $wait.Remark
                 break
-            }
-
-            if (Test-ForceNextSignal -Text $reply) {
-                Write-Host "  检测到继续信号，发送 下一步..." -ForegroundColor Yellow
-                if ($nextCount -ge $MaxNextSteps) {
-                    $status = "次数上限终止"
-                    $remarks = "达到最大下一步次数: $MaxNextSteps"
-                    break
-                }
-                $previousReply = $reply
-                $nextCount++
-                $round++
-                Send-TrackedChatGPTMessage -OutputFile $outputFile -Label "继续到 Round $round" -Message $ContinueMessage
-                $sendCount++
-                Save-TaskCheckpoint -Task $Task -Status "进行中" -Phase "waiting_reply" -Round $round -SendCount $sendCount -OutputFile $outputFile -ConversationUrl $conversationUrl
-                continue
             }
 
             $hasFullTable = Test-ReplyContainsFullTable -Reply $reply -MinimumRows $minimumFullTableRows
@@ -2689,6 +2904,22 @@ function Process-TSVTask {
                 $status = "成功"
                 $remarks = "检测到明确批次完成信号且包含完整表"
                 break
+            }
+
+            if (Test-ForceNextSignal -Text $reply) {
+                Write-Host "  检测到继续信号，发送 下一步..." -ForegroundColor Yellow
+                if ($nextCount -ge $MaxNextSteps) {
+                    $status = "次数上限终止"
+                    $remarks = "达到最大下一步次数: $MaxNextSteps"
+                    break
+                }
+                $previousReply = $reply
+                $nextCount++
+                $round++
+                Send-TrackedChatGPTMessage -OutputFile $outputFile -Label "继续到 Round $round" -Message $ContinueMessage
+                $sendCount++
+                Save-TaskCheckpoint -Task $Task -Status "进行中" -Phase "waiting_reply" -Round $round -SendCount $sendCount -OutputFile $outputFile -ConversationUrl $conversationUrl
+                continue
             }
 
             if (-not (Test-ReplyHasRoundProgressSignals -Reply $reply)) {

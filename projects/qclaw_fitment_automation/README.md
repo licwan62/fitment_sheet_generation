@@ -2,6 +2,23 @@
 
 以下命令默认在 PowerShell 中执行。
 
+## 项目结构
+
+```text
+qclaw_fitment_automation/
+├── src/                         # Python 命令行工具与配置加载代码
+├── tests/                       # 不依赖浏览器的 smoke tests
+├── requirements/                # 不同数据源/任务的 requirement
+├── workspaces/                  # 各批次输入、输出、检查点和运行记录
+├── config.yaml                  # 默认运行配置
+├── run_from_config.ps1          # 推荐启动入口
+├── run_automation.bat           # Windows 快捷入口
+├── qclaw_fitment_automation.ps1 # 核心自动化脚本（兼容直接调用）
+└── playwright_browser_bridge.js # Playwright 浏览器桥接
+```
+
+`src` 中的 Python 文件都是可直接执行的 CLI，不要求安装为 Python 包。
+
 ## 推荐：使用 config.yaml 工作
 
 默认入口是 `run_from_config.ps1`，不再要求每次传 `-Project`。它默认读取同目录的 `config.yaml`，且未指定模式时使用 `mode: work`。
@@ -41,9 +58,8 @@ powershell -NoProfile -ExecutionPolicy Bypass -File ".\run_from_config.ps1" -Con
 - `runtime.processing`：选择 `row`（逐行独立对话）或 `file`（整文件独立对话）
 - `runtime.input_files.skip_processed`：是否跳过日志中已成功的整文件任务
 - `data_contract.requirement`：requirement 文件地址；相对路径按 config.yaml 所在目录解析，也可以写绝对路径
-- `data_contract.instructions`：附加到每轮提示中的全量数据约束
 
-全量表固定字段、自动留空字段及是否输出子车系匹配表，只在 requirement
+全量表固定字段、自动留空字段、附加提示约束及是否输出子车系匹配表，只在 requirement
 文件的 `<!-- fitment-data-contract ... -->` 区块中配置，不要在
 `config.yaml` 中重复设置。字段定义重复出现在 config 时会直接报错，防止两处配置漂移。
 
@@ -113,10 +129,25 @@ runtime:
 ```
 
 每轮回复都会先追加到该任务的 Markdown 文本，再更新 JSON checkpoint。checkpoint
-记录任务状态、轮次、发送次数、输出文件和 ChatGPT 对话 URL。脚本重启后会跳过已经
-成功的任务；未完成任务若已取得对话 URL，则自动打开原对话，从断点继续。全部任务
-遍历结束后，`summary.txt` 汇总最终状态。逐行模式下 `conversation.mode` 必须为
-`new`，历史对话续跑由 checkpoint 负责。
+记录任务状态、轮次、发送次数、输出文件、当前 ChatGPT 对话 URL 和对话分支链。
+脚本重启后会跳过已经成功的任务；未完成任务若已取得对话 URL，则自动打开当前分支，
+从断点继续。全部任务遍历结束后，`summary.txt` 汇总最终状态。逐行模式下
+`conversation.mode` 必须为 `new`，历史对话续跑由 checkpoint 负责。
+
+### 对话长度上限与自动分支
+
+检测到 ChatGPT 提示当前对话达到最大长度后，脚本会自动：
+
+1. 从最后一条用户消息执行“在新聊天中分支”。
+2. 等待 ChatGPT 生成不同于父对话的新 `/c/...` URL。
+3. 立即把父对话、新分支、触发轮次和创建时间写入任务 checkpoint。
+4. 在新分支继续等待当前轮回复；脚本重启后也会恢复最新分支。
+
+checkpoint 使用 `version: 2`，其中 `conversation_url` 指向当前分支，
+`conversation_lineage` 按顺序记录根对话和所有后续分支，
+`conversation_branch_count` 记录已创建的分支数量。结果 Markdown 中也会追加
+“对话分支”段落，便于人工审计。如果页面没有提供“在新聊天中分支”入口，脚本会
+明确报错并保留原 checkpoint，不会静默创建一个丢失上下文的空白聊天。
 
 只预览最终选中的文件和拆分后的任务，不打开浏览器：
 
@@ -361,12 +392,12 @@ powershell -NoProfile -ExecutionPolicy Bypass -File ".\qclaw_fitment_automation.
 
 ## 拆分原始 TSV
 
-使用 `split_origin_tsv.py` 可以把一个 TSV 按固定行数拆成多个 `split` 文件。
+使用 `src\split_origin_tsv.py` 可以把一个 TSV 按固定行数拆成多个 `split` 文件。
 
 例如，把项目根目录下的 `full.tsv` 按每份约 `20` 行拆到 `input_sheets` 目录：
 
 ```powershell
-python .\split_origin_tsv.py --origin .\full.tsv --output-dir .\input_sheets --prefix split --chunk-size 20 --write
+python .\src\split_origin_tsv.py --origin .\full.tsv --output-dir .\input_sheets --prefix split --chunk-size 20 --write
 ```
 
 生成的文件名类似：
@@ -389,17 +420,17 @@ split_part_03.tsv
 如果需要覆盖已有的 `split_part_*.tsv` 文件：
 
 ```powershell
-python .\split_origin_tsv.py --origin .\full.tsv --output-dir .\input_sheets --prefix split --chunk-size 20 --write --force
+python .\src\split_origin_tsv.py --origin .\full.tsv --output-dir .\input_sheets --prefix split --chunk-size 20 --write --force
 ```
 
 ## 合并最终 Round 结果
 
-使用 `merge_final_round_results.py` 可以从每个分片对应的最新结果 Markdown 中，提取最后一个包含 TSV 表格的 `--- Round N / 下一步 ---` 或 `--- Round N / 首次发送 ---` 段落，并合并成一个总 TSV。
+使用 `src\merge_final_round_results.py` 可以从每个分片对应的最新结果 Markdown 中，提取最后一个包含 TSV 表格的 `--- Round N / 下一步 ---` 或 `--- Round N / 首次发送 ---` 段落，并合并成一个总 TSV。
 
 最常用命令：
 
 ```powershell
-python .\merge_final_round_results.py --project .\workspaces\0610
+python .\src\merge_final_round_results.py --project .\workspaces\0610
 ```
 
 默认路径：
@@ -428,10 +459,10 @@ python .\merge_final_round_results.py --project .\workspaces\0610
 
 ```powershell
 # 使用项目目录默认路径合并
-python .\merge_final_round_results.py --project .\workspaces\0610
+python .\src\merge_final_round_results.py --project .\workspaces\0610
 
 # 指定输入和输出目录
-python .\merge_final_round_results.py `
+python .\src\merge_final_round_results.py `
   --project .\workspaces\0610 `
   --origin-dir .\input_sheets\my_batch `
   --results-dir .\output_sheets `
@@ -439,12 +470,12 @@ python .\merge_final_round_results.py `
   --log-dir .\output_merged
 
 # 显式指定输出文件路径
-python .\merge_final_round_results.py `
+python .\src\merge_final_round_results.py `
   --output .\output_merged\my_batch_merged.tsv `
   --log .\output_merged\my_batch_merged.log
 
 # 不写表头
-python .\merge_final_round_results.py --no-header
+python .\src\merge_final_round_results.py --no-header
 ```
 
 powershell -NoProfile -ExecutionPolicy Bypass -File ".\qclaw_fitment_automation.ps1" -Project .\workspaces\0604补强 -MaxRounds 100

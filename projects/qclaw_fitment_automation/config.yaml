@@ -59,6 +59,3 @@ data_contract:
   # 尺寸代表年复用功能；启用时字段名必须来自 requirement 的全量表定义。
   dimension_representative:
     enabled: false
-  instructions:
-    - 不得新增当前 TSV 年份范围外的年代、代际或车型行
-    - 输出顺序必须保持输入 split 第一条到最后一条的边界
