@@ -16,7 +16,19 @@ param(
     [Alias("requirement_path", "requirement-path")]
     [string]$RequirementPath = "",
     [string]$ChatGptUrl = "https://chatgpt.com/",
-    [string]$Browser = "openclaw",
+    [ValidateSet("playwright", "openclaw")]
+    [string]$Browser = "playwright",
+    [ValidateSet("new", "manual_resume", "archive_resume")]
+    [string]$ConversationMode = "new",
+    [string]$ConversationArchiveCode = "",
+    [string]$ConversationArchivePath = "",
+    [ValidateSet("file", "row", "vehicle")]
+    [string]$TaskGranularity = "file",
+    [string[]]$VehicleKeyColumns = @("MAKE", "MODEL"),
+    [string[]]$RowLabelColumns = @(),
+    [string]$CheckpointDir = "",
+    [string]$PlaywrightProfilePath = "",
+    [string]$PlaywrightExecutablePath = "",
     [string]$OpenClawCommand = "openclaw.cmd",
     [string]$OpenClawConfigPath = "",
     [string]$OpenClawGatewayUrl = "",
@@ -27,6 +39,7 @@ param(
     [int]$OperationDelay = 2,
     [int]$LargePayloadDelay = 8,
     [int]$PostReplyDelay = 2,
+    [Alias("max-reply-wait-seconds", "max_reply_wait_seconds")]
     [int]$MaxReplyWaitSeconds = 900,
     [int]$StuckGeneratingGraceSeconds = 35,
     [int]$XBrowserRetryCount = 2,
@@ -36,6 +49,7 @@ param(
     [string[]]$OnlyFiles = @(),
     [switch]$ConfigureXBrowserQuick,
     [switch]$OpenOnly,
+    [switch]$ListTasksOnly,
     [Parameter(ValueFromRemainingArguments = $true)]
     [string[]]$ExtraArgs = @()
 )
@@ -129,20 +143,47 @@ function Resolve-ProjectPaths {
     if (-not $ExplicitParameters.Contains("OutputDir")) { $script:OutputDir = Join-Path $projectRoot "output" }
     if (-not $ExplicitParameters.Contains("LogPath")) { $script:LogPath = Join-Path $projectRoot "log.csv" }
     if (-not $ExplicitParameters.Contains("SummaryPath")) { $script:SummaryPath = Join-Path $projectRoot "summary.txt" }
+    if ([string]::IsNullOrWhiteSpace($ConversationArchivePath)) { $script:ConversationArchivePath = Join-Path $projectRoot "conversation_archives.json" }
+    if ([string]::IsNullOrWhiteSpace($CheckpointDir)) { $script:CheckpointDir = Join-Path $projectRoot "checkpoints" }
 }
 
 Read-GnuStyleArguments
 Set-DefaultPaths
 Resolve-ProjectPaths
+if ([string]::IsNullOrWhiteSpace($ConversationArchivePath)) {
+    $ConversationArchivePath = Join-Path $ScriptRoot "conversation_archives.json"
+}
+if ([string]::IsNullOrWhiteSpace($CheckpointDir)) {
+    $CheckpointDir = Join-Path $ScriptRoot "checkpoints"
+}
+$VehicleKeyColumns = @(
+    $VehicleKeyColumns |
+        ForEach-Object { @([string]$_ -split ",") } |
+        ForEach-Object { $_.Trim() } |
+        Where-Object { $_ }
+)
+$RowLabelColumns = @(
+    $RowLabelColumns |
+        ForEach-Object { @([string]$_ -split ",") } |
+        ForEach-Object { $_.Trim() } |
+        Where-Object { $_ }
+)
+if ($TaskGranularity -eq "vehicle" -and $VehicleKeyColumns.Count -eq 0) {
+    throw "车型逐项模式至少需要一个 VehicleKeyColumns"
+}
 
 $OpenClawConfig = $null
 $OpenClawAuthToken = ""
 $OpenClawTargetId = ""
 $OpenClawResolvedCommand = ""
+$PlaywrightBridgeProcess = $null
+$PlaywrightBridgeUrl = ""
+$PlaywrightBridgeToken = ""
 $SkipStatuses = @("成功")
 $InputFilePattern = if ($env:FITMENT_INPUT_PATTERN) { $env:FITMENT_INPUT_PATTERN } else { "*.tsv" }
 $InputFileOrder = if ($env:FITMENT_INPUT_ORDER) { $env:FITMENT_INPUT_ORDER } else { "name_asc" }
 $SkipProcessedFiles = ($env:FITMENT_SKIP_PROCESSED -ne "false")
+$InputSourcesJson = if ($env:FITMENT_INPUT_SOURCES_JSON) { [string]$env:FITMENT_INPUT_SOURCES_JSON } else { "" }
 $ProgressKeywords = @("更新点", "当前批次进度", "下一步优先处理", "下一步优先补缺失", "下一步优先核对", "待终核", "可入库", "数据抓取过程", "全量表", "TSV", "新增/拆出记录", "主要数值修改", "🟢", "🟡", "🔴")
 $RequiredTsvHeader = if ($env:FITMENT_TSV_HEADER) { $env:FITMENT_TSV_HEADER } else { "主车型`t年份区间`t结构`t对应尺码`t品牌`t前台车型`t排序依据车型`t子车系`t分类`t版本`t门数`t代际`t区间最小年份`t区间最大年份`tmax_length_in`tmax_width_in`tmax_height_in`tmax_length_cm`tmax_width_cm`tmax_height_cm`t驾驶室类型`t货斗长度_ft`t长度余量`t无尺码原因`t参考车型`t备注`t迭代状态" }
 $SubseriesEnabled = ($env:FITMENT_SUBSERIES_ENABLED -ne "false")
@@ -150,20 +191,29 @@ $RequiredSubseriesMatchHeader = if ($env:FITMENT_SUBSERIES_HEADER) { $env:FITMEN
 $AutoEmptyColumns = if ($env:FITMENT_AUTO_EMPTY_COLUMNS_DEFINED -eq "true") { [string]$env:FITMENT_AUTO_EMPTY_COLUMNS } elseif ($env:FITMENT_AUTO_EMPTY_COLUMNS) { $env:FITMENT_AUTO_EMPTY_COLUMNS } else { "对应尺码、排序依据车型、子车系、区间最小年份、区间最大年份、max_length_cm、max_width_cm、max_height_cm、长度余量、无尺码原因" }
 $SubseriesAutoEmptyColumns = if ($env:FITMENT_SUBSERIES_AUTO_EMPTY_COLUMNS_DEFINED -eq "true") { [string]$env:FITMENT_SUBSERIES_AUTO_EMPTY_COLUMNS } elseif ($env:FITMENT_SUBSERIES_AUTO_EMPTY_COLUMNS) { $env:FITMENT_SUBSERIES_AUTO_EMPTY_COLUMNS } else { "匹配数量" }
 $ExtraDataInstructions = if ($env:FITMENT_DATA_INSTRUCTIONS) { $env:FITMENT_DATA_INSTRUCTIONS } else { "" }
+$DimensionRepresentativeInstruction = if ($env:FITMENT_DIMENSION_REPRESENTATIVE_INSTRUCTION) { $env:FITMENT_DIMENSION_REPRESENTATIVE_INSTRUCTION } else { "" }
+$ConfiguredTaskRules = (@($ExtraDataInstructions, $DimensionRepresentativeInstruction) |
+    Where-Object { -not [string]::IsNullOrWhiteSpace([string]$_) } |
+    ForEach-Object { [string]$_ }) -join "`n"
 $AutoEmptyReminder = if ($AutoEmptyColumns) { "以下自动字段必须保留列但值留空：$AutoEmptyColumns。" } else { "" }
 $SubseriesReminder = if ($SubseriesEnabled) { "另需维护子车系匹配表，表头固定为：$RequiredSubseriesMatchHeader；以下自动字段必须保留列但值留空：$SubseriesAutoEmptyColumns。" } else { "不要输出子车系匹配表。" }
-$HeaderReminder = "全量 TSV 表头必须严格使用 requirement 指定的字段顺序：$RequiredTsvHeader。$AutoEmptyReminder$SubseriesReminder$ExtraDataInstructions"
+$ConfiguredTaskRulesReminder = if ($ConfiguredTaskRules) { "`n$ConfiguredTaskRules" } else { "" }
+$HeaderReminder = "全量 TSV 表头必须严格使用 requirement 指定的字段顺序：$RequiredTsvHeader。$AutoEmptyReminder$SubseriesReminder$ConfiguredTaskRulesReminder"
 $PhaseOrderReminder = '执行顺序必须固定为：第一阶段先解决数据缺失，优先补齐缺失年份、缺失结构/版本/门数/驾驶室/货斗、缺失尺寸、缺失参考车型等会阻塞成表的数据；第二阶段才解决核对问题，逐年核对参考车型覆盖、尺寸口径和迭代状态。只要仍存在任何数据缺失，不要把主要精力转到核对问题，也不要写全部可入库或本批次完成。回复中的下一步方向请按阶段写：有缺失时写“下一步优先补缺失”，缺失已补齐后再写“下一步优先核对”。'
 $SubseriesOutputItem = if ($SubseriesEnabled) { "；4) 本轮更新后的子车系匹配表" } else { "" }
-$ContinueMessage = '继续补强当前批次，并严格按以下格式回复：1) 更新点；2) 当前批次进度；3) 本轮更新后的全量 TSV（必须是真正更新过的 TSV，不能只写计划或说明，' + $HeaderReminder + '）' + $SubseriesOutputItem + '；5) 下一步优先处理（有数据缺失时必须写下一步优先补缺失，缺失补齐后再写下一步优先核对）；6) 若仍未完成，在末尾单独输出：下一步。' + $PhaseOrderReminder + '不要新增当前 TSV 范围外的年代、代际或车型行；拆分后的年份合集不得超出原记录年份范围；最终 TSV 顺序必须保持当前 split 第一条到最后一条的边界。不要只描述这一轮将要做什么而不给 TSV，不要连续重复上一轮内容。'
-$MissingSignalsMessage = '你的上一轮回复缺少正常推进信号。请立刻继续当前批次，并严格补齐以下内容：更新点、当前批次进度、本轮更新后的全量 TSV' + $(if ($SubseriesEnabled) { "、本轮更新后的子车系匹配表" } else { "" }) + '、下一步优先处理；如果还没完成，末尾单独输出：下一步。不得只给说明、计划、摘要或重复上一轮文本，必须给一个更新过的全量 TSV。' + $PhaseOrderReminder + $HeaderReminder
-$FullTableRequestMessage = '给我当前批次更新后的完整可替换全量 TSV' + $(if ($SubseriesEnabled) { "，并给出子车系匹配表" } else { "" }) + '。全量 TSV 必须包含未变更、已修改、在当前记录年份范围内拆分后的全部记录；不要只给变化部分、摘要或说明。若仍有数据缺失，先继续补缺失，不要提前转为最终核对或完成。不要新增当前 TSV 范围外的年代、代际或车型行，输出顺序必须保持当前 split 第一条到最后一条的边界。' + $PhaseOrderReminder + $HeaderReminder
-$CompletionFixMessage = '你刚才给了完成信号，但当前回复没有可直接入库的完整全量 TSV' + $(if ($SubseriesEnabled) { "、缺少子车系匹配表" } else { "" }) + '，或仍可能存在未先解决的数据缺失。若本批次其实还没完成，请先补齐数据缺失，再做核对，并带上：更新点、当前批次进度、本轮更新后的全量 TSV' + $(if ($SubseriesEnabled) { "、本轮更新后的子车系匹配表" } else { "" }) + '、下一步优先处理，并在末尾单独输出：下一步。' + $PhaseOrderReminder + $HeaderReminder
+$ContinueMessage = '继续补强当前批次，并严格按以下格式回复：1) 更新点；2) 当前批次进度；3) 本轮更新后的全量 TSV（必须是真正更新过的 TSV，不能只写计划或说明，' + $HeaderReminder + '）' + $SubseriesOutputItem + '；5) 下一步优先处理（有数据缺失时必须写下一步优先补缺失，缺失补齐后再写下一步优先核对）；6) 若仍未完成，TSV 代码块外最后一行必须单独输出“推进信号：CONTINUE”；全部完成时最后一行单独输出“推进信号：COMPLETE”。' + $PhaseOrderReminder + '不要新增当前 TSV 范围外的年代、代际或车型行；拆分后的年份合集不得超出原记录年份范围；最终 TSV 顺序必须保持当前 split 第一条到最后一条的边界。不要只描述这一轮将要做什么而不给 TSV，不要连续重复上一轮内容。'
+$MissingSignalsMessage = '你的上一轮回复缺少正常推进信号。请立刻继续当前批次，并严格补齐以下内容：更新点、当前批次进度、本轮更新后的全量 TSV' + $(if ($SubseriesEnabled) { "、本轮更新后的子车系匹配表" } else { "" }) + '、下一步优先处理；如果还没完成，TSV 代码块外最后一行单独输出“推进信号：CONTINUE”；全部完成则输出“推进信号：COMPLETE”。不得只给说明、计划、摘要或重复上一轮文本，必须给一个更新过的全量 TSV。' + $PhaseOrderReminder + $HeaderReminder
+$FullTableRequestMessage = '给我当前批次更新后的完整可替换全量 TSV' + $(if ($SubseriesEnabled) { "，并给出子车系匹配表" } else { "" }) + '。全量 TSV 必须包含未变更、已修改、在当前记录年份范围内拆分后的全部记录；不要只给变化部分、摘要或说明。若仍有数据缺失，先继续补缺失，不要提前转为最终核对或完成。TSV 代码块外最后一行必须输出“推进信号：CONTINUE”或“推进信号：COMPLETE”。不要新增当前 TSV 范围外的年代、代际或车型行，输出顺序必须保持当前 split 第一条到最后一条的边界。' + $PhaseOrderReminder + $HeaderReminder
+$CompletionFixMessage = '你刚才给了完成信号，但当前回复没有可直接入库的完整全量 TSV' + $(if ($SubseriesEnabled) { "、缺少子车系匹配表" } else { "" }) + '，或仍可能存在未先解决的数据缺失。若本批次其实还没完成，请先补齐数据缺失，再做核对，并带上：更新点、当前批次进度、本轮更新后的全量 TSV' + $(if ($SubseriesEnabled) { "、本轮更新后的子车系匹配表" } else { "" }) + '、下一步优先处理，并在 TSV 代码块外最后一行输出“推进信号：CONTINUE”；确认全部完成才输出“推进信号：COMPLETE”。' + $PhaseOrderReminder + $HeaderReminder
 
 function Invoke-XB {
     param([Parameter(ValueFromRemainingArguments = $true)][string[]]$Args)
 
-    if (-not $Args -or $Args.Count -eq 0) { throw "OpenClaw 浏览器命令为空" }
+    if (-not $Args -or $Args.Count -eq 0) { throw "浏览器命令为空" }
+
+    if ($Browser -eq "playwright" -or ($Args -contains "playwright")) {
+        return Invoke-PlaywrightXB @Args
+    }
 
     $command = $Args[0]
     if ($command -eq "init") {
@@ -242,6 +292,165 @@ function Invoke-XB {
         }
         default { throw "不支持的 OpenClaw 浏览器 action: $action" }
     }
+}
+
+function Get-FreeLocalPort {
+    $listener = New-Object System.Net.Sockets.TcpListener ([Net.IPAddress]::Loopback), 0
+    try {
+        $listener.Start()
+        return ([Net.IPEndPoint]$listener.LocalEndpoint).Port
+    }
+    finally {
+        $listener.Stop()
+    }
+}
+
+function Initialize-PlaywrightRuntime {
+    if ($script:PlaywrightBridgeProcess -and -not $script:PlaywrightBridgeProcess.HasExited -and $script:PlaywrightBridgeUrl) {
+        try {
+            Invoke-RestMethod -Uri "$($script:PlaywrightBridgeUrl)/health" -Headers @{ Authorization = "Bearer $($script:PlaywrightBridgeToken)" } -TimeoutSec 2 | Out-Null
+            return
+        }
+        catch { }
+    }
+
+    $node = Get-Command node -ErrorAction SilentlyContinue
+    if (-not $node) { throw "找不到 Node.js。Playwright 模式需要 Node.js 18 或更高版本。" }
+    $bridgePath = Join-Path $ScriptRoot "playwright_browser_bridge.js"
+    $playwrightModule = Join-Path $ScriptRoot "node_modules\playwright"
+    if (-not (Test-Path -LiteralPath $playwrightModule -PathType Container)) {
+        throw "Playwright 依赖尚未安装。请在 $ScriptRoot 运行：npm install；npx playwright install chromium"
+    }
+
+    if ([string]::IsNullOrWhiteSpace($script:PlaywrightProfilePath)) {
+        $script:PlaywrightProfilePath = Join-Path $env:LOCALAPPDATA "qclaw-fitment-automation\playwright-profile"
+    }
+    if (-not (Test-Path -LiteralPath $script:PlaywrightProfilePath)) {
+        New-Item -ItemType Directory -Path $script:PlaywrightProfilePath -Force | Out-Null
+    }
+
+    $port = Get-FreeLocalPort
+    $script:PlaywrightBridgeUrl = "http://127.0.0.1:$port"
+    $script:PlaywrightBridgeToken = [guid]::NewGuid().ToString("N")
+    $bridgeArgs = @(
+        "`"$bridgePath`"",
+        "--port=$port",
+        "--token=$($script:PlaywrightBridgeToken)",
+        "--parent-pid=$PID",
+        "--user-data-dir=`"$($script:PlaywrightProfilePath)`""
+    )
+    if (-not [string]::IsNullOrWhiteSpace($PlaywrightExecutablePath)) {
+        $bridgeArgs += "--executable-path=`"$PlaywrightExecutablePath`""
+    }
+    $script:PlaywrightBridgeProcess = Start-Process -FilePath $node.Source -ArgumentList $bridgeArgs -PassThru -WindowStyle Hidden
+
+    for ($attempt = 0; $attempt -lt 60; $attempt++) {
+        if ($script:PlaywrightBridgeProcess.HasExited) {
+            throw "Playwright browser bridge 启动失败，退出码: $($script:PlaywrightBridgeProcess.ExitCode)"
+        }
+        try {
+            Invoke-RestMethod -Uri "$($script:PlaywrightBridgeUrl)/health" -Headers @{ Authorization = "Bearer $($script:PlaywrightBridgeToken)" } -TimeoutSec 1 | Out-Null
+            return
+        }
+        catch {
+            Start-Sleep -Milliseconds 250
+        }
+    }
+    throw "Playwright browser bridge 启动超时"
+}
+
+function Invoke-PlaywrightAction {
+    param([string]$Action, $Body = @{})
+    Initialize-PlaywrightRuntime
+    $payload = @{} + $Body
+    $payload.action = $Action
+    # Windows PowerShell 5.1 may encode a string request body as ANSI even when
+    # Content-Type says JSON. Send explicit UTF-8 bytes so Chinese text inside
+    # page-evaluation scripts is not replaced with "?" (which can corrupt regexes).
+    $payloadJson = $payload | ConvertTo-Json -Depth 30 -Compress
+    $payloadBytes = [Text.Encoding]::UTF8.GetBytes($payloadJson)
+    try {
+        $response = Invoke-RestMethod -Uri "$($script:PlaywrightBridgeUrl)/action" -Method Post `
+            -Headers @{ Authorization = "Bearer $($script:PlaywrightBridgeToken)" } `
+            -ContentType "application/json; charset=utf-8" -Body $payloadBytes -TimeoutSec 120
+        if (-not $response.ok) { throw [string]$response.error }
+        return $response.result
+    }
+    catch {
+        $detail = if ($_.ErrorDetails -and $_.ErrorDetails.Message) { $_.ErrorDetails.Message } else { $_.Exception.Message }
+        throw "Playwright browser 请求失败 ($Action): $detail"
+    }
+}
+
+function Invoke-PlaywrightXB {
+    param([Parameter(ValueFromRemainingArguments = $true)][string[]]$Args)
+    $command = $Args[0]
+    if ($command -eq "init") {
+        return New-XBSuccess -Result (Invoke-PlaywrightAction -Action "init")
+    }
+    if ($command -eq "cleanup") {
+        try { $result = Invoke-PlaywrightAction -Action "cleanup" }
+        finally {
+            $script:PlaywrightBridgeProcess = $null
+            $script:PlaywrightBridgeUrl = ""
+            $script:PlaywrightBridgeToken = ""
+        }
+        return New-XBSuccess -Result $result
+    }
+    if ($command -ne "run") { throw "不支持的 Playwright 兼容命令: $command" }
+
+    $actionArgs = @($Args[1..($Args.Count - 1)])
+    if ($actionArgs.Count -ge 2 -and $actionArgs[0] -eq "--browser") {
+        $actionArgs = if ($actionArgs.Count -gt 2) { @($actionArgs[2..($actionArgs.Count - 1)]) } else { @() }
+    }
+    $action = $actionArgs[0]
+    switch ($action) {
+        "open" { return New-XBSuccess -Result (Invoke-PlaywrightAction -Action "open" -Body @{ url = [string]$actionArgs[1] }) }
+        "get" { return New-XBSuccess -Result (Invoke-PlaywrightAction -Action "get-url") }
+        "wait" { return New-XBSuccess -Result (Invoke-PlaywrightAction -Action "wait") }
+        "eval" { return New-XBSuccess -Result (Invoke-PlaywrightAction -Action "eval" -Body @{ expression = [string]$actionArgs[1] }) }
+        "press" { return New-XBSuccess -Result (Invoke-PlaywrightAction -Action "press" -Body @{ key = [string]$actionArgs[1] }) }
+        "tab" {
+            if ($actionArgs.Count -eq 1) { return New-XBSuccess -Result (Invoke-PlaywrightAction -Action "tabs") }
+            if ($actionArgs[1] -eq "new") {
+                $url = if ($actionArgs.Count -gt 2) { [string]$actionArgs[2] } else { "about:blank" }
+                return New-XBSuccess -Result (Invoke-PlaywrightAction -Action "tab-new" -Body @{ url = $url })
+            }
+            return New-XBSuccess -Result (Invoke-PlaywrightAction -Action "tab-focus" -Body @{ index = [int]$actionArgs[1] })
+        }
+        default { throw "不支持的 Playwright browser action: $action" }
+    }
+}
+
+function Get-RegularBrowserExecutable {
+    $candidates = @(
+        (Join-Path $env:ProgramFiles "Google\Chrome\Application\chrome.exe"),
+        $(if (${env:ProgramFiles(x86)}) { Join-Path ${env:ProgramFiles(x86)} "Google\Chrome\Application\chrome.exe" }),
+        (Join-Path $env:LOCALAPPDATA "Google\Chrome\Application\chrome.exe"),
+        (Join-Path $env:ProgramFiles "Microsoft\Edge\Application\msedge.exe"),
+        $(if (${env:ProgramFiles(x86)}) { Join-Path ${env:ProgramFiles(x86)} "Microsoft\Edge\Application\msedge.exe" }),
+        (Join-Path $env:LOCALAPPDATA "Microsoft\Edge\Application\msedge.exe")
+    )
+    return $candidates | Where-Object { $_ -and (Test-Path -LiteralPath $_ -PathType Leaf) } | Select-Object -First 1
+}
+
+function Invoke-ManualPlaywrightLogin {
+    $regularBrowser = Get-RegularBrowserExecutable
+    if (-not $regularBrowser) { return $false }
+
+    Write-Host "Google 不允许在受自动化控制的浏览器中登录，切换到普通浏览器建立会话..." -ForegroundColor Yellow
+    Invoke-XB "cleanup" | Out-Null
+    $browserArgs = @(
+        "--user-data-dir=`"$($script:PlaywrightProfilePath)`"",
+        $ChatGptUrl
+    )
+    Start-Process -FilePath $regularBrowser -ArgumentList $browserArgs | Out-Null
+    Write-Host "已打开普通浏览器: $regularBrowser" -ForegroundColor Cyan
+    [void](Read-Host "请完成 ChatGPT/Google 登录，确认输入框可用，关闭刚打开的浏览器窗口，然后回到这里按 Enter")
+
+    Initialize-XBrowser
+    Open-ChatGPT
+    return $true
 }
 
 function New-XBSuccess {
@@ -580,20 +789,20 @@ function Get-XBValue {
 }
 
 function Initialize-XBrowser {
-    Write-Host "初始化 OpenClaw browser..." -ForegroundColor Yellow
+    Write-Host "初始化 $Browser browser..." -ForegroundColor Yellow
     $init = Invoke-XB "init"
 
     if (-not $init.ok) {
-        throw "OpenClaw browser 初始化失败: $($init.error) $($init.hint)"
+        throw "$Browser browser 初始化失败: $($init.error) $($init.hint)"
     }
 
-    Write-Host "OpenClaw browser 就绪。" -ForegroundColor Green
+    Write-Host "$Browser browser 就绪。" -ForegroundColor Green
 }
 
 function Test-Prerequisites {
     Write-Host "检查目录和文件..." -ForegroundColor Yellow
 
-    if (-not (Test-Path $InputDir)) { throw "输入目录不存在: $InputDir" }
+    if ([string]::IsNullOrWhiteSpace($InputSourcesJson) -and -not (Test-Path $InputDir)) { throw "输入目录不存在: $InputDir" }
     if (-not (Test-Path $RequirementPath)) { throw "requirement.md 不存在: $RequirementPath" }
     if (-not (Test-Path $OutputDir)) {
         New-Item -ItemType Directory -Path $OutputDir -Force | Out-Null
@@ -672,12 +881,299 @@ function Test-ContainsAny {
     return $false
 }
 
+function ConvertTo-TaskSafeName {
+    param([string]$Value)
+    $safe = (($Value.Trim() -replace '[^\p{L}\p{Nd}]+', '-') -replace '^-+|-+$', '')
+    if ([string]::IsNullOrWhiteSpace($safe)) { return "vehicle" }
+    if ($safe.Length -gt 80) { $safe = $safe.Substring(0, 80).TrimEnd("-") }
+    return $safe.ToLowerInvariant()
+}
+
+function Get-StableTaskHash {
+    param([string]$Value)
+    $sha = [Security.Cryptography.SHA256]::Create()
+    try {
+        $bytes = [Text.Encoding]::UTF8.GetBytes($Value)
+        return (([BitConverter]::ToString($sha.ComputeHash($bytes))).Replace("-", "").Substring(0, 8)).ToLowerInvariant()
+    }
+    finally {
+        $sha.Dispose()
+    }
+}
+
+function Get-ConfiguredInputFiles {
+    $files = New-Object System.Collections.Generic.List[System.IO.FileInfo]
+
+    if (-not [string]::IsNullOrWhiteSpace($InputSourcesJson)) {
+        try {
+            $sources = $InputSourcesJson | ConvertFrom-Json
+        }
+        catch {
+            throw "FITMENT_INPUT_SOURCES_JSON 无法解析: $($_.Exception.Message)"
+        }
+
+        foreach ($directory in @($sources.directories)) {
+            $path = [string]$directory.path
+            $pattern = if ([string]::IsNullOrWhiteSpace([string]$directory.pattern)) { "*.tsv" } else { [string]$directory.pattern }
+            $recursive = [bool]$directory.recursive
+            if (-not (Test-Path -LiteralPath $path -PathType Container)) {
+                throw "配置的输入目录不存在: $path"
+            }
+            $found = if ($recursive) {
+                @(Get-ChildItem -LiteralPath $path -Filter $pattern -File -Recurse)
+            }
+            else {
+                @(Get-ChildItem -LiteralPath $path -Filter $pattern -File)
+            }
+            foreach ($item in $found) { $files.Add($item) }
+        }
+
+        foreach ($explicitFile in @($sources.files)) {
+            $path = [string]$explicitFile.path
+            if (-not (Test-Path -LiteralPath $path -PathType Leaf)) {
+                throw "配置的输入文件不存在: $path"
+            }
+            $files.Add((Get-Item -LiteralPath $path))
+        }
+    }
+    else {
+        if (-not (Test-Path -LiteralPath $InputDir -PathType Container)) {
+            throw "输入目录不存在: $InputDir"
+        }
+        foreach ($item in @(Get-ChildItem -LiteralPath $InputDir -Filter $InputFilePattern -File)) {
+            $files.Add($item)
+        }
+    }
+
+    $uniqueByPath = @{}
+    foreach ($file in $files) {
+        $uniqueByPath[$file.FullName.ToLowerInvariant()] = $file
+    }
+    $result = @($uniqueByPath.Values)
+    if ($InputFileOrder -eq "name_desc") { $result = @($result | Sort-Object Name, FullName -Descending) }
+    elseif ($InputFileOrder -eq "modified_asc") { $result = @($result | Sort-Object LastWriteTime, FullName) }
+    elseif ($InputFileOrder -eq "modified_desc") { $result = @($result | Sort-Object LastWriteTime, FullName -Descending) }
+    else { $result = @($result | Sort-Object Name, FullName) }
+
+    if ($OnlyFiles.Count -gt 0) {
+        $onlySet = New-Object "System.Collections.Generic.HashSet[string]" ([StringComparer]::OrdinalIgnoreCase)
+        foreach ($onlyFile in $OnlyFiles) {
+            foreach ($onlyFilePart in ($onlyFile -split ",")) {
+                $trimmed = $onlyFilePart.Trim()
+                if (-not $trimmed) { continue }
+                $name = if ($trimmed.EndsWith(".tsv", [StringComparison]::OrdinalIgnoreCase)) { $trimmed } else { "$trimmed.tsv" }
+                [void]$onlySet.Add($name)
+            }
+        }
+        $result = @($result | Where-Object { $onlySet.Contains($_.Name) })
+    }
+    return @($result)
+}
+
+function Get-TSVTasks {
+    param([System.IO.FileInfo[]]$Files)
+
+    $tasks = New-Object System.Collections.Generic.List[object]
+    $baseNameCounts = @{}
+    foreach ($file in $Files) {
+        $key = $file.BaseName.ToLowerInvariant()
+        $baseNameCounts[$key] = 1 + [int]$baseNameCounts[$key]
+    }
+    foreach ($file in $Files) {
+        $sourceBaseName = $file.BaseName
+        if ([int]$baseNameCounts[$file.BaseName.ToLowerInvariant()] -gt 1) {
+            $pathHash = Get-StableTaskHash -Value $file.FullName
+            $sourceBaseName = "$($file.BaseName)__$($pathHash.Substring(0, 6))"
+        }
+        if ($TaskGranularity -eq "file") {
+            $content = Get-Content -LiteralPath $file.FullName -Raw -Encoding UTF8
+            $logName = if ($sourceBaseName -eq $file.BaseName) { $file.Name } else { "$($file.Name)#$sourceBaseName" }
+            $tasks.Add([pscustomobject]@{
+                TaskId = $sourceBaseName
+                DisplayName = $file.BaseName
+                SourceFile = $file
+                SourceName = $file.Name
+                LogName = $logName
+                Content = $content
+                BaseName = $sourceBaseName
+                CheckpointPath = Join-Path $CheckpointDir "$sourceBaseName.json"
+            })
+            continue
+        }
+
+        $lines = @(Get-Content -LiteralPath $file.FullName -Encoding UTF8)
+        if ($lines.Count -lt 2) {
+            Write-Host "跳过没有数据行的车型清单: $($file.Name)" -ForegroundColor Yellow
+            continue
+        }
+        $header = $lines[0].TrimStart([char]0xFEFF)
+        $columns = @($header -split "`t", -1)
+        $labelColumns = if ($TaskGranularity -eq "row") { @($RowLabelColumns) } else { @($VehicleKeyColumns) }
+        $keyIndexes = @()
+        foreach ($keyColumn in $labelColumns) {
+            $index = [Array]::FindIndex(
+                [string[]]$columns,
+                [Predicate[string]]{ param($value) $value.Equals($keyColumn, [StringComparison]::OrdinalIgnoreCase) }
+            )
+            if ($index -lt 0) {
+                throw "输入文件 $($file.Name) 缺少标签列 '$keyColumn'；现有列: $($columns -join ', ')"
+            }
+            $keyIndexes += $index
+        }
+
+        if ($TaskGranularity -eq "row") {
+            $duplicateCounts = @{}
+            $rowNumber = 0
+            foreach ($line in @($lines | Select-Object -Skip 1)) {
+                $rowNumber++
+                if ([string]::IsNullOrWhiteSpace($line)) { continue }
+                $fields = @($line -split "`t", -1)
+                $labelValues = @($keyIndexes | ForEach-Object {
+                    if ($_ -lt $fields.Count) { $fields[$_].Trim() } else { "" }
+                } | Where-Object { $_ })
+                $label = if ($labelValues.Count -gt 0) {
+                    ($labelValues -join " ").Trim()
+                }
+                else {
+                    "$($file.BaseName) 第 $rowNumber 行"
+                }
+                $contentHash = Get-StableTaskHash -Value "$($file.Name)`n$line"
+                $duplicateKey = $contentHash
+                $duplicateCounts[$duplicateKey] = 1 + [int]$duplicateCounts[$duplicateKey]
+                $duplicateSuffix = if ([int]$duplicateCounts[$duplicateKey] -gt 1) { "__dup$($duplicateCounts[$duplicateKey])" } else { "" }
+                $safeLabel = ConvertTo-TaskSafeName -Value $label
+                $taskId = "$sourceBaseName`__row`__$safeLabel`__$contentHash$duplicateSuffix"
+                $tasks.Add([pscustomobject]@{
+                    TaskId = $taskId
+                    DisplayName = $label
+                    SourceFile = $file
+                    SourceName = $file.Name
+                    LogName = "$($file.Name)#$label"
+                    Content = "$header`r`n$line"
+                    BaseName = $taskId
+                    CheckpointPath = Join-Path $CheckpointDir "$taskId.json"
+                })
+            }
+            continue
+        }
+
+        $groups = [ordered]@{}
+        foreach ($line in @($lines | Select-Object -Skip 1)) {
+            if ([string]::IsNullOrWhiteSpace($line)) { continue }
+            $fields = @($line -split "`t", -1)
+            $keyValues = @($keyIndexes | ForEach-Object {
+                if ($_ -lt $fields.Count) { $fields[$_].Trim() } else { "" }
+            })
+            if (@($keyValues | Where-Object { $_ }).Count -eq 0) {
+                throw "车型清单 $($file.Name) 存在车型键全部为空的数据行: $line"
+            }
+            $groupKey = $keyValues -join [char]0x1F
+            if (-not $groups.Contains($groupKey)) {
+                $groups[$groupKey] = [pscustomobject]@{
+                    Key = $groupKey
+                    Label = ($keyValues -join " ").Trim()
+                    Lines = New-Object System.Collections.Generic.List[string]
+                }
+            }
+            $groups[$groupKey].Lines.Add($line)
+        }
+
+        foreach ($group in $groups.Values) {
+            $safeLabel = ConvertTo-TaskSafeName -Value $group.Label
+            $stableHash = Get-StableTaskHash -Value "$($file.Name)`n$($group.Key)"
+            $taskId = "{0}__{1}__{2}" -f $sourceBaseName, $safeLabel, $stableHash
+            $tasks.Add([pscustomobject]@{
+                TaskId = $taskId
+                DisplayName = $group.Label
+                SourceFile = $file
+                SourceName = $file.Name
+                LogName = "$($file.Name)#$($group.Label)"
+                Content = "$header`r`n$($group.Lines -join "`r`n")"
+                BaseName = $taskId
+                CheckpointPath = Join-Path $CheckpointDir "$taskId.json"
+            })
+        }
+    }
+    return @($tasks | ForEach-Object { $_ })
+}
+
+function Get-TaskCheckpoint {
+    param($Task)
+    if (-not (Test-Path -LiteralPath $Task.CheckpointPath -PathType Leaf)) { return $null }
+    try {
+        return Get-Content -LiteralPath $Task.CheckpointPath -Raw -Encoding UTF8 | ConvertFrom-Json
+    }
+    catch {
+        Write-Host "警告: checkpoint 无法读取，将从新对话开始: $($Task.CheckpointPath)" -ForegroundColor Yellow
+        return $null
+    }
+}
+
+function Save-TaskCheckpoint {
+    param(
+        $Task,
+        [string]$Status,
+        [string]$Phase,
+        [int]$Round,
+        [int]$SendCount,
+        [string]$OutputFile,
+        [string]$ConversationUrl,
+        [string]$Remarks = ""
+    )
+
+    if (-not (Test-Path -LiteralPath $CheckpointDir)) {
+        New-Item -ItemType Directory -Path $CheckpointDir -Force | Out-Null
+    }
+    $checkpoint = [ordered]@{
+        version = 1
+        task_id = $Task.TaskId
+        task_name = $Task.DisplayName
+        vehicle = $Task.DisplayName
+        source_file = $Task.SourceName
+        status = $Status
+        phase = $Phase
+        round = $Round
+        send_count = $SendCount
+        output_file = $OutputFile
+        conversation_url = $ConversationUrl
+        remarks = $Remarks
+        updated_at = Get-Date -Format "yyyy-MM-dd HH:mm:ss"
+    }
+    $tempPath = "$($Task.CheckpointPath).tmp"
+    $checkpoint | ConvertTo-Json -Depth 5 | Set-Content -LiteralPath $tempPath -Encoding UTF8
+    Move-Item -LiteralPath $tempPath -Destination $Task.CheckpointPath -Force
+}
+
+function Get-ReplyNarrativeText {
+    param([string]$Text)
+
+    if ([string]::IsNullOrWhiteSpace($Text)) { return "" }
+
+    $result = New-Object System.Collections.Generic.List[string]
+    $insideFence = $false
+    foreach ($line in ($Text -split "`r?`n")) {
+        $trimmed = $line.Trim()
+        if ($trimmed -match '^```') {
+            $insideFence = -not $insideFence
+            continue
+        }
+        if ($insideFence) { continue }
+        # 兼容回复代码围栏缺失或尚未闭合的情况：含制表符的表头/数据行
+        # 以及 Markdown 表格行都不参与语义推进判断。
+        if ($line.Contains("`t") -or $trimmed -match '^\|.*\|$') { continue }
+        $result.Add($line)
+    }
+    return (($result -join "`n") -replace "`n{3,}", "`n`n").Trim()
+}
+
 function Test-CompletionSignal {
     param([string]$Text)
 
+    $Text = Get-ReplyNarrativeText -Text $Text
     if ([string]::IsNullOrWhiteSpace($Text)) { return $false }
 
     $patterns = @(
+        "(?im)^\s*推进信号\s*[：:]\s*(COMPLETE|完成)\s*$",
         "(^|[\r\n。！？.!?；;：:])\s*(本批次|当前批次|该批次)\s*(已)?完成\s*([。！？.!?；;]|$)",
         "(^|[\r\n。！？.!?；;：:])\s*批次(已)?(完成|结束)\s*([。！？.!?；;]|$)",
         "(^|[\r\n。！？.!?；;：:])\s*全部(已)?完成\s*([。！？.!?；;]|$)",
@@ -694,6 +1190,7 @@ function Test-CompletionSignal {
 function Test-FullTableRequestSignal {
     param([string]$Text)
 
+    $Text = Get-ReplyNarrativeText -Text $Text
     if ([string]::IsNullOrWhiteSpace($Text)) { return $false }
 
     $patterns = @(
@@ -709,36 +1206,51 @@ function Test-FullTableRequestSignal {
     return $false
 }
 
-function Get-TSVDataRowCountFromText {
+function Get-ConfiguredFullTableRowsFromText {
     param([string]$Text)
 
-    if ([string]::IsNullOrWhiteSpace($Text)) { return 0 }
+    $rows = New-Object System.Collections.Generic.List[object]
+    if ([string]::IsNullOrWhiteSpace($Text)) { return @() }
 
     $lines = $Text -split "`r?`n"
-    $isHeader = {
-        param([string]$Line)
-        $columns = $Line.Trim() -split "`t"
-        return ($columns.Count -ge 12 -and $columns[0] -eq "主车型" -and ($columns -contains "max_length_in") -and ($columns -contains "迭代状态"))
-    }
+    $headerColumns = @($RequiredTsvHeader -split "`t", -1)
     $inTable = $false
-    $count = 0
 
     foreach ($line in $lines) {
-        $trimmed = $line.Trim()
-        if (& $isHeader $trimmed) {
+        $rawLine = $line.TrimEnd("`r")
+        $trimmed = $rawLine.Trim().TrimStart([char]0xFEFF)
+        if ($trimmed -eq $RequiredTsvHeader) {
             $inTable = $true
             continue
         }
         if (-not $inTable) { continue }
         if ([string]::IsNullOrWhiteSpace($trimmed)) {
-            if ($count -gt 0) { break }
+            if ($rows.Count -gt 0) { break }
             continue
         }
-        if ($trimmed -like "---*") { break }
-        if (($trimmed -split "`t").Count -ge 12) { $count++ }
+        if ($trimmed -like "---*" -or $trimmed -match '^```') {
+            if ($rows.Count -gt 0) { break }
+            continue
+        }
+
+        $columns = @($rawLine -split "`t", -1)
+        if ($columns.Count -lt $headerColumns.Count) {
+            if ($rows.Count -gt 0) { break }
+            continue
+        }
+        $record = [ordered]@{}
+        for ($index = 0; $index -lt $headerColumns.Count; $index++) {
+            $record[$headerColumns[$index]] = [string]$columns[$index]
+        }
+        $rows.Add([pscustomobject]$record)
     }
 
-    return $count
+    return @($rows | ForEach-Object { $_ })
+}
+
+function Get-TSVDataRowCountFromText {
+    param([string]$Text)
+    return @(Get-ConfiguredFullTableRowsFromText -Text $Text).Count
 }
 
 function Format-CapturedReplyMarkdown {
@@ -751,7 +1263,6 @@ function Format-CapturedReplyMarkdown {
     $normalized = $normalized -replace "`n{3,}", "`n`n"
     $normalized = $normalized -replace "(?m)^```[ \t]*`n(tsv|csv|markdown|md)[ \t]*`n", ('```$1' + "`n")
     $normalized = $normalized -replace "(?m)^tsv[ \t]*`n(主车型`t分类`t品牌)", ('```tsv' + "`n" + '$1')
-    $normalized = $normalized -replace "(?m)(迭代状态[^\n]*`n(?:[^\n]*`t[^\n]*`n)+)(?!(?:[^\n]*`t[^\n]*`n)|```)", ('$1```' + "`n")
 
     return $normalized.Trim()
 }
@@ -760,44 +1271,19 @@ function Get-TSVDataRowsFromText {
     param([string]$Text)
 
     $rows = @()
-    if ([string]::IsNullOrWhiteSpace($Text)) { return $rows }
-
-    $lines = $Text -split "`r?`n"
-    $isHeader = {
-        param([string]$Line)
-        $columns = $Line.Trim() -split "`t"
-        return ($columns.Count -ge 12 -and $columns[0] -eq "主车型" -and ($columns -contains "max_length_in") -and ($columns -contains "迭代状态"))
-    }
-    $headerColumns = @()
-    $inTable = $false
-
-    foreach ($line in $lines) {
-        $trimmed = $line.Trim()
-        if (& $isHeader $trimmed) {
-            $headerColumns = @($trimmed -split "`t")
-            $inTable = $true
-            continue
-        }
-        if (-not $inTable) { continue }
-        if ([string]::IsNullOrWhiteSpace($trimmed)) {
-            if ($rows.Count -gt 0) { break }
-            continue
-        }
-        if ($trimmed -like "---*") { break }
-
-        $columns = $trimmed -split "`t"
-        if ($columns.Count -ge 12) {
-            $yearIndex = [array]::IndexOf($headerColumns, "年份区间")
-            if ($yearIndex -lt 0) { $yearIndex = [array]::IndexOf($headerColumns, "年份") }
-            $referenceIndex = [array]::IndexOf($headerColumns, "参考车型")
-            $remarksIndex = [array]::IndexOf($headerColumns, "备注")
-            $statusIndex = [array]::IndexOf($headerColumns, "迭代状态")
-            $rows += [PSCustomObject]@{
-                Year = if ($yearIndex -ge 0 -and $yearIndex -lt $columns.Count) { [string]$columns[$yearIndex] } else { "" }
-                Reference = if ($referenceIndex -ge 0 -and $referenceIndex -lt $columns.Count) { [string]$columns[$referenceIndex] } else { "" }
-                Remarks = if ($remarksIndex -ge 0 -and $remarksIndex -lt $columns.Count) { [string]$columns[$remarksIndex] } else { "" }
-                Status = if ($statusIndex -ge 0 -and $statusIndex -lt $columns.Count) { [string]$columns[$statusIndex] } else { "" }
+    foreach ($record in @(Get-ConfiguredFullTableRowsFromText -Text $Text)) {
+        $year = ""
+        foreach ($name in @("年份区间", "年份", "YEAR", "Year")) {
+            if ($record.PSObject.Properties.Name -contains $name) {
+                $year = [string]$record.$name
+                break
             }
+        }
+        $rows += [PSCustomObject]@{
+            Year = $year
+            Reference = if ($record.PSObject.Properties.Name -contains "参考车型") { [string]$record."参考车型" } else { "" }
+            Remarks = if ($record.PSObject.Properties.Name -contains "备注") { [string]$record."备注" } else { "" }
+            Status = if ($record.PSObject.Properties.Name -contains "迭代状态") { [string]$record."迭代状态" } else { "" }
         }
     }
 
@@ -856,6 +1342,7 @@ function Test-ReplyContainsTSV {
 function Test-ReplyHasNextDirection {
     param([string]$Reply)
 
+    $Reply = Get-ReplyNarrativeText -Text $Reply
     if ([string]::IsNullOrWhiteSpace($Reply)) { return $false }
 
     $patterns = @(
@@ -878,17 +1365,32 @@ function Test-ReplyHasNextDirection {
     return $false
 }
 
+function Test-ReplyHasStrongContinuation {
+    param([string]$Reply)
+
+    $Reply = Get-ReplyNarrativeText -Text $Reply
+    if ([string]::IsNullOrWhiteSpace($Reply) -or $Reply.Trim().Length -lt 80) { return $false }
+    if (-not (Test-ReplyHasNextDirection -Reply $Reply)) { return $false }
+
+    $hasAction = $Reply -match "补齐|补缺失|补强|核对|解决|处理|继续|完成"
+    $hasConcreteTarget = $Reply -match "年份|车型|车身|组合|尺寸|三维|参考车型|CAB|BED|轴距|版本|来源"
+    return ($hasAction -and $hasConcreteTarget)
+}
+
 function Test-ReplyHasRoundProgressSignals {
     param([string]$Reply)
 
+    $Reply = Get-ReplyNarrativeText -Text $Reply
     if ([string]::IsNullOrWhiteSpace($Reply)) { return $false }
 
-    $hasTsv = Test-ReplyContainsTSV -Reply $Reply
     $hasUpdate = $Reply -match "更新点"
     $hasProgress = $Reply -match "当前批次进度"
     $hasNextDirection = Test-ReplyHasNextDirection -Reply $Reply
 
-    return ($hasTsv -and $hasUpdate -and $hasProgress -and $hasNextDirection)
+    $hasFullRoundFormat = $hasUpdate -and $hasProgress -and $hasNextDirection
+    $hasStrongContinuation = Test-ReplyHasStrongContinuation -Reply $Reply
+
+    return ($hasFullRoundFormat -or $hasStrongContinuation)
 }
 
 function Test-CapturedReplyShellOnly {
@@ -901,9 +1403,11 @@ function Test-CapturedReplyShellOnly {
 function Test-ForceNextSignal {
     param([string]$Text)
 
+    $Text = Get-ReplyNarrativeText -Text $Text
     if ([string]::IsNullOrWhiteSpace($Text)) { return $false }
 
     $patterns = @(
+        "(?im)^\s*推进信号\s*[：:]\s*(CONTINUE|继续)\s*$",
         "回复\s*[：:]\s*下一步",
         '请(回复|发送)\s*[“"]?下一步[”"]?',
         "(^|[\r\n])\s*下一步[。.!！]?\s*$",
@@ -920,39 +1424,32 @@ function Test-ForceNextSignal {
     return $false
 }
 
-function Get-LevenshteinDistance {
-    param([string]$Text1, [string]$Text2)
-
-    $len1 = $Text1.Length
-    $len2 = $Text2.Length
-    $d = New-Object 'int[,]' ($len1 + 1), ($len2 + 1)
-
-    for ($i = 0; $i -le $len1; $i++) { $d[$i, 0] = $i }
-    for ($j = 0; $j -le $len2; $j++) { $d[0, $j] = $j }
-
-    for ($i = 1; $i -le $len1; $i++) {
-        for ($j = 1; $j -le $len2; $j++) {
-            $cost = if ($Text1[$i - 1] -eq $Text2[$j - 1]) { 0 } else { 1 }
-            $deleteCost = $d[($i - 1), $j] + 1
-            $insertCost = $d[$i, ($j - 1)] + 1
-            $replaceCost = $d[($i - 1), ($j - 1)] + $cost
-            $d[$i, $j] = [Math]::Min([Math]::Min($deleteCost, $insertCost), $replaceCost)
-        }
-    }
-
-    return $d[$len1, $len2]
-}
-
 function Get-TextSimilarity {
     param([string]$Text1, [string]$Text2)
 
     if ([string]::IsNullOrEmpty($Text1) -or [string]::IsNullOrEmpty($Text2)) { return 0.0 }
-    $maxCompareLength = 6000
-    if ($Text1.Length -gt $maxCompareLength) { $Text1 = $Text1.Substring($Text1.Length - $maxCompareLength) }
-    if ($Text2.Length -gt $maxCompareLength) { $Text2 = $Text2.Substring($Text2.Length - $maxCompareLength) }
-    $maxLen = [Math]::Max($Text1.Length, $Text2.Length)
-    if ($maxLen -eq 0) { return 1.0 }
-    return [Math]::Max(0.0, 1.0 - ((Get-LevenshteinDistance -Text1 $Text1 -Text2 $Text2) / $maxLen))
+
+    # 对普通说明文本做线性的“相同行集合”比较。旧实现即使截断到
+    # 6000 字符仍需 3600 万次 PowerShell Levenshtein 循环。
+    $set1 = New-Object 'System.Collections.Generic.HashSet[string]' ([StringComparer]::OrdinalIgnoreCase)
+    $set2 = New-Object 'System.Collections.Generic.HashSet[string]' ([StringComparer]::OrdinalIgnoreCase)
+    foreach ($line in ($Text1 -split "`r?`n")) {
+        $value = ($line -replace "\s+", " ").Trim()
+        if ($value) { [void]$set1.Add($value) }
+    }
+    foreach ($line in ($Text2 -split "`r?`n")) {
+        $value = ($line -replace "\s+", " ").Trim()
+        if ($value) { [void]$set2.Add($value) }
+    }
+    if ($set1.Count -eq 0 -and $set2.Count -eq 0) { return 1.0 }
+
+    $intersection = 0
+    foreach ($value in $set1) {
+        if ($set2.Contains($value)) { $intersection++ }
+    }
+    $unionCount = $set1.Count + $set2.Count - $intersection
+    if ($unionCount -le 0) { return 1.0 }
+    return ($intersection / $unionCount)
 }
 
 function Open-ChatGPT {
@@ -1145,14 +1642,22 @@ function Get-ChatGPTState {
   const editor = findEditor();
   const buttons = Array.from(document.querySelectorAll('button'));
   const buttonText = b => ((b.getAttribute('aria-label') || '') + ' ' + (b.innerText || '')).toLowerCase();
-  const isGenerating = buttons.some(b => /stop|停止/.test(buttonText(b)) && !b.disabled && isVisible(b));
+  const directStop = document.querySelector('[data-testid="stop-button"], [data-testid="composer-stop-button"], button[aria-label*="Stop"], button[aria-label*="停止"]');
+  const isGenerating = !!(directStop && !directStop.disabled && isVisible(directStop)) ||
+    buttons.some(b => /stop|停止/.test(buttonText(b)) && !b.disabled && isVisible(b));
   const pageText = document.body.innerText || '';
+  const authControls = Array.from(document.querySelectorAll('a, button')).filter(isVisible);
+  const hasLoginControl = authControls.some(el => {
+    const text = ((el.innerText || '') + ' ' + (el.getAttribute('aria-label') || '')).toLowerCase().trim();
+    const href = (el.getAttribute('href') || '').toLowerCase();
+    return /^(log in|login|sign up|登录|注册)$/.test(text) || /\/auth\/(login|signup)/.test(href);
+  });
   return {
     reply,
     inputReady: !!editor && !editor.disabled && editor.getAttribute('aria-disabled') !== 'true',
     isGenerating,
     hasStopButton: isGenerating,
-    loggedOut: /log in|sign up|登录|注册/.test(pageText) && !editor,
+    loggedOut: hasLoginControl || (/log in|sign up|登录|注册/.test(pageText) && !editor),
     pageError: /something went wrong|network error|页面错误|网络错误|出错了/.test(pageText)
   };
 })()
@@ -1319,7 +1824,7 @@ function Set-ChatGPTEditorText {
     }
 }
 
-function Copy-LastChatGPTReplyMarkdown {
+function Read-LastChatGPTReplyMarkdownFromDom {
     param([string]$FallbackReply = "")
 
     Ensure-ChatGPTActive
@@ -1430,9 +1935,20 @@ function Copy-LastChatGPTReplyMarkdown {
   return { ok: true, text };
 })()
 '@
-    $replyResult = Get-XBValue (Invoke-XBRun "eval" $script)
+    # 此处页面脚本返回的是 { ok, text/reason } 结构化对象。
+    # 不要经过 Get-XBValue；该兼容函数会把带 text 字段的对象拆成纯字符串，
+    # 导致后续丢失 ok/reason，并被误报为 unknown。
+    $replyResult = Invoke-XBRun "eval" $script
     if (-not $replyResult -or -not $replyResult.ok) {
-        $reason = if ($replyResult -and $replyResult.reason) { [string]$replyResult.reason } else { "unknown" }
+        $reason = if ($replyResult -is [string]) {
+            "unexpected-string-result"
+        }
+        elseif ($replyResult -and $replyResult.reason) {
+            [string]$replyResult.reason
+        }
+        else {
+            "unknown-result-shape"
+        }
         throw "读取最后一条回复失败: $reason"
     }
     $copied = ([string]$replyResult.text).TrimEnd()
@@ -1448,6 +1964,148 @@ function Copy-LastChatGPTReplyMarkdown {
     }
 
     return $copied
+}
+
+function Copy-LastChatGPTReplyMarkdown {
+    param([string]$FallbackReply = "")
+
+    Ensure-ChatGPTActive
+
+    # 在网页内部拦截复制按钮要写入的文本并直接返回。这里刻意不调用
+    # Windows 的 Set-Clipboard/Get-Clipboard；超长回复会让系统剪贴板
+    # 锁竞争，并可能连带卡住 VS Code 终端。
+    $script = @'
+(async () => {
+  const exactXPath = '/html/body/div[2]/div/div[1]/div/div[2]/div[1]/div/div[2]/main/div/div/div/div[1]/div/div[1]/div[28]/section/div/div[1]/div[2]/div/button[1]';
+  const assistantNodes = Array.from(document.querySelectorAll('[data-message-author-role="assistant"]'));
+  const lastAssistant = assistantNodes.length ? assistantNodes[assistantNodes.length - 1] : null;
+  const turn = lastAssistant
+    ? (lastAssistant.closest('article') || lastAssistant.closest('[data-testid*="conversation-turn"]') || lastAssistant)
+    : null;
+
+  if (turn && turn.scrollIntoView) {
+    turn.scrollIntoView({ block: 'center' });
+    turn.dispatchEvent(new MouseEvent('mouseenter', { bubbles: true }));
+    turn.dispatchEvent(new MouseEvent('mouseover', { bubbles: true }));
+  }
+
+  const isReplyCopyButton = button => {
+    if (!button || button.disabled || button.closest('pre, code')) return false;
+    const label = [
+      button.getAttribute('aria-label') || '',
+      button.getAttribute('data-testid') || '',
+      button.getAttribute('title') || '',
+      button.innerText || ''
+    ].join(' ').trim().toLowerCase();
+    return /(^|\s)(copy|复制)(\s|$)|copy.*(message|response|回复)|复制.*(消息|回复)/i.test(label);
+  };
+
+  let button = null;
+  if (turn) {
+    button = Array.from(turn.querySelectorAll('button')).find(isReplyCopyButton) || null;
+  }
+  if (!button) {
+    const xpathNode = document.evaluate(
+      exactXPath,
+      document,
+      null,
+      XPathResult.FIRST_ORDERED_NODE_TYPE,
+      null
+    ).singleNodeValue;
+    if (xpathNode instanceof HTMLButtonElement) button = xpathNode;
+  }
+  if (!button) return { ok: false, reason: 'copy-button-not-found' };
+
+  let capturedText = '';
+  const clipboard = navigator.clipboard;
+  const restores = [];
+  const replaceMethod = (target, name, replacement) => {
+    if (!target) return false;
+    const ownDescriptor = Object.getOwnPropertyDescriptor(target, name);
+    try {
+      Object.defineProperty(target, name, {
+        configurable: true,
+        writable: true,
+        value: replacement
+      });
+      restores.push(() => {
+        try {
+          if (ownDescriptor) Object.defineProperty(target, name, ownDescriptor);
+          else delete target[name];
+        } catch (_) {}
+      });
+      return true;
+    } catch (_) {
+      return false;
+    }
+  };
+
+  const interceptedWriteText = replaceMethod(clipboard, 'writeText', async text => {
+    capturedText = String(text || '');
+  });
+  const interceptedWrite = replaceMethod(clipboard, 'write', async items => {
+    for (const item of Array.from(items || [])) {
+      const preferredType = (item.types || []).find(type => type === 'text/markdown')
+        || (item.types || []).find(type => type === 'text/plain')
+        || (item.types || [])[0];
+      if (!preferredType) continue;
+      try {
+        const blob = await item.getType(preferredType);
+        capturedText = await blob.text();
+        if (capturedText) break;
+      } catch (_) {}
+    }
+  });
+  if (!interceptedWriteText && !interceptedWrite) {
+    return { ok: false, reason: 'clipboard-interception-unavailable' };
+  }
+
+  try {
+    button.click();
+    const deadline = Date.now() + 3000;
+    while (!capturedText && Date.now() < deadline) {
+      await new Promise(resolve => setTimeout(resolve, 25));
+    }
+  } finally {
+    restores.reverse().forEach(restore => restore());
+  }
+
+  if (!capturedText) {
+    return { ok: false, reason: 'copy-text-not-captured' };
+  }
+  return {
+    ok: true,
+    text: capturedText,
+    source: button.getAttribute('data-testid') || button.getAttribute('aria-label') || 'xpath'
+  };
+})()
+'@
+
+    try {
+        $copyResult = Invoke-XBRun "eval" $script
+        if (-not $copyResult -or -not $copyResult.ok) {
+            $reason = if ($copyResult -and $copyResult.reason) { [string]$copyResult.reason } else { "unknown-copy-result" }
+            throw "点击复制按钮失败: $reason"
+        }
+        $copied = ([string]$copyResult.text).TrimEnd()
+        if ([string]::IsNullOrWhiteSpace($copied)) { throw "复制按钮返回了空内容" }
+        if (-not [string]::IsNullOrWhiteSpace($FallbackReply)) {
+            $fallbackTrimmed = $FallbackReply.Trim()
+            if ($copied -eq "下一步" -or
+                ($fallbackTrimmed.Length -gt 200 -and $copied.Length -lt [Math]::Min(120, [int]($fallbackTrimmed.Length * 0.2)))) {
+                throw "复制按钮返回的内容不像完整回复，长度: $($copied.Length)，页面回复长度: $($fallbackTrimmed.Length)"
+            }
+        }
+        return $copied
+    }
+    catch {
+        if (-not [string]::IsNullOrWhiteSpace($FallbackReply)) {
+            Write-Host "  复制按钮读取失败，直接使用已捕获的页面文本：$($_.Exception.Message)" -ForegroundColor Yellow
+            return $FallbackReply.TrimEnd()
+        }
+        Write-Host "  复制按钮读取失败，回退到页面 DOM：$($_.Exception.Message)" -ForegroundColor Yellow
+        return Read-LastChatGPTReplyMarkdownFromDom -FallbackReply $FallbackReply
+    }
 }
 
 function Wait-MessageAccepted {
@@ -1470,6 +2128,38 @@ function Wait-MessageAccepted {
     }
 
     return $false
+}
+
+function Wait-ChatGPTConversationIdle {
+    param([int]$TimeoutSeconds = 900)
+
+    $deadline = (Get-Date).AddSeconds($TimeoutSeconds)
+    $idleSince = $null
+    $announcedWaiting = $false
+    $lastState = $null
+
+    while ((Get-Date) -lt $deadline) {
+        $state = Get-ChatGPTState
+        $lastState = $state
+        if ($state.loggedOut) { throw "ChatGPT 页面显示未登录" }
+        if ($state.pageError) { throw "ChatGPT 页面出现错误提示" }
+
+        if (-not $state.isGenerating -and $state.inputReady) {
+            if (-not $idleSince) { $idleSince = Get-Date }
+            if (((Get-Date) - $idleSince).TotalSeconds -ge 3) { return $state }
+        }
+        else {
+            $idleSince = $null
+            if ($state.isGenerating -and -not $announcedWaiting) {
+                Write-Host "  当前对话仍在生成，等待停止后再发送；不会抢先发送消息。" -ForegroundColor Yellow
+                $announcedWaiting = $true
+            }
+        }
+        Start-Sleep -Seconds 1
+    }
+
+    $detail = if ($lastState -and $lastState.isGenerating) { "回复仍在生成" } else { "输入框仍不可用" }
+    throw "等待对话空闲超过 $TimeoutSeconds 秒：$detail"
 }
 
 function Wait-EditorTextReady {
@@ -1550,6 +2240,8 @@ function Send-ChatGPTMessage {
         [switch]$LargePayload
     )
 
+    # 发送前进行最终空闲门禁，避免旧回复已稳定但当前回复仍在流式生成时抢发。
+    Wait-ChatGPTConversationIdle -TimeoutSeconds $MaxReplyWaitSeconds | Out-Null
     Focus-ChatGPTEditor
     $writeAttempts = if ($LargePayload) { 4 } else { 3 }
     $written = $false
@@ -1604,6 +2296,7 @@ function Wait-ChatGPTReplyComplete {
     $deadline = (Get-Date).AddSeconds($MaxReplyWaitSeconds)
     $lastReply = ""
     $stableSince = $null
+    $strongContinuationSince = $null
 
     function Complete-WaitWithReply {
         param(
@@ -1631,6 +2324,14 @@ function Wait-ChatGPTReplyComplete {
         if ($state.pageError) { return @{ Ok = $false; Status = "页面错误"; Remark = "页面出现错误提示"; Reply = [string]$state.reply } }
 
         $reply = [string]$state.reply
+        $hasStrongContinuation = Test-ReplyHasStrongContinuation -Reply $reply
+        if ($hasStrongContinuation) {
+            if (-not $strongContinuationSince) { $strongContinuationSince = Get-Date }
+        }
+        else {
+            $strongContinuationSince = $null
+        }
+
         if ($reply -ne $lastReply) {
             $lastReply = $reply
             $stableSince = Get-Date
@@ -1639,20 +2340,28 @@ function Wait-ChatGPTReplyComplete {
             $stableSeconds = ((Get-Date) - $stableSince).TotalSeconds
             $hasReadyState = (-not $state.isGenerating) -and $state.inputReady -and ($stableSeconds -ge $ReplyStabilityDelay)
             $hasFallbackReadyState = (-not $state.isGenerating) -and ($stableSeconds -ge ($ReplyStabilityDelay + 8))
-            $looksLikeUsableReply = (Test-CompletionSignal -Text $reply) -or (Test-ReplyContainsTSV -Reply $reply) -or (Test-ReplyHasNextDirection -Reply $reply) -or ($reply.Length -ge 500)
-            $stuckButStable = $looksLikeUsableReply -and ($stableSeconds -ge $StuckGeneratingGraceSeconds)
+            $narrativeReply = Get-ReplyNarrativeText -Text $reply
+            $looksLikeUsableReply = (Test-CompletionSignal -Text $narrativeReply) -or
+                (Test-ReplyHasNextDirection -Reply $narrativeReply) -or
+                ($narrativeReply.Length -ge 80)
 
-            if ($hasReadyState -or $hasFallbackReadyState -or $stuckButStable) {
-                if ($stuckButStable -and $state.isGenerating) {
-                    Write-Host "  回复文本已稳定 $([int]$stableSeconds) 秒，但页面仍显示生成中；先捕捉当前回复并落盘。" -ForegroundColor Yellow
-                }
-                $copyRemark = if ($stuckButStable -and $state.isGenerating) { "页面状态疑似卡住，使用稳定文本" } else { "页面文本fallback" }
-                $completed = Complete-WaitWithReply -Reply $reply -CopyRemark $copyRemark
+            if (($hasReadyState -or $hasFallbackReadyState) -and $looksLikeUsableReply) {
+                $completed = Complete-WaitWithReply -Reply $reply -CopyRemark "页面文本fallback"
                 if ($completed.Ok) { return $completed }
                 $lastReply = ""
                 $stableSince = $null
                 Start-Sleep -Seconds 2
                 continue
+            }
+        }
+
+        if ($strongContinuationSince) {
+            $continuationSeconds = ((Get-Date) - $strongContinuationSince).TotalSeconds
+            $continuationReady = (-not $state.isGenerating) -and ($continuationSeconds -ge $ReplyStabilityDelay)
+            if ($continuationReady) {
+                $completed = Complete-WaitWithReply -Reply $reply -CopyRemark "明确推进计划已完成"
+                if ($completed.Ok) { return $completed }
+                $strongContinuationSince = $null
             }
         }
 
@@ -1665,16 +2374,19 @@ function Wait-ChatGPTReplyComplete {
 function Test-RepeatedReply {
     param([string]$Previous, [string]$Current)
 
-    if ([string]::IsNullOrEmpty($Previous) -or [string]::IsNullOrEmpty($Current)) { return $false }
-    $similarity = Get-TextSimilarity -Text1 $Previous -Text2 $Current
-    $newChars = $Current.Length - $Previous.Length
-    $hasNewProgress = (Test-ContainsAny -Text $Current -Keywords @("更新点", "新增/拆出记录", "主要数值修改")) -and (-not (Test-ContainsAny -Text $Previous -Keywords @("更新点", "新增/拆出记录", "主要数值修改")))
+    $previousNarrative = Get-ReplyNarrativeText -Text $Previous
+    $currentNarrative = Get-ReplyNarrativeText -Text $Current
+    if ([string]::IsNullOrEmpty($previousNarrative) -or [string]::IsNullOrEmpty($currentNarrative)) { return $false }
+    $similarity = Get-TextSimilarity -Text1 $previousNarrative -Text2 $currentNarrative
+    $newChars = $currentNarrative.Length - $previousNarrative.Length
+    $hasNewProgress = (Test-ContainsAny -Text $currentNarrative -Keywords @("更新点", "新增/拆出记录", "主要数值修改")) -and (-not (Test-ContainsAny -Text $previousNarrative -Keywords @("更新点", "新增/拆出记录", "主要数值修改")))
     return ($similarity -gt $SimilarityThreshold -and $newChars -lt $MinNewChars -and -not $hasNewProgress)
 }
 
 function Test-DeviatedReply {
     param([string]$Reply, [int]$Round)
 
+    $Reply = Get-ReplyNarrativeText -Text $Reply
     if (Test-ContainsAny -Text $Reply -Keywords $ProgressKeywords) { return $false }
     if (Test-CompletionSignal -Text $Reply) { return $false }
     if ($Round -le 2) { return $false }
@@ -1682,10 +2394,138 @@ function Test-DeviatedReply {
     return $true
 }
 
-function Process-TSVFile {
-    param([System.IO.FileInfo]$TSVFile)
+function Get-CurrentChatGPTUrl {
+    $value = Get-XBValue (Invoke-XBRun "get" "url")
+    if ($value -and $value.url) { return [string]$value.url }
+    return [string]$value
+}
 
-    $fileName = $TSVFile.Name
+function Wait-CurrentChatGPTConversationUrl {
+    param([int]$TimeoutSeconds = 15)
+    $deadline = (Get-Date).AddSeconds($TimeoutSeconds)
+    do {
+        try {
+            $url = Get-CurrentChatGPTUrl
+            if (Test-ChatGPTConversationUrl -Url $url) { return $url }
+        }
+        catch { }
+        Start-Sleep -Seconds 1
+    } while ((Get-Date) -lt $deadline)
+    return ""
+}
+
+function Test-ChatGPTConversationUrl {
+    param([string]$Url)
+    if ([string]::IsNullOrWhiteSpace($Url)) { return $false }
+    try {
+        $uri = [uri]$Url
+        return ($uri.Host -eq "chatgpt.com" -and $uri.AbsolutePath -match "/c/[^/]+")
+    }
+    catch { return $false }
+}
+
+function Get-ConversationArchiveRecords {
+    if (-not (Test-Path -LiteralPath $ConversationArchivePath -PathType Leaf)) { return @() }
+    try {
+        $data = Get-Content -LiteralPath $ConversationArchivePath -Raw -Encoding UTF8 | ConvertFrom-Json
+        return @($data.conversations)
+    }
+    catch {
+        throw "无法读取对话存档 $ConversationArchivePath：$($_.Exception.Message)"
+    }
+}
+
+function Save-ConversationArchive {
+    param([string]$Code, [string]$Url, [string]$FileName)
+    $records = @(Get-ConversationArchiveRecords | Where-Object { [string]$_.code -ne $Code })
+    $records += [pscustomobject]@{
+        code = $Code
+        url = $Url
+        file = $FileName
+        saved_at = Get-Date -Format "yyyy-MM-dd HH:mm:ss"
+    }
+    $parent = Split-Path -Parent $ConversationArchivePath
+    if ($parent -and -not (Test-Path -LiteralPath $parent)) {
+        New-Item -ItemType Directory -Path $parent -Force | Out-Null
+    }
+    @{ version = 1; conversations = $records } | ConvertTo-Json -Depth 10 |
+        Set-Content -LiteralPath $ConversationArchivePath -Encoding UTF8
+    Write-Host "  对话已存档：$Code -> $Url" -ForegroundColor Green
+}
+
+function Open-ArchivedConversation {
+    param([string]$Code)
+    $record = Get-ConversationArchiveRecords | Where-Object { [string]$_.code -eq $Code } | Select-Object -First 1
+    if (-not $record) { throw "找不到对话存档码 '$Code'：$ConversationArchivePath" }
+    if (-not (Test-ChatGPTConversationUrl -Url ([string]$record.url))) {
+        throw "存档码 '$Code' 的 URL 无效：$($record.url)"
+    }
+    Write-Host "  打开存档对话：$Code" -ForegroundColor Cyan
+    Invoke-XBRun "tab" "new" ([string]$record.url) | Out-Null
+    Start-Sleep -Seconds 3
+    try { Invoke-XBRun "wait" "--load" "networkidle" | Out-Null } catch { }
+}
+
+function Select-ConversationForResume {
+    param([string]$Code, [string]$FileName)
+    while ($true) {
+        Write-Host "  请在浏览器中从 ChatGPT 历史记录手动选择要继续的对话。" -ForegroundColor Yellow
+        [void](Read-Host "  选好并确认页面加载完成后，回到这里按 Enter")
+        $url = Get-CurrentChatGPTUrl
+        if (Test-ChatGPTConversationUrl -Url $url) {
+            Save-ConversationArchive -Code $Code -Url $url -FileName $FileName
+            return
+        }
+        Write-Host "  当前不是 ChatGPT 对话页面：$url" -ForegroundColor Yellow
+    }
+}
+
+function Send-TrackedChatGPTMessage {
+    param(
+        [string]$OutputFile,
+        [string]$Label,
+        [string]$Message,
+        [switch]$LargePayload
+    )
+    Add-Content -LiteralPath $OutputFile -Value "`r`n--- 发送 / $Label ---`r`n$Message`r`n" -Encoding UTF8
+    Send-ChatGPTMessage -Message $Message -LargePayload:$LargePayload
+}
+
+function Get-InitialTaskMessage {
+    param(
+        $Task,
+        [string]$RequirementContent,
+        [string]$TsvContent
+    )
+    $taskTitle = "【全量表更新】$($Task.DisplayName)"
+    return @"
+【任务名称】
+$taskTitle
+
+【任务要求】
+$RequirementContent
+
+【执行顺序】
+$PhaseOrderReminder
+
+【配置附加规则】
+$ConfiguredTaskRules
+
+【当前文件名】
+$($Task.SourceName)
+
+【当前独立任务】
+$($Task.DisplayName)
+
+【TSV 数据】
+$TsvContent
+"@
+}
+
+function Process-TSVTask {
+    param($Task)
+
+    $fileName = [string]$Task.LogName
     $startTime = Get-Date -Format "yyyy-MM-dd HH:mm:ss"
     $sendCount = 0
     $nextCount = 0
@@ -1695,45 +2535,99 @@ function Process-TSVFile {
     $minimumFullTableRows = 0
     $status = ""
     $remarks = ""
-    $outputFile = Get-OutputFilePath -BaseName $TSVFile.BaseName
+    $conversationUrl = ""
+    $checkpoint = Get-TaskCheckpoint -Task $Task
+    $resumeFromCheckpoint = $false
+    $outputFile = ""
 
-    Write-Host "`n处理文件: $fileName" -ForegroundColor Cyan
-    "# 文件名：$fileName`r`n" | Set-Content -Path $outputFile -Encoding UTF8
+    if ($checkpoint -and [string]$checkpoint.status -eq "成功") {
+        Write-Host "跳过 checkpoint 已成功车型: $($Task.DisplayName)" -ForegroundColor Gray
+        return
+    }
+    if ($checkpoint -and
+        (Test-ChatGPTConversationUrl -Url ([string]$checkpoint.conversation_url)) -and
+        (Test-Path -LiteralPath ([string]$checkpoint.output_file) -PathType Leaf)) {
+        $resumeFromCheckpoint = $true
+        $outputFile = [string]$checkpoint.output_file
+        $conversationUrl = [string]$checkpoint.conversation_url
+        $round = [Math]::Max(1, [int]$checkpoint.round)
+        $sendCount = [Math]::Max(0, [int]$checkpoint.send_count)
+    }
+    else {
+        $outputFile = Get-OutputFilePath -BaseName $Task.BaseName
+    }
+
+    Write-Host "`n处理任务: $($Task.DisplayName)（来源: $($Task.SourceName)）" -ForegroundColor Cyan
+    if (-not $resumeFromCheckpoint) {
+        "# 任务：$($Task.DisplayName)`r`n# 来源文件：$($Task.SourceName)`r`n# 任务 ID：$($Task.TaskId)`r`n" |
+            Set-Content -Path $outputFile -Encoding UTF8
+    }
 
     try {
-        Start-ChatGPTNewConversation
-
         $requirementContent = Get-Content $RequirementPath -Raw -Encoding UTF8
-        $tsvContent = Get-Content $TSVFile.FullName -Raw -Encoding UTF8
-        $taskTitle = "【全量表更新】$($TSVFile.BaseName)"
+        $tsvContent = [string]$Task.Content
         $minimumFullTableRows = [Math]::Max(0, (@($tsvContent -split "`r?`n" | Where-Object { -not [string]::IsNullOrWhiteSpace($_) }).Count - 1))
-        $message = @"
-【任务名称】
-$taskTitle
+        if ($resumeFromCheckpoint) {
+            Write-Host "  从车型 checkpoint 恢复原对话（第 $round 轮）..." -ForegroundColor Cyan
+            Invoke-XBRun "tab" "new" $conversationUrl | Out-Null
+            Start-Sleep -Seconds 3
+            try { Invoke-XBRun "wait" "--load" "networkidle" | Out-Null } catch { }
+            if ([string]$checkpoint.phase -ne "waiting_reply") {
+                $round++
+                Send-TrackedChatGPTMessage -OutputFile $outputFile -Label "checkpoint 续跑到 Round $round" -Message $ContinueMessage
+                $sendCount++
+                Save-TaskCheckpoint -Task $Task -Status "进行中" -Phase "waiting_reply" -Round $round -SendCount $sendCount -OutputFile $outputFile -ConversationUrl $conversationUrl
+            }
+        }
+        elseif ($ConversationMode -eq "new") {
+            Start-ChatGPTNewConversation
+            $message = Get-InitialTaskMessage -Task $Task -RequirementContent $requirementContent -TsvContent $tsvContent
+            Write-Host "  正在发送首次任务..." -ForegroundColor Gray
+            Send-TrackedChatGPTMessage -OutputFile $outputFile -Label "首次任务" -Message $message -LargePayload
+            Write-Host "  首次任务已发送。" -ForegroundColor Green
+            $sendCount++
+            $conversationUrl = Wait-CurrentChatGPTConversationUrl
+            Save-TaskCheckpoint -Task $Task -Status "进行中" -Phase "waiting_reply" -Round $round -SendCount $sendCount -OutputFile $outputFile -ConversationUrl $conversationUrl
+        }
+        else {
+            $archiveCode = if ([string]::IsNullOrWhiteSpace($ConversationArchiveCode)) { $Task.BaseName } else { $ConversationArchiveCode }
+            if ($ConversationMode -eq "manual_resume") {
+                Select-ConversationForResume -Code $archiveCode -FileName $fileName
+            }
+            else {
+                Open-ArchivedConversation -Code $archiveCode
+            }
 
-【任务要求】
-$requirementContent
-
-【执行顺序】
-$PhaseOrderReminder
-
-【当前文件名】
-$fileName
-
-【TSV 数据】
-$tsvContent
-"@
-
-        Send-ChatGPTMessage -Message $message -LargePayload
-        $sendCount++
+            Write-Host "  已接管所选对话，检查当前对话是否仍在生成..." -ForegroundColor Gray
+            $idleState = Wait-ChatGPTConversationIdle -TimeoutSeconds $MaxReplyWaitSeconds
+            Write-Host "  对话已空闲，保存当前最后一条回复..." -ForegroundColor Green
+            try {
+                $existingReply = Copy-LastChatGPTReplyMarkdown -FallbackReply ([string]$idleState.reply)
+            }
+            catch {
+                Write-Host "  恢复现场的 Markdown 读取失败，使用状态文本: $($_.Exception.Message)" -ForegroundColor Yellow
+                $existingReply = [string]$idleState.reply
+            }
+            $previousReply = Format-CapturedReplyMarkdown -Text $existingReply
+            Add-Content -Path $outputFile -Value "`r`n--- 恢复现场 / 已有回复 ---`r`n$previousReply`r`n" -Encoding UTF8
+            Write-Host "  当前回复已完成并保存，正在发送继续指令..." -ForegroundColor Green
+            Send-TrackedChatGPTMessage -OutputFile $outputFile -Label "存档续跑" -Message $ContinueMessage
+            Write-Host "  继续指令已发送，进入自动推进。" -ForegroundColor Green
+            $sendCount++
+            try { $conversationUrl = Get-CurrentChatGPTUrl } catch { }
+            Save-TaskCheckpoint -Task $Task -Status "进行中" -Phase "waiting_reply" -Round $round -SendCount $sendCount -OutputFile $outputFile -ConversationUrl $conversationUrl
+        }
 
         while ($true) {
             Write-Host "  等待第 $round 轮回复完成..." -ForegroundColor Gray
             $wait = Wait-ChatGPTReplyComplete
             $reply = Format-CapturedReplyMarkdown -Text ([string]$wait.Reply)
 
-            $roundTitle = if ($round -eq 1) { "--- Round 1 / 首次发送 ---" } else { "--- Round $round / 下一步 ---" }
+            $roundTitle = if ($resumeFromCheckpoint) { "--- Round $round / checkpoint 续跑 ---" } elseif ($round -eq 1 -and $ConversationMode -eq "new") { "--- Round 1 / 首次发送 ---" } elseif ($round -eq 1) { "--- Round 1 / 存档续跑 ---" } else { "--- Round $round / 下一步 ---" }
             Add-Content -Path $outputFile -Value "`r`n$roundTitle`r`n$reply`r`n" -Encoding UTF8
+            Write-Host "  第 $round 轮回复已落盘（$($reply.Length) 字符）：$(Split-Path $outputFile -Leaf)" -ForegroundColor Green
+            try { $conversationUrl = Get-CurrentChatGPTUrl } catch { }
+            Save-TaskCheckpoint -Task $Task -Status "进行中" -Phase "reply_saved" -Round $round -SendCount $sendCount -OutputFile $outputFile -ConversationUrl $conversationUrl
 
             if (-not $wait.Ok) {
                 $status = $wait.Status
@@ -1751,8 +2645,9 @@ $tsvContent
                 $previousReply = $reply
                 $nextCount++
                 $round++
-                Send-ChatGPTMessage -Message $ContinueMessage
+                Send-TrackedChatGPTMessage -OutputFile $outputFile -Label "继续到 Round $round" -Message $ContinueMessage
                 $sendCount++
+                Save-TaskCheckpoint -Task $Task -Status "进行中" -Phase "waiting_reply" -Round $round -SendCount $sendCount -OutputFile $outputFile -ConversationUrl $conversationUrl
                 continue
             }
 
@@ -1768,8 +2663,9 @@ $tsvContent
                 $previousReply = $reply
                 $nextCount++
                 $round++
-                Send-ChatGPTMessage -Message $FullTableRequestMessage
+                Send-TrackedChatGPTMessage -OutputFile $outputFile -Label "请求完整表 / Round $round" -Message $FullTableRequestMessage
                 $sendCount++
+                Save-TaskCheckpoint -Task $Task -Status "进行中" -Phase "waiting_reply" -Round $round -SendCount $sendCount -OutputFile $outputFile -ConversationUrl $conversationUrl
                 continue
             }
 
@@ -1785,8 +2681,9 @@ $tsvContent
                     $previousReply = $reply
                     $nextCount++
                     $round++
-                    Send-ChatGPTMessage -Message $CompletionFixMessage
+                    Send-TrackedChatGPTMessage -OutputFile $outputFile -Label "完成信号纠偏 / Round $round" -Message $CompletionFixMessage
                     $sendCount++
+                    Save-TaskCheckpoint -Task $Task -Status "进行中" -Phase "waiting_reply" -Round $round -SendCount $sendCount -OutputFile $outputFile -ConversationUrl $conversationUrl
                     continue
                 }
                 $status = "成功"
@@ -1795,17 +2692,18 @@ $tsvContent
             }
 
             if (-not (Test-ReplyHasRoundProgressSignals -Reply $reply)) {
-                Write-Host "  回复缺少 TSV 或推进信号，发送格式纠偏提示..." -ForegroundColor Yellow
+                Write-Host "  普通说明文本缺少明确推进信号，发送格式纠偏提示..." -ForegroundColor Yellow
                 if ($nextCount -ge $MaxNextSteps) {
                     $status = "偏离终止"
-                    $remarks = "回复缺少 TSV / 更新点 / 当前进度 / 下一步方向等正常推进信号"
+                    $remarks = "普通说明文本缺少更新点 / 当前进度 / 下一步方向等明确推进信号"
                     break
                 }
                 $previousReply = $reply
                 $nextCount++
                 $round++
-                Send-ChatGPTMessage -Message $MissingSignalsMessage
+                Send-TrackedChatGPTMessage -OutputFile $outputFile -Label "推进信号纠偏 / Round $round" -Message $MissingSignalsMessage
                 $sendCount++
+                Save-TaskCheckpoint -Task $Task -Status "进行中" -Phase "waiting_reply" -Round $round -SendCount $sendCount -OutputFile $outputFile -ConversationUrl $conversationUrl
                 continue
             }
 
@@ -1823,7 +2721,7 @@ $tsvContent
 
             if (Test-DeviatedReply -Reply $reply -Round $round) {
                 $status = "偏离终止"
-                $remarks = "回复缺少 TSV / 更新点 / 当前进度 / 下一步方向等正常推进信号"
+                $remarks = "普通说明文本缺少更新点 / 当前进度 / 下一步方向等明确推进信号"
                 break
             }
 
@@ -1832,8 +2730,9 @@ $tsvContent
             $round++
 
             Write-Host "  继续发送 下一步 ($nextCount/$MaxNextSteps)..." -ForegroundColor Yellow
-            Send-ChatGPTMessage -Message $ContinueMessage
+            Send-TrackedChatGPTMessage -OutputFile $outputFile -Label "继续到 Round $round" -Message $ContinueMessage
             $sendCount++
+            Save-TaskCheckpoint -Task $Task -Status "进行中" -Phase "waiting_reply" -Round $round -SendCount $sendCount -OutputFile $outputFile -ConversationUrl $conversationUrl
         }
     }
     catch {
@@ -1843,11 +2742,13 @@ $tsvContent
     }
 
     $endTime = Get-Date -Format "yyyy-MM-dd HH:mm:ss"
+    Save-TaskCheckpoint -Task $Task -Status $status -Phase "finished" -Round $round -SendCount $sendCount -OutputFile $outputFile -ConversationUrl $conversationUrl -Remarks $remarks
     Add-LogEntry -FileName $fileName -StartTime $startTime -EndTime $endTime -Status $status -SendCount $sendCount -OutputFile $outputFile -Remarks $remarks
     Write-Host "完成: $fileName -> $status ($remarks)" -ForegroundColor $(if ($status -eq "成功") { "Green" } else { "Yellow" })
 }
 
 function Generate-Summary {
+    param([object[]]$Tasks = @())
     $rows = @()
     try { $rows = @(Import-Csv -Path $LogPath -Encoding UTF8) } catch { }
 
@@ -1859,7 +2760,36 @@ function Generate-Summary {
         $latestByFile[$fileName] = $row
     }
 
-    $currentRows = @($latestByFile.Values | Sort-Object { $_."文件名" }, { $_.FileName })
+    if ($Tasks.Count -gt 0) {
+        $currentRows = @(
+            foreach ($task in $Tasks) {
+                $logName = [string]$task.LogName
+                $checkpoint = Get-TaskCheckpoint -Task $task
+                if ($checkpoint) {
+                    [pscustomobject]@{
+                        "文件名" = $logName
+                        "状态" = [string]$checkpoint.status
+                        "输出文件名" = Split-Path ([string]$checkpoint.output_file) -Leaf
+                        "备注" = [string]$checkpoint.remarks
+                    }
+                }
+                elseif ($latestByFile.ContainsKey($logName)) {
+                    $latestByFile[$logName]
+                }
+                else {
+                    [pscustomobject]@{
+                        "文件名" = $logName
+                        "状态" = "未处理"
+                        "输出文件名" = ""
+                        "备注" = "尚无 checkpoint"
+                    }
+                }
+            }
+        )
+    }
+    else {
+        $currentRows = @($latestByFile.Values | Sort-Object { $_."文件名" }, { $_.FileName })
+    }
 
     $count = @{
         "成功" = 0
@@ -1868,6 +2798,7 @@ function Generate-Summary {
         "页面错误" = 0
         "登录失效" = 0
         "偏离终止" = 0
+        "未处理" = 0
     }
 
     foreach ($row in $currentRows) {
@@ -1876,7 +2807,7 @@ function Generate-Summary {
         if ($count.ContainsKey($status)) { $count[$status]++ }
     }
 
-    $failed = $count["重复终止"] + $count["次数上限终止"] + $count["页面错误"] + $count["登录失效"] + $count["偏离终止"]
+    $failed = $count["重复终止"] + $count["次数上限终止"] + $count["页面错误"] + $count["登录失效"] + $count["偏离终止"] + $count["未处理"]
     $unsuccessfulRows = @(
         $currentRows |
             Where-Object {
@@ -1915,9 +2846,10 @@ function Generate-Summary {
 页面错误数：$($count["页面错误"])
 登录失效数：$($count["登录失效"])
 偏离终止数：$($count["偏离终止"])
+未处理数：$($count["未处理"])
 失败数：$failed
-当前未成功的文件数：$($unsuccessfulRows.Count)
-当前未成功的文件：
+当前未成功的任务数：$($unsuccessfulRows.Count)
+当前未成功的任务：
 $unsuccessfulText
 输出目录：$OutputDir
 完成时间：$(Get-Date -Format "yyyy-MM-dd HH:mm:ss")
@@ -1932,8 +2864,21 @@ $unsuccessfulText
 
 function Main {
     Write-Host "========================================" -ForegroundColor Cyan
-    Write-Host "OpenClaw 全量表补强自动化" -ForegroundColor Cyan
+    Write-Host "$Browser 全量表补强自动化" -ForegroundColor Cyan
     Write-Host "========================================" -ForegroundColor Cyan
+
+    if ($TaskGranularity -in @("row", "vehicle") -and $ConversationMode -ne "new") {
+        throw "逐行/车型模式要求 runtime.conversation.mode: new；每个任务必须使用独立新对话，续跑由 checkpoint 自动完成。"
+    }
+
+    $tsvFiles = @(Get-ConfiguredInputFiles)
+    $tasks = @(Get-TSVTasks -Files $tsvFiles)
+    Write-Host "找到 $($tsvFiles.Count) 个去重后的 TSV 文件，生成 $($tasks.Count) 个独立任务（粒度: $TaskGranularity）。" -ForegroundColor Green
+    if ($ListTasksOnly) {
+        foreach ($file in $tsvFiles) { Write-Host "  [文件] $($file.FullName)" -ForegroundColor DarkCyan }
+        foreach ($task in $tasks) { Write-Host "  [任务] $($task.TaskId) -> $($task.DisplayName)" }
+        return
+    }
 
     Test-Prerequisites
     Initialize-XBrowser
@@ -1941,16 +2886,44 @@ function Main {
 
     if ($OpenOnly) {
         try {
-            $checkUrl = [string](Invoke-OpenClawEvaluate -Expression "(() => location.href)()")
-            $checkTitle = [string](Invoke-OpenClawEvaluate -Expression "(() => document.title)()")
+            $checkUrl = [string](Get-XBValue (Invoke-XBRun "eval" "(() => location.href)()"))
+            $checkTitle = [string](Get-XBValue (Invoke-XBRun "eval" "(() => document.title)()"))
             if ([string]::IsNullOrWhiteSpace($checkUrl)) { throw "页面 URL 为空" }
-            Write-Host "OpenClaw 页面控制验证成功: $checkTitle ($checkUrl)" -ForegroundColor Green
+            Write-Host "$Browser 页面控制验证成功: $checkTitle ($checkUrl)" -ForegroundColor Green
         }
         catch {
-            throw "ChatGPT 已打开，但 OpenClaw 页面读取验证失败: $($_.Exception.Message)"
+            throw "ChatGPT 已打开，但 $Browser 页面读取验证失败: $($_.Exception.Message)"
         }
-        Write-Host "如页面尚未登录，请登录完成后重新运行脚本开始处理。" -ForegroundColor Yellow
-        return
+        while ($true) {
+            $state = Get-ChatGPTState
+            if (-not $state.loggedOut -and $state.inputReady) {
+                Write-Host "ChatGPT 已登录，输入框已就绪。" -ForegroundColor Green
+                return
+            }
+
+            Write-Host "当前尚未检测到已登录的可输入页面。" -ForegroundColor Yellow
+            if ($Browser -eq "playwright" -and $state.loggedOut) {
+                try {
+                    if (Invoke-ManualPlaywrightLogin) { continue }
+                }
+                catch {
+                    Write-Host "普通浏览器登录交接失败: $($_.Exception.Message)" -ForegroundColor Yellow
+                    Write-Host "请确认刚打开的普通浏览器已经完全关闭，然后按 Enter 重试。" -ForegroundColor Yellow
+                }
+            }
+            [void](Read-Host "请完成登录，然后回到此窗口按 Enter 重新验证（Ctrl+C 取消）")
+            try {
+                $state = Get-ChatGPTState
+                if (-not $state.loggedOut -and $state.inputReady) {
+                    Write-Host "ChatGPT 登录成功，输入框已就绪。" -ForegroundColor Green
+                    return
+                }
+                Write-Host "仍未检测到登录状态，将继续等待手动确认。" -ForegroundColor Yellow
+            }
+            catch {
+                Write-Host "页面仍在跳转或暂时无法读取，将继续等待手动确认。" -ForegroundColor Yellow
+            }
+        }
     }
 
     $state = Get-ChatGPTState
@@ -1959,40 +2932,21 @@ function Main {
         exit 1
     }
 
-    $tsvFiles = @(Get-ChildItem -Path $InputDir -Filter $InputFilePattern -File)
-    if ($InputFileOrder -eq "name_desc") { $tsvFiles = @($tsvFiles | Sort-Object Name -Descending) }
-    elseif ($InputFileOrder -eq "modified_asc") { $tsvFiles = @($tsvFiles | Sort-Object LastWriteTime) }
-    elseif ($InputFileOrder -eq "modified_desc") { $tsvFiles = @($tsvFiles | Sort-Object LastWriteTime -Descending) }
-    else { $tsvFiles = @($tsvFiles | Sort-Object Name) }
-    if ($OnlyFiles.Count -gt 0) {
-        $onlySet = New-Object "System.Collections.Generic.HashSet[string]" ([StringComparer]::OrdinalIgnoreCase)
-        foreach ($onlyFile in $OnlyFiles) {
-            foreach ($onlyFilePart in ($onlyFile -split ",")) {
-                $trimmed = $onlyFilePart.Trim()
-                if (-not $trimmed) { continue }
-                $name = if ($trimmed.EndsWith(".tsv", [StringComparison]::OrdinalIgnoreCase)) { $trimmed } else { "$trimmed.tsv" }
-                [void]$onlySet.Add($name)
-            }
-        }
-        $tsvFiles = @($tsvFiles | Where-Object { $onlySet.Contains($_.Name) })
-    }
     $processedSet = New-Object "System.Collections.Generic.HashSet[string]"
-    if ($OnlyFiles.Count -eq 0 -and $SkipProcessedFiles) {
+    if ($TaskGranularity -eq "file" -and $OnlyFiles.Count -eq 0 -and $SkipProcessedFiles) {
         $processedSet = Get-ProcessedFileSet
     }
-    Write-Host "找到 $($tsvFiles.Count) 个 TSV 文件。" -ForegroundColor Green
-
-    foreach ($tsvFile in $tsvFiles) {
-        if ($processedSet.Contains($tsvFile.Name)) {
-            Write-Host "跳过已处理文件: $($tsvFile.Name)" -ForegroundColor Gray
+    foreach ($task in $tasks) {
+        if ($TaskGranularity -eq "file" -and $processedSet.Contains($task.LogName)) {
+            Write-Host "跳过已处理文件: $($task.LogName)" -ForegroundColor Gray
             continue
         }
 
-        Process-TSVFile -TSVFile $tsvFile
+        Process-TSVTask -Task $task
         Start-Sleep -Seconds 5
     }
 
-    Generate-Summary
+    Generate-Summary -Tasks $tasks
     Write-Host "`n全部处理完成。汇总文件: $SummaryPath" -ForegroundColor Green
 }
 

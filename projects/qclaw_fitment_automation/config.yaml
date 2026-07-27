@@ -26,16 +26,39 @@ project_layout:
 
 runtime:
   max_rounds: 150
-  browser: openclaw
+  # 单轮回复（含接管存档对话时等待其空闲）的最长等待时间，单位：秒。
+  max_reply_wait_seconds: 900
+  # playwright 使用独立、持久化的测试 Chromium；改回 openclaw 可使用旧后端。
+  browser: playwright
+  playwright_profile_path: ""
+  playwright_executable_path: ""
+  conversation:
+    mode: new
+    archive_code: ""
+    archive_path: conversation_archives.json
+  # directories 和 files 可同时使用；最终文件按绝对路径去重。
+  input_sources:
+    directories:
+      - path: input
+        pattern: "*.tsv"
+        recursive: false
+    files: []
+    order: name_asc
+  processing:
+    # file=每个文件一个对话；row=每个非空数据行一个对话。
+    mode: file
+    row_label_columns: [MAKE, MODEL]
+    checkpoint_dir: checkpoints
   continue_on_error: false
   only_files: []
   input_files:
-    pattern: "*.tsv"
-    order: name_asc
     skip_processed: true
 
 data_contract:
   requirement: requirements\eu_autodata.md
+  # 尺寸代表年复用功能；启用时字段名必须来自 requirement 的全量表定义。
+  dimension_representative:
+    enabled: false
   instructions:
     - 不得新增当前 TSV 年份范围外的年代、代际或车型行
     - 输出顺序必须保持输入 split 第一条到最后一条的边界
