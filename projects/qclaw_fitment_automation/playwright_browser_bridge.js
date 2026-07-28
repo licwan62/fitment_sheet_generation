@@ -22,6 +22,18 @@ if (!port || !token) {
 let context;
 let currentPage;
 
+function isClosedTargetError(error) {
+  const message = error && (error.stack || error.message || String(error));
+  return /Target page, context or browser has been closed|browserContext\..*closed|Browser has been closed|Connection closed/i.test(message || "");
+}
+
+async function resetBrowserState() {
+  const staleContext = context;
+  context = undefined;
+  currentPage = undefined;
+  if (staleContext) await staleContext.close().catch(() => {});
+}
+
 function json(response, status, payload) {
   const body = JSON.stringify(payload);
   response.writeHead(status, {
@@ -40,20 +52,27 @@ async function readBody(request) {
 
 async function ensureBrowser() {
   if (context) return;
-  context = await chromium.launchPersistentContext(userDataDir, {
+  const launchedContext = await chromium.launchPersistentContext(userDataDir, {
     headless: false,
     executablePath: executablePath || undefined,
     viewport: null,
     args: ["--start-maximized"],
   });
-  context.setDefaultTimeout(20_000);
-  context.setDefaultNavigationTimeout(90_000);
-  context.on("page", (page) => {
+  context = launchedContext;
+  launchedContext.setDefaultTimeout(20_000);
+  launchedContext.setDefaultNavigationTimeout(90_000);
+  launchedContext.on("page", (page) => {
     currentPage = page;
   });
-  currentPage = context.pages().find((page) => page.url().startsWith("https://chatgpt.com")) ||
-    context.pages()[0] ||
-    await context.newPage();
+  launchedContext.on("close", () => {
+    if (context === launchedContext) {
+      context = undefined;
+      currentPage = undefined;
+    }
+  });
+  currentPage = launchedContext.pages().find((page) => page.url().startsWith("https://chatgpt.com")) ||
+    launchedContext.pages()[0] ||
+    await launchedContext.newPage();
 }
 
 async function activePage() {
@@ -164,7 +183,14 @@ const server = http.createServer(async (request, response) => {
   }
   try {
     const body = await readBody(request);
-    const result = await runAction(body.action, body);
+    let result;
+    try {
+      result = await runAction(body.action, body);
+    } catch (error) {
+      if (body.action === "cleanup" || !isClosedTargetError(error)) throw error;
+      await resetBrowserState();
+      result = await runAction(body.action, body);
+    }
     json(response, 200, { ok: true, result });
   } catch (error) {
     json(response, 500, { ok: false, error: error.stack || error.message || String(error) });

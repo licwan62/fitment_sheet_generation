@@ -1,0 +1,7 @@
+"文件名","开始时间","结束时间","状态","发送次数","输出文件名","备注"
+"test.tsv","2026-07-28 09:11:00","2026-07-28 11:25:22","页面错误","27","test_result.md","异常: Playwright browser 请求失败 (tab-new): {""ok"":false,""error"":""browserContext.newPage: Target page, context or browser has been closed\n    at activePage (D:\\Home\\Scripts\\fitment_sheet_generation\\projects\\qclaw_fitment_automation\\playwright_browser_bridge.js:62:85)\n    at async runAction (D:\\Home\\Scripts\\fitment_sheet_generation\\projects\\qclaw_fitment_automation\\playwright_browser_bridge.js:93:16)\n    at async Server. (D:\\Home\\Scripts\\fitment_sheet_generation\\projects\\qclaw_fitment_automation\\playwright_browser_bridge.js:167:20)""}"
+"all.tsv#all 第 1-100 行","2026-07-28 12:08:18","2026-07-28 12:54:47","成功","3","all__batch__0001__36300f0a_result.md","检测到明确批次完成信号且包含完整表"
+"all.tsv#all 第 101-200 行","2026-07-28 15:56:47","2026-07-28 15:56:54","成功","23","all__batch__0002__0daa824a_result.md","恢复 waiting_reply 时检测到服务器端已有完整表及下载链接；已更新累计最终 TSV"
+"all.tsv#all 第 201-300 行","2026-07-28 17:08:46","2026-07-28 17:23:33","成功","2","all__batch__0003__af0e5459_result_2.md","检测到明确批次完成信号、两张完整表及下载链接；已更新本批与累计最终 TSV"
+"all.tsv#all 第 301-400 行","2026-07-28 17:23:38","2026-07-28 18:05:12","成功","6","all__batch__0004__c1f4a7b5_result.md","检测到明确批次完成信号、两张完整表及下载链接；已更新本批与累计最终 TSV"
+"all.tsv#all 第 401-500 行","2026-07-28 18:05:17","2026-07-28 18:26:31","成功","2","all__batch__0005__b17c10ac_result.md","检测到明确批次完成信号、两张完整表及下载链接；已更新本批与累计最终 TSV"
