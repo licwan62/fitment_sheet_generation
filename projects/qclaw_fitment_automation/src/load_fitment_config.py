@@ -237,7 +237,12 @@ def main():
         raise ValueError("缺少 data_contract.requirement")
     forbidden = [
         name
-        for name in ("full_table", "subseries_match", "instructions")
+        for name in (
+            "full_table",
+            "dimension_group_table",
+            "subseries_match",
+            "instructions",
+        )
         if name in contract
     ]
     if forbidden:
@@ -256,6 +261,11 @@ def main():
     requirement_contract = load_requirement_contract(requirement_path)
     contract["full_table"] = validate_table(
         requirement_contract.get("full_table", {}), "full_table"
+    )
+    contract["dimension_group_table"] = validate_table(
+        requirement_contract.get("dimension_group_table", {"enabled": False}),
+        "dimension_group_table",
+        required=False,
     )
     contract["subseries_match"] = validate_table(
         requirement_contract.get("subseries_match", {"enabled": False}),
@@ -364,8 +374,17 @@ def main():
                 "runtime.processing 与旧版 runtime.vehicle_iteration 不能同时启用"
             )
         processing_mode = processing.get("mode", "file")
-        if processing_mode not in {"row", "file"}:
-            raise ValueError("runtime.processing.mode 只能是 row 或 file")
+        if processing_mode not in {"row", "file", "batch"}:
+            raise ValueError("runtime.processing.mode 只能是 row、file 或 batch")
+        rows_per_task = processing.get("rows_per_task", 0)
+        if isinstance(rows_per_task, bool) or not isinstance(rows_per_task, int):
+            raise ValueError("runtime.processing.rows_per_task 必须是整数")
+        if processing_mode == "batch" and rows_per_task <= 0:
+            raise ValueError(
+                "processing.mode 为 batch 时 rows_per_task 必须大于 0"
+            )
+        if processing_mode != "batch" and rows_per_task < 0:
+            raise ValueError("runtime.processing.rows_per_task 不能小于 0")
         row_label_columns = processing.get("row_label_columns", [])
         if not isinstance(row_label_columns, list) or any(
             not isinstance(item, str) or not item.strip()
@@ -374,10 +393,10 @@ def main():
             raise ValueError(
                 "runtime.processing.row_label_columns 必须是字符串列表"
             )
-        if processing_mode == "row" and conversation.get("mode", "new") != "new":
+        if processing_mode in {"row", "batch"} and conversation.get("mode", "new") != "new":
             raise ValueError(
-                "processing.mode 为 row 时 conversation.mode 必须是 new；"
-                "逐行续跑由 checkpoint 自动完成"
+                "processing.mode 为 row 或 batch 时 conversation.mode 必须是 new；"
+                "独立任务续跑由 checkpoint 自动完成"
             )
     input_files = require_mapping(runtime.get("input_files", {}), "runtime.input_files")
     if input_files.get("order", "name_asc") not in {"name_asc", "name_desc", "modified_asc", "modified_desc"}:

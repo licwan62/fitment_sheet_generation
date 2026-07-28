@@ -22,8 +22,10 @@ param(
     [string]$ConversationMode = "new",
     [string]$ConversationArchiveCode = "",
     [string]$ConversationArchivePath = "",
-    [ValidateSet("file", "row", "vehicle")]
+    [ValidateSet("file", "row", "batch", "vehicle")]
     [string]$TaskGranularity = "file",
+    [ValidateRange(0, [int]::MaxValue)]
+    [int]$RowsPerTask = 0,
     [string[]]$VehicleKeyColumns = @("MAKE", "MODEL"),
     [string[]]$RowLabelColumns = @(),
     [string]$CheckpointDir = "",
@@ -171,6 +173,9 @@ $RowLabelColumns = @(
 if ($TaskGranularity -eq "vehicle" -and $VehicleKeyColumns.Count -eq 0) {
     throw "车型逐项模式至少需要一个 VehicleKeyColumns"
 }
+if ($TaskGranularity -eq "batch" -and $RowsPerTask -le 0) {
+    throw "批次模式必须设置大于 0 的 RowsPerTask"
+}
 
 $OpenClawConfig = $null
 $OpenClawAuthToken = ""
@@ -186,6 +191,8 @@ $SkipProcessedFiles = ($env:FITMENT_SKIP_PROCESSED -ne "false")
 $InputSourcesJson = if ($env:FITMENT_INPUT_SOURCES_JSON) { [string]$env:FITMENT_INPUT_SOURCES_JSON } else { "" }
 $ProgressKeywords = @("更新点", "当前批次进度", "下一步优先处理", "下一步优先补缺失", "下一步优先核对", "待终核", "可入库", "数据抓取过程", "全量表", "TSV", "新增/拆出记录", "主要数值修改", "🟢", "🟡", "🔴")
 $RequiredTsvHeader = if ($env:FITMENT_TSV_HEADER) { $env:FITMENT_TSV_HEADER } else { "主车型`t年份区间`t结构`t对应尺码`t品牌`t前台车型`t排序依据车型`t子车系`t分类`t版本`t门数`t代际`t区间最小年份`t区间最大年份`tmax_length_in`tmax_width_in`tmax_height_in`tmax_length_cm`tmax_width_cm`tmax_height_cm`t驾驶室类型`t货斗长度_ft`t长度余量`t无尺码原因`t参考车型`t备注`t迭代状态" }
+$DimensionGroupEnabled = ($env:FITMENT_DIMENSION_GROUP_ENABLED -eq "true")
+$RequiredDimensionGroupHeader = if ($env:FITMENT_DIMENSION_GROUP_HEADER) { $env:FITMENT_DIMENSION_GROUP_HEADER } else { "DIMENSION_GROUP_ID`tLengthMM`tWidthMM`tHeightMM`tDimensionSource`tSourceURL" }
 $SubseriesEnabled = ($env:FITMENT_SUBSERIES_ENABLED -ne "false")
 $RequiredSubseriesMatchHeader = if ($env:FITMENT_SUBSERIES_HEADER) { $env:FITMENT_SUBSERIES_HEADER } else { "Year`t主车型`t结构`t版本`t候选车型`t匹配数量" }
 $AutoEmptyColumns = if ($env:FITMENT_AUTO_EMPTY_COLUMNS_DEFINED -eq "true") { [string]$env:FITMENT_AUTO_EMPTY_COLUMNS } elseif ($env:FITMENT_AUTO_EMPTY_COLUMNS) { $env:FITMENT_AUTO_EMPTY_COLUMNS } else { "对应尺码、排序依据车型、子车系、区间最小年份、区间最大年份、max_length_cm、max_width_cm、max_height_cm、长度余量、无尺码原因" }
@@ -196,15 +203,39 @@ $ConfiguredTaskRules = (@($ExtraDataInstructions, $DimensionRepresentativeInstru
     Where-Object { -not [string]::IsNullOrWhiteSpace([string]$_) } |
     ForEach-Object { [string]$_ }) -join "`n"
 $AutoEmptyReminder = if ($AutoEmptyColumns) { "以下自动字段必须保留列但值留空：$AutoEmptyColumns。" } else { "" }
+$DimensionGroupReminder = if ($DimensionGroupEnabled) { "另需维护完整 DIMENSION_GROUP TSV，表头固定为：$RequiredDimensionGroupHeader。缺少任一张表、任一映射引用的尺寸组，或尺寸组字段不完整时不得 COMPLETE。" } else { "" }
 $SubseriesReminder = if ($SubseriesEnabled) { "另需维护子车系匹配表，表头固定为：$RequiredSubseriesMatchHeader；以下自动字段必须保留列但值留空：$SubseriesAutoEmptyColumns。" } else { "不要输出子车系匹配表。" }
 $ConfiguredTaskRulesReminder = if ($ConfiguredTaskRules) { "`n$ConfiguredTaskRules" } else { "" }
-$HeaderReminder = "全量 TSV 表头必须严格使用 requirement 指定的字段顺序：$RequiredTsvHeader。$AutoEmptyReminder$SubseriesReminder$ConfiguredTaskRulesReminder"
-$PhaseOrderReminder = '执行顺序必须固定为：第一阶段先解决数据缺失，优先补齐缺失年份、缺失结构/版本/门数/驾驶室/货斗、缺失尺寸、缺失参考车型等会阻塞成表的数据；第二阶段才解决核对问题，逐年核对参考车型覆盖、尺寸口径和迭代状态。只要仍存在任何数据缺失，不要把主要精力转到核对问题，也不要写全部可入库或本批次完成。回复中的下一步方向请按阶段写：有缺失时写“下一步优先补缺失”，缺失已补齐后再写“下一步优先核对”。'
-$SubseriesOutputItem = if ($SubseriesEnabled) { "；4) 本轮更新后的子车系匹配表" } else { "" }
-$ContinueMessage = '继续补强当前批次，并严格按以下格式回复：1) 更新点；2) 当前批次进度；3) 本轮更新后的全量 TSV（必须是真正更新过的 TSV，不能只写计划或说明，' + $HeaderReminder + '）' + $SubseriesOutputItem + '；5) 下一步优先处理（有数据缺失时必须写下一步优先补缺失，缺失补齐后再写下一步优先核对）；6) 若仍未完成，TSV 代码块外最后一行必须单独输出“推进信号：CONTINUE”；全部完成时最后一行单独输出“推进信号：COMPLETE”。' + $PhaseOrderReminder + '若输入记录已有年份范围，拆分后的年份合集不得超出该范围；若输入未提供年份，只可补入可靠来源明确支持的生产年份。不得新增输入不存在的 MAKE/MODEL；最终 TSV 顺序必须保持当前 split 第一条到最后一条的边界。不要只描述这一轮将要做什么而不给 TSV，不要连续重复上一轮内容。'
-$MissingSignalsMessage = '你的上一轮回复缺少正常推进信号。请立刻继续当前批次，并严格补齐以下内容：更新点、当前批次进度、本轮更新后的全量 TSV' + $(if ($SubseriesEnabled) { "、本轮更新后的子车系匹配表" } else { "" }) + '、下一步优先处理；如果还没完成，TSV 代码块外最后一行单独输出“推进信号：CONTINUE”；全部完成则输出“推进信号：COMPLETE”。不得只给说明、计划、摘要或重复上一轮文本，必须给一个更新过的全量 TSV。' + $PhaseOrderReminder + $HeaderReminder
-$FullTableRequestMessage = '给我当前批次更新后的完整可替换全量 TSV' + $(if ($SubseriesEnabled) { "，并给出子车系匹配表" } else { "" }) + '。全量 TSV 必须包含未变更、已修改，以及按输入已有年份范围（输入无年份时按可靠来源支持的生产年份）拆分后的全部记录；不要只给变化部分、摘要或说明。若仍有数据缺失，先继续补缺失，不要提前转为最终核对或完成。TSV 代码块外最后一行必须输出“推进信号：CONTINUE”或“推进信号：COMPLETE”。不得新增输入不存在的 MAKE/MODEL，输出顺序必须保持当前 split 第一条到最后一条的边界。' + $PhaseOrderReminder + $HeaderReminder
-$CompletionFixMessage = '你刚才给了完成信号，但当前回复没有可直接入库的完整全量 TSV' + $(if ($SubseriesEnabled) { "、缺少子车系匹配表" } else { "" }) + '，或仍可能存在未先解决的数据缺失。若本批次其实还没完成，请先补齐数据缺失，再做核对，并带上：更新点、当前批次进度、本轮更新后的全量 TSV' + $(if ($SubseriesEnabled) { "、本轮更新后的子车系匹配表" } else { "" }) + '、下一步优先处理，并在 TSV 代码块外最后一行输出“推进信号：CONTINUE”；确认全部完成才输出“推进信号：COMPLETE”。' + $PhaseOrderReminder + $HeaderReminder
+$HeaderReminder = "Ktype 映射 TSV 表头必须严格使用 requirement 指定的字段顺序：$RequiredTsvHeader。$AutoEmptyReminder$DimensionGroupReminder$SubseriesReminder$ConfiguredTaskRulesReminder"
+$PhaseOrderReminder = if ($DimensionGroupEnabled) {
+    '执行顺序固定为：第一阶段优先消除 PENDING 并补齐会阻塞两张最终表的数据。检测到 PENDING=0 后，第二阶段最多只做一次轻量机械收尾：核对固定表头、id 与 DIMENSION_GROUP_ID 唯一、映射引用闭合、长宽高和来源非空、两个任务指定下载链接齐全。第二阶段不得重新逐车型、逐年份或逐来源做深度检索，不得为了提高置信度反复核对，也不得因非阻塞的排序或措辞问题继续多轮。PENDING=0 后的下一条回复必须直接输出两张最终完整 TSV、两个精确 sandbox 下载链接，并以“推进信号：COMPLETE”结束；不要再输出 CONTINUE。'
+}
+else {
+    '执行顺序必须固定为：第一阶段先解决数据缺失，优先补齐缺失年份、缺失结构/版本/门数/驾驶室/货斗、缺失尺寸、缺失参考车型等会阻塞成表的数据；第二阶段才解决核对问题，逐年核对参考车型覆盖、尺寸口径和迭代状态。只要仍存在任何数据缺失，不要把主要精力转到核对问题，也不要写全部可入库或本批次完成。回复中的下一步方向请按阶段写：有缺失时写“下一步优先补缺失”，缺失已补齐后再写“下一步优先核对”。'
+}
+$AdditionalOutputItems = $(if ($DimensionGroupEnabled) { "；4) 本轮更新后的完整 DIMENSION_GROUP TSV" } else { "" }) + $(if ($SubseriesEnabled) { "；5) 本轮更新后的子车系匹配表" } else { "" })
+$RequiredExtraTablesText = $(if ($DimensionGroupEnabled) { "、完整 DIMENSION_GROUP TSV" } else { "" }) + $(if ($SubseriesEnabled) { "、子车系匹配表" } else { "" })
+$CompletionScopeText = if ($DimensionGroupEnabled) { "两张必需表均完整且全部映射闭合" } else { "全部必需输出完整且记录闭合" }
+$ContinueMessage = if ($DimensionGroupEnabled) {
+    '继续当前批次并采用缓存优先模式。尺寸组只在首次创建或纠错时完整核对一次三维和来源；后续 Ktype 只判断关联哪个现有 DIMENSION_GROUP_ID，不重复抓取，不输出缓存来源或匹配理由。仍有 PENDING 时，CONTINUE 轮仅输出：1) 更新点；2) 当前批次进度；3) 本轮新增/修改的 Ktype 映射 TSV（无变化写“无”）；4) 本轮首次创建/修正的 DIMENSION_GROUP TSV（复用既有组不重复输出，无变化写“无”）；5) 下一步优先处理。若当前或上一轮进度已经是 PENDING=0，本轮不要继续检索或再次输出 CONTINUE，必须立刻汇总并输出两张最终完整 TSV、两个任务指定 sandbox 下载链接和“推进信号：COMPLETE”。' + $PhaseOrderReminder + $HeaderReminder
+}
+else {
+    '继续补强当前批次，并严格按以下格式回复：1) 更新点；2) 当前批次进度；3) 本轮更新后的完整 Ktype 映射 TSV（必须是真正更新过的 TSV，不能只写计划或说明，' + $HeaderReminder + '）' + $AdditionalOutputItems + '；下一步优先处理（有数据缺失时必须写下一步优先补缺失，缺失补齐后再写下一步优先核对）；若仍未完成，TSV 代码块外最后一行必须单独输出“推进信号：CONTINUE”；' + $CompletionScopeText + '时，最后一行才可单独输出“推进信号：COMPLETE”。' + $PhaseOrderReminder
+}
+$MissingSignalsMessage = if ($DimensionGroupEnabled) {
+    '你的上一轮回复缺少正常推进信号。继续当前批次：尺寸组首次建档后必须复用；仅输出本轮新增/修改的 Ktype 映射行和首次创建/修正的 DIMENSION_GROUP 行，无变化明确写“无”，并给出下一步优先处理。未完成输出“推进信号：CONTINUE”；只有同一回复包含两张最终完整表且全部映射闭合时才可 COMPLETE。' + $PhaseOrderReminder + $HeaderReminder
+}
+else {
+    '你的上一轮回复缺少正常推进信号。请立刻继续当前批次，并严格补齐以下内容：更新点、当前批次进度、本轮更新后的完整 Ktype 映射 TSV' + $RequiredExtraTablesText + '、下一步优先处理；如果还没完成，TSV 代码块外最后一行单独输出“推进信号：CONTINUE”；全部必需表完整且映射闭合才输出“推进信号：COMPLETE”。不得只给说明、计划、摘要或重复上一轮文本。' + $PhaseOrderReminder + $HeaderReminder
+}
+$FullTableRequestMessage = '给我当前批次更新后的完整可替换 Ktype 映射 TSV' + $RequiredExtraTablesText + '。必须包含未变更、已修改和合法拆分后的全部记录；不要只给变化部分、摘要或说明。若仍有数据缺失，先继续补缺失，不要提前完成。TSV 代码块外最后一行必须输出“推进信号：CONTINUE”或“推进信号：COMPLETE”。' + $PhaseOrderReminder + $HeaderReminder
+$CompletionFixMessage = '你刚才给了完成信号，但当前回复缺少完整 Ktype 映射 TSV' + $RequiredExtraTablesText + '，存在未引用/缺失/不完整的尺寸组，或仍有数据缺失。请补齐所有必需表；未完成时输出“推进信号：CONTINUE”，确认全部表完整且映射闭合后才输出“推进信号：COMPLETE”。' + $PhaseOrderReminder + $HeaderReminder
+$LightFinalizeMessage = if ($DimensionGroupEnabled) {
+    '立即执行轻量收尾。当前批次已经 PENDING=0；停止外部检索，不再逐车型、逐年份、逐来源复核，不要再输出 CONTINUE。使用本对话已累计确认的内容，立刻重建并在同一回复中输出最终完整 Ktype 映射 TSV 和最终完整 DIMENSION_GROUP TSV。只做机械检查：固定表头、唯一主键、映射引用闭合、三维与来源非空、任务指定文件名和两个可点击 sandbox 下载链接齐全。随后最后一行单独输出“推进信号：COMPLETE”。' + $HeaderReminder
+}
+else {
+    $ContinueMessage
+}
 
 function Invoke-XB {
     param([Parameter(ValueFromRemainingArguments = $true)][string[]]$Args)
@@ -1007,6 +1038,40 @@ function Get-TSVTasks {
             continue
         }
         $header = $lines[0].TrimStart([char]0xFEFF)
+
+        if ($TaskGranularity -eq "batch") {
+            $dataLines = @(
+                $lines |
+                    Select-Object -Skip 1 |
+                    Where-Object { -not [string]::IsNullOrWhiteSpace($_) }
+            )
+            for ($offset = 0; $offset -lt $dataLines.Count; $offset += $RowsPerTask) {
+                $batchIndex = [int]($offset / $RowsPerTask) + 1
+                $takeCount = [Math]::Min($RowsPerTask, $dataLines.Count - $offset)
+                $batchLines = @($dataLines[$offset..($offset + $takeCount - 1)])
+                $startRow = $offset + 1
+                $endRow = $offset + $takeCount
+                $batchLabel = "$($file.BaseName) 第 $startRow-$endRow 行"
+                $stableHash = Get-StableTaskHash -Value "$($file.Name)`n$startRow`n$($batchLines -join "`n")"
+                $taskId = "{0}__batch__{1:D4}__{2}" -f $sourceBaseName, $batchIndex, $stableHash
+                $tasks.Add([pscustomobject]@{
+                    TaskId = $taskId
+                    DisplayName = $batchLabel
+                    SourceFile = $file
+                    SourceName = $file.Name
+                    SourceBaseName = $sourceBaseName
+                    BatchStartRow = $startRow
+                    BatchEndRow = $endRow
+                    FinalArtifactPrefix = "$sourceBaseName`_$startRow-$endRow"
+                    LogName = "$($file.Name)#$batchLabel"
+                    Content = "$header`r`n$($batchLines -join "`r`n")"
+                    BaseName = $taskId
+                    CheckpointPath = Join-Path $CheckpointDir "$taskId.json"
+                })
+            }
+            continue
+        }
+
         $columns = @($header -split "`t", -1)
         $labelColumns = if ($TaskGranularity -eq "row") { @($RowLabelColumns) } else { @($VehicleKeyColumns) }
         $keyIndexes = @()
@@ -1235,7 +1300,7 @@ function Get-ConfiguredFullTableRowsFromText {
     if ([string]::IsNullOrWhiteSpace($Text)) { return @() }
 
     $lines = $Text -split "`r?`n"
-    $headerColumns = @($RequiredTsvHeader -split "`t", -1)
+    $headerColumns = @($RequiredTsvHeader -split "`t")
     $inTable = $false
 
     foreach ($line in $lines) {
@@ -1255,8 +1320,8 @@ function Get-ConfiguredFullTableRowsFromText {
             continue
         }
 
-        $columns = @($rawLine -split "`t", -1)
-        if ($columns.Count -lt $headerColumns.Count) {
+        $columns = @($rawLine -split "`t")
+        if ($columns.Count -ne $headerColumns.Count) {
             if ($rows.Count -gt 0) { break }
             continue
         }
@@ -1268,6 +1333,504 @@ function Get-ConfiguredFullTableRowsFromText {
     }
 
     return @($rows | ForEach-Object { $_ })
+}
+
+function Get-ConfiguredDimensionGroupRowsFromText {
+    param([string]$Text)
+
+    $rows = New-Object System.Collections.Generic.List[object]
+    if (-not $DimensionGroupEnabled -or [string]::IsNullOrWhiteSpace($Text)) { return @() }
+
+    $lines = $Text -split "`r?`n"
+    $headerColumns = @($RequiredDimensionGroupHeader -split "`t")
+    $inTable = $false
+
+    foreach ($line in $lines) {
+        $rawLine = $line.TrimEnd("`r")
+        $trimmed = $rawLine.Trim().TrimStart([char]0xFEFF)
+        if ($trimmed -eq $RequiredDimensionGroupHeader) {
+            $inTable = $true
+            continue
+        }
+        if (-not $inTable) { continue }
+        if ([string]::IsNullOrWhiteSpace($trimmed)) {
+            if ($rows.Count -gt 0) { break }
+            continue
+        }
+        if ($trimmed -like "---*" -or $trimmed -match '^```') {
+            if ($rows.Count -gt 0) { break }
+            continue
+        }
+
+        $columns = @($rawLine -split "`t")
+        if ($columns.Count -ne $headerColumns.Count) {
+            if ($rows.Count -gt 0) { break }
+            continue
+        }
+        $record = [ordered]@{}
+        for ($index = 0; $index -lt $headerColumns.Count; $index++) {
+            $record[$headerColumns[$index]] = [string]$columns[$index]
+        }
+        $rows.Add([pscustomobject]$record)
+    }
+
+    return @($rows | ForEach-Object { $_ })
+}
+
+function Test-DimensionGroupTablesComplete {
+    param([string]$Reply)
+
+    if (-not $DimensionGroupEnabled) { return $true }
+
+    $mappingRows = @(Get-ConfiguredFullTableRowsFromText -Text $Reply)
+    $dimensionRows = @(Get-ConfiguredDimensionGroupRowsFromText -Text $Reply)
+    if ($mappingRows.Count -eq 0 -or $dimensionRows.Count -eq 0) { return $false }
+
+    $groups = @{}
+    foreach ($row in $dimensionRows) {
+        $groupId = ([string]$row.DIMENSION_GROUP_ID).Trim()
+        if (-not $groupId -or $groups.ContainsKey($groupId)) { return $false }
+        foreach ($field in @("LengthMM", "WidthMM", "HeightMM", "DimensionSource", "SourceURL")) {
+            if ([string]::IsNullOrWhiteSpace([string]$row.$field)) { return $false }
+        }
+        foreach ($field in @("LengthMM", "WidthMM", "HeightMM")) {
+            $number = 0
+            if (-not [int]::TryParse(([string]$row.$field).Trim(), [ref]$number) -or $number -le 0) {
+                return $false
+            }
+        }
+        $groups[$groupId] = $true
+    }
+
+    $referencedGroups = @{}
+    $mappingIds = @{}
+    foreach ($row in $mappingRows) {
+        $mappingId = ([string]$row.id).Trim()
+        $ktype = ([string]$row.Ktype).Trim()
+        if (-not $mappingId -or -not $ktype -or $mappingIds.ContainsKey($mappingId)) {
+            return $false
+        }
+        $mappingIds[$mappingId] = $true
+        $groupId = ([string]$row.DIMENSION_GROUP_ID).Trim()
+        if (-not $groupId -or -not $groups.ContainsKey($groupId)) { return $false }
+        foreach ($field in @("NormalizedBodyStyle", "Generation", "MatchConfidence")) {
+            if ([string]::IsNullOrWhiteSpace([string]$row.$field)) { return $false }
+        }
+        if ($row.PSObject.Properties.Name -contains "IterationStatus") {
+            if (([string]$row.IterationStatus).Trim() -ne "READY") { return $false }
+        }
+        $referencedGroups[$groupId] = $true
+    }
+
+    foreach ($groupId in $groups.Keys) {
+        if (-not $referencedGroups.ContainsKey($groupId)) { return $false }
+    }
+    return $true
+}
+
+function Test-ReplyContainsRequiredDownloadLinks {
+    param(
+        [string]$Reply,
+        $Task = $null
+    )
+
+    if (-not $DimensionGroupEnabled) { return $true }
+    if ([string]::IsNullOrWhiteSpace($Reply)) { return $false }
+
+    if ($null -ne $Task) {
+        $names = Get-TaskFinalArtifactNames -Task $Task
+        $mappingName = [regex]::Escape($names.MappingFileName)
+        $dimensionName = [regex]::Escape($names.DimensionFileName)
+        $mappingLink = "(?im)\[[^\]]+\]\(sandbox:/mnt/data/$mappingName\)"
+        $dimensionLink = "(?im)\[[^\]]+\]\(sandbox:/mnt/data/$dimensionName\)"
+    }
+    else {
+        $mappingLink = '(?im)\[[^\]]+\]\(sandbox:/mnt/data/[^)\s]*_ktype_dimension_mapping_final\.tsv\)'
+        $dimensionLink = '(?im)\[[^\]]+\]\(sandbox:/mnt/data/[^)\s]*_dimension_groups_final\.tsv\)'
+    }
+    return (($Reply -match $mappingLink) -and ($Reply -match $dimensionLink))
+}
+
+function Get-TaskFinalArtifactNames {
+    param($Task)
+
+    $sourceBaseName = if (
+        $Task.PSObject.Properties.Name -contains "SourceBaseName" -and
+        -not [string]::IsNullOrWhiteSpace([string]$Task.SourceBaseName)
+    ) {
+        [string]$Task.SourceBaseName
+    }
+    elseif ($Task.SourceFile) {
+        [string]$Task.SourceFile.BaseName
+    }
+    else {
+        [string]$Task.BaseName
+    }
+    $sourceBaseName = ($sourceBaseName -replace '[^\p{L}\p{Nd}._-]+', '_').Trim("_")
+    if (-not $sourceBaseName) { $sourceBaseName = "fitment" }
+
+    $prefix = if (
+        $Task.PSObject.Properties.Name -contains "FinalArtifactPrefix" -and
+        -not [string]::IsNullOrWhiteSpace([string]$Task.FinalArtifactPrefix)
+    ) {
+        [string]$Task.FinalArtifactPrefix
+    }
+    else {
+        $sourceBaseName
+    }
+    $prefix = ($prefix -replace '[^\p{L}\p{Nd}._-]+', '_').Trim("_")
+
+    # 分批模式使用首批文件名作为持续累计总表。第一批成功时创建，
+    # 后续每批成功后继续按主键去重追加到同一对文件。
+    $aggregatePrefix = if (
+        $Task.PSObject.Properties.Name -contains "BatchStartRow" -and
+        $RowsPerTask -gt 0
+    ) {
+        "$sourceBaseName`_1-$RowsPerTask"
+    }
+    else {
+        $sourceBaseName
+    }
+
+    return [pscustomobject]@{
+        MappingFileName = "$prefix`_ktype_dimension_mapping_final.tsv"
+        DimensionFileName = "$prefix`_dimension_groups_final.tsv"
+        AggregateMappingFileName = "$aggregatePrefix`_ktype_dimension_mapping_final.tsv"
+        AggregateDimensionFileName = "$aggregatePrefix`_dimension_groups_final.tsv"
+    }
+}
+
+function Get-TaskFinalArtifactInstruction {
+    param($Task)
+
+    if (-not $DimensionGroupEnabled) { return "" }
+    $names = Get-TaskFinalArtifactNames -Task $Task
+    return @"
+
+【COMPLETE 下载文件硬性要求】
+准备 COMPLETE 时，除两张完整内嵌 TSV 外，还必须创建并提供以下两个可点击 sandbox 下载链接，文件名必须完全一致：
+- $($names.MappingFileName)
+- $($names.DimensionFileName)
+缺少任一下载链接时不得输出推进信号：COMPLETE。
+"@
+}
+
+function Assert-OutputArtifactPath {
+    param([string]$Path)
+
+    $outputRoot = [System.IO.Path]::GetFullPath($OutputDir).TrimEnd(
+        [System.IO.Path]::DirectorySeparatorChar,
+        [System.IO.Path]::AltDirectorySeparatorChar
+    ) + [System.IO.Path]::DirectorySeparatorChar
+    $resolved = [System.IO.Path]::GetFullPath($Path)
+    if (-not $resolved.StartsWith($outputRoot, [StringComparison]::OrdinalIgnoreCase)) {
+        throw "最终 TSV 路径超出输出目录: $resolved"
+    }
+    return $resolved
+}
+
+function ConvertTo-StrictTsvText {
+    param(
+        [string]$Header,
+        [object[]]$Rows
+    )
+
+    $columns = @($Header -split "`t")
+    $lines = New-Object System.Collections.Generic.List[string]
+    $lines.Add($Header)
+    foreach ($row in @($Rows)) {
+        $values = New-Object System.Collections.Generic.List[string]
+        foreach ($column in $columns) {
+            $value = [string]$row.$column
+            if ($value.Contains("`t") -or $value.Contains("`r") -or $value.Contains("`n")) {
+                throw "TSV 字段包含制表符或换行: $column"
+            }
+            $values.Add($value)
+        }
+        $lines.Add(($values -join "`t"))
+    }
+    return (($lines -join "`r`n") + "`r`n")
+}
+
+function Write-StrictTsvAtomic {
+    param(
+        [string]$Path,
+        [string]$Header,
+        [object[]]$Rows
+    )
+
+    $resolvedPath = Assert-OutputArtifactPath -Path $Path
+    $parent = Split-Path -Parent $resolvedPath
+    if (-not (Test-Path -LiteralPath $parent -PathType Container)) {
+        New-Item -ItemType Directory -Path $parent -Force | Out-Null
+    }
+    $tempPath = Assert-OutputArtifactPath -Path "$resolvedPath.tmp"
+    $text = ConvertTo-StrictTsvText -Header $Header -Rows $Rows
+    Set-Content -LiteralPath $tempPath -Value $text -Encoding UTF8 -NoNewline
+    Move-Item -LiteralPath $tempPath -Destination $resolvedPath -Force
+}
+
+function Read-StrictTsvRows {
+    param(
+        [string]$Path,
+        [string]$Header
+    )
+
+    if (-not (Test-Path -LiteralPath $Path -PathType Leaf)) { return @() }
+    $lines = @(Get-Content -LiteralPath $Path -Encoding UTF8)
+    if ($lines.Count -eq 0) { return @() }
+    $actualHeader = $lines[0].TrimStart([char]0xFEFF)
+    if ($actualHeader -ne $Header) {
+        throw "现有最终 TSV 表头不匹配: $Path"
+    }
+    $columns = @($Header -split "`t")
+    $rows = New-Object System.Collections.Generic.List[object]
+    foreach ($line in @($lines | Select-Object -Skip 1)) {
+        if ([string]::IsNullOrWhiteSpace($line)) { continue }
+        $values = @($line -split "`t")
+        if ($values.Count -ne $columns.Count) {
+            throw "现有最终 TSV 列数错误: $Path"
+        }
+        $record = [ordered]@{}
+        for ($index = 0; $index -lt $columns.Count; $index++) {
+            $record[$columns[$index]] = [string]$values[$index]
+        }
+        $rows.Add([pscustomobject]$record)
+    }
+    return @($rows | ForEach-Object { $_ })
+}
+
+function Get-LastStrictTableRowsFromText {
+    param(
+        [string]$Text,
+        [string]$Header
+    )
+
+    if ([string]::IsNullOrWhiteSpace($Text)) { return @() }
+    $columns = @($Header -split "`t")
+    $lines = @($Text -split "`r?`n")
+    $lastRows = @()
+    for ($lineIndex = 0; $lineIndex -lt $lines.Count; $lineIndex++) {
+        $candidateHeader = $lines[$lineIndex].Trim().TrimStart([char]0xFEFF)
+        if ($candidateHeader -ne $Header) { continue }
+
+        $rows = New-Object System.Collections.Generic.List[object]
+        for ($dataIndex = $lineIndex + 1; $dataIndex -lt $lines.Count; $dataIndex++) {
+            $rawLine = $lines[$dataIndex].TrimEnd("`r")
+            $trimmed = $rawLine.Trim()
+            if ([string]::IsNullOrWhiteSpace($trimmed) -or $trimmed -match '^```' -or $trimmed -like "---*") {
+                if ($rows.Count -gt 0) { break }
+                continue
+            }
+            $values = @($rawLine -split "`t")
+            if ($values.Count -ne $columns.Count) {
+                if ($rows.Count -gt 0) { break }
+                continue
+            }
+            $record = [ordered]@{}
+            for ($columnIndex = 0; $columnIndex -lt $columns.Count; $columnIndex++) {
+                $record[$columns[$columnIndex]] = [string]$values[$columnIndex]
+            }
+            $rows.Add([pscustomobject]$record)
+        }
+        if ($rows.Count -gt 0) {
+            $lastRows = @($rows | ForEach-Object { $_ })
+        }
+    }
+    return @($lastRows | ForEach-Object { $_ })
+}
+
+function Restore-CompletedTaskArtifacts {
+    param(
+        $Task,
+        $Checkpoint
+    )
+
+    if (-not $DimensionGroupEnabled -or $null -eq $Checkpoint) { return $null }
+    $resultPath = [string]$Checkpoint.output_file
+    if (-not $resultPath -or -not (Test-Path -LiteralPath $resultPath -PathType Leaf)) {
+        Write-Host "警告: 成功 checkpoint 缺少可读结果文件，无法回填最终 TSV: $($Task.DisplayName)" -ForegroundColor Yellow
+        return $null
+    }
+
+    $text = Get-Content -LiteralPath $resultPath -Raw -Encoding UTF8
+    $mappingRows = @(Get-LastStrictTableRowsFromText -Text $text -Header $RequiredTsvHeader)
+    if ($mappingRows.Count -eq 0) {
+        # 兼容移除 EndDateStatus 前已经人工完成的 11 列 Ktype 映射表。
+        $legacyHeader = "id`tKtype`tNormalizedBodyStyle`tGeneration`tBodyCode`tDoors`tDIMENSION_GROUP_ID`tEndDateStatus`tMatchConfidence`tNotes`tIterationStatus"
+        $legacyRows = @(Get-LastStrictTableRowsFromText -Text $text -Header $legacyHeader)
+        if ($legacyRows.Count -gt 0) {
+            $mappingRows = @(
+                foreach ($row in $legacyRows) {
+                    [pscustomobject][ordered]@{
+                        id = [string]$row.id
+                        Ktype = [string]$row.Ktype
+                        NormalizedBodyStyle = [string]$row.NormalizedBodyStyle
+                        Generation = [string]$row.Generation
+                        BodyCode = [string]$row.BodyCode
+                        Doors = [string]$row.Doors
+                        DIMENSION_GROUP_ID = [string]$row.DIMENSION_GROUP_ID
+                        MatchConfidence = [string]$row.MatchConfidence
+                        Notes = [string]$row.Notes
+                        IterationStatus = [string]$row.IterationStatus
+                    }
+                }
+            )
+        }
+    }
+    $dimensionRows = @(Get-LastStrictTableRowsFromText -Text $text -Header $RequiredDimensionGroupHeader)
+    if ($mappingRows.Count -eq 0 -or $dimensionRows.Count -eq 0) {
+        Write-Host "警告: 成功结果中找不到最终两张 TSV，无法回填: $($Task.DisplayName)" -ForegroundColor Yellow
+        return $null
+    }
+
+    $names = Get-TaskFinalArtifactNames -Task $Task
+    $syntheticReply = @"
+$(ConvertTo-StrictTsvText -Header $RequiredTsvHeader -Rows $mappingRows)
+$(ConvertTo-StrictTsvText -Header $RequiredDimensionGroupHeader -Rows $dimensionRows)
+[下载 Ktype 映射表](sandbox:/mnt/data/$($names.MappingFileName))
+[下载 DIMENSION_GROUP 表](sandbox:/mnt/data/$($names.DimensionFileName))
+"@
+    $minimumRows = [Math]::Max(
+        0,
+        (@([string]$Task.Content -split "`r?`n" | Where-Object {
+            -not [string]::IsNullOrWhiteSpace($_)
+        }).Count - 1)
+    )
+    if (-not (Test-ReplyContainsFullTable -Reply $syntheticReply -MinimumRows $minimumRows -Task $Task)) {
+        throw "历史成功结果的两张最终 TSV 未通过当前完整性校验: $($Task.DisplayName)"
+    }
+    return Publish-CompletedTaskTables -Task $Task -Reply $syntheticReply -ResultMarkdownPath ""
+}
+
+function Merge-FinalMappingRows {
+    param(
+        [object[]]$ExistingRows,
+        [object[]]$NewRows
+    )
+
+    $rows = New-Object System.Collections.Generic.List[object]
+    $indexById = @{}
+    foreach ($row in @($ExistingRows)) {
+        $id = ([string]$row.id).Trim()
+        if (-not $id -or $indexById.ContainsKey($id)) {
+            throw "最终 Ktype 映射表存在重复或空 id: $id"
+        }
+        $indexById[$id] = $rows.Count
+        $rows.Add($row)
+    }
+    foreach ($row in @($NewRows)) {
+        $id = ([string]$row.id).Trim()
+        if (-not $id) { throw "新增 Ktype 映射存在空 id" }
+        if ($indexById.ContainsKey($id)) {
+            $existing = $rows[[int]$indexById[$id]]
+            if (([string]$existing.Ktype).Trim() -ne ([string]$row.Ktype).Trim()) {
+                throw "同一 id 对应不同 Ktype: $id"
+            }
+            $rows[[int]$indexById[$id]] = $row
+        }
+        else {
+            $indexById[$id] = $rows.Count
+            $rows.Add($row)
+        }
+    }
+    return @($rows | ForEach-Object { $_ })
+}
+
+function Merge-FinalDimensionRows {
+    param(
+        [object[]]$ExistingRows,
+        [object[]]$NewRows
+    )
+
+    $rows = New-Object System.Collections.Generic.List[object]
+    $indexById = @{}
+    foreach ($row in @($ExistingRows)) {
+        $id = ([string]$row.DIMENSION_GROUP_ID).Trim()
+        if (-not $id -or $indexById.ContainsKey($id)) {
+            throw "最终 DIMENSION_GROUP 表存在重复或空 ID: $id"
+        }
+        $indexById[$id] = $rows.Count
+        $rows.Add($row)
+    }
+    foreach ($row in @($NewRows)) {
+        $id = ([string]$row.DIMENSION_GROUP_ID).Trim()
+        if (-not $id) { throw "新增 DIMENSION_GROUP 存在空 ID" }
+        if ($indexById.ContainsKey($id)) {
+            $existing = $rows[[int]$indexById[$id]]
+            foreach ($field in @("LengthMM", "WidthMM", "HeightMM")) {
+                if (([string]$existing.$field).Trim() -ne ([string]$row.$field).Trim()) {
+                    throw "DIMENSION_GROUP $id 的 $field 与既有最终值冲突"
+                }
+            }
+            # 尺寸一致时保留首次建组的来源行，避免后续 Ktype 重复改写缓存事实。
+            continue
+        }
+        $indexById[$id] = $rows.Count
+        $rows.Add($row)
+    }
+    return @($rows | ForEach-Object { $_ })
+}
+
+function Publish-CompletedTaskTables {
+    param(
+        $Task,
+        [string]$Reply,
+        [string]$ResultMarkdownPath
+    )
+
+    if (-not $DimensionGroupEnabled) { return $null }
+    if (-not (Test-ReplyContainsRequiredDownloadLinks -Reply $Reply -Task $Task)) {
+        throw "COMPLETE 回复缺少两个最终 TSV 下载链接"
+    }
+
+    $mappingRows = @(Get-ConfiguredFullTableRowsFromText -Text $Reply)
+    $dimensionRows = @(Get-ConfiguredDimensionGroupRowsFromText -Text $Reply)
+    if ($mappingRows.Count -eq 0 -or $dimensionRows.Count -eq 0) {
+        throw "COMPLETE 回复缺少可提取的两张完整 TSV"
+    }
+
+    $names = Get-TaskFinalArtifactNames -Task $Task
+    $batchMappingPath = Join-Path $OutputDir $names.MappingFileName
+    $batchDimensionPath = Join-Path $OutputDir $names.DimensionFileName
+    $aggregateMappingPath = Join-Path $OutputDir $names.AggregateMappingFileName
+    $aggregateDimensionPath = Join-Path $OutputDir $names.AggregateDimensionFileName
+
+    # 必须先读取累计表再写本批文件。分批模式下首批文件名与累计表同名；
+    # 若先写首批快照，会在 checkpoint 恢复时覆盖已经追加的后续批次。
+    $existingMappings = @(Read-StrictTsvRows -Path $aggregateMappingPath -Header $RequiredTsvHeader)
+    $existingDimensions = @(Read-StrictTsvRows -Path $aggregateDimensionPath -Header $RequiredDimensionGroupHeader)
+    $mergedMappings = @(Merge-FinalMappingRows -ExistingRows $existingMappings -NewRows $mappingRows)
+    $mergedDimensions = @(Merge-FinalDimensionRows -ExistingRows $existingDimensions -NewRows $dimensionRows)
+
+    if (-not [string]::Equals($batchMappingPath, $aggregateMappingPath, [StringComparison]::OrdinalIgnoreCase)) {
+        Write-StrictTsvAtomic -Path $batchMappingPath -Header $RequiredTsvHeader -Rows $mappingRows
+    }
+    if (-not [string]::Equals($batchDimensionPath, $aggregateDimensionPath, [StringComparison]::OrdinalIgnoreCase)) {
+        Write-StrictTsvAtomic -Path $batchDimensionPath -Header $RequiredDimensionGroupHeader -Rows $dimensionRows
+    }
+    Write-StrictTsvAtomic -Path $aggregateDimensionPath -Header $RequiredDimensionGroupHeader -Rows $mergedDimensions
+    Write-StrictTsvAtomic -Path $aggregateMappingPath -Header $RequiredTsvHeader -Rows $mergedMappings
+
+    if ($ResultMarkdownPath) {
+        Add-Content -LiteralPath $ResultMarkdownPath -Encoding UTF8 -Value @"
+
+--- 本地最终 TSV 已更新 ---
+- 本批 Ktype 映射：$($names.MappingFileName)
+- 本批尺寸组：$($names.DimensionFileName)
+- 累计 Ktype 映射：$($names.AggregateMappingFileName)（$($mergedMappings.Count) 行）
+- 累计尺寸组：$($names.AggregateDimensionFileName)（$($mergedDimensions.Count) 行）
+"@
+    }
+
+    return [pscustomobject]@{
+        BatchMappingPath = $batchMappingPath
+        BatchDimensionPath = $batchDimensionPath
+        AggregateMappingPath = $aggregateMappingPath
+        AggregateDimensionPath = $aggregateDimensionPath
+        AggregateMappingRows = $mergedMappings.Count
+        AggregateDimensionRows = $mergedDimensions.Count
+    }
 }
 
 function Get-TSVDataRowCountFromText {
@@ -1348,11 +1911,17 @@ function Test-ReplyHasPendingRows {
 function Test-ReplyContainsFullTable {
     param(
         [string]$Reply,
-        [int]$MinimumRows
+        [int]$MinimumRows,
+        $Task = $null
     )
 
-    if ($MinimumRows -le 0) { return $true }
-    return ((Get-TSVDataRowCountFromText -Text $Reply) -ge $MinimumRows)
+    if ($MinimumRows -gt 0 -and (Get-TSVDataRowCountFromText -Text $Reply) -lt $MinimumRows) {
+        return $false
+    }
+    return (
+        (Test-DimensionGroupTablesComplete -Reply $Reply) -and
+        (Test-ReplyContainsRequiredDownloadLinks -Reply $Reply -Task $Task)
+    )
 }
 
 function Test-ReplyContainsTSV {
@@ -1444,6 +2013,24 @@ function Test-ForceNextSignal {
     }
 
     return $false
+}
+
+function Test-ReplyReadyForLightFinalize {
+    param([string]$Text)
+
+    if (-not $DimensionGroupEnabled) { return $false }
+    $Text = Get-ReplyNarrativeText -Text $Text
+    if ([string]::IsNullOrWhiteSpace($Text)) { return $false }
+
+    $pendingIsZero = $Text -match '(?im)\bPENDING\b[^\r\n]*?(?:映射\s*)?[：:]?\s*0\s*/\s*(\d+)'
+    if (-not $pendingIsZero) { return $false }
+
+    $readyMatch = [regex]::Match($Text, '(?im)\bREADY\b[^\r\n]*?(?:映射\s*)?[：:]?\s*(\d+)\s*/\s*(\d+)')
+    if (-not $readyMatch.Success) { return $false }
+
+    $readyCount = [int]$readyMatch.Groups[1].Value
+    $totalCount = [int]$readyMatch.Groups[2].Value
+    return ($totalCount -gt 0 -and $readyCount -eq $totalCount)
 }
 
 function Get-TextSimilarity {
@@ -1664,9 +2251,18 @@ function Get-ChatGPTState {
   const editor = findEditor();
   const buttons = Array.from(document.querySelectorAll('button'));
   const buttonText = b => ((b.getAttribute('aria-label') || '') + ' ' + (b.innerText || '')).toLowerCase();
-  const directStop = document.querySelector('[data-testid="stop-button"], [data-testid="composer-stop-button"], button[aria-label*="Stop"], button[aria-label*="停止"]');
+  const directStop = document.querySelector(
+    '[data-testid="stop-button"], [data-testid="composer-stop-button"], ' +
+    'button[aria-label*="Stop generating"], button[aria-label*="Stop responding"], ' +
+    'button[aria-label="停止回答"], button[aria-label="停止生成"]'
+  );
   const isGenerating = !!(directStop && !directStop.disabled && isVisible(directStop)) ||
-    buttons.some(b => /stop|停止/.test(buttonText(b)) && !b.disabled && isVisible(b));
+    buttons.some(b =>
+      /stop generating|stop responding|停止回答|停止生成/.test(buttonText(b)) &&
+      !/stopped|已停止/.test(buttonText(b)) &&
+      !b.disabled &&
+      isVisible(b)
+    );
   const pageText = document.body.innerText || '';
   const conversationLimitPattern = /maximum length for this (conversation|chat)|conversation.{0,40}(maximum length|length limit|too long)|start a new chat to continue|reached.{0,40}(conversation|chat).{0,20}limit|对话.{0,30}(最大长度|长度上限|已达上限|达到上限)|聊天.{0,30}(最大长度|长度上限|已达上限|达到上限)|开始新(聊天|对话).{0,20}继续/i;
   const conversationLimitReached = conversationLimitPattern.test(pageText);
@@ -2606,7 +3202,11 @@ function Test-ChatGPTConversationUrl {
     if ([string]::IsNullOrWhiteSpace($Url)) { return $false }
     try {
         $uri = [uri]$Url
-        return ($uri.Host -eq "chatgpt.com" -and $uri.AbsolutePath -match "/c/[^/]+")
+        if ($uri.Host -ne "chatgpt.com") { return $false }
+        $match = [regex]::Match($uri.AbsolutePath, '^/c/([^/]+)')
+        if (-not $match.Success) { return $false }
+        # /c/WEB:<uuid> 是新消息提交时的瞬态前端地址，不能用于 checkpoint 恢复。
+        return ($match.Groups[1].Value -notmatch '^(?i)WEB:')
     }
     catch { return $false }
 }
@@ -2685,6 +3285,7 @@ function Get-InitialTaskMessage {
         [string]$TsvContent
     )
     $taskTitle = "【全量表更新】$($Task.DisplayName)"
+    $artifactInstruction = Get-TaskFinalArtifactInstruction -Task $Task
     return @"
 【任务名称】
 $taskTitle
@@ -2703,6 +3304,7 @@ $($Task.SourceName)
 
 【当前独立任务】
 $($Task.DisplayName)
+$artifactInstruction
 
 【TSV 数据】
 $TsvContent
@@ -2722,13 +3324,27 @@ function Process-TSVTask {
     $minimumFullTableRows = 0
     $status = ""
     $remarks = ""
+    $fatalBrowserFailure = $false
     $conversationUrl = ""
     $checkpoint = Get-TaskCheckpoint -Task $Task
     $resumeFromCheckpoint = $false
     $finishWithoutReplyLoop = $false
     $outputFile = ""
+    $artifactInstruction = Get-TaskFinalArtifactInstruction -Task $Task
+    $taskContinueMessage = $ContinueMessage + $artifactInstruction
+    $taskLightFinalizeMessage = $LightFinalizeMessage + $artifactInstruction
+    $taskCompletionFixMessage = $CompletionFixMessage + $artifactInstruction
+    $taskFullTableRequestMessage = $FullTableRequestMessage + $artifactInstruction
+    $taskMissingSignalsMessage = $MissingSignalsMessage + $artifactInstruction
 
     if ($checkpoint -and [string]$checkpoint.status -eq "成功") {
+        if ($DimensionGroupEnabled) {
+            $restoredArtifacts = Restore-CompletedTaskArtifacts -Task $Task -Checkpoint $checkpoint
+            if ($null -eq $restoredArtifacts) {
+                throw "已成功任务无法回填两张最终 TSV: $($Task.DisplayName)"
+            }
+            Write-Host "已从成功 checkpoint 更新累计最终 TSV: $($Task.DisplayName)" -ForegroundColor DarkGreen
+        }
         Write-Host "跳过 checkpoint 已成功车型: $($Task.DisplayName)" -ForegroundColor Gray
         return
     }
@@ -2760,7 +3376,44 @@ function Process-TSVTask {
             Invoke-XBRun "tab" "new" $conversationUrl | Out-Null
             Start-Sleep -Seconds 3
             try { Invoke-XBRun "wait" "--load" "networkidle" | Out-Null } catch { }
-            if ([string]$checkpoint.phase -ne "waiting_reply") {
+            if ([string]$checkpoint.phase -eq "waiting_reply") {
+                # 进程可能在消息已经由其他已登录页面完成后才恢复。先检查
+                # 服务器端现有最后回复，避免把一个已完成的回复永远当作
+                # “仍在等待的新回复”。
+                $idleState = Wait-ChatGPTConversationIdle -TimeoutSeconds $MaxReplyWaitSeconds
+                try {
+                    $resumeReply = Copy-LastChatGPTReplyMarkdown -FallbackReply ([string]$idleState.reply)
+                }
+                catch {
+                    Write-Host "  waiting_reply checkpoint 回复读取失败，使用状态文本: $($_.Exception.Message)" -ForegroundColor Yellow
+                    $resumeReply = [string]$idleState.reply
+                }
+                $resumeReply = Format-CapturedReplyMarkdown -Text $resumeReply
+                if ([string]::IsNullOrWhiteSpace($resumeReply)) {
+                    Write-Host "  waiting_reply checkpoint 没有可恢复回复；新建对话并重发完整任务。" -ForegroundColor Yellow
+                    Start-ChatGPTNewConversation
+                    $message = Get-InitialTaskMessage -Task $Task -RequirementContent $requirementContent -TsvContent $tsvContent
+                    Send-TrackedChatGPTMessage -OutputFile $outputFile -Label "checkpoint 丢失对话 / 重发完整任务" -Message $message -LargePayload
+                    $sendCount++
+                    $conversationUrl = Wait-CurrentChatGPTConversationUrl
+                    Save-TaskCheckpoint -Task $Task -Status "进行中" -Phase "waiting_reply" -Round $round -SendCount $sendCount -OutputFile $outputFile -ConversationUrl $conversationUrl
+                }
+                else {
+                    $resumeHasFullTable = Test-ReplyContainsFullTable -Reply $resumeReply -MinimumRows $minimumFullTableRows -Task $Task
+                }
+
+                if (-not [string]::IsNullOrWhiteSpace($resumeReply) -and
+                    (Test-CompletionSignal -Text $resumeReply) -and $resumeHasFullTable) {
+                    $roundTitle = "--- Round $round / checkpoint 恢复已完成回复 ---"
+                    Add-Content -Path $outputFile -Value "`r`n$roundTitle`r`n$resumeReply`r`n" -Encoding UTF8
+                    Write-Host "  waiting_reply checkpoint 已存在完整最终回复；直接落盘完成。" -ForegroundColor Green
+                    Publish-CompletedTaskTables -Task $Task -Reply $resumeReply -ResultMarkdownPath $outputFile | Out-Null
+                    $status = "成功"
+                    $remarks = "恢复 waiting_reply 时检测到服务器端已有完整表及下载链接；已更新累计最终 TSV"
+                    $finishWithoutReplyLoop = $true
+                }
+            }
+            elseif ([string]$checkpoint.phase -ne "waiting_reply") {
                 $conversationUrl = Ensure-TaskConversationCapacity -Task $Task -OutputFile $outputFile `
                     -Round $round -SendCount $sendCount -ConversationUrl $conversationUrl
                 $idleState = Wait-ChatGPTConversationIdle -TimeoutSeconds $MaxReplyWaitSeconds
@@ -2772,20 +3425,38 @@ function Process-TSVTask {
                     $resumeReply = [string]$idleState.reply
                 }
                 $resumeReply = Format-CapturedReplyMarkdown -Text $resumeReply
-                $resumeHasFullTable = Test-ReplyContainsFullTable -Reply $resumeReply -MinimumRows $minimumFullTableRows
-
-                if ((Test-CompletionSignal -Text $resumeReply) -and $resumeHasFullTable) {
-                    Write-Host "  checkpoint 最后一轮已明确完成；结束留痕，不再发送继续指令。" -ForegroundColor Green
-                    $status = "成功"
-                    $remarks = "恢复时检测到明确批次完成信号且包含完整表"
-                    $finishWithoutReplyLoop = $true
+                if ([string]::IsNullOrWhiteSpace($resumeReply)) {
+                    Write-Host "  checkpoint 没有可恢复回复；新建对话并重发完整任务。" -ForegroundColor Yellow
+                    Start-ChatGPTNewConversation
+                    $message = Get-InitialTaskMessage -Task $Task -RequirementContent $requirementContent -TsvContent $tsvContent
+                    Send-TrackedChatGPTMessage -OutputFile $outputFile -Label "checkpoint 丢失对话 / 重发完整任务" -Message $message -LargePayload
+                    $sendCount++
+                    $conversationUrl = Wait-CurrentChatGPTConversationUrl
+                    Save-TaskCheckpoint -Task $Task -Status "进行中" -Phase "waiting_reply" -Round $round -SendCount $sendCount -OutputFile $outputFile -ConversationUrl $conversationUrl
                 }
                 else {
+                    $resumeHasFullTable = Test-ReplyContainsFullTable -Reply $resumeReply -MinimumRows $minimumFullTableRows -Task $Task
+                }
+
+                if (-not [string]::IsNullOrWhiteSpace($resumeReply) -and
+                    (Test-CompletionSignal -Text $resumeReply) -and $resumeHasFullTable) {
+                    Write-Host "  checkpoint 最后一轮已明确完成；结束留痕，不再发送继续指令。" -ForegroundColor Green
+                    Publish-CompletedTaskTables -Task $Task -Reply $resumeReply -ResultMarkdownPath $outputFile | Out-Null
+                    $status = "成功"
+                    $remarks = "恢复时检测到明确批次完成信号、两张完整表及下载链接；已更新累计最终 TSV"
+                    $finishWithoutReplyLoop = $true
+                }
+                elseif (-not [string]::IsNullOrWhiteSpace($resumeReply)) {
                     $round++
-                    $resumeMessage = if (Test-CompletionSignal -Text $resumeReply) { $CompletionFixMessage } else { $ContinueMessage }
-                    $resumeLabel = if (Test-CompletionSignal -Text $resumeReply) { "checkpoint 完成信号纠偏到 Round $round" } else { "checkpoint 续跑到 Round $round" }
+                    $resumeNeedsLightFinalize = Test-ReplyReadyForLightFinalize -Text $resumeReply
+                    $resumeMessage = if (Test-CompletionSignal -Text $resumeReply) { $taskCompletionFixMessage } elseif ($resumeNeedsLightFinalize) { $taskLightFinalizeMessage } else { $taskContinueMessage }
+                    $resumeLabel = if (Test-CompletionSignal -Text $resumeReply) { "checkpoint 完成信号纠偏到 Round $round" } elseif ($resumeNeedsLightFinalize) { "checkpoint 轻量收尾到 Round $round" } else { "checkpoint 续跑到 Round $round" }
                     Send-TrackedChatGPTMessage -OutputFile $outputFile -Label $resumeLabel -Message $resumeMessage
                     $sendCount++
+                    $currentConversationUrl = Wait-CurrentChatGPTConversationUrl
+                    if (Test-ChatGPTConversationUrl -Url $currentConversationUrl) {
+                        $conversationUrl = $currentConversationUrl
+                    }
                     Save-TaskCheckpoint -Task $Task -Status "进行中" -Phase "waiting_reply" -Round $round -SendCount $sendCount -OutputFile $outputFile -ConversationUrl $conversationUrl
                 }
             }
@@ -2825,16 +3496,18 @@ function Process-TSVTask {
             $previousReply = Format-CapturedReplyMarkdown -Text $existingReply
             Add-Content -Path $outputFile -Value "`r`n--- 恢复现场 / 已有回复 ---`r`n$previousReply`r`n" -Encoding UTF8
             try { $conversationUrl = Get-CurrentChatGPTUrl } catch { }
-            $existingHasFullTable = Test-ReplyContainsFullTable -Reply $previousReply -MinimumRows $minimumFullTableRows
+            $existingHasFullTable = Test-ReplyContainsFullTable -Reply $previousReply -MinimumRows $minimumFullTableRows -Task $Task
             if ((Test-CompletionSignal -Text $previousReply) -and $existingHasFullTable) {
                 Write-Host "  恢复现场最后一轮已明确完成；结束留痕，不再发送继续指令。" -ForegroundColor Green
+                Publish-CompletedTaskTables -Task $Task -Reply $previousReply -ResultMarkdownPath $outputFile | Out-Null
                 $status = "成功"
-                $remarks = "恢复现场检测到明确批次完成信号且包含完整表"
+                $remarks = "恢复现场检测到明确批次完成信号、两张完整表及下载链接；已更新累计最终 TSV"
                 $finishWithoutReplyLoop = $true
             }
             else {
-                $resumeMessage = if (Test-CompletionSignal -Text $previousReply) { $CompletionFixMessage } else { $ContinueMessage }
-                $resumeLabel = if (Test-CompletionSignal -Text $previousReply) { "存档完成信号纠偏" } else { "存档续跑" }
+                $resumeNeedsLightFinalize = Test-ReplyReadyForLightFinalize -Text $previousReply
+                $resumeMessage = if (Test-CompletionSignal -Text $previousReply) { $taskCompletionFixMessage } elseif ($resumeNeedsLightFinalize) { $taskLightFinalizeMessage } else { $taskContinueMessage }
+                $resumeLabel = if (Test-CompletionSignal -Text $previousReply) { "存档完成信号纠偏" } elseif ($resumeNeedsLightFinalize) { "存档轻量收尾" } else { "存档续跑" }
                 Write-Host "  当前回复已完成并保存，正在发送后续指令..." -ForegroundColor Green
                 Send-TrackedChatGPTMessage -OutputFile $outputFile -Label $resumeLabel -Message $resumeMessage
                 Write-Host "  后续指令已发送，进入自动推进。" -ForegroundColor Green
@@ -2866,7 +3539,7 @@ function Process-TSVTask {
                 break
             }
 
-            $hasFullTable = Test-ReplyContainsFullTable -Reply $reply -MinimumRows $minimumFullTableRows
+            $hasFullTable = Test-ReplyContainsFullTable -Reply $reply -MinimumRows $minimumFullTableRows -Task $Task
             if ((Test-FullTableRequestSignal -Text $reply) -and (-not $hasFullTable)) {
                 Write-Host "  检测到全部/所有可入库，但未给完整表，发送完整全量表请求..." -ForegroundColor Yellow
                 if ($nextCount -ge $MaxNextSteps) {
@@ -2878,7 +3551,7 @@ function Process-TSVTask {
                 $previousReply = $reply
                 $nextCount++
                 $round++
-                Send-TrackedChatGPTMessage -OutputFile $outputFile -Label "请求完整表 / Round $round" -Message $FullTableRequestMessage
+                Send-TrackedChatGPTMessage -OutputFile $outputFile -Label "请求完整表 / Round $round" -Message $taskFullTableRequestMessage
                 $sendCount++
                 Save-TaskCheckpoint -Task $Task -Status "进行中" -Phase "waiting_reply" -Round $round -SendCount $sendCount -OutputFile $outputFile -ConversationUrl $conversationUrl
                 continue
@@ -2886,28 +3559,30 @@ function Process-TSVTask {
 
             if (Test-CompletionSignal -Text $reply) {
                 if (-not $hasFullTable) {
-                    Write-Host "  检测到完成信号，但完整 TSV 行数不足，发送补表请求..." -ForegroundColor Yellow
+                    Write-Host "  检测到完成信号，但两张完整 TSV 或下载链接不合格，发送补表请求..." -ForegroundColor Yellow
                     if ($nextCount -ge $MaxNextSteps) {
                         $status = "次数上限终止"
-                        $remarks = "完成信号缺少完整 TSV，且达到最大下一步次数: $MaxNextSteps"
+                        $remarks = "完成信号缺少两张完整 TSV 或指定下载链接，且达到最大下一步次数: $MaxNextSteps"
                         break
                     }
                     $requestedFullTable = $true
                     $previousReply = $reply
                     $nextCount++
                     $round++
-                    Send-TrackedChatGPTMessage -OutputFile $outputFile -Label "完成信号纠偏 / Round $round" -Message $CompletionFixMessage
+                    Send-TrackedChatGPTMessage -OutputFile $outputFile -Label "完成信号纠偏 / Round $round" -Message $taskCompletionFixMessage
                     $sendCount++
                     Save-TaskCheckpoint -Task $Task -Status "进行中" -Phase "waiting_reply" -Round $round -SendCount $sendCount -OutputFile $outputFile -ConversationUrl $conversationUrl
                     continue
                 }
+                Publish-CompletedTaskTables -Task $Task -Reply $reply -ResultMarkdownPath $outputFile | Out-Null
                 $status = "成功"
-                $remarks = "检测到明确批次完成信号且包含完整表"
+                $remarks = "检测到明确批次完成信号、两张完整表及下载链接；已更新本批与累计最终 TSV"
                 break
             }
 
             if (Test-ForceNextSignal -Text $reply) {
-                Write-Host "  检测到继续信号，发送 下一步..." -ForegroundColor Yellow
+                $needsLightFinalize = Test-ReplyReadyForLightFinalize -Text $reply
+                Write-Host $(if ($needsLightFinalize) { "  检测到 PENDING=0，发送轻量收尾..." } else { "  检测到继续信号，发送 下一步..." }) -ForegroundColor Yellow
                 if ($nextCount -ge $MaxNextSteps) {
                     $status = "次数上限终止"
                     $remarks = "达到最大下一步次数: $MaxNextSteps"
@@ -2916,7 +3591,9 @@ function Process-TSVTask {
                 $previousReply = $reply
                 $nextCount++
                 $round++
-                Send-TrackedChatGPTMessage -OutputFile $outputFile -Label "继续到 Round $round" -Message $ContinueMessage
+                $nextMessage = if ($needsLightFinalize) { $taskLightFinalizeMessage } else { $taskContinueMessage }
+                $nextLabel = if ($needsLightFinalize) { "轻量收尾到 Round $round" } else { "继续到 Round $round" }
+                Send-TrackedChatGPTMessage -OutputFile $outputFile -Label $nextLabel -Message $nextMessage
                 $sendCount++
                 Save-TaskCheckpoint -Task $Task -Status "进行中" -Phase "waiting_reply" -Round $round -SendCount $sendCount -OutputFile $outputFile -ConversationUrl $conversationUrl
                 continue
@@ -2932,7 +3609,7 @@ function Process-TSVTask {
                 $previousReply = $reply
                 $nextCount++
                 $round++
-                Send-TrackedChatGPTMessage -OutputFile $outputFile -Label "推进信号纠偏 / Round $round" -Message $MissingSignalsMessage
+                Send-TrackedChatGPTMessage -OutputFile $outputFile -Label "推进信号纠偏 / Round $round" -Message $taskMissingSignalsMessage
                 $sendCount++
                 Save-TaskCheckpoint -Task $Task -Status "进行中" -Phase "waiting_reply" -Round $round -SendCount $sendCount -OutputFile $outputFile -ConversationUrl $conversationUrl
                 continue
@@ -2960,8 +3637,11 @@ function Process-TSVTask {
             $nextCount++
             $round++
 
-            Write-Host "  继续发送 下一步 ($nextCount/$MaxNextSteps)..." -ForegroundColor Yellow
-            Send-TrackedChatGPTMessage -OutputFile $outputFile -Label "继续到 Round $round" -Message $ContinueMessage
+            $needsLightFinalize = Test-ReplyReadyForLightFinalize -Text $reply
+            Write-Host $(if ($needsLightFinalize) { "  检测到 PENDING=0，发送轻量收尾 ($nextCount/$MaxNextSteps)..." } else { "  继续发送 下一步 ($nextCount/$MaxNextSteps)..." }) -ForegroundColor Yellow
+            $nextMessage = if ($needsLightFinalize) { $taskLightFinalizeMessage } else { $taskContinueMessage }
+            $nextLabel = if ($needsLightFinalize) { "轻量收尾到 Round $round" } else { "继续到 Round $round" }
+            Send-TrackedChatGPTMessage -OutputFile $outputFile -Label $nextLabel -Message $nextMessage
             $sendCount++
             Save-TaskCheckpoint -Task $Task -Status "进行中" -Phase "waiting_reply" -Round $round -SendCount $sendCount -OutputFile $outputFile -ConversationUrl $conversationUrl
         }
@@ -2969,6 +3649,7 @@ function Process-TSVTask {
     catch {
         $status = "页面错误"
         $remarks = "异常: $($_.Exception.Message)"
+        $fatalBrowserFailure = $remarks -match '(?i)Playwright browser 请求失败|Target page, context or browser has been closed|browserContext\..*closed|浏览器桥接进程.*退出|无法连接.*browser|Connection.*closed'
         Add-Content -Path $outputFile -Value "`r`n--- 脚本异常 ---`r`n$remarks`r`n" -Encoding UTF8
     }
 
@@ -2976,6 +3657,9 @@ function Process-TSVTask {
     Save-TaskCheckpoint -Task $Task -Status $status -Phase "finished" -Round $round -SendCount $sendCount -OutputFile $outputFile -ConversationUrl $conversationUrl -Remarks $remarks
     Add-LogEntry -FileName $fileName -StartTime $startTime -EndTime $endTime -Status $status -SendCount $sendCount -OutputFile $outputFile -Remarks $remarks
     Write-Host "完成: $fileName -> $status ($remarks)" -ForegroundColor $(if ($status -eq "成功") { "Green" } else { "Yellow" })
+    if ($fatalBrowserFailure) {
+        throw "浏览器基础设施失效，已停止整个项目以避免把后续批次批量标记为失败。当前任务可在重启后从 checkpoint 恢复。$remarks"
+    }
 }
 
 function Generate-Summary {
@@ -3098,8 +3782,8 @@ function Main {
     Write-Host "$Browser 全量表补强自动化" -ForegroundColor Cyan
     Write-Host "========================================" -ForegroundColor Cyan
 
-    if ($TaskGranularity -in @("row", "vehicle") -and $ConversationMode -ne "new") {
-        throw "逐行/车型模式要求 runtime.conversation.mode: new；每个任务必须使用独立新对话，续跑由 checkpoint 自动完成。"
+    if ($TaskGranularity -in @("row", "batch", "vehicle") -and $ConversationMode -ne "new") {
+        throw "逐行/分批/车型模式要求 runtime.conversation.mode: new；每个任务必须使用独立新对话，续跑由 checkpoint 自动完成。"
     }
 
     $tsvFiles = @(Get-ConfiguredInputFiles)
@@ -3160,7 +3844,7 @@ function Main {
     $state = Get-ChatGPTState
     if ($state.loggedOut -or -not $state.inputReady) {
         Write-Host "ChatGPT 当前不可输入。请在打开的浏览器里登录，并进入可发送消息的页面后再运行脚本。" -ForegroundColor Red
-        exit 1
+        throw "ChatGPT 当前不可输入"
     }
 
     $processedSet = New-Object "System.Collections.Generic.HashSet[string]"
@@ -3182,5 +3866,32 @@ function Main {
 }
 
 if ($env:FITMENT_OPENCLAW_LIBRARY_ONLY -ne "1") {
-    Main
+    try {
+        Main
+    }
+    finally {
+        # 只清理由本脚本实际启动且仍存活的 Playwright bridge。
+        # 不调用初始化逻辑，避免在退出阶段反而重新唤起测试 Chrome。
+        if ($Browser -eq "playwright" -and
+            $script:PlaywrightBridgeProcess -and
+            -not $script:PlaywrightBridgeProcess.HasExited -and
+            -not [string]::IsNullOrWhiteSpace($script:PlaywrightBridgeUrl)) {
+            Write-Host "关闭脚本托管的 Playwright Chrome..." -ForegroundColor DarkGray
+            try {
+                Invoke-XB "cleanup" | Out-Null
+            }
+            catch {
+                Write-Host "Playwright Chrome 正常清理失败，终止其桥接进程: $($_.Exception.Message)" -ForegroundColor Yellow
+                try {
+                    if ($script:PlaywrightBridgeProcess -and -not $script:PlaywrightBridgeProcess.HasExited) {
+                        Stop-Process -Id $script:PlaywrightBridgeProcess.Id -Force -ErrorAction SilentlyContinue
+                    }
+                }
+                catch { }
+                $script:PlaywrightBridgeProcess = $null
+                $script:PlaywrightBridgeUrl = ""
+                $script:PlaywrightBridgeToken = ""
+            }
+        }
+    }
 }

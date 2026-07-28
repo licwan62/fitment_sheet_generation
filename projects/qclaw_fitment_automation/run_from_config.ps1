@@ -78,6 +78,8 @@ $requirementPath = [string]$config._meta.requirement_path
 if (-not (Test-Path -LiteralPath $requirementPath -PathType Leaf)) { throw "requirement 文件不存在: $requirementPath" }
 
 $fullColumns = @($contract.full_table.columns | ForEach-Object { [string]$_ })
+$dimensionGroupEnabled = [bool](Get-Value $contract.dimension_group_table "enabled" $false)
+$dimensionGroupColumns = if ($dimensionGroupEnabled) { @($contract.dimension_group_table.columns | ForEach-Object { [string]$_ }) } else { @() }
 $subseriesEnabled = [bool](Get-Value $contract.subseries_match "enabled" $false)
 $subseriesColumns = if ($subseriesEnabled) { @($contract.subseries_match.columns | ForEach-Object { [string]$_ }) } else { @() }
 $oldEnvironment = @{}
@@ -85,6 +87,8 @@ $environmentMap = @{
     FITMENT_TSV_HEADER = $fullColumns -join "`t"
     FITMENT_AUTO_EMPTY_COLUMNS_DEFINED = "true"
     FITMENT_AUTO_EMPTY_COLUMNS = @($contract.full_table.auto_empty_columns) -join "、"
+    FITMENT_DIMENSION_GROUP_ENABLED = $dimensionGroupEnabled.ToString().ToLowerInvariant()
+    FITMENT_DIMENSION_GROUP_HEADER = $dimensionGroupColumns -join "`t"
     FITMENT_SUBSERIES_ENABLED = $subseriesEnabled.ToString().ToLowerInvariant()
     FITMENT_SUBSERIES_HEADER = $subseriesColumns -join "`t"
     FITMENT_SUBSERIES_AUTO_EMPTY_COLUMNS_DEFINED = "true"
@@ -104,7 +108,7 @@ foreach ($key in $environmentMap.Keys) {
 Write-Host "配置: $resolvedConfig" -ForegroundColor Cyan
 Write-Host "模式: $effectiveMode；项目数: $($projects.Count)" -ForegroundColor Cyan
 Write-Host "Requirement: $requirementPath" -ForegroundColor DarkCyan
-Write-Host "全量表列数: $($fullColumns.Count)；子车系匹配表: $(if ($subseriesEnabled) { "$($subseriesColumns.Count) 列" } else { "禁用" })" -ForegroundColor DarkCyan
+Write-Host "Ktype 映射表: $($fullColumns.Count) 列；DIMENSION_GROUP 表: $(if ($dimensionGroupEnabled) { "$($dimensionGroupColumns.Count) 列" } else { "禁用" })；子车系匹配表: $(if ($subseriesEnabled) { "$($subseriesColumns.Count) 列" } else { "禁用" })" -ForegroundColor DarkCyan
 foreach ($project in $projects) { Write-Host "  - $($project.FullName)" }
 
 $scriptPath = Join-Path $PSScriptRoot "qclaw_fitment_automation.ps1"
@@ -181,6 +185,10 @@ try {
         $processing = Get-Value $runtime "processing" $null
         if ($processing) {
             $arguments += @("-TaskGranularity", [string](Get-Value $processing "mode" "file"))
+            $rowsPerTask = [int](Get-Value $processing "rows_per_task" 0)
+            if ($rowsPerTask -gt 0) {
+                $arguments += @("-RowsPerTask", [string]$rowsPerTask)
+            }
             $rowLabelColumns = @((Get-Value $processing "row_label_columns" @()))
             if ($rowLabelColumns.Count -gt 0) {
                 $arguments += @("-RowLabelColumns", ($rowLabelColumns -join ","))

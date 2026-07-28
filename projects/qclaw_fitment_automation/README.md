@@ -103,7 +103,8 @@ runtime:
     order: name_asc
 
   processing:
-    mode: row
+    mode: batch
+    rows_per_task: 100
     row_label_columns: [MAKE, MODEL]
     checkpoint_dir: checkpoints
 ```
@@ -112,7 +113,29 @@ runtime:
 
 - `mode: row`：跳过表头和空行，每个数据行携带原表头，分别打开一个全新 ChatGPT
   对话。`row_label_columns` 只控制任务名称；不配置时使用“文件名 + 行号”。
+- `mode: batch`：跳过表头和空行，按 `rows_per_task` 连续分批；每批携带原表头并
+  打开一个全新 ChatGPT 对话。例如 `rows_per_task: 100` 表示每个对话最多输入
+  100 条数据行，表头不计入数量。
 - `mode: file`：每个最终选中的完整 TSV 文件打开一个全新 ChatGPT 对话。
+
+当 requirement 启用 `dimension_group_table` 时，批次只有在 COMPLETE 回复同时
+包含两张完整内嵌 TSV 和两个任务指定文件名的 sandbox 下载链接后才会成功。脚本
+会从内嵌表生成本批文件，例如：
+
+```text
+all_1-100_ktype_dimension_mapping_final.tsv
+all_1-100_dimension_groups_final.tsv
+```
+
+分批模式将首批文件名直接作为累计总表：
+
+```text
+all_1-100_ktype_dimension_mapping_final.tsv
+all_1-100_dimension_groups_final.tsv
+```
+
+第一批成功时创建总表，之后每个成功批次立即追加。映射表按 `id` 幂等更新，尺寸组表按 `DIMENSION_GROUP_ID` 去重。重复续跑不会增加
+重复行；同一尺寸组的三维发生冲突时会停止合并，避免静默覆盖首次确认的尺寸事实。
 
 两种模式都为每个独立任务保留输出文本和 checkpoint：
 

@@ -1,0 +1,26 @@
+﻿{
+    "version":  2,
+    "task_id":  "all__batch__0023__b132ecad",
+    "task_name":  "all 第 2201-2300 行",
+    "vehicle":  "all 第 2201-2300 行",
+    "source_file":  "all.tsv",
+    "status":  "页面错误",
+    "phase":  "finished",
+    "round":  7,
+    "send_count":  7,
+    "output_file":  "D:\\Home\\Scripts\\fitment_sheet_generation\\projects\\qclaw_fitment_automation\\workspaces\\0728-eu\\output\\all__batch__0023__b132ecad_result.md",
+    "conversation_url":  "https://chatgpt.com/c/6a691b1c-f270-83ec-988e-95dd443e3879",
+    "conversation_branch_count":  0,
+    "conversation_lineage":  [
+                                 {
+                                     "branch_index":  0,
+                                     "url":  "https://chatgpt.com/c/6a691b1c-f270-83ec-988e-95dd443e3879",
+                                     "parent_url":  "",
+                                     "trigger":  "initial",
+                                     "round":  1,
+                                     "created_at":  "2026-07-29 05:12:04"
+                                 }
+                             ],
+    "remarks":  "等待回复超过 9999 秒",
+    "updated_at":  "2026-07-29 08:41:53"
+}

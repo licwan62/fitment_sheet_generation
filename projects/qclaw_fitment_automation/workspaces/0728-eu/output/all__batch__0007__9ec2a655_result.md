@@ -1,3 +1,13 @@
+﻿# 任务：all 第 601-700 行
+# 来源文件：all.tsv
+# 任务 ID：all__batch__0007__9ec2a655
+
+
+--- 发送 / 首次任务 ---
+【任务名称】
+【全量表更新】all 第 601-700 行
+
+【任务要求】
 # EU Auto-Data Ktype 与尺寸组补全规则
 
 本规则适用于以下 Tab 分隔的欧洲车型输入表。`Ktype` 是输入车型标识，但不保证唯一对应一个物理车身。输出必须包含两张互相解耦的全量 TSV：
@@ -375,3 +385,126 @@ EU-OPEL-CORSA-D-HATCHBACK-5D-01	3999	1737	1488	Vauxhall New Corsa official broch
 14. 是否仅在首次创建或纠错尺寸组时抓取三维和来源；后续 Ktype 是否只建立关联。
 15. CONTINUE 轮是否避免重复输出未变化记录，COMPLETE 轮是否一次性输出两张完整快照。
 16. COMPLETE 轮是否提供任务指定文件名的两个可点击 `.tsv` sandbox 下载链接。
+
+
+【执行顺序】
+执行顺序固定为：第一阶段优先消除 PENDING 并补齐会阻塞两张最终表的数据。检测到 PENDING=0 后，第二阶段最多只做一次轻量机械收尾：核对固定表头、id 与 DIMENSION_GROUP_ID 唯一、映射引用闭合、长宽高和来源非空、两个任务指定下载链接齐全。第二阶段不得重新逐车型、逐年份或逐来源做深度检索，不得为了提高置信度反复核对，也不得因非阻塞的排序或措辞问题继续多轮。PENDING=0 后的下一条回复必须直接输出两张最终完整 TSV、两个精确 sandbox 下载链接，并以“推进信号：COMPLETE”结束；不要再输出 CONTINUE。
+
+【配置附加规则】
+
+
+【当前文件名】
+all.tsv
+
+【当前独立任务】
+all 第 601-700 行
+
+【COMPLETE 下载文件硬性要求】
+准备 COMPLETE 时，除两张完整内嵌 TSV 外，还必须创建并提供以下两个可点击 sandbox 下载链接，文件名必须完全一致：
+- all_601-700_ktype_dimension_mapping_final.tsv
+- all_601-700_dimension_groups_final.tsv
+缺少任一下载链接时不得输出推进信号：COMPLETE。
+
+【TSV 数据】
+Make	Model	VariantName	BodyStyle	DriveType	Energy	EngineOutputKW	EngineOutputHP	Product Start Month-Year	Product End Month-Year	LastProcessedDate	Ktype
+Opel	Kadett e	2.0 I	Stufenheck	Frontantrieb	Benzin	85	115	Sep 1987	May 1992	2024-03-01	626
+Opel	Kadett e	1.6 D	Stufenheck	Frontantrieb	Diesel	40	54	Sep 1984	Jan 1989	2024-03-01	627
+Opel	Kadett e	1.7 D	Stufenheck	Frontantrieb	Diesel	42	57	Feb 1989	Aug 1991	2024-03-01	628
+Opel	Kadett e	1.4 I	Stufenheck	Frontantrieb	Benzin	44	60	Jan 1990	Aug 1991	2024-03-01	629
+Opel	Kadett e	1.8 I	Stufenheck	Frontantrieb	Benzin	66	90	Aug 1989	May 1992	2024-03-01	630
+Opel	Kadett e caravan	1.2	Kombi	Frontantrieb	Benzin	40	55	Sep 1984	Jul 1986	2024-03-01	631
+Opel	Kadett e caravan	1.3 N	Kombi	Frontantrieb	Benzin	44	60	Sep 1984	Aug 1991	2024-03-01	632
+Opel	Kadett e caravan	1.3 S	Kombi	Frontantrieb	Benzin	55	75	Sep 1984	Aug 1987	2024-03-01	633
+Opel	Kadett e caravan	1.4 S	Kombi	Frontantrieb	Benzin	55	75	Jan 1990	Aug 1991	2024-03-01	634
+Opel	Kadett e caravan	1.6 I	Kombi	Frontantrieb	Benzin	55	75	Sep 1986	Aug 1991	2024-03-01	635
+Opel	Kadett e caravan	1.6	Kombi	Frontantrieb	Benzin	60	82	Sep 1986	Aug 1991	2024-03-01	636
+Opel	Kadett e caravan	1.6 S	Kombi	Frontantrieb	Benzin	66	90	Sep 1984	Aug 1986	2024-03-01	637
+Opel	Kadett e caravan	1.8 S	Kombi	Frontantrieb	Benzin	62	84	Sep 1987	Aug 1991	2024-03-01	638
+Opel	Kadett e caravan	1.8 E	Kombi	Frontantrieb	Benzin	74	100	Oct 1985	Aug 1986	2024-03-01	639
+Opel	Kadett e caravan	2.0 I	Kombi	Frontantrieb	Benzin	85	115	Sep 1987	Aug 1991	2024-03-01	640
+Opel	Kadett e caravan	1.6 D	Kombi	Frontantrieb	Diesel	40	54	Sep 1984	Jan 1989	2024-03-01	641
+Opel	Kadett e caravan	1.7 D	Kombi	Frontantrieb	Diesel	42	57	Feb 1989	Aug 1991	2024-03-01	642
+Opel	Kadett e caravan	1.4 I	Kombi	Frontantrieb	Benzin	44	60	Jan 1990	Aug 1991	2024-03-01	643
+Opel	Kadett e caravan	1.8 I	Kombi	Frontantrieb	Benzin	66	90	Jun 1985	Aug 1991	2024-03-01	644
+Opel	Kadett e	1.6 I	Cabriolet	Frontantrieb	Benzin	55	75	Oct 1986	Feb 1993	2024-03-01	645
+Opel	Kadett e	2.0 I	Cabriolet	Frontantrieb	Benzin	85	115	Oct 1986	Feb 1993	2024-03-01	646
+Opel	Ascona a	1.2 S	Stufenheck	Heckantrieb	Benzin	44	60	Apr 1972	Aug 1975	2024-03-01	647
+Seat	Ibiza iv sc	1.2 TDI	Schrägheck	Frontantrieb	Diesel	55	75	May 2010	May 2015	2025-06-01	648
+Opel	Ascona a	1.6 N	Stufenheck	Heckantrieb	Benzin	50	68	Oct 1970	Feb 1975	2024-03-01	649
+Nissan	Leaf	Electric	Schrägheck	Frontantrieb	Elektro	80	109	Nov 2010	Dec 2017	2024-05-01	650
+Opel	Ascona a	1.6 S	Stufenheck	Heckantrieb	Benzin	59	80	Oct 1970	Feb 1975	2024-03-01	651
+Opel	Ascona a	1.9 SR	Stufenheck	Heckantrieb	Benzin	65	88	Mar 1975	Aug 1975	2024-03-01	652
+Opel	Ascona a	1.9 SR	Stufenheck	Heckantrieb	Benzin	66	90	Mar 1971	Feb 1975	2024-03-01	653
+Mercedes-benz	S-Klasse	280 S	Stufenheck	Heckantrieb	Benzin	115	156	Aug 1972	Jul 1980	2024-03-01	654
+Mercedes-benz	S-Klasse	280 S	Stufenheck	Heckantrieb	Benzin	118	160	Aug 1972	Jul 1980	2024-03-01	655
+Mercedes-benz	S-Klasse	280 SE, SEL	Stufenheck	Heckantrieb	Benzin	130	177	Aug 1972	Jul 1980	2024-03-01	656
+Opel	Ascona b	1.2	Stufenheck	Heckantrieb	Benzin	40	55	Aug 1976	Feb 1979	2024-03-01	657
+Opel	Ascona b	1.2 S	Stufenheck	Heckantrieb	Benzin	44	60	Sep 1975	Feb 1979	2024-03-01	658
+Opel	Ascona b	1.3 S	Stufenheck	Heckantrieb	Benzin	55	75	Aug 1979	Aug 1981	2024-03-01	659
+Opel	Ascona b	1.3 N	Stufenheck	Heckantrieb	Benzin	44	60	Mar 1979	Aug 1981	2024-03-01	660
+Opel	Ascona b	1.6 N	Stufenheck	Heckantrieb	Benzin	44	60	Sep 1975	Aug 1981	2024-03-01	661
+Opel	Ascona b	1.6 S	Stufenheck	Heckantrieb	Benzin	55	75	Sep 1975	Aug 1981	2024-03-01	662
+Opel	Ascona b	1.9 N	Stufenheck	Heckantrieb	Benzin	55	75	Aug 1976	Aug 1981	2024-03-01	663
+Opel	Ascona b	1.9 S	Stufenheck	Heckantrieb	Benzin	66	90	Sep 1975	Aug 1981	2024-03-01	664
+Opel	Ascona b	2.0 N	Stufenheck	Heckantrieb	Benzin	66	90	Aug 1977	Aug 1981	2024-03-01	665
+Opel	Ascona b	2.0 S	Stufenheck	Heckantrieb	Benzin	74	100	Aug 1977	Aug 1981	2024-03-01	666
+Opel	Ascona b	2.0 E	Stufenheck	Heckantrieb	Benzin	81	110	Aug 1979	Aug 1981	2024-03-01	667
+Opel	Ascona b	2.0 D	Stufenheck	Heckantrieb	Diesel	43	58	Aug 1978	Aug 1981	2024-03-01	668
+Mercedes-benz	S-Klasse	280 SE, SEL	Stufenheck	Heckantrieb	Benzin	136	185	Aug 1972	Jul 1980	2024-03-01	669
+Mercedes-benz	S-Klasse	350 SE, SEL	Stufenheck	Heckantrieb	Benzin	143	194	Mar 1976	Mar 1980	2024-03-01	670
+Mercedes-benz	S-Klasse	350 SE, SEL	Stufenheck	Heckantrieb	Benzin	147	200	Aug 1972	Feb 1976	2024-03-01	671
+Mercedes-benz	S-Klasse	350 SE, SEL	Stufenheck	Heckantrieb	Benzin	151	205	Mar 1976	Mar 1980	2024-03-01	672
+Mercedes-benz	S-Klasse	450 SE, SEL	Stufenheck	Heckantrieb	Benzin	160	218	Dec 1975	Apr 1980	2024-03-01	673
+Mercedes-benz	S-Klasse	450 SE, SEL	Stufenheck	Heckantrieb	Benzin	165	224	Jan 1973	Apr 1980	2024-03-01	674
+Mercedes-benz	S-Klasse	450 SEL 6.9	Stufenheck	Heckantrieb	Benzin	210	286	Jul 1975	Mar 1980	2024-03-01	675
+Ford	Escort iv	1.3	Schrägheck	Frontantrieb	Benzin	44	60	Jan 1986	Jul 1990	2024-03-01	676
+Ford	Escort iv	1.4	Schrägheck	Frontantrieb	Benzin	54	73	Jan 1986	Jul 1990	2024-03-01	677
+Mercedes-benz	S-Klasse	260 SE	Stufenheck	Heckantrieb	Benzin	118	160	Sep 1985	Jun 1991	2024-03-01	678
+Ford	Escort iv	1.4	Schrägheck	Frontantrieb	Benzin	55	75	Jan 1986	Jul 1990	2024-03-01	679
+Mercedes-benz	S-Klasse	260 SE	Stufenheck	Heckantrieb	Benzin	122	166	Sep 1985	Jun 1991	2024-03-01	680
+Nissan	Gt-R	V6	Coupe	Allrad	Benzin	390	530	Oct 2010	Sep 2011	2024-03-01	681
+Mercedes-benz	S-Klasse	280 S	Stufenheck	Heckantrieb	Benzin	115	156	Dec 1979	Jul 1985	2024-03-01	682
+Mercedes-benz	S-Klasse	280 SE, SEL	Stufenheck	Heckantrieb	Benzin	136	185	Oct 1979	Jul 1985	2024-03-01	683
+Mercedes-benz	S-Klasse	300 SE, SEL	Stufenheck	Heckantrieb	Benzin	132	180	Jan 1986	Jun 1991	2024-03-01	684
+Mercedes-benz	S-Klasse	300 SE, SEL	Stufenheck	Heckantrieb	Benzin	138	188	Sep 1985	Dec 1989	2024-03-01	685
+Peugeot	Ion	Electric	Schrägheck	Heckantrieb	Elektro	47	64	Nov 2010	-	2024-03-01	686
+Ford	Escort iv	1.6 I	Schrägheck	Frontantrieb	Benzin	66	90	Jan 1986	May 1990	2024-03-01	687
+Ford	Escort iv	1.6 Xr3i	Schrägheck	Frontantrieb	Benzin	77	105	Jan 1986	Aug 1989	2024-03-01	688
+Ford	Escort iv	1.6 Turbo RS	Schrägheck	Frontantrieb	Benzin	97	132	Jan 1986	Jul 1990	2024-03-01	689
+Ford	Escort iv	1.6 D	Schrägheck	Frontantrieb	Diesel	40	54	Jan 1986	Jan 1989	2024-03-01	690
+Mercedes-benz	S-Klasse	380 SE, SEL	Stufenheck	Heckantrieb	Benzin	160	218	Sep 1980	Oct 1981	2024-03-01	691
+Mercedes-benz	S-Klasse	380 SE, SEL	Stufenheck	Heckantrieb	Benzin	150	204	Oct 1981	Aug 1985	2024-03-01	692
+Mercedes-benz	S-Klasse	420 SE, SEL	Stufenheck	Heckantrieb	Benzin	150	204	Oct 1985	Jun 1991	2024-03-01	693
+Mercedes-benz	S-Klasse	420 SE, SEL	Stufenheck	Heckantrieb	Benzin	160	218	Oct 1985	Dec 1987	2024-03-01	694
+Mercedes-benz	S-Klasse	420 SE, SEL	Stufenheck	Heckantrieb	Benzin	165	224	Oct 1985	Jun 1991	2024-03-01	695
+Mercedes-benz	S-Klasse	420 SE, SEL	Stufenheck	Heckantrieb	Benzin	170	231	Oct 1985	Dec 1987	2024-03-01	696
+Peugeot	508 i	1.6 VTI	Stufenheck	Frontantrieb	Benzin	88	120	Nov 2010	Dec 2018	2024-03-01	697
+Mercedes-benz	S-Klasse	500 SE, SEL	Stufenheck	Heckantrieb	Benzin	164	223	Sep 1985	Jun 1991	2024-03-01	698
+Mercedes-benz	S-Klasse	500 SE, SEL	Stufenheck	Heckantrieb	Benzin	170	231	Dec 1979	Aug 1985	2024-03-01	699
+Mercedes-benz	S-Klasse	500 SE, SEL	Stufenheck	Heckantrieb	Benzin	177	241	Dec 1979	Aug 1985	2024-03-01	700
+Mercedes-benz	S-Klasse	500 SE, SEL	Stufenheck	Heckantrieb	Benzin	180	245	Sep 1985	Jun 1991	2024-03-01	701
+Mercedes-benz	S-Klasse	500 SE, SEL	Stufenheck	Heckantrieb	Benzin	185	252	Sep 1987	Jun 1991	2024-03-01	702
+Mercedes-benz	S-Klasse	500 SE, SEL	Stufenheck	Heckantrieb	Benzin	195	265	Sep 1987	Jun 1991	2024-03-01	703
+Peugeot	508 sw i	1.6 VTI	Kombi	Frontantrieb	Benzin	88	120	Nov 2010	Dec 2018	2024-03-01	704
+Mercedes-benz	S-Klasse	560 SE, SEL	Stufenheck	Heckantrieb	Benzin	178	242	Oct 1985	Jun 1991	2024-03-01	705
+Mercedes-benz	S-Klasse	560 SE, SEL	Stufenheck	Heckantrieb	Benzin	200	272	Oct 1985	Dec 1987	2024-03-01	706
+Mercedes-benz	S-Klasse	560 SE, SEL	Stufenheck	Heckantrieb	Benzin	205	279	Aug 1987	Jun 1991	2024-03-01	707
+Mercedes-benz	S-Klasse	560 SE, SEL	Stufenheck	Heckantrieb	Benzin	220	300	Oct 1985	Jun 1991	2024-03-01	708
+Ford	Escort iv	1.8 D	Schrägheck	Frontantrieb	Diesel	44	60	Jan 1989	Jul 1990	2024-03-01	709
+Ford	Escort iv	1.6 I	Schrägheck	Frontantrieb	Benzin	75	102	Aug 1989	Jul 1990	2024-03-01	710
+Peugeot	508 i	1.6 THP	Stufenheck	Frontantrieb	Benzin	115	156	Nov 2010	Dec 2018	2024-03-01	711
+Peugeot	508 sw i	1.6 THP	Kombi	Frontantrieb	Benzin	115	156	Nov 2010	Dec 2018	2024-03-01	712
+Peugeot	508 i	1.6 HDI	Stufenheck	Frontantrieb	Diesel	82	112	Nov 2010	Dec 2018	2024-03-01	713
+Peugeot	508 sw i	1.6 HDI	Kombi	Frontantrieb	Diesel	82	112	Nov 2010	Dec 2018	2024-03-01	714
+Fiat	500	0.6	Stufenheck	Heckantrieb	Benzin	12	16	Mar 1948	Dec 1949	2024-03-01	715
+Mercedes-benz	S-Klasse	500 SE, SEL CAT	Stufenheck	Heckantrieb	Benzin	185	252	Jun 1989	Jun 1991	2024-03-01	716
+Peugeot	508 i	2.0 HDI	Stufenheck	Frontantrieb	Diesel	103	140	Nov 2010	Dec 2018	2024-03-01	717
+Mercedes-benz	Sl	190 SL	Cabriolet	Heckantrieb	Benzin	77	105	Jan 1955	Dec 1963	2024-03-01	719
+Mercedes-benz	Pagode	230 SL	Cabriolet	Heckantrieb	Benzin	110	150	Jan 1963	Jan 1967	2024-03-01	720
+Mercedes-benz	Pagode	250 SL	Cabriolet	Heckantrieb	Benzin	110	150	Jan 1966	Jan 1968	2024-03-01	721
+Mercedes-benz	Pagode	280 SL	Cabriolet	Heckantrieb	Benzin	125	170	Jan 1968	Mar 1971	2024-03-01	722
+Mercedes-benz	Sl	280 SL	Cabriolet	Heckantrieb	Benzin	130	177	Jun 1976	Sep 1981	2024-03-01	723
+Ford	Orion ii	1.4 CAT	Stufenheck	Frontantrieb	Benzin	54	73	Feb 1987	Jul 1990	2024-03-01	724
+Ford	Orion ii	1.4	Stufenheck	Frontantrieb	Benzin	55	75	Dec 1985	Jul 1990	2024-03-01	725
+Ford	Orion ii	1.4	Stufenheck	Frontantrieb	Benzin	52	72	Mar 1986	Jul 1990	2024-03-01	726
+
