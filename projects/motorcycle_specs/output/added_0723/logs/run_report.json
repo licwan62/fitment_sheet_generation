@@ -1,0 +1,31 @@
+{
+  "started_at": "2026-07-23T06:47:32.359993+00:00",
+  "finished_at": "2026-07-23T12:55:18.071669+00:00",
+  "input_count": 4740,
+  "processed_count": 4740,
+  "candidate_page_count": 52291,
+  "fetched_page_count": 4320,
+  "cache_hit_count": 3,
+  "exact_match_count": 4331,
+  "likely_match_count": 368,
+  "inferred_count": 318,
+  "review_count": 21768,
+  "not_found_count": 1985,
+  "parsed_complete_count": 2418,
+  "parsed_partial_count": 776,
+  "parse_failed_count": 4,
+  "dimension_group_count": 2913,
+  "error_count": 2,
+  "performance": {
+    "candidate_page_relationship_count": 5725,
+    "planned_fetch_relationship_count": 6278,
+    "adaptive_skipped_count": 871,
+    "unique_fetched_url_count": 4048,
+    "unique_parsed_url_count": 4046
+  },
+  "progress_files": {
+    "match": "D:\\Licheng\\Repo\\fitment_sheet_generation\\projects\\motorcycle_specs\\output\\added_0723\\match_progress.csv",
+    "fetch": "D:\\Licheng\\Repo\\fitment_sheet_generation\\projects\\motorcycle_specs\\output\\added_0723\\fetch_progress.csv",
+    "parse": "D:\\Licheng\\Repo\\fitment_sheet_generation\\projects\\motorcycle_specs\\output\\added_0723\\parse_progress.csv"
+  }
+}

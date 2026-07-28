@@ -90,3 +90,5 @@ Traceback (most recent call last):
   File "D:\Home\Scripts\fitment_sheet_generation\projects\motorcycle_specs\.venv\Lib\site-packages\httpx\_transports\default.py", line 118, in map_httpcore_exceptions
     raise mapped_exc(message) from exc
 httpx.ReadError: [WinError 10054] 远程主机强迫关闭了一个现有的连接。
+2026-07-23 18:20:44,880 ERROR moto_dimension_crawler.crawler Fetch failed https://www.1000ps.com/en-gb/model/12520/kawasaki-brute-force-750-4x4i-eps-camo: HTTP 404
+2026-07-23 18:42:41,793 ERROR moto_dimension_crawler.crawler Fetch failed https://www.1000ps.com/en-gb/model/13353/sherco-300-se-racing: HTTP 404
