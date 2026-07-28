@@ -1,4 +1,4 @@
-DIMENSION_GROUP_ID	LengthMM	WidthMM	HeightMM	DimensionSource	SourceURL
+﻿DIMENSION_GROUP_ID	LengthMM	WidthMM	HeightMM	DimensionSource	SourceURL
 EU-BMW-NEW-CLASS-2000-SEDAN-01	4500	1710	1445	Automobile-Catalog; Auto-Data	https://www.automobile-catalog.com/car/1968/77360/bmw_2000.html;https://www.auto-data.net/en/bmw-new-class-2000-100hp-44621
 EU-BMW-3-SERIES-E21-SEDAN-01	4355	1610	1380	BMW factory technical data; Auto-Data	https://www.bmwe21.net/79_on_specs.pdf;https://www.auto-data.net/en/bmw-3-series-e21-315-75hp-10091
 EU-BMW-3-SERIES-E30-SEDAN-2D-01	4325	1645	1380	BMW Group Classic; Auto-Data	https://www.bmwgroup-classic.com/en/models/bmw-classics/product-description-page.ad-872-1.bmw-3-series-saloon-e30.html;https://www.auto-data.net/en/bmw-3-series-coupe-e30-325i-171hp-46129
@@ -152,6 +152,3 @@ EU-SEAT-IBIZA-IV-3D-PREFL-HATCHBACK-01	4034	1693	1428	Automobile-Catalog 2010 Se
 EU-SEAT-IBIZA-IV-3D-FACELIFT-HATCHBACK-01	4043	1693	1428	Auto-Data Seat Ibiza IV SC facelift 1.2 12V 60	https://www.auto-data.net/en/seat-ibiza-iv-sc-facelift-2012-1.2-12v-60hp-19319
 EU-SEAT-IBIZA-IV-5D-PREFL-HATCHBACK-01	4052	1693	1445	Automobile-Catalog 2010 Seat Ibiza 1.2 12V 60	https://www.automobile-catalog.com/car/2010/3094850/seat_ibiza_1_2_12v_60.html
 EU-SEAT-IBIZA-IV-5D-FACELIFT-HATCHBACK-01	4061	1693	1445	Auto-Data Seat Ibiza IV facelift 1.2 12V 60	https://www.auto-data.net/en/seat-ibiza-iv-facelift-2012-1.2-12v-60hp-16881
-EU-VOLVO-XC90-II-SUV-5D-FACELIFT-01	4953	1931	1771	Volvo Cars UK XC90 Plug-in Hybrid Specifications	https://www.volvocars.com/uk/cars/xc90-hybrid/specifications/
-EU-VOLVO-XC60-II-SUV-5D-FACELIFT-01	4708	1902	1651	Volvo Cars UK XC60 Plug-in Hybrid Specifications	https://www.volvocars.com/uk/cars/xc60-hybrid/specifications/
-EU-CUPRA-BORN-I-HATCHBACK-5D-FACELIFT-01	4336	1809	1543	CUPRA Born 2026 Official Model Page	https://www.cupra.com/en/cars/born

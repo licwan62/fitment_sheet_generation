@@ -55,8 +55,16 @@ async function ensureBrowser() {
   const launchedContext = await chromium.launchPersistentContext(userDataDir, {
     headless: false,
     executablePath: executablePath || undefined,
+    // Use the macOS login keychain, matching the normal Chrome process used
+    // for the one-time login handoff. Playwright's mock-keychain defaults make
+    // cookies written by normal Chrome unreadable after it takes control.
+    ignoreDefaultArgs: [
+      "--enable-automation",
+      "--use-mock-keychain",
+      "--password-store=basic",
+    ],
     viewport: null,
-    args: ["--start-maximized"],
+    args: ["--start-maximized", "--disable-blink-features=AutomationControlled"],
   });
   context = launchedContext;
   launchedContext.setDefaultTimeout(20_000);
@@ -111,7 +119,18 @@ async function runAction(action, body) {
 
   const page = await activePage();
   if (action === "open") {
-    currentPage = await context.newPage();
+    const targetUrl = new URL(body.url);
+    const matchingPages = context.pages().filter((item) => {
+      try {
+        return !item.isClosed() && new URL(item.url()).host === targetUrl.host;
+      } catch {
+        return false;
+      }
+    });
+    currentPage = matchingPages[0] || page;
+    await Promise.all(matchingPages.slice(1).map((item) => item.close().catch(() => {})));
+    // Re-read the shared profile after a normal Chrome login. A restored tab
+    // can otherwise keep showing its pre-login DOM even though cookies exist.
     await currentPage.goto(body.url, { waitUntil: "domcontentloaded" });
     await currentPage.bringToFront();
     return pageInfo(currentPage, context.pages().indexOf(currentPage));

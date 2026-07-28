@@ -17,6 +17,7 @@ function Get-Value {
 function Resolve-ConfigPath {
     param([string]$Path, [string]$Base)
     if ([string]::IsNullOrWhiteSpace($Path)) { return "" }
+    if (-not $IsWindows) { $Path = $Path.Replace("\", [System.IO.Path]::DirectorySeparatorChar) }
     if ([System.IO.Path]::IsPathRooted($Path)) { return [System.IO.Path]::GetFullPath($Path) }
     return [System.IO.Path]::GetFullPath((Join-Path $Base $Path))
 }
@@ -28,8 +29,11 @@ function Test-AnyPattern {
 }
 
 $resolvedConfig = $ExecutionContext.SessionState.Path.GetUnresolvedProviderPathFromPSPath($ConfigPath)
-$loader = Join-Path $PSScriptRoot "src\load_fitment_config.py"
-$json = & python $loader $resolvedConfig
+$loader = Join-Path (Join-Path $PSScriptRoot "src") "load_fitment_config.py"
+$python = Get-Command python3 -ErrorAction SilentlyContinue
+if (-not $python) { $python = Get-Command python -ErrorAction SilentlyContinue }
+if (-not $python) { throw "找不到 Python 3。macOS 可运行: brew install python" }
+$json = & $python.Source $loader $resolvedConfig
 if ($LASTEXITCODE -ne 0) { throw "读取 config.yaml 失败" }
 $config = $json | ConvertFrom-Json
 $configDir = [string]$config._meta.config_dir
@@ -112,6 +116,13 @@ Write-Host "Ktype 映射表: $($fullColumns.Count) 列；DIMENSION_GROUP 表: $(
 foreach ($project in $projects) { Write-Host "  - $($project.FullName)" }
 
 $scriptPath = Join-Path $PSScriptRoot "qclaw_fitment_automation.ps1"
+$powerShellExecutable = (Get-Process -Id $PID).Path
+if ([string]::IsNullOrWhiteSpace($powerShellExecutable)) {
+    $powerShellCommand = Get-Command pwsh -ErrorAction SilentlyContinue
+    if (-not $powerShellCommand) { $powerShellCommand = Get-Command powershell.exe -ErrorAction SilentlyContinue }
+    if (-not $powerShellCommand) { throw "无法定位当前 PowerShell 可执行文件" }
+    $powerShellExecutable = $powerShellCommand.Source
+}
 $continueOnError = [bool](Get-Value $runtime "continue_on_error" $false)
 $failures = @()
 try {
@@ -134,6 +145,7 @@ try {
             $resolvedDirectories = @(
                 foreach ($directory in @((Get-Value $inputSources "directories" @()))) {
                     $sourcePath = [string](Get-Value $directory "path" "")
+                    if (-not $IsWindows) { $sourcePath = $sourcePath.Replace("\", [System.IO.Path]::DirectorySeparatorChar) }
                     $resolvedSourcePath = if ([System.IO.Path]::IsPathRooted($sourcePath)) {
                         [System.IO.Path]::GetFullPath($sourcePath)
                     }
@@ -150,6 +162,7 @@ try {
             $resolvedFiles = @(
                 foreach ($sourceFile in @((Get-Value $inputSources "files" @()))) {
                     $sourcePath = [string](Get-Value $sourceFile "path" "")
+                    if (-not $IsWindows) { $sourcePath = $sourcePath.Replace("\", [System.IO.Path]::DirectorySeparatorChar) }
                     $resolvedSourcePath = if ([System.IO.Path]::IsPathRooted($sourcePath)) {
                         [System.IO.Path]::GetFullPath($sourcePath)
                     }
@@ -194,6 +207,7 @@ try {
                 $arguments += @("-RowLabelColumns", ($rowLabelColumns -join ","))
             }
             $checkpointPath = [string](Get-Value $processing "checkpoint_dir" "checkpoints")
+            if (-not $IsWindows) { $checkpointPath = $checkpointPath.Replace("\", [System.IO.Path]::DirectorySeparatorChar) }
             if ([System.IO.Path]::IsPathRooted($checkpointPath)) {
                 $resolvedCheckpointPath = [System.IO.Path]::GetFullPath($checkpointPath)
             }
@@ -208,6 +222,7 @@ try {
             $keyColumns = @((Get-Value $vehicleIteration "key_columns" @("MAKE", "MODEL")))
             $arguments += @("-VehicleKeyColumns", ($keyColumns -join ","))
             $checkpointPath = [string](Get-Value $vehicleIteration "checkpoint_dir" "checkpoints")
+            if (-not $IsWindows) { $checkpointPath = $checkpointPath.Replace("\", [System.IO.Path]::DirectorySeparatorChar) }
             if ([System.IO.Path]::IsPathRooted($checkpointPath)) {
                 $resolvedCheckpointPath = [System.IO.Path]::GetFullPath($checkpointPath)
             }
@@ -230,7 +245,7 @@ try {
         if ($effectiveMode -eq "dry_run") { $arguments += "-ListTasksOnly" }
 
         Write-Host "`n[$effectiveMode] $($project.Name)" -ForegroundColor Green
-        & powershell.exe @arguments
+        & $powerShellExecutable @arguments
         if ($LASTEXITCODE -ne 0) {
             $failures += $project.FullName
             if (-not $continueOnError) { throw "项目执行失败: $($project.FullName)" }

@@ -31,7 +31,7 @@ param(
     [string]$CheckpointDir = "",
     [string]$PlaywrightProfilePath = "",
     [string]$PlaywrightExecutablePath = "",
-    [string]$OpenClawCommand = "openclaw.cmd",
+    [string]$OpenClawCommand = "",
     [string]$OpenClawConfigPath = "",
     [string]$OpenClawGatewayUrl = "",
     [string]$OpenClawBrowserUrl = "",
@@ -57,6 +57,9 @@ param(
 )
 
 $ErrorActionPreference = "Stop"
+if ([string]::IsNullOrWhiteSpace($OpenClawCommand)) {
+    $OpenClawCommand = if ($IsWindows -or $null -eq $IsWindows) { "openclaw.cmd" } else { "openclaw" }
+}
 
 $ExplicitParameters = New-Object "System.Collections.Generic.HashSet[string]" ([StringComparer]::OrdinalIgnoreCase)
 foreach ($key in $PSBoundParameters.Keys) {
@@ -134,7 +137,9 @@ function Set-DefaultPaths {
     if ([string]::IsNullOrWhiteSpace($OutputDir)) { $script:OutputDir = Join-Path $ScriptRoot "output_sheets" }
     if ([string]::IsNullOrWhiteSpace($LogPath)) { $script:LogPath = Join-Path $ScriptRoot "log.csv" }
     if ([string]::IsNullOrWhiteSpace($SummaryPath)) { $script:SummaryPath = Join-Path $ScriptRoot "summary.txt" }
-    if ([string]::IsNullOrWhiteSpace($RequirementPath)) { $script:RequirementPath = Join-Path $ScriptRoot "requirements\eu_autodata.md" }
+    if ([string]::IsNullOrWhiteSpace($RequirementPath)) {
+        $script:RequirementPath = Join-Path (Join-Path $ScriptRoot "requirements") "eu_autodata.md"
+    }
 }
 
 function Resolve-ProjectPaths {
@@ -336,6 +341,46 @@ function Get-FreeLocalPort {
     }
 }
 
+function Stop-StalePlaywrightProfileBrowsers {
+    if (-not ($IsMacOS -or $IsLinux) -or [string]::IsNullOrWhiteSpace($script:PlaywrightProfilePath)) {
+        return
+    }
+
+    $matching = @(
+        & ps -axo "pid=,command=" 2>$null | ForEach-Object {
+            if ($_ -match '^\s*(\d+)\s+(.+)$') {
+                $processId = [int]$Matches[1]
+                $commandLine = $Matches[2]
+                if (
+                    $processId -ne $PID -and
+                    $commandLine.Contains($script:PlaywrightProfilePath) -and
+                    $commandLine -match '(?i)(Google Chrome|Chromium|chrome)' -and
+                    $commandLine -notmatch '\s--type='
+                ) {
+                    [pscustomobject]@{ Id = $processId; CommandLine = $commandLine }
+                }
+            }
+        }
+    )
+    if ($matching.Count -eq 0) { return }
+
+    Write-Host "检测到占用专用 profile 的残留 Chrome，正在定向关闭: $($matching.Id -join ', ')" -ForegroundColor Yellow
+    foreach ($item in $matching) {
+        Stop-Process -Id $item.Id -ErrorAction SilentlyContinue
+    }
+
+    $deadline = (Get-Date).AddSeconds(10)
+    do {
+        Start-Sleep -Milliseconds 250
+        $stillRunning = @($matching | Where-Object { Get-Process -Id $_.Id -ErrorAction SilentlyContinue })
+    } while ($stillRunning.Count -gt 0 -and (Get-Date) -lt $deadline)
+
+    foreach ($item in $stillRunning) {
+        Stop-Process -Id $item.Id -Force -ErrorAction SilentlyContinue
+    }
+    if ($stillRunning.Count -gt 0) { Start-Sleep -Seconds 1 }
+}
+
 function Initialize-PlaywrightRuntime {
     if ($script:PlaywrightBridgeProcess -and -not $script:PlaywrightBridgeProcess.HasExited -and $script:PlaywrightBridgeUrl) {
         try {
@@ -348,17 +393,34 @@ function Initialize-PlaywrightRuntime {
     $node = Get-Command node -ErrorAction SilentlyContinue
     if (-not $node) { throw "找不到 Node.js。Playwright 模式需要 Node.js 18 或更高版本。" }
     $bridgePath = Join-Path $ScriptRoot "playwright_browser_bridge.js"
-    $playwrightModule = Join-Path $ScriptRoot "node_modules\playwright"
+    $playwrightModule = Join-Path (Join-Path $ScriptRoot "node_modules") "playwright"
     if (-not (Test-Path -LiteralPath $playwrightModule -PathType Container)) {
         throw "Playwright 依赖尚未安装。请在 $ScriptRoot 运行：npm install；npx playwright install chromium"
     }
 
     if ([string]::IsNullOrWhiteSpace($script:PlaywrightProfilePath)) {
-        $script:PlaywrightProfilePath = Join-Path $env:LOCALAPPDATA "qclaw-fitment-automation\playwright-profile"
+        $profileBase = if ($IsMacOS) {
+            Join-Path $HOME "Library/Application Support"
+        }
+        elseif ($IsLinux) {
+            if ($env:XDG_STATE_HOME) { $env:XDG_STATE_HOME } else { Join-Path $HOME ".local/state" }
+        }
+        else {
+            $env:LOCALAPPDATA
+        }
+        $script:PlaywrightProfilePath = Join-Path (Join-Path $profileBase "qclaw-fitment-automation") "playwright-profile"
     }
     if (-not (Test-Path -LiteralPath $script:PlaywrightProfilePath)) {
         New-Item -ItemType Directory -Path $script:PlaywrightProfilePath -Force | Out-Null
     }
+    if ([string]::IsNullOrWhiteSpace($script:PlaywrightExecutablePath) -and $IsMacOS) {
+        $macChrome = "/Applications/Google Chrome.app/Contents/MacOS/Google Chrome"
+        if (Test-Path -LiteralPath $macChrome -PathType Leaf) {
+            $script:PlaywrightExecutablePath = $macChrome
+            Write-Host "Playwright 使用系统 Google Chrome，以支持首次登录。" -ForegroundColor DarkCyan
+        }
+    }
+    Stop-StalePlaywrightProfileBrowsers
 
     $port = Get-FreeLocalPort
     $script:PlaywrightBridgeUrl = "http://127.0.0.1:$port"
@@ -373,7 +435,13 @@ function Initialize-PlaywrightRuntime {
     if (-not [string]::IsNullOrWhiteSpace($PlaywrightExecutablePath)) {
         $bridgeArgs += "--executable-path=`"$PlaywrightExecutablePath`""
     }
-    $script:PlaywrightBridgeProcess = Start-Process -FilePath $node.Source -ArgumentList $bridgeArgs -PassThru -WindowStyle Hidden
+    $startProcessParams = @{
+        FilePath = $node.Source
+        ArgumentList = $bridgeArgs
+        PassThru = $true
+    }
+    if ($IsWindows) { $startProcessParams.WindowStyle = "Hidden" }
+    $script:PlaywrightBridgeProcess = Start-Process @startProcessParams
 
     for ($attempt = 0; $attempt -lt 60; $attempt++) {
         if ($script:PlaywrightBridgeProcess.HasExited) {
@@ -454,14 +522,31 @@ function Invoke-PlaywrightXB {
 }
 
 function Get-RegularBrowserExecutable {
-    $candidates = @(
-        (Join-Path $env:ProgramFiles "Google\Chrome\Application\chrome.exe"),
-        $(if (${env:ProgramFiles(x86)}) { Join-Path ${env:ProgramFiles(x86)} "Google\Chrome\Application\chrome.exe" }),
-        (Join-Path $env:LOCALAPPDATA "Google\Chrome\Application\chrome.exe"),
-        (Join-Path $env:ProgramFiles "Microsoft\Edge\Application\msedge.exe"),
-        $(if (${env:ProgramFiles(x86)}) { Join-Path ${env:ProgramFiles(x86)} "Microsoft\Edge\Application\msedge.exe" }),
-        (Join-Path $env:LOCALAPPDATA "Microsoft\Edge\Application\msedge.exe")
-    )
+    if ($IsMacOS) {
+        $candidates = @(
+            "/Applications/Google Chrome.app/Contents/MacOS/Google Chrome",
+            "/Applications/Microsoft Edge.app/Contents/MacOS/Microsoft Edge",
+            (Join-Path $HOME "Applications/Google Chrome.app/Contents/MacOS/Google Chrome")
+        )
+    }
+    elseif ($IsLinux) {
+        $candidates = @(
+            (Get-Command google-chrome -ErrorAction SilentlyContinue).Source,
+            (Get-Command chromium -ErrorAction SilentlyContinue).Source,
+            (Get-Command chromium-browser -ErrorAction SilentlyContinue).Source,
+            (Get-Command microsoft-edge -ErrorAction SilentlyContinue).Source
+        )
+    }
+    else {
+        $candidates = @(
+            $(if ($env:ProgramFiles) { Join-Path $env:ProgramFiles "Google\Chrome\Application\chrome.exe" }),
+            $(if (${env:ProgramFiles(x86)}) { Join-Path ${env:ProgramFiles(x86)} "Google\Chrome\Application\chrome.exe" }),
+            $(if ($env:LOCALAPPDATA) { Join-Path $env:LOCALAPPDATA "Google\Chrome\Application\chrome.exe" }),
+            $(if ($env:ProgramFiles) { Join-Path $env:ProgramFiles "Microsoft\Edge\Application\msedge.exe" }),
+            $(if (${env:ProgramFiles(x86)}) { Join-Path ${env:ProgramFiles(x86)} "Microsoft\Edge\Application\msedge.exe" }),
+            $(if ($env:LOCALAPPDATA) { Join-Path $env:LOCALAPPDATA "Microsoft\Edge\Application\msedge.exe" })
+        )
+    }
     return $candidates | Where-Object { $_ -and (Test-Path -LiteralPath $_ -PathType Leaf) } | Select-Object -First 1
 }
 
@@ -473,15 +558,73 @@ function Invoke-ManualPlaywrightLogin {
     Invoke-XB "cleanup" | Out-Null
     $browserArgs = @(
         "--user-data-dir=`"$($script:PlaywrightProfilePath)`"",
+        "--new-window",
+        "--no-first-run",
+        "--no-default-browser-check",
+        "--disable-background-mode",
         $ChatGptUrl
     )
-    Start-Process -FilePath $regularBrowser -ArgumentList $browserArgs | Out-Null
+    $loginBrowserProcess = Start-Process -FilePath $regularBrowser -ArgumentList $browserArgs -PassThru
     Write-Host "已打开普通浏览器: $regularBrowser" -ForegroundColor Cyan
-    [void](Read-Host "请完成 ChatGPT/Google 登录，确认输入框可用，关闭刚打开的浏览器窗口，然后回到这里按 Enter")
+    Write-Host "普通 Chrome 与 Testing Chrome 使用同一个专用 profile: $($script:PlaywrightProfilePath)" -ForegroundColor DarkCyan
+    [void](Read-Host "请完成 ChatGPT/Google 登录，确认输入框可用，然后回到这里按 Enter；脚本会保存登录状态并关闭这个专用 Chrome")
 
+    if ($loginBrowserProcess -and -not $loginBrowserProcess.HasExited) {
+        Write-Host "正在关闭普通 Chrome，使登录 Cookie 完整写入 profile..." -ForegroundColor Yellow
+        try {
+            $loginBrowserProcess.CloseMainWindow() | Out-Null
+            if (-not $loginBrowserProcess.WaitForExit(10000)) {
+                Stop-Process -Id $loginBrowserProcess.Id -ErrorAction Stop
+                $loginBrowserProcess.WaitForExit(5000) | Out-Null
+            }
+        }
+        catch {
+            Write-Host "关闭专用 Chrome 时收到提示: $($_.Exception.Message)" -ForegroundColor Yellow
+        }
+    }
+    Start-Sleep -Seconds 2
+
+    Write-Host "正在把登录状态交接给 Testing Chrome..." -ForegroundColor Cyan
     Initialize-XBrowser
     Open-ChatGPT
     return $true
+}
+
+function Wait-ChatGPTLogin {
+    $manualLoginAttempted = $false
+    while ($true) {
+        try {
+            $state = Get-ChatGPTState
+            if (-not $state.loggedOut -and $state.inputReady) {
+                Write-Host "ChatGPT 已登录，输入框已就绪。" -ForegroundColor Green
+                return
+            }
+        }
+        catch {
+            Write-Host "ChatGPT 页面仍在加载，等待手动确认。" -ForegroundColor Yellow
+            $state = $null
+        }
+
+        Write-Host "当前尚未检测到已登录的可输入页面。" -ForegroundColor Yellow
+        if ($Browser -eq "playwright" -and -not $manualLoginAttempted) {
+            $manualLoginAttempted = $true
+            try {
+                if (Invoke-ManualPlaywrightLogin) { continue }
+            }
+            catch {
+                Write-Host "普通浏览器登录交接失败: $($_.Exception.Message)" -ForegroundColor Yellow
+                Write-Host "请确认刚打开的普通浏览器已经完全关闭，然后按 Enter 重试。" -ForegroundColor Yellow
+            }
+        }
+
+        if ($manualLoginAttempted) {
+            Write-Host "登录页面已经打开；不会重复新建页面。请继续使用该页面完成登录。" -ForegroundColor DarkCyan
+        }
+        if ($state) {
+            Write-Host "验证详情: URL=$($state.url)；输入框候选=$($state.editorCandidates)；loggedOut=$($state.loggedOut)" -ForegroundColor DarkGray
+        }
+        [void](Read-Host "请在已打开的浏览器中完成登录，确认聊天输入框可用，然后回到此窗口按 Enter 重新验证（Ctrl+C 取消）")
+    }
 }
 
 function New-XBSuccess {
@@ -531,7 +674,12 @@ function Initialize-OpenClawRuntime {
         $oldEager = $env:OPENCLAW_EAGER_BROWSER_CONTROL_SERVER
         try {
             $env:OPENCLAW_EAGER_BROWSER_CONTROL_SERVER = "1"
-            Start-Process -FilePath $script:OpenClawResolvedCommand -ArgumentList @("gateway", "run") -WindowStyle Hidden | Out-Null
+            $gatewayStartParams = @{
+                FilePath = $script:OpenClawResolvedCommand
+                ArgumentList = @("gateway", "run")
+            }
+            if ($IsWindows) { $gatewayStartParams.WindowStyle = "Hidden" }
+            Start-Process @gatewayStartParams | Out-Null
         }
         finally {
             if ($null -eq $oldEager) { Remove-Item Env:OPENCLAW_EAGER_BROWSER_CONTROL_SERVER -ErrorAction SilentlyContinue }
@@ -560,6 +708,9 @@ function Restart-LocalOpenClawGatewayWithBrowser {
     if ($gatewayUri.Host -notin @("127.0.0.1", "localhost", "::1")) {
         throw "远程 OpenClaw Gateway 未暴露 browser control 服务，无法由本脚本重启: $gatewayUri"
     }
+    if (-not $IsWindows) {
+        throw "OpenClaw browser control 未启动。请在终端停止现有 Gateway，并运行: OPENCLAW_EAGER_BROWSER_CONTROL_SERVER=1 openclaw gateway run"
+    }
 
     $connection = Get-NetTCPConnection -LocalPort $gatewayUri.Port -State Listen -ErrorAction SilentlyContinue | Select-Object -First 1
     if (-not $connection) { return }
@@ -574,7 +725,12 @@ function Restart-LocalOpenClawGatewayWithBrowser {
     $oldEager = $env:OPENCLAW_EAGER_BROWSER_CONTROL_SERVER
     try {
         $env:OPENCLAW_EAGER_BROWSER_CONTROL_SERVER = "1"
-        Start-Process -FilePath $script:OpenClawResolvedCommand -ArgumentList @("gateway", "run") -WindowStyle Hidden | Out-Null
+        $gatewayStartParams = @{
+            FilePath = $script:OpenClawResolvedCommand
+            ArgumentList = @("gateway", "run")
+            WindowStyle = "Hidden"
+        }
+        Start-Process @gatewayStartParams | Out-Null
     }
     finally {
         if ($null -eq $oldEager) { Remove-Item Env:OPENCLAW_EAGER_BROWSER_CONTROL_SERVER -ErrorAction SilentlyContinue }
@@ -2274,6 +2430,9 @@ function Get-ChatGPTState {
   });
   return {
     reply,
+    url: location.href,
+    title: document.title,
+    editorCandidates: document.querySelectorAll('#prompt-textarea, textarea, [contenteditable="true"], [role="textbox"]').length,
     inputReady: !!editor && !editor.disabled && editor.getAttribute('aria-disabled') !== 'true',
     isGenerating,
     hasStopButton: isGenerating,
@@ -3798,6 +3957,7 @@ function Main {
     Test-Prerequisites
     Initialize-XBrowser
     Open-ChatGPT
+    Wait-ChatGPTLogin
 
     if ($OpenOnly) {
         try {
@@ -3809,36 +3969,7 @@ function Main {
         catch {
             throw "ChatGPT 已打开，但 $Browser 页面读取验证失败: $($_.Exception.Message)"
         }
-        while ($true) {
-            $state = Get-ChatGPTState
-            if (-not $state.loggedOut -and $state.inputReady) {
-                Write-Host "ChatGPT 已登录，输入框已就绪。" -ForegroundColor Green
-                return
-            }
-
-            Write-Host "当前尚未检测到已登录的可输入页面。" -ForegroundColor Yellow
-            if ($Browser -eq "playwright" -and $state.loggedOut) {
-                try {
-                    if (Invoke-ManualPlaywrightLogin) { continue }
-                }
-                catch {
-                    Write-Host "普通浏览器登录交接失败: $($_.Exception.Message)" -ForegroundColor Yellow
-                    Write-Host "请确认刚打开的普通浏览器已经完全关闭，然后按 Enter 重试。" -ForegroundColor Yellow
-                }
-            }
-            [void](Read-Host "请完成登录，然后回到此窗口按 Enter 重新验证（Ctrl+C 取消）")
-            try {
-                $state = Get-ChatGPTState
-                if (-not $state.loggedOut -and $state.inputReady) {
-                    Write-Host "ChatGPT 登录成功，输入框已就绪。" -ForegroundColor Green
-                    return
-                }
-                Write-Host "仍未检测到登录状态，将继续等待手动确认。" -ForegroundColor Yellow
-            }
-            catch {
-                Write-Host "页面仍在跳转或暂时无法读取，将继续等待手动确认。" -ForegroundColor Yellow
-            }
-        }
+        return
     }
 
     $state = Get-ChatGPTState

@@ -1,6 +1,6 @@
 # QClaw Fitment Automation
 
-以下命令默认在 PowerShell 中执行。
+支持 Windows PowerShell 和 macOS/Linux 的 PowerShell Core。
 
 ## 项目结构
 
@@ -12,6 +12,7 @@ qclaw_fitment_automation/
 ├── workspaces/                  # 各批次输入、输出、检查点和运行记录
 ├── config.yaml                  # 默认运行配置
 ├── run_from_config.ps1          # 推荐启动入口
+├── run_from_config.sh           # macOS/Linux 快捷入口
 ├── run_automation.bat           # Windows 快捷入口
 ├── qclaw_fitment_automation.ps1 # 核心自动化脚本（兼容直接调用）
 └── playwright_browser_bridge.js # Playwright 浏览器桥接
@@ -28,6 +29,32 @@ qclaw_fitment_automation/
 ```powershell
 powershell -NoProfile -ExecutionPolicy Bypass -File ".\run_from_config.ps1"
 ```
+
+macOS 首次运行先安装依赖：
+
+```bash
+brew install --cask powershell
+python3 -m pip install PyYAML
+npm install
+npx playwright install chromium
+```
+
+之后在本目录运行：
+
+```bash
+chmod +x ./run_from_config.sh
+./run_from_config.sh -ConfigPath "./configs/production.yaml"
+```
+
+macOS 也可以不使用快捷脚本，直接执行：
+
+```bash
+pwsh -NoProfile -File "./run_from_config.ps1" -ConfigPath "./configs/production.yaml"
+```
+
+首次运行时脚本会打开浏览器并暂停，不会在未登录状态下直接失败。请在浏览器中完成
+ChatGPT 登录，确认聊天输入框可用，再回到终端按 Enter；登录状态会保存在独立的
+Playwright profile 中，后续运行可直接复用。
 
 只检查配置、目录和当前浏览器页面控制，不发送消息：
 

@@ -1,0 +1,14 @@
+总文件数：1
+成功数：1
+重复终止数：0
+次数上限终止数：0
+页面错误数：0
+登录失效数：0
+偏离终止数：0
+未处理数：0
+失败数：0
+当前未成功的任务数：0
+当前未成功的任务：
+无
+输出目录：/Users/survivor/Documents/GitHub/fitment_sheet_generation/projects/qclaw_fitment_automation/workspaces/0728-eu/output
+完成时间：2026-07-28 19:52:45
