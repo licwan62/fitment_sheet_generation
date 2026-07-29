@@ -1,0 +1,26 @@
+﻿{
+    "version":  2,
+    "task_id":  "all__batch__0012__e3ca2cdc",
+    "task_name":  "all 第 1101-1200 行",
+    "vehicle":  "all 第 1101-1200 行",
+    "source_file":  "all.tsv",
+    "status":  "页面错误",
+    "phase":  "finished",
+    "round":  21,
+    "send_count":  21,
+    "output_file":  "D:\\Licheng\\Repo\\fitment_sheet_generation\\projects\\qclaw_fitment_automation\\workspaces\\0728-eu-2\\output\\all__batch__0012__e3ca2cdc_result.md",
+    "conversation_url":  "https://chatgpt.com/c/6a696a5b-926c-83ea-bbbb-eb9bdb849c21",
+    "conversation_branch_count":  0,
+    "conversation_lineage":  [
+                                 {
+                                     "branch_index":  0,
+                                     "url":  "https://chatgpt.com/c/6a696a5b-926c-83ea-bbbb-eb9bdb849c21",
+                                     "parent_url":  "",
+                                     "trigger":  "initial",
+                                     "round":  1,
+                                     "created_at":  "2026-07-29 10:50:11"
+                                 }
+                             ],
+    "remarks":  "异常: 已打开消息操作菜单，但没有找到【在新聊天中分支】",
+    "updated_at":  "2026-07-29 13:02:39"
+}

@@ -1,3 +1,13 @@
+﻿# 任务：all 第 1701-1800 行
+# 来源文件：all.tsv
+# 任务 ID：all__batch__0018__cbe0d8a3
+
+
+--- 发送 / 首次任务 ---
+【任务名称】
+【全量表更新】all 第 1701-1800 行
+
+【任务要求】
 # EU Auto-Data Ktype 与尺寸组补全规则
 
 本规则适用于以下 Tab 分隔的欧洲车型输入表。`Ktype` 是输入车型标识，但不保证唯一对应一个物理车身。输出必须包含两张互相解耦的全量 TSV：
@@ -75,7 +85,6 @@ DIMENSION_GROUP 表是尺寸事实的唯一落盘位置。
 - 本表不得包含当前 Ktype 映射表完全未引用的孤立尺寸组。
 - 相同物理外廓只能复用同一个稳定 `DIMENSION_GROUP_ID`，不得因 Ktype、发动机或来源不同重复建组。
 - 物理外廓不同必须使用不同 `DIMENSION_GROUP_ID`。
-- 如果当前批次得到的三维与累计表中同名 `DIMENSION_GROUP_ID` 不同，禁止覆盖已有组；应使用同系列下一个可用序号创建新尺寸组，并将当前批次所有相关 Ktype 映射同步指向新组。
 - 尺寸研究、来源冲突和缓存核验都在尺寸组层完成，不在 Ktype 映射表重复落盘。
 
 ### 4. 首次建组与后续复用
@@ -376,3 +385,126 @@ EU-OPEL-CORSA-D-HATCHBACK-5D-01	3999	1737	1488	Vauxhall New Corsa official broch
 14. 是否仅在首次创建或纠错尺寸组时抓取三维和来源；后续 Ktype 是否只建立关联。
 15. CONTINUE 轮是否避免重复输出未变化记录，COMPLETE 轮是否一次性输出两张完整快照。
 16. COMPLETE 轮是否提供任务指定文件名的两个可点击 `.tsv` sandbox 下载链接。
+
+
+【执行顺序】
+执行顺序固定为：第一阶段优先消除 PENDING 并补齐会阻塞两张最终表的数据。检测到 PENDING=0 后，第二阶段最多只做一次轻量机械收尾：核对固定表头、id 与 DIMENSION_GROUP_ID 唯一、映射引用闭合、长宽高和来源非空、两个任务指定下载链接齐全。第二阶段不得重新逐车型、逐年份或逐来源做深度检索，不得为了提高置信度反复核对，也不得因非阻塞的排序或措辞问题继续多轮。PENDING=0 后的下一条回复必须直接输出两张最终完整 TSV、两个精确 sandbox 下载链接，并以“推进信号：COMPLETE”结束；不要再输出 CONTINUE。
+
+【配置附加规则】
+
+
+【当前文件名】
+all.tsv
+
+【当前独立任务】
+all 第 1701-1800 行
+
+【COMPLETE 下载文件硬性要求】
+准备 COMPLETE 时，除两张完整内嵌 TSV 外，还必须创建并提供以下两个可点击 sandbox 下载链接，文件名必须完全一致：
+- all_1701-1800_ktype_dimension_mapping_final.tsv
+- all_1701-1800_dimension_groups_final.tsv
+缺少任一下载链接时不得输出推进信号：COMPLETE。
+
+【TSV 数据】
+Make	Model	VariantName	BodyStyle	DriveType	Energy	EngineOutputKW	EngineOutputHP	Product Start Month-Year	Product End Month-Year	LastProcessedDate	Ktype
+Renault	Laguna iii	2.0 16V	Schrägheck	Frontantrieb	Benzin	103	140	Oct 2007	Dec 2012	2024-03-01	23369
+Renault	Laguna iii	2.0 16V Turbo	Schrägheck	Frontantrieb	Benzin	125	170	Oct 2007	Dec 2015	2024-03-01	23370
+Renault	Laguna iii	1.5 DCI	Schrägheck	Frontantrieb	Diesel	81	110	Oct 2007	Dec 2015	2024-03-01	23371
+Renault	Laguna iii	2.0 DCI	Schrägheck	Frontantrieb	Diesel	96	131	Oct 2007	Dec 2015	2024-03-01	23372
+Renault	Laguna iii	2.0 DCI	Schrägheck	Frontantrieb	Diesel	110	150	Oct 2007	Dec 2015	2024-03-01	23373
+Renault	Laguna iii grandtour	2.0 16V	Kombi	Frontantrieb	Benzin	103	140	Oct 2007	Dec 2015	2024-03-01	23374
+Renault	Laguna iii grandtour	2.0 16V Turbo	Kombi	Frontantrieb	Benzin	125	170	Oct 2007	Dec 2015	2024-03-01	23375
+Renault	Laguna iii grandtour	1.5 DCI	Kombi	Frontantrieb	Diesel	81	110	Oct 2007	Dec 2015	2024-03-01	23376
+Renault	Laguna iii grandtour	2.0 DCI	Kombi	Frontantrieb	Diesel	96	131	Oct 2007	Dec 2015	2024-03-01	23377
+Renault	Laguna iii grandtour	2.0 DCI	Kombi	Frontantrieb	Diesel	110	150	Oct 2007	Dec 2015	2024-03-01	23378
+Peugeot	308 i	1.4 16V	Schrägheck	Frontantrieb	Benzin	70	95	Sep 2007	Oct 2014	2024-03-01	23379
+Peugeot	308 i	1.6 16V	Schrägheck	Frontantrieb	Benzin	88	120	Sep 2007	Oct 2014	2024-03-01	23380
+Peugeot	308 i	1.6 16V	Schrägheck	Frontantrieb	Benzin	110	150	Sep 2007	Oct 2014	2024-03-01	23381
+Peugeot	308 i	1.6 HDI	Schrägheck	Frontantrieb	Diesel	66	90	Sep 2007	Oct 2014	2024-03-01	23382
+Peugeot	308 i	1.6 HDI	Schrägheck	Frontantrieb	Diesel	80	109	Sep 2007	Oct 2014	2024-03-01	23383
+Peugeot	308 i	2.0 HDI	Schrägheck	Frontantrieb	Diesel	100	136	Sep 2007	Oct 2014	2024-03-01	23384
+Peugeot	207 sw	1.4	Kombi	Frontantrieb	Benzin	54	73	Jun 2007	Dec 2012	2024-03-01	23385
+Peugeot	207 sw	1.4 16V	Kombi	Frontantrieb	Benzin	70	95	Jun 2007	Oct 2013	2024-03-01	23386
+Peugeot	207 sw	1.6 16V	Kombi	Frontantrieb	Benzin	88	120	Jun 2007	Oct 2013	2024-03-01	23387
+Peugeot	207 sw	1.6 HDI	Kombi	Frontantrieb	Diesel	66	90	Jun 2007	Dec 2012	2024-03-01	23388
+Peugeot	207 sw	1.6 HDI	Kombi	Frontantrieb	Diesel	80	109	Jun 2007	Dec 2012	2024-03-01	23389
+Mazda	Cx-7	2.3 MZR Disi Turbo AWD	SUV	Allrad	Benzin	190	258	Oct 2007	Aug 2009	2024-03-01	23395
+Mazda	2	1.3	Schrägheck	Frontantrieb	Benzin	55	75	Oct 2007	Jun 2015	2024-03-01	23396
+Mazda	2	1.5	Schrägheck	Frontantrieb	Benzin	76	103	Jul 2007	Jun 2015	2024-03-01	23397
+Mazda	2	1.3	Schrägheck	Frontantrieb	Benzin	63	86	Oct 2007	Jun 2015	2024-03-01	23398
+Mercedes-benz	C-Klasse	C 180 Kompressor	Kombi	Heckantrieb	Benzin	115	156	Aug 2007	Aug 2014	2024-03-01	23399
+Mercedes-benz	C-Klasse	C 200 Kompressor	Kombi	Heckantrieb	Benzin	135	184	Aug 2007	Aug 2014	2024-03-01	23400
+Mercedes-benz	C-Klasse	C 230	Kombi	Heckantrieb	Benzin	150	204	Aug 2007	Aug 2014	2024-03-01	23401
+Mercedes-benz	C-Klasse	C 280	Kombi	Heckantrieb	Benzin	170	231	Aug 2007	Aug 2014	2024-03-01	23402
+Mercedes-benz	C-Klasse	C 350	Kombi	Heckantrieb	Benzin	200	272	Aug 2007	Aug 2014	2024-03-01	23403
+Mercedes-benz	C-Klasse	C 200 CDI	Kombi	Heckantrieb	Diesel	100	136	Aug 2007	Dec 2009	2024-03-01	23404
+VW	Golf ii	1.8 GTI 16V	Schrägheck	Frontantrieb	Benzin	100	136	Aug 1986	Jul 1988	2024-03-01	23406
+Mercedes-benz	C-Klasse	C 220 CDI	Kombi	Heckantrieb	Diesel	125	170	Aug 2007	Nov 2008	2024-03-01	23408
+Land Rover	Range rover i	2.4 TD 4X4	Geländewagen geschlossen	Allrad	Diesel	78	106	Oct 1985	Sep 1989	2024-03-01	23411
+Opel	Agila b	1	Schrägheck	Frontantrieb	Benzin	48	65	Apr 2008	Jun 2011	2025-06-01	23425
+Opel	Agila b	1.2	Schrägheck	Frontantrieb	Benzin	63	86	Apr 2008	Oct 2012	2025-06-01	23426
+Opel	Agila b	1.3 Cdti	Schrägheck	Frontantrieb	Diesel	55	75	Apr 2008	Apr 2010	2025-06-01	23427
+Jaguar	X-Type i	2.1 V6	Kombi	Frontantrieb	Benzin	115	156	Nov 2003	Mar 2009	2024-03-01	23428
+BMW	1	135 I	Coupe	Heckantrieb	Benzin	225	306	Oct 2007	Oct 2013	2024-03-01	23429
+BMW	1	120 D	Coupe	Heckantrieb	Diesel	130	177	Sep 2007	Oct 2013	2024-03-01	23430
+BMW	1	123 D	Coupe	Heckantrieb	Diesel	150	204	Oct 2007	Sep 2013	2024-03-01	23431
+BMW	1	123 D	Schrägheck	Heckantrieb	Diesel	150	204	Mar 2007	Dec 2011	2024-03-01	23432
+Hyundai	I30	1.4	Schrägheck	Frontantrieb	Benzin	80	109	Oct 2007	Nov 2011	2024-03-01	23433
+Hyundai	I30	1.6	Schrägheck	Frontantrieb	Benzin	90	122	Oct 2007	Nov 2011	2024-03-01	23434
+Hyundai	I30	2	Schrägheck	Frontantrieb	Benzin	105	143	Oct 2007	Nov 2011	2024-03-01	23435
+Hyundai	I30	1.6 Crdi	Schrägheck	Frontantrieb	Diesel	85	116	Oct 2007	Nov 2011	2024-03-01	23436
+Hyundai	I30	2.0 Crdi	Schrägheck	Frontantrieb	Diesel	103	140	Oct 2007	Nov 2011	2024-03-01	23437
+Opel	Omega b	2.2 DTI 16V	Stufenheck	Heckantrieb	Diesel	81	110	Sep 2000	Jul 2003	2024-03-01	23438
+Opel	Omega b caravan	2.2 DTI 16V	Kombi	Heckantrieb	Diesel	81	110	Sep 2000	Jul 2003	2024-03-01	23439
+Citroën	C5	2.0 HDI	Schrägheck	Frontantrieb	Diesel	79	107	Mar 2001	Aug 2004	2024-07-01	23440
+Citroën	C5	2.0 HDI	Kombi	Frontantrieb	Diesel	80	109	Jun 2001	Aug 2004	2024-07-01	23441
+Chrysler	Grand voyager v	3.3	Großraumlimousine	Frontantrieb	Benzin	125	170	Jan 2008	-	2024-03-01	23442
+Suzuki	Swift iii	1.6	Schrägheck	Frontantrieb	Benzin	92	125	May 2006	Dec 2015	2026-05-01	23443
+Mini	Mini	Cooper S	Kombi	Frontantrieb	Benzin	120	163	Oct 2007	Jun 2014	2024-03-01	23444
+Mini	Mini	Cooper S	Kombi	Frontantrieb	Benzin	128	174	Aug 2007	Jul 2010	2024-03-01	23445
+Mini	Mini	Cooper	Kombi	Frontantrieb	Benzin	88	120	Oct 2007	Dec 2013	2024-03-01	23446
+Mini	Mini	Cooper D	Kombi	Frontantrieb	Diesel	80	109	Oct 2007	Feb 2010	2024-03-01	23447
+Lincoln	Ls	3.9 V8 32V	Stufenheck	Heckantrieb	Benzin	180	245	May 1998	-	2024-03-01	23448
+Dacia	Solenza	1.4	Schrägheck	Frontantrieb	Benzin	55	75	Feb 2003	Oct 2005	2024-03-01	23449
+Dacia	Solenza	1.9 D	Schrägheck	Frontantrieb	Diesel	46	63	Feb 2003	-	2024-03-01	23450
+Renault	Clio iii grandtour	1.2 16V	Kombi	Frontantrieb	Benzin	55	75	Feb 2008	Dec 2014	2026-05-01	23451
+Renault	Clio iii grandtour	1.2 16V	Kombi	Frontantrieb	Benzin	58	78	Nov 2007	Dec 2014	2026-05-01	23452
+Renault	Clio iii grandtour	1.2 16V	Kombi	Frontantrieb	Benzin	74	101	Nov 2007	Dec 2012	2026-05-01	23453
+Renault	Clio iii grandtour	1.6 16V	Kombi	Frontantrieb	Benzin	82	112	Nov 2007	Dec 2012	2026-05-01	23454
+Renault	Clio iii grandtour	1.5 DCI	Kombi	Frontantrieb	Diesel	50	68	Nov 2007	Dec 2012	2026-05-01	23455
+Renault	Clio iii grandtour	1.5 DCI	Kombi	Frontantrieb	Diesel	63	86	Nov 2007	Dec 2012	2026-05-01	23456
+Renault	Clio iii grandtour	1.5 DCI	Kombi	Frontantrieb	Diesel	76	103	Nov 2007	Dec 2012	2026-05-01	23457
+Renault	Clio iii grandtour	1.5 DCI	Kombi	Frontantrieb	Diesel	78	106	Feb 2008	Dec 2012	2026-05-01	23458
+Mercedes-benz	C-Klasse	C 320 CDI	Kombi	Heckantrieb	Diesel	165	224	Aug 2007	Aug 2014	2024-03-01	23459
+Renault	Kangoo	1.6	Großraumlimousine	Frontantrieb	Benzin	64	87	Feb 2008	-	2024-03-01	23460
+Mercedes-benz	C-Klasse	C 320 CDI 4-matic	Kombi	Allrad	Diesel	165	224	Aug 2007	Dec 2011	2024-03-01	23461
+Renault	Kangoo	1.6 16V	Großraumlimousine	Frontantrieb	Benzin	78	106	Feb 2008	-	2024-03-01	23462
+Ferrari	F430	430 Scuderia	Coupe	Heckantrieb	Benzin	375	510	Sep 2007	Dec 2009	2024-03-01	23463
+Renault	Kangoo	1.5 DCI 70	Großraumlimousine	Frontantrieb	Diesel	50	68	Feb 2008	-	2024-03-01	23464
+Renault	Kangoo	1.5 DCI 85	Großraumlimousine	Frontantrieb	Diesel	63	86	Feb 2008	-	2024-03-01	23465
+Renault	Kangoo	1.5 DCI 105	Großraumlimousine	Frontantrieb	Diesel	76	103	Feb 2008	-	2024-03-01	23466
+Nissan	Tiida	1.6	Schrägheck	Frontantrieb	Benzin	81	110	Sep 2007	Dec 2011	2024-03-01	23467
+Nissan	Tiida	1.8	Schrägheck	Frontantrieb	Benzin	93	126	Sep 2004	Dec 2011	2024-03-01	23468
+Nissan	Tiida	1.5 DCI	Schrägheck	Frontantrieb	Diesel	78	106	Sep 2007	Dec 2011	2024-03-01	23469
+KIA	Pro cee'd	1.4	Schrägheck	Frontantrieb	Benzin	80	109	Feb 2008	Sep 2012	2024-03-01	23470
+KIA	Pro cee'd	1.6	Schrägheck	Frontantrieb	Benzin	90	122	Feb 2008	Sep 2012	2024-03-01	23471
+KIA	Pro cee'd	2	Schrägheck	Frontantrieb	Benzin	105	143	Feb 2008	Sep 2012	2024-03-01	23472
+Mercedes-benz	E-Klasse	E 350 CGI	Stufenheck	Heckantrieb	Benzin	215	292	Sep 2007	Dec 2008	2024-03-01	23473
+KIA	Pro cee'd	1.6 Crdi 90	Schrägheck	Frontantrieb	Diesel	66	90	Feb 2008	Sep 2012	2024-03-01	23474
+KIA	Pro cee'd	1.6 Crdi 115	Schrägheck	Frontantrieb	Diesel	85	115	Feb 2008	Sep 2012	2024-03-01	23475
+KIA	Pro cee'd	2.0 Crdi 140	Schrägheck	Frontantrieb	Diesel	103	140	Feb 2008	Sep 2012	2024-03-01	23476
+Mercedes-benz	E-Klasse	E 300 Bluetec	Stufenheck	Heckantrieb	Diesel	155	211	Sep 2007	Dec 2008	2024-03-01	23477
+Santana	Ps10/anibal	2.8 D 4X4	Geländewagen geschlossen	Allrad	Diesel	78	106	Mar 2003	-	2024-03-01	23478
+Santana	Ps10/anibal	2.8 TD	Geländewagen geschlossen	Heckantrieb	Diesel	92	125	Dec 2002	-	2024-03-01	23479
+Santana	Ps10/anibal	2.8 D 4X4	Geländewagen geschlossen	Allrad	Diesel	92	125	Mar 2003	-	2024-03-01	23480
+VW	Touareg	5.0 R50 TDI	SUV	Allrad	Diesel	257	350	Aug 2007	May 2010	2024-03-01	23481
+Jaguar	Xk ii	3.6	Coupe	Heckantrieb	Benzin	190	258	Jul 2007	Jul 2014	2024-03-01	23482
+Chevrolet	Hhr	2.4	Kombi	Frontantrieb	Benzin	125	170	Oct 2007	Dec 2011	2024-03-01	23483
+Abarth	Grande punto	1.4	Schrägheck	Frontantrieb	Benzin	114	155	Jul 2007	Jun 2010	2024-03-01	23484
+Renault	Twingo	1.2	Schrägheck	Frontantrieb	Benzin	43	58	Mar 2007	Sep 2014	2026-05-01	23485
+Renault	Twingo	1.2 16V	Schrägheck	Frontantrieb	Benzin	56	76	Mar 2007	Oct 2010	2026-05-01	23486
+Renault	Twingo	1.5 DCI	Schrägheck	Frontantrieb	Diesel	47	64	Mar 2007	Sep 2014	2026-05-01	23487
+Nissan	Tiida	1.6	Stufenheck	Frontantrieb	Benzin	81	110	Sep 2007	Dec 2012	2024-03-01	23488
+Nissan	Tiida	1.8	Stufenheck	Frontantrieb	Benzin	93	126	Sep 2007	Dec 2012	2024-03-01	23489
+Nissan	Tiida	1.5 DCI	Stufenheck	Frontantrieb	Diesel	78	106	Sep 2007	Dec 2012	2024-03-01	23490
+

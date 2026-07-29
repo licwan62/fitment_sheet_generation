@@ -3,6 +3,7 @@
 
 import argparse
 import json
+import os
 import re
 import sys
 from pathlib import Path
@@ -251,7 +252,10 @@ def main():
             + ", ".join(forbidden)
         )
 
-    requirement_path = Path(contract["requirement"])
+    requirement_value = contract["requirement"]
+    if os.sep == "/":
+        requirement_value = requirement_value.replace("\\", "/")
+    requirement_path = Path(requirement_value)
     if not requirement_path.is_absolute():
         requirement_path = path.parent / requirement_path
     requirement_path = requirement_path.resolve()

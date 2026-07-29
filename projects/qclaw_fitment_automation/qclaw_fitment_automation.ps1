@@ -31,7 +31,7 @@ param(
     [string]$CheckpointDir = "",
     [string]$PlaywrightProfilePath = "",
     [string]$PlaywrightExecutablePath = "",
-    [string]$OpenClawCommand = "openclaw.cmd",
+    [string]$OpenClawCommand = "",
     [string]$OpenClawConfigPath = "",
     [string]$OpenClawGatewayUrl = "",
     [string]$OpenClawBrowserUrl = "",
@@ -57,6 +57,9 @@ param(
 )
 
 $ErrorActionPreference = "Stop"
+if ([string]::IsNullOrWhiteSpace($OpenClawCommand)) {
+    $OpenClawCommand = if ($IsWindows -or $null -eq $IsWindows) { "openclaw.cmd" } else { "openclaw" }
+}
 
 $ExplicitParameters = New-Object "System.Collections.Generic.HashSet[string]" ([StringComparer]::OrdinalIgnoreCase)
 foreach ($key in $PSBoundParameters.Keys) {
@@ -134,7 +137,9 @@ function Set-DefaultPaths {
     if ([string]::IsNullOrWhiteSpace($OutputDir)) { $script:OutputDir = Join-Path $ScriptRoot "output_sheets" }
     if ([string]::IsNullOrWhiteSpace($LogPath)) { $script:LogPath = Join-Path $ScriptRoot "log.csv" }
     if ([string]::IsNullOrWhiteSpace($SummaryPath)) { $script:SummaryPath = Join-Path $ScriptRoot "summary.txt" }
-    if ([string]::IsNullOrWhiteSpace($RequirementPath)) { $script:RequirementPath = Join-Path $ScriptRoot "requirements\eu_autodata.md" }
+    if ([string]::IsNullOrWhiteSpace($RequirementPath)) {
+        $script:RequirementPath = Join-Path (Join-Path $ScriptRoot "requirements") "eu_autodata.md"
+    }
 }
 
 function Resolve-ProjectPaths {
@@ -336,6 +341,46 @@ function Get-FreeLocalPort {
     }
 }
 
+function Stop-StalePlaywrightProfileBrowsers {
+    if (-not ($IsMacOS -or $IsLinux) -or [string]::IsNullOrWhiteSpace($script:PlaywrightProfilePath)) {
+        return
+    }
+
+    $matching = @(
+        & ps -axo "pid=,command=" 2>$null | ForEach-Object {
+            if ($_ -match '^\s*(\d+)\s+(.+)$') {
+                $processId = [int]$Matches[1]
+                $commandLine = $Matches[2]
+                if (
+                    $processId -ne $PID -and
+                    $commandLine.Contains($script:PlaywrightProfilePath) -and
+                    $commandLine -match '(?i)(Google Chrome|Chromium|chrome)' -and
+                    $commandLine -notmatch '\s--type='
+                ) {
+                    [pscustomobject]@{ Id = $processId; CommandLine = $commandLine }
+                }
+            }
+        }
+    )
+    if ($matching.Count -eq 0) { return }
+
+    Write-Host "检测到占用专用 profile 的残留 Chrome，正在定向关闭: $($matching.Id -join ', ')" -ForegroundColor Yellow
+    foreach ($item in $matching) {
+        Stop-Process -Id $item.Id -ErrorAction SilentlyContinue
+    }
+
+    $deadline = (Get-Date).AddSeconds(10)
+    do {
+        Start-Sleep -Milliseconds 250
+        $stillRunning = @($matching | Where-Object { Get-Process -Id $_.Id -ErrorAction SilentlyContinue })
+    } while ($stillRunning.Count -gt 0 -and (Get-Date) -lt $deadline)
+
+    foreach ($item in $stillRunning) {
+        Stop-Process -Id $item.Id -Force -ErrorAction SilentlyContinue
+    }
+    if ($stillRunning.Count -gt 0) { Start-Sleep -Seconds 1 }
+}
+
 function Initialize-PlaywrightRuntime {
     if ($script:PlaywrightBridgeProcess -and -not $script:PlaywrightBridgeProcess.HasExited -and $script:PlaywrightBridgeUrl) {
         try {
@@ -348,17 +393,34 @@ function Initialize-PlaywrightRuntime {
     $node = Get-Command node -ErrorAction SilentlyContinue
     if (-not $node) { throw "找不到 Node.js。Playwright 模式需要 Node.js 18 或更高版本。" }
     $bridgePath = Join-Path $ScriptRoot "playwright_browser_bridge.js"
-    $playwrightModule = Join-Path $ScriptRoot "node_modules\playwright"
+    $playwrightModule = Join-Path (Join-Path $ScriptRoot "node_modules") "playwright"
     if (-not (Test-Path -LiteralPath $playwrightModule -PathType Container)) {
         throw "Playwright 依赖尚未安装。请在 $ScriptRoot 运行：npm install；npx playwright install chromium"
     }
 
     if ([string]::IsNullOrWhiteSpace($script:PlaywrightProfilePath)) {
-        $script:PlaywrightProfilePath = Join-Path $env:LOCALAPPDATA "qclaw-fitment-automation\playwright-profile"
+        $profileBase = if ($IsMacOS) {
+            Join-Path $HOME "Library/Application Support"
+        }
+        elseif ($IsLinux) {
+            if ($env:XDG_STATE_HOME) { $env:XDG_STATE_HOME } else { Join-Path $HOME ".local/state" }
+        }
+        else {
+            $env:LOCALAPPDATA
+        }
+        $script:PlaywrightProfilePath = Join-Path (Join-Path $profileBase "qclaw-fitment-automation") "playwright-profile"
     }
     if (-not (Test-Path -LiteralPath $script:PlaywrightProfilePath)) {
         New-Item -ItemType Directory -Path $script:PlaywrightProfilePath -Force | Out-Null
     }
+    if ([string]::IsNullOrWhiteSpace($script:PlaywrightExecutablePath) -and $IsMacOS) {
+        $macChrome = "/Applications/Google Chrome.app/Contents/MacOS/Google Chrome"
+        if (Test-Path -LiteralPath $macChrome -PathType Leaf) {
+            $script:PlaywrightExecutablePath = $macChrome
+            Write-Host "Playwright 使用系统 Google Chrome，以支持首次登录。" -ForegroundColor DarkCyan
+        }
+    }
+    Stop-StalePlaywrightProfileBrowsers
 
     $port = Get-FreeLocalPort
     $script:PlaywrightBridgeUrl = "http://127.0.0.1:$port"
@@ -373,7 +435,13 @@ function Initialize-PlaywrightRuntime {
     if (-not [string]::IsNullOrWhiteSpace($PlaywrightExecutablePath)) {
         $bridgeArgs += "--executable-path=`"$PlaywrightExecutablePath`""
     }
-    $script:PlaywrightBridgeProcess = Start-Process -FilePath $node.Source -ArgumentList $bridgeArgs -PassThru -WindowStyle Hidden
+    $startProcessParams = @{
+        FilePath = $node.Source
+        ArgumentList = $bridgeArgs
+        PassThru = $true
+    }
+    if ($IsWindows) { $startProcessParams.WindowStyle = "Hidden" }
+    $script:PlaywrightBridgeProcess = Start-Process @startProcessParams
 
     for ($attempt = 0; $attempt -lt 60; $attempt++) {
         if ($script:PlaywrightBridgeProcess.HasExited) {
@@ -454,14 +522,31 @@ function Invoke-PlaywrightXB {
 }
 
 function Get-RegularBrowserExecutable {
-    $candidates = @(
-        (Join-Path $env:ProgramFiles "Google\Chrome\Application\chrome.exe"),
-        $(if (${env:ProgramFiles(x86)}) { Join-Path ${env:ProgramFiles(x86)} "Google\Chrome\Application\chrome.exe" }),
-        (Join-Path $env:LOCALAPPDATA "Google\Chrome\Application\chrome.exe"),
-        (Join-Path $env:ProgramFiles "Microsoft\Edge\Application\msedge.exe"),
-        $(if (${env:ProgramFiles(x86)}) { Join-Path ${env:ProgramFiles(x86)} "Microsoft\Edge\Application\msedge.exe" }),
-        (Join-Path $env:LOCALAPPDATA "Microsoft\Edge\Application\msedge.exe")
-    )
+    if ($IsMacOS) {
+        $candidates = @(
+            "/Applications/Google Chrome.app/Contents/MacOS/Google Chrome",
+            "/Applications/Microsoft Edge.app/Contents/MacOS/Microsoft Edge",
+            (Join-Path $HOME "Applications/Google Chrome.app/Contents/MacOS/Google Chrome")
+        )
+    }
+    elseif ($IsLinux) {
+        $candidates = @(
+            (Get-Command google-chrome -ErrorAction SilentlyContinue).Source,
+            (Get-Command chromium -ErrorAction SilentlyContinue).Source,
+            (Get-Command chromium-browser -ErrorAction SilentlyContinue).Source,
+            (Get-Command microsoft-edge -ErrorAction SilentlyContinue).Source
+        )
+    }
+    else {
+        $candidates = @(
+            $(if ($env:ProgramFiles) { Join-Path $env:ProgramFiles "Google\Chrome\Application\chrome.exe" }),
+            $(if (${env:ProgramFiles(x86)}) { Join-Path ${env:ProgramFiles(x86)} "Google\Chrome\Application\chrome.exe" }),
+            $(if ($env:LOCALAPPDATA) { Join-Path $env:LOCALAPPDATA "Google\Chrome\Application\chrome.exe" }),
+            $(if ($env:ProgramFiles) { Join-Path $env:ProgramFiles "Microsoft\Edge\Application\msedge.exe" }),
+            $(if (${env:ProgramFiles(x86)}) { Join-Path ${env:ProgramFiles(x86)} "Microsoft\Edge\Application\msedge.exe" }),
+            $(if ($env:LOCALAPPDATA) { Join-Path $env:LOCALAPPDATA "Microsoft\Edge\Application\msedge.exe" })
+        )
+    }
     return $candidates | Where-Object { $_ -and (Test-Path -LiteralPath $_ -PathType Leaf) } | Select-Object -First 1
 }
 
@@ -473,15 +558,73 @@ function Invoke-ManualPlaywrightLogin {
     Invoke-XB "cleanup" | Out-Null
     $browserArgs = @(
         "--user-data-dir=`"$($script:PlaywrightProfilePath)`"",
+        "--new-window",
+        "--no-first-run",
+        "--no-default-browser-check",
+        "--disable-background-mode",
         $ChatGptUrl
     )
-    Start-Process -FilePath $regularBrowser -ArgumentList $browserArgs | Out-Null
+    $loginBrowserProcess = Start-Process -FilePath $regularBrowser -ArgumentList $browserArgs -PassThru
     Write-Host "已打开普通浏览器: $regularBrowser" -ForegroundColor Cyan
-    [void](Read-Host "请完成 ChatGPT/Google 登录，确认输入框可用，关闭刚打开的浏览器窗口，然后回到这里按 Enter")
+    Write-Host "普通 Chrome 与 Testing Chrome 使用同一个专用 profile: $($script:PlaywrightProfilePath)" -ForegroundColor DarkCyan
+    [void](Read-Host "请完成 ChatGPT/Google 登录，确认输入框可用，然后回到这里按 Enter；脚本会保存登录状态并关闭这个专用 Chrome")
 
+    if ($loginBrowserProcess -and -not $loginBrowserProcess.HasExited) {
+        Write-Host "正在关闭普通 Chrome，使登录 Cookie 完整写入 profile..." -ForegroundColor Yellow
+        try {
+            $loginBrowserProcess.CloseMainWindow() | Out-Null
+            if (-not $loginBrowserProcess.WaitForExit(10000)) {
+                Stop-Process -Id $loginBrowserProcess.Id -ErrorAction Stop
+                $loginBrowserProcess.WaitForExit(5000) | Out-Null
+            }
+        }
+        catch {
+            Write-Host "关闭专用 Chrome 时收到提示: $($_.Exception.Message)" -ForegroundColor Yellow
+        }
+    }
+    Start-Sleep -Seconds 2
+
+    Write-Host "正在把登录状态交接给 Testing Chrome..." -ForegroundColor Cyan
     Initialize-XBrowser
     Open-ChatGPT
     return $true
+}
+
+function Wait-ChatGPTLogin {
+    $manualLoginAttempted = $false
+    while ($true) {
+        try {
+            $state = Get-ChatGPTState
+            if (-not $state.loggedOut -and $state.inputReady) {
+                Write-Host "ChatGPT 已登录，输入框已就绪。" -ForegroundColor Green
+                return
+            }
+        }
+        catch {
+            Write-Host "ChatGPT 页面仍在加载，等待手动确认。" -ForegroundColor Yellow
+            $state = $null
+        }
+
+        Write-Host "当前尚未检测到已登录的可输入页面。" -ForegroundColor Yellow
+        if ($Browser -eq "playwright" -and -not $manualLoginAttempted) {
+            $manualLoginAttempted = $true
+            try {
+                if (Invoke-ManualPlaywrightLogin) { continue }
+            }
+            catch {
+                Write-Host "普通浏览器登录交接失败: $($_.Exception.Message)" -ForegroundColor Yellow
+                Write-Host "请确认刚打开的普通浏览器已经完全关闭，然后按 Enter 重试。" -ForegroundColor Yellow
+            }
+        }
+
+        if ($manualLoginAttempted) {
+            Write-Host "登录页面已经打开；不会重复新建页面。请继续使用该页面完成登录。" -ForegroundColor DarkCyan
+        }
+        if ($state) {
+            Write-Host "验证详情: URL=$($state.url)；输入框候选=$($state.editorCandidates)；loggedOut=$($state.loggedOut)" -ForegroundColor DarkGray
+        }
+        [void](Read-Host "请在已打开的浏览器中完成登录，确认聊天输入框可用，然后回到此窗口按 Enter 重新验证（Ctrl+C 取消）")
+    }
 }
 
 function New-XBSuccess {
@@ -531,7 +674,12 @@ function Initialize-OpenClawRuntime {
         $oldEager = $env:OPENCLAW_EAGER_BROWSER_CONTROL_SERVER
         try {
             $env:OPENCLAW_EAGER_BROWSER_CONTROL_SERVER = "1"
-            Start-Process -FilePath $script:OpenClawResolvedCommand -ArgumentList @("gateway", "run") -WindowStyle Hidden | Out-Null
+            $gatewayStartParams = @{
+                FilePath = $script:OpenClawResolvedCommand
+                ArgumentList = @("gateway", "run")
+            }
+            if ($IsWindows) { $gatewayStartParams.WindowStyle = "Hidden" }
+            Start-Process @gatewayStartParams | Out-Null
         }
         finally {
             if ($null -eq $oldEager) { Remove-Item Env:OPENCLAW_EAGER_BROWSER_CONTROL_SERVER -ErrorAction SilentlyContinue }
@@ -560,6 +708,9 @@ function Restart-LocalOpenClawGatewayWithBrowser {
     if ($gatewayUri.Host -notin @("127.0.0.1", "localhost", "::1")) {
         throw "远程 OpenClaw Gateway 未暴露 browser control 服务，无法由本脚本重启: $gatewayUri"
     }
+    if (-not $IsWindows) {
+        throw "OpenClaw browser control 未启动。请在终端停止现有 Gateway，并运行: OPENCLAW_EAGER_BROWSER_CONTROL_SERVER=1 openclaw gateway run"
+    }
 
     $connection = Get-NetTCPConnection -LocalPort $gatewayUri.Port -State Listen -ErrorAction SilentlyContinue | Select-Object -First 1
     if (-not $connection) { return }
@@ -574,7 +725,12 @@ function Restart-LocalOpenClawGatewayWithBrowser {
     $oldEager = $env:OPENCLAW_EAGER_BROWSER_CONTROL_SERVER
     try {
         $env:OPENCLAW_EAGER_BROWSER_CONTROL_SERVER = "1"
-        Start-Process -FilePath $script:OpenClawResolvedCommand -ArgumentList @("gateway", "run") -WindowStyle Hidden | Out-Null
+        $gatewayStartParams = @{
+            FilePath = $script:OpenClawResolvedCommand
+            ArgumentList = @("gateway", "run")
+            WindowStyle = "Hidden"
+        }
+        Start-Process @gatewayStartParams | Out-Null
     }
     finally {
         if ($null -eq $oldEager) { Remove-Item Env:OPENCLAW_EAGER_BROWSER_CONTROL_SERVER -ErrorAction SilentlyContinue }
@@ -710,6 +866,8 @@ function Test-XBRecoverableError {
         "Protocol error",
         "CDP",
         "browser has disconnected",
+        "Failed to open a new tab",
+        "Target.createTarget",
         "websocket",
         "ECONNRESET",
         "ECONNREFUSED",
@@ -721,6 +879,56 @@ function Test-XBRecoverableError {
     }
 
     return $false
+}
+
+function Test-BrowserInfrastructureFailure {
+    param([string]$Detail)
+
+    if ([string]::IsNullOrWhiteSpace($Detail)) { return $false }
+    return $Detail -match '(?i)Target page, context or browser has been closed|browserContext\..*closed|Browser has been closed|browser has disconnected|Connection closed|Failed to open a new tab|Target\.createTarget|浏览器桥接进程.*退出|无法连接.*browser|ECONNRESET|ECONNREFUSED'
+}
+
+function Resolve-TaskFailure {
+    param([string]$Detail)
+
+    $text = [string]$Detail
+    if (Test-BrowserInfrastructureFailure -Detail $text) {
+        return [pscustomobject]@{ Status = "浏览器错误"; FatalBrowser = $true }
+    }
+    if ($text -match 'DIMENSION_GROUP .+ 与既有最终值冲突|同一 id 对应不同 Ktype') {
+        return [pscustomobject]@{ Status = "数据冲突"; FatalBrowser = $false }
+    }
+    if ($text -match '最终 .+存在重复或空|新增 .+存在空|现有最终 TSV (表头不匹配|列数错误)|TSV 字段包含制表符或换行|最终 TSV 路径超出输出目录') {
+        return [pscustomobject]@{ Status = "数据校验失败"; FatalBrowser = $false }
+    }
+    if ($text -match '缺少两个最终 TSV 下载链接|缺少可提取的两张完整 TSV|未通过当前完整性校验') {
+        return [pscustomobject]@{ Status = "结果不完整"; FatalBrowser = $false }
+    }
+    if ($text -match '在新聊天中分支|在新对话中分支|分支到新聊天|新的对话 URL') {
+        return [pscustomobject]@{ Status = "对话分支失败"; FatalBrowser = $false }
+    }
+    if ($text -match '等待回复超过 \d+ 秒|回复.*超时') {
+        return [pscustomobject]@{ Status = "回复超时"; FatalBrowser = $false }
+    }
+    if ($text -match 'locator\.waitFor: Timeout|页面 URL 为空|页面读取验证失败|输入框|composer|页面 DOM|copy-button-not-found|no-assistant-node') {
+        return [pscustomobject]@{ Status = "页面操作错误"; FatalBrowser = $false }
+    }
+    if ($text -match '页面出现错误提示|something went wrong|network error|页面错误|网络错误|出错了') {
+        return [pscustomobject]@{ Status = "页面错误"; FatalBrowser = $false }
+    }
+    return [pscustomobject]@{ Status = "脚本错误"; FatalBrowser = $false }
+}
+
+function Get-NormalizedTaskStatus {
+    param(
+        [string]$Status,
+        [string]$Remarks
+    )
+
+    if ($Status -eq "页面错误" -and -not [string]::IsNullOrWhiteSpace($Remarks)) {
+        return [string](Resolve-TaskFailure -Detail $Remarks).Status
+    }
+    return $Status
 }
 
 function Repair-XBrowserSession {
@@ -1515,6 +1723,69 @@ function Get-TaskFinalArtifactInstruction {
 "@
 }
 
+function ConvertTo-DimensionGroupIdToken {
+    param([string]$Value)
+
+    if ([string]::IsNullOrWhiteSpace($Value)) { return "" }
+    $normalized = $Value.Normalize([Text.NormalizationForm]::FormD)
+    $characters = New-Object System.Collections.Generic.List[char]
+    foreach ($character in $normalized.ToCharArray()) {
+        if ([Globalization.CharUnicodeInfo]::GetUnicodeCategory($character) -ne [Globalization.UnicodeCategory]::NonSpacingMark) {
+            $characters.Add($character)
+        }
+    }
+    return ((-join $characters) -replace '[^A-Za-z0-9]+', '-').Trim("-").ToUpperInvariant()
+}
+
+function Get-TaskExistingDimensionGroupInstruction {
+    param($Task)
+
+    if (-not $DimensionGroupEnabled) { return "" }
+    $names = Get-TaskFinalArtifactNames -Task $Task
+    $aggregateDimensionPath = Join-Path $OutputDir $names.AggregateDimensionFileName
+    if (-not (Test-Path -LiteralPath $aggregateDimensionPath -PathType Leaf)) { return "" }
+
+    $lines = @([string]$Task.Content -split "`r?`n" | Where-Object {
+        -not [string]::IsNullOrWhiteSpace($_)
+    })
+    if ($lines.Count -lt 2) { return "" }
+    $headers = @($lines[0].TrimStart([char]0xFEFF) -split "`t")
+    $makeIndex = [Array]::IndexOf($headers, "Make")
+    $modelIndex = [Array]::IndexOf($headers, "Model")
+    if ($makeIndex -lt 0 -or $modelIndex -lt 0) { return "" }
+
+    $prefixes = New-Object "System.Collections.Generic.HashSet[string]" ([StringComparer]::OrdinalIgnoreCase)
+    foreach ($line in $lines | Select-Object -Skip 1) {
+        $values = @($line -split "`t")
+        if ($values.Count -le [Math]::Max($makeIndex, $modelIndex)) { continue }
+        $make = ConvertTo-DimensionGroupIdToken -Value $values[$makeIndex]
+        $model = ConvertTo-DimensionGroupIdToken -Value $values[$modelIndex]
+        if ($make -and $model) { [void]$prefixes.Add("EU-$make-$model") }
+    }
+    if ($prefixes.Count -eq 0) { return "" }
+
+    $existingRows = @(Read-StrictTsvRows -Path $aggregateDimensionPath -Header $RequiredDimensionGroupHeader)
+    $relevantRows = @(
+        $existingRows | Where-Object {
+            $id = ([string]$_.DIMENSION_GROUP_ID).Trim()
+            @($prefixes | Where-Object { $id.StartsWith($_, [StringComparison]::OrdinalIgnoreCase) }).Count -gt 0
+        } | Sort-Object DIMENSION_GROUP_ID
+    )
+    if ($relevantRows.Count -eq 0) { return "" }
+
+    $cacheLines = @("DIMENSION_GROUP_ID`tLengthMM`tWidthMM`tHeightMM")
+    $cacheLines += @($relevantRows | ForEach-Object {
+        "$($_.DIMENSION_GROUP_ID)`t$($_.LengthMM)`t$($_.WidthMM)`t$($_.HeightMM)"
+    })
+    return @"
+
+【跨批次已有尺寸组索引】
+以下 ID 已经存在于累计表。三维和物理外廓完全相同时才可复用；如果当前证据得到不同三维，禁止改写已有组，必须使用同系列下一个可用序号创建新 DIMENSION_GROUP_ID，并把当前批次相关 Ktype 全部指向新组。
+
+$($cacheLines -join "`r`n")
+"@
+}
+
 function Assert-OutputArtifactPath {
     param([string]$Path)
 
@@ -1640,6 +1911,23 @@ function Get-LastStrictTableRowsFromText {
     return @($lastRows | ForEach-Object { $_ })
 }
 
+function Get-LastSavedRoundReply {
+    param([string]$ResultMarkdownPath)
+
+    if (
+        [string]::IsNullOrWhiteSpace($ResultMarkdownPath) -or
+        -not (Test-Path -LiteralPath $ResultMarkdownPath -PathType Leaf)
+    ) {
+        return ""
+    }
+
+    $text = Get-Content -LiteralPath $ResultMarkdownPath -Raw -Encoding UTF8
+    $pattern = '(?ms)^--- Round\s+\d+\s*/[^\r\n]*---\s*\r?\n(?<reply>.*?)(?=^--- (?:Round\s+\d+\s*/|发送\s*/|脚本异常|本地最终 TSV 已更新|对话分支)[^\r\n]*---\s*$|\z)'
+    $matches = [regex]::Matches($text, $pattern)
+    if ($matches.Count -eq 0) { return "" }
+    return ([string]$matches[$matches.Count - 1].Groups["reply"].Value).Trim()
+}
+
 function Restore-CompletedTaskArtifacts {
     param(
         $Task,
@@ -1737,6 +2025,176 @@ function Merge-FinalMappingRows {
     return @($rows | ForEach-Object { $_ })
 }
 
+function Copy-FitmentTableRow {
+    param($Row)
+
+    $copy = [ordered]@{}
+    foreach ($property in $Row.PSObject.Properties) {
+        $copy[$property.Name] = [string]$property.Value
+    }
+    return [pscustomobject]$copy
+}
+
+function Get-DimensionGroupSignature {
+    param($Row)
+
+    return (@("LengthMM", "WidthMM", "HeightMM") | ForEach-Object {
+        ([string]$Row.$_).Trim()
+    }) -join "x"
+}
+
+function Get-DimensionGroupSequence {
+    param([string]$GroupId)
+
+    $id = $GroupId.Trim()
+    if ($id -match '^(.*-)(\d+)$') {
+        return [pscustomobject]@{
+            Prefix = [string]$Matches[1]
+            Number = [int]$Matches[2]
+            Width = [Math]::Max(2, ([string]$Matches[2]).Length)
+        }
+    }
+    return [pscustomobject]@{
+        Prefix = "$id-"
+        Number = 1
+        Width = 2
+    }
+}
+
+function Resolve-DimensionGroupConflicts {
+    param(
+        [object[]]$ExistingDimensionRows,
+        [object[]]$NewDimensionRows,
+        [object[]]$NewMappingRows
+    )
+
+    $existingById = @{}
+    $allKnownById = @{}
+    foreach ($sourceRow in @($ExistingDimensionRows)) {
+        $row = Copy-FitmentTableRow -Row $sourceRow
+        $id = ([string]$row.DIMENSION_GROUP_ID).Trim()
+        if (-not $id -or $existingById.ContainsKey($id)) {
+            throw "最终 DIMENSION_GROUP 表存在重复或空 ID: $id"
+        }
+        $existingById[$id] = $row
+        $allKnownById[$id] = $row
+    }
+
+    $resolvedDimensions = New-Object System.Collections.Generic.List[object]
+    $remap = @{}
+    $audit = New-Object System.Collections.Generic.List[object]
+    $reservedNewIds = New-Object "System.Collections.Generic.HashSet[string]" ([StringComparer]::OrdinalIgnoreCase)
+    foreach ($sourceRow in @($NewDimensionRows)) {
+        $reservedId = ([string]$sourceRow.DIMENSION_GROUP_ID).Trim()
+        if (-not $reservedId -or -not $reservedNewIds.Add($reservedId)) {
+            throw "新增 DIMENSION_GROUP 存在重复或空 ID: $reservedId"
+        }
+    }
+
+    foreach ($sourceRow in @($NewDimensionRows)) {
+        $row = Copy-FitmentTableRow -Row $sourceRow
+        $originalId = ([string]$row.DIMENSION_GROUP_ID).Trim()
+        if (-not $originalId) { throw "新增 DIMENSION_GROUP 存在空 ID" }
+        $targetId = $originalId
+        if ($existingById.ContainsKey($originalId)) {
+            $existingSignature = Get-DimensionGroupSignature -Row $existingById[$originalId]
+            $newSignature = Get-DimensionGroupSignature -Row $row
+            if ($existingSignature -ne $newSignature) {
+                $sequence = Get-DimensionGroupSequence -GroupId $originalId
+                $familyPattern = "^$([regex]::Escape($sequence.Prefix))(\d+)$"
+                $matchingId = ""
+                $maxSequence = [int]$sequence.Number
+
+                foreach ($knownId in @($allKnownById.Keys | Sort-Object)) {
+                    if ($knownId -notmatch $familyPattern) { continue }
+                    $knownNumber = [int]$Matches[1]
+                    if ($knownNumber -gt $maxSequence) { $maxSequence = $knownNumber }
+                    if (
+                        -not $matchingId -and
+                        -not $reservedNewIds.Contains($knownId) -and
+                        (Get-DimensionGroupSignature -Row $allKnownById[$knownId]) -eq $newSignature
+                    ) {
+                        $matchingId = $knownId
+                    }
+                }
+
+                if ($matchingId) {
+                    $targetId = $matchingId
+                    $action = "复用已有尺寸组"
+                }
+                else {
+                    do {
+                        $maxSequence++
+                        $formattedSequence = ([string]$maxSequence).PadLeft($sequence.Width, "0")
+                        $targetId = "$($sequence.Prefix)$formattedSequence"
+                    } while ($allKnownById.ContainsKey($targetId) -or $reservedNewIds.Contains($targetId))
+                    $action = "创建新尺寸组"
+                }
+
+                $remap[$originalId] = $targetId
+                $audit.Add([pscustomobject]@{
+                    OriginalId = $originalId
+                    TargetId = $targetId
+                    ExistingDimensions = $existingSignature
+                    NewDimensions = $newSignature
+                    Action = $action
+                })
+            }
+        }
+
+        $row.DIMENSION_GROUP_ID = $targetId
+        if ($allKnownById.ContainsKey($targetId)) {
+            $knownSignature = Get-DimensionGroupSignature -Row $allKnownById[$targetId]
+            $rowSignature = Get-DimensionGroupSignature -Row $row
+            if ($knownSignature -ne $rowSignature) {
+                throw "尺寸组协调后仍存在冲突: $targetId ($knownSignature != $rowSignature)"
+            }
+        }
+        else {
+            $allKnownById[$targetId] = $row
+        }
+        $resolvedDimensions.Add($row)
+    }
+
+    $resolvedMappings = New-Object System.Collections.Generic.List[object]
+    foreach ($sourceRow in @($NewMappingRows)) {
+        $row = Copy-FitmentTableRow -Row $sourceRow
+        $groupId = ([string]$row.DIMENSION_GROUP_ID).Trim()
+        if ($remap.ContainsKey($groupId)) {
+            $row.DIMENSION_GROUP_ID = [string]$remap[$groupId]
+        }
+        $resolvedMappings.Add($row)
+    }
+
+    $dimensionIds = @{}
+    foreach ($row in $resolvedDimensions) {
+        $id = ([string]$row.DIMENSION_GROUP_ID).Trim()
+        if (-not $id -or $dimensionIds.ContainsKey($id)) {
+            throw "协调后的本批 DIMENSION_GROUP 存在重复或空 ID: $id"
+        }
+        $dimensionIds[$id] = $true
+    }
+    $referencedIds = @{}
+    foreach ($row in $resolvedMappings) {
+        $groupId = ([string]$row.DIMENSION_GROUP_ID).Trim()
+        if (-not $groupId -or -not $dimensionIds.ContainsKey($groupId)) {
+            throw "Ktype $($row.Ktype) 引用了本批不存在的尺寸组: $groupId"
+        }
+        $referencedIds[$groupId] = $true
+    }
+    foreach ($groupId in $dimensionIds.Keys) {
+        if (-not $referencedIds.ContainsKey($groupId)) {
+            throw "协调后的本批尺寸组未被任何 Ktype 引用: $groupId"
+        }
+    }
+
+    return [pscustomobject]@{
+        MappingRows = @($resolvedMappings | ForEach-Object { $_ })
+        DimensionRows = @($resolvedDimensions | ForEach-Object { $_ })
+        Audit = @($audit | ForEach-Object { $_ })
+    }
+}
+
 function Merge-FinalDimensionRows {
     param(
         [object[]]$ExistingRows,
@@ -1800,6 +2258,10 @@ function Publish-CompletedTaskTables {
     # 若先写首批快照，会在 checkpoint 恢复时覆盖已经追加的后续批次。
     $existingMappings = @(Read-StrictTsvRows -Path $aggregateMappingPath -Header $RequiredTsvHeader)
     $existingDimensions = @(Read-StrictTsvRows -Path $aggregateDimensionPath -Header $RequiredDimensionGroupHeader)
+    $resolved = Resolve-DimensionGroupConflicts -ExistingDimensionRows $existingDimensions `
+        -NewDimensionRows $dimensionRows -NewMappingRows $mappingRows
+    $mappingRows = @($resolved.MappingRows)
+    $dimensionRows = @($resolved.DimensionRows)
     $mergedMappings = @(Merge-FinalMappingRows -ExistingRows $existingMappings -NewRows $mappingRows)
     $mergedDimensions = @(Merge-FinalDimensionRows -ExistingRows $existingDimensions -NewRows $dimensionRows)
 
@@ -1813,6 +2275,14 @@ function Publish-CompletedTaskTables {
     Write-StrictTsvAtomic -Path $aggregateMappingPath -Header $RequiredTsvHeader -Rows $mergedMappings
 
     if ($ResultMarkdownPath) {
+        $conflictAuditText = if (@($resolved.Audit).Count -gt 0) {
+            "`r`n- 尺寸冲突协调：`r`n" + ((@($resolved.Audit) | ForEach-Object {
+                "  - $($_.OriginalId) -> $($_.TargetId)：$($_.ExistingDimensions) 与 $($_.NewDimensions)，$($_.Action)"
+            }) -join "`r`n")
+        }
+        else {
+            ""
+        }
         Add-Content -LiteralPath $ResultMarkdownPath -Encoding UTF8 -Value @"
 
 --- 本地最终 TSV 已更新 ---
@@ -1820,6 +2290,7 @@ function Publish-CompletedTaskTables {
 - 本批尺寸组：$($names.DimensionFileName)
 - 累计 Ktype 映射：$($names.AggregateMappingFileName)（$($mergedMappings.Count) 行）
 - 累计尺寸组：$($names.AggregateDimensionFileName)（$($mergedDimensions.Count) 行）
+$conflictAuditText
 "@
     }
 
@@ -2274,6 +2745,9 @@ function Get-ChatGPTState {
   });
   return {
     reply,
+    url: location.href,
+    title: document.title,
+    editorCandidates: document.querySelectorAll('#prompt-textarea, textarea, [contenteditable="true"], [role="textbox"]').length,
     inputReady: !!editor && !editor.disabled && editor.getAttribute('aria-disabled') !== 'true',
     isGenerating,
     hasStopButton: isGenerating,
@@ -2856,7 +3330,7 @@ function Start-ChatGPTNewConversation {
     try { Invoke-XBRun "wait" "--load" "networkidle" | Out-Null } catch { }
 }
 
-function Start-ChatGPTConversationBranch {
+function Invoke-ChatGPTConversationBranchOnce {
     param([string]$ParentUrl)
 
     Ensure-ChatGPTActive
@@ -2946,6 +3420,38 @@ function Start-ChatGPTConversationBranch {
     } while ((Get-Date) -lt $deadline)
 
     throw "已点击【在新聊天中分支】，但 30 秒内未取得新的对话 URL"
+}
+
+function Start-ChatGPTConversationBranch {
+    param([string]$ParentUrl)
+
+    $lastError = ""
+    for ($attempt = 1; $attempt -le 3; $attempt++) {
+        try {
+            return Invoke-ChatGPTConversationBranchOnce -ParentUrl $ParentUrl
+        }
+        catch {
+            $lastError = $_.Exception.Message
+            try {
+                $currentUrl = Get-CurrentChatGPTUrl
+                if (
+                    (Test-ChatGPTConversationUrl -Url $currentUrl) -and
+                    -not [string]::Equals($currentUrl, $ParentUrl, [StringComparison]::OrdinalIgnoreCase)
+                ) {
+                    Write-Host "  分支操作已生效，恢复取得新对话 URL: $currentUrl" -ForegroundColor Green
+                    return $currentUrl
+                }
+            }
+            catch { }
+
+            if ($attempt -ge 3) { break }
+            Write-Host "  对话分支操作失败，重新加载父对话后重试 ($attempt/2): $lastError" -ForegroundColor Yellow
+            Invoke-XBRun "open" $ParentUrl | Out-Null
+            Start-Sleep -Seconds 3
+        }
+    }
+
+    throw "对话分支失败（已尝试 3 次）: $lastError"
 }
 
 function Send-ChatGPTMessage {
@@ -3091,7 +3597,7 @@ function Wait-ChatGPTReplyComplete {
         Start-Sleep -Seconds 2
     }
 
-    return @{ Ok = $false; Status = "页面错误"; Remark = "等待回复超过 $MaxReplyWaitSeconds 秒"; Reply = $lastReply }
+    return @{ Ok = $false; Status = "回复超时"; Remark = "等待回复超过 $MaxReplyWaitSeconds 秒"; Reply = $lastReply }
 }
 
 function Test-RepeatedReply {
@@ -3286,6 +3792,7 @@ function Get-InitialTaskMessage {
     )
     $taskTitle = "【全量表更新】$($Task.DisplayName)"
     $artifactInstruction = Get-TaskFinalArtifactInstruction -Task $Task
+    $existingDimensionGroupInstruction = Get-TaskExistingDimensionGroupInstruction -Task $Task
     return @"
 【任务名称】
 $taskTitle
@@ -3305,6 +3812,7 @@ $($Task.SourceName)
 【当前独立任务】
 $($Task.DisplayName)
 $artifactInstruction
+$existingDimensionGroupInstruction
 
 【TSV 数据】
 $TsvContent
@@ -3372,11 +3880,32 @@ function Process-TSVTask {
         $tsvContent = [string]$Task.Content
         $minimumFullTableRows = [Math]::Max(0, (@($tsvContent -split "`r?`n" | Where-Object { -not [string]::IsNullOrWhiteSpace($_) }).Count - 1))
         if ($resumeFromCheckpoint) {
-            Write-Host "  从车型 checkpoint 恢复原对话（第 $round 轮）..." -ForegroundColor Cyan
-            Invoke-XBRun "tab" "new" $conversationUrl | Out-Null
-            Start-Sleep -Seconds 3
-            try { Invoke-XBRun "wait" "--load" "networkidle" | Out-Null } catch { }
-            if ([string]$checkpoint.phase -eq "waiting_reply") {
+            $localResumeReply = Format-CapturedReplyMarkdown -Text (
+                Get-LastSavedRoundReply -ResultMarkdownPath $outputFile
+            )
+            if (-not [string]::IsNullOrWhiteSpace($localResumeReply)) {
+                Write-Host "  已从 checkpoint 结果文件读取最后一个已落盘 Round（$($localResumeReply.Length) 字符）。" -ForegroundColor DarkGreen
+                $localHasFullTable = Test-ReplyContainsFullTable -Reply $localResumeReply -MinimumRows $minimumFullTableRows -Task $Task
+                if ((Test-CompletionSignal -Text $localResumeReply) -and $localHasFullTable) {
+                    try {
+                        Publish-CompletedTaskTables -Task $Task -Reply $localResumeReply -ResultMarkdownPath $outputFile | Out-Null
+                        $status = "成功"
+                        $remarks = "从 checkpoint 本地最后回复恢复完整表并成功更新累计最终 TSV"
+                        $finishWithoutReplyLoop = $true
+                        Write-Host "  本地最后回复已重新入库成功，无需重新发送任务。" -ForegroundColor Green
+                    }
+                    catch {
+                        Write-Host "  本地最后回复暂未能入库，继续原对话处理: $($_.Exception.Message)" -ForegroundColor Yellow
+                    }
+                }
+            }
+
+            if (-not $finishWithoutReplyLoop) {
+                Write-Host "  从车型 checkpoint 恢复原对话（第 $round 轮）..." -ForegroundColor Cyan
+                Invoke-XBRun "tab" "new" $conversationUrl | Out-Null
+                Start-Sleep -Seconds 3
+                try { Invoke-XBRun "wait" "--load" "networkidle" | Out-Null } catch { }
+                if ([string]$checkpoint.phase -eq "waiting_reply") {
                 # 进程可能在消息已经由其他已登录页面完成后才恢复。先检查
                 # 服务器端现有最后回复，避免把一个已完成的回复永远当作
                 # “仍在等待的新回复”。
@@ -3387,16 +3916,11 @@ function Process-TSVTask {
                 catch {
                     Write-Host "  waiting_reply checkpoint 回复读取失败，使用状态文本: $($_.Exception.Message)" -ForegroundColor Yellow
                     $resumeReply = [string]$idleState.reply
+                    if ([string]::IsNullOrWhiteSpace($resumeReply)) { $resumeReply = $localResumeReply }
                 }
                 $resumeReply = Format-CapturedReplyMarkdown -Text $resumeReply
                 if ([string]::IsNullOrWhiteSpace($resumeReply)) {
-                    Write-Host "  waiting_reply checkpoint 没有可恢复回复；新建对话并重发完整任务。" -ForegroundColor Yellow
-                    Start-ChatGPTNewConversation
-                    $message = Get-InitialTaskMessage -Task $Task -RequirementContent $requirementContent -TsvContent $tsvContent
-                    Send-TrackedChatGPTMessage -OutputFile $outputFile -Label "checkpoint 丢失对话 / 重发完整任务" -Message $message -LargePayload
-                    $sendCount++
-                    $conversationUrl = Wait-CurrentChatGPTConversationUrl
-                    Save-TaskCheckpoint -Task $Task -Status "进行中" -Phase "waiting_reply" -Round $round -SendCount $sendCount -OutputFile $outputFile -ConversationUrl $conversationUrl
+                    throw "checkpoint 原对话页面和本地结果均没有可恢复回复；已保留原 checkpoint，禁止新建对话重发"
                 }
                 else {
                     $resumeHasFullTable = Test-ReplyContainsFullTable -Reply $resumeReply -MinimumRows $minimumFullTableRows -Task $Task
@@ -3423,16 +3947,11 @@ function Process-TSVTask {
                 catch {
                     Write-Host "  checkpoint 回复读取失败，使用状态文本: $($_.Exception.Message)" -ForegroundColor Yellow
                     $resumeReply = [string]$idleState.reply
+                    if ([string]::IsNullOrWhiteSpace($resumeReply)) { $resumeReply = $localResumeReply }
                 }
                 $resumeReply = Format-CapturedReplyMarkdown -Text $resumeReply
                 if ([string]::IsNullOrWhiteSpace($resumeReply)) {
-                    Write-Host "  checkpoint 没有可恢复回复；新建对话并重发完整任务。" -ForegroundColor Yellow
-                    Start-ChatGPTNewConversation
-                    $message = Get-InitialTaskMessage -Task $Task -RequirementContent $requirementContent -TsvContent $tsvContent
-                    Send-TrackedChatGPTMessage -OutputFile $outputFile -Label "checkpoint 丢失对话 / 重发完整任务" -Message $message -LargePayload
-                    $sendCount++
-                    $conversationUrl = Wait-CurrentChatGPTConversationUrl
-                    Save-TaskCheckpoint -Task $Task -Status "进行中" -Phase "waiting_reply" -Round $round -SendCount $sendCount -OutputFile $outputFile -ConversationUrl $conversationUrl
+                    throw "checkpoint 原对话页面和本地结果均没有可恢复回复；已保留原 checkpoint，禁止新建对话重发"
                 }
                 else {
                     $resumeHasFullTable = Test-ReplyContainsFullTable -Reply $resumeReply -MinimumRows $minimumFullTableRows -Task $Task
@@ -3459,6 +3978,7 @@ function Process-TSVTask {
                     }
                     Save-TaskCheckpoint -Task $Task -Status "进行中" -Phase "waiting_reply" -Round $round -SendCount $sendCount -OutputFile $outputFile -ConversationUrl $conversationUrl
                 }
+            }
             }
         }
         elseif ($ConversationMode -eq "new") {
@@ -3647,9 +4167,10 @@ function Process-TSVTask {
         }
     }
     catch {
-        $status = "页面错误"
         $remarks = "异常: $($_.Exception.Message)"
-        $fatalBrowserFailure = $remarks -match '(?i)Playwright browser 请求失败|Target page, context or browser has been closed|browserContext\..*closed|浏览器桥接进程.*退出|无法连接.*browser|Connection.*closed'
+        $failure = Resolve-TaskFailure -Detail $remarks
+        $status = [string]$failure.Status
+        $fatalBrowserFailure = [bool]$failure.FatalBrowser
         Add-Content -Path $outputFile -Value "`r`n--- 脚本异常 ---`r`n$remarks`r`n" -Encoding UTF8
     }
 
@@ -3711,23 +4232,39 @@ function Generate-Summary {
         "重复终止" = 0
         "次数上限终止" = 0
         "页面错误" = 0
+        "页面操作错误" = 0
+        "浏览器错误" = 0
+        "回复超时" = 0
+        "对话分支失败" = 0
+        "数据冲突" = 0
+        "数据校验失败" = 0
+        "结果不完整" = 0
+        "脚本错误" = 0
         "登录失效" = 0
         "偏离终止" = 0
+        "进行中" = 0
         "未处理" = 0
     }
 
     foreach ($row in $currentRows) {
         $status = $row."状态"
         if (-not $status) { $status = $row.Status }
+        $remarks = $row."备注"
+        if (-not $remarks) { $remarks = $row.Remarks }
+        $status = Get-NormalizedTaskStatus -Status ([string]$status) -Remarks ([string]$remarks)
         if ($count.ContainsKey($status)) { $count[$status]++ }
+        else { $count["脚本错误"]++ }
     }
 
-    $failed = $count["重复终止"] + $count["次数上限终止"] + $count["页面错误"] + $count["登录失效"] + $count["偏离终止"] + $count["未处理"]
+    $failed = $currentRows.Count - $count["成功"]
     $unsuccessfulRows = @(
         $currentRows |
             Where-Object {
                 $status = $_."状态"
                 if (-not $status) { $status = $_.Status }
+                $remarks = $_."备注"
+                if (-not $remarks) { $remarks = $_.Remarks }
+                $status = Get-NormalizedTaskStatus -Status ([string]$status) -Remarks ([string]$remarks)
                 $status -ne "成功"
             } |
             Sort-Object { $_."文件名" }, { $_.FileName }
@@ -3744,6 +4281,7 @@ function Generate-Summary {
             if (-not $status) { $status = $_.Status }
             $remarks = $_."备注"
             if (-not $remarks) { $remarks = $_.Remarks }
+            $status = Get-NormalizedTaskStatus -Status ([string]$status) -Remarks ([string]$remarks)
             if ([string]::IsNullOrWhiteSpace($remarks)) {
                 " - $fileName [$status]"
             }
@@ -3759,8 +4297,17 @@ function Generate-Summary {
 重复终止数：$($count["重复终止"])
 次数上限终止数：$($count["次数上限终止"])
 页面错误数：$($count["页面错误"])
+页面操作错误数：$($count["页面操作错误"])
+浏览器错误数：$($count["浏览器错误"])
+回复超时数：$($count["回复超时"])
+对话分支失败数：$($count["对话分支失败"])
+数据冲突数：$($count["数据冲突"])
+数据校验失败数：$($count["数据校验失败"])
+结果不完整数：$($count["结果不完整"])
+脚本错误数：$($count["脚本错误"])
 登录失效数：$($count["登录失效"])
 偏离终止数：$($count["偏离终止"])
+进行中数：$($count["进行中"])
 未处理数：$($count["未处理"])
 失败数：$failed
 当前未成功的任务数：$($unsuccessfulRows.Count)
@@ -3798,6 +4345,7 @@ function Main {
     Test-Prerequisites
     Initialize-XBrowser
     Open-ChatGPT
+    Wait-ChatGPTLogin
 
     if ($OpenOnly) {
         try {
@@ -3809,36 +4357,7 @@ function Main {
         catch {
             throw "ChatGPT 已打开，但 $Browser 页面读取验证失败: $($_.Exception.Message)"
         }
-        while ($true) {
-            $state = Get-ChatGPTState
-            if (-not $state.loggedOut -and $state.inputReady) {
-                Write-Host "ChatGPT 已登录，输入框已就绪。" -ForegroundColor Green
-                return
-            }
-
-            Write-Host "当前尚未检测到已登录的可输入页面。" -ForegroundColor Yellow
-            if ($Browser -eq "playwright" -and $state.loggedOut) {
-                try {
-                    if (Invoke-ManualPlaywrightLogin) { continue }
-                }
-                catch {
-                    Write-Host "普通浏览器登录交接失败: $($_.Exception.Message)" -ForegroundColor Yellow
-                    Write-Host "请确认刚打开的普通浏览器已经完全关闭，然后按 Enter 重试。" -ForegroundColor Yellow
-                }
-            }
-            [void](Read-Host "请完成登录，然后回到此窗口按 Enter 重新验证（Ctrl+C 取消）")
-            try {
-                $state = Get-ChatGPTState
-                if (-not $state.loggedOut -and $state.inputReady) {
-                    Write-Host "ChatGPT 登录成功，输入框已就绪。" -ForegroundColor Green
-                    return
-                }
-                Write-Host "仍未检测到登录状态，将继续等待手动确认。" -ForegroundColor Yellow
-            }
-            catch {
-                Write-Host "页面仍在跳转或暂时无法读取，将继续等待手动确认。" -ForegroundColor Yellow
-            }
-        }
+        return
     }
 
     $state = Get-ChatGPTState
