@@ -10,7 +10,7 @@ workspace:
     # 只运行当前欧洲车型工作区。
     strategy: explicit
     projects:
-      - 0728-eu
+      - 0728-eu-2
     include:
       - "*"
     exclude:

@@ -866,6 +866,8 @@ function Test-XBRecoverableError {
         "Protocol error",
         "CDP",
         "browser has disconnected",
+        "Failed to open a new tab",
+        "Target.createTarget",
         "websocket",
         "ECONNRESET",
         "ECONNREFUSED",
@@ -877,6 +879,56 @@ function Test-XBRecoverableError {
     }
 
     return $false
+}
+
+function Test-BrowserInfrastructureFailure {
+    param([string]$Detail)
+
+    if ([string]::IsNullOrWhiteSpace($Detail)) { return $false }
+    return $Detail -match '(?i)Target page, context or browser has been closed|browserContext\..*closed|Browser has been closed|browser has disconnected|Connection closed|Failed to open a new tab|Target\.createTarget|浏览器桥接进程.*退出|无法连接.*browser|ECONNRESET|ECONNREFUSED'
+}
+
+function Resolve-TaskFailure {
+    param([string]$Detail)
+
+    $text = [string]$Detail
+    if (Test-BrowserInfrastructureFailure -Detail $text) {
+        return [pscustomobject]@{ Status = "浏览器错误"; FatalBrowser = $true }
+    }
+    if ($text -match 'DIMENSION_GROUP .+ 与既有最终值冲突|同一 id 对应不同 Ktype') {
+        return [pscustomobject]@{ Status = "数据冲突"; FatalBrowser = $false }
+    }
+    if ($text -match '最终 .+存在重复或空|新增 .+存在空|现有最终 TSV (表头不匹配|列数错误)|TSV 字段包含制表符或换行|最终 TSV 路径超出输出目录') {
+        return [pscustomobject]@{ Status = "数据校验失败"; FatalBrowser = $false }
+    }
+    if ($text -match '缺少两个最终 TSV 下载链接|缺少可提取的两张完整 TSV|未通过当前完整性校验') {
+        return [pscustomobject]@{ Status = "结果不完整"; FatalBrowser = $false }
+    }
+    if ($text -match '在新聊天中分支|在新对话中分支|分支到新聊天|新的对话 URL') {
+        return [pscustomobject]@{ Status = "对话分支失败"; FatalBrowser = $false }
+    }
+    if ($text -match '等待回复超过 \d+ 秒|回复.*超时') {
+        return [pscustomobject]@{ Status = "回复超时"; FatalBrowser = $false }
+    }
+    if ($text -match 'locator\.waitFor: Timeout|页面 URL 为空|页面读取验证失败|输入框|composer|页面 DOM|copy-button-not-found|no-assistant-node') {
+        return [pscustomobject]@{ Status = "页面操作错误"; FatalBrowser = $false }
+    }
+    if ($text -match '页面出现错误提示|something went wrong|network error|页面错误|网络错误|出错了') {
+        return [pscustomobject]@{ Status = "页面错误"; FatalBrowser = $false }
+    }
+    return [pscustomobject]@{ Status = "脚本错误"; FatalBrowser = $false }
+}
+
+function Get-NormalizedTaskStatus {
+    param(
+        [string]$Status,
+        [string]$Remarks
+    )
+
+    if ($Status -eq "页面错误" -and -not [string]::IsNullOrWhiteSpace($Remarks)) {
+        return [string](Resolve-TaskFailure -Detail $Remarks).Status
+    }
+    return $Status
 }
 
 function Repair-XBrowserSession {
@@ -1671,6 +1723,69 @@ function Get-TaskFinalArtifactInstruction {
 "@
 }
 
+function ConvertTo-DimensionGroupIdToken {
+    param([string]$Value)
+
+    if ([string]::IsNullOrWhiteSpace($Value)) { return "" }
+    $normalized = $Value.Normalize([Text.NormalizationForm]::FormD)
+    $characters = New-Object System.Collections.Generic.List[char]
+    foreach ($character in $normalized.ToCharArray()) {
+        if ([Globalization.CharUnicodeInfo]::GetUnicodeCategory($character) -ne [Globalization.UnicodeCategory]::NonSpacingMark) {
+            $characters.Add($character)
+        }
+    }
+    return ((-join $characters) -replace '[^A-Za-z0-9]+', '-').Trim("-").ToUpperInvariant()
+}
+
+function Get-TaskExistingDimensionGroupInstruction {
+    param($Task)
+
+    if (-not $DimensionGroupEnabled) { return "" }
+    $names = Get-TaskFinalArtifactNames -Task $Task
+    $aggregateDimensionPath = Join-Path $OutputDir $names.AggregateDimensionFileName
+    if (-not (Test-Path -LiteralPath $aggregateDimensionPath -PathType Leaf)) { return "" }
+
+    $lines = @([string]$Task.Content -split "`r?`n" | Where-Object {
+        -not [string]::IsNullOrWhiteSpace($_)
+    })
+    if ($lines.Count -lt 2) { return "" }
+    $headers = @($lines[0].TrimStart([char]0xFEFF) -split "`t")
+    $makeIndex = [Array]::IndexOf($headers, "Make")
+    $modelIndex = [Array]::IndexOf($headers, "Model")
+    if ($makeIndex -lt 0 -or $modelIndex -lt 0) { return "" }
+
+    $prefixes = New-Object "System.Collections.Generic.HashSet[string]" ([StringComparer]::OrdinalIgnoreCase)
+    foreach ($line in $lines | Select-Object -Skip 1) {
+        $values = @($line -split "`t")
+        if ($values.Count -le [Math]::Max($makeIndex, $modelIndex)) { continue }
+        $make = ConvertTo-DimensionGroupIdToken -Value $values[$makeIndex]
+        $model = ConvertTo-DimensionGroupIdToken -Value $values[$modelIndex]
+        if ($make -and $model) { [void]$prefixes.Add("EU-$make-$model") }
+    }
+    if ($prefixes.Count -eq 0) { return "" }
+
+    $existingRows = @(Read-StrictTsvRows -Path $aggregateDimensionPath -Header $RequiredDimensionGroupHeader)
+    $relevantRows = @(
+        $existingRows | Where-Object {
+            $id = ([string]$_.DIMENSION_GROUP_ID).Trim()
+            @($prefixes | Where-Object { $id.StartsWith($_, [StringComparison]::OrdinalIgnoreCase) }).Count -gt 0
+        } | Sort-Object DIMENSION_GROUP_ID
+    )
+    if ($relevantRows.Count -eq 0) { return "" }
+
+    $cacheLines = @("DIMENSION_GROUP_ID`tLengthMM`tWidthMM`tHeightMM")
+    $cacheLines += @($relevantRows | ForEach-Object {
+        "$($_.DIMENSION_GROUP_ID)`t$($_.LengthMM)`t$($_.WidthMM)`t$($_.HeightMM)"
+    })
+    return @"
+
+【跨批次已有尺寸组索引】
+以下 ID 已经存在于累计表。三维和物理外廓完全相同时才可复用；如果当前证据得到不同三维，禁止改写已有组，必须使用同系列下一个可用序号创建新 DIMENSION_GROUP_ID，并把当前批次相关 Ktype 全部指向新组。
+
+$($cacheLines -join "`r`n")
+"@
+}
+
 function Assert-OutputArtifactPath {
     param([string]$Path)
 
@@ -1796,6 +1911,23 @@ function Get-LastStrictTableRowsFromText {
     return @($lastRows | ForEach-Object { $_ })
 }
 
+function Get-LastSavedRoundReply {
+    param([string]$ResultMarkdownPath)
+
+    if (
+        [string]::IsNullOrWhiteSpace($ResultMarkdownPath) -or
+        -not (Test-Path -LiteralPath $ResultMarkdownPath -PathType Leaf)
+    ) {
+        return ""
+    }
+
+    $text = Get-Content -LiteralPath $ResultMarkdownPath -Raw -Encoding UTF8
+    $pattern = '(?ms)^--- Round\s+\d+\s*/[^\r\n]*---\s*\r?\n(?<reply>.*?)(?=^--- (?:Round\s+\d+\s*/|发送\s*/|脚本异常|本地最终 TSV 已更新|对话分支)[^\r\n]*---\s*$|\z)'
+    $matches = [regex]::Matches($text, $pattern)
+    if ($matches.Count -eq 0) { return "" }
+    return ([string]$matches[$matches.Count - 1].Groups["reply"].Value).Trim()
+}
+
 function Restore-CompletedTaskArtifacts {
     param(
         $Task,
@@ -1893,6 +2025,176 @@ function Merge-FinalMappingRows {
     return @($rows | ForEach-Object { $_ })
 }
 
+function Copy-FitmentTableRow {
+    param($Row)
+
+    $copy = [ordered]@{}
+    foreach ($property in $Row.PSObject.Properties) {
+        $copy[$property.Name] = [string]$property.Value
+    }
+    return [pscustomobject]$copy
+}
+
+function Get-DimensionGroupSignature {
+    param($Row)
+
+    return (@("LengthMM", "WidthMM", "HeightMM") | ForEach-Object {
+        ([string]$Row.$_).Trim()
+    }) -join "x"
+}
+
+function Get-DimensionGroupSequence {
+    param([string]$GroupId)
+
+    $id = $GroupId.Trim()
+    if ($id -match '^(.*-)(\d+)$') {
+        return [pscustomobject]@{
+            Prefix = [string]$Matches[1]
+            Number = [int]$Matches[2]
+            Width = [Math]::Max(2, ([string]$Matches[2]).Length)
+        }
+    }
+    return [pscustomobject]@{
+        Prefix = "$id-"
+        Number = 1
+        Width = 2
+    }
+}
+
+function Resolve-DimensionGroupConflicts {
+    param(
+        [object[]]$ExistingDimensionRows,
+        [object[]]$NewDimensionRows,
+        [object[]]$NewMappingRows
+    )
+
+    $existingById = @{}
+    $allKnownById = @{}
+    foreach ($sourceRow in @($ExistingDimensionRows)) {
+        $row = Copy-FitmentTableRow -Row $sourceRow
+        $id = ([string]$row.DIMENSION_GROUP_ID).Trim()
+        if (-not $id -or $existingById.ContainsKey($id)) {
+            throw "最终 DIMENSION_GROUP 表存在重复或空 ID: $id"
+        }
+        $existingById[$id] = $row
+        $allKnownById[$id] = $row
+    }
+
+    $resolvedDimensions = New-Object System.Collections.Generic.List[object]
+    $remap = @{}
+    $audit = New-Object System.Collections.Generic.List[object]
+    $reservedNewIds = New-Object "System.Collections.Generic.HashSet[string]" ([StringComparer]::OrdinalIgnoreCase)
+    foreach ($sourceRow in @($NewDimensionRows)) {
+        $reservedId = ([string]$sourceRow.DIMENSION_GROUP_ID).Trim()
+        if (-not $reservedId -or -not $reservedNewIds.Add($reservedId)) {
+            throw "新增 DIMENSION_GROUP 存在重复或空 ID: $reservedId"
+        }
+    }
+
+    foreach ($sourceRow in @($NewDimensionRows)) {
+        $row = Copy-FitmentTableRow -Row $sourceRow
+        $originalId = ([string]$row.DIMENSION_GROUP_ID).Trim()
+        if (-not $originalId) { throw "新增 DIMENSION_GROUP 存在空 ID" }
+        $targetId = $originalId
+        if ($existingById.ContainsKey($originalId)) {
+            $existingSignature = Get-DimensionGroupSignature -Row $existingById[$originalId]
+            $newSignature = Get-DimensionGroupSignature -Row $row
+            if ($existingSignature -ne $newSignature) {
+                $sequence = Get-DimensionGroupSequence -GroupId $originalId
+                $familyPattern = "^$([regex]::Escape($sequence.Prefix))(\d+)$"
+                $matchingId = ""
+                $maxSequence = [int]$sequence.Number
+
+                foreach ($knownId in @($allKnownById.Keys | Sort-Object)) {
+                    if ($knownId -notmatch $familyPattern) { continue }
+                    $knownNumber = [int]$Matches[1]
+                    if ($knownNumber -gt $maxSequence) { $maxSequence = $knownNumber }
+                    if (
+                        -not $matchingId -and
+                        -not $reservedNewIds.Contains($knownId) -and
+                        (Get-DimensionGroupSignature -Row $allKnownById[$knownId]) -eq $newSignature
+                    ) {
+                        $matchingId = $knownId
+                    }
+                }
+
+                if ($matchingId) {
+                    $targetId = $matchingId
+                    $action = "复用已有尺寸组"
+                }
+                else {
+                    do {
+                        $maxSequence++
+                        $formattedSequence = ([string]$maxSequence).PadLeft($sequence.Width, "0")
+                        $targetId = "$($sequence.Prefix)$formattedSequence"
+                    } while ($allKnownById.ContainsKey($targetId) -or $reservedNewIds.Contains($targetId))
+                    $action = "创建新尺寸组"
+                }
+
+                $remap[$originalId] = $targetId
+                $audit.Add([pscustomobject]@{
+                    OriginalId = $originalId
+                    TargetId = $targetId
+                    ExistingDimensions = $existingSignature
+                    NewDimensions = $newSignature
+                    Action = $action
+                })
+            }
+        }
+
+        $row.DIMENSION_GROUP_ID = $targetId
+        if ($allKnownById.ContainsKey($targetId)) {
+            $knownSignature = Get-DimensionGroupSignature -Row $allKnownById[$targetId]
+            $rowSignature = Get-DimensionGroupSignature -Row $row
+            if ($knownSignature -ne $rowSignature) {
+                throw "尺寸组协调后仍存在冲突: $targetId ($knownSignature != $rowSignature)"
+            }
+        }
+        else {
+            $allKnownById[$targetId] = $row
+        }
+        $resolvedDimensions.Add($row)
+    }
+
+    $resolvedMappings = New-Object System.Collections.Generic.List[object]
+    foreach ($sourceRow in @($NewMappingRows)) {
+        $row = Copy-FitmentTableRow -Row $sourceRow
+        $groupId = ([string]$row.DIMENSION_GROUP_ID).Trim()
+        if ($remap.ContainsKey($groupId)) {
+            $row.DIMENSION_GROUP_ID = [string]$remap[$groupId]
+        }
+        $resolvedMappings.Add($row)
+    }
+
+    $dimensionIds = @{}
+    foreach ($row in $resolvedDimensions) {
+        $id = ([string]$row.DIMENSION_GROUP_ID).Trim()
+        if (-not $id -or $dimensionIds.ContainsKey($id)) {
+            throw "协调后的本批 DIMENSION_GROUP 存在重复或空 ID: $id"
+        }
+        $dimensionIds[$id] = $true
+    }
+    $referencedIds = @{}
+    foreach ($row in $resolvedMappings) {
+        $groupId = ([string]$row.DIMENSION_GROUP_ID).Trim()
+        if (-not $groupId -or -not $dimensionIds.ContainsKey($groupId)) {
+            throw "Ktype $($row.Ktype) 引用了本批不存在的尺寸组: $groupId"
+        }
+        $referencedIds[$groupId] = $true
+    }
+    foreach ($groupId in $dimensionIds.Keys) {
+        if (-not $referencedIds.ContainsKey($groupId)) {
+            throw "协调后的本批尺寸组未被任何 Ktype 引用: $groupId"
+        }
+    }
+
+    return [pscustomobject]@{
+        MappingRows = @($resolvedMappings | ForEach-Object { $_ })
+        DimensionRows = @($resolvedDimensions | ForEach-Object { $_ })
+        Audit = @($audit | ForEach-Object { $_ })
+    }
+}
+
 function Merge-FinalDimensionRows {
     param(
         [object[]]$ExistingRows,
@@ -1956,6 +2258,10 @@ function Publish-CompletedTaskTables {
     # 若先写首批快照，会在 checkpoint 恢复时覆盖已经追加的后续批次。
     $existingMappings = @(Read-StrictTsvRows -Path $aggregateMappingPath -Header $RequiredTsvHeader)
     $existingDimensions = @(Read-StrictTsvRows -Path $aggregateDimensionPath -Header $RequiredDimensionGroupHeader)
+    $resolved = Resolve-DimensionGroupConflicts -ExistingDimensionRows $existingDimensions `
+        -NewDimensionRows $dimensionRows -NewMappingRows $mappingRows
+    $mappingRows = @($resolved.MappingRows)
+    $dimensionRows = @($resolved.DimensionRows)
     $mergedMappings = @(Merge-FinalMappingRows -ExistingRows $existingMappings -NewRows $mappingRows)
     $mergedDimensions = @(Merge-FinalDimensionRows -ExistingRows $existingDimensions -NewRows $dimensionRows)
 
@@ -1969,6 +2275,14 @@ function Publish-CompletedTaskTables {
     Write-StrictTsvAtomic -Path $aggregateMappingPath -Header $RequiredTsvHeader -Rows $mergedMappings
 
     if ($ResultMarkdownPath) {
+        $conflictAuditText = if (@($resolved.Audit).Count -gt 0) {
+            "`r`n- 尺寸冲突协调：`r`n" + ((@($resolved.Audit) | ForEach-Object {
+                "  - $($_.OriginalId) -> $($_.TargetId)：$($_.ExistingDimensions) 与 $($_.NewDimensions)，$($_.Action)"
+            }) -join "`r`n")
+        }
+        else {
+            ""
+        }
         Add-Content -LiteralPath $ResultMarkdownPath -Encoding UTF8 -Value @"
 
 --- 本地最终 TSV 已更新 ---
@@ -1976,6 +2290,7 @@ function Publish-CompletedTaskTables {
 - 本批尺寸组：$($names.DimensionFileName)
 - 累计 Ktype 映射：$($names.AggregateMappingFileName)（$($mergedMappings.Count) 行）
 - 累计尺寸组：$($names.AggregateDimensionFileName)（$($mergedDimensions.Count) 行）
+$conflictAuditText
 "@
     }
 
@@ -3015,7 +3330,7 @@ function Start-ChatGPTNewConversation {
     try { Invoke-XBRun "wait" "--load" "networkidle" | Out-Null } catch { }
 }
 
-function Start-ChatGPTConversationBranch {
+function Invoke-ChatGPTConversationBranchOnce {
     param([string]$ParentUrl)
 
     Ensure-ChatGPTActive
@@ -3105,6 +3420,38 @@ function Start-ChatGPTConversationBranch {
     } while ((Get-Date) -lt $deadline)
 
     throw "已点击【在新聊天中分支】，但 30 秒内未取得新的对话 URL"
+}
+
+function Start-ChatGPTConversationBranch {
+    param([string]$ParentUrl)
+
+    $lastError = ""
+    for ($attempt = 1; $attempt -le 3; $attempt++) {
+        try {
+            return Invoke-ChatGPTConversationBranchOnce -ParentUrl $ParentUrl
+        }
+        catch {
+            $lastError = $_.Exception.Message
+            try {
+                $currentUrl = Get-CurrentChatGPTUrl
+                if (
+                    (Test-ChatGPTConversationUrl -Url $currentUrl) -and
+                    -not [string]::Equals($currentUrl, $ParentUrl, [StringComparison]::OrdinalIgnoreCase)
+                ) {
+                    Write-Host "  分支操作已生效，恢复取得新对话 URL: $currentUrl" -ForegroundColor Green
+                    return $currentUrl
+                }
+            }
+            catch { }
+
+            if ($attempt -ge 3) { break }
+            Write-Host "  对话分支操作失败，重新加载父对话后重试 ($attempt/2): $lastError" -ForegroundColor Yellow
+            Invoke-XBRun "open" $ParentUrl | Out-Null
+            Start-Sleep -Seconds 3
+        }
+    }
+
+    throw "对话分支失败（已尝试 3 次）: $lastError"
 }
 
 function Send-ChatGPTMessage {
@@ -3250,7 +3597,7 @@ function Wait-ChatGPTReplyComplete {
         Start-Sleep -Seconds 2
     }
 
-    return @{ Ok = $false; Status = "页面错误"; Remark = "等待回复超过 $MaxReplyWaitSeconds 秒"; Reply = $lastReply }
+    return @{ Ok = $false; Status = "回复超时"; Remark = "等待回复超过 $MaxReplyWaitSeconds 秒"; Reply = $lastReply }
 }
 
 function Test-RepeatedReply {
@@ -3445,6 +3792,7 @@ function Get-InitialTaskMessage {
     )
     $taskTitle = "【全量表更新】$($Task.DisplayName)"
     $artifactInstruction = Get-TaskFinalArtifactInstruction -Task $Task
+    $existingDimensionGroupInstruction = Get-TaskExistingDimensionGroupInstruction -Task $Task
     return @"
 【任务名称】
 $taskTitle
@@ -3464,6 +3812,7 @@ $($Task.SourceName)
 【当前独立任务】
 $($Task.DisplayName)
 $artifactInstruction
+$existingDimensionGroupInstruction
 
 【TSV 数据】
 $TsvContent
@@ -3531,11 +3880,32 @@ function Process-TSVTask {
         $tsvContent = [string]$Task.Content
         $minimumFullTableRows = [Math]::Max(0, (@($tsvContent -split "`r?`n" | Where-Object { -not [string]::IsNullOrWhiteSpace($_) }).Count - 1))
         if ($resumeFromCheckpoint) {
-            Write-Host "  从车型 checkpoint 恢复原对话（第 $round 轮）..." -ForegroundColor Cyan
-            Invoke-XBRun "tab" "new" $conversationUrl | Out-Null
-            Start-Sleep -Seconds 3
-            try { Invoke-XBRun "wait" "--load" "networkidle" | Out-Null } catch { }
-            if ([string]$checkpoint.phase -eq "waiting_reply") {
+            $localResumeReply = Format-CapturedReplyMarkdown -Text (
+                Get-LastSavedRoundReply -ResultMarkdownPath $outputFile
+            )
+            if (-not [string]::IsNullOrWhiteSpace($localResumeReply)) {
+                Write-Host "  已从 checkpoint 结果文件读取最后一个已落盘 Round（$($localResumeReply.Length) 字符）。" -ForegroundColor DarkGreen
+                $localHasFullTable = Test-ReplyContainsFullTable -Reply $localResumeReply -MinimumRows $minimumFullTableRows -Task $Task
+                if ((Test-CompletionSignal -Text $localResumeReply) -and $localHasFullTable) {
+                    try {
+                        Publish-CompletedTaskTables -Task $Task -Reply $localResumeReply -ResultMarkdownPath $outputFile | Out-Null
+                        $status = "成功"
+                        $remarks = "从 checkpoint 本地最后回复恢复完整表并成功更新累计最终 TSV"
+                        $finishWithoutReplyLoop = $true
+                        Write-Host "  本地最后回复已重新入库成功，无需重新发送任务。" -ForegroundColor Green
+                    }
+                    catch {
+                        Write-Host "  本地最后回复暂未能入库，继续原对话处理: $($_.Exception.Message)" -ForegroundColor Yellow
+                    }
+                }
+            }
+
+            if (-not $finishWithoutReplyLoop) {
+                Write-Host "  从车型 checkpoint 恢复原对话（第 $round 轮）..." -ForegroundColor Cyan
+                Invoke-XBRun "tab" "new" $conversationUrl | Out-Null
+                Start-Sleep -Seconds 3
+                try { Invoke-XBRun "wait" "--load" "networkidle" | Out-Null } catch { }
+                if ([string]$checkpoint.phase -eq "waiting_reply") {
                 # 进程可能在消息已经由其他已登录页面完成后才恢复。先检查
                 # 服务器端现有最后回复，避免把一个已完成的回复永远当作
                 # “仍在等待的新回复”。
@@ -3546,16 +3916,11 @@ function Process-TSVTask {
                 catch {
                     Write-Host "  waiting_reply checkpoint 回复读取失败，使用状态文本: $($_.Exception.Message)" -ForegroundColor Yellow
                     $resumeReply = [string]$idleState.reply
+                    if ([string]::IsNullOrWhiteSpace($resumeReply)) { $resumeReply = $localResumeReply }
                 }
                 $resumeReply = Format-CapturedReplyMarkdown -Text $resumeReply
                 if ([string]::IsNullOrWhiteSpace($resumeReply)) {
-                    Write-Host "  waiting_reply checkpoint 没有可恢复回复；新建对话并重发完整任务。" -ForegroundColor Yellow
-                    Start-ChatGPTNewConversation
-                    $message = Get-InitialTaskMessage -Task $Task -RequirementContent $requirementContent -TsvContent $tsvContent
-                    Send-TrackedChatGPTMessage -OutputFile $outputFile -Label "checkpoint 丢失对话 / 重发完整任务" -Message $message -LargePayload
-                    $sendCount++
-                    $conversationUrl = Wait-CurrentChatGPTConversationUrl
-                    Save-TaskCheckpoint -Task $Task -Status "进行中" -Phase "waiting_reply" -Round $round -SendCount $sendCount -OutputFile $outputFile -ConversationUrl $conversationUrl
+                    throw "checkpoint 原对话页面和本地结果均没有可恢复回复；已保留原 checkpoint，禁止新建对话重发"
                 }
                 else {
                     $resumeHasFullTable = Test-ReplyContainsFullTable -Reply $resumeReply -MinimumRows $minimumFullTableRows -Task $Task
@@ -3582,16 +3947,11 @@ function Process-TSVTask {
                 catch {
                     Write-Host "  checkpoint 回复读取失败，使用状态文本: $($_.Exception.Message)" -ForegroundColor Yellow
                     $resumeReply = [string]$idleState.reply
+                    if ([string]::IsNullOrWhiteSpace($resumeReply)) { $resumeReply = $localResumeReply }
                 }
                 $resumeReply = Format-CapturedReplyMarkdown -Text $resumeReply
                 if ([string]::IsNullOrWhiteSpace($resumeReply)) {
-                    Write-Host "  checkpoint 没有可恢复回复；新建对话并重发完整任务。" -ForegroundColor Yellow
-                    Start-ChatGPTNewConversation
-                    $message = Get-InitialTaskMessage -Task $Task -RequirementContent $requirementContent -TsvContent $tsvContent
-                    Send-TrackedChatGPTMessage -OutputFile $outputFile -Label "checkpoint 丢失对话 / 重发完整任务" -Message $message -LargePayload
-                    $sendCount++
-                    $conversationUrl = Wait-CurrentChatGPTConversationUrl
-                    Save-TaskCheckpoint -Task $Task -Status "进行中" -Phase "waiting_reply" -Round $round -SendCount $sendCount -OutputFile $outputFile -ConversationUrl $conversationUrl
+                    throw "checkpoint 原对话页面和本地结果均没有可恢复回复；已保留原 checkpoint，禁止新建对话重发"
                 }
                 else {
                     $resumeHasFullTable = Test-ReplyContainsFullTable -Reply $resumeReply -MinimumRows $minimumFullTableRows -Task $Task
@@ -3618,6 +3978,7 @@ function Process-TSVTask {
                     }
                     Save-TaskCheckpoint -Task $Task -Status "进行中" -Phase "waiting_reply" -Round $round -SendCount $sendCount -OutputFile $outputFile -ConversationUrl $conversationUrl
                 }
+            }
             }
         }
         elseif ($ConversationMode -eq "new") {
@@ -3806,9 +4167,10 @@ function Process-TSVTask {
         }
     }
     catch {
-        $status = "页面错误"
         $remarks = "异常: $($_.Exception.Message)"
-        $fatalBrowserFailure = $remarks -match '(?i)Playwright browser 请求失败|Target page, context or browser has been closed|browserContext\..*closed|浏览器桥接进程.*退出|无法连接.*browser|Connection.*closed'
+        $failure = Resolve-TaskFailure -Detail $remarks
+        $status = [string]$failure.Status
+        $fatalBrowserFailure = [bool]$failure.FatalBrowser
         Add-Content -Path $outputFile -Value "`r`n--- 脚本异常 ---`r`n$remarks`r`n" -Encoding UTF8
     }
 
@@ -3870,23 +4232,39 @@ function Generate-Summary {
         "重复终止" = 0
         "次数上限终止" = 0
         "页面错误" = 0
+        "页面操作错误" = 0
+        "浏览器错误" = 0
+        "回复超时" = 0
+        "对话分支失败" = 0
+        "数据冲突" = 0
+        "数据校验失败" = 0
+        "结果不完整" = 0
+        "脚本错误" = 0
         "登录失效" = 0
         "偏离终止" = 0
+        "进行中" = 0
         "未处理" = 0
     }
 
     foreach ($row in $currentRows) {
         $status = $row."状态"
         if (-not $status) { $status = $row.Status }
+        $remarks = $row."备注"
+        if (-not $remarks) { $remarks = $row.Remarks }
+        $status = Get-NormalizedTaskStatus -Status ([string]$status) -Remarks ([string]$remarks)
         if ($count.ContainsKey($status)) { $count[$status]++ }
+        else { $count["脚本错误"]++ }
     }
 
-    $failed = $count["重复终止"] + $count["次数上限终止"] + $count["页面错误"] + $count["登录失效"] + $count["偏离终止"] + $count["未处理"]
+    $failed = $currentRows.Count - $count["成功"]
     $unsuccessfulRows = @(
         $currentRows |
             Where-Object {
                 $status = $_."状态"
                 if (-not $status) { $status = $_.Status }
+                $remarks = $_."备注"
+                if (-not $remarks) { $remarks = $_.Remarks }
+                $status = Get-NormalizedTaskStatus -Status ([string]$status) -Remarks ([string]$remarks)
                 $status -ne "成功"
             } |
             Sort-Object { $_."文件名" }, { $_.FileName }
@@ -3903,6 +4281,7 @@ function Generate-Summary {
             if (-not $status) { $status = $_.Status }
             $remarks = $_."备注"
             if (-not $remarks) { $remarks = $_.Remarks }
+            $status = Get-NormalizedTaskStatus -Status ([string]$status) -Remarks ([string]$remarks)
             if ([string]::IsNullOrWhiteSpace($remarks)) {
                 " - $fileName [$status]"
             }
@@ -3918,8 +4297,17 @@ function Generate-Summary {
 重复终止数：$($count["重复终止"])
 次数上限终止数：$($count["次数上限终止"])
 页面错误数：$($count["页面错误"])
+页面操作错误数：$($count["页面操作错误"])
+浏览器错误数：$($count["浏览器错误"])
+回复超时数：$($count["回复超时"])
+对话分支失败数：$($count["对话分支失败"])
+数据冲突数：$($count["数据冲突"])
+数据校验失败数：$($count["数据校验失败"])
+结果不完整数：$($count["结果不完整"])
+脚本错误数：$($count["脚本错误"])
 登录失效数：$($count["登录失效"])
 偏离终止数：$($count["偏离终止"])
+进行中数：$($count["进行中"])
 未处理数：$($count["未处理"])
 失败数：$failed
 当前未成功的任务数：$($unsuccessfulRows.Count)

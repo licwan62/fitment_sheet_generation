@@ -1,4 +1,4 @@
-$ErrorActionPreference = "Stop"
+﻿$ErrorActionPreference = "Stop"
 $env:FITMENT_OPENCLAW_LIBRARY_ONLY = "1"
 . (Join-Path (Split-Path -Parent $PSScriptRoot) "qclaw_fitment_automation.ps1")
 

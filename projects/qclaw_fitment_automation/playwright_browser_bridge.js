@@ -24,7 +24,7 @@ let currentPage;
 
 function isClosedTargetError(error) {
   const message = error && (error.stack || error.message || String(error));
-  return /Target page, context or browser has been closed|browserContext\..*closed|Browser has been closed|Connection closed/i.test(message || "");
+  return /Target page, context or browser has been closed|browserContext\..*closed|Browser has been closed|Connection closed|Target\.createTarget.*Failed to open a new tab|Failed to open a new tab|browser has disconnected/i.test(message || "");
 }
 
 async function resetBrowserState() {
@@ -193,7 +193,22 @@ const server = http.createServer(async (request, response) => {
     return;
   }
   if (request.method === "GET" && request.url === "/health") {
-    json(response, 200, { ok: true });
+    try {
+      const page = await activePage();
+      await page.locator("body").waitFor({ state: "attached", timeout: 5_000 });
+      json(response, 200, {
+        ok: true,
+        browserReady: true,
+        pageCount: context.pages().filter((item) => !item.isClosed()).length,
+      });
+    } catch (error) {
+      if (isClosedTargetError(error)) await resetBrowserState();
+      json(response, 503, {
+        ok: false,
+        browserReady: false,
+        error: error.stack || error.message || String(error),
+      });
+    }
     return;
   }
   if (request.method !== "POST" || request.url !== "/action") {
