@@ -1,0 +1,21 @@
+{
+  "decision": "MATCH",
+  "selected_candidate": "CMX 500 Rebel",
+  "confidence": "HIGH",
+  "match_basis": "SAME_NAME",
+  "explanation": "The input model 'CMX500 Rebel 500 ABS SE' is a specific configuration of the CMX 500 Rebel, with 'ABS SE' being a configuration suffix. The base model identity 'CMX 500 Rebel' matches exactly with the catalog candidate. The displacement (500) and model name are identical, and the suffixes do not alter the underlying motorcycle identity.",
+  "canonical_model_alias": "CMX 500 Rebel",
+  "configuration_tokens": [
+    "ABS",
+    "SE"
+  ],
+  "brand_aliases": [],
+  "model_aliases": [
+    "CMX 500 Rebel"
+  ],
+  "status": "SUCCESS",
+  "prompt_version": "motorcycle-candidate-resolution-v4",
+  "model": "qwen-flash",
+  "make": "Honda",
+  "model_name": "CMX500 Rebel 500 ABS SE"
+}

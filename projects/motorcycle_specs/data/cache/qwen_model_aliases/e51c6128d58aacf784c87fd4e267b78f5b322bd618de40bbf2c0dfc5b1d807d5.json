@@ -1,0 +1,21 @@
+{
+  "decision": "MATCH",
+  "selected_candidate": "Harley-Davidson Electra Glide Ultra Classic Low",
+  "confidence": "HIGH",
+  "match_basis": "SAME_NAME",
+  "explanation": "The input model 'FLHTCUL Electra Glide Ultra Classic Low' is a direct specification of the catalog candidate 'Harley-Davidson Electra Glide Ultra Classic Low', with the VIN/model code FLHTCUL confirming it as the same underlying motorcycle. The name matches exactly, including the 'Low' configuration, which is part of the official model designation.",
+  "canonical_model_alias": "Electra Glide Ultra Classic Low",
+  "configuration_tokens": [
+    "Low"
+  ],
+  "brand_aliases": [],
+  "model_aliases": [
+    "Glide Ultra Classic Low",
+    "Electra Glide Ultra Classic Low"
+  ],
+  "status": "SUCCESS",
+  "prompt_version": "motorcycle-candidate-resolution-v4",
+  "model": "qwen-flash",
+  "make": "Harley-Davidson",
+  "model_name": "FLHTCUL Electra Glide Ultra Classic Low"
+}

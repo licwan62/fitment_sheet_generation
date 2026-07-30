@@ -1,0 +1,20 @@
+{
+  "decision": "MATCH",
+  "selected_candidate": "CBF 1000FA",
+  "confidence": "HIGH",
+  "match_basis": "MARKET_ALIAS",
+  "explanation": "The CBF1000A is a market-specific designation (likely for the 'A' variant in certain regions), and CBF 1000FA represents the same underlying motorcycle model with a known regional or configuration suffix. The core model identity (CBF 1000) is preserved, and the 'A' suffix aligns with the FA designation as a valid market or equipment variant.",
+  "canonical_model_alias": "CBF 1000FA",
+  "configuration_tokens": [
+    "FA"
+  ],
+  "brand_aliases": [],
+  "model_aliases": [
+    "CBF 1000FA"
+  ],
+  "status": "SUCCESS",
+  "prompt_version": "motorcycle-candidate-resolution-v4",
+  "model": "qwen-flash",
+  "make": "Honda",
+  "model_name": "CBF1000A"
+}

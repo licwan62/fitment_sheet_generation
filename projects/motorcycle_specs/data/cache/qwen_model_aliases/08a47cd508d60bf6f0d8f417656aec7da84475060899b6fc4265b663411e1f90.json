@@ -1,0 +1,18 @@
+{
+  "decision": "MATCH",
+  "selected_candidate": "250 SR",
+  "confidence": "HIGH",
+  "match_basis": "SAME_NAME",
+  "explanation": "The input '250SR FI' is functionally identical to '250 SR' in the catalog, with 'FI' (Fuel Injection) being a standard feature of the model and not altering the core identity. The omission of 'FI' in the candidate does not indicate a different model.",
+  "canonical_model_alias": "250 SR",
+  "configuration_tokens": [],
+  "brand_aliases": [],
+  "model_aliases": [
+    "250 SR"
+  ],
+  "status": "SUCCESS",
+  "prompt_version": "motorcycle-candidate-resolution-v4",
+  "model": "qwen-flash",
+  "make": "CFMOTO",
+  "model_name": "250SR FI"
+}

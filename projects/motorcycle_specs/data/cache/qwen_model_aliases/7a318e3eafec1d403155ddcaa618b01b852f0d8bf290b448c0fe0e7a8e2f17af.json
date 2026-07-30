@@ -1,0 +1,20 @@
+{
+  "decision": "MATCH",
+  "selected_candidate": "Suzuki GZ 150",
+  "confidence": "HIGH",
+  "match_basis": "MARKET_ALIAS",
+  "explanation": "The input 'GZ150HC GZ150' refers to the Suzuki GZ150, with 'HC' likely denoting a market-specific configuration or variant. The model is known as the 'Suzuki GZ 150' in catalog listings, and 'GZ150' is a standard designation for this motorcycle. The name variation is consistent with regional or marketing naming practices.",
+  "canonical_model_alias": "Suzuki GZ 150",
+  "configuration_tokens": [
+    "HC"
+  ],
+  "brand_aliases": [],
+  "model_aliases": [
+    "GZ 150"
+  ],
+  "status": "SUCCESS",
+  "prompt_version": "motorcycle-candidate-resolution-v4",
+  "model": "qwen-flash",
+  "make": "Suzuki",
+  "model_name": "GZ150HC GZ150"
+}

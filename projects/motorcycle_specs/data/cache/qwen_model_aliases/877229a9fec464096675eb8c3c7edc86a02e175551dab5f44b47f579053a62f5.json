@@ -1,0 +1,18 @@
+{
+  "decision": "MATCH",
+  "selected_candidate": "Ducati Scrambler Nightshift",
+  "confidence": "HIGH",
+  "match_basis": "SAME_NAME",
+  "explanation": "The input 'Scrambler Nightshift NG' refers to the same motorcycle model as 'Ducati Scrambler Nightshift', with 'NG' likely indicating a market or configuration variant not altering the core model identity. The catalog candidate 'Ducati Scrambler Nightshift' is the canonical expression of this model.",
+  "canonical_model_alias": "Scrambler Nightshift",
+  "configuration_tokens": [],
+  "brand_aliases": [],
+  "model_aliases": [
+    "Scrambler Nightshift"
+  ],
+  "status": "SUCCESS",
+  "prompt_version": "motorcycle-candidate-resolution-v4",
+  "model": "qwen-flash",
+  "make": "Ducati",
+  "model_name": "Scrambler Nightshift NG"
+}

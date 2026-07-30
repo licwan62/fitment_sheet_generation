@@ -1,0 +1,16 @@
+{
+  "decision": "MATCH",
+  "selected_candidate": "beta rr 200 2t",
+  "confidence": "HIGH",
+  "match_basis": "SAME_NAME",
+  "explanation": "The input 'TR32 200' is a known market or configuration designation for the Beta RR 200 2T model. The core identity matches exactly: Beta, 200cc, 2-stroke, and the RR series. 'TR32' is a regional or internal designation that refers to the same model.",
+  "canonical_model_alias": "beta rr 200 2t",
+  "configuration_tokens": [],
+  "brand_aliases": [],
+  "model_aliases": [],
+  "status": "SUCCESS",
+  "prompt_version": "motorcycle-candidate-resolution-v4",
+  "model": "qwen-flash",
+  "make": "Beta",
+  "model_name": "TR32 200"
+}

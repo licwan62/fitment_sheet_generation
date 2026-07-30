@@ -1,0 +1,20 @@
+{
+  "decision": "MATCH",
+  "selected_candidate": "GL 500 Silver \n\t\tWing Interstate",
+  "confidence": "HIGH",
+  "match_basis": "SAME_NAME",
+  "explanation": "The input 'GL500I Silver Wing Interstate' matches the catalog candidate 'GL 500 Silver \n\t\tWing Interstate' as the same underlying motorcycle model, with 'I' in the input being a standard designation for 'Interstate' and the title formatting differing only in spacing and line break. The displacement (500), model series (GL), and trim (Interstate) are identical.",
+  "canonical_model_alias": "GL 500 Silver Wing Interstate",
+  "configuration_tokens": [
+    "Interstate"
+  ],
+  "brand_aliases": [],
+  "model_aliases": [
+    "GL 500 Silver Wing Interstate"
+  ],
+  "status": "SUCCESS",
+  "prompt_version": "motorcycle-candidate-resolution-v4",
+  "model": "qwen-flash",
+  "make": "Honda",
+  "model_name": "GL500I Silver Wing Interstate"
+}

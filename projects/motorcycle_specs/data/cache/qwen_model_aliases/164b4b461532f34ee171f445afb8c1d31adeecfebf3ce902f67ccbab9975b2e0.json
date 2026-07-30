@@ -1,0 +1,19 @@
+{
+  "decision": "MATCH",
+  "selected_candidate": "Harley-Davidson Street 750",
+  "confidence": "HIGH",
+  "match_basis": "MARKET_ALIAS",
+  "explanation": "The 'XG750A Street Rod' is a market-specific designation for the Harley-Davidson Street 750, with 'Street Rod' being a regional or marketing name variant for the same model. The displacement (750) and model lineage confirm identity.",
+  "canonical_model_alias": "Street 750",
+  "configuration_tokens": [],
+  "brand_aliases": [],
+  "model_aliases": [
+    "750",
+    "Street 750"
+  ],
+  "status": "SUCCESS",
+  "prompt_version": "motorcycle-candidate-resolution-v4",
+  "model": "qwen-flash",
+  "make": "Harley-Davidson",
+  "model_name": "XG750A Street Rod"
+}

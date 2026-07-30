@@ -1,0 +1,18 @@
+{
+  "decision": "MATCH",
+  "selected_candidate": "Harley-Davidson Model UL",
+  "confidence": "HIGH",
+  "match_basis": "HISTORICAL_ALIAS",
+  "explanation": "'UL' is a historical model designation used by Harley-Davidson for the 1970s and 1980s, and 'Harley-Davidson Model UL' is the canonical catalog title for that model. The input 'UL' refers to this specific model line, not a different variant or successor.",
+  "canonical_model_alias": "Model UL",
+  "configuration_tokens": [],
+  "brand_aliases": [],
+  "model_aliases": [
+    "Model UL"
+  ],
+  "status": "SUCCESS",
+  "prompt_version": "motorcycle-candidate-resolution-v4",
+  "model": "qwen-flash",
+  "make": "Harley-Davidson",
+  "model_name": "UL"
+}

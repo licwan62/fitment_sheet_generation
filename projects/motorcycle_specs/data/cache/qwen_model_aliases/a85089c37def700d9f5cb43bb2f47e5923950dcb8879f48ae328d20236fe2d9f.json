@@ -1,0 +1,20 @@
+{
+  "decision": "MATCH",
+  "selected_candidate": "VZ 800 V \n      Marauder",
+  "confidence": "HIGH",
+  "match_basis": "SAME_NAME",
+  "explanation": "The input 'VZ800 Marauder' and the candidate 'VZ 800 V \n      Marauder' refer to the same motorcycle model, with only minor formatting differences (spacing, inclusion of 'V' in the displacement). The 'V' is a known market or configuration label for this model and does not indicate a different underlying motorcycle. No other model identity is altered.",
+  "canonical_model_alias": "VZ 800 V Marauder",
+  "configuration_tokens": [
+    "V"
+  ],
+  "brand_aliases": [],
+  "model_aliases": [
+    "VZ 800 V Marauder"
+  ],
+  "status": "SUCCESS",
+  "prompt_version": "motorcycle-candidate-resolution-v4",
+  "model": "qwen-flash",
+  "make": "Suzuki",
+  "model_name": "VZ800 Marauder"
+}

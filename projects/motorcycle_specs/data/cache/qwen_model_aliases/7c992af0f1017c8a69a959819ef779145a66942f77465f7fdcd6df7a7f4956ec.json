@@ -1,0 +1,20 @@
+{
+  "decision": "MATCH",
+  "selected_candidate": "GL 500 Silver \n\t\tWing Interstate",
+  "confidence": "HIGH",
+  "match_basis": "MARKET_ALIAS",
+  "explanation": "The input 'GL500I Silver Wing Interstate' uses the market-specific designation 'Interstate' and 'I' suffix, which is a known configuration label for the GL500 Silver Wing in North America. The catalog candidate 'GL 500 Silver \n\t\tWing Interstate' includes the same model identifier and full name with proper formatting, confirming it refers to the same motorcycle. The 'I' in the input is a standard market designation, not a different model.",
+  "canonical_model_alias": "GL 500 Silver Wing Interstate",
+  "configuration_tokens": [
+    "Interstate"
+  ],
+  "brand_aliases": [],
+  "model_aliases": [
+    "GL 500 Silver Wing Interstate"
+  ],
+  "status": "SUCCESS",
+  "prompt_version": "motorcycle-candidate-resolution-v4",
+  "model": "qwen-flash",
+  "make": "Honda",
+  "model_name": "GL500I Silver Wing Interstate"
+}

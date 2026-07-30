@@ -1,0 +1,20 @@
+{
+  "decision": "MATCH",
+  "selected_candidate": "Honda CD70",
+  "confidence": "HIGH",
+  "match_basis": "ABBREVIATION",
+  "explanation": "The input 'C70K' is a known market or configuration variant of the Honda CD70, where 'K' may denote a specific regional or model year designation. The CD70 is the correct and canonical model name for this motorcycle, and 'C70K' aligns with historical naming conventions for this model.",
+  "canonical_model_alias": "CD70",
+  "configuration_tokens": [
+    "K"
+  ],
+  "brand_aliases": [],
+  "model_aliases": [
+    "CD70"
+  ],
+  "status": "SUCCESS",
+  "prompt_version": "motorcycle-candidate-resolution-v4",
+  "model": "qwen-flash",
+  "make": "Honda",
+  "model_name": "C70K"
+}

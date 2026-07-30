@@ -1,0 +1,19 @@
+{
+  "decision": "MATCH",
+  "selected_candidate": "Harley-Davidson Dyna Glide Daytona",
+  "confidence": "HIGH",
+  "match_basis": "SAME_NAME",
+  "explanation": "The input model 'FXDB-D Dyna Glide Daytona' is a valid designation for the same motorcycle as 'Harley-Davidson Dyna Glide Daytona', with 'FXDB' being the model code and 'D' indicating the Daytona variant. The catalog candidate matches exactly in name and model identity, with no conflicting configuration or displacement differences.",
+  "canonical_model_alias": "Dyna Glide Daytona FXDB",
+  "configuration_tokens": [],
+  "brand_aliases": [],
+  "model_aliases": [
+    "Glide Daytona",
+    "Dyna Glide Daytona FXDB"
+  ],
+  "status": "SUCCESS",
+  "prompt_version": "motorcycle-candidate-resolution-v4",
+  "model": "qwen-flash",
+  "make": "Harley-Davidson",
+  "model_name": "FXDB-D Dyna Glide Daytona"
+}

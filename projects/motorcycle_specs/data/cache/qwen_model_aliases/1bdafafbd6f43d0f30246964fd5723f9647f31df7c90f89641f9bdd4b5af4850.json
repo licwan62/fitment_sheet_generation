@@ -1,0 +1,20 @@
+{
+  "decision": "MATCH",
+  "selected_candidate": "GV 1200GLF Madura",
+  "confidence": "HIGH",
+  "match_basis": "MARKET_ALIAS",
+  "explanation": "The input 'GV1200 Madura' refers to the same motorcycle model as 'GV 1200GLF Madura', with 'GLF' being a market-specific configuration label (likely for the European or UK market) that does not change the core identity. The model is consistently known as the Madura across variants, and the displacement and platform are identical.",
+  "canonical_model_alias": "GV 1200GLF Madura",
+  "configuration_tokens": [
+    "GLF"
+  ],
+  "brand_aliases": [],
+  "model_aliases": [
+    "GV 1200GLF Madura"
+  ],
+  "status": "SUCCESS",
+  "prompt_version": "motorcycle-candidate-resolution-v4",
+  "model": "qwen-flash",
+  "make": "Suzuki",
+  "model_name": "GV1200 Madura"
+}

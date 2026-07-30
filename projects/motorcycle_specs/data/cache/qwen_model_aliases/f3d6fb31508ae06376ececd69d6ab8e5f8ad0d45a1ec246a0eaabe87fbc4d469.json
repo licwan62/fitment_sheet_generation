@@ -1,0 +1,18 @@
+{
+  "decision": "MATCH",
+  "selected_candidate": "AN 650 Burgman Executive",
+  "confidence": "HIGH",
+  "match_basis": "SAME_NAME",
+  "explanation": "The input 'AN650A Burgman Executive' and the candidate 'AN 650 Burgman Executive' refer to the same motorcycle model, with only minor formatting differences (spacing, letter case, and the 'A' suffix which is a known market or configuration label for this model). The displacement (650), model name (Burgman), and trim level (Executive) are identical.",
+  "canonical_model_alias": "AN 650 Burgman Executive",
+  "configuration_tokens": [],
+  "brand_aliases": [],
+  "model_aliases": [
+    "AN 650 Burgman Executive"
+  ],
+  "status": "SUCCESS",
+  "prompt_version": "motorcycle-candidate-resolution-v4",
+  "model": "qwen-flash",
+  "make": "Suzuki",
+  "model_name": "AN650A Burgman Executive"
+}

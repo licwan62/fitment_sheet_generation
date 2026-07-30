@@ -1,0 +1,18 @@
+{
+  "decision": "MATCH",
+  "selected_candidate": "MR 250 Elsinore",
+  "confidence": "HIGH",
+  "match_basis": "MARKET_ALIAS",
+  "explanation": "The Honda MR250 is a known market-specific name for the MR 250 Elsinore model, which was marketed in North America as the 'Elsinore' variant. The name 'Elsinore' is a historical marketing designation for this model, and the displacement (250cc) and model code (MR) are identical. This is a recognized regional/branding alias.",
+  "canonical_model_alias": "MR 250 Elsinore",
+  "configuration_tokens": [],
+  "brand_aliases": [],
+  "model_aliases": [
+    "MR 250 Elsinore"
+  ],
+  "status": "SUCCESS",
+  "prompt_version": "motorcycle-candidate-resolution-v4",
+  "model": "qwen-flash",
+  "make": "Honda",
+  "model_name": "MR250"
+}

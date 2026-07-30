@@ -1,0 +1,20 @@
+{
+  "decision": "MATCH",
+  "selected_candidate": "Ducati Monster 750 i.e.",
+  "confidence": "HIGH",
+  "match_basis": "MARKET_ALIAS",
+  "explanation": "The 'Monster 750 City' is a market-specific name for the Ducati Monster 750 i.e., with 'City' denoting a configuration or regional variant. The core model identity (Monster 750 i.e.) matches exactly, and 'City' is a known marketing label used in certain markets without altering the underlying motorcycle model.",
+  "canonical_model_alias": "Monster 750 i.e.",
+  "configuration_tokens": [
+    "City"
+  ],
+  "brand_aliases": [],
+  "model_aliases": [
+    "Monster 750 i.e."
+  ],
+  "status": "SUCCESS",
+  "prompt_version": "motorcycle-candidate-resolution-v4",
+  "model": "qwen-flash",
+  "make": "Ducati",
+  "model_name": "Monster 750 City"
+}

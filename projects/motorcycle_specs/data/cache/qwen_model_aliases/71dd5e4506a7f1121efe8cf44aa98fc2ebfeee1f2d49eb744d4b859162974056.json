@@ -1,0 +1,20 @@
+{
+  "decision": "MATCH",
+  "selected_candidate": "CBF 600S",
+  "confidence": "HIGH",
+  "match_basis": "MARKET_ALIAS",
+  "explanation": "The 'CBF600SA' is a market-specific variant of the CBF600S, with 'SA' denoting a special edition or configuration (e.g., for the European or Australian market). The core model identity remains the CBF600S. The 'N' variant (CBF 600N) is a different model with distinct design and specifications.",
+  "canonical_model_alias": "CBF 600S",
+  "configuration_tokens": [
+    "SA"
+  ],
+  "brand_aliases": [],
+  "model_aliases": [
+    "CBF 600S"
+  ],
+  "status": "SUCCESS",
+  "prompt_version": "motorcycle-candidate-resolution-v4",
+  "model": "qwen-flash",
+  "make": "Honda",
+  "model_name": "CBF600SA"
+}

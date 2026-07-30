@@ -1,0 +1,16 @@
+{
+  "decision": "NO_MATCH",
+  "selected_candidate": "",
+  "confidence": "HIGH",
+  "match_basis": "NONE",
+  "explanation": "The input model '230 Dual' has a displacement of 230cc and is designated as a dual-sport model. None of the catalog candidates match this exact displacement or model designation. The closest candidates are 250cc models, but they differ in displacement and name. No known market alias, historical variant, abbreviation, or typo links '230 Dual' to any candidate. Therefore, no match is valid.",
+  "canonical_model_alias": "",
+  "configuration_tokens": [],
+  "brand_aliases": [],
+  "model_aliases": [],
+  "status": "SUCCESS",
+  "prompt_version": "motorcycle-candidate-resolution-v4",
+  "model": "qwen-flash",
+  "make": "CFMOTO",
+  "model_name": "230 Dual"
+}

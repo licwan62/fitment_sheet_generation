@@ -1,0 +1,20 @@
+{
+  "decision": "MATCH",
+  "selected_candidate": "GL1500C Valkyrie",
+  "confidence": "HIGH",
+  "match_basis": "MARKET_ALIAS",
+  "explanation": "The GL1500C/CD Valkyrie is a market-specific designation for the GL1500C Valkyrie, with 'CD' being a configuration or regional variant label. The core model identity (GL1500C) and name (Valkyrie) match exactly with the catalog candidate.",
+  "canonical_model_alias": "GL1500C Valkyrie",
+  "configuration_tokens": [
+    "CD"
+  ],
+  "brand_aliases": [],
+  "model_aliases": [
+    "GL1500C Valkyrie"
+  ],
+  "status": "SUCCESS",
+  "prompt_version": "motorcycle-candidate-resolution-v4",
+  "model": "qwen-flash",
+  "make": "Honda",
+  "model_name": "GL1500C/CD Valkyrie"
+}

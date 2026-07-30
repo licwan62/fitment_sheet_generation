@@ -1,0 +1,16 @@
+{
+  "decision": "INFER",
+  "confidence": "MEDIUM",
+  "length_mm": 2150,
+  "width_mm": 850,
+  "height_mm": 1250,
+  "wheelbase_mm": 1380,
+  "seat_height_mm": 890,
+  "ground_clearance_mm": 300,
+  "explanation": "Inferred from typical dimensions of similar off-road motocross bikes in the 125cc class, such as KTM SX125 and Husqvarna TC125, which share platform and design philosophy with Gas Gas Contact TX125. Dimensions are consistent with mid-2010s model year trends for this segment. No official catalog data available for confirmation.",
+  "status": "SUCCESS",
+  "prompt_version": "motorcycle-dimension-inference-v1",
+  "model": "qwen-flash",
+  "make": "Gas Gas",
+  "model_name": "Contact TX125"
+}

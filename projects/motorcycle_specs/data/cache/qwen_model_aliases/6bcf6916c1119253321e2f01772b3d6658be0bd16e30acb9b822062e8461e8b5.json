@@ -1,0 +1,16 @@
+{
+  "decision": "NO_MATCH",
+  "selected_candidate": "",
+  "confidence": "HIGH",
+  "match_basis": "NONE",
+  "explanation": "The input model 'Gixxer SF FI GP' is not a valid or recognized variant of the catalog candidates 'Gixxer SF250' and 'Gixxer SF250 MotoGP Edition'. The input includes 'FI GP', which suggests a fuel-injected, Grand Prix-themed version, but no such model exists in Suzuki's official lineup under that name. The catalog candidates are 250cc models, while 'FI GP' implies a different configuration or a misinterpretation of the actual model designation. There is no evidence of a market alias, historical alias, abbreviation, or typo linking the input to either candidate.",
+  "canonical_model_alias": "",
+  "configuration_tokens": [],
+  "brand_aliases": [],
+  "model_aliases": [],
+  "status": "SUCCESS",
+  "prompt_version": "motorcycle-candidate-resolution-v4",
+  "model": "qwen-flash",
+  "make": "Suzuki",
+  "model_name": "Gixxer SF FI GP"
+}

@@ -1,0 +1,18 @@
+{
+  "decision": "MATCH",
+  "selected_candidate": "BMW r 1300 gs adventure",
+  "confidence": "HIGH",
+  "match_basis": "MARKET_ALIAS",
+  "explanation": "The 'Tramuntana' is a known market-specific name for the R1300GS Adventure in certain regions, particularly in Europe. The model identity (R1300GS Adventure) is identical despite the regional naming variation.",
+  "canonical_model_alias": "r 1300 gs adventure",
+  "configuration_tokens": [
+    "Adventure"
+  ],
+  "brand_aliases": [],
+  "model_aliases": [],
+  "status": "SUCCESS",
+  "prompt_version": "motorcycle-candidate-resolution-v4",
+  "model": "qwen-flash",
+  "make": "BMW",
+  "model_name": "R1300GS Option 719 Tramuntana"
+}

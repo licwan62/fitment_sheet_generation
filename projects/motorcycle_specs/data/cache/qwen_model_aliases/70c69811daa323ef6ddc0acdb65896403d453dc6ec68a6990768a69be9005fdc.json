@@ -1,0 +1,16 @@
+{
+  "decision": "MATCH",
+  "selected_candidate": "Honda CRF1100L Africa Twin Adventure Sports",
+  "confidence": "HIGH",
+  "match_basis": "SAME_NAME",
+  "explanation": "The input model 'CRF1100A4 Africa Twin Adventure Sports' refers to the same motorcycle as the candidate 'Honda CRF1100L Africa Twin Adventure Sports', with 'A4' being a likely typo or misinterpretation of 'L' (common in model designations). The displacement (1100), model name ('Africa Twin Adventure Sports'), and manufacturer (Honda) are identical. The 'L' in CRF1100L is the correct designation for this model year, and 'A4' does not represent a valid variant.",
+  "canonical_model_alias": "CRF1100L Africa Twin Adventure Sports",
+  "configuration_tokens": [],
+  "brand_aliases": [],
+  "model_aliases": [],
+  "status": "SUCCESS",
+  "prompt_version": "motorcycle-candidate-resolution-v4",
+  "model": "qwen-flash",
+  "make": "Honda",
+  "model_name": "CRF1100A4 Africa Twin Adventure Sports"
+}

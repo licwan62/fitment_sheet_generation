@@ -1,0 +1,16 @@
+{
+  "decision": "INFER|UNKNOWN",
+  "confidence": "MEDIUM|LOW",
+  "length_mm": null,
+  "width_mm": null,
+  "height_mm": null,
+  "wheelbase_mm": null,
+  "seat_height_mm": null,
+  "ground_clearance_mm": null,
+  "explanation": "The Gas Gas Enducross EC 250 from 2000 is a vintage motocross model with limited publicly available dimensional data. No official catalog or technical documentation for this specific year/model combination was found. Dimensions may vary significantly between production years and markets, and no reliable source confirms exact measurements. Inference is uncertain due to lack of verifiable data.",
+  "status": "SUCCESS",
+  "prompt_version": "motorcycle-dimension-inference-v1",
+  "model": "qwen-flash",
+  "make": "Gas Gas",
+  "model_name": "Enducross EC 250 2000"
+}

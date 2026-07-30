@@ -1,0 +1,18 @@
+{
+  "decision": "MATCH",
+  "selected_candidate": "Softail Low Rider S 117 FXLRS",
+  "confidence": "HIGH",
+  "match_basis": "MARKET_ALIAS",
+  "explanation": "The input 'FXLRS Low Rider S 117' is the same motorcycle as 'Softail Low Rider S 117 FXLRS', with the model name reordered. 'FXLRS' is the factory designation for the Low Rider S 117, and 'Softail' is the platform name. The order of words in the catalog title does not change the underlying model identity; this is a known market and catalog variation.",
+  "canonical_model_alias": "Softail Low Rider S 117 FXLRS",
+  "configuration_tokens": [],
+  "brand_aliases": [],
+  "model_aliases": [
+    "Softail Low Rider S 117 FXLRS"
+  ],
+  "status": "SUCCESS",
+  "prompt_version": "motorcycle-candidate-resolution-v4",
+  "model": "qwen-flash",
+  "make": "Harley-Davidson",
+  "model_name": "FXLRS Low Rider S 117"
+}

@@ -1,0 +1,16 @@
+{
+  "decision": "MATCH",
+  "selected_candidate": "G 650 X Moto",
+  "confidence": "HIGH",
+  "match_basis": "MARKET_ALIAS",
+  "explanation": "The input 'G650 Xmoto' is a variant of the BMW G 650 X Moto, with 'Xmoto' being a market-specific or stylized spelling of 'X Moto'. The model identity, displacement (650cc), and platform are identical. This is a known regional or marketing variation of the same motorcycle.",
+  "canonical_model_alias": "G 650 X Moto",
+  "configuration_tokens": [],
+  "brand_aliases": [],
+  "model_aliases": [],
+  "status": "SUCCESS",
+  "prompt_version": "motorcycle-candidate-resolution-v4",
+  "model": "qwen-flash",
+  "make": "BMW",
+  "model_name": "G650 Xmoto"
+}

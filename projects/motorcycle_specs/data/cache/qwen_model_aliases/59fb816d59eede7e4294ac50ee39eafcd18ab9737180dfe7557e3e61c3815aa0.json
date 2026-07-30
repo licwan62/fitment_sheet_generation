@@ -1,0 +1,22 @@
+{
+  "decision": "MATCH",
+  "selected_candidate": "Bajaj pulsar n160",
+  "confidence": "HIGH",
+  "match_basis": "MARKET_ALIAS",
+  "explanation": "'Pulsar N 160 FI ABS UG' is a market-specific configuration of the Bajaj Pulsar N160, with 'FI' (Fuel Injection), 'ABS' (Anti-lock Braking System), and 'UG' (likely indicating a specific variant or regional designation) being equipment or configuration labels. The core model identity remains Bajaj Pulsar N160.",
+  "canonical_model_alias": "pulsar n160",
+  "configuration_tokens": [
+    "FI",
+    "ABS",
+    "UG"
+  ],
+  "brand_aliases": [],
+  "model_aliases": [
+    "pulsar n160"
+  ],
+  "status": "SUCCESS",
+  "prompt_version": "motorcycle-candidate-resolution-v4",
+  "model": "qwen-flash",
+  "make": "Bajaj",
+  "model_name": "Pulsar N 160 FI ABS UG"
+}

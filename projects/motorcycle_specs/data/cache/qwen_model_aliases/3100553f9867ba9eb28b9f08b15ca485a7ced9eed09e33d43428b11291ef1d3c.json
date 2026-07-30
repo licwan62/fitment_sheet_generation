@@ -1,0 +1,18 @@
+{
+  "decision": "MATCH",
+  "selected_candidate": "Suzuki Burgman 200 ABS",
+  "confidence": "HIGH",
+  "match_basis": "SAME_NAME",
+  "explanation": "The input 'UH200 Burgman ABS' refers to the same motorcycle model as 'Suzuki Burgman 200 ABS', with 'UH200' being the model code and 'Burgman ABS' the name. The catalog candidate matches exactly in model identity, displacement, and features.",
+  "canonical_model_alias": "Burgman 200 ABS",
+  "configuration_tokens": [],
+  "brand_aliases": [],
+  "model_aliases": [
+    "Burgman 200 ABS"
+  ],
+  "status": "SUCCESS",
+  "prompt_version": "motorcycle-candidate-resolution-v4",
+  "model": "qwen-flash",
+  "make": "Suzuki",
+  "model_name": "UH200 Burgman ABS"
+}

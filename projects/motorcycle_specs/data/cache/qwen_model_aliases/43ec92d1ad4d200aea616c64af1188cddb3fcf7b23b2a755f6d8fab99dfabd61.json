@@ -1,0 +1,18 @@
+{
+  "decision": "MATCH",
+  "selected_candidate": "gasgas ex 250 f",
+  "confidence": "HIGH",
+  "match_basis": "SAME_NAME",
+  "explanation": "The input 'EX 250F' is a direct match in name and displacement to the catalog candidate 'gasgas ex 250 f', with only case variation and spacing difference. No other model variants or displacements are involved.",
+  "canonical_model_alias": "ex 250 f",
+  "configuration_tokens": [],
+  "brand_aliases": [],
+  "model_aliases": [
+    "gasgas ex 250 f"
+  ],
+  "status": "SUCCESS",
+  "prompt_version": "motorcycle-candidate-resolution-v4",
+  "model": "qwen-flash",
+  "make": "Gas Gas",
+  "model_name": "EX 250F"
+}

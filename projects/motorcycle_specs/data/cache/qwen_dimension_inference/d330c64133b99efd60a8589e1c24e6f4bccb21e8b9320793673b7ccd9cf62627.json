@@ -1,0 +1,16 @@
+{
+  "decision": "INFER|UNKNOWN",
+  "confidence": "MEDIUM|LOW",
+  "length_mm": null,
+  "width_mm": null,
+  "height_mm": null,
+  "wheelbase_mm": null,
+  "seat_height_mm": null,
+  "ground_clearance_mm": null,
+  "explanation": "The Aprilia SR 160 Race is a limited-edition or track-focused variant of the standard SR 160. Due to its niche market positioning and lack of official catalog data for this specific model, dimensions cannot be reliably inferred. Variations in design between standard and race versions may affect key measurements, and no definitive source confirms these values. Therefore, dimensions are marked as unknown with medium to low confidence.",
+  "status": "SUCCESS",
+  "prompt_version": "motorcycle-dimension-inference-v1",
+  "model": "qwen-flash",
+  "make": "Aprilia",
+  "model_name": "SR 160 Race"
+}

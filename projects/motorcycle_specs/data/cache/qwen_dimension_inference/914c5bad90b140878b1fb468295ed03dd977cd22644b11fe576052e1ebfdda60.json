@@ -1,0 +1,16 @@
+{
+  "decision": "INFER",
+  "confidence": "MEDIUM",
+  "length_mm": 2100,
+  "width_mm": 800,
+  "height_mm": 1050,
+  "wheelbase_mm": 1340,
+  "seat_height_mm": 780,
+  "ground_clearance_mm": 190,
+  "explanation": "Inferred from typical dimensions of 1960s Honda scrambler models (e.g., CL125, CL250) with similar engine displacement and design. The CL200 Scrambler shares platform traits with the CL250 but is smaller; dimensions are estimated based on historical data and proportional scaling. No official catalog page available for confirmation.",
+  "status": "SUCCESS",
+  "prompt_version": "motorcycle-dimension-inference-v1",
+  "model": "qwen-flash",
+  "make": "Honda",
+  "model_name": "CL200 Scrambler"
+}

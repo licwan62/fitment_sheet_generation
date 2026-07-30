@@ -1,0 +1,16 @@
+{
+  "decision": "MATCH",
+  "selected_candidate": "Honda Dream 305",
+  "confidence": "HIGH",
+  "match_basis": "SAME_NAME",
+  "explanation": "The input 'CA77 Dream 305' and the candidate 'Honda Dream 305' refer to the same motorcycle model, with 'CA77' being the model code for the 1969 Honda Dream 305. The catalog title matches the known model name and displacement exactly, with only the model code differing. No other candidate shares the same identity.",
+  "canonical_model_alias": "Dream 305",
+  "configuration_tokens": [],
+  "brand_aliases": [],
+  "model_aliases": [],
+  "status": "SUCCESS",
+  "prompt_version": "motorcycle-candidate-resolution-v4",
+  "model": "qwen-flash",
+  "make": "Honda",
+  "model_name": "CA77 Dream 305"
+}

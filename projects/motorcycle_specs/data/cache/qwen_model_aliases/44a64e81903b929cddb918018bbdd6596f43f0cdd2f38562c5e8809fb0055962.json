@@ -1,0 +1,20 @@
+{
+  "decision": "MATCH",
+  "selected_candidate": "aprilia mana 850 gt",
+  "confidence": "HIGH",
+  "match_basis": "SAME_NAME",
+  "explanation": "The input 'Mana 850 GT ABS' is a direct match to the catalog candidate 'aprilia mana 850 gt' in name and displacement, with 'ABS' being a standard feature not altering the core model identity. The variant 'NA Mana 850GT' is a known North American market configuration of the same model, but the base model remains identical.",
+  "canonical_model_alias": "aprilia mana 850 gt",
+  "configuration_tokens": [
+    "ABS"
+  ],
+  "brand_aliases": [],
+  "model_aliases": [
+    "mana 850 gt"
+  ],
+  "status": "SUCCESS",
+  "prompt_version": "motorcycle-candidate-resolution-v4",
+  "model": "qwen-flash",
+  "make": "Aprilia",
+  "model_name": "Mana 850 GT ABS"
+}

@@ -1,0 +1,16 @@
+{
+  "decision": "MATCH",
+  "selected_candidate": "beta rx 250 2t",
+  "confidence": "HIGH",
+  "match_basis": "SAME_NAME",
+  "explanation": "The input '250 RX' corresponds directly to the catalog candidate 'beta rx 250 2t', which is the full, canonical name of the same motorcycle model. The displacement (250), model series (RX), and two-stroke engine configuration (2t) are identical. The absence of '2t' in the input does not change the identity, as 'RX' is a well-known Beta model line with 250cc variants.",
+  "canonical_model_alias": "rx 250 2t",
+  "configuration_tokens": [],
+  "brand_aliases": [],
+  "model_aliases": [],
+  "status": "SUCCESS",
+  "prompt_version": "motorcycle-candidate-resolution-v4",
+  "model": "qwen-flash",
+  "make": "Beta",
+  "model_name": "250 RX"
+}

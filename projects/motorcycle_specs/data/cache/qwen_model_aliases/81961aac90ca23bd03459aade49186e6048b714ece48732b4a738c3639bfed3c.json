@@ -1,0 +1,16 @@
+{
+  "decision": "NO_MATCH",
+  "selected_candidate": "",
+  "confidence": "HIGH",
+  "match_basis": "NONE",
+  "explanation": "The model RM500 is a vintage motocross motorcycle produced by Suzuki, while all catalog candidates are different models: RG 500 is a racing road bike, DR 500 S is a dual-sport, GS 500 and GS 500F are standard street bikes, and RM-Z250/450 are modern motocross models. None match the RM500 in displacement, intended use, or platform.",
+  "canonical_model_alias": "",
+  "configuration_tokens": [],
+  "brand_aliases": [],
+  "model_aliases": [],
+  "status": "SUCCESS",
+  "prompt_version": "motorcycle-candidate-resolution-v4",
+  "model": "qwen-flash",
+  "make": "Suzuki",
+  "model_name": "RM500"
+}

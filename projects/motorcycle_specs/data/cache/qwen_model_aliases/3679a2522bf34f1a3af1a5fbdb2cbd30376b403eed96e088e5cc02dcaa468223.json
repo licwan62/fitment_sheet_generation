@@ -1,0 +1,16 @@
+{
+  "decision": "MATCH",
+  "selected_candidate": "SL 99 \n\t\tMotosport 90",
+  "confidence": "HIGH",
+  "match_basis": "MARKET_ALIAS",
+  "explanation": "The Honda SL90 is a known model in the Honda lineup, and 'SL 99 Motosport 90' is a market-specific or promotional variant that refers to the same underlying motorcycle. The 'SL' designation and 90cc displacement are consistent, and 'Motosport 90' is a common alternate name used in certain regions for the SL90. The '99' is likely a typographical or cataloging variation of '90', but the core identity remains unchanged.",
+  "canonical_model_alias": "SL 99 Motosport 90",
+  "configuration_tokens": [],
+  "brand_aliases": [],
+  "model_aliases": [],
+  "status": "SUCCESS",
+  "prompt_version": "motorcycle-candidate-resolution-v4",
+  "model": "qwen-flash",
+  "make": "Honda",
+  "model_name": "SL90"
+}

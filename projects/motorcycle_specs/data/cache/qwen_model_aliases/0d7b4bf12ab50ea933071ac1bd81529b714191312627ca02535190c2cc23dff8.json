@@ -1,0 +1,16 @@
+{
+  "decision": "NO_MATCH",
+  "selected_candidate": "",
+  "confidence": "HIGH",
+  "match_basis": "NONE",
+  "explanation": "The '125 RR-Race Edition' is a race-focused variant of the Beta RR 125, while 'RR 125 Enduro' and 'RR 125 Motard' are distinct configurations with different intended uses (enduro vs. motard). The Race Edition is not equivalent to either, as it represents a specialized homologation or limited edition model with unique specifications, not a market or configuration variant of the base models.",
+  "canonical_model_alias": "",
+  "configuration_tokens": [],
+  "brand_aliases": [],
+  "model_aliases": [],
+  "status": "SUCCESS",
+  "prompt_version": "motorcycle-candidate-resolution-v4",
+  "model": "qwen-flash",
+  "make": "Beta",
+  "model_name": "125 RR-Race Edition"
+}

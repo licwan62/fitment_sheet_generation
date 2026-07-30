@@ -1,0 +1,15 @@
+{
+  "decision": "MATCH",
+  "selected_candidate": "CBR 600F4i",
+  "canonical_model_alias": "CBR600F4i",
+  "configuration_tokens": [],
+  "brand_aliases": [],
+  "model_aliases": [
+    "CBR 600F4i"
+  ],
+  "status": "SUCCESS",
+  "prompt_version": "motorcycle-candidate-resolution-v3",
+  "model": "qwen-flash",
+  "make": "Honda",
+  "model_name": "CBR600F F4I"
+}

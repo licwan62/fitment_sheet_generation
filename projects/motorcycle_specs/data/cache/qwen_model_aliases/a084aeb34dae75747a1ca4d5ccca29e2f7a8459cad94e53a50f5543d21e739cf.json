@@ -1,0 +1,20 @@
+{
+  "decision": "MATCH",
+  "selected_candidate": "TS 185B",
+  "confidence": "HIGH",
+  "match_basis": "SAME_NAME",
+  "explanation": "The input 'TS185' is a direct match in name and displacement to the catalog candidate 'TS 185B', which is a known variant of the same underlying model. The 'B' suffix denotes a specific configuration or market version, but does not change the core identity of the TS185 motorcycle.",
+  "canonical_model_alias": "TS 185B",
+  "configuration_tokens": [
+    "B"
+  ],
+  "brand_aliases": [],
+  "model_aliases": [
+    "TS 185B"
+  ],
+  "status": "SUCCESS",
+  "prompt_version": "motorcycle-candidate-resolution-v4",
+  "model": "qwen-flash",
+  "make": "Suzuki",
+  "model_name": "TS185"
+}

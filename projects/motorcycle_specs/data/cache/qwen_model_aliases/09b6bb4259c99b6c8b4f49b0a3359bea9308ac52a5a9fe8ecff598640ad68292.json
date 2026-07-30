@@ -1,0 +1,16 @@
+{
+  "decision": "NO_MATCH",
+  "selected_candidate": "",
+  "confidence": "HIGH",
+  "match_basis": "NONE",
+  "explanation": "The input model 'TE90' does not correspond to any of the catalog candidates. Hyosung TE90 is a distinct model not listed among the provided candidates, which include different displacements and model names (e.g., GT 250, ST 700 I). No known market alias, historical name, abbreviation, or typo links 'TE90' to any candidate. The displacement and model designation are inconsistent across all options.",
+  "canonical_model_alias": "",
+  "configuration_tokens": [],
+  "brand_aliases": [],
+  "model_aliases": [],
+  "status": "SUCCESS",
+  "prompt_version": "motorcycle-candidate-resolution-v4",
+  "model": "qwen-flash",
+  "make": "Hyosung",
+  "model_name": "TE90"
+}

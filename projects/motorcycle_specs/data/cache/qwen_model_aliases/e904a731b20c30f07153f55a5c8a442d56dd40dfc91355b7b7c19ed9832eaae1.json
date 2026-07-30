@@ -1,0 +1,20 @@
+{
+  "decision": "MATCH",
+  "selected_candidate": "SM 450 FSE",
+  "confidence": "HIGH",
+  "match_basis": "SAME_NAME",
+  "explanation": "The input 'SM 450' matches the core model identity of 'SM 450 FSE', which is a known variant in Gas Gas's catalog. The 'FSE' suffix denotes a specific configuration (fuel injection, electronic systems), but the base model remains SM 450. Other candidates either differ in model name (e.g., MC 450F, EC 450 FSE) or are unrelated models (e.g., Pampera, Halley). 'SM 450 FSE' is the canonical expression for this model.",
+  "canonical_model_alias": "SM 450 FSE",
+  "configuration_tokens": [
+    "FSE"
+  ],
+  "brand_aliases": [],
+  "model_aliases": [
+    "SM 450 FSE"
+  ],
+  "status": "SUCCESS",
+  "prompt_version": "motorcycle-candidate-resolution-v4",
+  "model": "qwen-flash",
+  "make": "Gas Gas",
+  "model_name": "SM 450"
+}

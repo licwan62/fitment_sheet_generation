@@ -1,0 +1,19 @@
+{
+  "decision": "MATCH",
+  "selected_candidate": "Harley-Davidson VRSCSE Screamin Eagle V-Rod",
+  "confidence": "HIGH",
+  "match_basis": "MARKET_ALIAS",
+  "explanation": "'VRXSE Scremin Eagle Destroyer' is a market or regional mislabeling of the Harley-Davidson VRSCSE Screamin Eagle V-Rod, with 'VRXSE' likely a typo or variant spelling of 'VRSCSE', and 'Destroyer' being a non-standard nickname not in official nomenclature but associated with the V-Rod's aggressive branding. The model identity matches exactly: VRSCSE (V-Rod Screamin' Eagle) with the same engine, platform, and configuration.",
+  "canonical_model_alias": "VRSCSE Screamin Eagle V-Rod",
+  "configuration_tokens": [],
+  "brand_aliases": [],
+  "model_aliases": [
+    "Screamin Eagle V-Rod",
+    "VRSCSE Screamin Eagle V-Rod"
+  ],
+  "status": "SUCCESS",
+  "prompt_version": "motorcycle-candidate-resolution-v4",
+  "model": "qwen-flash",
+  "make": "Harley-Davidson",
+  "model_name": "VRXSE Screamin Eagle Destroyer"
+}

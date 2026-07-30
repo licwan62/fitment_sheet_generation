@@ -1,0 +1,16 @@
+{
+  "decision": "NO_MATCH",
+  "selected_candidate": "",
+  "confidence": "HIGH",
+  "match_basis": "NONE",
+  "explanation": "The input model 'T305' refers to a Suzuki motorcycle with a 305cc engine, but none of the catalog candidates match this specific model. The closest candidate, 'T 305 Raider', is a different model name and not confirmed as a direct alias for T305. Other candidates are unrelated in displacement, platform, or model lineage (e.g., V-Strom series are adventure bikes with larger engines). No evidence supports that any candidate is the same underlying motorcycle.",
+  "canonical_model_alias": "",
+  "configuration_tokens": [],
+  "brand_aliases": [],
+  "model_aliases": [],
+  "status": "SUCCESS",
+  "prompt_version": "motorcycle-candidate-resolution-v4",
+  "model": "qwen-flash",
+  "make": "Suzuki",
+  "model_name": "T305"
+}

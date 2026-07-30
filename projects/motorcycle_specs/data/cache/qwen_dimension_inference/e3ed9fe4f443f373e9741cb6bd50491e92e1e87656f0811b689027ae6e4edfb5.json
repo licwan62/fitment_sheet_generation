@@ -1,0 +1,16 @@
+{
+  "decision": "INFER|UNKNOWN",
+  "confidence": "LOW",
+  "length_mm": null,
+  "width_mm": null,
+  "height_mm": null,
+  "wheelbase_mm": null,
+  "seat_height_mm": null,
+  "ground_clearance_mm": null,
+  "explanation": "Husqvarna WXE 610 is a less commonly documented model, and no reliable public specifications are available for its dimensions. The model may have varied significantly by year or market, and without access to official documentation or verified sources, accurate inference is not possible. Therefore, all dimensions are marked as unknown.",
+  "status": "SUCCESS",
+  "prompt_version": "motorcycle-dimension-inference-v1",
+  "model": "qwen-flash",
+  "make": "Husqvarna",
+  "model_name": "WXE 610"
+}

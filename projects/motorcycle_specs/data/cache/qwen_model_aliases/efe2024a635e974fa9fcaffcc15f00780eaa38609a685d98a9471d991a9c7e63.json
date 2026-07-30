@@ -1,0 +1,18 @@
+{
+  "decision": "MATCH",
+  "selected_candidate": "Bajaj platina 100",
+  "confidence": "HIGH",
+  "match_basis": "MARKET_ALIAS",
+  "explanation": "The CT 100 is a market-specific name for the Bajaj Platina 100, commonly used in certain regions. The model shares identical engine, platform, and specifications, confirming it is the same motorcycle under different naming conventions.",
+  "canonical_model_alias": "Platina 100",
+  "configuration_tokens": [],
+  "brand_aliases": [],
+  "model_aliases": [
+    "platina 100"
+  ],
+  "status": "SUCCESS",
+  "prompt_version": "motorcycle-candidate-resolution-v4",
+  "model": "qwen-flash",
+  "make": "Bajaj",
+  "model_name": "CT 100"
+}

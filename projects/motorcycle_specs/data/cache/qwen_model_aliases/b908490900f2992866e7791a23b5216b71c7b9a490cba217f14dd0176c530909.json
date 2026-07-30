@@ -1,0 +1,13 @@
+{
+  "decision": "NO_MATCH",
+  "selected_candidate": "",
+  "canonical_model_alias": "",
+  "configuration_tokens": [],
+  "brand_aliases": [],
+  "model_aliases": [],
+  "status": "SUCCESS",
+  "prompt_version": "motorcycle-candidate-resolution-v3",
+  "model": "qwen-flash",
+  "make": "BMW",
+  "model_name": "F650CS ABS"
+}

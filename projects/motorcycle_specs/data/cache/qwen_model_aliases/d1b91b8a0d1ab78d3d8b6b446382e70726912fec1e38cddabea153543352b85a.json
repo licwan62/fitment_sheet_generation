@@ -1,0 +1,16 @@
+{
+  "decision": "MATCH",
+  "selected_candidate": "K \n\t\t1100LT Highline",
+  "confidence": "HIGH",
+  "match_basis": "MARKET_ALIAS",
+  "explanation": "The input 'K1100LT High Line' is a market-specific naming variant of the same model as 'K 1100LT Highline', with 'High Line' and 'Highline' being interchangeable designations for the same premium trim level in BMW's K-series motorcycles. The displacement (1100), model type (LT), and configuration are identical.",
+  "canonical_model_alias": "K 1100LT Highline",
+  "configuration_tokens": [],
+  "brand_aliases": [],
+  "model_aliases": [],
+  "status": "SUCCESS",
+  "prompt_version": "motorcycle-candidate-resolution-v4",
+  "model": "qwen-flash",
+  "make": "BMW",
+  "model_name": "K1100LT High Line"
+}

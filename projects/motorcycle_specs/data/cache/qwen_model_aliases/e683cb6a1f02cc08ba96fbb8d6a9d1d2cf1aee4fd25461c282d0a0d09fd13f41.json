@@ -1,0 +1,21 @@
+{
+  "decision": "MATCH",
+  "selected_candidate": "GL 1800 Gold Wing / DCT",
+  "confidence": "HIGH",
+  "match_basis": "MARKET_ALIAS",
+  "explanation": "'GL1800P Gold Wing Premium Audio' is a market-specific configuration of the GL1800 Gold Wing with DCT and premium audio, which corresponds to the 'GL 1800 Gold Wing / DCT' model in the catalog. The 'P' suffix denotes a premium trim, consistent with the Premium Audio variant available in certain markets. The core motorcycle identity (GL1800 Gold Wing with DCT) matches exactly.",
+  "canonical_model_alias": "GL 1800 Gold Wing / DCT",
+  "configuration_tokens": [
+    "Premium Audio",
+    "DCT"
+  ],
+  "brand_aliases": [],
+  "model_aliases": [
+    "GL 1800 Gold Wing / DCT"
+  ],
+  "status": "SUCCESS",
+  "prompt_version": "motorcycle-candidate-resolution-v4",
+  "model": "qwen-flash",
+  "make": "Honda",
+  "model_name": "GL1800P Gold Wing Premium Audio"
+}

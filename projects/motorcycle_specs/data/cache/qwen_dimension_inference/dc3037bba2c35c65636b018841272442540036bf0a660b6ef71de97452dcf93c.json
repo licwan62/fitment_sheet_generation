@@ -1,0 +1,16 @@
+{
+  "decision": "INFER|UNKNOWN",
+  "confidence": "MEDIUM|LOW",
+  "length_mm": null,
+  "width_mm": null,
+  "height_mm": null,
+  "wheelbase_mm": null,
+  "seat_height_mm": null,
+  "ground_clearance_mm": null,
+  "explanation": "The Gas Gas EC 250 Cami is a motocross model, but specific dimensions vary significantly by year and market. Without access to a catalog or official specifications for this exact variant, reliable inference is not possible. Dimensions from similar models (e.g., KTM 250 SX) are not directly transferable due to potential differences in frame geometry, suspension setup, and component placement. Therefore, the model identity and dimensional data remain uncertain.",
+  "status": "SUCCESS",
+  "prompt_version": "motorcycle-dimension-inference-v1",
+  "model": "qwen-flash",
+  "make": "Gas Gas",
+  "model_name": "EC 250 Cami"
+}

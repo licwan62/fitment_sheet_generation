@@ -1,0 +1,14 @@
+{
+  "decision": "NO_MATCH",
+  "selected_candidate": "",
+  "confidence": "HIGH",
+  "match_basis": "NONE",
+  "explanation": "Honda is not the manufacturer of the Montesa Cota 4RT260, which is a Spanish motorcycle produced by Montesa, a subsidiary of the Cycles Peugeot group. The 'MRT260 Montesa Cota 4RT260' is a specific model from Montesa's lineup and does not align with any Honda model. No candidate in the catalog matches this description under Honda's branding or model line.",
+  "status": "SUCCESS",
+  "prompt_version": "motorcycle-candidate-resolution-v4",
+  "model": "qwen-flash",
+  "make": "Honda",
+  "model_name": "MRT260 Montesa Cota 4RT260",
+  "brand_aliases": [],
+  "model_aliases": []
+}

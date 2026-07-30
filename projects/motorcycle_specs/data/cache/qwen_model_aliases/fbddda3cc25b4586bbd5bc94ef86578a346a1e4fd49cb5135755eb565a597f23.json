@@ -1,0 +1,16 @@
+{
+  "decision": "NO_MATCH",
+  "selected_candidate": "",
+  "confidence": "HIGH",
+  "match_basis": "NONE",
+  "explanation": "The model 'Beamer II' is not a known variant or alias for any of the listed E-TON catalog candidates. None of the candidates match the name 'Beamer II' in terms of naming pattern, displacement, or historical reference. The term 'Beamer' is not associated with E-TON's product line, and no evidence suggests it is a market-specific, typographical, or historical alias for any of the listed models.",
+  "canonical_model_alias": "",
+  "configuration_tokens": [],
+  "brand_aliases": [],
+  "model_aliases": [],
+  "status": "SUCCESS",
+  "prompt_version": "motorcycle-candidate-resolution-v4",
+  "model": "qwen-flash",
+  "make": "E-TON",
+  "model_name": "Beamer II"
+}

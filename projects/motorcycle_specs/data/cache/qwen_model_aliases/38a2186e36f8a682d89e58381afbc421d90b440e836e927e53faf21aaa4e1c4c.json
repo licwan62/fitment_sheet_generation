@@ -1,0 +1,16 @@
+{
+  "decision": "NO_MATCH",
+  "selected_candidate": "",
+  "confidence": "HIGH",
+  "match_basis": "NONE",
+  "explanation": "The input 'KHRTT' does not correspond to any known Harley-Davidson model in the catalog candidates. None of the listed candidates match the identifier 'KHRTT' in name, displacement, or model lineage. The term 'KHRTT' appears to be a non-standard or invalid input, possibly a typo or misinterpretation. No candidate is a valid alias for this identifier.",
+  "canonical_model_alias": "",
+  "configuration_tokens": [],
+  "brand_aliases": [],
+  "model_aliases": [],
+  "status": "SUCCESS",
+  "prompt_version": "motorcycle-candidate-resolution-v4",
+  "model": "qwen-flash",
+  "make": "Harley-Davidson",
+  "model_name": "KHRTT"
+}

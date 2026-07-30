@@ -1,0 +1,16 @@
+{
+  "decision": "NO_MATCH",
+  "selected_candidate": "",
+  "confidence": "HIGH",
+  "match_basis": "NONE",
+  "explanation": "The model 'SR250' is not present in the catalog candidates. The candidates include different Husqvarna models such as WR250, TE250R, TXC250R, Vitpilen 250, and 250CR, none of which are the SR250. The SR250 is a distinct model line from Husqvarna, historically known as a street-oriented motorcycle with a different design and platform compared to the off-road or adventure-focused models listed. No candidate matches the SR250 in name, configuration, or identity.",
+  "canonical_model_alias": "",
+  "configuration_tokens": [],
+  "brand_aliases": [],
+  "model_aliases": [],
+  "status": "SUCCESS",
+  "prompt_version": "motorcycle-candidate-resolution-v4",
+  "model": "qwen-flash",
+  "make": "Husqvarna",
+  "model_name": "SR250"
+}

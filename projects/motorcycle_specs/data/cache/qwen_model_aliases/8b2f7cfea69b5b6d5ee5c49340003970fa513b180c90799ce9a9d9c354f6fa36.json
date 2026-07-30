@@ -1,0 +1,16 @@
+{
+  "decision": "MATCH",
+  "selected_candidate": "R 12GS",
+  "confidence": "HIGH",
+  "match_basis": "MARKET_ALIAS",
+  "explanation": "R 12 G/S is a market-specific naming variant of the R 12GS, with 'G/S' being the standard designation used in international markets. The input 'R 12 G/S' uses a space and slash format common in some regions, while 'R 12GS' is the consolidated form used in BMW's catalog. Both refer to the same model.",
+  "canonical_model_alias": "R 12GS",
+  "configuration_tokens": [],
+  "brand_aliases": [],
+  "model_aliases": [],
+  "status": "SUCCESS",
+  "prompt_version": "motorcycle-candidate-resolution-v4",
+  "model": "qwen-flash",
+  "make": "BMW",
+  "model_name": "R 12 G/S"
+}

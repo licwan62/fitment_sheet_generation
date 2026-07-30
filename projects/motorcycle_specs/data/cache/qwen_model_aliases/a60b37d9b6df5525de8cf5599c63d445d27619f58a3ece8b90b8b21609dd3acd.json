@@ -1,0 +1,16 @@
+{
+  "decision": "NO_MATCH",
+  "selected_candidate": "",
+  "confidence": "HIGH",
+  "match_basis": "NONE",
+  "explanation": "The model 'M50 Boulevard SE' is not found in the catalog candidates. No matching or related motorcycle model from Suzuki with this exact configuration (M50 displacement, Boulevard series, SE trim) exists in the provided list. The M50 designation and SE variant are specific to the Suzuki Boulevard S50 and S50A models, but no candidate matches this precise identity.",
+  "canonical_model_alias": "",
+  "configuration_tokens": [],
+  "brand_aliases": [],
+  "model_aliases": [],
+  "status": "SUCCESS",
+  "prompt_version": "motorcycle-candidate-resolution-v4",
+  "model": "qwen-flash",
+  "make": "Suzuki",
+  "model_name": "M50 Boulevard SE"
+}

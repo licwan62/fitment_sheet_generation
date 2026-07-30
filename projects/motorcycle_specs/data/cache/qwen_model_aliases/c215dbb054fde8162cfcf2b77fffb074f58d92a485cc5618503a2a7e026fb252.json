@@ -1,0 +1,20 @@
+{
+  "decision": "MATCH",
+  "selected_candidate": "Honda CB 750",
+  "confidence": "HIGH",
+  "match_basis": "SAME_NAME",
+  "explanation": "The input 'CB750L' refers to the Honda CB750 model, and 'Honda CB 750' is a direct catalog match. The 'L' suffix may denote a market-specific configuration or variant (e.g., long seat or luxury), but does not alter the core model identity. The base motorcycle is identical to the standard CB750.",
+  "canonical_model_alias": "CB 750",
+  "configuration_tokens": [
+    "L"
+  ],
+  "brand_aliases": [],
+  "model_aliases": [
+    "CB 750"
+  ],
+  "status": "SUCCESS",
+  "prompt_version": "motorcycle-candidate-resolution-v4",
+  "model": "qwen-flash",
+  "make": "Honda",
+  "model_name": "CB750L"
+}

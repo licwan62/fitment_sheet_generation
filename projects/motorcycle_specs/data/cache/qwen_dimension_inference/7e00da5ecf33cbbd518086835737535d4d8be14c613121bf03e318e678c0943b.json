@@ -1,0 +1,16 @@
+{
+  "decision": "INFER|UNKNOWN",
+  "confidence": "MEDIUM|LOW",
+  "length_mm": null,
+  "width_mm": null,
+  "height_mm": null,
+  "wheelbase_mm": null,
+  "seat_height_mm": null,
+  "ground_clearance_mm": null,
+  "explanation": "The Buell RS1200 model is not definitively identified in available data, and dimensions may vary by year and market. Without a confirmed catalog reference or consistent model-specific details, accurate inference is limited to uncertainty.",
+  "status": "SUCCESS",
+  "prompt_version": "motorcycle-dimension-inference-v1",
+  "model": "qwen-flash",
+  "make": "Buell",
+  "model_name": "RS1200"
+}

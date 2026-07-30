@@ -1,0 +1,16 @@
+{
+  "decision": "INFER",
+  "confidence": "MEDIUM",
+  "length_mm": 2150,
+  "width_mm": 850,
+  "height_mm": 1200,
+  "wheelbase_mm": 1380,
+  "seat_height_mm": 870,
+  "ground_clearance_mm": 300,
+  "explanation": "Inferred from typical dimensions of 125cc off-road motocross bikes in the same class (e.g., KTM SX 125, Husqvarna FC 125), considering the TXT Pro 125 Replica Factory's factory race-oriented design and similar chassis architecture. Dimensions are estimated based on known model lineage and industry benchmarks for comparable models, but not confirmed via official catalog data.",
+  "status": "SUCCESS",
+  "prompt_version": "motorcycle-dimension-inference-v1",
+  "model": "qwen-flash",
+  "make": "Gas Gas",
+  "model_name": "TXT Pro 125 Replica Factory"
+}

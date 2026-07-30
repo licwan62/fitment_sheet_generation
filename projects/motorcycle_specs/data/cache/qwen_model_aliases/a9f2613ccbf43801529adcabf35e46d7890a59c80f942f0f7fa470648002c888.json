@@ -1,0 +1,20 @@
+{
+  "decision": "MATCH",
+  "selected_candidate": "K 75RTA",
+  "confidence": "HIGH",
+  "match_basis": "MARKET_ALIAS",
+  "explanation": "The input 'K75RT ABS' refers to the BMW K 75RT with ABS, which was marketed as the 'K 75RTA' in certain regions, particularly in North America. The 'A' suffix denotes the ABS version, making it a market-specific variant of the same underlying model. The displacement and core configuration are identical.",
+  "canonical_model_alias": "K 75RTA",
+  "configuration_tokens": [
+    "ABS"
+  ],
+  "brand_aliases": [],
+  "model_aliases": [
+    "K 75RTA"
+  ],
+  "status": "SUCCESS",
+  "prompt_version": "motorcycle-candidate-resolution-v4",
+  "model": "qwen-flash",
+  "make": "BMW",
+  "model_name": "K75RT ABS"
+}

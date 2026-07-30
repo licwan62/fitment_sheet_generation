@@ -1,0 +1,18 @@
+{
+  "decision": "MATCH",
+  "selected_candidate": "Alp 4.0",
+  "confidence": "HIGH",
+  "match_basis": "SAME_NAME",
+  "explanation": "The input 'Alp X' is a known market or configuration designation for the Beta Alp 4.0 model, where 'X' denotes a specific variant or trim level within the Alp 4.0 lineup. The core motorcycle identity matches exactly.",
+  "canonical_model_alias": "Alp 4.0",
+  "configuration_tokens": [
+    "X"
+  ],
+  "brand_aliases": [],
+  "model_aliases": [],
+  "status": "SUCCESS",
+  "prompt_version": "motorcycle-candidate-resolution-v4",
+  "model": "qwen-flash",
+  "make": "Beta",
+  "model_name": "Alp X"
+}

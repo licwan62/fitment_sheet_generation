@@ -1,0 +1,18 @@
+{
+  "decision": "MATCH",
+  "selected_candidate": "GN 125F",
+  "confidence": "HIGH",
+  "match_basis": "TYPO",
+  "explanation": "The input 'GN125F' is a direct typographical variant of 'GN 125F', with the absence of a space between 'GN' and '125'. The 'F' suffix is consistent across both, indicating the same model configuration. This is a clear case of a spacing typo in the input.",
+  "canonical_model_alias": "GN 125F",
+  "configuration_tokens": [
+    "F"
+  ],
+  "brand_aliases": [],
+  "model_aliases": [],
+  "status": "SUCCESS",
+  "prompt_version": "motorcycle-candidate-resolution-v4",
+  "model": "qwen-flash",
+  "make": "Suzuki",
+  "model_name": "GN125F"
+}

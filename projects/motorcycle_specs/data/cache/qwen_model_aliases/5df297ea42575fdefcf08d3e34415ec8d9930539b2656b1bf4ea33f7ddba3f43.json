@@ -1,0 +1,18 @@
+{
+  "decision": "MATCH",
+  "selected_candidate": "MSX 125 Grom",
+  "confidence": "HIGH",
+  "match_basis": "MARKET_ALIAS",
+  "explanation": "The MSX 125 Grom is the same motorcycle as the Honda Grom 125, with 'MSX' being the European and international market name for the model. The model identity, displacement, and platform are identical.",
+  "canonical_model_alias": "MSX 125 Grom",
+  "configuration_tokens": [],
+  "brand_aliases": [],
+  "model_aliases": [
+    "MSX 125 Grom"
+  ],
+  "status": "SUCCESS",
+  "prompt_version": "motorcycle-candidate-resolution-v4",
+  "model": "qwen-flash",
+  "make": "Honda",
+  "model_name": "Grom 125"
+}

@@ -1,0 +1,20 @@
+{
+  "decision": "MATCH",
+  "selected_candidate": "Honda Z50R",
+  "confidence": "HIGH",
+  "match_basis": "SAME_NAME",
+  "explanation": "The input 'Z50RD' is a direct variant of the 'Honda Z50R' model, with 'D' likely indicating a market-specific configuration or typo for 'R'. The core model identity matches exactly. The 'Z50R' is the canonical name for this motorcycle.",
+  "canonical_model_alias": "Z50R",
+  "configuration_tokens": [
+    "D"
+  ],
+  "brand_aliases": [],
+  "model_aliases": [
+    "Z50R"
+  ],
+  "status": "SUCCESS",
+  "prompt_version": "motorcycle-candidate-resolution-v4",
+  "model": "qwen-flash",
+  "make": "Honda",
+  "model_name": "Z50RD"
+}

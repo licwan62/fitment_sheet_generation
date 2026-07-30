@@ -1,0 +1,19 @@
+{
+  "decision": "MATCH",
+  "selected_candidate": "gasgas txt 280 pro",
+  "confidence": "HIGH",
+  "match_basis": "SAME_NAME",
+  "explanation": "The input 'TXT Pro 280' and the candidate 'gasgas txt 280 pro' refer to the same motorcycle model, with only minor variations in capitalization and spacing. The term 'Pro' is equivalent to 'pro', and the displacement '280' matches exactly. No other model in the list shares this exact configuration.",
+  "canonical_model_alias": "txt 280 pro",
+  "configuration_tokens": [],
+  "brand_aliases": [],
+  "model_aliases": [
+    "gasgas txt 280 pro",
+    "txt 280 pro"
+  ],
+  "status": "SUCCESS",
+  "prompt_version": "motorcycle-candidate-resolution-v4",
+  "model": "qwen-flash",
+  "make": "Gas Gas",
+  "model_name": "TXT Pro 280"
+}

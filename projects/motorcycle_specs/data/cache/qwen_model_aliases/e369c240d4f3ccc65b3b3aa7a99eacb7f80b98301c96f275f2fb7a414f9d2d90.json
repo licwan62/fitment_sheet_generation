@@ -1,0 +1,21 @@
+{
+  "decision": "MATCH",
+  "selected_candidate": "Harley-Davidson fltrxse cvo road glide",
+  "confidence": "HIGH",
+  "match_basis": "TYPO",
+  "explanation": "The input 'FLTRXRRSE' is a likely typo for 'FLTRXSE', which matches the catalog candidate 'Harley-Davidson fltrxse cvo road glide'. The 'RR' suffix in the input appears to be a misentry, as no official CVO Road Glide model uses 'RR' in its designation. The core model identifier 'FLTRXSE' and 'CVO Road Glide' are consistent with the known 2018–2020 CVO Road Glide Special variant.",
+  "canonical_model_alias": "fltrxse cvo road glide",
+  "configuration_tokens": [
+    "cvo",
+    "road glide"
+  ],
+  "brand_aliases": [],
+  "model_aliases": [
+    "fltrxse cvo road glide"
+  ],
+  "status": "SUCCESS",
+  "prompt_version": "motorcycle-candidate-resolution-v4",
+  "model": "qwen-flash",
+  "make": "Harley-Davidson",
+  "model_name": "FLTRXRRSE CVO Road Glide RR"
+}

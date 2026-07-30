@@ -1,0 +1,20 @@
+{
+  "decision": "MATCH",
+  "selected_candidate": "Panigale \n\t\tV4 S 25 Anniversario 916",
+  "confidence": "HIGH",
+  "match_basis": "MARKET_ALIAS",
+  "explanation": "The input 'Panigale V4 25 Anniversario 916' refers to the same limited-edition model as the candidate 'Panigale V4 S 25 Anniversario 916', with 'S' being a market or configuration designation for the high-performance variant. The '25 Anniversario 916' is a known commemorative edition tied to Ducati's 25th anniversary of the 916 model, and the 'V4 S' variant is the correct model line. The slight variation in formatting and the presence of 'S' in the candidate do not indicate a different motorcycle.",
+  "canonical_model_alias": "Panigale V4 S 25 Anniversario 916",
+  "configuration_tokens": [
+    "25 Anniversario 916"
+  ],
+  "brand_aliases": [],
+  "model_aliases": [
+    "Panigale V4 S 25 Anniversario 916"
+  ],
+  "status": "SUCCESS",
+  "prompt_version": "motorcycle-candidate-resolution-v4",
+  "model": "qwen-flash",
+  "make": "Ducati",
+  "model_name": "Panigale V4 25 Anniversario 916"
+}

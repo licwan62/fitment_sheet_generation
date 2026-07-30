@@ -1,0 +1,18 @@
+{
+  "decision": "MATCH",
+  "selected_candidate": "Boulevard M50",
+  "confidence": "HIGH",
+  "match_basis": "SAME_NAME",
+  "explanation": "The input 'M50 Boulevard' refers to the same motorcycle model as the catalog candidate 'Boulevard M50', with identical displacement and model identity. The name order difference does not affect model identity.",
+  "canonical_model_alias": "Boulevard M50",
+  "configuration_tokens": [],
+  "brand_aliases": [],
+  "model_aliases": [
+    "Boulevard M50"
+  ],
+  "status": "SUCCESS",
+  "prompt_version": "motorcycle-candidate-resolution-v4",
+  "model": "qwen-flash",
+  "make": "Suzuki",
+  "model_name": "M50 Boulevard"
+}

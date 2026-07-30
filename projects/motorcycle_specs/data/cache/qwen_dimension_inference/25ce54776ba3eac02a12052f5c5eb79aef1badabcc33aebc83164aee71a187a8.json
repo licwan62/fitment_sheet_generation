@@ -1,0 +1,16 @@
+{
+  "decision": "INFER|UNKNOWN",
+  "confidence": "MEDIUM|LOW",
+  "length_mm": null,
+  "width_mm": null,
+  "height_mm": null,
+  "wheelbase_mm": null,
+  "seat_height_mm": null,
+  "ground_clearance_mm": null,
+  "explanation": "The Gas Gas Trial 327 is a trial-specific motorcycle with limited public documentation. Without access to official specifications or verified catalog data, dimensions cannot be reliably determined. Variations by model year and market further reduce confidence in inference. No direct source material confirms exact measurements.",
+  "status": "SUCCESS",
+  "prompt_version": "motorcycle-dimension-inference-v1",
+  "model": "qwen-flash",
+  "make": "Gas Gas",
+  "model_name": "Trial 327"
+}

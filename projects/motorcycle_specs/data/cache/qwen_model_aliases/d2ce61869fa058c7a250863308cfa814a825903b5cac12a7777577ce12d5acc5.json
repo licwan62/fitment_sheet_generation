@@ -1,0 +1,20 @@
+{
+  "decision": "MATCH",
+  "selected_candidate": "Suzuki TS 100 A",
+  "confidence": "HIGH",
+  "match_basis": "SAME_NAME",
+  "explanation": "The input 'TS100' directly matches the base model name of 'Suzuki TS 100 A', which is a known variant in the Suzuki TS 100 series. The 'A' suffix denotes a specific configuration or market version, but the core model identity remains unchanged.",
+  "canonical_model_alias": "TS 100 A",
+  "configuration_tokens": [
+    "A"
+  ],
+  "brand_aliases": [],
+  "model_aliases": [
+    "TS 100 A"
+  ],
+  "status": "SUCCESS",
+  "prompt_version": "motorcycle-candidate-resolution-v4",
+  "model": "qwen-flash",
+  "make": "Suzuki",
+  "model_name": "TS100"
+}

@@ -1,0 +1,16 @@
+{
+  "decision": "INFER|UNKNOWN",
+  "confidence": "LOW",
+  "length_mm": null,
+  "width_mm": null,
+  "height_mm": null,
+  "wheelbase_mm": null,
+  "seat_height_mm": null,
+  "ground_clearance_mm": null,
+  "explanation": "The R1200GS HP2 is a limited-edition, high-performance variant of the R1200GS with no official public specifications beyond general model lineage. Dimensions may vary significantly from standard R1200GS models due to performance modifications and unique design elements. Without verified documentation or direct measurement data, accurate inference is not reliable. Model identity and dimensional consistency across variants are uncertain.",
+  "status": "SUCCESS",
+  "prompt_version": "motorcycle-dimension-inference-v1",
+  "model": "qwen-flash",
+  "make": "BMW",
+  "model_name": "R1200GS HP2"
+}

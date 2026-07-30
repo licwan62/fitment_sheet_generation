@@ -1,0 +1,20 @@
+{
+  "decision": "MATCH",
+  "selected_candidate": "Honda CB 160",
+  "confidence": "HIGH",
+  "match_basis": "MARKET_ALIAS",
+  "explanation": "The 'CB160F Invicta' is a market-specific name for the Honda CB 160, with 'Invicta' being a regional or marketing designation used in certain markets like India. The core model identity (CB160) matches exactly, and the 'F' suffix is consistent with the standard CB160F variant. The candidate 'Honda CB Unicorn 160' refers to a different model entirely, which is not the same motorcycle.",
+  "canonical_model_alias": "CB 160",
+  "configuration_tokens": [
+    "F"
+  ],
+  "brand_aliases": [],
+  "model_aliases": [
+    "CB 160"
+  ],
+  "status": "SUCCESS",
+  "prompt_version": "motorcycle-candidate-resolution-v4",
+  "model": "qwen-flash",
+  "make": "Honda",
+  "model_name": "CB160F Invicta"
+}

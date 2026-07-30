@@ -1,0 +1,16 @@
+{
+  "decision": "INFER|UNKNOWN",
+  "confidence": "LOW",
+  "length_mm": null,
+  "width_mm": null,
+  "height_mm": null,
+  "wheelbase_mm": null,
+  "seat_height_mm": null,
+  "ground_clearance_mm": null,
+  "explanation": "The Gas Gas Contact TX321 is a motocross motorcycle, but specific dimensional data is not consistently documented across sources. Variations by model year and market configuration make precise inference unreliable without direct reference. Dimensions are inferred as uncertain due to lack of verified specifications and potential model-year differences.",
+  "status": "SUCCESS",
+  "prompt_version": "motorcycle-dimension-inference-v1",
+  "model": "qwen-flash",
+  "make": "Gas Gas",
+  "model_name": "Contact TX321"
+}

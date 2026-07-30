@@ -1,0 +1,20 @@
+{
+  "decision": "MATCH",
+  "selected_candidate": "RR 450 Enduro",
+  "confidence": "HIGH",
+  "match_basis": "SAME_NAME",
+  "explanation": "The input '450 RR' and the candidate 'RR 450 Enduro' refer to the same underlying Beta motorcycle model, with only minor reordering of the model name and addition of 'Enduro' as a configuration descriptor. The core identity (RR 450) is preserved, and 'Enduro' is a valid configuration label for this model.",
+  "canonical_model_alias": "RR 450 Enduro",
+  "configuration_tokens": [
+    "Enduro"
+  ],
+  "brand_aliases": [],
+  "model_aliases": [
+    "RR 450 Enduro"
+  ],
+  "status": "SUCCESS",
+  "prompt_version": "motorcycle-candidate-resolution-v4",
+  "model": "qwen-flash",
+  "make": "Beta",
+  "model_name": "450 RR"
+}

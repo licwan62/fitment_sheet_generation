@@ -1,0 +1,16 @@
+{
+  "decision": "MATCH",
+  "selected_candidate": "RC51",
+  "confidence": "HIGH",
+  "match_basis": "MARKET_ALIAS",
+  "explanation": "The RVT1000R RC51 is the full model designation for the Honda RC51, with 'RVT1000R' being the engine and platform code used in some markets. The RC51 is the widely recognized name for this motorcycle across global catalogs, making it a market-specific naming variant of the same model.",
+  "canonical_model_alias": "RC51",
+  "configuration_tokens": [],
+  "brand_aliases": [],
+  "model_aliases": [],
+  "status": "SUCCESS",
+  "prompt_version": "motorcycle-candidate-resolution-v4",
+  "model": "qwen-flash",
+  "make": "Honda",
+  "model_name": "RVT1000R RC51"
+}

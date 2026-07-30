@@ -1,0 +1,16 @@
+{
+  "decision": "INFER|UNKNOWN",
+  "confidence": "MEDIUM|LOW",
+  "length_mm": null,
+  "width_mm": null,
+  "height_mm": null,
+  "wheelbase_mm": null,
+  "seat_height_mm": null,
+  "ground_clearance_mm": null,
+  "explanation": "The model 'MRT2604F Montesa Cota 4RT Repsol Ed.' appears to be a special edition motorcycle, but no reliable public data or catalog references confirm its exact dimensions. The model name suggests a collaboration between Montesa and Repsol, based on the Cota 4RT platform, which is typically a 450cc enduro bike. However, without official specifications or verified sources, dimension inference is uncertain. Variations by year and market further reduce confidence. Therefore, dimensions are marked as unknown.",
+  "status": "SUCCESS",
+  "prompt_version": "motorcycle-dimension-inference-v1",
+  "model": "qwen-flash",
+  "make": "Honda",
+  "model_name": "MRT2604F Montesa Cota 4RT Repsol Ed."
+}

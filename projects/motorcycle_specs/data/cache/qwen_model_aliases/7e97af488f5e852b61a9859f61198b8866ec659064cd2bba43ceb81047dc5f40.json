@@ -1,0 +1,20 @@
+{
+  "decision": "MATCH",
+  "selected_candidate": "CB 750 A Hondamatic",
+  "confidence": "HIGH",
+  "match_basis": "MARKET_ALIAS",
+  "explanation": "The input 'CB750A Automatic' refers to the Honda CB750A with the Hondamatic automatic transmission, which was marketed as 'Hondamatic' in certain regions. The catalog candidate 'CB 750 A Hondamatic' is the correct and canonical name for this model, with 'Hondamatic' being a known market-specific name for the automatic transmission variant. The model displacement (750), configuration (A), and transmission type (automatic) are consistent.",
+  "canonical_model_alias": "CB 750 A Hondamatic",
+  "configuration_tokens": [
+    "Hondamatic"
+  ],
+  "brand_aliases": [],
+  "model_aliases": [
+    "CB 750 A Hondamatic"
+  ],
+  "status": "SUCCESS",
+  "prompt_version": "motorcycle-candidate-resolution-v4",
+  "model": "qwen-flash",
+  "make": "Honda",
+  "model_name": "CB750A Automatic"
+}

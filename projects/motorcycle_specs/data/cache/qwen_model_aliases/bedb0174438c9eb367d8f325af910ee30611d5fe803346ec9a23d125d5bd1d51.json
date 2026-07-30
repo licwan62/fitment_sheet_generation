@@ -1,0 +1,16 @@
+{
+  "decision": "NO_MATCH",
+  "selected_candidate": "",
+  "confidence": "HIGH",
+  "match_basis": "NONE",
+  "explanation": "The input model 'XR75' is not equivalent to any of the catalog candidates. The XR75 is a specific Honda model from the 1980s, while all candidates either have different displacements (e.g., 125, 750, 500), different model lines (e.g., NC750X, NX500), or are entirely different models (e.g., XLV 750R, XL750 Transalp). No known market alias, historical name, abbreviation, or typo links 'XR75' to any candidate.",
+  "canonical_model_alias": "",
+  "configuration_tokens": [],
+  "brand_aliases": [],
+  "model_aliases": [],
+  "status": "SUCCESS",
+  "prompt_version": "motorcycle-candidate-resolution-v4",
+  "model": "qwen-flash",
+  "make": "Honda",
+  "model_name": "XR75"
+}

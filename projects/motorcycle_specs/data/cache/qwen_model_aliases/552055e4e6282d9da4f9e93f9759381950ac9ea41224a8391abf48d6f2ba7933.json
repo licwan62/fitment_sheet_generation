@@ -1,0 +1,18 @@
+{
+  "decision": "MATCH",
+  "selected_candidate": "125BKX",
+  "confidence": "HIGH",
+  "match_basis": "MARKET_ALIAS",
+  "explanation": "The Benelli VZ 125i is a market-specific designation for the same motorcycle model as the 125BKX, which is a known regional or catalog variant of the same underlying 125cc model. The 'VZ' and 'BKX' designations refer to the same platform with minor nomenclature differences used in different markets or catalogs.",
+  "canonical_model_alias": "125BKX",
+  "configuration_tokens": [],
+  "brand_aliases": [],
+  "model_aliases": [
+    "125BKX"
+  ],
+  "status": "SUCCESS",
+  "prompt_version": "motorcycle-candidate-resolution-v4",
+  "model": "qwen-flash",
+  "make": "Benelli",
+  "model_name": "VZ 125i"
+}

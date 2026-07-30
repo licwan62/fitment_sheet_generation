@@ -1,0 +1,19 @@
+{
+  "decision": "MATCH",
+  "selected_candidate": "Harley-Davidson FLHTK Electra Glide Ultra Limited",
+  "confidence": "HIGH",
+  "match_basis": "SAME_NAME",
+  "explanation": "The input 'FLHTK Ultra Limited' refers to the same motorcycle model as 'Harley-Davidson FLHTK Electra Glide Ultra Limited', with the full model designation including the FLHTK chassis code and the Electra Glide Ultra Limited name. The omission of 'Electra Glide' in the input is a common shorthand used in the motorcycle community, but the model identity remains unchanged.",
+  "canonical_model_alias": "FLHTK Electra Glide Ultra Limited",
+  "configuration_tokens": [],
+  "brand_aliases": [],
+  "model_aliases": [
+    "Electra Glide Ultra Limited",
+    "FLHTK Electra Glide Ultra Limited"
+  ],
+  "status": "SUCCESS",
+  "prompt_version": "motorcycle-candidate-resolution-v4",
+  "model": "qwen-flash",
+  "make": "Harley-Davidson",
+  "model_name": "FLHTK Ultra Limited"
+}

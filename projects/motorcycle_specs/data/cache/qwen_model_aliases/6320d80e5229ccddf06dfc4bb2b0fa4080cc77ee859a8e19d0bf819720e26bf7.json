@@ -1,0 +1,19 @@
+{
+  "decision": "MATCH",
+  "selected_candidate": "gasgas randonne 200",
+  "confidence": "HIGH",
+  "match_basis": "MARKET_ALIAS",
+  "explanation": "'TX 200 Randonne' is a market-specific naming variant of the 'Gas Gas Randonne 200', with 'Randonne' being a regional or marketing name for the same model. The displacement (200) and manufacturer (Gas Gas) are consistent, and no other candidate matches this identity exactly.",
+  "canonical_model_alias": "randonne 200",
+  "configuration_tokens": [],
+  "brand_aliases": [],
+  "model_aliases": [
+    "gasgas randonne 200",
+    "randonne 200"
+  ],
+  "status": "SUCCESS",
+  "prompt_version": "motorcycle-candidate-resolution-v4",
+  "model": "qwen-flash",
+  "make": "Gas Gas",
+  "model_name": "TX 200 Randonne"
+}

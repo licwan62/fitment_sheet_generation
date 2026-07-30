@@ -1,0 +1,20 @@
+{
+  "decision": "MATCH",
+  "selected_candidate": "Honda CM 250 C",
+  "confidence": "HIGH",
+  "match_basis": "SAME_NAME",
+  "explanation": "The input 'CM250C Custom' refers to the same motorcycle model as 'Honda CM 250 C', with 'Custom' being a descriptive variant name and 'C' in the model number indicating the same configuration. The catalog candidate 'Honda CM 250 C' is the canonical expression of this model, matching displacement (250), model code (CM), and variant (C). Other candidates differ in model code or engine type.",
+  "canonical_model_alias": "CM 250 C",
+  "configuration_tokens": [
+    "Custom"
+  ],
+  "brand_aliases": [],
+  "model_aliases": [
+    "CM 250 C"
+  ],
+  "status": "SUCCESS",
+  "prompt_version": "motorcycle-candidate-resolution-v4",
+  "model": "qwen-flash",
+  "make": "Honda",
+  "model_name": "CM250C Custom"
+}

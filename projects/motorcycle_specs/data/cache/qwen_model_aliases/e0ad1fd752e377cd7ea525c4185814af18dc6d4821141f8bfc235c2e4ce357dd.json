@@ -1,0 +1,20 @@
+{
+  "decision": "MATCH",
+  "selected_candidate": "beta rr motard 125 r",
+  "confidence": "HIGH",
+  "match_basis": "MARKET_ALIAS",
+  "explanation": "The input '125 RR-S' refers to the Beta RR Motard 125 R, where 'RR-S' is a market-specific or configuration designation for the same model. The 'S' likely denotes a special or sport variant, consistent with Beta's naming conventions for the Motard series. The displacement (125) and core model (RR Motard) match exactly.",
+  "canonical_model_alias": "rr motard 125 r",
+  "configuration_tokens": [
+    "s"
+  ],
+  "brand_aliases": [],
+  "model_aliases": [
+    "rr motard 125 r"
+  ],
+  "status": "SUCCESS",
+  "prompt_version": "motorcycle-candidate-resolution-v4",
+  "model": "qwen-flash",
+  "make": "Beta",
+  "model_name": "125 RR-S"
+}

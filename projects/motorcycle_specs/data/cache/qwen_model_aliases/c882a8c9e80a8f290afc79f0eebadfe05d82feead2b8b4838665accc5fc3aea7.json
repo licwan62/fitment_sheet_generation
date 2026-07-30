@@ -1,0 +1,18 @@
+{
+  "decision": "MATCH",
+  "selected_candidate": "T 250 Hustler",
+  "confidence": "HIGH",
+  "match_basis": "MARKET_ALIAS",
+  "explanation": "The Suzuki T250 is known as the 'T 250 Hustler' in certain markets, particularly in North America, where it was marketed under that name. This is a recognized market-specific alias for the same underlying motorcycle model.",
+  "canonical_model_alias": "T 250 Hustler",
+  "configuration_tokens": [],
+  "brand_aliases": [],
+  "model_aliases": [
+    "T 250 Hustler"
+  ],
+  "status": "SUCCESS",
+  "prompt_version": "motorcycle-candidate-resolution-v4",
+  "model": "qwen-flash",
+  "make": "Suzuki",
+  "model_name": "T250"
+}

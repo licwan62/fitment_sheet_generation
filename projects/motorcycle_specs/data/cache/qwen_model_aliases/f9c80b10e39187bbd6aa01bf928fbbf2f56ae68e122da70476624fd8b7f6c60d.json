@@ -1,0 +1,22 @@
+{
+  "decision": "MATCH",
+  "selected_candidate": "GSX-R 750Z 40th \n\t\tAnniversary Edition",
+  "confidence": "HIGH",
+  "match_basis": "SAME_NAME",
+  "explanation": "The input 'GSX-R750Z 40th Anniversary' matches the catalog candidate 'GSX-R 750Z 40th \n\t\tAnniversary Edition' in model name, displacement, suffix, and anniversary designation. The spacing and line break are cosmetic variations. Both refer to the same limited-edition 2023 Suzuki GSX-R750Z 40th Anniversary model.",
+  "canonical_model_alias": "GSX-R 750Z 40th Anniversary Edition",
+  "configuration_tokens": [
+    "40th",
+    "Anniversary",
+    "Edition"
+  ],
+  "brand_aliases": [],
+  "model_aliases": [
+    "GSX-R 750Z 40th Anniversary Edition"
+  ],
+  "status": "SUCCESS",
+  "prompt_version": "motorcycle-candidate-resolution-v4",
+  "model": "qwen-flash",
+  "make": "Suzuki",
+  "model_name": "GSX-R750Z 40th Anniversary"
+}

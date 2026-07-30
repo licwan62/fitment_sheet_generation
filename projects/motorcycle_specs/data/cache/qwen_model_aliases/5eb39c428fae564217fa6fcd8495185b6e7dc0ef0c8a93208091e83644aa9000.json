@@ -1,0 +1,16 @@
+{
+  "decision": "NO_MATCH",
+  "selected_candidate": "",
+  "confidence": "HIGH",
+  "match_basis": "NONE",
+  "explanation": "FLHB is a Harley-Davidson model designation for the Road King, but none of the catalog candidates match the exact model identity. The closest candidate, 'Road King FLHR', refers to a different model variant (FLHR) with distinct features and displacement. FLHB and FLHR are not interchangeable; they represent different model lines within Harley-Davidson's lineup.",
+  "canonical_model_alias": "",
+  "configuration_tokens": [],
+  "brand_aliases": [],
+  "model_aliases": [],
+  "status": "SUCCESS",
+  "prompt_version": "motorcycle-candidate-resolution-v4",
+  "model": "qwen-flash",
+  "make": "Harley-Davidson",
+  "model_name": "FLHB"
+}

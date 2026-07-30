@@ -1,0 +1,16 @@
+{
+  "decision": "UNKNOWN",
+  "confidence": "LOW",
+  "length_mm": null,
+  "width_mm": null,
+  "height_mm": null,
+  "wheelbase_mm": null,
+  "seat_height_mm": null,
+  "ground_clearance_mm": null,
+  "explanation": "Cobra CX65 model details are not reliably documented in public sources; no consistent dimensions available across years or markets. Model identity and specifications may vary significantly, making accurate inference impossible without additional context.",
+  "status": "SUCCESS",
+  "prompt_version": "motorcycle-dimension-inference-v1",
+  "model": "qwen-flash",
+  "make": "Cobra",
+  "model_name": "CX65"
+}

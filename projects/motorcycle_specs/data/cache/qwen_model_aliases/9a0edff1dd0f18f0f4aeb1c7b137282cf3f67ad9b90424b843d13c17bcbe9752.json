@@ -1,0 +1,18 @@
+{
+  "decision": "MATCH",
+  "selected_candidate": "bigdog k 9",
+  "confidence": "HIGH",
+  "match_basis": "SAME_NAME",
+  "explanation": "The input 'K-9' matches the catalog candidate 'bigdog k 9' as the same underlying motorcycle model, with consistent naming and no conflicting identity tokens.",
+  "canonical_model_alias": "k 9",
+  "configuration_tokens": [],
+  "brand_aliases": [],
+  "model_aliases": [
+    "bigdog k 9"
+  ],
+  "status": "SUCCESS",
+  "prompt_version": "motorcycle-candidate-resolution-v4",
+  "model": "qwen-flash",
+  "make": "Big Dog",
+  "model_name": "K-9"
+}

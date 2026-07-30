@@ -1,0 +1,16 @@
+{
+  "decision": "INFER|UNKNOWN",
+  "confidence": "MEDIUM|LOW",
+  "length_mm": null,
+  "width_mm": null,
+  "height_mm": null,
+  "wheelbase_mm": null,
+  "seat_height_mm": null,
+  "ground_clearance_mm": null,
+  "explanation": "The Ducati Panigale V4 SP2 30th Anniversario 916 is a limited-edition model with no official catalog page or verified specifications publicly available. While the base Panigale V4 SP2 has known dimensions, this special variant may differ in subtle ways due to unique design elements, and no authoritative source confirms its exact measurements. Therefore, dimensions are inferred as unknown with medium to low confidence.",
+  "status": "SUCCESS",
+  "prompt_version": "motorcycle-dimension-inference-v1",
+  "model": "qwen-flash",
+  "make": "Ducati",
+  "model_name": "Panigale V4 SP2 30th Anniversario 916"
+}

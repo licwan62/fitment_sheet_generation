@@ -1,0 +1,16 @@
+{
+  "decision": "NO_MATCH",
+  "selected_candidate": "",
+  "confidence": "HIGH",
+  "match_basis": "NONE",
+  "explanation": "The model 'RMZ250 RM Army Edition' is not present in the catalog candidates, and no known alias or variant of this specific model exists in the provided list. The 'Army Edition' is a special configuration or marketing name not found among the candidates.",
+  "canonical_model_alias": "",
+  "configuration_tokens": [],
+  "brand_aliases": [],
+  "model_aliases": [],
+  "status": "SUCCESS",
+  "prompt_version": "motorcycle-candidate-resolution-v4",
+  "model": "qwen-flash",
+  "make": "Suzuki",
+  "model_name": "RMZ250 RM Army Edition"
+}

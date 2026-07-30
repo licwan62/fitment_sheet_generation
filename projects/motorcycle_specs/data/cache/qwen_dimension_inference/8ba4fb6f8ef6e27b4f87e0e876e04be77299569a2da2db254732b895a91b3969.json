@@ -1,0 +1,16 @@
+{
+  "decision": "INFER|UNKNOWN",
+  "confidence": "MEDIUM|LOW",
+  "length_mm": null,
+  "width_mm": null,
+  "height_mm": null,
+  "wheelbase_mm": null,
+  "seat_height_mm": null,
+  "ground_clearance_mm": null,
+  "explanation": "The Honda CL72 Scrambler 250 is a vintage model with no standardized catalog data available for precise dimension extraction. Dimensions vary significantly across production years and regional markets, and no definitive source confirms exact measurements. Inference is limited by lack of consistent documentation and potential variations in frame geometry, suspension setup, and wheel size. Therefore, dimensions are marked as unknown with medium to low confidence.",
+  "status": "SUCCESS",
+  "prompt_version": "motorcycle-dimension-inference-v1",
+  "model": "qwen-flash",
+  "make": "Honda",
+  "model_name": "CL72 Scrambler 250"
+}

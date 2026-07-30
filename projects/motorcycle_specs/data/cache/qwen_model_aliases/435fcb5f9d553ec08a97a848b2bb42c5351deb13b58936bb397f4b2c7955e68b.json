@@ -1,0 +1,18 @@
+{
+  "decision": "MATCH",
+  "selected_candidate": "VF 700F Interceptor V40",
+  "confidence": "HIGH",
+  "match_basis": "MARKET_ALIAS",
+  "explanation": "The 'VF700F Interceptor V40' is a known market-specific designation (V40) for the Honda VF700F Interceptor, used in certain regions like Japan and Europe. The core model identity—VF700F Interceptor—remains unchanged; the 'V40' suffix denotes a configuration or market variant, not a different motorcycle. This is a recognized regional naming convention.",
+  "canonical_model_alias": "VF 700F Interceptor",
+  "configuration_tokens": [
+    "V40"
+  ],
+  "brand_aliases": [],
+  "model_aliases": [],
+  "status": "SUCCESS",
+  "prompt_version": "motorcycle-candidate-resolution-v4",
+  "model": "qwen-flash",
+  "make": "Honda",
+  "model_name": "VF700F Interceptor"
+}

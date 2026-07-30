@@ -1,0 +1,18 @@
+{
+  "decision": "MATCH",
+  "selected_candidate": "harley davidson sportster xl 883 l superlow",
+  "confidence": "HIGH",
+  "match_basis": "MARKET_ALIAS",
+  "explanation": "The input 'XL883L SuperLow' is a market-specific naming variant of the same model identified in the candidate 'harley davidson sportster xl 883 l superlow'. 'SuperLow' is a known marketing name for the XL883L Sportster Low, and the model identity (XL883L, 883cc displacement, low-riding configuration) is identical. The variation in word order and capitalization does not change the underlying motorcycle.",
+  "canonical_model_alias": "sportster xl 883 l superlow",
+  "configuration_tokens": [],
+  "brand_aliases": [],
+  "model_aliases": [
+    "sportster xl 883 l superlow"
+  ],
+  "status": "SUCCESS",
+  "prompt_version": "motorcycle-candidate-resolution-v4",
+  "model": "qwen-flash",
+  "make": "Harley-Davidson",
+  "model_name": "XL883L SuperLow"
+}

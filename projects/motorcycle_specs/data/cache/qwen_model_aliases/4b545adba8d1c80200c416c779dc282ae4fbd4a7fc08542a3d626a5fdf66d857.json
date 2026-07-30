@@ -1,0 +1,16 @@
+{
+  "decision": "MATCH",
+  "selected_candidate": "Leoncino 251",
+  "confidence": "HIGH",
+  "match_basis": "SAME_NAME",
+  "explanation": "The model 'Leoncino 250' and the catalog candidate 'Leoncino 251' refer to the same underlying motorcycle model, with the displacement difference (250 vs 251) being a minor numerical variation likely due to rounding or regional cataloging practices. The core model identity, including design, engine, and platform, is identical.",
+  "canonical_model_alias": "Leoncino 251",
+  "configuration_tokens": [],
+  "brand_aliases": [],
+  "model_aliases": [],
+  "status": "SUCCESS",
+  "prompt_version": "motorcycle-candidate-resolution-v4",
+  "model": "qwen-flash",
+  "make": "Benelli",
+  "model_name": "Leoncino 250"
+}

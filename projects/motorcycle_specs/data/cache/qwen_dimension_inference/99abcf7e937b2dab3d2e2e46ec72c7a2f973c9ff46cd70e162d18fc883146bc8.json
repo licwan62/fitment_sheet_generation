@@ -1,0 +1,16 @@
+{
+  "decision": "INFER",
+  "confidence": "MEDIUM",
+  "length_mm": 2100,
+  "width_mm": 850,
+  "height_mm": 1150,
+  "wheelbase_mm": 1380,
+  "seat_height_mm": 860,
+  "ground_clearance_mm": 220,
+  "explanation": "Inferred based on typical dimensions of similar off-road motorcycles in the Gas Gas Contact GT12 class, with average values for comparable models from 2010–2015. Length and width reflect standard trail bike proportions; wheelbase and seat height align with mid-range motocross/enduro configurations. Ground clearance consistent with off-road use. No official catalog data available for confirmation.",
+  "status": "SUCCESS",
+  "prompt_version": "motorcycle-dimension-inference-v1",
+  "model": "qwen-flash",
+  "make": "Gas Gas",
+  "model_name": "Contact GT12"
+}

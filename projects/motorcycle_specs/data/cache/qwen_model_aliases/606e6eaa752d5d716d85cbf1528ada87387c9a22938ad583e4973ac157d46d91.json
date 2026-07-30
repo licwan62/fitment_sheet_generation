@@ -1,0 +1,16 @@
+{
+  "decision": "NO_MATCH",
+  "selected_candidate": "",
+  "confidence": "HIGH",
+  "match_basis": "NONE",
+  "explanation": "The input model 'Hunk 150' is not present in the catalog candidates. None of the listed candidates match the Hunk 150 in name, displacement, or model lineage. The 'Hero hunk 440 sx' is a different model with a higher displacement and different name structure. Other candidates are unrelated in model family, displacement, or type (e.g., scooter, adventure bike). No known market alias, abbreviation, or typo links any candidate to 'Hunk 150'.",
+  "canonical_model_alias": "",
+  "configuration_tokens": [],
+  "brand_aliases": [],
+  "model_aliases": [],
+  "status": "SUCCESS",
+  "prompt_version": "motorcycle-candidate-resolution-v4",
+  "model": "qwen-flash",
+  "make": "Hero",
+  "model_name": "Hunk 150"
+}

@@ -1,0 +1,16 @@
+{
+  "decision": "MATCH",
+  "selected_candidate": "GW 250 Inazuma",
+  "confidence": "HIGH",
+  "match_basis": "SAME_NAME",
+  "explanation": "The input 'Inazuma' directly matches the model name in the candidate 'GW 250 Inazuma', which is the correct and canonical Suzuki Inazuma model. The other candidates are different displacement variants or unrelated models (e.g., GSX series), so only GW 250 Inazuma is the true match.",
+  "canonical_model_alias": "GW 250 Inazuma",
+  "configuration_tokens": [],
+  "brand_aliases": [],
+  "model_aliases": [],
+  "status": "SUCCESS",
+  "prompt_version": "motorcycle-candidate-resolution-v4",
+  "model": "qwen-flash",
+  "make": "Suzuki",
+  "model_name": "Inazuma"
+}

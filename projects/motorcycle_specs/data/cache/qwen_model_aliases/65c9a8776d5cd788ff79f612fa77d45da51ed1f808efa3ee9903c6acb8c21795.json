@@ -1,0 +1,18 @@
+{
+  "decision": "MATCH",
+  "selected_candidate": "Honda Elite 125",
+  "confidence": "HIGH",
+  "match_basis": "SAME_NAME",
+  "explanation": "The input 'CH125 Elite' is a valid market or catalog designation for the Honda Elite 125, with 'CH' being a model code used in some regions. The core identity—Elite 125—is identical across both names.",
+  "canonical_model_alias": "Elite 125",
+  "configuration_tokens": [],
+  "brand_aliases": [],
+  "model_aliases": [
+    "Elite 125"
+  ],
+  "status": "SUCCESS",
+  "prompt_version": "motorcycle-candidate-resolution-v4",
+  "model": "qwen-flash",
+  "make": "Honda",
+  "model_name": "CH125 Elite"
+}

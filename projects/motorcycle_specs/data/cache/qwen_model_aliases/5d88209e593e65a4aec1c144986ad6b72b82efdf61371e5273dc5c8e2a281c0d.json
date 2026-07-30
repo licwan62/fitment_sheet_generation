@@ -1,0 +1,18 @@
+{
+  "decision": "MATCH",
+  "selected_candidate": "XR 250",
+  "confidence": "HIGH",
+  "match_basis": "MARKET_ALIAS",
+  "explanation": "The 'XR250 TORNADO' is a market-specific name for the XR250 model, with 'Tornado' being a regional or marketing designation used in certain markets. The core model identity (XR250) matches exactly with the candidate 'XR 250'.",
+  "canonical_model_alias": "XR 250",
+  "configuration_tokens": [],
+  "brand_aliases": [],
+  "model_aliases": [
+    "XR 250"
+  ],
+  "status": "SUCCESS",
+  "prompt_version": "motorcycle-candidate-resolution-v4",
+  "model": "qwen-flash",
+  "make": "Honda",
+  "model_name": "XR250 TORNADO"
+}

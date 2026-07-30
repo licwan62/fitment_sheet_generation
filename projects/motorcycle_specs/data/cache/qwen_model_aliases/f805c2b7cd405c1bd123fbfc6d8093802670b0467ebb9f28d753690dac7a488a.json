@@ -1,0 +1,18 @@
+{
+  "decision": "MATCH",
+  "selected_candidate": "harley davidson sportster xl 1200 v seventy two",
+  "confidence": "HIGH",
+  "match_basis": "SAME_NAME",
+  "explanation": "The input 'XL1200V Seventy-Two' is a direct match in model identity with the catalog candidate 'harley davidson sportster xl 1200 v seventy two', including exact displacement, model code, and name. The variation in capitalization and spacing does not alter the underlying motorcycle identity.",
+  "canonical_model_alias": "sportster xl 1200 v seventy two",
+  "configuration_tokens": [],
+  "brand_aliases": [],
+  "model_aliases": [
+    "sportster xl 1200 v seventy two"
+  ],
+  "status": "SUCCESS",
+  "prompt_version": "motorcycle-candidate-resolution-v4",
+  "model": "qwen-flash",
+  "make": "Harley-Davidson",
+  "model_name": "XL1200V Seventy-Two"
+}

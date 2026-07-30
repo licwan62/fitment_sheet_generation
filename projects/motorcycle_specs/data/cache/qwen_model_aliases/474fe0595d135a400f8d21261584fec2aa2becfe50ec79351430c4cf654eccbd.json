@@ -1,0 +1,16 @@
+{
+  "decision": "NO_MATCH",
+  "selected_candidate": "",
+  "confidence": "HIGH",
+  "match_basis": "NONE",
+  "explanation": "The CM450E and CM 450T are distinct models: the CM450E is a 1978–1983 dual-sport motorcycle with a single-cylinder engine, while the CM 450T is a 1980s model with a twin-cylinder engine. They differ in engine configuration, design, and market positioning. No evidence suggests they are the same underlying motorcycle.",
+  "canonical_model_alias": "",
+  "configuration_tokens": [],
+  "brand_aliases": [],
+  "model_aliases": [],
+  "status": "SUCCESS",
+  "prompt_version": "motorcycle-candidate-resolution-v4",
+  "model": "qwen-flash",
+  "make": "Honda",
+  "model_name": "CM450E"
+}

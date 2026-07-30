@@ -1,0 +1,20 @@
+{
+  "decision": "MATCH",
+  "selected_candidate": "XN 85D Turbo",
+  "confidence": "HIGH",
+  "match_basis": "MARKET_ALIAS",
+  "explanation": "The 'XN85 Turbo' is a known market designation for the Suzuki XN 85D Turbo, with 'D' denoting a specific configuration variant. The model is identical across listings, and 'XN85 Turbo' is a common shorthand used in catalogs and user inputs.",
+  "canonical_model_alias": "XN 85D Turbo",
+  "configuration_tokens": [
+    "D"
+  ],
+  "brand_aliases": [],
+  "model_aliases": [
+    "XN 85D Turbo"
+  ],
+  "status": "SUCCESS",
+  "prompt_version": "motorcycle-candidate-resolution-v4",
+  "model": "qwen-flash",
+  "make": "Suzuki",
+  "model_name": "XN85 Turbo"
+}

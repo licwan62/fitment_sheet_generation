@@ -1,0 +1,16 @@
+{
+  "decision": "INFER",
+  "confidence": "MEDIUM",
+  "length_mm": 2800,
+  "width_mm": 900,
+  "height_mm": 1150,
+  "wheelbase_mm": 1650,
+  "seat_height_mm": 780,
+  "ground_clearance_mm": 130,
+  "explanation": "Inferred from typical American cruiser dimensions and known model characteristics of the Thunder series by American IronHorse. Dimensions are consistent with similar models in the lineup, but exact values may vary by year or market. No catalog data available for verification.",
+  "status": "SUCCESS",
+  "prompt_version": "motorcycle-dimension-inference-v1",
+  "model": "qwen-flash",
+  "make": "American IronHorse",
+  "model_name": "Thunder"
+}

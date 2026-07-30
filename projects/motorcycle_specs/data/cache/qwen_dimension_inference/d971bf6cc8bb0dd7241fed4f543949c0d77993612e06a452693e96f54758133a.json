@@ -1,0 +1,16 @@
+{
+  "decision": "UNKNOWN",
+  "confidence": "LOW",
+  "length_mm": null,
+  "width_mm": null,
+  "height_mm": null,
+  "wheelbase_mm": null,
+  "seat_height_mm": null,
+  "ground_clearance_mm": null,
+  "explanation": "The model 'CX50-OI' by Cobra is not a recognized or documented motorcycle in available public databases. No reliable information exists to infer dimensions, and the model name does not correspond to known Cobra motorcycle series. Without confirmed specifications or visual references, dimensions cannot be reliably estimated.",
+  "status": "SUCCESS",
+  "prompt_version": "motorcycle-dimension-inference-v1",
+  "model": "qwen-flash",
+  "make": "Cobra",
+  "model_name": "CX50-OI"
+}

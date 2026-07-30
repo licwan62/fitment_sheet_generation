@@ -1,0 +1,18 @@
+{
+  "decision": "MATCH",
+  "selected_candidate": "GL 1100 Gold Wing Aspencade",
+  "confidence": "HIGH",
+  "match_basis": "SAME_NAME",
+  "explanation": "The input 'GL1100A Gold Wing Aspencade' and the candidate 'GL 1100 Gold Wing Aspencade' refer to the same model. The 'A' in GL1100A is a known model designation for the 1982–1983 model year of the Gold Wing Aspencade, and the catalog candidate correctly reflects the full model name without the year suffix. The absence of the 'A' in the candidate title does not change the underlying motorcycle identity.",
+  "canonical_model_alias": "GL 1100 Gold Wing Aspencade",
+  "configuration_tokens": [],
+  "brand_aliases": [],
+  "model_aliases": [
+    "GL 1100 Gold Wing Aspencade"
+  ],
+  "status": "SUCCESS",
+  "prompt_version": "motorcycle-candidate-resolution-v4",
+  "model": "qwen-flash",
+  "make": "Honda",
+  "model_name": "GL1100A Gold Wing Aspencade"
+}

@@ -1,0 +1,20 @@
+{
+  "decision": "MATCH",
+  "selected_candidate": "Pulsar NS200",
+  "confidence": "HIGH",
+  "match_basis": "MARKET_ALIAS",
+  "explanation": "The 'Pulsar 200 NS UG' is a market-specific variant (UG likely denoting a specific configuration or regional edition) of the Pulsar NS200, which is the same underlying motorcycle model. The name 'Pulsar 200 NS UG' uses a common naming convention where '200' refers to displacement and 'NS' denotes the model series, with 'UG' as a configuration suffix. This matches the core model 'Pulsar NS200' in identity.",
+  "canonical_model_alias": "Pulsar NS200",
+  "configuration_tokens": [
+    "UG"
+  ],
+  "brand_aliases": [],
+  "model_aliases": [
+    "Pulsar NS200"
+  ],
+  "status": "SUCCESS",
+  "prompt_version": "motorcycle-candidate-resolution-v4",
+  "model": "qwen-flash",
+  "make": "Bajaj",
+  "model_name": "Pulsar 200 NS UG"
+}

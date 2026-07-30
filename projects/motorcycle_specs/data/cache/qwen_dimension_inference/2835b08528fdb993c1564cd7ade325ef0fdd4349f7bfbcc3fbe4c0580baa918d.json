@@ -1,0 +1,16 @@
+{
+  "decision": "INFER|UNKNOWN",
+  "confidence": "MEDIUM|LOW",
+  "length_mm": null,
+  "width_mm": null,
+  "height_mm": null,
+  "wheelbase_mm": null,
+  "seat_height_mm": null,
+  "ground_clearance_mm": null,
+  "explanation": "Model identity is uncertain due to potential variations in trim levels and model years; dimensions may differ significantly by market or production year. No official catalog data available for verification. Inference not reliable enough for precise values.",
+  "status": "SUCCESS",
+  "prompt_version": "motorcycle-dimension-inference-v1",
+  "model": "qwen-flash",
+  "make": "Ducati",
+  "model_name": "Super Sport 950 S"
+}

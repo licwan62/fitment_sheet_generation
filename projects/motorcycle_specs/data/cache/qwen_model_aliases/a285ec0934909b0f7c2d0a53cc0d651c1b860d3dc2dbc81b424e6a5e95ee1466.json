@@ -1,0 +1,20 @@
+{
+  "decision": "MATCH",
+  "selected_candidate": "Honda GL 1500 SE Gold Wing",
+  "confidence": "HIGH",
+  "match_basis": "MARKET_ALIAS",
+  "explanation": "The input 'GL1500 Gold Wing' refers to the same underlying model as the candidates, with 'SE' being a market-specific configuration label (Special Edition) used in certain regions. The core model identity (GL1500 Gold Wing) is unchanged, and 'SE' is a known variant designation rather than a different model.",
+  "canonical_model_alias": "GL 1500 SE Gold Wing",
+  "configuration_tokens": [
+    "SE"
+  ],
+  "brand_aliases": [],
+  "model_aliases": [
+    "GL 1500 SE Gold Wing"
+  ],
+  "status": "SUCCESS",
+  "prompt_version": "motorcycle-candidate-resolution-v4",
+  "model": "qwen-flash",
+  "make": "Honda",
+  "model_name": "GL1500 Gold Wing"
+}

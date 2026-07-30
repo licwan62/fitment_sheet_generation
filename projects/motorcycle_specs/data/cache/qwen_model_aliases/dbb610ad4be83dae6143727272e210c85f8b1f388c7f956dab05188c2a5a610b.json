@@ -1,0 +1,16 @@
+{
+  "decision": "NO_MATCH",
+  "selected_candidate": "",
+  "confidence": "HIGH",
+  "match_basis": "NONE",
+  "explanation": "The input model 'CA200' has a 200cc displacement, while the catalog candidates 'Honda CA 125 Rebel' and 'Honda CA Rebel 125' are 125cc models. The displacement difference confirms they are different motorcycles, despite sharing the 'CA' prefix and 'Rebel' name. No known market alias, historical name, or typo connects CA200 to a 125cc model.",
+  "canonical_model_alias": "",
+  "configuration_tokens": [],
+  "brand_aliases": [],
+  "model_aliases": [],
+  "status": "SUCCESS",
+  "prompt_version": "motorcycle-candidate-resolution-v4",
+  "model": "qwen-flash",
+  "make": "Honda",
+  "model_name": "CA200"
+}

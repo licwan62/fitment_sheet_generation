@@ -1,0 +1,21 @@
+{
+  "decision": "MATCH",
+  "selected_candidate": "XR 150L",
+  "confidence": "HIGH",
+  "match_basis": "MARKET_ALIAS",
+  "explanation": "XR150LEK is a market-specific variant (likely European or Asian) of the XR 150L, with 'E' denoting a specific configuration (e.g., emissions compliance or lighting setup) and 'K' possibly indicating a model year or regional specification. The core model identity remains XR 150L.",
+  "canonical_model_alias": "XR 150L",
+  "configuration_tokens": [
+    "E",
+    "K"
+  ],
+  "brand_aliases": [],
+  "model_aliases": [
+    "XR 150L"
+  ],
+  "status": "SUCCESS",
+  "prompt_version": "motorcycle-candidate-resolution-v4",
+  "model": "qwen-flash",
+  "make": "Honda",
+  "model_name": "XR150LEK"
+}

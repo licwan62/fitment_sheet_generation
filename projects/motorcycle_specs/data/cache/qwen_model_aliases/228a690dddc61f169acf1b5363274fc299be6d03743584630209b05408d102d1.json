@@ -1,0 +1,19 @@
+{
+  "decision": "MATCH",
+  "selected_candidate": "gasgas ec 250 racing",
+  "confidence": "HIGH",
+  "match_basis": "MARKET_ALIAS",
+  "explanation": "'XC 250 Racing' is a market-specific naming variant for the same model as 'EC 250 Racing' in Gas Gas's catalog; both refer to the 250cc two-stroke cross-country racing model, with 'XC' and 'EC' being interchangeable designations within the brand's nomenclature.",
+  "canonical_model_alias": "ec 250 racing",
+  "configuration_tokens": [],
+  "brand_aliases": [],
+  "model_aliases": [
+    "gasgas ec 250 racing",
+    "ec 250 racing"
+  ],
+  "status": "SUCCESS",
+  "prompt_version": "motorcycle-candidate-resolution-v4",
+  "model": "qwen-flash",
+  "make": "Gas Gas",
+  "model_name": "XC 250 Racing"
+}

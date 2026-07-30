@@ -1,0 +1,16 @@
+{
+  "decision": "NO_MATCH",
+  "selected_candidate": "",
+  "confidence": "HIGH",
+  "match_basis": "NONE",
+  "explanation": "The model 'NH125 Aero' is not equivalent to any of the catalog candidates. The NH125 Aero is a specific Honda model known for its retro-styled design and 125cc engine, but none of the listed candidates match its exact identity, including regional names, historical variants, or plausible typos. The candidates are distinct models with different designations, platforms, or configurations.",
+  "canonical_model_alias": "",
+  "configuration_tokens": [],
+  "brand_aliases": [],
+  "model_aliases": [],
+  "status": "SUCCESS",
+  "prompt_version": "motorcycle-candidate-resolution-v4",
+  "model": "qwen-flash",
+  "make": "Honda",
+  "model_name": "NH125 Aero"
+}

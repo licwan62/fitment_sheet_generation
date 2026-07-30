@@ -1,0 +1,19 @@
+{
+  "decision": "MATCH",
+  "selected_candidate": "CRF 1100L Africa Twin Adventure Sports ES / DCT",
+  "confidence": "HIGH",
+  "match_basis": "MARKET_ALIAS",
+  "explanation": "The input 'CRF1100A4 Africa Twin Adventure Sports DCT' refers to the same motorcycle model as 'CRF 1100L Africa Twin Adventure Sports ES / DCT'. The 'A4' in the input is a known market-specific designation (likely for European or specific regional trim) that corresponds to the 'ES' (Enhanced Specification) variant in other markets. Both include the DCT transmission and are identical in displacement, platform, and core features. The 'L' in the candidate is standard for this model year and does not indicate a different model.",
+  "canonical_model_alias": "CRF 1100L Africa Twin Adventure Sports ES / DCT",
+  "configuration_tokens": [
+    "ES",
+    "DCT"
+  ],
+  "brand_aliases": [],
+  "model_aliases": [],
+  "status": "SUCCESS",
+  "prompt_version": "motorcycle-candidate-resolution-v4",
+  "model": "qwen-flash",
+  "make": "Honda",
+  "model_name": "CRF1100A4 Africa Twin Adventure Sports DCT"
+}

@@ -1,0 +1,18 @@
+{
+  "decision": "MATCH",
+  "selected_candidate": "Legend \n\t150",
+  "confidence": "HIGH",
+  "match_basis": "MARKET_ALIAS",
+  "explanation": "The Bajaj Avenger Street 150 is marketed as the 'Legend 150' in certain regions, particularly in India, where it was rebranded for specific market positioning. Despite the name change, it refers to the same underlying motorcycle model with identical engine, chassis, and specifications.",
+  "canonical_model_alias": "Legend 150",
+  "configuration_tokens": [],
+  "brand_aliases": [],
+  "model_aliases": [
+    "Legend 150"
+  ],
+  "status": "SUCCESS",
+  "prompt_version": "motorcycle-candidate-resolution-v4",
+  "model": "qwen-flash",
+  "make": "Bajaj",
+  "model_name": "Avenger Street 150"
+}

@@ -1,0 +1,16 @@
+{
+  "decision": "NO_MATCH",
+  "selected_candidate": "",
+  "confidence": "HIGH",
+  "match_basis": "NONE",
+  "explanation": "The input 'XLR' does not correspond to any of the catalog candidates, as none are known variants or aliases of a model named XLR. The Harley-Davidson XR 750 and XR 1000 are different models with distinct identities, and no candidate matches the XLR designation in name, displacement, or historical context. The other candidates are unrelated in model name and configuration.",
+  "canonical_model_alias": "",
+  "configuration_tokens": [],
+  "brand_aliases": [],
+  "model_aliases": [],
+  "status": "SUCCESS",
+  "prompt_version": "motorcycle-candidate-resolution-v4",
+  "model": "qwen-flash",
+  "make": "Harley-Davidson",
+  "model_name": "XLR"
+}

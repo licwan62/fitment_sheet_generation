@@ -1,0 +1,20 @@
+{
+  "decision": "MATCH",
+  "selected_candidate": "Ducati Monster 600",
+  "confidence": "HIGH",
+  "match_basis": "SAME_NAME",
+  "explanation": "The input 'Monster 600 Metallic' refers to the same underlying motorcycle model as 'Ducati Monster 600', with 'Metallic' being a paint color variant not altering the core model identity. The catalog candidate 'Ducati Monster 600' is the canonical expression of this model.",
+  "canonical_model_alias": "Monster 600",
+  "configuration_tokens": [
+    "Metallic"
+  ],
+  "brand_aliases": [],
+  "model_aliases": [
+    "Monster 600"
+  ],
+  "status": "SUCCESS",
+  "prompt_version": "motorcycle-candidate-resolution-v4",
+  "model": "qwen-flash",
+  "make": "Ducati",
+  "model_name": "Monster 600 Metallic"
+}

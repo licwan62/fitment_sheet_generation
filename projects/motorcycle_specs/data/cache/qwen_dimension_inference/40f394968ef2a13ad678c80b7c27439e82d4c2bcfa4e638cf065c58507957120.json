@@ -1,0 +1,16 @@
+{
+  "decision": "INFER|UNKNOWN",
+  "confidence": "MEDIUM|LOW",
+  "length_mm": null,
+  "width_mm": null,
+  "height_mm": null,
+  "wheelbase_mm": null,
+  "seat_height_mm": null,
+  "ground_clearance_mm": null,
+  "explanation": "The Beta 430 RR X-Pro is a high-performance motocross motorcycle, but specific dimensional data varies significantly across model years and markets. Without access to an official catalog or verified technical specification sheet for this exact variant, precise dimensions cannot be reliably inferred. Dimensions may differ between versions (e.g., 2018 vs. 2020) and regional configurations. Therefore, all values are marked as unknown with medium to low confidence.",
+  "status": "SUCCESS",
+  "prompt_version": "motorcycle-dimension-inference-v1",
+  "model": "qwen-flash",
+  "make": "Beta",
+  "model_name": "430 RR X-Pro"
+}

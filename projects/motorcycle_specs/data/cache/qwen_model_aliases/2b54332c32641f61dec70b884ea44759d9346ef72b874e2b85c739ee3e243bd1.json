@@ -1,0 +1,15 @@
+{
+  "decision": "MATCH",
+  "selected_candidate": "CX 500 Custom",
+  "canonical_model_alias": "CX 500 Custom",
+  "configuration_tokens": [],
+  "brand_aliases": [],
+  "model_aliases": [
+    "CX 500 Custom"
+  ],
+  "status": "SUCCESS",
+  "prompt_version": "motorcycle-candidate-resolution-v3",
+  "model": "qwen-flash",
+  "make": "Honda",
+  "model_name": "CX500C Custom"
+}

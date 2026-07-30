@@ -1,0 +1,16 @@
+{
+  "decision": "INFER|UNKNOWN",
+  "confidence": "LOW",
+  "length_mm": null,
+  "width_mm": null,
+  "height_mm": null,
+  "wheelbase_mm": null,
+  "seat_height_mm": null,
+  "ground_clearance_mm": null,
+  "explanation": "The Honda PS250 Big Ruckus is a rare and limited-production model with no widely available official dimensions. No reliable catalog or technical documentation confirms its exact measurements, and variations across markets or years are possible. Without definitive sources, dimensions cannot be reliably inferred.",
+  "status": "SUCCESS",
+  "prompt_version": "motorcycle-dimension-inference-v1",
+  "model": "qwen-flash",
+  "make": "Honda",
+  "model_name": "PS250 Big Ruckus"
+}

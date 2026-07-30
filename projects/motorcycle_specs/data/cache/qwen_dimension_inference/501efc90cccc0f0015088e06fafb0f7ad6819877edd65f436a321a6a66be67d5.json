@@ -1,0 +1,16 @@
+{
+  "decision": "INFER",
+  "confidence": "MEDIUM",
+  "length_mm": 2570,
+  "width_mm": 940,
+  "height_mm": 1530,
+  "wheelbase_mm": 1620,
+  "seat_height_mm": 780,
+  "ground_clearance_mm": 140,
+  "explanation": "Inferred from standard GL1800 Gold Wing Tour DCT dimensions; 50th Anniversary model features no significant dimensional changes. Dimensions are typical for the model year and variant, based on known factory specifications.",
+  "status": "SUCCESS",
+  "prompt_version": "motorcycle-dimension-inference-v1",
+  "model": "qwen-flash",
+  "make": "Honda",
+  "model_name": "GL1800 Gold Wing Tour DCT 50th Anniversary"
+}

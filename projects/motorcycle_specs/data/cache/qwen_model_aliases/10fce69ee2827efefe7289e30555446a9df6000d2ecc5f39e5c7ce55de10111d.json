@@ -1,0 +1,21 @@
+{
+  "decision": "MATCH",
+  "selected_candidate": "Suzuki Gixxer SF SP",
+  "confidence": "HIGH",
+  "match_basis": "MARKET_ALIAS",
+  "explanation": "'Gixxer SF FI GP' is a market-specific or configuration-labeled variant of the Gixxer SF SP, with 'FI GP' likely denoting fuel injection and a Grand Prix-inspired trim, which aligns with the SP model's high-end specification. The core model identity (Gixxer SF) and displacement are consistent across variants.",
+  "canonical_model_alias": "Gixxer SF SP",
+  "configuration_tokens": [
+    "FI",
+    "GP"
+  ],
+  "brand_aliases": [],
+  "model_aliases": [
+    "Gixxer SF SP"
+  ],
+  "status": "SUCCESS",
+  "prompt_version": "motorcycle-candidate-resolution-v4",
+  "model": "qwen-flash",
+  "make": "Suzuki",
+  "model_name": "Gixxer SF FI GP"
+}

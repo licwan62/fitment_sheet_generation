@@ -1,0 +1,16 @@
+{
+  "decision": "NO_MATCH",
+  "selected_candidate": "",
+  "confidence": "HIGH",
+  "match_basis": "NONE",
+  "explanation": "The model 'Origin '73' is not a known or documented motorcycle model in the Can-Am catalog, and no matching candidate exists in the provided list. The term 'Origin '73' does not correspond to any recognized Can-Am motorcycle model from 1973 or any other year, nor is it a known market name, historical alias, abbreviation, or plausible typo for a listed model.",
+  "canonical_model_alias": "",
+  "configuration_tokens": [],
+  "brand_aliases": [],
+  "model_aliases": [],
+  "status": "SUCCESS",
+  "prompt_version": "motorcycle-candidate-resolution-v4",
+  "model": "qwen-flash",
+  "make": "Can-Am",
+  "model_name": "Origin '73"
+}

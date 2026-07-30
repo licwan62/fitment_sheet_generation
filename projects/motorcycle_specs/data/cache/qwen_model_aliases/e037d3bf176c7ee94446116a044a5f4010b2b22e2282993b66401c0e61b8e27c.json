@@ -1,0 +1,20 @@
+{
+  "decision": "MATCH",
+  "selected_candidate": "SR 50 Factory",
+  "confidence": "HIGH",
+  "match_basis": "MARKET_ALIAS",
+  "explanation": "The 'SR 50 Ditech' is a market-specific variant of the SR 50 Factory, with 'Ditech' referring to Aprilia's Ditech fuel injection system used in certain European markets. The core model identity (SR 50) and displacement are identical, and 'Ditech' is a known configuration label rather than a distinct model. The SR 50 Factory is the canonical name for this model in the catalog.",
+  "canonical_model_alias": "SR 50 Factory",
+  "configuration_tokens": [
+    "Ditech"
+  ],
+  "brand_aliases": [],
+  "model_aliases": [
+    "SR 50 Factory"
+  ],
+  "status": "SUCCESS",
+  "prompt_version": "motorcycle-candidate-resolution-v4",
+  "model": "qwen-flash",
+  "make": "Aprilia",
+  "model_name": "SR 50 Ditech"
+}

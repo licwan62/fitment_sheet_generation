@@ -1,0 +1,18 @@
+{
+  "decision": "MATCH",
+  "selected_candidate": "VF \n      1000F",
+  "confidence": "HIGH",
+  "match_basis": "SAME_NAME",
+  "explanation": "The input model 'VF1000F Interceptor' is the same motorcycle as the catalog candidate 'VF 1000F', with 'Interceptor' being a model designation used in some markets and eras for the VF1000F, while the core model identity (VF1000F) matches exactly.",
+  "canonical_model_alias": "VF 1000F",
+  "configuration_tokens": [],
+  "brand_aliases": [],
+  "model_aliases": [
+    "VF 1000F"
+  ],
+  "status": "SUCCESS",
+  "prompt_version": "motorcycle-candidate-resolution-v4",
+  "model": "qwen-flash",
+  "make": "Honda",
+  "model_name": "VF1000F Interceptor"
+}

@@ -1,0 +1,16 @@
+{
+  "decision": "UNKNOWN",
+  "confidence": "LOW",
+  "length_mm": null,
+  "width_mm": null,
+  "height_mm": null,
+  "wheelbase_mm": null,
+  "seat_height_mm": null,
+  "ground_clearance_mm": null,
+  "explanation": "ATK GT650R is not a widely documented or standardized model in public motorcycle databases. No reliable source confirms its dimensions, and the model may have varied across markets or years. Without verifiable data or official specifications, dimensions cannot be reliably inferred.",
+  "status": "SUCCESS",
+  "prompt_version": "motorcycle-dimension-inference-v1",
+  "model": "qwen-flash",
+  "make": "ATK",
+  "model_name": "GT650R"
+}

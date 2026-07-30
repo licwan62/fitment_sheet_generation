@@ -1,0 +1,18 @@
+{
+  "decision": "MATCH",
+  "selected_candidate": "husqvarna te 510",
+  "confidence": "HIGH",
+  "match_basis": "MARKET_ALIAS",
+  "explanation": "The WXE 510 is a market-specific naming for the Husqvarna TE 510, used in certain regions or configurations. The model shares the same engine, platform, and specifications, with 'WXE' being a regional or commercial designation for the TE 510.",
+  "canonical_model_alias": "te 510",
+  "configuration_tokens": [],
+  "brand_aliases": [],
+  "model_aliases": [
+    "te 510"
+  ],
+  "status": "SUCCESS",
+  "prompt_version": "motorcycle-candidate-resolution-v4",
+  "model": "qwen-flash",
+  "make": "Husqvarna",
+  "model_name": "WXE 510"
+}

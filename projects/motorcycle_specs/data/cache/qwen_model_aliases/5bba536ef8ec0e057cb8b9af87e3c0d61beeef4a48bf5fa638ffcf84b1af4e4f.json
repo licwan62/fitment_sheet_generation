@@ -1,0 +1,19 @@
+{
+  "decision": "MATCH",
+  "selected_candidate": "Honda CB600F",
+  "confidence": "HIGH",
+  "match_basis": "HISTORICAL_ALIAS",
+  "explanation": "The model 'Honda CB600F' is the original and primary name for the 600cc motorcycle produced by Honda. The candidates 'Honda CBF600' and 'Honda CBF 600' are alternate designations (CBF being a variant of CB600F) used in certain markets, particularly Europe, where the model was marketed as CBF600. 'Honda SW-T600' and 'honda sw t600' refer to a different model line (a scooter), not the CB600F. Despite variations in naming, 'CB600F' and 'CBF600' represent the same underlying motorcycle platform with minor regional branding differences.",
+  "canonical_model_alias": "CB600F",
+  "configuration_tokens": [],
+  "brand_aliases": [],
+  "model_aliases": [
+    "CB600F",
+    "CBF600"
+  ],
+  "status": "SUCCESS",
+  "prompt_version": "motorcycle-candidate-resolution-v4",
+  "model": "qwen-flash",
+  "make": "Honda",
+  "model_name": "600"
+}

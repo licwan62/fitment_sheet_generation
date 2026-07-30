@@ -1,0 +1,16 @@
+{
+  "decision": "MATCH",
+  "selected_candidate": "beta euro 350",
+  "confidence": "HIGH",
+  "match_basis": "MARKET_ALIAS",
+  "explanation": "The 'TR35' is a market-specific designation for the Beta Euro 350, commonly used in certain regions. The model shares the same engine displacement (350cc), platform, and specifications as the Beta Euro 350, with 'TR35' being a regional or marketing variant name.",
+  "canonical_model_alias": "beta euro 350",
+  "configuration_tokens": [],
+  "brand_aliases": [],
+  "model_aliases": [],
+  "status": "SUCCESS",
+  "prompt_version": "motorcycle-candidate-resolution-v4",
+  "model": "qwen-flash",
+  "make": "Beta",
+  "model_name": "TR35"
+}

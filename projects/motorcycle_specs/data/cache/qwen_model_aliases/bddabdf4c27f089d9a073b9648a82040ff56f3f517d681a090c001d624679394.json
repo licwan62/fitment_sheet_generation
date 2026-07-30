@@ -1,0 +1,20 @@
+{
+  "decision": "MATCH",
+  "selected_candidate": "450 MT (IBEX)",
+  "confidence": "HIGH",
+  "match_basis": "MARKET_ALIAS",
+  "explanation": "The '450MT Low Fender' is a market-specific configuration of the CFMOTO 450 MT, with 'Low Fender' being a styling/trim variant. The 'IBEX' designation is a known market or model variant label used by CFMOTO for this model in certain regions, particularly in Europe and Asia. The core motorcycle identity—450 MT—is preserved, and the difference is a configuration label, not a distinct model.",
+  "canonical_model_alias": "450 MT (IBEX)",
+  "configuration_tokens": [
+    "Low Fender"
+  ],
+  "brand_aliases": [],
+  "model_aliases": [
+    "450 MT (IBEX)"
+  ],
+  "status": "SUCCESS",
+  "prompt_version": "motorcycle-candidate-resolution-v4",
+  "model": "qwen-flash",
+  "make": "CFMOTO",
+  "model_name": "450MT Low Fender"
+}

@@ -1,0 +1,18 @@
+{
+  "decision": "MATCH",
+  "selected_candidate": "Softail Fat \n      Boy 107",
+  "confidence": "HIGH",
+  "match_basis": "SAME_NAME",
+  "explanation": "The input 'FLFB Fat Boy 107' is the official model code for the Harley-Davidson Softail Fat Boy 107. The catalog candidate 'Softail Fat Boy 107' uses the standard naming convention and matches exactly in model name, displacement (107), and platform (Softail). The presence of a line break does not affect identity.",
+  "canonical_model_alias": "Softail Fat Boy 107",
+  "configuration_tokens": [],
+  "brand_aliases": [],
+  "model_aliases": [
+    "Softail Fat Boy 107"
+  ],
+  "status": "SUCCESS",
+  "prompt_version": "motorcycle-candidate-resolution-v4",
+  "model": "qwen-flash",
+  "make": "Harley-Davidson",
+  "model_name": "FLFB Fat Boy 107"
+}

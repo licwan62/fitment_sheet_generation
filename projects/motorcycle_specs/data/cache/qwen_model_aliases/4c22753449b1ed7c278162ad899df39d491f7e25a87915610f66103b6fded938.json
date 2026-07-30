@@ -1,0 +1,19 @@
+{
+  "decision": "MATCH",
+  "selected_candidate": "indian roadmaster powerplus dark horse",
+  "confidence": "HIGH",
+  "match_basis": "SAME_NAME",
+  "explanation": "The input 'Roadmaster PowerPlus Dark Horse 108' matches the catalog candidate 'indian roadmaster powerplus dark horse' in model name, configuration, and brand. The displacement '108' is consistent with the PowerPlus variant, and no other candidate shares both the PowerPlus and Dark Horse designations. The case and formatting differences are negligible.",
+  "canonical_model_alias": "roadmaster powerplus dark horse",
+  "configuration_tokens": [
+    "powerplus",
+    "dark horse"
+  ],
+  "brand_aliases": [],
+  "model_aliases": [],
+  "status": "SUCCESS",
+  "prompt_version": "motorcycle-candidate-resolution-v4",
+  "model": "qwen-flash",
+  "make": "Indian",
+  "model_name": "Roadmaster PowerPlus Dark Horse 108"
+}

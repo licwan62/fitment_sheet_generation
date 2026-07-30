@@ -1,0 +1,20 @@
+{
+  "decision": "MATCH",
+  "selected_candidate": "GSX-S 1000F",
+  "confidence": "HIGH",
+  "match_basis": "SAME_NAME",
+  "explanation": "The input 'GSX-S1000F ABS' and the candidate 'GSX-S 1000F' refer to the same motorcycle model, with the ABS designation being a standard equipment feature not altering the core model identity. The spacing and formatting differences are negligible.",
+  "canonical_model_alias": "GSX-S 1000F",
+  "configuration_tokens": [
+    "ABS"
+  ],
+  "brand_aliases": [],
+  "model_aliases": [
+    "GSX-S 1000F"
+  ],
+  "status": "SUCCESS",
+  "prompt_version": "motorcycle-candidate-resolution-v4",
+  "model": "qwen-flash",
+  "make": "Suzuki",
+  "model_name": "GSX-S1000F ABS"
+}

@@ -1,0 +1,16 @@
+{
+  "decision": "NO_MATCH",
+  "selected_candidate": "",
+  "confidence": "HIGH",
+  "match_basis": "NONE",
+  "explanation": "The input model 'CA102' does not correspond to any of the catalog candidates. The CA102 is a known Honda model, but it is not equivalent to any of the listed models, which are either different displacements, different model lines (e.g., CB, PCX, ADV), or unrelated variants. No market alias, historical name, abbreviation, or typo links CA102 to any candidate.",
+  "canonical_model_alias": "",
+  "configuration_tokens": [],
+  "brand_aliases": [],
+  "model_aliases": [],
+  "status": "SUCCESS",
+  "prompt_version": "motorcycle-candidate-resolution-v4",
+  "model": "qwen-flash",
+  "make": "Honda",
+  "model_name": "CA102"
+}

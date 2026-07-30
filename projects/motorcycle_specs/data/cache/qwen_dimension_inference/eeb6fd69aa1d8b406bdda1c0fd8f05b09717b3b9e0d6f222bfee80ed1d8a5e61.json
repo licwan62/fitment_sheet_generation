@@ -1,0 +1,16 @@
+{
+  "decision": "INFER|UNKNOWN",
+  "confidence": "LOW",
+  "length_mm": null,
+  "width_mm": null,
+  "height_mm": null,
+  "wheelbase_mm": null,
+  "seat_height_mm": null,
+  "ground_clearance_mm": null,
+  "explanation": "The model 'FLSB Sport Glide 107' is not a recognized or officially documented Harley-Davidson model. The FLSB designation does not correspond to any known factory model in the Harley-Davidson lineup, and no reliable source confirms its existence or specifications. Dimensions cannot be reliably inferred due to uncertainty in model identity and potential variation by year or market. Therefore, all dimensions are marked as unknown.",
+  "status": "SUCCESS",
+  "prompt_version": "motorcycle-dimension-inference-v1",
+  "model": "qwen-flash",
+  "make": "Harley-Davidson",
+  "model_name": "FLSB Sport Glide 107"
+}

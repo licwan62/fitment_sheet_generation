@@ -1,0 +1,16 @@
+{
+  "decision": "NO_MATCH",
+  "selected_candidate": "",
+  "confidence": "HIGH",
+  "match_basis": "NONE",
+  "explanation": "The model 'Boxer BM 150' is not a known Bajaj motorcycle in the provided catalog candidates. None of the listed candidates match the name, configuration, or known variants of the Boxer BM 150. The name 'Boxer' may refer to a different brand or a misidentification, and no candidate corresponds to this specific model.",
+  "canonical_model_alias": "",
+  "configuration_tokens": [],
+  "brand_aliases": [],
+  "model_aliases": [],
+  "status": "SUCCESS",
+  "prompt_version": "motorcycle-candidate-resolution-v4",
+  "model": "qwen-flash",
+  "make": "Bajaj",
+  "model_name": "Boxer BM 150"
+}

@@ -1,0 +1,20 @@
+{
+  "decision": "MATCH",
+  "selected_candidate": "Ducati SportClassic PaulSmart 1000 LE",
+  "confidence": "HIGH",
+  "match_basis": "SAME_NAME",
+  "explanation": "The input 'PaulSmart 1000 LE' is a direct reference to the Ducati SportClassic PaulSmart 1000 LE model, which is explicitly listed in the catalog candidates. The name matches exactly, including the model designation and special edition suffix.",
+  "canonical_model_alias": "SportClassic PaulSmart 1000 LE",
+  "configuration_tokens": [
+    "LE"
+  ],
+  "brand_aliases": [],
+  "model_aliases": [
+    "SportClassic PaulSmart 1000 LE"
+  ],
+  "status": "SUCCESS",
+  "prompt_version": "motorcycle-candidate-resolution-v4",
+  "model": "qwen-flash",
+  "make": "Ducati",
+  "model_name": "PaulSmart 1000 LE"
+}

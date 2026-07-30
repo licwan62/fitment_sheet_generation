@@ -1,0 +1,16 @@
+{
+  "decision": "INFER|UNKNOWN",
+  "confidence": "LOW",
+  "length_mm": null,
+  "width_mm": null,
+  "height_mm": null,
+  "wheelbase_mm": null,
+  "seat_height_mm": null,
+  "ground_clearance_mm": null,
+  "explanation": "The Hero ECO 150 Cargo is a lesser-known commercial variant with limited public documentation. Dimensions may vary significantly by market and production year, and no reliable source confirms exact specifications. Inference is not feasible due to insufficient model-specific data.",
+  "status": "SUCCESS",
+  "prompt_version": "motorcycle-dimension-inference-v1",
+  "model": "qwen-flash",
+  "make": "Hero",
+  "model_name": "ECO 150 Cargo"
+}

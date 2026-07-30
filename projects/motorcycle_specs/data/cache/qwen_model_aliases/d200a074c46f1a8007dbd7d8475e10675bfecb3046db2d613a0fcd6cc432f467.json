@@ -1,0 +1,21 @@
+{
+  "decision": "MATCH",
+  "selected_candidate": "250 SR",
+  "confidence": "HIGH",
+  "match_basis": "MARKET_ALIAS",
+  "explanation": "The input '250SR FI + ABS' refers to the same model as '250 SR' in the catalog, with 'FI + ABS' being additional equipment features not altering the core model identity. The name '250SR' is a standard market designation for this model, and 'FI + ABS' is a configuration enhancement, not a different model.",
+  "canonical_model_alias": "250 SR",
+  "configuration_tokens": [
+    "FI",
+    "ABS"
+  ],
+  "brand_aliases": [],
+  "model_aliases": [
+    "250 SR"
+  ],
+  "status": "SUCCESS",
+  "prompt_version": "motorcycle-candidate-resolution-v4",
+  "model": "qwen-flash",
+  "make": "CFMOTO",
+  "model_name": "250SR FI + ABS"
+}

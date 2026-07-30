@@ -1,0 +1,16 @@
+{
+  "decision": "NO_MATCH",
+  "selected_candidate": "",
+  "confidence": "HIGH",
+  "match_basis": "NONE",
+  "explanation": "The input model 'ST-E3 EVA' does not correspond to any of the catalog candidates. The 'ST-E3 EVA' is a specific variant of the Hyosung ST7 series, but none of the listed candidates match its exact model identity, including displacement, configuration, or known market names. The candidates include different models (e.g., MS3i, GV 300i) with distinct platforms and displacements, and no evidence suggests 'ST-E3 EVA' is an alias for any of them.",
+  "canonical_model_alias": "",
+  "configuration_tokens": [],
+  "brand_aliases": [],
+  "model_aliases": [],
+  "status": "SUCCESS",
+  "prompt_version": "motorcycle-candidate-resolution-v4",
+  "model": "qwen-flash",
+  "make": "Hyosung",
+  "model_name": "ST-E3 EVA"
+}

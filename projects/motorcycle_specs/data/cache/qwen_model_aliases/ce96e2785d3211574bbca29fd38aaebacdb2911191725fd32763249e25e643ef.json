@@ -1,0 +1,21 @@
+{
+  "decision": "MATCH",
+  "selected_candidate": "NC 700X / \n\t\tDCT",
+  "confidence": "HIGH",
+  "match_basis": "SAME_NAME",
+  "explanation": "The input 'NC700X DCT ABS' refers to the same motorcycle model as 'NC 700X / DCT', with 'ABS' being a configuration feature not altering the core model identity. The catalog candidate matches exactly in model name and key features, including DCT transmission.",
+  "canonical_model_alias": "NC 700X / DCT",
+  "configuration_tokens": [
+    "DCT",
+    "ABS"
+  ],
+  "brand_aliases": [],
+  "model_aliases": [
+    "NC 700X / DCT"
+  ],
+  "status": "SUCCESS",
+  "prompt_version": "motorcycle-candidate-resolution-v4",
+  "model": "qwen-flash",
+  "make": "Honda",
+  "model_name": "NC700X DCT ABS"
+}

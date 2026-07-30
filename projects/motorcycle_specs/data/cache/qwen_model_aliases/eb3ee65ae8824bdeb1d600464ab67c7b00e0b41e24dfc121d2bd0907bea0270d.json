@@ -1,0 +1,18 @@
+{
+  "decision": "MATCH",
+  "selected_candidate": "CB 250F Twister",
+  "confidence": "HIGH",
+  "match_basis": "MARKET_ALIAS",
+  "explanation": "The 'CB250 Twister' is a common informal reference to the Honda CB 250F Twister, a model marketed in various regions with slight name variations. The 'F' suffix denotes the specific engine and model variant, and 'Twister' is the official model name. This is a known market or colloquial naming convention for the same motorcycle.",
+  "canonical_model_alias": "CB 250F Twister",
+  "configuration_tokens": [],
+  "brand_aliases": [],
+  "model_aliases": [
+    "CB 250F Twister"
+  ],
+  "status": "SUCCESS",
+  "prompt_version": "motorcycle-candidate-resolution-v4",
+  "model": "qwen-flash",
+  "make": "Honda",
+  "model_name": "CB250 Twister"
+}

@@ -1,0 +1,20 @@
+{
+  "decision": "MATCH",
+  "selected_candidate": "AN 650 Burgman",
+  "confidence": "HIGH",
+  "match_basis": "SAME_NAME",
+  "explanation": "The input 'AN650A Burgman ABS' refers to the same underlying motorcycle model as 'AN 650 Burgman', with 'A' and 'ABS' being configuration or market-specific identifiers that do not alter the core model identity. The catalog candidate 'AN 650 Burgman' is the canonical expression of this model.",
+  "canonical_model_alias": "AN 650 Burgman",
+  "configuration_tokens": [
+    "ABS"
+  ],
+  "brand_aliases": [],
+  "model_aliases": [
+    "AN 650 Burgman"
+  ],
+  "status": "SUCCESS",
+  "prompt_version": "motorcycle-candidate-resolution-v4",
+  "model": "qwen-flash",
+  "make": "Suzuki",
+  "model_name": "AN650A Burgman ABS"
+}

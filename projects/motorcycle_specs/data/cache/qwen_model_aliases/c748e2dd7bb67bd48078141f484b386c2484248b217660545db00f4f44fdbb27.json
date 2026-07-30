@@ -1,0 +1,16 @@
+{
+  "decision": "NO_MATCH",
+  "selected_candidate": "",
+  "confidence": "HIGH",
+  "match_basis": "NONE",
+  "explanation": "The R1100R SE is a distinct model from both the R 1100RS and R 1100RT. The R1100R SE is a sport-touring variant with specific features like a lower seat height, different suspension setup, and unique styling not shared with the RS (sport) or RT (touring) models. Despite similar displacement and platform, they are different models in BMW's lineup.",
+  "canonical_model_alias": "",
+  "configuration_tokens": [],
+  "brand_aliases": [],
+  "model_aliases": [],
+  "status": "SUCCESS",
+  "prompt_version": "motorcycle-candidate-resolution-v4",
+  "model": "qwen-flash",
+  "make": "BMW",
+  "model_name": "R1100R SE"
+}

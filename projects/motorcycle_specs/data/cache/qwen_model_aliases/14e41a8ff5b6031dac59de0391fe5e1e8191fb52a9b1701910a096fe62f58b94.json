@@ -1,0 +1,21 @@
+{
+  "decision": "MATCH",
+  "selected_candidate": "Honda VT 750 C2 Shadow",
+  "confidence": "HIGH",
+  "match_basis": "MARKET_ALIAS",
+  "explanation": "The 'VT750C2B Shadow Phantom' is a market-specific variant (Phantom) of the VT750C2 Shadow, with 'B' denoting a configuration or model year suffix. The catalog candidate 'Honda VT 750 C2 Shadow' represents the same underlying model, with 'Phantom' being a marketing name rather than a distinct model identity. The displacement and core model number (VT750C2) are identical.",
+  "canonical_model_alias": "VT 750 C2 Shadow",
+  "configuration_tokens": [
+    "B",
+    "Phantom"
+  ],
+  "brand_aliases": [],
+  "model_aliases": [
+    "VT 750 C2 Shadow"
+  ],
+  "status": "SUCCESS",
+  "prompt_version": "motorcycle-candidate-resolution-v4",
+  "model": "qwen-flash",
+  "make": "Honda",
+  "model_name": "VT750C2B Shadow Phantom"
+}

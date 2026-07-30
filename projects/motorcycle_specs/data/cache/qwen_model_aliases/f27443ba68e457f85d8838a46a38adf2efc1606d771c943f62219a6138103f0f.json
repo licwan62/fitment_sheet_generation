@@ -1,0 +1,16 @@
+{
+  "decision": "NO_MATCH",
+  "selected_candidate": "",
+  "confidence": "HIGH",
+  "match_basis": "NONE",
+  "explanation": "The input model 'CA200' is a distinct Honda motorcycle model not present in the catalog candidates. The candidates include various Honda models like CB 200, NX200, CL500, and CB500F, but none match the CA200 in model designation, displacement, or known market names. The CA200 is a specific model from Honda's past lineup, and no candidate represents it under any known alias, abbreviation, or typo. Therefore, no match is valid.",
+  "canonical_model_alias": "",
+  "configuration_tokens": [],
+  "brand_aliases": [],
+  "model_aliases": [],
+  "status": "SUCCESS",
+  "prompt_version": "motorcycle-candidate-resolution-v4",
+  "model": "qwen-flash",
+  "make": "Honda",
+  "model_name": "CA200"
+}

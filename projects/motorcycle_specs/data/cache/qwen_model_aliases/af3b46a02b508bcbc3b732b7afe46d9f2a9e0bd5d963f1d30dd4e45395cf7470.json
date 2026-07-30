@@ -1,0 +1,16 @@
+{
+  "decision": "NO_MATCH",
+  "selected_candidate": "",
+  "confidence": "HIGH",
+  "match_basis": "NONE",
+  "explanation": "The input model 'CR500' refers to a vintage motocross motorcycle, but none of the catalog candidates match this specific model. 'WR 500' and '500XC' are different Husqvarna models with distinct designations. The other candidates are unrelated in displacement, type, or model line. No known market alias, historical name, abbreviation, or typo links 'CR500' to any candidate.",
+  "canonical_model_alias": "",
+  "configuration_tokens": [],
+  "brand_aliases": [],
+  "model_aliases": [],
+  "status": "SUCCESS",
+  "prompt_version": "motorcycle-candidate-resolution-v4",
+  "model": "qwen-flash",
+  "make": "Husqvarna",
+  "model_name": "CR500"
+}

@@ -1,0 +1,18 @@
+{
+  "decision": "MATCH",
+  "selected_candidate": "Suzuki GS 650 G Katana",
+  "confidence": "HIGH",
+  "match_basis": "SAME_NAME",
+  "explanation": "The input 'GS650M Katana' refers to the same motorcycle model as 'Suzuki GS 650 G Katana', with 'M' being a market-specific or typographical variant of 'G' in this context. The displacement (650), model name (Katana), and manufacturer (Suzuki) are identical. The 'G' designation is the correct model identifier for this variant, and 'M' is a known regional or typographical variation.",
+  "canonical_model_alias": "GS 650 G Katana",
+  "configuration_tokens": [],
+  "brand_aliases": [],
+  "model_aliases": [
+    "GS 650 G Katana"
+  ],
+  "status": "SUCCESS",
+  "prompt_version": "motorcycle-candidate-resolution-v4",
+  "model": "qwen-flash",
+  "make": "Suzuki",
+  "model_name": "GS650M Katana"
+}

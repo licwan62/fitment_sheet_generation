@@ -1,0 +1,20 @@
+{
+  "decision": "MATCH",
+  "selected_candidate": "CX 650TC Turbo",
+  "confidence": "HIGH",
+  "match_basis": "MARKET_ALIAS",
+  "explanation": "The 'CX650T Turbo' is a valid market-specific designation for the CX 650TC Turbo, with 'T' denoting the turbocharged variant and 'TC' indicating the model's trim or configuration. The naming variation reflects regional or catalog labeling differences, but both refer to the same underlying motorcycle model.",
+  "canonical_model_alias": "CX 650TC Turbo",
+  "configuration_tokens": [
+    "Turbo"
+  ],
+  "brand_aliases": [],
+  "model_aliases": [
+    "CX 650TC Turbo"
+  ],
+  "status": "SUCCESS",
+  "prompt_version": "motorcycle-candidate-resolution-v4",
+  "model": "qwen-flash",
+  "make": "Honda",
+  "model_name": "CX650T Turbo"
+}

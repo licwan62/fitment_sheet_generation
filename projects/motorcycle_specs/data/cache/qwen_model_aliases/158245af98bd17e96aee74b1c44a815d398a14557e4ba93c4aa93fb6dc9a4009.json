@@ -1,0 +1,19 @@
+{
+  "decision": "MATCH",
+  "selected_candidate": "gasgas txt 125",
+  "confidence": "HIGH",
+  "match_basis": "MARKET_ALIAS",
+  "explanation": "The 'Enducross TT125' is a market-specific naming for the Gas Gas TXT 125, used in certain regions or promotional contexts. The core model identity (TXT 125) matches exactly, and 'Enducross' is a known racing/competition variant designation within Gas Gas's marketing, not a different model.",
+  "canonical_model_alias": "txt 125",
+  "configuration_tokens": [],
+  "brand_aliases": [],
+  "model_aliases": [
+    "gasgas txt 125",
+    "txt 125"
+  ],
+  "status": "SUCCESS",
+  "prompt_version": "motorcycle-candidate-resolution-v4",
+  "model": "qwen-flash",
+  "make": "Gas Gas",
+  "model_name": "Enducross TT125"
+}

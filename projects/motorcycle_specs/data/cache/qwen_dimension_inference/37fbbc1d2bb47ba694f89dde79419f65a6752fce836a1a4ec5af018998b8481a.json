@@ -1,0 +1,16 @@
+{
+  "decision": "UNKNOWN",
+  "confidence": "LOW",
+  "length_mm": null,
+  "width_mm": null,
+  "height_mm": null,
+  "wheelbase_mm": null,
+  "seat_height_mm": null,
+  "ground_clearance_mm": null,
+  "explanation": "No known Suzuki model named 'GSXR50' exists in official records or public databases. The GSXR series typically starts at 600cc (e.g., GSX-R600), and a 50cc variant is inconsistent with the GSXR product line's performance and market positioning. Dimensions cannot be reliably inferred due to model identity uncertainty.",
+  "status": "SUCCESS",
+  "prompt_version": "motorcycle-dimension-inference-v1",
+  "model": "qwen-flash",
+  "make": "Suzuki",
+  "model_name": "GSXR50"
+}

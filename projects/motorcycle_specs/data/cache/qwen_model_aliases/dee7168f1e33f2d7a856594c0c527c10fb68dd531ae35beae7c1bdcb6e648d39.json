@@ -1,0 +1,15 @@
+{
+  "decision": "MATCH",
+  "selected_candidate": "VF 750F Interceptor V45",
+  "canonical_model_alias": "VF750F Interceptor V45",
+  "configuration_tokens": [],
+  "brand_aliases": [],
+  "model_aliases": [
+    "VF 750F Interceptor V45"
+  ],
+  "status": "SUCCESS",
+  "prompt_version": "motorcycle-candidate-resolution-v3",
+  "model": "qwen-flash",
+  "make": "Honda",
+  "model_name": "VF750F V45 Interceptor"
+}

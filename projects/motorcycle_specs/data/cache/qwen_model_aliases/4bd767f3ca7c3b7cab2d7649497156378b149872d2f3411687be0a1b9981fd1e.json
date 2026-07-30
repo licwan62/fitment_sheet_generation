@@ -1,0 +1,18 @@
+{
+  "decision": "MATCH",
+  "selected_candidate": "Avenger 220 \n\tDTS-i",
+  "confidence": "HIGH",
+  "match_basis": "SAME_NAME",
+  "explanation": "The input 'Avenger Street 220' and the candidate 'Avenger 220 DTS-i' refer to the same motorcycle model, with 'Street' being a common descriptive term in marketing names and 'DTS-i' denoting the fuel injection system. The displacement (220) and core model name (Avenger) are identical, confirming they represent the same underlying motorcycle.",
+  "canonical_model_alias": "Avenger 220 DTS-i",
+  "configuration_tokens": [],
+  "brand_aliases": [],
+  "model_aliases": [
+    "Avenger 220 DTS-i"
+  ],
+  "status": "SUCCESS",
+  "prompt_version": "motorcycle-candidate-resolution-v4",
+  "model": "qwen-flash",
+  "make": "Bajaj",
+  "model_name": "Avenger Street 220"
+}

@@ -1,0 +1,18 @@
+{
+  "decision": "MATCH",
+  "selected_candidate": "AS 50 Maverick",
+  "confidence": "HIGH",
+  "match_basis": "MARKET_ALIAS",
+  "explanation": "The input 'AS50' refers to the Suzuki AS50 Maverick, a model marketed in certain regions as the 'Maverick' variant. The name 'AS50' is the model designation, and 'AS 50 Maverick' is the full catalog title used for the same motorcycle, with the space and word 'Maverick' being a market-specific naming convention.",
+  "canonical_model_alias": "AS 50 Maverick",
+  "configuration_tokens": [],
+  "brand_aliases": [],
+  "model_aliases": [
+    "AS 50 Maverick"
+  ],
+  "status": "SUCCESS",
+  "prompt_version": "motorcycle-candidate-resolution-v4",
+  "model": "qwen-flash",
+  "make": "Suzuki",
+  "model_name": "AS50"
+}

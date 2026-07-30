@@ -1,0 +1,16 @@
+{
+  "decision": "INFER|UNKNOWN",
+  "confidence": "MEDIUM|LOW",
+  "length_mm": null,
+  "width_mm": null,
+  "height_mm": null,
+  "wheelbase_mm": null,
+  "seat_height_mm": null,
+  "ground_clearance_mm": null,
+  "explanation": "The 1190SX by Erik Buell Racing is a high-performance motorcycle with limited publicly available dimensional data. Variations in model year, market-specific configurations, and lack of official catalog references make precise dimension estimation uncertain. Without verified sources or consistent specifications across variants, dimensions are inferred as unknown.",
+  "status": "SUCCESS",
+  "prompt_version": "motorcycle-dimension-inference-v1",
+  "model": "qwen-flash",
+  "make": "Erik Buell Racing",
+  "model_name": "1190SX"
+}

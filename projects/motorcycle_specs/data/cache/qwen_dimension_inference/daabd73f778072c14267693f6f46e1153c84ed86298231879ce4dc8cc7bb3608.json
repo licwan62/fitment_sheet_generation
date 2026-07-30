@@ -1,0 +1,16 @@
+{
+  "decision": "INFER|UNKNOWN",
+  "confidence": "LOW",
+  "length_mm": null,
+  "width_mm": null,
+  "height_mm": null,
+  "wheelbase_mm": null,
+  "seat_height_mm": null,
+  "ground_clearance_mm": null,
+  "explanation": "The Honda CR60R is not a widely documented or standard model in public motorcycle databases. It may be a prototype, limited edition, or misidentified model. Without confirmed specifications or official documentation, dimensions cannot be reliably inferred. The model name does not match known Honda CR series motorcycles (e.g., CRF, CBR). Therefore, the identity and dimensions remain uncertain.",
+  "status": "SUCCESS",
+  "prompt_version": "motorcycle-dimension-inference-v1",
+  "model": "qwen-flash",
+  "make": "Honda",
+  "model_name": "CR60R"
+}

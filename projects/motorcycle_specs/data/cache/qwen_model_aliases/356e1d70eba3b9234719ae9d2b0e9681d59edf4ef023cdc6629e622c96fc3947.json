@@ -1,0 +1,16 @@
+{
+  "decision": "NO_MATCH",
+  "selected_candidate": "",
+  "confidence": "HIGH",
+  "match_basis": "NONE",
+  "explanation": "The input model 'TNT25N' has a displacement of 25cc, which is inconsistent with all catalog candidates that are 125cc, 135cc, or 302cc. The 'TNT25N' does not match any known Benelli model in the provided list, and no plausible alias, abbreviation, or typo accounts for the significant displacement difference.",
+  "canonical_model_alias": "",
+  "configuration_tokens": [],
+  "brand_aliases": [],
+  "model_aliases": [],
+  "status": "SUCCESS",
+  "prompt_version": "motorcycle-candidate-resolution-v4",
+  "model": "qwen-flash",
+  "make": "Benelli",
+  "model_name": "TNT25N"
+}

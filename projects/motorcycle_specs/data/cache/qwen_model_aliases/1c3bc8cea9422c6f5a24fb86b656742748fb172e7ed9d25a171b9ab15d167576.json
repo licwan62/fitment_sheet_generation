@@ -1,0 +1,16 @@
+{
+  "decision": "NO_MATCH",
+  "selected_candidate": "",
+  "confidence": "HIGH",
+  "match_basis": "NONE",
+  "explanation": "WMX 250 is not a known Husqvarna model; the catalog candidates do not include a matching or closely related model. The WMX designation does not correspond to any Husqvarna motorcycle in the provided list, and no candidate shares the same identity, market name, abbreviation, or plausible typo for WMX 250.",
+  "canonical_model_alias": "",
+  "configuration_tokens": [],
+  "brand_aliases": [],
+  "model_aliases": [],
+  "status": "SUCCESS",
+  "prompt_version": "motorcycle-candidate-resolution-v4",
+  "model": "qwen-flash",
+  "make": "Husqvarna",
+  "model_name": "WMX 250"
+}

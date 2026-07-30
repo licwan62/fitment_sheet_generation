@@ -1,0 +1,13 @@
+{
+  "decision": "MATCH",
+  "selected_candidate": "CRF 1100L Africa Twin Adventure Sports ES / DCT",
+  "canonical_model_alias": "CRF 1100L Africa Twin Adventure Sports ES / DCT",
+  "configuration_tokens": [],
+  "brand_aliases": [],
+  "model_aliases": [],
+  "status": "SUCCESS",
+  "prompt_version": "motorcycle-candidate-resolution-v3",
+  "model": "qwen-flash",
+  "make": "Honda",
+  "model_name": "CRF1100L4 Africa Twin Adventure Sports ES DCT"
+}

@@ -1,0 +1,16 @@
+{
+  "decision": "INFER|UNKNOWN",
+  "confidence": "LOW",
+  "length_mm": null,
+  "width_mm": null,
+  "height_mm": null,
+  "wheelbase_mm": null,
+  "seat_height_mm": null,
+  "ground_clearance_mm": null,
+  "explanation": "The Suzuki RF600 is a high-performance naked motorcycle with no publicly available official dimensions. Model-specific variations across years and markets are significant, and no consistent catalog data exists for precise dimensioning. Inference from similar models (e.g., Suzuki GSX-R600) is unreliable due to differing design goals. Therefore, dimensions cannot be confidently estimated.",
+  "status": "SUCCESS",
+  "prompt_version": "motorcycle-dimension-inference-v1",
+  "model": "qwen-flash",
+  "make": "Suzuki",
+  "model_name": "RF600"
+}

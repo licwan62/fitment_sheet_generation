@@ -1,0 +1,16 @@
+{
+  "decision": "NO_MATCH",
+  "selected_candidate": "",
+  "confidence": "HIGH",
+  "match_basis": "NONE",
+  "explanation": "The input model 'SL70' has a displacement of 70cc, while all catalog candidates ('SL 100', 'SL 175', 'SL 350') have higher displacements and are distinct models. No known market name, abbreviation, or typo links 'SL70' to any of these candidates. The displacement difference confirms they are different motorcycles.",
+  "canonical_model_alias": "",
+  "configuration_tokens": [],
+  "brand_aliases": [],
+  "model_aliases": [],
+  "status": "SUCCESS",
+  "prompt_version": "motorcycle-candidate-resolution-v4",
+  "model": "qwen-flash",
+  "make": "Honda",
+  "model_name": "SL70"
+}

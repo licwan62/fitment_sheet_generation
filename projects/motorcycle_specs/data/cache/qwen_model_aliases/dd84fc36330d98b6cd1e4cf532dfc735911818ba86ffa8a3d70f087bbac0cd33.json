@@ -1,0 +1,18 @@
+{
+  "decision": "MATCH",
+  "selected_candidate": "indian challenger dark horse",
+  "confidence": "HIGH",
+  "match_basis": "SAME_NAME",
+  "explanation": "The input 'Challenger Dark Horse 108 Audio Package' refers to the same underlying motorcycle model as 'indian challenger dark horse', with the 'Audio Package' being a configuration variant that does not change the core model identity. The displacement (108) is consistent with the Challenger Dark Horse, and the 'Audio Package' is a known accessory bundle for this model.",
+  "canonical_model_alias": "challenger dark horse",
+  "configuration_tokens": [
+    "108 audio package"
+  ],
+  "brand_aliases": [],
+  "model_aliases": [],
+  "status": "SUCCESS",
+  "prompt_version": "motorcycle-candidate-resolution-v4",
+  "model": "qwen-flash",
+  "make": "Indian",
+  "model_name": "Challenger Dark Horse 108 Audio Package"
+}

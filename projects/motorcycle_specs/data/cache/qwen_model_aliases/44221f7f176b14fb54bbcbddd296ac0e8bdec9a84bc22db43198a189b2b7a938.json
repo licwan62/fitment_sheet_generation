@@ -1,0 +1,20 @@
+{
+  "decision": "MATCH",
+  "selected_candidate": "SMV 1200 Dorsoduro",
+  "confidence": "HIGH",
+  "match_basis": "MARKET_ALIAS",
+  "explanation": "The 'SMV 1200 Dorsoduro' is a known market-specific catalog name for the Aprilia Dorsoduro 1200, with 'SMV' denoting a special edition or configuration variant within the Dorsoduro lineup. The model identity remains unchanged, and the naming aligns with Aprilia's historical use of alphanumeric designations for variants.",
+  "canonical_model_alias": "Dorsoduro 1200",
+  "configuration_tokens": [
+    "SMV"
+  ],
+  "brand_aliases": [],
+  "model_aliases": [
+    "SMV 1200 Dorsoduro"
+  ],
+  "status": "SUCCESS",
+  "prompt_version": "motorcycle-candidate-resolution-v4",
+  "model": "qwen-flash",
+  "make": "Aprilia",
+  "model_name": "Dorsoduro 1200"
+}

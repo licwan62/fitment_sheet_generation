@@ -1,0 +1,16 @@
+{
+  "decision": "UNKNOWN",
+  "confidence": "LOW",
+  "length_mm": null,
+  "width_mm": null,
+  "height_mm": null,
+  "wheelbase_mm": null,
+  "seat_height_mm": null,
+  "ground_clearance_mm": null,
+  "explanation": "No reliable public data or catalog information available for the Islo Flip 125 model; manufacturer and model details are not widely documented, making dimension estimation uncertain. Possible variations by market or year further reduce confidence.",
+  "status": "SUCCESS",
+  "prompt_version": "motorcycle-dimension-inference-v1",
+  "model": "qwen-flash",
+  "make": "Islo",
+  "model_name": "Flip 125"
+}

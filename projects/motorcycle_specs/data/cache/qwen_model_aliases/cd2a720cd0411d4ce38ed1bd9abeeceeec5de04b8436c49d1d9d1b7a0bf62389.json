@@ -1,0 +1,18 @@
+{
+  "decision": "MATCH",
+  "selected_candidate": "gasgas mc 250f",
+  "confidence": "HIGH",
+  "match_basis": "SAME_NAME",
+  "explanation": "The input 'MC 250F' matches the catalog candidate 'gasgas mc 250f' exactly in model name, displacement, and configuration. The manufacturer is consistent, and no distinguishing suffixes or variants alter the core identity.",
+  "canonical_model_alias": "mc 250f",
+  "configuration_tokens": [],
+  "brand_aliases": [],
+  "model_aliases": [
+    "gasgas mc 250f"
+  ],
+  "status": "SUCCESS",
+  "prompt_version": "motorcycle-candidate-resolution-v4",
+  "model": "qwen-flash",
+  "make": "Gas Gas",
+  "model_name": "MC 250F"
+}

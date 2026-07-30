@@ -1,0 +1,16 @@
+{
+  "decision": "NO_MATCH",
+  "selected_candidate": "",
+  "confidence": "HIGH",
+  "match_basis": "NONE",
+  "explanation": "The input model 'LT160' is a different motorcycle model from the catalog candidates, which are all variants of the Hyosung GT 650. The displacement (160cc vs 650cc) and model designation (LT vs GT) indicate distinct models with no evidence of being the same underlying motorcycle.",
+  "canonical_model_alias": "",
+  "configuration_tokens": [],
+  "brand_aliases": [],
+  "model_aliases": [],
+  "status": "SUCCESS",
+  "prompt_version": "motorcycle-candidate-resolution-v4",
+  "model": "qwen-flash",
+  "make": "Hyosung",
+  "model_name": "LT160"
+}

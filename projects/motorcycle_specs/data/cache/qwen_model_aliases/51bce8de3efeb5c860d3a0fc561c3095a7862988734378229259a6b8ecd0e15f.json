@@ -1,0 +1,16 @@
+{
+  "decision": "NO_MATCH",
+  "selected_candidate": "",
+  "confidence": "HIGH",
+  "match_basis": "NONE",
+  "explanation": "The input model 'MRT301N Montesa Cota 4RT 301RR Race Replica' is not a valid Honda motorcycle. Montesa is a Spanish brand, historically associated with trials and off-road motorcycles, and was acquired by the Spanish company Cycles Montesa, later part of the Pons Group. While Honda has produced models with similar naming patterns (e.g., RC series), there is no known Honda model matching this exact name or configuration. The inclusion of 'Montesa Cota 4RT' as part of the model name indicates a non-Honda product, making it incompatible with any Honda catalog candidate. Therefore, no match exists.",
+  "canonical_model_alias": "",
+  "configuration_tokens": [],
+  "brand_aliases": [],
+  "model_aliases": [],
+  "status": "SUCCESS",
+  "prompt_version": "motorcycle-candidate-resolution-v4",
+  "model": "qwen-flash",
+  "make": "Honda",
+  "model_name": "MRT301N Montesa Cota 4RT 301RR Race Replica"
+}

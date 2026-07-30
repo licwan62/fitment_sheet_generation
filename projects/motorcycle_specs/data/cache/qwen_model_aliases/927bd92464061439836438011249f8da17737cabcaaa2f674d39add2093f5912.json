@@ -1,0 +1,18 @@
+{
+  "decision": "MATCH",
+  "selected_candidate": "Suzuki GSX-R750 50th Anniversary",
+  "confidence": "HIGH",
+  "match_basis": "SAME_NAME",
+  "explanation": "The input 'GSX-R750 50th Ann. Edition' is a direct variant of the catalog candidate 'Suzuki GSX-R750 50th Anniversary', with only minor differences in punctuation and spacing. Both refer to the same model: the 50th-anniversary edition of the Suzuki GSX-R750, identical in displacement, platform, and commemorative identity.",
+  "canonical_model_alias": "GSX-R750 50th Anniversary",
+  "configuration_tokens": [],
+  "brand_aliases": [],
+  "model_aliases": [
+    "GSX-R750 50th Anniversary"
+  ],
+  "status": "SUCCESS",
+  "prompt_version": "motorcycle-candidate-resolution-v4",
+  "model": "qwen-flash",
+  "make": "Suzuki",
+  "model_name": "GSX-R750 50th Ann. Edition"
+}

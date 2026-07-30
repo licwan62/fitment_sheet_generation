@@ -1,0 +1,18 @@
+{
+  "decision": "MATCH",
+  "selected_candidate": "TS 125R",
+  "confidence": "HIGH",
+  "match_basis": "MARKET_ALIAS",
+  "explanation": "The 'TS125 Hustler' is a market-specific name for the TS125R in certain regions, particularly in North America, where it was marketed as the 'Hustler'. Both refer to the same underlying motorcycle model with identical specifications and platform.",
+  "canonical_model_alias": "TS 125R",
+  "configuration_tokens": [],
+  "brand_aliases": [],
+  "model_aliases": [
+    "TS 125R"
+  ],
+  "status": "SUCCESS",
+  "prompt_version": "motorcycle-candidate-resolution-v4",
+  "model": "qwen-flash",
+  "make": "Suzuki",
+  "model_name": "TS125"
+}

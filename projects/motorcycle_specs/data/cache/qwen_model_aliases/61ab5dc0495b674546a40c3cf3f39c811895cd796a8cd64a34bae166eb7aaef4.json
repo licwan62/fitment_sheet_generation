@@ -1,0 +1,18 @@
+{
+  "decision": "MATCH",
+  "selected_candidate": "buell lightning xb 12 s",
+  "confidence": "HIGH",
+  "match_basis": "MARKET_ALIAS",
+  "explanation": "The 'S1 White Lightning' is a market-specific name for the Buell Lightning XB12S, with 'S1' being a configuration or marketing designation and 'White Lightning' a color/trim variant. The core model identity matches exactly with the XB12S.",
+  "canonical_model_alias": "lightning xb 12 s",
+  "configuration_tokens": [
+    "s"
+  ],
+  "brand_aliases": [],
+  "model_aliases": [],
+  "status": "SUCCESS",
+  "prompt_version": "motorcycle-candidate-resolution-v4",
+  "model": "qwen-flash",
+  "make": "Buell",
+  "model_name": "S1 White Lightning"
+}

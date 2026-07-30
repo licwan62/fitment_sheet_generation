@@ -1,0 +1,19 @@
+{
+  "decision": "MATCH",
+  "selected_candidate": "Panigale V4 SP2 \n\t\tAnniversario 916 Limited Edition",
+  "confidence": "HIGH",
+  "match_basis": "MARKET_ALIAS",
+  "explanation": "The input 'Panigale V4 SP2 30th Anniversario 916' refers to the same model as the candidate 'Panigale V4 SP2 Anniversario 916 Limited Edition', with '30th Anniversario' being a market-specific phrasing for the 30th anniversary edition, and 'Limited Edition' being a common descriptor for such releases. The core model identity (Panigale V4 SP2) and the 916 designation are identical.",
+  "canonical_model_alias": "Panigale V4 SP2 Anniversario 916 Limited Edition",
+  "configuration_tokens": [
+    "Anniversario 916",
+    "Limited Edition"
+  ],
+  "brand_aliases": [],
+  "model_aliases": [],
+  "status": "SUCCESS",
+  "prompt_version": "motorcycle-candidate-resolution-v4",
+  "model": "qwen-flash",
+  "make": "Ducati",
+  "model_name": "Panigale V4 SP2 30th Anniversario 916"
+}

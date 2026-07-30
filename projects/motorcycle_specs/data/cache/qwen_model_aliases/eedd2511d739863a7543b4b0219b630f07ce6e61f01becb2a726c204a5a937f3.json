@@ -1,0 +1,21 @@
+{
+  "decision": "MATCH",
+  "selected_candidate": "DL 650 V-Strom Touring",
+  "confidence": "HIGH",
+  "match_basis": "SAME_NAME",
+  "explanation": "The input model 'DL650A V-Strom XT Touring' refers to the same motorcycle as the catalog candidate 'DL 650 V-Strom Touring', with 'XT' and 'A' being market or configuration designations that do not alter the core model identity. The displacement (650), platform (V-Strom), and touring variant are consistent across both names.",
+  "canonical_model_alias": "DL 650 V-Strom Touring",
+  "configuration_tokens": [
+    "XT",
+    "A"
+  ],
+  "brand_aliases": [],
+  "model_aliases": [
+    "DL 650 V-Strom Touring"
+  ],
+  "status": "SUCCESS",
+  "prompt_version": "motorcycle-candidate-resolution-v4",
+  "model": "qwen-flash",
+  "make": "Suzuki",
+  "model_name": "DL650A V-Strom XT Touring"
+}

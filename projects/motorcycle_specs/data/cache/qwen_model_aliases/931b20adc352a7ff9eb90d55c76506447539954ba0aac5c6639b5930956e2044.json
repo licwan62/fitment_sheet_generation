@@ -1,0 +1,21 @@
+{
+  "decision": "MATCH",
+  "selected_candidate": "beta rr 125 4t lc enduro",
+  "confidence": "HIGH",
+  "match_basis": "MARKET_ALIAS",
+  "explanation": "The input 'RR 125 4T Enduro T' refers to the same model as 'beta rr 125 4t lc enduro', where 'T' is a market-specific or configuration label (likely for 'Trail' or 'Touring') and 'LC' denotes fuel injection, commonly used in European markets. The core model identity (RR 125 4T Enduro) is identical across both names.",
+  "canonical_model_alias": "beta rr 125 4t lc enduro",
+  "configuration_tokens": [
+    "T",
+    "lc"
+  ],
+  "brand_aliases": [],
+  "model_aliases": [
+    "rr 125 4t lc enduro"
+  ],
+  "status": "SUCCESS",
+  "prompt_version": "motorcycle-candidate-resolution-v4",
+  "model": "qwen-flash",
+  "make": "Beta",
+  "model_name": "RR 125 4T Enduro T"
+}

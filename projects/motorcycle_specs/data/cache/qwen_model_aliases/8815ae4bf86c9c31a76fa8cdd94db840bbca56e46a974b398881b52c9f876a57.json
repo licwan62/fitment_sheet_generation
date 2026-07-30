@@ -1,0 +1,16 @@
+{
+  "decision": "MATCH",
+  "selected_candidate": "Honda Z50A",
+  "confidence": "HIGH",
+  "match_basis": "SAME_NAME",
+  "explanation": "The input model 'Z50A' exactly matches the catalog candidate 'Honda Z50A' in name, displacement, and model identifier. No ambiguity or variation exists.",
+  "canonical_model_alias": "Z50A",
+  "configuration_tokens": [],
+  "brand_aliases": [],
+  "model_aliases": [],
+  "status": "SUCCESS",
+  "prompt_version": "motorcycle-candidate-resolution-v4",
+  "model": "qwen-flash",
+  "make": "Honda",
+  "model_name": "Z50A"
+}

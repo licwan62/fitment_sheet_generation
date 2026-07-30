@@ -1,0 +1,23 @@
+{
+  "decision": "MATCH",
+  "selected_candidate": "Honda GL1800 Gold Wing DCT",
+  "confidence": "HIGH",
+  "match_basis": "SAME_NAME",
+  "explanation": "The input model 'GL1800HPNM Gold Wing Audio/Comfort/Navi/XM' is a configuration-specific variant of the Honda GL1800 Gold Wing DCT, with 'HPNM' likely denoting a regional or equipment package (e.g., Audio/Comfort/Navi/XM). The core model identity matches the catalog candidate 'Honda GL1800 Gold Wing DCT', which is the base model for this configuration. All candidates are variants of the same underlying motorcycle.",
+  "canonical_model_alias": "GL1800 Gold Wing DCT",
+  "configuration_tokens": [
+    "Audio",
+    "Comfort",
+    "Navi",
+    "XM"
+  ],
+  "brand_aliases": [],
+  "model_aliases": [
+    "GL1800 Gold Wing DCT"
+  ],
+  "status": "SUCCESS",
+  "prompt_version": "motorcycle-candidate-resolution-v4",
+  "model": "qwen-flash",
+  "make": "Honda",
+  "model_name": "GL1800HPNM Gold Wing Audio/Comfort/Navi/XM"
+}

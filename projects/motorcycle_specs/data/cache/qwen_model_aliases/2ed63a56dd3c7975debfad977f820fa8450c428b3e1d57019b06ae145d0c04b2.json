@@ -1,0 +1,21 @@
+{
+  "decision": "MATCH",
+  "selected_candidate": "NA Mana 850GT",
+  "confidence": "HIGH",
+  "match_basis": "MARKET_ALIAS",
+  "explanation": "The 'NA' in 'NA Mana 850' and 'NA Mana 850GT' refers to the North American market variant, which is a known regional designation for the same underlying motorcycle model. The GT suffix denotes a touring configuration, but the core model identity (Mana 850) remains unchanged. Thus, both candidates represent the same motorcycle with a market-specific label and configuration suffix.",
+  "canonical_model_alias": "Mana 850GT",
+  "configuration_tokens": [
+    "GT"
+  ],
+  "brand_aliases": [],
+  "model_aliases": [
+    "NA Mana 850GT",
+    "Mana 850GT"
+  ],
+  "status": "SUCCESS",
+  "prompt_version": "motorcycle-candidate-resolution-v4",
+  "model": "qwen-flash",
+  "make": "Aprilia",
+  "model_name": "Mana 850"
+}

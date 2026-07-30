@@ -1,0 +1,17 @@
+﻿INPUT_ID,MAKE,MODEL,CANDIDATE_TITLE,CANDIDATE_URL,MATCH_SCORE,MATCH_CONFIDENCE,MATCH_STATUS
+000140,BMW,R100/7,R 100/7,https://www.motorcyclespecs.co.za/model/bmw/bmw-r100-7-78.html,95,HIGH,EXACT
+000140,BMW,R100/7,"R 
+		100/7",https://www.motorcyclespecs.co.za/model/bmw/bmw-r100-7.html,95,HIGH,EXACT
+000141,BMW,R100CS,R 100CS,https://www.motorcyclespecs.co.za/model/bmw/bmw-r100cs-77.html,95,HIGH,EXACT
+000141,BMW,R100CS,R 100CS,https://www.motorcyclespecs.co.za/model/bmw/bmw-r100cs-81.html,95,HIGH,EXACT
+000141,BMW,R100CS,R 100CS,https://www.motorcyclespecs.co.za/model/bmw/bmw-r100cs-82.html,95,HIGH,EXACT
+000142,BMW,R100GS,bmw r100gs,https://www.motorcyclespecs.co.za/model/Custom/bmw-r100gs.html,95,LOW,MULTIPLE
+000142,BMW,R100GS,R 100GS,https://www.motorcyclespecs.co.za/model/bmw/bmw-r100gs-87.html,95,LOW,MULTIPLE
+000142,BMW,R100GS,R 100GS,https://www.motorcyclespecs.co.za/model/bmw/bmw-r100gs-89.html,95,LOW,MULTIPLE
+000142,BMW,R100GS,R 100GS,https://www.motorcyclespecs.co.za/model/bmw/bmw-r100gs-90.html,95,LOW,MULTIPLE
+000142,BMW,R100GS,R 100GS,https://www.motorcyclespecs.co.za/model/bmw/bmw-r100gs-91.html,95,LOW,MULTIPLE
+000143,BMW,R100GS Paris-Dakar,R 100GS Paris Dakar,https://www.motorcyclespecs.co.za/model/bmw/bmw-r100gs-pd-88.html,95,HIGH,EXACT
+000143,BMW,R100GS Paris-Dakar,R 100GS Paris Dakar,https://www.motorcyclespecs.co.za/model/bmw/bmw-r100gs-pd-89.html,95,HIGH,EXACT
+000143,BMW,R100GS Paris-Dakar,R 100GS Paris Dakar,https://www.motorcyclespecs.co.za/model/bmw/bmw-r100gs-pd-93.html,95,HIGH,EXACT
+000144,BMW,R100R,R 100R,https://www.motorcyclespecs.co.za/model/bmw/bmw-r100r-92.html,95,HIGH,EXACT
+000144,BMW,R100R,R 100R,https://www.motorcyclespecs.co.za/model/bmw/bmw-r100r-94.html,95,HIGH,EXACT

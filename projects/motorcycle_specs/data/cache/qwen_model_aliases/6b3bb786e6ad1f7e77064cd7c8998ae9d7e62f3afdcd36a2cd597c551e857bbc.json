@@ -1,0 +1,15 @@
+{
+  "decision": "MATCH",
+  "selected_candidate": "PCX 150 Scooter",
+  "canonical_model_alias": "PCX 150 Scooter",
+  "configuration_tokens": [],
+  "brand_aliases": [],
+  "model_aliases": [
+    "PCX 150 Scooter"
+  ],
+  "status": "SUCCESS",
+  "prompt_version": "motorcycle-candidate-resolution-v3",
+  "model": "qwen-flash",
+  "make": "Honda",
+  "model_name": "PCX150 ABS"
+}

@@ -1,0 +1,16 @@
+{
+  "decision": "NO_MATCH",
+  "selected_candidate": "",
+  "confidence": "HIGH",
+  "match_basis": "NONE",
+  "explanation": "The 'Dominar 400 TE' is a specific variant with a 'TE' designation, likely indicating a technical or market-specific configuration. The candidate 'Dominar 400 BS' refers to the Bharat Stage (BS) emission-compliant version, which is a different regulatory and equipment configuration. Despite sharing the same base model name and displacement, the suffixes indicate distinct variants not interchangeable in identity.",
+  "canonical_model_alias": "",
+  "configuration_tokens": [],
+  "brand_aliases": [],
+  "model_aliases": [],
+  "status": "SUCCESS",
+  "prompt_version": "motorcycle-candidate-resolution-v4",
+  "model": "qwen-flash",
+  "make": "Bajaj",
+  "model_name": "Dominar 400 TE"
+}

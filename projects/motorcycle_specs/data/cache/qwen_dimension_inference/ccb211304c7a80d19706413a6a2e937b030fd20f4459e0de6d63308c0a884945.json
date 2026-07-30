@@ -1,0 +1,16 @@
+{
+  "decision": "INFER",
+  "confidence": "MEDIUM",
+  "length_mm": 2050,
+  "width_mm": 850,
+  "height_mm": 1120,
+  "wheelbase_mm": 1320,
+  "seat_height_mm": 840,
+  "ground_clearance_mm": 200,
+  "explanation": "Inferred from comparable 200cc dual-sport motorcycles in Hero's lineup, such as the Xpulse 200 4V and similar models from competitors like KTM Duke 200 and Honda CRF250L. Dimensions are estimated based on typical proportions for this class of motorcycle, with seat height and ground clearance aligned with off-road utility focus. No official catalog data available for the 2V FI variant.",
+  "status": "SUCCESS",
+  "prompt_version": "motorcycle-dimension-inference-v1",
+  "model": "qwen-flash",
+  "make": "Hero",
+  "model_name": "Xpulse 200 2V FI"
+}

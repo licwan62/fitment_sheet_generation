@@ -1,0 +1,20 @@
+{
+  "decision": "MATCH",
+  "selected_candidate": "Pulsar 180",
+  "confidence": "HIGH",
+  "match_basis": "MARKET_ALIAS",
+  "explanation": "The 'Pulsar 180 LS' is a market-specific configuration of the Pulsar 180, with 'LS' denoting a specific variant (likely 'Light Sport' or similar), but the core model remains the Pulsar 180. The catalog candidate 'Pulsar 180' represents the base model and is the canonical expression for this motorcycle.",
+  "canonical_model_alias": "Pulsar 180",
+  "configuration_tokens": [
+    "LS"
+  ],
+  "brand_aliases": [],
+  "model_aliases": [
+    "Pulsar 180"
+  ],
+  "status": "SUCCESS",
+  "prompt_version": "motorcycle-candidate-resolution-v4",
+  "model": "qwen-flash",
+  "make": "Bajaj",
+  "model_name": "Pulsar 180 LS"
+}

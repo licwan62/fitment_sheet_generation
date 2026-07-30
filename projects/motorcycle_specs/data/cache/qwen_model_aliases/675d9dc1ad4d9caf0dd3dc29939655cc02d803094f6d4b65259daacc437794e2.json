@@ -1,0 +1,20 @@
+{
+  "decision": "MATCH",
+  "selected_candidate": "Honda Elite SA 50",
+  "confidence": "HIGH",
+  "match_basis": "MARKET_ALIAS",
+  "explanation": "The 'SE50 Elite S' is a market-specific variant of the Honda Elite SA 50, with 'SE50' and 'S' denoting the same model configuration. The 'S' suffix in 'Elite S' corresponds to the 'SA' designation in the catalog candidate, indicating the same underlying motorcycle model with a regional or marketing label difference.",
+  "canonical_model_alias": "Elite SA 50",
+  "configuration_tokens": [
+    "S"
+  ],
+  "brand_aliases": [],
+  "model_aliases": [
+    "Elite SA 50"
+  ],
+  "status": "SUCCESS",
+  "prompt_version": "motorcycle-candidate-resolution-v4",
+  "model": "qwen-flash",
+  "make": "Honda",
+  "model_name": "SE50 Elite S"
+}

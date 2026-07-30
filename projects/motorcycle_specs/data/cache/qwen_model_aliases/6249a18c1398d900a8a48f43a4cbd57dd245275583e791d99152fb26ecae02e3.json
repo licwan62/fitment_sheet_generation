@@ -1,0 +1,16 @@
+{
+  "decision": "NO_MATCH",
+  "selected_candidate": "",
+  "confidence": "HIGH",
+  "match_basis": "NONE",
+  "explanation": "The input model 'NH80 Aero' does not correspond to any of the catalog candidates. Honda Juno M80 is a different model (a 1969 scooter), and none of the other candidates match the NH80 Aero in name, displacement, or model lineage. The 'Aero' suffix is not associated with any known Honda motorcycle model in this context, and 'NH80' is not a recognized Honda model designation. No plausible alias, typo, or market variant connects the input to any candidate.",
+  "canonical_model_alias": "",
+  "configuration_tokens": [],
+  "brand_aliases": [],
+  "model_aliases": [],
+  "status": "SUCCESS",
+  "prompt_version": "motorcycle-candidate-resolution-v4",
+  "model": "qwen-flash",
+  "make": "Honda",
+  "model_name": "NH80 Aero"
+}

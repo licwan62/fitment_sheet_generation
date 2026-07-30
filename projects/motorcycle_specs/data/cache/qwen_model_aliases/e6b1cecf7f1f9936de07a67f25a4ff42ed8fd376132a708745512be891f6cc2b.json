@@ -1,0 +1,20 @@
+{
+  "decision": "MATCH",
+  "selected_candidate": "buell xb 9sx",
+  "confidence": "HIGH",
+  "match_basis": "MARKET_ALIAS",
+  "explanation": "The 'XB9S Lightning' is a market-specific naming variant of the Buell XB9SX. The 'S' in XB9S denotes the same model configuration as the XB9SX, with 'S' being a common market designation for the standard or sport version. The displacement (900cc) and model lineage are identical.",
+  "canonical_model_alias": "xb 9sx",
+  "configuration_tokens": [
+    "s"
+  ],
+  "brand_aliases": [],
+  "model_aliases": [
+    "xb 9sx"
+  ],
+  "status": "SUCCESS",
+  "prompt_version": "motorcycle-candidate-resolution-v4",
+  "model": "qwen-flash",
+  "make": "Buell",
+  "model_name": "XB9S Lightning"
+}

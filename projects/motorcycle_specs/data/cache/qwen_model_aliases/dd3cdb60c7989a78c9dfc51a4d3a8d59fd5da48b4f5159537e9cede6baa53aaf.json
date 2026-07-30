@@ -1,0 +1,16 @@
+{
+  "decision": "NO_MATCH",
+  "selected_candidate": "",
+  "confidence": "HIGH",
+  "match_basis": "NONE",
+  "explanation": "The F650ST and F 650GS are distinct BMW motorcycle models with different intended uses: the F650ST is a sport-touring model, while the F 650GS is a dual-sport model. They differ in design, suspension, geometry, and market positioning. Despite sharing the same engine displacement (650cc), they are not the same underlying motorcycle.",
+  "canonical_model_alias": "",
+  "configuration_tokens": [],
+  "brand_aliases": [],
+  "model_aliases": [],
+  "status": "SUCCESS",
+  "prompt_version": "motorcycle-candidate-resolution-v4",
+  "model": "qwen-flash",
+  "make": "BMW",
+  "model_name": "F650ST"
+}

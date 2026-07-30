@@ -1,0 +1,18 @@
+{
+  "decision": "MATCH",
+  "selected_candidate": "GSX-R 150 MotoGP \n\t\tEdition",
+  "confidence": "HIGH",
+  "match_basis": "MARKET_ALIAS",
+  "explanation": "The GSX-S150 MotoGP is a market-specific naming variant of the GSX-R 150 MotoGP Edition, with 'S' and 'R' being interchangeable in Suzuki's model nomenclature for sport bikes. The MotoGP Edition designation confirms it is the same model, with 'S' likely denoting a street version and 'R' a race-inspired variant—common marketing practice. Displacement (150) and special edition branding align exactly.",
+  "canonical_model_alias": "GSX-R 150 MotoGP Edition",
+  "configuration_tokens": [],
+  "brand_aliases": [],
+  "model_aliases": [
+    "GSX-R 150 MotoGP Edition"
+  ],
+  "status": "SUCCESS",
+  "prompt_version": "motorcycle-candidate-resolution-v4",
+  "model": "qwen-flash",
+  "make": "Suzuki",
+  "model_name": "GSX-S150 MotoGP"
+}

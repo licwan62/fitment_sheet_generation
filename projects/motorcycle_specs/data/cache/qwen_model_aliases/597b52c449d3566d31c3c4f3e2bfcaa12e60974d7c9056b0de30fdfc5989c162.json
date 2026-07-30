@@ -1,0 +1,16 @@
+{
+  "decision": "MATCH",
+  "selected_candidate": "Harley-Davidson XR 750",
+  "confidence": "HIGH",
+  "match_basis": "SAME_NAME",
+  "explanation": "The input 'XR' refers to the Harley-Davidson XR 750, a well-known vintage model. Among the candidates, 'Harley-Davidson XR 750' is the only one that matches the core identity of the XR model with exact displacement and name. Other candidates like XR 1000 or XR 1200 are different models with distinct displacements and identities.",
+  "canonical_model_alias": "XR 750",
+  "configuration_tokens": [],
+  "brand_aliases": [],
+  "model_aliases": [],
+  "status": "SUCCESS",
+  "prompt_version": "motorcycle-candidate-resolution-v4",
+  "model": "qwen-flash",
+  "make": "Harley-Davidson",
+  "model_name": "XR"
+}

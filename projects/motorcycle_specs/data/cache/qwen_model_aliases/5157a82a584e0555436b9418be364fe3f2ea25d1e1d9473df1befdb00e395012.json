@@ -1,0 +1,20 @@
+{
+  "decision": "MATCH",
+  "selected_candidate": "husqvarna txc 250 r",
+  "confidence": "HIGH",
+  "match_basis": "MARKET_ALIAS",
+  "explanation": "The input 'TXC 250' refers to the same model as 'husqvarna txc 250 r', with 'r' denoting a specific configuration (likely 'race' or 'revised'), which is a known market or configuration variant of the TXC 250. The core model identity, including displacement and platform, is identical.",
+  "canonical_model_alias": "txc 250 r",
+  "configuration_tokens": [
+    "r"
+  ],
+  "brand_aliases": [],
+  "model_aliases": [
+    "txc 250 r"
+  ],
+  "status": "SUCCESS",
+  "prompt_version": "motorcycle-candidate-resolution-v4",
+  "model": "qwen-flash",
+  "make": "Husqvarna",
+  "model_name": "TXC 250"
+}

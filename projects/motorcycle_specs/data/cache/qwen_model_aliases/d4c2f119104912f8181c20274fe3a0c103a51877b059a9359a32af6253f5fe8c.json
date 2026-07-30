@@ -1,0 +1,16 @@
+{
+  "decision": "NO_MATCH",
+  "selected_candidate": "",
+  "confidence": "HIGH",
+  "match_basis": "NONE",
+  "explanation": "The model 'CL160 Scrambler' is not found in the catalog candidates, and no known variant or alias of this specific model exists within the provided list. The CL160 Scrambler was a real Honda model, but without any matching candidate titles in the input list, a match cannot be confirmed.",
+  "canonical_model_alias": "",
+  "configuration_tokens": [],
+  "brand_aliases": [],
+  "model_aliases": [],
+  "status": "SUCCESS",
+  "prompt_version": "motorcycle-candidate-resolution-v4",
+  "model": "qwen-flash",
+  "make": "Honda",
+  "model_name": "CL160 Scrambler"
+}

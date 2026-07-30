@@ -1,0 +1,18 @@
+{
+  "decision": "MATCH",
+  "selected_candidate": "Suzuki FZ50",
+  "confidence": "HIGH",
+  "match_basis": "MARKET_ALIAS",
+  "explanation": "The Suzuki F50 is a known market designation for the Suzuki FZ50, a popular entry-level motorcycle in various regions. The 'F50' model is commonly referred to as the FZ50 in official catalogs and marketing materials, with 'F50' being a simplified or regional shorthand.",
+  "canonical_model_alias": "FZ50",
+  "configuration_tokens": [],
+  "brand_aliases": [],
+  "model_aliases": [
+    "FZ50"
+  ],
+  "status": "SUCCESS",
+  "prompt_version": "motorcycle-candidate-resolution-v4",
+  "model": "qwen-flash",
+  "make": "Suzuki",
+  "model_name": "F50"
+}

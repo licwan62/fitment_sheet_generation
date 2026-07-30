@@ -1,0 +1,16 @@
+{
+  "decision": "NO_MATCH",
+  "selected_candidate": "",
+  "confidence": "HIGH",
+  "match_basis": "NONE",
+  "explanation": "The model 'Beamer III' is not a known variant or alias of any of the listed E-TON catalog candidates. None of the candidates match the name, displacement, or configuration implied by 'Beamer III', and there is no evidence linking it to any of the E-TON Viper series or other models in the list. The name 'Beamer III' does not correspond to any documented E-TON model, including regional or historical variants.",
+  "canonical_model_alias": "",
+  "configuration_tokens": [],
+  "brand_aliases": [],
+  "model_aliases": [],
+  "status": "SUCCESS",
+  "prompt_version": "motorcycle-candidate-resolution-v4",
+  "model": "qwen-flash",
+  "make": "E-TON",
+  "model_name": "Beamer III"
+}

@@ -1,0 +1,20 @@
+{
+  "decision": "MATCH",
+  "selected_candidate": "Suzuki Gixxer SF 250",
+  "confidence": "HIGH",
+  "match_basis": "SAME_NAME",
+  "explanation": "The input 'Gixxer SF250 GP' refers to the same motorcycle model as 'Suzuki Gixxer SF 250', with 'GP' being a configuration or marketing suffix that does not change the core model identity. The displacement (250) and key identifiers (Gixxer SF) match exactly.",
+  "canonical_model_alias": "Gixxer SF 250",
+  "configuration_tokens": [
+    "GP"
+  ],
+  "brand_aliases": [],
+  "model_aliases": [
+    "Gixxer SF 250"
+  ],
+  "status": "SUCCESS",
+  "prompt_version": "motorcycle-candidate-resolution-v4",
+  "model": "qwen-flash",
+  "make": "Suzuki",
+  "model_name": "Gixxer SF250 GP"
+}

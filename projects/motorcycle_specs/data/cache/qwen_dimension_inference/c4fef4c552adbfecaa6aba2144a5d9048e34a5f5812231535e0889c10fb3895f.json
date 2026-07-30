@@ -1,0 +1,16 @@
+{
+  "decision": "INFER|UNKNOWN",
+  "confidence": "LOW",
+  "length_mm": null,
+  "width_mm": null,
+  "height_mm": null,
+  "wheelbase_mm": null,
+  "seat_height_mm": null,
+  "ground_clearance_mm": null,
+  "explanation": "The Beta Steve Holcombe Replica is a limited edition off-road motorcycle based on the Beta 400 RR or similar enduro platform, but specific dimensions are not consistently documented. Model identity and year variations (e.g., 2015–2017) affect dimensions significantly. Without access to official specifications or verified catalog data for this exact variant, dimensional inference is unreliable. Therefore, dimensions are marked as unknown with low confidence.",
+  "status": "SUCCESS",
+  "prompt_version": "motorcycle-dimension-inference-v1",
+  "model": "qwen-flash",
+  "make": "Beta",
+  "model_name": "Steve Holcombe Replica"
+}

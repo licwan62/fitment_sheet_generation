@@ -1,0 +1,16 @@
+{
+  "decision": "INFER|UNKNOWN",
+  "confidence": "LOW",
+  "length_mm": null,
+  "width_mm": null,
+  "height_mm": null,
+  "wheelbase_mm": null,
+  "seat_height_mm": null,
+  "ground_clearance_mm": null,
+  "explanation": "The Islo Urban 200 Cabina is a niche or regional model with limited public documentation. No reliable source confirms its dimensions, and variations across markets or years are possible. Without verified data or a catalog reference, dimensions cannot be reliably inferred.",
+  "status": "SUCCESS",
+  "prompt_version": "motorcycle-dimension-inference-v1",
+  "model": "qwen-flash",
+  "make": "Islo",
+  "model_name": "Urban 200 Cabina"
+}

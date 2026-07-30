@@ -1,0 +1,20 @@
+{
+  "decision": "MATCH",
+  "selected_candidate": "CN 250 Helix / Fusion",
+  "confidence": "HIGH",
+  "match_basis": "SAME_NAME",
+  "explanation": "The input 'CN250 Helix' is a direct match to the catalog candidate 'CN 250 Helix / Fusion' in name and model identity, with only minor formatting differences (spacing and slash inclusion). The displacement (250) and model name (Helix) are identical, and the '/ Fusion' suffix is a known configuration or market variant that does not alter the core model identity. No evidence suggests a different underlying motorcycle.",
+  "canonical_model_alias": "CN 250 Helix / Fusion",
+  "configuration_tokens": [
+    "Fusion"
+  ],
+  "brand_aliases": [],
+  "model_aliases": [
+    "CN 250 Helix / Fusion"
+  ],
+  "status": "SUCCESS",
+  "prompt_version": "motorcycle-candidate-resolution-v4",
+  "model": "qwen-flash",
+  "make": "Honda",
+  "model_name": "CN250 Helix"
+}

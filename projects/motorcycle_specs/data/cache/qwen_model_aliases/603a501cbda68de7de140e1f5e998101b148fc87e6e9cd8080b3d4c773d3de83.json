@@ -1,0 +1,16 @@
+{
+  "decision": "NO_MATCH",
+  "selected_candidate": "",
+  "confidence": "HIGH",
+  "match_basis": "NONE",
+  "explanation": "The model 'EZ90 Cub' is not found in the catalog candidates, and no known variant or market-specific alias for this exact model exists in the provided list. Honda's EZ90 Cub is a specific model designation, and without any matching candidate titles in the catalog, a match cannot be confirmed.",
+  "canonical_model_alias": "",
+  "configuration_tokens": [],
+  "brand_aliases": [],
+  "model_aliases": [],
+  "status": "SUCCESS",
+  "prompt_version": "motorcycle-candidate-resolution-v4",
+  "model": "qwen-flash",
+  "make": "Honda",
+  "model_name": "EZ90 Cub"
+}

@@ -1,0 +1,20 @@
+{
+  "decision": "MATCH",
+  "selected_candidate": "DL \n\t\t800 V-Strom RE",
+  "confidence": "HIGH",
+  "match_basis": "MARKET_ALIAS",
+  "explanation": "The input 'DL800 V-Strom 800' refers to the base model of the Suzuki V-Strom 800 series. The candidate 'DL 800 V-Strom RE' is a market-specific configuration (likely for European or regional markets) of the same underlying motorcycle, with 'RE' denoting a variant that does not alter the core model identity. Displacement and platform remain identical; 'RE' is a known market designation for this model in certain regions.",
+  "canonical_model_alias": "DL 800 V-Strom RE",
+  "configuration_tokens": [
+    "RE"
+  ],
+  "brand_aliases": [],
+  "model_aliases": [
+    "DL 800 V-Strom RE"
+  ],
+  "status": "SUCCESS",
+  "prompt_version": "motorcycle-candidate-resolution-v4",
+  "model": "qwen-flash",
+  "make": "Suzuki",
+  "model_name": "DL800 V-Strom 800"
+}

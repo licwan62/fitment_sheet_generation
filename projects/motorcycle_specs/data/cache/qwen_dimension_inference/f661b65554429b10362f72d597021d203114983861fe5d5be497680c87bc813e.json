@@ -1,0 +1,16 @@
+{
+  "decision": "UNKNOWN",
+  "confidence": "LOW",
+  "length_mm": null,
+  "width_mm": null,
+  "height_mm": null,
+  "wheelbase_mm": null,
+  "seat_height_mm": null,
+  "ground_clearance_mm": null,
+  "explanation": "The Cobra BM50 model is not widely documented, and no reliable source confirms its dimensions. Without a catalog reference or verified specifications, dimensions cannot be reliably inferred. Variations by year or market further reduce confidence in any estimation.",
+  "status": "SUCCESS",
+  "prompt_version": "motorcycle-dimension-inference-v1",
+  "model": "qwen-flash",
+  "make": "Cobra",
+  "model_name": "BM50"
+}

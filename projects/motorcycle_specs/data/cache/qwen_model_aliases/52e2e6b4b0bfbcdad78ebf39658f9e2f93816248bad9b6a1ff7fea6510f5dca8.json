@@ -1,0 +1,16 @@
+{
+  "decision": "MATCH",
+  "selected_candidate": "SR Motard 125",
+  "confidence": "HIGH",
+  "match_basis": "TYPO",
+  "explanation": "The input 'SR Motard 150' is a plausible typo or misinput for the actual model 'SR Motard 125', as Aprilia did not produce a SR Motard 150. The SR Motard 125 is the correct and only existing model in this series with similar naming and configuration. The displacement difference (150 vs 125) is likely a typo, and no other candidate matches the intended model.",
+  "canonical_model_alias": "SR Motard 125",
+  "configuration_tokens": [],
+  "brand_aliases": [],
+  "model_aliases": [],
+  "status": "SUCCESS",
+  "prompt_version": "motorcycle-candidate-resolution-v4",
+  "model": "qwen-flash",
+  "make": "Aprilia",
+  "model_name": "SR Motard 150"
+}

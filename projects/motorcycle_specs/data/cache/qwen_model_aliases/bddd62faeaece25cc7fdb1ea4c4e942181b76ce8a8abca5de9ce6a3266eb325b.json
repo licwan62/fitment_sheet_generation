@@ -1,0 +1,18 @@
+{
+  "decision": "MATCH",
+  "selected_candidate": "husqvarna te 510",
+  "confidence": "HIGH",
+  "match_basis": "MARKET_ALIAS",
+  "explanation": "TXC 510 is a market-specific designation for the same motorcycle as the TE 510, with 'TXC' being a regional or marketing variant of the TE 510 model. The displacement (510) and platform are identical, and Husqvarna uses 'TE' for enduro models while 'TXC' denotes a similar enduro-focused version in certain markets.",
+  "canonical_model_alias": "te 510",
+  "configuration_tokens": [],
+  "brand_aliases": [],
+  "model_aliases": [
+    "te 510"
+  ],
+  "status": "SUCCESS",
+  "prompt_version": "motorcycle-candidate-resolution-v4",
+  "model": "qwen-flash",
+  "make": "Husqvarna",
+  "model_name": "TXC 510"
+}

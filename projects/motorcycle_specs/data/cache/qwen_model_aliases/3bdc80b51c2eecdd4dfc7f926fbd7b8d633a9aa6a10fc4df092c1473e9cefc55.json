@@ -1,0 +1,19 @@
+{
+  "decision": "MATCH",
+  "selected_candidate": "BMW K 1600 B Midnight",
+  "confidence": "HIGH",
+  "match_basis": "MARKET_ALIAS",
+  "explanation": "The input 'K1600B Option 719 Midnight' refers to the BMW K 1600 B Midnight model, a specific configuration of the K 1600 B with the 'Midnight' color and option code 719. The catalog candidate 'BMW K 1600 B Midnight' is the official market name for this variant, confirming it as the same underlying motorcycle despite minor differences in formatting and the inclusion of the option code in the input.",
+  "canonical_model_alias": "K 1600 B Midnight",
+  "configuration_tokens": [
+    "Option 719",
+    "Midnight"
+  ],
+  "brand_aliases": [],
+  "model_aliases": [],
+  "status": "SUCCESS",
+  "prompt_version": "motorcycle-candidate-resolution-v4",
+  "model": "qwen-flash",
+  "make": "BMW",
+  "model_name": "K1600B Option 719 Midnight"
+}

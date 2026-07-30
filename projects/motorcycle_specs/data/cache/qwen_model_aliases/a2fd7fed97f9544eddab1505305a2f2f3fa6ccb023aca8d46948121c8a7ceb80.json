@@ -1,0 +1,15 @@
+{
+  "decision": "MATCH",
+  "selected_candidate": "VT 600CD \n      Shadow De Lux VLX",
+  "canonical_model_alias": "VT 600CD Shadow De Lux VLX",
+  "configuration_tokens": [],
+  "brand_aliases": [],
+  "model_aliases": [
+    "VT 600CD Shadow De Lux VLX"
+  ],
+  "status": "SUCCESS",
+  "prompt_version": "motorcycle-candidate-resolution-v3",
+  "model": "qwen-flash",
+  "make": "Honda",
+  "model_name": "VT600CD Shadow VLX Deluxe"
+}

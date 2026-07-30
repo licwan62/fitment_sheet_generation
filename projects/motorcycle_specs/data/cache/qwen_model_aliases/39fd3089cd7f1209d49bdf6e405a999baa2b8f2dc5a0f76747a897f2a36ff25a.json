@@ -1,0 +1,20 @@
+{
+  "decision": "MATCH",
+  "selected_candidate": "CBR 1000RR / C-ABS",
+  "confidence": "HIGH",
+  "match_basis": "MARKET_ALIAS",
+  "explanation": "The input 'CBR1000RR ABS' is a market-specific or marketing variant of the CBR1000RR with anti-lock braking system, which corresponds to the catalog candidate 'CBR 1000RR / C-ABS'—a known regional or configuration label for the same model. The displacement and core model identity are identical, and 'C-ABS' denotes the ABS version, consistent with the input.",
+  "canonical_model_alias": "CBR 1000RR / C-ABS",
+  "configuration_tokens": [
+    "ABS"
+  ],
+  "brand_aliases": [],
+  "model_aliases": [
+    "CBR 1000RR / C-ABS"
+  ],
+  "status": "SUCCESS",
+  "prompt_version": "motorcycle-candidate-resolution-v4",
+  "model": "qwen-flash",
+  "make": "Honda",
+  "model_name": "CBR1000RR ABS"
+}

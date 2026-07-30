@@ -1,0 +1,16 @@
+{
+  "decision": "MATCH",
+  "selected_candidate": "CB 400F",
+  "confidence": "HIGH",
+  "match_basis": "SAME_NAME",
+  "explanation": "The input 'CB400F CB-1' refers to the same motorcycle model as 'CB 400F', with 'CB-1' being a historical or market-specific designation for the same model. The core model identifier 'CB400F' is identical across all candidates, and no displacement or configuration differences are present.",
+  "canonical_model_alias": "CB 400F",
+  "configuration_tokens": [],
+  "brand_aliases": [],
+  "model_aliases": [],
+  "status": "SUCCESS",
+  "prompt_version": "motorcycle-candidate-resolution-v4",
+  "model": "qwen-flash",
+  "make": "Honda",
+  "model_name": "CB400F CB-1"
+}

@@ -1,0 +1,16 @@
+{
+  "decision": "NO_MATCH",
+  "selected_candidate": "",
+  "confidence": "HIGH",
+  "match_basis": "NONE",
+  "explanation": "The model 'WMX 125' is not a known variant or alias of any of the listed Husqvarna catalog candidates. The WMX series is not part of Husqvarna's official motorcycle lineup, and none of the candidates match the WMX designation in name, configuration, or historical usage. The closest candidates (SM 125, WR 125) are different models with distinct purposes: SM for motocross, WR for enduro, while TX 125 is a trials model. Vitpilen and Svartpilen are street-oriented models. No evidence supports that WMX 125 refers to any of these as a market-specific, historical, or typographical variant.",
+  "canonical_model_alias": "",
+  "configuration_tokens": [],
+  "brand_aliases": [],
+  "model_aliases": [],
+  "status": "SUCCESS",
+  "prompt_version": "motorcycle-candidate-resolution-v4",
+  "model": "qwen-flash",
+  "make": "Husqvarna",
+  "model_name": "WMX 125"
+}

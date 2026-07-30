@@ -1,0 +1,16 @@
+{
+  "decision": "NO_MATCH",
+  "selected_candidate": "",
+  "confidence": "HIGH",
+  "match_basis": "NONE",
+  "explanation": "The input model GS300L has a 300cc displacement, while all catalog candidates either have different displacements (e.g., 400, 500, 600, 1000) or are entirely different vehicle types (e.g., KingQuad 300 is an ATV). No candidate matches the GS300L in displacement, model series, or identity.",
+  "canonical_model_alias": "",
+  "configuration_tokens": [],
+  "brand_aliases": [],
+  "model_aliases": [],
+  "status": "SUCCESS",
+  "prompt_version": "motorcycle-candidate-resolution-v4",
+  "model": "qwen-flash",
+  "make": "Suzuki",
+  "model_name": "GS300L"
+}

@@ -1,0 +1,20 @@
+{
+  "decision": "MATCH",
+  "selected_candidate": "Suzuki T 250",
+  "confidence": "HIGH",
+  "match_basis": "MARKET_ALIAS",
+  "explanation": "The 'T250RJ' is a market-specific designation for the Suzuki T 250, with 'RJ' likely denoting a regional or configuration variant. The core model identity matches the Suzuki T 250 in the catalog candidates.",
+  "canonical_model_alias": "T 250",
+  "configuration_tokens": [
+    "RJ"
+  ],
+  "brand_aliases": [],
+  "model_aliases": [
+    "T 250"
+  ],
+  "status": "SUCCESS",
+  "prompt_version": "motorcycle-candidate-resolution-v4",
+  "model": "qwen-flash",
+  "make": "Suzuki",
+  "model_name": "T250RJ"
+}

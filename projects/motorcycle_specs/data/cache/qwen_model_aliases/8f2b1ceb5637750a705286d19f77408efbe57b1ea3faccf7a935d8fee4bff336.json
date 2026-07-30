@@ -1,0 +1,20 @@
+{
+  "decision": "MATCH",
+  "selected_candidate": "Honda NSC50R",
+  "confidence": "HIGH",
+  "match_basis": "MARKET_ALIAS",
+  "explanation": "The 'NS50F' is a market-specific designation for the Honda NSC50R, which was marketed as the 'Monkey' in some regions. The 'F' suffix denotes fuel-injected models, and 'NSC50R' is the correct catalog name for the same motorcycle model with identical displacement and platform.",
+  "canonical_model_alias": "NSC50R",
+  "configuration_tokens": [
+    "F"
+  ],
+  "brand_aliases": [],
+  "model_aliases": [
+    "NSC50R"
+  ],
+  "status": "SUCCESS",
+  "prompt_version": "motorcycle-candidate-resolution-v4",
+  "model": "qwen-flash",
+  "make": "Honda",
+  "model_name": "NS50F"
+}

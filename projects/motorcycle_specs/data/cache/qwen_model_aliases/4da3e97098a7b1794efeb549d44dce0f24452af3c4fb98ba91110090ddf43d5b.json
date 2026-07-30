@@ -1,0 +1,20 @@
+{
+  "decision": "MATCH",
+  "selected_candidate": "Indian sport scout sixty",
+  "confidence": "HIGH",
+  "match_basis": "MARKET_ALIAS",
+  "explanation": "The 'Sport Scout Limited' is a market-specific name for the Indian Sport Scout Sixty, which was marketed as a limited edition variant. The model shares the same platform, engine, and core identity as the Sport Scout Sixty, with 'Limited' being a configuration label rather than a distinct model. The catalog candidate 'Indian sport scout sixty' correctly identifies the underlying motorcycle.",
+  "canonical_model_alias": "sport scout sixty",
+  "configuration_tokens": [
+    "Limited"
+  ],
+  "brand_aliases": [],
+  "model_aliases": [
+    "sport scout sixty"
+  ],
+  "status": "SUCCESS",
+  "prompt_version": "motorcycle-candidate-resolution-v4",
+  "model": "qwen-flash",
+  "make": "Indian",
+  "model_name": "Sport Scout Limited"
+}

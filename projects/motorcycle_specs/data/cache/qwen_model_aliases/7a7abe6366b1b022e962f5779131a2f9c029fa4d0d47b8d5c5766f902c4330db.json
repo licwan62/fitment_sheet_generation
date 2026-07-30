@@ -1,0 +1,18 @@
+{
+  "decision": "MATCH",
+  "selected_candidate": "Suzuki V-Strom 800DE",
+  "confidence": "HIGH",
+  "match_basis": "SAME_NAME",
+  "explanation": "The input model 'DL800 V-Strom 800DE' is the same motorcycle as the candidate 'Suzuki V-Strom 800DE', with only minor formatting differences. The model designation '800DE' is identical, and 'DL800' is a common internal model code for this variant. The name 'V-Strom 800DE' is the standard catalog title used by Suzuki.",
+  "canonical_model_alias": "V-Strom 800DE",
+  "configuration_tokens": [],
+  "brand_aliases": [],
+  "model_aliases": [
+    "V-Strom 800DE"
+  ],
+  "status": "SUCCESS",
+  "prompt_version": "motorcycle-candidate-resolution-v4",
+  "model": "qwen-flash",
+  "make": "Suzuki",
+  "model_name": "DL800 V-Strom 800DE"
+}

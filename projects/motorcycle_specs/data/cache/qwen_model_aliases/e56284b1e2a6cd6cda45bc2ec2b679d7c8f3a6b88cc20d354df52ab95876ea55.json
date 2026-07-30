@@ -1,0 +1,19 @@
+{
+  "decision": "MATCH",
+  "selected_candidate": "beta rr x pro 4t 350",
+  "confidence": "HIGH",
+  "match_basis": "MARKET_ALIAS",
+  "explanation": "The input '350 RR X-Pro' is a market-specific naming variant of the same model as 'beta rr x pro 4t 350', with 'X-Pro' being a configuration label used in certain markets. The displacement (350), engine type (4T), and core model (RR) are identical, confirming it is the same underlying motorcycle.",
+  "canonical_model_alias": "beta rr x pro 4t 350",
+  "configuration_tokens": [
+    "X-Pro",
+    "4T"
+  ],
+  "brand_aliases": [],
+  "model_aliases": [],
+  "status": "SUCCESS",
+  "prompt_version": "motorcycle-candidate-resolution-v4",
+  "model": "qwen-flash",
+  "make": "Beta",
+  "model_name": "350 RR X-Pro"
+}

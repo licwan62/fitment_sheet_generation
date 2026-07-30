@@ -1,0 +1,16 @@
+{
+  "decision": "NO_MATCH",
+  "selected_candidate": "",
+  "confidence": "HIGH",
+  "match_basis": "NONE",
+  "explanation": "The Cobra CX50SR King Limited Edition is a 50cc motorcycle, while the Intruder M1800R Cobra Special is a 1,800cc cruiser. The displacement, engine size, and model lineage are fundamentally different. No known market name, historical alias, abbreviation, or typo connects these two models. The shared 'Cobra' branding refers to a special edition on a different platform and is not a model identity match.",
+  "canonical_model_alias": "",
+  "configuration_tokens": [],
+  "brand_aliases": [],
+  "model_aliases": [],
+  "status": "SUCCESS",
+  "prompt_version": "motorcycle-candidate-resolution-v4",
+  "model": "qwen-flash",
+  "make": "Cobra",
+  "model_name": "CX50SR King Limited Edition"
+}

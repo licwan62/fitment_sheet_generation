@@ -1,0 +1,20 @@
+{
+  "decision": "MATCH",
+  "selected_candidate": "CT 125 Hunter Trail Cub",
+  "confidence": "HIGH",
+  "match_basis": "MARKET_ALIAS",
+  "explanation": "The CT125A Trail 125 ABS is a market-specific variant of the CT125 Hunter Trail Cub, with 'Trail 125 ABS' being a marketing name used in certain regions. The core model identity (CT125) and displacement (125) are identical, and the 'ABS' feature is a configuration addition, not a model change. The 'Hunter Trail Cub' is a known alternate name for this model in some markets.",
+  "canonical_model_alias": "CT 125 Hunter Trail Cub",
+  "configuration_tokens": [
+    "Trail 125 ABS"
+  ],
+  "brand_aliases": [],
+  "model_aliases": [
+    "CT 125 Hunter Trail Cub"
+  ],
+  "status": "SUCCESS",
+  "prompt_version": "motorcycle-candidate-resolution-v4",
+  "model": "qwen-flash",
+  "make": "Honda",
+  "model_name": "CT125A Trail 125 ABS"
+}

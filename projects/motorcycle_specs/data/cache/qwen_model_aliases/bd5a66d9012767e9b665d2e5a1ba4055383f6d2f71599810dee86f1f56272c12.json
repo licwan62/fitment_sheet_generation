@@ -1,0 +1,16 @@
+{
+  "decision": "NO_MATCH",
+  "selected_candidate": "",
+  "confidence": "HIGH",
+  "match_basis": "NONE",
+  "explanation": "The input model 'K75/3' is not equivalent to any of the catalog candidates. The 'K75/3' designation refers to a specific variant with a 3-cylinder engine, while the catalog candidates are all K75 models with different configurations (e.g., RT for touring, S for sport), but none match the 'K75/3' specification. The 'K75/3' is a distinct model not listed in the provided candidates.",
+  "canonical_model_alias": "",
+  "configuration_tokens": [],
+  "brand_aliases": [],
+  "model_aliases": [],
+  "status": "SUCCESS",
+  "prompt_version": "motorcycle-candidate-resolution-v4",
+  "model": "qwen-flash",
+  "make": "BMW",
+  "model_name": "K75/3"
+}

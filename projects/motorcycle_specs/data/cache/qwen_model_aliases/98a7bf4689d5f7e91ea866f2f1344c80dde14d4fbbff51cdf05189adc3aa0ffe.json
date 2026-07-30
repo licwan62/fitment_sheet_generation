@@ -1,0 +1,20 @@
+{
+  "decision": "MATCH",
+  "selected_candidate": "aprilia sr 50 r",
+  "confidence": "HIGH",
+  "match_basis": "MARKET_ALIAS",
+  "explanation": "The input 'SR 50' refers to the same underlying model as 'aprilia sr 50 r', where 'r' denotes a market-specific or configuration variant (e.g., European or retail version) of the SR 50. The core model identity, including displacement and platform, is identical.",
+  "canonical_model_alias": "sr 50 r",
+  "configuration_tokens": [
+    "r"
+  ],
+  "brand_aliases": [],
+  "model_aliases": [
+    "sr 50 r"
+  ],
+  "status": "SUCCESS",
+  "prompt_version": "motorcycle-candidate-resolution-v4",
+  "model": "qwen-flash",
+  "make": "Aprilia",
+  "model_name": "SR 50"
+}

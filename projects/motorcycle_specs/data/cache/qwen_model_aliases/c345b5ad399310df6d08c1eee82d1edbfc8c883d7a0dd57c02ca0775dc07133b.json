@@ -1,0 +1,16 @@
+{
+  "decision": "MATCH",
+  "selected_candidate": "honda cb1000f",
+  "confidence": "HIGH",
+  "match_basis": "MARKET_ALIAS",
+  "explanation": "The Honda CBR1000S1 is a market-specific name for the Honda CB1000F, particularly in certain regions like Europe and Japan. The model shares identical engine, chassis, and specifications. 'CBR1000S1' is a marketing designation that aligns with the CB1000F's identity, making it a known regional or market alias.",
+  "canonical_model_alias": "cb1000f",
+  "configuration_tokens": [],
+  "brand_aliases": [],
+  "model_aliases": [],
+  "status": "SUCCESS",
+  "prompt_version": "motorcycle-candidate-resolution-v4",
+  "model": "qwen-flash",
+  "make": "Honda",
+  "model_name": "CBR1000S1"
+}

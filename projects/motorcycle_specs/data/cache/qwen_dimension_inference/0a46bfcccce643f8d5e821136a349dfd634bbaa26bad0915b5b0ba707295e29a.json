@@ -1,0 +1,16 @@
+{
+  "decision": "INFER|UNKNOWN",
+  "confidence": "MEDIUM|LOW",
+  "length_mm": null,
+  "width_mm": null,
+  "height_mm": null,
+  "wheelbase_mm": null,
+  "seat_height_mm": null,
+  "ground_clearance_mm": null,
+  "explanation": "The Islo Partner 200 is a lesser-known model with limited publicly available specifications. No reliable catalog or technical documentation was found to confirm its dimensions. Without verified data or clear model variants across years/markets, dimension estimation carries high uncertainty. Therefore, all values are marked as unknown.",
+  "status": "SUCCESS",
+  "prompt_version": "motorcycle-dimension-inference-v1",
+  "model": "qwen-flash",
+  "make": "Islo",
+  "model_name": "Partner 200"
+}

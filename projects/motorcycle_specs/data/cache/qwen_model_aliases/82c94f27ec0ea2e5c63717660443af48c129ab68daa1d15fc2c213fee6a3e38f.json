@@ -1,0 +1,16 @@
+{
+  "decision": "NO_MATCH",
+  "selected_candidate": "",
+  "confidence": "HIGH",
+  "match_basis": "NONE",
+  "explanation": "The model 'Contact JTR370' is not present in the catalog candidates. The candidates include various Gas Gas models like 'Contact estart 250', 'econtact', and 'TXT 250 Contact', but none match the displacement (370cc) or the specific designation 'JTR370'. The 'EC 300' and 'EC 250' models are different series entirely, and no candidate matches the exact model identity. There is no evidence of a market name, abbreviation, or typo that would equate 'Contact JTR370' to any listed candidate.",
+  "canonical_model_alias": "",
+  "configuration_tokens": [],
+  "brand_aliases": [],
+  "model_aliases": [],
+  "status": "SUCCESS",
+  "prompt_version": "motorcycle-candidate-resolution-v4",
+  "model": "qwen-flash",
+  "make": "Gas Gas",
+  "model_name": "Contact JTR370"
+}

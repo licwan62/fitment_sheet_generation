@@ -1,0 +1,16 @@
+{
+  "decision": "INFER",
+  "confidence": "MEDIUM",
+  "length_mm": 2100,
+  "width_mm": 850,
+  "height_mm": 1100,
+  "wheelbase_mm": 1350,
+  "seat_height_mm": 840,
+  "ground_clearance_mm": 200,
+  "explanation": "Inferred based on typical dimensions of similar 250cc off-road motorcycles in the Gas Gas Contact JTR250 class, including comparable models from KTM and Husqvarna. Dimensions are estimated within expected ranges for this category, but exact values may vary by model year or market.",
+  "status": "SUCCESS",
+  "prompt_version": "motorcycle-dimension-inference-v1",
+  "model": "qwen-flash",
+  "make": "Gas Gas",
+  "model_name": "Contact JTR250"
+}

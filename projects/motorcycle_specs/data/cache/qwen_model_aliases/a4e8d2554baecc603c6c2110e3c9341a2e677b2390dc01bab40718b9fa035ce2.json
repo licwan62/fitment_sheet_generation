@@ -1,0 +1,20 @@
+{
+  "decision": "MATCH",
+  "selected_candidate": "GL \n      1200 Gold Wing Aspencade",
+  "confidence": "HIGH",
+  "match_basis": "SAME_NAME",
+  "explanation": "The input 'GL1200SEI Gold Wing Aspencade' refers to the same model as 'GL 1200 Gold Wing Aspencade', with 'SEI' being a known configuration identifier for the Aspencade trim level. The catalog candidate matches the core model identity, and 'SEI' is a valid variant label within the Aspencade series. No other model in the list shares this exact identity.",
+  "canonical_model_alias": "GL 1200 Gold Wing Aspencade",
+  "configuration_tokens": [
+    "SEI"
+  ],
+  "brand_aliases": [],
+  "model_aliases": [
+    "GL 1200 Gold Wing Aspencade"
+  ],
+  "status": "SUCCESS",
+  "prompt_version": "motorcycle-candidate-resolution-v4",
+  "model": "qwen-flash",
+  "make": "Honda",
+  "model_name": "GL1200SEI Gold Wing Aspencade"
+}

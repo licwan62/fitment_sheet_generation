@@ -1,0 +1,20 @@
+{
+  "decision": "MATCH",
+  "selected_candidate": "Platina 100",
+  "confidence": "HIGH",
+  "match_basis": "MARKET_ALIAS",
+  "explanation": "The 'ES' suffix in 'Platina 100 ES' is a market-specific configuration label (likely denoting enhanced specification) and does not denote a different underlying model. The core motorcycle identity remains Platina 100 across markets.",
+  "canonical_model_alias": "Platina 100",
+  "configuration_tokens": [
+    "ES"
+  ],
+  "brand_aliases": [],
+  "model_aliases": [
+    "Platina 100"
+  ],
+  "status": "SUCCESS",
+  "prompt_version": "motorcycle-candidate-resolution-v4",
+  "model": "qwen-flash",
+  "make": "Bajaj",
+  "model_name": "Platina 100 ES"
+}

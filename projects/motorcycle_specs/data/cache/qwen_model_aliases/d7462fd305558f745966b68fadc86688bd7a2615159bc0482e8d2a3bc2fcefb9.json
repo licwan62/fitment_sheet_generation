@@ -1,0 +1,20 @@
+{
+  "decision": "MATCH",
+  "selected_candidate": "SV 650S / \n\t\tABS",
+  "confidence": "HIGH",
+  "match_basis": "MARKET_ALIAS",
+  "explanation": "The input 'SV650 ABS' refers to the same motorcycle model as 'SV 650S / ABS', where 'S' denotes the sport variant and 'ABS' is the anti-lock braking system. The 'S' suffix is a standard market designation for the higher-spec version, and the inclusion of ABS is consistent across both names. The model identity (SV650) and key features (ABS) are identical; differences in naming format reflect marketing or catalog presentation, not distinct models.",
+  "canonical_model_alias": "SV 650S / ABS",
+  "configuration_tokens": [
+    "ABS"
+  ],
+  "brand_aliases": [],
+  "model_aliases": [
+    "SV 650S / ABS"
+  ],
+  "status": "SUCCESS",
+  "prompt_version": "motorcycle-candidate-resolution-v4",
+  "model": "qwen-flash",
+  "make": "Suzuki",
+  "model_name": "SV650 ABS"
+}

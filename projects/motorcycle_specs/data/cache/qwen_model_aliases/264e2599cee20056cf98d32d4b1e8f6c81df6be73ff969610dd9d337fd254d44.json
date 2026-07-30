@@ -1,0 +1,20 @@
+{
+  "decision": "MATCH",
+  "selected_candidate": "Ducati Monster 900",
+  "confidence": "HIGH",
+  "match_basis": "SAME_NAME",
+  "explanation": "The input 'Monster 900 Metallic' refers to the same underlying motorcycle model as 'Ducati Monster 900', with 'Metallic' being a paint color or finish variant, not a distinct model. The core model identity (Monster 900) is unchanged.",
+  "canonical_model_alias": "Monster 900",
+  "configuration_tokens": [
+    "Metallic"
+  ],
+  "brand_aliases": [],
+  "model_aliases": [
+    "Monster 900"
+  ],
+  "status": "SUCCESS",
+  "prompt_version": "motorcycle-candidate-resolution-v4",
+  "model": "qwen-flash",
+  "make": "Ducati",
+  "model_name": "Monster 900 Metallic"
+}

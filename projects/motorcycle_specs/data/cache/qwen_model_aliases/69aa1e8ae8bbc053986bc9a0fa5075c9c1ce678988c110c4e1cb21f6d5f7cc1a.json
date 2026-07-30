@@ -1,0 +1,18 @@
+{
+  "decision": "MATCH",
+  "selected_candidate": "husqvarna te 150",
+  "confidence": "HIGH",
+  "match_basis": "MARKET_ALIAS",
+  "explanation": "The 'WR150' is a market-specific naming for the Husqvarna TE 150, particularly in certain regions where 'WR' denotes a motocross or enduro variant. The TE 150 is the correct model with identical displacement and platform, confirming it as the same underlying motorcycle.",
+  "canonical_model_alias": "te 150",
+  "configuration_tokens": [],
+  "brand_aliases": [],
+  "model_aliases": [
+    "te 150"
+  ],
+  "status": "SUCCESS",
+  "prompt_version": "motorcycle-candidate-resolution-v4",
+  "model": "qwen-flash",
+  "make": "Husqvarna",
+  "model_name": "WR150"
+}

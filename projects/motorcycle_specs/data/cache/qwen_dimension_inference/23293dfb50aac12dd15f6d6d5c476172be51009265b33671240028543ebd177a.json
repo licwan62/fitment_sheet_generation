@@ -1,0 +1,16 @@
+{
+  "decision": "INFER",
+  "confidence": "MEDIUM",
+  "length_mm": 2250,
+  "width_mm": 880,
+  "height_mm": 1150,
+  "wheelbase_mm": 1470,
+  "seat_height_mm": 960,
+  "ground_clearance_mm": 320,
+  "explanation": "Inferred from typical dimensions of 500cc enduro motorcycles in the same class (e.g., KTM 500 EXC-F, Husqvarna FE 501), considering Gas Gas EC 500F's shared platform and design language. Dimensions are approximate and may vary slightly by model year or market.",
+  "status": "SUCCESS",
+  "prompt_version": "motorcycle-dimension-inference-v1",
+  "model": "qwen-flash",
+  "make": "Gas Gas",
+  "model_name": "EC 500F"
+}

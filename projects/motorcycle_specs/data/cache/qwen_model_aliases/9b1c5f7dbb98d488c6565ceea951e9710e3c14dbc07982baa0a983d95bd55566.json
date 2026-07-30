@@ -1,0 +1,20 @@
+{
+  "decision": "MATCH",
+  "selected_candidate": "husqvarna sm 510r",
+  "confidence": "HIGH",
+  "match_basis": "MARKET_ALIAS",
+  "explanation": "The input 'SM 510RR' is a known market variant or configuration label for the Husqvarna SM 510R, where 'RR' denotes a high-performance or racing-oriented version. This is a recognized configuration of the same underlying model, not a different motorcycle.",
+  "canonical_model_alias": "sm 510r",
+  "configuration_tokens": [
+    "RR"
+  ],
+  "brand_aliases": [],
+  "model_aliases": [
+    "sm 510r"
+  ],
+  "status": "SUCCESS",
+  "prompt_version": "motorcycle-candidate-resolution-v4",
+  "model": "qwen-flash",
+  "make": "Husqvarna",
+  "model_name": "SM 510RR"
+}

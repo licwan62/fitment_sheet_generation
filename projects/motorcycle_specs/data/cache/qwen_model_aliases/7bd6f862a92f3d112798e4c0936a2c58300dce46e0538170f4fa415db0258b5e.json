@@ -1,0 +1,16 @@
+{
+  "decision": "NO_MATCH",
+  "selected_candidate": "",
+  "confidence": "HIGH",
+  "match_basis": "NONE",
+  "explanation": "The input model 'MRT301N Montesa Cota 4RT 301RR' is a Honda-branded motorcycle with a Montesa Cota 4RT 301RR designation, but Montesa is a separate Spanish motorcycle marque historically associated with trials and off-road bikes. The Honda MRT301N is not a known variant of the Montesa Cota 4RT 301RR, and no catalog candidate exists to confirm identity. The model name suggests a hybrid or rebadged version, but without evidence of a direct match in the catalog, it cannot be confirmed as the same underlying motorcycle. Therefore, NO_MATCH is appropriate.",
+  "canonical_model_alias": "",
+  "configuration_tokens": [],
+  "brand_aliases": [],
+  "model_aliases": [],
+  "status": "SUCCESS",
+  "prompt_version": "motorcycle-candidate-resolution-v4",
+  "model": "qwen-flash",
+  "make": "Honda",
+  "model_name": "MRT301N Montesa Cota 4RT 301RR"
+}

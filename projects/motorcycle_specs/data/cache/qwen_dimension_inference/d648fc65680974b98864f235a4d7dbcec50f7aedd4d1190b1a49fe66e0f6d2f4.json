@@ -1,0 +1,16 @@
+{
+  "decision": "INFER|UNKNOWN",
+  "confidence": "MEDIUM|LOW",
+  "length_mm": null,
+  "width_mm": null,
+  "height_mm": null,
+  "wheelbase_mm": null,
+  "seat_height_mm": null,
+  "ground_clearance_mm": null,
+  "explanation": "The Indian Challenger Limited 108 Audio Package is a limited-edition model with no publicly available official dimensions. Variations in design across years and markets, combined with the absence of a catalog reference, prevent reliable inference. Dimensions may differ from standard Challenger models due to audio package integration and styling changes. Without definitive source data, dimensions are uncertain.",
+  "status": "SUCCESS",
+  "prompt_version": "motorcycle-dimension-inference-v1",
+  "model": "qwen-flash",
+  "make": "Indian",
+  "model_name": "Challenger Limited 108 Audio Package"
+}

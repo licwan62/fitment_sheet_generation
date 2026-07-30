@@ -1,0 +1,18 @@
+{
+  "decision": "NO_MATCH",
+  "selected_candidate": "",
+  "confidence": "HIGH",
+  "match_basis": "NONE",
+  "explanation": "The input model VT750RS Shadow RS is distinct from the catalog candidates, which are all VT750C Shadow models. The 'RS' suffix indicates a different configuration or variant (likely a sportier or higher-spec version), and the displacement and model code (VT750RS vs VT750C) differ. No evidence suggests that VT750RS is a market name, abbreviation, or typo for VT750C. Therefore, it is not the same underlying motorcycle.",
+  "canonical_model_alias": "",
+  "configuration_tokens": [
+    "RS"
+  ],
+  "brand_aliases": [],
+  "model_aliases": [],
+  "status": "SUCCESS",
+  "prompt_version": "motorcycle-candidate-resolution-v4",
+  "model": "qwen-flash",
+  "make": "Honda",
+  "model_name": "VT750RS Shadow RS"
+}

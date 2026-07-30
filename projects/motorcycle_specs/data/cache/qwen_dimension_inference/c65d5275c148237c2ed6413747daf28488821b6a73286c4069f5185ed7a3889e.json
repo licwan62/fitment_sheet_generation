@@ -1,0 +1,16 @@
+{
+  "decision": "UNKNOWN",
+  "confidence": "LOW",
+  "length_mm": null,
+  "width_mm": null,
+  "height_mm": null,
+  "wheelbase_mm": null,
+  "seat_height_mm": null,
+  "ground_clearance_mm": null,
+  "explanation": "The Beta 500 RR-S is a limited-production off-road motorcycle with no publicly available standardized dimensions across all variants and model years. Variations in frame design, suspension setup, and market-specific configurations make reliable inference impossible without direct measurement or official documentation. No consistent catalog data exists to support confident estimation.",
+  "status": "SUCCESS",
+  "prompt_version": "motorcycle-dimension-inference-v1",
+  "model": "qwen-flash",
+  "make": "Beta",
+  "model_name": "500 RR-S"
+}

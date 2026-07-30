@@ -1,0 +1,16 @@
+{
+  "decision": "INFER|UNKNOWN",
+  "confidence": "MEDIUM|LOW",
+  "length_mm": null,
+  "width_mm": null,
+  "height_mm": null,
+  "wheelbase_mm": null,
+  "seat_height_mm": null,
+  "ground_clearance_mm": null,
+  "explanation": "The model '741' is not a recognized Indian Motorcycle model. Indian Motorcycles typically use designations such as Scout, Chieftain, Roadmaster, or Springfield. Without clear confirmation of the model identity or available catalog data, dimensions cannot be reliably inferred. Variations by year and market further reduce confidence. Therefore, all dimensions are marked as unknown.",
+  "status": "SUCCESS",
+  "prompt_version": "motorcycle-dimension-inference-v1",
+  "model": "qwen-flash",
+  "make": "Indian",
+  "model_name": "741"
+}

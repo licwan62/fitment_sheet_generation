@@ -1,0 +1,18 @@
+{
+  "decision": "MATCH",
+  "selected_candidate": "honda nps 50 zoomer",
+  "confidence": "HIGH",
+  "match_basis": "MARKET_ALIAS",
+  "explanation": "The Honda NQ50 Spree is a market-specific name for the Honda NPS50 Zoomer. The NQ50 Spree was marketed in North America as a variant of the NPS50, with 'Spree' being a branding label for the model in that region. The displacement (50cc) and model identity are identical.",
+  "canonical_model_alias": "nps 50 zoomer",
+  "configuration_tokens": [],
+  "brand_aliases": [],
+  "model_aliases": [
+    "nps 50 zoomer"
+  ],
+  "status": "SUCCESS",
+  "prompt_version": "motorcycle-candidate-resolution-v4",
+  "model": "qwen-flash",
+  "make": "Honda",
+  "model_name": "NQ50 Spree"
+}

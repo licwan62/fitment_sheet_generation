@@ -1,0 +1,21 @@
+{
+  "decision": "MATCH",
+  "selected_candidate": "999R Fila Toseland Replica",
+  "confidence": "HIGH",
+  "match_basis": "MARKET_ALIAS",
+  "explanation": "The input '999R FILA' refers to the Ducati 999R Fila Toseland Replica, a limited edition variant marketed with Fila branding and named after rider James Toseland. This is a known market-specific configuration of the 999R model, not a different motorcycle.",
+  "canonical_model_alias": "999R Fila Toseland Replica",
+  "configuration_tokens": [
+    "Fila",
+    "Toseland Replica"
+  ],
+  "brand_aliases": [],
+  "model_aliases": [
+    "999R Fila Toseland Replica"
+  ],
+  "status": "SUCCESS",
+  "prompt_version": "motorcycle-candidate-resolution-v4",
+  "model": "qwen-flash",
+  "make": "Ducati",
+  "model_name": "999R FILA"
+}

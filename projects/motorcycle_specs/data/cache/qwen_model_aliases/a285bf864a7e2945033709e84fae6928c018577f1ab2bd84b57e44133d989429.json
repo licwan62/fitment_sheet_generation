@@ -1,0 +1,18 @@
+{
+  "decision": "MATCH",
+  "selected_candidate": "Boulevard C50 B.O.S.S.",
+  "confidence": "HIGH",
+  "match_basis": "SAME_NAME",
+  "explanation": "The input model 'C50 Boulevard B.O.S.S.' and the catalog candidate 'Boulevard C50 B.O.S.S.' refer to the same underlying motorcycle model, with only the order of words differing. The displacement (C50), name (Boulevard), and special edition identifier (B.O.S.S.) are identical, confirming they represent the same model.",
+  "canonical_model_alias": "Boulevard C50 B.O.S.S.",
+  "configuration_tokens": [],
+  "brand_aliases": [],
+  "model_aliases": [
+    "Boulevard C50 B.O.S.S."
+  ],
+  "status": "SUCCESS",
+  "prompt_version": "motorcycle-candidate-resolution-v4",
+  "model": "qwen-flash",
+  "make": "Suzuki",
+  "model_name": "C50 Boulevard B.O.S.S."
+}

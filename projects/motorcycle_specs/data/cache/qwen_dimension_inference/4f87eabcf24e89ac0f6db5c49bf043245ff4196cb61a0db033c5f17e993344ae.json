@@ -1,0 +1,16 @@
+{
+  "decision": "INFER|UNKNOWN",
+  "confidence": "MEDIUM|LOW",
+  "length_mm": null,
+  "width_mm": null,
+  "height_mm": null,
+  "wheelbase_mm": null,
+  "seat_height_mm": null,
+  "ground_clearance_mm": null,
+  "explanation": "The FXDWG2 CVO Dyna Wide Glide is a limited-edition model with no official catalog dimensions publicly available. Variations in production years and market-specific configurations may alter dimensions significantly. Without verified source data, dimension estimation is unreliable.",
+  "status": "SUCCESS",
+  "prompt_version": "motorcycle-dimension-inference-v1",
+  "model": "qwen-flash",
+  "make": "Harley-Davidson",
+  "model_name": "FXDWG2 CVO Dyna Wide Glide"
+}

@@ -1,0 +1,21 @@
+{
+  "decision": "MATCH",
+  "selected_candidate": "VT 1300CT  Interstate",
+  "confidence": "HIGH",
+  "match_basis": "SAME_NAME",
+  "explanation": "The input model 'VT1300CTA Interstate ABS' and the candidate 'VT 1300CT  Interstate' refer to the same underlying motorcycle. The 'A' in VT1300CTA is a known market or configuration suffix (likely for 'Australia' or 'ABS'), and 'Interstate' is the shared model name. The presence of 'ABS' in the input is a feature, not a model differentiator. The core model identity (VT1300CT Interstate) matches exactly.",
+  "canonical_model_alias": "VT 1300CT  Interstate",
+  "configuration_tokens": [
+    "A",
+    "ABS"
+  ],
+  "brand_aliases": [],
+  "model_aliases": [
+    "VT 1300CT Interstate"
+  ],
+  "status": "SUCCESS",
+  "prompt_version": "motorcycle-candidate-resolution-v4",
+  "model": "qwen-flash",
+  "make": "Honda",
+  "model_name": "VT1300CTA Interstate ABS"
+}

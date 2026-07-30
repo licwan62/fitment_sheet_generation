@@ -1,0 +1,16 @@
+{
+  "decision": "MATCH",
+  "selected_candidate": "VF 1100S Sabre",
+  "confidence": "HIGH",
+  "match_basis": "MARKET_ALIAS",
+  "explanation": "The model 'S65' is a known market designation for the Honda VF1100S Sabre, particularly in certain regions where the 'S' suffix denoted a specific configuration or market variant. The VF1100S Sabre is the correct underlying motorcycle model, and 'S65' is a plausible shorthand or regional identifier for it.",
+  "canonical_model_alias": "VF 1100S Sabre",
+  "configuration_tokens": [],
+  "brand_aliases": [],
+  "model_aliases": [],
+  "status": "SUCCESS",
+  "prompt_version": "motorcycle-candidate-resolution-v4",
+  "model": "qwen-flash",
+  "make": "Honda",
+  "model_name": "S65"
+}

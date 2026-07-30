@@ -1,0 +1,18 @@
+{
+  "decision": "MATCH",
+  "selected_candidate": "beta rr racing 2t 250",
+  "confidence": "HIGH",
+  "match_basis": "SAME_NAME",
+  "explanation": "The input '250 RR-Race Edition' and the candidate 'beta rr racing 2t 250' refer to the same underlying motorcycle model, with 'Race Edition' being a configuration label for the racing variant of the RR 250. The displacement (250), model series (RR), and racing intent align exactly. The '2T' designation is standard for this model's two-stroke engine, and 'Beta' is consistent across both. No other model in the list shares the same core identity.",
+  "canonical_model_alias": "beta rr racing 2t 250",
+  "configuration_tokens": [
+    "Race Edition"
+  ],
+  "brand_aliases": [],
+  "model_aliases": [],
+  "status": "SUCCESS",
+  "prompt_version": "motorcycle-candidate-resolution-v4",
+  "model": "qwen-flash",
+  "make": "Beta",
+  "model_name": "250 RR-Race Edition"
+}

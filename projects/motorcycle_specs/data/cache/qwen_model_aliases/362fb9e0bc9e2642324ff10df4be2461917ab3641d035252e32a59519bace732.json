@@ -1,0 +1,20 @@
+{
+  "decision": "MATCH",
+  "selected_candidate": "Honda GL 1800 Gold Wing ABS",
+  "confidence": "HIGH",
+  "match_basis": "SAME_NAME",
+  "explanation": "The input 'GL1800A Gold Wing ABS' is a valid market-specific or catalog variant of the same underlying model as 'Honda GL 1800 Gold Wing ABS', with 'A' likely denoting a model year or configuration suffix. The core identity—GL1800 Gold Wing ABS—is identical across both names.",
+  "canonical_model_alias": "GL 1800 Gold Wing ABS",
+  "configuration_tokens": [
+    "ABS"
+  ],
+  "brand_aliases": [],
+  "model_aliases": [
+    "GL 1800 Gold Wing ABS"
+  ],
+  "status": "SUCCESS",
+  "prompt_version": "motorcycle-candidate-resolution-v4",
+  "model": "qwen-flash",
+  "make": "Honda",
+  "model_name": "GL1800A Gold Wing ABS"
+}

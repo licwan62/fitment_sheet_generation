@@ -1,0 +1,22 @@
+{
+  "decision": "MATCH",
+  "selected_candidate": "indian roadmaster powerplus limited with 112 package",
+  "confidence": "HIGH",
+  "match_basis": "SAME_NAME",
+  "explanation": "The input 'Roadmaster PowerPlus Limited 112' matches the catalog candidate 'indian roadmaster powerplus limited with 112 package' in model name, configuration (PowerPlus Limited), displacement (112), and brand. The only difference is phrasing ('with 112 package' vs. '112'), which is a known packaging descriptor for the same model. No other model variants match this exact combination.",
+  "canonical_model_alias": "roadmaster powerplus limited with 112 package",
+  "configuration_tokens": [
+    "powerplus",
+    "limited",
+    "112"
+  ],
+  "brand_aliases": [],
+  "model_aliases": [
+    "roadmaster powerplus limited with 112 package"
+  ],
+  "status": "SUCCESS",
+  "prompt_version": "motorcycle-candidate-resolution-v4",
+  "model": "qwen-flash",
+  "make": "Indian",
+  "model_name": "Roadmaster PowerPlus Limited 112"
+}

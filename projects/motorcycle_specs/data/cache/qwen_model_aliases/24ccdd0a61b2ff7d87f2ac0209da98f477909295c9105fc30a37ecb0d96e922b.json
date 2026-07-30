@@ -1,0 +1,20 @@
+{
+  "decision": "MATCH",
+  "selected_candidate": "R nineT Urban G/S 40 Years Edition",
+  "confidence": "HIGH",
+  "match_basis": "MARKET_ALIAS",
+  "explanation": "The '40 Years GS Edition' is a special edition designation for the R nineT Urban G/S, and '40 Years Edition' is a known market or catalog abbreviation for this limited-run model. The core motorcycle identity (R nineT Urban G/S) is unchanged, and the suffix difference is a recognized configuration label.",
+  "canonical_model_alias": "R nineT Urban G/S 40 Years Edition",
+  "configuration_tokens": [
+    "40 Years Edition"
+  ],
+  "brand_aliases": [],
+  "model_aliases": [
+    "R nineT Urban G/S 40 Years Edition"
+  ],
+  "status": "SUCCESS",
+  "prompt_version": "motorcycle-candidate-resolution-v4",
+  "model": "qwen-flash",
+  "make": "BMW",
+  "model_name": "R nine T Urban G/S 40 Years GS Edition"
+}

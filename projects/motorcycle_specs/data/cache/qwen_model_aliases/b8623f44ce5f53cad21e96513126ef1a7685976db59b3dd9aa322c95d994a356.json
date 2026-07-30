@@ -1,0 +1,16 @@
+{
+  "decision": "MATCH",
+  "selected_candidate": "Suzuki GSX-R600 Moto GP",
+  "confidence": "HIGH",
+  "match_basis": "MARKET_ALIAS",
+  "explanation": "'GSX-R600 MotoGP' is a market-specific naming variant of the same motorcycle model as 'Suzuki GSX-R600 Moto GP', with 'MotoGP' being a promotional or homologation designation used in certain markets. The core model identity (GSX-R600) and displacement are identical, and the difference is a configuration label, not a distinct model.",
+  "canonical_model_alias": "GSX-R600 Moto GP",
+  "configuration_tokens": [],
+  "brand_aliases": [],
+  "model_aliases": [],
+  "status": "SUCCESS",
+  "prompt_version": "motorcycle-candidate-resolution-v4",
+  "model": "qwen-flash",
+  "make": "Suzuki",
+  "model_name": "GSX-R600 MotoGP"
+}

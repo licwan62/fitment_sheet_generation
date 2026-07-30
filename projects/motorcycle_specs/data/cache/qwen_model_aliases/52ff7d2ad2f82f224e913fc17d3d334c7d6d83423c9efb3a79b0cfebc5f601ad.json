@@ -1,0 +1,21 @@
+{
+  "decision": "MATCH",
+  "selected_candidate": "Suzuki Boulevard C90",
+  "confidence": "HIGH",
+  "match_basis": "MARKET_ALIAS",
+  "explanation": "The 'C90T' designation is a market-specific configuration label used in certain regions for the Suzuki Boulevard C90, particularly in North America. The model is otherwise known as the Boulevard C90 in standard catalog listings. The 'T' suffix denotes a specific trim or configuration but does not represent a different underlying motorcycle model.",
+  "canonical_model_alias": "Boulevard C90",
+  "configuration_tokens": [
+    "T"
+  ],
+  "brand_aliases": [],
+  "model_aliases": [
+    "Boulevard C90",
+    "C90T"
+  ],
+  "status": "SUCCESS",
+  "prompt_version": "motorcycle-candidate-resolution-v4",
+  "model": "qwen-flash",
+  "make": "Suzuki",
+  "model_name": "C90T Boulevard"
+}

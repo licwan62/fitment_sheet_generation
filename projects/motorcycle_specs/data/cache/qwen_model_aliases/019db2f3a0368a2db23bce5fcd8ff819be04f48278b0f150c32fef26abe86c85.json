@@ -1,0 +1,11 @@
+{
+  "prompt_version": "motorcycle-brand-model-aliases-v2",
+  "model": "qwen3.7-plus",
+  "make": "BMW",
+  "model_name": "G310R",
+  "brand_aliases": [
+    "Bayerische Motoren Werke",
+    "Bayerische Motoren Werke AG"
+  ],
+  "model_aliases": []
+}

@@ -1,0 +1,18 @@
+{
+  "decision": "MATCH",
+  "selected_candidate": "TE 510",
+  "confidence": "HIGH",
+  "match_basis": "SAME_NAME",
+  "explanation": "The input 'TX510' is a known market or catalog variant of the TE 510 model, with 'TX' being an alternate designation used in certain regions or years for the same underlying motorcycle. The displacement (510) and model series (TE) confirm identity.",
+  "canonical_model_alias": "TE 510",
+  "configuration_tokens": [],
+  "brand_aliases": [],
+  "model_aliases": [
+    "TE 510"
+  ],
+  "status": "SUCCESS",
+  "prompt_version": "motorcycle-candidate-resolution-v4",
+  "model": "qwen-flash",
+  "make": "Husqvarna",
+  "model_name": "TX510"
+}

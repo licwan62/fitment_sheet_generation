@@ -1,0 +1,21 @@
+{
+  "decision": "MATCH",
+  "selected_candidate": "GL 1800 Gold Wing / DCT",
+  "confidence": "HIGH",
+  "match_basis": "MARKET_ALIAS",
+  "explanation": "The 'Valkyrie ABS' is a known market-specific name for the GL1800 Gold Wing in certain regions, particularly in Europe and Asia, where it was marketed as the Valkyrie due to branding differences. The model shares identical displacement, platform, and features including DCT and ABS. The catalog candidate 'GL 1800 Gold Wing / DCT' represents the same underlying motorcycle.",
+  "canonical_model_alias": "GL 1800 Gold Wing / DCT",
+  "configuration_tokens": [
+    "DCT",
+    "ABS"
+  ],
+  "brand_aliases": [],
+  "model_aliases": [
+    "GL 1800 Gold Wing / DCT"
+  ],
+  "status": "SUCCESS",
+  "prompt_version": "motorcycle-candidate-resolution-v4",
+  "model": "qwen-flash",
+  "make": "Honda",
+  "model_name": "GL1800 Valkyrie ABS"
+}

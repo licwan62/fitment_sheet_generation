@@ -1,0 +1,18 @@
+{
+  "decision": "MATCH",
+  "selected_candidate": "F 650 Funduro",
+  "confidence": "HIGH",
+  "match_basis": "MARKET_ALIAS",
+  "explanation": "The F650 Enduro is the European market name for the same motorcycle known as the F 650 Funduro in other regions, particularly North America. The model is identical in specification and design; only the name differs by market. This is a well-documented regional naming convention.",
+  "canonical_model_alias": "F 650 Funduro",
+  "configuration_tokens": [],
+  "brand_aliases": [],
+  "model_aliases": [
+    "F 650 Funduro"
+  ],
+  "status": "SUCCESS",
+  "prompt_version": "motorcycle-candidate-resolution-v4",
+  "model": "qwen-flash",
+  "make": "BMW",
+  "model_name": "F650 Enduro"
+}

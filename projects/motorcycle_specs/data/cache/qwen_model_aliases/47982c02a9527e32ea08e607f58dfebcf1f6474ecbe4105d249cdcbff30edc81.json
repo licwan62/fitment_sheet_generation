@@ -1,0 +1,19 @@
+{
+  "decision": "MATCH",
+  "selected_candidate": "Chieftain Limited",
+  "confidence": "HIGH",
+  "match_basis": "MARKET_ALIAS",
+  "explanation": "The 'Chieftain PowerPlus Limited 108' is a limited-edition variant of the Indian Chieftain Limited, with the 'PowerPlus' and '108' denoting engine displacement and performance package. 'Chieftain Limited' is the base model name used in official catalogs, and 'PowerPlus Limited' is a market-specific configuration label for the same underlying model with a 108ci engine. The candidate 'Chieftain Limited' represents the core identity of this motorcycle.",
+  "canonical_model_alias": "Chieftain Limited",
+  "configuration_tokens": [
+    "PowerPlus",
+    "108"
+  ],
+  "brand_aliases": [],
+  "model_aliases": [],
+  "status": "SUCCESS",
+  "prompt_version": "motorcycle-candidate-resolution-v4",
+  "model": "qwen-flash",
+  "make": "Indian",
+  "model_name": "Chieftain PowerPlus Limited 108"
+}

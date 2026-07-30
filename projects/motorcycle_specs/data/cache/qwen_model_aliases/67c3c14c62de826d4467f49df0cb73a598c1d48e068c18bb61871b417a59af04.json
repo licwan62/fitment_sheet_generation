@@ -1,0 +1,20 @@
+{
+  "decision": "MATCH",
+  "selected_candidate": "K 75SA",
+  "confidence": "HIGH",
+  "match_basis": "MARKET_ALIAS",
+  "explanation": "The 'K75S ABS' is a market-specific variant of the K 75SA, with 'ABS' indicating the anti-lock braking system added in later model years. The K 75SA is the correct catalog name for the same underlying motorcycle model, with 'S' denoting sport touring and 'A' indicating the ABS version. This is a known market designation difference.",
+  "canonical_model_alias": "K 75SA",
+  "configuration_tokens": [
+    "ABS"
+  ],
+  "brand_aliases": [],
+  "model_aliases": [
+    "K 75SA"
+  ],
+  "status": "SUCCESS",
+  "prompt_version": "motorcycle-candidate-resolution-v4",
+  "model": "qwen-flash",
+  "make": "BMW",
+  "model_name": "K75S ABS"
+}

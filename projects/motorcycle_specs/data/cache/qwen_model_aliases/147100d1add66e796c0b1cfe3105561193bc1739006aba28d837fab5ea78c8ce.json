@@ -1,0 +1,18 @@
+{
+  "decision": "NO_MATCH",
+  "selected_candidate": "",
+  "confidence": "HIGH",
+  "match_basis": "NONE",
+  "explanation": "The input model 'GSX-R1000X' is a distinct variant with a 'X' suffix, indicating a specific configuration or market version not present in the catalog candidates 'GSX-R 1000' and 'GSX-R1000'. The candidates represent standard GSX-R1000 models without the 'X' designation, which denotes a different model line (e.g., GSX-R1000X was a limited edition or special variant). Therefore, no match exists.",
+  "canonical_model_alias": "",
+  "configuration_tokens": [
+    "X"
+  ],
+  "brand_aliases": [],
+  "model_aliases": [],
+  "status": "SUCCESS",
+  "prompt_version": "motorcycle-candidate-resolution-v4",
+  "model": "qwen-flash",
+  "make": "Suzuki",
+  "model_name": "GSX-R1000X"
+}

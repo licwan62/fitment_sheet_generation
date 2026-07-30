@@ -1,0 +1,16 @@
+{
+  "decision": "INFER|UNKNOWN",
+  "confidence": "MEDIUM|LOW",
+  "length_mm": null,
+  "width_mm": null,
+  "height_mm": null,
+  "wheelbase_mm": null,
+  "seat_height_mm": null,
+  "ground_clearance_mm": null,
+  "explanation": "Model identity uncertain; Beta 300 RR X-Pro lacks publicly documented dimensions. Variations by year and market are possible. No reliable source confirms exact measurements. Inference not feasible with confidence.",
+  "status": "SUCCESS",
+  "prompt_version": "motorcycle-dimension-inference-v1",
+  "model": "qwen-flash",
+  "make": "Beta",
+  "model_name": "300 RR X-Pro"
+}

@@ -1,0 +1,16 @@
+{
+  "decision": "INFER|UNKNOWN",
+  "confidence": "LOW",
+  "length_mm": null,
+  "width_mm": null,
+  "height_mm": null,
+  "wheelbase_mm": null,
+  "seat_height_mm": null,
+  "ground_clearance_mm": null,
+  "explanation": "The Honda CB72 Hawk 250 is a vintage model with limited publicly available dimensional data. Variations in production years and regional specifications make accurate dimension estimation uncertain. No reliable source confirms exact measurements, and cross-referencing with similar models introduces risk of error. Therefore, dimensions are marked as unknown with low confidence.",
+  "status": "SUCCESS",
+  "prompt_version": "motorcycle-dimension-inference-v1",
+  "model": "qwen-flash",
+  "make": "Honda",
+  "model_name": "CB72 Hawk 250"
+}

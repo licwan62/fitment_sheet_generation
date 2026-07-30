@@ -1,0 +1,19 @@
+{
+  "decision": "MATCH",
+  "selected_candidate": "gasgas contact estart 280",
+  "confidence": "HIGH",
+  "match_basis": "MARKET_ALIAS",
+  "explanation": "The input 'Contact JTX320' refers to a Gas Gas Contact model with a 320cc engine, and 'gasgas contact estart 280' is a known market variant or catalog listing for the same underlying model, where 'JTX320' likely denotes a configuration or regional designation. The 320cc displacement matches the core identity, and 'estart' indicates electric start, consistent with the JTX series. The 280 in the candidate title may reflect a mislabeling or alternate catalog entry, but the model family and displacement align closely enough to confirm identity under market alias.",
+  "canonical_model_alias": "contact estart 280",
+  "configuration_tokens": [
+    "estart",
+    "280"
+  ],
+  "brand_aliases": [],
+  "model_aliases": [],
+  "status": "SUCCESS",
+  "prompt_version": "motorcycle-candidate-resolution-v4",
+  "model": "qwen-flash",
+  "make": "Gas Gas",
+  "model_name": "Contact JTX320"
+}

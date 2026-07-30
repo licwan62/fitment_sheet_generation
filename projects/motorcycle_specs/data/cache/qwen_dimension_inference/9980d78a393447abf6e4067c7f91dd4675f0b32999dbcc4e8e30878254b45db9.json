@@ -1,0 +1,16 @@
+{
+  "decision": "UNKNOWN",
+  "confidence": "LOW",
+  "length_mm": null,
+  "width_mm": null,
+  "height_mm": null,
+  "wheelbase_mm": null,
+  "seat_height_mm": null,
+  "ground_clearance_mm": null,
+  "explanation": "ATK GV650 is not a widely recognized or documented motorcycle model in public sources. No reliable specifications are available, and the model's identity or production details are uncertain. Dimensions cannot be reliably inferred without further confirmation.",
+  "status": "SUCCESS",
+  "prompt_version": "motorcycle-dimension-inference-v1",
+  "model": "qwen-flash",
+  "make": "ATK",
+  "model_name": "GV650"
+}

@@ -1,0 +1,18 @@
+{
+  "decision": "MATCH",
+  "selected_candidate": "Honda Ape 50",
+  "confidence": "HIGH",
+  "match_basis": "MARKET_ALIAS",
+  "explanation": "Honda NA50 is a known market-specific designation for the Honda Ape 50, particularly in certain regions where it was marketed under the NA50 model code. The NA50 refers to the same motorcycle as the Ape 50, with identical displacement and platform.",
+  "canonical_model_alias": "Honda Ape 50",
+  "configuration_tokens": [],
+  "brand_aliases": [],
+  "model_aliases": [
+    "Ape 50"
+  ],
+  "status": "SUCCESS",
+  "prompt_version": "motorcycle-candidate-resolution-v4",
+  "model": "qwen-flash",
+  "make": "Honda",
+  "model_name": "NA50"
+}

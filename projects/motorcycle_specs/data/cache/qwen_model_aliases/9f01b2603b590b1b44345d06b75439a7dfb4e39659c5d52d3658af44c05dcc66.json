@@ -1,0 +1,21 @@
+{
+  "decision": "MATCH",
+  "selected_candidate": "250 SR",
+  "confidence": "HIGH",
+  "match_basis": "MARKET_ALIAS",
+  "explanation": "The '250 SR-S ABS' model is a market-specific configuration of the 250 SR, with 'S' and 'ABS' denoting equipment and safety features. The core model identity remains unchanged. The suffix 'S' is commonly used in CFMOTO's naming for specific variants, and 'ABS' is an added feature, not a different model.",
+  "canonical_model_alias": "250 SR",
+  "configuration_tokens": [
+    "S",
+    "ABS"
+  ],
+  "brand_aliases": [],
+  "model_aliases": [
+    "250 SR"
+  ],
+  "status": "SUCCESS",
+  "prompt_version": "motorcycle-candidate-resolution-v4",
+  "model": "qwen-flash",
+  "make": "CFMOTO",
+  "model_name": "250 SR-S ABS"
+}

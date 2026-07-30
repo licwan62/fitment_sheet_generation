@@ -1,0 +1,21 @@
+{
+  "decision": "MATCH",
+  "selected_candidate": "700 CL-X Sport",
+  "confidence": "HIGH",
+  "match_basis": "MARKET_ALIAS",
+  "explanation": "The '700CL-X Heritage' and '700 CL-X Sport' are different market or configuration names for the same underlying CFMOTO 700 CL-X model, with 'Heritage' and 'Sport' representing distinct trim or marketing variants of the same motorcycle platform. Displacement and core model designation (700 CL-X) are identical.",
+  "canonical_model_alias": "700 CL-X Sport",
+  "configuration_tokens": [
+    "Heritage",
+    "Sport"
+  ],
+  "brand_aliases": [],
+  "model_aliases": [
+    "700 CL-X Sport"
+  ],
+  "status": "SUCCESS",
+  "prompt_version": "motorcycle-candidate-resolution-v4",
+  "model": "qwen-flash",
+  "make": "CFMOTO",
+  "model_name": "700CL-X Heritage"
+}

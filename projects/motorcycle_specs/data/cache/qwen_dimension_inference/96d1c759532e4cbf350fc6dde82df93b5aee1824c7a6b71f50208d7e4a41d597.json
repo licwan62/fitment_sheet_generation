@@ -1,0 +1,16 @@
+{
+  "decision": "UNKNOWN",
+  "confidence": "LOW",
+  "length_mm": null,
+  "width_mm": null,
+  "height_mm": null,
+  "wheelbase_mm": null,
+  "seat_height_mm": null,
+  "ground_clearance_mm": null,
+  "explanation": "Insufficient reliable data available to infer dimensions for the CFMOTO Ibex 800 T; model identity and specifications vary significantly by year and market, and no consistent catalog or verified source confirms exact measurements.",
+  "status": "SUCCESS",
+  "prompt_version": "motorcycle-dimension-inference-v1",
+  "model": "qwen-flash",
+  "make": "CFMOTO",
+  "model_name": "Ibex 800 T"
+}

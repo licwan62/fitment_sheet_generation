@@ -1,0 +1,18 @@
+{
+  "decision": "MATCH",
+  "selected_candidate": "beta rr race 2t 250",
+  "confidence": "HIGH",
+  "match_basis": "SAME_NAME",
+  "explanation": "The input '250 RR-Race Edition (2-Stroke)' is functionally identical to 'beta rr race 2t 250'—both refer to the same 250cc two-stroke Beta RR Race model, with 'Race Edition' being a marketing term for the same high-performance variant. The use of 'RR-Race Edition' and 'rr race' are synonymous in Beta's catalog context.",
+  "canonical_model_alias": "beta rr race 2t 250",
+  "configuration_tokens": [],
+  "brand_aliases": [],
+  "model_aliases": [
+    "rr race 2t 250"
+  ],
+  "status": "SUCCESS",
+  "prompt_version": "motorcycle-candidate-resolution-v4",
+  "model": "qwen-flash",
+  "make": "Beta",
+  "model_name": "250 RR-Race Edition (2-Stroke)"
+}

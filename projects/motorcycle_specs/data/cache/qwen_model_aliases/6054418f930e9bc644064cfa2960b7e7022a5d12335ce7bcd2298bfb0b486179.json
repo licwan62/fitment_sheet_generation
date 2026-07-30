@@ -1,0 +1,18 @@
+{
+  "decision": "MATCH",
+  "selected_candidate": "Boulevard C50T",
+  "confidence": "HIGH",
+  "match_basis": "SAME_NAME",
+  "explanation": "The input model 'C50T Boulevard' refers to the same motorcycle as the catalog candidate 'Boulevard C50T', with only the order of words differing. The displacement (C50T) and model name (Boulevard) are identical, confirming it is the same underlying motorcycle.",
+  "canonical_model_alias": "Boulevard C50T",
+  "configuration_tokens": [],
+  "brand_aliases": [],
+  "model_aliases": [
+    "Boulevard C50T"
+  ],
+  "status": "SUCCESS",
+  "prompt_version": "motorcycle-candidate-resolution-v4",
+  "model": "qwen-flash",
+  "make": "Suzuki",
+  "model_name": "C50T Boulevard"
+}

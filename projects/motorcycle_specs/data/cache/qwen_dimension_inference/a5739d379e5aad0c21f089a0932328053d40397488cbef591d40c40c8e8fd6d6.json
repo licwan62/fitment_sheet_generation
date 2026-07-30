@@ -1,0 +1,16 @@
+{
+  "decision": "INFER|UNKNOWN",
+  "confidence": "MEDIUM|LOW",
+  "length_mm": null,
+  "width_mm": null,
+  "height_mm": null,
+  "wheelbase_mm": null,
+  "seat_height_mm": null,
+  "ground_clearance_mm": null,
+  "explanation": "Big Bear Choppers is a custom motorcycle builder with limited public documentation on specific model dimensions. The Devils Advocate Two-Up V111 Carb appears to be a custom or limited-production model with no publicly available catalog data or verified specifications. Dimensions may vary significantly by build, year, or market configuration. Without definitive sources or consistent data across models, accurate inference is not reliable.",
+  "status": "SUCCESS",
+  "prompt_version": "motorcycle-dimension-inference-v1",
+  "model": "qwen-flash",
+  "make": "Big Bear Choppers",
+  "model_name": "Devils Advocate Two-Up V111 Carb"
+}

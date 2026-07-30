@@ -1,0 +1,16 @@
+{
+  "decision": "INFER|UNKNOWN",
+  "confidence": "LOW",
+  "length_mm": null,
+  "width_mm": null,
+  "height_mm": null,
+  "wheelbase_mm": null,
+  "seat_height_mm": null,
+  "ground_clearance_mm": null,
+  "explanation": "Bultaco Pursang 370 is a rare model with limited public documentation. No reliable dimensions are available from verified sources, and variations across production years or markets cannot be ruled out. Inferred dimensions are not confidently estimable from model knowledge alone.",
+  "status": "SUCCESS",
+  "prompt_version": "motorcycle-dimension-inference-v1",
+  "model": "qwen-flash",
+  "make": "Bultaco",
+  "model_name": "Pursang 370"
+}

@@ -1,0 +1,18 @@
+{
+  "decision": "MATCH",
+  "selected_candidate": "aprilia sr 50 street",
+  "confidence": "HIGH",
+  "match_basis": "MARKET_ALIAS",
+  "explanation": "The input 'SR 50 Ditech' refers to the Aprilia SR 50 model marketed in certain regions as 'Street', with 'Ditech' being a technical designation for the fuel-injected engine system. The 'SR 50 Street' is the correct market-specific name for this model, making it a valid alias.",
+  "canonical_model_alias": "sr 50 street",
+  "configuration_tokens": [],
+  "brand_aliases": [],
+  "model_aliases": [
+    "sr 50 street"
+  ],
+  "status": "SUCCESS",
+  "prompt_version": "motorcycle-candidate-resolution-v4",
+  "model": "qwen-flash",
+  "make": "Aprilia",
+  "model_name": "SR 50 Ditech"
+}

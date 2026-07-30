@@ -1,0 +1,18 @@
+{
+  "decision": "MATCH",
+  "selected_candidate": "cfmoto 650nk",
+  "confidence": "HIGH",
+  "match_basis": "MARKET_ALIAS",
+  "explanation": "The '650 Adventura' is a market-specific name for the CFMOTO 650NK model, particularly in certain regions. The 650NK and 650 Adventura share identical platform, engine, and specifications, with the 'Adventura' designation being a marketing variant for adventure-style positioning.",
+  "canonical_model_alias": "650NK",
+  "configuration_tokens": [],
+  "brand_aliases": [],
+  "model_aliases": [
+    "650nk"
+  ],
+  "status": "SUCCESS",
+  "prompt_version": "motorcycle-candidate-resolution-v4",
+  "model": "qwen-flash",
+  "make": "CFMOTO",
+  "model_name": "650 Adventura"
+}

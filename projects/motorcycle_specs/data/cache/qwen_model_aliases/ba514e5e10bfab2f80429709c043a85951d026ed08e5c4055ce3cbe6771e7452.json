@@ -1,0 +1,16 @@
+{
+  "decision": "NO_MATCH",
+  "selected_candidate": "",
+  "confidence": "HIGH",
+  "match_basis": "NONE",
+  "explanation": "The input model K1200LTC is a specific variant of the BMW K1200LT with a touring configuration (LTC), while the catalog candidates 'K 1200LT' and 'K 1200RS' are distinct models. The K1200LT is a touring motorcycle, and the K1200RS is a sport-touring model with different geometry, purpose, and equipment. The LTC suffix denotes a specific configuration not present in either candidate. No known market name, abbreviation, or typo equivalence exists between K1200LTC and the listed candidates.",
+  "canonical_model_alias": "",
+  "configuration_tokens": [],
+  "brand_aliases": [],
+  "model_aliases": [],
+  "status": "SUCCESS",
+  "prompt_version": "motorcycle-candidate-resolution-v4",
+  "model": "qwen-flash",
+  "make": "BMW",
+  "model_name": "K1200LTC"
+}

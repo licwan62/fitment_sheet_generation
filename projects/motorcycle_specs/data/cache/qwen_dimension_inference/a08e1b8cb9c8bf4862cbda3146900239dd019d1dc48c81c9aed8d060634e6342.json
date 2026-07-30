@@ -1,0 +1,16 @@
+{
+  "decision": "INFER|UNKNOWN",
+  "confidence": "MEDIUM|LOW",
+  "length_mm": null,
+  "width_mm": null,
+  "height_mm": null,
+  "wheelbase_mm": null,
+  "seat_height_mm": null,
+  "ground_clearance_mm": null,
+  "explanation": "The FLHRSE5 CVO Road King model is a limited-edition variant with no publicly documented factory dimensions. Variations in trim, accessories, and production year may affect overall dimensions. Without access to official specifications or a physical reference, accurate inference is not reliable.",
+  "status": "SUCCESS",
+  "prompt_version": "motorcycle-dimension-inference-v1",
+  "model": "qwen-flash",
+  "make": "Harley-Davidson",
+  "model_name": "FLHRSE5 CVO Road King"
+}

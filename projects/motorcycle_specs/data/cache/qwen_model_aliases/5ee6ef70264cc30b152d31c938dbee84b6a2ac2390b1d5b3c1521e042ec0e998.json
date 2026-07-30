@@ -1,0 +1,16 @@
+{
+  "decision": "NO_MATCH",
+  "selected_candidate": "",
+  "confidence": "HIGH",
+  "match_basis": "NONE",
+  "explanation": "The input model 'SD50/Sense' does not correspond to any of the catalog candidates. 'SD50' is not a known Hyosung model, and 'Sense' is not a recognized variant or market name for any listed Hyosung motorcycle. The candidates include models like GT 650S, GD250R, and SF50 Racing, which are distinct in displacement, platform, and naming. No plausible alias, typo, or configuration match exists between 'SD50/Sense' and any candidate.",
+  "canonical_model_alias": "",
+  "configuration_tokens": [],
+  "brand_aliases": [],
+  "model_aliases": [],
+  "status": "SUCCESS",
+  "prompt_version": "motorcycle-candidate-resolution-v4",
+  "model": "qwen-flash",
+  "make": "Hyosung",
+  "model_name": "SD50/Sense"
+}

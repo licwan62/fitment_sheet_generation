@@ -1,0 +1,21 @@
+{
+  "decision": "MATCH",
+  "selected_candidate": "Honda NT700VA Deauville",
+  "confidence": "HIGH",
+  "match_basis": "MARKET_ALIAS",
+  "explanation": "NT700VA is the European market designation for the Deauville model, which is the same motorcycle as the NT700V ABS. The 'VA' suffix denotes a specific configuration (ABS and updated features) marketed as Deauville in Europe.",
+  "canonical_model_alias": "NT700VA Deauville",
+  "configuration_tokens": [
+    "ABS",
+    "VA"
+  ],
+  "brand_aliases": [],
+  "model_aliases": [
+    "NT700VA Deauville"
+  ],
+  "status": "SUCCESS",
+  "prompt_version": "motorcycle-candidate-resolution-v4",
+  "model": "qwen-flash",
+  "make": "Honda",
+  "model_name": "NT700VA ABS"
+}

@@ -1,0 +1,21 @@
+{
+  "decision": "MATCH",
+  "selected_candidate": "DBx Concept",
+  "confidence": "HIGH",
+  "match_basis": "MARKET_ALIAS",
+  "explanation": "The 'DBX E B.Motard' is a market-specific configuration or naming variant of the DBx Concept, with 'B.Motard' indicating a motard (streetfighter) version marketed under a different name. The core model identity remains the same as the DBx Concept.",
+  "canonical_model_alias": "DBx Concept",
+  "configuration_tokens": [
+    "E",
+    "B.Motard"
+  ],
+  "brand_aliases": [],
+  "model_aliases": [
+    "DBx Concept"
+  ],
+  "status": "SUCCESS",
+  "prompt_version": "motorcycle-candidate-resolution-v4",
+  "model": "qwen-flash",
+  "make": "Bimota",
+  "model_name": "DBX E B.Motard"
+}

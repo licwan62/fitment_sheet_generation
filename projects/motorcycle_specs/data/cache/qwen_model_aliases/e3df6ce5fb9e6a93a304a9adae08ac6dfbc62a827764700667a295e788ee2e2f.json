@@ -1,0 +1,18 @@
+{
+  "decision": "MATCH",
+  "selected_candidate": "e ton viper 150",
+  "confidence": "HIGH",
+  "match_basis": "SAME_NAME",
+  "explanation": "The input model 'Sport 150' is a known market or marketing name for the E-TON Viper 150, which is a direct match in displacement and model identity. The name 'Sport 150' aligns with the Viper 150's positioning as a sport-oriented 150cc motorcycle.",
+  "canonical_model_alias": "viper 150",
+  "configuration_tokens": [],
+  "brand_aliases": [],
+  "model_aliases": [
+    "viper 150"
+  ],
+  "status": "SUCCESS",
+  "prompt_version": "motorcycle-candidate-resolution-v4",
+  "model": "qwen-flash",
+  "make": "E-TON",
+  "model_name": "Sport 150"
+}

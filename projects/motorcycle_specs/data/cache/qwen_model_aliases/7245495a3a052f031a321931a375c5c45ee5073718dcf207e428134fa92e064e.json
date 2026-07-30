@@ -1,0 +1,16 @@
+{
+  "decision": "MATCH",
+  "selected_candidate": "Beta Synt. 450",
+  "confidence": "HIGH",
+  "match_basis": "MARKET_ALIAS",
+  "explanation": "'Synt.' is a known market-specific or abbreviated designation for the Beta Synt. 450, commonly used in catalogs and enthusiast communities. The model is identical despite the truncated name.",
+  "canonical_model_alias": "Beta Synt. 450",
+  "configuration_tokens": [],
+  "brand_aliases": [],
+  "model_aliases": [],
+  "status": "SUCCESS",
+  "prompt_version": "motorcycle-candidate-resolution-v4",
+  "model": "qwen-flash",
+  "make": "Beta",
+  "model_name": "Synt."
+}

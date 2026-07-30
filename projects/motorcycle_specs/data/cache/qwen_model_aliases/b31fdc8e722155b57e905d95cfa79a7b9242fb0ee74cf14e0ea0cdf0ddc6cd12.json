@@ -1,0 +1,18 @@
+{
+  "decision": "MATCH",
+  "selected_candidate": "VF 750C Magna V45",
+  "confidence": "HIGH",
+  "match_basis": "SAME_NAME",
+  "explanation": "The input 'VF750C V45 Magna' is a direct match in substance and naming convention to the catalog candidate 'VF 750C Magna V45', with only minor spacing and formatting differences. The model identity, displacement (750), engine configuration (V45), and name (Magna) are identical. No other candidate shares this exact combination.",
+  "canonical_model_alias": "VF 750C Magna V45",
+  "configuration_tokens": [],
+  "brand_aliases": [],
+  "model_aliases": [
+    "VF 750C Magna V45"
+  ],
+  "status": "SUCCESS",
+  "prompt_version": "motorcycle-candidate-resolution-v4",
+  "model": "qwen-flash",
+  "make": "Honda",
+  "model_name": "VF750C V45 Magna"
+}

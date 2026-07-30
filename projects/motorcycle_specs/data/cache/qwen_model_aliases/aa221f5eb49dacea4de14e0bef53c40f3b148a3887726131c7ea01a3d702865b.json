@@ -1,0 +1,16 @@
+{
+  "decision": "NO_MATCH",
+  "selected_candidate": "",
+  "confidence": "HIGH",
+  "match_basis": "NONE",
+  "explanation": "The model 'Mini 50 R12' is not found in the catalog candidates, and no known market name, historical alias, abbreviation, or plausible typo of this model exists in the provided list. The displacement (50cc), model series (Mini), and configuration (R12) are specific and do not match any known Beta motorcycle in the absence of candidate data.",
+  "canonical_model_alias": "",
+  "configuration_tokens": [],
+  "brand_aliases": [],
+  "model_aliases": [],
+  "status": "SUCCESS",
+  "prompt_version": "motorcycle-candidate-resolution-v4",
+  "model": "qwen-flash",
+  "make": "Beta",
+  "model_name": "Mini 50 R12"
+}

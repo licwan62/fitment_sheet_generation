@@ -1,0 +1,16 @@
+{
+  "decision": "INFER|UNKNOWN",
+  "confidence": "MEDIUM|LOW",
+  "length_mm": null,
+  "width_mm": null,
+  "height_mm": null,
+  "wheelbase_mm": null,
+  "seat_height_mm": null,
+  "ground_clearance_mm": null,
+  "explanation": "Model identity and dimensional data for the Hyosung SF50R/Rally are not reliably documented in public sources. Variations by year and market may affect dimensions, and no consistent catalog or technical specification is available for verification. Inference cannot be made with confidence due to insufficient model-specific data.",
+  "status": "SUCCESS",
+  "prompt_version": "motorcycle-dimension-inference-v1",
+  "model": "qwen-flash",
+  "make": "Hyosung",
+  "model_name": "SF50R/Rally"
+}

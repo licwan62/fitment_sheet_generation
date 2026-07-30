@@ -1,0 +1,20 @@
+{
+  "decision": "MATCH",
+  "selected_candidate": "VT 1100 \n\t\tShadow Ace Tourer",
+  "confidence": "HIGH",
+  "match_basis": "MARKET_ALIAS",
+  "explanation": "The input 'VT1100T Shadow ACE Tour' corresponds to the same model as 'VT 1100 Shadow Ace Tourer', with 'T' in the model code likely denoting a market-specific or configuration variant (e.g., Tourer), and 'ACE Tour' being a common marketing shorthand for 'Ace Tourer'. The displacement (1100), base model (Shadow), and key identifiers match exactly. The catalog candidate is the correct and canonical form.",
+  "canonical_model_alias": "VT 1100 Shadow Ace Tourer",
+  "configuration_tokens": [
+    "Tourer"
+  ],
+  "brand_aliases": [],
+  "model_aliases": [
+    "VT 1100 Shadow Ace Tourer"
+  ],
+  "status": "SUCCESS",
+  "prompt_version": "motorcycle-candidate-resolution-v4",
+  "model": "qwen-flash",
+  "make": "Honda",
+  "model_name": "VT1100T Shadow ACE Tour"
+}

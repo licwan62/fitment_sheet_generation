@@ -1,0 +1,16 @@
+{
+  "decision": "UNKNOWN",
+  "confidence": "LOW",
+  "length_mm": null,
+  "width_mm": null,
+  "height_mm": null,
+  "wheelbase_mm": null,
+  "seat_height_mm": null,
+  "ground_clearance_mm": null,
+  "explanation": "The Hyosung SD50/Sense model is not well-documented in public sources, and available information is inconsistent or insufficient to reliably infer dimensions. Variations by year and market are possible, and no definitive specifications are available for verification. Therefore, dimensions cannot be confidently estimated.",
+  "status": "SUCCESS",
+  "prompt_version": "motorcycle-dimension-inference-v1",
+  "model": "qwen-flash",
+  "make": "Hyosung",
+  "model_name": "SD50/Sense"
+}

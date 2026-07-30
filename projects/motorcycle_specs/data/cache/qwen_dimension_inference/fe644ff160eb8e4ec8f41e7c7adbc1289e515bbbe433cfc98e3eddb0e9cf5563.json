@@ -1,0 +1,16 @@
+{
+  "decision": "INFER|UNKNOWN",
+  "confidence": "MEDIUM|LOW",
+  "length_mm": null,
+  "width_mm": null,
+  "height_mm": null,
+  "wheelbase_mm": null,
+  "seat_height_mm": null,
+  "ground_clearance_mm": null,
+  "explanation": "The Big Dog K-9 250 is a custom motorcycle model with limited publicly available dimensional data. No official catalog or verified source provides consistent dimensions across years or markets. Model identity and specifications may vary significantly by production year and regional configuration, making accurate inference uncertain. Dimensions from similar models are not reliable for cross-model assignment.",
+  "status": "SUCCESS",
+  "prompt_version": "motorcycle-dimension-inference-v1",
+  "model": "qwen-flash",
+  "make": "Big Dog",
+  "model_name": "K-9 250"
+}

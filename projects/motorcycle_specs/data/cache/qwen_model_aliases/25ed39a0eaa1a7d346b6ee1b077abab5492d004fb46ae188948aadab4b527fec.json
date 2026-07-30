@@ -1,0 +1,16 @@
+{
+  "decision": "MATCH",
+  "selected_candidate": "Harley-Davidson Nightster Special",
+  "confidence": "HIGH",
+  "match_basis": "SAME_NAME",
+  "explanation": "The input 'RH975S Nightster Special' refers to the same motorcycle model as 'Harley-Davidson Nightster Special', with 'RH975S' being a model code that identifies the 975cc engine variant within the Nightster Special lineup. The name 'Nightster Special' is the official catalog title, and the input uses a common internal designation format. No other candidate matches this identity.",
+  "canonical_model_alias": "Nightster Special",
+  "configuration_tokens": [],
+  "brand_aliases": [],
+  "model_aliases": [],
+  "status": "SUCCESS",
+  "prompt_version": "motorcycle-candidate-resolution-v4",
+  "model": "qwen-flash",
+  "make": "Harley-Davidson",
+  "model_name": "RH975S Nightster Special"
+}

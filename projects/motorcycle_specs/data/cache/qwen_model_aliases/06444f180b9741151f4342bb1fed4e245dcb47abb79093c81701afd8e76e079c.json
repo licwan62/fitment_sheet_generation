@@ -1,0 +1,20 @@
+{
+  "decision": "MATCH",
+  "selected_candidate": "998S Final Edition",
+  "confidence": "HIGH",
+  "match_basis": "HISTORICAL_ALIAS",
+  "explanation": "The '998 F Edition Monoposto' is a known limited edition variant of the Ducati 998S, with 'F Edition' and 'Monoposto' referring to the same high-performance, single-seat configuration. The '998S Final Edition' is the official catalog title for this model, making it a historical alias despite differing phrasing.",
+  "canonical_model_alias": "998S Final Edition",
+  "configuration_tokens": [
+    "Final Edition"
+  ],
+  "brand_aliases": [],
+  "model_aliases": [
+    "998S Final Edition"
+  ],
+  "status": "SUCCESS",
+  "prompt_version": "motorcycle-candidate-resolution-v4",
+  "model": "qwen-flash",
+  "make": "Ducati",
+  "model_name": "998 F Edition Monoposto"
+}

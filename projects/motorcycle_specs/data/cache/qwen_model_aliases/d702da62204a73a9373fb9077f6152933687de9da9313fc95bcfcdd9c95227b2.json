@@ -1,0 +1,18 @@
+{
+  "decision": "MATCH",
+  "selected_candidate": "CX 500 Deluxe",
+  "confidence": "HIGH",
+  "match_basis": "SAME_NAME",
+  "explanation": "The input 'CX500D Deluxe' is a direct variant of the 'CX 500 Deluxe' model, with 'D' likely denoting a market or configuration label (e.g., 'Deluxe' trim) that does not alter the core model identity. The catalog candidate 'CX 500 Deluxe' matches the underlying motorcycle model exactly.",
+  "canonical_model_alias": "CX 500 Deluxe",
+  "configuration_tokens": [],
+  "brand_aliases": [],
+  "model_aliases": [
+    "CX 500 Deluxe"
+  ],
+  "status": "SUCCESS",
+  "prompt_version": "motorcycle-candidate-resolution-v4",
+  "model": "qwen-flash",
+  "make": "Honda",
+  "model_name": "CX500D Deluxe"
+}

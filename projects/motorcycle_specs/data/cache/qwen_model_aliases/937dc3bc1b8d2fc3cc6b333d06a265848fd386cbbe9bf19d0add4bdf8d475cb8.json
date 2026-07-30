@@ -1,0 +1,21 @@
+{
+  "decision": "MATCH",
+  "selected_candidate": "CMX \n\t\t1100T Rebel / DCT",
+  "confidence": "HIGH",
+  "match_basis": "MARKET_ALIAS",
+  "explanation": "The input 'CMX1100 Rebel 1100T' refers to the same motorcycle model as the candidate 'CMX 1100T Rebel / DCT'. The '1100T' suffix is a market-specific configuration label used in certain regions, and 'DCT' denotes the dual-clutch transmission variant. This is a known market designation for the 1100T model, making it a valid alias. The core model identity (CMX1100T Rebel) remains unchanged.",
+  "canonical_model_alias": "CMX 1100T Rebel / DCT",
+  "configuration_tokens": [
+    "1100T",
+    "DCT"
+  ],
+  "brand_aliases": [],
+  "model_aliases": [
+    "CMX 1100T Rebel / DCT"
+  ],
+  "status": "SUCCESS",
+  "prompt_version": "motorcycle-candidate-resolution-v4",
+  "model": "qwen-flash",
+  "make": "Honda",
+  "model_name": "CMX1100 Rebel 1100T"
+}

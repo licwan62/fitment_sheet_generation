@@ -1,0 +1,16 @@
+{
+  "decision": "INFER|UNKNOWN",
+  "confidence": "LOW",
+  "length_mm": null,
+  "width_mm": null,
+  "height_mm": null,
+  "wheelbase_mm": null,
+  "seat_height_mm": null,
+  "ground_clearance_mm": null,
+  "explanation": "The Cobra CX50FWE is not a widely recognized or documented motorcycle model in public databases. Without access to official specifications, catalog pages, or verified user reports, dimensions cannot be reliably inferred. The model name suggests a small-displacement motorcycle (likely under 125cc), but exact dimensions vary significantly across manufacturers and markets. No consistent data source confirms its physical characteristics. Therefore, all dimensions are marked as unknown with low confidence.",
+  "status": "SUCCESS",
+  "prompt_version": "motorcycle-dimension-inference-v1",
+  "model": "qwen-flash",
+  "make": "Cobra",
+  "model_name": "CX50FWE"
+}

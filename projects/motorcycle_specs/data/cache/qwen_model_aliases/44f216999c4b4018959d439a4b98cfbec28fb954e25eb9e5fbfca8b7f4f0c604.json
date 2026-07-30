@@ -1,0 +1,16 @@
+{
+  "decision": "NO_MATCH",
+  "selected_candidate": "",
+  "confidence": "HIGH",
+  "match_basis": "NONE",
+  "explanation": "The input model '250 MX-6' refers to a small-displacement, motocross-oriented Can-Am motorcycle with a 250cc engine and six-speed transmission. None of the catalog candidates match this specific model in displacement, intended use (motocross vs. utility/ATV), or configuration. The candidates are all larger-displacement utility ATVs or side-by-sides, primarily from the Outlander, Traxter, or DS series, none of which are 250cc motocross machines. No known market alias, historical name, abbreviation, or typo links the input to any candidate.",
+  "canonical_model_alias": "",
+  "configuration_tokens": [],
+  "brand_aliases": [],
+  "model_aliases": [],
+  "status": "SUCCESS",
+  "prompt_version": "motorcycle-candidate-resolution-v4",
+  "model": "qwen-flash",
+  "make": "Can-Am",
+  "model_name": "250 MX-6"
+}

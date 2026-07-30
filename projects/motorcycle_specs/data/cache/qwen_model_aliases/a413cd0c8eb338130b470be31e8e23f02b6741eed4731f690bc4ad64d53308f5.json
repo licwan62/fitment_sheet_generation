@@ -1,0 +1,16 @@
+{
+  "decision": "NO_MATCH",
+  "selected_candidate": "",
+  "confidence": "HIGH",
+  "match_basis": "NONE",
+  "explanation": "The input model 'F50' does not correspond to any of the catalog candidates, as none represent a 50cc motorcycle or a known variant of a Suzuki F50. The candidates are all larger displacement models (250cc and 500cc), and no known market name, historical alias, abbreviation, or typo links 'F50' to any of them.",
+  "canonical_model_alias": "",
+  "configuration_tokens": [],
+  "brand_aliases": [],
+  "model_aliases": [],
+  "status": "SUCCESS",
+  "prompt_version": "motorcycle-candidate-resolution-v4",
+  "model": "qwen-flash",
+  "make": "Suzuki",
+  "model_name": "F50"
+}

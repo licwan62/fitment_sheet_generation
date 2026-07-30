@@ -1,0 +1,18 @@
+{
+  "decision": "MATCH",
+  "selected_candidate": "DL 800DE V-Strom Adventure",
+  "confidence": "HIGH",
+  "match_basis": "MARKET_ALIAS",
+  "explanation": "The Suzuki V-Strom 800DE is a known market designation for the DL 800DE V-Strom Adventure model, with 'V-Strom' being the primary name and 'DL 800DE' the model code. The catalog candidate matches the same underlying motorcycle, with 'DL' being the model series identifier used in Suzuki's naming convention for this variant.",
+  "canonical_model_alias": "DL 800DE V-Strom Adventure",
+  "configuration_tokens": [],
+  "brand_aliases": [],
+  "model_aliases": [
+    "DL 800DE V-Strom Adventure"
+  ],
+  "status": "SUCCESS",
+  "prompt_version": "motorcycle-candidate-resolution-v4",
+  "model": "qwen-flash",
+  "make": "Suzuki",
+  "model_name": "V-Strom 800DE"
+}

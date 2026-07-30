@@ -1,0 +1,20 @@
+{
+  "decision": "MATCH",
+  "selected_candidate": "Bajaj pulsar ns 160",
+  "confidence": "HIGH",
+  "match_basis": "MARKET_ALIAS",
+  "explanation": "The input 'Pulsar 160 NS UG' refers to the same model as 'Bajaj Pulsar NS 160', where 'UG' is a market-specific designation (likely for 'Urban Grit' or similar regional naming) and does not alter the core model identity. The displacement (160), engine type (NS), and manufacturer (Bajaj) are identical.",
+  "canonical_model_alias": "pulsar ns 160",
+  "configuration_tokens": [
+    "UG"
+  ],
+  "brand_aliases": [],
+  "model_aliases": [
+    "pulsar ns 160"
+  ],
+  "status": "SUCCESS",
+  "prompt_version": "motorcycle-candidate-resolution-v4",
+  "model": "qwen-flash",
+  "make": "Bajaj",
+  "model_name": "Pulsar 160 NS UG"
+}

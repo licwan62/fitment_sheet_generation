@@ -1,0 +1,20 @@
+{
+  "decision": "MATCH",
+  "selected_candidate": "indian scout sixty bobber",
+  "confidence": "HIGH",
+  "match_basis": "MARKET_ALIAS",
+  "explanation": "'Scout Sixty Bobber Limited' is a limited edition variant of the 'Scout Sixty Bobber' model, with 'Limited' being a configuration suffix. The core model identity remains unchanged. The catalog candidate 'indian scout sixty bobber' accurately represents the base model, including correct displacement and body style.",
+  "canonical_model_alias": "scout sixty bobber",
+  "configuration_tokens": [
+    "limited"
+  ],
+  "brand_aliases": [],
+  "model_aliases": [
+    "scout sixty bobber"
+  ],
+  "status": "SUCCESS",
+  "prompt_version": "motorcycle-candidate-resolution-v4",
+  "model": "qwen-flash",
+  "make": "Indian",
+  "model_name": "Scout Sixty Bobber Limited"
+}

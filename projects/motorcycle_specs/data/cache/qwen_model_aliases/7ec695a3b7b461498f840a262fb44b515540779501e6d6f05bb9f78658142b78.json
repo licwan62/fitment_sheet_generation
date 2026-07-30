@@ -1,0 +1,21 @@
+{
+  "decision": "MATCH",
+  "selected_candidate": "gasgas ec 200 racing",
+  "confidence": "HIGH",
+  "match_basis": "MARKET_ALIAS",
+  "explanation": "The model 'XC 200 Racing' is a market-specific naming variant of the 'EC 200 Racing' series produced by Gas Gas. The 'XC' designation in this context refers to a racing configuration or marketing name used in certain regions, while the core model (EC 200) and displacement (200) are identical. The 'Racing' suffix confirms the same configuration. This is a known market alias for the EC 200 Racing model.",
+  "canonical_model_alias": "ec 200 racing",
+  "configuration_tokens": [
+    "racing"
+  ],
+  "brand_aliases": [],
+  "model_aliases": [
+    "gasgas ec 200 racing",
+    "ec 200 racing"
+  ],
+  "status": "SUCCESS",
+  "prompt_version": "motorcycle-candidate-resolution-v4",
+  "model": "qwen-flash",
+  "make": "Gas Gas",
+  "model_name": "XC 200 Racing"
+}

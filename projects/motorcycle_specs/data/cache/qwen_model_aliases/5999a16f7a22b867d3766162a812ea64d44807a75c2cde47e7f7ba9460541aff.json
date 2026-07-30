@@ -1,0 +1,16 @@
+{
+  "decision": "NO_MATCH",
+  "selected_candidate": "",
+  "confidence": "HIGH",
+  "match_basis": "NONE",
+  "explanation": "The input model GS1100ES is a specific variant of the Suzuki GS1100 series with an 'ES' suffix, indicating a European specification or enhanced version. The catalog candidates (GS 1100G, GS 1100GK, GS 1100GL) are different model variants within the same family but not equivalent to GS1100ES. The 'G' series models differ in design, engine tuning, and market configuration, and there is no evidence that any of them are known aliases or typos for GS1100ES. Displacement and model year alignment do not override the distinct identity of the 'ES' variant.",
+  "canonical_model_alias": "",
+  "configuration_tokens": [],
+  "brand_aliases": [],
+  "model_aliases": [],
+  "status": "SUCCESS",
+  "prompt_version": "motorcycle-candidate-resolution-v4",
+  "model": "qwen-flash",
+  "make": "Suzuki",
+  "model_name": "GS1100ES"
+}

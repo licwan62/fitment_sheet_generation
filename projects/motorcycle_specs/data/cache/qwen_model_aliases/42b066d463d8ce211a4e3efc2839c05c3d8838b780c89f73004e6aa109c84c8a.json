@@ -1,0 +1,20 @@
+{
+  "decision": "MATCH",
+  "selected_candidate": "Boulevard C50SE",
+  "confidence": "HIGH",
+  "match_basis": "MARKET_ALIAS",
+  "explanation": "The input 'C50 Boulevard SE' is a regional or market-specific naming variation of the Suzuki Boulevard C50SE, with the model name reordered but identical in specification and identity. The 'SE' suffix denotes the same configuration. This is a known market labeling difference.",
+  "canonical_model_alias": "Boulevard C50SE",
+  "configuration_tokens": [
+    "SE"
+  ],
+  "brand_aliases": [],
+  "model_aliases": [
+    "Boulevard C50SE"
+  ],
+  "status": "SUCCESS",
+  "prompt_version": "motorcycle-candidate-resolution-v4",
+  "model": "qwen-flash",
+  "make": "Suzuki",
+  "model_name": "C50 Boulevard SE"
+}

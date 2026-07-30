@@ -1,0 +1,20 @@
+{
+  "decision": "MATCH",
+  "selected_candidate": "EC 200E \n\t\tRacing",
+  "confidence": "HIGH",
+  "match_basis": "MARKET_ALIAS",
+  "explanation": "The input 'EC 200E' is a known market-specific variant of the EC 200 model, with 'E' denoting a European specification or configuration. The candidate 'EC 200E Racing' represents the same underlying motorcycle model with a racing configuration label, which is a valid configuration token and does not alter the core identity. The displacement and model series are identical.",
+  "canonical_model_alias": "EC 200E Racing",
+  "configuration_tokens": [
+    "Racing"
+  ],
+  "brand_aliases": [],
+  "model_aliases": [
+    "EC 200E Racing"
+  ],
+  "status": "SUCCESS",
+  "prompt_version": "motorcycle-candidate-resolution-v4",
+  "model": "qwen-flash",
+  "make": "Gas Gas",
+  "model_name": "EC 200E"
+}

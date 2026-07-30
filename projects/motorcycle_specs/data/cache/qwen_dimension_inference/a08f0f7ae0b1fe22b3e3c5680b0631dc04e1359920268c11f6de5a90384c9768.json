@@ -1,0 +1,16 @@
+{
+  "decision": "INFER|UNKNOWN",
+  "confidence": "MEDIUM|LOW",
+  "length_mm": null,
+  "width_mm": null,
+  "height_mm": null,
+  "wheelbase_mm": null,
+  "seat_height_mm": null,
+  "ground_clearance_mm": null,
+  "explanation": "The Benelli Tornado Naked Tre 889 s is a limited-production model with no publicly available official dimensions. Variations in year-specific configurations and market-specific tuning make reliable inference uncertain. No consistent catalog or verified source provides definitive measurements, and the model's identity overlaps closely with the Tre 800 series, which complicates accurate differentiation. Therefore, dimensions are inferred as unknown.",
+  "status": "SUCCESS",
+  "prompt_version": "motorcycle-dimension-inference-v1",
+  "model": "qwen-flash",
+  "make": "Benelli",
+  "model_name": "Tornado Naked Tre 889 s"
+}

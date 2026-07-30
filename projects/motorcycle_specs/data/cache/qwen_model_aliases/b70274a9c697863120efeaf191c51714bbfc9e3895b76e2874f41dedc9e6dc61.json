@@ -1,0 +1,20 @@
+{
+  "decision": "MATCH",
+  "selected_candidate": "CX 650 Custom",
+  "confidence": "HIGH",
+  "match_basis": "SAME_NAME",
+  "explanation": "The input 'CX650C Custom' refers to the same motorcycle model as 'CX 650 Custom', with only minor formatting differences (spacing, capitalization). The displacement (650), model series (CX), and configuration (Custom) are identical. The 'C' in 'CX650C' is a standard designation for the Custom variant and matches the catalog candidate.",
+  "canonical_model_alias": "CX 650 Custom",
+  "configuration_tokens": [
+    "Custom"
+  ],
+  "brand_aliases": [],
+  "model_aliases": [
+    "CX 650 Custom"
+  ],
+  "status": "SUCCESS",
+  "prompt_version": "motorcycle-candidate-resolution-v4",
+  "model": "qwen-flash",
+  "make": "Honda",
+  "model_name": "CX650C Custom"
+}

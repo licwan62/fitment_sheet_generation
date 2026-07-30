@@ -1,0 +1,16 @@
+{
+  "decision": "INFER|UNKNOWN",
+  "confidence": "MEDIUM|LOW",
+  "length_mm": null,
+  "width_mm": null,
+  "height_mm": null,
+  "wheelbase_mm": null,
+  "seat_height_mm": null,
+  "ground_clearance_mm": null,
+  "explanation": "The Suzuki GS1150ES is a classic model from the 1980s, but exact dimensions vary across model years and markets. Without access to a specific catalog or official documentation for this variant, precise measurements cannot be reliably determined. Inferred dimensions may differ significantly between versions, leading to uncertainty in the output.",
+  "status": "SUCCESS",
+  "prompt_version": "motorcycle-dimension-inference-v1",
+  "model": "qwen-flash",
+  "make": "Suzuki",
+  "model_name": "GS1150ES"
+}

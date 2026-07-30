@@ -1,0 +1,16 @@
+{
+  "decision": "NO_MATCH",
+  "selected_candidate": "",
+  "confidence": "HIGH",
+  "match_basis": "NONE",
+  "explanation": "The model 'QuattroNove X off road' is not found in the catalog candidates, and no known variant or alias of this model exists in the provided list. The name 'QuattroNove' likely refers to the 490cc engine displacement (quattro = four, novine = nine), but no matching catalog entry confirms this as a valid motorcycle model under Benelli with that exact configuration.",
+  "canonical_model_alias": "",
+  "configuration_tokens": [],
+  "brand_aliases": [],
+  "model_aliases": [],
+  "status": "SUCCESS",
+  "prompt_version": "motorcycle-candidate-resolution-v4",
+  "model": "qwen-flash",
+  "make": "Benelli",
+  "model_name": "QuattroNove X off road"
+}

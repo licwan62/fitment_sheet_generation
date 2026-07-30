@@ -1,0 +1,19 @@
+{
+  "decision": "MATCH",
+  "selected_candidate": "beta rr race 2t 300",
+  "confidence": "HIGH",
+  "match_basis": "MARKET_ALIAS",
+  "explanation": "The input '300 RR-Race Edition' refers to the same model as 'beta rr race 2t 300', where 'Race Edition' is a market-specific designation for the high-performance variant of the RR 300, and '2T' confirms the two-stroke engine configuration. The displacement (300) and model series (RR) are identical, and the naming variation is consistent with Beta's historical use of 'Race Edition' as a marketing label for performance variants.",
+  "canonical_model_alias": "beta rr race 2t 300",
+  "configuration_tokens": [
+    "race",
+    "2t"
+  ],
+  "brand_aliases": [],
+  "model_aliases": [],
+  "status": "SUCCESS",
+  "prompt_version": "motorcycle-candidate-resolution-v4",
+  "model": "qwen-flash",
+  "make": "Beta",
+  "model_name": "300 RR-Race Edition"
+}

@@ -1,0 +1,22 @@
+{
+  "decision": "MATCH",
+  "selected_candidate": "Electra Glide Ultra Classic  \n\t\tCVO FLHTCU-SE3",
+  "confidence": "HIGH",
+  "match_basis": "SAME_NAME",
+  "explanation": "The input model 'FLHTCUSE3 Screamin Eagle Ultra Classic Electra Glide' is the same motorcycle as the candidate 'Electra Glide Ultra Classic CVO FLHTCU-SE3', with identical displacement, engine configuration, and trim level. The naming variation is due to different catalog formatting and order of descriptors, but both refer to the same CVO (Custom Vehicle Operations) model with the Screamin' Eagle package on the Electra Glide Ultra Classic platform.",
+  "canonical_model_alias": "Electra Glide Ultra Classic CVO FLHTCU-SE3",
+  "configuration_tokens": [
+    "CVO",
+    "FLHTCU-SE3",
+    "Screamin Eagle"
+  ],
+  "brand_aliases": [],
+  "model_aliases": [
+    "Electra Glide Ultra Classic CVO FLHTCU-SE3"
+  ],
+  "status": "SUCCESS",
+  "prompt_version": "motorcycle-candidate-resolution-v4",
+  "model": "qwen-flash",
+  "make": "Harley-Davidson",
+  "model_name": "FLHTCUSE3 Screamin Eagle Ultra Classic Electra Glide"
+}

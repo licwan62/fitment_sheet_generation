@@ -1,0 +1,19 @@
+{
+  "decision": "MATCH",
+  "selected_candidate": "Harley-Davidson FXDR 114",
+  "confidence": "HIGH",
+  "match_basis": "SAME_NAME",
+  "explanation": "The input model 'FXDRS FXDR 114' is a direct match in name and displacement to the catalog candidate 'Harley-Davidson FXDR 114', with 'FXDRS' being a plausible typo or variant abbreviation for 'FXDR'. The core model identity, including displacement (114), is identical.",
+  "canonical_model_alias": "FXDR 114",
+  "configuration_tokens": [],
+  "brand_aliases": [],
+  "model_aliases": [
+    "114",
+    "FXDR 114"
+  ],
+  "status": "SUCCESS",
+  "prompt_version": "motorcycle-candidate-resolution-v4",
+  "model": "qwen-flash",
+  "make": "Harley-Davidson",
+  "model_name": "FXDRS FXDR 114"
+}

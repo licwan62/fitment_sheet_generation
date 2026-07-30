@@ -1,0 +1,15 @@
+{
+  "decision": "MATCH",
+  "selected_candidate": "NX 125 Transcity",
+  "canonical_model_alias": "NX 125 Transcity",
+  "configuration_tokens": [],
+  "brand_aliases": [],
+  "model_aliases": [
+    "NX 125 Transcity"
+  ],
+  "status": "SUCCESS",
+  "prompt_version": "motorcycle-candidate-resolution-v3",
+  "model": "qwen-flash",
+  "make": "Honda",
+  "model_name": "NX125"
+}

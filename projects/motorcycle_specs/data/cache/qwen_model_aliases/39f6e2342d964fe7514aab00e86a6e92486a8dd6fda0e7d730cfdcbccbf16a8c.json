@@ -1,0 +1,20 @@
+{
+  "decision": "MATCH",
+  "selected_candidate": "hyosung gv 250i",
+  "confidence": "HIGH",
+  "match_basis": "MARKET_ALIAS",
+  "explanation": "The input 'GV250' refers to the same underlying motorcycle model as 'hyosung gv 250i', where 'i' denotes a market-specific or configuration variant (likely fuel-injected version). The core model identity, displacement, and manufacturer are identical. 'GV 250 Aquila' is a known marketing name for the same model in certain regions.",
+  "canonical_model_alias": "gv 250i",
+  "configuration_tokens": [
+    "i"
+  ],
+  "brand_aliases": [],
+  "model_aliases": [
+    "gv 250i"
+  ],
+  "status": "SUCCESS",
+  "prompt_version": "motorcycle-candidate-resolution-v4",
+  "model": "qwen-flash",
+  "make": "Hyosung",
+  "model_name": "GV250"
+}

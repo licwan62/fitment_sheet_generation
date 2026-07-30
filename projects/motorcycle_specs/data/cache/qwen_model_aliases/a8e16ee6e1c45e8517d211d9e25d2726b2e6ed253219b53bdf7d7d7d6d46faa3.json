@@ -1,0 +1,20 @@
+{
+  "decision": "MATCH",
+  "selected_candidate": "DL \n      1050XT V-Strom",
+  "confidence": "HIGH",
+  "match_basis": "SAME_NAME",
+  "explanation": "The input model 'DL1050 V-Strom 1050XT' is a direct match in name and configuration to the catalog candidate 'DL 1050XT V-Strom', with identical displacement, model series, and variant suffix. The spacing and line break formatting are cosmetic differences only.",
+  "canonical_model_alias": "DL 1050XT V-Strom",
+  "configuration_tokens": [
+    "1050XT"
+  ],
+  "brand_aliases": [],
+  "model_aliases": [
+    "DL 1050XT V-Strom"
+  ],
+  "status": "SUCCESS",
+  "prompt_version": "motorcycle-candidate-resolution-v4",
+  "model": "qwen-flash",
+  "make": "Suzuki",
+  "model_name": "DL1050 V-Strom 1050XT"
+}

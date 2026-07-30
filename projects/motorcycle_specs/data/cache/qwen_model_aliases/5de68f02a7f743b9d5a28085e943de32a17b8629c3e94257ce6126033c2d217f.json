@@ -1,0 +1,19 @@
+{
+  "decision": "MATCH",
+  "selected_candidate": "Harley-Davidson FL Duo Glide",
+  "confidence": "HIGH",
+  "match_basis": "SAME_NAME",
+  "explanation": "The input 'FL' refers to the Harley-Davidson FL series, and 'Harley-Davidson FL Duo Glide' is a specific model within that series, making it the correct match. The FL designation is the core identity, and the Duo Glide variant is a known configuration under that model line.",
+  "canonical_model_alias": "FL Duo Glide",
+  "configuration_tokens": [],
+  "brand_aliases": [],
+  "model_aliases": [
+    "Duo Glide",
+    "FL Duo Glide"
+  ],
+  "status": "SUCCESS",
+  "prompt_version": "motorcycle-candidate-resolution-v4",
+  "model": "qwen-flash",
+  "make": "Harley-Davidson",
+  "model_name": "FL"
+}

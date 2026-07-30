@@ -1,0 +1,16 @@
+{
+  "decision": "NO_MATCH",
+  "selected_candidate": "",
+  "confidence": "HIGH",
+  "match_basis": "NONE",
+  "explanation": "The Beta 350 RR-Race Edition is a race-oriented model, while the RR 350 Enduro is an enduro-focused model. Despite sharing the 'RR 350' designation, the 'Race Edition' and 'Enduro' variants differ in purpose, configuration, and intended use, indicating distinct models. No evidence supports they are the same underlying motorcycle.",
+  "canonical_model_alias": "",
+  "configuration_tokens": [],
+  "brand_aliases": [],
+  "model_aliases": [],
+  "status": "SUCCESS",
+  "prompt_version": "motorcycle-candidate-resolution-v4",
+  "model": "qwen-flash",
+  "make": "Beta",
+  "model_name": "350 RR-Race Edition"
+}

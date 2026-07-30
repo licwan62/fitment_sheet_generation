@@ -1,0 +1,20 @@
+{
+  "decision": "MATCH",
+  "selected_candidate": "DR 200SE",
+  "confidence": "HIGH",
+  "match_basis": "MARKET_ALIAS",
+  "explanation": "The DR200 is a known model designation for Suzuki's DR 200SE, which was marketed under the DR200 name in certain regions and catalogs. The SE suffix denotes a specific configuration (e.g., enhanced suspension, styling), but the core model identity remains unchanged. This is a recognized market naming variation.",
+  "canonical_model_alias": "DR 200SE",
+  "configuration_tokens": [
+    "SE"
+  ],
+  "brand_aliases": [],
+  "model_aliases": [
+    "DR 200SE"
+  ],
+  "status": "SUCCESS",
+  "prompt_version": "motorcycle-candidate-resolution-v4",
+  "model": "qwen-flash",
+  "make": "Suzuki",
+  "model_name": "DR200"
+}

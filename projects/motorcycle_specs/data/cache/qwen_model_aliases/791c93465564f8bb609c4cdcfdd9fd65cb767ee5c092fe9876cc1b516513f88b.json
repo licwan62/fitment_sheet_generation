@@ -1,0 +1,18 @@
+{
+  "decision": "MATCH",
+  "selected_candidate": "beta rr 498 4t",
+  "confidence": "HIGH",
+  "match_basis": "SAME_NAME",
+  "explanation": "The input '498 RR-Race Edition' refers to the same motorcycle model as 'beta rr 498 4t', with identical displacement (498cc), engine type (4T), and model series (RR). The 'Race Edition' is a configuration label, not a different model. The catalog candidate 'beta rr 498 4t' is the canonical expression of this model.",
+  "canonical_model_alias": "beta rr 498 4t",
+  "configuration_tokens": [
+    "Race Edition"
+  ],
+  "brand_aliases": [],
+  "model_aliases": [],
+  "status": "SUCCESS",
+  "prompt_version": "motorcycle-candidate-resolution-v4",
+  "model": "qwen-flash",
+  "make": "Beta",
+  "model_name": "498 RR-Race Edition"
+}

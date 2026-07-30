@@ -1,0 +1,16 @@
+{
+  "decision": "INFER",
+  "confidence": "MEDIUM",
+  "length_mm": 2150,
+  "width_mm": 860,
+  "height_mm": 1380,
+  "wheelbase_mm": 1480,
+  "seat_height_mm": 870,
+  "ground_clearance_mm": 220,
+  "explanation": "Inferred from typical dimensions of similar off-road motocross bikes in the 250cc class, such as the Gas Gas MC 250F and KTM 250 SX. The Contact T25 is a dual-sport model with a focus on trail and enduro use, suggesting slightly taller and longer proportions than pure motocross bikes. Dimensions are estimated based on comparable models and general design trends for this category, but exact values may vary by year and market.",
+  "status": "SUCCESS",
+  "prompt_version": "motorcycle-dimension-inference-v1",
+  "model": "qwen-flash",
+  "make": "Gas Gas",
+  "model_name": "Contact T25"
+}

@@ -1,0 +1,16 @@
+{
+  "decision": "MATCH",
+  "selected_candidate": "Chie f Deluxe",
+  "confidence": "HIGH",
+  "match_basis": "TYPO",
+  "explanation": "The input 'Chief Deluxe' is a clear typographical variant of 'Chie f Deluxe', with the 'f' likely intended as a misrendered 'f' from 'Chief'. The core model identity matches exactly.",
+  "canonical_model_alias": "Chief Deluxe",
+  "configuration_tokens": [],
+  "brand_aliases": [],
+  "model_aliases": [],
+  "status": "SUCCESS",
+  "prompt_version": "motorcycle-candidate-resolution-v4",
+  "model": "qwen-flash",
+  "make": "Indian",
+  "model_name": "Chief Deluxe"
+}

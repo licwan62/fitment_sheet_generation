@@ -1,0 +1,18 @@
+{
+  "decision": "MATCH",
+  "selected_candidate": "Gixxer SF250 MotoGP Edition",
+  "confidence": "HIGH",
+  "match_basis": "MARKET_ALIAS",
+  "explanation": "The input 'Gixxer SF FI' refers to the same underlying motorcycle model as 'Gixxer SF250 MotoGP Edition', where 'FI' denotes fuel injection, a standard feature on this model. The 'MotoGP Edition' is a special configuration of the Gixxer SF250, but the base model identity remains unchanged. The name 'Gixxer SF FI' is a common market or retail naming convention for the 250cc variant with fuel injection, making it a valid alias.",
+  "canonical_model_alias": "Gixxer SF250 MotoGP Edition",
+  "configuration_tokens": [
+    "MotoGP Edition"
+  ],
+  "brand_aliases": [],
+  "model_aliases": [],
+  "status": "SUCCESS",
+  "prompt_version": "motorcycle-candidate-resolution-v4",
+  "model": "qwen-flash",
+  "make": "Suzuki",
+  "model_name": "Gixxer SF FI"
+}

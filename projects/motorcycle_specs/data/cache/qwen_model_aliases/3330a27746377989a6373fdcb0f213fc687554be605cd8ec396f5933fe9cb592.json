@@ -1,0 +1,23 @@
+{
+  "decision": "MATCH",
+  "selected_candidate": "Harley-Davidson FLHXSE2 CVO Street Glide",
+  "confidence": "HIGH",
+  "match_basis": "MARKET_ALIAS",
+  "explanation": "The input 'FLTRSEI2 Screamin Eagle Road Glide 2' refers to the 2012 model of the Harley-Davidson Road Glide with Screamin' Eagle CVO trim. The catalog candidate 'Harley-Davidson FLHXSE2 CVO Street Glide' is the correct model name for that year and configuration, where 'FLHX' is the model code for the Street Glide (a variant of the Road Glide platform), and 'SE2' denotes the Screamin' Eagle CVO package. Despite the name difference between 'Road Glide' and 'Street Glide', this is a known market/trim designation shift: the 2012 Road Glide CVO was rebranded as the Street Glide CVO in some markets and catalogs. The displacement, engine, and CVO package are identical.",
+  "canonical_model_alias": "FLHXSE2 CVO Street Glide",
+  "configuration_tokens": [
+    "SE2",
+    "CVO"
+  ],
+  "brand_aliases": [],
+  "model_aliases": [
+    "FLHXSE2 CVO Street Glide",
+    "FLTRSEI2",
+    "Screamin Eagle Road Glide 2"
+  ],
+  "status": "SUCCESS",
+  "prompt_version": "motorcycle-candidate-resolution-v4",
+  "model": "qwen-flash",
+  "make": "Harley-Davidson",
+  "model_name": "FLTRSEI2 Screamin Eagle Road Glide 2"
+}

@@ -1,0 +1,18 @@
+{
+  "decision": "MATCH",
+  "selected_candidate": "buell xb12stt",
+  "confidence": "HIGH",
+  "match_basis": "MARKET_ALIAS",
+  "explanation": "The 'S2T Thunderbolt' is a market-specific name for the Buell XB12STT, which was marketed as the Thunderbolt in certain regions. The model shares identical platform, engine (1200cc), and specifications. The 'S2T' designation aligns with the XB12STT's configuration.",
+  "canonical_model_alias": "xb12stt",
+  "configuration_tokens": [],
+  "brand_aliases": [],
+  "model_aliases": [
+    "s2t"
+  ],
+  "status": "SUCCESS",
+  "prompt_version": "motorcycle-candidate-resolution-v4",
+  "model": "qwen-flash",
+  "make": "Buell",
+  "model_name": "S2T Thunderbolt"
+}

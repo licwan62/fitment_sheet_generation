@@ -1,0 +1,18 @@
+{
+  "decision": "MATCH",
+  "selected_candidate": "RR 525 \n\tEnduro",
+  "confidence": "HIGH",
+  "match_basis": "SAME_NAME",
+  "explanation": "The input model '525 RR' is a direct match in identity to the catalog candidate 'RR 525 Enduro', as both refer to the same Beta motorcycle model with identical displacement and core designation. The order of 'RR' and '525' is reversed but does not alter the model identity; 'RR 525 Enduro' is the canonical form used in Beta's catalog.",
+  "canonical_model_alias": "RR 525 Enduro",
+  "configuration_tokens": [],
+  "brand_aliases": [],
+  "model_aliases": [
+    "RR 525 Enduro"
+  ],
+  "status": "SUCCESS",
+  "prompt_version": "motorcycle-candidate-resolution-v4",
+  "model": "qwen-flash",
+  "make": "Beta",
+  "model_name": "525 RR"
+}

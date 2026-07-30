@@ -1,0 +1,22 @@
+{
+  "decision": "MATCH",
+  "selected_candidate": "Bajaj pulsar ns200",
+  "confidence": "HIGH",
+  "match_basis": "MARKET_ALIAS",
+  "explanation": "The 'Pulsar 200 NS FI ABS Edicion Limitada' is a limited edition variant of the Bajaj Pulsar NS200, with 'Edicion Limitada' indicating a special market-specific configuration. The core model identity (NS200) matches exactly, and the addition of FI, ABS, and limited edition branding are configuration variations, not model changes.",
+  "canonical_model_alias": "pulsar ns200",
+  "configuration_tokens": [
+    "FI",
+    "ABS",
+    "Edicion Limitada"
+  ],
+  "brand_aliases": [],
+  "model_aliases": [
+    "pulsar ns200"
+  ],
+  "status": "SUCCESS",
+  "prompt_version": "motorcycle-candidate-resolution-v4",
+  "model": "qwen-flash",
+  "make": "Bajaj",
+  "model_name": "Pulsar 200 NS FI ABS Edicion Limitada"
+}

@@ -1,0 +1,18 @@
+{
+  "decision": "MATCH",
+  "selected_candidate": "Softail \n\t\tBreakout 107",
+  "confidence": "HIGH",
+  "match_basis": "SAME_NAME",
+  "explanation": "The input 'FXBR Breakout 107' and the candidate 'Softail \\n\\t\\tBreakout 107' refer to the same motorcycle model, with 'FXBR' being the model code for the Softail Breakout 107. The name and displacement match exactly, and 'Softail' is the correct model line under Harley-Davidson for this variant.",
+  "canonical_model_alias": "Softail Breakout 107",
+  "configuration_tokens": [],
+  "brand_aliases": [],
+  "model_aliases": [
+    "Softail Breakout 107"
+  ],
+  "status": "SUCCESS",
+  "prompt_version": "motorcycle-candidate-resolution-v4",
+  "model": "qwen-flash",
+  "make": "Harley-Davidson",
+  "model_name": "FXBR Breakout 107"
+}

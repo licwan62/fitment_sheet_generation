@@ -1,0 +1,18 @@
+{
+  "decision": "MATCH",
+  "selected_candidate": "BX 449 Cross",
+  "confidence": "HIGH",
+  "match_basis": "MARKET_ALIAS",
+  "explanation": "The 'BX 449 Enduro' and 'BX 449 Cross' refer to the same underlying motorcycle model, with 'Enduro' and 'Cross' being interchangeable market or configuration designations for the same Benelli model. The displacement (449) and platform (BX) are identical, confirming identity.",
+  "canonical_model_alias": "BX 449 Cross",
+  "configuration_tokens": [],
+  "brand_aliases": [],
+  "model_aliases": [
+    "BX 449 Cross"
+  ],
+  "status": "SUCCESS",
+  "prompt_version": "motorcycle-candidate-resolution-v4",
+  "model": "qwen-flash",
+  "make": "Benelli",
+  "model_name": "BX 449 Enduro"
+}

@@ -1,0 +1,16 @@
+{
+  "decision": "MATCH",
+  "selected_candidate": "gasgas txt 300 pro raga",
+  "confidence": "HIGH",
+  "match_basis": "SAME_NAME",
+  "explanation": "The input 'TXT Pro Raga Series' directly matches the catalog candidate 'gasgas txt 300 pro raga' in name and model structure, with '300' being the displacement that aligns with the 'Pro Raga' series designation. The term 'Raga Series' is a known marketing name for this model line.",
+  "canonical_model_alias": "txt 300 pro raga",
+  "configuration_tokens": [],
+  "brand_aliases": [],
+  "model_aliases": [],
+  "status": "SUCCESS",
+  "prompt_version": "motorcycle-candidate-resolution-v4",
+  "model": "qwen-flash",
+  "make": "Gas Gas",
+  "model_name": "TXT Pro Raga Series"
+}

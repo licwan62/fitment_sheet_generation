@@ -1,0 +1,20 @@
+{
+  "decision": "MATCH",
+  "selected_candidate": "RR 480 4T Enduro",
+  "confidence": "HIGH",
+  "match_basis": "MARKET_ALIAS",
+  "explanation": "The 'RR Race 4T 480' is a market-specific naming variant of the same motorcycle model as 'RR 480 4T Enduro', with 'Race' indicating a performance-oriented configuration in the same lineage. The displacement (480), engine type (4T), and core model (RR) are identical, confirming identity. 'Enduro' reflects a common market designation for this model in certain regions.",
+  "canonical_model_alias": "RR 480 4T Enduro",
+  "configuration_tokens": [
+    "Race"
+  ],
+  "brand_aliases": [],
+  "model_aliases": [
+    "RR 480 4T Enduro"
+  ],
+  "status": "SUCCESS",
+  "prompt_version": "motorcycle-candidate-resolution-v4",
+  "model": "qwen-flash",
+  "make": "Beta",
+  "model_name": "RR Race 4T 480"
+}

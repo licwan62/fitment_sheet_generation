@@ -1,0 +1,18 @@
+{
+  "decision": "MATCH",
+  "selected_candidate": "CT 110 Trail 110",
+  "confidence": "HIGH",
+  "match_basis": "MARKET_ALIAS",
+  "explanation": "The CA110 is a known Honda model marketed as the CT 110 Trail 110 in certain regions, particularly in North America. The 'CA' series designation refers to the same motorcycle platform as the CT 110, with 'Trail 110' being the model's name in some markets. This is a regional naming variation, not a different model.",
+  "canonical_model_alias": "CT 110 Trail 110",
+  "configuration_tokens": [],
+  "brand_aliases": [],
+  "model_aliases": [
+    "CT 110 Trail 110"
+  ],
+  "status": "SUCCESS",
+  "prompt_version": "motorcycle-candidate-resolution-v4",
+  "model": "qwen-flash",
+  "make": "Honda",
+  "model_name": "CA110"
+}

@@ -1,0 +1,18 @@
+{
+  "decision": "MATCH",
+  "selected_candidate": "husqvarna te 511",
+  "confidence": "HIGH",
+  "match_basis": "MARKET_ALIAS",
+  "explanation": "TXC 511 is a market-specific designation for the same model as TE 511; Husqvarna used 'TXC' as a regional or marketing variant of the TE series, particularly in certain European markets. The displacement (511) and model architecture are identical.",
+  "canonical_model_alias": "te 511",
+  "configuration_tokens": [],
+  "brand_aliases": [],
+  "model_aliases": [
+    "te 511"
+  ],
+  "status": "SUCCESS",
+  "prompt_version": "motorcycle-candidate-resolution-v4",
+  "model": "qwen-flash",
+  "make": "Husqvarna",
+  "model_name": "TXC 511"
+}

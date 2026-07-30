@@ -1,0 +1,16 @@
+{
+  "decision": "NO_MATCH",
+  "selected_candidate": "",
+  "confidence": "HIGH",
+  "match_basis": "NONE",
+  "explanation": "The input model 'Scout Bobber Limited +Tech' is a distinct limited-edition variant with specific technology enhancements, not equivalent to the standard 'Scout Bobber Twenty' or 'Scout Bobber Sixty' models. The catalog candidates are different displacement or configuration variants, and no candidate matches the exact identity of the 'Limited +Tech' model.",
+  "canonical_model_alias": "",
+  "configuration_tokens": [],
+  "brand_aliases": [],
+  "model_aliases": [],
+  "status": "SUCCESS",
+  "prompt_version": "motorcycle-candidate-resolution-v4",
+  "model": "qwen-flash",
+  "make": "Indian",
+  "model_name": "Scout Bobber Limited +Tech"
+}

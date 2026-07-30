@@ -1,0 +1,16 @@
+{
+  "decision": "NO_MATCH",
+  "selected_candidate": "",
+  "confidence": "HIGH",
+  "match_basis": "NONE",
+  "explanation": "The input model 'GS250T' is a specific variant with a 'T' suffix, likely denoting a trim or market-specific configuration. The catalog candidates 'GS 250' and 'GS 250FW' do not match the 'T' suffix and represent different configurations or models (e.g., 'FW' may indicate a fuel-injected or wide-ride version). No evidence suggests 'GS250T' is a known alias, typo, or market variant of either candidate. Therefore, no match exists.",
+  "canonical_model_alias": "",
+  "configuration_tokens": [],
+  "brand_aliases": [],
+  "model_aliases": [],
+  "status": "SUCCESS",
+  "prompt_version": "motorcycle-candidate-resolution-v4",
+  "model": "qwen-flash",
+  "make": "Suzuki",
+  "model_name": "GS250T"
+}

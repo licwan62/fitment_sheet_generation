@@ -1,0 +1,16 @@
+{
+  "decision": "NO_MATCH",
+  "selected_candidate": "",
+  "confidence": "HIGH",
+  "match_basis": "NONE",
+  "explanation": "The model 'Ridgeback' by Big Dog does not match any entries in the catalog candidates, and no known market name, historical alias, abbreviation, or plausible typo of this model is present in the provided list. Without candidate matches, a definitive match cannot be established.",
+  "canonical_model_alias": "",
+  "configuration_tokens": [],
+  "brand_aliases": [],
+  "model_aliases": [],
+  "status": "SUCCESS",
+  "prompt_version": "motorcycle-candidate-resolution-v4",
+  "model": "qwen-flash",
+  "make": "Big Dog",
+  "model_name": "Ridgeback"
+}

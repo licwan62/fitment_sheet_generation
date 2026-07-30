@@ -1,0 +1,16 @@
+{
+  "decision": "MATCH",
+  "selected_candidate": "R nineT Pure",
+  "confidence": "HIGH",
+  "match_basis": "SAME_NAME",
+  "explanation": "The input model 'R nine T Pure' exactly matches the catalog candidate 'R nineT Pure' in name and identity, with no distinguishing configuration or displacement differences. The spacing and capitalization are standard variations of the same model name.",
+  "canonical_model_alias": "R nineT Pure",
+  "configuration_tokens": [],
+  "brand_aliases": [],
+  "model_aliases": [],
+  "status": "SUCCESS",
+  "prompt_version": "motorcycle-candidate-resolution-v4",
+  "model": "qwen-flash",
+  "make": "BMW",
+  "model_name": "R nine T Pure"
+}

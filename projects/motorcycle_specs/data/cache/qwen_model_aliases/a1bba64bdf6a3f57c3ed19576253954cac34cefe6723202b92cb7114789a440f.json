@@ -1,0 +1,20 @@
+{
+  "decision": "MATCH",
+  "selected_candidate": "F 650GS Dakar",
+  "confidence": "HIGH",
+  "match_basis": "SAME_NAME",
+  "explanation": "The input 'F650GS Dakar ABS' and the catalog candidate 'F 650GS Dakar' refer to the same underlying motorcycle model, with the only difference being the inclusion of 'ABS' in the input, which is a configuration feature (braking system) and not a distinct model identifier. The core model identity remains unchanged.",
+  "canonical_model_alias": "F 650GS Dakar",
+  "configuration_tokens": [
+    "ABS"
+  ],
+  "brand_aliases": [],
+  "model_aliases": [
+    "F 650GS Dakar"
+  ],
+  "status": "SUCCESS",
+  "prompt_version": "motorcycle-candidate-resolution-v4",
+  "model": "qwen-flash",
+  "make": "BMW",
+  "model_name": "F650GS Dakar ABS"
+}

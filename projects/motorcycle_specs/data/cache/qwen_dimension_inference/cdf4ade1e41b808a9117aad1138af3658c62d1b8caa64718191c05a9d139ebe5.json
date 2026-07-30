@@ -1,0 +1,16 @@
+{
+  "decision": "INFER|UNKNOWN",
+  "confidence": "MEDIUM|LOW",
+  "length_mm": null,
+  "width_mm": null,
+  "height_mm": null,
+  "wheelbase_mm": null,
+  "seat_height_mm": null,
+  "ground_clearance_mm": null,
+  "explanation": "The BMW R1300GS Option 719 Tramuntana is a limited-edition variant with no official published dimensions. Model-specific variations in trim, accessories, and suspension setup may alter overall dimensions. Without verified data from a catalog or direct measurement, dimensions cannot be reliably inferred. Known base model R1300GS dimensions are not directly applicable due to potential modifications in this special edition.",
+  "status": "SUCCESS",
+  "prompt_version": "motorcycle-dimension-inference-v1",
+  "model": "qwen-flash",
+  "make": "BMW",
+  "model_name": "R1300GS Option 719 Tramuntana"
+}

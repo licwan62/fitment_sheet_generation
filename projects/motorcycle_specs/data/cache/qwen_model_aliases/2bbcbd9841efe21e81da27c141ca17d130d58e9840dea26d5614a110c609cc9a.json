@@ -1,0 +1,20 @@
+{
+  "decision": "MATCH",
+  "selected_candidate": "Ducati Multistrada 950 S",
+  "confidence": "HIGH",
+  "match_basis": "SAME_NAME",
+  "explanation": "The input 'Multistrada 950 S Spoked Wheels' refers to the same underlying model as 'Ducati Multistrada 950 S', with 'Spoked Wheels' being a configuration detail rather than a distinct model identifier. The core model identity (Multistrada 950 S) is preserved across both names.",
+  "canonical_model_alias": "Multistrada 950 S",
+  "configuration_tokens": [
+    "Spoked Wheels"
+  ],
+  "brand_aliases": [],
+  "model_aliases": [
+    "Multistrada 950 S"
+  ],
+  "status": "SUCCESS",
+  "prompt_version": "motorcycle-candidate-resolution-v4",
+  "model": "qwen-flash",
+  "make": "Ducati",
+  "model_name": "Multistrada 950 S Spoked Wheels"
+}

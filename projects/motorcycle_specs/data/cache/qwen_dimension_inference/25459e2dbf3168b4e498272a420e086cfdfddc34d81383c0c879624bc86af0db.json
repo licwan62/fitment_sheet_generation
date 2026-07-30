@@ -1,0 +1,16 @@
+{
+  "decision": "INFER|UNKNOWN",
+  "confidence": "LOW",
+  "length_mm": null,
+  "width_mm": null,
+  "height_mm": null,
+  "wheelbase_mm": null,
+  "seat_height_mm": null,
+  "ground_clearance_mm": null,
+  "explanation": "The Big Dog K-9 EFI is a custom motorcycle with limited publicly available dimensional data. Variations in model year, market-specific configurations, and custom modifications make precise dimensions uncertain. Without access to official specifications or verified catalog data, dimensions cannot be reliably inferred.",
+  "status": "SUCCESS",
+  "prompt_version": "motorcycle-dimension-inference-v1",
+  "model": "qwen-flash",
+  "make": "Big Dog",
+  "model_name": "K-9 EFI"
+}

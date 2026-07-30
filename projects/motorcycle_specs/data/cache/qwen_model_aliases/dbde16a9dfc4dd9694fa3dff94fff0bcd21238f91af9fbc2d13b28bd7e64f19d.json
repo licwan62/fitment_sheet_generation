@@ -1,0 +1,18 @@
+{
+  "decision": "MATCH",
+  "selected_candidate": "Street 500",
+  "confidence": "HIGH",
+  "match_basis": "SAME_NAME",
+  "explanation": "The input 'XG500 Street 500' refers to the same motorcycle model as 'Street 500' in the catalog, with 'XG500' being a model code used by Harley-Davidson for the Street 500. The name 'Street 500' is the canonical designation.",
+  "canonical_model_alias": "Street 500",
+  "configuration_tokens": [],
+  "brand_aliases": [],
+  "model_aliases": [
+    "Street 500"
+  ],
+  "status": "SUCCESS",
+  "prompt_version": "motorcycle-candidate-resolution-v4",
+  "model": "qwen-flash",
+  "make": "Harley-Davidson",
+  "model_name": "XG500 Street 500"
+}

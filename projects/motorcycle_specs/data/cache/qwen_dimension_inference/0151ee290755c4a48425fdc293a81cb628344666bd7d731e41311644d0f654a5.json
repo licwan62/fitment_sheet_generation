@@ -1,0 +1,16 @@
+{
+  "decision": "INFER|UNKNOWN",
+  "confidence": "MEDIUM|LOW",
+  "length_mm": null,
+  "width_mm": null,
+  "height_mm": null,
+  "wheelbase_mm": null,
+  "seat_height_mm": null,
+  "ground_clearance_mm": null,
+  "explanation": "The Beta TR32 200 is a motocross motorcycle, but specific dimensions are not consistently documented across sources. Variations by model year and market configuration make precise measurements uncertain. Without access to official specifications or verified catalog data, dimensions cannot be reliably inferred.",
+  "status": "SUCCESS",
+  "prompt_version": "motorcycle-dimension-inference-v1",
+  "model": "qwen-flash",
+  "make": "Beta",
+  "model_name": "TR32 200"
+}

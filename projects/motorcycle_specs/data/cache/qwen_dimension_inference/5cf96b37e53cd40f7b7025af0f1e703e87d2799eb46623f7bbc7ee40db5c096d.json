@@ -1,0 +1,16 @@
+{
+  "decision": "INFER|UNKNOWN",
+  "confidence": "MEDIUM|LOW",
+  "length_mm": null,
+  "width_mm": null,
+  "height_mm": null,
+  "wheelbase_mm": null,
+  "seat_height_mm": null,
+  "ground_clearance_mm": null,
+  "explanation": "The Husqvarna SR250 is a vintage model with no consistent published dimensions across all variants and production years. Variations in frame design, suspension setup, and market-specific configurations make accurate dimension estimation uncertain without a specific year or model variant. No reliable catalog data is available for inference.",
+  "status": "SUCCESS",
+  "prompt_version": "motorcycle-dimension-inference-v1",
+  "model": "qwen-flash",
+  "make": "Husqvarna",
+  "model_name": "SR250"
+}

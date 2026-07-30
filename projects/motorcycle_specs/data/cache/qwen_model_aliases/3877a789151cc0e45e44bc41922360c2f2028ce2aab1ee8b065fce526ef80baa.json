@@ -1,0 +1,21 @@
+{
+  "decision": "MATCH",
+  "selected_candidate": "gasgas txt 125 pro",
+  "confidence": "HIGH",
+  "match_basis": "MARKET_ALIAS",
+  "explanation": "The input 'TXT Pro 125 Raga' refers to a market-specific or configuration variant of the Gas Gas TXT 125 Pro. 'Raga' is a known regional or marketing designation for a high-performance or race-oriented version of the TXT 125 Pro, particularly in certain European markets. The core model identity (TXT 125 Pro) matches exactly with the candidate 'gasgas txt 125 pro'. Other candidates differ in model name or displacement.",
+  "canonical_model_alias": "txt 125 pro",
+  "configuration_tokens": [
+    "Raga"
+  ],
+  "brand_aliases": [],
+  "model_aliases": [
+    "gasgas txt 125 pro",
+    "txt 125 pro"
+  ],
+  "status": "SUCCESS",
+  "prompt_version": "motorcycle-candidate-resolution-v4",
+  "model": "qwen-flash",
+  "make": "Gas Gas",
+  "model_name": "TXT Pro 125 Raga"
+}

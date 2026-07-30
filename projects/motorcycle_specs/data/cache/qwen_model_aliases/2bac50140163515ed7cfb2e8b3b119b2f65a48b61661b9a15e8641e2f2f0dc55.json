@@ -1,0 +1,20 @@
+{
+  "decision": "MATCH",
+  "selected_candidate": "RR 400 \n\tMotard",
+  "confidence": "HIGH",
+  "match_basis": "MARKET_ALIAS",
+  "explanation": "The input '400 SM' refers to the Beta RR 400 Motard model, which is a market-specific configuration of the RR 400. The 'SM' designation in the input likely refers to 'Street Motard' or similar market terminology for the motard variant, aligning with the 'Motard' label in the candidate. The displacement (400) and core model (RR 400) match exactly.",
+  "canonical_model_alias": "RR 400 Motard",
+  "configuration_tokens": [
+    "Motard"
+  ],
+  "brand_aliases": [],
+  "model_aliases": [
+    "RR 400 Motard"
+  ],
+  "status": "SUCCESS",
+  "prompt_version": "motorcycle-candidate-resolution-v4",
+  "model": "qwen-flash",
+  "make": "Beta",
+  "model_name": "400 SM"
+}

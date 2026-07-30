@@ -1,0 +1,16 @@
+{
+  "decision": "NO_MATCH",
+  "selected_candidate": "",
+  "confidence": "HIGH",
+  "match_basis": "NONE",
+  "explanation": "The input model 'K1200LTI Icon' is not equivalent to either 'K 1200LT' or 'K 1200RS'. The K1200LTI Icon is a specific high-end touring variant of the K1200 series with unique features, while the K1200LT is a different long-wheelbase touring model and the K1200RS is a sport-touring model. None of the candidates match the input in model identity, configuration, or market designation.",
+  "canonical_model_alias": "",
+  "configuration_tokens": [],
+  "brand_aliases": [],
+  "model_aliases": [],
+  "status": "SUCCESS",
+  "prompt_version": "motorcycle-candidate-resolution-v4",
+  "model": "qwen-flash",
+  "make": "BMW",
+  "model_name": "K1200LTI Icon"
+}

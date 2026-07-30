@@ -1,0 +1,16 @@
+{
+  "decision": "MATCH",
+  "selected_candidate": "beta re 125 4t",
+  "confidence": "HIGH",
+  "match_basis": "MARKET_ALIAS",
+  "explanation": "The model 'TR32 125' is a Beta motorcycle with a 125cc 4-stroke engine. 'RE 125 4T' and 'beta re 125 4t' are known market or catalog designations for the same model, where 'RE' stands for 'Rally Enduro'—a common naming convention used by Beta for this specific 125cc 4T motard/enduro model. The TR32 designation may be a regional or internal code, but the core identity (Beta, 125cc, 4-stroke) matches exactly. Other candidates differ in displacement (2T), engine type (RR vs RE), or configuration (Motard variant).",
+  "canonical_model_alias": "beta re 125 4t",
+  "configuration_tokens": [],
+  "brand_aliases": [],
+  "model_aliases": [],
+  "status": "SUCCESS",
+  "prompt_version": "motorcycle-candidate-resolution-v4",
+  "model": "qwen-flash",
+  "make": "Beta",
+  "model_name": "TR32 125"
+}

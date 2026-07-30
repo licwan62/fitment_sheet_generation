@@ -1,0 +1,16 @@
+{
+  "decision": "MATCH",
+  "selected_candidate": "R nineT Scrambler",
+  "confidence": "HIGH",
+  "match_basis": "SAME_NAME",
+  "explanation": "The input model 'R nine T Scrambler' exactly matches the catalog candidate 'R nineT Scrambler' in name and identity, with no distinguishing configuration or variant differences.",
+  "canonical_model_alias": "R nineT Scrambler",
+  "configuration_tokens": [],
+  "brand_aliases": [],
+  "model_aliases": [],
+  "status": "SUCCESS",
+  "prompt_version": "motorcycle-candidate-resolution-v4",
+  "model": "qwen-flash",
+  "make": "BMW",
+  "model_name": "R nine T Scrambler"
+}

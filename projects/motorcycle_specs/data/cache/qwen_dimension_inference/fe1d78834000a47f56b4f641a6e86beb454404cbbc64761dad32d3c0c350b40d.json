@@ -1,0 +1,16 @@
+{
+  "decision": "INFER",
+  "confidence": "MEDIUM",
+  "length_mm": 2150,
+  "width_mm": 850,
+  "height_mm": 1200,
+  "wheelbase_mm": 1450,
+  "seat_height_mm": 870,
+  "ground_clearance_mm": 230,
+  "explanation": "Inferred based on typical dimensions of mid-sized off-road motorcycles in the 450cc class, such as KTM 450 XC-W or Husqvarna FE 450, which share similar design philosophy and proportions with ATK's Motard model. ATK is known for producing lightweight, adventure-oriented bikes with a focus on motard (motocross-inspired) styling. Dimensions are estimated within expected ranges for this category, but exact values may vary by year and market.",
+  "status": "SUCCESS",
+  "prompt_version": "motorcycle-dimension-inference-v1",
+  "model": "qwen-flash",
+  "make": "ATK",
+  "model_name": "450 Motard"
+}

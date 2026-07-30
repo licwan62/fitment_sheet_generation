@@ -1,0 +1,16 @@
+{
+  "decision": "NO_MATCH",
+  "selected_candidate": "",
+  "confidence": "HIGH",
+  "match_basis": "NONE",
+  "explanation": "The input model 'R850R Special Edition' is a distinct variant of the R850R, featuring unique styling and limited production. None of the catalog candidates match this specific model. The candidates listed are variants of the R850RT, R850C, or R850 Avantgarde, which are different models with different chassis, purpose, and design. The R850R Special Edition is not equivalent to any of these.",
+  "canonical_model_alias": "",
+  "configuration_tokens": [],
+  "brand_aliases": [],
+  "model_aliases": [],
+  "status": "SUCCESS",
+  "prompt_version": "motorcycle-candidate-resolution-v4",
+  "model": "qwen-flash",
+  "make": "BMW",
+  "model_name": "R850R Special Edition"
+}

@@ -1,0 +1,19 @@
+{
+  "decision": "MATCH",
+  "selected_candidate": "gasgas txt 300 pro",
+  "confidence": "HIGH",
+  "match_basis": "SAME_NAME",
+  "explanation": "The input '300 Pro' matches the core model name of the candidate 'gasgas txt 300 pro' exactly, with no conflicting identity tokens. The 'txt' prefix is a known market-specific designation for Gas Gas's enduro models, and '300 Pro' is the standard model identifier. No displacement or configuration differences exist.",
+  "canonical_model_alias": "txt 300 pro",
+  "configuration_tokens": [],
+  "brand_aliases": [],
+  "model_aliases": [
+    "gasgas txt 300 pro",
+    "txt 300 pro"
+  ],
+  "status": "SUCCESS",
+  "prompt_version": "motorcycle-candidate-resolution-v4",
+  "model": "qwen-flash",
+  "make": "Gas Gas",
+  "model_name": "300 Pro"
+}

@@ -1,0 +1,20 @@
+{
+  "decision": "MATCH",
+  "selected_candidate": "Boulevard C50 B.O.S.S.",
+  "confidence": "HIGH",
+  "match_basis": "MARKET_ALIAS",
+  "explanation": "The 'C50B Boulevard' is a known market-specific designation for the Suzuki Boulevard C50 B.O.S.S. model, where 'B.O.S.S.' is an acronym for 'Big O' Slighted Streetbike, used in North American marketing. The model identity, displacement (C50), and platform are identical despite the naming variation.",
+  "canonical_model_alias": "Boulevard C50 B.O.S.S.",
+  "configuration_tokens": [
+    "B.O.S.S."
+  ],
+  "brand_aliases": [],
+  "model_aliases": [
+    "Boulevard C50 B.O.S.S."
+  ],
+  "status": "SUCCESS",
+  "prompt_version": "motorcycle-candidate-resolution-v4",
+  "model": "qwen-flash",
+  "make": "Suzuki",
+  "model_name": "C50B Boulevard"
+}

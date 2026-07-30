@@ -1,0 +1,18 @@
+{
+  "decision": "MATCH",
+  "selected_candidate": "TE 610",
+  "confidence": "HIGH",
+  "match_basis": "MARKET_ALIAS",
+  "explanation": "The WXC 610 is a factory-enduro model from Husqvarna, and the TE 610 is its official market-specific name in certain regions. Both refer to the same underlying motorcycle model with identical engine displacement and platform, differing only in naming convention for marketing purposes.",
+  "canonical_model_alias": "TE 610",
+  "configuration_tokens": [],
+  "brand_aliases": [],
+  "model_aliases": [
+    "TE 610"
+  ],
+  "status": "SUCCESS",
+  "prompt_version": "motorcycle-candidate-resolution-v4",
+  "model": "qwen-flash",
+  "make": "Husqvarna",
+  "model_name": "WXC 610"
+}

@@ -1,0 +1,16 @@
+{
+  "decision": "INFER|UNKNOWN",
+  "confidence": "LOW",
+  "length_mm": null,
+  "width_mm": null,
+  "height_mm": null,
+  "wheelbase_mm": null,
+  "seat_height_mm": null,
+  "ground_clearance_mm": null,
+  "explanation": "The FLHRSE4 Screamin Eagle Road King is a variant of the Harley-Davidson Road King series, but specific dimensional data for this exact model year and configuration is not consistently documented in public sources. Variations in factory production over time and between markets (e.g., U.S. vs. international) may affect dimensions. Without access to an official catalog or verified technical document for this precise model, dimensions cannot be reliably inferred. Therefore, all values are marked as unknown.",
+  "status": "SUCCESS",
+  "prompt_version": "motorcycle-dimension-inference-v1",
+  "model": "qwen-flash",
+  "make": "Harley-Davidson",
+  "model_name": "FLHRSE4 Screamin Eagle Road King"
+}

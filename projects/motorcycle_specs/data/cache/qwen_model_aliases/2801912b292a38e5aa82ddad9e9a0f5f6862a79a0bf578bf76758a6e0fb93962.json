@@ -1,0 +1,20 @@
+{
+  "decision": "MATCH",
+  "selected_candidate": "husqvarna fe 350 heritage",
+  "confidence": "HIGH",
+  "match_basis": "MARKET_ALIAS",
+  "explanation": "'FE350S Heritage' is a market-specific naming variant of the 'FE 350 Heritage' model, with 'S' likely denoting a special or sport configuration that is part of the Heritage lineup. The core model identity (FE 350 Heritage) matches exactly in the catalog candidates.",
+  "canonical_model_alias": "fe 350 heritage",
+  "configuration_tokens": [
+    "Heritage"
+  ],
+  "brand_aliases": [],
+  "model_aliases": [
+    "fe 350 heritage"
+  ],
+  "status": "SUCCESS",
+  "prompt_version": "motorcycle-candidate-resolution-v4",
+  "model": "qwen-flash",
+  "make": "Husqvarna",
+  "model_name": "FE350S Heritage"
+}

@@ -1,0 +1,16 @@
+{
+  "decision": "NO_MATCH",
+  "selected_candidate": "",
+  "confidence": "HIGH",
+  "match_basis": "NONE",
+  "explanation": "The model 'KING' from manufacturer 'Cobra' does not correspond to any known variant of the 'Intruder M1800R Cobra Special', which is a Suzuki motorcycle. The names, manufacturer, and model identity are fundamentally different; no market name, historical alias, abbreviation, or typo links them. The 'Cobra' brand is unrelated to Suzuki's Intruder line.",
+  "canonical_model_alias": "",
+  "configuration_tokens": [],
+  "brand_aliases": [],
+  "model_aliases": [],
+  "status": "SUCCESS",
+  "prompt_version": "motorcycle-candidate-resolution-v4",
+  "model": "qwen-flash",
+  "make": "Cobra",
+  "model_name": "KING"
+}

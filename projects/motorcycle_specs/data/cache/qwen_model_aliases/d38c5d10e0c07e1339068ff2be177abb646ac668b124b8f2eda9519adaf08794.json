@@ -1,0 +1,20 @@
+{
+  "decision": "MATCH",
+  "selected_candidate": "Honda CB1000C",
+  "confidence": "HIGH",
+  "match_basis": "SAME_NAME",
+  "explanation": "The input 'CB1000C Custom' and the candidate 'Honda CB1000C' refer to the same motorcycle model, with the only difference being the inclusion of 'Custom' in the input, which is a configuration descriptor already implied by the model name. The displacement (1000), model code (CB1000C), and manufacturer (Honda) are identical.",
+  "canonical_model_alias": "CB1000C",
+  "configuration_tokens": [
+    "Custom"
+  ],
+  "brand_aliases": [],
+  "model_aliases": [
+    "CB1000C"
+  ],
+  "status": "SUCCESS",
+  "prompt_version": "motorcycle-candidate-resolution-v4",
+  "model": "qwen-flash",
+  "make": "Honda",
+  "model_name": "CB1000C Custom"
+}

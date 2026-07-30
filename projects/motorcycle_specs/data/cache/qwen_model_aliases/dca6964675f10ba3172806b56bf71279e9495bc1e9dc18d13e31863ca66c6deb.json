@@ -1,0 +1,18 @@
+{
+  "decision": "MATCH",
+  "selected_candidate": "CBR 1000F",
+  "confidence": "HIGH",
+  "match_basis": "SAME_NAME",
+  "explanation": "The input 'CBR1000F Hurricane' and the candidate 'CBR 1000F' refer to the same underlying motorcycle model, with 'Hurricane' being a known marketing name for the CBR1000F in certain markets. The displacement (1000F) and model series (CBR) are identical, confirming identity.",
+  "canonical_model_alias": "CBR 1000F",
+  "configuration_tokens": [],
+  "brand_aliases": [],
+  "model_aliases": [
+    "CBR 1000F"
+  ],
+  "status": "SUCCESS",
+  "prompt_version": "motorcycle-candidate-resolution-v4",
+  "model": "qwen-flash",
+  "make": "Honda",
+  "model_name": "CBR1000F Hurricane"
+}

@@ -1,0 +1,18 @@
+{
+  "decision": "MATCH",
+  "selected_candidate": "Honda Elite SA 50",
+  "confidence": "HIGH",
+  "match_basis": "MARKET_ALIAS",
+  "explanation": "The 'SE50P Elite' is a market-specific designation for the Honda Elite SA 50, with 'SE50P' likely representing a regional or internal model code. The SA 50 is the same underlying model as the Elite 50 in certain markets, and the naming variation reflects regional marketing rather than a different motorcycle.",
+  "canonical_model_alias": "Elite SA 50",
+  "configuration_tokens": [],
+  "brand_aliases": [],
+  "model_aliases": [
+    "Elite SA 50"
+  ],
+  "status": "SUCCESS",
+  "prompt_version": "motorcycle-candidate-resolution-v4",
+  "model": "qwen-flash",
+  "make": "Honda",
+  "model_name": "SE50P Elite"
+}

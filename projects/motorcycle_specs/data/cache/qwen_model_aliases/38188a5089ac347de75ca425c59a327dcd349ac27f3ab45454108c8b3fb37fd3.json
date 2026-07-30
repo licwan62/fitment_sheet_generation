@@ -1,0 +1,21 @@
+{
+  "decision": "MATCH",
+  "selected_candidate": "RSV4 RR Misano Limited Edition",
+  "confidence": "HIGH",
+  "match_basis": "MARKET_ALIAS",
+  "explanation": "The input 'RSV4 RR Misano' refers to a limited edition variant of the RSV4 RR model, specifically marketed as the 'Misano Limited Edition'. This is a known market-specific name for the same underlying motorcycle model. The core identity (RSV4 RR) and displacement are unchanged; 'Misano' is a configuration label denoting a special edition.",
+  "canonical_model_alias": "RSV4 RR Misano Limited Edition",
+  "configuration_tokens": [
+    "Misano",
+    "Limited Edition"
+  ],
+  "brand_aliases": [],
+  "model_aliases": [
+    "RSV4 RR Misano Limited Edition"
+  ],
+  "status": "SUCCESS",
+  "prompt_version": "motorcycle-candidate-resolution-v4",
+  "model": "qwen-flash",
+  "make": "Aprilia",
+  "model_name": "RSV4 RR Misano"
+}

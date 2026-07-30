@@ -1,0 +1,18 @@
+{
+  "started_at": "2026-07-19T17:39:42.289890+00:00",
+  "finished_at": "2026-07-19T17:39:43.296197+00:00",
+  "input_count": 5,
+  "processed_count": 5,
+  "candidate_page_count": 127,
+  "fetched_page_count": 0,
+  "cache_hit_count": 0,
+  "exact_match_count": 10,
+  "likely_match_count": 0,
+  "review_count": 51,
+  "not_found_count": 0,
+  "parsed_complete_count": 10,
+  "parsed_partial_count": 0,
+  "parse_failed_count": 0,
+  "dimension_group_count": 4,
+  "error_count": 0
+}

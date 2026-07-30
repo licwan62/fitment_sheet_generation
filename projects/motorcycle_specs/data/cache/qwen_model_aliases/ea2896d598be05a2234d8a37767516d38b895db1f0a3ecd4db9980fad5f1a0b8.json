@@ -1,0 +1,20 @@
+{
+  "decision": "MATCH",
+  "selected_candidate": "F 800GS",
+  "confidence": "HIGH",
+  "match_basis": "MARKET_ALIAS",
+  "explanation": "The 'F800GS Explorer' is a market-specific configuration or variant name for the F 800GS model, commonly used in certain regions to denote the adventure-touring version. It refers to the same underlying motorcycle platform and engine, with no change in core identity. The catalog candidate 'F 800GS' represents the base model that includes this variant.",
+  "canonical_model_alias": "F 800GS",
+  "configuration_tokens": [
+    "Explorer"
+  ],
+  "brand_aliases": [],
+  "model_aliases": [
+    "F 800GS"
+  ],
+  "status": "SUCCESS",
+  "prompt_version": "motorcycle-candidate-resolution-v4",
+  "model": "qwen-flash",
+  "make": "BMW",
+  "model_name": "F800GS Explorer"
+}

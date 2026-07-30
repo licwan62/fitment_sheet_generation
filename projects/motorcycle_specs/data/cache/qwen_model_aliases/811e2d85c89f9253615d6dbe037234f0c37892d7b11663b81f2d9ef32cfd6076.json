@@ -1,0 +1,20 @@
+{
+  "decision": "MATCH",
+  "selected_candidate": "VT 1300CS \n\t\tSabre",
+  "confidence": "HIGH",
+  "match_basis": "SAME_NAME",
+  "explanation": "The input 'VT1300CSA Sabre ABS' and the candidate 'VT 1300CS Sabre' refer to the same underlying motorcycle model. The 'A' in VT1300CSA is a known market or configuration suffix (likely for 'ABS' or 'Australia'), and 'ABS' is explicitly mentioned in the input but not in the catalog title, which is standard for some regional variants. The core model identity (VT1300CS Sabre) is identical.",
+  "canonical_model_alias": "VT 1300CS Sabre",
+  "configuration_tokens": [
+    "ABS"
+  ],
+  "brand_aliases": [],
+  "model_aliases": [
+    "VT 1300CS Sabre"
+  ],
+  "status": "SUCCESS",
+  "prompt_version": "motorcycle-candidate-resolution-v4",
+  "model": "qwen-flash",
+  "make": "Honda",
+  "model_name": "VT1300CSA Sabre ABS"
+}

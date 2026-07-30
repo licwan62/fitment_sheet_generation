@@ -1,0 +1,18 @@
+{
+  "decision": "MATCH",
+  "selected_candidate": "hyosung gd 250r",
+  "confidence": "HIGH",
+  "match_basis": "MARKET_ALIAS",
+  "explanation": "The input 'GD250' refers to the same motorcycle model as 'hyosung gd 250r', with 'GD250' being a common shorthand or market designation for the GD 250R model. The 'R' suffix denotes the sport variant, and the model is consistently referred to by this name across catalogs. The 'i' in 'gd 250i' is likely a mislabeling or typo, while 'GT 250' and 'GV 250i' are different models.",
+  "canonical_model_alias": "gd 250r",
+  "configuration_tokens": [],
+  "brand_aliases": [],
+  "model_aliases": [
+    "gd 250r"
+  ],
+  "status": "SUCCESS",
+  "prompt_version": "motorcycle-candidate-resolution-v4",
+  "model": "qwen-flash",
+  "make": "Hyosung",
+  "model_name": "GD250"
+}

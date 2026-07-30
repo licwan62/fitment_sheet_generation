@@ -1,0 +1,18 @@
+{
+  "decision": "MATCH",
+  "selected_candidate": "G 310GS 40 Years Edition",
+  "confidence": "HIGH",
+  "match_basis": "HISTORICAL_ALIAS",
+  "explanation": "The 'G310GS 40 Years GS Edition' is a special commemorative version of the G 310GS, and 'G 310GS 40 Years Edition' is the official catalog title used by BMW for this model. The variation in spacing and capitalization ('G310GS' vs 'G 310GS') is a known formatting difference in BMW's naming convention, not a distinct model. The '40 Years GS Edition' is a historical marketing name for the same motorcycle.",
+  "canonical_model_alias": "G 310GS 40 Years Edition",
+  "configuration_tokens": [],
+  "brand_aliases": [],
+  "model_aliases": [
+    "G 310GS 40 Years Edition"
+  ],
+  "status": "SUCCESS",
+  "prompt_version": "motorcycle-candidate-resolution-v4",
+  "model": "qwen-flash",
+  "make": "BMW",
+  "model_name": "G310GS 40 Years GS Edition"
+}

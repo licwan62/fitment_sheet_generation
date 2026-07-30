@@ -1,0 +1,21 @@
+{
+  "decision": "MATCH",
+  "selected_candidate": "Harley-Davidson FXCW Softail Rocker",
+  "confidence": "HIGH",
+  "match_basis": "MARKET_ALIAS",
+  "explanation": "The input 'FXCW Rocker' is a commonly used market name for the Harley-Davidson FXCW Softail Rocker, with 'Softail Rocker' being the full model designation. The variant 'FXCWC Rocker C' is a configuration variant of the same model, but the core identity remains unchanged. The term 'Rocker' is consistently used across variants and is recognized as a marketing name for this model line.",
+  "canonical_model_alias": "FXCW Softail Rocker",
+  "configuration_tokens": [
+    "C"
+  ],
+  "brand_aliases": [],
+  "model_aliases": [
+    "Softail Rocker",
+    "FXCW Softail Rocker"
+  ],
+  "status": "SUCCESS",
+  "prompt_version": "motorcycle-candidate-resolution-v4",
+  "model": "qwen-flash",
+  "make": "Harley-Davidson",
+  "model_name": "FXCW Rocker"
+}

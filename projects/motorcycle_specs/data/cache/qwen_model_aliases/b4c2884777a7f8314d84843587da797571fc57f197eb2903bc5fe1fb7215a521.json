@@ -1,0 +1,16 @@
+{
+  "decision": "NO_MATCH",
+  "selected_candidate": "",
+  "confidence": "HIGH",
+  "match_basis": "NONE",
+  "explanation": "The input model 'VFR800D Interceptor DLX' is not present in the catalog candidates. The candidates are VFR 800F Interceptor, VFR 800F V-TEC, and VFR 800X Crossrunner Concept. The 'D' in 'VFR800D' indicates a different model variant (likely a European or specific market version), and 'DLX' denotes a trim level not reflected in any candidate. The F-series models differ in engine configuration and displacement (800F vs 800D), and the X variant is a different body style (adventure/cross). No candidate matches the exact model identity.",
+  "canonical_model_alias": "",
+  "configuration_tokens": [],
+  "brand_aliases": [],
+  "model_aliases": [],
+  "status": "SUCCESS",
+  "prompt_version": "motorcycle-candidate-resolution-v4",
+  "model": "qwen-flash",
+  "make": "Honda",
+  "model_name": "VFR800D Interceptor DLX"
+}

@@ -1,0 +1,19 @@
+{
+  "decision": "MATCH",
+  "selected_candidate": "EC 300 \n\tSix Days",
+  "confidence": "HIGH",
+  "match_basis": "MARKET_ALIAS",
+  "explanation": "'EC 300 Six Days Chile 18' refers to the EC 300 Six Days model marketed in Chile, with 'Chile' indicating a regional variant and '18' denoting the 2018 model year. The core model identity is unchanged; 'Six Days' is the standard name for this off-road racing variant. The catalog candidate 'EC 300 \\n\\tSix Days' matches the base model exactly, with no conflicting displacement or configuration differences.",
+  "canonical_model_alias": "EC 300 Six Days",
+  "configuration_tokens": [
+    "Chile",
+    "18"
+  ],
+  "brand_aliases": [],
+  "model_aliases": [],
+  "status": "SUCCESS",
+  "prompt_version": "motorcycle-candidate-resolution-v4",
+  "model": "qwen-flash",
+  "make": "Gas Gas",
+  "model_name": "EC 300 Six Days Chile 18"
+}

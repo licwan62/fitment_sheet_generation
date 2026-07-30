@@ -1,0 +1,20 @@
+{
+  "decision": "MATCH",
+  "selected_candidate": "beta rr 125t",
+  "confidence": "HIGH",
+  "match_basis": "MARKET_ALIAS",
+  "explanation": "The '125 RR-Race Edition' is a high-performance variant of the Beta RR 125T, marketed as a race-focused version. The 'RR-Race Edition' is a configuration label for the same underlying model, with '125T' indicating the displacement and engine type. The catalog candidate 'beta rr 125t' represents the base model that includes this edition as a variant.",
+  "canonical_model_alias": "beta rr 125t",
+  "configuration_tokens": [
+    "Race Edition"
+  ],
+  "brand_aliases": [],
+  "model_aliases": [
+    "rr 125t"
+  ],
+  "status": "SUCCESS",
+  "prompt_version": "motorcycle-candidate-resolution-v4",
+  "model": "qwen-flash",
+  "make": "Beta",
+  "model_name": "125 RR-Race Edition"
+}

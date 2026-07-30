@@ -1,0 +1,19 @@
+{
+  "decision": "MATCH",
+  "selected_candidate": "Chieftain Dark \n\t\tHorse",
+  "confidence": "HIGH",
+  "match_basis": "MARKET_ALIAS",
+  "explanation": "The input 'Chieftain PowerPlus Dark Horse 108' refers to the Indian Chieftain Dark Horse model with a 108 cubic inch engine, marketed as PowerPlus. 'PowerPlus' is a known configuration label for the 108ci engine variant, and 'Dark Horse' is the model name. The candidate 'Chieftain Dark Horse' is the standard catalog title for this model in many markets, making it a valid market alias despite missing the 'PowerPlus' and displacement details. The core identity (Chieftain Dark Horse 108) is preserved.",
+  "canonical_model_alias": "Chieftain Dark Horse",
+  "configuration_tokens": [
+    "PowerPlus",
+    "108"
+  ],
+  "brand_aliases": [],
+  "model_aliases": [],
+  "status": "SUCCESS",
+  "prompt_version": "motorcycle-candidate-resolution-v4",
+  "model": "qwen-flash",
+  "make": "Indian",
+  "model_name": "Chieftain PowerPlus Dark Horse 108"
+}

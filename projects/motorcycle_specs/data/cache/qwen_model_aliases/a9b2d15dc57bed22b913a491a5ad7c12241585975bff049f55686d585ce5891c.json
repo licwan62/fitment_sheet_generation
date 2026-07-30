@@ -1,0 +1,19 @@
+{
+  "decision": "MATCH",
+  "selected_candidate": "Harley-Davidson Street Bob 117",
+  "confidence": "HIGH",
+  "match_basis": "SAME_NAME",
+  "explanation": "The input 'FXBB Street Bob 117' is the model code and name for the Harley-Davidson Street Bob 117. The candidate 'Harley-Davidson Street Bob 117' is the exact catalog title, with no variation in model identity, displacement, or configuration.",
+  "canonical_model_alias": "Street Bob 117",
+  "configuration_tokens": [],
+  "brand_aliases": [],
+  "model_aliases": [
+    "Bob 117",
+    "Street Bob 117"
+  ],
+  "status": "SUCCESS",
+  "prompt_version": "motorcycle-candidate-resolution-v4",
+  "model": "qwen-flash",
+  "make": "Harley-Davidson",
+  "model_name": "FXBB Street Bob 117"
+}

@@ -1,0 +1,16 @@
+{
+  "decision": "INFER|UNKNOWN",
+  "confidence": "MEDIUM|LOW",
+  "length_mm": null,
+  "width_mm": null,
+  "height_mm": null,
+  "wheelbase_mm": null,
+  "seat_height_mm": null,
+  "ground_clearance_mm": null,
+  "explanation": "Husqvarna HUV 4414 XP is not a recognized motorcycle model in available public databases or manufacturer documentation. The model name appears inconsistent with Husqvarna's known product naming conventions for motorcycles. Without a confirmed catalog reference or official specifications, dimensions cannot be reliably inferred. Further verification of the model identity is required.",
+  "status": "SUCCESS",
+  "prompt_version": "motorcycle-dimension-inference-v1",
+  "model": "qwen-flash",
+  "make": "Husqvarna",
+  "model_name": "HUV 4414 XP"
+}

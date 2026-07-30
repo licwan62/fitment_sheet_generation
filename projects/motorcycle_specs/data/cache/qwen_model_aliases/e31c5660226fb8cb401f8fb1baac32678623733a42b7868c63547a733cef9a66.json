@@ -1,0 +1,21 @@
+{
+  "decision": "MATCH",
+  "selected_candidate": "gasgas txt 250 pro",
+  "confidence": "HIGH",
+  "match_basis": "MARKET_ALIAS",
+  "explanation": "The 'Trial 250' is a market-specific name for the Gas Gas TXT 250 Pro, which is the same underlying motorcycle model. The 'TXT' designation refers to the trial racing series, and 'Pro' indicates the professional configuration. This is a known market/usage-based naming variation.",
+  "canonical_model_alias": "txt 250 pro",
+  "configuration_tokens": [
+    "pro"
+  ],
+  "brand_aliases": [],
+  "model_aliases": [
+    "gasgas txt 250 pro",
+    "txt 250 pro"
+  ],
+  "status": "SUCCESS",
+  "prompt_version": "motorcycle-candidate-resolution-v4",
+  "model": "qwen-flash",
+  "make": "Gas Gas",
+  "model_name": "Trial 250"
+}

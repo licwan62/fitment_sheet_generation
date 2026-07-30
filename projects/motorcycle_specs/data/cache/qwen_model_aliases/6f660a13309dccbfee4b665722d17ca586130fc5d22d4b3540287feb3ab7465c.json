@@ -1,0 +1,21 @@
+{
+  "decision": "MATCH",
+  "selected_candidate": "Monster S4R",
+  "confidence": "HIGH",
+  "match_basis": "ABBREVIATION",
+  "explanation": "The input 'Monster S4Rs' is a known market or configuration variant of the 'Monster S4R', with the 's' likely denoting a specific version (e.g., 'S' for Sport or Special), but the core model identity remains unchanged. The difference is a common suffix variation in Ducati's naming convention.",
+  "canonical_model_alias": "Monster S4R",
+  "configuration_tokens": [
+    "S",
+    "R"
+  ],
+  "brand_aliases": [],
+  "model_aliases": [
+    "Monster S4R"
+  ],
+  "status": "SUCCESS",
+  "prompt_version": "motorcycle-candidate-resolution-v4",
+  "model": "qwen-flash",
+  "make": "Ducati",
+  "model_name": "Monster S4Rs"
+}

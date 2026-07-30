@@ -1,0 +1,20 @@
+{
+  "decision": "MATCH",
+  "selected_candidate": "Indian chieftain dark horse",
+  "confidence": "HIGH",
+  "match_basis": "SAME_NAME",
+  "explanation": "The input 'Chieftain Dark Horse Audio Package' refers to the same model as 'Indian chieftain dark horse', with 'Audio Package' being a configuration detail that does not change the core model identity. The catalog candidate matches exactly in name and model designation.",
+  "canonical_model_alias": "chieftain dark horse",
+  "configuration_tokens": [
+    "audio package"
+  ],
+  "brand_aliases": [],
+  "model_aliases": [
+    "chieftain dark horse"
+  ],
+  "status": "SUCCESS",
+  "prompt_version": "motorcycle-candidate-resolution-v4",
+  "model": "qwen-flash",
+  "make": "Indian",
+  "model_name": "Chieftain Dark Horse Audio Package"
+}

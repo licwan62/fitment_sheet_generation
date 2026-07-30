@@ -1,0 +1,16 @@
+{
+  "decision": "MATCH",
+  "selected_candidate": "benelli caffe nero",
+  "confidence": "HIGH",
+  "match_basis": "SAME_NAME",
+  "explanation": "The input 'Caffe Nero 250' is a direct reference to the Benelli Caffe Nero 250 model, and 'benelli caffe nero' in the catalog candidates is the exact canonical title for the same motorcycle. The displacement '250' is consistent, and no other model in the list matches this specific configuration.",
+  "canonical_model_alias": "caffe nero 250",
+  "configuration_tokens": [],
+  "brand_aliases": [],
+  "model_aliases": [],
+  "status": "SUCCESS",
+  "prompt_version": "motorcycle-candidate-resolution-v4",
+  "model": "qwen-flash",
+  "make": "Benelli",
+  "model_name": "Caffe Nero 250"
+}

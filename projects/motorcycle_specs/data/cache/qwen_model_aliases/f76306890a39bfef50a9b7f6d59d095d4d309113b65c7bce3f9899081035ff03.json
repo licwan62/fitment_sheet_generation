@@ -1,0 +1,19 @@
+{
+  "decision": "MATCH",
+  "selected_candidate": "gasgas txt 250 pro racing",
+  "confidence": "HIGH",
+  "match_basis": "MARKET_ALIAS",
+  "explanation": "The 'TXT Pro 250 Raga' is a market-specific name for the same model as 'gasgas txt 250 pro racing', with 'Raga' being a regional or marketing designation used in certain markets for the 250cc Pro Racing variant. The displacement, model series (TXT Pro), and core identity match exactly.",
+  "canonical_model_alias": "txt 250 pro racing",
+  "configuration_tokens": [],
+  "brand_aliases": [],
+  "model_aliases": [
+    "gasgas txt 250 pro racing",
+    "txt 250 pro racing"
+  ],
+  "status": "SUCCESS",
+  "prompt_version": "motorcycle-candidate-resolution-v4",
+  "model": "qwen-flash",
+  "make": "Gas Gas",
+  "model_name": "TXT Pro 250 Raga"
+}

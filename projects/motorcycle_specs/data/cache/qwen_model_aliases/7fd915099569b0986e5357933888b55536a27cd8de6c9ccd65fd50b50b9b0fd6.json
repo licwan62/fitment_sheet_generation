@@ -1,0 +1,21 @@
+{
+  "decision": "MATCH",
+  "selected_candidate": "Honda GL 1500 Gold Wing SE",
+  "confidence": "HIGH",
+  "match_basis": "MARKET_ALIAS",
+  "explanation": "The 'GL1500I Gold Wing Interstate' is a market-specific designation (I for Interstate) of the same model as the 'GL 1500 Gold Wing SE', which is a known variant in the U.S. market. The SE trim level and 1500 displacement are identical, and 'Interstate' is a configuration label for the touring-oriented version with added features, not a different model. The naming differences reflect regional marketing, not distinct motorcycles.",
+  "canonical_model_alias": "GL 1500 Gold Wing SE",
+  "configuration_tokens": [
+    "SE",
+    "Interstate"
+  ],
+  "brand_aliases": [],
+  "model_aliases": [
+    "GL 1500 Gold Wing SE"
+  ],
+  "status": "SUCCESS",
+  "prompt_version": "motorcycle-candidate-resolution-v4",
+  "model": "qwen-flash",
+  "make": "Honda",
+  "model_name": "GL1500I Gold Wing Interstate"
+}

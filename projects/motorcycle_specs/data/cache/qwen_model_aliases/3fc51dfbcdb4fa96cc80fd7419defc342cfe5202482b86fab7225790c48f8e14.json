@@ -1,0 +1,20 @@
+{
+  "decision": "MATCH",
+  "selected_candidate": "F 800GS",
+  "confidence": "HIGH",
+  "match_basis": "MARKET_ALIAS",
+  "explanation": "The 'F800GS Comfort' is a configuration variant of the F 800GS model, with 'Comfort' denoting a specific equipment or market-specific trim. The core motorcycle identity remains unchanged, and 'F800GS' is the canonical catalog title for this model line.",
+  "canonical_model_alias": "F 800GS",
+  "configuration_tokens": [
+    "Comfort"
+  ],
+  "brand_aliases": [],
+  "model_aliases": [
+    "F 800GS"
+  ],
+  "status": "SUCCESS",
+  "prompt_version": "motorcycle-candidate-resolution-v4",
+  "model": "qwen-flash",
+  "make": "BMW",
+  "model_name": "F800GS Comfort"
+}

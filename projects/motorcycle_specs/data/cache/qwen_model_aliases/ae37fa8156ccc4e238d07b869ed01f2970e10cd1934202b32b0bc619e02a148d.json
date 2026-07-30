@@ -1,0 +1,18 @@
+{
+  "decision": "MATCH",
+  "selected_candidate": "FXRS 1340 Low Rider",
+  "confidence": "HIGH",
+  "match_basis": "MARKET_ALIAS",
+  "explanation": "'FXRC Low Rider Chrome' is a market-specific variant (Chrome trim) of the FXRS 1340 Low Rider, with 'RC' denoting a chrome finish option in certain markets. The core model identity (FXRS 1340 Low Rider) matches exactly.",
+  "canonical_model_alias": "FXRS 1340 Low Rider",
+  "configuration_tokens": [
+    "Chrome"
+  ],
+  "brand_aliases": [],
+  "model_aliases": [],
+  "status": "SUCCESS",
+  "prompt_version": "motorcycle-candidate-resolution-v4",
+  "model": "qwen-flash",
+  "make": "Harley-Davidson",
+  "model_name": "FXRC Low Rider Chrome"
+}

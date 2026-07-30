@@ -1,0 +1,16 @@
+{
+  "decision": "INFER|UNKNOWN",
+  "confidence": "LOW",
+  "length_mm": null,
+  "width_mm": null,
+  "height_mm": null,
+  "wheelbase_mm": null,
+  "seat_height_mm": null,
+  "ground_clearance_mm": null,
+  "explanation": "The BMW K75/3 is a rare and specialized model with limited public documentation. Variations in production years and markets may affect dimensions significantly, and no reliable source confirms exact measurements. Inference is uncertain due to lack of consistent data.",
+  "status": "SUCCESS",
+  "prompt_version": "motorcycle-dimension-inference-v1",
+  "model": "qwen-flash",
+  "make": "BMW",
+  "model_name": "K75/3"
+}

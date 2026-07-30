@@ -1,0 +1,22 @@
+{
+  "decision": "MATCH",
+  "selected_candidate": "Bajaj pulsar ns 125",
+  "confidence": "LOW",
+  "match_basis": "TYPO",
+  "explanation": "The input 'Pulsar N 250 FI ABS' is a typo or misinterpretation of 'Pulsar NS 250', which is the correct model name. 'Pulsar N 250' is not a valid model; the correct model is Pulsar NS 250, and 'N' likely refers to 'NS'. The candidate 'Bajaj pulsar ns 125' is incorrect as it's a different displacement. However, no exact match exists in the list for Pulsar NS 250. The closest candidate is 'Bajaj pulsar ns200', which shares the NS platform but differs in displacement. Thus, the match is weak due to typographical confusion and lack of exact candidate.",
+  "canonical_model_alias": "Pulsar NS 250",
+  "configuration_tokens": [
+    "FI",
+    "ABS"
+  ],
+  "brand_aliases": [],
+  "model_aliases": [
+    "Pulsar NS 250",
+    "Pulsar N 250"
+  ],
+  "status": "SUCCESS",
+  "prompt_version": "motorcycle-candidate-resolution-v4",
+  "model": "qwen-flash",
+  "make": "Bajaj",
+  "model_name": "Pulsar N 250 FI ABS"
+}

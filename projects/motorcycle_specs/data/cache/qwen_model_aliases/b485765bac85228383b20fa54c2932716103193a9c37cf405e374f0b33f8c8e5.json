@@ -1,0 +1,20 @@
+{
+  "decision": "MATCH",
+  "selected_candidate": "buell lightning xb 12 scg",
+  "confidence": "HIGH",
+  "match_basis": "SAME_NAME",
+  "explanation": "The input 'XB12Scg Lightning' is a direct variant of the catalog candidate 'buell lightning xb 12 scg', with identical displacement (1200cc), model series (XB12), and configuration suffix (SCG). The capitalization and spacing differences are negligible. This is the same underlying motorcycle model.",
+  "canonical_model_alias": "lightning xb 12 scg",
+  "configuration_tokens": [
+    "scg"
+  ],
+  "brand_aliases": [],
+  "model_aliases": [
+    "lightning xb 12 scg"
+  ],
+  "status": "SUCCESS",
+  "prompt_version": "motorcycle-candidate-resolution-v4",
+  "model": "qwen-flash",
+  "make": "Buell",
+  "model_name": "XB12Scg Lightning"
+}

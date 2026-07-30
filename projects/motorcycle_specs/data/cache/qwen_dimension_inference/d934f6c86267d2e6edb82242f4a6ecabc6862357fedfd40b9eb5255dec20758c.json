@@ -1,0 +1,16 @@
+{
+  "decision": "INFER|UNKNOWN",
+  "confidence": "MEDIUM|LOW",
+  "length_mm": null,
+  "width_mm": null,
+  "height_mm": null,
+  "wheelbase_mm": null,
+  "seat_height_mm": null,
+  "ground_clearance_mm": null,
+  "explanation": "The Buell S2 Thunderbolt model's dimensions vary significantly across production years and markets, and no consistent catalog data is available for definitive inference. Without access to a specific model year or official specifications, accurate dimension estimation cannot be reliably made.",
+  "status": "SUCCESS",
+  "prompt_version": "motorcycle-dimension-inference-v1",
+  "model": "qwen-flash",
+  "make": "Buell",
+  "model_name": "S2 Thunderbolt"
+}

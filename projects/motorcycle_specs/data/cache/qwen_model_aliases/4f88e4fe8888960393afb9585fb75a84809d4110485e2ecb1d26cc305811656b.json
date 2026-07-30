@@ -1,0 +1,16 @@
+{
+  "decision": "MATCH",
+  "selected_candidate": "BMW R nineT 5",
+  "confidence": "HIGH",
+  "match_basis": "SAME_NAME",
+  "explanation": "The input 'R nine T /5' is a direct variant of the catalog candidate 'BMW R nineT 5', with the forward slash likely being a typo or formatting error for the number 5. The model identity, including displacement and name, matches exactly.",
+  "canonical_model_alias": "R nineT 5",
+  "configuration_tokens": [],
+  "brand_aliases": [],
+  "model_aliases": [],
+  "status": "SUCCESS",
+  "prompt_version": "motorcycle-candidate-resolution-v4",
+  "model": "qwen-flash",
+  "make": "BMW",
+  "model_name": "R nine T /5"
+}

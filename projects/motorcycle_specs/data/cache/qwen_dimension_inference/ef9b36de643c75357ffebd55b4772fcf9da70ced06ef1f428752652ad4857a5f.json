@@ -1,0 +1,16 @@
+{
+  "decision": "INFER|UNKNOWN",
+  "confidence": "MEDIUM|LOW",
+  "length_mm": null,
+  "width_mm": null,
+  "height_mm": null,
+  "wheelbase_mm": null,
+  "seat_height_mm": null,
+  "ground_clearance_mm": null,
+  "explanation": "The Beta Mini 50 R12 is a small off-road motorcycle primarily designed for youth or entry-level riders. However, specific dimensional data for this exact model variant is not publicly documented in available sources. Dimensions may vary by year and market configuration. Without access to official specifications or verified catalog data, accurate inference is uncertain. Therefore, all dimensions are marked as unknown with medium to low confidence.",
+  "status": "SUCCESS",
+  "prompt_version": "motorcycle-dimension-inference-v1",
+  "model": "qwen-flash",
+  "make": "Beta",
+  "model_name": "Mini 50 R12"
+}

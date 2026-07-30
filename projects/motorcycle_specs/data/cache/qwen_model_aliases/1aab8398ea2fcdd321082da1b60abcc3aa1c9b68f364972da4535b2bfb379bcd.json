@@ -1,0 +1,18 @@
+{
+  "decision": "MATCH",
+  "selected_candidate": "GT 185M",
+  "confidence": "HIGH",
+  "match_basis": "MARKET_ALIAS",
+  "explanation": "The 'GT 185K' and 'GT 185M' are different market designations for the same underlying Suzuki GT185 model; 'M' is the correct and more commonly used designation in international catalogs, while 'K' may be a regional or typographical variant. Both refer to the same motorcycle model with identical specifications.",
+  "canonical_model_alias": "GT 185M",
+  "configuration_tokens": [],
+  "brand_aliases": [],
+  "model_aliases": [
+    "GT 185M"
+  ],
+  "status": "SUCCESS",
+  "prompt_version": "motorcycle-candidate-resolution-v4",
+  "model": "qwen-flash",
+  "make": "Suzuki",
+  "model_name": "GT185"
+}

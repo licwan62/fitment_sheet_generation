@@ -1,0 +1,18 @@
+{
+  "decision": "MATCH",
+  "selected_candidate": "Gixxer SF250 MotoGP Edition",
+  "confidence": "HIGH",
+  "match_basis": "MARKET_ALIAS",
+  "explanation": "The 'Gixxer SF250 GP' is a market-specific naming variant of the 'Gixxer SF250 MotoGP Edition', with 'GP' used as a branding shorthand for the MotoGP Edition. Both refer to the same model with identical core specifications and identity.",
+  "canonical_model_alias": "Gixxer SF250 MotoGP Edition",
+  "configuration_tokens": [],
+  "brand_aliases": [],
+  "model_aliases": [
+    "Gixxer SF250 MotoGP Edition"
+  ],
+  "status": "SUCCESS",
+  "prompt_version": "motorcycle-candidate-resolution-v4",
+  "model": "qwen-flash",
+  "make": "Suzuki",
+  "model_name": "Gixxer SF250 GP"
+}

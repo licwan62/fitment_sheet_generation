@@ -1,0 +1,16 @@
+{
+  "decision": "INFER",
+  "confidence": "MEDIUM",
+  "length_mm": 2150,
+  "width_mm": 860,
+  "height_mm": 1240,
+  "wheelbase_mm": 1390,
+  "seat_height_mm": 920,
+  "ground_clearance_mm": 300,
+  "explanation": "Inferred from typical dimensions of 250-300cc off-road motorcycles in the Gas Gas TXT series, including the TXT Pro 300 Raga's design language and market positioning. Dimensions are consistent with similar models like the KTM 300 EXC-F and Husqvarna TC 300, adjusted for Gas Gas-specific proportions. Seat height reflects standard rider ergonomics for enduro use. Ground clearance aligns with competitive off-road performance expectations.",
+  "status": "SUCCESS",
+  "prompt_version": "motorcycle-dimension-inference-v1",
+  "model": "qwen-flash",
+  "make": "Gas Gas",
+  "model_name": "TXT Pro 300 Raga"
+}

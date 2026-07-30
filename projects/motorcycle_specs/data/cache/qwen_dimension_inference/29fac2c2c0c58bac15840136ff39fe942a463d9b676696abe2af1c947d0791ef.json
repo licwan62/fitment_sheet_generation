@@ -1,0 +1,16 @@
+{
+  "decision": "INFER|UNKNOWN",
+  "confidence": "MEDIUM|LOW",
+  "length_mm": null,
+  "width_mm": null,
+  "height_mm": null,
+  "wheelbase_mm": null,
+  "seat_height_mm": null,
+  "ground_clearance_mm": null,
+  "explanation": "The CFMOTO Ibex 800 E is a dual-sport motorcycle, but specific dimensions are not consistently documented across sources. Variations by model year and market configuration may affect measurements. Without access to an official catalog or verified technical specification sheet, accurate inference is limited. Dimensions from similar models (e.g., Ibex 650 or 700) cannot be reliably extrapolated due to potential differences in frame design and component layout.",
+  "status": "SUCCESS",
+  "prompt_version": "motorcycle-dimension-inference-v1",
+  "model": "qwen-flash",
+  "make": "CFMOTO",
+  "model_name": "Ibex 800 E"
+}

@@ -1,0 +1,16 @@
+{
+  "decision": "NO_MATCH",
+  "selected_candidate": "",
+  "confidence": "HIGH",
+  "match_basis": "NONE",
+  "explanation": "The input model FXDWG3 CVO Dyna Wide Glide is a Dyna-series motorcycle with a specific engine and configuration, while all catalog candidates are Road Glide, Street Glide, Softail Convertible, or Springer models—different series entirely. No candidate matches the underlying motorcycle identity in terms of platform, model lineage, or configuration.",
+  "canonical_model_alias": "",
+  "configuration_tokens": [],
+  "brand_aliases": [],
+  "model_aliases": [],
+  "status": "SUCCESS",
+  "prompt_version": "motorcycle-candidate-resolution-v4",
+  "model": "qwen-flash",
+  "make": "Harley-Davidson",
+  "model_name": "FXDWG3 CVO Dyna Wide Glide"
+}

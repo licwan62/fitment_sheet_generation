@@ -1,0 +1,16 @@
+{
+  "decision": "INFER|UNKNOWN",
+  "confidence": "LOW",
+  "length_mm": null,
+  "width_mm": null,
+  "height_mm": null,
+  "wheelbase_mm": null,
+  "seat_height_mm": null,
+  "ground_clearance_mm": null,
+  "explanation": "The Gas Gas TXT 80 Rookie is a junior motocross bike, but specific dimensions are not consistently documented across sources. Without access to official specifications or verified catalog data, and due to potential variations by model year and market, precise measurements cannot be reliably inferred. Dimensions may differ significantly between versions, leading to uncertainty in estimation.",
+  "status": "SUCCESS",
+  "prompt_version": "motorcycle-dimension-inference-v1",
+  "model": "qwen-flash",
+  "make": "Gas Gas",
+  "model_name": "TXT 80 Rookie"
+}

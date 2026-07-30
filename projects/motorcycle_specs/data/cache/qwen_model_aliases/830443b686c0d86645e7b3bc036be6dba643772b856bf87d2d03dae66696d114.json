@@ -1,0 +1,19 @@
+{
+  "decision": "MATCH",
+  "selected_candidate": "VT750C2BS Shadow Phantom ABS",
+  "confidence": "HIGH",
+  "match_basis": "SAME_NAME",
+  "explanation": "The input model name 'VT750C2BS Shadow Phantom ABS' exactly matches the catalog candidate title, including all identity-bearing tokens such as displacement (750), model code (VT750C2BS), and special features (Phantom, ABS). No discrepancies in model identity or configuration are present.",
+  "canonical_model_alias": "VT750C2BS Shadow Phantom ABS",
+  "configuration_tokens": [
+    "Phantom",
+    "ABS"
+  ],
+  "brand_aliases": [],
+  "model_aliases": [],
+  "status": "SUCCESS",
+  "prompt_version": "motorcycle-candidate-resolution-v4",
+  "model": "qwen-flash",
+  "make": "Honda",
+  "model_name": "VT750C2BS Shadow Phantom ABS"
+}

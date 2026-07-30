@@ -1,0 +1,18 @@
+{
+  "decision": "MATCH",
+  "selected_candidate": "VL 800 LC Intruder Volusia",
+  "confidence": "HIGH",
+  "match_basis": "SAME_NAME",
+  "explanation": "The input 'VL800 Intruder Volusia' refers to the same motorcycle model as the catalog candidate 'VL 800 LC Intruder Volusia', with only minor formatting differences (space, 'LC' inclusion). The 'LC' designation is a known engine configuration label for this model and does not indicate a different underlying motorcycle. The SE variant is a configuration variant but shares the core identity.",
+  "canonical_model_alias": "VL 800 LC Intruder Volusia",
+  "configuration_tokens": [],
+  "brand_aliases": [],
+  "model_aliases": [
+    "VL 800 LC Intruder Volusia"
+  ],
+  "status": "SUCCESS",
+  "prompt_version": "motorcycle-candidate-resolution-v4",
+  "model": "qwen-flash",
+  "make": "Suzuki",
+  "model_name": "VL800 Intruder Volusia"
+}

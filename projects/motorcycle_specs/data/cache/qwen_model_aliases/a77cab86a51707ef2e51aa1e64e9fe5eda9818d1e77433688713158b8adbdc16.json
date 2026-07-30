@@ -1,0 +1,16 @@
+{
+  "decision": "NO_MATCH",
+  "selected_candidate": "",
+  "confidence": "HIGH",
+  "match_basis": "NONE",
+  "explanation": "The input model 'K75/3' is not a valid variant of any listed catalog candidate. The 'K75/3' designation does not correspond to any known BMW K75 model, including the K 75C, K 75S, or K 75 RT. The '/3' suffix is not a recognized configuration, market name, or typo for any standard K75 variant. The K75 series did not include a 'K75/3' model in official BMW catalogs.",
+  "canonical_model_alias": "",
+  "configuration_tokens": [],
+  "brand_aliases": [],
+  "model_aliases": [],
+  "status": "SUCCESS",
+  "prompt_version": "motorcycle-candidate-resolution-v4",
+  "model": "qwen-flash",
+  "make": "BMW",
+  "model_name": "K75/3"
+}

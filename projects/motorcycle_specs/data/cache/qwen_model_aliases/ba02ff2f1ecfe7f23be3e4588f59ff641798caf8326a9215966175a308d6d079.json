@@ -1,0 +1,16 @@
+{
+  "decision": "NO_MATCH",
+  "selected_candidate": "",
+  "confidence": "HIGH",
+  "match_basis": "NONE",
+  "explanation": "The model 'CR400' is not present in the catalog candidates, and none of the listed candidates refer to a Husqvarna CR400. The closest matches are other Husqvarna models with different displacement, designations, or configurations (e.g., WR 400, FC 450), but none match the CR400 in name, displacement, or model lineage. No known market alias, historical variant, abbreviation, or typo links any candidate to CR400.",
+  "canonical_model_alias": "",
+  "configuration_tokens": [],
+  "brand_aliases": [],
+  "model_aliases": [],
+  "status": "SUCCESS",
+  "prompt_version": "motorcycle-candidate-resolution-v4",
+  "model": "qwen-flash",
+  "make": "Husqvarna",
+  "model_name": "CR400"
+}

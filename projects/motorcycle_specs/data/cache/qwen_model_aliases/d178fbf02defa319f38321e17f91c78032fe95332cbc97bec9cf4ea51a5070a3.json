@@ -1,0 +1,20 @@
+{
+  "decision": "MATCH",
+  "selected_candidate": "Honda CB 550 Four K",
+  "confidence": "HIGH",
+  "match_basis": "MARKET_ALIAS",
+  "explanation": "The 'CB550K' is a market-specific designation for the Honda CB550 Four, particularly used in North America. The 'Four' suffix denotes the inline-four engine configuration, and 'K' is a model variant identifier used in certain markets. This matches the 'Honda CB 550 Four K' candidate exactly as a known regional name.",
+  "canonical_model_alias": "CB 550 Four K",
+  "configuration_tokens": [
+    "K"
+  ],
+  "brand_aliases": [],
+  "model_aliases": [
+    "CB 550 Four K"
+  ],
+  "status": "SUCCESS",
+  "prompt_version": "motorcycle-candidate-resolution-v4",
+  "model": "qwen-flash",
+  "make": "Honda",
+  "model_name": "CB550K"
+}

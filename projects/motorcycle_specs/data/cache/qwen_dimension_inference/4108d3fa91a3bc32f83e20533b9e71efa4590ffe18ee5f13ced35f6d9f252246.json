@@ -1,0 +1,16 @@
+{
+  "decision": "INFER|UNKNOWN",
+  "confidence": "LOW",
+  "length_mm": null,
+  "width_mm": null,
+  "height_mm": null,
+  "wheelbase_mm": null,
+  "seat_height_mm": null,
+  "ground_clearance_mm": null,
+  "explanation": "The Honda CM91 is not a recognized model in official Honda motorcycle listings. It may be a misidentification or confusion with another model such as the CM900 or CB900. Without confirmed data or a catalog reference, dimensions cannot be reliably inferred. Variations by year and market further reduce confidence.",
+  "status": "SUCCESS",
+  "prompt_version": "motorcycle-dimension-inference-v1",
+  "model": "qwen-flash",
+  "make": "Honda",
+  "model_name": "CM91"
+}

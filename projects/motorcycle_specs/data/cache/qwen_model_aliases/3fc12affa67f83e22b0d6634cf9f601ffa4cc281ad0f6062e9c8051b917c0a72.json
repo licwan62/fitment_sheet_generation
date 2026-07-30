@@ -1,0 +1,16 @@
+{
+  "decision": "MATCH",
+  "selected_candidate": "Honda CB600F",
+  "confidence": "HIGH",
+  "match_basis": "SAME_NAME",
+  "explanation": "The input 'CB600F 599' refers to the Honda CB600F model with a 599cc engine, which is identical to the catalog candidate 'Honda CB600F'. The displacement '599' is consistent with the CB600F's engine size. The name and model identity match exactly.",
+  "canonical_model_alias": "CB600F",
+  "configuration_tokens": [],
+  "brand_aliases": [],
+  "model_aliases": [],
+  "status": "SUCCESS",
+  "prompt_version": "motorcycle-candidate-resolution-v4",
+  "model": "qwen-flash",
+  "make": "Honda",
+  "model_name": "CB600F 599"
+}

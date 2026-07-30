@@ -1,0 +1,18 @@
+{
+  "decision": "MATCH",
+  "selected_candidate": "CB 900F",
+  "confidence": "HIGH",
+  "match_basis": "SAME_NAME",
+  "explanation": "The input 'CB900F Super Sport' refers to the same motorcycle model as 'CB 900F' in the catalog, with 'Super Sport' being a marketing name or descriptor rather than a distinct model identifier. The core model identity (CB900F) matches exactly.",
+  "canonical_model_alias": "CB 900F",
+  "configuration_tokens": [],
+  "brand_aliases": [],
+  "model_aliases": [
+    "CB 900F"
+  ],
+  "status": "SUCCESS",
+  "prompt_version": "motorcycle-candidate-resolution-v4",
+  "model": "qwen-flash",
+  "make": "Honda",
+  "model_name": "CB900F Super Sport"
+}

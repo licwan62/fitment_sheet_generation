@@ -1,0 +1,20 @@
+{
+  "decision": "MATCH",
+  "selected_candidate": "CRF 250L",
+  "confidence": "HIGH",
+  "match_basis": "SAME_NAME",
+  "explanation": "The input model 'CRF250L ABS' is functionally identical to the catalog candidate 'CRF 250L', with 'ABS' being a configuration feature (anti-lock braking system) that does not alter the core model identity. The absence of 'ABS' in the candidate title is acceptable as it denotes a variant, not a different model.",
+  "canonical_model_alias": "CRF 250L",
+  "configuration_tokens": [
+    "ABS"
+  ],
+  "brand_aliases": [],
+  "model_aliases": [
+    "CRF 250L"
+  ],
+  "status": "SUCCESS",
+  "prompt_version": "motorcycle-candidate-resolution-v4",
+  "model": "qwen-flash",
+  "make": "Honda",
+  "model_name": "CRF250L ABS"
+}

@@ -1,0 +1,18 @@
+{
+  "decision": "MATCH",
+  "selected_candidate": "CHF 50 Metropolitan Scooter",
+  "confidence": "HIGH",
+  "match_basis": "MARKET_ALIAS",
+  "explanation": "The input 'CHF50P Metropolitan II' and the candidate 'CHF 50 Metropolitan Scooter' refer to the same Honda model, with 'Metropolitan II' being a market-specific designation for the CHF50P variant in certain regions. The displacement (50), platform (CHF), and model lineage are identical. The 'P' suffix is consistent with the CHF50P designation, and 'Metropolitan Scooter' is a known catalog name used interchangeably with 'Metropolitan II'.",
+  "canonical_model_alias": "CHF 50 Metropolitan Scooter",
+  "configuration_tokens": [],
+  "brand_aliases": [],
+  "model_aliases": [
+    "CHF 50 Metropolitan Scooter"
+  ],
+  "status": "SUCCESS",
+  "prompt_version": "motorcycle-candidate-resolution-v4",
+  "model": "qwen-flash",
+  "make": "Honda",
+  "model_name": "CHF50P Metropolitan II"
+}

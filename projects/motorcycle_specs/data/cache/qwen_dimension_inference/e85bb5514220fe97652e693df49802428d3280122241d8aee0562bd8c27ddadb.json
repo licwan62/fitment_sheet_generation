@@ -1,0 +1,16 @@
+{
+  "decision": "INFER",
+  "confidence": "MEDIUM",
+  "length_mm": 2150,
+  "width_mm": 860,
+  "height_mm": 1130,
+  "wheelbase_mm": 1470,
+  "seat_height_mm": 960,
+  "ground_clearance_mm": 300,
+  "explanation": "Inferred from typical dimensions of 350cc off-road motorcycles in the same class (e.g., KTM 350 SX-F, Husqvarna FC 350), considering Gas Gas EX 350F's design lineage and shared platform with KTM. Dimensions are approximate and may vary slightly by model year or market.",
+  "status": "SUCCESS",
+  "prompt_version": "motorcycle-dimension-inference-v1",
+  "model": "qwen-flash",
+  "make": "Gas Gas",
+  "model_name": "EX 350F"
+}

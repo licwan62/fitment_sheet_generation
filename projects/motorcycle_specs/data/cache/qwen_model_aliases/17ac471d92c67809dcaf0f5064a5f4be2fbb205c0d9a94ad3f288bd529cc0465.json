@@ -1,0 +1,16 @@
+{
+  "decision": "MATCH",
+  "selected_candidate": "Frontera 380",
+  "confidence": "HIGH",
+  "match_basis": "TYPO",
+  "explanation": "The input 'Frontera 370' is a plausible typo for 'Frontera 380', as both share the same model name and displacement is within a common variation range; Bultaco's Frontera series had closely numbered displacements (e.g., 350, 370, 380), and '370' may be a misremembered or mistyped variant of '380'. The core model identity remains consistent.",
+  "canonical_model_alias": "Frontera 380",
+  "configuration_tokens": [],
+  "brand_aliases": [],
+  "model_aliases": [],
+  "status": "SUCCESS",
+  "prompt_version": "motorcycle-candidate-resolution-v4",
+  "model": "qwen-flash",
+  "make": "Bultaco",
+  "model_name": "Frontera 370"
+}

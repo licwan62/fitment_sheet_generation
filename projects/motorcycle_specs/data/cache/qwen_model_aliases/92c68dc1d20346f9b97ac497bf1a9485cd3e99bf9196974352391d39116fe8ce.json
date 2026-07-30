@@ -1,0 +1,16 @@
+{
+  "decision": "NO_MATCH",
+  "selected_candidate": "",
+  "confidence": "HIGH",
+  "match_basis": "NONE",
+  "explanation": "The input model 'CB1100 ABS' includes the ABS feature, which is not present in any of the catalog candidates. The candidates 'CB 1100RS', 'CB 1100', and 'CB 1100R BB' are distinct models without ABS, and no known market or historical alias of these models includes ABS as a defining identifier. Therefore, they do not match the input model.",
+  "canonical_model_alias": "",
+  "configuration_tokens": [],
+  "brand_aliases": [],
+  "model_aliases": [],
+  "status": "SUCCESS",
+  "prompt_version": "motorcycle-candidate-resolution-v4",
+  "model": "qwen-flash",
+  "make": "Honda",
+  "model_name": "CB1100 ABS"
+}

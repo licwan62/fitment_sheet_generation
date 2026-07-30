@@ -1,0 +1,16 @@
+{
+  "decision": "INFER|UNKNOWN",
+  "confidence": "MEDIUM|LOW",
+  "length_mm": null,
+  "width_mm": null,
+  "height_mm": null,
+  "wheelbase_mm": null,
+  "seat_height_mm": null,
+  "ground_clearance_mm": null,
+  "explanation": "The FLTRXSE2 CVO Road Glide Custom is a limited-edition model with no publicly available official dimensions from Harley-Davidson's catalog. Variations in trim, accessories, and custom features across markets or years make precise dimension estimation uncertain. Without verified data or a direct reference, dimensions cannot be reliably inferred.",
+  "status": "SUCCESS",
+  "prompt_version": "motorcycle-dimension-inference-v1",
+  "model": "qwen-flash",
+  "make": "Harley-Davidson",
+  "model_name": "FLTRXSE2 CVO Road Glide Custom"
+}

@@ -1,0 +1,20 @@
+{
+  "decision": "MATCH",
+  "selected_candidate": "RR 350 Enduro",
+  "confidence": "HIGH",
+  "match_basis": "MARKET_ALIAS",
+  "explanation": "The '350 RR-S' is a market-specific designation for the same motorcycle model as the 'RR 350 Enduro', with 'RR-S' denoting a sport-oriented configuration in certain markets, while 'Enduro' reflects the model's intended use. The displacement (350) and core model identity (RR) are consistent across both names.",
+  "canonical_model_alias": "RR 350 Enduro",
+  "configuration_tokens": [
+    "S"
+  ],
+  "brand_aliases": [],
+  "model_aliases": [
+    "RR 350 Enduro"
+  ],
+  "status": "SUCCESS",
+  "prompt_version": "motorcycle-candidate-resolution-v4",
+  "model": "qwen-flash",
+  "make": "Beta",
+  "model_name": "350 RR-S"
+}

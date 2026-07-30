@@ -1,0 +1,16 @@
+{
+  "decision": "NO_MATCH",
+  "selected_candidate": "",
+  "confidence": "HIGH",
+  "match_basis": "NONE",
+  "explanation": "MR175 is not a known Honda model; the catalog candidates include various Honda models, but none match the MR175 designation. The CB 175 and CD 175 are real Honda models, but MR175 does not correspond to any official Honda motorcycle name or known variant in the provided list.",
+  "canonical_model_alias": "",
+  "configuration_tokens": [],
+  "brand_aliases": [],
+  "model_aliases": [],
+  "status": "SUCCESS",
+  "prompt_version": "motorcycle-candidate-resolution-v4",
+  "model": "qwen-flash",
+  "make": "Honda",
+  "model_name": "MR175"
+}

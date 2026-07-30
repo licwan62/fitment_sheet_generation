@@ -1,0 +1,16 @@
+{
+  "decision": "NO_MATCH",
+  "selected_candidate": "",
+  "confidence": "HIGH",
+  "match_basis": "NONE",
+  "explanation": "No catalog candidates were provided for comparison, and no known Beta Minitrail Electric 16 model exists in the standard Beta motorcycle lineup. The name 'Minitrail Electric 16' appears to be a fabricated or non-existent model variant.",
+  "canonical_model_alias": "",
+  "configuration_tokens": [],
+  "brand_aliases": [],
+  "model_aliases": [],
+  "status": "SUCCESS",
+  "prompt_version": "motorcycle-candidate-resolution-v4",
+  "model": "qwen-flash",
+  "make": "Beta",
+  "model_name": "Minitrail Electric 16"
+}

@@ -1,0 +1,20 @@
+{
+  "decision": "MATCH",
+  "selected_candidate": "VFR 700F",
+  "confidence": "HIGH",
+  "match_basis": "SAME_NAME",
+  "explanation": "The input model 'VFR700F Interceptor' and the catalog candidate 'VFR 700F' refer to the same underlying motorcycle model, with 'Interceptor' being a market or descriptive designation that does not alter the core model identity. The displacement (700F) and platform (VFR) are identical.",
+  "canonical_model_alias": "VFR 700F",
+  "configuration_tokens": [
+    "Interceptor"
+  ],
+  "brand_aliases": [],
+  "model_aliases": [
+    "VFR 700F"
+  ],
+  "status": "SUCCESS",
+  "prompt_version": "motorcycle-candidate-resolution-v4",
+  "model": "qwen-flash",
+  "make": "Honda",
+  "model_name": "VFR700F Interceptor"
+}

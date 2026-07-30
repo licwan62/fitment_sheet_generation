@@ -1,0 +1,16 @@
+{
+  "decision": "INFER|UNKNOWN",
+  "confidence": "MEDIUM|LOW",
+  "length_mm": null,
+  "width_mm": null,
+  "height_mm": null,
+  "wheelbase_mm": null,
+  "seat_height_mm": null,
+  "ground_clearance_mm": null,
+  "explanation": "The Honda GL1800 Gold Wing Tour Airbag DCT 50th Anniversary model's exact dimensions are not reliably distinguishable from standard GL1800 variants due to lack of official catalog data for this specific commemorative edition. Variations by year and market may affect dimensions, and no definitive source confirms unique measurements for the 50th Anniversary variant. Therefore, dimensions are inferred as unknown.",
+  "status": "SUCCESS",
+  "prompt_version": "motorcycle-dimension-inference-v1",
+  "model": "qwen-flash",
+  "make": "Honda",
+  "model_name": "GL1800 Gold Wing Tour Airbag DCT 50th Anniversary"
+}

@@ -1,0 +1,20 @@
+{
+  "decision": "MATCH",
+  "selected_candidate": "Suzuki Boulevard M109R Limited",
+  "confidence": "HIGH",
+  "match_basis": "MARKET_ALIAS",
+  "explanation": "The input 'M109RZ Boulevard Limited' is a market-specific or regional variant naming of the Suzuki Boulevard M109R Limited, with 'Z' likely denoting a configuration or regional model designation. The core model identity (M109R Limited) matches exactly with the candidate.",
+  "canonical_model_alias": "Boulevard M109R Limited",
+  "configuration_tokens": [
+    "Limited"
+  ],
+  "brand_aliases": [],
+  "model_aliases": [
+    "Boulevard M109R Limited"
+  ],
+  "status": "SUCCESS",
+  "prompt_version": "motorcycle-candidate-resolution-v4",
+  "model": "qwen-flash",
+  "make": "Suzuki",
+  "model_name": "M109RZ Boulevard Limited"
+}

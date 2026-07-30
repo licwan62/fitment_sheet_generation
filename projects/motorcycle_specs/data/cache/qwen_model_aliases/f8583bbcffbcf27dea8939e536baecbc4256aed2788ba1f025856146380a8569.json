@@ -1,0 +1,19 @@
+{
+  "decision": "MATCH",
+  "selected_candidate": "Harley-Davidson Road Glide",
+  "confidence": "HIGH",
+  "match_basis": "MARKET_ALIAS",
+  "explanation": "'RLD' is a known market or internal designation for the Harley-Davidson Road Glide, particularly in certain regional or dealer contexts. The model name 'Road Glide' is the standard catalog name, and 'RLD' aligns with this as a configuration or market-specific identifier.",
+  "canonical_model_alias": "Road Glide",
+  "configuration_tokens": [],
+  "brand_aliases": [],
+  "model_aliases": [
+    "Glide",
+    "Road Glide"
+  ],
+  "status": "SUCCESS",
+  "prompt_version": "motorcycle-candidate-resolution-v4",
+  "model": "qwen-flash",
+  "make": "Harley-Davidson",
+  "model_name": "RLD"
+}

@@ -1,0 +1,16 @@
+{
+  "decision": "MATCH",
+  "selected_candidate": "Honda CT 110",
+  "confidence": "HIGH",
+  "match_basis": "TYPO",
+  "explanation": "The input 'CT200' is likely a typo for 'CT110', as the Honda CT110 is a well-known model in the CT series with similar naming conventions. The CT200 does not exist in Honda's catalog, but the CT110 is a recognized model with a comparable engine displacement and design. The '200' in the input may be a misinput or confusion with another model.",
+  "canonical_model_alias": "Honda CT 110",
+  "configuration_tokens": [],
+  "brand_aliases": [],
+  "model_aliases": [],
+  "status": "SUCCESS",
+  "prompt_version": "motorcycle-candidate-resolution-v4",
+  "model": "qwen-flash",
+  "make": "Honda",
+  "model_name": "CT200"
+}

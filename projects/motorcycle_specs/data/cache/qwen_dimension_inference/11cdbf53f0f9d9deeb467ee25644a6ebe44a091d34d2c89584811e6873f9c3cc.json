@@ -1,0 +1,16 @@
+{
+  "decision": "INFER|UNKNOWN",
+  "confidence": "LOW",
+  "length_mm": null,
+  "width_mm": null,
+  "height_mm": null,
+  "wheelbase_mm": null,
+  "seat_height_mm": null,
+  "ground_clearance_mm": null,
+  "explanation": "The Bultaco Frontera 250 is a vintage model with limited publicly available dimensional data. Variations across production years and markets, combined with the lack of consistent catalog references, prevent reliable inference. Dimensions may differ significantly between models and regions. No definitive source confirms specific measurements.",
+  "status": "SUCCESS",
+  "prompt_version": "motorcycle-dimension-inference-v1",
+  "model": "qwen-flash",
+  "make": "Bultaco",
+  "model_name": "Frontera 250"
+}

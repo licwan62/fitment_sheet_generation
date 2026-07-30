@@ -1,0 +1,16 @@
+{
+  "decision": "NO_MATCH",
+  "selected_candidate": "",
+  "confidence": "HIGH",
+  "match_basis": "NONE",
+  "explanation": "The model 'CA125A Super Cub' is a specific Honda motorcycle with a 125cc engine and the 'Super Cub' designation, while 'CA 125 Rebel' refers to a different model line. The 'Rebel' name is associated with a distinct styling and marketing identity, not a variant of the Super Cub. No known market alias, historical alias, abbreviation, or typo links these two models. The displacement matches, but the model names and branding are fundamentally different.",
+  "canonical_model_alias": "",
+  "configuration_tokens": [],
+  "brand_aliases": [],
+  "model_aliases": [],
+  "status": "SUCCESS",
+  "prompt_version": "motorcycle-candidate-resolution-v4",
+  "model": "qwen-flash",
+  "make": "Honda",
+  "model_name": "CA125A Super Cub"
+}

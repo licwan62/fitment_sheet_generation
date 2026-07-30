@@ -1,0 +1,18 @@
+{
+  "decision": "MATCH",
+  "selected_candidate": "Knucklehead",
+  "confidence": "HIGH",
+  "match_basis": "HISTORICAL_ALIAS",
+  "explanation": "The 'KH' model designation is a well-documented historical alias for the Harley-Davidson Knucklehead, referring to the distinctive valve cover design that resembled a knuckle. This is a direct and established model identity in Harley-Davidson's history.",
+  "canonical_model_alias": "Knucklehead",
+  "configuration_tokens": [],
+  "brand_aliases": [],
+  "model_aliases": [
+    "Knucklehead"
+  ],
+  "status": "SUCCESS",
+  "prompt_version": "motorcycle-candidate-resolution-v4",
+  "model": "qwen-flash",
+  "make": "Harley-Davidson",
+  "model_name": "KH"
+}

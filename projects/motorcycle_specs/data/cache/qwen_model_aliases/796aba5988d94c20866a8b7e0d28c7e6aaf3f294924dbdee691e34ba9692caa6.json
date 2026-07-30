@@ -1,0 +1,18 @@
+{
+  "decision": "MATCH",
+  "selected_candidate": "Boulevard S83",
+  "confidence": "HIGH",
+  "match_basis": "SAME_NAME",
+  "explanation": "The input 'S83 Boulevard' refers to the same motorcycle model as 'Boulevard S83', with identical displacement and model identity. The order of words does not change the underlying model identity.",
+  "canonical_model_alias": "Boulevard S83",
+  "configuration_tokens": [],
+  "brand_aliases": [],
+  "model_aliases": [
+    "Boulevard S83"
+  ],
+  "status": "SUCCESS",
+  "prompt_version": "motorcycle-candidate-resolution-v4",
+  "model": "qwen-flash",
+  "make": "Suzuki",
+  "model_name": "S83 Boulevard"
+}

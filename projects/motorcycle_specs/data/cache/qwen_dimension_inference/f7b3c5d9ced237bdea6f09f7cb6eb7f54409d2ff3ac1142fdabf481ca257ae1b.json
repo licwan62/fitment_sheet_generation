@@ -1,0 +1,16 @@
+{
+  "decision": "INFER",
+  "confidence": "LOW",
+  "length_mm": 1950,
+  "width_mm": 720,
+  "height_mm": 1100,
+  "wheelbase_mm": 1280,
+  "seat_height_mm": 760,
+  "ground_clearance_mm": 130,
+  "explanation": "Inferred based on typical dimensions of small-displacement motorcycles in the 40-60cc class, commonly used for urban commuting or entry-level riders. HM CRE 50 is a hypothetical or obscure model with no publicly available specifications; dimensions are estimated from similar models (e.g., Honda Super Cub 50, Yamaha PW50) but may vary significantly by market or year. No official data found.",
+  "status": "SUCCESS",
+  "prompt_version": "motorcycle-dimension-inference-v1",
+  "model": "qwen-flash",
+  "make": "HM",
+  "model_name": "CRE 50"
+}

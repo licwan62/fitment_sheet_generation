@@ -1,0 +1,16 @@
+{
+  "decision": "NO_MATCH",
+  "selected_candidate": "",
+  "confidence": "HIGH",
+  "match_basis": "NONE",
+  "explanation": "The model GS1100E is not present in the catalog candidates, and none of the candidates (GS 1100G, GS 1100GK, GS 1100GL) represent the same underlying motorcycle as the GS1100E. The 'E' suffix denotes a distinct model variant with different specifications and production timeline compared to the G-series models, which are earlier and different in design and engine configuration. No known market name, abbreviation, or typo links GS1100E to any of these G-series models.",
+  "canonical_model_alias": "",
+  "configuration_tokens": [],
+  "brand_aliases": [],
+  "model_aliases": [],
+  "status": "SUCCESS",
+  "prompt_version": "motorcycle-candidate-resolution-v4",
+  "model": "qwen-flash",
+  "make": "Suzuki",
+  "model_name": "GS1100E"
+}

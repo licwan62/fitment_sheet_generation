@@ -1,0 +1,15 @@
+{
+  "decision": "MATCH",
+  "selected_candidate": "PCX 125 Scooter",
+  "canonical_model_alias": "PCX125",
+  "configuration_tokens": [],
+  "brand_aliases": [],
+  "model_aliases": [
+    "PCX 125 Scooter"
+  ],
+  "status": "SUCCESS",
+  "prompt_version": "motorcycle-candidate-resolution-v3",
+  "model": "qwen-flash",
+  "make": "Honda",
+  "model_name": "PCX125"
+}

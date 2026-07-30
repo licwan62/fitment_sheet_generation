@@ -1,0 +1,18 @@
+{
+  "decision": "MATCH",
+  "selected_candidate": "F 850GS 40 Years Edition",
+  "confidence": "HIGH",
+  "match_basis": "SAME_NAME",
+  "explanation": "The input model 'F850GS 40 Years GS Edition' and the candidate 'F 850GS 40 Years Edition' refer to the same motorcycle, with only minor variations in spacing and the omission of 'GS' in the candidate title. The '40 Years Edition' is a known commemorative designation for this model, and both titles identify the identical underlying motorcycle. The candidate is a valid canonical form.",
+  "canonical_model_alias": "F 850GS 40 Years Edition",
+  "configuration_tokens": [],
+  "brand_aliases": [],
+  "model_aliases": [
+    "F 850GS 40 Years Edition"
+  ],
+  "status": "SUCCESS",
+  "prompt_version": "motorcycle-candidate-resolution-v4",
+  "model": "qwen-flash",
+  "make": "BMW",
+  "model_name": "F850GS 40 Years GS Edition"
+}

@@ -1,0 +1,21 @@
+{
+  "decision": "MATCH",
+  "selected_candidate": "Suzuki V-Strom 1050DE Adventure",
+  "confidence": "HIGH",
+  "match_basis": "SAME_NAME",
+  "explanation": "The input model 'DL1050 V-Strom 1050DE Adventure' is a direct match in identity to the catalog candidate 'Suzuki V-Strom 1050DE Adventure', with only minor variations in formatting and casing. The displacement (1050), model name (V-Strom), and configuration (DE Adventure) are identical. The 'DL' prefix is a common Suzuki model designation that does not alter the underlying motorcycle identity.",
+  "canonical_model_alias": "V-Strom 1050DE Adventure",
+  "configuration_tokens": [
+    "DE",
+    "Adventure"
+  ],
+  "brand_aliases": [],
+  "model_aliases": [
+    "V-Strom 1050DE Adventure"
+  ],
+  "status": "SUCCESS",
+  "prompt_version": "motorcycle-candidate-resolution-v4",
+  "model": "qwen-flash",
+  "make": "Suzuki",
+  "model_name": "DL1050 V-Strom 1050DE Adventure"
+}

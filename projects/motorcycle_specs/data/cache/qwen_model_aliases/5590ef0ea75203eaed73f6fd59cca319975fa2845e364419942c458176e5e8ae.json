@@ -1,0 +1,19 @@
+{
+  "decision": "MATCH",
+  "selected_candidate": "DL 250X V-Strom",
+  "confidence": "HIGH",
+  "match_basis": "MARKET_ALIAS",
+  "explanation": "The input 'DL250L8 V-Strom' refers to the Suzuki V-Strom 250, with 'L8' likely being a market-specific or configuration code. The model 'DL 250X V-Strom' is a known variant in the same product line, differing only in suffix (X vs L8), which is a common market or configuration label. Both share the same displacement, engine architecture, and platform, confirming they are the same underlying motorcycle.",
+  "canonical_model_alias": "DL 250X V-Strom",
+  "configuration_tokens": [
+    "L8",
+    "X"
+  ],
+  "brand_aliases": [],
+  "model_aliases": [],
+  "status": "SUCCESS",
+  "prompt_version": "motorcycle-candidate-resolution-v4",
+  "model": "qwen-flash",
+  "make": "Suzuki",
+  "model_name": "DL250L8 V-Strom"
+}

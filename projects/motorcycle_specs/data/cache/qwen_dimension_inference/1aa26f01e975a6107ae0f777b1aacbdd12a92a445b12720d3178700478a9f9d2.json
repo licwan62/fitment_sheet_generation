@@ -1,0 +1,16 @@
+{
+  "decision": "INFER",
+  "confidence": "MEDIUM",
+  "length_mm": 2140,
+  "width_mm": 905,
+  "height_mm": 1115,
+  "wheelbase_mm": 1440,
+  "seat_height_mm": 805,
+  "ground_clearance_mm": 135,
+  "explanation": "Inferred from typical dimensions of the Ducati Super Sport 950 (2020–2023 model years), based on known factory specifications and consistent design trends. Dimensions are representative but may vary slightly by year or market. No catalog page was available for verification.",
+  "status": "SUCCESS",
+  "prompt_version": "motorcycle-dimension-inference-v1",
+  "model": "qwen-flash",
+  "make": "Ducati",
+  "model_name": "Super Sport 950"
+}

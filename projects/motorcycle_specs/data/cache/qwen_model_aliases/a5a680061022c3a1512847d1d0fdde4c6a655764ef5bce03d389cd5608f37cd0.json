@@ -1,0 +1,16 @@
+{
+  "decision": "NO_MATCH",
+  "selected_candidate": "",
+  "confidence": "HIGH",
+  "match_basis": "NONE",
+  "explanation": "HUV 4420 is not a valid Husqvarna motorcycle model name. The catalog candidates are all real Husqvarna models, but none match the input HUV 4420 in identity, displacement, or known naming conventions. HUV 4420 does not correspond to any known Husqvarna model, including variants of the Vitpilen, TE, FE, or 401 series.",
+  "canonical_model_alias": "",
+  "configuration_tokens": [],
+  "brand_aliases": [],
+  "model_aliases": [],
+  "status": "SUCCESS",
+  "prompt_version": "motorcycle-candidate-resolution-v4",
+  "model": "qwen-flash",
+  "make": "Husqvarna",
+  "model_name": "HUV 4420"
+}

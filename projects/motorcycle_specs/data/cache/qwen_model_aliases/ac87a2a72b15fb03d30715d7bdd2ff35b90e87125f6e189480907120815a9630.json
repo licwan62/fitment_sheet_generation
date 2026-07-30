@@ -1,0 +1,20 @@
+{
+  "decision": "MATCH",
+  "selected_candidate": "CRF 1000L2 Africa Twin Adventure Sports / DCT",
+  "confidence": "HIGH",
+  "match_basis": "SAME_NAME",
+  "explanation": "The input model name and the selected candidate are identical in content, with only minor formatting differences (spacing and line break). The DCT variant is explicitly included in both, confirming they refer to the same motorcycle model.",
+  "canonical_model_alias": "CRF 1000L2 Africa Twin Adventure Sports / DCT",
+  "configuration_tokens": [
+    "DCT"
+  ],
+  "brand_aliases": [],
+  "model_aliases": [
+    "CRF 1000L2 Africa Twin Adventure Sports / DCT"
+  ],
+  "status": "SUCCESS",
+  "prompt_version": "motorcycle-candidate-resolution-v4",
+  "model": "qwen-flash",
+  "make": "Honda",
+  "model_name": "CRF1000L2 Africa Twin Adventure Sports"
+}

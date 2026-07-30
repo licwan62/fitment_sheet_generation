@@ -1,0 +1,16 @@
+{
+  "decision": "NO_MATCH",
+  "selected_candidate": "",
+  "confidence": "HIGH",
+  "match_basis": "NONE",
+  "explanation": "The input model 'CRF450R-S' is not equivalent to any of the catalog candidates. 'CRF450R-S' includes a '-S' suffix, which denotes a specific configuration (likely 'Street' or 'Special'), while the candidates 'CRF 450RL', 'CRF 450L', and 'CRF 450X' represent distinct models with different intended uses (motocross, dual-sport, etc.). The '-S' suffix is not a known market alias, abbreviation, or typo for any of these variants. No evidence supports that they are the same underlying motorcycle. Therefore, no match is valid.",
+  "canonical_model_alias": "",
+  "configuration_tokens": [],
+  "brand_aliases": [],
+  "model_aliases": [],
+  "status": "SUCCESS",
+  "prompt_version": "motorcycle-candidate-resolution-v4",
+  "model": "qwen-flash",
+  "make": "Honda",
+  "model_name": "CRF450R-S"
+}

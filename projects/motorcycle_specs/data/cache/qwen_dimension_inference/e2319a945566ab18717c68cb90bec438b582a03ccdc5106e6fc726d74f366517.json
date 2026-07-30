@@ -1,0 +1,16 @@
+{
+  "decision": "INFER|UNKNOWN",
+  "confidence": "LOW",
+  "length_mm": null,
+  "width_mm": null,
+  "height_mm": null,
+  "wheelbase_mm": null,
+  "seat_height_mm": null,
+  "ground_clearance_mm": null,
+  "explanation": "The American IronHorse Tejas model lacks publicly available standardized dimensions, and variations exist across years and configurations. Without a definitive catalog reference or verified source, dimensions cannot be reliably inferred. Model-specific details are not consistently documented, leading to uncertainty.",
+  "status": "SUCCESS",
+  "prompt_version": "motorcycle-dimension-inference-v1",
+  "model": "qwen-flash",
+  "make": "American IronHorse",
+  "model_name": "Tejas"
+}

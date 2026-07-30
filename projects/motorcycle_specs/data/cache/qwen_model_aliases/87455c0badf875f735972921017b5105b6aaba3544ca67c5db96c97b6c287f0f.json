@@ -1,0 +1,20 @@
+{
+  "decision": "MATCH",
+  "selected_candidate": "VT 750C Shadow Aero",
+  "confidence": "HIGH",
+  "match_basis": "SAME_NAME",
+  "explanation": "The input model 'VT750CA Shadow Aero ABS' and the candidate 'VT 750C Shadow Aero' refer to the same underlying motorcycle model. The 'CA' suffix in the input is a known market-specific designation (likely for Canada or a specific configuration) that does not alter the core model identity. The displacement (750), platform (VT), and model name (Shadow Aero) are identical. The presence of 'ABS' in the input is a feature addition but does not constitute a different model. The catalog candidate is canonical and matches the base model.",
+  "canonical_model_alias": "VT 750C Shadow Aero",
+  "configuration_tokens": [
+    "ABS"
+  ],
+  "brand_aliases": [],
+  "model_aliases": [
+    "VT 750C Shadow Aero"
+  ],
+  "status": "SUCCESS",
+  "prompt_version": "motorcycle-candidate-resolution-v4",
+  "model": "qwen-flash",
+  "make": "Honda",
+  "model_name": "VT750CA Shadow Aero ABS"
+}

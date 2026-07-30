@@ -1,0 +1,18 @@
+{
+  "decision": "MATCH",
+  "selected_candidate": "SV 650S / \n\t\tABS",
+  "confidence": "HIGH",
+  "match_basis": "MARKET_ALIAS",
+  "explanation": "The 'SV650A ABS' is a market-specific designation for the same model as the 'SV 650S ABS', with 'A' likely denoting a European or specific regional variant. The core model identity (SV650S) and ABS specification match exactly.",
+  "canonical_model_alias": "SV 650S ABS",
+  "configuration_tokens": [],
+  "brand_aliases": [],
+  "model_aliases": [
+    "SV 650S / ABS"
+  ],
+  "status": "SUCCESS",
+  "prompt_version": "motorcycle-candidate-resolution-v4",
+  "model": "qwen-flash",
+  "make": "Suzuki",
+  "model_name": "SV650A ABS"
+}

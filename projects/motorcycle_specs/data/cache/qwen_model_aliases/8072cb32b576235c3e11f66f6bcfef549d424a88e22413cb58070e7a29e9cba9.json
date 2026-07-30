@@ -1,0 +1,20 @@
+{
+  "decision": "MATCH",
+  "selected_candidate": "CB 650F",
+  "confidence": "HIGH",
+  "match_basis": "SAME_NAME",
+  "explanation": "The input model 'CB650F ABS' is functionally identical to the catalog candidate 'CB 650F', with 'ABS' being a configuration feature (anti-lock braking system) that does not alter the core model identity. The name 'CB650F' matches exactly in the catalog candidate, and the displacement and platform are unchanged.",
+  "canonical_model_alias": "CB 650F",
+  "configuration_tokens": [
+    "ABS"
+  ],
+  "brand_aliases": [],
+  "model_aliases": [
+    "CB 650F"
+  ],
+  "status": "SUCCESS",
+  "prompt_version": "motorcycle-candidate-resolution-v4",
+  "model": "qwen-flash",
+  "make": "Honda",
+  "model_name": "CB650F ABS"
+}

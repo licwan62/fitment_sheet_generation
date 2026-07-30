@@ -1,0 +1,18 @@
+{
+  "decision": "MATCH",
+  "selected_candidate": "Suzuki GSX 1100 L",
+  "confidence": "HIGH",
+  "match_basis": "MARKET_ALIAS",
+  "explanation": "The 'GS1100L' is a market-specific designation for the Suzuki GSX 1100 L, which was marketed as the GS1100L in certain regions. The model shares the same engine, frame, and core specifications. 'GSX 1100 L' is the official catalog name used in global and U.S. markets, making it the canonical form.",
+  "canonical_model_alias": "GSX 1100 L",
+  "configuration_tokens": [],
+  "brand_aliases": [],
+  "model_aliases": [
+    "GSX 1100 L"
+  ],
+  "status": "SUCCESS",
+  "prompt_version": "motorcycle-candidate-resolution-v4",
+  "model": "qwen-flash",
+  "make": "Suzuki",
+  "model_name": "GS1100L"
+}

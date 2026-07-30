@@ -1,0 +1,18 @@
+{
+  "decision": "MATCH",
+  "selected_candidate": "gasgas txt 200",
+  "confidence": "HIGH",
+  "match_basis": "SAME_NAME",
+  "explanation": "The input 'TXT 200' matches the catalog candidate 'gasgas txt 200' exactly in name and displacement, confirming it is the same model. The other candidates are different models (e.g., XC 200, EC 200), so only this one is valid.",
+  "canonical_model_alias": "txt 200",
+  "configuration_tokens": [],
+  "brand_aliases": [],
+  "model_aliases": [
+    "gasgas txt 200"
+  ],
+  "status": "SUCCESS",
+  "prompt_version": "motorcycle-candidate-resolution-v4",
+  "model": "qwen-flash",
+  "make": "Gas Gas",
+  "model_name": "TXT 200"
+}

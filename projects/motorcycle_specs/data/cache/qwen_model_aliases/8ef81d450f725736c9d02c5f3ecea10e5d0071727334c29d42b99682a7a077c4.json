@@ -1,0 +1,18 @@
+{
+  "decision": "MATCH",
+  "selected_candidate": "AS 50 Maverick",
+  "confidence": "HIGH",
+  "match_basis": "MARKET_ALIAS",
+  "explanation": "The model 'AS50' is a known market designation for the Suzuki AS 50 Maverick, a small-displacement motorcycle produced in the 1970s. The name 'AS50' is a direct abbreviation of 'AS 50', and 'Maverick' was a marketing name used for this model in certain regions. The catalog candidate 'AS 50 Maverick' matches the underlying motorcycle identity with only a minor variation in spacing and naming convention.",
+  "canonical_model_alias": "AS 50 Maverick",
+  "configuration_tokens": [],
+  "brand_aliases": [],
+  "model_aliases": [
+    "AS 50 Maverick"
+  ],
+  "status": "SUCCESS",
+  "prompt_version": "motorcycle-candidate-resolution-v4",
+  "model": "qwen-flash",
+  "make": "Suzuki",
+  "model_name": "AS50"
+}

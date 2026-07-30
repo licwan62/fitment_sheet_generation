@@ -1,0 +1,16 @@
+{
+  "decision": "NO_MATCH",
+  "selected_candidate": "",
+  "confidence": "HIGH",
+  "match_basis": "NONE",
+  "explanation": "The model 'GP175' is a specific Husqvarna motorcycle with a 175cc engine, but none of the catalog candidates match this displacement or name. The candidates are either different displacements (e.g., 125cc, 85cc), different model lines (e.g., Vitpilen, Te, Svartpilen, TC), or unrelated variants. No known market alias, historical name, abbreviation, or typo links 'GP175' to any of the listed candidates.",
+  "canonical_model_alias": "",
+  "configuration_tokens": [],
+  "brand_aliases": [],
+  "model_aliases": [],
+  "status": "SUCCESS",
+  "prompt_version": "motorcycle-candidate-resolution-v4",
+  "model": "qwen-flash",
+  "make": "Husqvarna",
+  "model_name": "GP175"
+}

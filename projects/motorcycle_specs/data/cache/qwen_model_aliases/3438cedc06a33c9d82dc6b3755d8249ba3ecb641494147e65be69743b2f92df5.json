@@ -1,0 +1,18 @@
+{
+  "decision": "MATCH",
+  "selected_candidate": "CB 500F",
+  "confidence": "HIGH",
+  "match_basis": "MARKET_ALIAS",
+  "explanation": "The 'CB500' input refers to the same underlying motorcycle model as the 'CB 500F', which is a market-specific designation for the Honda CB500 series. The 'F' suffix denotes the standard or naked variant, commonly used in international markets, while 'E' is a different configuration (often a European-spec version with different emissions and equipment). However, 'CB 500F' is the canonical and most widely recognized name for the base model, making it the correct match.",
+  "canonical_model_alias": "CB 500F",
+  "configuration_tokens": [],
+  "brand_aliases": [],
+  "model_aliases": [
+    "CB 500F"
+  ],
+  "status": "SUCCESS",
+  "prompt_version": "motorcycle-candidate-resolution-v4",
+  "model": "qwen-flash",
+  "make": "Honda",
+  "model_name": "CB500"
+}

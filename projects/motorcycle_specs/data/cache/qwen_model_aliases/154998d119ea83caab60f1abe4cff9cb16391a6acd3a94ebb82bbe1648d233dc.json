@@ -1,0 +1,18 @@
+{
+  "decision": "MATCH",
+  "selected_candidate": "Suzuki V-Strom 250 ABS",
+  "confidence": "HIGH",
+  "match_basis": "MARKET_ALIAS",
+  "explanation": "The input 'DL250L8 V-Strom ABS' refers to the Suzuki V-Strom 250 ABS model, where 'DL250L8' is a market-specific or internal designation. The catalog candidate 'Suzuki V-Strom 250 ABS' is the standard international name for the same motorcycle. The 'L8' suffix may denote a regional configuration or variant, but the core model (V-Strom 250 ABS) is identical.",
+  "canonical_model_alias": "V-Strom 250 ABS",
+  "configuration_tokens": [
+    "ABS"
+  ],
+  "brand_aliases": [],
+  "model_aliases": [],
+  "status": "SUCCESS",
+  "prompt_version": "motorcycle-candidate-resolution-v4",
+  "model": "qwen-flash",
+  "make": "Suzuki",
+  "model_name": "DL250L8 V-Strom ABS"
+}

@@ -1,0 +1,16 @@
+{
+  "decision": "INFER|UNKNOWN",
+  "confidence": "LOW",
+  "length_mm": null,
+  "width_mm": null,
+  "height_mm": null,
+  "wheelbase_mm": null,
+  "seat_height_mm": null,
+  "ground_clearance_mm": null,
+  "explanation": "No publicly available catalog or technical specifications for the Big Bear Choppers Venom Chopper V111 EFI were found. Model identity and dimensional data are uncertain, and variations by year or market cannot be ruled out. Inference is not reliable without verified sources.",
+  "status": "SUCCESS",
+  "prompt_version": "motorcycle-dimension-inference-v1",
+  "model": "qwen-flash",
+  "make": "Big Bear Choppers",
+  "model_name": "Venom Chopper V111 EFI"
+}

@@ -1,0 +1,16 @@
+{
+  "decision": "NO_MATCH",
+  "selected_candidate": "",
+  "confidence": "HIGH",
+  "match_basis": "NONE",
+  "explanation": "The model 'CB77 SuperHawk 305' is not found in the catalog candidates, and no known variant or alias of this specific model exists in the provided list. The CB77 SuperHawk 305 is a unique combination of model code, name, and displacement that does not match any standard Honda motorcycle in the catalog. No plausible market name, historical alias, abbreviation, or typo-based match is available.",
+  "canonical_model_alias": "",
+  "configuration_tokens": [],
+  "brand_aliases": [],
+  "model_aliases": [],
+  "status": "SUCCESS",
+  "prompt_version": "motorcycle-candidate-resolution-v4",
+  "model": "qwen-flash",
+  "make": "Honda",
+  "model_name": "CB77 SuperHawk 305"
+}

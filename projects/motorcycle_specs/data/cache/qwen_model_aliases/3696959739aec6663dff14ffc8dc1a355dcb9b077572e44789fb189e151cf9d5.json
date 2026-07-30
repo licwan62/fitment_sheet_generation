@@ -1,0 +1,18 @@
+{
+  "decision": "MATCH",
+  "selected_candidate": "beta minicross r12",
+  "confidence": "HIGH",
+  "match_basis": "MARKET_ALIAS",
+  "explanation": "The 'R12' model is a known market-specific name for the Beta Minicross R12, which is a 125cc motocross motorcycle. The catalog candidate 'beta minicross r12' correctly identifies the same underlying model with a regional or market designation. The displacement (125cc) and intended use (minicross) align exactly.",
+  "canonical_model_alias": "beta minicross r12",
+  "configuration_tokens": [],
+  "brand_aliases": [],
+  "model_aliases": [
+    "minicross r12"
+  ],
+  "status": "SUCCESS",
+  "prompt_version": "motorcycle-candidate-resolution-v4",
+  "model": "qwen-flash",
+  "make": "Beta",
+  "model_name": "R12"
+}

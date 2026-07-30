@@ -1,0 +1,20 @@
+{
+  "decision": "MATCH",
+  "selected_candidate": "800 MT",
+  "confidence": "HIGH",
+  "match_basis": "MARKET_ALIAS",
+  "explanation": "The input '800MT Sport' is a market-specific naming variant of the CFMOTO 800 MT model, where 'Sport' denotes a configuration or trim level but does not change the underlying motorcycle identity. The core model '800 MT' in the catalog candidates matches exactly in displacement and platform.",
+  "canonical_model_alias": "800 MT",
+  "configuration_tokens": [
+    "Sport"
+  ],
+  "brand_aliases": [],
+  "model_aliases": [
+    "800 MT"
+  ],
+  "status": "SUCCESS",
+  "prompt_version": "motorcycle-candidate-resolution-v4",
+  "model": "qwen-flash",
+  "make": "CFMOTO",
+  "model_name": "800MT Sport"
+}

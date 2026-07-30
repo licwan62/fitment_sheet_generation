@@ -1,0 +1,16 @@
+{
+  "decision": "NO_MATCH",
+  "selected_candidate": "",
+  "confidence": "HIGH",
+  "match_basis": "NONE",
+  "explanation": "The input model 'BMW R1200GS Exclusive' is a specific variant of the R 1200 GS platform, but none of the catalog candidates match it exactly in name or configuration. The closest candidates are variants of the R 1200 GS with different suffixes (e.g., TE, Rallye, xDrive Hybrid, LC), but 'Exclusive' is not present in any candidate and is a distinct trim level. The R 1200 GS TE Exclusive and R 1200GS LC TE Exclusive differ in engine designation and features. No candidate matches the exact model identity including the 'Exclusive' configuration. Therefore, no valid match exists.",
+  "canonical_model_alias": "",
+  "configuration_tokens": [],
+  "brand_aliases": [],
+  "model_aliases": [],
+  "status": "SUCCESS",
+  "prompt_version": "motorcycle-candidate-resolution-v4",
+  "model": "qwen-flash",
+  "make": "BMW",
+  "model_name": "R1200GS Exclusive"
+}

@@ -1,0 +1,16 @@
+{
+  "decision": "NO_MATCH",
+  "selected_candidate": "",
+  "confidence": "HIGH",
+  "match_basis": "NONE",
+  "explanation": "The model 'Ibex 800 T' is not equivalent to any of the catalog candidates. The 'Ibex' name is associated with a different CFMOTO model line, and the '800 T' designation does not match any known variant of the listed 800MT, 800NK, or other models. There is no evidence of market alias, abbreviation, typo, or configuration equivalence. The displacement (800) matches some candidates, but the model name and suffix ('T') are distinct and not recognized as synonymous.",
+  "canonical_model_alias": "",
+  "configuration_tokens": [],
+  "brand_aliases": [],
+  "model_aliases": [],
+  "status": "SUCCESS",
+  "prompt_version": "motorcycle-candidate-resolution-v4",
+  "model": "qwen-flash",
+  "make": "CFMOTO",
+  "model_name": "Ibex 800 T"
+}

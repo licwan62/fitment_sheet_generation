@@ -1,0 +1,16 @@
+{
+  "decision": "INFER|UNKNOWN",
+  "confidence": "LOW",
+  "length_mm": null,
+  "width_mm": null,
+  "height_mm": null,
+  "wheelbase_mm": null,
+  "seat_height_mm": null,
+  "ground_clearance_mm": null,
+  "explanation": "The Big Bear Choppers Venom ProStreet V111 Carb is a custom motorcycle with no publicly available official dimensions. As a custom build, its specifications may vary significantly between units and lack standardized data. Without access to a catalog or verified source, dimensions cannot be reliably inferred. Model identity is uncertain due to limited documentation and potential variations by build year or market.",
+  "status": "SUCCESS",
+  "prompt_version": "motorcycle-dimension-inference-v1",
+  "model": "qwen-flash",
+  "make": "Big Bear Choppers",
+  "model_name": "Venom ProStreet V111 Carb"
+}

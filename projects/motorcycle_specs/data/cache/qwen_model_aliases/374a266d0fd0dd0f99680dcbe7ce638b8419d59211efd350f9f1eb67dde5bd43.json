@@ -1,0 +1,16 @@
+{
+  "decision": "NO_MATCH",
+  "selected_candidate": "",
+  "confidence": "HIGH",
+  "match_basis": "NONE",
+  "explanation": "The input model 'Zero' does not correspond to any of the catalog candidates, which are all Beta models with specific displacements and designations (e.g., Euro 350, RR 125 Enduro). 'Zero' is not a known model name in Beta's lineup, nor is it a recognized alias, abbreviation, or typo for any of the listed models. The candidates are distinct models with different engine sizes and configurations.",
+  "canonical_model_alias": "",
+  "configuration_tokens": [],
+  "brand_aliases": [],
+  "model_aliases": [],
+  "status": "SUCCESS",
+  "prompt_version": "motorcycle-candidate-resolution-v4",
+  "model": "qwen-flash",
+  "make": "Beta",
+  "model_name": "Zero"
+}

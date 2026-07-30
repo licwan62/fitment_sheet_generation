@@ -1,0 +1,9 @@
+{
+  "status": "API_ERROR",
+  "prompt_version": "motorcycle-candidate-resolution-v3",
+  "model": "qwen-flash",
+  "make": "Honda",
+  "model_name": "MRT300L Montesa Cota 301RR",
+  "candidate_titles": [],
+  "error_type": "HTTPStatusError"
+}

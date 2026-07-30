@@ -1,0 +1,21 @@
+{
+  "decision": "MATCH",
+  "selected_candidate": "Honda GL1800 Gold Wing",
+  "confidence": "HIGH",
+  "match_basis": "MARKET_ALIAS",
+  "explanation": "The 'GL1800P Gold Wing Premium Audio' is a market-specific configuration of the GL1800 Gold Wing, with 'P' denoting the Premium Audio package. This is a known variant within the same model line and does not represent a different underlying motorcycle.",
+  "canonical_model_alias": "GL1800 Gold Wing",
+  "configuration_tokens": [
+    "P",
+    "Premium Audio"
+  ],
+  "brand_aliases": [],
+  "model_aliases": [
+    "GL1800 Gold Wing"
+  ],
+  "status": "SUCCESS",
+  "prompt_version": "motorcycle-candidate-resolution-v4",
+  "model": "qwen-flash",
+  "make": "Honda",
+  "model_name": "GL1800P Gold Wing Premium Audio"
+}

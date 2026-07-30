@@ -1,0 +1,16 @@
+{
+  "decision": "NO_MATCH",
+  "selected_candidate": "",
+  "confidence": "HIGH",
+  "match_basis": "NONE",
+  "explanation": "The input 'Inline 4' refers to an engine configuration, not a model name. None of the catalog candidates are known models with an inline-four engine from Indian Motorcycles. The candidates include models like Chieftain, Springfield, and Dakota, which are real Indian models but do not match the 'Inline 4' descriptor. Ducati 650 Indiana is a different manufacturer's model. No candidate corresponds to an Indian motorcycle with an inline-four engine.",
+  "canonical_model_alias": "",
+  "configuration_tokens": [],
+  "brand_aliases": [],
+  "model_aliases": [],
+  "status": "SUCCESS",
+  "prompt_version": "motorcycle-candidate-resolution-v4",
+  "model": "qwen-flash",
+  "make": "Indian",
+  "model_name": "Inline 4"
+}

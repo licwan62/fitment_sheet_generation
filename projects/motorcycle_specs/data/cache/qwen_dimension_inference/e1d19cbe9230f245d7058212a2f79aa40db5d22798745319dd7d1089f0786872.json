@@ -1,0 +1,16 @@
+{
+  "decision": "INFER",
+  "confidence": "LOW",
+  "length_mm": 2600,
+  "width_mm": 850,
+  "height_mm": 1100,
+  "wheelbase_mm": 1550,
+  "seat_height_mm": 780,
+  "ground_clearance_mm": 140,
+  "explanation": "Inferred from typical Big Bear Choppers ProStreet V-series design language and comparable custom motorcycle dimensions; no official catalog data available. Dimensions are estimates based on visual proportions and common practices in the custom chopper segment, but may vary by year or market configuration.",
+  "status": "SUCCESS",
+  "prompt_version": "motorcycle-dimension-inference-v1",
+  "model": "qwen-flash",
+  "make": "Big Bear Choppers",
+  "model_name": "Athena ProStreet V111 EFI"
+}

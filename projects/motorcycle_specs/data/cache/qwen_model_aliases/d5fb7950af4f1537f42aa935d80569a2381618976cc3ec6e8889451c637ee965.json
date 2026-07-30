@@ -1,0 +1,18 @@
+{
+  "decision": "MATCH",
+  "selected_candidate": "gasgas ec 200 racing",
+  "confidence": "HIGH",
+  "match_basis": "SAME_NAME",
+  "explanation": "The input 'EC 200 Racing' is a direct match in meaning and identity to the catalog candidate 'gasgas ec 200 racing', with only case variation and minor formatting differences. The model designation, displacement, and intended use (racing) are identical.",
+  "canonical_model_alias": "ec 200 racing",
+  "configuration_tokens": [],
+  "brand_aliases": [],
+  "model_aliases": [
+    "gasgas ec 200 racing"
+  ],
+  "status": "SUCCESS",
+  "prompt_version": "motorcycle-candidate-resolution-v4",
+  "model": "qwen-flash",
+  "make": "Gas Gas",
+  "model_name": "EC 200 Racing"
+}

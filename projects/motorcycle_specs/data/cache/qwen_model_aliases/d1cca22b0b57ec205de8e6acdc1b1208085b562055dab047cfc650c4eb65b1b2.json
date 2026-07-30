@@ -1,0 +1,16 @@
+{
+  "decision": "NO_MATCH",
+  "selected_candidate": "",
+  "confidence": "HIGH",
+  "match_basis": "NONE",
+  "explanation": "The input model CRF250RWE is not equivalent to any of the catalog candidates (CRF 250L, CRF 250M, CRF 250X). The 'RWE' suffix indicates a specific configuration or market variant not present in the listed candidates. The candidates differ in model designation and are distinct models with different intended uses (e.g., L for dual-sport, M for motocross, X for enduro), and none match the RWE variant's identity.",
+  "canonical_model_alias": "",
+  "configuration_tokens": [],
+  "brand_aliases": [],
+  "model_aliases": [],
+  "status": "SUCCESS",
+  "prompt_version": "motorcycle-candidate-resolution-v4",
+  "model": "qwen-flash",
+  "make": "Honda",
+  "model_name": "CRF250RWE"
+}

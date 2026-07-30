@@ -1,0 +1,20 @@
+{
+  "decision": "MATCH",
+  "selected_candidate": "Monster 900ie \n\t  Dark",
+  "confidence": "HIGH",
+  "match_basis": "MARKET_ALIAS",
+  "explanation": "The 'Monster 900 Dark' is a known market-specific configuration of the Ducati Monster 900ie, with 'Dark' referring to its blacked-out aesthetic and trim. The model designation '900ie' matches the displacement and engine specification, and 'Dark' is a consistent configuration label used in official marketing for this variant.",
+  "canonical_model_alias": "Monster 900ie Dark",
+  "configuration_tokens": [
+    "Dark"
+  ],
+  "brand_aliases": [],
+  "model_aliases": [
+    "Monster 900ie Dark"
+  ],
+  "status": "SUCCESS",
+  "prompt_version": "motorcycle-candidate-resolution-v4",
+  "model": "qwen-flash",
+  "make": "Ducati",
+  "model_name": "Monster 900 Dark"
+}

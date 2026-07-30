@@ -1,0 +1,18 @@
+{
+  "decision": "MATCH",
+  "selected_candidate": "CM 400T",
+  "confidence": "HIGH",
+  "match_basis": "MARKET_ALIAS",
+  "explanation": "The 'CM400A Hondamatic' is a market-specific name for the Honda CM400T, with 'Hondamatic' referring to the automatic transmission variant marketed in certain regions. The model identity is identical, with the same displacement and platform.",
+  "canonical_model_alias": "CM 400T",
+  "configuration_tokens": [],
+  "brand_aliases": [],
+  "model_aliases": [
+    "CM 400T"
+  ],
+  "status": "SUCCESS",
+  "prompt_version": "motorcycle-candidate-resolution-v4",
+  "model": "qwen-flash",
+  "make": "Honda",
+  "model_name": "CM400A Hondamatic"
+}

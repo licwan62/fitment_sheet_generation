@@ -1,0 +1,16 @@
+{
+  "decision": "NO_MATCH",
+  "selected_candidate": "",
+  "confidence": "HIGH",
+  "match_basis": "NONE",
+  "explanation": "The model 'Chopper DT' is not a known variant or alias of any of the listed Big Dog catalog candidates, which are all named after dog breeds. There is no evidence linking 'Chopper DT' to any of these models, and 'DT' does not correspond to a known market name, configuration, or typo for any of them. The names do not match in structure, naming convention, or historical usage.",
+  "canonical_model_alias": "",
+  "configuration_tokens": [],
+  "brand_aliases": [],
+  "model_aliases": [],
+  "status": "SUCCESS",
+  "prompt_version": "motorcycle-candidate-resolution-v4",
+  "model": "qwen-flash",
+  "make": "Big Dog",
+  "model_name": "Chopper DT"
+}

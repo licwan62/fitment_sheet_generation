@@ -1,0 +1,19 @@
+{
+  "decision": "MATCH",
+  "selected_candidate": "gasgas pampera 125",
+  "confidence": "HIGH",
+  "match_basis": "MARKET_ALIAS",
+  "explanation": "'Endutrail 125' is a market-specific name for the Gas Gas Pampera 125, used in certain regions; both refer to the same model with identical displacement and platform.",
+  "canonical_model_alias": "pampera 125",
+  "configuration_tokens": [],
+  "brand_aliases": [],
+  "model_aliases": [
+    "gasgas pampera 125",
+    "pampera 125"
+  ],
+  "status": "SUCCESS",
+  "prompt_version": "motorcycle-candidate-resolution-v4",
+  "model": "qwen-flash",
+  "make": "Gas Gas",
+  "model_name": "Endutrail 125"
+}

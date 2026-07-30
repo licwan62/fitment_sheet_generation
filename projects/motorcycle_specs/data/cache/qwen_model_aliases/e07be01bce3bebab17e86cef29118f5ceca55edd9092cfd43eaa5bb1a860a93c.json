@@ -1,0 +1,18 @@
+{
+  "decision": "MATCH",
+  "selected_candidate": "Boulevard C90 B.O.S.S.",
+  "confidence": "HIGH",
+  "match_basis": "SAME_NAME",
+  "explanation": "The input 'C90 Boulevard B.O.S.S.' and the candidate 'Boulevard C90 B.O.S.S.' refer to the same motorcycle model, with only a reordering of the model name components. The displacement (C90), model series (Boulevard), and special edition designation (B.O.S.S.) are identical. The order variation is a known catalog presentation difference and does not indicate a different model.",
+  "canonical_model_alias": "Boulevard C90 B.O.S.S.",
+  "configuration_tokens": [],
+  "brand_aliases": [],
+  "model_aliases": [
+    "Boulevard C90 B.O.S.S."
+  ],
+  "status": "SUCCESS",
+  "prompt_version": "motorcycle-candidate-resolution-v4",
+  "model": "qwen-flash",
+  "make": "Suzuki",
+  "model_name": "C90 Boulevard B.O.S.S."
+}

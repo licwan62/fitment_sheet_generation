@@ -1,0 +1,20 @@
+{
+  "decision": "MATCH",
+  "selected_candidate": "C 70 Super \n\t\tCub Scooter",
+  "confidence": "HIGH",
+  "match_basis": "MARKET_ALIAS",
+  "explanation": "The 'C70K' is a known market designation for the Honda C 70 Super Cub Scooter, where 'K' denotes a specific configuration or regional variant. The model is identical in core identity, displacement, and platform to the 'C 70 Super Cub Scooter' listed in candidates.",
+  "canonical_model_alias": "C 70 Super Cub Scooter",
+  "configuration_tokens": [
+    "K"
+  ],
+  "brand_aliases": [],
+  "model_aliases": [
+    "C 70 Super Cub Scooter"
+  ],
+  "status": "SUCCESS",
+  "prompt_version": "motorcycle-candidate-resolution-v4",
+  "model": "qwen-flash",
+  "make": "Honda",
+  "model_name": "C70K"
+}

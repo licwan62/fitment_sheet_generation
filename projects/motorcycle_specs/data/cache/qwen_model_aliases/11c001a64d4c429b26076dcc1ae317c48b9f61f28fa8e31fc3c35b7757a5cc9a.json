@@ -1,0 +1,20 @@
+{
+  "decision": "MATCH",
+  "selected_candidate": "BMW R 1300 GS Trophy",
+  "confidence": "HIGH",
+  "match_basis": "MARKET_ALIAS",
+  "explanation": "The 'R1300GS Adventure Trophy' is a market-specific configuration of the R1300GS Adventure, with 'Trophy' denoting a special edition or trim level. The catalog candidate 'BMW R 1300 GS Trophy' refers to the same underlying model, with 'Trophy' being a known variant label for this motorcycle in certain markets. Displacement and core model identity are identical.",
+  "canonical_model_alias": "R 1300GS Adventure Trophy",
+  "configuration_tokens": [
+    "Trophy"
+  ],
+  "brand_aliases": [],
+  "model_aliases": [
+    "R 1300 GS Trophy"
+  ],
+  "status": "SUCCESS",
+  "prompt_version": "motorcycle-candidate-resolution-v4",
+  "model": "qwen-flash",
+  "make": "BMW",
+  "model_name": "R1300GS Adventure Trophy"
+}

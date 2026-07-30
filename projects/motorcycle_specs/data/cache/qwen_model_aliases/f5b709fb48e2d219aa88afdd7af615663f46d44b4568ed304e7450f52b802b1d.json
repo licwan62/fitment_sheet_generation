@@ -1,0 +1,20 @@
+{
+  "decision": "MATCH",
+  "selected_candidate": "Honda CX 500 C",
+  "confidence": "HIGH",
+  "match_basis": "MARKET_ALIAS",
+  "explanation": "The input 'CX500C Custom' refers to the Honda CX 500 Custom model, which was marketed in some regions as the 'CX 500 C'. The 'C' suffix denotes the custom variant, and 'Custom' is a known market designation for this model. The catalog candidate 'Honda CX 500 C' is the correct canonical name for the same motorcycle.",
+  "canonical_model_alias": "CX 500 C",
+  "configuration_tokens": [
+    "Custom"
+  ],
+  "brand_aliases": [],
+  "model_aliases": [
+    "CX 500 C"
+  ],
+  "status": "SUCCESS",
+  "prompt_version": "motorcycle-candidate-resolution-v4",
+  "model": "qwen-flash",
+  "make": "Honda",
+  "model_name": "CX500C Custom"
+}

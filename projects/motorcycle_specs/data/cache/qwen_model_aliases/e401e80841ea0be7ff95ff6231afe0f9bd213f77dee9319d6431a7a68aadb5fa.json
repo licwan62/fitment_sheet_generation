@@ -1,0 +1,16 @@
+{
+  "decision": "MATCH",
+  "selected_candidate": "RM65",
+  "confidence": "HIGH",
+  "match_basis": "SAME_NAME",
+  "explanation": "The input 'RM65' directly matches the catalog candidate 'RM65', which is a known Suzuki motocross model. No aliasing, typo, or configuration difference is present.",
+  "canonical_model_alias": "RM65",
+  "configuration_tokens": [],
+  "brand_aliases": [],
+  "model_aliases": [],
+  "status": "SUCCESS",
+  "prompt_version": "motorcycle-candidate-resolution-v4",
+  "model": "qwen-flash",
+  "make": "Suzuki",
+  "model_name": "RM65"
+}

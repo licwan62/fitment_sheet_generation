@@ -1,0 +1,18 @@
+{
+  "decision": "MATCH",
+  "selected_candidate": "R 1200C",
+  "confidence": "HIGH",
+  "match_basis": "MARKET_ALIAS",
+  "explanation": "The 'R1200C Phoenix' is a market-specific name for the R 1200C, used primarily in North America. It refers to the same underlying motorcycle model with identical specifications and platform. The 'Phoenix' designation is a regional marketing name, not a distinct model variant.",
+  "canonical_model_alias": "R 1200C",
+  "configuration_tokens": [],
+  "brand_aliases": [],
+  "model_aliases": [
+    "R 1200C"
+  ],
+  "status": "SUCCESS",
+  "prompt_version": "motorcycle-candidate-resolution-v4",
+  "model": "qwen-flash",
+  "make": "BMW",
+  "model_name": "R1200C Phoenix"
+}

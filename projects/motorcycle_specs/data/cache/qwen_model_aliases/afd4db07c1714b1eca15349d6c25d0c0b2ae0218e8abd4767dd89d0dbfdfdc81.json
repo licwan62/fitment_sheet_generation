@@ -1,0 +1,20 @@
+{
+  "decision": "MATCH",
+  "selected_candidate": "R 1100S",
+  "confidence": "HIGH",
+  "match_basis": "SAME_NAME",
+  "explanation": "The input 'R1100S ABS' refers to the same motorcycle model as 'R 1100S' in the catalog, with 'ABS' being a configuration feature (anti-lock braking system) that does not change the core model identity. The model designation 'R 1100S' is the canonical form of the same underlying motorcycle.",
+  "canonical_model_alias": "R 1100S",
+  "configuration_tokens": [
+    "ABS"
+  ],
+  "brand_aliases": [],
+  "model_aliases": [
+    "R 1100S"
+  ],
+  "status": "SUCCESS",
+  "prompt_version": "motorcycle-candidate-resolution-v4",
+  "model": "qwen-flash",
+  "make": "BMW",
+  "model_name": "R1100S ABS"
+}

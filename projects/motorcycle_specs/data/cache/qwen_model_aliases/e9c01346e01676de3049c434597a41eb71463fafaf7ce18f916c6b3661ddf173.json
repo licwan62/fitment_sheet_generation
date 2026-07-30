@@ -1,0 +1,20 @@
+{
+  "decision": "MATCH",
+  "selected_candidate": "Indian scout classic",
+  "confidence": "HIGH",
+  "match_basis": "MARKET_ALIAS",
+  "explanation": "'Scout Classic Limited Tech' is a market-specific configuration of the Indian Scout Classic, with 'Limited Tech' likely referring to a limited edition technology package within the Scout Classic lineup. The core model identity remains the Scout Classic.",
+  "canonical_model_alias": "scout classic",
+  "configuration_tokens": [
+    "Limited Tech"
+  ],
+  "brand_aliases": [],
+  "model_aliases": [
+    "scout classic"
+  ],
+  "status": "SUCCESS",
+  "prompt_version": "motorcycle-candidate-resolution-v4",
+  "model": "qwen-flash",
+  "make": "Indian",
+  "model_name": "Scout Classic Limited Tech"
+}

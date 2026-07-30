@@ -1,0 +1,18 @@
+{
+  "decision": "MATCH",
+  "selected_candidate": "buell lightning xb 12 s",
+  "confidence": "HIGH",
+  "match_basis": "SAME_NAME",
+  "explanation": "The input 'XB12S Lightning' is the same model as 'buell lightning xb 12 s' in the catalog, with only case and spacing differences. The displacement (12), model code (XB), and suffix (S) are identical, confirming it is the same underlying motorcycle.",
+  "canonical_model_alias": "lightning xb 12 s",
+  "configuration_tokens": [],
+  "brand_aliases": [],
+  "model_aliases": [
+    "lightning xb 12 s"
+  ],
+  "status": "SUCCESS",
+  "prompt_version": "motorcycle-candidate-resolution-v4",
+  "model": "qwen-flash",
+  "make": "Buell",
+  "model_name": "XB12S Lightning"
+}

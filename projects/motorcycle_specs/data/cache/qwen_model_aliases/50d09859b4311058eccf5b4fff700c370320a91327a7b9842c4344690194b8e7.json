@@ -1,0 +1,15 @@
+{
+  "decision": "MATCH",
+  "selected_candidate": "CR 125",
+  "canonical_model_alias": "CR 125",
+  "configuration_tokens": [],
+  "brand_aliases": [],
+  "model_aliases": [
+    "CR 125"
+  ],
+  "status": "SUCCESS",
+  "prompt_version": "motorcycle-candidate-resolution-v3",
+  "model": "qwen-flash",
+  "make": "Honda",
+  "model_name": "CR125M"
+}

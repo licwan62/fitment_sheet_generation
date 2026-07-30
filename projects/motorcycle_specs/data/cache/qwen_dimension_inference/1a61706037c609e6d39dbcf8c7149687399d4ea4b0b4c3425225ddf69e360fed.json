@@ -1,0 +1,16 @@
+{
+  "decision": "INFER|UNKNOWN",
+  "confidence": "LOW",
+  "length_mm": null,
+  "width_mm": null,
+  "height_mm": null,
+  "wheelbase_mm": null,
+  "seat_height_mm": null,
+  "ground_clearance_mm": null,
+  "explanation": "The Indian Challenger Limited 108 is a limited-edition model with no publicly available official dimensions. Variations in production years and market-specific configurations may affect physical dimensions. Without access to a catalog page or verified specifications, accurate inference is not reliable. Dimensions are therefore marked as unknown.",
+  "status": "SUCCESS",
+  "prompt_version": "motorcycle-dimension-inference-v1",
+  "model": "qwen-flash",
+  "make": "Indian",
+  "model_name": "Challenger Limited 108"
+}

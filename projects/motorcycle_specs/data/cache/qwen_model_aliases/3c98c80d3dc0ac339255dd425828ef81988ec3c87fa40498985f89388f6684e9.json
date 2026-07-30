@@ -1,0 +1,15 @@
+{
+  "decision": "MATCH",
+  "selected_candidate": "Rebel CMX 450C",
+  "canonical_model_alias": "Rebel CMX 450C",
+  "configuration_tokens": [],
+  "brand_aliases": [],
+  "model_aliases": [
+    "Rebel CMX 450C"
+  ],
+  "status": "SUCCESS",
+  "prompt_version": "motorcycle-candidate-resolution-v3",
+  "model": "qwen-flash",
+  "make": "Honda",
+  "model_name": "CMX450C Rebel"
+}

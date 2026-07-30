@@ -1,0 +1,18 @@
+{
+  "decision": "MATCH",
+  "selected_candidate": "benelli velvet touring 125",
+  "confidence": "HIGH",
+  "match_basis": "MARKET_ALIAS",
+  "explanation": "The 'Velvet 125' is a market-specific name for the Benelli Velvet Touring 125, which is the same model sold under different regional branding. The core identity, displacement, and model lineage are identical.",
+  "canonical_model_alias": "velvet touring 125",
+  "configuration_tokens": [],
+  "brand_aliases": [],
+  "model_aliases": [
+    "velvet touring 125"
+  ],
+  "status": "SUCCESS",
+  "prompt_version": "motorcycle-candidate-resolution-v4",
+  "model": "qwen-flash",
+  "make": "Benelli",
+  "model_name": "Velvet 125"
+}

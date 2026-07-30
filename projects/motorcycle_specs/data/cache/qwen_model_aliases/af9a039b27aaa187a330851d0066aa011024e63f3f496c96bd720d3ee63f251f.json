@@ -1,0 +1,18 @@
+{
+  "decision": "MATCH",
+  "selected_candidate": "beta minitrial electric 16",
+  "confidence": "HIGH",
+  "match_basis": "SAME_NAME",
+  "explanation": "The input 'Minitrial-E 16' is a direct variant of 'beta minitrial electric 16', with 'E' indicating electric and '16' denoting displacement. The model name and displacement match exactly, and the electric designation aligns with the 'electric' in the catalog candidate.",
+  "canonical_model_alias": "beta minitrial electric 16",
+  "configuration_tokens": [],
+  "brand_aliases": [],
+  "model_aliases": [
+    "minitrial electric 16"
+  ],
+  "status": "SUCCESS",
+  "prompt_version": "motorcycle-candidate-resolution-v4",
+  "model": "qwen-flash",
+  "make": "Beta",
+  "model_name": "Minitrial-E 16"
+}

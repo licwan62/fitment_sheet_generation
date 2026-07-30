@@ -1,0 +1,23 @@
+{
+  "decision": "MATCH",
+  "selected_candidate": "EC 300 Enduro GP \n\t\tReplica",
+  "confidence": "HIGH",
+  "match_basis": "HISTORICAL_ALIAS",
+  "explanation": "The 'EC 300 Replica' model is a known historical marketing name for the EC 300 Enduro GP Replica, which was produced by Gas Gas as a limited edition homologation model. The 'Enduro GP' and 'Replica' designations are part of the same model's identity, with 'GP' indicating its race-inspired heritage. This is a recognized variant of the EC 300 platform, not a different displacement or platform.",
+  "canonical_model_alias": "EC 300 Enduro GP Replica",
+  "configuration_tokens": [
+    "Enduro GP",
+    "Replica"
+  ],
+  "brand_aliases": [],
+  "model_aliases": [
+    "EC 300 Enduro GP Replica",
+    "EC 300E Replica",
+    "EC 300 GP Replica"
+  ],
+  "status": "SUCCESS",
+  "prompt_version": "motorcycle-candidate-resolution-v4",
+  "model": "qwen-flash",
+  "make": "Gas Gas",
+  "model_name": "EC 300 Replica"
+}

@@ -1,0 +1,18 @@
+{
+  "decision": "MATCH",
+  "selected_candidate": "Honda Ape 50",
+  "confidence": "HIGH",
+  "match_basis": "MARKET_ALIAS",
+  "explanation": "The Honda Z50A is a known market name for the Honda Ape 50, a small, retro-styled motorcycle sold in various regions. The 'Z50A' designation refers to the same model platform as the Ape 50, with differences only in naming and minor regional configurations. This is a well-documented case of a model being marketed under different names in different markets.",
+  "canonical_model_alias": "Honda Ape 50",
+  "configuration_tokens": [],
+  "brand_aliases": [],
+  "model_aliases": [
+    "Ape 50"
+  ],
+  "status": "SUCCESS",
+  "prompt_version": "motorcycle-candidate-resolution-v4",
+  "model": "qwen-flash",
+  "make": "Honda",
+  "model_name": "Z50A"
+}

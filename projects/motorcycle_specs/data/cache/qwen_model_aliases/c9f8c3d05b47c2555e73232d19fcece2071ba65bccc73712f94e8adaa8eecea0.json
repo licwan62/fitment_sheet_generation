@@ -1,0 +1,16 @@
+{
+  "decision": "NO_MATCH",
+  "selected_candidate": "",
+  "confidence": "HIGH",
+  "match_basis": "NONE",
+  "explanation": "The input model 'Gixxer SF FI Bi-Tono' is a 250cc motorcycle with specific features like FI (Fuel Injection) and Bi-Tono (two-tone paint), but the catalog candidates 'Gixxer SF250' and 'Gixxer SF250 MotoGP Edition' are distinct in naming and configuration. The term 'FI Bi-Tono' does not match any candidate's name exactly, and no known market alias or typo equivalence exists between them. The MotoGP Edition is a special variant, not a direct match. Thus, no candidate represents the same underlying model.",
+  "canonical_model_alias": "",
+  "configuration_tokens": [],
+  "brand_aliases": [],
+  "model_aliases": [],
+  "status": "SUCCESS",
+  "prompt_version": "motorcycle-candidate-resolution-v4",
+  "model": "qwen-flash",
+  "make": "Suzuki",
+  "model_name": "Gixxer SF FI Bi-Tono"
+}

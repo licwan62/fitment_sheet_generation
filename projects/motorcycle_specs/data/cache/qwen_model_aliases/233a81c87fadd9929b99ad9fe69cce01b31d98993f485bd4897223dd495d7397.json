@@ -1,0 +1,16 @@
+{
+  "decision": "MATCH",
+  "selected_candidate": "C 72 Dream",
+  "confidence": "HIGH",
+  "match_basis": "MARKET_ALIAS",
+  "explanation": "The input 'CA72 Dream 250' refers to the Honda CA72 Dream, a 250cc model produced in the 1960s. 'C 72 Dream' is a known market and catalog variation of the same model, with 'C' used as a shorthand for 'CA' in some regional listings. The displacement (250) and model name (Dream) are consistent, confirming identity.",
+  "canonical_model_alias": "C 72 Dream",
+  "configuration_tokens": [],
+  "brand_aliases": [],
+  "model_aliases": [],
+  "status": "SUCCESS",
+  "prompt_version": "motorcycle-candidate-resolution-v4",
+  "model": "qwen-flash",
+  "make": "Honda",
+  "model_name": "CA72 Dream 250"
+}

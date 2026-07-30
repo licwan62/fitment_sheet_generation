@@ -1,0 +1,16 @@
+{
+  "decision": "NO_MATCH",
+  "selected_candidate": "",
+  "confidence": "HIGH",
+  "match_basis": "NONE",
+  "explanation": "The input 'UR100 Lets' does not correspond to any of the catalog candidates. 'UR100' is not a known Suzuki model designation, and 'Lets' is not a recognized model name or variant in Suzuki's lineup. The candidates listed are all distinct models with different names, displacements, or configurations, none matching the input.",
+  "canonical_model_alias": "",
+  "configuration_tokens": [],
+  "brand_aliases": [],
+  "model_aliases": [],
+  "status": "SUCCESS",
+  "prompt_version": "motorcycle-candidate-resolution-v4",
+  "model": "qwen-flash",
+  "make": "Suzuki",
+  "model_name": "UR100 Lets"
+}

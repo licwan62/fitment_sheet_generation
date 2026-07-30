@@ -1,0 +1,20 @@
+{
+  "decision": "MATCH",
+  "selected_candidate": "CRF 1100L Africa Twin / DCT",
+  "confidence": "HIGH",
+  "match_basis": "SAME_NAME",
+  "explanation": "All candidates refer to the same underlying motorcycle model, with variations in spacing, formatting, and minor suffixes. The core identity 'CRF 1100L Africa Twin' is preserved, and the '/ DCT' suffix denotes the dual-clutch transmission configuration, which is a known variant of this model. The 'Adventure Sports ES' suffix in one candidate is a marketing or configuration label but does not alter the base model identity.",
+  "canonical_model_alias": "CRF 1100L Africa Twin / DCT",
+  "configuration_tokens": [
+    "DCT"
+  ],
+  "brand_aliases": [],
+  "model_aliases": [
+    "CRF 1100L Africa Twin / DCT"
+  ],
+  "status": "SUCCESS",
+  "prompt_version": "motorcycle-candidate-resolution-v4",
+  "model": "qwen-flash",
+  "make": "Honda",
+  "model_name": "CRF1100L Africa Twin"
+}

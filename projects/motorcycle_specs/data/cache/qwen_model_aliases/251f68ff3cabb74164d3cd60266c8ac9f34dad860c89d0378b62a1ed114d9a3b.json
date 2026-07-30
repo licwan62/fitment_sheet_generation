@@ -1,0 +1,16 @@
+{
+  "decision": "MATCH",
+  "selected_candidate": "husqvarna wr 250",
+  "confidence": "HIGH",
+  "match_basis": "SAME_NAME",
+  "explanation": "The input 'WR240' is a plausible typo or misreading of 'WR250', as the displacement is close and both are part of Husqvarna's motocross lineup. However, upon closer inspection, WR240 does not exist in Husqvarna's official model lineup; the correct model is WR250. Given that no candidate matches WR240 exactly but WR250 is the only plausible intended model with matching displacement and model series, it is treated as a direct match due to known market naming conventions and common input errors.",
+  "canonical_model_alias": "wr 250",
+  "configuration_tokens": [],
+  "brand_aliases": [],
+  "model_aliases": [],
+  "status": "SUCCESS",
+  "prompt_version": "motorcycle-candidate-resolution-v4",
+  "model": "qwen-flash",
+  "make": "Husqvarna",
+  "model_name": "WR240"
+}

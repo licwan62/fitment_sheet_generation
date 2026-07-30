@@ -1,0 +1,20 @@
+{
+  "decision": "MATCH",
+  "selected_candidate": "K 75S",
+  "confidence": "HIGH",
+  "match_basis": "SAME_NAME",
+  "explanation": "The input 'K75S ABS' and the candidate 'K 75S' refer to the same underlying motorcycle model, with 'ABS' being a configuration feature (anti-lock braking system) that does not change the core model identity. The absence of 'ABS' in the candidate title is acceptable as it denotes a variant, not a different model.",
+  "canonical_model_alias": "K 75S",
+  "configuration_tokens": [
+    "ABS"
+  ],
+  "brand_aliases": [],
+  "model_aliases": [
+    "K 75S"
+  ],
+  "status": "SUCCESS",
+  "prompt_version": "motorcycle-candidate-resolution-v4",
+  "model": "qwen-flash",
+  "make": "BMW",
+  "model_name": "K75S ABS"
+}

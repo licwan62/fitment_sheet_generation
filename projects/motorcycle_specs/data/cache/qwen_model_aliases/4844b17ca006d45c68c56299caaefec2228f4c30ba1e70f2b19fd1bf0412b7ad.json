@@ -1,0 +1,21 @@
+{
+  "decision": "MATCH",
+  "selected_candidate": "gasgas txt 80 racing",
+  "confidence": "HIGH",
+  "match_basis": "MARKET_ALIAS",
+  "explanation": "'Enducross TT 80' is a market-specific name for the Gas Gas TXT 80 Racing model, with 'Enducross' indicating the competition series and 'TT' denoting the race configuration. The TXT 80 Racing is the correct underlying model.",
+  "canonical_model_alias": "txt 80 racing",
+  "configuration_tokens": [
+    "racing"
+  ],
+  "brand_aliases": [],
+  "model_aliases": [
+    "gasgas txt 80 racing",
+    "txt 80 racing"
+  ],
+  "status": "SUCCESS",
+  "prompt_version": "motorcycle-candidate-resolution-v4",
+  "model": "qwen-flash",
+  "make": "Gas Gas",
+  "model_name": "Enducross TT 80"
+}

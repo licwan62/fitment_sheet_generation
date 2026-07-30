@@ -1,0 +1,16 @@
+{
+  "decision": "UNKNOWN",
+  "confidence": "LOW",
+  "length_mm": null,
+  "width_mm": null,
+  "height_mm": null,
+  "wheelbase_mm": null,
+  "seat_height_mm": null,
+  "ground_clearance_mm": null,
+  "explanation": "ATK is not a widely recognized motorcycle manufacturer, and '350 CC' refers to engine displacement rather than a specific model. Without a clear model name or reference to a known design, dimensions cannot be reliably inferred. Variations by year, market, or configuration further reduce confidence in any estimation.",
+  "status": "SUCCESS",
+  "prompt_version": "motorcycle-dimension-inference-v1",
+  "model": "qwen-flash",
+  "make": "ATK",
+  "model_name": "350 CC"
+}

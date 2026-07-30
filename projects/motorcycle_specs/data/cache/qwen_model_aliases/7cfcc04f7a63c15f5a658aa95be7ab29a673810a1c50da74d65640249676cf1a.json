@@ -1,0 +1,16 @@
+{
+  "decision": "NO_MATCH",
+  "selected_candidate": "",
+  "confidence": "HIGH",
+  "match_basis": "NONE",
+  "explanation": "The input model 'HUV 4414 XP' does not correspond to any of the catalog candidates, which are all variants of the Husqvarna Vitpilen or Svartpilen 401. The input contains a non-standard identifier 'HUV 4414 XP' that does not match any known Husqvarna model name, displacement, or configuration. There is no evidence of a market alias, historical name, abbreviation, or typo linking it to the listed candidates.",
+  "canonical_model_alias": "",
+  "configuration_tokens": [],
+  "brand_aliases": [],
+  "model_aliases": [],
+  "status": "SUCCESS",
+  "prompt_version": "motorcycle-candidate-resolution-v4",
+  "model": "qwen-flash",
+  "make": "Husqvarna",
+  "model_name": "HUV 4414 XP"
+}

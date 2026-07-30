@@ -1,0 +1,18 @@
+{
+  "decision": "MATCH",
+  "selected_candidate": "hyosung newtee up 50",
+  "confidence": "HIGH",
+  "match_basis": "MARKET_ALIAS",
+  "explanation": "The QT50 is a known model name used by Hyosung for a 50cc scooter, and 'Newtee Up 50' is the marketed name for the same motorcycle in certain regions, making it a market-specific alias. The displacement (50) matches exactly, and no other candidate shares this identity.",
+  "canonical_model_alias": "newtee up 50",
+  "configuration_tokens": [],
+  "brand_aliases": [],
+  "model_aliases": [
+    "newtee up 50"
+  ],
+  "status": "SUCCESS",
+  "prompt_version": "motorcycle-candidate-resolution-v4",
+  "model": "qwen-flash",
+  "make": "Hyosung",
+  "model_name": "QT50"
+}

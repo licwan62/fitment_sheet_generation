@@ -1,0 +1,16 @@
+{
+  "decision": "INFER|UNKNOWN",
+  "confidence": "MEDIUM|LOW",
+  "length_mm": null,
+  "width_mm": null,
+  "height_mm": null,
+  "wheelbase_mm": null,
+  "seat_height_mm": null,
+  "ground_clearance_mm": null,
+  "explanation": "The FLSTFSE2 Screamin Eagle Fat Boy model is not clearly documented with consistent dimensions across sources, and variations by year and market are significant. Without a definitive catalog reference or verified specification sheet, accurate inference is uncertain. Dimensions from related models (e.g., standard Fat Boy) may not apply due to unique modifications in the Screamin Eagle variant.",
+  "status": "SUCCESS",
+  "prompt_version": "motorcycle-dimension-inference-v1",
+  "model": "qwen-flash",
+  "make": "Harley-Davidson",
+  "model_name": "FLSTFSE2 Screamin Eagle Fat Boy"
+}

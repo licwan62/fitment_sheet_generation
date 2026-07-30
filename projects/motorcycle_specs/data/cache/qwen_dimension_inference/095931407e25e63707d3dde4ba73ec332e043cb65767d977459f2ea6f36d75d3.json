@@ -1,0 +1,16 @@
+{
+  "decision": "INFER|UNKNOWN",
+  "confidence": "MEDIUM|LOW",
+  "length_mm": null,
+  "width_mm": null,
+  "height_mm": null,
+  "wheelbase_mm": null,
+  "seat_height_mm": null,
+  "ground_clearance_mm": null,
+  "explanation": "The Gas Gas EC Ranger 200 is a motocross motorcycle, but specific dimensions are not reliably available in public sources for this model year and variant. Without official documentation or verified measurements, accurate inference is uncertain due to potential variations by market and model year. Dimensions from similar models (e.g., KTM 200 EXC) are not directly applicable due to differences in design and engineering.",
+  "status": "SUCCESS",
+  "prompt_version": "motorcycle-dimension-inference-v1",
+  "model": "qwen-flash",
+  "make": "Gas Gas",
+  "model_name": "EC Ranger 200"
+}

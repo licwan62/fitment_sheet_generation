@@ -1,0 +1,16 @@
+{
+  "decision": "NO_MATCH",
+  "selected_candidate": "",
+  "confidence": "HIGH",
+  "match_basis": "NONE",
+  "explanation": "The Pulsar 200 RS and Pulsar NS200 are distinct models with different designations, target markets, and model identities. The 'RS' suffix in Pulsar 200 RS denotes a specific sportier variant with unique styling and features not present in the NS200, which is a separate model line. Despite shared displacement and brand, they are not the same underlying motorcycle.",
+  "canonical_model_alias": "",
+  "configuration_tokens": [],
+  "brand_aliases": [],
+  "model_aliases": [],
+  "status": "SUCCESS",
+  "prompt_version": "motorcycle-candidate-resolution-v4",
+  "model": "qwen-flash",
+  "make": "Bajaj",
+  "model_name": "Pulsar 200 RS"
+}

@@ -1,0 +1,16 @@
+{
+  "decision": "INFER|UNKNOWN",
+  "confidence": "MEDIUM|LOW",
+  "length_mm": null,
+  "width_mm": null,
+  "height_mm": null,
+  "wheelbase_mm": null,
+  "seat_height_mm": null,
+  "ground_clearance_mm": null,
+  "explanation": "The Gas Gas MC 450F Factory Edition is a high-performance motocross bike, but specific dimensions vary significantly by model year and market. Without access to an official catalog page or definitive source for this exact variant, precise measurements cannot be reliably confirmed. Inferred dimensions from similar models may not apply due to potential design changes in the Factory Edition. Therefore, dimensions are marked as unknown with medium to low confidence.",
+  "status": "SUCCESS",
+  "prompt_version": "motorcycle-dimension-inference-v1",
+  "model": "qwen-flash",
+  "make": "Gas Gas",
+  "model_name": "MC 450F Factory Edition"
+}

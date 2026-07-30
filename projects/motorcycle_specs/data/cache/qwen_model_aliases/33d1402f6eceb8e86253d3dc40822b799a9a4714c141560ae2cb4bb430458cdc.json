@@ -1,0 +1,16 @@
+{
+  "decision": "NO_MATCH",
+  "selected_candidate": "",
+  "confidence": "HIGH",
+  "match_basis": "NONE",
+  "explanation": "The R1100R SE is a distinct model from the R1100RS. The R1100R SE is a sport-touring variant of the R1100R, while the R1100RS is a different model in the same platform but with a more performance-oriented configuration and different bodywork. They differ in design, intended use, and specification, despite sharing the same engine displacement and platform lineage.",
+  "canonical_model_alias": "",
+  "configuration_tokens": [],
+  "brand_aliases": [],
+  "model_aliases": [],
+  "status": "SUCCESS",
+  "prompt_version": "motorcycle-candidate-resolution-v4",
+  "model": "qwen-flash",
+  "make": "BMW",
+  "model_name": "R1100R SE"
+}

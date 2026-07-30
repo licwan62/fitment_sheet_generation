@@ -1,0 +1,21 @@
+{
+  "decision": "MATCH",
+  "selected_candidate": "gasgas ec 300 racing",
+  "confidence": "HIGH",
+  "match_basis": "SAME_NAME",
+  "explanation": "The input 'EC 300 Racing E-Start' refers to the same model as 'gasgas ec 300 racing', with 'E-Start' being a configuration detail (electronic start) that does not change the core model identity. The catalog candidate 'gasgas ec 300 racing' is the canonical expression for this model.",
+  "canonical_model_alias": "ec 300 racing",
+  "configuration_tokens": [
+    "e-start"
+  ],
+  "brand_aliases": [],
+  "model_aliases": [
+    "gasgas ec 300 racing",
+    "ec 300 racing"
+  ],
+  "status": "SUCCESS",
+  "prompt_version": "motorcycle-candidate-resolution-v4",
+  "model": "qwen-flash",
+  "make": "Gas Gas",
+  "model_name": "EC 300 Racing E-Start"
+}

@@ -1,0 +1,16 @@
+{
+  "decision": "NO_MATCH",
+  "selected_candidate": "",
+  "confidence": "HIGH",
+  "match_basis": "NONE",
+  "explanation": "The CFMOTO Ibex 800 S is a distinct model with a specific configuration and branding. None of the catalog candidates match its exact identity, including displacement, name, and market-specific designation. The '800MT' series models are different in design, purpose, and naming convention. The 'Ibex' name is not used in any of the listed candidates, and no known market alias, abbreviation, or typo links the Ibex 800 S to any of them.",
+  "canonical_model_alias": "",
+  "configuration_tokens": [],
+  "brand_aliases": [],
+  "model_aliases": [],
+  "status": "SUCCESS",
+  "prompt_version": "motorcycle-candidate-resolution-v4",
+  "model": "qwen-flash",
+  "make": "CFMOTO",
+  "model_name": "Ibex 800 S"
+}

@@ -1,0 +1,18 @@
+{
+  "decision": "MATCH",
+  "selected_candidate": "NX 650 Dominator",
+  "confidence": "HIGH",
+  "match_basis": "MARKET_ALIAS",
+  "explanation": "The model 'NX650' is a known market designation for the Honda NX 650 Dominator, which was marketed under various names in different regions. The catalog candidate 'NX 650 Dominator' correctly identifies the same motorcycle model.",
+  "canonical_model_alias": "NX 650 Dominator",
+  "configuration_tokens": [],
+  "brand_aliases": [],
+  "model_aliases": [
+    "NX 650 Dominator"
+  ],
+  "status": "SUCCESS",
+  "prompt_version": "motorcycle-candidate-resolution-v4",
+  "model": "qwen-flash",
+  "make": "Honda",
+  "model_name": "NX650"
+}

@@ -1,0 +1,16 @@
+{
+  "decision": "NO_MATCH",
+  "selected_candidate": "",
+  "confidence": "HIGH",
+  "match_basis": "NONE",
+  "explanation": "The model 'NU50' is not a known Honda motorcycle model in the catalog. No valid candidate matches this identifier, and there is no evidence of a market name, historical alias, abbreviation, or typo that would link it to an existing Honda model. The designation 'NU50' does not correspond to any documented Honda motorcycle with this exact format.",
+  "canonical_model_alias": "",
+  "configuration_tokens": [],
+  "brand_aliases": [],
+  "model_aliases": [],
+  "status": "SUCCESS",
+  "prompt_version": "motorcycle-candidate-resolution-v4",
+  "model": "qwen-flash",
+  "make": "Honda",
+  "model_name": "NU50"
+}

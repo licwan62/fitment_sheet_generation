@@ -1,0 +1,20 @@
+{
+  "decision": "MATCH",
+  "selected_candidate": "indian challenger limited with 112 package",
+  "confidence": "HIGH",
+  "match_basis": "MARKET_ALIAS",
+  "explanation": "The 'Challenger Limited 112 Audio Package' is a market-specific configuration of the Indian Challenger Limited with the 112 engine package, and 'Audio Package' is a known variant label. The catalog candidate 'indian challenger limited with 112 package' matches the core model identity, with 'Audio Package' being a configuration detail not altering the base model.",
+  "canonical_model_alias": "challenger limited with 112 package",
+  "configuration_tokens": [
+    "audio package"
+  ],
+  "brand_aliases": [],
+  "model_aliases": [
+    "challenger limited with 112 package"
+  ],
+  "status": "SUCCESS",
+  "prompt_version": "motorcycle-candidate-resolution-v4",
+  "model": "qwen-flash",
+  "make": "Indian",
+  "model_name": "Challenger Limited 112 Audio Package"
+}

@@ -1,0 +1,20 @@
+{
+  "decision": "MATCH",
+  "selected_candidate": "benda darkflag 500 commander",
+  "confidence": "HIGH",
+  "match_basis": "MARKET_ALIAS",
+  "explanation": "The 'Dark Flag 500' is a known model name used in certain markets, and the 'Dark Flag 500 Commander' is a variant with a configuration suffix that does not change the core model identity. The base model is identical, and 'Commander' is a market-specific designation for this variant.",
+  "canonical_model_alias": "benda darkflag 500 commander",
+  "configuration_tokens": [
+    "commander"
+  ],
+  "brand_aliases": [],
+  "model_aliases": [
+    "darkflag 500 commander"
+  ],
+  "status": "SUCCESS",
+  "prompt_version": "motorcycle-candidate-resolution-v4",
+  "model": "qwen-flash",
+  "make": "Benda",
+  "model_name": "Dark Flag 500"
+}

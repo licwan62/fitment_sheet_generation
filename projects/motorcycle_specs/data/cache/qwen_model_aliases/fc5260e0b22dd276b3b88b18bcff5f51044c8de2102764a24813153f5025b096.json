@@ -1,0 +1,19 @@
+{
+  "decision": "MATCH",
+  "selected_candidate": "gasgas ec 250",
+  "confidence": "HIGH",
+  "match_basis": "MARKET_ALIAS",
+  "explanation": "'Enducross 250' is a market-specific name for the Gas Gas EC 250, used in certain regions to denote the off-road/enduro variant. The EC 250 is the correct model designation, with 'Enducross' being a marketing alias for the same motorcycle.",
+  "canonical_model_alias": "ec 250",
+  "configuration_tokens": [],
+  "brand_aliases": [],
+  "model_aliases": [
+    "gasgas ec 250",
+    "ec 250"
+  ],
+  "status": "SUCCESS",
+  "prompt_version": "motorcycle-candidate-resolution-v4",
+  "model": "qwen-flash",
+  "make": "Gas Gas",
+  "model_name": "Enducross 250"
+}

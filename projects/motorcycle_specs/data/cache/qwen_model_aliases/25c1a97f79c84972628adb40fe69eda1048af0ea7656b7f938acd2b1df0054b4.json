@@ -1,0 +1,18 @@
+{
+  "decision": "MATCH",
+  "selected_candidate": "Hero xtreme 160r",
+  "confidence": "HIGH",
+  "match_basis": "MARKET_ALIAS",
+  "explanation": "Hunk 160R is a regional market name for the Hero Xtreme 160R, with 'Hunk' being a branding variation used in certain markets. The displacement (160) and model structure match exactly.",
+  "canonical_model_alias": "xtreme 160r",
+  "configuration_tokens": [],
+  "brand_aliases": [],
+  "model_aliases": [
+    "xtreme 160r"
+  ],
+  "status": "SUCCESS",
+  "prompt_version": "motorcycle-candidate-resolution-v4",
+  "model": "qwen-flash",
+  "make": "Hero",
+  "model_name": "Hunk 160R"
+}

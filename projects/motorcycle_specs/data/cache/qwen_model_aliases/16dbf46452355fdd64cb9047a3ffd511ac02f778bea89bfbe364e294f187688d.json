@@ -1,0 +1,16 @@
+{
+  "decision": "NO_MATCH",
+  "selected_candidate": "",
+  "confidence": "HIGH",
+  "match_basis": "NONE",
+  "explanation": "The model 'NCH50 Metropolitan' is not found in the catalog candidates. No matching or related motorcycle model is present in the provided list, and no known market name, historical alias, abbreviation, or typo of this model exists within the candidates. The displacement (50cc) and model code (NCH50) are specific identifiers that do not correspond to any listed candidate.",
+  "canonical_model_alias": "",
+  "configuration_tokens": [],
+  "brand_aliases": [],
+  "model_aliases": [],
+  "status": "SUCCESS",
+  "prompt_version": "motorcycle-candidate-resolution-v4",
+  "model": "qwen-flash",
+  "make": "Honda",
+  "model_name": "NCH50 Metropolitan"
+}

@@ -1,0 +1,16 @@
+{
+  "decision": "INFER|UNKNOWN",
+  "confidence": "LOW",
+  "length_mm": null,
+  "width_mm": null,
+  "height_mm": null,
+  "wheelbase_mm": null,
+  "seat_height_mm": null,
+  "ground_clearance_mm": null,
+  "explanation": "The Harley-Davidson XLT is not a recognized model in the manufacturer's official lineup. It may be a misidentification or confusion with another model such as the Sportster or Softail series. Without confirmed model details or a catalog reference, dimensions cannot be reliably inferred. Dimensions vary significantly across Harley-Davidson models and years, making accurate estimation impossible without further clarification.",
+  "status": "SUCCESS",
+  "prompt_version": "motorcycle-dimension-inference-v1",
+  "model": "qwen-flash",
+  "make": "Harley-Davidson",
+  "model_name": "XLT"
+}

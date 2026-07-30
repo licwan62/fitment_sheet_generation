@@ -1,0 +1,16 @@
+{
+  "decision": "NO_MATCH",
+  "selected_candidate": "",
+  "confidence": "HIGH",
+  "match_basis": "NONE",
+  "explanation": "The input model 'WXC 410' is not present in the catalog candidates, and no candidate represents the same underlying motorcycle model. The WXC 410 is a distinct model from the listed candidates, which include different displacements, series (e.g., TE, TC, FC, FX), and configurations. No known market alias, historical name, abbreviation, or typo links the input to any candidate.",
+  "canonical_model_alias": "",
+  "configuration_tokens": [],
+  "brand_aliases": [],
+  "model_aliases": [],
+  "status": "SUCCESS",
+  "prompt_version": "motorcycle-candidate-resolution-v4",
+  "model": "qwen-flash",
+  "make": "Husqvarna",
+  "model_name": "WXC 410"
+}

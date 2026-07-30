@@ -1,0 +1,16 @@
+{
+  "decision": "INFER|UNKNOWN",
+  "confidence": "LOW",
+  "length_mm": null,
+  "width_mm": null,
+  "height_mm": null,
+  "wheelbase_mm": null,
+  "seat_height_mm": null,
+  "ground_clearance_mm": null,
+  "explanation": "The Ducati Super Sport S model varies significantly in dimensions across different model years and markets, and no definitive catalog data is available for verification. Inferred dimensions from similar models are not reliable due to potential design changes. Therefore, dimensions are marked as unknown with low confidence.",
+  "status": "SUCCESS",
+  "prompt_version": "motorcycle-dimension-inference-v1",
+  "model": "qwen-flash",
+  "make": "Ducati",
+  "model_name": "Super Sport S"
+}

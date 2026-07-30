@@ -1,0 +1,20 @@
+{
+  "decision": "MATCH",
+  "selected_candidate": "CB 350K",
+  "confidence": "HIGH",
+  "match_basis": "MARKET_ALIAS",
+  "explanation": "The input 'CB350K Super Sport' refers to the Honda CB350K, a model marketed as 'Super Sport' in certain regions. The 'Super Sport' designation is a configuration or marketing label, not a distinct model. The core identity matches the catalog candidate 'CB 350K'.",
+  "canonical_model_alias": "CB 350K",
+  "configuration_tokens": [
+    "Super Sport"
+  ],
+  "brand_aliases": [],
+  "model_aliases": [
+    "CB 350K"
+  ],
+  "status": "SUCCESS",
+  "prompt_version": "motorcycle-candidate-resolution-v4",
+  "model": "qwen-flash",
+  "make": "Honda",
+  "model_name": "CB350K Super Sport"
+}

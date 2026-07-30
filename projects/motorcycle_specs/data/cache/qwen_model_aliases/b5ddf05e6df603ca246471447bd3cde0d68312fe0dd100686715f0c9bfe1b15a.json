@@ -1,0 +1,20 @@
+{
+  "decision": "MATCH",
+  "selected_candidate": "Ducati 998 S",
+  "confidence": "HIGH",
+  "match_basis": "MARKET_ALIAS",
+  "explanation": "The '998 F Edition Biposto' is a special configuration of the Ducati 998 S, with 'F Edition Biposto' being a market-specific or configurational designation for the two-seater version. The core model identity is the 998 S, and this variant is well-documented in Ducati's catalog as a limited edition with dual seating. The name variation reflects a regional or marketing label rather than a different model.",
+  "canonical_model_alias": "998 S",
+  "configuration_tokens": [
+    "F Edition Biposto"
+  ],
+  "brand_aliases": [],
+  "model_aliases": [
+    "998 S"
+  ],
+  "status": "SUCCESS",
+  "prompt_version": "motorcycle-candidate-resolution-v4",
+  "model": "qwen-flash",
+  "make": "Ducati",
+  "model_name": "998 F Edition Biposto"
+}

@@ -1,0 +1,11 @@
+{
+  "status": "API_ERROR",
+  "prompt_version": "motorcycle-candidate-resolution-v3",
+  "model": "qwen-flash",
+  "make": "Honda",
+  "model_name": "GB500",
+  "candidate_titles": [
+    "GB 500TT Clubman Tourist Trophy"
+  ],
+  "error_type": "HTTPStatusError"
+}

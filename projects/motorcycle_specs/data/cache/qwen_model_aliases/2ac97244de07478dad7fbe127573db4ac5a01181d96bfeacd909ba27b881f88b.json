@@ -1,0 +1,15 @@
+{
+  "decision": "MATCH",
+  "selected_candidate": "CHF \n\t\t50 M etropolitan Scooter",
+  "canonical_model_alias": "CHF50P Metropolitan II",
+  "configuration_tokens": [],
+  "brand_aliases": [],
+  "model_aliases": [
+    "CHF 50 M etropolitan Scooter"
+  ],
+  "status": "SUCCESS",
+  "prompt_version": "motorcycle-candidate-resolution-v3",
+  "model": "qwen-flash",
+  "make": "Honda",
+  "model_name": "CHF50P Metropolitan II"
+}

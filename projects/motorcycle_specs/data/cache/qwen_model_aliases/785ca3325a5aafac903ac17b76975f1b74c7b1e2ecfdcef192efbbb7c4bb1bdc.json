@@ -1,0 +1,20 @@
+{
+  "decision": "MATCH",
+  "selected_candidate": "DL 250SX V-Strom",
+  "confidence": "HIGH",
+  "match_basis": "MARKET_ALIAS",
+  "explanation": "The 'V-Strom 250 SX' and 'DL 250SX V-Strom' refer to the same motorcycle model, with 'DL 250SX V-Strom' being the catalog designation used in certain markets, particularly in Europe and other regions where Suzuki uses the DL prefix for its adventure-touring models. The 'SX' suffix denotes the same high-end configuration, and the displacement (250) and model family (V-Strom) are identical. This is a known market-specific naming variation.",
+  "canonical_model_alias": "DL 250SX V-Strom",
+  "configuration_tokens": [
+    "SX"
+  ],
+  "brand_aliases": [],
+  "model_aliases": [
+    "DL 250SX V-Strom"
+  ],
+  "status": "SUCCESS",
+  "prompt_version": "motorcycle-candidate-resolution-v4",
+  "model": "qwen-flash",
+  "make": "Suzuki",
+  "model_name": "V-Strom 250 SX"
+}

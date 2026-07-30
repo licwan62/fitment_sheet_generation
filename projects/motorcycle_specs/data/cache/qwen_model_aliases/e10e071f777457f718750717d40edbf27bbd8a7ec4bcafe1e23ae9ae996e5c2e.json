@@ -1,0 +1,21 @@
+{
+  "decision": "MATCH",
+  "selected_candidate": "Honda CB 160",
+  "confidence": "HIGH",
+  "match_basis": "SAME_NAME",
+  "explanation": "The input 'CB160F' is a variant of the Honda CB 160 model, with 'F' likely denoting a market-specific configuration or fuel-injected version. The catalog candidate 'Honda CB 160' represents the base model identity. 'Honda CB Unicorn 160' is a rebranded name used in certain markets (e.g., India) for the same underlying motorcycle, but 'Honda CB 160' is the more direct and canonical expression of the model.",
+  "canonical_model_alias": "CB 160",
+  "configuration_tokens": [
+    "F"
+  ],
+  "brand_aliases": [],
+  "model_aliases": [
+    "CB 160",
+    "CB Unicorn 160"
+  ],
+  "status": "SUCCESS",
+  "prompt_version": "motorcycle-candidate-resolution-v4",
+  "model": "qwen-flash",
+  "make": "Honda",
+  "model_name": "CB160F"
+}

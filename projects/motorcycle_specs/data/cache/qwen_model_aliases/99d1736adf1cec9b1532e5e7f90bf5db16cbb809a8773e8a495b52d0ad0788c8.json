@@ -1,0 +1,18 @@
+{
+  "decision": "MATCH",
+  "selected_candidate": "buell xb 9sx",
+  "confidence": "HIGH",
+  "match_basis": "SAME_NAME",
+  "explanation": "The input 'XB9SX Lightning' is a direct match in name and model designation to the catalog candidate 'buell xb 9sx', with no conflicting or differing identity-bearing tokens. The term 'Lightning' is part of the model's common name but not a distinguishing configuration token here.",
+  "canonical_model_alias": "xb 9sx",
+  "configuration_tokens": [],
+  "brand_aliases": [],
+  "model_aliases": [
+    "xb 9sx"
+  ],
+  "status": "SUCCESS",
+  "prompt_version": "motorcycle-candidate-resolution-v4",
+  "model": "qwen-flash",
+  "make": "Buell",
+  "model_name": "XB9SX Lightning"
+}

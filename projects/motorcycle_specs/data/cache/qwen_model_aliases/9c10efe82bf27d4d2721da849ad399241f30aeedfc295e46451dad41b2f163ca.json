@@ -1,0 +1,16 @@
+{
+  "decision": "NO_MATCH",
+  "selected_candidate": "",
+  "confidence": "HIGH",
+  "match_basis": "NONE",
+  "explanation": "The input model 'CB190R Repsol' is a distinct motorcycle with a specific engine displacement (190cc), design, and branding (Repsol livery). None of the catalog candidates match this exact model in terms of name, displacement, or identity. The closest candidate, 'CBF 190TR', shares the 190cc displacement and Honda CB lineage but is a different model type (naked street bike vs. sport-tourer), and 'CBF 190X Fight Hawk' is a variant with different styling and configuration. 'CB190R Repsol' is not a known market alias, historical name, abbreviation, or typo for any listed candidate. All candidates differ in model identity, including displacement, body style, or intended use.",
+  "canonical_model_alias": "",
+  "configuration_tokens": [],
+  "brand_aliases": [],
+  "model_aliases": [],
+  "status": "SUCCESS",
+  "prompt_version": "motorcycle-candidate-resolution-v4",
+  "model": "qwen-flash",
+  "make": "Honda",
+  "model_name": "CB190R Repsol"
+}

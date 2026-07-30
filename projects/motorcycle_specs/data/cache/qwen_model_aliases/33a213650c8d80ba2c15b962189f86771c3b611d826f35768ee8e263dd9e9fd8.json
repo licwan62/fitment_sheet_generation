@@ -1,0 +1,16 @@
+{
+  "decision": "NO_MATCH",
+  "selected_candidate": "",
+  "confidence": "HIGH",
+  "match_basis": "NONE",
+  "explanation": "The model 'WXE 360' is not a known variant of any listed Husqvarna catalog candidate. The 'WXE' designation does not correspond to any official Husqvarna motorcycle model, and none of the candidates match the displacement, platform, or naming convention of a 'WXE 360'. The closest candidates are WR 360 and 360 Automatic, but these are distinct models with different designations and configurations. No evidence supports that 'WXE 360' is a market name, typo, or alias for any candidate.",
+  "canonical_model_alias": "",
+  "configuration_tokens": [],
+  "brand_aliases": [],
+  "model_aliases": [],
+  "status": "SUCCESS",
+  "prompt_version": "motorcycle-candidate-resolution-v4",
+  "model": "qwen-flash",
+  "make": "Husqvarna",
+  "model_name": "WXE 360"
+}

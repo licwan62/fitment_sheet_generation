@@ -1,0 +1,16 @@
+{
+  "decision": "NO_MATCH",
+  "selected_candidate": "",
+  "confidence": "HIGH",
+  "match_basis": "NONE",
+  "explanation": "The input model 'GE110 Hayate EP' refers to a specific Suzuki motorcycle known as the Hayate 110, a lightweight commuter bike with a 110cc engine. None of the catalog candidates match this model in terms of name, displacement, or identity. The 'Suzuki Raider J Pro 110' is a different model (Raider series), and 'Suzuki Address 110' is another distinct commuter model. 'Hayabusa', 'Burgman Street', 'Katana', 'Sixteen 150', and 'GSX-R 1000' are entirely different models with different purposes, displacements, and platforms. No candidate represents the same underlying motorcycle.",
+  "canonical_model_alias": "",
+  "configuration_tokens": [],
+  "brand_aliases": [],
+  "model_aliases": [],
+  "status": "SUCCESS",
+  "prompt_version": "motorcycle-candidate-resolution-v4",
+  "model": "qwen-flash",
+  "make": "Suzuki",
+  "model_name": "GE110 Hayate EP"
+}

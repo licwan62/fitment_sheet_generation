@@ -1,0 +1,18 @@
+{
+  "decision": "MATCH",
+  "selected_candidate": "Intruder M800",
+  "confidence": "HIGH",
+  "match_basis": "MARKET_ALIAS",
+  "explanation": "The input 'Intruder ABS' refers to the Suzuki Intruder M800 with ABS, a known market-specific configuration. The M800 is the only Intruder model in the catalog candidates that matches this displacement and features ABS as a standard or available option. Other models (e.g., M1500, M1800) have different displacements and are not associated with the 'ABS' variant in the same context.",
+  "canonical_model_alias": "Intruder M800",
+  "configuration_tokens": [
+    "ABS"
+  ],
+  "brand_aliases": [],
+  "model_aliases": [],
+  "status": "SUCCESS",
+  "prompt_version": "motorcycle-candidate-resolution-v4",
+  "model": "qwen-flash",
+  "make": "Suzuki",
+  "model_name": "Intruder ABS"
+}

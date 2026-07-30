@@ -1,0 +1,16 @@
+{
+  "decision": "NO_MATCH",
+  "selected_candidate": "",
+  "confidence": "HIGH",
+  "match_basis": "NONE",
+  "explanation": "The input model 'HUV 4213' does not correspond to any of the catalog candidates, which are all variants of the Husqvarna 401 series (Vitpilen, Svartpilen). The displacement '4213' is inconsistent with the 401 models and likely a typo or misinterpretation. No known Husqvarna model matches this identifier.",
+  "canonical_model_alias": "",
+  "configuration_tokens": [],
+  "brand_aliases": [],
+  "model_aliases": [],
+  "status": "SUCCESS",
+  "prompt_version": "motorcycle-candidate-resolution-v4",
+  "model": "qwen-flash",
+  "make": "Husqvarna",
+  "model_name": "HUV 4213"
+}

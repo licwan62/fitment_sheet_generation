@@ -1,0 +1,18 @@
+{
+  "decision": "MATCH",
+  "selected_candidate": "GS 650G Katana",
+  "confidence": "HIGH",
+  "match_basis": "MARKET_ALIAS",
+  "explanation": "The input 'GS650M Katana' refers to the Suzuki GS650G Katana, where 'M' is a market-specific designation (likely for the European or UK market) and 'G' is the correct model code. The 'M' suffix in some regional catalogs was used interchangeably with 'G' for the same model, particularly in the UK and Europe. This is a known market variation of the GS650G Katana.",
+  "canonical_model_alias": "GS 650G Katana",
+  "configuration_tokens": [],
+  "brand_aliases": [],
+  "model_aliases": [
+    "GS 650G Katana"
+  ],
+  "status": "SUCCESS",
+  "prompt_version": "motorcycle-candidate-resolution-v4",
+  "model": "qwen-flash",
+  "make": "Suzuki",
+  "model_name": "GS650M Katana"
+}

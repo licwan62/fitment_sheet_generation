@@ -1,0 +1,20 @@
+{
+  "decision": "MATCH",
+  "selected_candidate": "2ue 756 \n\t\tPrototype",
+  "confidence": "HIGH",
+  "match_basis": "TYPO",
+  "explanation": "The input '2ue 756' is a clear typographical variant of 'Due 756', where '2ue' is a misrendering of 'Due' (Italian for 'two'). Both refer to the same Benelli model, with identical displacement and configuration. The prototype designation in the candidate confirms it is the correct match.",
+  "canonical_model_alias": "2ue 756",
+  "configuration_tokens": [
+    "Prototype"
+  ],
+  "brand_aliases": [],
+  "model_aliases": [
+    "2ue 756 Prototype"
+  ],
+  "status": "SUCCESS",
+  "prompt_version": "motorcycle-candidate-resolution-v4",
+  "model": "qwen-flash",
+  "make": "Benelli",
+  "model_name": "2ue 756"
+}

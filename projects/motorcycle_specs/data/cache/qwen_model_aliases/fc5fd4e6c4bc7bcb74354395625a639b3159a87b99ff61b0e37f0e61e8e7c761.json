@@ -1,0 +1,18 @@
+{
+  "decision": "MATCH",
+  "selected_candidate": "CB 400T \n\t\tHawk",
+  "confidence": "HIGH",
+  "match_basis": "MARKET_ALIAS",
+  "explanation": "The 'CB400TII Hawk II' is a market-specific designation for the CB400T Hawk, with 'II' and 'Hawk II' being marketing labels rather than model changes. The core model identity remains the CB400T Hawk.",
+  "canonical_model_alias": "CB 400T \n\t\tHawk",
+  "configuration_tokens": [],
+  "brand_aliases": [],
+  "model_aliases": [
+    "CB 400T Hawk"
+  ],
+  "status": "SUCCESS",
+  "prompt_version": "motorcycle-candidate-resolution-v4",
+  "model": "qwen-flash",
+  "make": "Honda",
+  "model_name": "CB400TII Hawk II"
+}

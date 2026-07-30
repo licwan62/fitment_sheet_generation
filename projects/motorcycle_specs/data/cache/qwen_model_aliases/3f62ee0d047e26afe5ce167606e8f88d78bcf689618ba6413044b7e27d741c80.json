@@ -1,0 +1,18 @@
+{
+  "decision": "MATCH",
+  "selected_candidate": "VF \n      750F Interceptor V45",
+  "confidence": "HIGH",
+  "match_basis": "SAME_NAME",
+  "explanation": "The input 'VF750F V45 Interceptor' and the candidate 'VF 750F Interceptor V45' refer to the same motorcycle model, with only minor formatting differences (spacing, line break) and no change in model identity. The displacement (750), engine configuration (V45), and model name (Interceptor) are identical.",
+  "canonical_model_alias": "VF 750F Interceptor V45",
+  "configuration_tokens": [],
+  "brand_aliases": [],
+  "model_aliases": [
+    "VF 750F Interceptor V45"
+  ],
+  "status": "SUCCESS",
+  "prompt_version": "motorcycle-candidate-resolution-v4",
+  "model": "qwen-flash",
+  "make": "Honda",
+  "model_name": "VF750F V45 Interceptor"
+}

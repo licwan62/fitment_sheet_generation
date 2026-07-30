@@ -1,0 +1,16 @@
+{
+  "decision": "INFER|UNKNOWN",
+  "confidence": "MEDIUM|LOW",
+  "length_mm": null,
+  "width_mm": null,
+  "height_mm": null,
+  "wheelbase_mm": null,
+  "seat_height_mm": null,
+  "ground_clearance_mm": null,
+  "explanation": "The Buell RSS1200 is a limited-production model with no widely available official dimensions. Variations across model years and markets, combined with lack of consistent public data, prevent reliable inference. Dimensions may differ significantly from similar models like the Buell Blast or XB models due to unique design elements. Without verified sources, dimension estimates are speculative.",
+  "status": "SUCCESS",
+  "prompt_version": "motorcycle-dimension-inference-v1",
+  "model": "qwen-flash",
+  "make": "Buell",
+  "model_name": "RSS1200"
+}

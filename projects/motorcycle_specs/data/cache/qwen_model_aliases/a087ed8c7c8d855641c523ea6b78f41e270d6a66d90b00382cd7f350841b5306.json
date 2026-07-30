@@ -1,0 +1,18 @@
+{
+  "decision": "MATCH",
+  "selected_candidate": "Suzuki GSX-R1000 1 Million",
+  "confidence": "HIGH",
+  "match_basis": "MARKET_ALIAS",
+  "explanation": "The input 'GSX-R1000 1 Million C.E.' refers to the Suzuki GSX-R1000 1 Million Edition, a special limited-edition model released in 2008. The catalog candidate 'Suzuki GSX-R1000 1 Million' is the canonical title for this exact model, with 'C.E.' being a common abbreviation for 'Celebration Edition' or 'Centenary Edition' used in marketing. This is a known market-specific naming variant of the same motorcycle.",
+  "canonical_model_alias": "GSX-R1000 1 Million",
+  "configuration_tokens": [],
+  "brand_aliases": [],
+  "model_aliases": [
+    "GSX-R1000 1 Million"
+  ],
+  "status": "SUCCESS",
+  "prompt_version": "motorcycle-candidate-resolution-v4",
+  "model": "qwen-flash",
+  "make": "Suzuki",
+  "model_name": "GSX-R1000 1 Million C.E."
+}

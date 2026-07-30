@@ -1,0 +1,18 @@
+{
+  "decision": "MATCH",
+  "selected_candidate": "GS 450E",
+  "confidence": "HIGH",
+  "match_basis": "MARKET_ALIAS",
+  "explanation": "GS450GA is a known market-specific designation for the Suzuki GS 450E, particularly in certain regional catalogs where 'GA' denotes a configuration or market variant. The core model identity (GS 450) and displacement (450) are identical, and 'GA' aligns with known naming conventions for the GS 450E in specific markets.",
+  "canonical_model_alias": "GS 450E",
+  "configuration_tokens": [],
+  "brand_aliases": [],
+  "model_aliases": [
+    "GS 450E"
+  ],
+  "status": "SUCCESS",
+  "prompt_version": "motorcycle-candidate-resolution-v4",
+  "model": "qwen-flash",
+  "make": "Suzuki",
+  "model_name": "GS450GA"
+}

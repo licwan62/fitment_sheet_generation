@@ -1,0 +1,16 @@
+{
+  "decision": "NO_MATCH",
+  "selected_candidate": "",
+  "confidence": "HIGH",
+  "match_basis": "NONE",
+  "explanation": "The model 'Endutrial 250' does not correspond to any of the catalog candidates. 'Endutrial' appears to be a misspelling or misinterpretation of 'Enduro', but none of the listed candidates match the intended model identity. The candidates include 'EnduroGP 250', 'TrialGP 250', 'Pampera 250', 'EC 250 Racing', 'SM 250', and 'EC 250 2T' variants, which are distinct models with different purposes (enduro, trial, motocross, racing). No candidate matches the 'Endutrial 250' as a valid alias or configuration of an existing model.",
+  "canonical_model_alias": "",
+  "configuration_tokens": [],
+  "brand_aliases": [],
+  "model_aliases": [],
+  "status": "SUCCESS",
+  "prompt_version": "motorcycle-candidate-resolution-v4",
+  "model": "qwen-flash",
+  "make": "Gas Gas",
+  "model_name": "Endutrial 250"
+}

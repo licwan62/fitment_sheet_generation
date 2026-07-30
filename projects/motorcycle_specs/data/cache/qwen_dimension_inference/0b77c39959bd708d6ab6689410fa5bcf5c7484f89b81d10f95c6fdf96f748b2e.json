@@ -1,0 +1,16 @@
+{
+  "decision": "INFER|UNKNOWN",
+  "confidence": "LOW",
+  "length_mm": null,
+  "width_mm": null,
+  "height_mm": null,
+  "wheelbase_mm": null,
+  "seat_height_mm": null,
+  "ground_clearance_mm": null,
+  "explanation": "ATK 200 is a vintage motorcycle model with limited publicly available specifications. No reliable source confirms exact dimensions, and variations across production years or markets are possible. Without access to official documentation or verified measurements, precise inference is not feasible.",
+  "status": "SUCCESS",
+  "prompt_version": "motorcycle-dimension-inference-v1",
+  "model": "qwen-flash",
+  "make": "ATK",
+  "model_name": "200"
+}

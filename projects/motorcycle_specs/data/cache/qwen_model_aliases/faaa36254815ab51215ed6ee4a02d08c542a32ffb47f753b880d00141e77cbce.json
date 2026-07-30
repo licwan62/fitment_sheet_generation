@@ -1,0 +1,18 @@
+{
+  "decision": "MATCH",
+  "selected_candidate": "Honda VTR 1000 F Firestorm",
+  "confidence": "HIGH",
+  "match_basis": "MARKET_ALIAS",
+  "explanation": "The Honda VF1000F Interceptor is the same motorcycle as the VTR 1000F Firestorm, with 'VF' and 'VTR' being different model designations used in different markets (VF for North America, VTR for Europe and other regions). The Firestorm name is the marketing name for this model in international markets. The spelling variations in the candidate are typographical or casing differences of the same canonical title.",
+  "canonical_model_alias": "VTR 1000 F Firestorm",
+  "configuration_tokens": [],
+  "brand_aliases": [],
+  "model_aliases": [
+    "VTR 1000 F Firestorm"
+  ],
+  "status": "SUCCESS",
+  "prompt_version": "motorcycle-candidate-resolution-v4",
+  "model": "qwen-flash",
+  "make": "Honda",
+  "model_name": "VF1000F Interceptor"
+}

@@ -1,0 +1,21 @@
+{
+  "decision": "MATCH",
+  "selected_candidate": "beta rr race 2t 300",
+  "confidence": "HIGH",
+  "match_basis": "SAME_NAME",
+  "explanation": "The input '300 RR-Race Edition (2-Stroke)' refers to the same model as 'beta rr race 2t 300', with 'Race Edition' being a configuration label and '2-Stroke' equivalent to '2t'. The core model identity (RR 300 2T) is identical.",
+  "canonical_model_alias": "beta rr race 2t 300",
+  "configuration_tokens": [
+    "race",
+    "2t"
+  ],
+  "brand_aliases": [],
+  "model_aliases": [
+    "rr race 2t 300"
+  ],
+  "status": "SUCCESS",
+  "prompt_version": "motorcycle-candidate-resolution-v4",
+  "model": "qwen-flash",
+  "make": "Beta",
+  "model_name": "300 RR-Race Edition (2-Stroke)"
+}

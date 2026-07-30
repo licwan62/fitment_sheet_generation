@@ -1,0 +1,16 @@
+{
+  "decision": "UNKNOWN",
+  "confidence": "LOW",
+  "length_mm": null,
+  "width_mm": null,
+  "height_mm": null,
+  "wheelbase_mm": null,
+  "seat_height_mm": null,
+  "ground_clearance_mm": null,
+  "explanation": "The model 'Titanium V111 Carb' by Big Bear Choppers is not a widely documented or standardized production motorcycle. Without access to official specifications, catalog data, or verified visual references, dimensions cannot be reliably inferred. Variations in design, custom builds, and lack of consistent model year data further reduce confidence. Therefore, all dimensions are marked as unknown.",
+  "status": "SUCCESS",
+  "prompt_version": "motorcycle-dimension-inference-v1",
+  "model": "qwen-flash",
+  "make": "Big Bear Choppers",
+  "model_name": "Titanium V111 Carb"
+}

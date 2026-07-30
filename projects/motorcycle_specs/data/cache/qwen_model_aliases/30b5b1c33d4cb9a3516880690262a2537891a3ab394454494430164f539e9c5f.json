@@ -1,0 +1,18 @@
+{
+  "decision": "MATCH",
+  "selected_candidate": "Suzuki JR 50",
+  "confidence": "HIGH",
+  "match_basis": "MARKET_ALIAS",
+  "explanation": "The 'OR50' is a known market-specific designation for the Suzuki JR 50, particularly in certain regional catalogs. The model shares identical engine displacement, platform, and specifications, with 'OR50' being a variant label used in some markets. This is not a typo or configuration difference but a documented alternate name.",
+  "canonical_model_alias": "JR 50",
+  "configuration_tokens": [],
+  "brand_aliases": [],
+  "model_aliases": [
+    "JR 50"
+  ],
+  "status": "SUCCESS",
+  "prompt_version": "motorcycle-candidate-resolution-v4",
+  "model": "qwen-flash",
+  "make": "Suzuki",
+  "model_name": "OR50"
+}

@@ -1,0 +1,16 @@
+{
+  "decision": "INFER|UNKNOWN",
+  "confidence": "LOW",
+  "length_mm": null,
+  "width_mm": null,
+  "height_mm": null,
+  "wheelbase_mm": null,
+  "seat_height_mm": null,
+  "ground_clearance_mm": null,
+  "explanation": "The Suzuki FD110 is not a widely recognized or documented motorcycle model. No reliable public data exists for its dimensions, and the model name does not correspond to any known Suzuki motorcycle in standard catalogs or databases. Without clear visual references, official specifications, or consistent model identification, dimension estimation is speculative. Therefore, all values are marked as unknown with low confidence.",
+  "status": "SUCCESS",
+  "prompt_version": "motorcycle-dimension-inference-v1",
+  "model": "qwen-flash",
+  "make": "Suzuki",
+  "model_name": "FD110"
+}

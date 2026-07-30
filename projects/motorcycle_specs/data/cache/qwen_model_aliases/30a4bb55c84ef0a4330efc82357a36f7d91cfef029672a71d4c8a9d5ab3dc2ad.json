@@ -1,0 +1,18 @@
+{
+  "decision": "MATCH",
+  "selected_candidate": "RR 250 Enduro",
+  "confidence": "HIGH",
+  "match_basis": "SAME_NAME",
+  "explanation": "The input '250 RR' is a direct variant of the catalog candidate 'RR 250 Enduro', which is the correct model name for the Beta 250 RR Enduro. The order of terms and inclusion of 'Enduro' are consistent with standard Beta naming conventions, and no other candidate matches the same underlying motorcycle identity.",
+  "canonical_model_alias": "RR 250 Enduro",
+  "configuration_tokens": [],
+  "brand_aliases": [],
+  "model_aliases": [
+    "RR 250 Enduro"
+  ],
+  "status": "SUCCESS",
+  "prompt_version": "motorcycle-candidate-resolution-v4",
+  "model": "qwen-flash",
+  "make": "Beta",
+  "model_name": "250 RR"
+}

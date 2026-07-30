@@ -1,0 +1,16 @@
+{
+  "decision": "NO_MATCH",
+  "selected_candidate": "",
+  "confidence": "HIGH",
+  "match_basis": "NONE",
+  "explanation": "The input model 'XLRTT' does not correspond to any of the catalog candidates. None of the listed models match the identifier 'XLRTT' in name, displacement, or known market/historical aliases. The closest candidate, 'Harley-Davidson fxlrs', is a different model (Low Rider S) and does not align with XLRTT's identity. No plausible typo, abbreviation, or configuration variant supports a match.",
+  "canonical_model_alias": "",
+  "configuration_tokens": [],
+  "brand_aliases": [],
+  "model_aliases": [],
+  "status": "SUCCESS",
+  "prompt_version": "motorcycle-candidate-resolution-v4",
+  "model": "qwen-flash",
+  "make": "Harley-Davidson",
+  "model_name": "XLRTT"
+}

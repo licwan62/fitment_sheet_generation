@@ -1,0 +1,20 @@
+{
+  "decision": "MATCH",
+  "selected_candidate": "CR 125",
+  "confidence": "HIGH",
+  "match_basis": "MARKET_ALIAS",
+  "explanation": "The 'CR125M' is a market-specific designation (likely for the European or Japanese domestic market) of the same underlying model as the 'CR 125', with the 'M' suffix denoting a configuration or market variant. The core model identity, displacement, and platform are identical.",
+  "canonical_model_alias": "CR 125",
+  "configuration_tokens": [
+    "M"
+  ],
+  "brand_aliases": [],
+  "model_aliases": [
+    "CR 125"
+  ],
+  "status": "SUCCESS",
+  "prompt_version": "motorcycle-candidate-resolution-v4",
+  "model": "qwen-flash",
+  "make": "Honda",
+  "model_name": "CR125M"
+}

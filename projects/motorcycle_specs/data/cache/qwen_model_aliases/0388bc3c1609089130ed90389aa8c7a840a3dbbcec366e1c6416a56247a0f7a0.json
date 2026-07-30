@@ -1,0 +1,20 @@
+{
+  "decision": "MATCH",
+  "selected_candidate": "GSX-R 1000R",
+  "confidence": "HIGH",
+  "match_basis": "SAME_NAME",
+  "explanation": "The input 'GSX-R1000R ABS' refers to the same underlying motorcycle model as 'GSX-R 1000R' in the catalog, with 'ABS' being a configuration feature (anti-lock braking system) that does not change the core model identity. The displacement and model name match exactly.",
+  "canonical_model_alias": "GSX-R 1000R",
+  "configuration_tokens": [
+    "ABS"
+  ],
+  "brand_aliases": [],
+  "model_aliases": [
+    "GSX-R 1000R"
+  ],
+  "status": "SUCCESS",
+  "prompt_version": "motorcycle-candidate-resolution-v4",
+  "model": "qwen-flash",
+  "make": "Suzuki",
+  "model_name": "GSX-R1000R ABS"
+}

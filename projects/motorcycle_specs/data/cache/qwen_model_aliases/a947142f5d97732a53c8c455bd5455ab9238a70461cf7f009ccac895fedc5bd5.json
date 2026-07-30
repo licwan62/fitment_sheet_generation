@@ -1,0 +1,18 @@
+{
+  "decision": "MATCH",
+  "selected_candidate": "Boulevard C50",
+  "confidence": "HIGH",
+  "match_basis": "MARKET_ALIAS",
+  "explanation": "The 'M50B Boulevard' is a market-specific designation for the Suzuki Boulevard C50, with 'M50B' likely referring to a model code or regional variant. The core motorcycle identity matches exactly, including displacement and platform.",
+  "canonical_model_alias": "Boulevard C50",
+  "configuration_tokens": [],
+  "brand_aliases": [],
+  "model_aliases": [
+    "Boulevard C50"
+  ],
+  "status": "SUCCESS",
+  "prompt_version": "motorcycle-candidate-resolution-v4",
+  "model": "qwen-flash",
+  "make": "Suzuki",
+  "model_name": "M50B Boulevard"
+}

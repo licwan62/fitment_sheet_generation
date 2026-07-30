@@ -1,0 +1,16 @@
+{
+  "decision": "INFER|UNKNOWN",
+  "confidence": "MEDIUM|LOW",
+  "length_mm": null,
+  "width_mm": null,
+  "height_mm": null,
+  "wheelbase_mm": null,
+  "seat_height_mm": null,
+  "ground_clearance_mm": null,
+  "explanation": "The Gas Gas EC 250F Suomi is a limited-edition or special variant of the EC 250F, but specific dimensions for this exact model are not publicly documented in standard sources. Without access to official specifications or verified catalog data, and due to potential variations by year or market, dimension estimation carries high uncertainty. Therefore, dimensions are marked as unknown.",
+  "status": "SUCCESS",
+  "prompt_version": "motorcycle-dimension-inference-v1",
+  "model": "qwen-flash",
+  "make": "Gas Gas",
+  "model_name": "EC 250F Suomi"
+}

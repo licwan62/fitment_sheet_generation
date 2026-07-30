@@ -1,0 +1,18 @@
+{
+  "decision": "MATCH",
+  "selected_candidate": "M 1000RR \n\t50 Years M Edition",
+  "confidence": "HIGH",
+  "match_basis": "MARKET_ALIAS",
+  "explanation": "The input 'M1000RR 50 Years M' refers to the same limited-edition model as 'M 1000RR 50 Years M Edition', with '50 Years M' being a commemorative designation for BMW's 50th anniversary of motorcycle production. The model name is identical in essence, with only formatting and spacing differences. The catalog candidate includes the full official title with edition designation.",
+  "canonical_model_alias": "M 1000RR 50 Years M Edition",
+  "configuration_tokens": [],
+  "brand_aliases": [],
+  "model_aliases": [
+    "M 1000RR 50 Years M Edition"
+  ],
+  "status": "SUCCESS",
+  "prompt_version": "motorcycle-candidate-resolution-v4",
+  "model": "qwen-flash",
+  "make": "BMW",
+  "model_name": "M1000RR 50 Years M"
+}

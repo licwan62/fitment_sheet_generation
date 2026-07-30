@@ -1,0 +1,18 @@
+{
+  "decision": "MATCH",
+  "selected_candidate": "CT 90 Trail 90",
+  "confidence": "HIGH",
+  "match_basis": "MARKET_ALIAS",
+  "explanation": "The CT90 is a well-known Honda model, and 'Trail 90' is a market-specific name used for the same motorcycle in certain regions, particularly in North America. The model identity remains unchanged; only the marketing name differs.",
+  "canonical_model_alias": "CT 90 Trail 90",
+  "configuration_tokens": [],
+  "brand_aliases": [],
+  "model_aliases": [
+    "CT 90 Trail 90"
+  ],
+  "status": "SUCCESS",
+  "prompt_version": "motorcycle-candidate-resolution-v4",
+  "model": "qwen-flash",
+  "make": "Honda",
+  "model_name": "CT90"
+}

@@ -1,0 +1,18 @@
+{
+  "decision": "MATCH",
+  "selected_candidate": "R 18 100th \n\t\tAnniversary",
+  "confidence": "HIGH",
+  "match_basis": "MARKET_ALIAS",
+  "explanation": "The input 'R 18 100 Years' is a market-specific phrasing for the same model as 'R 18 100th Anniversary', which is the official catalog title. The term '100 Years' is a descriptive variant of '100th Anniversary' used in marketing, and both refer to the same limited-edition R 18 model commemorating BMW Motorrad's 100th anniversary.",
+  "canonical_model_alias": "R 18 100th Anniversary",
+  "configuration_tokens": [],
+  "brand_aliases": [],
+  "model_aliases": [
+    "R 18 100th Anniversary"
+  ],
+  "status": "SUCCESS",
+  "prompt_version": "motorcycle-candidate-resolution-v4",
+  "model": "qwen-flash",
+  "make": "BMW",
+  "model_name": "R 18 100 Years"
+}

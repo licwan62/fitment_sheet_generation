@@ -1,0 +1,16 @@
+{
+  "decision": "NO_MATCH",
+  "selected_candidate": "",
+  "confidence": "HIGH",
+  "match_basis": "NONE",
+  "explanation": "The input model 'CBR1000RR SP2' is not present in the catalog candidates. The closest candidates are variants of the CBR1000RR-R-SP series, which differ in model designation (R-SP vs SP2), indicating distinct models. The 'SP2' suffix is not equivalent to 'R-SP' and represents a different specification or generation. No known market alias, abbreviation, or typo links 'SP2' to any candidate.",
+  "canonical_model_alias": "",
+  "configuration_tokens": [],
+  "brand_aliases": [],
+  "model_aliases": [],
+  "status": "SUCCESS",
+  "prompt_version": "motorcycle-candidate-resolution-v4",
+  "model": "qwen-flash",
+  "make": "Honda",
+  "model_name": "CBR1000RR SP2"
+}

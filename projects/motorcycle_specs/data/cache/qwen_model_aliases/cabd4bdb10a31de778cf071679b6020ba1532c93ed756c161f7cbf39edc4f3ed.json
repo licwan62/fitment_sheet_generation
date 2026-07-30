@@ -1,0 +1,16 @@
+{
+  "decision": "MATCH",
+  "selected_candidate": "benelli pepe",
+  "confidence": "HIGH",
+  "match_basis": "SAME_NAME",
+  "explanation": "The input 'Pepe 50' directly matches the catalog candidate 'benelli pepe', which is the correct model name for the 50cc version produced by Benelli. The displacement (50) is consistent with the model's identity and is not a configuration token but part of the model's core identity.",
+  "canonical_model_alias": "benelli pepe",
+  "configuration_tokens": [],
+  "brand_aliases": [],
+  "model_aliases": [],
+  "status": "SUCCESS",
+  "prompt_version": "motorcycle-candidate-resolution-v4",
+  "model": "qwen-flash",
+  "make": "Benelli",
+  "model_name": "Pepe 50"
+}

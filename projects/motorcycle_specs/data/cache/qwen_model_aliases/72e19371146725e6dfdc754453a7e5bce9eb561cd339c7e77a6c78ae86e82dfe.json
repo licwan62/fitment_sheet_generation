@@ -1,0 +1,21 @@
+{
+  "decision": "MATCH",
+  "selected_candidate": "Harley-Davidson FLSTN Heritage Softail",
+  "confidence": "HIGH",
+  "match_basis": "SAME_NAME",
+  "explanation": "The input model 'FLSTN Heritage Softail Nostalgia' is a direct match in name and model code (FLSTN) with the candidate 'Harley-Davidson FLSTN Softail Deluxe', which is a known variant of the Heritage Softail line. The term 'Nostalgia' in the input is a marketing name for the same model series, and 'Softail Deluxe' is a configuration label that does not alter the core identity. The displacement and model code (FLSTN) are identical, confirming it is the same underlying motorcycle.",
+  "canonical_model_alias": "FLSTN Heritage Softail",
+  "configuration_tokens": [
+    "Nostalgia",
+    "Deluxe"
+  ],
+  "brand_aliases": [],
+  "model_aliases": [
+    "FLSTN Heritage Softail"
+  ],
+  "status": "SUCCESS",
+  "prompt_version": "motorcycle-candidate-resolution-v4",
+  "model": "qwen-flash",
+  "make": "Harley-Davidson",
+  "model_name": "FLSTN Heritage Softail Nostalgia"
+}

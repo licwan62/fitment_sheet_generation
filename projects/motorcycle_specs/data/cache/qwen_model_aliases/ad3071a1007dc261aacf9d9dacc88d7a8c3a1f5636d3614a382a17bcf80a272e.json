@@ -1,0 +1,18 @@
+{
+  "decision": "MATCH",
+  "selected_candidate": "SM 570R",
+  "confidence": "HIGH",
+  "match_basis": "SAME_NAME",
+  "explanation": "The input model 'SMR 570' is a variant of the 'SM 570R' with a minor naming difference. 'SMR' is a known market or configuration designation for the Husqvarna SM 570R, and the displacement (570) matches exactly. The model is identical in specification and platform.",
+  "canonical_model_alias": "SM 570R",
+  "configuration_tokens": [],
+  "brand_aliases": [],
+  "model_aliases": [
+    "SM 570R"
+  ],
+  "status": "SUCCESS",
+  "prompt_version": "motorcycle-candidate-resolution-v4",
+  "model": "qwen-flash",
+  "make": "Husqvarna",
+  "model_name": "SMR 570"
+}

@@ -1,0 +1,16 @@
+{
+  "decision": "NO_MATCH",
+  "selected_candidate": "",
+  "confidence": "HIGH",
+  "match_basis": "NONE",
+  "explanation": "The Bultaco Streaker 125 is a distinct model with no matching or closely related entry in the catalog candidates. None of the listed candidates are known variants, market names, or typographical equivalents of the Streaker 125. The displacement (125cc) does not match any candidate, and the name 'Streaker' is not a known alias for any of the listed models.",
+  "canonical_model_alias": "",
+  "configuration_tokens": [],
+  "brand_aliases": [],
+  "model_aliases": [],
+  "status": "SUCCESS",
+  "prompt_version": "motorcycle-candidate-resolution-v4",
+  "model": "qwen-flash",
+  "make": "Bultaco",
+  "model_name": "Streaker 125"
+}

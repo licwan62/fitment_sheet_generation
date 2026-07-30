@@ -1,0 +1,16 @@
+{
+  "decision": "INFER|UNKNOWN",
+  "confidence": "MEDIUM|LOW",
+  "length_mm": null,
+  "width_mm": null,
+  "height_mm": null,
+  "wheelbase_mm": null,
+  "seat_height_mm": null,
+  "ground_clearance_mm": null,
+  "explanation": "The FXST Softail Standard 107 model's dimensions vary across years and markets, and without a specific year or catalog reference, accurate inference is uncertain. Known variations in frame design and component fitment between model years prevent reliable estimation. Dimensions from related models (e.g., FXSTB, FXSTS) are not directly transferable due to differences in geometry and equipment.",
+  "status": "SUCCESS",
+  "prompt_version": "motorcycle-dimension-inference-v1",
+  "model": "qwen-flash",
+  "make": "Harley-Davidson",
+  "model_name": "FXST Softail Standard 107"
+}

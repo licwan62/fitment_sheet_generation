@@ -1,0 +1,20 @@
+{
+  "decision": "MATCH",
+  "selected_candidate": "CB 450K",
+  "confidence": "HIGH",
+  "match_basis": "SAME_NAME",
+  "explanation": "The input 'CB450' refers to the same underlying motorcycle model as the catalog candidate 'CB 450K', which is a known variant of the CB450 series. The 'K' suffix denotes a specific configuration or market version, but the core model identity remains unchanged. Other candidates like CB 450T, CB 450S, and CB 450DX/N represent different models with distinct designations and configurations.",
+  "canonical_model_alias": "CB 450K",
+  "configuration_tokens": [
+    "K"
+  ],
+  "brand_aliases": [],
+  "model_aliases": [
+    "CB 450K"
+  ],
+  "status": "SUCCESS",
+  "prompt_version": "motorcycle-candidate-resolution-v4",
+  "model": "qwen-flash",
+  "make": "Honda",
+  "model_name": "CB450"
+}

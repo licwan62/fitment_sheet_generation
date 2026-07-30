@@ -1,0 +1,18 @@
+{
+  "decision": "MATCH",
+  "selected_candidate": "ETV 1200 \n\t\tCaponord",
+  "confidence": "HIGH",
+  "match_basis": "SAME_NAME",
+  "explanation": "The input 'Caponord 1200' and the candidate 'ETV 1200 Caponord' refer to the same underlying motorcycle model, with the catalog title using the ETV 1200 designation as the official model number. The name 'Caponord 1200' is a direct reference to the same model, and the ETV 1200 is the known internal model code for this motorcycle.",
+  "canonical_model_alias": "ETV 1200 Caponord",
+  "configuration_tokens": [],
+  "brand_aliases": [],
+  "model_aliases": [
+    "ETV 1200 Caponord"
+  ],
+  "status": "SUCCESS",
+  "prompt_version": "motorcycle-candidate-resolution-v4",
+  "model": "qwen-flash",
+  "make": "Aprilia",
+  "model_name": "Caponord 1200"
+}

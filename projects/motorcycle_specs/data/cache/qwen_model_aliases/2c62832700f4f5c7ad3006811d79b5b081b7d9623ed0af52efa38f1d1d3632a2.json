@@ -1,0 +1,16 @@
+{
+  "decision": "NO_MATCH",
+  "selected_candidate": "",
+  "confidence": "HIGH",
+  "match_basis": "NONE",
+  "explanation": "The R1200RS and R 1200RT are distinct BMW motorcycle models with different intended uses, geometries, and configurations. The RS is a sport-touring model focused on handling and performance, while the RT is a touring-oriented model with larger luggage capacity and a more relaxed riding position. They differ in displacement (both are 1200cc), but their design, purpose, and specifications are not interchangeable. No known market name, abbreviation, or typo links them as the same model.",
+  "canonical_model_alias": "",
+  "configuration_tokens": [],
+  "brand_aliases": [],
+  "model_aliases": [],
+  "status": "SUCCESS",
+  "prompt_version": "motorcycle-candidate-resolution-v4",
+  "model": "qwen-flash",
+  "make": "BMW",
+  "model_name": "R1200RS"
+}

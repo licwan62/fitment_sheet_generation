@@ -1,0 +1,18 @@
+{
+  "decision": "MATCH",
+  "selected_candidate": "CB 1000 \n\t\tCustom",
+  "confidence": "HIGH",
+  "match_basis": "MARKET_ALIAS",
+  "explanation": "The input 'CB1000C Custom' is a variant of the Honda CB1000 Custom, with 'C' likely denoting 'Custom' in the model designation. The catalog candidate 'CB 1000 \n\t\tCustom' uses a space and line break but refers to the same model, differing only in formatting. This is a known market or naming convention variation for the same motorcycle.",
+  "canonical_model_alias": "CB 1000 Custom",
+  "configuration_tokens": [],
+  "brand_aliases": [],
+  "model_aliases": [
+    "CB 1000 Custom"
+  ],
+  "status": "SUCCESS",
+  "prompt_version": "motorcycle-candidate-resolution-v4",
+  "model": "qwen-flash",
+  "make": "Honda",
+  "model_name": "CB1000C Custom"
+}

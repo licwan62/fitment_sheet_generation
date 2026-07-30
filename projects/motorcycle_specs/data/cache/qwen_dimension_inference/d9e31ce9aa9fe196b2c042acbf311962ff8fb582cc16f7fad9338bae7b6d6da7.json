@@ -1,0 +1,16 @@
+{
+  "decision": "INFER|UNKNOWN",
+  "confidence": "MEDIUM|LOW",
+  "length_mm": null,
+  "width_mm": null,
+  "height_mm": null,
+  "wheelbase_mm": null,
+  "seat_height_mm": null,
+  "ground_clearance_mm": null,
+  "explanation": "The Gas Gas EC 350F is a motocross motorcycle, but specific dimensional data varies across model years and markets. Without access to a definitive catalog or official specification sheet for the exact year/model variant, precise dimensions cannot be reliably inferred. Dimensions such as length, width, wheelbase, seat height, and ground clearance are subject to change between revisions and regional configurations. Therefore, the model identity and its associated dimensions remain uncertain.",
+  "status": "SUCCESS",
+  "prompt_version": "motorcycle-dimension-inference-v1",
+  "model": "qwen-flash",
+  "make": "Gas Gas",
+  "model_name": "EC 350F"
+}

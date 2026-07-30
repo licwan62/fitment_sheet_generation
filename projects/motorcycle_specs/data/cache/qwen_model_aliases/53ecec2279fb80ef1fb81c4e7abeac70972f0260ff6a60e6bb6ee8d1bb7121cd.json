@@ -1,0 +1,18 @@
+{
+  "decision": "MATCH",
+  "selected_candidate": "beta minitrial electric 20",
+  "confidence": "HIGH",
+  "match_basis": "SAME_NAME",
+  "explanation": "The input 'Minitrial-E 20' directly corresponds to the catalog candidate 'beta minitrial electric 20', with 'E' being a standard abbreviation for 'Electric' in Beta's naming convention. The displacement '20' matches exactly, and no other candidate shares both the model name and electric designation.",
+  "canonical_model_alias": "minitrial electric 20",
+  "configuration_tokens": [],
+  "brand_aliases": [],
+  "model_aliases": [
+    "minitrial electric 20"
+  ],
+  "status": "SUCCESS",
+  "prompt_version": "motorcycle-candidate-resolution-v4",
+  "model": "qwen-flash",
+  "make": "Beta",
+  "model_name": "Minitrial-E 20"
+}

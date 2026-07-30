@@ -1,0 +1,16 @@
+{
+  "decision": "NO_MATCH",
+  "selected_candidate": "",
+  "confidence": "HIGH",
+  "match_basis": "NONE",
+  "explanation": "The input model 'HUV 4420 D' does not correspond to any of the catalog candidates. The candidate list includes models from Husqvarna and Nuda, but none match the identifier 'HUV 4420 D' in terms of displacement, name, or known variants. 'HUV 4420 D' appears to be a non-standard or possibly misidentified code, and no candidate aligns with it as a valid alias or variant.",
+  "canonical_model_alias": "",
+  "configuration_tokens": [],
+  "brand_aliases": [],
+  "model_aliases": [],
+  "status": "SUCCESS",
+  "prompt_version": "motorcycle-candidate-resolution-v4",
+  "model": "qwen-flash",
+  "make": "Husqvarna",
+  "model_name": "HUV 4420 D"
+}

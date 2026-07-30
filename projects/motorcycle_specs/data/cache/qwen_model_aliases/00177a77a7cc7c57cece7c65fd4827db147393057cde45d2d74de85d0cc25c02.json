@@ -1,0 +1,18 @@
+{
+  "decision": "MATCH",
+  "selected_candidate": "430CR",
+  "confidence": "HIGH",
+  "match_basis": "MARKET_ALIAS",
+  "explanation": "The Husqvarna XC430 is a factory model in the XC series, and '430CR' is a known market-specific or catalog shorthand for the same model, commonly used in European and international listings. The displacement (430) and intended use (cross-country) align exactly, and 'CR' likely denotes a cross-country racing variant, consistent with XC430's identity.",
+  "canonical_model_alias": "430CR",
+  "configuration_tokens": [],
+  "brand_aliases": [],
+  "model_aliases": [
+    "430CR"
+  ],
+  "status": "SUCCESS",
+  "prompt_version": "motorcycle-candidate-resolution-v4",
+  "model": "qwen-flash",
+  "make": "Husqvarna",
+  "model_name": "XC430"
+}

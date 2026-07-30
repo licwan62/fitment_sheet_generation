@@ -1,0 +1,22 @@
+{
+  "decision": "MATCH",
+  "selected_candidate": "Harley-Davidson Pan America 1250 Special",
+  "confidence": "HIGH",
+  "match_basis": "SAME_NAME",
+  "explanation": "The input 'RA1250S Pan America 1250 Special G.I.' refers to the same motorcycle model as 'Harley-Davidson Pan America 1250 Special', with 'RA1250S' and 'G.I.' being internal or market-specific designations that do not alter the core model identity. The displacement (1250) and model name (Pan America Special) are identical.",
+  "canonical_model_alias": "Pan America 1250 Special",
+  "configuration_tokens": [
+    "G.I.",
+    "RA1250S"
+  ],
+  "brand_aliases": [],
+  "model_aliases": [
+    "America 1250 Special",
+    "Pan America 1250 Special"
+  ],
+  "status": "SUCCESS",
+  "prompt_version": "motorcycle-candidate-resolution-v4",
+  "model": "qwen-flash",
+  "make": "Harley-Davidson",
+  "model_name": "RA1250S Pan America 1250 Special G.I."
+}

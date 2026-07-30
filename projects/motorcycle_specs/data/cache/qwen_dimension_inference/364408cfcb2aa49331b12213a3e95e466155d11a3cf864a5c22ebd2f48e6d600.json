@@ -1,0 +1,16 @@
+{
+  "decision": "INFER|UNKNOWN",
+  "confidence": "LOW",
+  "length_mm": null,
+  "width_mm": null,
+  "height_mm": null,
+  "wheelbase_mm": null,
+  "seat_height_mm": null,
+  "ground_clearance_mm": null,
+  "explanation": "The Islo Mutant 250 is a niche or limited-production model with no publicly available official specifications. No reliable catalog or technical documentation confirms its dimensions, and variations across markets or model years are possible. Without verifiable data sources, dimension estimation is speculative.",
+  "status": "SUCCESS",
+  "prompt_version": "motorcycle-dimension-inference-v1",
+  "model": "qwen-flash",
+  "make": "Islo",
+  "model_name": "Mutant 250"
+}

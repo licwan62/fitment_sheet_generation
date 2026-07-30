@@ -1,0 +1,16 @@
+{
+  "decision": "NO_MATCH",
+  "selected_candidate": "",
+  "confidence": "HIGH",
+  "match_basis": "NONE",
+  "explanation": "The input model 'CL90 Scrambler' is a specific Honda motorcycle from the 1960s, while all catalog candidates either refer to different models (e.g., CT90 Trail 90, TRX90X SporTrax), different displacements (e.g., CL500, CMX1100), or unrelated types (e.g., Cub Scooter, CB350 Cruiser). None of the candidates match the CL90 Scrambler in model designation, displacement, or intended use. The CL90 is a 90cc scrambler with a distinct engine and chassis design not shared by any listed candidate.",
+  "canonical_model_alias": "",
+  "configuration_tokens": [],
+  "brand_aliases": [],
+  "model_aliases": [],
+  "status": "SUCCESS",
+  "prompt_version": "motorcycle-candidate-resolution-v4",
+  "model": "qwen-flash",
+  "make": "Honda",
+  "model_name": "CL90 Scrambler"
+}

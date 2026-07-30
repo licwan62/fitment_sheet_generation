@@ -1,0 +1,18 @@
+{
+  "decision": "MATCH",
+  "selected_candidate": "RF 900R",
+  "confidence": "HIGH",
+  "match_basis": "MARKET_ALIAS",
+  "explanation": "The 'RF900' input refers to the same motorcycle model as the 'RF 900R', with 'R' being a standard market designation for the road version, commonly used in Suzuki's naming. The 'RF 900RS2' is a different variant with additional equipment and a distinct model code, but 'RF 900R' matches the core identity of the RF900.",
+  "canonical_model_alias": "RF 900R",
+  "configuration_tokens": [],
+  "brand_aliases": [],
+  "model_aliases": [
+    "RF 900R"
+  ],
+  "status": "SUCCESS",
+  "prompt_version": "motorcycle-candidate-resolution-v4",
+  "model": "qwen-flash",
+  "make": "Suzuki",
+  "model_name": "RF900"
+}

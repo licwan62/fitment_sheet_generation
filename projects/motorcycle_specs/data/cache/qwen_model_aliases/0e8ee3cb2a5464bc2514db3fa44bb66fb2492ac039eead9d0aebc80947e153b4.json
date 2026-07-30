@@ -1,0 +1,21 @@
+{
+  "decision": "MATCH",
+  "selected_candidate": "Electra Glide Ultra Classic \n\t\tCVO FLHTCU-SE8",
+  "confidence": "HIGH",
+  "match_basis": "SAME_NAME",
+  "explanation": "The input model 'FLHTCUSE8 CVO Ultra Classic Electra Glide' matches the catalog candidate 'Electra Glide Ultra Classic \\n\\t\\tCVO FLHTCU-SE8' in all identity-bearing elements: model code (FLHTCUSE8/FLHTCU-SE8), trim level (CVO), series (Ultra Classic), and name (Electra Glide). The difference in hyphenation and spacing is a known catalog formatting variation. Displacement and year are not specified but are implied to be consistent.",
+  "canonical_model_alias": "Electra Glide Ultra Classic CVO FLHTCU-SE8",
+  "configuration_tokens": [
+    "CVO",
+    "SE8"
+  ],
+  "brand_aliases": [],
+  "model_aliases": [
+    "Electra Glide Ultra Classic CVO FLHTCU-SE8"
+  ],
+  "status": "SUCCESS",
+  "prompt_version": "motorcycle-candidate-resolution-v4",
+  "model": "qwen-flash",
+  "make": "Harley-Davidson",
+  "model_name": "FLHTCUSE8 CVO Ultra Classic Electra Glide"
+}

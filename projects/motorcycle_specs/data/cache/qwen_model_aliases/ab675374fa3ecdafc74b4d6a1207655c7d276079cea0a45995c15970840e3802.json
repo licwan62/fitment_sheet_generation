@@ -1,0 +1,16 @@
+{
+  "decision": "MATCH",
+  "selected_candidate": "T 200 \n\t  Invader",
+  "confidence": "HIGH",
+  "match_basis": "MARKET_ALIAS",
+  "explanation": "The Suzuki T20 is a known market name for the Suzuki T200 Invader, a model produced in the 1970s. The 'T20' input refers to the same underlying motorcycle as the 'T200 Invader' catalog candidate, with 'T20' being a common shorthand or misreference used in some regions and enthusiast circles. The displacement (200cc) and model identity align exactly.",
+  "canonical_model_alias": "T 200 Invader",
+  "configuration_tokens": [],
+  "brand_aliases": [],
+  "model_aliases": [],
+  "status": "SUCCESS",
+  "prompt_version": "motorcycle-candidate-resolution-v4",
+  "model": "qwen-flash",
+  "make": "Suzuki",
+  "model_name": "T20"
+}

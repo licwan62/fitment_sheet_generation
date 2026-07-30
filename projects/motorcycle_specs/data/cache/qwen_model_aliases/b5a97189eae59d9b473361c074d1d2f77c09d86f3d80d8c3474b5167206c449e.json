@@ -1,0 +1,16 @@
+{
+  "decision": "NO_MATCH",
+  "selected_candidate": "",
+  "confidence": "HIGH",
+  "match_basis": "NONE",
+  "explanation": "The input 'UR110 Let's' is not a known Suzuki motorcycle model, and none of the catalog candidates match its identity. The candidates are unrelated models, including different displacements, configurations, and product lines (e.g., GSX 1100, Address 110, Burgman). No evidence supports that 'UR110 Let's' refers to any of these models as a market name, historical alias, abbreviation, or typo.",
+  "canonical_model_alias": "",
+  "configuration_tokens": [],
+  "brand_aliases": [],
+  "model_aliases": [],
+  "status": "SUCCESS",
+  "prompt_version": "motorcycle-candidate-resolution-v4",
+  "model": "qwen-flash",
+  "make": "Suzuki",
+  "model_name": "UR110 Let's"
+}

@@ -1,0 +1,16 @@
+{
+  "decision": "NO_MATCH",
+  "selected_candidate": "",
+  "confidence": "HIGH",
+  "match_basis": "NONE",
+  "explanation": "HUV 4421 D is not a valid model identifier for any Husqvarna motorcycle in the catalog candidates. The candidates all reference the 401 displacement, but HUV 4421 D does not match any known Husqvarna model name, market variant, or configuration. No plausible alias, typo, or historical name correspondence exists between HUV 4421 D and any listed candidate.",
+  "canonical_model_alias": "",
+  "configuration_tokens": [],
+  "brand_aliases": [],
+  "model_aliases": [],
+  "status": "SUCCESS",
+  "prompt_version": "motorcycle-candidate-resolution-v4",
+  "model": "qwen-flash",
+  "make": "Husqvarna",
+  "model_name": "HUV 4421 D"
+}

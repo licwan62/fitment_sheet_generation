@@ -1,0 +1,17 @@
+{
+  "decision": "MATCH",
+  "selected_candidate": "CMX 500 Rebel",
+  "canonical_model_alias": "CMX 500 Rebel",
+  "configuration_tokens": [
+    "ABS"
+  ],
+  "brand_aliases": [],
+  "model_aliases": [
+    "CMX 500 Rebel"
+  ],
+  "status": "SUCCESS",
+  "prompt_version": "motorcycle-candidate-resolution-v3",
+  "model": "qwen-flash",
+  "make": "Honda",
+  "model_name": "CMX500 Rebel 500 ABS"
+}

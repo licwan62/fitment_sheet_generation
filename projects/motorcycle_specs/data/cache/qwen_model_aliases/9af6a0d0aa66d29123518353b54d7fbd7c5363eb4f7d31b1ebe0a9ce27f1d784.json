@@ -1,0 +1,20 @@
+{
+  "decision": "MATCH",
+  "selected_candidate": "Honda CGL 125",
+  "confidence": "HIGH",
+  "match_basis": "MARKET_ALIAS",
+  "explanation": "CGL125 TOOL is a market-specific configuration or variant label for the Honda CGL 125, commonly used in certain regions. The 'TOOL' suffix denotes a utility or commercial variant, but the core model remains the Honda CGL 125. This is a known regional/functional designation for the same underlying motorcycle.",
+  "canonical_model_alias": "CGL 125",
+  "configuration_tokens": [
+    "TOOL"
+  ],
+  "brand_aliases": [],
+  "model_aliases": [
+    "CGL 125"
+  ],
+  "status": "SUCCESS",
+  "prompt_version": "motorcycle-candidate-resolution-v4",
+  "model": "qwen-flash",
+  "make": "Honda",
+  "model_name": "CGL125 TOOL"
+}

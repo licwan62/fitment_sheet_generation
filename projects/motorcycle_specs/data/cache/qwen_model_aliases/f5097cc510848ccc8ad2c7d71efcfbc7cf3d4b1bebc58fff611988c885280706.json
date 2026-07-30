@@ -1,0 +1,16 @@
+{
+  "decision": "NO_MATCH",
+  "selected_candidate": "",
+  "confidence": "HIGH",
+  "match_basis": "NONE",
+  "explanation": "The model '125 RR X-Pro' is a specific configuration of Beta's 125 RR series with an 'X-Pro' designation, which denotes a high-performance or specialized variant. The catalog candidates 'RR 125 Enduro' and 'RR 125 Motard' are distinct model variants with different intended uses (enduro vs. motard), and neither matches the 'X-Pro' configuration. There is no evidence that 'X-Pro' is a known market name, abbreviation, or typo for either candidate. Therefore, the models are not the same underlying motorcycle.",
+  "canonical_model_alias": "",
+  "configuration_tokens": [],
+  "brand_aliases": [],
+  "model_aliases": [],
+  "status": "SUCCESS",
+  "prompt_version": "motorcycle-candidate-resolution-v4",
+  "model": "qwen-flash",
+  "make": "Beta",
+  "model_name": "125 RR X-Pro"
+}

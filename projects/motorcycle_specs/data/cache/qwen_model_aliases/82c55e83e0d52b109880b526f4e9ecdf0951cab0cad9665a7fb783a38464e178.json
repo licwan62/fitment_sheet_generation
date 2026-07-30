@@ -1,0 +1,20 @@
+{
+  "decision": "MATCH",
+  "selected_candidate": "RR 450 Enduro",
+  "confidence": "HIGH",
+  "match_basis": "MARKET_ALIAS",
+  "explanation": "The '450 RR-Race Edition' is a race-oriented variant of the Beta RR 450 Enduro, with 'Race Edition' being a market-specific configuration label. The core model identity (RR 450 Enduro) matches exactly.",
+  "canonical_model_alias": "RR 450 Enduro",
+  "configuration_tokens": [
+    "Race Edition"
+  ],
+  "brand_aliases": [],
+  "model_aliases": [
+    "RR 450 Enduro"
+  ],
+  "status": "SUCCESS",
+  "prompt_version": "motorcycle-candidate-resolution-v4",
+  "model": "qwen-flash",
+  "make": "Beta",
+  "model_name": "450 RR-Race Edition"
+}

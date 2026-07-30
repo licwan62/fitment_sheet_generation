@@ -1,0 +1,16 @@
+{
+  "decision": "MATCH",
+  "selected_candidate": "RR 430 4T Enduro",
+  "confidence": "HIGH",
+  "match_basis": "SAME_NAME",
+  "explanation": "The input '430 RR' and the candidate 'RR 430 4T Enduro' refer to the same Beta motorcycle model, with only the order of identifiers differing. The displacement (430), engine type (4T), and intended use (Enduro) align exactly, and 'RR' is a known performance designation used by Beta for this model. No configuration or market-specific differences alter the core identity.",
+  "canonical_model_alias": "RR 430 4T Enduro",
+  "configuration_tokens": [],
+  "brand_aliases": [],
+  "model_aliases": [],
+  "status": "SUCCESS",
+  "prompt_version": "motorcycle-candidate-resolution-v4",
+  "model": "qwen-flash",
+  "make": "Beta",
+  "model_name": "430 RR"
+}

@@ -1,0 +1,16 @@
+{
+  "decision": "NO_MATCH",
+  "selected_candidate": "",
+  "confidence": "HIGH",
+  "match_basis": "NONE",
+  "explanation": "The input model 'TS50' is a 50cc motorcycle, while the catalog candidates 'TS 250' and 'TS 250X' are 250cc models. The displacement difference confirms they are distinct motorcycles, even if both share the 'TS' prefix. No known market name, abbreviation, or typo links TS50 to TS250 or TS250X.",
+  "canonical_model_alias": "",
+  "configuration_tokens": [],
+  "brand_aliases": [],
+  "model_aliases": [],
+  "status": "SUCCESS",
+  "prompt_version": "motorcycle-candidate-resolution-v4",
+  "model": "qwen-flash",
+  "make": "Suzuki",
+  "model_name": "TS50"
+}

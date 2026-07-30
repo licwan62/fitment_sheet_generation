@@ -1,0 +1,16 @@
+{
+  "decision": "NO_MATCH",
+  "selected_candidate": "",
+  "confidence": "HIGH",
+  "match_basis": "NONE",
+  "explanation": "The input model 'XL75' has a displacement of 75cc, but all catalog candidates are significantly different in displacement (e.g., XL 350, XL 175, NX500) or are entirely different models (e.g., XLV 750 R). No candidate matches the 75cc displacement or the XL75 designation. The name 'XL75' does not correspond to any known Honda model in the provided list.",
+  "canonical_model_alias": "",
+  "configuration_tokens": [],
+  "brand_aliases": [],
+  "model_aliases": [],
+  "status": "SUCCESS",
+  "prompt_version": "motorcycle-candidate-resolution-v4",
+  "model": "qwen-flash",
+  "make": "Honda",
+  "model_name": "XL75"
+}

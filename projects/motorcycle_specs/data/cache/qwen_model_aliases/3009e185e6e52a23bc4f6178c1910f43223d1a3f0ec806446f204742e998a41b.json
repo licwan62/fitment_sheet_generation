@@ -1,0 +1,18 @@
+{
+  "decision": "MATCH",
+  "selected_candidate": "CB 400T \n\t\tHawk",
+  "confidence": "HIGH",
+  "match_basis": "SAME_NAME",
+  "explanation": "The input 'CB400TI Hawk I' refers to the same motorcycle model as 'CB 400T Hawk', with 'TI' being a plausible typo or variant spelling of 'T' in this context. The core model identity (CB 400T) and the 'Hawk' name are consistent across both, and no displacement or significant configuration difference exists. The 'I' suffix is likely a misinterpretation or stylization of the model designation.",
+  "canonical_model_alias": "CB 400T \n\t\tHawk",
+  "configuration_tokens": [],
+  "brand_aliases": [],
+  "model_aliases": [
+    "CB 400T Hawk"
+  ],
+  "status": "SUCCESS",
+  "prompt_version": "motorcycle-candidate-resolution-v4",
+  "model": "qwen-flash",
+  "make": "Honda",
+  "model_name": "CB400TI Hawk I"
+}

@@ -1,0 +1,22 @@
+{
+  "decision": "MATCH",
+  "selected_candidate": "gasgas txt 280 pro racing",
+  "confidence": "HIGH",
+  "match_basis": "SAME_NAME",
+  "explanation": "The input 'TXT Pro 280 Racing' is a direct match in meaning and structure to the catalog candidate 'gasgas txt 280 pro racing', with only minor casing and spacing differences. The model name, displacement (280), and configuration (Pro Racing) are identical.",
+  "canonical_model_alias": "txt 280 pro racing",
+  "configuration_tokens": [
+    "pro",
+    "racing"
+  ],
+  "brand_aliases": [],
+  "model_aliases": [
+    "gasgas txt 280 pro racing",
+    "txt 280 pro racing"
+  ],
+  "status": "SUCCESS",
+  "prompt_version": "motorcycle-candidate-resolution-v4",
+  "model": "qwen-flash",
+  "make": "Gas Gas",
+  "model_name": "TXT Pro 280 Racing"
+}

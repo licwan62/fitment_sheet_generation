@@ -1,0 +1,12 @@
+{
+  "status": "API_ERROR",
+  "prompt_version": "motorcycle-candidate-resolution-v3",
+  "model": "qwen-flash",
+  "make": "Honda",
+  "model_name": "600",
+  "candidate_titles": [
+    "CBF 600N",
+    "XL 600R"
+  ],
+  "error_type": "HTTPStatusError"
+}

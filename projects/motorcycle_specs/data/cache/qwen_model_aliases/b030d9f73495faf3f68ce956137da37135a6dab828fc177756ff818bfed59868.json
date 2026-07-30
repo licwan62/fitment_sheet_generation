@@ -1,0 +1,20 @@
+{
+  "decision": "MATCH",
+  "selected_candidate": "DR-Z 400E",
+  "confidence": "HIGH",
+  "match_basis": "SAME_NAME",
+  "explanation": "The input 'DR-Z400' matches the catalog candidate 'DR-Z 400E' as the same underlying motorcycle model, with 'E' being a known market or configuration suffix for the 400cc version. The core model identity (DR-Z 400) is identical.",
+  "canonical_model_alias": "DR-Z 400E",
+  "configuration_tokens": [
+    "E"
+  ],
+  "brand_aliases": [],
+  "model_aliases": [
+    "DR-Z 400E"
+  ],
+  "status": "SUCCESS",
+  "prompt_version": "motorcycle-candidate-resolution-v4",
+  "model": "qwen-flash",
+  "make": "Suzuki",
+  "model_name": "DR-Z400"
+}

@@ -1,0 +1,16 @@
+{
+  "decision": "NO_MATCH",
+  "selected_candidate": "",
+  "confidence": "HIGH",
+  "match_basis": "NONE",
+  "explanation": "The input model 'R1200C Stiletto' is a distinct BMW motorcycle with a unique design and platform, differing from the candidates which are variants of the R 1200ST, R 1200RT, and R 1200CL. The 'Stiletto' name is not a known market or configuration alias for any of the listed models, and no candidate shares the same underlying model identity.",
+  "canonical_model_alias": "",
+  "configuration_tokens": [],
+  "brand_aliases": [],
+  "model_aliases": [],
+  "status": "SUCCESS",
+  "prompt_version": "motorcycle-candidate-resolution-v4",
+  "model": "qwen-flash",
+  "make": "BMW",
+  "model_name": "R1200C Stiletto"
+}

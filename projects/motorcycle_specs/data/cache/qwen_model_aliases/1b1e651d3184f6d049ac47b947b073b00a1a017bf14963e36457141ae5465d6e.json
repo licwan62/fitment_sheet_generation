@@ -1,0 +1,13 @@
+{
+  "decision": "MATCH",
+  "selected_candidate": "R 12GS",
+  "canonical_model_alias": "R 12 GS",
+  "configuration_tokens": [],
+  "brand_aliases": [],
+  "model_aliases": [],
+  "status": "SUCCESS",
+  "prompt_version": "motorcycle-candidate-resolution-v3",
+  "model": "qwen-flash",
+  "make": "BMW",
+  "model_name": "R 12 G/S"
+}

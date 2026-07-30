@@ -1,0 +1,18 @@
+{
+  "decision": "MATCH",
+  "selected_candidate": "CT 70 Dax",
+  "confidence": "HIGH",
+  "match_basis": "MARKET_ALIAS",
+  "explanation": "The CT70 is a well-known Honda model, and 'CT 70 Dax' is a recognized market-specific name used in Europe and other regions for the same motorcycle. The 'Dax' name was a marketing alias for the CT70 in certain markets, particularly in the UK and continental Europe, making it a direct identity match despite the name variation.",
+  "canonical_model_alias": "CT 70 Dax",
+  "configuration_tokens": [],
+  "brand_aliases": [],
+  "model_aliases": [
+    "CT 70 Dax"
+  ],
+  "status": "SUCCESS",
+  "prompt_version": "motorcycle-candidate-resolution-v4",
+  "model": "qwen-flash",
+  "make": "Honda",
+  "model_name": "CT70"
+}

@@ -1,0 +1,18 @@
+{
+  "decision": "MATCH",
+  "selected_candidate": "buell lightning xb 12 s",
+  "confidence": "HIGH",
+  "match_basis": "SAME_NAME",
+  "explanation": "The input 'S1 Lightning' is a known market or configuration designation for the Buell Lightning XB12S, which is identical to the catalog candidate 'buell lightning xb 12 s'. The 'S1' suffix aligns with the 'S' model designation in the official name.",
+  "canonical_model_alias": "lightning xb 12 s",
+  "configuration_tokens": [
+    "s"
+  ],
+  "brand_aliases": [],
+  "model_aliases": [],
+  "status": "SUCCESS",
+  "prompt_version": "motorcycle-candidate-resolution-v4",
+  "model": "qwen-flash",
+  "make": "Buell",
+  "model_name": "S1 Lightning"
+}

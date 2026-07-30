@@ -1,0 +1,20 @@
+{
+  "decision": "MATCH",
+  "selected_candidate": "Electra Glide Ultra Classic \n\t\tScreamin' Eagle FLHTCU-SE2",
+  "confidence": "HIGH",
+  "match_basis": "SAME_NAME",
+  "explanation": "The input 'FLHTCSE2 Screamin Eagle Electra Glide 2' and the candidate 'Electra Glide Ultra Classic Screamin' Eagle FLHTCU-SE2' refer to the same underlying motorcycle model, with minor variations in naming convention and spacing. The model code FLHTCU-SE2 is consistent across both, confirming identical identity. The term 'Screamin Eagle Electra Glide 2' is a known market or configuration label for this model, and 'Ultra Classic' is the correct model designation. No displacement or engine differences exist.",
+  "canonical_model_alias": "Electra Glide Ultra Classic Screamin' Eagle FLHTCU-SE2",
+  "configuration_tokens": [
+    "SE2"
+  ],
+  "brand_aliases": [],
+  "model_aliases": [
+    "Electra Glide Ultra Classic Screamin' Eagle FLHTCU-SE2"
+  ],
+  "status": "SUCCESS",
+  "prompt_version": "motorcycle-candidate-resolution-v4",
+  "model": "qwen-flash",
+  "make": "Harley-Davidson",
+  "model_name": "FLHTCSE2 Screamin Eagle Electra Glide 2"
+}

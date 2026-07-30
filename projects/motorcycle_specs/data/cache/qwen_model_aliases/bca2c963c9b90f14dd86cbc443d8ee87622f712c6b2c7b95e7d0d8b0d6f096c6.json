@@ -1,0 +1,20 @@
+{
+  "decision": "MATCH",
+  "selected_candidate": "CBR 650F",
+  "confidence": "HIGH",
+  "match_basis": "SAME_NAME",
+  "explanation": "The input 'CBR650F ABS' and the candidate 'CBR 650F' refer to the same underlying motorcycle model. The presence of 'ABS' in the input is a configuration feature (braking system), not a model identifier. The spacing and capitalization differences are negligible. The displacement (650F) and model series (CBR) match exactly.",
+  "canonical_model_alias": "CBR 650F",
+  "configuration_tokens": [
+    "ABS"
+  ],
+  "brand_aliases": [],
+  "model_aliases": [
+    "CBR 650F"
+  ],
+  "status": "SUCCESS",
+  "prompt_version": "motorcycle-candidate-resolution-v4",
+  "model": "qwen-flash",
+  "make": "Honda",
+  "model_name": "CBR650F ABS"
+}

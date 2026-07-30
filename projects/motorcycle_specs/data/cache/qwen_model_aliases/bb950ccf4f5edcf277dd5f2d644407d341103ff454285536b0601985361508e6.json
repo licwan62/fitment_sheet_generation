@@ -1,0 +1,19 @@
+{
+  "decision": "NO_MATCH",
+  "selected_candidate": "",
+  "confidence": "HIGH",
+  "match_basis": "NONE",
+  "explanation": "The input model 'DL650A V-Strom XT ABS' includes 'XT' and 'ABS' configuration details not present in any of the catalog candidates. The candidates are either base models ('DL 650 V-Strom') or variants without the 'XT' designation or ABS, indicating distinct configurations. No candidate matches the full specification including both 'XT' and 'ABS'.",
+  "canonical_model_alias": "",
+  "configuration_tokens": [
+    "XT",
+    "ABS"
+  ],
+  "brand_aliases": [],
+  "model_aliases": [],
+  "status": "SUCCESS",
+  "prompt_version": "motorcycle-candidate-resolution-v4",
+  "model": "qwen-flash",
+  "make": "Suzuki",
+  "model_name": "DL650A V-Strom XT ABS"
+}

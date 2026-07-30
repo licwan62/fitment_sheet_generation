@@ -1,0 +1,19 @@
+{
+  "decision": "MATCH",
+  "selected_candidate": "beta rr 450 racing 4t",
+  "confidence": "HIGH",
+  "match_basis": "MARKET_ALIAS",
+  "explanation": "The '450 RR-Race Edition' is a market-specific naming for the same model as 'beta rr 450 racing 4t', which is the official catalog title for the race-oriented version of the RR 450. The term 'Race Edition' aligns with 'racing 4t' as a performance configuration, and both share identical displacement, engine type (4T), and intended use.",
+  "canonical_model_alias": "rr 450 racing 4t",
+  "configuration_tokens": [
+    "racing",
+    "4t"
+  ],
+  "brand_aliases": [],
+  "model_aliases": [],
+  "status": "SUCCESS",
+  "prompt_version": "motorcycle-candidate-resolution-v4",
+  "model": "qwen-flash",
+  "make": "Beta",
+  "model_name": "450 RR-Race Edition"
+}

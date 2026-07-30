@@ -1,0 +1,18 @@
+{
+  "decision": "MATCH",
+  "selected_candidate": "CBR 900RR Fireblade (CBR 929RR)",
+  "confidence": "HIGH",
+  "match_basis": "MARKET_ALIAS",
+  "explanation": "The CBR929RR is a market-specific designation for the CBR 900RR Fireblade, with '929' referring to the engine displacement (approximately 929cc) used in certain markets, particularly in Japan and Europe. The model is identical across these designations.",
+  "canonical_model_alias": "CBR 900RR Fireblade",
+  "configuration_tokens": [
+    "CBR 929RR"
+  ],
+  "brand_aliases": [],
+  "model_aliases": [],
+  "status": "SUCCESS",
+  "prompt_version": "motorcycle-candidate-resolution-v4",
+  "model": "qwen-flash",
+  "make": "Honda",
+  "model_name": "CBR929RR"
+}

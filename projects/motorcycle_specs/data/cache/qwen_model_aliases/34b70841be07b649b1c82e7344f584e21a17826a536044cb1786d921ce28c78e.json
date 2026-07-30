@@ -1,0 +1,18 @@
+{
+  "decision": "MATCH",
+  "selected_candidate": "bigdog mastiff",
+  "confidence": "HIGH",
+  "match_basis": "SAME_NAME",
+  "explanation": "The input model 'Mastiff' exactly matches the catalog candidate 'bigdog mastiff' in name and identity, with no variation in displacement, configuration, or market-specific suffixes. It is the correct and canonical model.",
+  "canonical_model_alias": "mastiff",
+  "configuration_tokens": [],
+  "brand_aliases": [],
+  "model_aliases": [
+    "bigdog mastiff"
+  ],
+  "status": "SUCCESS",
+  "prompt_version": "motorcycle-candidate-resolution-v4",
+  "model": "qwen-flash",
+  "make": "Big Dog",
+  "model_name": "Mastiff"
+}

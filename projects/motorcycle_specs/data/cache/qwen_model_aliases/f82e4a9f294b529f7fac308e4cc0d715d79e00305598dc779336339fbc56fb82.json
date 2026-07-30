@@ -1,0 +1,19 @@
+{
+  "decision": "MATCH",
+  "selected_candidate": "beta rr 390 4t racing",
+  "confidence": "HIGH",
+  "match_basis": "SAME_NAME",
+  "explanation": "The input '390 RR-Race Edition' refers to the same motorcycle model as 'beta rr 390 4t racing', with 'RR-Race Edition' being a marketing name for the race-oriented version of the 390 RR, and '4t racing' in the candidate confirms the same 4-stroke racing configuration. The displacement (390), model (RR), and racing focus align exactly.",
+  "canonical_model_alias": "beta rr 390 4t racing",
+  "configuration_tokens": [
+    "4t",
+    "racing"
+  ],
+  "brand_aliases": [],
+  "model_aliases": [],
+  "status": "SUCCESS",
+  "prompt_version": "motorcycle-candidate-resolution-v4",
+  "model": "qwen-flash",
+  "make": "Beta",
+  "model_name": "390 RR-Race Edition"
+}

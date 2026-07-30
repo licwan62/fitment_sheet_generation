@@ -1,0 +1,15 @@
+{
+  "decision": "MATCH",
+  "selected_candidate": "CBX 250RS",
+  "canonical_model_alias": "CBX 250RS",
+  "configuration_tokens": [],
+  "brand_aliases": [],
+  "model_aliases": [
+    "CBX 250RS"
+  ],
+  "status": "SUCCESS",
+  "prompt_version": "motorcycle-candidate-resolution-v3",
+  "model": "qwen-flash",
+  "make": "Honda",
+  "model_name": "CBX250"
+}

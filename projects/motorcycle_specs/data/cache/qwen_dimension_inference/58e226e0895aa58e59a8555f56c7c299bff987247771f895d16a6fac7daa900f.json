@@ -1,0 +1,16 @@
+{
+  "decision": "UNKNOWN",
+  "confidence": "LOW",
+  "length_mm": null,
+  "width_mm": null,
+  "height_mm": null,
+  "wheelbase_mm": null,
+  "seat_height_mm": null,
+  "ground_clearance_mm": null,
+  "explanation": "The Big Dog Vintage Sport model is not well-documented in public sources, and its dimensions vary significantly across years and markets. Without a specific model year or reliable catalog reference, accurate dimension estimation cannot be confidently made.",
+  "status": "SUCCESS",
+  "prompt_version": "motorcycle-dimension-inference-v1",
+  "model": "qwen-flash",
+  "make": "Big Dog",
+  "model_name": "Vintage Sport"
+}

@@ -1,0 +1,16 @@
+{
+  "decision": "NO_MATCH",
+  "selected_candidate": "",
+  "confidence": "HIGH",
+  "match_basis": "NONE",
+  "explanation": "The input 'VL' does not correspond to any of the catalog candidates as a valid model identifier. The Harley-Davidson EL is a different model, and 'Model VL' is not a recognized official model name in Harley-Davidson's catalog. CVO models are distinct configurations, and Livewire ELW is an electric model unrelated to VL. No candidate matches the VL designation in identity or known market/typo variants.",
+  "canonical_model_alias": "",
+  "configuration_tokens": [],
+  "brand_aliases": [],
+  "model_aliases": [],
+  "status": "SUCCESS",
+  "prompt_version": "motorcycle-candidate-resolution-v4",
+  "model": "qwen-flash",
+  "make": "Harley-Davidson",
+  "model_name": "VL"
+}

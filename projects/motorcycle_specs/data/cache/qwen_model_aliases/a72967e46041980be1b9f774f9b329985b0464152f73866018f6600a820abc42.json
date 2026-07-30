@@ -1,0 +1,16 @@
+{
+  "decision": "NO_MATCH",
+  "selected_candidate": "",
+  "confidence": "HIGH",
+  "match_basis": "NONE",
+  "explanation": "The model 'Miss Behavin V111 EFI' is not found in the catalog candidates, and no known market name, historical alias, abbreviation, or plausible typo matches it to any candidate. The manufacturer Big Bear Choppers is associated with custom motorcycles, but this specific model does not correspond to any listed catalog entry.",
+  "canonical_model_alias": "",
+  "configuration_tokens": [],
+  "brand_aliases": [],
+  "model_aliases": [],
+  "status": "SUCCESS",
+  "prompt_version": "motorcycle-candidate-resolution-v4",
+  "model": "qwen-flash",
+  "make": "Big Bear Choppers",
+  "model_name": "Miss Behavin V111 EFI"
+}

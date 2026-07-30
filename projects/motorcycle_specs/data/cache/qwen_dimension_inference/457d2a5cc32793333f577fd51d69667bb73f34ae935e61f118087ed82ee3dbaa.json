@@ -1,0 +1,16 @@
+{
+  "decision": "INFER|UNKNOWN",
+  "confidence": "LOW",
+  "length_mm": null,
+  "width_mm": null,
+  "height_mm": null,
+  "wheelbase_mm": null,
+  "seat_height_mm": null,
+  "ground_clearance_mm": null,
+  "explanation": "The Big Dog Wolf model's dimensions are not consistently documented across sources, and variations by year or market configuration may exist. Without access to a specific catalog page or verified technical data for the exact model year and variant, reliable inference cannot be made with confidence. Dimensions from similar models are not applicable due to potential design differences.",
+  "status": "SUCCESS",
+  "prompt_version": "motorcycle-dimension-inference-v1",
+  "model": "qwen-flash",
+  "make": "Big Dog",
+  "model_name": "Wolf"
+}

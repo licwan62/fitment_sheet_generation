@@ -1,0 +1,18 @@
+{
+  "decision": "MATCH",
+  "selected_candidate": "GL 1100 Gold Wing Interstate",
+  "confidence": "HIGH",
+  "match_basis": "SAME_NAME",
+  "explanation": "The input 'GL1100I Gold Wing Interstate' is a direct match in model identity to the catalog candidate 'GL 1100 Gold Wing Interstate', with 'I' being a common market or configuration designation for 'Interstate' and the displacement and model name aligning exactly. The absence of 'Honda' in the input does not affect model identity, as the model is unambiguously identified by the GL1100I designation.",
+  "canonical_model_alias": "GL 1100 Gold Wing Interstate",
+  "configuration_tokens": [],
+  "brand_aliases": [],
+  "model_aliases": [
+    "GL 1100 Gold Wing Interstate"
+  ],
+  "status": "SUCCESS",
+  "prompt_version": "motorcycle-candidate-resolution-v4",
+  "model": "qwen-flash",
+  "make": "Honda",
+  "model_name": "GL1100I Gold Wing Interstate"
+}

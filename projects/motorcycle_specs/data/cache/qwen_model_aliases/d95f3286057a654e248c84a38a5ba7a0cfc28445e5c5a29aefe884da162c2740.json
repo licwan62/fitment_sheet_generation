@@ -1,0 +1,16 @@
+{
+  "decision": "NO_MATCH",
+  "selected_candidate": "",
+  "confidence": "HIGH",
+  "match_basis": "NONE",
+  "explanation": "The input model 'TS50' is a small-displacement motorcycle, but none of the catalog candidates match its exact identity. 'Suzuki TS50ER' is a distinct model with a different designation and configuration. The other candidates ('TR 50 SD', 'TR 50 SX') are from a different model line (TR series), and 'TS 250' has a different displacement. No known market name, abbreviation, or typo links 'TS50' to any of these candidates.",
+  "canonical_model_alias": "",
+  "configuration_tokens": [],
+  "brand_aliases": [],
+  "model_aliases": [],
+  "status": "SUCCESS",
+  "prompt_version": "motorcycle-candidate-resolution-v4",
+  "model": "qwen-flash",
+  "make": "Suzuki",
+  "model_name": "TS50"
+}

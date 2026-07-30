@@ -1,0 +1,16 @@
+{
+  "decision": "MATCH",
+  "selected_candidate": "husaberg fe 450 e",
+  "confidence": "HIGH",
+  "match_basis": "MARKET_ALIAS",
+  "explanation": "The input 'FC470E' is a variant of the Husaberg FE 450 E, with 'FC' likely being a regional or internal designation and '470' a typo or misreading of '450'. The 'E' suffix aligns with the Enduro model designation. The FE 450 E is the correct model in the catalog list.",
+  "canonical_model_alias": "fe 450 e",
+  "configuration_tokens": [],
+  "brand_aliases": [],
+  "model_aliases": [],
+  "status": "SUCCESS",
+  "prompt_version": "motorcycle-candidate-resolution-v4",
+  "model": "qwen-flash",
+  "make": "Husaberg",
+  "model_name": "FC470E"
+}

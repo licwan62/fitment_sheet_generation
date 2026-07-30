@@ -1,0 +1,20 @@
+{
+  "decision": "MATCH",
+  "selected_candidate": "DR 250S",
+  "confidence": "HIGH",
+  "match_basis": "MARKET_ALIAS",
+  "explanation": "The DR250SE is a variant of the DR 250S, with 'SE' denoting a specific market or configuration (e.g., 'Special Edition' or 'European' version), but it refers to the same underlying model. The DR 250SH is a different model (with 'H' suffix indicating a distinct configuration). The Suzuki DR 250 S is a direct match in name and identity.",
+  "canonical_model_alias": "DR 250S",
+  "configuration_tokens": [
+    "SE"
+  ],
+  "brand_aliases": [],
+  "model_aliases": [
+    "DR 250S"
+  ],
+  "status": "SUCCESS",
+  "prompt_version": "motorcycle-candidate-resolution-v4",
+  "model": "qwen-flash",
+  "make": "Suzuki",
+  "model_name": "DR250SE"
+}

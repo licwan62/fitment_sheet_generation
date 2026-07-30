@@ -1,0 +1,18 @@
+{
+  "decision": "MATCH",
+  "selected_candidate": "Honda Montesa Cota 4RT 260",
+  "confidence": "HIGH",
+  "match_basis": "MARKET_ALIAS",
+  "explanation": "The input 'MRT260 Montesa Cota 4RT260' refers to the Honda-powered Montesa Cota 4RT 260, a model produced under the Montesa brand (a Spanish marque acquired by Honda) and marketed in certain regions as a high-performance motocross bike. The name 'MRT260' is a configuration or market-specific designation for the same model. The catalog candidate 'Honda Montesa Cota 4RT 260' correctly identifies this motorcycle with the same displacement and model lineage.",
+  "canonical_model_alias": "Montesa Cota 4RT 260",
+  "configuration_tokens": [],
+  "brand_aliases": [],
+  "model_aliases": [
+    "Montesa Cota 4RT 260"
+  ],
+  "status": "SUCCESS",
+  "prompt_version": "motorcycle-candidate-resolution-v4",
+  "model": "qwen-flash",
+  "make": "Honda",
+  "model_name": "MRT260 Montesa Cota 4RT260"
+}

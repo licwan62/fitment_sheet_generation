@@ -1,0 +1,16 @@
+{
+  "decision": "NO_MATCH",
+  "selected_candidate": "",
+  "confidence": "HIGH",
+  "match_basis": "NONE",
+  "explanation": "The input model 'Trial 327' has a displacement of 327cc, which does not match any of the catalog candidates. The candidates are all 125cc, 250cc, 280cc, or 300cc models, and none are known variants or market aliases of a 327cc Trial model. There is no evidence of a typo, abbreviation, or historical name that would link 'Trial 327' to any of the listed candidates.",
+  "canonical_model_alias": "",
+  "configuration_tokens": [],
+  "brand_aliases": [],
+  "model_aliases": [],
+  "status": "SUCCESS",
+  "prompt_version": "motorcycle-candidate-resolution-v4",
+  "model": "qwen-flash",
+  "make": "Gas Gas",
+  "model_name": "Trial 327"
+}

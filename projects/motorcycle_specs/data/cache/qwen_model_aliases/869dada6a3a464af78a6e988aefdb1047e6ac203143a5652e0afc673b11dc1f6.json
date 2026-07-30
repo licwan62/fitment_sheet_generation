@@ -1,0 +1,16 @@
+{
+  "decision": "MATCH",
+  "selected_candidate": "GL 1800 \n\t\tGold Wing 5 0th Anniversary",
+  "confidence": "HIGH",
+  "match_basis": "TYPO",
+  "explanation": "The input '50th Anniversary' is a typographical variation of '5 0th Anniversary', where the space and digit separation are inconsistent but refer to the same commemorative model. The displacement (GL1800) and model name (Gold Wing) are identical, confirming the same underlying motorcycle.",
+  "canonical_model_alias": "GL 1800 Gold Wing 50th Anniversary",
+  "configuration_tokens": [],
+  "brand_aliases": [],
+  "model_aliases": [],
+  "status": "SUCCESS",
+  "prompt_version": "motorcycle-candidate-resolution-v4",
+  "model": "qwen-flash",
+  "make": "Honda",
+  "model_name": "GL1800 Gold Wing 50th Anniversary"
+}

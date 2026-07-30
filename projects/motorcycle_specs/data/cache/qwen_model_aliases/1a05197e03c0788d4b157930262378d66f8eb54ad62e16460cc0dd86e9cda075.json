@@ -1,0 +1,16 @@
+{
+  "decision": "NO_MATCH",
+  "selected_candidate": "",
+  "confidence": "HIGH",
+  "match_basis": "NONE",
+  "explanation": "The input model 'CB500T Twin DOHC' specifies a specific configuration with a twin-cylinder, DOHC engine and the 'T' designation, which is distinct from both 'CB 500T' (which may refer to a different variant or market-specific version) and 'CB 500F' (a different model with a single-cylinder engine). The 'T' in CB500T typically denotes a touring or dual-purpose variant with a different frame and equipment, while the 'F' in CB500F refers to a standard/factory model. The DOHC specification further confirms this is not a match for the CB500F, which uses a SOHC engine. No evidence supports that either candidate is the same underlying motorcycle.",
+  "canonical_model_alias": "",
+  "configuration_tokens": [],
+  "brand_aliases": [],
+  "model_aliases": [],
+  "status": "SUCCESS",
+  "prompt_version": "motorcycle-candidate-resolution-v4",
+  "model": "qwen-flash",
+  "make": "Honda",
+  "model_name": "CB500T Twin DOHC"
+}

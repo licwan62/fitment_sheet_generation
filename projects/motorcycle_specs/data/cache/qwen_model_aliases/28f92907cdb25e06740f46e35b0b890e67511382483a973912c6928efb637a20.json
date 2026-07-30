@@ -1,0 +1,18 @@
+{
+  "decision": "MATCH",
+  "selected_candidate": "Suzuki JR 50",
+  "confidence": "HIGH",
+  "match_basis": "MARKET_ALIAS",
+  "explanation": "The Suzuki RM50 is a well-known motocross model, and the 'JR 50' is a recognized market-specific name (particularly in Japan) for the same 50cc two-stroke motocross motorcycle. The RM50 and JR 50 refer to the identical underlying model, with 'JR' being a regional or marketing designation.",
+  "canonical_model_alias": "JR 50",
+  "configuration_tokens": [],
+  "brand_aliases": [],
+  "model_aliases": [
+    "JR 50"
+  ],
+  "status": "SUCCESS",
+  "prompt_version": "motorcycle-candidate-resolution-v4",
+  "model": "qwen-flash",
+  "make": "Suzuki",
+  "model_name": "RM50"
+}

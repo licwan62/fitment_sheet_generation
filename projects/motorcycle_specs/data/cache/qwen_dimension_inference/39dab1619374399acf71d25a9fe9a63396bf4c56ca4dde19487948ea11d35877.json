@@ -1,0 +1,16 @@
+{
+  "decision": "INFER|UNKNOWN",
+  "confidence": "MEDIUM|LOW",
+  "length_mm": null,
+  "width_mm": null,
+  "height_mm": null,
+  "wheelbase_mm": null,
+  "seat_height_mm": null,
+  "ground_clearance_mm": null,
+  "explanation": "The Buell S1 White Lightning is a limited-production model with no official catalog dimensions publicly available. Variations in design across production years and markets, combined with lack of verified data sources, prevent confident estimation. Dimensions may differ significantly from other Buell models due to unique styling and engineering choices.",
+  "status": "SUCCESS",
+  "prompt_version": "motorcycle-dimension-inference-v1",
+  "model": "qwen-flash",
+  "make": "Buell",
+  "model_name": "S1 White Lightning"
+}

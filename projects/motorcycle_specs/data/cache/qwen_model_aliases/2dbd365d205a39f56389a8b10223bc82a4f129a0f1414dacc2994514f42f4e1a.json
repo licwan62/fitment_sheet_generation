@@ -1,0 +1,16 @@
+{
+  "decision": "NO_MATCH",
+  "selected_candidate": "",
+  "confidence": "HIGH",
+  "match_basis": "NONE",
+  "explanation": "The input 'VLDD' does not correspond to any known model in the catalog candidates. Harley-Davidson has no model named 'VLDD', and none of the listed candidates match this identifier. The candidates are unrelated models, including V-Rod variants and CVO Street Glide/ Road Glide models, which are distinct from any potential VLDD designation.",
+  "canonical_model_alias": "",
+  "configuration_tokens": [],
+  "brand_aliases": [],
+  "model_aliases": [],
+  "status": "SUCCESS",
+  "prompt_version": "motorcycle-candidate-resolution-v4",
+  "model": "qwen-flash",
+  "make": "Harley-Davidson",
+  "model_name": "VLDD"
+}

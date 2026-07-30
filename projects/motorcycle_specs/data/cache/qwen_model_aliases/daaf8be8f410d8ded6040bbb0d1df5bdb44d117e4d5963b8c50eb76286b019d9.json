@@ -1,0 +1,18 @@
+{
+  "decision": "MATCH",
+  "selected_candidate": "Honda PA50 Camino",
+  "confidence": "HIGH",
+  "match_basis": "MARKET_ALIAS",
+  "explanation": "The Honda PA50 II is a known market variant of the Honda PA50 Camino, with 'II' denoting a later model iteration or version in certain regions. The PA50 Camino is the correct catalog title for this model in the provided list.",
+  "canonical_model_alias": "PA50 Camino",
+  "configuration_tokens": [],
+  "brand_aliases": [],
+  "model_aliases": [
+    "PA50 Camino"
+  ],
+  "status": "SUCCESS",
+  "prompt_version": "motorcycle-candidate-resolution-v4",
+  "model": "qwen-flash",
+  "make": "Honda",
+  "model_name": "PA50 II"
+}

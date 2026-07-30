@@ -1,0 +1,16 @@
+{
+  "decision": "NO_MATCH",
+  "selected_candidate": "",
+  "confidence": "HIGH",
+  "match_basis": "NONE",
+  "explanation": "The input model 'Aprilia SR 160 Race' is a distinct motorcycle with a race-oriented designation and 160cc displacement. None of the catalog candidates match this exact model identity: 'Aprilia sxr160' is a different model (SXR series), 'sr 160 bs6' is a variant with emission compliance but not a race version, and all others are unrelated in displacement, name, or model line. No known market alias, historical name, abbreviation, or typo links any candidate to 'SR 160 Race'.",
+  "canonical_model_alias": "",
+  "configuration_tokens": [],
+  "brand_aliases": [],
+  "model_aliases": [],
+  "status": "SUCCESS",
+  "prompt_version": "motorcycle-candidate-resolution-v4",
+  "model": "qwen-flash",
+  "make": "Aprilia",
+  "model_name": "SR 160 Race"
+}

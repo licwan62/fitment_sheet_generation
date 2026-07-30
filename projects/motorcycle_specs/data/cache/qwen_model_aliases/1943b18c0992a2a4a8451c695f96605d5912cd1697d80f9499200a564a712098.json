@@ -1,0 +1,16 @@
+{
+  "decision": "NO_MATCH",
+  "selected_candidate": "",
+  "confidence": "HIGH",
+  "match_basis": "NONE",
+  "explanation": "The input model 'Metralla 250 GT' is not equivalent to any of the catalog candidates. 'Metralla' is a distinct Bultaco model name, and 'GT' is a configuration suffix not present in any candidate. The candidates include different models such as Sherpa T250, Alpina 250, Matador 250 MK4/MK5, and Frontera 250, none of which are known variants or market names of the Metralla 250 GT. No evidence supports that any candidate refers to the same underlying motorcycle.",
+  "canonical_model_alias": "",
+  "configuration_tokens": [],
+  "brand_aliases": [],
+  "model_aliases": [],
+  "status": "SUCCESS",
+  "prompt_version": "motorcycle-candidate-resolution-v4",
+  "model": "qwen-flash",
+  "make": "Bultaco",
+  "model_name": "Metralla 250 GT"
+}

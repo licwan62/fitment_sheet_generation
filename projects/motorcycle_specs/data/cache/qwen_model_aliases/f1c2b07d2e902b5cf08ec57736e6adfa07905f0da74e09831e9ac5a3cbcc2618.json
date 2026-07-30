@@ -1,0 +1,16 @@
+{
+  "decision": "NO_MATCH",
+  "selected_candidate": "",
+  "confidence": "HIGH",
+  "match_basis": "NONE",
+  "explanation": "The model 'XC125' is not a known variant of any of the listed Husqvarna catalog candidates. The XC series is distinct from TC, CR, TX, SM, Vitpilen, and Svartpilen models, which are different product lines with different purposes (e.g., motocross, enduro, street). No evidence supports that 'XC125' is a market name, abbreviation, or typo for any of the listed models.",
+  "canonical_model_alias": "",
+  "configuration_tokens": [],
+  "brand_aliases": [],
+  "model_aliases": [],
+  "status": "SUCCESS",
+  "prompt_version": "motorcycle-candidate-resolution-v4",
+  "model": "qwen-flash",
+  "make": "Husqvarna",
+  "model_name": "XC125"
+}

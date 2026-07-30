@@ -1,0 +1,16 @@
+{
+  "decision": "MATCH",
+  "selected_candidate": "Honda Montesa Cota 4RT 260",
+  "confidence": "HIGH",
+  "match_basis": "SAME_NAME",
+  "explanation": "The input 'MRT2603E Montesa Cota 4RT260' refers to the same motorcycle model as 'Honda Montesa Cota 4RT 260', with the displacement and model designation matching exactly. The 'MRT2603E' is a manufacturer-specific part or internal code, but the core model identity aligns with the catalog candidate.",
+  "canonical_model_alias": "Montesa Cota 4RT 260",
+  "configuration_tokens": [],
+  "brand_aliases": [],
+  "model_aliases": [],
+  "status": "SUCCESS",
+  "prompt_version": "motorcycle-candidate-resolution-v4",
+  "model": "qwen-flash",
+  "make": "Honda",
+  "model_name": "MRT2603E Montesa Cota 4RT260"
+}

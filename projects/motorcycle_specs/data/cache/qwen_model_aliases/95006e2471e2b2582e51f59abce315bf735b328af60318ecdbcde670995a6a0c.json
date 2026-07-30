@@ -1,0 +1,15 @@
+{
+  "decision": "MATCH",
+  "selected_candidate": "VF \n      1000F",
+  "canonical_model_alias": "VF 1000F Interceptor",
+  "configuration_tokens": [],
+  "brand_aliases": [],
+  "model_aliases": [
+    "VF 1000F"
+  ],
+  "status": "SUCCESS",
+  "prompt_version": "motorcycle-candidate-resolution-v3",
+  "model": "qwen-flash",
+  "make": "Honda",
+  "model_name": "VF1000F Interceptor"
+}

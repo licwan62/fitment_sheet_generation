@@ -1,0 +1,9 @@
+{
+  "status": "API_ERROR",
+  "prompt_version": "motorcycle-candidate-resolution-v3",
+  "model": "qwen-flash",
+  "make": "Honda",
+  "model_name": "CBR500R",
+  "candidate_titles": [],
+  "error_type": "HTTPStatusError"
+}

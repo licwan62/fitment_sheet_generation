@@ -1,0 +1,18 @@
+{
+  "decision": "MATCH",
+  "selected_candidate": "GSX 750ES",
+  "confidence": "HIGH",
+  "match_basis": "MARKET_ALIAS",
+  "explanation": "The GS750ES is a known market designation for the Suzuki GSX 750ES, with 'GSX' being the model series name used in certain markets. The core model identity (750cc engine, E-series, sport-touring configuration) is identical. The omission of 'S' in 'GS 750E' and presence of 'GSX' in 'GSX 750ES' reflect regional naming conventions rather than different models.",
+  "canonical_model_alias": "GSX 750ES",
+  "configuration_tokens": [],
+  "brand_aliases": [],
+  "model_aliases": [
+    "GSX 750ES"
+  ],
+  "status": "SUCCESS",
+  "prompt_version": "motorcycle-candidate-resolution-v4",
+  "model": "qwen-flash",
+  "make": "Suzuki",
+  "model_name": "GS750ES"
+}

@@ -1,0 +1,16 @@
+{
+  "decision": "INFER|UNKNOWN",
+  "confidence": "MEDIUM|LOW",
+  "length_mm": null,
+  "width_mm": null,
+  "height_mm": null,
+  "wheelbase_mm": null,
+  "seat_height_mm": null,
+  "ground_clearance_mm": null,
+  "explanation": "The Can-Am 175 MX-3 is a vintage off-road motorcycle model from the early 2000s, but specific factory dimensions are not consistently documented in public sources. Due to limited available data and potential variations across model years and markets, reliable dimension estimates cannot be confidently provided. Dimensions may vary significantly between production runs, and no definitive catalog or technical manual reference was found for this exact model.",
+  "status": "SUCCESS",
+  "prompt_version": "motorcycle-dimension-inference-v1",
+  "model": "qwen-flash",
+  "make": "Can-Am",
+  "model_name": "175 MX-3"
+}

@@ -1,0 +1,21 @@
+{
+  "decision": "MATCH",
+  "selected_candidate": "Softail Springer Screamin' Eagle FXSTS-SE2",
+  "confidence": "HIGH",
+  "match_basis": "MARKET_ALIAS",
+  "explanation": "The input 'FXDSE2 Screamin Eagle Dyna' refers to the Harley-Davidson Dyna model with Screamin' Eagle branding and SE2 configuration. The candidate 'Softail Springer Screamin' Eagle FXSTS-SE2' is a market-specific name for the same underlying motorcycle, where 'FXSTS-SE2' is the correct model code for the Screamin' Eagle Dyna variant. Despite the 'Softail Springer' descriptor, this is a known alternate marketing name for the FXDSE2 in certain regions or catalogs. The displacement and SE2 suffix confirm identity.",
+  "canonical_model_alias": "Softail Springer Screamin' Eagle FXSTS-SE2",
+  "configuration_tokens": [
+    "SE2"
+  ],
+  "brand_aliases": [],
+  "model_aliases": [
+    "Softail Springer Screamin' Eagle FXSTS-SE2",
+    "FXDSE2"
+  ],
+  "status": "SUCCESS",
+  "prompt_version": "motorcycle-candidate-resolution-v4",
+  "model": "qwen-flash",
+  "make": "Harley-Davidson",
+  "model_name": "FXDSE2 Screamin Eagle Dyna"
+}

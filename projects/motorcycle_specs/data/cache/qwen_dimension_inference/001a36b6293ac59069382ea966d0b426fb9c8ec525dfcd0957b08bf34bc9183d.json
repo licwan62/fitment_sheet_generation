@@ -1,0 +1,16 @@
+{
+  "decision": "INFER|UNKNOWN",
+  "confidence": "LOW",
+  "length_mm": null,
+  "width_mm": null,
+  "height_mm": null,
+  "wheelbase_mm": null,
+  "seat_height_mm": null,
+  "ground_clearance_mm": null,
+  "explanation": "Model identity uncertain due to limited public data on the 'K1600 Grand America Option 719 Midnight' variant; dimensions may vary by market and year. No reliable catalog or official source available for verification. Inference not feasible with sufficient confidence.",
+  "status": "SUCCESS",
+  "prompt_version": "motorcycle-dimension-inference-v1",
+  "model": "qwen-flash",
+  "make": "BMW",
+  "model_name": "K1600 Grand America Option 719 Midnight"
+}

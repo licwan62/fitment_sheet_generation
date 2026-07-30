@@ -1,0 +1,18 @@
+{
+  "decision": "MATCH",
+  "selected_candidate": "999R Xerox Replica",
+  "confidence": "HIGH",
+  "match_basis": "MARKET_ALIAS",
+  "explanation": "The input '999R Xerox' refers to the limited-edition Ducati 999R Xerox Replica, a special market variant of the 999R. 'Xerox Replica' is the official catalog name for this model, and '999R Xerox' is a commonly used shorthand in enthusiast circles. The core model identity (999R) and the homologation/edition context (Xerox) are preserved.",
+  "canonical_model_alias": "999R Xerox Replica",
+  "configuration_tokens": [],
+  "brand_aliases": [],
+  "model_aliases": [
+    "999R Xerox Replica"
+  ],
+  "status": "SUCCESS",
+  "prompt_version": "motorcycle-candidate-resolution-v4",
+  "model": "qwen-flash",
+  "make": "Ducati",
+  "model_name": "999R Xerox"
+}

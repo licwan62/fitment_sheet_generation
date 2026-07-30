@@ -1,0 +1,18 @@
+{
+  "decision": "MATCH",
+  "selected_candidate": "husqvarna smr 510",
+  "confidence": "HIGH",
+  "match_basis": "MARKET_ALIAS",
+  "explanation": "The 'WMX 510' is a market-specific designation for the Husqvarna SMR 510, used in certain regions to denote the motocross variant. The SMR 510 is the correct model name, with 'WMX' being a regional or marketing label for the same motorcycle.",
+  "canonical_model_alias": "smr 510",
+  "configuration_tokens": [],
+  "brand_aliases": [],
+  "model_aliases": [
+    "smr 510"
+  ],
+  "status": "SUCCESS",
+  "prompt_version": "motorcycle-candidate-resolution-v4",
+  "model": "qwen-flash",
+  "make": "Husqvarna",
+  "model_name": "WMX 510"
+}

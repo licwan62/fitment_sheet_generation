@@ -1,0 +1,16 @@
+{
+  "decision": "INFER",
+  "confidence": "MEDIUM",
+  "length_mm": 1850,
+  "width_mm": 780,
+  "height_mm": 1080,
+  "wheelbase_mm": 1250,
+  "seat_height_mm": 780,
+  "ground_clearance_mm": 300,
+  "explanation": "Inferred from typical dimensions of small off-road motorcycles in the 50cc class, such as the Gas Gas TXT Rookie 50, which shares platform and design language with similar models like the KTM 50 SX. Dimensions are estimated based on standard proportions for youth-oriented motocross bikes with comparable engine size and intended use. No official catalog data available for confirmation.",
+  "status": "SUCCESS",
+  "prompt_version": "motorcycle-dimension-inference-v1",
+  "model": "qwen-flash",
+  "make": "Gas Gas",
+  "model_name": "TXT Rookie 50"
+}

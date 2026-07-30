@@ -1,0 +1,12 @@
+{
+  "status": "API_ERROR",
+  "prompt_version": "motorcycle-candidate-resolution-v3",
+  "model": "qwen-flash",
+  "make": "Honda",
+  "model_name": "GL500I Silver Wing Interstate",
+  "candidate_titles": [
+    "GL 500 Silver \n\t\tWing Interstate",
+    "GL 500 Silver Wing"
+  ],
+  "error_type": "HTTPStatusError"
+}

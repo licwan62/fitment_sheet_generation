@@ -1,0 +1,16 @@
+{
+  "decision": "NO_MATCH",
+  "selected_candidate": "",
+  "confidence": "HIGH",
+  "match_basis": "NONE",
+  "explanation": "The Aprilia Sportcity 250 is not present in the catalog candidates. None of the listed models match the Sportcity 250 in name, displacement, or known market/variant identities. The closest candidates are other Aprilia models with different names and displacements (e.g., 125cc or RS/GPR variants), but none correspond to a 250cc Sportcity model.",
+  "canonical_model_alias": "",
+  "configuration_tokens": [],
+  "brand_aliases": [],
+  "model_aliases": [],
+  "status": "SUCCESS",
+  "prompt_version": "motorcycle-candidate-resolution-v4",
+  "model": "qwen-flash",
+  "make": "Aprilia",
+  "model_name": "Sportcity 250"
+}

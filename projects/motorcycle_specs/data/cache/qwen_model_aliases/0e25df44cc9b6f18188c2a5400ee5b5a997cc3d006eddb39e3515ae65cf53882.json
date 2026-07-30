@@ -1,0 +1,19 @@
+{
+  "decision": "MATCH",
+  "selected_candidate": "Honda VF 1100 S Sabre V65",
+  "confidence": "HIGH",
+  "match_basis": "HISTORICAL_ALIAS",
+  "explanation": "The input 'S65' is a known market shorthand for the Honda VF1100S Sabre V65, a model produced from 1983–1987. The 'S65' designation refers to the engine displacement (650cc) and model line, but in this context, it is historically recognized as a regional or dealer alias for the V65 Sabre. The full catalog title 'Honda VF 1100 S Sabre V65' matches the same underlying motorcycle.",
+  "canonical_model_alias": "VF 1100 S Sabre V65",
+  "configuration_tokens": [],
+  "brand_aliases": [],
+  "model_aliases": [
+    "V65",
+    "Sabre V65"
+  ],
+  "status": "SUCCESS",
+  "prompt_version": "motorcycle-candidate-resolution-v4",
+  "model": "qwen-flash",
+  "make": "Honda",
+  "model_name": "S65"
+}

@@ -1,0 +1,16 @@
+{
+  "decision": "NO_MATCH",
+  "selected_candidate": "",
+  "confidence": "HIGH",
+  "match_basis": "NONE",
+  "explanation": "The input model 'HUV 4210 EXP' does not correspond to any of the catalog candidates. 'HUV 4210 EXP' is not a known Husqvarna motorcycle model, and none of the listed candidates match its displacement (4210 cc), naming convention, or configuration. The candidates are all real Husqvarna models but are unrelated in displacement, model series, or intended use. No plausible alias, typo, abbreviation, or market variant connects 'HUV 4210 EXP' to any candidate.",
+  "canonical_model_alias": "",
+  "configuration_tokens": [],
+  "brand_aliases": [],
+  "model_aliases": [],
+  "status": "SUCCESS",
+  "prompt_version": "motorcycle-candidate-resolution-v4",
+  "model": "qwen-flash",
+  "make": "Husqvarna",
+  "model_name": "HUV 4210 EXP"
+}

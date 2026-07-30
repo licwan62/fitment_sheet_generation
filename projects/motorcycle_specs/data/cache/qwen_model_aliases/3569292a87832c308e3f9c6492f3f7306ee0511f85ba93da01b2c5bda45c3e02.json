@@ -1,0 +1,16 @@
+{
+  "decision": "MATCH",
+  "selected_candidate": "Supersport 950",
+  "confidence": "HIGH",
+  "match_basis": "SAME_NAME",
+  "explanation": "The input 'Super Sport 950' is a direct variant of the catalog candidate 'Supersport 950', differing only in spacing and capitalization. Both refer to the same underlying motorcycle model, with identical displacement (950cc) and model lineage. The name 'Supersport' is the correct official spelling used by Ducati for this model.",
+  "canonical_model_alias": "Supersport 950",
+  "configuration_tokens": [],
+  "brand_aliases": [],
+  "model_aliases": [],
+  "status": "SUCCESS",
+  "prompt_version": "motorcycle-candidate-resolution-v4",
+  "model": "qwen-flash",
+  "make": "Ducati",
+  "model_name": "Super Sport 950"
+}

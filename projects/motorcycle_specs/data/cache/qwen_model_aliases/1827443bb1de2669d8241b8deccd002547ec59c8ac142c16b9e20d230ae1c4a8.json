@@ -1,0 +1,16 @@
+{
+  "decision": "NO_MATCH",
+  "selected_candidate": "",
+  "confidence": "HIGH",
+  "match_basis": "NONE",
+  "explanation": "The input model 'Enducross 50' is a 50cc motorcycle, but none of the catalog candidates are a 50cc model. The candidates include 250cc, 300cc, and 450cc models, which are different displacement variants. No candidate matches the 50cc specification or shares a known market name, abbreviation, or typo for 'Enducross 50'.",
+  "canonical_model_alias": "",
+  "configuration_tokens": [],
+  "brand_aliases": [],
+  "model_aliases": [],
+  "status": "SUCCESS",
+  "prompt_version": "motorcycle-candidate-resolution-v4",
+  "model": "qwen-flash",
+  "make": "Gas Gas",
+  "model_name": "Enducross 50"
+}

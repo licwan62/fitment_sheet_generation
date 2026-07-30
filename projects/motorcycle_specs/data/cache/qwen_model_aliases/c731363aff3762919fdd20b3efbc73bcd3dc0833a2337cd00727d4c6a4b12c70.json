@@ -1,0 +1,20 @@
+{
+  "decision": "MATCH",
+  "selected_candidate": "Honda XR 100 R",
+  "confidence": "HIGH",
+  "match_basis": "MARKET_ALIAS",
+  "explanation": "The input 'XR100' refers to the Honda XR 100, which is a known market name variant of the XR 100 R. The 'R' suffix denotes the model's road-legal configuration, commonly used in certain markets, and is considered a standard designation for this model. The core identity (XR 100) matches exactly with the candidate.",
+  "canonical_model_alias": "XR 100 R",
+  "configuration_tokens": [
+    "R"
+  ],
+  "brand_aliases": [],
+  "model_aliases": [
+    "XR 100 R"
+  ],
+  "status": "SUCCESS",
+  "prompt_version": "motorcycle-candidate-resolution-v4",
+  "model": "qwen-flash",
+  "make": "Honda",
+  "model_name": "XR100"
+}

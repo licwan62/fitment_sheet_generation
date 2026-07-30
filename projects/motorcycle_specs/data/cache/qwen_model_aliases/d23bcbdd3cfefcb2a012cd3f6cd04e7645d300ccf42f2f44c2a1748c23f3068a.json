@@ -1,0 +1,20 @@
+{
+  "decision": "MATCH",
+  "selected_candidate": "Suzuki GSX-S750Z",
+  "confidence": "HIGH",
+  "match_basis": "SAME_NAME",
+  "explanation": "The input model 'GSX-S750Z ABS' and the candidate 'Suzuki GSX-S750Z' refer to the same underlying motorcycle model, with the only difference being the inclusion of 'ABS' in the input, which is a standard feature on this model and not a distinct variant. The displacement (750), platform (GSX-S), and model identifier (Z) are identical.",
+  "canonical_model_alias": "GSX-S750Z",
+  "configuration_tokens": [
+    "ABS"
+  ],
+  "brand_aliases": [],
+  "model_aliases": [
+    "GSX-S750Z"
+  ],
+  "status": "SUCCESS",
+  "prompt_version": "motorcycle-candidate-resolution-v4",
+  "model": "qwen-flash",
+  "make": "Suzuki",
+  "model_name": "GSX-S750Z ABS"
+}

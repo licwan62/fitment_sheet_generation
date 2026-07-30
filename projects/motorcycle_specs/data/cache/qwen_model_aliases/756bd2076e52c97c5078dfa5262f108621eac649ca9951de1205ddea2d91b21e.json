@@ -1,0 +1,16 @@
+{
+  "decision": "NO_MATCH",
+  "selected_candidate": "",
+  "confidence": "HIGH",
+  "match_basis": "NONE",
+  "explanation": "The input model 'GSXR50' refers to a high-performance sport motorcycle in the GSX-R series, but no candidate in the list matches this model. The candidates either have different displacements (e.g., 250, 1000), are unrelated models (e.g., Quadsport Z50, Katana 50), or are from different model lines (e.g., TR 50 SX, Gixxer 250). None of the candidates represent the Suzuki GSX-R50, which is not a real model; the smallest GSX-R model is GSX-R600. Thus, there is no valid match.",
+  "canonical_model_alias": "",
+  "configuration_tokens": [],
+  "brand_aliases": [],
+  "model_aliases": [],
+  "status": "SUCCESS",
+  "prompt_version": "motorcycle-candidate-resolution-v4",
+  "model": "qwen-flash",
+  "make": "Suzuki",
+  "model_name": "GSXR50"
+}

@@ -1,0 +1,20 @@
+{
+  "decision": "MATCH",
+  "selected_candidate": "Suzuki GSX 1100 ES",
+  "confidence": "HIGH",
+  "match_basis": "MARKET_ALIAS",
+  "explanation": "The GS1100ES is a known market designation for the Suzuki GSX 1100 ES, with 'GSX' being the model series name and 'ES' denoting the specific configuration (European specification). The input 'GS1100ES' uses an older naming convention common in North America, while 'GSX 1100 ES' is the standardized catalog title. Both refer to the same motorcycle model.",
+  "canonical_model_alias": "GSX 1100 ES",
+  "configuration_tokens": [
+    "ES"
+  ],
+  "brand_aliases": [],
+  "model_aliases": [
+    "GSX 1100 ES"
+  ],
+  "status": "SUCCESS",
+  "prompt_version": "motorcycle-candidate-resolution-v4",
+  "model": "qwen-flash",
+  "make": "Suzuki",
+  "model_name": "GS1100ES"
+}

@@ -1,0 +1,20 @@
+{
+  "decision": "MATCH",
+  "selected_candidate": "TM 250J Champion MX",
+  "confidence": "HIGH",
+  "match_basis": "MARKET_ALIAS",
+  "explanation": "The input 'TM250' refers to the Suzuki TM250, a motocross model marketed as 'Champion MX' in certain regions. The candidate 'TM 250J Champion MX' is a direct variant with the same underlying model identity, where 'Champion MX' is a market-specific name. The displacement (250) and model series (TM) are identical, confirming the match.",
+  "canonical_model_alias": "TM 250J Champion MX",
+  "configuration_tokens": [
+    "Champion MX"
+  ],
+  "brand_aliases": [],
+  "model_aliases": [
+    "TM 250J Champion MX"
+  ],
+  "status": "SUCCESS",
+  "prompt_version": "motorcycle-candidate-resolution-v4",
+  "model": "qwen-flash",
+  "make": "Suzuki",
+  "model_name": "TM250"
+}

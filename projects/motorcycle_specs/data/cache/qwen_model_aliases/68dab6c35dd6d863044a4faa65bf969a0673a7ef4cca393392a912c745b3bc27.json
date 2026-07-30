@@ -1,0 +1,21 @@
+{
+  "decision": "MATCH",
+  "selected_candidate": "gasgas contact estart 280",
+  "confidence": "HIGH",
+  "match_basis": "MARKET_ALIAS",
+  "explanation": "The 'Contact 280' is a known model name in the Gas Gas lineup, and 'contact estart 280' is a valid catalog variant that includes the electric start feature, which is a common market-specific configuration. The term 'Contact' is consistent across both, and 'estart' is a standard abbreviation for electric start, making this a direct market or configuration variant of the same model.",
+  "canonical_model_alias": "contact estart 280",
+  "configuration_tokens": [
+    "estart"
+  ],
+  "brand_aliases": [],
+  "model_aliases": [
+    "gasgas contact estart 280",
+    "contact estart 280"
+  ],
+  "status": "SUCCESS",
+  "prompt_version": "motorcycle-candidate-resolution-v4",
+  "model": "qwen-flash",
+  "make": "Gas Gas",
+  "model_name": "Contact 280"
+}

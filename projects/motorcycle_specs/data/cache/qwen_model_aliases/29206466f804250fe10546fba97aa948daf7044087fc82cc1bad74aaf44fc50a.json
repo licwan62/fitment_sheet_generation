@@ -1,0 +1,18 @@
+{
+  "decision": "MATCH",
+  "selected_candidate": "beta evo 125 2t my10",
+  "confidence": "HIGH",
+  "match_basis": "SAME_NAME",
+  "explanation": "The input 'EVO 125' matches the core model identity of 'beta evo 125 2t my10', which is a known catalog variant of the same EVO 125 2T model. The 'my10' (model year 2010) is a configuration label, not a different model. All other candidates are distinct models.",
+  "canonical_model_alias": "beta evo 125 2t",
+  "configuration_tokens": [
+    "my10"
+  ],
+  "brand_aliases": [],
+  "model_aliases": [],
+  "status": "SUCCESS",
+  "prompt_version": "motorcycle-candidate-resolution-v4",
+  "model": "qwen-flash",
+  "make": "Beta",
+  "model_name": "EVO 125"
+}

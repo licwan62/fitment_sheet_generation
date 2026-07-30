@@ -1,0 +1,16 @@
+{
+  "decision": "INFER|UNKNOWN",
+  "confidence": "MEDIUM|LOW",
+  "length_mm": null,
+  "width_mm": null,
+  "height_mm": null,
+  "wheelbase_mm": null,
+  "seat_height_mm": null,
+  "ground_clearance_mm": null,
+  "explanation": "The Aprilia SR 160 is a lightweight urban motorcycle with a 160cc engine, but exact dimensions vary across model years and markets. Without access to a specific catalog page or verified technical data for a given variant, precise measurements cannot be reliably determined. Inferred dimensions from similar models may not apply due to design changes or regional variations.",
+  "status": "SUCCESS",
+  "prompt_version": "motorcycle-dimension-inference-v1",
+  "model": "qwen-flash",
+  "make": "Aprilia",
+  "model_name": "SR 160"
+}

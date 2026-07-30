@@ -1,0 +1,20 @@
+{
+  "decision": "MATCH",
+  "selected_candidate": "Honda CB 160",
+  "confidence": "HIGH",
+  "match_basis": "MARKET_ALIAS",
+  "explanation": "The 'CB160F DLX' is a market-specific configuration of the Honda CB 160, with 'DLX' denoting a premium trim level. The 'CB Unicorn 160' is a different model marketed under a distinct name in certain regions, but 'CB160F DLX' aligns with the CB 160 platform and is not the same as the Unicorn variant.",
+  "canonical_model_alias": "CB 160",
+  "configuration_tokens": [
+    "DLX"
+  ],
+  "brand_aliases": [],
+  "model_aliases": [
+    "CB 160"
+  ],
+  "status": "SUCCESS",
+  "prompt_version": "motorcycle-candidate-resolution-v4",
+  "model": "qwen-flash",
+  "make": "Honda",
+  "model_name": "CB160F DLX"
+}

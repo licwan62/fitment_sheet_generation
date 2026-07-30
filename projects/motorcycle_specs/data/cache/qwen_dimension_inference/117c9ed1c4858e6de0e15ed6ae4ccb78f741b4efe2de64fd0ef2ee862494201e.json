@@ -1,0 +1,16 @@
+{
+  "decision": "UNKNOWN",
+  "confidence": "LOW",
+  "length_mm": null,
+  "width_mm": null,
+  "height_mm": null,
+  "wheelbase_mm": null,
+  "seat_height_mm": null,
+  "ground_clearance_mm": null,
+  "explanation": "The ATK 250 LQ model is not well-documented in public sources, and no reliable dimensions are available. The model's identity and specifications may vary significantly by year or market, making accurate inference uncertain. Without verified data or a clear reference, dimensions cannot be reliably estimated.",
+  "status": "SUCCESS",
+  "prompt_version": "motorcycle-dimension-inference-v1",
+  "model": "qwen-flash",
+  "make": "ATK",
+  "model_name": "250 LQ"
+}

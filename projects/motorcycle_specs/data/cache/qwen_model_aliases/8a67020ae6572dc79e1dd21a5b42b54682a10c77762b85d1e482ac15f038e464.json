@@ -1,0 +1,16 @@
+{
+  "decision": "NO_MATCH",
+  "selected_candidate": "",
+  "confidence": "HIGH",
+  "match_basis": "NONE",
+  "explanation": "The model 'GL1500CF Valkyrie Interstate' is not present in the catalog candidates, and no known alias or variant of this specific model exists within the provided list. The GL1500CF Valkyrie Interstate is a distinct Honda model with unique configuration and naming, and without any matching candidate, a match cannot be confirmed.",
+  "canonical_model_alias": "",
+  "configuration_tokens": [],
+  "brand_aliases": [],
+  "model_aliases": [],
+  "status": "SUCCESS",
+  "prompt_version": "motorcycle-candidate-resolution-v4",
+  "model": "qwen-flash",
+  "make": "Honda",
+  "model_name": "GL1500CF Valkyrie Interstate"
+}

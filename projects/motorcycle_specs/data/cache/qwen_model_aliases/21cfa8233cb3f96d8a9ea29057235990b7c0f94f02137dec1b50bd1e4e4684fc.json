@@ -1,0 +1,16 @@
+{
+  "decision": "MATCH",
+  "selected_candidate": "EC 250 \n\t2T Cross Country",
+  "confidence": "HIGH",
+  "match_basis": "MARKET_ALIAS",
+  "explanation": "The input 'Enducross EC 250 2000' refers to the Gas Gas EC 250 model marketed as 'Enducross' in certain regions, which is a variant of the EC 250 2T Cross Country. The 'Enducross' name is a market-specific designation for the same underlying motorcycle model, with identical displacement and engine type (2T).",
+  "canonical_model_alias": "EC 250 2T Cross Country",
+  "configuration_tokens": [],
+  "brand_aliases": [],
+  "model_aliases": [],
+  "status": "SUCCESS",
+  "prompt_version": "motorcycle-candidate-resolution-v4",
+  "model": "qwen-flash",
+  "make": "Gas Gas",
+  "model_name": "Enducross EC 250 2000"
+}

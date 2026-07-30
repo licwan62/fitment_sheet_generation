@@ -1,0 +1,16 @@
+{
+  "decision": "MATCH",
+  "selected_candidate": "RR 390 4T Enduro",
+  "confidence": "HIGH",
+  "match_basis": "SAME_NAME",
+  "explanation": "The input '390 RR' and the candidate 'RR 390 4T Enduro' refer to the same underlying Beta motorcycle model, with the displacement (390) and performance-oriented designation (RR) matching exactly. The order of terms differs but is a common variation in catalog listings. The '4T Enduro' suffix denotes the engine type and intended use, consistent with the RR series. No other model identity is implied.",
+  "canonical_model_alias": "RR 390 4T Enduro",
+  "configuration_tokens": [],
+  "brand_aliases": [],
+  "model_aliases": [],
+  "status": "SUCCESS",
+  "prompt_version": "motorcycle-candidate-resolution-v4",
+  "model": "qwen-flash",
+  "make": "Beta",
+  "model_name": "390 RR"
+}

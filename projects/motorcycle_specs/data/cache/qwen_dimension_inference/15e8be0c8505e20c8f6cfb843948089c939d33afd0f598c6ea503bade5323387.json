@@ -1,0 +1,16 @@
+{
+  "decision": "INFER|UNKNOWN",
+  "confidence": "MEDIUM|LOW",
+  "length_mm": null,
+  "width_mm": null,
+  "height_mm": null,
+  "wheelbase_mm": null,
+  "seat_height_mm": null,
+  "ground_clearance_mm": null,
+  "explanation": "Erik Buell Racing 1190RS dimensions vary significantly by model year and market configuration; no consistent catalog data available for definitive inference. Model-specific variations in frame geometry, suspension setup, and component fitment prevent reliable estimation without verified sources.",
+  "status": "SUCCESS",
+  "prompt_version": "motorcycle-dimension-inference-v1",
+  "model": "qwen-flash",
+  "make": "Erik Buell Racing",
+  "model_name": "1190RS"
+}

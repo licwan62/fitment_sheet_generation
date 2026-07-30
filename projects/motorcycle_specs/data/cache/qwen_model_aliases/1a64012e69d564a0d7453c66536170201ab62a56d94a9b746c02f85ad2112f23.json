@@ -1,0 +1,15 @@
+{
+  "decision": "MATCH",
+  "selected_candidate": "Rebel CMX 300 / ABS",
+  "canonical_model_alias": "Rebel CMX 300 / ABS",
+  "configuration_tokens": [],
+  "brand_aliases": [],
+  "model_aliases": [
+    "Rebel CMX 300 / ABS"
+  ],
+  "status": "SUCCESS",
+  "prompt_version": "motorcycle-candidate-resolution-v3",
+  "model": "qwen-flash",
+  "make": "Honda",
+  "model_name": "CMX300 Rebel 300 ABS"
+}

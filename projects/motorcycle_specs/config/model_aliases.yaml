@@ -1,0 +1,6 @@
+# 可选的离线兜底。启用 qwen_aliases 后无需日常维护；
+# 本次 API 生成并实际使用的口径词见输出目录 generated_aliases.json。
+model_aliases:
+  "bmw|c evolution": ["c-evolution", "cevolution"]
+  "bmw|c400gt": ["c 400 gt", "c-400-gt"]
+

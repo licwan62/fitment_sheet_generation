@@ -1,0 +1,16 @@
+{
+  "decision": "NO_MATCH",
+  "selected_candidate": "",
+  "confidence": "HIGH",
+  "match_basis": "NONE",
+  "explanation": "The model 'INVICTA 150' is not a known Honda motorcycle name, and none of the catalog candidates match it in identity, market name, or plausible typo. The candidates are distinct models with different designations, engine configurations, and intended uses. 'Honda Elite 150' is the closest in naming pattern but is a different model altogether. No evidence supports that 'INVICTA 150' refers to any of the listed models.",
+  "canonical_model_alias": "",
+  "configuration_tokens": [],
+  "brand_aliases": [],
+  "model_aliases": [],
+  "status": "SUCCESS",
+  "prompt_version": "motorcycle-candidate-resolution-v4",
+  "model": "qwen-flash",
+  "make": "Honda",
+  "model_name": "INVICTA 150"
+}

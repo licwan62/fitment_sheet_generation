@@ -1,0 +1,20 @@
+{
+  "decision": "MATCH",
+  "selected_candidate": "BMW R1150GS",
+  "confidence": "HIGH",
+  "match_basis": "MARKET_ALIAS",
+  "explanation": "'R1150GS Sport' is a market-specific configuration or trim name for the R1150GS, commonly used in certain regions (e.g., North America) to denote a sportier variant. It shares the same core model identity as the standard R1150GS, with no change in engine, platform, or fundamental design. The 'Sport' designation is a configuration label, not a distinct model.",
+  "canonical_model_alias": "R 1150GS",
+  "configuration_tokens": [
+    "Sport"
+  ],
+  "brand_aliases": [],
+  "model_aliases": [
+    "R1150GS"
+  ],
+  "status": "SUCCESS",
+  "prompt_version": "motorcycle-candidate-resolution-v4",
+  "model": "qwen-flash",
+  "make": "BMW",
+  "model_name": "R1150GS Sport"
+}

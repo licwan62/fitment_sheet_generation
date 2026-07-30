@@ -1,0 +1,16 @@
+{
+  "decision": "NO_MATCH",
+  "selected_candidate": "",
+  "confidence": "HIGH",
+  "match_basis": "NONE",
+  "explanation": "The input model CRF230F is a dual-sport motorcycle with a 230cc engine, while CRF 230L and CRF 230M are distinct models in the same family but differ in configuration and market designation. The 'F' suffix denotes a specific variant (likely for off-road or factory specification), which is not equivalent to the 'L' or 'M' designations. No evidence suggests they are the same underlying model.",
+  "canonical_model_alias": "",
+  "configuration_tokens": [],
+  "brand_aliases": [],
+  "model_aliases": [],
+  "status": "SUCCESS",
+  "prompt_version": "motorcycle-candidate-resolution-v4",
+  "model": "qwen-flash",
+  "make": "Honda",
+  "model_name": "CRF230F"
+}

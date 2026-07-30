@@ -1,0 +1,16 @@
+{
+  "decision": "NO_MATCH",
+  "selected_candidate": "",
+  "confidence": "HIGH",
+  "match_basis": "NONE",
+  "explanation": "The input model 'CB650R E-Clutch' includes an E-Clutch feature not present in any of the catalog candidates. The candidates 'CB 650R', 'CB 650LC', and 'CB 650C Custom' are distinct models with different configurations or designations, and none match the E-Clutch variant. No known market name, abbreviation, or typo equates to this specific configuration.",
+  "canonical_model_alias": "",
+  "configuration_tokens": [],
+  "brand_aliases": [],
+  "model_aliases": [],
+  "status": "SUCCESS",
+  "prompt_version": "motorcycle-candidate-resolution-v4",
+  "model": "qwen-flash",
+  "make": "Honda",
+  "model_name": "CB650R E-Clutch"
+}

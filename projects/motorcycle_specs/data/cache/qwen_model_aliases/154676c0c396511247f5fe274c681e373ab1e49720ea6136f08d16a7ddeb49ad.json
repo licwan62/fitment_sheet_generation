@@ -1,0 +1,20 @@
+{
+  "decision": "MATCH",
+  "selected_candidate": "T 250 Hustler",
+  "confidence": "HIGH",
+  "match_basis": "MARKET_ALIAS",
+  "explanation": "The Suzuki T250RJ is a market-specific designation for the T250 Hustler, a model marketed in certain regions under the 'Hustler' name. The 'RJ' suffix denotes a specific configuration or regional variant, but the core model identity matches the T250 Hustler. This is a known market alias.",
+  "canonical_model_alias": "T 250 Hustler",
+  "configuration_tokens": [
+    "RJ"
+  ],
+  "brand_aliases": [],
+  "model_aliases": [
+    "T 250 Hustler"
+  ],
+  "status": "SUCCESS",
+  "prompt_version": "motorcycle-candidate-resolution-v4",
+  "model": "qwen-flash",
+  "make": "Suzuki",
+  "model_name": "T250RJ"
+}

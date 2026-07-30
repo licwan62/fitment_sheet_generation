@@ -1,0 +1,15 @@
+{
+  "decision": "MATCH",
+  "selected_candidate": "VT 1100 \n\t\tShadow Ace Tourer",
+  "canonical_model_alias": "VT 1100 Shadow Ace Tourer",
+  "configuration_tokens": [],
+  "brand_aliases": [],
+  "model_aliases": [
+    "VT 1100 Shadow Ace Tourer"
+  ],
+  "status": "SUCCESS",
+  "prompt_version": "motorcycle-candidate-resolution-v3",
+  "model": "qwen-flash",
+  "make": "Honda",
+  "model_name": "VT1100T Shadow ACE Tour"
+}

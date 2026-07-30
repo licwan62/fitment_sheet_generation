@@ -1,0 +1,20 @@
+{
+  "decision": "MATCH",
+  "selected_candidate": "Suzuki GSF1250S Bandit ABS",
+  "confidence": "HIGH",
+  "match_basis": "SAME_NAME",
+  "explanation": "The input 'GSF1250SA Bandit ABS' is a direct match in model identity to 'Suzuki GSF1250S Bandit ABS', with 'SA' being a known market or configuration suffix (likely for 'Standard ABS') that does not alter the core model identity. All other candidates share the same base model, displacement, and name structure, confirming they refer to the same motorcycle.",
+  "canonical_model_alias": "GSF1250S Bandit ABS",
+  "configuration_tokens": [
+    "ABS"
+  ],
+  "brand_aliases": [],
+  "model_aliases": [
+    "GSF1250S Bandit ABS"
+  ],
+  "status": "SUCCESS",
+  "prompt_version": "motorcycle-candidate-resolution-v4",
+  "model": "qwen-flash",
+  "make": "Suzuki",
+  "model_name": "GSF1250SA Bandit ABS"
+}

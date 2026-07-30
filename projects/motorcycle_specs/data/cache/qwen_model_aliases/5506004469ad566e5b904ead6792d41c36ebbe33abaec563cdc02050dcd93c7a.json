@@ -1,0 +1,20 @@
+{
+  "decision": "MATCH",
+  "selected_candidate": "GL 650 Silver Wing",
+  "confidence": "HIGH",
+  "match_basis": "MARKET_ALIAS",
+  "explanation": "'GL650I Silver Wing Interstate' is a market-specific designation (Interstate) for the GL650 Silver Wing, with 'I' denoting the Interstate variant. The catalog candidate 'GL 650 Silver Wing' represents the same underlying model, with the Interstate configuration implied by context and known Honda marketing practices.",
+  "canonical_model_alias": "GL 650 Silver Wing",
+  "configuration_tokens": [
+    "Interstate"
+  ],
+  "brand_aliases": [],
+  "model_aliases": [
+    "GL 650 Silver Wing"
+  ],
+  "status": "SUCCESS",
+  "prompt_version": "motorcycle-candidate-resolution-v4",
+  "model": "qwen-flash",
+  "make": "Honda",
+  "model_name": "GL650I Silver Wing Interstate"
+}

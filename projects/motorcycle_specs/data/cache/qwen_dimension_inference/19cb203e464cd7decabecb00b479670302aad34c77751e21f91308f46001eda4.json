@@ -1,0 +1,16 @@
+{
+  "decision": "UNKNOWN",
+  "confidence": "LOW",
+  "length_mm": null,
+  "width_mm": null,
+  "height_mm": null,
+  "wheelbase_mm": null,
+  "seat_height_mm": null,
+  "ground_clearance_mm": null,
+  "explanation": "Insufficient publicly available data on the Big Bear Choppers Reaper Chopper V111 Carb to reliably infer dimensions; model details and specifications are not documented in accessible sources, and variations by year or market cannot be ruled out.",
+  "status": "SUCCESS",
+  "prompt_version": "motorcycle-dimension-inference-v1",
+  "model": "qwen-flash",
+  "make": "Big Bear Choppers",
+  "model_name": "Reaper Chopper V111 Carb"
+}

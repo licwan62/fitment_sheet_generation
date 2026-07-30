@@ -1,0 +1,18 @@
+{
+  "decision": "MATCH",
+  "selected_candidate": "harley davidson cvo road glide limited fltrkse",
+  "confidence": "HIGH",
+  "match_basis": "SAME_NAME",
+  "explanation": "The input model 'FLTRKSE CVO Road Glide Limited' is a direct match in identity to the candidate 'harley davidson cvo road glide limited fltrkse', with only case and spacing variations. The displacement, configuration, and model designation are identical. The candidate includes the full model code FLTRKSE, confirming it is the same motorcycle.",
+  "canonical_model_alias": "cvo road glide limited fltrkse",
+  "configuration_tokens": [],
+  "brand_aliases": [],
+  "model_aliases": [
+    "cvo road glide limited fltrkse"
+  ],
+  "status": "SUCCESS",
+  "prompt_version": "motorcycle-candidate-resolution-v4",
+  "model": "qwen-flash",
+  "make": "Harley-Davidson",
+  "model_name": "FLTRKSE CVO Road Glide Limited"
+}

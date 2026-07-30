@@ -1,0 +1,20 @@
+{
+  "decision": "MATCH",
+  "selected_candidate": "R 1100RS",
+  "confidence": "HIGH",
+  "match_basis": "SAME_NAME",
+  "explanation": "The input model 'R1100RS ABS' is functionally identical to the catalog candidate 'R 1100RS', with the ABS variant being a configuration addition not changing the core model identity. The spacing and presence of 'ABS' do not alter the fundamental model designation.",
+  "canonical_model_alias": "R 1100RS",
+  "configuration_tokens": [
+    "ABS"
+  ],
+  "brand_aliases": [],
+  "model_aliases": [
+    "R 1100RS"
+  ],
+  "status": "SUCCESS",
+  "prompt_version": "motorcycle-candidate-resolution-v4",
+  "model": "qwen-flash",
+  "make": "BMW",
+  "model_name": "R1100RS ABS"
+}

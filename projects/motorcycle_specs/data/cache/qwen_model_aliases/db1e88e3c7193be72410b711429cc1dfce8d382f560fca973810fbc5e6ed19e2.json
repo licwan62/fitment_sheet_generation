@@ -1,0 +1,18 @@
+{
+  "decision": "MATCH",
+  "selected_candidate": "AC 50 Colt",
+  "confidence": "HIGH",
+  "match_basis": "MARKET_ALIAS",
+  "explanation": "The 'AC50' is a known market designation for the Suzuki AC 50 Colt, a vintage motorcycle model produced in the 1960s. The absence of a space in 'AC50' is a common typographical variant or catalog shorthand for 'AC 50', and 'Colt' is the official model name used in Suzuki's catalog. This is a direct match under a regional or catalog naming convention.",
+  "canonical_model_alias": "AC 50 Colt",
+  "configuration_tokens": [],
+  "brand_aliases": [],
+  "model_aliases": [
+    "AC 50 Colt"
+  ],
+  "status": "SUCCESS",
+  "prompt_version": "motorcycle-candidate-resolution-v4",
+  "model": "qwen-flash",
+  "make": "Suzuki",
+  "model_name": "AC50"
+}

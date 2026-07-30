@@ -1,0 +1,16 @@
+{
+  "decision": "NO_MATCH",
+  "selected_candidate": "",
+  "confidence": "HIGH",
+  "match_basis": "NONE",
+  "explanation": "The input model 'KRTT' does not correspond to any known Harley-Davidson model, including variants of the Sportster or other cataloged models. None of the candidates match the identifier 'KRTT' in name, displacement, or configuration. The closest candidate, 'Harley-Davidson Crtt 250', appears to be a misspelling or fictional entry, and no such model exists in Harley-Davidson's official lineup.",
+  "canonical_model_alias": "",
+  "configuration_tokens": [],
+  "brand_aliases": [],
+  "model_aliases": [],
+  "status": "SUCCESS",
+  "prompt_version": "motorcycle-candidate-resolution-v4",
+  "model": "qwen-flash",
+  "make": "Harley-Davidson",
+  "model_name": "KRTT"
+}

@@ -1,0 +1,18 @@
+{
+  "decision": "MATCH",
+  "selected_candidate": "R 1200C Aventgarde",
+  "confidence": "HIGH",
+  "match_basis": "TYPO",
+  "explanation": "The input 'Avantgarde' is a plausible typo or transliteration error for 'Aventgarde', which is the correct spelling used in BMW's catalog for this model. Both refer to the same motorcycle model with identical specifications and configuration.",
+  "canonical_model_alias": "R 1200C Aventgarde",
+  "configuration_tokens": [],
+  "brand_aliases": [],
+  "model_aliases": [
+    "R 1200C Aventgarde"
+  ],
+  "status": "SUCCESS",
+  "prompt_version": "motorcycle-candidate-resolution-v4",
+  "model": "qwen-flash",
+  "make": "BMW",
+  "model_name": "R1200C Avantgarde"
+}

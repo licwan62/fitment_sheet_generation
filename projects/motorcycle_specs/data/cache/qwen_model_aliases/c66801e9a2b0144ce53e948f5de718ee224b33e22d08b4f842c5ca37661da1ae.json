@@ -1,0 +1,18 @@
+{
+  "decision": "MATCH",
+  "selected_candidate": "RV 125 \n\t  VanVan",
+  "confidence": "HIGH",
+  "match_basis": "MARKET_ALIAS",
+  "explanation": "The RV125 Bambang is a known market-specific name for the Suzuki RV125 in certain regions, particularly Indonesia, where 'Bambang' was used as a local marketing name. The RV 125 VanVan is the same model with a different regional branding. Both refer to the identical underlying motorcycle model.",
+  "canonical_model_alias": "RV 125 VanVan",
+  "configuration_tokens": [],
+  "brand_aliases": [],
+  "model_aliases": [
+    "RV 125 VanVan"
+  ],
+  "status": "SUCCESS",
+  "prompt_version": "motorcycle-candidate-resolution-v4",
+  "model": "qwen-flash",
+  "make": "Suzuki",
+  "model_name": "RV125"
+}

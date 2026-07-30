@@ -1,0 +1,19 @@
+{
+  "decision": "MATCH",
+  "selected_candidate": "Harley-Davidson Softail Slim S",
+  "confidence": "HIGH",
+  "match_basis": "SAME_NAME",
+  "explanation": "The input 'FLSS Softail Slim S' and the candidate 'Harley-Davidson Softail Slim S' refer to the same motorcycle model, with the catalog candidate using the full brand name and standard naming convention. The 'FLSS' designation is the model code for this variant, which is consistent across official Harley-Davidson nomenclature.",
+  "canonical_model_alias": "Softail Slim S",
+  "configuration_tokens": [],
+  "brand_aliases": [],
+  "model_aliases": [
+    "Slim S",
+    "Softail Slim S"
+  ],
+  "status": "SUCCESS",
+  "prompt_version": "motorcycle-candidate-resolution-v4",
+  "model": "qwen-flash",
+  "make": "Harley-Davidson",
+  "model_name": "FLSS Softail Slim S"
+}

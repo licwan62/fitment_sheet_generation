@@ -1,0 +1,16 @@
+{
+  "decision": "NO_MATCH",
+  "selected_candidate": "",
+  "confidence": "HIGH",
+  "match_basis": "NONE",
+  "explanation": "The input model 'Pulsar LS 125' is not equivalent to any of the catalog candidates. The 'LS' designation is not a known variant or market name for the listed Bajaj Pulsar models, and no candidate matches the LS 125 in identity, displacement, or configuration. The Pulsar NS 125 and Pulsar N125 are different models with distinct engine and design characteristics. Other candidates like Classic 125, Platina 125, Discover 125, and Freedom 125 are entirely different model lines. No evidence supports that 'LS 125' is a valid alias or typo for any of these.",
+  "canonical_model_alias": "",
+  "configuration_tokens": [],
+  "brand_aliases": [],
+  "model_aliases": [],
+  "status": "SUCCESS",
+  "prompt_version": "motorcycle-candidate-resolution-v4",
+  "model": "qwen-flash",
+  "make": "Bajaj",
+  "model_name": "Pulsar LS 125"
+}

@@ -1,0 +1,16 @@
+{
+  "decision": "INFER",
+  "confidence": "MEDIUM",
+  "length_mm": 2150,
+  "width_mm": 850,
+  "height_mm": 1100,
+  "wheelbase_mm": 1370,
+  "seat_height_mm": 940,
+  "ground_clearance_mm": 360,
+  "explanation": "Inferred based on typical dimensions of similar 125cc off-road motorcycles in the Gas Gas XC series, such as the XC 125 Factory and XC 125 Pro, which share comparable chassis design and performance orientation. Dimensions are estimated within expected ranges for this class of motocross bike, but exact values may vary by model year or market.",
+  "status": "SUCCESS",
+  "prompt_version": "motorcycle-dimension-inference-v1",
+  "model": "qwen-flash",
+  "make": "Gas Gas",
+  "model_name": "XC 125 Racing"
+}

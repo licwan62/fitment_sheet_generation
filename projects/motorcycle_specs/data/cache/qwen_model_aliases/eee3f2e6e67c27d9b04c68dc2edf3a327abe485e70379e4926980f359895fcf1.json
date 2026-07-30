@@ -1,0 +1,18 @@
+{
+  "decision": "MATCH",
+  "selected_candidate": "CX 500 Custom",
+  "confidence": "HIGH",
+  "match_basis": "SAME_NAME",
+  "explanation": "The input 'CX500C Custom' is a direct match in meaning and identity to the catalog candidate 'CX 500 Custom', with only minor formatting differences (spacing, capitalization). The 'C' in CX500C is a known market or configuration designation for the Custom variant, and the model is identical across both names.",
+  "canonical_model_alias": "CX 500 Custom",
+  "configuration_tokens": [],
+  "brand_aliases": [],
+  "model_aliases": [
+    "CX 500 Custom"
+  ],
+  "status": "SUCCESS",
+  "prompt_version": "motorcycle-candidate-resolution-v4",
+  "model": "qwen-flash",
+  "make": "Honda",
+  "model_name": "CX500C Custom"
+}

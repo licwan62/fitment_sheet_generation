@@ -1,0 +1,18 @@
+{
+  "decision": "MATCH",
+  "selected_candidate": "Pursuit Limited",
+  "confidence": "HIGH",
+  "match_basis": "MARKET_ALIAS",
+  "explanation": "The 'Pursuit Limited 108 Audio Package' is a configuration of the Pursuit Limited model, with 'Audio Package' being an equipment variant. The core model identity remains 'Pursuit Limited', and no other candidate matches this exact model. The '108' displacement is consistent with the Pursuit Limited's engine size, and 'Audio Package' is a known configuration label, not a model change.",
+  "canonical_model_alias": "Pursuit Limited",
+  "configuration_tokens": [
+    "Audio Package"
+  ],
+  "brand_aliases": [],
+  "model_aliases": [],
+  "status": "SUCCESS",
+  "prompt_version": "motorcycle-candidate-resolution-v4",
+  "model": "qwen-flash",
+  "make": "Indian",
+  "model_name": "Pursuit Limited 108 Audio Package"
+}

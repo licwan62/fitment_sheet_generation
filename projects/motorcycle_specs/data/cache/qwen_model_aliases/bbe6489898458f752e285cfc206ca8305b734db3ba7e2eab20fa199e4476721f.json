@@ -1,0 +1,20 @@
+{
+  "decision": "MATCH",
+  "selected_candidate": "RS 660 \n\t\tStars and Stripes Limited Edition",
+  "confidence": "HIGH",
+  "match_basis": "MARKET_ALIAS",
+  "explanation": "The 'Stars & Stripes Limited Edition' is a known market-specific naming variant for the Aprilia RS 660, marketed in North America with patriotic-themed graphics and limited production. The name difference is due to regional branding, but the underlying model is identical.",
+  "canonical_model_alias": "RS 660 Stars and Stripes Limited Edition",
+  "configuration_tokens": [
+    "Stars and Stripes Limited Edition"
+  ],
+  "brand_aliases": [],
+  "model_aliases": [
+    "RS 660 Stars and Stripes Limited Edition"
+  ],
+  "status": "SUCCESS",
+  "prompt_version": "motorcycle-candidate-resolution-v4",
+  "model": "qwen-flash",
+  "make": "Aprilia",
+  "model_name": "RS 660 Stars & Stripes Limited Edition"
+}

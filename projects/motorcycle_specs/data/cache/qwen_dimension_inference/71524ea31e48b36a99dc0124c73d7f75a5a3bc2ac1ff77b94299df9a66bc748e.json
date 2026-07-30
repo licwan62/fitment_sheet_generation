@@ -1,0 +1,16 @@
+{
+  "decision": "INFER|UNKNOWN",
+  "confidence": "MEDIUM|LOW",
+  "length_mm": null,
+  "width_mm": null,
+  "height_mm": null,
+  "wheelbase_mm": null,
+  "seat_height_mm": null,
+  "ground_clearance_mm": null,
+  "explanation": "The Gas Gas XC 250 Racing is a motocross model, but specific dimensional data varies significantly across model years and markets. Without access to a definitive catalog or official specifications, and due to potential variations in frame geometry and component fitment, reliable inference is limited. Dimensions are uncertain and cannot be confidently estimated from model knowledge alone.",
+  "status": "SUCCESS",
+  "prompt_version": "motorcycle-dimension-inference-v1",
+  "model": "qwen-flash",
+  "make": "Gas Gas",
+  "model_name": "XC 250 Racing"
+}

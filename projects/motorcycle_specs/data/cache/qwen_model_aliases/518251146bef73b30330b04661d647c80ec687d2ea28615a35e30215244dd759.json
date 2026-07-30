@@ -1,0 +1,16 @@
+{
+  "decision": "NO_MATCH",
+  "selected_candidate": "",
+  "confidence": "HIGH",
+  "match_basis": "NONE",
+  "explanation": "The input model 'Papio XO' is not present in the catalog candidates. While 'cfmoto papio 125' and 'ST Papio 125' are related to the Papio series, they differ in displacement (125cc) and lack the 'XO' designation. The 'Papio XO' appears to be a distinct variant or marketing name not matching any candidate's exact identity. No evidence supports it as a market alias, abbreviation, or typo for any listed model.",
+  "canonical_model_alias": "",
+  "configuration_tokens": [],
+  "brand_aliases": [],
+  "model_aliases": [],
+  "status": "SUCCESS",
+  "prompt_version": "motorcycle-candidate-resolution-v4",
+  "model": "qwen-flash",
+  "make": "CFMOTO",
+  "model_name": "Papio XO"
+}

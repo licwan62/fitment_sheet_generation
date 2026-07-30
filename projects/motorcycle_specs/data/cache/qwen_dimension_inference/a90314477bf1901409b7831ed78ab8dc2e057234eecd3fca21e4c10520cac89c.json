@@ -1,0 +1,16 @@
+{
+  "decision": "INFER|UNKNOWN",
+  "confidence": "LOW",
+  "length_mm": null,
+  "width_mm": null,
+  "height_mm": null,
+  "wheelbase_mm": null,
+  "seat_height_mm": null,
+  "ground_clearance_mm": null,
+  "explanation": "The Honda GL1500CT Valkyrie Tour is a rare and specific variant with limited public documentation. While the GL1500 series shares common dimensions across models, the CT variant (Touring) includes unique features such as a larger fuel tank and touring accessories that may alter overall dimensions. Without confirmed catalog data or official specifications for this exact model year and market configuration, precise dimensions cannot be reliably inferred. Variations by year and regional market further reduce confidence in estimation.",
+  "status": "SUCCESS",
+  "prompt_version": "motorcycle-dimension-inference-v1",
+  "model": "qwen-flash",
+  "make": "Honda",
+  "model_name": "GL1500CT Valkyrie Tour"
+}

@@ -1,0 +1,18 @@
+{
+  "decision": "MATCH",
+  "selected_candidate": "Honda Montesa Cota 4RT 260R",
+  "confidence": "HIGH",
+  "match_basis": "SAME_NAME",
+  "explanation": "The input model 'MRT260N Montesa Cota 4RT 260R' is a Honda-branded version of the Montesa Cota 4RT 260R, with 'MRT260N' being a model code that maps directly to this motorcycle. The catalog candidate 'Honda Montesa Cota 4RT 260R' is the correct and canonical title for this model.",
+  "canonical_model_alias": "Montesa Cota 4RT 260R",
+  "configuration_tokens": [],
+  "brand_aliases": [],
+  "model_aliases": [
+    "Montesa Cota 4RT 260R"
+  ],
+  "status": "SUCCESS",
+  "prompt_version": "motorcycle-candidate-resolution-v4",
+  "model": "qwen-flash",
+  "make": "Honda",
+  "model_name": "MRT260N Montesa Cota 4RT 260R"
+}

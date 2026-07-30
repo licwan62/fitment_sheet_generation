@@ -1,0 +1,20 @@
+{
+  "decision": "MATCH",
+  "selected_candidate": "Dominar 400 BS",
+  "confidence": "HIGH",
+  "match_basis": "MARKET_ALIAS",
+  "explanation": "The input 'Dominar D400' is a market-specific or regional naming variant of the 'Dominar 400 BS' model, where 'D400' is an abbreviation for '400' and 'BS' denotes Bharat Stage emission compliance. Both refer to the same underlying motorcycle model produced by Bajaj.",
+  "canonical_model_alias": "Dominar 400 BS",
+  "configuration_tokens": [
+    "BS"
+  ],
+  "brand_aliases": [],
+  "model_aliases": [
+    "Dominar 400 BS"
+  ],
+  "status": "SUCCESS",
+  "prompt_version": "motorcycle-candidate-resolution-v4",
+  "model": "qwen-flash",
+  "make": "Bajaj",
+  "model_name": "Dominar D400"
+}

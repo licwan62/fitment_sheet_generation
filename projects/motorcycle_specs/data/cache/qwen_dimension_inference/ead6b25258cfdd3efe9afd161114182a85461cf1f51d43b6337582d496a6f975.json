@@ -1,0 +1,16 @@
+{
+  "decision": "INFER|UNKNOWN",
+  "confidence": "MEDIUM|LOW",
+  "length_mm": null,
+  "width_mm": null,
+  "height_mm": null,
+  "wheelbase_mm": null,
+  "seat_height_mm": null,
+  "ground_clearance_mm": null,
+  "explanation": "The Honda CL70 Scrambler is a vintage motorcycle from the early 1960s, and while general dimensions are known from historical references, exact specifications vary by model year and market. Without access to a specific catalog page or verified technical manual for the exact variant, precise measurements cannot be confidently determined. Dimensions may differ between domestic and export versions, and factory data is not consistently documented. Therefore, inferred values are uncertain.",
+  "status": "SUCCESS",
+  "prompt_version": "motorcycle-dimension-inference-v1",
+  "model": "qwen-flash",
+  "make": "Honda",
+  "model_name": "CL70 Scrambler"
+}

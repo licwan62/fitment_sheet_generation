@@ -1,0 +1,20 @@
+{
+  "decision": "MATCH",
+  "selected_candidate": "Boulevard C50T",
+  "confidence": "HIGH",
+  "match_basis": "MARKET_ALIAS",
+  "explanation": "The input 'C50T Boulevard' refers to the same motorcycle model as 'Boulevard C50T' in the catalog, with 'C50T' being the correct displacement and configuration suffix. The order of words does not change the model identity; 'Boulevard C50T' is a known market or catalog variant of the Suzuki Boulevard C50 series with the T designation for specific configuration (e.g., touring). No other candidate matches this exact configuration.",
+  "canonical_model_alias": "Boulevard C50T",
+  "configuration_tokens": [
+    "T"
+  ],
+  "brand_aliases": [],
+  "model_aliases": [
+    "Boulevard C50T"
+  ],
+  "status": "SUCCESS",
+  "prompt_version": "motorcycle-candidate-resolution-v4",
+  "model": "qwen-flash",
+  "make": "Suzuki",
+  "model_name": "C50T Boulevard"
+}

@@ -1,0 +1,16 @@
+{
+  "decision": "INFER",
+  "confidence": "MEDIUM",
+  "length_mm": 2150,
+  "width_mm": 850,
+  "height_mm": 1150,
+  "wheelbase_mm": 1420,
+  "seat_height_mm": 890,
+  "ground_clearance_mm": 270,
+  "explanation": "Inferred from typical dimensions of similar off-road motocross bikes in the Gas Gas TXT series, such as the TXT 300 and TXT 450, which share comparable design language and chassis layout. The TXT Sr. is a high-performance variant likely featuring slightly increased ground clearance and seat height for aggressive riding. Dimensions are estimated based on standard motocross bike proportions and manufacturer's typical scaling across models.",
+  "status": "SUCCESS",
+  "prompt_version": "motorcycle-dimension-inference-v1",
+  "model": "qwen-flash",
+  "make": "Gas Gas",
+  "model_name": "TXT Sr."
+}

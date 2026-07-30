@@ -1,0 +1,16 @@
+{
+  "decision": "MATCH",
+  "selected_candidate": "VT1100C Shadow ACE",
+  "confidence": "HIGH",
+  "match_basis": "SAME_NAME",
+  "explanation": "The input model 'VT1100C2 Shadow ACE' is a valid variant of the Honda VT1100C Shadow ACE, with the '2' likely being a typo or misinterpretation of the model's designation. The core model identity matches exactly with the catalog candidate.",
+  "canonical_model_alias": "VT1100C Shadow ACE",
+  "configuration_tokens": [],
+  "brand_aliases": [],
+  "model_aliases": [],
+  "status": "SUCCESS",
+  "prompt_version": "motorcycle-candidate-resolution-v4",
+  "model": "qwen-flash",
+  "make": "Honda",
+  "model_name": "VT1100C2 Shadow ACE"
+}

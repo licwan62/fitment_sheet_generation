@@ -1,0 +1,20 @@
+{
+  "decision": "MATCH",
+  "selected_candidate": "Ducati 998 S",
+  "confidence": "HIGH",
+  "match_basis": "MARKET_ALIAS",
+  "explanation": "The '998 Monoposto' is a special edition of the Ducati 998 S, marketed in certain regions as 'Monoposto' (Italian for 'single seat'), which refers to the same underlying model with a specific configuration. The core model identity (998) and engine displacement are identical; the 'Monoposto' designation is a market-specific configuration label, not a different model.",
+  "canonical_model_alias": "998 S",
+  "configuration_tokens": [
+    "Monoposto"
+  ],
+  "brand_aliases": [],
+  "model_aliases": [
+    "998 S"
+  ],
+  "status": "SUCCESS",
+  "prompt_version": "motorcycle-candidate-resolution-v4",
+  "model": "qwen-flash",
+  "make": "Ducati",
+  "model_name": "998 Monoposto"
+}

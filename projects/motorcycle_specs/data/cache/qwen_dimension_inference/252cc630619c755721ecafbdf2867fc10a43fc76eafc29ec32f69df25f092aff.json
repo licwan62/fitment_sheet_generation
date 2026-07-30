@@ -1,0 +1,16 @@
+{
+  "decision": "INFER|UNKNOWN",
+  "confidence": "LOW",
+  "length_mm": null,
+  "width_mm": null,
+  "height_mm": null,
+  "wheelbase_mm": null,
+  "seat_height_mm": null,
+  "ground_clearance_mm": null,
+  "explanation": "The Beta EVO 200 Factory model is a high-performance enduro motorcycle, but specific dimensional data for this exact variant (especially factory edition) is not consistently documented in public sources. Dimensions may vary by year and market configuration. Without access to an official catalog or verified technical specification sheet, precise measurements cannot be reliably inferred. Therefore, all dimensions are marked as unknown.",
+  "status": "SUCCESS",
+  "prompt_version": "motorcycle-dimension-inference-v1",
+  "model": "qwen-flash",
+  "make": "Beta",
+  "model_name": "EVO 200 Factory"
+}

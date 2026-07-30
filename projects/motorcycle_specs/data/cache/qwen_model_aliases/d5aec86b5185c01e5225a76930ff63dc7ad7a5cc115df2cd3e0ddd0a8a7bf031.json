@@ -1,0 +1,23 @@
+{
+  "decision": "MATCH",
+  "selected_candidate": "Softail Fat Boy 117 Gray Ghost",
+  "confidence": "HIGH",
+  "match_basis": "MARKET_ALIAS",
+  "explanation": "The input 'FLSTFI Fat Boy Gray Ghost' refers to the same motorcycle model as 'Softail Fat Boy 117 Gray Ghost'. The FLSTFI is the model code for the Softail Fat Boy, and 'Gray Ghost' is a special edition name used in marketing. The displacement (117 cubic inches) matches the FLSTFI's engine size. 'Softail Fat Boy 117 Gray Ghost' is a valid catalog expression of the same model with regional/market naming convention.",
+  "canonical_model_alias": "Softail Fat Boy 117 Gray Ghost",
+  "configuration_tokens": [
+    "117",
+    "Gray Ghost"
+  ],
+  "brand_aliases": [],
+  "model_aliases": [
+    "FLSTFI Fat Boy",
+    "Softail Fat Boy",
+    "softail fat boy flstf"
+  ],
+  "status": "SUCCESS",
+  "prompt_version": "motorcycle-candidate-resolution-v4",
+  "model": "qwen-flash",
+  "make": "Harley-Davidson",
+  "model_name": "FLSTFI Fat Boy Gray Ghost"
+}

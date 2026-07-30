@@ -1,0 +1,20 @@
+{
+  "decision": "MATCH",
+  "selected_candidate": "BMW R 1100 RT",
+  "confidence": "HIGH",
+  "match_basis": "SAME_NAME",
+  "explanation": "The input 'R1100RTL' is a variant of the 'R 1100 RT' model, with 'RTL' being a known market-specific designation (e.g., for the UK or European markets) that refers to the same underlying motorcycle. The displacement and core model identity are identical.",
+  "canonical_model_alias": "R 1100 RT",
+  "configuration_tokens": [
+    "RTL"
+  ],
+  "brand_aliases": [],
+  "model_aliases": [
+    "R 1100 RT"
+  ],
+  "status": "SUCCESS",
+  "prompt_version": "motorcycle-candidate-resolution-v4",
+  "model": "qwen-flash",
+  "make": "BMW",
+  "model_name": "R1100RTL"
+}

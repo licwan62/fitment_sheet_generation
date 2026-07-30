@@ -1,0 +1,19 @@
+{
+  "decision": "MATCH",
+  "selected_candidate": "Harley-Davidson Pan America 1250 ST",
+  "confidence": "HIGH",
+  "match_basis": "SAME_NAME",
+  "explanation": "The input model 'RA1250ST Pan America 1250 ST' is a valid representation of the Harley-Davidson Pan America 1250 ST, with 'RA1250ST' being a catalog or internal designation that aligns with the official model name. The candidate 'Harley-Davidson Pan America 1250 ST' matches exactly in model name and displacement, confirming it as the same underlying motorcycle.",
+  "canonical_model_alias": "Pan America 1250 ST",
+  "configuration_tokens": [],
+  "brand_aliases": [],
+  "model_aliases": [
+    "America 1250 ST",
+    "Pan America 1250 ST"
+  ],
+  "status": "SUCCESS",
+  "prompt_version": "motorcycle-candidate-resolution-v4",
+  "model": "qwen-flash",
+  "make": "Harley-Davidson",
+  "model_name": "RA1250ST Pan America 1250 ST"
+}

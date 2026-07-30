@@ -1,0 +1,21 @@
+{
+  "decision": "MATCH",
+  "selected_candidate": "buell lightning long xb 12 ss",
+  "confidence": "HIGH",
+  "match_basis": "MARKET_ALIAS",
+  "explanation": "The input 'XB12Ss Lightning Long' is a variant of the Buell Lightning XB12S, with 'Long' indicating a market-specific or configuration-based name for the extended version. The candidate 'buell lightning long xb 12 ss' matches this model exactly in identity and configuration, with only minor casing and spacing differences. The displacement (12), suffix (SS), and model line (Lightning) are consistent across both names.",
+  "canonical_model_alias": "lightning long xb 12 ss",
+  "configuration_tokens": [
+    "long",
+    "ss"
+  ],
+  "brand_aliases": [],
+  "model_aliases": [
+    "lightning long xb 12 ss"
+  ],
+  "status": "SUCCESS",
+  "prompt_version": "motorcycle-candidate-resolution-v4",
+  "model": "qwen-flash",
+  "make": "Buell",
+  "model_name": "XB12Ss Lightning Long"
+}

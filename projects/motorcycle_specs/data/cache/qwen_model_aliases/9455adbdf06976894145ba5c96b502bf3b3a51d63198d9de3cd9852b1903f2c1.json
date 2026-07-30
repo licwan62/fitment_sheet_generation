@@ -1,0 +1,16 @@
+{
+  "decision": "NO_MATCH",
+  "selected_candidate": "",
+  "confidence": "HIGH",
+  "match_basis": "NONE",
+  "explanation": "No catalog candidates were provided for the Benda Chinchilla 450, and no known motorcycle model by that name exists in available records. The manufacturer 'Benda' is not a recognized motorcycle brand in historical or current motorcycle catalogs. Therefore, no valid match can be established.",
+  "canonical_model_alias": "",
+  "configuration_tokens": [],
+  "brand_aliases": [],
+  "model_aliases": [],
+  "status": "SUCCESS",
+  "prompt_version": "motorcycle-candidate-resolution-v4",
+  "model": "qwen-flash",
+  "make": "Benda",
+  "model_name": "Chinchilla 450"
+}

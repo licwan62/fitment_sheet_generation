@@ -1,0 +1,20 @@
+{
+  "decision": "MATCH",
+  "selected_candidate": "aprilia scarabeo 50",
+  "confidence": "HIGH",
+  "match_basis": "MARKET_ALIAS",
+  "explanation": "'Scarabeo 50 Ditech' is a market-specific variant of the Aprilia Scarabeo 50, with 'Ditech' referring to a specific engine management system or regional configuration. The core model identity remains the same as the standard 'Aprilia Scarabeo 50'.",
+  "canonical_model_alias": "scarabeo 50",
+  "configuration_tokens": [
+    "Ditech"
+  ],
+  "brand_aliases": [],
+  "model_aliases": [
+    "scarabeo 50"
+  ],
+  "status": "SUCCESS",
+  "prompt_version": "motorcycle-candidate-resolution-v4",
+  "model": "qwen-flash",
+  "make": "Aprilia",
+  "model_name": "Scarabeo 50 Ditech"
+}

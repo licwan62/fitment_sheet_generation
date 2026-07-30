@@ -1,0 +1,18 @@
+{
+  "decision": "MATCH",
+  "selected_candidate": "harley davidson softail sport glide flsb",
+  "confidence": "HIGH",
+  "match_basis": "MARKET_ALIAS",
+  "explanation": "The input 'FLSB Sport Glide 107' refers to the Harley-Davidson Softail Sport Glide with a 107ci engine, and 'FLSB' is the correct model code for this variant. The candidate 'harley davidson softail sport glide flsb' matches exactly in model code and name, confirming it is the same underlying motorcycle. The case variation and lowercase formatting are acceptable as standard catalog variations.",
+  "canonical_model_alias": "softail sport glide flsb",
+  "configuration_tokens": [
+    "107"
+  ],
+  "brand_aliases": [],
+  "model_aliases": [],
+  "status": "SUCCESS",
+  "prompt_version": "motorcycle-candidate-resolution-v4",
+  "model": "qwen-flash",
+  "make": "Harley-Davidson",
+  "model_name": "FLSB Sport Glide 107"
+}

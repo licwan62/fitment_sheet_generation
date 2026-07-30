@@ -1,0 +1,18 @@
+{
+  "decision": "MATCH",
+  "selected_candidate": "GZ 250 Marauder",
+  "confidence": "HIGH",
+  "match_basis": "MARKET_ALIAS",
+  "explanation": "The GZ250 is the model code used by Suzuki for the Marauder in North America and other markets, where 'Marauder' is the marketed name. The catalog candidate 'GZ 250 Marauder' correctly identifies the same underlying motorcycle model with the exact displacement and model code.",
+  "canonical_model_alias": "GZ 250 Marauder",
+  "configuration_tokens": [],
+  "brand_aliases": [],
+  "model_aliases": [
+    "GZ 250 Marauder"
+  ],
+  "status": "SUCCESS",
+  "prompt_version": "motorcycle-candidate-resolution-v4",
+  "model": "qwen-flash",
+  "make": "Suzuki",
+  "model_name": "GZ250"
+}

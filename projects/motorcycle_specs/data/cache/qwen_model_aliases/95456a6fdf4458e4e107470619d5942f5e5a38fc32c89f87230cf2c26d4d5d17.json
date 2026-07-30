@@ -1,0 +1,18 @@
+{
+  "decision": "MATCH",
+  "selected_candidate": "Ducati Monster 800 i.e.",
+  "confidence": "HIGH",
+  "match_basis": "MARKET_ALIAS",
+  "explanation": "The input 'Monster 800' refers to the same underlying model as 'Ducati Monster 800 i.e.', where 'i.e.' is a historical marketing designation for the fuel-injected version. The 'ie' variant is a common market alias for the same model, and all candidates share the core identity of the 800cc Monster with electronic injection. The canonical form is standardized as 'Ducati Monster 800 i.e.'.",
+  "canonical_model_alias": "Monster 800 i.e.",
+  "configuration_tokens": [],
+  "brand_aliases": [],
+  "model_aliases": [
+    "Monster 800 i.e."
+  ],
+  "status": "SUCCESS",
+  "prompt_version": "motorcycle-candidate-resolution-v4",
+  "model": "qwen-flash",
+  "make": "Ducati",
+  "model_name": "Monster 800"
+}

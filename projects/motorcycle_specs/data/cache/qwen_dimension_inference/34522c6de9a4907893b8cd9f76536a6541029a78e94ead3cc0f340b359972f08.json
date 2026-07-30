@@ -1,0 +1,16 @@
+{
+  "decision": "INFER|UNKNOWN",
+  "confidence": "MEDIUM|LOW",
+  "length_mm": null,
+  "width_mm": null,
+  "height_mm": null,
+  "wheelbase_mm": null,
+  "seat_height_mm": null,
+  "ground_clearance_mm": null,
+  "explanation": "The Gas Gas EC 450 4T is a motocross model, but specific dimensional data varies significantly across model years and markets. Without access to a catalog page or verified technical documentation for the exact variant, dimensions cannot be reliably inferred. Known variants (e.g., 2018–2023) show minor variations in wheelbase and seat height. Therefore, output is marked as UNKNOWN with medium to low confidence.",
+  "status": "SUCCESS",
+  "prompt_version": "motorcycle-dimension-inference-v1",
+  "model": "qwen-flash",
+  "make": "Gas Gas",
+  "model_name": "EC 450 4T"
+}

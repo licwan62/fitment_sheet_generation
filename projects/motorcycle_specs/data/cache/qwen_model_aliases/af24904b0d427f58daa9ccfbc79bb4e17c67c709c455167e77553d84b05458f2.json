@@ -1,0 +1,18 @@
+{
+  "decision": "MATCH",
+  "selected_candidate": "gasgas ecranger 200",
+  "confidence": "HIGH",
+  "match_basis": "SAME_NAME",
+  "explanation": "The input 'EC Ranger 200' is a direct match in meaning and identity to the catalog candidate 'gasgas ecranger 200', with only minor casing and spacing differences. The name 'EC Ranger' is the correct model designation, and 'ecranger' is the standard lowercase catalog form.",
+  "canonical_model_alias": "ecranger 200",
+  "configuration_tokens": [],
+  "brand_aliases": [],
+  "model_aliases": [
+    "gasgas ecranger 200"
+  ],
+  "status": "SUCCESS",
+  "prompt_version": "motorcycle-candidate-resolution-v4",
+  "model": "qwen-flash",
+  "make": "Gas Gas",
+  "model_name": "EC Ranger 200"
+}

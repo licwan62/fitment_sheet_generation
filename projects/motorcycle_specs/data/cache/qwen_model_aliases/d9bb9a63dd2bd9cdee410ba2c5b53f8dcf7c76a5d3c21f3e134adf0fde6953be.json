@@ -1,0 +1,18 @@
+{
+  "decision": "MATCH",
+  "selected_candidate": "CB 750 A Hondamatic",
+  "confidence": "HIGH",
+  "match_basis": "MARKET_ALIAS",
+  "explanation": "The 'CB750A Automatic' is a known market designation for the CB 750 A Hondamatic, where 'Hondamatic' refers to Honda's automatic transmission variant. This is a recognized market-specific name for the same model.",
+  "canonical_model_alias": "CB 750 A Hondamatic",
+  "configuration_tokens": [],
+  "brand_aliases": [],
+  "model_aliases": [
+    "CB 750 A Hondamatic"
+  ],
+  "status": "SUCCESS",
+  "prompt_version": "motorcycle-candidate-resolution-v4",
+  "model": "qwen-flash",
+  "make": "Honda",
+  "model_name": "CB750A Automatic"
+}

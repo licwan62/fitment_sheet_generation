@@ -1,0 +1,16 @@
+{
+  "decision": "NO_MATCH",
+  "selected_candidate": "",
+  "confidence": "HIGH",
+  "match_basis": "NONE",
+  "explanation": "The input model 'SF50B/Prima' is a 50cc motorcycle with a specific designation (SF50B) and market name 'Prima', which does not correspond to any of the catalog candidates. The candidates listed are either different displacements (e.g., GT 650, GT 250), different model names (e.g., Newtee Up 50), or lack the SF50B identifier. None match the exact model identity including displacement, model code, and market name.",
+  "canonical_model_alias": "",
+  "configuration_tokens": [],
+  "brand_aliases": [],
+  "model_aliases": [],
+  "status": "SUCCESS",
+  "prompt_version": "motorcycle-candidate-resolution-v4",
+  "model": "qwen-flash",
+  "make": "Hyosung",
+  "model_name": "SF50B/Prima"
+}

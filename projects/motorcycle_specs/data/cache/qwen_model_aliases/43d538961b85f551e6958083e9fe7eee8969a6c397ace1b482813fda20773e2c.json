@@ -1,0 +1,20 @@
+{
+  "decision": "MATCH",
+  "selected_candidate": "beta rr 450",
+  "confidence": "HIGH",
+  "match_basis": "SAME_NAME",
+  "explanation": "The input '450 RC' is a known market or configuration variant of the Beta RR 450, where 'RC' likely stands for 'Race Competition' or similar, aligning with Beta's naming conventions. The core model identity (RR 450) matches exactly with the candidate.",
+  "canonical_model_alias": "beta rr 450",
+  "configuration_tokens": [
+    "RC"
+  ],
+  "brand_aliases": [],
+  "model_aliases": [
+    "rr 450"
+  ],
+  "status": "SUCCESS",
+  "prompt_version": "motorcycle-candidate-resolution-v4",
+  "model": "qwen-flash",
+  "make": "Beta",
+  "model_name": "450 RC"
+}

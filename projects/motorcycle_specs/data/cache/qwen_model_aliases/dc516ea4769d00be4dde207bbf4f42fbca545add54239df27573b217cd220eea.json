@@ -1,0 +1,18 @@
+{
+  "decision": "MATCH",
+  "selected_candidate": "VFR 1200X  Crosstourer",
+  "confidence": "HIGH",
+  "match_basis": "MARKET_ALIAS",
+  "explanation": "The VFR1200X and VFR 1200X Crosstourer refer to the same underlying motorcycle model, with 'Crosstourer' being the market-specific name used for the VFR1200X in certain regions, particularly Europe. This is a known variant designation for the same model.",
+  "canonical_model_alias": "VFR 1200X Crosstourer",
+  "configuration_tokens": [],
+  "brand_aliases": [],
+  "model_aliases": [
+    "VFR 1200X Crosstourer"
+  ],
+  "status": "SUCCESS",
+  "prompt_version": "motorcycle-candidate-resolution-v4",
+  "model": "qwen-flash",
+  "make": "Honda",
+  "model_name": "VFR1200X"
+}

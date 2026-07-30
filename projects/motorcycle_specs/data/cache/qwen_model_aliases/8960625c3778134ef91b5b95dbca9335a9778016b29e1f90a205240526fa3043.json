@@ -1,0 +1,19 @@
+{
+  "decision": "MATCH",
+  "selected_candidate": "EC 250 \n\t2T Cervantes Replica",
+  "confidence": "HIGH",
+  "match_basis": "SAME_NAME",
+  "explanation": "The input model 'EC 250 Cervantes Replica' matches the catalog candidate 'EC 250 \\n\\t2T Cervantes Replica' exactly in name and configuration, with only minor formatting differences (line break). The '2T' designation is consistent with the Cervantes Replica's two-stroke engine, confirming identity.",
+  "canonical_model_alias": "EC 250 2T Cervantes Replica",
+  "configuration_tokens": [
+    "2T",
+    "Cervantes Replica"
+  ],
+  "brand_aliases": [],
+  "model_aliases": [],
+  "status": "SUCCESS",
+  "prompt_version": "motorcycle-candidate-resolution-v4",
+  "model": "qwen-flash",
+  "make": "Gas Gas",
+  "model_name": "EC 250 Cervantes Replica"
+}

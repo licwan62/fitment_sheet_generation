@@ -1,0 +1,18 @@
+{
+  "decision": "MATCH",
+  "selected_candidate": "CB 360T",
+  "confidence": "HIGH",
+  "match_basis": "MARKET_ALIAS",
+  "explanation": "The CB360T is the European market designation for the Honda CB360, with 'T' denoting the 'Touring' or 'Trunk' variant; this is a known regional market name for the same underlying model. The CB360G is a different configuration (likely Japanese domestic market with different equipment), but the core model identity matches the CB360T as the primary catalog expression for the CB360 in international markets.",
+  "canonical_model_alias": "CB 360T",
+  "configuration_tokens": [],
+  "brand_aliases": [],
+  "model_aliases": [
+    "CB 360T"
+  ],
+  "status": "SUCCESS",
+  "prompt_version": "motorcycle-candidate-resolution-v4",
+  "model": "qwen-flash",
+  "make": "Honda",
+  "model_name": "CB360"
+}

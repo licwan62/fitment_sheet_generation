@@ -1,0 +1,16 @@
+{
+  "decision": "NO_MATCH",
+  "selected_candidate": "",
+  "confidence": "HIGH",
+  "match_basis": "NONE",
+  "explanation": "The model 'Ibex 800 E' is not equivalent to any of the catalog candidates. The Ibex 800 E is a distinct model in CFMOTO's lineup, with 'Ibex' being a specific sub-brand or trim line for certain CFMOTO motorcycles, and 'E' likely denoting a configuration or market variant. None of the listed candidates match this exact model identity, including displacement (800), name ('Ibex'), and suffix ('E'). The 800MT series, 800NK, and other variants are different models despite shared displacement or platform elements.",
+  "canonical_model_alias": "",
+  "configuration_tokens": [],
+  "brand_aliases": [],
+  "model_aliases": [],
+  "status": "SUCCESS",
+  "prompt_version": "motorcycle-candidate-resolution-v4",
+  "model": "qwen-flash",
+  "make": "CFMOTO",
+  "model_name": "Ibex 800 E"
+}

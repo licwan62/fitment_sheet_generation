@@ -1,0 +1,21 @@
+{
+  "decision": "MATCH",
+  "selected_candidate": "Harley-Davidson FXS Softail Blackline",
+  "confidence": "HIGH",
+  "match_basis": "SAME_NAME",
+  "explanation": "The input 'FXS Blackline' refers to the same motorcycle model as the candidate 'Harley-Davidson FXS Softail Blackline', with 'Softail' being a standard part of the model's name and 'Blackline' indicating the trim level. The model is consistently identified by the FXS designation and Blackline configuration.",
+  "canonical_model_alias": "FXS Softail Blackline",
+  "configuration_tokens": [
+    "Blackline"
+  ],
+  "brand_aliases": [],
+  "model_aliases": [
+    "Softail Blackline",
+    "FXS Softail Blackline"
+  ],
+  "status": "SUCCESS",
+  "prompt_version": "motorcycle-candidate-resolution-v4",
+  "model": "qwen-flash",
+  "make": "Harley-Davidson",
+  "model_name": "FXS Blackline"
+}

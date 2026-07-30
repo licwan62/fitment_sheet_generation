@@ -1,0 +1,18 @@
+{
+  "decision": "MATCH",
+  "selected_candidate": "CB 1000F",
+  "confidence": "HIGH",
+  "match_basis": "MARKET_ALIAS",
+  "explanation": "The 'CB1000' input refers to the Honda CB1000F, which was marketed as the CB1000 in some regions (e.g., Japan and Europe) before being rebranded as CB1000F for global consistency. The model is identical; only the naming differs by market.",
+  "canonical_model_alias": "CB 1000F",
+  "configuration_tokens": [],
+  "brand_aliases": [],
+  "model_aliases": [
+    "CB 1000F"
+  ],
+  "status": "SUCCESS",
+  "prompt_version": "motorcycle-candidate-resolution-v4",
+  "model": "qwen-flash",
+  "make": "Honda",
+  "model_name": "CB1000"
+}

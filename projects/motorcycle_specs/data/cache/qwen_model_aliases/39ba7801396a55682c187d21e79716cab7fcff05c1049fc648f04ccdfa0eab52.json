@@ -1,0 +1,19 @@
+{
+  "decision": "MATCH",
+  "selected_candidate": "gasgas txt 125 pro",
+  "confidence": "HIGH",
+  "match_basis": "SAME_NAME",
+  "explanation": "The input 'TXT Pro 125' and the candidate 'gasgas txt 125 pro' refer to the same motorcycle model, with only minor variation in capitalization and spacing. The displacement (125) and core model name (TXT 125 Pro) are identical, confirming they represent the same underlying motorcycle.",
+  "canonical_model_alias": "txt 125 pro",
+  "configuration_tokens": [],
+  "brand_aliases": [],
+  "model_aliases": [
+    "gasgas txt 125 pro",
+    "txt 125 pro"
+  ],
+  "status": "SUCCESS",
+  "prompt_version": "motorcycle-candidate-resolution-v4",
+  "model": "qwen-flash",
+  "make": "Gas Gas",
+  "model_name": "TXT Pro 125"
+}

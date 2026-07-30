@@ -1,0 +1,18 @@
+{
+  "decision": "MATCH",
+  "selected_candidate": "harley davidson touring road glide special fltrxs",
+  "confidence": "HIGH",
+  "match_basis": "SAME_NAME",
+  "explanation": "The input model 'FLTRXS Road Glide Special' is the same motorcycle as the candidate 'harley davidson touring road glide special fltrxs', with only minor variations in capitalization and phrasing. The model code FLTRXS and the name 'Road Glide Special' are identical, confirming it is the same underlying motorcycle.",
+  "canonical_model_alias": "touring road glide special fltrxs",
+  "configuration_tokens": [],
+  "brand_aliases": [],
+  "model_aliases": [
+    "touring road glide special fltrxs"
+  ],
+  "status": "SUCCESS",
+  "prompt_version": "motorcycle-candidate-resolution-v4",
+  "model": "qwen-flash",
+  "make": "Harley-Davidson",
+  "model_name": "FLTRXS Road Glide Special"
+}

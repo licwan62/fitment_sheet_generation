@@ -1,0 +1,16 @@
+{
+  "decision": "INFER|UNKNOWN",
+  "confidence": "MEDIUM|LOW",
+  "length_mm": null,
+  "width_mm": null,
+  "height_mm": null,
+  "wheelbase_mm": null,
+  "seat_height_mm": null,
+  "ground_clearance_mm": null,
+  "explanation": "The model year and market-specific variations for the CRF1100L4 Africa Twin Adventure Sports ES DCT are not fully confirmed, and no definitive catalog data is available. Dimensions may vary slightly between markets and model years. Inference based on similar models is uncertain due to potential differences in frame design, suspension setup, and optional equipment.",
+  "status": "SUCCESS",
+  "prompt_version": "motorcycle-dimension-inference-v1",
+  "model": "qwen-flash",
+  "make": "Honda",
+  "model_name": "CRF1100L4 Africa Twin Adventure Sports ES DCT"
+}

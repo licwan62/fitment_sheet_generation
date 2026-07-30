@@ -1,0 +1,16 @@
+{
+  "decision": "INFER|UNKNOWN",
+  "confidence": "LOW",
+  "length_mm": null,
+  "width_mm": null,
+  "height_mm": null,
+  "wheelbase_mm": null,
+  "seat_height_mm": null,
+  "ground_clearance_mm": null,
+  "explanation": "The Cobra CX50SR King Limited Edition is a niche or limited-production model with no publicly available official dimensions. Without access to a catalog page or verified specifications, and given the model's potential variation by year or market, accurate inference is not reliable. Dimensions cannot be confidently estimated from general knowledge of similar models due to possible unique design features.",
+  "status": "SUCCESS",
+  "prompt_version": "motorcycle-dimension-inference-v1",
+  "model": "qwen-flash",
+  "make": "Cobra",
+  "model_name": "CX50SR King Limited Edition"
+}

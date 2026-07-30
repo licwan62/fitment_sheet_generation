@@ -1,0 +1,16 @@
+{
+  "decision": "INFER|UNKNOWN",
+  "confidence": "LOW",
+  "length_mm": null,
+  "width_mm": null,
+  "height_mm": null,
+  "wheelbase_mm": null,
+  "seat_height_mm": null,
+  "ground_clearance_mm": null,
+  "explanation": "The Gas Gas Contact 250 ES is a motocross motorcycle, but specific dimensional data for this exact model variant (especially across different years and markets) is not consistently documented. Without access to official specifications or verified catalog sources, dimensions cannot be reliably inferred. Variations in frame design, suspension setup, and component configuration between model years may result in significant differences. Therefore, the model identity and dimensions are considered uncertain.",
+  "status": "SUCCESS",
+  "prompt_version": "motorcycle-dimension-inference-v1",
+  "model": "qwen-flash",
+  "make": "Gas Gas",
+  "model_name": "Contact 250 ES"
+}

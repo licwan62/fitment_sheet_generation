@@ -1,0 +1,16 @@
+{
+  "decision": "NO_MATCH",
+  "selected_candidate": "",
+  "confidence": "HIGH",
+  "match_basis": "NONE",
+  "explanation": "The input model 'VT13CXA Fury ABS' is not found in the catalog candidates, and no matching candidate exists for this specific motorcycle configuration. The model designation includes a unique VIN-like identifier (VT13CXA) and features (Fury ABS), which are not present in any known catalog entry. No plausible alias, market variant, or typo match can be established with the provided candidates.",
+  "canonical_model_alias": "",
+  "configuration_tokens": [],
+  "brand_aliases": [],
+  "model_aliases": [],
+  "status": "SUCCESS",
+  "prompt_version": "motorcycle-candidate-resolution-v4",
+  "model": "qwen-flash",
+  "make": "Honda",
+  "model_name": "VT13CXA Fury ABS"
+}

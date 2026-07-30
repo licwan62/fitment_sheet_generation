@@ -1,0 +1,18 @@
+{
+  "decision": "MATCH",
+  "selected_candidate": "harley davidson softail slim fls",
+  "confidence": "HIGH",
+  "match_basis": "SAME_NAME",
+  "explanation": "The input 'FLS Softail Slim' is the same model as 'harley davidson softail slim fls', with the FLS designation being the correct model code for the Softail Slim. The casing and order of words differ, but the core identity matches exactly.",
+  "canonical_model_alias": "softail slim fls",
+  "configuration_tokens": [],
+  "brand_aliases": [],
+  "model_aliases": [
+    "softail slim fls"
+  ],
+  "status": "SUCCESS",
+  "prompt_version": "motorcycle-candidate-resolution-v4",
+  "model": "qwen-flash",
+  "make": "Harley-Davidson",
+  "model_name": "FLS Softail Slim"
+}

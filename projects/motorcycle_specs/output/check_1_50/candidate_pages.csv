@@ -1,0 +1,1404 @@
+﻿INPUT_ID,MAKE,MODEL,CANDIDATE_TITLE,CANDIDATE_URL,MATCH_SCORE,MATCH_CONFIDENCE,MATCH_STATUS
+000001,BMW,C evolution,C Evolution,https://www.motorcyclespecs.co.za/model/bmw/bmw-c1e-17.html,95,HIGH,EXACT
+000001,BMW,C evolution,C 600 Sport,https://www.motorcyclespecs.co.za/model/bmw/bmw-c600-sport-14.html,57,LOW,MODEL_MISMATCH
+000001,BMW,C evolution,C 650 Sport,https://www.motorcyclespecs.co.za/model/bmw/bmw-c600-sport-16.html,57,LOW,MODEL_MISMATCH
+000001,BMW,C evolution,C 650 Sport,https://www.motorcyclespecs.co.za/model/bmw/bmw-c600-sport-18.html,57,LOW,MODEL_MISMATCH
+000001,BMW,C evolution,C 650 Sport,https://www.motorcyclespecs.co.za/model/bmw/bmw-c600-sport-20.html,57,LOW,MODEL_MISMATCH
+000001,BMW,C evolution,C 600 Sport,https://www.motorcyclespecs.co.za/model/bmw/bmw-c600-sport.html,57,LOW,MODEL_MISMATCH
+000001,BMW,C evolution,C 400GT,https://www.motorcyclespecs.co.za/model/bmw/BMW-c400gt-19.html,54,LOW,MODEL_MISMATCH
+000001,BMW,C evolution,C 400GT,https://www.motorcyclespecs.co.za/model/bmw/bmw-c400gt-2025.html,54,LOW,MODEL_MISMATCH
+000001,BMW,C evolution,C 400GT,https://www.motorcyclespecs.co.za/model/bmw/bmw-c400gt-21.html,54,LOW,MODEL_MISMATCH
+000001,BMW,C evolution,C 650GT,https://www.motorcyclespecs.co.za/model/bmw/bmw-c650gt-12.html,54,LOW,MODEL_MISMATCH
+000001,BMW,C evolution,C 650GT,https://www.motorcyclespecs.co.za/model/bmw/bmw-c650gt-14.html,54,LOW,MODEL_MISMATCH
+000001,BMW,C evolution,C 650GT,https://www.motorcyclespecs.co.za/model/bmw/bmw-c650gt-16.html,54,LOW,MODEL_MISMATCH
+000001,BMW,C evolution,C 650GT,https://www.motorcyclespecs.co.za/model/bmw/bmw-c650gt-18.html,54,LOW,MODEL_MISMATCH
+000001,BMW,C evolution,C 650GT,https://www.motorcyclespecs.co.za/model/bmw/bmw-c650gt-20.html,54,LOW,MODEL_MISMATCH
+000001,BMW,C evolution,C,https://www.motorcyclespecs.co.za/model/bmw/bmw-c1.html,53,LOW,MODEL_MISMATCH
+000001,BMW,C evolution,C 1-200,https://www.motorcyclespecs.co.za/model/bmw/bmw-c1-200.html,51,LOW,MODEL_MISMATCH
+000001,BMW,C evolution,C 400X,https://www.motorcyclespecs.co.za/model/bmw/bmw-c400x-18.html,48,LOW,MODEL_MISMATCH
+000001,BMW,C evolution,C 400X,https://www.motorcyclespecs.co.za/model/bmw/bmw-c400x-2025.html,48,LOW,MODEL_MISMATCH
+000001,BMW,C evolution,C 400X,https://www.motorcyclespecs.co.za/model/bmw/bmw-c400x-21.html,48,LOW,MODEL_MISMATCH
+000001,BMW,C evolution,C 400X,https://www.motorcyclespecs.co.za/model/bmw/bmw-g400x-20.html,48,LOW,MODEL_MISMATCH
+000002,BMW,C400GT,C 400GT,https://www.motorcyclespecs.co.za/model/bmw/BMW-c400gt-19.html,95,HIGH,EXACT
+000002,BMW,C400GT,C 400GT,https://www.motorcyclespecs.co.za/model/bmw/bmw-c400gt-2025.html,95,HIGH,EXACT
+000002,BMW,C400GT,C 400GT,https://www.motorcyclespecs.co.za/model/bmw/bmw-c400gt-21.html,95,HIGH,EXACT
+000002,BMW,C400GT,C 400X,https://www.motorcyclespecs.co.za/model/bmw/bmw-c400x-18.html,73,LOW,REVIEW
+000002,BMW,C400GT,C 400X,https://www.motorcyclespecs.co.za/model/bmw/bmw-c400x-2025.html,73,LOW,REVIEW
+000002,BMW,C400GT,C 400X,https://www.motorcyclespecs.co.za/model/bmw/bmw-c400x-21.html,73,LOW,REVIEW
+000002,BMW,C400GT,C 400X,https://www.motorcyclespecs.co.za/model/bmw/bmw-g400x-20.html,73,LOW,REVIEW
+000003,BMW,C400X,C 400X,https://www.motorcyclespecs.co.za/model/bmw/bmw-c400x-18.html,95,HIGH,EXACT
+000003,BMW,C400X,C 400X,https://www.motorcyclespecs.co.za/model/bmw/bmw-c400x-2025.html,95,HIGH,EXACT
+000003,BMW,C400X,C 400X,https://www.motorcyclespecs.co.za/model/bmw/bmw-c400x-21.html,95,HIGH,EXACT
+000003,BMW,C400X,C 400X,https://www.motorcyclespecs.co.za/model/bmw/bmw-g400x-20.html,95,HIGH,EXACT
+000003,BMW,C400X,C 400GT,https://www.motorcyclespecs.co.za/model/bmw/BMW-c400gt-19.html,73,LOW,REVIEW
+000003,BMW,C400X,C 400GT,https://www.motorcyclespecs.co.za/model/bmw/bmw-c400gt-2025.html,73,LOW,REVIEW
+000003,BMW,C400X,C 400GT,https://www.motorcyclespecs.co.za/model/bmw/bmw-c400gt-21.html,73,LOW,REVIEW
+000004,BMW,C600 Sport,C 600 Sport,https://www.motorcyclespecs.co.za/model/bmw/bmw-c600-sport-14.html,95,HIGH,EXACT
+000004,BMW,C600 Sport,C 600 Sport,https://www.motorcyclespecs.co.za/model/bmw/bmw-c600-sport.html,95,HIGH,EXACT
+000004,BMW,C600 Sport,C 650 Sport,https://www.motorcyclespecs.co.za/model/bmw/bmw-c600-sport-16.html,65,LOW,NUMBER_MISMATCH
+000004,BMW,C600 Sport,C 650 Sport,https://www.motorcyclespecs.co.za/model/bmw/bmw-c600-sport-18.html,65,LOW,NUMBER_MISMATCH
+000004,BMW,C600 Sport,C 650 Sport,https://www.motorcyclespecs.co.za/model/bmw/bmw-c600-sport-20.html,65,LOW,NUMBER_MISMATCH
+000005,BMW,C650 Sport,C 650 Sport,https://www.motorcyclespecs.co.za/model/bmw/bmw-c600-sport-16.html,95,HIGH,EXACT
+000005,BMW,C650 Sport,C 650 Sport,https://www.motorcyclespecs.co.za/model/bmw/bmw-c600-sport-18.html,95,HIGH,EXACT
+000005,BMW,C650 Sport,C 650 Sport,https://www.motorcyclespecs.co.za/model/bmw/bmw-c600-sport-20.html,95,HIGH,EXACT
+000005,BMW,C650 Sport,C 650GT,https://www.motorcyclespecs.co.za/model/bmw/bmw-c650gt-12.html,71,LOW,REVIEW
+000005,BMW,C650 Sport,C 650GT,https://www.motorcyclespecs.co.za/model/bmw/bmw-c650gt-14.html,71,LOW,REVIEW
+000005,BMW,C650 Sport,C 650GT,https://www.motorcyclespecs.co.za/model/bmw/bmw-c650gt-16.html,71,LOW,REVIEW
+000005,BMW,C650 Sport,C 650GT,https://www.motorcyclespecs.co.za/model/bmw/bmw-c650gt-18.html,71,LOW,REVIEW
+000005,BMW,C650 Sport,C 650GT,https://www.motorcyclespecs.co.za/model/bmw/bmw-c650gt-20.html,71,LOW,REVIEW
+000006,BMW,C650GT,C 650GT,https://www.motorcyclespecs.co.za/model/bmw/bmw-c650gt-12.html,95,HIGH,EXACT
+000006,BMW,C650GT,C 650GT,https://www.motorcyclespecs.co.za/model/bmw/bmw-c650gt-14.html,95,HIGH,EXACT
+000006,BMW,C650GT,C 650GT,https://www.motorcyclespecs.co.za/model/bmw/bmw-c650gt-16.html,95,HIGH,EXACT
+000006,BMW,C650GT,C 650GT,https://www.motorcyclespecs.co.za/model/bmw/bmw-c650gt-18.html,95,HIGH,EXACT
+000006,BMW,C650GT,C 650GT,https://www.motorcyclespecs.co.za/model/bmw/bmw-c650gt-20.html,95,HIGH,EXACT
+000006,BMW,C650GT,C 650 Sport,https://www.motorcyclespecs.co.za/model/bmw/bmw-c600-sport-16.html,71,LOW,REVIEW
+000006,BMW,C650GT,C 650 Sport,https://www.motorcyclespecs.co.za/model/bmw/bmw-c600-sport-18.html,71,LOW,REVIEW
+000006,BMW,C650GT,C 650 Sport,https://www.motorcyclespecs.co.za/model/bmw/bmw-c600-sport-20.html,71,LOW,REVIEW
+000007,BMW,CE 02,CE-02,https://www.motorcyclespecs.co.za/model/bmw/bmw-ceo2-2024.html,95,HIGH,EXACT
+000007,BMW,CE 02,CE-04,https://www.motorcyclespecs.co.za/model/bmw/bmw-ce-04-2026.html,65,LOW,NUMBER_MISMATCH
+000008,BMW,CE 04,CE-04,https://www.motorcyclespecs.co.za/model/bmw/bmw-ce-04-2026.html,95,HIGH,EXACT
+000008,BMW,CE 04,CE-04,https://www.motorcyclespecs.co.za/model/bmw/bmw-ce-04.html,95,HIGH,EXACT
+000009,BMW,F650,F 650GS,https://www.motorcyclespecs.co.za/model/bmw/bmw-f650gs-01.html,79,LOW,REVIEW
+000009,BMW,F650,F 650GS,https://www.motorcyclespecs.co.za/model/bmw/bmw-f650gs-02.html,79,LOW,REVIEW
+000009,BMW,F650,F 650GS,https://www.motorcyclespecs.co.za/model/bmw/bmw-f650gs-03.html,79,LOW,REVIEW
+000009,BMW,F650,F 650GS,https://www.motorcyclespecs.co.za/model/bmw/bmw-f650gs-04.html,79,LOW,REVIEW
+000009,BMW,F650,F 650GS,https://www.motorcyclespecs.co.za/model/bmw/bmw-f650gs-05.html,79,LOW,REVIEW
+000009,BMW,F650,F 650GS,https://www.motorcyclespecs.co.za/model/bmw/bmw-f650gs-06.html,79,LOW,REVIEW
+000009,BMW,F650,F 650GS,https://www.motorcyclespecs.co.za/model/bmw/bmw-f650gs-07.html,79,LOW,REVIEW
+000009,BMW,F650,F 650GS,https://www.motorcyclespecs.co.za/model/bmw/bmw-f650gs-08.html,79,LOW,REVIEW
+000009,BMW,F650,F 650GS,https://www.motorcyclespecs.co.za/model/bmw/bmw-f650gs-09.html,79,LOW,REVIEW
+000009,BMW,F650,"F 
+		650GS",https://www.motorcyclespecs.co.za/model/bmw/bmw-f650gs.html,79,LOW,REVIEW
+000009,BMW,F650,F 650 Funduro,https://www.motorcyclespecs.co.za/model/bmw/bmw-f650-94.html,65,LOW,MODEL_MISMATCH
+000009,BMW,F650,F 650 Funduro,https://www.motorcyclespecs.co.za/model/bmw/bmw-f650-95.html,65,LOW,MODEL_MISMATCH
+000009,BMW,F650,F 650 Funduro,https://www.motorcyclespecs.co.za/model/bmw/bmw-f650-96.html,65,LOW,MODEL_MISMATCH
+000009,BMW,F650,F 650 Funduro,https://www.motorcyclespecs.co.za/model/bmw/bmw-f650-97.html,65,LOW,MODEL_MISMATCH
+000009,BMW,F650,F 650 Funduro,https://www.motorcyclespecs.co.za/model/bmw/bmw-f650-98.html,65,LOW,MODEL_MISMATCH
+000009,BMW,F650,F 650 Funduro,https://www.motorcyclespecs.co.za/model/bmw/bmw-f650-99.html,65,LOW,MODEL_MISMATCH
+000009,BMW,F650,F 650GS Dakar,https://www.motorcyclespecs.co.za/model/bmw/bmw-f650-dakar-01.html,65,LOW,MODEL_MISMATCH
+000009,BMW,F650,F 650GS Dakar,https://www.motorcyclespecs.co.za/model/bmw/bmw-f650-dakar-02.html,65,LOW,MODEL_MISMATCH
+000009,BMW,F650,"F 650GS 
+		Dakar",https://www.motorcyclespecs.co.za/model/bmw/bmw-f650-dakar-03.html,65,LOW,MODEL_MISMATCH
+000009,BMW,F650,F 650GS Dakar,https://www.motorcyclespecs.co.za/model/bmw/bmw-f650-dakar.html,65,LOW,MODEL_MISMATCH
+000009,BMW,F650,"F 650GS 
+		Dakar",https://www.motorcyclespecs.co.za/model/bmw/bmw-f650gs-dakar-04.html,65,LOW,MODEL_MISMATCH
+000009,BMW,F650,"F 650GS 
+		Dakar",https://www.motorcyclespecs.co.za/model/bmw/bmw-f650gs-dakar-05.html,65,LOW,MODEL_MISMATCH
+000009,BMW,F650,"F 650GS 
+		Dakar",https://www.motorcyclespecs.co.za/model/bmw/bmw-f650gs-dakar-06.html,65,LOW,MODEL_MISMATCH
+000009,BMW,F650,"F 650GS 
+		Dakar",https://www.motorcyclespecs.co.za/model/bmw/bmw-f650gs-dakar-07.html,65,LOW,MODEL_MISMATCH
+000009,BMW,F650,F 650ST Strada,https://www.motorcyclespecs.co.za/model/bmw/bmw-f650st-00.html,64,LOW,MODEL_MISMATCH
+000009,BMW,F650,F 650ST Strada,https://www.motorcyclespecs.co.za/model/bmw/bmw-f650st-98.html,64,LOW,MODEL_MISMATCH
+000009,BMW,F650,F 650ST Strada,https://www.motorcyclespecs.co.za/model/bmw/bmw-f650st-99.html,64,LOW,MODEL_MISMATCH
+000009,BMW,F650,"F 
+		650ST Strada",https://www.motorcyclespecs.co.za/model/bmw/bmw-f650st.html,64,LOW,MODEL_MISMATCH
+000009,BMW,F650,F 650CS Scarver,https://www.motorcyclespecs.co.za/model/bmw/bmw-f650cs-02.html,63,LOW,MODEL_MISMATCH
+000009,BMW,F650,F 650CS Scarver,https://www.motorcyclespecs.co.za/model/bmw/bmw-f650cs-03.html,63,LOW,MODEL_MISMATCH
+000009,BMW,F650,F 650CS Scarver,https://www.motorcyclespecs.co.za/model/bmw/bmw-f650cs-04.html,63,LOW,MODEL_MISMATCH
+000009,BMW,F650,"F 
+		650CS Scarver",https://www.motorcyclespecs.co.za/model/bmw/bmw-f650cs.html,63,LOW,MODEL_MISMATCH
+000009,BMW,F650,"F 650RR 
+		Dakar",https://www.motorcyclespecs.co.za/model/bmw/bmw-f650rr-dakar-99.html,60,LOW,MODEL_MISMATCH
+000009,BMW,F650,F 650GS (800cc),https://www.motorcyclespecs.co.za/model/bmw/bmw-f650gs-10.html,56,LOW,NUMBER_MISMATCH
+000009,BMW,F650,"F 650GS 
+		(800cc)",https://www.motorcyclespecs.co.za/model/bmw/bmw-f650gs-11.html,56,LOW,NUMBER_MISMATCH
+000009,BMW,F650,F 650GS 30th Anniversary Special,https://www.motorcyclespecs.co.za/model/bmw/bmw-f650gs-special-10.html,44,LOW,NUMBER_MISMATCH
+000010,BMW,F650 Enduro,F 650 Funduro,https://www.motorcyclespecs.co.za/model/bmw/bmw-f650-94.html,87,LOW,REVIEW
+000010,BMW,F650 Enduro,F 650 Funduro,https://www.motorcyclespecs.co.za/model/bmw/bmw-f650-95.html,87,LOW,REVIEW
+000010,BMW,F650 Enduro,F 650 Funduro,https://www.motorcyclespecs.co.za/model/bmw/bmw-f650-96.html,87,LOW,REVIEW
+000010,BMW,F650 Enduro,F 650 Funduro,https://www.motorcyclespecs.co.za/model/bmw/bmw-f650-97.html,87,LOW,REVIEW
+000010,BMW,F650 Enduro,F 650 Funduro,https://www.motorcyclespecs.co.za/model/bmw/bmw-f650-98.html,87,LOW,REVIEW
+000010,BMW,F650 Enduro,F 650 Funduro,https://www.motorcyclespecs.co.za/model/bmw/bmw-f650-99.html,87,LOW,REVIEW
+000010,BMW,F650 Enduro,F 650CS Scarver,https://www.motorcyclespecs.co.za/model/bmw/bmw-f650cs-02.html,69,LOW,MODEL_MISMATCH
+000010,BMW,F650 Enduro,F 650CS Scarver,https://www.motorcyclespecs.co.za/model/bmw/bmw-f650cs-03.html,69,LOW,MODEL_MISMATCH
+000010,BMW,F650 Enduro,F 650CS Scarver,https://www.motorcyclespecs.co.za/model/bmw/bmw-f650cs-04.html,69,LOW,MODEL_MISMATCH
+000010,BMW,F650 Enduro,"F 
+		650CS Scarver",https://www.motorcyclespecs.co.za/model/bmw/bmw-f650cs.html,69,LOW,MODEL_MISMATCH
+000010,BMW,F650 Enduro,F 650GS Dakar,https://www.motorcyclespecs.co.za/model/bmw/bmw-f650-dakar-01.html,67,LOW,MODEL_MISMATCH
+000010,BMW,F650 Enduro,F 650GS Dakar,https://www.motorcyclespecs.co.za/model/bmw/bmw-f650-dakar-02.html,67,LOW,MODEL_MISMATCH
+000010,BMW,F650 Enduro,"F 650GS 
+		Dakar",https://www.motorcyclespecs.co.za/model/bmw/bmw-f650-dakar-03.html,67,LOW,MODEL_MISMATCH
+000010,BMW,F650 Enduro,F 650GS Dakar,https://www.motorcyclespecs.co.za/model/bmw/bmw-f650-dakar.html,67,LOW,MODEL_MISMATCH
+000010,BMW,F650 Enduro,F 650GS,https://www.motorcyclespecs.co.za/model/bmw/bmw-f650gs-01.html,67,LOW,MODEL_MISMATCH
+000010,BMW,F650 Enduro,F 650GS,https://www.motorcyclespecs.co.za/model/bmw/bmw-f650gs-02.html,67,LOW,MODEL_MISMATCH
+000010,BMW,F650 Enduro,F 650GS,https://www.motorcyclespecs.co.za/model/bmw/bmw-f650gs-03.html,67,LOW,MODEL_MISMATCH
+000010,BMW,F650 Enduro,F 650GS,https://www.motorcyclespecs.co.za/model/bmw/bmw-f650gs-04.html,67,LOW,MODEL_MISMATCH
+000010,BMW,F650 Enduro,F 650GS,https://www.motorcyclespecs.co.za/model/bmw/bmw-f650gs-05.html,67,LOW,MODEL_MISMATCH
+000010,BMW,F650 Enduro,F 650GS,https://www.motorcyclespecs.co.za/model/bmw/bmw-f650gs-06.html,67,LOW,MODEL_MISMATCH
+000010,BMW,F650 Enduro,F 650GS,https://www.motorcyclespecs.co.za/model/bmw/bmw-f650gs-07.html,67,LOW,MODEL_MISMATCH
+000010,BMW,F650 Enduro,F 650GS,https://www.motorcyclespecs.co.za/model/bmw/bmw-f650gs-08.html,67,LOW,MODEL_MISMATCH
+000010,BMW,F650 Enduro,F 650GS,https://www.motorcyclespecs.co.za/model/bmw/bmw-f650gs-09.html,67,LOW,MODEL_MISMATCH
+000010,BMW,F650 Enduro,"F 650GS 
+		Dakar",https://www.motorcyclespecs.co.za/model/bmw/bmw-f650gs-dakar-04.html,67,LOW,MODEL_MISMATCH
+000010,BMW,F650 Enduro,"F 650GS 
+		Dakar",https://www.motorcyclespecs.co.za/model/bmw/bmw-f650gs-dakar-05.html,67,LOW,MODEL_MISMATCH
+000010,BMW,F650 Enduro,"F 650GS 
+		Dakar",https://www.motorcyclespecs.co.za/model/bmw/bmw-f650gs-dakar-06.html,67,LOW,MODEL_MISMATCH
+000010,BMW,F650 Enduro,"F 650GS 
+		Dakar",https://www.motorcyclespecs.co.za/model/bmw/bmw-f650gs-dakar-07.html,67,LOW,MODEL_MISMATCH
+000010,BMW,F650 Enduro,"F 
+		650GS",https://www.motorcyclespecs.co.za/model/bmw/bmw-f650gs.html,67,LOW,MODEL_MISMATCH
+000010,BMW,F650 Enduro,"F 650RR 
+		Dakar",https://www.motorcyclespecs.co.za/model/bmw/bmw-f650rr-dakar-99.html,64,LOW,MODEL_MISMATCH
+000010,BMW,F650 Enduro,F 650ST Strada,https://www.motorcyclespecs.co.za/model/bmw/bmw-f650st-00.html,64,LOW,MODEL_MISMATCH
+000010,BMW,F650 Enduro,F 650ST Strada,https://www.motorcyclespecs.co.za/model/bmw/bmw-f650st-98.html,64,LOW,MODEL_MISMATCH
+000010,BMW,F650 Enduro,F 650ST Strada,https://www.motorcyclespecs.co.za/model/bmw/bmw-f650st-99.html,64,LOW,MODEL_MISMATCH
+000010,BMW,F650 Enduro,"F 
+		650ST Strada",https://www.motorcyclespecs.co.za/model/bmw/bmw-f650st.html,64,LOW,MODEL_MISMATCH
+000010,BMW,F650 Enduro,F 650GS (800cc),https://www.motorcyclespecs.co.za/model/bmw/bmw-f650gs-10.html,52,LOW,NUMBER_MISMATCH
+000010,BMW,F650 Enduro,"F 650GS 
+		(800cc)",https://www.motorcyclespecs.co.za/model/bmw/bmw-f650gs-11.html,52,LOW,NUMBER_MISMATCH
+000010,BMW,F650 Enduro,F 650GS 30th Anniversary Special,https://www.motorcyclespecs.co.za/model/bmw/bmw-f650gs-special-10.html,48,LOW,NUMBER_MISMATCH
+000011,BMW,F650 SE,F 650GS,https://www.motorcyclespecs.co.za/model/bmw/bmw-f650gs-01.html,85,LOW,REVIEW
+000011,BMW,F650 SE,F 650GS,https://www.motorcyclespecs.co.za/model/bmw/bmw-f650gs-02.html,85,LOW,REVIEW
+000011,BMW,F650 SE,F 650GS,https://www.motorcyclespecs.co.za/model/bmw/bmw-f650gs-03.html,85,LOW,REVIEW
+000011,BMW,F650 SE,F 650GS,https://www.motorcyclespecs.co.za/model/bmw/bmw-f650gs-04.html,85,LOW,REVIEW
+000011,BMW,F650 SE,F 650GS,https://www.motorcyclespecs.co.za/model/bmw/bmw-f650gs-05.html,85,LOW,REVIEW
+000011,BMW,F650 SE,F 650GS,https://www.motorcyclespecs.co.za/model/bmw/bmw-f650gs-06.html,85,LOW,REVIEW
+000011,BMW,F650 SE,F 650GS,https://www.motorcyclespecs.co.za/model/bmw/bmw-f650gs-07.html,85,LOW,REVIEW
+000011,BMW,F650 SE,F 650GS,https://www.motorcyclespecs.co.za/model/bmw/bmw-f650gs-08.html,85,LOW,REVIEW
+000011,BMW,F650 SE,F 650GS,https://www.motorcyclespecs.co.za/model/bmw/bmw-f650gs-09.html,85,LOW,REVIEW
+000011,BMW,F650 SE,"F 
+		650GS",https://www.motorcyclespecs.co.za/model/bmw/bmw-f650gs.html,85,LOW,REVIEW
+000011,BMW,F650 SE,F 650CS Scarver,https://www.motorcyclespecs.co.za/model/bmw/bmw-f650cs-02.html,74,LOW,REVIEW
+000011,BMW,F650 SE,F 650CS Scarver,https://www.motorcyclespecs.co.za/model/bmw/bmw-f650cs-03.html,74,LOW,REVIEW
+000011,BMW,F650 SE,F 650CS Scarver,https://www.motorcyclespecs.co.za/model/bmw/bmw-f650cs-04.html,74,LOW,REVIEW
+000011,BMW,F650 SE,"F 
+		650CS Scarver",https://www.motorcyclespecs.co.za/model/bmw/bmw-f650cs.html,74,LOW,REVIEW
+000011,BMW,F650 SE,F 650GS Dakar,https://www.motorcyclespecs.co.za/model/bmw/bmw-f650-dakar-01.html,71,LOW,REVIEW
+000011,BMW,F650 SE,F 650GS Dakar,https://www.motorcyclespecs.co.za/model/bmw/bmw-f650-dakar-02.html,71,LOW,REVIEW
+000011,BMW,F650 SE,"F 650GS 
+		Dakar",https://www.motorcyclespecs.co.za/model/bmw/bmw-f650-dakar-03.html,71,LOW,REVIEW
+000011,BMW,F650 SE,F 650GS Dakar,https://www.motorcyclespecs.co.za/model/bmw/bmw-f650-dakar.html,71,LOW,REVIEW
+000011,BMW,F650 SE,"F 650GS 
+		Dakar",https://www.motorcyclespecs.co.za/model/bmw/bmw-f650gs-dakar-04.html,71,LOW,REVIEW
+000011,BMW,F650 SE,"F 650GS 
+		Dakar",https://www.motorcyclespecs.co.za/model/bmw/bmw-f650gs-dakar-05.html,71,LOW,REVIEW
+000011,BMW,F650 SE,"F 650GS 
+		Dakar",https://www.motorcyclespecs.co.za/model/bmw/bmw-f650gs-dakar-06.html,71,LOW,REVIEW
+000011,BMW,F650 SE,"F 650GS 
+		Dakar",https://www.motorcyclespecs.co.za/model/bmw/bmw-f650gs-dakar-07.html,71,LOW,REVIEW
+000011,BMW,F650 SE,F 650ST Strada,https://www.motorcyclespecs.co.za/model/bmw/bmw-f650st-00.html,70,LOW,REVIEW
+000011,BMW,F650 SE,F 650ST Strada,https://www.motorcyclespecs.co.za/model/bmw/bmw-f650st-98.html,70,LOW,REVIEW
+000011,BMW,F650 SE,F 650ST Strada,https://www.motorcyclespecs.co.za/model/bmw/bmw-f650st-99.html,70,LOW,REVIEW
+000011,BMW,F650 SE,"F 
+		650ST Strada",https://www.motorcyclespecs.co.za/model/bmw/bmw-f650st.html,70,LOW,REVIEW
+000011,BMW,F650 SE,F 650 Funduro,https://www.motorcyclespecs.co.za/model/bmw/bmw-f650-94.html,65,LOW,MODEL_MISMATCH
+000011,BMW,F650 SE,F 650 Funduro,https://www.motorcyclespecs.co.za/model/bmw/bmw-f650-95.html,65,LOW,MODEL_MISMATCH
+000011,BMW,F650 SE,F 650 Funduro,https://www.motorcyclespecs.co.za/model/bmw/bmw-f650-96.html,65,LOW,MODEL_MISMATCH
+000011,BMW,F650 SE,F 650 Funduro,https://www.motorcyclespecs.co.za/model/bmw/bmw-f650-97.html,65,LOW,MODEL_MISMATCH
+000011,BMW,F650 SE,F 650 Funduro,https://www.motorcyclespecs.co.za/model/bmw/bmw-f650-98.html,65,LOW,MODEL_MISMATCH
+000011,BMW,F650 SE,F 650 Funduro,https://www.motorcyclespecs.co.za/model/bmw/bmw-f650-99.html,65,LOW,MODEL_MISMATCH
+000011,BMW,F650 SE,F 650GS (800cc),https://www.motorcyclespecs.co.za/model/bmw/bmw-f650gs-10.html,63,LOW,NUMBER_MISMATCH
+000011,BMW,F650 SE,"F 650GS 
+		(800cc)",https://www.motorcyclespecs.co.za/model/bmw/bmw-f650gs-11.html,63,LOW,NUMBER_MISMATCH
+000011,BMW,F650 SE,"F 650RR 
+		Dakar",https://www.motorcyclespecs.co.za/model/bmw/bmw-f650rr-dakar-99.html,60,LOW,MODEL_MISMATCH
+000011,BMW,F650 SE,F 650GS 30th Anniversary Special,https://www.motorcyclespecs.co.za/model/bmw/bmw-f650gs-special-10.html,50,LOW,NUMBER_MISMATCH
+000012,BMW,F650CS,F 650GS,https://www.motorcyclespecs.co.za/model/bmw/bmw-f650gs-01.html,85,LOW,REVIEW
+000012,BMW,F650CS,F 650GS,https://www.motorcyclespecs.co.za/model/bmw/bmw-f650gs-02.html,85,LOW,REVIEW
+000012,BMW,F650CS,F 650GS,https://www.motorcyclespecs.co.za/model/bmw/bmw-f650gs-03.html,85,LOW,REVIEW
+000012,BMW,F650CS,F 650GS,https://www.motorcyclespecs.co.za/model/bmw/bmw-f650gs-04.html,85,LOW,REVIEW
+000012,BMW,F650CS,F 650GS,https://www.motorcyclespecs.co.za/model/bmw/bmw-f650gs-05.html,85,LOW,REVIEW
+000012,BMW,F650CS,F 650GS,https://www.motorcyclespecs.co.za/model/bmw/bmw-f650gs-06.html,85,LOW,REVIEW
+000012,BMW,F650CS,F 650GS,https://www.motorcyclespecs.co.za/model/bmw/bmw-f650gs-07.html,85,LOW,REVIEW
+000012,BMW,F650CS,F 650GS,https://www.motorcyclespecs.co.za/model/bmw/bmw-f650gs-08.html,85,LOW,REVIEW
+000012,BMW,F650CS,F 650GS,https://www.motorcyclespecs.co.za/model/bmw/bmw-f650gs-09.html,85,LOW,REVIEW
+000012,BMW,F650CS,"F 
+		650GS",https://www.motorcyclespecs.co.za/model/bmw/bmw-f650gs.html,85,LOW,REVIEW
+000012,BMW,F650CS,F 650CS Scarver,https://www.motorcyclespecs.co.za/model/bmw/bmw-f650cs-02.html,72,LOW,REVIEW
+000012,BMW,F650CS,F 650CS Scarver,https://www.motorcyclespecs.co.za/model/bmw/bmw-f650cs-03.html,72,LOW,REVIEW
+000012,BMW,F650CS,F 650CS Scarver,https://www.motorcyclespecs.co.za/model/bmw/bmw-f650cs-04.html,72,LOW,REVIEW
+000012,BMW,F650CS,"F 
+		650CS Scarver",https://www.motorcyclespecs.co.za/model/bmw/bmw-f650cs.html,72,LOW,REVIEW
+000012,BMW,F650CS,F 650GS Dakar,https://www.motorcyclespecs.co.za/model/bmw/bmw-f650-dakar-01.html,71,LOW,REVIEW
+000012,BMW,F650CS,F 650GS Dakar,https://www.motorcyclespecs.co.za/model/bmw/bmw-f650-dakar-02.html,71,LOW,REVIEW
+000012,BMW,F650CS,"F 650GS 
+		Dakar",https://www.motorcyclespecs.co.za/model/bmw/bmw-f650-dakar-03.html,71,LOW,REVIEW
+000012,BMW,F650CS,F 650GS Dakar,https://www.motorcyclespecs.co.za/model/bmw/bmw-f650-dakar.html,71,LOW,REVIEW
+000012,BMW,F650CS,"F 650GS 
+		Dakar",https://www.motorcyclespecs.co.za/model/bmw/bmw-f650gs-dakar-04.html,71,LOW,REVIEW
+000012,BMW,F650CS,"F 650GS 
+		Dakar",https://www.motorcyclespecs.co.za/model/bmw/bmw-f650gs-dakar-05.html,71,LOW,REVIEW
+000012,BMW,F650CS,"F 650GS 
+		Dakar",https://www.motorcyclespecs.co.za/model/bmw/bmw-f650gs-dakar-06.html,71,LOW,REVIEW
+000012,BMW,F650CS,"F 650GS 
+		Dakar",https://www.motorcyclespecs.co.za/model/bmw/bmw-f650gs-dakar-07.html,71,LOW,REVIEW
+000012,BMW,F650CS,F 650ST Strada,https://www.motorcyclespecs.co.za/model/bmw/bmw-f650st-00.html,70,LOW,REVIEW
+000012,BMW,F650CS,F 650ST Strada,https://www.motorcyclespecs.co.za/model/bmw/bmw-f650st-98.html,70,LOW,REVIEW
+000012,BMW,F650CS,F 650ST Strada,https://www.motorcyclespecs.co.za/model/bmw/bmw-f650st-99.html,70,LOW,REVIEW
+000012,BMW,F650CS,"F 
+		650ST Strada",https://www.motorcyclespecs.co.za/model/bmw/bmw-f650st.html,70,LOW,REVIEW
+000012,BMW,F650CS,F 650 Funduro,https://www.motorcyclespecs.co.za/model/bmw/bmw-f650-94.html,65,LOW,MODEL_MISMATCH
+000012,BMW,F650CS,F 650 Funduro,https://www.motorcyclespecs.co.za/model/bmw/bmw-f650-95.html,65,LOW,MODEL_MISMATCH
+000012,BMW,F650CS,F 650 Funduro,https://www.motorcyclespecs.co.za/model/bmw/bmw-f650-96.html,65,LOW,MODEL_MISMATCH
+000012,BMW,F650CS,F 650 Funduro,https://www.motorcyclespecs.co.za/model/bmw/bmw-f650-97.html,65,LOW,MODEL_MISMATCH
+000012,BMW,F650CS,F 650 Funduro,https://www.motorcyclespecs.co.za/model/bmw/bmw-f650-98.html,65,LOW,MODEL_MISMATCH
+000012,BMW,F650CS,F 650 Funduro,https://www.motorcyclespecs.co.za/model/bmw/bmw-f650-99.html,65,LOW,MODEL_MISMATCH
+000012,BMW,F650CS,F 650GS (800cc),https://www.motorcyclespecs.co.za/model/bmw/bmw-f650gs-10.html,63,LOW,NUMBER_MISMATCH
+000012,BMW,F650CS,"F 650GS 
+		(800cc)",https://www.motorcyclespecs.co.za/model/bmw/bmw-f650gs-11.html,63,LOW,NUMBER_MISMATCH
+000012,BMW,F650CS,"F 650RR 
+		Dakar",https://www.motorcyclespecs.co.za/model/bmw/bmw-f650rr-dakar-99.html,60,LOW,MODEL_MISMATCH
+000012,BMW,F650CS,F 650GS 30th Anniversary Special,https://www.motorcyclespecs.co.za/model/bmw/bmw-f650gs-special-10.html,47,LOW,NUMBER_MISMATCH
+000013,BMW,F650CS ABS,F 650GS,https://www.motorcyclespecs.co.za/model/bmw/bmw-f650gs-01.html,70,LOW,REVIEW
+000013,BMW,F650CS ABS,F 650GS,https://www.motorcyclespecs.co.za/model/bmw/bmw-f650gs-02.html,70,LOW,REVIEW
+000013,BMW,F650CS ABS,F 650GS,https://www.motorcyclespecs.co.za/model/bmw/bmw-f650gs-03.html,70,LOW,REVIEW
+000013,BMW,F650CS ABS,F 650GS,https://www.motorcyclespecs.co.za/model/bmw/bmw-f650gs-04.html,70,LOW,REVIEW
+000013,BMW,F650CS ABS,F 650GS,https://www.motorcyclespecs.co.za/model/bmw/bmw-f650gs-05.html,70,LOW,REVIEW
+000013,BMW,F650CS ABS,F 650GS,https://www.motorcyclespecs.co.za/model/bmw/bmw-f650gs-06.html,70,LOW,REVIEW
+000013,BMW,F650CS ABS,F 650GS,https://www.motorcyclespecs.co.za/model/bmw/bmw-f650gs-07.html,70,LOW,REVIEW
+000013,BMW,F650CS ABS,F 650GS,https://www.motorcyclespecs.co.za/model/bmw/bmw-f650gs-08.html,70,LOW,REVIEW
+000013,BMW,F650CS ABS,F 650GS,https://www.motorcyclespecs.co.za/model/bmw/bmw-f650gs-09.html,70,LOW,REVIEW
+000013,BMW,F650CS ABS,"F 
+		650GS",https://www.motorcyclespecs.co.za/model/bmw/bmw-f650gs.html,70,LOW,REVIEW
+000013,BMW,F650CS ABS,F 650CS Scarver,https://www.motorcyclespecs.co.za/model/bmw/bmw-f650cs-02.html,68,LOW,MODEL_MISMATCH
+000013,BMW,F650CS ABS,F 650CS Scarver,https://www.motorcyclespecs.co.za/model/bmw/bmw-f650cs-03.html,68,LOW,MODEL_MISMATCH
+000013,BMW,F650CS ABS,F 650CS Scarver,https://www.motorcyclespecs.co.za/model/bmw/bmw-f650cs-04.html,68,LOW,MODEL_MISMATCH
+000013,BMW,F650CS ABS,"F 
+		650CS Scarver",https://www.motorcyclespecs.co.za/model/bmw/bmw-f650cs.html,68,LOW,MODEL_MISMATCH
+000013,BMW,F650CS ABS,F 650GS Dakar,https://www.motorcyclespecs.co.za/model/bmw/bmw-f650-dakar-01.html,66,LOW,MODEL_MISMATCH
+000013,BMW,F650CS ABS,F 650GS Dakar,https://www.motorcyclespecs.co.za/model/bmw/bmw-f650-dakar-02.html,66,LOW,MODEL_MISMATCH
+000013,BMW,F650CS ABS,"F 650GS 
+		Dakar",https://www.motorcyclespecs.co.za/model/bmw/bmw-f650-dakar-03.html,66,LOW,MODEL_MISMATCH
+000013,BMW,F650CS ABS,F 650GS Dakar,https://www.motorcyclespecs.co.za/model/bmw/bmw-f650-dakar.html,66,LOW,MODEL_MISMATCH
+000013,BMW,F650CS ABS,"F 650GS 
+		Dakar",https://www.motorcyclespecs.co.za/model/bmw/bmw-f650gs-dakar-04.html,66,LOW,MODEL_MISMATCH
+000013,BMW,F650CS ABS,"F 650GS 
+		Dakar",https://www.motorcyclespecs.co.za/model/bmw/bmw-f650gs-dakar-05.html,66,LOW,MODEL_MISMATCH
+000013,BMW,F650CS ABS,"F 650GS 
+		Dakar",https://www.motorcyclespecs.co.za/model/bmw/bmw-f650gs-dakar-06.html,66,LOW,MODEL_MISMATCH
+000013,BMW,F650CS ABS,"F 650GS 
+		Dakar",https://www.motorcyclespecs.co.za/model/bmw/bmw-f650gs-dakar-07.html,66,LOW,MODEL_MISMATCH
+000013,BMW,F650CS ABS,F 650ST Strada,https://www.motorcyclespecs.co.za/model/bmw/bmw-f650st-00.html,66,LOW,MODEL_MISMATCH
+000013,BMW,F650CS ABS,F 650ST Strada,https://www.motorcyclespecs.co.za/model/bmw/bmw-f650st-98.html,66,LOW,MODEL_MISMATCH
+000013,BMW,F650CS ABS,F 650ST Strada,https://www.motorcyclespecs.co.za/model/bmw/bmw-f650st-99.html,66,LOW,MODEL_MISMATCH
+000013,BMW,F650CS ABS,"F 
+		650ST Strada",https://www.motorcyclespecs.co.za/model/bmw/bmw-f650st.html,66,LOW,MODEL_MISMATCH
+000013,BMW,F650CS ABS,"F 650RR 
+		Dakar",https://www.motorcyclespecs.co.za/model/bmw/bmw-f650rr-dakar-99.html,60,LOW,MODEL_MISMATCH
+000013,BMW,F650CS ABS,F 650 Funduro,https://www.motorcyclespecs.co.za/model/bmw/bmw-f650-94.html,57,LOW,MODEL_MISMATCH
+000013,BMW,F650CS ABS,F 650 Funduro,https://www.motorcyclespecs.co.za/model/bmw/bmw-f650-95.html,57,LOW,MODEL_MISMATCH
+000013,BMW,F650CS ABS,F 650 Funduro,https://www.motorcyclespecs.co.za/model/bmw/bmw-f650-96.html,57,LOW,MODEL_MISMATCH
+000013,BMW,F650CS ABS,F 650 Funduro,https://www.motorcyclespecs.co.za/model/bmw/bmw-f650-97.html,57,LOW,MODEL_MISMATCH
+000013,BMW,F650CS ABS,F 650 Funduro,https://www.motorcyclespecs.co.za/model/bmw/bmw-f650-98.html,57,LOW,MODEL_MISMATCH
+000013,BMW,F650CS ABS,F 650 Funduro,https://www.motorcyclespecs.co.za/model/bmw/bmw-f650-99.html,57,LOW,MODEL_MISMATCH
+000013,BMW,F650CS ABS,F 650GS (800cc),https://www.motorcyclespecs.co.za/model/bmw/bmw-f650gs-10.html,53,LOW,NUMBER_MISMATCH
+000013,BMW,F650CS ABS,"F 650GS 
+		(800cc)",https://www.motorcyclespecs.co.za/model/bmw/bmw-f650gs-11.html,53,LOW,NUMBER_MISMATCH
+000013,BMW,F650CS ABS,F 650GS 30th Anniversary Special,https://www.motorcyclespecs.co.za/model/bmw/bmw-f650gs-special-10.html,47,LOW,NUMBER_MISMATCH
+000014,BMW,F650GS,F 650GS,https://www.motorcyclespecs.co.za/model/bmw/bmw-f650gs-01.html,95,HIGH,EXACT
+000014,BMW,F650GS,F 650GS,https://www.motorcyclespecs.co.za/model/bmw/bmw-f650gs-02.html,95,HIGH,EXACT
+000014,BMW,F650GS,F 650GS,https://www.motorcyclespecs.co.za/model/bmw/bmw-f650gs-03.html,95,HIGH,EXACT
+000014,BMW,F650GS,F 650GS,https://www.motorcyclespecs.co.za/model/bmw/bmw-f650gs-04.html,95,HIGH,EXACT
+000014,BMW,F650GS,F 650GS,https://www.motorcyclespecs.co.za/model/bmw/bmw-f650gs-05.html,95,HIGH,EXACT
+000014,BMW,F650GS,F 650GS,https://www.motorcyclespecs.co.za/model/bmw/bmw-f650gs-06.html,95,HIGH,EXACT
+000014,BMW,F650GS,F 650GS,https://www.motorcyclespecs.co.za/model/bmw/bmw-f650gs-07.html,95,HIGH,EXACT
+000014,BMW,F650GS,F 650GS,https://www.motorcyclespecs.co.za/model/bmw/bmw-f650gs-08.html,95,HIGH,EXACT
+000014,BMW,F650GS,F 650GS,https://www.motorcyclespecs.co.za/model/bmw/bmw-f650gs-09.html,95,HIGH,EXACT
+000014,BMW,F650GS,"F 
+		650GS",https://www.motorcyclespecs.co.za/model/bmw/bmw-f650gs.html,95,HIGH,EXACT
+000014,BMW,F650GS,F 650GS Dakar,https://www.motorcyclespecs.co.za/model/bmw/bmw-f650-dakar-01.html,77,LOW,REVIEW
+000014,BMW,F650GS,F 650GS Dakar,https://www.motorcyclespecs.co.za/model/bmw/bmw-f650-dakar-02.html,77,LOW,REVIEW
+000014,BMW,F650GS,"F 650GS 
+		Dakar",https://www.motorcyclespecs.co.za/model/bmw/bmw-f650-dakar-03.html,77,LOW,REVIEW
+000014,BMW,F650GS,F 650GS Dakar,https://www.motorcyclespecs.co.za/model/bmw/bmw-f650-dakar.html,77,LOW,REVIEW
+000014,BMW,F650GS,"F 650GS 
+		Dakar",https://www.motorcyclespecs.co.za/model/bmw/bmw-f650gs-dakar-04.html,77,LOW,REVIEW
+000014,BMW,F650GS,"F 650GS 
+		Dakar",https://www.motorcyclespecs.co.za/model/bmw/bmw-f650gs-dakar-05.html,77,LOW,REVIEW
+000014,BMW,F650GS,"F 650GS 
+		Dakar",https://www.motorcyclespecs.co.za/model/bmw/bmw-f650gs-dakar-06.html,77,LOW,REVIEW
+000014,BMW,F650GS,"F 650GS 
+		Dakar",https://www.motorcyclespecs.co.za/model/bmw/bmw-f650gs-dakar-07.html,77,LOW,REVIEW
+000014,BMW,F650GS,F 650ST Strada,https://www.motorcyclespecs.co.za/model/bmw/bmw-f650st-00.html,70,LOW,REVIEW
+000014,BMW,F650GS,F 650ST Strada,https://www.motorcyclespecs.co.za/model/bmw/bmw-f650st-98.html,70,LOW,REVIEW
+000014,BMW,F650GS,F 650ST Strada,https://www.motorcyclespecs.co.za/model/bmw/bmw-f650st-99.html,70,LOW,REVIEW
+000014,BMW,F650GS,"F 
+		650ST Strada",https://www.motorcyclespecs.co.za/model/bmw/bmw-f650st.html,70,LOW,REVIEW
+000014,BMW,F650GS,F 650CS Scarver,https://www.motorcyclespecs.co.za/model/bmw/bmw-f650cs-02.html,68,LOW,MODEL_MISMATCH
+000014,BMW,F650GS,F 650CS Scarver,https://www.motorcyclespecs.co.za/model/bmw/bmw-f650cs-03.html,68,LOW,MODEL_MISMATCH
+000014,BMW,F650GS,F 650CS Scarver,https://www.motorcyclespecs.co.za/model/bmw/bmw-f650cs-04.html,68,LOW,MODEL_MISMATCH
+000014,BMW,F650GS,"F 
+		650CS Scarver",https://www.motorcyclespecs.co.za/model/bmw/bmw-f650cs.html,68,LOW,MODEL_MISMATCH
+000014,BMW,F650GS,F 650 Funduro,https://www.motorcyclespecs.co.za/model/bmw/bmw-f650-94.html,65,LOW,MODEL_MISMATCH
+000014,BMW,F650GS,F 650 Funduro,https://www.motorcyclespecs.co.za/model/bmw/bmw-f650-95.html,65,LOW,MODEL_MISMATCH
+000014,BMW,F650GS,F 650 Funduro,https://www.motorcyclespecs.co.za/model/bmw/bmw-f650-96.html,65,LOW,MODEL_MISMATCH
+000014,BMW,F650GS,F 650 Funduro,https://www.motorcyclespecs.co.za/model/bmw/bmw-f650-97.html,65,LOW,MODEL_MISMATCH
+000014,BMW,F650GS,F 650 Funduro,https://www.motorcyclespecs.co.za/model/bmw/bmw-f650-98.html,65,LOW,MODEL_MISMATCH
+000014,BMW,F650GS,F 650 Funduro,https://www.motorcyclespecs.co.za/model/bmw/bmw-f650-99.html,65,LOW,MODEL_MISMATCH
+000014,BMW,F650GS,F 650GS (800cc),https://www.motorcyclespecs.co.za/model/bmw/bmw-f650gs-10.html,65,LOW,NUMBER_MISMATCH
+000014,BMW,F650GS,"F 650GS 
+		(800cc)",https://www.motorcyclespecs.co.za/model/bmw/bmw-f650gs-11.html,65,LOW,NUMBER_MISMATCH
+000014,BMW,F650GS,"F 650RR 
+		Dakar",https://www.motorcyclespecs.co.za/model/bmw/bmw-f650rr-dakar-99.html,60,LOW,MODEL_MISMATCH
+000014,BMW,F650GS,F 650GS 30th Anniversary Special,https://www.motorcyclespecs.co.za/model/bmw/bmw-f650gs-special-10.html,50,LOW,NUMBER_MISMATCH
+000015,BMW,F650GS ABS,F 650GS,https://www.motorcyclespecs.co.za/model/bmw/bmw-f650gs-01.html,78,LOW,REVIEW
+000015,BMW,F650GS ABS,F 650GS,https://www.motorcyclespecs.co.za/model/bmw/bmw-f650gs-02.html,78,LOW,REVIEW
+000015,BMW,F650GS ABS,F 650GS,https://www.motorcyclespecs.co.za/model/bmw/bmw-f650gs-03.html,78,LOW,REVIEW
+000015,BMW,F650GS ABS,F 650GS,https://www.motorcyclespecs.co.za/model/bmw/bmw-f650gs-04.html,78,LOW,REVIEW
+000015,BMW,F650GS ABS,F 650GS,https://www.motorcyclespecs.co.za/model/bmw/bmw-f650gs-05.html,78,LOW,REVIEW
+000015,BMW,F650GS ABS,F 650GS,https://www.motorcyclespecs.co.za/model/bmw/bmw-f650gs-06.html,78,LOW,REVIEW
+000015,BMW,F650GS ABS,F 650GS,https://www.motorcyclespecs.co.za/model/bmw/bmw-f650gs-07.html,78,LOW,REVIEW
+000015,BMW,F650GS ABS,F 650GS,https://www.motorcyclespecs.co.za/model/bmw/bmw-f650gs-08.html,78,LOW,REVIEW
+000015,BMW,F650GS ABS,F 650GS,https://www.motorcyclespecs.co.za/model/bmw/bmw-f650gs-09.html,78,LOW,REVIEW
+000015,BMW,F650GS ABS,"F 
+		650GS",https://www.motorcyclespecs.co.za/model/bmw/bmw-f650gs.html,78,LOW,REVIEW
+000015,BMW,F650GS ABS,F 650GS Dakar,https://www.motorcyclespecs.co.za/model/bmw/bmw-f650-dakar-01.html,70,LOW,REVIEW
+000015,BMW,F650GS ABS,F 650GS Dakar,https://www.motorcyclespecs.co.za/model/bmw/bmw-f650-dakar-02.html,70,LOW,REVIEW
+000015,BMW,F650GS ABS,"F 650GS 
+		Dakar",https://www.motorcyclespecs.co.za/model/bmw/bmw-f650-dakar-03.html,70,LOW,REVIEW
+000015,BMW,F650GS ABS,F 650GS Dakar,https://www.motorcyclespecs.co.za/model/bmw/bmw-f650-dakar.html,70,LOW,REVIEW
+000015,BMW,F650GS ABS,"F 650GS 
+		Dakar",https://www.motorcyclespecs.co.za/model/bmw/bmw-f650gs-dakar-04.html,70,LOW,REVIEW
+000015,BMW,F650GS ABS,"F 650GS 
+		Dakar",https://www.motorcyclespecs.co.za/model/bmw/bmw-f650gs-dakar-05.html,70,LOW,REVIEW
+000015,BMW,F650GS ABS,"F 650GS 
+		Dakar",https://www.motorcyclespecs.co.za/model/bmw/bmw-f650gs-dakar-06.html,70,LOW,REVIEW
+000015,BMW,F650GS ABS,"F 650GS 
+		Dakar",https://www.motorcyclespecs.co.za/model/bmw/bmw-f650gs-dakar-07.html,70,LOW,REVIEW
+000015,BMW,F650GS ABS,F 650ST Strada,https://www.motorcyclespecs.co.za/model/bmw/bmw-f650st-00.html,66,LOW,MODEL_MISMATCH
+000015,BMW,F650GS ABS,F 650ST Strada,https://www.motorcyclespecs.co.za/model/bmw/bmw-f650st-98.html,66,LOW,MODEL_MISMATCH
+000015,BMW,F650GS ABS,F 650ST Strada,https://www.motorcyclespecs.co.za/model/bmw/bmw-f650st-99.html,66,LOW,MODEL_MISMATCH
+000015,BMW,F650GS ABS,"F 
+		650ST Strada",https://www.motorcyclespecs.co.za/model/bmw/bmw-f650st.html,66,LOW,MODEL_MISMATCH
+000015,BMW,F650GS ABS,F 650CS Scarver,https://www.motorcyclespecs.co.za/model/bmw/bmw-f650cs-02.html,65,LOW,MODEL_MISMATCH
+000015,BMW,F650GS ABS,F 650CS Scarver,https://www.motorcyclespecs.co.za/model/bmw/bmw-f650cs-03.html,65,LOW,MODEL_MISMATCH
+000015,BMW,F650GS ABS,F 650CS Scarver,https://www.motorcyclespecs.co.za/model/bmw/bmw-f650cs-04.html,65,LOW,MODEL_MISMATCH
+000015,BMW,F650GS ABS,"F 
+		650CS Scarver",https://www.motorcyclespecs.co.za/model/bmw/bmw-f650cs.html,65,LOW,MODEL_MISMATCH
+000015,BMW,F650GS ABS,"F 650RR 
+		Dakar",https://www.motorcyclespecs.co.za/model/bmw/bmw-f650rr-dakar-99.html,60,LOW,MODEL_MISMATCH
+000015,BMW,F650GS ABS,F 650GS (800cc),https://www.motorcyclespecs.co.za/model/bmw/bmw-f650gs-10.html,59,LOW,NUMBER_MISMATCH
+000015,BMW,F650GS ABS,"F 650GS 
+		(800cc)",https://www.motorcyclespecs.co.za/model/bmw/bmw-f650gs-11.html,59,LOW,NUMBER_MISMATCH
+000015,BMW,F650GS ABS,F 650 Funduro,https://www.motorcyclespecs.co.za/model/bmw/bmw-f650-94.html,57,LOW,MODEL_MISMATCH
+000015,BMW,F650GS ABS,F 650 Funduro,https://www.motorcyclespecs.co.za/model/bmw/bmw-f650-95.html,57,LOW,MODEL_MISMATCH
+000015,BMW,F650GS ABS,F 650 Funduro,https://www.motorcyclespecs.co.za/model/bmw/bmw-f650-96.html,57,LOW,MODEL_MISMATCH
+000015,BMW,F650GS ABS,F 650 Funduro,https://www.motorcyclespecs.co.za/model/bmw/bmw-f650-97.html,57,LOW,MODEL_MISMATCH
+000015,BMW,F650GS ABS,F 650 Funduro,https://www.motorcyclespecs.co.za/model/bmw/bmw-f650-98.html,57,LOW,MODEL_MISMATCH
+000015,BMW,F650GS ABS,F 650 Funduro,https://www.motorcyclespecs.co.za/model/bmw/bmw-f650-99.html,57,LOW,MODEL_MISMATCH
+000015,BMW,F650GS ABS,F 650GS 30th Anniversary Special,https://www.motorcyclespecs.co.za/model/bmw/bmw-f650gs-special-10.html,50,LOW,NUMBER_MISMATCH
+000016,BMW,F650GS Dakar,F 650GS Dakar,https://www.motorcyclespecs.co.za/model/bmw/bmw-f650-dakar-01.html,95,HIGH,EXACT
+000016,BMW,F650GS Dakar,F 650GS Dakar,https://www.motorcyclespecs.co.za/model/bmw/bmw-f650-dakar-02.html,95,HIGH,EXACT
+000016,BMW,F650GS Dakar,"F 650GS 
+		Dakar",https://www.motorcyclespecs.co.za/model/bmw/bmw-f650-dakar-03.html,95,HIGH,EXACT
+000016,BMW,F650GS Dakar,F 650GS Dakar,https://www.motorcyclespecs.co.za/model/bmw/bmw-f650-dakar.html,95,HIGH,EXACT
+000016,BMW,F650GS Dakar,"F 650GS 
+		Dakar",https://www.motorcyclespecs.co.za/model/bmw/bmw-f650gs-dakar-04.html,95,HIGH,EXACT
+000016,BMW,F650GS Dakar,"F 650GS 
+		Dakar",https://www.motorcyclespecs.co.za/model/bmw/bmw-f650gs-dakar-05.html,95,HIGH,EXACT
+000016,BMW,F650GS Dakar,"F 650GS 
+		Dakar",https://www.motorcyclespecs.co.za/model/bmw/bmw-f650gs-dakar-06.html,95,HIGH,EXACT
+000016,BMW,F650GS Dakar,"F 650GS 
+		Dakar",https://www.motorcyclespecs.co.za/model/bmw/bmw-f650gs-dakar-07.html,95,HIGH,EXACT
+000016,BMW,F650GS Dakar,F 650GS,https://www.motorcyclespecs.co.za/model/bmw/bmw-f650gs-01.html,77,LOW,REVIEW
+000016,BMW,F650GS Dakar,F 650GS,https://www.motorcyclespecs.co.za/model/bmw/bmw-f650gs-02.html,77,LOW,REVIEW
+000016,BMW,F650GS Dakar,F 650GS,https://www.motorcyclespecs.co.za/model/bmw/bmw-f650gs-03.html,77,LOW,REVIEW
+000016,BMW,F650GS Dakar,F 650GS,https://www.motorcyclespecs.co.za/model/bmw/bmw-f650gs-04.html,77,LOW,REVIEW
+000016,BMW,F650GS Dakar,F 650GS,https://www.motorcyclespecs.co.za/model/bmw/bmw-f650gs-05.html,77,LOW,REVIEW
+000016,BMW,F650GS Dakar,F 650GS,https://www.motorcyclespecs.co.za/model/bmw/bmw-f650gs-06.html,77,LOW,REVIEW
+000016,BMW,F650GS Dakar,F 650GS,https://www.motorcyclespecs.co.za/model/bmw/bmw-f650gs-07.html,77,LOW,REVIEW
+000016,BMW,F650GS Dakar,F 650GS,https://www.motorcyclespecs.co.za/model/bmw/bmw-f650gs-08.html,77,LOW,REVIEW
+000016,BMW,F650GS Dakar,F 650GS,https://www.motorcyclespecs.co.za/model/bmw/bmw-f650gs-09.html,77,LOW,REVIEW
+000016,BMW,F650GS Dakar,"F 
+		650GS",https://www.motorcyclespecs.co.za/model/bmw/bmw-f650gs.html,77,LOW,REVIEW
+000016,BMW,F650GS Dakar,"F 650RR 
+		Dakar",https://www.motorcyclespecs.co.za/model/bmw/bmw-f650rr-dakar-99.html,75,LOW,REVIEW
+000016,BMW,F650GS Dakar,F 650ST Strada,https://www.motorcyclespecs.co.za/model/bmw/bmw-f650st-00.html,74,LOW,REVIEW
+000016,BMW,F650GS Dakar,F 650ST Strada,https://www.motorcyclespecs.co.za/model/bmw/bmw-f650st-98.html,74,LOW,REVIEW
+000016,BMW,F650GS Dakar,F 650ST Strada,https://www.motorcyclespecs.co.za/model/bmw/bmw-f650st-99.html,74,LOW,REVIEW
+000016,BMW,F650GS Dakar,"F 
+		650ST Strada",https://www.motorcyclespecs.co.za/model/bmw/bmw-f650st.html,74,LOW,REVIEW
+000016,BMW,F650GS Dakar,F 650CS Scarver,https://www.motorcyclespecs.co.za/model/bmw/bmw-f650cs-02.html,71,LOW,REVIEW
+000016,BMW,F650GS Dakar,F 650CS Scarver,https://www.motorcyclespecs.co.za/model/bmw/bmw-f650cs-03.html,71,LOW,REVIEW
+000016,BMW,F650GS Dakar,F 650CS Scarver,https://www.motorcyclespecs.co.za/model/bmw/bmw-f650cs-04.html,71,LOW,REVIEW
+000016,BMW,F650GS Dakar,"F 
+		650CS Scarver",https://www.motorcyclespecs.co.za/model/bmw/bmw-f650cs.html,71,LOW,REVIEW
+000016,BMW,F650GS Dakar,F 650 Funduro,https://www.motorcyclespecs.co.za/model/bmw/bmw-f650-94.html,70,LOW,REVIEW
+000016,BMW,F650GS Dakar,F 650 Funduro,https://www.motorcyclespecs.co.za/model/bmw/bmw-f650-95.html,70,LOW,REVIEW
+000016,BMW,F650GS Dakar,F 650 Funduro,https://www.motorcyclespecs.co.za/model/bmw/bmw-f650-96.html,70,LOW,REVIEW
+000016,BMW,F650GS Dakar,F 650 Funduro,https://www.motorcyclespecs.co.za/model/bmw/bmw-f650-97.html,70,LOW,REVIEW
+000016,BMW,F650GS Dakar,F 650 Funduro,https://www.motorcyclespecs.co.za/model/bmw/bmw-f650-98.html,70,LOW,REVIEW
+000016,BMW,F650GS Dakar,F 650 Funduro,https://www.motorcyclespecs.co.za/model/bmw/bmw-f650-99.html,70,LOW,REVIEW
+000016,BMW,F650GS Dakar,F 650GS (800cc),https://www.motorcyclespecs.co.za/model/bmw/bmw-f650gs-10.html,61,LOW,NUMBER_MISMATCH
+000016,BMW,F650GS Dakar,"F 650GS 
+		(800cc)",https://www.motorcyclespecs.co.za/model/bmw/bmw-f650gs-11.html,61,LOW,NUMBER_MISMATCH
+000016,BMW,F650GS Dakar,F 650GS 30th Anniversary Special,https://www.motorcyclespecs.co.za/model/bmw/bmw-f650gs-special-10.html,55,LOW,NUMBER_MISMATCH
+000017,BMW,F650GS Dakar ABS,F 650GS Dakar,https://www.motorcyclespecs.co.za/model/bmw/bmw-f650-dakar-01.html,78,LOW,REVIEW
+000017,BMW,F650GS Dakar ABS,F 650GS Dakar,https://www.motorcyclespecs.co.za/model/bmw/bmw-f650-dakar-02.html,78,LOW,REVIEW
+000017,BMW,F650GS Dakar ABS,"F 650GS 
+		Dakar",https://www.motorcyclespecs.co.za/model/bmw/bmw-f650-dakar-03.html,78,LOW,REVIEW
+000017,BMW,F650GS Dakar ABS,F 650GS Dakar,https://www.motorcyclespecs.co.za/model/bmw/bmw-f650-dakar.html,78,LOW,REVIEW
+000017,BMW,F650GS Dakar ABS,"F 650GS 
+		Dakar",https://www.motorcyclespecs.co.za/model/bmw/bmw-f650gs-dakar-04.html,78,LOW,REVIEW
+000017,BMW,F650GS Dakar ABS,"F 650GS 
+		Dakar",https://www.motorcyclespecs.co.za/model/bmw/bmw-f650gs-dakar-05.html,78,LOW,REVIEW
+000017,BMW,F650GS Dakar ABS,"F 650GS 
+		Dakar",https://www.motorcyclespecs.co.za/model/bmw/bmw-f650gs-dakar-06.html,78,LOW,REVIEW
+000017,BMW,F650GS Dakar ABS,"F 650GS 
+		Dakar",https://www.motorcyclespecs.co.za/model/bmw/bmw-f650gs-dakar-07.html,78,LOW,REVIEW
+000017,BMW,F650GS Dakar ABS,"F 650RR 
+		Dakar",https://www.motorcyclespecs.co.za/model/bmw/bmw-f650rr-dakar-99.html,72,LOW,REVIEW
+000017,BMW,F650GS Dakar ABS,F 650GS,https://www.motorcyclespecs.co.za/model/bmw/bmw-f650gs-01.html,67,LOW,MODEL_MISMATCH
+000017,BMW,F650GS Dakar ABS,F 650GS,https://www.motorcyclespecs.co.za/model/bmw/bmw-f650gs-02.html,67,LOW,MODEL_MISMATCH
+000017,BMW,F650GS Dakar ABS,F 650GS,https://www.motorcyclespecs.co.za/model/bmw/bmw-f650gs-03.html,67,LOW,MODEL_MISMATCH
+000017,BMW,F650GS Dakar ABS,F 650GS,https://www.motorcyclespecs.co.za/model/bmw/bmw-f650gs-04.html,67,LOW,MODEL_MISMATCH
+000017,BMW,F650GS Dakar ABS,F 650GS,https://www.motorcyclespecs.co.za/model/bmw/bmw-f650gs-05.html,67,LOW,MODEL_MISMATCH
+000017,BMW,F650GS Dakar ABS,F 650GS,https://www.motorcyclespecs.co.za/model/bmw/bmw-f650gs-06.html,67,LOW,MODEL_MISMATCH
+000017,BMW,F650GS Dakar ABS,F 650GS,https://www.motorcyclespecs.co.za/model/bmw/bmw-f650gs-07.html,67,LOW,MODEL_MISMATCH
+000017,BMW,F650GS Dakar ABS,F 650GS,https://www.motorcyclespecs.co.za/model/bmw/bmw-f650gs-08.html,67,LOW,MODEL_MISMATCH
+000017,BMW,F650GS Dakar ABS,F 650GS,https://www.motorcyclespecs.co.za/model/bmw/bmw-f650gs-09.html,67,LOW,MODEL_MISMATCH
+000017,BMW,F650GS Dakar ABS,"F 
+		650GS",https://www.motorcyclespecs.co.za/model/bmw/bmw-f650gs.html,67,LOW,MODEL_MISMATCH
+000017,BMW,F650GS Dakar ABS,F 650ST Strada,https://www.motorcyclespecs.co.za/model/bmw/bmw-f650st-00.html,65,LOW,MODEL_MISMATCH
+000017,BMW,F650GS Dakar ABS,F 650ST Strada,https://www.motorcyclespecs.co.za/model/bmw/bmw-f650st-98.html,65,LOW,MODEL_MISMATCH
+000017,BMW,F650GS Dakar ABS,F 650ST Strada,https://www.motorcyclespecs.co.za/model/bmw/bmw-f650st-99.html,65,LOW,MODEL_MISMATCH
+000017,BMW,F650GS Dakar ABS,"F 
+		650ST Strada",https://www.motorcyclespecs.co.za/model/bmw/bmw-f650st.html,65,LOW,MODEL_MISMATCH
+000017,BMW,F650GS Dakar ABS,F 650CS Scarver,https://www.motorcyclespecs.co.za/model/bmw/bmw-f650cs-02.html,63,LOW,MODEL_MISMATCH
+000017,BMW,F650GS Dakar ABS,F 650CS Scarver,https://www.motorcyclespecs.co.za/model/bmw/bmw-f650cs-03.html,63,LOW,MODEL_MISMATCH
+000017,BMW,F650GS Dakar ABS,F 650CS Scarver,https://www.motorcyclespecs.co.za/model/bmw/bmw-f650cs-04.html,63,LOW,MODEL_MISMATCH
+000017,BMW,F650GS Dakar ABS,"F 
+		650CS Scarver",https://www.motorcyclespecs.co.za/model/bmw/bmw-f650cs.html,63,LOW,MODEL_MISMATCH
+000017,BMW,F650GS Dakar ABS,F 650 Funduro,https://www.motorcyclespecs.co.za/model/bmw/bmw-f650-94.html,61,LOW,MODEL_MISMATCH
+000017,BMW,F650GS Dakar ABS,F 650 Funduro,https://www.motorcyclespecs.co.za/model/bmw/bmw-f650-95.html,61,LOW,MODEL_MISMATCH
+000017,BMW,F650GS Dakar ABS,F 650 Funduro,https://www.motorcyclespecs.co.za/model/bmw/bmw-f650-96.html,61,LOW,MODEL_MISMATCH
+000017,BMW,F650GS Dakar ABS,F 650 Funduro,https://www.motorcyclespecs.co.za/model/bmw/bmw-f650-97.html,61,LOW,MODEL_MISMATCH
+000017,BMW,F650GS Dakar ABS,F 650 Funduro,https://www.motorcyclespecs.co.za/model/bmw/bmw-f650-98.html,61,LOW,MODEL_MISMATCH
+000017,BMW,F650GS Dakar ABS,F 650 Funduro,https://www.motorcyclespecs.co.za/model/bmw/bmw-f650-99.html,61,LOW,MODEL_MISMATCH
+000017,BMW,F650GS Dakar ABS,F 650GS (800cc),https://www.motorcyclespecs.co.za/model/bmw/bmw-f650gs-10.html,51,LOW,NUMBER_MISMATCH
+000017,BMW,F650GS Dakar ABS,"F 650GS 
+		(800cc)",https://www.motorcyclespecs.co.za/model/bmw/bmw-f650gs-11.html,51,LOW,NUMBER_MISMATCH
+000017,BMW,F650GS Dakar ABS,F 650GS 30th Anniversary Special,https://www.motorcyclespecs.co.za/model/bmw/bmw-f650gs-special-10.html,51,LOW,NUMBER_MISMATCH
+000018,BMW,F650ST,F 650GS,https://www.motorcyclespecs.co.za/model/bmw/bmw-f650gs-01.html,85,LOW,REVIEW
+000018,BMW,F650ST,F 650GS,https://www.motorcyclespecs.co.za/model/bmw/bmw-f650gs-02.html,85,LOW,REVIEW
+000018,BMW,F650ST,F 650GS,https://www.motorcyclespecs.co.za/model/bmw/bmw-f650gs-03.html,85,LOW,REVIEW
+000018,BMW,F650ST,F 650GS,https://www.motorcyclespecs.co.za/model/bmw/bmw-f650gs-04.html,85,LOW,REVIEW
+000018,BMW,F650ST,F 650GS,https://www.motorcyclespecs.co.za/model/bmw/bmw-f650gs-05.html,85,LOW,REVIEW
+000018,BMW,F650ST,F 650GS,https://www.motorcyclespecs.co.za/model/bmw/bmw-f650gs-06.html,85,LOW,REVIEW
+000018,BMW,F650ST,F 650GS,https://www.motorcyclespecs.co.za/model/bmw/bmw-f650gs-07.html,85,LOW,REVIEW
+000018,BMW,F650ST,F 650GS,https://www.motorcyclespecs.co.za/model/bmw/bmw-f650gs-08.html,85,LOW,REVIEW
+000018,BMW,F650ST,F 650GS,https://www.motorcyclespecs.co.za/model/bmw/bmw-f650gs-09.html,85,LOW,REVIEW
+000018,BMW,F650ST,"F 
+		650GS",https://www.motorcyclespecs.co.za/model/bmw/bmw-f650gs.html,85,LOW,REVIEW
+000018,BMW,F650ST,F 650ST Strada,https://www.motorcyclespecs.co.za/model/bmw/bmw-f650st-00.html,76,LOW,REVIEW
+000018,BMW,F650ST,F 650ST Strada,https://www.motorcyclespecs.co.za/model/bmw/bmw-f650st-98.html,76,LOW,REVIEW
+000018,BMW,F650ST,F 650ST Strada,https://www.motorcyclespecs.co.za/model/bmw/bmw-f650st-99.html,76,LOW,REVIEW
+000018,BMW,F650ST,"F 
+		650ST Strada",https://www.motorcyclespecs.co.za/model/bmw/bmw-f650st.html,76,LOW,REVIEW
+000018,BMW,F650ST,F 650GS Dakar,https://www.motorcyclespecs.co.za/model/bmw/bmw-f650-dakar-01.html,71,LOW,REVIEW
+000018,BMW,F650ST,F 650GS Dakar,https://www.motorcyclespecs.co.za/model/bmw/bmw-f650-dakar-02.html,71,LOW,REVIEW
+000018,BMW,F650ST,"F 650GS 
+		Dakar",https://www.motorcyclespecs.co.za/model/bmw/bmw-f650-dakar-03.html,71,LOW,REVIEW
+000018,BMW,F650ST,F 650GS Dakar,https://www.motorcyclespecs.co.za/model/bmw/bmw-f650-dakar.html,71,LOW,REVIEW
+000018,BMW,F650ST,"F 650GS 
+		Dakar",https://www.motorcyclespecs.co.za/model/bmw/bmw-f650gs-dakar-04.html,71,LOW,REVIEW
+000018,BMW,F650ST,"F 650GS 
+		Dakar",https://www.motorcyclespecs.co.za/model/bmw/bmw-f650gs-dakar-05.html,71,LOW,REVIEW
+000018,BMW,F650ST,"F 650GS 
+		Dakar",https://www.motorcyclespecs.co.za/model/bmw/bmw-f650gs-dakar-06.html,71,LOW,REVIEW
+000018,BMW,F650ST,"F 650GS 
+		Dakar",https://www.motorcyclespecs.co.za/model/bmw/bmw-f650gs-dakar-07.html,71,LOW,REVIEW
+000018,BMW,F650ST,F 650CS Scarver,https://www.motorcyclespecs.co.za/model/bmw/bmw-f650cs-02.html,68,LOW,MODEL_MISMATCH
+000018,BMW,F650ST,F 650CS Scarver,https://www.motorcyclespecs.co.za/model/bmw/bmw-f650cs-03.html,68,LOW,MODEL_MISMATCH
+000018,BMW,F650ST,F 650CS Scarver,https://www.motorcyclespecs.co.za/model/bmw/bmw-f650cs-04.html,68,LOW,MODEL_MISMATCH
+000018,BMW,F650ST,"F 
+		650CS Scarver",https://www.motorcyclespecs.co.za/model/bmw/bmw-f650cs.html,68,LOW,MODEL_MISMATCH
+000018,BMW,F650ST,F 650 Funduro,https://www.motorcyclespecs.co.za/model/bmw/bmw-f650-94.html,65,LOW,MODEL_MISMATCH
+000018,BMW,F650ST,F 650 Funduro,https://www.motorcyclespecs.co.za/model/bmw/bmw-f650-95.html,65,LOW,MODEL_MISMATCH
+000018,BMW,F650ST,F 650 Funduro,https://www.motorcyclespecs.co.za/model/bmw/bmw-f650-96.html,65,LOW,MODEL_MISMATCH
+000018,BMW,F650ST,F 650 Funduro,https://www.motorcyclespecs.co.za/model/bmw/bmw-f650-97.html,65,LOW,MODEL_MISMATCH
+000018,BMW,F650ST,F 650 Funduro,https://www.motorcyclespecs.co.za/model/bmw/bmw-f650-98.html,65,LOW,MODEL_MISMATCH
+000018,BMW,F650ST,F 650 Funduro,https://www.motorcyclespecs.co.za/model/bmw/bmw-f650-99.html,65,LOW,MODEL_MISMATCH
+000018,BMW,F650ST,F 650GS (800cc),https://www.motorcyclespecs.co.za/model/bmw/bmw-f650gs-10.html,63,LOW,NUMBER_MISMATCH
+000018,BMW,F650ST,"F 650GS 
+		(800cc)",https://www.motorcyclespecs.co.za/model/bmw/bmw-f650gs-11.html,63,LOW,NUMBER_MISMATCH
+000018,BMW,F650ST,"F 650RR 
+		Dakar",https://www.motorcyclespecs.co.za/model/bmw/bmw-f650rr-dakar-99.html,60,LOW,MODEL_MISMATCH
+000018,BMW,F650ST,F 650GS 30th Anniversary Special,https://www.motorcyclespecs.co.za/model/bmw/bmw-f650gs-special-10.html,50,LOW,NUMBER_MISMATCH
+000019,BMW,F700GS,F 700GS,https://www.motorcyclespecs.co.za/model/bmw/bmw-f700gs-13.html,95,HIGH,EXACT
+000019,BMW,F700GS,F 700GS,https://www.motorcyclespecs.co.za/model/bmw/bmw-f700gs-14.html,95,HIGH,EXACT
+000019,BMW,F700GS,F 700GS,https://www.motorcyclespecs.co.za/model/bmw/bmw-f700gs-15.html,95,HIGH,EXACT
+000019,BMW,F700GS,F 700GS,https://www.motorcyclespecs.co.za/model/bmw/bmw-f700gs-16.html,95,HIGH,EXACT
+000019,BMW,F700GS,F 700GS,https://www.motorcyclespecs.co.za/model/bmw/bmw-f700gs-17.html,95,HIGH,EXACT
+000020,BMW,F750GS,F 750GS,https://www.motorcyclespecs.co.za/model/bmw/bmw-f750gs-18.html,95,HIGH,EXACT
+000020,BMW,F750GS,F 750GS,https://www.motorcyclespecs.co.za/model/bmw/bmw-f750gs-19.html,95,HIGH,EXACT
+000020,BMW,F750GS,F 750GS,https://www.motorcyclespecs.co.za/model/bmw/bmw-f750gs-20.html,95,HIGH,EXACT
+000020,BMW,F750GS,F 750GS,https://www.motorcyclespecs.co.za/model/bmw/bmw-f750gs-21.html,95,HIGH,EXACT
+000020,BMW,F750GS,F 750GS,https://www.motorcyclespecs.co.za/model/bmw/bmw-f750gs-22.html,95,HIGH,EXACT
+000020,BMW,F750GS,F 750GS 40 Years Edition,https://www.motorcyclespecs.co.za/model/bmw/bmw-f750gs-40th.html,56,LOW,NUMBER_MISMATCH
+000021,BMW,F750GS 40 Years GS Edition,F 750GS 40 Years Edition,https://www.motorcyclespecs.co.za/model/bmw/bmw-f750gs-40th.html,85,LOW,REVIEW
+000022,BMW,F800GS,F 800GS,https://www.motorcyclespecs.co.za/model/bmw/bmw-f800gs-08.html,95,HIGH,EXACT
+000022,BMW,F800GS,F 800GS,https://www.motorcyclespecs.co.za/model/bmw/bmw-f800gs-09.html,95,HIGH,EXACT
+000022,BMW,F800GS,F 800GS,https://www.motorcyclespecs.co.za/model/bmw/bmw-f800gs-10.html,95,HIGH,EXACT
+000022,BMW,F800GS,F 800GS,https://www.motorcyclespecs.co.za/model/bmw/bmw-f800gs-11.html,95,HIGH,EXACT
+000022,BMW,F800GS,F 800GS,https://www.motorcyclespecs.co.za/model/bmw/bmw-f800gs-12.html,95,HIGH,EXACT
+000022,BMW,F800GS,F 800GS,https://www.motorcyclespecs.co.za/model/bmw/bmw-f800gs-13.html,95,HIGH,EXACT
+000022,BMW,F800GS,F 800GS,https://www.motorcyclespecs.co.za/model/bmw/bmw-f800gs-14.html,95,HIGH,EXACT
+000022,BMW,F800GS,F 800GS,https://www.motorcyclespecs.co.za/model/bmw/bmw-f800gs-15.html,95,HIGH,EXACT
+000022,BMW,F800GS,F 800GS,https://www.motorcyclespecs.co.za/model/bmw/bmw-f800gs-16.html,95,HIGH,EXACT
+000022,BMW,F800GS,F 800GS,https://www.motorcyclespecs.co.za/model/bmw/bmw-f800gs-17.html,95,HIGH,EXACT
+000022,BMW,F800GS,F 800GS,https://www.motorcyclespecs.co.za/model/bmw/bmw-f800gs-2024.html,95,HIGH,EXACT
+000022,BMW,F800GS,F 800ST,https://www.motorcyclespecs.co.za/model/bmw/bmw-f800st-07.html,85,LOW,REVIEW
+000022,BMW,F800GS,F 800ST,https://www.motorcyclespecs.co.za/model/bmw/bmw-f800st-08.html,85,LOW,REVIEW
+000022,BMW,F800GS,F 800ST,https://www.motorcyclespecs.co.za/model/bmw/bmw-f800st-09.html,85,LOW,REVIEW
+000022,BMW,F800GS,F 800ST,https://www.motorcyclespecs.co.za/model/bmw/bmw-f800st-10.html,85,LOW,REVIEW
+000022,BMW,F800GS,F 800ST,https://www.motorcyclespecs.co.za/model/bmw/bmw-f800st-11.html,85,LOW,REVIEW
+000022,BMW,F800GS,F 800ST,https://www.motorcyclespecs.co.za/model/bmw/bmw-f800st-12.html,85,LOW,REVIEW
+000022,BMW,F800GS,F 800ST,https://www.motorcyclespecs.co.za/model/bmw/bmw-f800st-13.html,85,LOW,REVIEW
+000022,BMW,F800GS,F 800S,https://www.motorcyclespecs.co.za/model/bmw/bmw-f800s-06.html,83,LOW,REVIEW
+000022,BMW,F800GS,F 800S,https://www.motorcyclespecs.co.za/model/bmw/bmw-f800s-07.html,83,LOW,REVIEW
+000022,BMW,F800GS,F 800S,https://www.motorcyclespecs.co.za/model/bmw/bmw-f800s-08.html,83,LOW,REVIEW
+000022,BMW,F800GS,F 800S,https://www.motorcyclespecs.co.za/model/bmw/bmw-f800s-09.html,83,LOW,REVIEW
+000022,BMW,F800GS,F 800S,https://www.motorcyclespecs.co.za/model/bmw/bmw-f800s-10.html,83,LOW,REVIEW
+000022,BMW,F800GS,F 800GT,https://www.motorcyclespecs.co.za/model/bmw/bmw-f800gt-13.html,80,LOW,REVIEW
+000022,BMW,F800GS,F 800GT,https://www.motorcyclespecs.co.za/model/bmw/bmw-f800gt-14.html,80,LOW,REVIEW
+000022,BMW,F800GS,F 800GT,https://www.motorcyclespecs.co.za/model/bmw/bmw-f800gt-15.html,80,LOW,REVIEW
+000022,BMW,F800GS,F 800GT,https://www.motorcyclespecs.co.za/model/bmw/bmw-f800gt-16.html,80,LOW,REVIEW
+000022,BMW,F800GS,F 800GT,https://www.motorcyclespecs.co.za/model/bmw/bmw-f800gt-17.html,80,LOW,REVIEW
+000022,BMW,F800GS,"F 
+		800GS Trophy",https://www.motorcyclespecs.co.za/model/bmw/bmw-f800gs-trophy.html,76,LOW,REVIEW
+000022,BMW,F800GS,F 800R,https://www.motorcyclespecs.co.za/model/bmw/bmw-f800r-10.html,73,LOW,REVIEW
+000022,BMW,F800GS,F 800R,https://www.motorcyclespecs.co.za/model/bmw/bmw-f800r-11.html,73,LOW,REVIEW
+000022,BMW,F800GS,F 800R,https://www.motorcyclespecs.co.za/model/bmw/bmw-f800r-12.html,73,LOW,REVIEW
+000022,BMW,F800GS,F 800R,https://www.motorcyclespecs.co.za/model/bmw/bmw-f800r-13.html,73,LOW,REVIEW
+000022,BMW,F800GS,F 800R,https://www.motorcyclespecs.co.za/model/bmw/bmw-f800r-14.html,73,LOW,REVIEW
+000022,BMW,F800GS,F 800R,https://www.motorcyclespecs.co.za/model/bmw/bmw-f800r-15.html,73,LOW,REVIEW
+000022,BMW,F800GS,F 800R,https://www.motorcyclespecs.co.za/model/bmw/bmw-f800r-16.html,73,LOW,REVIEW
+000022,BMW,F800GS,F 800R,https://www.motorcyclespecs.co.za/model/bmw/bmw-f800r-17.html,73,LOW,REVIEW
+000022,BMW,F800GS,F 800R,https://www.motorcyclespecs.co.za/model/bmw/bmw-f800r.html,73,LOW,REVIEW
+000022,BMW,F800GS,"F 
+800GS Triple Black",https://www.motorcyclespecs.co.za/model/bmw/bmw-f800gs-triple-black.html,68,LOW,MODEL_MISMATCH
+000022,BMW,F800GS,"F 
+		800GS Adventure",https://www.motorcyclespecs.co.za/model/bmw/bmw-f800gs-adventure-13.html,65,LOW,MODEL_MISMATCH
+000022,BMW,F800GS,"F 
+		800GS Adventure",https://www.motorcyclespecs.co.za/model/bmw/bmw-f800gs-adventure-14.html,65,LOW,MODEL_MISMATCH
+000022,BMW,F800GS,"F 
+		800GS Adventure",https://www.motorcyclespecs.co.za/model/bmw/bmw-f800gs-adventure-15.html,65,LOW,MODEL_MISMATCH
+000022,BMW,F800GS,"F 
+		800GS Adventure",https://www.motorcyclespecs.co.za/model/bmw/bmw-f800gs-adventure-16.html,65,LOW,MODEL_MISMATCH
+000022,BMW,F800GS,"F 
+		800GS Adventure",https://www.motorcyclespecs.co.za/model/bmw/bmw-f800gs-adventure-17.html,65,LOW,MODEL_MISMATCH
+000022,BMW,F800GS,"F 800 ST 
+		Touring",https://www.motorcyclespecs.co.za/model/bmw/bmw-f800st-se-11.html,63,LOW,MODEL_MISMATCH
+000022,BMW,F800GS,F 650GS (800cc),https://www.motorcyclespecs.co.za/model/bmw/bmw-f650gs-10.html,61,LOW,NUMBER_MISMATCH
+000022,BMW,F800GS,"F 650GS 
+		(800cc)",https://www.motorcyclespecs.co.za/model/bmw/bmw-f650gs-11.html,61,LOW,NUMBER_MISMATCH
+000022,BMW,F800GS,F 800R Chris Pfeiffer Edition,https://www.motorcyclespecs.co.za/model/bmw/bmw-f800r-special.html,52,LOW,MODEL_MISMATCH
+000022,BMW,F800GS,"F 
+	800GS 30th Anniversary Special",https://www.motorcyclespecs.co.za/model/bmw/bmw-f800gs-special-10.html,50,LOW,NUMBER_MISMATCH
+000022,BMW,F800GS,F 800R Nero Zaffiro Metallizzato,https://www.motorcyclespecs.co.za/model/bmw/bmw-f800r-nero-zaffiro-metallizzato.html,49,LOW,MODEL_MISMATCH
+000023,BMW,F800GS Adventure,"F 
+		800GS Adventure",https://www.motorcyclespecs.co.za/model/bmw/bmw-f800gs-adventure-13.html,95,HIGH,EXACT
+000023,BMW,F800GS Adventure,"F 
+		800GS Adventure",https://www.motorcyclespecs.co.za/model/bmw/bmw-f800gs-adventure-14.html,95,HIGH,EXACT
+000023,BMW,F800GS Adventure,"F 
+		800GS Adventure",https://www.motorcyclespecs.co.za/model/bmw/bmw-f800gs-adventure-15.html,95,HIGH,EXACT
+000023,BMW,F800GS Adventure,"F 
+		800GS Adventure",https://www.motorcyclespecs.co.za/model/bmw/bmw-f800gs-adventure-16.html,95,HIGH,EXACT
+000023,BMW,F800GS Adventure,"F 
+		800GS Adventure",https://www.motorcyclespecs.co.za/model/bmw/bmw-f800gs-adventure-17.html,95,HIGH,EXACT
+000023,BMW,F800GS Adventure,"F 
+		800GS Trophy",https://www.motorcyclespecs.co.za/model/bmw/bmw-f800gs-trophy.html,68,LOW,MODEL_MISMATCH
+000023,BMW,F800GS Adventure,"F 800 ST 
+		Touring",https://www.motorcyclespecs.co.za/model/bmw/bmw-f800st-se-11.html,67,LOW,MODEL_MISMATCH
+000023,BMW,F800GS Adventure,"F 
+800GS Triple Black",https://www.motorcyclespecs.co.za/model/bmw/bmw-f800gs-triple-black.html,66,LOW,MODEL_MISMATCH
+000023,BMW,F800GS Adventure,F 800GS,https://www.motorcyclespecs.co.za/model/bmw/bmw-f800gs-08.html,65,LOW,MODEL_MISMATCH
+000023,BMW,F800GS Adventure,F 800GS,https://www.motorcyclespecs.co.za/model/bmw/bmw-f800gs-09.html,65,LOW,MODEL_MISMATCH
+000023,BMW,F800GS Adventure,F 800GS,https://www.motorcyclespecs.co.za/model/bmw/bmw-f800gs-10.html,65,LOW,MODEL_MISMATCH
+000023,BMW,F800GS Adventure,F 800GS,https://www.motorcyclespecs.co.za/model/bmw/bmw-f800gs-11.html,65,LOW,MODEL_MISMATCH
+000023,BMW,F800GS Adventure,F 800GS,https://www.motorcyclespecs.co.za/model/bmw/bmw-f800gs-12.html,65,LOW,MODEL_MISMATCH
+000023,BMW,F800GS Adventure,F 800GS,https://www.motorcyclespecs.co.za/model/bmw/bmw-f800gs-13.html,65,LOW,MODEL_MISMATCH
+000023,BMW,F800GS Adventure,F 800GS,https://www.motorcyclespecs.co.za/model/bmw/bmw-f800gs-14.html,65,LOW,MODEL_MISMATCH
+000023,BMW,F800GS Adventure,F 800GS,https://www.motorcyclespecs.co.za/model/bmw/bmw-f800gs-15.html,65,LOW,MODEL_MISMATCH
+000023,BMW,F800GS Adventure,F 800GS,https://www.motorcyclespecs.co.za/model/bmw/bmw-f800gs-16.html,65,LOW,MODEL_MISMATCH
+000023,BMW,F800GS Adventure,F 800GS,https://www.motorcyclespecs.co.za/model/bmw/bmw-f800gs-17.html,65,LOW,MODEL_MISMATCH
+000023,BMW,F800GS Adventure,F 800GS,https://www.motorcyclespecs.co.za/model/bmw/bmw-f800gs-2024.html,65,LOW,MODEL_MISMATCH
+000023,BMW,F800GS Adventure,F 800GT,https://www.motorcyclespecs.co.za/model/bmw/bmw-f800gt-13.html,65,LOW,MODEL_MISMATCH
+000023,BMW,F800GS Adventure,F 800GT,https://www.motorcyclespecs.co.za/model/bmw/bmw-f800gt-14.html,65,LOW,MODEL_MISMATCH
+000023,BMW,F800GS Adventure,F 800GT,https://www.motorcyclespecs.co.za/model/bmw/bmw-f800gt-15.html,65,LOW,MODEL_MISMATCH
+000023,BMW,F800GS Adventure,F 800GT,https://www.motorcyclespecs.co.za/model/bmw/bmw-f800gt-16.html,65,LOW,MODEL_MISMATCH
+000023,BMW,F800GS Adventure,F 800GT,https://www.motorcyclespecs.co.za/model/bmw/bmw-f800gt-17.html,65,LOW,MODEL_MISMATCH
+000023,BMW,F800GS Adventure,F 800ST,https://www.motorcyclespecs.co.za/model/bmw/bmw-f800st-07.html,65,LOW,MODEL_MISMATCH
+000023,BMW,F800GS Adventure,F 800ST,https://www.motorcyclespecs.co.za/model/bmw/bmw-f800st-08.html,65,LOW,MODEL_MISMATCH
+000023,BMW,F800GS Adventure,F 800ST,https://www.motorcyclespecs.co.za/model/bmw/bmw-f800st-09.html,65,LOW,MODEL_MISMATCH
+000023,BMW,F800GS Adventure,F 800ST,https://www.motorcyclespecs.co.za/model/bmw/bmw-f800st-10.html,65,LOW,MODEL_MISMATCH
+000023,BMW,F800GS Adventure,F 800ST,https://www.motorcyclespecs.co.za/model/bmw/bmw-f800st-11.html,65,LOW,MODEL_MISMATCH
+000023,BMW,F800GS Adventure,F 800ST,https://www.motorcyclespecs.co.za/model/bmw/bmw-f800st-12.html,65,LOW,MODEL_MISMATCH
+000023,BMW,F800GS Adventure,F 800ST,https://www.motorcyclespecs.co.za/model/bmw/bmw-f800st-13.html,65,LOW,MODEL_MISMATCH
+000023,BMW,F800GS Adventure,F 800R,https://www.motorcyclespecs.co.za/model/bmw/bmw-f800r-10.html,62,LOW,MODEL_MISMATCH
+000023,BMW,F800GS Adventure,F 800R,https://www.motorcyclespecs.co.za/model/bmw/bmw-f800r-11.html,62,LOW,MODEL_MISMATCH
+000023,BMW,F800GS Adventure,F 800R,https://www.motorcyclespecs.co.za/model/bmw/bmw-f800r-12.html,62,LOW,MODEL_MISMATCH
+000023,BMW,F800GS Adventure,F 800R,https://www.motorcyclespecs.co.za/model/bmw/bmw-f800r-13.html,62,LOW,MODEL_MISMATCH
+000023,BMW,F800GS Adventure,F 800R,https://www.motorcyclespecs.co.za/model/bmw/bmw-f800r-14.html,62,LOW,MODEL_MISMATCH
+000023,BMW,F800GS Adventure,F 800R,https://www.motorcyclespecs.co.za/model/bmw/bmw-f800r-15.html,62,LOW,MODEL_MISMATCH
+000023,BMW,F800GS Adventure,F 800R,https://www.motorcyclespecs.co.za/model/bmw/bmw-f800r-16.html,62,LOW,MODEL_MISMATCH
+000023,BMW,F800GS Adventure,F 800R,https://www.motorcyclespecs.co.za/model/bmw/bmw-f800r-17.html,62,LOW,MODEL_MISMATCH
+000023,BMW,F800GS Adventure,F 800R,https://www.motorcyclespecs.co.za/model/bmw/bmw-f800r.html,62,LOW,MODEL_MISMATCH
+000023,BMW,F800GS Adventure,F 800S,https://www.motorcyclespecs.co.za/model/bmw/bmw-f800s-06.html,62,LOW,MODEL_MISMATCH
+000023,BMW,F800GS Adventure,F 800S,https://www.motorcyclespecs.co.za/model/bmw/bmw-f800s-07.html,62,LOW,MODEL_MISMATCH
+000023,BMW,F800GS Adventure,F 800S,https://www.motorcyclespecs.co.za/model/bmw/bmw-f800s-08.html,62,LOW,MODEL_MISMATCH
+000023,BMW,F800GS Adventure,F 800S,https://www.motorcyclespecs.co.za/model/bmw/bmw-f800s-09.html,62,LOW,MODEL_MISMATCH
+000023,BMW,F800GS Adventure,F 800S,https://www.motorcyclespecs.co.za/model/bmw/bmw-f800s-10.html,62,LOW,MODEL_MISMATCH
+000023,BMW,F800GS Adventure,F 800R Chris Pfeiffer Edition,https://www.motorcyclespecs.co.za/model/bmw/bmw-f800r-special.html,57,LOW,MODEL_MISMATCH
+000023,BMW,F800GS Adventure,F 800R Nero Zaffiro Metallizzato,https://www.motorcyclespecs.co.za/model/bmw/bmw-f800r-nero-zaffiro-metallizzato.html,54,LOW,MODEL_MISMATCH
+000023,BMW,F800GS Adventure,"F 
+	800GS 30th Anniversary Special",https://www.motorcyclespecs.co.za/model/bmw/bmw-f800gs-special-10.html,52,LOW,NUMBER_MISMATCH
+000023,BMW,F800GS Adventure,F 650GS (800cc),https://www.motorcyclespecs.co.za/model/bmw/bmw-f650gs-10.html,45,LOW,NUMBER_MISMATCH
+000023,BMW,F800GS Adventure,"F 650GS 
+		(800cc)",https://www.motorcyclespecs.co.za/model/bmw/bmw-f650gs-11.html,45,LOW,NUMBER_MISMATCH
+000024,BMW,F800GS Comfort,F 800GS,https://www.motorcyclespecs.co.za/model/bmw/bmw-f800gs-08.html,74,LOW,REVIEW
+000024,BMW,F800GS Comfort,F 800GS,https://www.motorcyclespecs.co.za/model/bmw/bmw-f800gs-09.html,74,LOW,REVIEW
+000024,BMW,F800GS Comfort,F 800GS,https://www.motorcyclespecs.co.za/model/bmw/bmw-f800gs-10.html,74,LOW,REVIEW
+000024,BMW,F800GS Comfort,F 800GS,https://www.motorcyclespecs.co.za/model/bmw/bmw-f800gs-11.html,74,LOW,REVIEW
+000024,BMW,F800GS Comfort,F 800GS,https://www.motorcyclespecs.co.za/model/bmw/bmw-f800gs-12.html,74,LOW,REVIEW
+000024,BMW,F800GS Comfort,F 800GS,https://www.motorcyclespecs.co.za/model/bmw/bmw-f800gs-13.html,74,LOW,REVIEW
+000024,BMW,F800GS Comfort,F 800GS,https://www.motorcyclespecs.co.za/model/bmw/bmw-f800gs-14.html,74,LOW,REVIEW
+000024,BMW,F800GS Comfort,F 800GS,https://www.motorcyclespecs.co.za/model/bmw/bmw-f800gs-15.html,74,LOW,REVIEW
+000024,BMW,F800GS Comfort,F 800GS,https://www.motorcyclespecs.co.za/model/bmw/bmw-f800gs-16.html,74,LOW,REVIEW
+000024,BMW,F800GS Comfort,F 800GS,https://www.motorcyclespecs.co.za/model/bmw/bmw-f800gs-17.html,74,LOW,REVIEW
+000024,BMW,F800GS Comfort,F 800GS,https://www.motorcyclespecs.co.za/model/bmw/bmw-f800gs-2024.html,74,LOW,REVIEW
+000024,BMW,F800GS Comfort,F 800ST,https://www.motorcyclespecs.co.za/model/bmw/bmw-f800st-07.html,74,LOW,REVIEW
+000024,BMW,F800GS Comfort,F 800ST,https://www.motorcyclespecs.co.za/model/bmw/bmw-f800st-08.html,74,LOW,REVIEW
+000024,BMW,F800GS Comfort,F 800ST,https://www.motorcyclespecs.co.za/model/bmw/bmw-f800st-09.html,74,LOW,REVIEW
+000024,BMW,F800GS Comfort,F 800ST,https://www.motorcyclespecs.co.za/model/bmw/bmw-f800st-10.html,74,LOW,REVIEW
+000024,BMW,F800GS Comfort,F 800ST,https://www.motorcyclespecs.co.za/model/bmw/bmw-f800st-11.html,74,LOW,REVIEW
+000024,BMW,F800GS Comfort,F 800ST,https://www.motorcyclespecs.co.za/model/bmw/bmw-f800st-12.html,74,LOW,REVIEW
+000024,BMW,F800GS Comfort,F 800ST,https://www.motorcyclespecs.co.za/model/bmw/bmw-f800st-13.html,74,LOW,REVIEW
+000024,BMW,F800GS Comfort,"F 
+		800GS Trophy",https://www.motorcyclespecs.co.za/model/bmw/bmw-f800gs-trophy.html,71,LOW,REVIEW
+000024,BMW,F800GS Comfort,F 800GT,https://www.motorcyclespecs.co.za/model/bmw/bmw-f800gt-13.html,69,LOW,MODEL_MISMATCH
+000024,BMW,F800GS Comfort,F 800GT,https://www.motorcyclespecs.co.za/model/bmw/bmw-f800gt-14.html,69,LOW,MODEL_MISMATCH
+000024,BMW,F800GS Comfort,F 800GT,https://www.motorcyclespecs.co.za/model/bmw/bmw-f800gt-15.html,69,LOW,MODEL_MISMATCH
+000024,BMW,F800GS Comfort,F 800GT,https://www.motorcyclespecs.co.za/model/bmw/bmw-f800gt-16.html,69,LOW,MODEL_MISMATCH
+000024,BMW,F800GS Comfort,F 800GT,https://www.motorcyclespecs.co.za/model/bmw/bmw-f800gt-17.html,69,LOW,MODEL_MISMATCH
+000024,BMW,F800GS Comfort,"F 
+800GS Triple Black",https://www.motorcyclespecs.co.za/model/bmw/bmw-f800gs-triple-black.html,67,LOW,MODEL_MISMATCH
+000024,BMW,F800GS Comfort,F 800R,https://www.motorcyclespecs.co.za/model/bmw/bmw-f800r-10.html,65,LOW,MODEL_MISMATCH
+000024,BMW,F800GS Comfort,F 800R,https://www.motorcyclespecs.co.za/model/bmw/bmw-f800r-11.html,65,LOW,MODEL_MISMATCH
+000024,BMW,F800GS Comfort,F 800R,https://www.motorcyclespecs.co.za/model/bmw/bmw-f800r-12.html,65,LOW,MODEL_MISMATCH
+000024,BMW,F800GS Comfort,F 800R,https://www.motorcyclespecs.co.za/model/bmw/bmw-f800r-13.html,65,LOW,MODEL_MISMATCH
+000024,BMW,F800GS Comfort,F 800R,https://www.motorcyclespecs.co.za/model/bmw/bmw-f800r-14.html,65,LOW,MODEL_MISMATCH
+000024,BMW,F800GS Comfort,F 800R,https://www.motorcyclespecs.co.za/model/bmw/bmw-f800r-15.html,65,LOW,MODEL_MISMATCH
+000024,BMW,F800GS Comfort,F 800R,https://www.motorcyclespecs.co.za/model/bmw/bmw-f800r-16.html,65,LOW,MODEL_MISMATCH
+000024,BMW,F800GS Comfort,F 800R,https://www.motorcyclespecs.co.za/model/bmw/bmw-f800r-17.html,65,LOW,MODEL_MISMATCH
+000024,BMW,F800GS Comfort,F 800R,https://www.motorcyclespecs.co.za/model/bmw/bmw-f800r.html,65,LOW,MODEL_MISMATCH
+000024,BMW,F800GS Comfort,F 800S,https://www.motorcyclespecs.co.za/model/bmw/bmw-f800s-06.html,65,LOW,MODEL_MISMATCH
+000024,BMW,F800GS Comfort,F 800S,https://www.motorcyclespecs.co.za/model/bmw/bmw-f800s-07.html,65,LOW,MODEL_MISMATCH
+000024,BMW,F800GS Comfort,F 800S,https://www.motorcyclespecs.co.za/model/bmw/bmw-f800s-08.html,65,LOW,MODEL_MISMATCH
+000024,BMW,F800GS Comfort,F 800S,https://www.motorcyclespecs.co.za/model/bmw/bmw-f800s-09.html,65,LOW,MODEL_MISMATCH
+000024,BMW,F800GS Comfort,F 800S,https://www.motorcyclespecs.co.za/model/bmw/bmw-f800s-10.html,65,LOW,MODEL_MISMATCH
+000024,BMW,F800GS Comfort,"F 800 ST 
+		Touring",https://www.motorcyclespecs.co.za/model/bmw/bmw-f800st-se-11.html,65,LOW,MODEL_MISMATCH
+000024,BMW,F800GS Comfort,"F 
+		800GS Adventure",https://www.motorcyclespecs.co.za/model/bmw/bmw-f800gs-adventure-13.html,61,LOW,MODEL_MISMATCH
+000024,BMW,F800GS Comfort,"F 
+		800GS Adventure",https://www.motorcyclespecs.co.za/model/bmw/bmw-f800gs-adventure-14.html,61,LOW,MODEL_MISMATCH
+000024,BMW,F800GS Comfort,"F 
+		800GS Adventure",https://www.motorcyclespecs.co.za/model/bmw/bmw-f800gs-adventure-15.html,61,LOW,MODEL_MISMATCH
+000024,BMW,F800GS Comfort,"F 
+		800GS Adventure",https://www.motorcyclespecs.co.za/model/bmw/bmw-f800gs-adventure-16.html,61,LOW,MODEL_MISMATCH
+000024,BMW,F800GS Comfort,"F 
+		800GS Adventure",https://www.motorcyclespecs.co.za/model/bmw/bmw-f800gs-adventure-17.html,61,LOW,MODEL_MISMATCH
+000024,BMW,F800GS Comfort,F 800R Nero Zaffiro Metallizzato,https://www.motorcyclespecs.co.za/model/bmw/bmw-f800r-nero-zaffiro-metallizzato.html,57,LOW,MODEL_MISMATCH
+000024,BMW,F800GS Comfort,F 800R Chris Pfeiffer Edition,https://www.motorcyclespecs.co.za/model/bmw/bmw-f800r-special.html,57,LOW,MODEL_MISMATCH
+000024,BMW,F800GS Comfort,F 650GS (800cc),https://www.motorcyclespecs.co.za/model/bmw/bmw-f650gs-10.html,55,LOW,NUMBER_MISMATCH
+000024,BMW,F800GS Comfort,"F 650GS 
+		(800cc)",https://www.motorcyclespecs.co.za/model/bmw/bmw-f650gs-11.html,55,LOW,NUMBER_MISMATCH
+000024,BMW,F800GS Comfort,"F 
+	800GS 30th Anniversary Special",https://www.motorcyclespecs.co.za/model/bmw/bmw-f800gs-special-10.html,51,LOW,NUMBER_MISMATCH
+000025,BMW,F800GS Dynamic,F 800GS,https://www.motorcyclespecs.co.za/model/bmw/bmw-f800gs-08.html,74,LOW,REVIEW
+000025,BMW,F800GS Dynamic,F 800GS,https://www.motorcyclespecs.co.za/model/bmw/bmw-f800gs-09.html,74,LOW,REVIEW
+000025,BMW,F800GS Dynamic,F 800GS,https://www.motorcyclespecs.co.za/model/bmw/bmw-f800gs-10.html,74,LOW,REVIEW
+000025,BMW,F800GS Dynamic,F 800GS,https://www.motorcyclespecs.co.za/model/bmw/bmw-f800gs-11.html,74,LOW,REVIEW
+000025,BMW,F800GS Dynamic,F 800GS,https://www.motorcyclespecs.co.za/model/bmw/bmw-f800gs-12.html,74,LOW,REVIEW
+000025,BMW,F800GS Dynamic,F 800GS,https://www.motorcyclespecs.co.za/model/bmw/bmw-f800gs-13.html,74,LOW,REVIEW
+000025,BMW,F800GS Dynamic,F 800GS,https://www.motorcyclespecs.co.za/model/bmw/bmw-f800gs-14.html,74,LOW,REVIEW
+000025,BMW,F800GS Dynamic,F 800GS,https://www.motorcyclespecs.co.za/model/bmw/bmw-f800gs-15.html,74,LOW,REVIEW
+000025,BMW,F800GS Dynamic,F 800GS,https://www.motorcyclespecs.co.za/model/bmw/bmw-f800gs-16.html,74,LOW,REVIEW
+000025,BMW,F800GS Dynamic,F 800GS,https://www.motorcyclespecs.co.za/model/bmw/bmw-f800gs-17.html,74,LOW,REVIEW
+000025,BMW,F800GS Dynamic,F 800GS,https://www.motorcyclespecs.co.za/model/bmw/bmw-f800gs-2024.html,74,LOW,REVIEW
+000025,BMW,F800GS Dynamic,"F 
+		800GS Trophy",https://www.motorcyclespecs.co.za/model/bmw/bmw-f800gs-trophy.html,71,LOW,REVIEW
+000025,BMW,F800GS Dynamic,"F 
+800GS Triple Black",https://www.motorcyclespecs.co.za/model/bmw/bmw-f800gs-triple-black.html,69,LOW,MODEL_MISMATCH
+000025,BMW,F800GS Dynamic,F 800ST,https://www.motorcyclespecs.co.za/model/bmw/bmw-f800st-07.html,68,LOW,MODEL_MISMATCH
+000025,BMW,F800GS Dynamic,F 800ST,https://www.motorcyclespecs.co.za/model/bmw/bmw-f800st-08.html,68,LOW,MODEL_MISMATCH
+000025,BMW,F800GS Dynamic,F 800ST,https://www.motorcyclespecs.co.za/model/bmw/bmw-f800st-09.html,68,LOW,MODEL_MISMATCH
+000025,BMW,F800GS Dynamic,F 800ST,https://www.motorcyclespecs.co.za/model/bmw/bmw-f800st-10.html,68,LOW,MODEL_MISMATCH
+000025,BMW,F800GS Dynamic,F 800ST,https://www.motorcyclespecs.co.za/model/bmw/bmw-f800st-11.html,68,LOW,MODEL_MISMATCH
+000025,BMW,F800GS Dynamic,F 800ST,https://www.motorcyclespecs.co.za/model/bmw/bmw-f800st-12.html,68,LOW,MODEL_MISMATCH
+000025,BMW,F800GS Dynamic,F 800ST,https://www.motorcyclespecs.co.za/model/bmw/bmw-f800st-13.html,68,LOW,MODEL_MISMATCH
+000025,BMW,F800GS Dynamic,F 800S,https://www.motorcyclespecs.co.za/model/bmw/bmw-f800s-06.html,65,LOW,MODEL_MISMATCH
+000025,BMW,F800GS Dynamic,F 800S,https://www.motorcyclespecs.co.za/model/bmw/bmw-f800s-07.html,65,LOW,MODEL_MISMATCH
+000025,BMW,F800GS Dynamic,F 800S,https://www.motorcyclespecs.co.za/model/bmw/bmw-f800s-08.html,65,LOW,MODEL_MISMATCH
+000025,BMW,F800GS Dynamic,F 800S,https://www.motorcyclespecs.co.za/model/bmw/bmw-f800s-09.html,65,LOW,MODEL_MISMATCH
+000025,BMW,F800GS Dynamic,F 800S,https://www.motorcyclespecs.co.za/model/bmw/bmw-f800s-10.html,65,LOW,MODEL_MISMATCH
+000025,BMW,F800GS Dynamic,"F 
+		800GS Adventure",https://www.motorcyclespecs.co.za/model/bmw/bmw-f800gs-adventure-13.html,63,LOW,MODEL_MISMATCH
+000025,BMW,F800GS Dynamic,"F 
+		800GS Adventure",https://www.motorcyclespecs.co.za/model/bmw/bmw-f800gs-adventure-14.html,63,LOW,MODEL_MISMATCH
+000025,BMW,F800GS Dynamic,"F 
+		800GS Adventure",https://www.motorcyclespecs.co.za/model/bmw/bmw-f800gs-adventure-15.html,63,LOW,MODEL_MISMATCH
+000025,BMW,F800GS Dynamic,"F 
+		800GS Adventure",https://www.motorcyclespecs.co.za/model/bmw/bmw-f800gs-adventure-16.html,63,LOW,MODEL_MISMATCH
+000025,BMW,F800GS Dynamic,"F 
+		800GS Adventure",https://www.motorcyclespecs.co.za/model/bmw/bmw-f800gs-adventure-17.html,63,LOW,MODEL_MISMATCH
+000025,BMW,F800GS Dynamic,F 800GT,https://www.motorcyclespecs.co.za/model/bmw/bmw-f800gt-13.html,63,LOW,MODEL_MISMATCH
+000025,BMW,F800GS Dynamic,F 800GT,https://www.motorcyclespecs.co.za/model/bmw/bmw-f800gt-14.html,63,LOW,MODEL_MISMATCH
+000025,BMW,F800GS Dynamic,F 800GT,https://www.motorcyclespecs.co.za/model/bmw/bmw-f800gt-15.html,63,LOW,MODEL_MISMATCH
+000025,BMW,F800GS Dynamic,F 800GT,https://www.motorcyclespecs.co.za/model/bmw/bmw-f800gt-16.html,63,LOW,MODEL_MISMATCH
+000025,BMW,F800GS Dynamic,F 800GT,https://www.motorcyclespecs.co.za/model/bmw/bmw-f800gt-17.html,63,LOW,MODEL_MISMATCH
+000025,BMW,F800GS Dynamic,"F 800 ST 
+		Touring",https://www.motorcyclespecs.co.za/model/bmw/bmw-f800st-se-11.html,62,LOW,MODEL_MISMATCH
+000025,BMW,F800GS Dynamic,F 800R,https://www.motorcyclespecs.co.za/model/bmw/bmw-f800r-10.html,59,LOW,MODEL_MISMATCH
+000025,BMW,F800GS Dynamic,F 800R,https://www.motorcyclespecs.co.za/model/bmw/bmw-f800r-11.html,59,LOW,MODEL_MISMATCH
+000025,BMW,F800GS Dynamic,F 800R,https://www.motorcyclespecs.co.za/model/bmw/bmw-f800r-12.html,59,LOW,MODEL_MISMATCH
+000025,BMW,F800GS Dynamic,F 800R,https://www.motorcyclespecs.co.za/model/bmw/bmw-f800r-13.html,59,LOW,MODEL_MISMATCH
+000025,BMW,F800GS Dynamic,F 800R,https://www.motorcyclespecs.co.za/model/bmw/bmw-f800r-14.html,59,LOW,MODEL_MISMATCH
+000025,BMW,F800GS Dynamic,F 800R,https://www.motorcyclespecs.co.za/model/bmw/bmw-f800r-15.html,59,LOW,MODEL_MISMATCH
+000025,BMW,F800GS Dynamic,F 800R,https://www.motorcyclespecs.co.za/model/bmw/bmw-f800r-16.html,59,LOW,MODEL_MISMATCH
+000025,BMW,F800GS Dynamic,F 800R,https://www.motorcyclespecs.co.za/model/bmw/bmw-f800r-17.html,59,LOW,MODEL_MISMATCH
+000025,BMW,F800GS Dynamic,F 800R,https://www.motorcyclespecs.co.za/model/bmw/bmw-f800r.html,59,LOW,MODEL_MISMATCH
+000025,BMW,F800GS Dynamic,F 800R Nero Zaffiro Metallizzato,https://www.motorcyclespecs.co.za/model/bmw/bmw-f800r-nero-zaffiro-metallizzato.html,57,LOW,MODEL_MISMATCH
+000025,BMW,F800GS Dynamic,F 650GS (800cc),https://www.motorcyclespecs.co.za/model/bmw/bmw-f650gs-10.html,55,LOW,NUMBER_MISMATCH
+000025,BMW,F800GS Dynamic,"F 650GS 
+		(800cc)",https://www.motorcyclespecs.co.za/model/bmw/bmw-f650gs-11.html,55,LOW,NUMBER_MISMATCH
+000025,BMW,F800GS Dynamic,F 800R Chris Pfeiffer Edition,https://www.motorcyclespecs.co.za/model/bmw/bmw-f800r-special.html,55,LOW,MODEL_MISMATCH
+000025,BMW,F800GS Dynamic,"F 
+	800GS 30th Anniversary Special",https://www.motorcyclespecs.co.za/model/bmw/bmw-f800gs-special-10.html,54,LOW,NUMBER_MISMATCH
+000026,BMW,F800GS Equipada,F 800GS,https://www.motorcyclespecs.co.za/model/bmw/bmw-f800gs-08.html,95,HIGH,EXACT
+000026,BMW,F800GS Equipada,F 800GS,https://www.motorcyclespecs.co.za/model/bmw/bmw-f800gs-09.html,95,HIGH,EXACT
+000026,BMW,F800GS Equipada,F 800GS,https://www.motorcyclespecs.co.za/model/bmw/bmw-f800gs-10.html,95,HIGH,EXACT
+000026,BMW,F800GS Equipada,F 800GS,https://www.motorcyclespecs.co.za/model/bmw/bmw-f800gs-11.html,95,HIGH,EXACT
+000026,BMW,F800GS Equipada,F 800GS,https://www.motorcyclespecs.co.za/model/bmw/bmw-f800gs-12.html,95,HIGH,EXACT
+000026,BMW,F800GS Equipada,F 800GS,https://www.motorcyclespecs.co.za/model/bmw/bmw-f800gs-13.html,95,HIGH,EXACT
+000026,BMW,F800GS Equipada,F 800GS,https://www.motorcyclespecs.co.za/model/bmw/bmw-f800gs-14.html,95,HIGH,EXACT
+000026,BMW,F800GS Equipada,F 800GS,https://www.motorcyclespecs.co.za/model/bmw/bmw-f800gs-15.html,95,HIGH,EXACT
+000026,BMW,F800GS Equipada,F 800GS,https://www.motorcyclespecs.co.za/model/bmw/bmw-f800gs-16.html,95,HIGH,EXACT
+000026,BMW,F800GS Equipada,F 800GS,https://www.motorcyclespecs.co.za/model/bmw/bmw-f800gs-17.html,95,HIGH,EXACT
+000026,BMW,F800GS Equipada,F 800GS,https://www.motorcyclespecs.co.za/model/bmw/bmw-f800gs-2024.html,95,HIGH,EXACT
+000026,BMW,F800GS Equipada,F 800ST,https://www.motorcyclespecs.co.za/model/bmw/bmw-f800st-07.html,85,LOW,REVIEW
+000026,BMW,F800GS Equipada,F 800ST,https://www.motorcyclespecs.co.za/model/bmw/bmw-f800st-08.html,85,LOW,REVIEW
+000026,BMW,F800GS Equipada,F 800ST,https://www.motorcyclespecs.co.za/model/bmw/bmw-f800st-09.html,85,LOW,REVIEW
+000026,BMW,F800GS Equipada,F 800ST,https://www.motorcyclespecs.co.za/model/bmw/bmw-f800st-10.html,85,LOW,REVIEW
+000026,BMW,F800GS Equipada,F 800ST,https://www.motorcyclespecs.co.za/model/bmw/bmw-f800st-11.html,85,LOW,REVIEW
+000026,BMW,F800GS Equipada,F 800ST,https://www.motorcyclespecs.co.za/model/bmw/bmw-f800st-12.html,85,LOW,REVIEW
+000026,BMW,F800GS Equipada,F 800ST,https://www.motorcyclespecs.co.za/model/bmw/bmw-f800st-13.html,85,LOW,REVIEW
+000026,BMW,F800GS Equipada,F 800S,https://www.motorcyclespecs.co.za/model/bmw/bmw-f800s-06.html,83,LOW,REVIEW
+000026,BMW,F800GS Equipada,F 800S,https://www.motorcyclespecs.co.za/model/bmw/bmw-f800s-07.html,83,LOW,REVIEW
+000026,BMW,F800GS Equipada,F 800S,https://www.motorcyclespecs.co.za/model/bmw/bmw-f800s-08.html,83,LOW,REVIEW
+000026,BMW,F800GS Equipada,F 800S,https://www.motorcyclespecs.co.za/model/bmw/bmw-f800s-09.html,83,LOW,REVIEW
+000026,BMW,F800GS Equipada,F 800S,https://www.motorcyclespecs.co.za/model/bmw/bmw-f800s-10.html,83,LOW,REVIEW
+000026,BMW,F800GS Equipada,F 800GT,https://www.motorcyclespecs.co.za/model/bmw/bmw-f800gt-13.html,80,LOW,REVIEW
+000026,BMW,F800GS Equipada,F 800GT,https://www.motorcyclespecs.co.za/model/bmw/bmw-f800gt-14.html,80,LOW,REVIEW
+000026,BMW,F800GS Equipada,F 800GT,https://www.motorcyclespecs.co.za/model/bmw/bmw-f800gt-15.html,80,LOW,REVIEW
+000026,BMW,F800GS Equipada,F 800GT,https://www.motorcyclespecs.co.za/model/bmw/bmw-f800gt-16.html,80,LOW,REVIEW
+000026,BMW,F800GS Equipada,F 800GT,https://www.motorcyclespecs.co.za/model/bmw/bmw-f800gt-17.html,80,LOW,REVIEW
+000026,BMW,F800GS Equipada,"F 
+		800GS Trophy",https://www.motorcyclespecs.co.za/model/bmw/bmw-f800gs-trophy.html,76,LOW,REVIEW
+000026,BMW,F800GS Equipada,F 800R,https://www.motorcyclespecs.co.za/model/bmw/bmw-f800r-10.html,73,LOW,REVIEW
+000026,BMW,F800GS Equipada,F 800R,https://www.motorcyclespecs.co.za/model/bmw/bmw-f800r-11.html,73,LOW,REVIEW
+000026,BMW,F800GS Equipada,F 800R,https://www.motorcyclespecs.co.za/model/bmw/bmw-f800r-12.html,73,LOW,REVIEW
+000026,BMW,F800GS Equipada,F 800R,https://www.motorcyclespecs.co.za/model/bmw/bmw-f800r-13.html,73,LOW,REVIEW
+000026,BMW,F800GS Equipada,F 800R,https://www.motorcyclespecs.co.za/model/bmw/bmw-f800r-14.html,73,LOW,REVIEW
+000026,BMW,F800GS Equipada,F 800R,https://www.motorcyclespecs.co.za/model/bmw/bmw-f800r-15.html,73,LOW,REVIEW
+000026,BMW,F800GS Equipada,F 800R,https://www.motorcyclespecs.co.za/model/bmw/bmw-f800r-16.html,73,LOW,REVIEW
+000026,BMW,F800GS Equipada,F 800R,https://www.motorcyclespecs.co.za/model/bmw/bmw-f800r-17.html,73,LOW,REVIEW
+000026,BMW,F800GS Equipada,F 800R,https://www.motorcyclespecs.co.za/model/bmw/bmw-f800r.html,73,LOW,REVIEW
+000026,BMW,F800GS Equipada,"F 
+800GS Triple Black",https://www.motorcyclespecs.co.za/model/bmw/bmw-f800gs-triple-black.html,68,LOW,MODEL_MISMATCH
+000026,BMW,F800GS Equipada,"F 
+		800GS Adventure",https://www.motorcyclespecs.co.za/model/bmw/bmw-f800gs-adventure-13.html,65,LOW,MODEL_MISMATCH
+000026,BMW,F800GS Equipada,"F 
+		800GS Adventure",https://www.motorcyclespecs.co.za/model/bmw/bmw-f800gs-adventure-14.html,65,LOW,MODEL_MISMATCH
+000026,BMW,F800GS Equipada,"F 
+		800GS Adventure",https://www.motorcyclespecs.co.za/model/bmw/bmw-f800gs-adventure-15.html,65,LOW,MODEL_MISMATCH
+000026,BMW,F800GS Equipada,"F 
+		800GS Adventure",https://www.motorcyclespecs.co.za/model/bmw/bmw-f800gs-adventure-16.html,65,LOW,MODEL_MISMATCH
+000026,BMW,F800GS Equipada,"F 
+		800GS Adventure",https://www.motorcyclespecs.co.za/model/bmw/bmw-f800gs-adventure-17.html,65,LOW,MODEL_MISMATCH
+000026,BMW,F800GS Equipada,"F 800 ST 
+		Touring",https://www.motorcyclespecs.co.za/model/bmw/bmw-f800st-se-11.html,63,LOW,MODEL_MISMATCH
+000026,BMW,F800GS Equipada,F 650GS (800cc),https://www.motorcyclespecs.co.za/model/bmw/bmw-f650gs-10.html,61,LOW,NUMBER_MISMATCH
+000026,BMW,F800GS Equipada,"F 650GS 
+		(800cc)",https://www.motorcyclespecs.co.za/model/bmw/bmw-f650gs-11.html,61,LOW,NUMBER_MISMATCH
+000026,BMW,F800GS Equipada,F 800R Chris Pfeiffer Edition,https://www.motorcyclespecs.co.za/model/bmw/bmw-f800r-special.html,52,LOW,MODEL_MISMATCH
+000026,BMW,F800GS Equipada,"F 
+	800GS 30th Anniversary Special",https://www.motorcyclespecs.co.za/model/bmw/bmw-f800gs-special-10.html,50,LOW,NUMBER_MISMATCH
+000026,BMW,F800GS Equipada,F 800R Nero Zaffiro Metallizzato,https://www.motorcyclespecs.co.za/model/bmw/bmw-f800r-nero-zaffiro-metallizzato.html,49,LOW,MODEL_MISMATCH
+000027,BMW,F800GS Explorer,F 800GS,https://www.motorcyclespecs.co.za/model/bmw/bmw-f800gs-08.html,73,LOW,REVIEW
+000027,BMW,F800GS Explorer,F 800GS,https://www.motorcyclespecs.co.za/model/bmw/bmw-f800gs-09.html,73,LOW,REVIEW
+000027,BMW,F800GS Explorer,F 800GS,https://www.motorcyclespecs.co.za/model/bmw/bmw-f800gs-10.html,73,LOW,REVIEW
+000027,BMW,F800GS Explorer,F 800GS,https://www.motorcyclespecs.co.za/model/bmw/bmw-f800gs-11.html,73,LOW,REVIEW
+000027,BMW,F800GS Explorer,F 800GS,https://www.motorcyclespecs.co.za/model/bmw/bmw-f800gs-12.html,73,LOW,REVIEW
+000027,BMW,F800GS Explorer,F 800GS,https://www.motorcyclespecs.co.za/model/bmw/bmw-f800gs-13.html,73,LOW,REVIEW
+000027,BMW,F800GS Explorer,F 800GS,https://www.motorcyclespecs.co.za/model/bmw/bmw-f800gs-14.html,73,LOW,REVIEW
+000027,BMW,F800GS Explorer,F 800GS,https://www.motorcyclespecs.co.za/model/bmw/bmw-f800gs-15.html,73,LOW,REVIEW
+000027,BMW,F800GS Explorer,F 800GS,https://www.motorcyclespecs.co.za/model/bmw/bmw-f800gs-16.html,73,LOW,REVIEW
+000027,BMW,F800GS Explorer,F 800GS,https://www.motorcyclespecs.co.za/model/bmw/bmw-f800gs-17.html,73,LOW,REVIEW
+000027,BMW,F800GS Explorer,F 800GS,https://www.motorcyclespecs.co.za/model/bmw/bmw-f800gs-2024.html,73,LOW,REVIEW
+000027,BMW,F800GS Explorer,"F 
+800GS Triple Black",https://www.motorcyclespecs.co.za/model/bmw/bmw-f800gs-triple-black.html,73,LOW,REVIEW
+000027,BMW,F800GS Explorer,"F 
+		800GS Trophy",https://www.motorcyclespecs.co.za/model/bmw/bmw-f800gs-trophy.html,70,LOW,REVIEW
+000027,BMW,F800GS Explorer,F 800ST,https://www.motorcyclespecs.co.za/model/bmw/bmw-f800st-07.html,67,LOW,MODEL_MISMATCH
+000027,BMW,F800GS Explorer,F 800ST,https://www.motorcyclespecs.co.za/model/bmw/bmw-f800st-08.html,67,LOW,MODEL_MISMATCH
+000027,BMW,F800GS Explorer,F 800ST,https://www.motorcyclespecs.co.za/model/bmw/bmw-f800st-09.html,67,LOW,MODEL_MISMATCH
+000027,BMW,F800GS Explorer,F 800ST,https://www.motorcyclespecs.co.za/model/bmw/bmw-f800st-10.html,67,LOW,MODEL_MISMATCH
+000027,BMW,F800GS Explorer,F 800ST,https://www.motorcyclespecs.co.za/model/bmw/bmw-f800st-11.html,67,LOW,MODEL_MISMATCH
+000027,BMW,F800GS Explorer,F 800ST,https://www.motorcyclespecs.co.za/model/bmw/bmw-f800st-12.html,67,LOW,MODEL_MISMATCH
+000027,BMW,F800GS Explorer,F 800ST,https://www.motorcyclespecs.co.za/model/bmw/bmw-f800st-13.html,67,LOW,MODEL_MISMATCH
+000027,BMW,F800GS Explorer,"F 
+		800GS Adventure",https://www.motorcyclespecs.co.za/model/bmw/bmw-f800gs-adventure-13.html,65,LOW,MODEL_MISMATCH
+000027,BMW,F800GS Explorer,"F 
+		800GS Adventure",https://www.motorcyclespecs.co.za/model/bmw/bmw-f800gs-adventure-14.html,65,LOW,MODEL_MISMATCH
+000027,BMW,F800GS Explorer,"F 
+		800GS Adventure",https://www.motorcyclespecs.co.za/model/bmw/bmw-f800gs-adventure-15.html,65,LOW,MODEL_MISMATCH
+000027,BMW,F800GS Explorer,"F 
+		800GS Adventure",https://www.motorcyclespecs.co.za/model/bmw/bmw-f800gs-adventure-16.html,65,LOW,MODEL_MISMATCH
+000027,BMW,F800GS Explorer,"F 
+		800GS Adventure",https://www.motorcyclespecs.co.za/model/bmw/bmw-f800gs-adventure-17.html,65,LOW,MODEL_MISMATCH
+000027,BMW,F800GS Explorer,"F 800 ST 
+		Touring",https://www.motorcyclespecs.co.za/model/bmw/bmw-f800st-se-11.html,65,LOW,MODEL_MISMATCH
+000027,BMW,F800GS Explorer,F 800R,https://www.motorcyclespecs.co.za/model/bmw/bmw-f800r-10.html,63,LOW,MODEL_MISMATCH
+000027,BMW,F800GS Explorer,F 800R,https://www.motorcyclespecs.co.za/model/bmw/bmw-f800r-11.html,63,LOW,MODEL_MISMATCH
+000027,BMW,F800GS Explorer,F 800R,https://www.motorcyclespecs.co.za/model/bmw/bmw-f800r-12.html,63,LOW,MODEL_MISMATCH
+000027,BMW,F800GS Explorer,F 800R,https://www.motorcyclespecs.co.za/model/bmw/bmw-f800r-13.html,63,LOW,MODEL_MISMATCH
+000027,BMW,F800GS Explorer,F 800R,https://www.motorcyclespecs.co.za/model/bmw/bmw-f800r-14.html,63,LOW,MODEL_MISMATCH
+000027,BMW,F800GS Explorer,F 800R,https://www.motorcyclespecs.co.za/model/bmw/bmw-f800r-15.html,63,LOW,MODEL_MISMATCH
+000027,BMW,F800GS Explorer,F 800R,https://www.motorcyclespecs.co.za/model/bmw/bmw-f800r-16.html,63,LOW,MODEL_MISMATCH
+000027,BMW,F800GS Explorer,F 800R,https://www.motorcyclespecs.co.za/model/bmw/bmw-f800r-17.html,63,LOW,MODEL_MISMATCH
+000027,BMW,F800GS Explorer,F 800R,https://www.motorcyclespecs.co.za/model/bmw/bmw-f800r.html,63,LOW,MODEL_MISMATCH
+000027,BMW,F800GS Explorer,F 800S,https://www.motorcyclespecs.co.za/model/bmw/bmw-f800s-06.html,63,LOW,MODEL_MISMATCH
+000027,BMW,F800GS Explorer,F 800S,https://www.motorcyclespecs.co.za/model/bmw/bmw-f800s-07.html,63,LOW,MODEL_MISMATCH
+000027,BMW,F800GS Explorer,F 800S,https://www.motorcyclespecs.co.za/model/bmw/bmw-f800s-08.html,63,LOW,MODEL_MISMATCH
+000027,BMW,F800GS Explorer,F 800S,https://www.motorcyclespecs.co.za/model/bmw/bmw-f800s-09.html,63,LOW,MODEL_MISMATCH
+000027,BMW,F800GS Explorer,F 800S,https://www.motorcyclespecs.co.za/model/bmw/bmw-f800s-10.html,63,LOW,MODEL_MISMATCH
+000027,BMW,F800GS Explorer,F 800GT,https://www.motorcyclespecs.co.za/model/bmw/bmw-f800gt-13.html,62,LOW,MODEL_MISMATCH
+000027,BMW,F800GS Explorer,F 800GT,https://www.motorcyclespecs.co.za/model/bmw/bmw-f800gt-14.html,62,LOW,MODEL_MISMATCH
+000027,BMW,F800GS Explorer,F 800GT,https://www.motorcyclespecs.co.za/model/bmw/bmw-f800gt-15.html,62,LOW,MODEL_MISMATCH
+000027,BMW,F800GS Explorer,F 800GT,https://www.motorcyclespecs.co.za/model/bmw/bmw-f800gt-16.html,62,LOW,MODEL_MISMATCH
+000027,BMW,F800GS Explorer,F 800GT,https://www.motorcyclespecs.co.za/model/bmw/bmw-f800gt-17.html,62,LOW,MODEL_MISMATCH
+000027,BMW,F800GS Explorer,F 800R Nero Zaffiro Metallizzato,https://www.motorcyclespecs.co.za/model/bmw/bmw-f800r-nero-zaffiro-metallizzato.html,58,LOW,MODEL_MISMATCH
+000027,BMW,F800GS Explorer,F 800R Chris Pfeiffer Edition,https://www.motorcyclespecs.co.za/model/bmw/bmw-f800r-special.html,58,LOW,MODEL_MISMATCH
+000027,BMW,F800GS Explorer,"F 
+	800GS 30th Anniversary Special",https://www.motorcyclespecs.co.za/model/bmw/bmw-f800gs-special-10.html,55,LOW,NUMBER_MISMATCH
+000027,BMW,F800GS Explorer,F 650GS (800cc),https://www.motorcyclespecs.co.za/model/bmw/bmw-f650gs-10.html,52,LOW,NUMBER_MISMATCH
+000027,BMW,F800GS Explorer,"F 650GS 
+		(800cc)",https://www.motorcyclespecs.co.za/model/bmw/bmw-f650gs-11.html,52,LOW,NUMBER_MISMATCH
+000028,BMW,F800GS Explorer LWR,"F 
+800GS Triple Black",https://www.motorcyclespecs.co.za/model/bmw/bmw-f800gs-triple-black.html,72,LOW,REVIEW
+000028,BMW,F800GS Explorer LWR,F 800GS,https://www.motorcyclespecs.co.za/model/bmw/bmw-f800gs-08.html,68,LOW,MODEL_MISMATCH
+000028,BMW,F800GS Explorer LWR,F 800GS,https://www.motorcyclespecs.co.za/model/bmw/bmw-f800gs-09.html,68,LOW,MODEL_MISMATCH
+000028,BMW,F800GS Explorer LWR,F 800GS,https://www.motorcyclespecs.co.za/model/bmw/bmw-f800gs-10.html,68,LOW,MODEL_MISMATCH
+000028,BMW,F800GS Explorer LWR,F 800GS,https://www.motorcyclespecs.co.za/model/bmw/bmw-f800gs-11.html,68,LOW,MODEL_MISMATCH
+000028,BMW,F800GS Explorer LWR,F 800GS,https://www.motorcyclespecs.co.za/model/bmw/bmw-f800gs-12.html,68,LOW,MODEL_MISMATCH
+000028,BMW,F800GS Explorer LWR,F 800GS,https://www.motorcyclespecs.co.za/model/bmw/bmw-f800gs-13.html,68,LOW,MODEL_MISMATCH
+000028,BMW,F800GS Explorer LWR,F 800GS,https://www.motorcyclespecs.co.za/model/bmw/bmw-f800gs-14.html,68,LOW,MODEL_MISMATCH
+000028,BMW,F800GS Explorer LWR,F 800GS,https://www.motorcyclespecs.co.za/model/bmw/bmw-f800gs-15.html,68,LOW,MODEL_MISMATCH
+000028,BMW,F800GS Explorer LWR,F 800GS,https://www.motorcyclespecs.co.za/model/bmw/bmw-f800gs-16.html,68,LOW,MODEL_MISMATCH
+000028,BMW,F800GS Explorer LWR,F 800GS,https://www.motorcyclespecs.co.za/model/bmw/bmw-f800gs-17.html,68,LOW,MODEL_MISMATCH
+000028,BMW,F800GS Explorer LWR,F 800GS,https://www.motorcyclespecs.co.za/model/bmw/bmw-f800gs-2024.html,68,LOW,MODEL_MISMATCH
+000028,BMW,F800GS Explorer LWR,"F 
+		800GS Trophy",https://www.motorcyclespecs.co.za/model/bmw/bmw-f800gs-trophy.html,67,LOW,MODEL_MISMATCH
+000028,BMW,F800GS Explorer LWR,F 800ST,https://www.motorcyclespecs.co.za/model/bmw/bmw-f800st-07.html,64,LOW,MODEL_MISMATCH
+000028,BMW,F800GS Explorer LWR,F 800ST,https://www.motorcyclespecs.co.za/model/bmw/bmw-f800st-08.html,64,LOW,MODEL_MISMATCH
+000028,BMW,F800GS Explorer LWR,F 800ST,https://www.motorcyclespecs.co.za/model/bmw/bmw-f800st-09.html,64,LOW,MODEL_MISMATCH
+000028,BMW,F800GS Explorer LWR,F 800ST,https://www.motorcyclespecs.co.za/model/bmw/bmw-f800st-10.html,64,LOW,MODEL_MISMATCH
+000028,BMW,F800GS Explorer LWR,F 800ST,https://www.motorcyclespecs.co.za/model/bmw/bmw-f800st-11.html,64,LOW,MODEL_MISMATCH
+000028,BMW,F800GS Explorer LWR,F 800ST,https://www.motorcyclespecs.co.za/model/bmw/bmw-f800st-12.html,64,LOW,MODEL_MISMATCH
+000028,BMW,F800GS Explorer LWR,F 800ST,https://www.motorcyclespecs.co.za/model/bmw/bmw-f800st-13.html,64,LOW,MODEL_MISMATCH
+000028,BMW,F800GS Explorer LWR,"F 
+		800GS Adventure",https://www.motorcyclespecs.co.za/model/bmw/bmw-f800gs-adventure-13.html,62,LOW,MODEL_MISMATCH
+000028,BMW,F800GS Explorer LWR,"F 
+		800GS Adventure",https://www.motorcyclespecs.co.za/model/bmw/bmw-f800gs-adventure-14.html,62,LOW,MODEL_MISMATCH
+000028,BMW,F800GS Explorer LWR,"F 
+		800GS Adventure",https://www.motorcyclespecs.co.za/model/bmw/bmw-f800gs-adventure-15.html,62,LOW,MODEL_MISMATCH
+000028,BMW,F800GS Explorer LWR,"F 
+		800GS Adventure",https://www.motorcyclespecs.co.za/model/bmw/bmw-f800gs-adventure-16.html,62,LOW,MODEL_MISMATCH
+000028,BMW,F800GS Explorer LWR,"F 
+		800GS Adventure",https://www.motorcyclespecs.co.za/model/bmw/bmw-f800gs-adventure-17.html,62,LOW,MODEL_MISMATCH
+000028,BMW,F800GS Explorer LWR,"F 800 ST 
+		Touring",https://www.motorcyclespecs.co.za/model/bmw/bmw-f800st-se-11.html,62,LOW,MODEL_MISMATCH
+000028,BMW,F800GS Explorer LWR,F 800GT,https://www.motorcyclespecs.co.za/model/bmw/bmw-f800gt-13.html,59,LOW,MODEL_MISMATCH
+000028,BMW,F800GS Explorer LWR,F 800GT,https://www.motorcyclespecs.co.za/model/bmw/bmw-f800gt-14.html,59,LOW,MODEL_MISMATCH
+000028,BMW,F800GS Explorer LWR,F 800GT,https://www.motorcyclespecs.co.za/model/bmw/bmw-f800gt-15.html,59,LOW,MODEL_MISMATCH
+000028,BMW,F800GS Explorer LWR,F 800GT,https://www.motorcyclespecs.co.za/model/bmw/bmw-f800gt-16.html,59,LOW,MODEL_MISMATCH
+000028,BMW,F800GS Explorer LWR,F 800GT,https://www.motorcyclespecs.co.za/model/bmw/bmw-f800gt-17.html,59,LOW,MODEL_MISMATCH
+000028,BMW,F800GS Explorer LWR,F 800R,https://www.motorcyclespecs.co.za/model/bmw/bmw-f800r-10.html,59,LOW,MODEL_MISMATCH
+000028,BMW,F800GS Explorer LWR,F 800R,https://www.motorcyclespecs.co.za/model/bmw/bmw-f800r-11.html,59,LOW,MODEL_MISMATCH
+000028,BMW,F800GS Explorer LWR,F 800R,https://www.motorcyclespecs.co.za/model/bmw/bmw-f800r-12.html,59,LOW,MODEL_MISMATCH
+000028,BMW,F800GS Explorer LWR,F 800R,https://www.motorcyclespecs.co.za/model/bmw/bmw-f800r-13.html,59,LOW,MODEL_MISMATCH
+000028,BMW,F800GS Explorer LWR,F 800R,https://www.motorcyclespecs.co.za/model/bmw/bmw-f800r-14.html,59,LOW,MODEL_MISMATCH
+000028,BMW,F800GS Explorer LWR,F 800R,https://www.motorcyclespecs.co.za/model/bmw/bmw-f800r-15.html,59,LOW,MODEL_MISMATCH
+000028,BMW,F800GS Explorer LWR,F 800R,https://www.motorcyclespecs.co.za/model/bmw/bmw-f800r-16.html,59,LOW,MODEL_MISMATCH
+000028,BMW,F800GS Explorer LWR,F 800R,https://www.motorcyclespecs.co.za/model/bmw/bmw-f800r-17.html,59,LOW,MODEL_MISMATCH
+000028,BMW,F800GS Explorer LWR,F 800R Nero Zaffiro Metallizzato,https://www.motorcyclespecs.co.za/model/bmw/bmw-f800r-nero-zaffiro-metallizzato.html,59,LOW,MODEL_MISMATCH
+000028,BMW,F800GS Explorer LWR,F 800R,https://www.motorcyclespecs.co.za/model/bmw/bmw-f800r.html,59,LOW,MODEL_MISMATCH
+000028,BMW,F800GS Explorer LWR,F 800S,https://www.motorcyclespecs.co.za/model/bmw/bmw-f800s-06.html,59,LOW,MODEL_MISMATCH
+000028,BMW,F800GS Explorer LWR,F 800S,https://www.motorcyclespecs.co.za/model/bmw/bmw-f800s-07.html,59,LOW,MODEL_MISMATCH
+000028,BMW,F800GS Explorer LWR,F 800S,https://www.motorcyclespecs.co.za/model/bmw/bmw-f800s-08.html,59,LOW,MODEL_MISMATCH
+000028,BMW,F800GS Explorer LWR,F 800S,https://www.motorcyclespecs.co.za/model/bmw/bmw-f800s-09.html,59,LOW,MODEL_MISMATCH
+000028,BMW,F800GS Explorer LWR,F 800S,https://www.motorcyclespecs.co.za/model/bmw/bmw-f800s-10.html,59,LOW,MODEL_MISMATCH
+000028,BMW,F800GS Explorer LWR,F 800R Chris Pfeiffer Edition,https://www.motorcyclespecs.co.za/model/bmw/bmw-f800r-special.html,58,LOW,MODEL_MISMATCH
+000028,BMW,F800GS Explorer LWR,"F 
+	800GS 30th Anniversary Special",https://www.motorcyclespecs.co.za/model/bmw/bmw-f800gs-special-10.html,55,LOW,NUMBER_MISMATCH
+000028,BMW,F800GS Explorer LWR,F 650GS (800cc),https://www.motorcyclespecs.co.za/model/bmw/bmw-f650gs-10.html,50,LOW,NUMBER_MISMATCH
+000028,BMW,F800GS Explorer LWR,"F 650GS 
+		(800cc)",https://www.motorcyclespecs.co.za/model/bmw/bmw-f650gs-11.html,50,LOW,NUMBER_MISMATCH
+000029,BMW,F800GS Urban,F 800GS,https://www.motorcyclespecs.co.za/model/bmw/bmw-f800gs-08.html,77,LOW,REVIEW
+000029,BMW,F800GS Urban,F 800GS,https://www.motorcyclespecs.co.za/model/bmw/bmw-f800gs-09.html,77,LOW,REVIEW
+000029,BMW,F800GS Urban,F 800GS,https://www.motorcyclespecs.co.za/model/bmw/bmw-f800gs-10.html,77,LOW,REVIEW
+000029,BMW,F800GS Urban,F 800GS,https://www.motorcyclespecs.co.za/model/bmw/bmw-f800gs-11.html,77,LOW,REVIEW
+000029,BMW,F800GS Urban,F 800GS,https://www.motorcyclespecs.co.za/model/bmw/bmw-f800gs-12.html,77,LOW,REVIEW
+000029,BMW,F800GS Urban,F 800GS,https://www.motorcyclespecs.co.za/model/bmw/bmw-f800gs-13.html,77,LOW,REVIEW
+000029,BMW,F800GS Urban,F 800GS,https://www.motorcyclespecs.co.za/model/bmw/bmw-f800gs-14.html,77,LOW,REVIEW
+000029,BMW,F800GS Urban,F 800GS,https://www.motorcyclespecs.co.za/model/bmw/bmw-f800gs-15.html,77,LOW,REVIEW
+000029,BMW,F800GS Urban,F 800GS,https://www.motorcyclespecs.co.za/model/bmw/bmw-f800gs-16.html,77,LOW,REVIEW
+000029,BMW,F800GS Urban,F 800GS,https://www.motorcyclespecs.co.za/model/bmw/bmw-f800gs-17.html,77,LOW,REVIEW
+000029,BMW,F800GS Urban,F 800GS,https://www.motorcyclespecs.co.za/model/bmw/bmw-f800gs-2024.html,77,LOW,REVIEW
+000029,BMW,F800GS Urban,"F 
+		800GS Trophy",https://www.motorcyclespecs.co.za/model/bmw/bmw-f800gs-trophy.html,74,LOW,REVIEW
+000029,BMW,F800GS Urban,"F 
+800GS Triple Black",https://www.motorcyclespecs.co.za/model/bmw/bmw-f800gs-triple-black.html,73,LOW,REVIEW
+000029,BMW,F800GS Urban,"F 800 ST 
+		Touring",https://www.motorcyclespecs.co.za/model/bmw/bmw-f800st-se-11.html,72,LOW,REVIEW
+000029,BMW,F800GS Urban,F 800ST,https://www.motorcyclespecs.co.za/model/bmw/bmw-f800st-07.html,71,LOW,REVIEW
+000029,BMW,F800GS Urban,F 800ST,https://www.motorcyclespecs.co.za/model/bmw/bmw-f800st-08.html,71,LOW,REVIEW
+000029,BMW,F800GS Urban,F 800ST,https://www.motorcyclespecs.co.za/model/bmw/bmw-f800st-09.html,71,LOW,REVIEW
+000029,BMW,F800GS Urban,F 800ST,https://www.motorcyclespecs.co.za/model/bmw/bmw-f800st-10.html,71,LOW,REVIEW
+000029,BMW,F800GS Urban,F 800ST,https://www.motorcyclespecs.co.za/model/bmw/bmw-f800st-11.html,71,LOW,REVIEW
+000029,BMW,F800GS Urban,F 800ST,https://www.motorcyclespecs.co.za/model/bmw/bmw-f800st-12.html,71,LOW,REVIEW
+000029,BMW,F800GS Urban,F 800ST,https://www.motorcyclespecs.co.za/model/bmw/bmw-f800st-13.html,71,LOW,REVIEW
+000029,BMW,F800GS Urban,F 800R,https://www.motorcyclespecs.co.za/model/bmw/bmw-f800r-10.html,67,LOW,MODEL_MISMATCH
+000029,BMW,F800GS Urban,F 800R,https://www.motorcyclespecs.co.za/model/bmw/bmw-f800r-11.html,67,LOW,MODEL_MISMATCH
+000029,BMW,F800GS Urban,F 800R,https://www.motorcyclespecs.co.za/model/bmw/bmw-f800r-12.html,67,LOW,MODEL_MISMATCH
+000029,BMW,F800GS Urban,F 800R,https://www.motorcyclespecs.co.za/model/bmw/bmw-f800r-13.html,67,LOW,MODEL_MISMATCH
+000029,BMW,F800GS Urban,F 800R,https://www.motorcyclespecs.co.za/model/bmw/bmw-f800r-14.html,67,LOW,MODEL_MISMATCH
+000029,BMW,F800GS Urban,F 800R,https://www.motorcyclespecs.co.za/model/bmw/bmw-f800r-15.html,67,LOW,MODEL_MISMATCH
+000029,BMW,F800GS Urban,F 800R,https://www.motorcyclespecs.co.za/model/bmw/bmw-f800r-16.html,67,LOW,MODEL_MISMATCH
+000029,BMW,F800GS Urban,F 800R,https://www.motorcyclespecs.co.za/model/bmw/bmw-f800r-17.html,67,LOW,MODEL_MISMATCH
+000029,BMW,F800GS Urban,F 800R,https://www.motorcyclespecs.co.za/model/bmw/bmw-f800r.html,67,LOW,MODEL_MISMATCH
+000029,BMW,F800GS Urban,F 800S,https://www.motorcyclespecs.co.za/model/bmw/bmw-f800s-06.html,67,LOW,MODEL_MISMATCH
+000029,BMW,F800GS Urban,F 800S,https://www.motorcyclespecs.co.za/model/bmw/bmw-f800s-07.html,67,LOW,MODEL_MISMATCH
+000029,BMW,F800GS Urban,F 800S,https://www.motorcyclespecs.co.za/model/bmw/bmw-f800s-08.html,67,LOW,MODEL_MISMATCH
+000029,BMW,F800GS Urban,F 800S,https://www.motorcyclespecs.co.za/model/bmw/bmw-f800s-09.html,67,LOW,MODEL_MISMATCH
+000029,BMW,F800GS Urban,F 800S,https://www.motorcyclespecs.co.za/model/bmw/bmw-f800s-10.html,67,LOW,MODEL_MISMATCH
+000029,BMW,F800GS Urban,"F 
+		800GS Adventure",https://www.motorcyclespecs.co.za/model/bmw/bmw-f800gs-adventure-13.html,66,LOW,MODEL_MISMATCH
+000029,BMW,F800GS Urban,"F 
+		800GS Adventure",https://www.motorcyclespecs.co.za/model/bmw/bmw-f800gs-adventure-14.html,66,LOW,MODEL_MISMATCH
+000029,BMW,F800GS Urban,"F 
+		800GS Adventure",https://www.motorcyclespecs.co.za/model/bmw/bmw-f800gs-adventure-15.html,66,LOW,MODEL_MISMATCH
+000029,BMW,F800GS Urban,"F 
+		800GS Adventure",https://www.motorcyclespecs.co.za/model/bmw/bmw-f800gs-adventure-16.html,66,LOW,MODEL_MISMATCH
+000029,BMW,F800GS Urban,"F 
+		800GS Adventure",https://www.motorcyclespecs.co.za/model/bmw/bmw-f800gs-adventure-17.html,66,LOW,MODEL_MISMATCH
+000029,BMW,F800GS Urban,F 800GT,https://www.motorcyclespecs.co.za/model/bmw/bmw-f800gt-13.html,66,LOW,MODEL_MISMATCH
+000029,BMW,F800GS Urban,F 800GT,https://www.motorcyclespecs.co.za/model/bmw/bmw-f800gt-14.html,66,LOW,MODEL_MISMATCH
+000029,BMW,F800GS Urban,F 800GT,https://www.motorcyclespecs.co.za/model/bmw/bmw-f800gt-15.html,66,LOW,MODEL_MISMATCH
+000029,BMW,F800GS Urban,F 800GT,https://www.motorcyclespecs.co.za/model/bmw/bmw-f800gt-16.html,66,LOW,MODEL_MISMATCH
+000029,BMW,F800GS Urban,F 800GT,https://www.motorcyclespecs.co.za/model/bmw/bmw-f800gt-17.html,66,LOW,MODEL_MISMATCH
+000029,BMW,F800GS Urban,F 800R Chris Pfeiffer Edition,https://www.motorcyclespecs.co.za/model/bmw/bmw-f800r-special.html,56,LOW,MODEL_MISMATCH
+000029,BMW,F800GS Urban,F 650GS (800cc),https://www.motorcyclespecs.co.za/model/bmw/bmw-f650gs-10.html,54,LOW,NUMBER_MISMATCH
+000029,BMW,F800GS Urban,"F 650GS 
+		(800cc)",https://www.motorcyclespecs.co.za/model/bmw/bmw-f650gs-11.html,54,LOW,NUMBER_MISMATCH
+000029,BMW,F800GS Urban,"F 
+	800GS 30th Anniversary Special",https://www.motorcyclespecs.co.za/model/bmw/bmw-f800gs-special-10.html,53,LOW,NUMBER_MISMATCH
+000029,BMW,F800GS Urban,F 800R Nero Zaffiro Metallizzato,https://www.motorcyclespecs.co.za/model/bmw/bmw-f800r-nero-zaffiro-metallizzato.html,53,LOW,MODEL_MISMATCH
+000030,BMW,F800GT,F 800GT,https://www.motorcyclespecs.co.za/model/bmw/bmw-f800gt-13.html,95,HIGH,EXACT
+000030,BMW,F800GT,F 800GT,https://www.motorcyclespecs.co.za/model/bmw/bmw-f800gt-14.html,95,HIGH,EXACT
+000030,BMW,F800GT,F 800GT,https://www.motorcyclespecs.co.za/model/bmw/bmw-f800gt-15.html,95,HIGH,EXACT
+000030,BMW,F800GT,F 800GT,https://www.motorcyclespecs.co.za/model/bmw/bmw-f800gt-16.html,95,HIGH,EXACT
+000030,BMW,F800GT,F 800GT,https://www.motorcyclespecs.co.za/model/bmw/bmw-f800gt-17.html,95,HIGH,EXACT
+000030,BMW,F800GT,F 800GS,https://www.motorcyclespecs.co.za/model/bmw/bmw-f800gs-08.html,80,LOW,REVIEW
+000030,BMW,F800GT,F 800GS,https://www.motorcyclespecs.co.za/model/bmw/bmw-f800gs-09.html,80,LOW,REVIEW
+000030,BMW,F800GT,F 800GS,https://www.motorcyclespecs.co.za/model/bmw/bmw-f800gs-10.html,80,LOW,REVIEW
+000030,BMW,F800GT,F 800GS,https://www.motorcyclespecs.co.za/model/bmw/bmw-f800gs-11.html,80,LOW,REVIEW
+000030,BMW,F800GT,F 800GS,https://www.motorcyclespecs.co.za/model/bmw/bmw-f800gs-12.html,80,LOW,REVIEW
+000030,BMW,F800GT,F 800GS,https://www.motorcyclespecs.co.za/model/bmw/bmw-f800gs-13.html,80,LOW,REVIEW
+000030,BMW,F800GT,F 800GS,https://www.motorcyclespecs.co.za/model/bmw/bmw-f800gs-14.html,80,LOW,REVIEW
+000030,BMW,F800GT,F 800GS,https://www.motorcyclespecs.co.za/model/bmw/bmw-f800gs-15.html,80,LOW,REVIEW
+000030,BMW,F800GT,F 800GS,https://www.motorcyclespecs.co.za/model/bmw/bmw-f800gs-16.html,80,LOW,REVIEW
+000030,BMW,F800GT,F 800GS,https://www.motorcyclespecs.co.za/model/bmw/bmw-f800gs-17.html,80,LOW,REVIEW
+000030,BMW,F800GT,F 800GS,https://www.motorcyclespecs.co.za/model/bmw/bmw-f800gs-2024.html,80,LOW,REVIEW
+000030,BMW,F800GT,F 800ST,https://www.motorcyclespecs.co.za/model/bmw/bmw-f800st-07.html,80,LOW,REVIEW
+000030,BMW,F800GT,F 800ST,https://www.motorcyclespecs.co.za/model/bmw/bmw-f800st-08.html,80,LOW,REVIEW
+000030,BMW,F800GT,F 800ST,https://www.motorcyclespecs.co.za/model/bmw/bmw-f800st-09.html,80,LOW,REVIEW
+000030,BMW,F800GT,F 800ST,https://www.motorcyclespecs.co.za/model/bmw/bmw-f800st-10.html,80,LOW,REVIEW
+000030,BMW,F800GT,F 800ST,https://www.motorcyclespecs.co.za/model/bmw/bmw-f800st-11.html,80,LOW,REVIEW
+000030,BMW,F800GT,F 800ST,https://www.motorcyclespecs.co.za/model/bmw/bmw-f800st-12.html,80,LOW,REVIEW
+000030,BMW,F800GT,F 800ST,https://www.motorcyclespecs.co.za/model/bmw/bmw-f800st-13.html,80,LOW,REVIEW
+000030,BMW,F800GT,F 800R,https://www.motorcyclespecs.co.za/model/bmw/bmw-f800r-10.html,73,LOW,REVIEW
+000030,BMW,F800GT,F 800R,https://www.motorcyclespecs.co.za/model/bmw/bmw-f800r-11.html,73,LOW,REVIEW
+000030,BMW,F800GT,F 800R,https://www.motorcyclespecs.co.za/model/bmw/bmw-f800r-12.html,73,LOW,REVIEW
+000030,BMW,F800GT,F 800R,https://www.motorcyclespecs.co.za/model/bmw/bmw-f800r-13.html,73,LOW,REVIEW
+000030,BMW,F800GT,F 800R,https://www.motorcyclespecs.co.za/model/bmw/bmw-f800r-14.html,73,LOW,REVIEW
+000030,BMW,F800GT,F 800R,https://www.motorcyclespecs.co.za/model/bmw/bmw-f800r-15.html,73,LOW,REVIEW
+000030,BMW,F800GT,F 800R,https://www.motorcyclespecs.co.za/model/bmw/bmw-f800r-16.html,73,LOW,REVIEW
+000030,BMW,F800GT,F 800R,https://www.motorcyclespecs.co.za/model/bmw/bmw-f800r-17.html,73,LOW,REVIEW
+000030,BMW,F800GT,F 800R,https://www.motorcyclespecs.co.za/model/bmw/bmw-f800r.html,73,LOW,REVIEW
+000030,BMW,F800GT,F 800S,https://www.motorcyclespecs.co.za/model/bmw/bmw-f800s-06.html,73,LOW,REVIEW
+000030,BMW,F800GT,F 800S,https://www.motorcyclespecs.co.za/model/bmw/bmw-f800s-07.html,73,LOW,REVIEW
+000030,BMW,F800GT,F 800S,https://www.motorcyclespecs.co.za/model/bmw/bmw-f800s-08.html,73,LOW,REVIEW
+000030,BMW,F800GT,F 800S,https://www.motorcyclespecs.co.za/model/bmw/bmw-f800s-09.html,73,LOW,REVIEW
+000030,BMW,F800GT,F 800S,https://www.motorcyclespecs.co.za/model/bmw/bmw-f800s-10.html,73,LOW,REVIEW
+000030,BMW,F800GT,"F 
+		800GS Trophy",https://www.motorcyclespecs.co.za/model/bmw/bmw-f800gs-trophy.html,71,LOW,REVIEW
+000030,BMW,F800GT,"F 
+		800GS Adventure",https://www.motorcyclespecs.co.za/model/bmw/bmw-f800gs-adventure-13.html,64,LOW,MODEL_MISMATCH
+000030,BMW,F800GT,"F 
+		800GS Adventure",https://www.motorcyclespecs.co.za/model/bmw/bmw-f800gs-adventure-14.html,64,LOW,MODEL_MISMATCH
+000030,BMW,F800GT,"F 
+		800GS Adventure",https://www.motorcyclespecs.co.za/model/bmw/bmw-f800gs-adventure-15.html,64,LOW,MODEL_MISMATCH
+000030,BMW,F800GT,"F 
+		800GS Adventure",https://www.motorcyclespecs.co.za/model/bmw/bmw-f800gs-adventure-16.html,64,LOW,MODEL_MISMATCH
+000030,BMW,F800GT,"F 
+		800GS Adventure",https://www.motorcyclespecs.co.za/model/bmw/bmw-f800gs-adventure-17.html,64,LOW,MODEL_MISMATCH
+000030,BMW,F800GT,"F 
+800GS Triple Black",https://www.motorcyclespecs.co.za/model/bmw/bmw-f800gs-triple-black.html,63,LOW,MODEL_MISMATCH
+000030,BMW,F800GT,"F 800 ST 
+		Touring",https://www.motorcyclespecs.co.za/model/bmw/bmw-f800st-se-11.html,63,LOW,MODEL_MISMATCH
+000030,BMW,F800GT,F 650GS (800cc),https://www.motorcyclespecs.co.za/model/bmw/bmw-f650gs-10.html,54,LOW,NUMBER_MISMATCH
+000030,BMW,F800GT,"F 650GS 
+		(800cc)",https://www.motorcyclespecs.co.za/model/bmw/bmw-f650gs-11.html,54,LOW,NUMBER_MISMATCH
+000030,BMW,F800GT,F 800R Nero Zaffiro Metallizzato,https://www.motorcyclespecs.co.za/model/bmw/bmw-f800r-nero-zaffiro-metallizzato.html,52,LOW,MODEL_MISMATCH
+000030,BMW,F800GT,F 800R Chris Pfeiffer Edition,https://www.motorcyclespecs.co.za/model/bmw/bmw-f800r-special.html,52,LOW,MODEL_MISMATCH
+000030,BMW,F800GT,"F 
+	800GS 30th Anniversary Special",https://www.motorcyclespecs.co.za/model/bmw/bmw-f800gs-special-10.html,45,LOW,NUMBER_MISMATCH
+000031,BMW,F800R,F 800R,https://www.motorcyclespecs.co.za/model/bmw/bmw-f800r-10.html,95,HIGH,EXACT
+000031,BMW,F800R,F 800R,https://www.motorcyclespecs.co.za/model/bmw/bmw-f800r-11.html,95,HIGH,EXACT
+000031,BMW,F800R,F 800R,https://www.motorcyclespecs.co.za/model/bmw/bmw-f800r-12.html,95,HIGH,EXACT
+000031,BMW,F800R,F 800R,https://www.motorcyclespecs.co.za/model/bmw/bmw-f800r-13.html,95,HIGH,EXACT
+000031,BMW,F800R,F 800R,https://www.motorcyclespecs.co.za/model/bmw/bmw-f800r-14.html,95,HIGH,EXACT
+000031,BMW,F800R,F 800R,https://www.motorcyclespecs.co.za/model/bmw/bmw-f800r-15.html,95,HIGH,EXACT
+000031,BMW,F800R,F 800R,https://www.motorcyclespecs.co.za/model/bmw/bmw-f800r-16.html,95,HIGH,EXACT
+000031,BMW,F800R,F 800R,https://www.motorcyclespecs.co.za/model/bmw/bmw-f800r-17.html,95,HIGH,EXACT
+000031,BMW,F800R,F 800R,https://www.motorcyclespecs.co.za/model/bmw/bmw-f800r.html,95,HIGH,EXACT
+000031,BMW,F800R,F 800S,https://www.motorcyclespecs.co.za/model/bmw/bmw-f800s-06.html,78,LOW,REVIEW
+000031,BMW,F800R,F 800S,https://www.motorcyclespecs.co.za/model/bmw/bmw-f800s-07.html,78,LOW,REVIEW
+000031,BMW,F800R,F 800S,https://www.motorcyclespecs.co.za/model/bmw/bmw-f800s-08.html,78,LOW,REVIEW
+000031,BMW,F800R,F 800S,https://www.motorcyclespecs.co.za/model/bmw/bmw-f800s-09.html,78,LOW,REVIEW
+000031,BMW,F800R,F 800S,https://www.motorcyclespecs.co.za/model/bmw/bmw-f800s-10.html,78,LOW,REVIEW
+000031,BMW,F800R,F 800GS,https://www.motorcyclespecs.co.za/model/bmw/bmw-f800gs-08.html,73,LOW,REVIEW
+000031,BMW,F800R,F 800GS,https://www.motorcyclespecs.co.za/model/bmw/bmw-f800gs-09.html,73,LOW,REVIEW
+000031,BMW,F800R,F 800GS,https://www.motorcyclespecs.co.za/model/bmw/bmw-f800gs-10.html,73,LOW,REVIEW
+000031,BMW,F800R,F 800GS,https://www.motorcyclespecs.co.za/model/bmw/bmw-f800gs-11.html,73,LOW,REVIEW
+000031,BMW,F800R,F 800GS,https://www.motorcyclespecs.co.za/model/bmw/bmw-f800gs-12.html,73,LOW,REVIEW
+000031,BMW,F800R,F 800GS,https://www.motorcyclespecs.co.za/model/bmw/bmw-f800gs-13.html,73,LOW,REVIEW
+000031,BMW,F800R,F 800GS,https://www.motorcyclespecs.co.za/model/bmw/bmw-f800gs-14.html,73,LOW,REVIEW
+000031,BMW,F800R,F 800GS,https://www.motorcyclespecs.co.za/model/bmw/bmw-f800gs-15.html,73,LOW,REVIEW
+000031,BMW,F800R,F 800GS,https://www.motorcyclespecs.co.za/model/bmw/bmw-f800gs-16.html,73,LOW,REVIEW
+000031,BMW,F800R,F 800GS,https://www.motorcyclespecs.co.za/model/bmw/bmw-f800gs-17.html,73,LOW,REVIEW
+000031,BMW,F800R,F 800GS,https://www.motorcyclespecs.co.za/model/bmw/bmw-f800gs-2024.html,73,LOW,REVIEW
+000031,BMW,F800R,F 800GT,https://www.motorcyclespecs.co.za/model/bmw/bmw-f800gt-13.html,73,LOW,REVIEW
+000031,BMW,F800R,F 800GT,https://www.motorcyclespecs.co.za/model/bmw/bmw-f800gt-14.html,73,LOW,REVIEW
+000031,BMW,F800R,F 800GT,https://www.motorcyclespecs.co.za/model/bmw/bmw-f800gt-15.html,73,LOW,REVIEW
+000031,BMW,F800R,F 800GT,https://www.motorcyclespecs.co.za/model/bmw/bmw-f800gt-16.html,73,LOW,REVIEW
+000031,BMW,F800R,F 800GT,https://www.motorcyclespecs.co.za/model/bmw/bmw-f800gt-17.html,73,LOW,REVIEW
+000031,BMW,F800R,F 800ST,https://www.motorcyclespecs.co.za/model/bmw/bmw-f800st-07.html,73,LOW,REVIEW
+000031,BMW,F800R,F 800ST,https://www.motorcyclespecs.co.za/model/bmw/bmw-f800st-08.html,73,LOW,REVIEW
+000031,BMW,F800R,F 800ST,https://www.motorcyclespecs.co.za/model/bmw/bmw-f800st-09.html,73,LOW,REVIEW
+000031,BMW,F800R,F 800ST,https://www.motorcyclespecs.co.za/model/bmw/bmw-f800st-10.html,73,LOW,REVIEW
+000031,BMW,F800R,F 800ST,https://www.motorcyclespecs.co.za/model/bmw/bmw-f800st-11.html,73,LOW,REVIEW
+000031,BMW,F800R,F 800ST,https://www.motorcyclespecs.co.za/model/bmw/bmw-f800st-12.html,73,LOW,REVIEW
+000031,BMW,F800R,F 800ST,https://www.motorcyclespecs.co.za/model/bmw/bmw-f800st-13.html,73,LOW,REVIEW
+000031,BMW,F800R,"F 
+		800GS Trophy",https://www.motorcyclespecs.co.za/model/bmw/bmw-f800gs-trophy.html,66,LOW,MODEL_MISMATCH
+000031,BMW,F800R,"F 800 ST 
+		Touring",https://www.motorcyclespecs.co.za/model/bmw/bmw-f800st-se-11.html,65,LOW,MODEL_MISMATCH
+000031,BMW,F800R,"F 
+		800GS Adventure",https://www.motorcyclespecs.co.za/model/bmw/bmw-f800gs-adventure-13.html,60,LOW,MODEL_MISMATCH
+000031,BMW,F800R,"F 
+		800GS Adventure",https://www.motorcyclespecs.co.za/model/bmw/bmw-f800gs-adventure-14.html,60,LOW,MODEL_MISMATCH
+000031,BMW,F800R,"F 
+		800GS Adventure",https://www.motorcyclespecs.co.za/model/bmw/bmw-f800gs-adventure-15.html,60,LOW,MODEL_MISMATCH
+000031,BMW,F800R,"F 
+		800GS Adventure",https://www.motorcyclespecs.co.za/model/bmw/bmw-f800gs-adventure-16.html,60,LOW,MODEL_MISMATCH
+000031,BMW,F800R,"F 
+		800GS Adventure",https://www.motorcyclespecs.co.za/model/bmw/bmw-f800gs-adventure-17.html,60,LOW,MODEL_MISMATCH
+000031,BMW,F800R,"F 
+800GS Triple Black",https://www.motorcyclespecs.co.za/model/bmw/bmw-f800gs-triple-black.html,59,LOW,MODEL_MISMATCH
+000031,BMW,F800R,F 800R Chris Pfeiffer Edition,https://www.motorcyclespecs.co.za/model/bmw/bmw-f800r-special.html,59,LOW,MODEL_MISMATCH
+000031,BMW,F800R,F 800R Nero Zaffiro Metallizzato,https://www.motorcyclespecs.co.za/model/bmw/bmw-f800r-nero-zaffiro-metallizzato.html,57,LOW,MODEL_MISMATCH
+000031,BMW,F800R,F 650GS (800cc),https://www.motorcyclespecs.co.za/model/bmw/bmw-f650gs-10.html,53,LOW,NUMBER_MISMATCH
+000031,BMW,F800R,"F 650GS 
+		(800cc)",https://www.motorcyclespecs.co.za/model/bmw/bmw-f650gs-11.html,53,LOW,NUMBER_MISMATCH
+000031,BMW,F800R,"F 
+	800GS 30th Anniversary Special",https://www.motorcyclespecs.co.za/model/bmw/bmw-f800gs-special-10.html,41,LOW,NUMBER_MISMATCH
+000032,BMW,F800S,F 800S,https://www.motorcyclespecs.co.za/model/bmw/bmw-f800s-06.html,95,HIGH,EXACT
+000032,BMW,F800S,F 800S,https://www.motorcyclespecs.co.za/model/bmw/bmw-f800s-07.html,95,HIGH,EXACT
+000032,BMW,F800S,F 800S,https://www.motorcyclespecs.co.za/model/bmw/bmw-f800s-08.html,95,HIGH,EXACT
+000032,BMW,F800S,F 800S,https://www.motorcyclespecs.co.za/model/bmw/bmw-f800s-09.html,95,HIGH,EXACT
+000032,BMW,F800S,F 800S,https://www.motorcyclespecs.co.za/model/bmw/bmw-f800s-10.html,95,HIGH,EXACT
+000032,BMW,F800S,F 800GS,https://www.motorcyclespecs.co.za/model/bmw/bmw-f800gs-08.html,83,LOW,REVIEW
+000032,BMW,F800S,F 800GS,https://www.motorcyclespecs.co.za/model/bmw/bmw-f800gs-09.html,83,LOW,REVIEW
+000032,BMW,F800S,F 800GS,https://www.motorcyclespecs.co.za/model/bmw/bmw-f800gs-10.html,83,LOW,REVIEW
+000032,BMW,F800S,F 800GS,https://www.motorcyclespecs.co.za/model/bmw/bmw-f800gs-11.html,83,LOW,REVIEW
+000032,BMW,F800S,F 800GS,https://www.motorcyclespecs.co.za/model/bmw/bmw-f800gs-12.html,83,LOW,REVIEW
+000032,BMW,F800S,F 800GS,https://www.motorcyclespecs.co.za/model/bmw/bmw-f800gs-13.html,83,LOW,REVIEW
+000032,BMW,F800S,F 800GS,https://www.motorcyclespecs.co.za/model/bmw/bmw-f800gs-14.html,83,LOW,REVIEW
+000032,BMW,F800S,F 800GS,https://www.motorcyclespecs.co.za/model/bmw/bmw-f800gs-15.html,83,LOW,REVIEW
+000032,BMW,F800S,F 800GS,https://www.motorcyclespecs.co.za/model/bmw/bmw-f800gs-16.html,83,LOW,REVIEW
+000032,BMW,F800S,F 800GS,https://www.motorcyclespecs.co.za/model/bmw/bmw-f800gs-17.html,83,LOW,REVIEW
+000032,BMW,F800S,F 800GS,https://www.motorcyclespecs.co.za/model/bmw/bmw-f800gs-2024.html,83,LOW,REVIEW
+000032,BMW,F800S,F 800ST,https://www.motorcyclespecs.co.za/model/bmw/bmw-f800st-07.html,83,LOW,REVIEW
+000032,BMW,F800S,F 800ST,https://www.motorcyclespecs.co.za/model/bmw/bmw-f800st-08.html,83,LOW,REVIEW
+000032,BMW,F800S,F 800ST,https://www.motorcyclespecs.co.za/model/bmw/bmw-f800st-09.html,83,LOW,REVIEW
+000032,BMW,F800S,F 800ST,https://www.motorcyclespecs.co.za/model/bmw/bmw-f800st-10.html,83,LOW,REVIEW
+000032,BMW,F800S,F 800ST,https://www.motorcyclespecs.co.za/model/bmw/bmw-f800st-11.html,83,LOW,REVIEW
+000032,BMW,F800S,F 800ST,https://www.motorcyclespecs.co.za/model/bmw/bmw-f800st-12.html,83,LOW,REVIEW
+000032,BMW,F800S,F 800ST,https://www.motorcyclespecs.co.za/model/bmw/bmw-f800st-13.html,83,LOW,REVIEW
+000032,BMW,F800S,F 800R,https://www.motorcyclespecs.co.za/model/bmw/bmw-f800r-10.html,78,LOW,REVIEW
+000032,BMW,F800S,F 800R,https://www.motorcyclespecs.co.za/model/bmw/bmw-f800r-11.html,78,LOW,REVIEW
+000032,BMW,F800S,F 800R,https://www.motorcyclespecs.co.za/model/bmw/bmw-f800r-12.html,78,LOW,REVIEW
+000032,BMW,F800S,F 800R,https://www.motorcyclespecs.co.za/model/bmw/bmw-f800r-13.html,78,LOW,REVIEW
+000032,BMW,F800S,F 800R,https://www.motorcyclespecs.co.za/model/bmw/bmw-f800r-14.html,78,LOW,REVIEW
+000032,BMW,F800S,F 800R,https://www.motorcyclespecs.co.za/model/bmw/bmw-f800r-15.html,78,LOW,REVIEW
+000032,BMW,F800S,F 800R,https://www.motorcyclespecs.co.za/model/bmw/bmw-f800r-16.html,78,LOW,REVIEW
+000032,BMW,F800S,F 800R,https://www.motorcyclespecs.co.za/model/bmw/bmw-f800r-17.html,78,LOW,REVIEW
+000032,BMW,F800S,F 800R,https://www.motorcyclespecs.co.za/model/bmw/bmw-f800r.html,78,LOW,REVIEW
+000032,BMW,F800S,F 800GT,https://www.motorcyclespecs.co.za/model/bmw/bmw-f800gt-13.html,73,LOW,REVIEW
+000032,BMW,F800S,F 800GT,https://www.motorcyclespecs.co.za/model/bmw/bmw-f800gt-14.html,73,LOW,REVIEW
+000032,BMW,F800S,F 800GT,https://www.motorcyclespecs.co.za/model/bmw/bmw-f800gt-15.html,73,LOW,REVIEW
+000032,BMW,F800S,F 800GT,https://www.motorcyclespecs.co.za/model/bmw/bmw-f800gt-16.html,73,LOW,REVIEW
+000032,BMW,F800S,F 800GT,https://www.motorcyclespecs.co.za/model/bmw/bmw-f800gt-17.html,73,LOW,REVIEW
+000032,BMW,F800S,"F 
+		800GS Trophy",https://www.motorcyclespecs.co.za/model/bmw/bmw-f800gs-trophy.html,66,LOW,MODEL_MISMATCH
+000032,BMW,F800S,"F 800 ST 
+		Touring",https://www.motorcyclespecs.co.za/model/bmw/bmw-f800st-se-11.html,65,LOW,MODEL_MISMATCH
+000032,BMW,F800S,"F 
+		800GS Adventure",https://www.motorcyclespecs.co.za/model/bmw/bmw-f800gs-adventure-13.html,62,LOW,MODEL_MISMATCH
+000032,BMW,F800S,"F 
+		800GS Adventure",https://www.motorcyclespecs.co.za/model/bmw/bmw-f800gs-adventure-14.html,62,LOW,MODEL_MISMATCH
+000032,BMW,F800S,"F 
+		800GS Adventure",https://www.motorcyclespecs.co.za/model/bmw/bmw-f800gs-adventure-15.html,62,LOW,MODEL_MISMATCH
+000032,BMW,F800S,"F 
+		800GS Adventure",https://www.motorcyclespecs.co.za/model/bmw/bmw-f800gs-adventure-16.html,62,LOW,MODEL_MISMATCH
+000032,BMW,F800S,"F 
+		800GS Adventure",https://www.motorcyclespecs.co.za/model/bmw/bmw-f800gs-adventure-17.html,62,LOW,MODEL_MISMATCH
+000032,BMW,F800S,"F 
+800GS Triple Black",https://www.motorcyclespecs.co.za/model/bmw/bmw-f800gs-triple-black.html,59,LOW,MODEL_MISMATCH
+000032,BMW,F800S,F 650GS (800cc),https://www.motorcyclespecs.co.za/model/bmw/bmw-f650gs-10.html,56,LOW,NUMBER_MISMATCH
+000032,BMW,F800S,"F 650GS 
+		(800cc)",https://www.motorcyclespecs.co.za/model/bmw/bmw-f650gs-11.html,56,LOW,NUMBER_MISMATCH
+000032,BMW,F800S,F 800R Chris Pfeiffer Edition,https://www.motorcyclespecs.co.za/model/bmw/bmw-f800r-special.html,53,LOW,MODEL_MISMATCH
+000032,BMW,F800S,F 800R Nero Zaffiro Metallizzato,https://www.motorcyclespecs.co.za/model/bmw/bmw-f800r-nero-zaffiro-metallizzato.html,49,LOW,MODEL_MISMATCH
+000032,BMW,F800S,"F 
+	800GS 30th Anniversary Special",https://www.motorcyclespecs.co.za/model/bmw/bmw-f800gs-special-10.html,42,LOW,NUMBER_MISMATCH
+000033,BMW,F800ST,F 800ST,https://www.motorcyclespecs.co.za/model/bmw/bmw-f800st-07.html,95,HIGH,EXACT
+000033,BMW,F800ST,F 800ST,https://www.motorcyclespecs.co.za/model/bmw/bmw-f800st-08.html,95,HIGH,EXACT
+000033,BMW,F800ST,F 800ST,https://www.motorcyclespecs.co.za/model/bmw/bmw-f800st-09.html,95,HIGH,EXACT
+000033,BMW,F800ST,F 800ST,https://www.motorcyclespecs.co.za/model/bmw/bmw-f800st-10.html,95,HIGH,EXACT
+000033,BMW,F800ST,F 800ST,https://www.motorcyclespecs.co.za/model/bmw/bmw-f800st-11.html,95,HIGH,EXACT
+000033,BMW,F800ST,F 800ST,https://www.motorcyclespecs.co.za/model/bmw/bmw-f800st-12.html,95,HIGH,EXACT
+000033,BMW,F800ST,F 800ST,https://www.motorcyclespecs.co.za/model/bmw/bmw-f800st-13.html,95,HIGH,EXACT
+000033,BMW,F800ST,F 800GS,https://www.motorcyclespecs.co.za/model/bmw/bmw-f800gs-08.html,85,LOW,REVIEW
+000033,BMW,F800ST,F 800GS,https://www.motorcyclespecs.co.za/model/bmw/bmw-f800gs-09.html,85,LOW,REVIEW
+000033,BMW,F800ST,F 800GS,https://www.motorcyclespecs.co.za/model/bmw/bmw-f800gs-10.html,85,LOW,REVIEW
+000033,BMW,F800ST,F 800GS,https://www.motorcyclespecs.co.za/model/bmw/bmw-f800gs-11.html,85,LOW,REVIEW
+000033,BMW,F800ST,F 800GS,https://www.motorcyclespecs.co.za/model/bmw/bmw-f800gs-12.html,85,LOW,REVIEW
+000033,BMW,F800ST,F 800GS,https://www.motorcyclespecs.co.za/model/bmw/bmw-f800gs-13.html,85,LOW,REVIEW
+000033,BMW,F800ST,F 800GS,https://www.motorcyclespecs.co.za/model/bmw/bmw-f800gs-14.html,85,LOW,REVIEW
+000033,BMW,F800ST,F 800GS,https://www.motorcyclespecs.co.za/model/bmw/bmw-f800gs-15.html,85,LOW,REVIEW
+000033,BMW,F800ST,F 800GS,https://www.motorcyclespecs.co.za/model/bmw/bmw-f800gs-16.html,85,LOW,REVIEW
+000033,BMW,F800ST,F 800GS,https://www.motorcyclespecs.co.za/model/bmw/bmw-f800gs-17.html,85,LOW,REVIEW
+000033,BMW,F800ST,F 800GS,https://www.motorcyclespecs.co.za/model/bmw/bmw-f800gs-2024.html,85,LOW,REVIEW
+000033,BMW,F800ST,F 800S,https://www.motorcyclespecs.co.za/model/bmw/bmw-f800s-06.html,83,LOW,REVIEW
+000033,BMW,F800ST,F 800S,https://www.motorcyclespecs.co.za/model/bmw/bmw-f800s-07.html,83,LOW,REVIEW
+000033,BMW,F800ST,F 800S,https://www.motorcyclespecs.co.za/model/bmw/bmw-f800s-08.html,83,LOW,REVIEW
+000033,BMW,F800ST,F 800S,https://www.motorcyclespecs.co.za/model/bmw/bmw-f800s-09.html,83,LOW,REVIEW
+000033,BMW,F800ST,F 800S,https://www.motorcyclespecs.co.za/model/bmw/bmw-f800s-10.html,83,LOW,REVIEW
+000033,BMW,F800ST,F 800GT,https://www.motorcyclespecs.co.za/model/bmw/bmw-f800gt-13.html,80,LOW,REVIEW
+000033,BMW,F800ST,F 800GT,https://www.motorcyclespecs.co.za/model/bmw/bmw-f800gt-14.html,80,LOW,REVIEW
+000033,BMW,F800ST,F 800GT,https://www.motorcyclespecs.co.za/model/bmw/bmw-f800gt-15.html,80,LOW,REVIEW
+000033,BMW,F800ST,F 800GT,https://www.motorcyclespecs.co.za/model/bmw/bmw-f800gt-16.html,80,LOW,REVIEW
+000033,BMW,F800ST,F 800GT,https://www.motorcyclespecs.co.za/model/bmw/bmw-f800gt-17.html,80,LOW,REVIEW
+000033,BMW,F800ST,"F 
+		800GS Trophy",https://www.motorcyclespecs.co.za/model/bmw/bmw-f800gs-trophy.html,76,LOW,REVIEW
+000033,BMW,F800ST,F 800R,https://www.motorcyclespecs.co.za/model/bmw/bmw-f800r-10.html,73,LOW,REVIEW
+000033,BMW,F800ST,F 800R,https://www.motorcyclespecs.co.za/model/bmw/bmw-f800r-11.html,73,LOW,REVIEW
+000033,BMW,F800ST,F 800R,https://www.motorcyclespecs.co.za/model/bmw/bmw-f800r-12.html,73,LOW,REVIEW
+000033,BMW,F800ST,F 800R,https://www.motorcyclespecs.co.za/model/bmw/bmw-f800r-13.html,73,LOW,REVIEW
+000033,BMW,F800ST,F 800R,https://www.motorcyclespecs.co.za/model/bmw/bmw-f800r-14.html,73,LOW,REVIEW
+000033,BMW,F800ST,F 800R,https://www.motorcyclespecs.co.za/model/bmw/bmw-f800r-15.html,73,LOW,REVIEW
+000033,BMW,F800ST,F 800R,https://www.motorcyclespecs.co.za/model/bmw/bmw-f800r-16.html,73,LOW,REVIEW
+000033,BMW,F800ST,F 800R,https://www.motorcyclespecs.co.za/model/bmw/bmw-f800r-17.html,73,LOW,REVIEW
+000033,BMW,F800ST,F 800R,https://www.motorcyclespecs.co.za/model/bmw/bmw-f800r.html,73,LOW,REVIEW
+000033,BMW,F800ST,"F 800 ST 
+		Touring",https://www.motorcyclespecs.co.za/model/bmw/bmw-f800st-se-11.html,69,LOW,MODEL_MISMATCH
+000033,BMW,F800ST,"F 
+800GS Triple Black",https://www.motorcyclespecs.co.za/model/bmw/bmw-f800gs-triple-black.html,68,LOW,MODEL_MISMATCH
+000033,BMW,F800ST,"F 
+		800GS Adventure",https://www.motorcyclespecs.co.za/model/bmw/bmw-f800gs-adventure-13.html,64,LOW,MODEL_MISMATCH
+000033,BMW,F800ST,"F 
+		800GS Adventure",https://www.motorcyclespecs.co.za/model/bmw/bmw-f800gs-adventure-14.html,64,LOW,MODEL_MISMATCH
+000033,BMW,F800ST,"F 
+		800GS Adventure",https://www.motorcyclespecs.co.za/model/bmw/bmw-f800gs-adventure-15.html,64,LOW,MODEL_MISMATCH
+000033,BMW,F800ST,"F 
+		800GS Adventure",https://www.motorcyclespecs.co.za/model/bmw/bmw-f800gs-adventure-16.html,64,LOW,MODEL_MISMATCH
+000033,BMW,F800ST,"F 
+		800GS Adventure",https://www.motorcyclespecs.co.za/model/bmw/bmw-f800gs-adventure-17.html,64,LOW,MODEL_MISMATCH
+000033,BMW,F800ST,F 650GS (800cc),https://www.motorcyclespecs.co.za/model/bmw/bmw-f650gs-10.html,59,LOW,NUMBER_MISMATCH
+000033,BMW,F800ST,"F 650GS 
+		(800cc)",https://www.motorcyclespecs.co.za/model/bmw/bmw-f650gs-11.html,59,LOW,NUMBER_MISMATCH
+000033,BMW,F800ST,F 800R Chris Pfeiffer Edition,https://www.motorcyclespecs.co.za/model/bmw/bmw-f800r-special.html,54,LOW,MODEL_MISMATCH
+000033,BMW,F800ST,F 800R Nero Zaffiro Metallizzato,https://www.motorcyclespecs.co.za/model/bmw/bmw-f800r-nero-zaffiro-metallizzato.html,52,LOW,MODEL_MISMATCH
+000033,BMW,F800ST,"F 
+	800GS 30th Anniversary Special",https://www.motorcyclespecs.co.za/model/bmw/bmw-f800gs-special-10.html,50,LOW,NUMBER_MISMATCH
+000034,BMW,F850GS,F 850GS,https://www.motorcyclespecs.co.za/model/bmw/bmw-f850gs-18.html,95,HIGH,EXACT
+000034,BMW,F850GS,F 850GS,https://www.motorcyclespecs.co.za/model/bmw/bmw-f850gs-19.html,95,HIGH,EXACT
+000034,BMW,F850GS,F 850GS,https://www.motorcyclespecs.co.za/model/bmw/bmw-f850gs-20.html,95,HIGH,EXACT
+000034,BMW,F850GS,F 850GS,https://www.motorcyclespecs.co.za/model/bmw/bmw-f850gs-21.html,95,HIGH,EXACT
+000034,BMW,F850GS,F 850GS Adventure,https://www.motorcyclespecs.co.za/model/bmw/bmw-f850gs-adven-19.html,65,LOW,MODEL_MISMATCH
+000034,BMW,F850GS,F 850GS Adventure,https://www.motorcyclespecs.co.za/model/bmw/bmw-f850gs-adven-20.html,65,LOW,MODEL_MISMATCH
+000034,BMW,F850GS,F 850GS Adventure,https://www.motorcyclespecs.co.za/model/bmw/bmw-f850gs-adven-21.html,65,LOW,MODEL_MISMATCH
+000034,BMW,F850GS,F 850GS Adventure,https://www.motorcyclespecs.co.za/model/bmw/bmw-f850gs-adven-22.html,65,LOW,MODEL_MISMATCH
+000034,BMW,F850GS,F 850GS 40 Years Edition,https://www.motorcyclespecs.co.za/model/bmw/bmw-f850gs-40th.html,56,LOW,NUMBER_MISMATCH
+000034,BMW,F850GS,F 850GS Adventure 40 Years Edition,https://www.motorcyclespecs.co.za/model/bmw/bmw-f850gs-adven-40th.html,44,LOW,NUMBER_MISMATCH
+000035,BMW,F850GS 40 Years GS Edition,F 850GS 40 Years Edition,https://www.motorcyclespecs.co.za/model/bmw/bmw-f850gs-40th.html,85,LOW,REVIEW
+000035,BMW,F850GS 40 Years GS Edition,F 850GS Adventure 40 Years Edition,https://www.motorcyclespecs.co.za/model/bmw/bmw-f850gs-adven-40th.html,73,LOW,REVIEW
+000036,BMW,F850GS A,F 850GS,https://www.motorcyclespecs.co.za/model/bmw/bmw-f850gs-18.html,89,LOW,REVIEW
+000036,BMW,F850GS A,F 850GS,https://www.motorcyclespecs.co.za/model/bmw/bmw-f850gs-19.html,89,LOW,REVIEW
+000036,BMW,F850GS A,F 850GS,https://www.motorcyclespecs.co.za/model/bmw/bmw-f850gs-20.html,89,LOW,REVIEW
+000036,BMW,F850GS A,F 850GS,https://www.motorcyclespecs.co.za/model/bmw/bmw-f850gs-21.html,89,LOW,REVIEW
+000036,BMW,F850GS A,F 850GS Adventure,https://www.motorcyclespecs.co.za/model/bmw/bmw-f850gs-adven-19.html,68,LOW,MODEL_MISMATCH
+000036,BMW,F850GS A,F 850GS Adventure,https://www.motorcyclespecs.co.za/model/bmw/bmw-f850gs-adven-20.html,68,LOW,MODEL_MISMATCH
+000036,BMW,F850GS A,F 850GS Adventure,https://www.motorcyclespecs.co.za/model/bmw/bmw-f850gs-adven-21.html,68,LOW,MODEL_MISMATCH
+000036,BMW,F850GS A,F 850GS Adventure,https://www.motorcyclespecs.co.za/model/bmw/bmw-f850gs-adven-22.html,68,LOW,MODEL_MISMATCH
+000036,BMW,F850GS A,F 850GS 40 Years Edition,https://www.motorcyclespecs.co.za/model/bmw/bmw-f850gs-40th.html,60,LOW,NUMBER_MISMATCH
+000036,BMW,F850GS A,F 850GS Adventure 40 Years Edition,https://www.motorcyclespecs.co.za/model/bmw/bmw-f850gs-adven-40th.html,48,LOW,NUMBER_MISMATCH
+000037,BMW,F850GS Adventure,F 850GS Adventure,https://www.motorcyclespecs.co.za/model/bmw/bmw-f850gs-adven-19.html,95,HIGH,EXACT
+000037,BMW,F850GS Adventure,F 850GS Adventure,https://www.motorcyclespecs.co.za/model/bmw/bmw-f850gs-adven-20.html,95,HIGH,EXACT
+000037,BMW,F850GS Adventure,F 850GS Adventure,https://www.motorcyclespecs.co.za/model/bmw/bmw-f850gs-adven-21.html,95,HIGH,EXACT
+000037,BMW,F850GS Adventure,F 850GS Adventure,https://www.motorcyclespecs.co.za/model/bmw/bmw-f850gs-adven-22.html,95,HIGH,EXACT
+000037,BMW,F850GS Adventure,F 850GS,https://www.motorcyclespecs.co.za/model/bmw/bmw-f850gs-18.html,65,LOW,MODEL_MISMATCH
+000037,BMW,F850GS Adventure,F 850GS,https://www.motorcyclespecs.co.za/model/bmw/bmw-f850gs-19.html,65,LOW,MODEL_MISMATCH
+000037,BMW,F850GS Adventure,F 850GS,https://www.motorcyclespecs.co.za/model/bmw/bmw-f850gs-20.html,65,LOW,MODEL_MISMATCH
+000037,BMW,F850GS Adventure,F 850GS,https://www.motorcyclespecs.co.za/model/bmw/bmw-f850gs-21.html,65,LOW,MODEL_MISMATCH
+000037,BMW,F850GS Adventure,F 850GS Adventure 40 Years Edition,https://www.motorcyclespecs.co.za/model/bmw/bmw-f850gs-adven-40th.html,64,LOW,NUMBER_MISMATCH
+000037,BMW,F850GS Adventure,F 850GS 40 Years Edition,https://www.motorcyclespecs.co.za/model/bmw/bmw-f850gs-40th.html,53,LOW,NUMBER_MISMATCH
+000038,BMW,F850GS Adventure 40 Years GS Edition,F 850GS Adventure 40 Years Edition,https://www.motorcyclespecs.co.za/model/bmw/bmw-f850gs-adven-40th.html,86,LOW,REVIEW
+000038,BMW,F850GS Adventure 40 Years GS Edition,F 850GS 40 Years Edition,https://www.motorcyclespecs.co.za/model/bmw/bmw-f850gs-40th.html,73,LOW,REVIEW
+000039,BMW,F900GS,F 900GS,https://www.motorcyclespecs.co.za/model/bmw/bmw-f900gs-2024.html,95,HIGH,EXACT
+000039,BMW,F900GS,F 900XR,https://www.motorcyclespecs.co.za/model/bmw/bmw-f900xr-20.html,75,LOW,REVIEW
+000039,BMW,F900GS,F 900XR,https://www.motorcyclespecs.co.za/model/bmw/bmw-f900xr-2025.html,75,LOW,REVIEW
+000039,BMW,F900GS,F 900R,https://www.motorcyclespecs.co.za/model/bmw/bmw-f900r-20.html,73,LOW,REVIEW
+000039,BMW,F900GS,F 900R,https://www.motorcyclespecs.co.za/model/bmw/bmw-f900r-2025.html,73,LOW,REVIEW
+000039,BMW,F900GS,BMW F 900 GS Adventure 2024,https://www.motorcyclespecs.co.za/model/bmw/bmw-f900gs-adventure-2024.html,65,LOW,MODEL_MISMATCH
+000039,BMW,F900GS,F 900R Cup,https://www.motorcyclespecs.co.za/model/bmw/bmw-f900r-cup-23.html,64,LOW,MODEL_MISMATCH
+000039,BMW,F900GS,F 900R Force,https://www.motorcyclespecs.co.za/model/bmw/bmw-f900r-forced-21.html,61,LOW,MODEL_MISMATCH
+000040,BMW,F900GS Adventure,BMW F 900 GS Adventure 2024,https://www.motorcyclespecs.co.za/model/bmw/bmw-f900gs-adventure-2024.html,95,HIGH,EXACT
+000040,BMW,F900GS Adventure,F 900GS,https://www.motorcyclespecs.co.za/model/bmw/bmw-f900gs-2024.html,65,LOW,MODEL_MISMATCH
+000040,BMW,F900GS Adventure,F 900R,https://www.motorcyclespecs.co.za/model/bmw/bmw-f900r-20.html,62,LOW,MODEL_MISMATCH
+000040,BMW,F900GS Adventure,F 900R,https://www.motorcyclespecs.co.za/model/bmw/bmw-f900r-2025.html,62,LOW,MODEL_MISMATCH
+000040,BMW,F900GS Adventure,F 900R Force,https://www.motorcyclespecs.co.za/model/bmw/bmw-f900r-forced-21.html,61,LOW,MODEL_MISMATCH
+000040,BMW,F900GS Adventure,F 900XR,https://www.motorcyclespecs.co.za/model/bmw/bmw-f900xr-20.html,61,LOW,MODEL_MISMATCH
+000040,BMW,F900GS Adventure,F 900XR,https://www.motorcyclespecs.co.za/model/bmw/bmw-f900xr-2025.html,61,LOW,MODEL_MISMATCH
+000040,BMW,F900GS Adventure,F 900R Cup,https://www.motorcyclespecs.co.za/model/bmw/bmw-f900r-cup-23.html,59,LOW,MODEL_MISMATCH
+000041,BMW,F900GS Adventure Equipada,BMW F 900 GS Adventure 2024,https://www.motorcyclespecs.co.za/model/bmw/bmw-f900gs-adventure-2024.html,95,HIGH,EXACT
+000041,BMW,F900GS Adventure Equipada,F 900GS,https://www.motorcyclespecs.co.za/model/bmw/bmw-f900gs-2024.html,65,LOW,MODEL_MISMATCH
+000041,BMW,F900GS Adventure Equipada,F 900R,https://www.motorcyclespecs.co.za/model/bmw/bmw-f900r-20.html,62,LOW,MODEL_MISMATCH
+000041,BMW,F900GS Adventure Equipada,F 900R,https://www.motorcyclespecs.co.za/model/bmw/bmw-f900r-2025.html,62,LOW,MODEL_MISMATCH
+000041,BMW,F900GS Adventure Equipada,F 900R Force,https://www.motorcyclespecs.co.za/model/bmw/bmw-f900r-forced-21.html,61,LOW,MODEL_MISMATCH
+000041,BMW,F900GS Adventure Equipada,F 900XR,https://www.motorcyclespecs.co.za/model/bmw/bmw-f900xr-20.html,61,LOW,MODEL_MISMATCH
+000041,BMW,F900GS Adventure Equipada,F 900XR,https://www.motorcyclespecs.co.za/model/bmw/bmw-f900xr-2025.html,61,LOW,MODEL_MISMATCH
+000041,BMW,F900GS Adventure Equipada,F 900R Cup,https://www.motorcyclespecs.co.za/model/bmw/bmw-f900r-cup-23.html,59,LOW,MODEL_MISMATCH
+000042,BMW,F900GS Adventure Touring,BMW F 900 GS Adventure 2024,https://www.motorcyclespecs.co.za/model/bmw/bmw-f900gs-adventure-2024.html,77,LOW,REVIEW
+000042,BMW,F900GS Adventure Touring,F 900R Force,https://www.motorcyclespecs.co.za/model/bmw/bmw-f900r-forced-21.html,60,LOW,MODEL_MISMATCH
+000042,BMW,F900GS Adventure Touring,F 900GS,https://www.motorcyclespecs.co.za/model/bmw/bmw-f900gs-2024.html,59,LOW,MODEL_MISMATCH
+000042,BMW,F900GS Adventure Touring,F 900R Cup,https://www.motorcyclespecs.co.za/model/bmw/bmw-f900r-cup-23.html,57,LOW,MODEL_MISMATCH
+000042,BMW,F900GS Adventure Touring,F 900R,https://www.motorcyclespecs.co.za/model/bmw/bmw-f900r-20.html,55,LOW,MODEL_MISMATCH
+000042,BMW,F900GS Adventure Touring,F 900R,https://www.motorcyclespecs.co.za/model/bmw/bmw-f900r-2025.html,55,LOW,MODEL_MISMATCH
+000042,BMW,F900GS Adventure Touring,F 900XR,https://www.motorcyclespecs.co.za/model/bmw/bmw-f900xr-20.html,55,LOW,MODEL_MISMATCH
+000042,BMW,F900GS Adventure Touring,F 900XR,https://www.motorcyclespecs.co.za/model/bmw/bmw-f900xr-2025.html,55,LOW,MODEL_MISMATCH
+000043,BMW,F900GS Adventure Urban Explorer,BMW F 900 GS Adventure 2024,https://www.motorcyclespecs.co.za/model/bmw/bmw-f900gs-adventure-2024.html,76,LOW,REVIEW
+000043,BMW,F900GS Adventure Urban Explorer,F 900R Force,https://www.motorcyclespecs.co.za/model/bmw/bmw-f900r-forced-21.html,58,LOW,MODEL_MISMATCH
+000043,BMW,F900GS Adventure Urban Explorer,F 900R Cup,https://www.motorcyclespecs.co.za/model/bmw/bmw-f900r-cup-23.html,56,LOW,MODEL_MISMATCH
+000043,BMW,F900GS Adventure Urban Explorer,F 900GS,https://www.motorcyclespecs.co.za/model/bmw/bmw-f900gs-2024.html,55,LOW,MODEL_MISMATCH
+000043,BMW,F900GS Adventure Urban Explorer,F 900XR,https://www.motorcyclespecs.co.za/model/bmw/bmw-f900xr-20.html,55,LOW,MODEL_MISMATCH
+000043,BMW,F900GS Adventure Urban Explorer,F 900XR,https://www.motorcyclespecs.co.za/model/bmw/bmw-f900xr-2025.html,55,LOW,MODEL_MISMATCH
+000043,BMW,F900GS Adventure Urban Explorer,F 900R,https://www.motorcyclespecs.co.za/model/bmw/bmw-f900r-20.html,52,LOW,MODEL_MISMATCH
+000043,BMW,F900GS Adventure Urban Explorer,F 900R,https://www.motorcyclespecs.co.za/model/bmw/bmw-f900r-2025.html,52,LOW,MODEL_MISMATCH
+000044,BMW,F900GS Equipada,F 900GS,https://www.motorcyclespecs.co.za/model/bmw/bmw-f900gs-2024.html,95,HIGH,EXACT
+000044,BMW,F900GS Equipada,F 900XR,https://www.motorcyclespecs.co.za/model/bmw/bmw-f900xr-20.html,75,LOW,REVIEW
+000044,BMW,F900GS Equipada,F 900XR,https://www.motorcyclespecs.co.za/model/bmw/bmw-f900xr-2025.html,75,LOW,REVIEW
+000044,BMW,F900GS Equipada,F 900R,https://www.motorcyclespecs.co.za/model/bmw/bmw-f900r-20.html,73,LOW,REVIEW
+000044,BMW,F900GS Equipada,F 900R,https://www.motorcyclespecs.co.za/model/bmw/bmw-f900r-2025.html,73,LOW,REVIEW
+000044,BMW,F900GS Equipada,BMW F 900 GS Adventure 2024,https://www.motorcyclespecs.co.za/model/bmw/bmw-f900gs-adventure-2024.html,65,LOW,MODEL_MISMATCH
+000044,BMW,F900GS Equipada,F 900R Cup,https://www.motorcyclespecs.co.za/model/bmw/bmw-f900r-cup-23.html,64,LOW,MODEL_MISMATCH
+000044,BMW,F900GS Equipada,F 900R Force,https://www.motorcyclespecs.co.za/model/bmw/bmw-f900r-forced-21.html,61,LOW,MODEL_MISMATCH
+000045,BMW,F900R,F 900R,https://www.motorcyclespecs.co.za/model/bmw/bmw-f900r-20.html,95,HIGH,EXACT
+000045,BMW,F900R,F 900R,https://www.motorcyclespecs.co.za/model/bmw/bmw-f900r-2025.html,95,HIGH,EXACT
+000045,BMW,F900R,F 900XR,https://www.motorcyclespecs.co.za/model/bmw/bmw-f900xr-20.html,83,LOW,REVIEW
+000045,BMW,F900R,F 900XR,https://www.motorcyclespecs.co.za/model/bmw/bmw-f900xr-2025.html,83,LOW,REVIEW
+000045,BMW,F900R,F 900R Cup,https://www.motorcyclespecs.co.za/model/bmw/bmw-f900r-cup-23.html,80,LOW,REVIEW
+000045,BMW,F900R,F 900R Force,https://www.motorcyclespecs.co.za/model/bmw/bmw-f900r-forced-21.html,75,LOW,REVIEW
+000045,BMW,F900R,F 900GS,https://www.motorcyclespecs.co.za/model/bmw/bmw-f900gs-2024.html,73,LOW,REVIEW
+000045,BMW,F900R,BMW F 900 GS Adventure 2024,https://www.motorcyclespecs.co.za/model/bmw/bmw-f900gs-adventure-2024.html,60,LOW,MODEL_MISMATCH
+000046,BMW,F900R Dybanuc,F 900R,https://www.motorcyclespecs.co.za/model/bmw/bmw-f900r-20.html,71,LOW,REVIEW
+000046,BMW,F900R Dybanuc,F 900R,https://www.motorcyclespecs.co.za/model/bmw/bmw-f900r-2025.html,71,LOW,REVIEW
+000046,BMW,F900R Dybanuc,F 900R Cup,https://www.motorcyclespecs.co.za/model/bmw/bmw-f900r-cup-23.html,71,LOW,REVIEW
+000046,BMW,F900R Dybanuc,F 900R Force,https://www.motorcyclespecs.co.za/model/bmw/bmw-f900r-forced-21.html,70,LOW,REVIEW
+000046,BMW,F900R Dybanuc,F 900XR,https://www.motorcyclespecs.co.za/model/bmw/bmw-f900xr-20.html,65,LOW,MODEL_MISMATCH
+000046,BMW,F900R Dybanuc,F 900XR,https://www.motorcyclespecs.co.za/model/bmw/bmw-f900xr-2025.html,65,LOW,MODEL_MISMATCH
+000046,BMW,F900R Dybanuc,BMW F 900 GS Adventure 2024,https://www.motorcyclespecs.co.za/model/bmw/bmw-f900gs-adventure-2024.html,61,LOW,MODEL_MISMATCH
+000046,BMW,F900R Dybanuc,F 900GS,https://www.motorcyclespecs.co.za/model/bmw/bmw-f900gs-2024.html,59,LOW,MODEL_MISMATCH
+000047,BMW,F900R Equipada,F 900R,https://www.motorcyclespecs.co.za/model/bmw/bmw-f900r-20.html,95,HIGH,EXACT
+000047,BMW,F900R Equipada,F 900R,https://www.motorcyclespecs.co.za/model/bmw/bmw-f900r-2025.html,95,HIGH,EXACT
+000047,BMW,F900R Equipada,F 900XR,https://www.motorcyclespecs.co.za/model/bmw/bmw-f900xr-20.html,83,LOW,REVIEW
+000047,BMW,F900R Equipada,F 900XR,https://www.motorcyclespecs.co.za/model/bmw/bmw-f900xr-2025.html,83,LOW,REVIEW
+000047,BMW,F900R Equipada,F 900R Cup,https://www.motorcyclespecs.co.za/model/bmw/bmw-f900r-cup-23.html,80,LOW,REVIEW
+000047,BMW,F900R Equipada,F 900R Force,https://www.motorcyclespecs.co.za/model/bmw/bmw-f900r-forced-21.html,75,LOW,REVIEW
+000047,BMW,F900R Equipada,F 900GS,https://www.motorcyclespecs.co.za/model/bmw/bmw-f900gs-2024.html,73,LOW,REVIEW
+000047,BMW,F900R Equipada,BMW F 900 GS Adventure 2024,https://www.motorcyclespecs.co.za/model/bmw/bmw-f900gs-adventure-2024.html,60,LOW,MODEL_MISMATCH
+000048,BMW,F900R LWR,F 900R,https://www.motorcyclespecs.co.za/model/bmw/bmw-f900r-20.html,80,LOW,REVIEW
+000048,BMW,F900R LWR,F 900R,https://www.motorcyclespecs.co.za/model/bmw/bmw-f900r-2025.html,80,LOW,REVIEW
+000048,BMW,F900R LWR,F 900R Force,https://www.motorcyclespecs.co.za/model/bmw/bmw-f900r-forced-21.html,77,LOW,REVIEW
+000048,BMW,F900R LWR,F 900R Cup,https://www.motorcyclespecs.co.za/model/bmw/bmw-f900r-cup-23.html,72,LOW,REVIEW
+000048,BMW,F900R LWR,F 900XR,https://www.motorcyclespecs.co.za/model/bmw/bmw-f900xr-20.html,72,LOW,REVIEW
+000048,BMW,F900R LWR,F 900XR,https://www.motorcyclespecs.co.za/model/bmw/bmw-f900xr-2025.html,72,LOW,REVIEW
+000048,BMW,F900R LWR,F 900GS,https://www.motorcyclespecs.co.za/model/bmw/bmw-f900gs-2024.html,64,LOW,MODEL_MISMATCH
+000048,BMW,F900R LWR,BMW F 900 GS Adventure 2024,https://www.motorcyclespecs.co.za/model/bmw/bmw-f900gs-adventure-2024.html,57,LOW,MODEL_MISMATCH
+000049,BMW,F900R Urban,F 900R,https://www.motorcyclespecs.co.za/model/bmw/bmw-f900r-20.html,75,LOW,REVIEW
+000049,BMW,F900R Urban,F 900R,https://www.motorcyclespecs.co.za/model/bmw/bmw-f900r-2025.html,75,LOW,REVIEW
+000049,BMW,F900R Urban,F 900R Force,https://www.motorcyclespecs.co.za/model/bmw/bmw-f900r-forced-21.html,74,LOW,REVIEW
+000049,BMW,F900R Urban,F 900R Cup,https://www.motorcyclespecs.co.za/model/bmw/bmw-f900r-cup-23.html,73,LOW,REVIEW
+000049,BMW,F900R Urban,F 900XR,https://www.motorcyclespecs.co.za/model/bmw/bmw-f900xr-20.html,67,LOW,MODEL_MISMATCH
+000049,BMW,F900R Urban,F 900XR,https://www.motorcyclespecs.co.za/model/bmw/bmw-f900xr-2025.html,67,LOW,MODEL_MISMATCH
+000049,BMW,F900R Urban,F 900GS,https://www.motorcyclespecs.co.za/model/bmw/bmw-f900gs-2024.html,61,LOW,MODEL_MISMATCH
+000049,BMW,F900R Urban,BMW F 900 GS Adventure 2024,https://www.motorcyclespecs.co.za/model/bmw/bmw-f900gs-adventure-2024.html,58,LOW,MODEL_MISMATCH
+000050,BMW,F900XR,F 900XR,https://www.motorcyclespecs.co.za/model/bmw/bmw-f900xr-20.html,95,HIGH,EXACT
+000050,BMW,F900XR,F 900XR,https://www.motorcyclespecs.co.za/model/bmw/bmw-f900xr-2025.html,95,HIGH,EXACT
+000050,BMW,F900XR,F 900R,https://www.motorcyclespecs.co.za/model/bmw/bmw-f900r-20.html,83,LOW,REVIEW
+000050,BMW,F900XR,F 900R,https://www.motorcyclespecs.co.za/model/bmw/bmw-f900r-2025.html,83,LOW,REVIEW
+000050,BMW,F900XR,F 900GS,https://www.motorcyclespecs.co.za/model/bmw/bmw-f900gs-2024.html,75,LOW,REVIEW
+000050,BMW,F900XR,F 900R Cup,https://www.motorcyclespecs.co.za/model/bmw/bmw-f900r-cup-23.html,72,LOW,REVIEW
+000050,BMW,F900XR,F 900R Force,https://www.motorcyclespecs.co.za/model/bmw/bmw-f900r-forced-21.html,67,LOW,MODEL_MISMATCH
+000050,BMW,F900XR,BMW F 900 GS Adventure 2024,https://www.motorcyclespecs.co.za/model/bmw/bmw-f900gs-adventure-2024.html,59,LOW,MODEL_MISMATCH
+000009,BMW,F650,NOT_FOUND,https://www.motorcyclespecs.co.za/model/bmw/bmw-f650gs-01.html,79,LOW,NOT_FOUND
+000010,BMW,F650 Enduro,NOT_FOUND,https://www.motorcyclespecs.co.za/model/bmw/bmw-f650-94.html,87,LOW,NOT_FOUND
+000011,BMW,F650 SE,NOT_FOUND,https://www.motorcyclespecs.co.za/model/bmw/bmw-f650gs-01.html,85,LOW,NOT_FOUND
+000012,BMW,F650CS,NOT_FOUND,https://www.motorcyclespecs.co.za/model/bmw/bmw-f650gs-01.html,85,LOW,NOT_FOUND
+000013,BMW,F650CS ABS,NOT_FOUND,https://www.motorcyclespecs.co.za/model/bmw/bmw-f650gs-01.html,70,LOW,NOT_FOUND
+000015,BMW,F650GS ABS,NOT_FOUND,https://www.motorcyclespecs.co.za/model/bmw/bmw-f650gs-01.html,78,LOW,NOT_FOUND
+000017,BMW,F650GS Dakar ABS,NOT_FOUND,https://www.motorcyclespecs.co.za/model/bmw/bmw-f650-dakar-01.html,78,LOW,NOT_FOUND
+000018,BMW,F650ST,NOT_FOUND,https://www.motorcyclespecs.co.za/model/bmw/bmw-f650gs-01.html,85,LOW,NOT_FOUND
+000021,BMW,F750GS 40 Years GS Edition,NOT_FOUND,https://www.motorcyclespecs.co.za/model/bmw/bmw-f750gs-40th.html,85,LOW,NOT_FOUND
+000024,BMW,F800GS Comfort,NOT_FOUND,https://www.motorcyclespecs.co.za/model/bmw/bmw-f800gs-08.html,74,LOW,NOT_FOUND
+000025,BMW,F800GS Dynamic,NOT_FOUND,https://www.motorcyclespecs.co.za/model/bmw/bmw-f800gs-08.html,74,LOW,NOT_FOUND
+000027,BMW,F800GS Explorer,NOT_FOUND,https://www.motorcyclespecs.co.za/model/bmw/bmw-f800gs-08.html,73,LOW,NOT_FOUND
+000028,BMW,F800GS Explorer LWR,NOT_FOUND,https://www.motorcyclespecs.co.za/model/bmw/bmw-f800gs-triple-black.html,72,LOW,NOT_FOUND
+000029,BMW,F800GS Urban,NOT_FOUND,https://www.motorcyclespecs.co.za/model/bmw/bmw-f800gs-08.html,77,LOW,NOT_FOUND
+000035,BMW,F850GS 40 Years GS Edition,NOT_FOUND,https://www.motorcyclespecs.co.za/model/bmw/bmw-f850gs-40th.html,85,LOW,NOT_FOUND
+000036,BMW,F850GS A,NOT_FOUND,https://www.motorcyclespecs.co.za/model/bmw/bmw-f850gs-18.html,89,LOW,NOT_FOUND
+000038,BMW,F850GS Adventure 40 Years GS Edition,NOT_FOUND,https://www.motorcyclespecs.co.za/model/bmw/bmw-f850gs-adven-40th.html,86,LOW,NOT_FOUND
+000042,BMW,F900GS Adventure Touring,NOT_FOUND,https://www.motorcyclespecs.co.za/model/bmw/bmw-f900gs-adventure-2024.html,77,LOW,NOT_FOUND
+000043,BMW,F900GS Adventure Urban Explorer,NOT_FOUND,https://www.motorcyclespecs.co.za/model/bmw/bmw-f900gs-adventure-2024.html,76,LOW,NOT_FOUND
+000046,BMW,F900R Dybanuc,NOT_FOUND,https://www.motorcyclespecs.co.za/model/bmw/bmw-f900r-20.html,71,LOW,NOT_FOUND
+000048,BMW,F900R LWR,NOT_FOUND,https://www.motorcyclespecs.co.za/model/bmw/bmw-f900r-20.html,80,LOW,NOT_FOUND
+000049,BMW,F900R Urban,NOT_FOUND,https://www.motorcyclespecs.co.za/model/bmw/bmw-f900r-20.html,75,LOW,NOT_FOUND

@@ -1,0 +1,16 @@
+{
+  "decision": "MATCH",
+  "selected_candidate": "Honda CB750F SuperSport",
+  "confidence": "HIGH",
+  "match_basis": "SAME_NAME",
+  "explanation": "The input 'CB750F Super Sport' refers to the same motorcycle model as 'Honda CB750F SuperSport', with only minor spacing and capitalization differences. The model name, displacement (750), engine configuration (Four), and variant (Super Sport) are identical.",
+  "canonical_model_alias": "CB750F SuperSport",
+  "configuration_tokens": [],
+  "brand_aliases": [],
+  "model_aliases": [],
+  "status": "SUCCESS",
+  "prompt_version": "motorcycle-candidate-resolution-v4",
+  "model": "qwen-flash",
+  "make": "Honda",
+  "model_name": "CB750F Super Sport"
+}

@@ -1,0 +1,16 @@
+{
+  "decision": "NO_MATCH",
+  "selected_candidate": "",
+  "confidence": "HIGH",
+  "match_basis": "NONE",
+  "explanation": "The input model 'MC-E 5' is not present in the catalog candidates. The closest candidates are 'gasgas mc e 5', 'gasgas mc 50', 'gasgas mc 85', etc., but none match the exact model designation including the 'E' suffix and displacement '5'. The 'MC-E 5' appears to be a specific variant, possibly a small-displacement or electric model, which is not represented in the provided list. No known market alias, abbreviation, or typo accounts for this discrepancy.",
+  "canonical_model_alias": "",
+  "configuration_tokens": [],
+  "brand_aliases": [],
+  "model_aliases": [],
+  "status": "SUCCESS",
+  "prompt_version": "motorcycle-candidate-resolution-v4",
+  "model": "qwen-flash",
+  "make": "Gas Gas",
+  "model_name": "MC-E 5"
+}

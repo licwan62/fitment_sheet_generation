@@ -1,0 +1,7 @@
+# 可选的离线兜底。启用 qwen_aliases 后无需日常维护；
+# 本次 API 生成并实际使用的口径词见输出目录 generated_aliases.json。
+brand_aliases:
+  bmw: ["bmw motorrad", "bayerische motoren werke"]
+  honda: ["honda motorcycles"]
+  yamaha: ["yamaha motor"]
+

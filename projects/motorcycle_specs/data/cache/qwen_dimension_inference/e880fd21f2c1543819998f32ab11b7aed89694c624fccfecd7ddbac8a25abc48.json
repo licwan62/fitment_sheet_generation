@@ -1,0 +1,16 @@
+{
+  "decision": "INFER",
+  "confidence": "MEDIUM",
+  "length_mm": 2250,
+  "width_mm": 860,
+  "height_mm": 1390,
+  "wheelbase_mm": 1470,
+  "seat_height_mm": 970,
+  "ground_clearance_mm": 300,
+  "explanation": "Inferred from Husqvarna WXC 350's typical dimensions based on similar off-road motocross models in the 350cc class, such as the KTM 350 SX-F and Husqvarna FC 350. Dimensions are consistent with a lightweight, high-performance motocross bike designed for aggressive terrain. Seat height and ground clearance reflect standard motocross ergonomics. All values are rounded to nearest 10 mm for realism; exact figures may vary slightly by model year or market.",
+  "status": "SUCCESS",
+  "prompt_version": "motorcycle-dimension-inference-v1",
+  "model": "qwen-flash",
+  "make": "Husqvarna",
+  "model_name": "WXC 350"
+}

@@ -1,0 +1,16 @@
+{
+  "decision": "INFER|UNKNOWN",
+  "confidence": "LOW",
+  "length_mm": null,
+  "width_mm": null,
+  "height_mm": null,
+  "wheelbase_mm": null,
+  "seat_height_mm": null,
+  "ground_clearance_mm": null,
+  "explanation": "The 'VL' model designation is not a recognized Harley-Davidson motorcycle model in official production history. Without a confirmed model identity or catalog reference, dimensions cannot be reliably inferred. Variations by year and market further increase uncertainty. Therefore, the result is marked as UNKNOWN with low confidence.",
+  "status": "SUCCESS",
+  "prompt_version": "motorcycle-dimension-inference-v1",
+  "model": "qwen-flash",
+  "make": "Harley-Davidson",
+  "model_name": "VL"
+}

@@ -1,0 +1,16 @@
+{
+  "decision": "NO_MATCH",
+  "selected_candidate": "",
+  "confidence": "HIGH",
+  "match_basis": "NONE",
+  "explanation": "The input model 'CL160 Scrambler' is not present in the catalog candidates. The only similar-sounding model is 'CL 450 Scrambler', which differs in displacement (160 vs 450) and is a different motorcycle. Other candidates are unrelated models from different series or product lines (e.g., Honda Click160, AirBlade 160, CB500F, CMX1100, SP160, ADV160, CB650R). No known market alias, historical name, abbreviation, or typo links 'CL160 Scrambler' to any candidate. Therefore, no match exists.",
+  "canonical_model_alias": "",
+  "configuration_tokens": [],
+  "brand_aliases": [],
+  "model_aliases": [],
+  "status": "SUCCESS",
+  "prompt_version": "motorcycle-candidate-resolution-v4",
+  "model": "qwen-flash",
+  "make": "Honda",
+  "model_name": "CL160 Scrambler"
+}

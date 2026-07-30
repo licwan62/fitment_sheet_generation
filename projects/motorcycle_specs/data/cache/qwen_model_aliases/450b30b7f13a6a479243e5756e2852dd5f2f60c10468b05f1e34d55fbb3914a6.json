@@ -1,0 +1,20 @@
+{
+  "decision": "MATCH",
+  "selected_candidate": "beta evo 80 junior",
+  "confidence": "HIGH",
+  "match_basis": "MARKET_ALIAS",
+  "explanation": "'EVO 80 JR' is a market-specific designation for the Beta EVO 80 Junior, with 'JR' being a standard abbreviation for 'Junior' in motorcycle model naming. The core model identity (EVO 80) matches exactly, and the suffix aligns with known regional or configuration labeling practices.",
+  "canonical_model_alias": "beta evo 80 junior",
+  "configuration_tokens": [
+    "junior"
+  ],
+  "brand_aliases": [],
+  "model_aliases": [
+    "evo 80 junior"
+  ],
+  "status": "SUCCESS",
+  "prompt_version": "motorcycle-candidate-resolution-v4",
+  "model": "qwen-flash",
+  "make": "Beta",
+  "model_name": "EVO 80 JR"
+}

@@ -1,0 +1,20 @@
+{
+  "decision": "MATCH",
+  "selected_candidate": "F 850GS Adventure",
+  "confidence": "HIGH",
+  "match_basis": "MARKET_ALIAS",
+  "explanation": "The 'F850GS A' is a market-specific designation for the F 850GS Adventure model, commonly used in certain regions to denote the adventure variant. The core motorcycle identity, including engine displacement and platform, is identical.",
+  "canonical_model_alias": "F 850GS Adventure",
+  "configuration_tokens": [
+    "A"
+  ],
+  "brand_aliases": [],
+  "model_aliases": [
+    "F 850GS Adventure"
+  ],
+  "status": "SUCCESS",
+  "prompt_version": "motorcycle-candidate-resolution-v4",
+  "model": "qwen-flash",
+  "make": "BMW",
+  "model_name": "F850GS A"
+}

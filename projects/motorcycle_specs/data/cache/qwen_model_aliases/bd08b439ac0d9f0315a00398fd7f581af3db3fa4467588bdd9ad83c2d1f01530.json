@@ -1,0 +1,20 @@
+{
+  "decision": "MATCH",
+  "selected_candidate": "DR 400S",
+  "confidence": "HIGH",
+  "match_basis": "MARKET_ALIAS",
+  "explanation": "The Suzuki DR400 is a known model, and 'DR 400S' is a market-specific variant (often referred to as the 'S' version) of the same underlying motorcycle. The 'S' suffix denotes a specific configuration or market edition, but the core model remains identical. The other candidates, DR-Z 400E and DR-Z 400SM, are different models in Suzuki's DR-Z series with distinct designations and engine configurations.",
+  "canonical_model_alias": "DR 400S",
+  "configuration_tokens": [
+    "S"
+  ],
+  "brand_aliases": [],
+  "model_aliases": [
+    "DR 400S"
+  ],
+  "status": "SUCCESS",
+  "prompt_version": "motorcycle-candidate-resolution-v4",
+  "model": "qwen-flash",
+  "make": "Suzuki",
+  "model_name": "DR400"
+}

@@ -1,0 +1,20 @@
+{
+  "decision": "MATCH",
+  "selected_candidate": "VF 500C Magna V30",
+  "confidence": "HIGH",
+  "match_basis": "SAME_NAME",
+  "explanation": "The input 'VF500C V30 Magna' is a direct match in substance and structure to the catalog candidate 'VF 500C Magna V30', with only minor spacing and word order differences that do not alter model identity. Both refer to the same Honda VF500C Magna V30 model.",
+  "canonical_model_alias": "VF 500C Magna V30",
+  "configuration_tokens": [
+    "V30"
+  ],
+  "brand_aliases": [],
+  "model_aliases": [
+    "VF 500C Magna V30"
+  ],
+  "status": "SUCCESS",
+  "prompt_version": "motorcycle-candidate-resolution-v4",
+  "model": "qwen-flash",
+  "make": "Honda",
+  "model_name": "VF500C V30 Magna"
+}

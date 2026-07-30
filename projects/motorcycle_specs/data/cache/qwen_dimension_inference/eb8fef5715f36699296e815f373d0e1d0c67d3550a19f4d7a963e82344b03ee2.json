@@ -1,0 +1,16 @@
+{
+  "decision": "INFER",
+  "confidence": "MEDIUM",
+  "length_mm": 2600,
+  "width_mm": 900,
+  "height_mm": 1100,
+  "wheelbase_mm": 1650,
+  "seat_height_mm": 780,
+  "ground_clearance_mm": 140,
+  "explanation": "Inferred based on typical dimensions of custom chopper motorcycles in the Big Bear Choppers product line, particularly similar models like the Bear Bones series. The V111 Carb model is a custom-built cruiser with a long wheelbase and elevated seat height common to this style. Dimensions are estimated from general industry norms for large displacement custom bikes, but exact values may vary by build year or configuration.",
+  "status": "SUCCESS",
+  "prompt_version": "motorcycle-dimension-inference-v1",
+  "model": "qwen-flash",
+  "make": "Big Bear Choppers",
+  "model_name": "Bear Bones V111 Carb"
+}

@@ -1,0 +1,21 @@
+{
+  "decision": "MATCH",
+  "selected_candidate": "Harley-Davidson Iron 883",
+  "confidence": "HIGH",
+  "match_basis": "SAME_NAME",
+  "explanation": "The input 'XL883N Iron 883' is a variant of the Harley-Davidson Iron 883 model, with 'XL883N' being a configuration identifier for the Sportster-based Iron 883. The core model identity is the Iron 883, and 'Harley-Davidson Iron 883' is the canonical catalog title for this model. All other candidates include redundant or variant descriptors (e.g., 'Sportster', 'XL 883 N') that are either marketing labels or configuration details, but the underlying motorcycle is identical.",
+  "canonical_model_alias": "Iron 883",
+  "configuration_tokens": [
+    "XL883N"
+  ],
+  "brand_aliases": [],
+  "model_aliases": [
+    "883",
+    "Iron 883"
+  ],
+  "status": "SUCCESS",
+  "prompt_version": "motorcycle-candidate-resolution-v4",
+  "model": "qwen-flash",
+  "make": "Harley-Davidson",
+  "model_name": "XL883N Iron 883"
+}

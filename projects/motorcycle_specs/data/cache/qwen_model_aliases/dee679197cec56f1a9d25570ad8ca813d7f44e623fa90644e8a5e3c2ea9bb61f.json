@@ -1,0 +1,18 @@
+{
+  "decision": "MATCH",
+  "selected_candidate": "Honda CB 900 F Hornet",
+  "confidence": "HIGH",
+  "match_basis": "MARKET_ALIAS",
+  "explanation": "The Honda CB900F Super Sport is a known market name for the CB900F Hornet in certain regions, particularly in Europe. The 'Super Sport' designation refers to the same model with performance-oriented tuning and styling, and 'Hornet' is the official model name used in the catalog. This is a recognized market-specific naming variation.",
+  "canonical_model_alias": "CB 900 F Hornet",
+  "configuration_tokens": [],
+  "brand_aliases": [],
+  "model_aliases": [
+    "CB 900 F Hornet"
+  ],
+  "status": "SUCCESS",
+  "prompt_version": "motorcycle-candidate-resolution-v4",
+  "model": "qwen-flash",
+  "make": "Honda",
+  "model_name": "CB900F Super Sport"
+}

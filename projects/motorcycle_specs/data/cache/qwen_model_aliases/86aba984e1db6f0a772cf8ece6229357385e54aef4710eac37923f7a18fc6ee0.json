@@ -1,0 +1,18 @@
+{
+  "decision": "MATCH",
+  "selected_candidate": "DB6 \n\t\tDelirio 1000",
+  "confidence": "HIGH",
+  "match_basis": "SAME_NAME",
+  "explanation": "The input 'DB6 Delirio' matches the core model identity of 'DB6 Delirio 1000', which is a known variant in Bimota's catalog. The displacement '1000' is a configuration token, but the base model DB6 Delirio is identical across variants. Other candidates differ in suffixes or displacements that indicate distinct models.",
+  "canonical_model_alias": "DB6 Delirio 1000",
+  "configuration_tokens": [
+    "1000"
+  ],
+  "brand_aliases": [],
+  "model_aliases": [],
+  "status": "SUCCESS",
+  "prompt_version": "motorcycle-candidate-resolution-v4",
+  "model": "qwen-flash",
+  "make": "Bimota",
+  "model_name": "DB6 Delirio"
+}

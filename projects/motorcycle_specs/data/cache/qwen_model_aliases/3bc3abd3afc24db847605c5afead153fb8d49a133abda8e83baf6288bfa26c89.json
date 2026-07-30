@@ -1,0 +1,20 @@
+{
+  "decision": "MATCH",
+  "selected_candidate": "Honda CBF125F",
+  "confidence": "HIGH",
+  "match_basis": "SAME_NAME",
+  "explanation": "The input model 'CBF125F Twister' is a market-specific name for the same underlying motorcycle identified as 'Honda CBF125F' in the catalog. The 'Twister' designation is a regional or marketing name for this model, not a different motorcycle.",
+  "canonical_model_alias": "CBF125F",
+  "configuration_tokens": [
+    "Twister"
+  ],
+  "brand_aliases": [],
+  "model_aliases": [
+    "CBF125F"
+  ],
+  "status": "SUCCESS",
+  "prompt_version": "motorcycle-candidate-resolution-v4",
+  "model": "qwen-flash",
+  "make": "Honda",
+  "model_name": "CBF125F Twister"
+}

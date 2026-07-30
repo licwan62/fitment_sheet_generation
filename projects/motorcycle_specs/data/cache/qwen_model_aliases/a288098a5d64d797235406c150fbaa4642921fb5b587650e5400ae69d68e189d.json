@@ -1,0 +1,20 @@
+{
+  "decision": "MATCH",
+  "selected_candidate": "Pulsar NS200",
+  "confidence": "HIGH",
+  "match_basis": "MARKET_ALIAS",
+  "explanation": "'Pulsar 200 NS UG' is a market-specific variant (UG likely denoting 'Urban Grit' or similar regional naming) of the Pulsar NS200, which is a well-known model in Bajaj's lineup. The displacement (200), engine type (NS series), and core identity align exactly with the Pulsar NS200. Regional or marketing names like 'UG' do not alter the underlying model identity.",
+  "canonical_model_alias": "Pulsar NS200",
+  "configuration_tokens": [
+    "UG"
+  ],
+  "brand_aliases": [],
+  "model_aliases": [
+    "Pulsar NS200"
+  ],
+  "status": "SUCCESS",
+  "prompt_version": "motorcycle-candidate-resolution-v4",
+  "model": "qwen-flash",
+  "make": "Bajaj",
+  "model_name": "Pulsar 200 NS UG"
+}

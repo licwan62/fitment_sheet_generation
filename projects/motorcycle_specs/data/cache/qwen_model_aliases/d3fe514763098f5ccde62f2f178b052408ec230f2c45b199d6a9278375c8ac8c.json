@@ -1,0 +1,20 @@
+{
+  "decision": "MATCH",
+  "selected_candidate": "Honda CL350",
+  "confidence": "HIGH",
+  "match_basis": "SAME_NAME",
+  "explanation": "The input 'CL350 Scrambler' refers to the same motorcycle model as 'Honda CL350', which is a known variant of the CL350 series produced by Honda. The term 'Scrambler' describes the model's style or configuration, not a different underlying model. The catalog candidate 'Honda CL350' matches the core identity exactly.",
+  "canonical_model_alias": "CL350",
+  "configuration_tokens": [
+    "Scrambler"
+  ],
+  "brand_aliases": [],
+  "model_aliases": [
+    "CL350"
+  ],
+  "status": "SUCCESS",
+  "prompt_version": "motorcycle-candidate-resolution-v4",
+  "model": "qwen-flash",
+  "make": "Honda",
+  "model_name": "CL350 Scrambler"
+}

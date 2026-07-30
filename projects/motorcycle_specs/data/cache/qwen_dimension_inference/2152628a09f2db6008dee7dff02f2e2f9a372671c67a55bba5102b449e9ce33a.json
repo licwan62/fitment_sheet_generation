@@ -1,0 +1,16 @@
+{
+  "decision": "INFER|UNKNOWN",
+  "confidence": "LOW",
+  "length_mm": null,
+  "width_mm": null,
+  "height_mm": null,
+  "wheelbase_mm": null,
+  "seat_height_mm": null,
+  "ground_clearance_mm": null,
+  "explanation": "The Sled Chopper V111 Carb by Big Bear Choppers is a custom chopper with no publicly available official dimensions. Without access to catalog data or verified specifications, and due to the high variability in custom builds, dimensional estimates cannot be reliably inferred. Model identity is uncertain, and dimensions may vary significantly by build year or market configuration.",
+  "status": "SUCCESS",
+  "prompt_version": "motorcycle-dimension-inference-v1",
+  "model": "qwen-flash",
+  "make": "Big Bear Choppers",
+  "model_name": "The Sled Chopper V111 Carb"
+}

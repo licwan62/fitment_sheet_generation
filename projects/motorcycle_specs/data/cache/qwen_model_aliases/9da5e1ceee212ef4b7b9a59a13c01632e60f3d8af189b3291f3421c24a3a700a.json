@@ -1,0 +1,13 @@
+{
+  "decision": "MATCH",
+  "selected_candidate": "R nineT",
+  "canonical_model_alias": "R nineT",
+  "configuration_tokens": [],
+  "brand_aliases": [],
+  "model_aliases": [],
+  "status": "SUCCESS",
+  "prompt_version": "motorcycle-candidate-resolution-v3",
+  "model": "qwen-flash",
+  "make": "BMW",
+  "model_name": "R nine T"
+}

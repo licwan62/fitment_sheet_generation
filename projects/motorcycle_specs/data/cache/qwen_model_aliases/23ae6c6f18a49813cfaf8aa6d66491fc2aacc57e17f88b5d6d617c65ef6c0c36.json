@@ -1,0 +1,16 @@
+{
+  "decision": "NO_MATCH",
+  "selected_candidate": "",
+  "confidence": "HIGH",
+  "match_basis": "NONE",
+  "explanation": "The input model 'WXE 260' is a different motorcycle from all catalog candidates, which are all 250cc models. The displacement (260 vs 250) and model designation (WXE vs WXC/FE/TE/Vitpilen) indicate distinct models. No candidate matches the WXE 260 in both displacement and model series.",
+  "canonical_model_alias": "",
+  "configuration_tokens": [],
+  "brand_aliases": [],
+  "model_aliases": [],
+  "status": "SUCCESS",
+  "prompt_version": "motorcycle-candidate-resolution-v4",
+  "model": "qwen-flash",
+  "make": "Husqvarna",
+  "model_name": "WXE 260"
+}

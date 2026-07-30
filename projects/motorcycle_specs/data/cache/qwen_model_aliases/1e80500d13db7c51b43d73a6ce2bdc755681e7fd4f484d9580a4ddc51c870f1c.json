@@ -1,0 +1,21 @@
+{
+  "decision": "MATCH",
+  "selected_candidate": "Bajaj pulsar n160",
+  "confidence": "HIGH",
+  "match_basis": "SAME_NAME",
+  "explanation": "The input 'Pulsar N 160 FI ABS' refers to the same motorcycle model as 'Bajaj pulsar n160', with 'FI ABS' being a configuration detail (fuel injection and anti-lock braking system) that does not change the core model identity. The name matches exactly in terms of model series, displacement, and manufacturer.",
+  "canonical_model_alias": "pulsar n160",
+  "configuration_tokens": [
+    "FI",
+    "ABS"
+  ],
+  "brand_aliases": [],
+  "model_aliases": [
+    "pulsar n160"
+  ],
+  "status": "SUCCESS",
+  "prompt_version": "motorcycle-candidate-resolution-v4",
+  "model": "qwen-flash",
+  "make": "Bajaj",
+  "model_name": "Pulsar N 160 FI ABS"
+}

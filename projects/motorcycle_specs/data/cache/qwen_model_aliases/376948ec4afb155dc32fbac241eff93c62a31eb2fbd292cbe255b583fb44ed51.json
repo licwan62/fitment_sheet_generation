@@ -1,0 +1,20 @@
+{
+  "decision": "MATCH",
+  "selected_candidate": "SM 515 FSR",
+  "confidence": "HIGH",
+  "match_basis": "SAME_NAME",
+  "explanation": "The input 'SM 515' matches the core model identity of 'SM 515 FSR' in the catalog, with 'FSR' being a configuration suffix (Factory Standard Race) that does not alter the base model identity. The displacement (515) and model series (SM) are identical.",
+  "canonical_model_alias": "SM 515 FSR",
+  "configuration_tokens": [
+    "FSR"
+  ],
+  "brand_aliases": [],
+  "model_aliases": [
+    "SM 515 FSR"
+  ],
+  "status": "SUCCESS",
+  "prompt_version": "motorcycle-candidate-resolution-v4",
+  "model": "qwen-flash",
+  "make": "Gas Gas",
+  "model_name": "SM 515"
+}

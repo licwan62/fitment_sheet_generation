@@ -1,0 +1,18 @@
+{
+  "decision": "MATCH",
+  "selected_candidate": "R 1200C",
+  "confidence": "HIGH",
+  "match_basis": "MARKET_ALIAS",
+  "explanation": "The 'R1200C Phoenix' is a market-specific name for the R 1200C, with 'Phoenix' being a regional or special edition designation. The core model identity (R 1200C) matches exactly with the catalog candidate 'R 1200C'. Other candidates like 'Montauk' and 'Independent' are different configurations or editions, but 'R 1200C' is the base model that encompasses the Phoenix variant.",
+  "canonical_model_alias": "R 1200C",
+  "configuration_tokens": [],
+  "brand_aliases": [],
+  "model_aliases": [
+    "R 1200C"
+  ],
+  "status": "SUCCESS",
+  "prompt_version": "motorcycle-candidate-resolution-v4",
+  "model": "qwen-flash",
+  "make": "BMW",
+  "model_name": "R1200C Phoenix"
+}

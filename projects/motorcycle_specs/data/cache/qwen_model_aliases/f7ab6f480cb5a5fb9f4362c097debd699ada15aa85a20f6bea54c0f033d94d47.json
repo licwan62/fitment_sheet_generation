@@ -1,0 +1,15 @@
+{
+  "decision": "MATCH",
+  "selected_candidate": "VF 750C Magna",
+  "canonical_model_alias": "VF750C Magna",
+  "configuration_tokens": [],
+  "brand_aliases": [],
+  "model_aliases": [
+    "VF 750C Magna"
+  ],
+  "status": "SUCCESS",
+  "prompt_version": "motorcycle-candidate-resolution-v3",
+  "model": "qwen-flash",
+  "make": "Honda",
+  "model_name": "VF750CD Magna Deluxe"
+}

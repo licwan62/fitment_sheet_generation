@@ -1,0 +1,18 @@
+{
+  "decision": "MATCH",
+  "selected_candidate": "CBR 600F4",
+  "confidence": "HIGH",
+  "match_basis": "SAME_NAME",
+  "explanation": "The input 'CBR600F F4' refers to the same motorcycle model as 'CBR 600F4', with identical displacement, engine configuration, and model designation. The space in the input is a minor formatting difference; no functional or identity-changing variation exists.",
+  "canonical_model_alias": "CBR 600F4",
+  "configuration_tokens": [],
+  "brand_aliases": [],
+  "model_aliases": [
+    "CBR 600F4"
+  ],
+  "status": "SUCCESS",
+  "prompt_version": "motorcycle-candidate-resolution-v4",
+  "model": "qwen-flash",
+  "make": "Honda",
+  "model_name": "CBR600F F4"
+}

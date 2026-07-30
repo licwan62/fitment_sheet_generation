@@ -1,0 +1,16 @@
+{
+  "decision": "MATCH",
+  "selected_candidate": "Pursang 350",
+  "confidence": "HIGH",
+  "match_basis": "TYPO",
+  "explanation": "The input 'Pursang 370' is likely a typo for 'Pursang 350', as Bultaco's Pursang series included a 350cc model and no 370cc variant. The displacement difference is plausible due to mishearing or miswriting '350' as '370'. The model name structure and manufacturer match exactly.",
+  "canonical_model_alias": "Pursang 350",
+  "configuration_tokens": [],
+  "brand_aliases": [],
+  "model_aliases": [],
+  "status": "SUCCESS",
+  "prompt_version": "motorcycle-candidate-resolution-v4",
+  "model": "qwen-flash",
+  "make": "Bultaco",
+  "model_name": "Pursang 370"
+}

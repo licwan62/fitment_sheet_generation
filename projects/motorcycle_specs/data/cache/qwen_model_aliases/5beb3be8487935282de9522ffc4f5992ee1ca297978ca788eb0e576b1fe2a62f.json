@@ -1,0 +1,20 @@
+{
+  "decision": "MATCH",
+  "selected_candidate": "Scarabeo 125ie",
+  "confidence": "HIGH",
+  "match_basis": "MARKET_ALIAS",
+  "explanation": "The 'Scarabeo 125ie' is a known market variant of the Scarabeo 125, with 'ie' denoting fuel injection and being a standard configuration suffix in Aprilia's catalog. The base model identity remains unchanged; the difference is a configuration label, not a distinct model.",
+  "canonical_model_alias": "Scarabeo 125ie",
+  "configuration_tokens": [
+    "ie"
+  ],
+  "brand_aliases": [],
+  "model_aliases": [
+    "Scarabeo 125ie"
+  ],
+  "status": "SUCCESS",
+  "prompt_version": "motorcycle-candidate-resolution-v4",
+  "model": "qwen-flash",
+  "make": "Aprilia",
+  "model_name": "Scarabeo 125"
+}

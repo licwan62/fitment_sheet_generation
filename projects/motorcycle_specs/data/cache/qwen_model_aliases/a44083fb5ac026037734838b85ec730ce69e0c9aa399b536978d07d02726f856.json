@@ -1,0 +1,20 @@
+{
+  "decision": "MATCH",
+  "selected_candidate": "beta evo 250 2t",
+  "confidence": "HIGH",
+  "match_basis": "SAME_NAME",
+  "explanation": "The input 'EVO 250 Sport (2 Stroke)' directly corresponds to the catalog candidate 'beta evo 250 2t', as 'Sport' is a common market designation for the standard EVO 250 2T model, and '2 Stroke' matches '2t'. The displacement and engine type are identical, and no other model in the list shares both the EVO 250 2T identity.",
+  "canonical_model_alias": "beta evo 250 2t",
+  "configuration_tokens": [
+    "Sport"
+  ],
+  "brand_aliases": [],
+  "model_aliases": [
+    "evo 250 2t"
+  ],
+  "status": "SUCCESS",
+  "prompt_version": "motorcycle-candidate-resolution-v4",
+  "model": "qwen-flash",
+  "make": "Beta",
+  "model_name": "EVO 250 Sport (2 Stroke)"
+}

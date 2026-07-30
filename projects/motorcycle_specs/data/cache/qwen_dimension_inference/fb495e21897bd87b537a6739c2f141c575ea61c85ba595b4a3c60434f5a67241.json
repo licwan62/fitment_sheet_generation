@@ -1,0 +1,16 @@
+{
+  "decision": "INFER|UNKNOWN",
+  "confidence": "MEDIUM|LOW",
+  "length_mm": null,
+  "width_mm": null,
+  "height_mm": null,
+  "wheelbase_mm": null,
+  "seat_height_mm": null,
+  "ground_clearance_mm": null,
+  "explanation": "The Gas Gas Pampera 250 is a limited-production or niche model with no publicly available official dimensions. Without access to a catalog page or verified specifications, and due to potential variations by year or market, accurate dimension estimation cannot be reliably made. Dimensions from similar models (e.g., Gas Gas MC 250) are not directly transferable due to differing design goals and configurations.",
+  "status": "SUCCESS",
+  "prompt_version": "motorcycle-dimension-inference-v1",
+  "model": "qwen-flash",
+  "make": "Gas Gas",
+  "model_name": "Pampera 250"
+}

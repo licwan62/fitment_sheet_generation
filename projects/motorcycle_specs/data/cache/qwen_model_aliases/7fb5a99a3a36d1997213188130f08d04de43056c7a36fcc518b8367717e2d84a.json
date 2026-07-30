@@ -1,0 +1,18 @@
+{
+  "decision": "MATCH",
+  "selected_candidate": "Honda CM 185 T",
+  "confidence": "HIGH",
+  "match_basis": "MARKET_ALIAS",
+  "explanation": "The input 'CM185T Twinstar' refers to the Honda CM185T, a model marketed as 'Twinstar' in some regions. The catalog candidate 'Honda CM 185 T' is the same underlying motorcycle, with 'Twinstar' being a market-specific name. The displacement (185) and model identifier (CM185T) match exactly.",
+  "canonical_model_alias": "CM 185 T",
+  "configuration_tokens": [],
+  "brand_aliases": [],
+  "model_aliases": [
+    "CM 185 T"
+  ],
+  "status": "SUCCESS",
+  "prompt_version": "motorcycle-candidate-resolution-v4",
+  "model": "qwen-flash",
+  "make": "Honda",
+  "model_name": "CM185T Twinstar"
+}

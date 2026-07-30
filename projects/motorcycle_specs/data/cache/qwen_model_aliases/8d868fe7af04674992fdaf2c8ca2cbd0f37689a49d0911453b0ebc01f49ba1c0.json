@@ -1,0 +1,20 @@
+{
+  "decision": "MATCH",
+  "selected_candidate": "GL \n      650 Silver Wing",
+  "confidence": "HIGH",
+  "match_basis": "SAME_NAME",
+  "explanation": "The input 'GL650I Silver Wing Interstate' refers to the same motorcycle model as 'GL 650 Silver Wing', with 'I' likely denoting 'Interstate' as a configuration label. The core model identity (GL650 Silver Wing) is identical, and 'Interstate' is a known market or configuration designation for this model. No other candidate shares the same base model identity.",
+  "canonical_model_alias": "GL 650 Silver Wing",
+  "configuration_tokens": [
+    "Interstate"
+  ],
+  "brand_aliases": [],
+  "model_aliases": [
+    "GL 650 Silver Wing"
+  ],
+  "status": "SUCCESS",
+  "prompt_version": "motorcycle-candidate-resolution-v4",
+  "model": "qwen-flash",
+  "make": "Honda",
+  "model_name": "GL650I Silver Wing Interstate"
+}

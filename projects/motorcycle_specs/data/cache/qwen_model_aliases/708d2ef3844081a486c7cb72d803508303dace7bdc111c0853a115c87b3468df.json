@@ -1,0 +1,21 @@
+{
+  "decision": "MATCH",
+  "selected_candidate": "RR 430 4T Enduro",
+  "confidence": "HIGH",
+  "match_basis": "MARKET_ALIAS",
+  "explanation": "The 'RR Race 4T 430' is a market-specific naming variant of the same model as 'RR 430 4T Enduro', with 'Race' indicating a race-oriented configuration within Beta's enduro lineup. The displacement (430), engine type (4T), and core model (RR) are identical, confirming they represent the same underlying motorcycle.",
+  "canonical_model_alias": "RR 430 4T Enduro",
+  "configuration_tokens": [
+    "Race",
+    "4T"
+  ],
+  "brand_aliases": [],
+  "model_aliases": [
+    "RR 430 4T Enduro"
+  ],
+  "status": "SUCCESS",
+  "prompt_version": "motorcycle-candidate-resolution-v4",
+  "model": "qwen-flash",
+  "make": "Beta",
+  "model_name": "RR Race 4T 430"
+}

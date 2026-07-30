@@ -1,0 +1,19 @@
+{
+  "decision": "MATCH",
+  "selected_candidate": "gasgas txt boy 50",
+  "confidence": "HIGH",
+  "match_basis": "MARKET_ALIAS",
+  "explanation": "The 'TXT Cadet 50' is a known market-specific name for the 'TXT Boy 50' model, with 'Cadet' being a regional or marketing designation for the same 50cc youth motorcycle. The displacement and core model identity match exactly.",
+  "canonical_model_alias": "txt boy 50",
+  "configuration_tokens": [],
+  "brand_aliases": [],
+  "model_aliases": [
+    "gasgas txt boy 50",
+    "txt boy 50"
+  ],
+  "status": "SUCCESS",
+  "prompt_version": "motorcycle-candidate-resolution-v4",
+  "model": "qwen-flash",
+  "make": "Gas Gas",
+  "model_name": "TXT Cadet 50"
+}

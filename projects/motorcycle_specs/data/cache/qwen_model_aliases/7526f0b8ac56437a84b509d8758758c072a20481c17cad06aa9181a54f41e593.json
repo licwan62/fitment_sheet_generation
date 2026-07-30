@@ -1,0 +1,18 @@
+{
+  "decision": "MATCH",
+  "selected_candidate": "WLA Army",
+  "confidence": "HIGH",
+  "match_basis": "HISTORICAL_ALIAS",
+  "explanation": "WLC is a known historical designation for the Harley-Davidson WLA, which was produced during World War II and commonly referred to as the 'WLA Army' in catalog and military records. The model name 'WLC' is an abbreviated or variant designation used interchangeably with 'WLA' in certain contexts, particularly in vintage motorcycle references and collector circles.",
+  "canonical_model_alias": "WLA Army",
+  "configuration_tokens": [],
+  "brand_aliases": [],
+  "model_aliases": [
+    "WLA Army"
+  ],
+  "status": "SUCCESS",
+  "prompt_version": "motorcycle-candidate-resolution-v4",
+  "model": "qwen-flash",
+  "make": "Harley-Davidson",
+  "model_name": "WLC"
+}

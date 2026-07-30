@@ -1,0 +1,16 @@
+{
+  "decision": "NO_MATCH",
+  "selected_candidate": "",
+  "confidence": "HIGH",
+  "match_basis": "NONE",
+  "explanation": "The model EN125-2A is a specific Suzuki motorcycle variant, but none of the catalog candidates match its exact identity. The GN125 and AN125 are different models; Avenis 125 and VanVan 125 are distinct variants with different designations and market positioning; Access 125 is a scooter with no engine or platform overlap; Gixxer 250 is a different displacement and model line entirely. No candidate represents the same underlying motorcycle as EN125-2A.",
+  "canonical_model_alias": "",
+  "configuration_tokens": [],
+  "brand_aliases": [],
+  "model_aliases": [],
+  "status": "SUCCESS",
+  "prompt_version": "motorcycle-candidate-resolution-v4",
+  "model": "qwen-flash",
+  "make": "Suzuki",
+  "model_name": "EN125-2A"
+}

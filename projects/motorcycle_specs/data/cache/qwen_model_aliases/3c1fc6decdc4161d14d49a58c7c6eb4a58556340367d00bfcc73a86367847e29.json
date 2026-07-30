@@ -1,0 +1,18 @@
+{
+  "decision": "NO_MATCH",
+  "selected_candidate": "",
+  "confidence": "HIGH",
+  "match_basis": "NONE",
+  "explanation": "The input model 'R1250GS Adventure Trophy' includes the 'Adventure Trophy' configuration, which is a distinct, limited-edition variant not present in any of the catalog candidates. The candidates are standard R1250GS Adventure or other configurations without the Trophy designation, making them different models despite shared base identity.",
+  "canonical_model_alias": "",
+  "configuration_tokens": [
+    "Adventure Trophy"
+  ],
+  "brand_aliases": [],
+  "model_aliases": [],
+  "status": "SUCCESS",
+  "prompt_version": "motorcycle-candidate-resolution-v4",
+  "model": "qwen-flash",
+  "make": "BMW",
+  "model_name": "R1250GS Adventure Trophy"
+}

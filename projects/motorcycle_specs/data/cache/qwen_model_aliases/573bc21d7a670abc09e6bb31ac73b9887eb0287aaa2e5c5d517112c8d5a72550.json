@@ -1,0 +1,20 @@
+{
+  "decision": "MATCH",
+  "selected_candidate": "buell ulysses xb12xt",
+  "confidence": "HIGH",
+  "match_basis": "MARKET_ALIAS",
+  "explanation": "The 'XB12XP Ulysses Police' is a police-specific configuration of the Buell Ulysses XB12XT model. The 'P' suffix denotes the police variant, which is a known market-specific configuration of the XB12XT. The base model identity remains unchanged.",
+  "canonical_model_alias": "buell ulysses xb12xt",
+  "configuration_tokens": [
+    "police"
+  ],
+  "brand_aliases": [],
+  "model_aliases": [
+    "ulysses xb12xt"
+  ],
+  "status": "SUCCESS",
+  "prompt_version": "motorcycle-candidate-resolution-v4",
+  "model": "qwen-flash",
+  "make": "Buell",
+  "model_name": "XB12XP Ulysses Police"
+}

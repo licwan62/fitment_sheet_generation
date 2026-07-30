@@ -1,0 +1,20 @@
+{
+  "decision": "MATCH",
+  "selected_candidate": "beta rr 390",
+  "confidence": "HIGH",
+  "match_basis": "SAME_NAME",
+  "explanation": "The input model '390 RR-S' is a variant of the Beta RR 390, with 'RR-S' likely denoting a specific configuration or market designation. The candidate 'beta rr 390' matches the core model identity exactly, including displacement and platform. Other candidates either differ in displacement (e.g., RS 350), include additional equipment (e.g., X Pro, Race), or add redundant descriptors (e.g., 4T Enduro), but 'beta rr 390' is the canonical expression for the base model.",
+  "canonical_model_alias": "beta rr 390",
+  "configuration_tokens": [
+    "RR-S"
+  ],
+  "brand_aliases": [],
+  "model_aliases": [
+    "rr 390"
+  ],
+  "status": "SUCCESS",
+  "prompt_version": "motorcycle-candidate-resolution-v4",
+  "model": "qwen-flash",
+  "make": "Beta",
+  "model_name": "390 RR-S"
+}

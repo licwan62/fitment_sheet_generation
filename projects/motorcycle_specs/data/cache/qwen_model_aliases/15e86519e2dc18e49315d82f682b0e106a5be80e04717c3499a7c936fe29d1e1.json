@@ -1,0 +1,16 @@
+{
+  "decision": "NO_MATCH",
+  "selected_candidate": "",
+  "confidence": "HIGH",
+  "match_basis": "NONE",
+  "explanation": "The model 'EN125HU Huracan' is not found in the catalog candidates. Suzuki did not produce a motorcycle named 'Huracan' in the EN125HU series; the name 'Huracan' is associated with a different Suzuki model (e.g., the GSX-R600 or other sport bikes), and no known variant of the EN125 series uses that name. The input appears to be a fictional or misattributed title.",
+  "canonical_model_alias": "",
+  "configuration_tokens": [],
+  "brand_aliases": [],
+  "model_aliases": [],
+  "status": "SUCCESS",
+  "prompt_version": "motorcycle-candidate-resolution-v4",
+  "model": "qwen-flash",
+  "make": "Suzuki",
+  "model_name": "EN125HU Huracan"
+}

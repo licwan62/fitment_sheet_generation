@@ -1,0 +1,16 @@
+{
+  "decision": "NO_MATCH",
+  "selected_candidate": "",
+  "confidence": "HIGH",
+  "match_basis": "NONE",
+  "explanation": "The input model 'WOW50' does not correspond to any of the catalog candidates. 'WOW50' is not a known variant, market name, or typo for any of the listed Hyosung models, which include different displacements (50, 650i, 250) and distinct model names. No evidence supports that 'WOW50' refers to any of the candidates.",
+  "canonical_model_alias": "",
+  "configuration_tokens": [],
+  "brand_aliases": [],
+  "model_aliases": [],
+  "status": "SUCCESS",
+  "prompt_version": "motorcycle-candidate-resolution-v4",
+  "model": "qwen-flash",
+  "make": "Hyosung",
+  "model_name": "WOW50"
+}

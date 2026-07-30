@@ -1,0 +1,18 @@
+{
+  "decision": "MATCH",
+  "selected_candidate": "Roadmaster \n\t\tLimited 116",
+  "confidence": "HIGH",
+  "match_basis": "MARKET_ALIAS",
+  "explanation": "The 'Roadmaster Limited Audio Package' is a configuration of the Indian Roadmaster Limited model with a 116 cubic inch engine, commonly marketed as the 'Limited 116' in catalog listings. The 'Audio Package' is a feature set within this model variant, not a distinct model. The candidate 'Roadmaster Limited 116' represents the same underlying motorcycle with known market-specific naming.",
+  "canonical_model_alias": "Roadmaster Limited 116",
+  "configuration_tokens": [
+    "Audio Package"
+  ],
+  "brand_aliases": [],
+  "model_aliases": [],
+  "status": "SUCCESS",
+  "prompt_version": "motorcycle-candidate-resolution-v4",
+  "model": "qwen-flash",
+  "make": "Indian",
+  "model_name": "Roadmaster Limited Audio Package"
+}

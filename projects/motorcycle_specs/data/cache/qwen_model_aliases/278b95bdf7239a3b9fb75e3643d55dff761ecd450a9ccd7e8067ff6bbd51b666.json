@@ -1,0 +1,16 @@
+{
+  "decision": "NO_MATCH",
+  "selected_candidate": "",
+  "confidence": "HIGH",
+  "match_basis": "NONE",
+  "explanation": "The R1100RL is a touring motorcycle with a distinct design and specifications, while the R1100RS is a sport-touring model and the R1100RT is a touring model with different frame, suspension, and equipment. Although all are part of the R1100 series, they are different models with unique identities. The R1100RL is not a market name, configuration, or typo variant of either R1100RS or R1100RT.",
+  "canonical_model_alias": "",
+  "configuration_tokens": [],
+  "brand_aliases": [],
+  "model_aliases": [],
+  "status": "SUCCESS",
+  "prompt_version": "motorcycle-candidate-resolution-v4",
+  "model": "qwen-flash",
+  "make": "BMW",
+  "model_name": "R1100RL"
+}

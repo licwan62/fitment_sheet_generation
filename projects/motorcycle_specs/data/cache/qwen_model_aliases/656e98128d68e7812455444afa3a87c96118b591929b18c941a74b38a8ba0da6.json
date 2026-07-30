@@ -1,0 +1,16 @@
+{
+  "decision": "MATCH",
+  "selected_candidate": "CFMOTO 450sr",
+  "confidence": "HIGH",
+  "match_basis": "TYPO",
+  "explanation": "The input '500 SR VOOM' likely contains a typo in displacement (500 instead of 450), as CFMOTO's 450SR is a known model and 'VOOM' appears to be a marketing or regional name variant. The core model identity matches the 450SR, with '500' being a plausible error. No other candidate shares the same base model identity.",
+  "canonical_model_alias": "450sr",
+  "configuration_tokens": [],
+  "brand_aliases": [],
+  "model_aliases": [],
+  "status": "SUCCESS",
+  "prompt_version": "motorcycle-candidate-resolution-v4",
+  "model": "qwen-flash",
+  "make": "CFMOTO",
+  "model_name": "500 SR VOOM"
+}

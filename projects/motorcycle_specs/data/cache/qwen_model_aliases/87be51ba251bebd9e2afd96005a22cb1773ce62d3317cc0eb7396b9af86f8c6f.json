@@ -1,0 +1,16 @@
+{
+  "decision": "NO_MATCH",
+  "selected_candidate": "",
+  "confidence": "HIGH",
+  "match_basis": "NONE",
+  "explanation": "The model 'CB92 Benly Super Sport 125' is not found in the catalog candidates, and no known variant or market-specific alias of this exact model exists in the provided list. The CB92 designation does not correspond to a recognized Honda motorcycle model in the standard catalog, and 'Benly' is not a valid Honda model name for this configuration. Therefore, no match can be established.",
+  "canonical_model_alias": "",
+  "configuration_tokens": [],
+  "brand_aliases": [],
+  "model_aliases": [],
+  "status": "SUCCESS",
+  "prompt_version": "motorcycle-candidate-resolution-v4",
+  "model": "qwen-flash",
+  "make": "Honda",
+  "model_name": "CB92 Benly Super Sport 125"
+}

@@ -1,0 +1,18 @@
+{
+  "decision": "MATCH",
+  "selected_candidate": "Suzuki GSX 1100 ES",
+  "confidence": "HIGH",
+  "match_basis": "MARKET_ALIAS",
+  "explanation": "The Suzuki GS1150ES is a market-specific name for the same motorcycle as the GSX 1100ES, with 'GS1150' being the displacement in the U.S. and 'GSX 1100' the European/International model designation. The 'ES' suffix denotes the same fuel-injected, sport-touring configuration. This is a known regional naming variation.",
+  "canonical_model_alias": "GSX 1100 ES",
+  "configuration_tokens": [
+    "ES"
+  ],
+  "brand_aliases": [],
+  "model_aliases": [],
+  "status": "SUCCESS",
+  "prompt_version": "motorcycle-candidate-resolution-v4",
+  "model": "qwen-flash",
+  "make": "Suzuki",
+  "model_name": "GS1150ES"
+}

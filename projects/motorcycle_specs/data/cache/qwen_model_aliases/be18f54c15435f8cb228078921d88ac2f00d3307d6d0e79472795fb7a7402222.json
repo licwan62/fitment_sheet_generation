@@ -1,0 +1,16 @@
+{
+  "decision": "NO_MATCH",
+  "selected_candidate": "",
+  "confidence": "HIGH",
+  "match_basis": "NONE",
+  "explanation": "The input model 'FSC600 Silver Wing' is not found in the catalog candidates, and no matching or equivalent model exists in the provided list. The FSC600 Silver Wing is a known Honda model, but since the catalog candidates are empty, no valid match can be made.",
+  "canonical_model_alias": "",
+  "configuration_tokens": [],
+  "brand_aliases": [],
+  "model_aliases": [],
+  "status": "SUCCESS",
+  "prompt_version": "motorcycle-candidate-resolution-v4",
+  "model": "qwen-flash",
+  "make": "Honda",
+  "model_name": "FSC600 Silver Wing"
+}

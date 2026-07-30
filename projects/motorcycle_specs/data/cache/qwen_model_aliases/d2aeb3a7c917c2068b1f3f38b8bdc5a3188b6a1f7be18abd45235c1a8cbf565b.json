@@ -1,0 +1,20 @@
+{
+  "decision": "MATCH",
+  "selected_candidate": "husqvarna fe 350",
+  "confidence": "HIGH",
+  "match_basis": "MARKET_ALIAS",
+  "explanation": "The input 'FE350W' is a market-specific or configuration variant (likely 'W' for 'World' or 'Workshop' model) of the Husqvarna FE 350, which is identical in core model identity to the standard FE 350. The 'W' suffix does not denote a different displacement or platform but rather a configuration or regional designation. The catalog candidate 'husqvarna fe 350' represents the base model and is the canonical form.",
+  "canonical_model_alias": "fe 350",
+  "configuration_tokens": [
+    "W"
+  ],
+  "brand_aliases": [],
+  "model_aliases": [
+    "fe 350"
+  ],
+  "status": "SUCCESS",
+  "prompt_version": "motorcycle-candidate-resolution-v4",
+  "model": "qwen-flash",
+  "make": "Husqvarna",
+  "model_name": "FE350W"
+}

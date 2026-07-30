@@ -1,0 +1,16 @@
+{
+  "decision": "UNKNOWN",
+  "confidence": "LOW",
+  "length_mm": null,
+  "width_mm": null,
+  "height_mm": null,
+  "wheelbase_mm": null,
+  "seat_height_mm": null,
+  "ground_clearance_mm": null,
+  "explanation": "The Gas Gas MC-E 5 is a less commonly documented model, and specific dimensional data is not reliably available in public sources. Without a clear catalog reference or consistent model year/market details, dimensions cannot be confidently inferred. Variations across years or markets may exist, leading to uncertainty.",
+  "status": "SUCCESS",
+  "prompt_version": "motorcycle-dimension-inference-v1",
+  "model": "qwen-flash",
+  "make": "Gas Gas",
+  "model_name": "MC-E 5"
+}

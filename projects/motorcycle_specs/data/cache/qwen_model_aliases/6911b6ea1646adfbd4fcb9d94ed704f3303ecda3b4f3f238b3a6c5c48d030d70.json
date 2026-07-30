@@ -1,0 +1,20 @@
+{
+  "decision": "MATCH",
+  "selected_candidate": "cfmoto 800nk advanced",
+  "confidence": "HIGH",
+  "match_basis": "MARKET_ALIAS",
+  "explanation": "The '800NK TC' is a market-specific configuration of the CFMOTO 800NK, with 'TC' denoting a trim level or variant. The 'cfmoto 800nk advanced' is a known catalog title for the same model in certain regions, representing the same underlying motorcycle with a different marketing designation.",
+  "canonical_model_alias": "800NK advanced",
+  "configuration_tokens": [
+    "advanced"
+  ],
+  "brand_aliases": [],
+  "model_aliases": [
+    "800nk advanced"
+  ],
+  "status": "SUCCESS",
+  "prompt_version": "motorcycle-candidate-resolution-v4",
+  "model": "qwen-flash",
+  "make": "CFMOTO",
+  "model_name": "800NK TC"
+}

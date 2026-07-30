@@ -1,0 +1,18 @@
+{
+  "decision": "MATCH",
+  "selected_candidate": "harley davidson softail breakout 114 fxbrs",
+  "confidence": "HIGH",
+  "match_basis": "ABBREVIATION",
+  "explanation": "The input 'FXBRS Breakout 114' is the model code for the Harley-Davidson Softail Breakout 114, where 'FXBRS' is the factory designation. The candidate 'harley davidson softail breakout 114 fxbrs' uses the full model name with the correct model code, confirming it is the same motorcycle. The variation in capitalization and spacing is negligible; the model code 'fxbrs' is a known identifier for this specific model.",
+  "canonical_model_alias": "softail breakout 114 fxbrs",
+  "configuration_tokens": [],
+  "brand_aliases": [],
+  "model_aliases": [
+    "softail breakout 114 fxbrs"
+  ],
+  "status": "SUCCESS",
+  "prompt_version": "motorcycle-candidate-resolution-v4",
+  "model": "qwen-flash",
+  "make": "Harley-Davidson",
+  "model_name": "FXBRS Breakout 114"
+}

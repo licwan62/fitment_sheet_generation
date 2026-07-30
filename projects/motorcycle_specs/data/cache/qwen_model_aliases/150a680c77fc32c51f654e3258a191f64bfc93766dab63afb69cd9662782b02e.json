@@ -1,0 +1,18 @@
+{
+  "decision": "MATCH",
+  "selected_candidate": "husqvarna wre 125",
+  "confidence": "HIGH",
+  "match_basis": "MARKET_ALIAS",
+  "explanation": "The 'WME 125' is a market-specific designation for the Husqvarna WRE 125, with 'WME' likely representing a regional or distributor code. The WRE 125 is the correct model in the Husqvarna lineup with this displacement and engine configuration.",
+  "canonical_model_alias": "husqvarna wre 125",
+  "configuration_tokens": [],
+  "brand_aliases": [],
+  "model_aliases": [
+    "wre 125"
+  ],
+  "status": "SUCCESS",
+  "prompt_version": "motorcycle-candidate-resolution-v4",
+  "model": "qwen-flash",
+  "make": "Husqvarna",
+  "model_name": "WME 125"
+}

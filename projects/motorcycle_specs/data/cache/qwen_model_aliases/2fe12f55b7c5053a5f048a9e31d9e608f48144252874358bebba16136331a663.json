@@ -1,0 +1,20 @@
+{
+  "decision": "MATCH",
+  "selected_candidate": "Suzuki GS 450 T",
+  "confidence": "HIGH",
+  "match_basis": "MARKET_ALIAS",
+  "explanation": "GS450TX is a market-specific variant of the GS450T, with 'TX' denoting a configuration or regional designation (e.g., for export or specific trim), but the core model identity remains the GS450T. The catalog candidate 'Suzuki GS 450 T' matches the underlying motorcycle model.",
+  "canonical_model_alias": "GS 450 T",
+  "configuration_tokens": [
+    "TX"
+  ],
+  "brand_aliases": [],
+  "model_aliases": [
+    "GS 450 T"
+  ],
+  "status": "SUCCESS",
+  "prompt_version": "motorcycle-candidate-resolution-v4",
+  "model": "qwen-flash",
+  "make": "Suzuki",
+  "model_name": "GS450TX"
+}

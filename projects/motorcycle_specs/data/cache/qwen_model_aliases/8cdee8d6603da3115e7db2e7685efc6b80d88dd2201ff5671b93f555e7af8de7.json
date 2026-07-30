@@ -1,0 +1,21 @@
+{
+  "decision": "MATCH",
+  "selected_candidate": "harley davidson softail street bob 114 fxbbs",
+  "confidence": "HIGH",
+  "match_basis": "ABBREVIATION",
+  "explanation": "FXBBS is the model code for the Harley-Davidson Street Bob 114, and 'Softail Street Bob' is the correct model name. The candidate 'harley davidson softail street bob 114 fxbbs' includes the exact model code and matches the underlying motorcycle identity despite variations in capitalization and formatting.",
+  "canonical_model_alias": "softail street bob 114",
+  "configuration_tokens": [
+    "fxbbs"
+  ],
+  "brand_aliases": [],
+  "model_aliases": [
+    "softail street bob 114 fxbbs",
+    "softail street bob 114"
+  ],
+  "status": "SUCCESS",
+  "prompt_version": "motorcycle-candidate-resolution-v4",
+  "model": "qwen-flash",
+  "make": "Harley-Davidson",
+  "model_name": "FXBBS Street Bob 114"
+}

@@ -1,0 +1,16 @@
+{
+  "decision": "INFER|UNKNOWN",
+  "confidence": "MEDIUM|LOW",
+  "length_mm": null,
+  "width_mm": null,
+  "height_mm": null,
+  "wheelbase_mm": null,
+  "seat_height_mm": null,
+  "ground_clearance_mm": null,
+  "explanation": "The Hyosung TE450S is a less commonly documented model, and no reliable public specifications are available for its exact dimensions. Variations by year and market may exist, and the model's identity is not definitively confirmed across sources. Without access to official catalog data or verified measurements, dimension estimation is uncertain.",
+  "status": "SUCCESS",
+  "prompt_version": "motorcycle-dimension-inference-v1",
+  "model": "qwen-flash",
+  "make": "Hyosung",
+  "model_name": "TE450S"
+}

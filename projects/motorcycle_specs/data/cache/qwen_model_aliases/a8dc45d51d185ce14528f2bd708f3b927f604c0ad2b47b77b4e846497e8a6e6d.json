@@ -1,0 +1,18 @@
+{
+  "decision": "MATCH",
+  "selected_candidate": "RR 498 \n\tEnduro",
+  "confidence": "HIGH",
+  "match_basis": "SAME_NAME",
+  "explanation": "The input '498 RR' and the candidate 'RR 498 Enduro' refer to the same motorcycle model, with only the order of the displacement and trim name swapped. The core identity—Beta 498 RR Enduro—is unchanged.",
+  "canonical_model_alias": "RR 498 Enduro",
+  "configuration_tokens": [],
+  "brand_aliases": [],
+  "model_aliases": [
+    "RR 498 Enduro"
+  ],
+  "status": "SUCCESS",
+  "prompt_version": "motorcycle-candidate-resolution-v4",
+  "model": "qwen-flash",
+  "make": "Beta",
+  "model_name": "498 RR"
+}

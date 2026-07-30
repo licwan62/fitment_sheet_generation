@@ -1,0 +1,15 @@
+{
+  "decision": "MATCH",
+  "selected_candidate": "CT 90 Trail 90",
+  "canonical_model_alias": "CT90",
+  "configuration_tokens": [],
+  "brand_aliases": [],
+  "model_aliases": [
+    "CT 90 Trail 90"
+  ],
+  "status": "SUCCESS",
+  "prompt_version": "motorcycle-candidate-resolution-v3",
+  "model": "qwen-flash",
+  "make": "Honda",
+  "model_name": "CT90"
+}

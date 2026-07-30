@@ -1,0 +1,18 @@
+{
+  "decision": "MATCH",
+  "selected_candidate": "VTR 1000F Firestorm",
+  "confidence": "HIGH",
+  "match_basis": "MARKET_ALIAS",
+  "explanation": "The VTR1000 Super Hawk is the North American market name for the Honda VTR1000F Firestorm, a model produced from 1997 to 2007. The 'Super Hawk' name was used in the U.S. and Canada, while 'Firestorm' was the international and European designation. Both refer to the same underlying motorcycle model with identical engine, chassis, and specifications.",
+  "canonical_model_alias": "VTR 1000F Firestorm",
+  "configuration_tokens": [],
+  "brand_aliases": [],
+  "model_aliases": [
+    "VTR 1000F Firestorm"
+  ],
+  "status": "SUCCESS",
+  "prompt_version": "motorcycle-candidate-resolution-v4",
+  "model": "qwen-flash",
+  "make": "Honda",
+  "model_name": "VTR1000 Super Hawk"
+}

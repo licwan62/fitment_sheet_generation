@@ -1,0 +1,18 @@
+{
+  "decision": "MATCH",
+  "selected_candidate": "GSX 1100S Katana",
+  "confidence": "HIGH",
+  "match_basis": "SAME_NAME",
+  "explanation": "The input 'GS1100S Katana' is a direct variant of the catalog candidate 'GSX 1100S Katana', with only minor formatting differences (missing 'X' in 'GS1100S' vs 'GSX1100S'). The model identity, displacement, and name are identical. The 'GSX' prefix is the correct model designation for this Suzuki Katana variant.",
+  "canonical_model_alias": "GSX 1100S Katana",
+  "configuration_tokens": [],
+  "brand_aliases": [],
+  "model_aliases": [
+    "GSX 1100S Katana"
+  ],
+  "status": "SUCCESS",
+  "prompt_version": "motorcycle-candidate-resolution-v4",
+  "model": "qwen-flash",
+  "make": "Suzuki",
+  "model_name": "GS1100S Katana"
+}

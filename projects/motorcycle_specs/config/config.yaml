@@ -1,0 +1,78 @@
+site:
+  base_url: "https://www.motorcyclespecs.co.za/"
+  user_agent: "MotorcycleDimensionResearchBot/1.0 (configure contact in config.yaml)"
+  obey_robots_txt: true
+sources:
+  - name: "motorcyclespecs"
+    index_type: "motorcyclespecs"
+    base_url: "https://www.motorcyclespecs.co.za/"
+    priority: 1
+    enabled: true
+    obey_robots_txt: true
+  - name: "1000ps"
+    index_type: "1000ps"
+    base_url: "https://www.1000ps.com/"
+    priority: 2
+    enabled: true
+    obey_robots_txt: true
+  - name: "bikedekho"
+    index_type: "bikedekho"
+    base_url: "https://www.bikedekho.com/"
+    priority: 3
+    enabled: true
+    obey_robots_txt: true
+  - name: "bikez"
+    index_type: "bikez"
+    base_url: "https://bikez.com/"
+    priority: 4
+    enabled: true
+    obey_robots_txt: true
+crawler:
+  max_concurrency: 2
+  request_delay_min_seconds: 2
+  request_delay_max_seconds: 5
+  connect_timeout_seconds: 20
+  read_timeout_seconds: 40
+  max_retries: 3
+  retry_delays_seconds: [5, 15, 45]
+  cache_enabled: true
+  failure_cache_seconds: 21600
+  permanent_failure_cache_seconds: 604800
+  fetch_strategy: adaptive
+  adaptive_max_same_title_pages: 3
+matching:
+  exact_threshold: 95
+  trusted_score_threshold: 80
+  likely_threshold: 85
+  review_threshold: 70
+  multiple_score_gap: 5
+  require_brand_match: true
+  enforce_number_tokens: true
+  ignored_model_words: ["equipada"]
+qwen_aliases:
+  enabled: true
+  infer_dimensions_when_missing: true
+  api_key_env: "QWEN_API_KEY"
+  base_url: "https://dashscope.aliyuncs.com/compatible-mode/v1"
+  model: "qwen-flash"
+  max_aliases: 12
+  max_candidates: 8
+  timeout_seconds: 30
+  failure_cache_seconds: 3600
+  cache_enabled: true
+dimension:
+  standard_unit: "mm"
+  group_tolerance_mm: {length: 5, width: 5, height: 5}
+validation:
+  length_min_mm: 900
+  length_max_mm: 3500
+  width_min_mm: 300
+  width_max_mm: 2000
+  height_min_mm: 400
+  height_max_mm: 2500
+  metric_imperial_conflict_percent: 5
+input_columns:
+  input_id: ["INPUT_ID", "input_id"]
+  make: ["MAKE", "品牌", "make"]
+  model: ["MODEL", "车型", "model"]
+  vehicle_type: ["车辆类型", "VEHICLE_TYPE", "vehicle_type"]

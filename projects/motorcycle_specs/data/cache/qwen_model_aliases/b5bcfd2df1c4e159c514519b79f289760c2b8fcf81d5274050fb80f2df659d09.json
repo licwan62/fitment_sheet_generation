@@ -1,0 +1,20 @@
+{
+  "decision": "MATCH",
+  "selected_candidate": "XDiavel S",
+  "confidence": "HIGH",
+  "match_basis": "SAME_NAME",
+  "explanation": "The input 'XDiavel S Nera' refers to the same underlying motorcycle model as 'XDiavel S', with 'Nera' being a color/trim variant (black) that does not alter the core model identity. The catalog candidate 'XDiavel S' is the canonical form of the base model.",
+  "canonical_model_alias": "XDiavel S",
+  "configuration_tokens": [
+    "Nera"
+  ],
+  "brand_aliases": [],
+  "model_aliases": [
+    "XDiavel S"
+  ],
+  "status": "SUCCESS",
+  "prompt_version": "motorcycle-candidate-resolution-v4",
+  "model": "qwen-flash",
+  "make": "Ducati",
+  "model_name": "XDiavel S Nera"
+}

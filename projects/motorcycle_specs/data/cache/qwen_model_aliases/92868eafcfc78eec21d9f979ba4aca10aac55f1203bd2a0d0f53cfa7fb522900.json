@@ -1,0 +1,20 @@
+{
+  "decision": "MATCH",
+  "selected_candidate": "husaberg fe 350",
+  "confidence": "HIGH",
+  "match_basis": "SAME_NAME",
+  "explanation": "The input 'FE350E' corresponds directly to the catalog candidate 'husaberg fe 350', with the 'E' suffix being a known market or configuration designation for the Enduro variant, which is already accounted for in the model name. The displacement (350) and model series (FE) match exactly.",
+  "canonical_model_alias": "fe 350",
+  "configuration_tokens": [
+    "E"
+  ],
+  "brand_aliases": [],
+  "model_aliases": [
+    "fe 350"
+  ],
+  "status": "SUCCESS",
+  "prompt_version": "motorcycle-candidate-resolution-v4",
+  "model": "qwen-flash",
+  "make": "Husaberg",
+  "model_name": "FE350E"
+}

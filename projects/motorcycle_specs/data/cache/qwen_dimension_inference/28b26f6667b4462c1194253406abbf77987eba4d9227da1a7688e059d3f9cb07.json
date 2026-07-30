@@ -1,0 +1,16 @@
+{
+  "decision": "INFER|UNKNOWN",
+  "confidence": "LOW",
+  "length_mm": null,
+  "width_mm": null,
+  "height_mm": null,
+  "wheelbase_mm": null,
+  "seat_height_mm": null,
+  "ground_clearance_mm": null,
+  "explanation": "Husaberg FX470E is a vintage enduro motorcycle with limited publicly available dimensional data. Model year variations and regional configurations may affect dimensions significantly, and no reliable catalog or technical documentation was found to confirm exact measurements. Inference is uncertain due to lack of verifiable sources.",
+  "status": "SUCCESS",
+  "prompt_version": "motorcycle-dimension-inference-v1",
+  "model": "qwen-flash",
+  "make": "Husaberg",
+  "model_name": "FX470E"
+}

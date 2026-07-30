@@ -1,0 +1,16 @@
+{
+  "decision": "NO_MATCH",
+  "selected_candidate": "",
+  "confidence": "HIGH",
+  "match_basis": "NONE",
+  "explanation": "The model 'Grom SP' is not present in the catalog candidates, and no known variant or market-specific alias of Grom SP matches any candidate. The Grom SP is a specific configuration of the Honda Grom (250cc), but without any matching candidate in the list, a match cannot be confirmed.",
+  "canonical_model_alias": "",
+  "configuration_tokens": [],
+  "brand_aliases": [],
+  "model_aliases": [],
+  "status": "SUCCESS",
+  "prompt_version": "motorcycle-candidate-resolution-v4",
+  "model": "qwen-flash",
+  "make": "Honda",
+  "model_name": "Grom SP"
+}

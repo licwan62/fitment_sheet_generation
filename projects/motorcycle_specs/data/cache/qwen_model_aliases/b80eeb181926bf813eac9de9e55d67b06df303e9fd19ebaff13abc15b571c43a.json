@@ -1,0 +1,16 @@
+{
+  "decision": "NO_MATCH",
+  "selected_candidate": "",
+  "confidence": "HIGH",
+  "match_basis": "NONE",
+  "explanation": "HUV 4414 is not a valid or recognized Husqvarna motorcycle model identifier. The catalog candidates all refer to the Husqvarna Vitpilen 401 or other models like TC 449/TE 449, which are entirely different motorcycles. HUV 4414 does not match any known model in the list by name, displacement, configuration, or market variant.",
+  "canonical_model_alias": "",
+  "configuration_tokens": [],
+  "brand_aliases": [],
+  "model_aliases": [],
+  "status": "SUCCESS",
+  "prompt_version": "motorcycle-candidate-resolution-v4",
+  "model": "qwen-flash",
+  "make": "Husqvarna",
+  "model_name": "HUV 4414"
+}

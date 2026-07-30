@@ -1,0 +1,16 @@
+{
+  "decision": "INFER|UNKNOWN",
+  "confidence": "MEDIUM|LOW",
+  "length_mm": null,
+  "width_mm": null,
+  "height_mm": null,
+  "wheelbase_mm": null,
+  "seat_height_mm": null,
+  "ground_clearance_mm": null,
+  "explanation": "The Pulsar 150 LS model is not clearly documented in public sources, and variations in design across years and markets make dimension inference unreliable. Without a definitive catalog reference or verified specification, dimensions cannot be confidently estimated.",
+  "status": "SUCCESS",
+  "prompt_version": "motorcycle-dimension-inference-v1",
+  "model": "qwen-flash",
+  "make": "Bajaj",
+  "model_name": "Pulsar 150 LS"
+}

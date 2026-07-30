@@ -1,0 +1,18 @@
+{
+  "decision": "MATCH",
+  "selected_candidate": "Bajaj pulsar 220f",
+  "confidence": "HIGH",
+  "match_basis": "MARKET_ALIAS",
+  "explanation": "The 'Pulsar 220 Neon' is a market-specific name for the Bajaj Pulsar 220F, with 'Neon' being a branding variant used in certain regions. The model shares the same engine, platform, and core identity as the Pulsar 220F.",
+  "canonical_model_alias": "pulsar 220f",
+  "configuration_tokens": [],
+  "brand_aliases": [],
+  "model_aliases": [
+    "pulsar 220f"
+  ],
+  "status": "SUCCESS",
+  "prompt_version": "motorcycle-candidate-resolution-v4",
+  "model": "qwen-flash",
+  "make": "Bajaj",
+  "model_name": "Pulsar 220 Neon"
+}

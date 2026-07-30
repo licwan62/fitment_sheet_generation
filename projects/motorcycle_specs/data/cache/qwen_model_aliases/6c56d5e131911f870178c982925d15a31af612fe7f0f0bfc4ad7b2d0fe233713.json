@@ -1,0 +1,15 @@
+{
+  "decision": "MATCH",
+  "selected_candidate": "CT 110 Trail 110",
+  "canonical_model_alias": "CT 110 Trail 110",
+  "configuration_tokens": [],
+  "brand_aliases": [],
+  "model_aliases": [
+    "CT 110 Trail 110"
+  ],
+  "status": "SUCCESS",
+  "prompt_version": "motorcycle-candidate-resolution-v3",
+  "model": "qwen-flash",
+  "make": "Honda",
+  "model_name": "CT110"
+}

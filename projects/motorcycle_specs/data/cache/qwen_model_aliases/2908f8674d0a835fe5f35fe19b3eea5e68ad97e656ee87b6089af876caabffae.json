@@ -1,0 +1,16 @@
+{
+  "decision": "NO_MATCH",
+  "selected_candidate": "",
+  "confidence": "HIGH",
+  "match_basis": "NONE",
+  "explanation": "The input model 'F800GS Explorer LWR' is a specific configuration of the F800GS with unique features (Explorer trim, LWR designation), while the catalog candidates 'F 800GS Triple Black' and 'F 800GS' are distinct models or configurations. 'F 800GS Triple Black' is a color/trim variant, and 'F 800GS' is the base model. None of the candidates match the Explorer LWR specification, which includes a specific luggage system, riding position, and equipment package not present in the listed candidates.",
+  "canonical_model_alias": "",
+  "configuration_tokens": [],
+  "brand_aliases": [],
+  "model_aliases": [],
+  "status": "SUCCESS",
+  "prompt_version": "motorcycle-candidate-resolution-v4",
+  "model": "qwen-flash",
+  "make": "BMW",
+  "model_name": "F800GS Explorer LWR"
+}

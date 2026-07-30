@@ -1,0 +1,20 @@
+{
+  "decision": "MATCH",
+  "selected_candidate": "Honda GL 1800 Gold Wing ABS",
+  "confidence": "HIGH",
+  "match_basis": "SAME_NAME",
+  "explanation": "The input 'GL1800 Valkyrie ABS' is a known market-specific name for the Honda GL1800 Gold Wing ABS. The Valkyrie name was used in certain markets (e.g., Japan and Europe) as a marketing variant of the Gold Wing, but it refers to the same underlying model with identical displacement, engine, and platform. The 'ABS' feature matches exactly.",
+  "canonical_model_alias": "GL 1800 Gold Wing ABS",
+  "configuration_tokens": [
+    "ABS"
+  ],
+  "brand_aliases": [],
+  "model_aliases": [
+    "GL 1800 Gold Wing ABS"
+  ],
+  "status": "SUCCESS",
+  "prompt_version": "motorcycle-candidate-resolution-v4",
+  "model": "qwen-flash",
+  "make": "Honda",
+  "model_name": "GL1800 Valkyrie ABS"
+}

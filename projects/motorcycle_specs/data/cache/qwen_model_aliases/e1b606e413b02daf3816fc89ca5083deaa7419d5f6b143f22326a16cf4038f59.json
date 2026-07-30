@@ -1,0 +1,20 @@
+{
+  "decision": "MATCH",
+  "selected_candidate": "R 1100GS",
+  "confidence": "HIGH",
+  "match_basis": "MARKET_ALIAS",
+  "explanation": "The R1100GS SE is a special edition variant of the R 1100GS, marketed as a premium configuration with enhanced equipment and styling. The 'SE' designation denotes a limited-edition or special equipment version, not a different model. It shares the same platform, engine, and core identity as the standard R 1100GS.",
+  "canonical_model_alias": "R 1100GS",
+  "configuration_tokens": [
+    "SE"
+  ],
+  "brand_aliases": [],
+  "model_aliases": [
+    "R 1100GS"
+  ],
+  "status": "SUCCESS",
+  "prompt_version": "motorcycle-candidate-resolution-v4",
+  "model": "qwen-flash",
+  "make": "BMW",
+  "model_name": "R1100GS SE"
+}

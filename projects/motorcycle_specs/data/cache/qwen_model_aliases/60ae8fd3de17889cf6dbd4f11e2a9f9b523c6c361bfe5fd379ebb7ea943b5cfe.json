@@ -1,0 +1,16 @@
+{
+  "decision": "MATCH",
+  "selected_candidate": "XB9SX Lightning",
+  "confidence": "HIGH",
+  "match_basis": "SAME_NAME",
+  "explanation": "The input model 'XB9SX Lightning' exactly matches the catalog candidate 'XB9SX Lightning' in name, displacement, and configuration. No variation or aliasing is present.",
+  "canonical_model_alias": "XB9SX Lightning",
+  "configuration_tokens": [],
+  "brand_aliases": [],
+  "model_aliases": [],
+  "status": "SUCCESS",
+  "prompt_version": "motorcycle-candidate-resolution-v4",
+  "model": "qwen-flash",
+  "make": "Buell",
+  "model_name": "XB9SX Lightning"
+}

@@ -1,0 +1,16 @@
+{
+  "decision": "NO_MATCH",
+  "selected_candidate": "",
+  "confidence": "HIGH",
+  "match_basis": "NONE",
+  "explanation": "The input model 'FXRPF Police' is a specific Harley-Davidson police variant based on the FXR platform with a 1200cc engine, while all catalog candidates are either different models (e.g., XL 883L, Road Glide series) or lack the police configuration and FXR platform identity. None of the candidates match the FXRPF Police in platform, displacement, or intended use.",
+  "canonical_model_alias": "",
+  "configuration_tokens": [],
+  "brand_aliases": [],
+  "model_aliases": [],
+  "status": "SUCCESS",
+  "prompt_version": "motorcycle-candidate-resolution-v4",
+  "model": "qwen-flash",
+  "make": "Harley-Davidson",
+  "model_name": "FXRPF Police"
+}

@@ -1,0 +1,16 @@
+{
+  "decision": "INFER|UNKNOWN",
+  "confidence": "LOW",
+  "length_mm": null,
+  "width_mm": null,
+  "height_mm": null,
+  "wheelbase_mm": null,
+  "seat_height_mm": null,
+  "ground_clearance_mm": null,
+  "explanation": "The Harley-Davidson FXRPF Police is a specialized variant with limited public documentation. While the FXR series shares platform traits with other Softail models, police-specific modifications and variations by year/market (e.g., equipment load, suspension upgrades) introduce uncertainty in dimensions. Without definitive source data or consistent model-year specifications, reliable inference is not possible.",
+  "status": "SUCCESS",
+  "prompt_version": "motorcycle-dimension-inference-v1",
+  "model": "qwen-flash",
+  "make": "Harley-Davidson",
+  "model_name": "FXRPF Police"
+}

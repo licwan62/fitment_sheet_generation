@@ -1,0 +1,20 @@
+{
+  "decision": "MATCH",
+  "selected_candidate": "Pulsar 150",
+  "confidence": "HIGH",
+  "match_basis": "MARKET_ALIAS",
+  "explanation": "The 'Pulsar 150 Neon' is a market-specific variant or edition of the standard Pulsar 150, with 'Neon' denoting a color scheme or special trim. It is not a different model in terms of platform, engine, or core design. The base model remains the Pulsar 150.",
+  "canonical_model_alias": "Pulsar 150",
+  "configuration_tokens": [
+    "Neon"
+  ],
+  "brand_aliases": [],
+  "model_aliases": [
+    "Pulsar 150"
+  ],
+  "status": "SUCCESS",
+  "prompt_version": "motorcycle-candidate-resolution-v4",
+  "model": "qwen-flash",
+  "make": "Bajaj",
+  "model_name": "Pulsar 150 Neon"
+}

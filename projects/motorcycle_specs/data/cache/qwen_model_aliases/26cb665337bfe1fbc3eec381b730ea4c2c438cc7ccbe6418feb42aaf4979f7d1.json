@@ -1,0 +1,16 @@
+{
+  "decision": "NO_MATCH",
+  "selected_candidate": "",
+  "confidence": "HIGH",
+  "match_basis": "NONE",
+  "explanation": "The model 'M50B Boulevard' is not found in the catalog candidates, and no known Suzuki motorcycle matches this name or its components (M50B, Boulevard) in the provided list. The M50B is not a recognized Suzuki model designation, and 'Boulevard' is a Suzuki brand name used for a different series of motorcycles (e.g., M50, M100, etc.), but not paired with 'M50B'. No plausible alias, market variant, or typo match exists within the candidate set.",
+  "canonical_model_alias": "",
+  "configuration_tokens": [],
+  "brand_aliases": [],
+  "model_aliases": [],
+  "status": "SUCCESS",
+  "prompt_version": "motorcycle-candidate-resolution-v4",
+  "model": "qwen-flash",
+  "make": "Suzuki",
+  "model_name": "M50B Boulevard"
+}

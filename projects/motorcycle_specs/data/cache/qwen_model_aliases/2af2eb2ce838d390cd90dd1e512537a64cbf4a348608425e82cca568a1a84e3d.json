@@ -1,0 +1,16 @@
+{
+  "decision": "NO_MATCH",
+  "selected_candidate": "",
+  "confidence": "HIGH",
+  "match_basis": "NONE",
+  "explanation": "The CM450A Hondamatic is a specific model with a unique transmission type (Hondamatic automatic) and designation. The candidate CM 450T refers to a different model variant, likely a standard or different configuration, not the same motorcycle. No evidence supports that CM 450T is a market name, abbreviation, or typo for CM450A Hondamatic. Displacement and model identity differ in context and specification.",
+  "canonical_model_alias": "",
+  "configuration_tokens": [],
+  "brand_aliases": [],
+  "model_aliases": [],
+  "status": "SUCCESS",
+  "prompt_version": "motorcycle-candidate-resolution-v4",
+  "model": "qwen-flash",
+  "make": "Honda",
+  "model_name": "CM450A Hondamatic"
+}

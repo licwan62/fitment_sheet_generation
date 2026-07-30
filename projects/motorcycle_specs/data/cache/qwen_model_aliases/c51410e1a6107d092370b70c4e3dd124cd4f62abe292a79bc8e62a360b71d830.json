@@ -1,0 +1,16 @@
+{
+  "decision": "NO_MATCH",
+  "selected_candidate": "",
+  "confidence": "HIGH",
+  "match_basis": "NONE",
+  "explanation": "The model 'Minitrial-E' is not found in the catalog candidates, and no known variant or alias of this model exists within the provided list. Beta's Minitrial-E is a specific trial motorcycle with distinct identity, and without matching candidates, a match cannot be confirmed.",
+  "canonical_model_alias": "",
+  "configuration_tokens": [],
+  "brand_aliases": [],
+  "model_aliases": [],
+  "status": "SUCCESS",
+  "prompt_version": "motorcycle-candidate-resolution-v4",
+  "model": "qwen-flash",
+  "make": "Beta",
+  "model_name": "Minitrial-E"
+}

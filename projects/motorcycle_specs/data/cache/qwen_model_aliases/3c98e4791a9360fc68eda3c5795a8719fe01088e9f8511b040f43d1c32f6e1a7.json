@@ -1,0 +1,18 @@
+{
+  "decision": "MATCH",
+  "selected_candidate": "Ducati Monster 750 i.e. Dark",
+  "confidence": "HIGH",
+  "match_basis": "MARKET_ALIAS",
+  "explanation": "'Monster 750 Dark City' is a market-specific naming variant for the Ducati Monster 750 i.e. Dark, with 'Dark City' being a regional or promotional designation not altering the core model identity. The displacement (750) and engine specification (i.e.) match exactly.",
+  "canonical_model_alias": "Monster 750 i.e. Dark",
+  "configuration_tokens": [],
+  "brand_aliases": [],
+  "model_aliases": [
+    "Monster 750 i.e. Dark"
+  ],
+  "status": "SUCCESS",
+  "prompt_version": "motorcycle-candidate-resolution-v4",
+  "model": "qwen-flash",
+  "make": "Ducati",
+  "model_name": "Monster 750 Dark City"
+}

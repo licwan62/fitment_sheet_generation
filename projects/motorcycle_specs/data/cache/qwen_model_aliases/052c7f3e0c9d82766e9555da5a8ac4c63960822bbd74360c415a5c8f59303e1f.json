@@ -1,0 +1,21 @@
+{
+  "decision": "MATCH",
+  "selected_candidate": "Harley-Davidson FXDI35 35th Anniversary Dyna Super Glide",
+  "confidence": "HIGH",
+  "match_basis": "SAME_NAME",
+  "explanation": "The input model 'FXDI35 Dyna 35th Anniversary Super Glide' is a direct match in name and configuration to the catalog candidate, with only minor reordering of words. The displacement (35th Anniversary) and model code (FXDI35) are identical, confirming it refers to the same motorcycle. No brand or configuration differences exist.",
+  "canonical_model_alias": "FXDI35 35th Anniversary Dyna Super Glide",
+  "configuration_tokens": [
+    "35th Anniversary"
+  ],
+  "brand_aliases": [],
+  "model_aliases": [
+    "35th Anniversary Dyna Super Glide",
+    "FXDI35 35th Anniversary Dyna Super Glide"
+  ],
+  "status": "SUCCESS",
+  "prompt_version": "motorcycle-candidate-resolution-v4",
+  "model": "qwen-flash",
+  "make": "Harley-Davidson",
+  "model_name": "FXDI35 Dyna 35th Anniversary Super Glide"
+}

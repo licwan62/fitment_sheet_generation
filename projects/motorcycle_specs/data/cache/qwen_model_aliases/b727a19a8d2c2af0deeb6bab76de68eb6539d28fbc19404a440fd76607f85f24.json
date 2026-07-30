@@ -1,0 +1,16 @@
+{
+  "decision": "NO_MATCH",
+  "selected_candidate": "",
+  "confidence": "HIGH",
+  "match_basis": "NONE",
+  "explanation": "The input model 'WXE 250' is not a valid Husqvarna motorcycle model. The catalog candidates include various Husqvarna models like WXC 250, FE 250, TE 250, and Vitpilen 250, but none match the 'WXE 250' designation. There is no known Husqvarna model with this name, and no evidence suggests it is a market alias, historical variant, or typo for any of the listed candidates.",
+  "canonical_model_alias": "",
+  "configuration_tokens": [],
+  "brand_aliases": [],
+  "model_aliases": [],
+  "status": "SUCCESS",
+  "prompt_version": "motorcycle-candidate-resolution-v4",
+  "model": "qwen-flash",
+  "make": "Husqvarna",
+  "model_name": "WXE 250"
+}

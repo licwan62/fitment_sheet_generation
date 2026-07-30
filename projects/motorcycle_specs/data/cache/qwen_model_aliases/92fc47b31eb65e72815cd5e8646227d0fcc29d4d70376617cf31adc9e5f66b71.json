@@ -1,0 +1,21 @@
+{
+  "decision": "MATCH",
+  "selected_candidate": "Suzuki Gixxer SF",
+  "confidence": "HIGH",
+  "match_basis": "SAME_NAME",
+  "explanation": "The input 'Gixxer SF FI Bi-Tono' refers to the same underlying motorcycle model as 'Suzuki Gixxer SF', with 'FI' denoting fuel injection and 'Bi-Tono' indicating a two-tone paint scheme—both are configuration details, not model differentiators. The core model identity remains unchanged.",
+  "canonical_model_alias": "Gixxer SF",
+  "configuration_tokens": [
+    "FI",
+    "Bi-Tono"
+  ],
+  "brand_aliases": [],
+  "model_aliases": [
+    "Gixxer SF"
+  ],
+  "status": "SUCCESS",
+  "prompt_version": "motorcycle-candidate-resolution-v4",
+  "model": "qwen-flash",
+  "make": "Suzuki",
+  "model_name": "Gixxer SF FI Bi-Tono"
+}

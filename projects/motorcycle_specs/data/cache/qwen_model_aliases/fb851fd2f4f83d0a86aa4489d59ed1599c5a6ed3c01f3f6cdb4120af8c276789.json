@@ -1,0 +1,18 @@
+{
+  "decision": "MATCH",
+  "selected_candidate": "Aprilia sr 160 bs6",
+  "confidence": "HIGH",
+  "match_basis": "SAME_NAME",
+  "explanation": "The input 'SR Motard 160' and the candidate 'Aprilia sr 160 bs6' refer to the same underlying motorcycle model, with the only difference being the addition of 'bs6' (Bharat Stage 6 emission compliance) as a configuration token. The core model identity—SR Motard 160—is preserved.",
+  "canonical_model_alias": "sr 160 bs6",
+  "configuration_tokens": [
+    "bs6"
+  ],
+  "brand_aliases": [],
+  "model_aliases": [],
+  "status": "SUCCESS",
+  "prompt_version": "motorcycle-candidate-resolution-v4",
+  "model": "qwen-flash",
+  "make": "Aprilia",
+  "model_name": "SR Motard 160"
+}

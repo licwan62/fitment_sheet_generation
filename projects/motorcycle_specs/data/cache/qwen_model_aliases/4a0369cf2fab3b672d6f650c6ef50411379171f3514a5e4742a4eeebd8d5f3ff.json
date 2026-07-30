@@ -1,0 +1,18 @@
+{
+  "decision": "MATCH",
+  "selected_candidate": "Harley-Davidson X440",
+  "confidence": "HIGH",
+  "match_basis": "MARKET_ALIAS",
+  "explanation": "The input 'X90' is a plausible typo or misreading of 'X440', which was marketed as the Harley-Davidson X440 in some regions. The 'X90 Shortster' variant is a known model name for the same underlying motorcycle, with 'Shortster' being a configuration label. The core model identity (X440) matches exactly, and 'X90' likely results from a digit misinterpretation. No other candidate shares this identity.",
+  "canonical_model_alias": "X440",
+  "configuration_tokens": [
+    "Shortster"
+  ],
+  "brand_aliases": [],
+  "model_aliases": [],
+  "status": "SUCCESS",
+  "prompt_version": "motorcycle-candidate-resolution-v4",
+  "model": "qwen-flash",
+  "make": "Harley-Davidson",
+  "model_name": "X90"
+}

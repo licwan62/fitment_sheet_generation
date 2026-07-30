@@ -1,0 +1,16 @@
+{
+  "decision": "MATCH",
+  "selected_candidate": "bigdog k 9",
+  "confidence": "HIGH",
+  "match_basis": "MARKET_ALIAS",
+  "explanation": "The input 'K-9 250' is a known market or model designation for the Big Dog K-9, with 'K-9' being a common stylized name used in marketing and cataloging. The candidate 'bigdog k 9' matches the same underlying motorcycle model, including displacement and configuration, despite minor formatting differences.",
+  "canonical_model_alias": "k 9",
+  "configuration_tokens": [],
+  "brand_aliases": [],
+  "model_aliases": [],
+  "status": "SUCCESS",
+  "prompt_version": "motorcycle-candidate-resolution-v4",
+  "model": "qwen-flash",
+  "make": "Big Dog",
+  "model_name": "K-9 250"
+}

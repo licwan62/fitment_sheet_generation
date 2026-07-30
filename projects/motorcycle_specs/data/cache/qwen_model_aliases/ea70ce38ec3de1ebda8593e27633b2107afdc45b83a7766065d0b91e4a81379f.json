@@ -1,0 +1,18 @@
+{
+  "decision": "MATCH",
+  "selected_candidate": "gasgas ec 350f",
+  "confidence": "HIGH",
+  "match_basis": "SAME_NAME",
+  "explanation": "The input 'EC 350F' exactly matches the catalog candidate 'gasgas ec 350f' in model name, displacement, and configuration. The casing and spacing differences are negligible and do not alter the identity.",
+  "canonical_model_alias": "ec 350f",
+  "configuration_tokens": [],
+  "brand_aliases": [],
+  "model_aliases": [
+    "gasgas ec 350f"
+  ],
+  "status": "SUCCESS",
+  "prompt_version": "motorcycle-candidate-resolution-v4",
+  "model": "qwen-flash",
+  "make": "Gas Gas",
+  "model_name": "EC 350F"
+}

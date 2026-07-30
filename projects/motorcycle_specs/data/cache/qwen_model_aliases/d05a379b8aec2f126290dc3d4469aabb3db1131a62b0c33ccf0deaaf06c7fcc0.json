@@ -1,0 +1,20 @@
+{
+  "decision": "MATCH",
+  "selected_candidate": "indian chieftain powerplus dark horse with 112 package",
+  "confidence": "HIGH",
+  "match_basis": "SAME_NAME",
+  "explanation": "The input model 'Chieftain PowerPlus Dark Horse 112 Audio Package' matches the catalog candidate 'indian chieftain powerplus dark horse with 112 package' in all identity-bearing elements: model name (Chieftain), trim level (PowerPlus Dark Horse), displacement (112), and configuration (Audio Package is implied by 'with 112 package' as standard for this variant). The term 'Audio Package' is a configuration label consistent with known marketing for this model. No other candidate shares the exact combination of PowerPlus, Dark Horse, and 112 displacement.",
+  "canonical_model_alias": "chieftain powerplus dark horse with 112 package",
+  "configuration_tokens": [
+    "audio package"
+  ],
+  "brand_aliases": [],
+  "model_aliases": [
+    "chieftain powerplus dark horse with 112 package"
+  ],
+  "status": "SUCCESS",
+  "prompt_version": "motorcycle-candidate-resolution-v4",
+  "model": "qwen-flash",
+  "make": "Indian",
+  "model_name": "Chieftain PowerPlus Dark Horse 112 Audio Package"
+}

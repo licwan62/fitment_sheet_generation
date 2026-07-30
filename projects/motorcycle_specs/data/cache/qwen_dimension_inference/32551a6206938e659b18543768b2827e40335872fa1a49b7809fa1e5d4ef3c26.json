@@ -1,0 +1,16 @@
+{
+  "decision": "INFER",
+  "confidence": "MEDIUM",
+  "length_mm": 2150,
+  "width_mm": 850,
+  "height_mm": 1350,
+  "wheelbase_mm": 1450,
+  "seat_height_mm": 920,
+  "ground_clearance_mm": 320,
+  "explanation": "Inferred from Beta TR35's typical off-road motorcycle design, based on similar models in the TR series (e.g., TR45, TR30), with mid-sized dimensions suitable for enduro use. Dimensions are estimated using general trends in Beta's product lineup and standard off-road motorcycle proportions. No official catalog data available for TR35.",
+  "status": "SUCCESS",
+  "prompt_version": "motorcycle-dimension-inference-v1",
+  "model": "qwen-flash",
+  "make": "Beta",
+  "model_name": "TR35"
+}

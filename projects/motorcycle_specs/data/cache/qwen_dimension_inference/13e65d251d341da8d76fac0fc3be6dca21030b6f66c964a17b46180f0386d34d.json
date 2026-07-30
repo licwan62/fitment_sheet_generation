@@ -1,0 +1,16 @@
+{
+  "decision": "INFER",
+  "confidence": "MEDIUM",
+  "length_mm": 2150,
+  "width_mm": 850,
+  "height_mm": 1100,
+  "wheelbase_mm": 1380,
+  "seat_height_mm": 920,
+  "ground_clearance_mm": 300,
+  "explanation": "Inferred based on typical dimensions of 350cc motocross bikes from the early 2000s, similar to models from KTM or Husqvarna in the same class. ATK 350 MX is a rare model with limited public data; dimensions are estimated within expected ranges for lightweight off-road motorcycles of this displacement and era.",
+  "status": "SUCCESS",
+  "prompt_version": "motorcycle-dimension-inference-v1",
+  "model": "qwen-flash",
+  "make": "ATK",
+  "model_name": "350 MX"
+}

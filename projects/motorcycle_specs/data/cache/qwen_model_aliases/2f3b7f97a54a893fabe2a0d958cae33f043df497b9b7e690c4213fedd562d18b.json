@@ -1,0 +1,18 @@
+{
+  "decision": "MATCH",
+  "selected_candidate": "CB 400A \n\t\tHondamatic",
+  "confidence": "HIGH",
+  "match_basis": "MARKET_ALIAS",
+  "explanation": "The CM400A Hondamatic is a known market-specific name for the same motorcycle as the CB 400A Hondamatic, with 'CM' and 'CB' being different model designations for the same underlying model in different markets or configurations. The displacement (400), transmission type (Hondamatic), and core identity are identical.",
+  "canonical_model_alias": "CB 400A Hondamatic",
+  "configuration_tokens": [],
+  "brand_aliases": [],
+  "model_aliases": [
+    "CB 400A Hondamatic"
+  ],
+  "status": "SUCCESS",
+  "prompt_version": "motorcycle-candidate-resolution-v4",
+  "model": "qwen-flash",
+  "make": "Honda",
+  "model_name": "CM400A Hondamatic"
+}

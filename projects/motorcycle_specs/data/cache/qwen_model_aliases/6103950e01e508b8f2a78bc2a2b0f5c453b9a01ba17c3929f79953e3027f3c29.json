@@ -1,0 +1,16 @@
+{
+  "decision": "NO_MATCH",
+  "selected_candidate": "",
+  "confidence": "HIGH",
+  "match_basis": "NONE",
+  "explanation": "The input model 'Contact GT32' is not present in the catalog candidates. The candidates either have different displacement (e.g., 250, 280), different model names (e.g., econtact, TXT 250 Contact), or are unrelated models (e.g., EC 200E Racing, EC 250 2T). No candidate matches the exact model identity of 'Contact GT32' in terms of name, displacement, and configuration.",
+  "canonical_model_alias": "",
+  "configuration_tokens": [],
+  "brand_aliases": [],
+  "model_aliases": [],
+  "status": "SUCCESS",
+  "prompt_version": "motorcycle-candidate-resolution-v4",
+  "model": "qwen-flash",
+  "make": "Gas Gas",
+  "model_name": "Contact GT32"
+}

@@ -1,0 +1,18 @@
+{
+  "decision": "MATCH",
+  "selected_candidate": "Bajaj dominar 400",
+  "confidence": "HIGH",
+  "match_basis": "SAME_NAME",
+  "explanation": "The input 'Dominar D400' is a direct reference to the Bajaj Dominar 400 model, and 'Bajaj dominar 400' in the catalog candidates is the canonical title for the same motorcycle. The 'D' in D400 is a common designation used in marketing and does not alter the model identity.",
+  "canonical_model_alias": "dominar 400",
+  "configuration_tokens": [],
+  "brand_aliases": [],
+  "model_aliases": [
+    "dominar 400"
+  ],
+  "status": "SUCCESS",
+  "prompt_version": "motorcycle-candidate-resolution-v4",
+  "model": "qwen-flash",
+  "make": "Bajaj",
+  "model_name": "Dominar D400"
+}

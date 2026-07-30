@@ -1,0 +1,16 @@
+{
+  "decision": "INFER|UNKNOWN",
+  "confidence": "MEDIUM|LOW",
+  "length_mm": null,
+  "width_mm": null,
+  "height_mm": null,
+  "wheelbase_mm": null,
+  "seat_height_mm": null,
+  "ground_clearance_mm": null,
+  "explanation": "ATK is not a recognized motorcycle manufacturer in the context of the 450 XC model, which is typically associated with KTM. The model name '450 XC' suggests an off-road motocross bike, but without confirmed manufacturer or catalog data, dimensions cannot be reliably inferred. Model identity is uncertain, and variations by year/market are likely. Therefore, all dimensions are unknown.",
+  "status": "SUCCESS",
+  "prompt_version": "motorcycle-dimension-inference-v1",
+  "model": "qwen-flash",
+  "make": "ATK",
+  "model_name": "450 XC"
+}

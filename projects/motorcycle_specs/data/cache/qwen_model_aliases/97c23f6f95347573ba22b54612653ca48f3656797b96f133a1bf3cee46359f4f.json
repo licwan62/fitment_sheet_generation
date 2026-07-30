@@ -1,0 +1,16 @@
+{
+  "decision": "NO_MATCH",
+  "selected_candidate": "",
+  "confidence": "HIGH",
+  "match_basis": "NONE",
+  "explanation": "The input model 'CM400E' is not equivalent to any of the catalog candidates. 'CM400E' is a distinct model variant, while the candidates are 'CM 400T', 'Honda CM 400 T', and 'Honda CM 400 A'. The suffixes 'E', 'T', and 'A' denote different configurations or market-specific versions, and there is no evidence that 'CM400E' is a known alias, typo, or historical name for any of these. Displacement (400) matches, but the suffixes are identity-bearing and differ. Therefore, no match is valid.",
+  "canonical_model_alias": "",
+  "configuration_tokens": [],
+  "brand_aliases": [],
+  "model_aliases": [],
+  "status": "SUCCESS",
+  "prompt_version": "motorcycle-candidate-resolution-v4",
+  "model": "qwen-flash",
+  "make": "Honda",
+  "model_name": "CM400E"
+}

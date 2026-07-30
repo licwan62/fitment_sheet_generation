@@ -1,0 +1,16 @@
+{
+  "decision": "NO_MATCH",
+  "selected_candidate": "",
+  "confidence": "HIGH",
+  "match_basis": "NONE",
+  "explanation": "The input 'CA95 Dream 150' refers to a vintage Honda motorcycle from the 1960s, specifically the Honda Dream 150 (CA95 model code). The catalog candidates are all modern Honda models (e.g., ADV150, PCX150, CBR150R), none of which are the same underlying motorcycle. The CA95 Dream 150 is a classic air-cooled, single-cylinder, upright street bike with no relation to the listed modern models.",
+  "canonical_model_alias": "",
+  "configuration_tokens": [],
+  "brand_aliases": [],
+  "model_aliases": [],
+  "status": "SUCCESS",
+  "prompt_version": "motorcycle-candidate-resolution-v4",
+  "model": "qwen-flash",
+  "make": "Honda",
+  "model_name": "CA95 Dream 150"
+}

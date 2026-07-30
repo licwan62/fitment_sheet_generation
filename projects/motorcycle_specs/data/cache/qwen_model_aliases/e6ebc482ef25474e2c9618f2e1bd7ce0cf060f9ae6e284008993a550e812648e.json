@@ -1,0 +1,16 @@
+{
+  "decision": "NO_MATCH",
+  "selected_candidate": "",
+  "confidence": "HIGH",
+  "match_basis": "NONE",
+  "explanation": "The input model 'VC' does not correspond to any of the catalog candidates, as none of them are known variants or aliases of a 'VC' model. The candidates include CVO, V-Rod Sc, VRSCA, VRSCB, and various CVO Street Glide and Road Glide models, which are distinct from a 'VC' designation. No evidence supports that 'VC' is a valid alias, abbreviation, or typo for any of these models.",
+  "canonical_model_alias": "",
+  "configuration_tokens": [],
+  "brand_aliases": [],
+  "model_aliases": [],
+  "status": "SUCCESS",
+  "prompt_version": "motorcycle-candidate-resolution-v4",
+  "model": "qwen-flash",
+  "make": "Harley-Davidson",
+  "model_name": "VC"
+}

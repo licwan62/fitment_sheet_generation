@@ -1,0 +1,21 @@
+{
+  "decision": "MATCH",
+  "selected_candidate": "gasgas txt 300 pro replica",
+  "confidence": "HIGH",
+  "match_basis": "SAME_NAME",
+  "explanation": "The input 'TXT Pro 300 Replica Factory' is a direct match in meaning and model identity to 'gasgas txt 300 pro replica', with 'Factory' being a configuration or marketing descriptor not altering the core model identity. The displacement (300), model series (TXT Pro), and key identifier (Replica) align exactly.",
+  "canonical_model_alias": "txt 300 pro replica",
+  "configuration_tokens": [
+    "Factory"
+  ],
+  "brand_aliases": [],
+  "model_aliases": [
+    "gasgas txt 300 pro replica",
+    "txt 300 pro replica"
+  ],
+  "status": "SUCCESS",
+  "prompt_version": "motorcycle-candidate-resolution-v4",
+  "model": "qwen-flash",
+  "make": "Gas Gas",
+  "model_name": "TXT Pro 300 Replica Factory"
+}

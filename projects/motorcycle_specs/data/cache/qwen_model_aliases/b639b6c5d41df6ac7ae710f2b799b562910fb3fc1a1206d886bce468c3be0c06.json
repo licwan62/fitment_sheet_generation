@@ -1,0 +1,18 @@
+{
+  "decision": "MATCH",
+  "selected_candidate": "husqvarna tc 450",
+  "confidence": "HIGH",
+  "match_basis": "MARKET_ALIAS",
+  "explanation": "The input 'TXC 450' is a known market-specific designation for the Husqvarna TC 450, with 'TXC' being a regional or marketing variant of the TC 450 model. The displacement and core model identity are identical; 'TXC' is a configuration label used in certain markets, not a distinct model.",
+  "canonical_model_alias": "tc 450",
+  "configuration_tokens": [],
+  "brand_aliases": [],
+  "model_aliases": [
+    "tc 450"
+  ],
+  "status": "SUCCESS",
+  "prompt_version": "motorcycle-candidate-resolution-v4",
+  "model": "qwen-flash",
+  "make": "Husqvarna",
+  "model_name": "TXC 450"
+}

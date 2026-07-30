@@ -1,0 +1,21 @@
+{
+  "decision": "MATCH",
+  "selected_candidate": "GL 1200 Gold Wing Aspencade SE-i Limited Edition",
+  "confidence": "HIGH",
+  "match_basis": "MARKET_ALIAS",
+  "explanation": "The input 'GL1200SEI Gold Wing Aspencade' refers to the same model as the candidate 'GL 1200 Gold Wing Aspencade SE-i Limited Edition'. The variation in capitalization, spacing, and inclusion of 'Limited Edition' is a known market-specific or catalog presentation difference. The core model identity (GL1200 Aspencade with SE-i specification) is identical.",
+  "canonical_model_alias": "GL 1200 Gold Wing Aspencade SE-i Limited Edition",
+  "configuration_tokens": [
+    "SE-i",
+    "Limited Edition"
+  ],
+  "brand_aliases": [],
+  "model_aliases": [
+    "GL 1200 Gold Wing Aspencade SE-i Limited Edition"
+  ],
+  "status": "SUCCESS",
+  "prompt_version": "motorcycle-candidate-resolution-v4",
+  "model": "qwen-flash",
+  "make": "Honda",
+  "model_name": "GL1200SEI Gold Wing Aspencade"
+}

@@ -1,0 +1,16 @@
+{
+  "decision": "INFER|UNKNOWN",
+  "confidence": "MEDIUM|LOW",
+  "length_mm": null,
+  "width_mm": null,
+  "height_mm": null,
+  "wheelbase_mm": null,
+  "seat_height_mm": null,
+  "ground_clearance_mm": null,
+  "explanation": "Husaberg FC499 is a vintage motocross model with no standardized catalog dimensions available. Variations across model years and markets make precise inference uncertain. Dimensions are not reliably inferable from known model characteristics alone.",
+  "status": "SUCCESS",
+  "prompt_version": "motorcycle-dimension-inference-v1",
+  "model": "qwen-flash",
+  "make": "Husaberg",
+  "model_name": "FC499"
+}

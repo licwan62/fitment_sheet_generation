@@ -1,0 +1,18 @@
+{
+  "decision": "MATCH",
+  "selected_candidate": "F 750GS 40 Years Edition",
+  "confidence": "HIGH",
+  "match_basis": "HISTORICAL_ALIAS",
+  "explanation": "The 'F750GS 40 Years GS Edition' is a special commemorative version of the F 750GS, and 'F 750GS 40 Years Edition' is the official catalog title used by BMW for this model. The difference in spacing and capitalization ('F750GS' vs 'F 750GS') is a minor formatting variation, not a model distinction. The '40 Years GS Edition' is a known historical marketing name for this variant.",
+  "canonical_model_alias": "F 750GS 40 Years Edition",
+  "configuration_tokens": [],
+  "brand_aliases": [],
+  "model_aliases": [
+    "F 750GS 40 Years Edition"
+  ],
+  "status": "SUCCESS",
+  "prompt_version": "motorcycle-candidate-resolution-v4",
+  "model": "qwen-flash",
+  "make": "BMW",
+  "model_name": "F750GS 40 Years GS Edition"
+}

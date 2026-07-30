@@ -1,0 +1,20 @@
+{
+  "decision": "MATCH",
+  "selected_candidate": "GV 1400 LX Cavalcade",
+  "confidence": "HIGH",
+  "match_basis": "MARKET_ALIAS",
+  "explanation": "The input 'GV1400 Cavalcade' is a common shorthand for the GV 1400 LX Cavalcade, which was marketed as the base model in certain regions. The 'LX' designation is a standard configuration label for this model, and the omission of 'LX' in the input does not change the underlying motorcycle identity.",
+  "canonical_model_alias": "GV 1400 LX Cavalcade",
+  "configuration_tokens": [
+    "LX"
+  ],
+  "brand_aliases": [],
+  "model_aliases": [
+    "GV 1400 LX Cavalcade"
+  ],
+  "status": "SUCCESS",
+  "prompt_version": "motorcycle-candidate-resolution-v4",
+  "model": "qwen-flash",
+  "make": "Suzuki",
+  "model_name": "GV1400 Cavalcade"
+}

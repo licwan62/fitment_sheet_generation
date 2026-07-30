@@ -1,0 +1,18 @@
+{
+  "decision": "MATCH",
+  "selected_candidate": "harley davidson v rod 10th anniversary edition vrscdx anv",
+  "confidence": "HIGH",
+  "match_basis": "MARKET_ALIAS",
+  "explanation": "The input 'VRSCDX ANN V-Rod Anniversary Edition' refers to the 10th-anniversary model of the VRSCDX V-Rod, which is known by the market-specific designation 'ANV' (Anniversary). The candidate 'harley davidson v rod 10th anniversary edition vrscdx anv' uses the same model identifier (VRSCDX), displacement context (V-Rod), and anniversary year (10th), with 'ANV' as the official market label for the anniversary variant. This is a known regional/market alias for the same motorcycle.",
+  "canonical_model_alias": "v rod 10th anniversary edition vrscdx anv",
+  "configuration_tokens": [
+    "anv"
+  ],
+  "brand_aliases": [],
+  "model_aliases": [],
+  "status": "SUCCESS",
+  "prompt_version": "motorcycle-candidate-resolution-v4",
+  "model": "qwen-flash",
+  "make": "Harley-Davidson",
+  "model_name": "VRSCDX ANN V-Rod Anniversary Edition"
+}

@@ -1,0 +1,20 @@
+{
+  "decision": "MATCH",
+  "selected_candidate": "CB 450K",
+  "confidence": "HIGH",
+  "match_basis": "MARKET_ALIAS",
+  "explanation": "The input 'CB450' refers to the Honda CB450, and 'CB 450K' is a known market-specific variant (K-model) of the same base model, commonly used in Europe and other regions. The 'K' suffix denotes a specific configuration or market version but does not change the core motorcycle identity. Other candidates differ in displacement, engine type, or are distinct models (e.g., CB 450T is a different model with a twin-cylinder engine; CB 450 DX is a dual-sport variant).",
+  "canonical_model_alias": "CB 450K",
+  "configuration_tokens": [
+    "K"
+  ],
+  "brand_aliases": [],
+  "model_aliases": [
+    "CB 450K"
+  ],
+  "status": "SUCCESS",
+  "prompt_version": "motorcycle-candidate-resolution-v4",
+  "model": "qwen-flash",
+  "make": "Honda",
+  "model_name": "CB450"
+}

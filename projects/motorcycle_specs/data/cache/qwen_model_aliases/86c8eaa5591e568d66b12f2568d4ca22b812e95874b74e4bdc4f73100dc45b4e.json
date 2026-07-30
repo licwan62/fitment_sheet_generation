@@ -1,0 +1,18 @@
+{
+  "decision": "MATCH",
+  "selected_candidate": "beta evo 250 2t factory",
+  "confidence": "HIGH",
+  "match_basis": "SAME_NAME",
+  "explanation": "The input 'EVO 250 Factory (2 Stroke)' directly corresponds to the catalog candidate 'beta evo 250 2t factory', with identical displacement, engine type, and model designation. The term '2 Stroke' is equivalent to '2t' in standard motorcycle nomenclature. No configuration or market variation alters the core identity.",
+  "canonical_model_alias": "beta evo 250 2t factory",
+  "configuration_tokens": [],
+  "brand_aliases": [],
+  "model_aliases": [
+    "evo 250 2t factory"
+  ],
+  "status": "SUCCESS",
+  "prompt_version": "motorcycle-candidate-resolution-v4",
+  "model": "qwen-flash",
+  "make": "Beta",
+  "model_name": "EVO 250 Factory (2 Stroke)"
+}

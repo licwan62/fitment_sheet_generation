@@ -1,0 +1,16 @@
+{
+  "decision": "INFER|UNKNOWN",
+  "confidence": "LOW",
+  "length_mm": null,
+  "width_mm": null,
+  "height_mm": null,
+  "wheelbase_mm": null,
+  "seat_height_mm": null,
+  "ground_clearance_mm": null,
+  "explanation": "The model designation 'DL250L8 V-Strom ABS' is not a standard or officially documented Suzuki motorcycle variant. The DL250 V-Strom is a known model, but the 'L8' suffix and specific configuration are unverified. Without official documentation or consistent references across markets and years, dimensions cannot be reliably inferred. Variations by year or market further reduce confidence. Therefore, all dimensions are marked as unknown.",
+  "status": "SUCCESS",
+  "prompt_version": "motorcycle-dimension-inference-v1",
+  "model": "qwen-flash",
+  "make": "Suzuki",
+  "model_name": "DL250L8 V-Strom ABS"
+}

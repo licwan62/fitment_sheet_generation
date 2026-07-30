@@ -1,0 +1,16 @@
+{
+  "decision": "NO_MATCH",
+  "selected_candidate": "",
+  "confidence": "HIGH",
+  "match_basis": "NONE",
+  "explanation": "The input model 'CA125A Super Cub' is a Honda Super Cub variant, while the catalog candidates 'CA 125 Rebel', 'Honda CA 125 Rebel', and 'Honda CA Rebel 125' refer to the Honda Rebel 125, a different motorcycle model with distinct design, platform, and market positioning. The Rebel series is not a Super Cub variant, despite sharing a similar displacement and naming convention. No evidence supports that these are the same underlying motorcycle.",
+  "canonical_model_alias": "",
+  "configuration_tokens": [],
+  "brand_aliases": [],
+  "model_aliases": [],
+  "status": "SUCCESS",
+  "prompt_version": "motorcycle-candidate-resolution-v4",
+  "model": "qwen-flash",
+  "make": "Honda",
+  "model_name": "CA125A Super Cub"
+}

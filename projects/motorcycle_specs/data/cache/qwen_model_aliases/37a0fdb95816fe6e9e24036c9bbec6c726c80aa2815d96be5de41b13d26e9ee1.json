@@ -1,0 +1,16 @@
+{
+  "decision": "NO_MATCH",
+  "selected_candidate": "",
+  "confidence": "HIGH",
+  "match_basis": "NONE",
+  "explanation": "The input model 'CL70 Scrambler' is a specific Honda scrambler motorcycle with a 70cc engine, while all catalog candidates either represent different models (e.g., Dream, Cub Scooter, ATC, CB350), different displacements (e.g., CL450, CL500), or unrelated variants (e.g., CRF70F, SL70). None match the CL70 Scrambler in displacement, configuration, or intended use. The CL70 Scrambler is not a known market alias, historical variant, or typo of any listed candidate.",
+  "canonical_model_alias": "",
+  "configuration_tokens": [],
+  "brand_aliases": [],
+  "model_aliases": [],
+  "status": "SUCCESS",
+  "prompt_version": "motorcycle-candidate-resolution-v4",
+  "model": "qwen-flash",
+  "make": "Honda",
+  "model_name": "CL70 Scrambler"
+}

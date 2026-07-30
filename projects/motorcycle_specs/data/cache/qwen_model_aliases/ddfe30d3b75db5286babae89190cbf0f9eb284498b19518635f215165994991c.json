@@ -1,0 +1,20 @@
+{
+  "decision": "MATCH",
+  "selected_candidate": "indian challenger limited with 112 package",
+  "confidence": "HIGH",
+  "match_basis": "SAME_NAME",
+  "explanation": "The input 'Challenger Limited 112' directly corresponds to the catalog candidate 'indian challenger limited with 112 package', as both refer to the same model with identical displacement (112), trim level (Limited), and manufacturer (Indian). The phrase 'with 112 package' is a standard descriptor for the engine displacement configuration.",
+  "canonical_model_alias": "challenger limited with 112 package",
+  "configuration_tokens": [
+    "112 package"
+  ],
+  "brand_aliases": [],
+  "model_aliases": [
+    "challenger limited with 112 package"
+  ],
+  "status": "SUCCESS",
+  "prompt_version": "motorcycle-candidate-resolution-v4",
+  "model": "qwen-flash",
+  "make": "Indian",
+  "model_name": "Challenger Limited 112"
+}

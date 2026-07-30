@@ -1,0 +1,20 @@
+{
+  "decision": "MATCH",
+  "selected_candidate": "Ducati Monster 900",
+  "confidence": "HIGH",
+  "match_basis": "SAME_NAME",
+  "explanation": "The input 'Monster 900 City' refers to the same underlying motorcycle model as 'Ducati Monster 900', with 'City' being a configuration or market-specific label not altering the core model identity. The catalog candidate 'Ducati Monster 900' is the canonical expression of this model.",
+  "canonical_model_alias": "Monster 900",
+  "configuration_tokens": [
+    "City"
+  ],
+  "brand_aliases": [],
+  "model_aliases": [
+    "Monster 900"
+  ],
+  "status": "SUCCESS",
+  "prompt_version": "motorcycle-candidate-resolution-v4",
+  "model": "qwen-flash",
+  "make": "Ducati",
+  "model_name": "Monster 900 City"
+}

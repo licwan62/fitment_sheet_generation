@@ -1,0 +1,16 @@
+{
+  "decision": "NO_MATCH",
+  "selected_candidate": "",
+  "confidence": "HIGH",
+  "match_basis": "NONE",
+  "explanation": "The input model 'K75A' is not equivalent to any of the catalog candidates. 'K75A' refers to a specific variant of the BMW K75 with a single-cylinder engine and a distinct configuration, while the candidates 'K 75SA', 'K 75RTA', 'K 75', and 'BMW K 75' are different models with different configurations (e.g., sport, touring, or base variants). The 'A' suffix in 'K75A' denotes a specific market or configuration that does not align with any of the listed candidates.",
+  "canonical_model_alias": "",
+  "configuration_tokens": [],
+  "brand_aliases": [],
+  "model_aliases": [],
+  "status": "SUCCESS",
+  "prompt_version": "motorcycle-candidate-resolution-v4",
+  "model": "qwen-flash",
+  "make": "BMW",
+  "model_name": "K75A"
+}

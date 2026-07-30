@@ -1,0 +1,18 @@
+{
+  "decision": "MATCH",
+  "selected_candidate": "husqvarna te 300 heritage",
+  "confidence": "HIGH",
+  "match_basis": "MARKET_ALIAS",
+  "explanation": "The input 'TX300 Heritage' is a market-specific naming variant of the Husqvarna TE 300 Heritage, with 'TX' being a regional or marketing designation for the same model. The displacement (300), heritage trim, and engine type align exactly with the TE 300 Heritage.",
+  "canonical_model_alias": "te 300 heritage",
+  "configuration_tokens": [],
+  "brand_aliases": [],
+  "model_aliases": [
+    "te 300 heritage"
+  ],
+  "status": "SUCCESS",
+  "prompt_version": "motorcycle-candidate-resolution-v4",
+  "model": "qwen-flash",
+  "make": "Husqvarna",
+  "model_name": "TX300 Heritage"
+}

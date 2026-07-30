@@ -1,0 +1,18 @@
+{
+  "decision": "MATCH",
+  "selected_candidate": "harley davidson softail low rider fxlr",
+  "confidence": "HIGH",
+  "match_basis": "SAME_NAME",
+  "explanation": "The input 'FXLR Low Rider 107' is a direct reference to the Harley-Davidson Softail Low Rider FXLR with a 107 cubic inch engine, which matches the catalog candidate 'harley davidson softail low rider fxlr' exactly in model identity and displacement. The variant '107' is consistent with the FXLR's standard engine size.",
+  "canonical_model_alias": "softail low rider fxlr",
+  "configuration_tokens": [
+    "107"
+  ],
+  "brand_aliases": [],
+  "model_aliases": [],
+  "status": "SUCCESS",
+  "prompt_version": "motorcycle-candidate-resolution-v4",
+  "model": "qwen-flash",
+  "make": "Harley-Davidson",
+  "model_name": "FXLR Low Rider 107"
+}

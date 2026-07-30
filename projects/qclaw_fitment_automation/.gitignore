@@ -1,0 +1,5 @@
+node_modules/
+.playwright-profile/
+conversation_archives.json
+__pycache__/
+*.py[cod]

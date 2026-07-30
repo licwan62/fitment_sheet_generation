@@ -1,0 +1,16 @@
+{
+  "decision": "UNKNOWN",
+  "confidence": "LOW",
+  "length_mm": null,
+  "width_mm": null,
+  "height_mm": null,
+  "wheelbase_mm": null,
+  "seat_height_mm": null,
+  "ground_clearance_mm": null,
+  "explanation": "The Big Dog Ridgeback model is not well-documented in public sources, and available information is inconsistent or insufficient to reliably infer dimensions. Variations by year and market further reduce confidence. Without a verified catalog reference or clear model-specific data, dimensions cannot be accurately estimated.",
+  "status": "SUCCESS",
+  "prompt_version": "motorcycle-dimension-inference-v1",
+  "model": "qwen-flash",
+  "make": "Big Dog",
+  "model_name": "Ridgeback"
+}

@@ -1,0 +1,16 @@
+{
+  "decision": "NO_MATCH",
+  "selected_candidate": "",
+  "confidence": "HIGH",
+  "match_basis": "NONE",
+  "explanation": "The model 'CRUISING 125' is not found in the catalog candidates, and no known variant or market-specific alias of this model exists in the provided list. Honda does not have a publicly documented motorcycle named 'CRUISING 125' in its historical or current lineup, suggesting it may be a misinterpretation or fictional name.",
+  "canonical_model_alias": "",
+  "configuration_tokens": [],
+  "brand_aliases": [],
+  "model_aliases": [],
+  "status": "SUCCESS",
+  "prompt_version": "motorcycle-candidate-resolution-v4",
+  "model": "qwen-flash",
+  "make": "Honda",
+  "model_name": "CRUISING 125"
+}

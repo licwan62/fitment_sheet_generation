@@ -1,0 +1,18 @@
+{
+  "decision": "MATCH",
+  "selected_candidate": "DR 650SE",
+  "confidence": "HIGH",
+  "match_basis": "MARKET_ALIAS",
+  "explanation": "The DR650SE is a specific configuration of the DR650 model, with 'SE' denoting a special edition or enhanced specification. The DR 650RS is a different variant (with 'RS' indicating a road sport or racing-inspired version), but both share the core DR650 identity. However, given that the input model is simply 'DR650' and the candidates are distinct configurations, the most accurate match is the DR 650SE as it is a well-documented, official variant of the DR650 line. The DR 650RS is not a direct alias but a separate model variant. Therefore, only DR 650SE matches the underlying DR650 model in the context of known Suzuki catalog variants.",
+  "canonical_model_alias": "DR 650SE",
+  "configuration_tokens": [],
+  "brand_aliases": [],
+  "model_aliases": [
+    "DR 650SE"
+  ],
+  "status": "SUCCESS",
+  "prompt_version": "motorcycle-candidate-resolution-v4",
+  "model": "qwen-flash",
+  "make": "Suzuki",
+  "model_name": "DR650"
+}

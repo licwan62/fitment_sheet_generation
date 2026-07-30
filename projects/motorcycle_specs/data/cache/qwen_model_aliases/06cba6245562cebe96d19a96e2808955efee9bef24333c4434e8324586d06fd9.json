@@ -1,0 +1,18 @@
+{
+  "decision": "MATCH",
+  "selected_candidate": "Suzuki Intruder 150",
+  "confidence": "HIGH",
+  "match_basis": "SAME_NAME",
+  "explanation": "The input 'Intruder ABS' refers to the Suzuki Intruder 150 with ABS, which is a known configuration of the Suzuki Intruder 150 model. The catalog candidate 'Suzuki Intruder 150' matches the underlying motorcycle identity, with ABS being a configuration feature not altering the core model identity.",
+  "canonical_model_alias": "Suzuki Intruder 150",
+  "configuration_tokens": [
+    "ABS"
+  ],
+  "brand_aliases": [],
+  "model_aliases": [],
+  "status": "SUCCESS",
+  "prompt_version": "motorcycle-candidate-resolution-v4",
+  "model": "qwen-flash",
+  "make": "Suzuki",
+  "model_name": "Intruder ABS"
+}

@@ -1,0 +1,16 @@
+{
+  "decision": "UNKNOWN",
+  "confidence": "LOW",
+  "length_mm": null,
+  "width_mm": null,
+  "height_mm": null,
+  "wheelbase_mm": null,
+  "seat_height_mm": null,
+  "ground_clearance_mm": null,
+  "explanation": "The model 'DM06 Wukong' by Honey Whale is not a publicly documented or widely recognized motorcycle. No reliable specifications are available, and the name 'Wukong' may refer to a fictional or prototype design. Without verifiable data or official catalog references, dimensions cannot be reliably inferred.",
+  "status": "SUCCESS",
+  "prompt_version": "motorcycle-dimension-inference-v1",
+  "model": "qwen-flash",
+  "make": "Honey Whale",
+  "model_name": "DM06 Wukong"
+}

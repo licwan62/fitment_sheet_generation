@@ -1,0 +1,16 @@
+{
+  "decision": "MATCH",
+  "selected_candidate": "gasgas txt rookie 80",
+  "confidence": "HIGH",
+  "match_basis": "TYPO",
+  "explanation": "'EC Rookie 50' and 'txt rookie 80' are the same model line with a displacement typo (50 vs 80) and 'EC' vs 'txt' as a known marketing abbreviation; 'txt' is Gas Gas's branding for youth models, and 'Rookie' is consistent. The 50cc version exists but the 80cc is the primary model in this series, making the input likely a misremembered displacement.",
+  "canonical_model_alias": "txt rookie 80",
+  "configuration_tokens": [],
+  "brand_aliases": [],
+  "model_aliases": [],
+  "status": "SUCCESS",
+  "prompt_version": "motorcycle-candidate-resolution-v4",
+  "model": "qwen-flash",
+  "make": "Gas Gas",
+  "model_name": "EC Rookie 50"
+}

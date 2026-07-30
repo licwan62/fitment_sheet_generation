@@ -1,0 +1,20 @@
+{
+  "decision": "MATCH",
+  "selected_candidate": "Suzuki V-Strom 1050XT Adventure",
+  "confidence": "HIGH",
+  "match_basis": "SAME_NAME",
+  "explanation": "The input model 'DL1050 V-Strom 1050XT Adventure' is a direct reference to the same motorcycle as the catalog candidate 'Suzuki V-Strom 1050XT Adventure', with 'DL1050' being the model code and 'V-Strom 1050XT Adventure' the official name. The candidate title matches the canonical model name used in Suzuki's catalog, including displacement, variant, and adventure designation.",
+  "canonical_model_alias": "V-Strom 1050XT Adventure",
+  "configuration_tokens": [
+    "Adventure"
+  ],
+  "brand_aliases": [],
+  "model_aliases": [
+    "V-Strom 1050XT Adventure"
+  ],
+  "status": "SUCCESS",
+  "prompt_version": "motorcycle-candidate-resolution-v4",
+  "model": "qwen-flash",
+  "make": "Suzuki",
+  "model_name": "DL1050 V-Strom 1050XT Adventure"
+}

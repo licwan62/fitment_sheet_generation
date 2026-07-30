@@ -1,0 +1,18 @@
+{
+  "decision": "MATCH",
+  "selected_candidate": "VFR 800F Interceptor",
+  "confidence": "HIGH",
+  "match_basis": "SAME_NAME",
+  "explanation": "The input 'VFR800 Interceptor' refers to the same underlying motorcycle model as 'VFR 800F Interceptor', with 'F' being a standard model designation in Honda's nomenclature for this variant. The absence of 'F' in the input is a common omission, but the core model identity remains unchanged.",
+  "canonical_model_alias": "VFR 800F Interceptor",
+  "configuration_tokens": [],
+  "brand_aliases": [],
+  "model_aliases": [
+    "VFR 800F Interceptor"
+  ],
+  "status": "SUCCESS",
+  "prompt_version": "motorcycle-candidate-resolution-v4",
+  "model": "qwen-flash",
+  "make": "Honda",
+  "model_name": "VFR800 Interceptor"
+}

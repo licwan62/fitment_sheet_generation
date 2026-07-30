@@ -1,0 +1,16 @@
+{
+  "decision": "NO_MATCH",
+  "selected_candidate": "",
+  "confidence": "HIGH",
+  "match_basis": "NONE",
+  "explanation": "The Hero Ignitor 125 is a distinct model from all catalog candidates. None of the candidates match the Ignitor 125 in name, displacement, or known market/variant identities. The Hero Glamour X 125 and Xoom 125 are different models; Destini 110 and Destini Prime differ in displacement and model line; R 1200GS Adventure and RNT 150 Diesel Scooter Concept are unrelated motorcycles. HX 250R is a different brand/model entirely.",
+  "canonical_model_alias": "",
+  "configuration_tokens": [],
+  "brand_aliases": [],
+  "model_aliases": [],
+  "status": "SUCCESS",
+  "prompt_version": "motorcycle-candidate-resolution-v4",
+  "model": "qwen-flash",
+  "make": "Hero",
+  "model_name": "Ignitor 125"
+}

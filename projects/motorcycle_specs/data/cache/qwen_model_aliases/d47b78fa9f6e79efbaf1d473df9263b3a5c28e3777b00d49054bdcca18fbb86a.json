@@ -1,0 +1,20 @@
+{
+  "decision": "MATCH",
+  "selected_candidate": "Suzuki SV650SF ABS",
+  "confidence": "HIGH",
+  "match_basis": "MARKET_ALIAS",
+  "explanation": "The 'SA' and 'SF' designations in the Suzuki SV650 series are market-specific variants of the same underlying model, with 'SA' used in some regions (e.g., Europe) and 'SF' in others (e.g., North America). Both include ABS and share identical core specifications, engine, and platform. The difference is a regional naming convention, not a distinct model.",
+  "canonical_model_alias": "SV650SF ABS",
+  "configuration_tokens": [
+    "ABS"
+  ],
+  "brand_aliases": [],
+  "model_aliases": [
+    "SV650SF ABS"
+  ],
+  "status": "SUCCESS",
+  "prompt_version": "motorcycle-candidate-resolution-v4",
+  "model": "qwen-flash",
+  "make": "Suzuki",
+  "model_name": "SV650SA ABS"
+}

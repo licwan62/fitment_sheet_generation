@@ -1,0 +1,16 @@
+{
+  "decision": "NO_MATCH",
+  "selected_candidate": "",
+  "confidence": "HIGH",
+  "match_basis": "NONE",
+  "explanation": "The input model 'XL75' refers to a 75cc motorcycle, while all catalog candidates are significantly larger displacement models (350cc, 175cc, 750cc). There is no known Honda XL75 model in the catalog, and none of the candidates match the 75cc displacement or the exact model designation. The XL750V Transalp series is unrelated in size and identity.",
+  "canonical_model_alias": "",
+  "configuration_tokens": [],
+  "brand_aliases": [],
+  "model_aliases": [],
+  "status": "SUCCESS",
+  "prompt_version": "motorcycle-candidate-resolution-v4",
+  "model": "qwen-flash",
+  "make": "Honda",
+  "model_name": "XL75"
+}

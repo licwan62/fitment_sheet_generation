@@ -1,0 +1,18 @@
+{
+  "decision": "MATCH",
+  "selected_candidate": "Suzuki Burgman 125 Street",
+  "confidence": "HIGH",
+  "match_basis": "SAME_NAME",
+  "explanation": "The input 'UB125 Burgman Street' is a valid market or catalog designation for the Suzuki Burgman 125 Street model. The candidate 'Suzuki Burgman 125 Street' matches exactly in name, displacement, and model type, confirming it is the same underlying motorcycle.",
+  "canonical_model_alias": "Burgman 125 Street",
+  "configuration_tokens": [],
+  "brand_aliases": [],
+  "model_aliases": [
+    "Burgman 125 Street"
+  ],
+  "status": "SUCCESS",
+  "prompt_version": "motorcycle-candidate-resolution-v4",
+  "model": "qwen-flash",
+  "make": "Suzuki",
+  "model_name": "UB125 Burgman Street"
+}

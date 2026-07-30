@@ -1,0 +1,16 @@
+{
+  "decision": "NO_MATCH",
+  "selected_candidate": "",
+  "confidence": "HIGH",
+  "match_basis": "NONE",
+  "explanation": "The input model 'Delta GT25' is not equivalent to any of the catalog candidates. The candidates are all variants of Gas Gas TXT or EC series with 125cc, 250cc, or 2T engine configurations, but none match the 'Delta GT25' designation in name, displacement, or known model lineage. 'Delta GT25' does not correspond to a known Gas Gas model, and no candidate shares the same identity.",
+  "canonical_model_alias": "",
+  "configuration_tokens": [],
+  "brand_aliases": [],
+  "model_aliases": [],
+  "status": "SUCCESS",
+  "prompt_version": "motorcycle-candidate-resolution-v4",
+  "model": "qwen-flash",
+  "make": "Gas Gas",
+  "model_name": "Delta GT25"
+}

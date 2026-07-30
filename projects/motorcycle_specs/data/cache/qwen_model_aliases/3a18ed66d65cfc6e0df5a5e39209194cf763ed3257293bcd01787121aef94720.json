@@ -1,0 +1,16 @@
+{
+  "decision": "NO_MATCH",
+  "selected_candidate": "",
+  "confidence": "HIGH",
+  "match_basis": "NONE",
+  "explanation": "The input model FC499 is a 499cc Husaberg, but all catalog candidates are 450cc or 390cc models. The displacement differs significantly, and no candidate matches the FC499 in engine size or model designation. No known market alias, historical name, or typo links FC499 to any of the listed models.",
+  "canonical_model_alias": "",
+  "configuration_tokens": [],
+  "brand_aliases": [],
+  "model_aliases": [],
+  "status": "SUCCESS",
+  "prompt_version": "motorcycle-candidate-resolution-v4",
+  "model": "qwen-flash",
+  "make": "Husaberg",
+  "model_name": "FC499"
+}

@@ -1,0 +1,16 @@
+{
+  "decision": "NO_MATCH",
+  "selected_candidate": "",
+  "confidence": "HIGH",
+  "match_basis": "NONE",
+  "explanation": "The input model 'Bear Bones V111 Carb' is not found in the catalog candidates, and no known market name, historical alias, abbreviation, or plausible typo matches any candidate. The manufacturer Big Bear Choppers is not associated with a widely recognized motorcycle model matching this description in available catalogs.",
+  "canonical_model_alias": "",
+  "configuration_tokens": [],
+  "brand_aliases": [],
+  "model_aliases": [],
+  "status": "SUCCESS",
+  "prompt_version": "motorcycle-candidate-resolution-v4",
+  "model": "qwen-flash",
+  "make": "Big Bear Choppers",
+  "model_name": "Bear Bones V111 Carb"
+}

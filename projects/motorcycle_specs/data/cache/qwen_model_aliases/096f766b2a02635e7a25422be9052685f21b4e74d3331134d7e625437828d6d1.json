@@ -1,0 +1,18 @@
+{
+  "decision": "MATCH",
+  "selected_candidate": "Indian scout sixty limited",
+  "confidence": "HIGH",
+  "match_basis": "MARKET_ALIAS",
+  "explanation": "The input 'Sport Scout Sixty Limited' is a marketing rebranding of the Indian Scout Sixty Limited, with 'Sport' being a stylistic or market-specific prefix used in certain regions. The core model identity—Scout Sixty Limited—matches exactly with the candidate. The term 'Sport' does not alter the underlying motorcycle model.",
+  "canonical_model_alias": "Indian scout sixty limited",
+  "configuration_tokens": [],
+  "brand_aliases": [],
+  "model_aliases": [
+    "scout sixty limited"
+  ],
+  "status": "SUCCESS",
+  "prompt_version": "motorcycle-candidate-resolution-v4",
+  "model": "qwen-flash",
+  "make": "Indian",
+  "model_name": "Sport Scout Sixty Limited"
+}

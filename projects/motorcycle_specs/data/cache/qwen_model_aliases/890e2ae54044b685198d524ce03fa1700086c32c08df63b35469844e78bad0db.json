@@ -1,0 +1,19 @@
+{
+  "decision": "MATCH",
+  "selected_candidate": "Harley-Davidson Street Glide Ultra",
+  "confidence": "HIGH",
+  "match_basis": "SAME_NAME",
+  "explanation": "The input 'FLHXU Street Glide Ultra' is the full model designation for the Harley-Davidson Street Glide Ultra, and 'Harley-Davidson Street Glide Ultra' is a direct catalog title that refers to the same motorcycle model. The FLHXU designation is the factory model code, while the catalog candidate uses the common name, but both identify the exact same model.",
+  "canonical_model_alias": "Street Glide Ultra",
+  "configuration_tokens": [],
+  "brand_aliases": [],
+  "model_aliases": [
+    "Glide Ultra",
+    "Street Glide Ultra"
+  ],
+  "status": "SUCCESS",
+  "prompt_version": "motorcycle-candidate-resolution-v4",
+  "model": "qwen-flash",
+  "make": "Harley-Davidson",
+  "model_name": "FLHXU Street Glide Ultra"
+}

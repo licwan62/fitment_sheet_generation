@@ -1,0 +1,18 @@
+{
+  "decision": "MATCH",
+  "selected_candidate": "cfmoto 300sr",
+  "confidence": "HIGH",
+  "match_basis": "MARKET_ALIAS",
+  "explanation": "The model '300SS' is a market-specific naming variant of the CFMOTO 300SR, commonly used in certain regions. The 'SS' designation is a known regional or marketing alias for the 300SR, particularly in European and Asian markets, while the core motorcycle identity remains unchanged.",
+  "canonical_model_alias": "300SR",
+  "configuration_tokens": [],
+  "brand_aliases": [],
+  "model_aliases": [
+    "300sr"
+  ],
+  "status": "SUCCESS",
+  "prompt_version": "motorcycle-candidate-resolution-v4",
+  "model": "qwen-flash",
+  "make": "CFMOTO",
+  "model_name": "300SS"
+}

@@ -1,0 +1,16 @@
+{
+  "decision": "INFER|UNKNOWN",
+  "confidence": "LOW",
+  "length_mm": null,
+  "width_mm": null,
+  "height_mm": null,
+  "wheelbase_mm": null,
+  "seat_height_mm": null,
+  "ground_clearance_mm": null,
+  "explanation": "The Honda GL 150 DS is not a widely documented model in standard motorcycle references, and no reliable catalog or technical specifications are available for this specific variant. The model name may be confused with other Honda models such as the GL series (e.g., GL1500 Gold Wing), but the 'GL 150 DS' does not correspond to an officially recognized production model. Without clear evidence of its existence or dimensions, dimensions cannot be reliably inferred. Therefore, the result is marked as UNKNOWN with low confidence.",
+  "status": "SUCCESS",
+  "prompt_version": "motorcycle-dimension-inference-v1",
+  "model": "qwen-flash",
+  "make": "Honda",
+  "model_name": "GL 150 DS"
+}

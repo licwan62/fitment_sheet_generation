@@ -1,0 +1,16 @@
+{
+  "decision": "INFER|UNKNOWN",
+  "confidence": "MEDIUM|LOW",
+  "length_mm": null,
+  "width_mm": null,
+  "height_mm": null,
+  "wheelbase_mm": null,
+  "seat_height_mm": null,
+  "ground_clearance_mm": null,
+  "explanation": "The Honda GL1800 Gold Wing 50th Anniversary model is a limited edition variant with no official catalog documentation available for precise dimensional data. While the standard GL1800 Gold Wing has known dimensions, variations in special editions—especially those involving unique styling, suspension, or weight distribution—can alter key measurements. Without confirmed manufacturer specifications or verified source data for this specific anniversary model, dimension estimation carries significant uncertainty. Therefore, dimensions are marked as unknown.",
+  "status": "SUCCESS",
+  "prompt_version": "motorcycle-dimension-inference-v1",
+  "model": "qwen-flash",
+  "make": "Honda",
+  "model_name": "GL1800 Gold Wing 50th Anniversary"
+}

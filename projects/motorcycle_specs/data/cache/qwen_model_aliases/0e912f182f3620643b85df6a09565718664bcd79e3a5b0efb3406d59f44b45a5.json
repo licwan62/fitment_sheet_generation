@@ -1,0 +1,16 @@
+{
+  "decision": "NO_MATCH",
+  "selected_candidate": "",
+  "confidence": "HIGH",
+  "match_basis": "NONE",
+  "explanation": "The input 'GL150' refers to a Honda motorcycle, but none of the catalog candidates match the GL150 model. The GL1500 SE is a different model (1500cc), and other candidates like XR 150L, SH150i, and PCX150 are distinct models with different engine configurations, design purposes, and platform identities. 'Honda @ 150' is a branding term, not a model name. No candidate represents the same underlying motorcycle as GL150.",
+  "canonical_model_alias": "",
+  "configuration_tokens": [],
+  "brand_aliases": [],
+  "model_aliases": [],
+  "status": "SUCCESS",
+  "prompt_version": "motorcycle-candidate-resolution-v4",
+  "model": "qwen-flash",
+  "make": "Honda",
+  "model_name": "GL150"
+}

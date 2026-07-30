@@ -1,0 +1,16 @@
+{
+  "decision": "MATCH",
+  "selected_candidate": "gasgas ec 250f",
+  "confidence": "HIGH",
+  "match_basis": "TYPO",
+  "explanation": "The input 'EC 250F 4T' is a valid model designation, and 'gasgas ec 250f' is a plausible lowercase and space-normalized variant with the same displacement, engine type (4T), and model series. The '4T' in the input is redundant in the candidate since 'ec 250f' implies 4-stroke by context, and the absence of '4T' does not indicate a different model. The 'F' suffix denotes a factory or race-oriented version, consistent across both. This is a known typographical variation in cataloging.",
+  "canonical_model_alias": "ec 250f",
+  "configuration_tokens": [],
+  "brand_aliases": [],
+  "model_aliases": [],
+  "status": "SUCCESS",
+  "prompt_version": "motorcycle-candidate-resolution-v4",
+  "model": "qwen-flash",
+  "make": "Gas Gas",
+  "model_name": "EC 250F 4T"
+}

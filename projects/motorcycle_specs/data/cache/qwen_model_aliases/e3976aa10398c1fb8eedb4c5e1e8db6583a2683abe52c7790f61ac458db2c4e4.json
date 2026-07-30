@@ -1,0 +1,21 @@
+{
+  "decision": "MATCH",
+  "selected_candidate": "harley davidson softail deuce fxstd",
+  "confidence": "HIGH",
+  "match_basis": "MARKET_ALIAS",
+  "explanation": "The input 'FXSTDSE Screamin Eagle Softail Deuce' is a market-specific configuration of the Softail Deuce model, and 'harley davidson softail deuce fxstd' is the canonical catalog expression for the same underlying motorcycle, with 'FXSTD' being the correct model code for the Deuce. The 'SSE' suffix in the input denotes the Screamin' Eagle package, which is a known configuration variant. The catalog candidate matches the base model identity despite differing formatting and suffixes.",
+  "canonical_model_alias": "softail deuce fxstd",
+  "configuration_tokens": [
+    "Screamin Eagle",
+    "SE"
+  ],
+  "brand_aliases": [],
+  "model_aliases": [
+    "softail deuce fxstd"
+  ],
+  "status": "SUCCESS",
+  "prompt_version": "motorcycle-candidate-resolution-v4",
+  "model": "qwen-flash",
+  "make": "Harley-Davidson",
+  "model_name": "FXSTDSE Screamin Eagle Softail Deuce"
+}

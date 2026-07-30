@@ -1,0 +1,16 @@
+{
+  "decision": "MATCH",
+  "selected_candidate": "VT 750C Shadow Spirit",
+  "confidence": "HIGH",
+  "match_basis": "SAME_NAME",
+  "explanation": "The input model 'VT750C2 Shadow Spirit' is a direct match in identity to the catalog candidate 'VT 750C Shadow Spirit', with the '2' in the model number being a minor variant or typo that does not alter the underlying motorcycle identity. The displacement (750), platform (VT), and name (Shadow Spirit) are identical.",
+  "canonical_model_alias": "VT 750C Shadow Spirit",
+  "configuration_tokens": [],
+  "brand_aliases": [],
+  "model_aliases": [],
+  "status": "SUCCESS",
+  "prompt_version": "motorcycle-candidate-resolution-v4",
+  "model": "qwen-flash",
+  "make": "Honda",
+  "model_name": "VT750C2 Shadow Spirit"
+}

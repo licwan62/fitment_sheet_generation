@@ -1,0 +1,16 @@
+{
+  "decision": "INFER|UNKNOWN",
+  "confidence": "MEDIUM|LOW",
+  "length_mm": null,
+  "width_mm": null,
+  "height_mm": null,
+  "wheelbase_mm": null,
+  "seat_height_mm": null,
+  "ground_clearance_mm": null,
+  "explanation": "ATK is a lesser-known manufacturer with limited public data on the 450 Dirt Track model. No reliable catalog or technical specifications were found to confirm dimensions. Variations by year and market are possible, and no direct source confirms model-specific measurements. Inference is not feasible with sufficient confidence.",
+  "status": "SUCCESS",
+  "prompt_version": "motorcycle-dimension-inference-v1",
+  "model": "qwen-flash",
+  "make": "ATK",
+  "model_name": "450 Dirt Track"
+}

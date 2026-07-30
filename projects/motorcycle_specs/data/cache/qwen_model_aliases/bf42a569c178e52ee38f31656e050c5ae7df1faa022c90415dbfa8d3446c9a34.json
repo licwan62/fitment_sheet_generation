@@ -1,0 +1,16 @@
+{
+  "decision": "MATCH",
+  "selected_candidate": "buell 1125 r",
+  "confidence": "HIGH",
+  "match_basis": "MARKET_ALIAS",
+  "explanation": "The Buell RR1000 is a market-specific name for the Buell 1125R, with 'RR' denoting a high-performance variant and '1000' referring to the engine displacement. The 1125R model was marketed as the RR1000 in certain regions or contexts, making it a known market alias.",
+  "canonical_model_alias": "1125 r",
+  "configuration_tokens": [],
+  "brand_aliases": [],
+  "model_aliases": [],
+  "status": "SUCCESS",
+  "prompt_version": "motorcycle-candidate-resolution-v4",
+  "model": "qwen-flash",
+  "make": "Buell",
+  "model_name": "RR1000"
+}

@@ -1,0 +1,16 @@
+{
+  "decision": "MATCH",
+  "selected_candidate": "harley davidson softail street bob fxbb",
+  "confidence": "HIGH",
+  "match_basis": "MARKET_ALIAS",
+  "explanation": "FXBB is the model code for the Street Bob 107, and 'Softail Street Bob FXBB' is the correct catalog designation. 'Street Bob 107' and 'Softail Street Bob FXBB' refer to the same motorcycle model, with 'Softail Fat Bob' being a common market misnomer or typo variant. The displacement (107 cubic inches) and model code (FXBB) confirm identity.",
+  "canonical_model_alias": "softail street bob fxbb",
+  "configuration_tokens": [],
+  "brand_aliases": [],
+  "model_aliases": [],
+  "status": "SUCCESS",
+  "prompt_version": "motorcycle-candidate-resolution-v4",
+  "model": "qwen-flash",
+  "make": "Harley-Davidson",
+  "model_name": "FXBB Street Bob 107"
+}

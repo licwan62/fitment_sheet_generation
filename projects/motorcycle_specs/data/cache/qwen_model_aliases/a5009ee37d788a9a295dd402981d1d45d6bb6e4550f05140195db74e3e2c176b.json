@@ -1,0 +1,16 @@
+{
+  "decision": "NO_MATCH",
+  "selected_candidate": "",
+  "confidence": "HIGH",
+  "match_basis": "NONE",
+  "explanation": "The input model '125 MX-6' is a small-displacement, motocross-oriented motorcycle with a 125cc engine and 6-speed transmission. None of the catalog candidates feature a 125cc engine or a motocross-focused designation. The candidates are all large off-road utility vehicles (UTVs) in the Outlander and Traxter lines, with engine displacements of 450cc, 650cc, or 1000cc, and are not related to the MX-6 model in design, purpose, or engine size.",
+  "canonical_model_alias": "",
+  "configuration_tokens": [],
+  "brand_aliases": [],
+  "model_aliases": [],
+  "status": "SUCCESS",
+  "prompt_version": "motorcycle-candidate-resolution-v4",
+  "model": "qwen-flash",
+  "make": "Can-Am",
+  "model_name": "125 MX-6"
+}

@@ -1,0 +1,18 @@
+{
+  "decision": "MATCH",
+  "selected_candidate": "CBX 250RS",
+  "confidence": "HIGH",
+  "match_basis": "MARKET_ALIAS",
+  "explanation": "The 'CBX250' input refers to the Honda CBX 250RS, a model marketed in certain regions as simply 'CBX 250'. The 'RS' designation is the official model name, but in some markets and contexts, it was referred to generically as CBX 250. The other candidates (CBX 250S, CBX 250 Twister) are distinct models with different configurations or designations.",
+  "canonical_model_alias": "CBX 250RS",
+  "configuration_tokens": [],
+  "brand_aliases": [],
+  "model_aliases": [
+    "CBX 250RS"
+  ],
+  "status": "SUCCESS",
+  "prompt_version": "motorcycle-candidate-resolution-v4",
+  "model": "qwen-flash",
+  "make": "Honda",
+  "model_name": "CBX250"
+}

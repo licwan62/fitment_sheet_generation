@@ -1,0 +1,16 @@
+{
+  "decision": "NO_MATCH",
+  "selected_candidate": "",
+  "confidence": "HIGH",
+  "match_basis": "NONE",
+  "explanation": "The input model VT800C Shadow is a distinct Honda motorcycle with a cruiser design, while all catalog candidates are VFR or CB series models with different engine configurations, purposes, and identities. None of the candidates match the VT800C Shadow in model identity, displacement, or platform.",
+  "canonical_model_alias": "",
+  "configuration_tokens": [],
+  "brand_aliases": [],
+  "model_aliases": [],
+  "status": "SUCCESS",
+  "prompt_version": "motorcycle-candidate-resolution-v4",
+  "model": "qwen-flash",
+  "make": "Honda",
+  "model_name": "VT800C Shadow"
+}

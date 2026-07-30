@@ -1,0 +1,16 @@
+{
+  "decision": "MATCH",
+  "selected_candidate": "gasgas txt rookie 80",
+  "confidence": "HIGH",
+  "match_basis": "MARKET_ALIAS",
+  "explanation": "The 'TXT 70 Rookie' is a market-specific name for the 80cc version of the TXT Rookie model, with '70' likely referring to displacement in a regional naming convention. The candidate 'gasgas txt rookie 80' matches the same underlying motorcycle with a correct displacement and identical model series.",
+  "canonical_model_alias": "txt rookie 80",
+  "configuration_tokens": [],
+  "brand_aliases": [],
+  "model_aliases": [],
+  "status": "SUCCESS",
+  "prompt_version": "motorcycle-candidate-resolution-v4",
+  "model": "qwen-flash",
+  "make": "Gas Gas",
+  "model_name": "TXT 70 Rookie"
+}

@@ -1,0 +1,16 @@
+{
+  "decision": "NO_MATCH",
+  "selected_candidate": "",
+  "confidence": "HIGH",
+  "match_basis": "NONE",
+  "explanation": "The input model CA105T is not present in the catalog candidates, and no candidate matches its identity. The CA105T is a distinct Honda model with a 105cc engine, while all candidates either have different displacements (e.g., CB125T, CT125), are unrelated models (e.g., PCX150, CB1000GT), or are from different model lines. No known market alias, historical name, abbreviation, or typo links CA105T to any candidate.",
+  "canonical_model_alias": "",
+  "configuration_tokens": [],
+  "brand_aliases": [],
+  "model_aliases": [],
+  "status": "SUCCESS",
+  "prompt_version": "motorcycle-candidate-resolution-v4",
+  "model": "qwen-flash",
+  "make": "Honda",
+  "model_name": "CA105T"
+}

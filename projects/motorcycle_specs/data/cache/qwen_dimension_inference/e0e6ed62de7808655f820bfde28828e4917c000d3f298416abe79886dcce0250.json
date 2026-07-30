@@ -1,0 +1,16 @@
+{
+  "decision": "INFER",
+  "confidence": "LOW",
+  "length_mm": 2200,
+  "width_mm": 900,
+  "height_mm": 1350,
+  "wheelbase_mm": 1450,
+  "seat_height_mm": 860,
+  "ground_clearance_mm": 200,
+  "explanation": "Inferred from typical dimensions of similar mid-sized off-road motorcycles in the 450cc class, such as KTM 450 SX-F or Husqvarna FC450. ATK 450 VR is a less documented model, and no official specifications were available. Dimensions are estimated based on general design trends for this category, but actual values may vary.",
+  "status": "SUCCESS",
+  "prompt_version": "motorcycle-dimension-inference-v1",
+  "model": "qwen-flash",
+  "make": "ATK",
+  "model_name": "450 VR"
+}

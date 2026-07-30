@@ -1,0 +1,16 @@
+{
+  "decision": "NO_MATCH",
+  "selected_candidate": "",
+  "confidence": "HIGH",
+  "match_basis": "NONE",
+  "explanation": "The BMW R nine T /5 is a modern motorcycle with a boxer twin engine, while the R 5 is a vintage 1950s model with a single-cylinder engine. The displacement, engine configuration, and era are fundamentally different. No known market name, abbreviation, or typo links these models. They are not the same underlying motorcycle.",
+  "canonical_model_alias": "",
+  "configuration_tokens": [],
+  "brand_aliases": [],
+  "model_aliases": [],
+  "status": "SUCCESS",
+  "prompt_version": "motorcycle-candidate-resolution-v4",
+  "model": "qwen-flash",
+  "make": "BMW",
+  "model_name": "R nine T /5"
+}

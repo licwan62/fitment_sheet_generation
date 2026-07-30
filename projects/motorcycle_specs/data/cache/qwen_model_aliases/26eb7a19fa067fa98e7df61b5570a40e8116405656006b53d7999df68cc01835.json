@@ -1,0 +1,20 @@
+{
+  "decision": "MATCH",
+  "selected_candidate": "Discover 125 DTS-i",
+  "confidence": "HIGH",
+  "match_basis": "MARKET_ALIAS",
+  "explanation": "The 'Discover 125 ST' is a market-specific configuration or variant of the Discover 125 DTS-i, with 'ST' likely denoting a special trim or regional designation. The core model identity (Discover 125) and engine displacement (125) are identical, and the DTS-i branding aligns with Bajaj's naming convention for this model line. No other candidate shares both the base model and displacement.",
+  "canonical_model_alias": "Discover 125 DTS-i",
+  "configuration_tokens": [
+    "ST"
+  ],
+  "brand_aliases": [],
+  "model_aliases": [
+    "Discover 125 DTS-i"
+  ],
+  "status": "SUCCESS",
+  "prompt_version": "motorcycle-candidate-resolution-v4",
+  "model": "qwen-flash",
+  "make": "Bajaj",
+  "model_name": "Discover 125 ST"
+}

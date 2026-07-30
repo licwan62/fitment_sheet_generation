@@ -1,0 +1,16 @@
+{
+  "decision": "INFER|UNKNOWN",
+  "confidence": "MEDIUM|LOW",
+  "length_mm": null,
+  "width_mm": null,
+  "height_mm": null,
+  "wheelbase_mm": null,
+  "seat_height_mm": null,
+  "ground_clearance_mm": null,
+  "explanation": "The Indian Chief Deluxe model's dimensions vary across model years and markets, and no definitive catalog reference is available for verification. Inferred dimensions based on similar models in the Indian lineup are not reliable enough for precise values. Therefore, all dimensions are marked as unknown with medium to low confidence.",
+  "status": "SUCCESS",
+  "prompt_version": "motorcycle-dimension-inference-v1",
+  "model": "qwen-flash",
+  "make": "Indian",
+  "model_name": "Chief Deluxe"
+}

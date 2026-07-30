@@ -1,0 +1,20 @@
+{
+  "decision": "MATCH",
+  "selected_candidate": "CBR 300R",
+  "confidence": "HIGH",
+  "match_basis": "SAME_NAME",
+  "explanation": "The input model 'CBR300R ABS' refers to the same motorcycle as the catalog candidate 'CBR 300R', with 'ABS' being a configuration feature (anti-lock braking system) that does not change the underlying model identity. The name is functionally identical, and the displacement (300R) and model series (CBR) match exactly.",
+  "canonical_model_alias": "CBR 300R",
+  "configuration_tokens": [
+    "ABS"
+  ],
+  "brand_aliases": [],
+  "model_aliases": [
+    "CBR 300R"
+  ],
+  "status": "SUCCESS",
+  "prompt_version": "motorcycle-candidate-resolution-v4",
+  "model": "qwen-flash",
+  "make": "Honda",
+  "model_name": "CBR300R ABS"
+}

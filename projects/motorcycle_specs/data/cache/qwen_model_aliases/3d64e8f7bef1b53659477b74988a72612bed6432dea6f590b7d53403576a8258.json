@@ -1,0 +1,18 @@
+{
+  "decision": "MATCH",
+  "selected_candidate": "beta minicross r10",
+  "confidence": "HIGH",
+  "match_basis": "SAME_NAME",
+  "explanation": "The input model 'R10' matches the catalog candidate 'beta minicross r10' exactly in name and displacement, with no conflicting or differing identity tokens. The model is a known Beta Minicross R10, and no other candidate shares this exact identity.",
+  "canonical_model_alias": "beta minicross r10",
+  "configuration_tokens": [],
+  "brand_aliases": [],
+  "model_aliases": [
+    "minicross r10"
+  ],
+  "status": "SUCCESS",
+  "prompt_version": "motorcycle-candidate-resolution-v4",
+  "model": "qwen-flash",
+  "make": "Beta",
+  "model_name": "R10"
+}

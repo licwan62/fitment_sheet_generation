@@ -1,0 +1,21 @@
+{
+  "decision": "MATCH",
+  "selected_candidate": "CBR 1000RR-SP Black Edition",
+  "confidence": "HIGH",
+  "match_basis": "MARKET_ALIAS",
+  "explanation": "The 'CBR1000RR SP Repsol Edition' is a special market-specific version of the CBR1000RR-SP, with 'Repsol Edition' being a known marketing name for the high-end variant sold in certain regions. The 'Black Edition' is a documented configuration of the CBR1000RR-SP that aligns with the Repsol livery and performance package, making it a valid market alias. Displacement and model core (CBR1000RR-SP) are identical.",
+  "canonical_model_alias": "CBR 1000RR-SP Black Edition",
+  "configuration_tokens": [
+    "Black Edition",
+    "Repsol"
+  ],
+  "brand_aliases": [],
+  "model_aliases": [
+    "CBR 1000RR-SP Black Edition"
+  ],
+  "status": "SUCCESS",
+  "prompt_version": "motorcycle-candidate-resolution-v4",
+  "model": "qwen-flash",
+  "make": "Honda",
+  "model_name": "CBR1000RR SP Repsol Edition"
+}

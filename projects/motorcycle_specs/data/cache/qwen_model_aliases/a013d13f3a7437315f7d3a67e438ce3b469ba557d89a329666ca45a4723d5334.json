@@ -1,0 +1,16 @@
+{
+  "decision": "NO_MATCH",
+  "selected_candidate": "",
+  "confidence": "HIGH",
+  "match_basis": "NONE",
+  "explanation": "The input model 'RF600' refers to the Suzuki RF600, a specific motorcycle model. The catalog candidate 'RF 600R' is a variant of the same model line, but the 'R' suffix indicates a different configuration (likely a sportier or track-focused version), and the presence of 'Suzuki GSR 600' and 'GSX-R 600' in the list confirms these are distinct models from different product lines. The '2026 GSX-R1000R' is a different displacement and model entirely. No candidate matches the exact underlying motorcycle identity of the RF600 without configuration or market-specific differences that alter model identity. Therefore, no match is valid.",
+  "canonical_model_alias": "",
+  "configuration_tokens": [],
+  "brand_aliases": [],
+  "model_aliases": [],
+  "status": "SUCCESS",
+  "prompt_version": "motorcycle-candidate-resolution-v4",
+  "model": "qwen-flash",
+  "make": "Suzuki",
+  "model_name": "RF600"
+}

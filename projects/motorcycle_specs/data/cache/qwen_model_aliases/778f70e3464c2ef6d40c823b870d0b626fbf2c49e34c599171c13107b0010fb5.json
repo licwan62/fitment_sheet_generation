@@ -1,0 +1,22 @@
+{
+  "decision": "MATCH",
+  "selected_candidate": "indian roadmaster powerplus dark horse with 112 package",
+  "confidence": "HIGH",
+  "match_basis": "SAME_NAME",
+  "explanation": "The input 'Roadmaster PowerPlus Dark Horse 112' is a direct match in model identity to the catalog candidate 'indian roadmaster powerplus dark horse with 112 package', including the same displacement (112), configuration (PowerPlus), and special edition name (Dark Horse). The variation in capitalization and minor phrasing differences do not alter the underlying motorcycle identity.",
+  "canonical_model_alias": "roadmaster powerplus dark horse with 112 package",
+  "configuration_tokens": [
+    "powerplus",
+    "dark horse",
+    "112 package"
+  ],
+  "brand_aliases": [],
+  "model_aliases": [
+    "roadmaster powerplus dark horse with 112 package"
+  ],
+  "status": "SUCCESS",
+  "prompt_version": "motorcycle-candidate-resolution-v4",
+  "model": "qwen-flash",
+  "make": "Indian",
+  "model_name": "Roadmaster PowerPlus Dark Horse 112"
+}

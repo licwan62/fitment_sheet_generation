@@ -1,0 +1,20 @@
+{
+  "decision": "MATCH",
+  "selected_candidate": "CL 450 Scrambler",
+  "confidence": "HIGH",
+  "match_basis": "SAME_NAME",
+  "explanation": "The input model 'CL450K Scrambler' and the catalog candidate 'CL 450 Scrambler' refer to the same underlying motorcycle model. The 'K' suffix in the input is a known market or configuration designation for this model, but does not alter the core identity. The displacement (450) and body style (Scrambler) match exactly.",
+  "canonical_model_alias": "CL 450 Scrambler",
+  "configuration_tokens": [
+    "K"
+  ],
+  "brand_aliases": [],
+  "model_aliases": [
+    "CL 450 Scrambler"
+  ],
+  "status": "SUCCESS",
+  "prompt_version": "motorcycle-candidate-resolution-v4",
+  "model": "qwen-flash",
+  "make": "Honda",
+  "model_name": "CL450K Scrambler"
+}

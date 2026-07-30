@@ -1,0 +1,16 @@
+{
+  "decision": "INFER|UNKNOWN",
+  "confidence": "LOW",
+  "length_mm": null,
+  "width_mm": null,
+  "height_mm": null,
+  "wheelbase_mm": null,
+  "seat_height_mm": null,
+  "ground_clearance_mm": null,
+  "explanation": "The Gas Gas TXT Pro 125 Raga is a specialized enduro motorcycle, but specific dimensions are not consistently documented across sources. Model variations by year and market may affect dimensions. Without access to an official catalog or verified technical spec sheet, accurate inference is limited. Dimensions from similar models (e.g., Gas Gas TXT 125) cannot be reliably applied due to potential differences in geometry and design. Therefore, dimensions remain uncertain.",
+  "status": "SUCCESS",
+  "prompt_version": "motorcycle-dimension-inference-v1",
+  "model": "qwen-flash",
+  "make": "Gas Gas",
+  "model_name": "TXT Pro 125 Raga"
+}

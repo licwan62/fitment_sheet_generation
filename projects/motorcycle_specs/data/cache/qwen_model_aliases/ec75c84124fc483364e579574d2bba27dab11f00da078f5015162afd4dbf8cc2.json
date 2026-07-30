@@ -1,0 +1,20 @@
+{
+  "decision": "MATCH",
+  "selected_candidate": "R \n\t\t1300RS",
+  "confidence": "HIGH",
+  "match_basis": "MARKET_ALIAS",
+  "explanation": "The input 'R1300R' and the candidate 'R 1300RS' refer to the same underlying motorcycle model. The 'RS' suffix is a known market designation (e.g., for sportier or track-oriented variants) and does not denote a different model; it is a configuration variant of the R1300R in certain markets, particularly in Europe. The core model identity—BMW R1300R—is preserved with only a minor suffix variation that reflects a market-specific naming convention.",
+  "canonical_model_alias": "R 1300RS",
+  "configuration_tokens": [
+    "RS"
+  ],
+  "brand_aliases": [],
+  "model_aliases": [
+    "R 1300RS"
+  ],
+  "status": "SUCCESS",
+  "prompt_version": "motorcycle-candidate-resolution-v4",
+  "model": "qwen-flash",
+  "make": "BMW",
+  "model_name": "R1300R"
+}

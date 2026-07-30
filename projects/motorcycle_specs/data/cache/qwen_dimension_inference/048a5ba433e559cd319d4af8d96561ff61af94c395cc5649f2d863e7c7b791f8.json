@@ -1,0 +1,16 @@
+{
+  "decision": "INFER|UNKNOWN",
+  "confidence": "MEDIUM|LOW",
+  "length_mm": null,
+  "width_mm": null,
+  "height_mm": null,
+  "wheelbase_mm": null,
+  "seat_height_mm": null,
+  "ground_clearance_mm": null,
+  "explanation": "The MRT2604E Montesa Cota 4RT Race Replica is a limited-production race replica based on the Montesa Cota 4RT, which was originally developed by Montesa (a Spanish brand now owned by Honda). However, the model designation 'MRT2604E' does not correspond to any publicly documented or officially cataloged Honda or Montesa production motorcycle. Dimensions for this specific variant are not available in verified sources, and no reliable data exists to confirm consistent dimensions across potential variations. As such, dimensions cannot be reliably inferred without risk of error. The model identity is uncertain due to lack of official documentation.",
+  "status": "SUCCESS",
+  "prompt_version": "motorcycle-dimension-inference-v1",
+  "model": "qwen-flash",
+  "make": "Honda",
+  "model_name": "MRT2604E Montesa Cota 4RT Race Replica"
+}

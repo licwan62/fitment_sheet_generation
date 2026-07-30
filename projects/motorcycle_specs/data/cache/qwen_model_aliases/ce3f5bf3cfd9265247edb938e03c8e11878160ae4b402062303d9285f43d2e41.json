@@ -1,0 +1,16 @@
+{
+  "decision": "MATCH",
+  "selected_candidate": "Husqvarna svartpilen 401",
+  "confidence": "HIGH",
+  "match_basis": "SAME_NAME",
+  "explanation": "The input 'HUV 4214' is a plausible typo or misreading of 'Husqvarna Vitpilen 401', which is a known model name. 'Vitpilen' and 'Svartpilen' are different color variants (white vs black) of the same base model, but 'Husqvarna svartpilen 401' is the correct catalog title for the black version. The displacement '401' matches exactly, and no other candidate shares this exact identity.",
+  "canonical_model_alias": "svartpilen 401",
+  "configuration_tokens": [],
+  "brand_aliases": [],
+  "model_aliases": [],
+  "status": "SUCCESS",
+  "prompt_version": "motorcycle-candidate-resolution-v4",
+  "model": "qwen-flash",
+  "make": "Husqvarna",
+  "model_name": "HUV 4214"
+}

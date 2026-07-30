@@ -1,0 +1,19 @@
+{
+  "decision": "MATCH",
+  "selected_candidate": "gasgas endurogp 250",
+  "confidence": "HIGH",
+  "match_basis": "MARKET_ALIAS",
+  "explanation": "'Enducross TT250' is a market-specific naming variant of the 'EnduroGP 250', with 'Enducross' being a regional or marketing name for the same model. The displacement (250) and core model identity are identical, and 'TT' may be a typographical or branding variation of 'GP'.",
+  "canonical_model_alias": "endurogp 250",
+  "configuration_tokens": [],
+  "brand_aliases": [],
+  "model_aliases": [
+    "gasgas endurogp 250",
+    "endurogp 250"
+  ],
+  "status": "SUCCESS",
+  "prompt_version": "motorcycle-candidate-resolution-v4",
+  "model": "qwen-flash",
+  "make": "Gas Gas",
+  "model_name": "Enducross TT250"
+}

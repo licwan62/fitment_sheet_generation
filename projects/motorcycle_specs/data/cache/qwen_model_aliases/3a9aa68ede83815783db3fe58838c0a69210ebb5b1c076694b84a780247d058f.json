@@ -1,0 +1,19 @@
+{
+  "decision": "MATCH",
+  "selected_candidate": "Harley-Davidson FLH Electra Glide",
+  "confidence": "HIGH",
+  "match_basis": "MARKET_ALIAS",
+  "explanation": "FLH Electra Glide Revival is a market-specific naming for the standard FLH Electra Glide model, commonly used in promotional or commemorative contexts. The core model identity remains unchanged.",
+  "canonical_model_alias": "FLH Electra Glide",
+  "configuration_tokens": [],
+  "brand_aliases": [],
+  "model_aliases": [
+    "Electra Glide",
+    "FLH Electra Glide"
+  ],
+  "status": "SUCCESS",
+  "prompt_version": "motorcycle-candidate-resolution-v4",
+  "model": "qwen-flash",
+  "make": "Harley-Davidson",
+  "model_name": "FLH Electra Glide Revival"
+}

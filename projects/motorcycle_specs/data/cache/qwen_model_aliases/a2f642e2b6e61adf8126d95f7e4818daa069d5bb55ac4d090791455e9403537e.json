@@ -1,0 +1,18 @@
+{
+  "decision": "MATCH",
+  "selected_candidate": "harley davidson dyna wide glide fxdwg",
+  "confidence": "HIGH",
+  "match_basis": "SAME_NAME",
+  "explanation": "The input model 'FXDWG2 CVO Dyna Wide Glide' is the same underlying motorcycle as 'harley davidson dyna wide glide fxdwg', with the year suffix '2' being a catalog year marker that does not change the core model identity. The name and displacement (Dyna Wide Glide) match exactly, and 'CVO' is a configuration label present in both. No other model in the list shares this exact identity.",
+  "canonical_model_alias": "dyna wide glide fxdwg",
+  "configuration_tokens": [
+    "CVO"
+  ],
+  "brand_aliases": [],
+  "model_aliases": [],
+  "status": "SUCCESS",
+  "prompt_version": "motorcycle-candidate-resolution-v4",
+  "model": "qwen-flash",
+  "make": "Harley-Davidson",
+  "model_name": "FXDWG2 CVO Dyna Wide Glide"
+}

@@ -1,0 +1,18 @@
+{
+  "decision": "MATCH",
+  "selected_candidate": "Softail Fat \n      Bob 107",
+  "confidence": "HIGH",
+  "match_basis": "MARKET_ALIAS",
+  "explanation": "The input 'FXFB Fat Bob 107' refers to the Harley-Davidson Softail Fat Bob 107, a model known by both its model code (FXFB) and its common name 'Fat Bob'. The candidate 'Softail Fat Bob 107' is the standard catalog title for this model, with 'Softail' being the platform name used in marketing. The variation in capitalization and line break does not affect identity. FXFB is the internal model code for the Fat Bob 107 within the Softail lineup.",
+  "canonical_model_alias": "Softail Fat Bob 107",
+  "configuration_tokens": [],
+  "brand_aliases": [],
+  "model_aliases": [
+    "Softail Fat Bob 107"
+  ],
+  "status": "SUCCESS",
+  "prompt_version": "motorcycle-candidate-resolution-v4",
+  "model": "qwen-flash",
+  "make": "Harley-Davidson",
+  "model_name": "FXFB Fat Bob 107"
+}

@@ -1,0 +1,16 @@
+{
+  "decision": "NO_MATCH",
+  "selected_candidate": "",
+  "confidence": "HIGH",
+  "match_basis": "NONE",
+  "explanation": "The input model 'NX50M' does not correspond to any of the catalog candidates. The Honda NX500 exists, but it is a different model with a larger displacement and distinct identity. The NX50M is not a known Honda model, and none of the listed candidates match its name or specification. No plausible alias, typo, or market variant connects 'NX50M' to any candidate.",
+  "canonical_model_alias": "",
+  "configuration_tokens": [],
+  "brand_aliases": [],
+  "model_aliases": [],
+  "status": "SUCCESS",
+  "prompt_version": "motorcycle-candidate-resolution-v4",
+  "model": "qwen-flash",
+  "make": "Honda",
+  "model_name": "NX50M"
+}

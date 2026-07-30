@@ -1,0 +1,20 @@
+{
+  "decision": "MATCH",
+  "selected_candidate": "Honda NT1100 DCT",
+  "confidence": "HIGH",
+  "match_basis": "CONFIGURATION",
+  "explanation": "The input 'NT1100D' is a valid abbreviation for the Honda NT1100 DCT model, where 'D' stands for DCT (Dual Clutch Transmission). This is a known configuration variant of the NT1100, and the candidate 'Honda NT1100 DCT' matches the same underlying motorcycle with an explicit transmission designation.",
+  "canonical_model_alias": "NT1100 DCT",
+  "configuration_tokens": [
+    "DCT"
+  ],
+  "brand_aliases": [],
+  "model_aliases": [
+    "NT1100 DCT"
+  ],
+  "status": "SUCCESS",
+  "prompt_version": "motorcycle-candidate-resolution-v4",
+  "model": "qwen-flash",
+  "make": "Honda",
+  "model_name": "NT1100D"
+}

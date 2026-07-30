@@ -1,0 +1,20 @@
+{
+  "decision": "MATCH",
+  "selected_candidate": "NT1100",
+  "confidence": "HIGH",
+  "match_basis": "SAME_NAME",
+  "explanation": "The input model 'NT1100D' and the candidate 'NT1100' refer to the same underlying motorcycle. The 'D' suffix is a market-specific or configuration label (e.g., for European or dealer-specific variants) but does not denote a different model. The core identity remains NT1100.",
+  "canonical_model_alias": "NT1100",
+  "configuration_tokens": [
+    "D"
+  ],
+  "brand_aliases": [],
+  "model_aliases": [
+    "NT1100"
+  ],
+  "status": "SUCCESS",
+  "prompt_version": "motorcycle-candidate-resolution-v4",
+  "model": "qwen-flash",
+  "make": "Honda",
+  "model_name": "NT1100D"
+}

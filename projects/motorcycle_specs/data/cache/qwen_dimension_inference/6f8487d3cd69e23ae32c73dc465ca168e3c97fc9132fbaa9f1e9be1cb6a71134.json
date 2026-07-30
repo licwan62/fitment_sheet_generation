@@ -1,0 +1,16 @@
+{
+  "decision": "INFER|UNKNOWN",
+  "confidence": "LOW",
+  "length_mm": null,
+  "width_mm": null,
+  "height_mm": null,
+  "wheelbase_mm": null,
+  "seat_height_mm": null,
+  "ground_clearance_mm": null,
+  "explanation": "The E-TON Beamer R2 is a lesser-known electric motorcycle model with limited publicly available specifications. No reliable catalog or technical documentation was found to confirm its dimensions. Model identity and variations across markets or years are uncertain, making accurate inference unreliable. Dimensions from similar models cannot be used due to the instruction to avoid cross-model copying. Therefore, all dimensions are marked as unknown.",
+  "status": "SUCCESS",
+  "prompt_version": "motorcycle-dimension-inference-v1",
+  "model": "qwen-flash",
+  "make": "E-TON",
+  "model_name": "Beamer R2"
+}

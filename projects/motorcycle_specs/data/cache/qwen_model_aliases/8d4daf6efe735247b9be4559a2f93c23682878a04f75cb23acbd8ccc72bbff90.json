@@ -1,0 +1,18 @@
+{
+  "decision": "MATCH",
+  "selected_candidate": "SM 610",
+  "confidence": "HIGH",
+  "match_basis": "MARKET_ALIAS",
+  "explanation": "WME 610 is a market-specific designation for the Husqvarna SM 610, used in certain regions or catalogs. The model identity, displacement, and platform are identical.",
+  "canonical_model_alias": "SM 610",
+  "configuration_tokens": [],
+  "brand_aliases": [],
+  "model_aliases": [
+    "SM 610"
+  ],
+  "status": "SUCCESS",
+  "prompt_version": "motorcycle-candidate-resolution-v4",
+  "model": "qwen-flash",
+  "make": "Husqvarna",
+  "model_name": "WME 610"
+}

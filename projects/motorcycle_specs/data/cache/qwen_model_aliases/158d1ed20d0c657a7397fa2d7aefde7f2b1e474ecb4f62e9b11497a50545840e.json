@@ -1,0 +1,16 @@
+{
+  "decision": "NO_MATCH",
+  "selected_candidate": "",
+  "confidence": "HIGH",
+  "match_basis": "NONE",
+  "explanation": "The K1200LT Exodus is a specific variant of the K1200LT with a unique trim or edition designation, while the catalog candidates 'K 1200LT' and 'K 1200RS' represent distinct models. The K1200RS is a different model altogether, not related to the LT series. The 'Exodus' suffix indicates a special configuration not present in either candidate, and no known market name, abbreviation, or typo equates 'K1200LT Exodus' to either listed model.",
+  "canonical_model_alias": "",
+  "configuration_tokens": [],
+  "brand_aliases": [],
+  "model_aliases": [],
+  "status": "SUCCESS",
+  "prompt_version": "motorcycle-candidate-resolution-v4",
+  "model": "qwen-flash",
+  "make": "BMW",
+  "model_name": "K1200LT Exodus"
+}

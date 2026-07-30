@@ -1,0 +1,20 @@
+{
+  "decision": "MATCH",
+  "selected_candidate": "Bajaj pulsar ns 125",
+  "confidence": "HIGH",
+  "match_basis": "MARKET_ALIAS",
+  "explanation": "The 'Pulsar 125 NS UG' is a regional or market-specific variant of the Pulsar NS 125, with 'UG' likely denoting a configuration or market label. The core model identity matches the Bajaj Pulsar NS 125, which is a known variant in the Pulsar lineup.",
+  "canonical_model_alias": "pulsar ns 125",
+  "configuration_tokens": [
+    "UG"
+  ],
+  "brand_aliases": [],
+  "model_aliases": [
+    "pulsar ns 125"
+  ],
+  "status": "SUCCESS",
+  "prompt_version": "motorcycle-candidate-resolution-v4",
+  "model": "qwen-flash",
+  "make": "Bajaj",
+  "model_name": "Pulsar 125 NS UG"
+}

@@ -1,0 +1,16 @@
+{
+  "decision": "NO_MATCH",
+  "selected_candidate": "",
+  "confidence": "HIGH",
+  "match_basis": "NONE",
+  "explanation": "The input model 'CA175K' does not correspond to any of the catalog candidates. The CA175K is a distinct Honda model, part of the Honda CA series (a 1960s-era parallel-twin motorcycle), while the candidates listed are from different model lines (CB, CD, PCX, CBR, etc.) and do not match in engine configuration, displacement, or platform. No known market alias, historical name, abbreviation, or typo links CA175K to any of the listed models.",
+  "canonical_model_alias": "",
+  "configuration_tokens": [],
+  "brand_aliases": [],
+  "model_aliases": [],
+  "status": "SUCCESS",
+  "prompt_version": "motorcycle-candidate-resolution-v4",
+  "model": "qwen-flash",
+  "make": "Honda",
+  "model_name": "CA175K"
+}

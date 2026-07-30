@@ -1,0 +1,20 @@
+{
+  "decision": "MATCH",
+  "selected_candidate": "CB 650R",
+  "confidence": "HIGH",
+  "match_basis": "SAME_NAME",
+  "explanation": "The input 'CB650R ABS' refers to the same motorcycle model as 'CB 650R', with 'ABS' being a configuration feature (anti-lock braking system) that does not change the core model identity. The catalog candidate 'CB 650R' is the canonical form of the model.",
+  "canonical_model_alias": "CB 650R",
+  "configuration_tokens": [
+    "ABS"
+  ],
+  "brand_aliases": [],
+  "model_aliases": [
+    "CB 650R"
+  ],
+  "status": "SUCCESS",
+  "prompt_version": "motorcycle-candidate-resolution-v4",
+  "model": "qwen-flash",
+  "make": "Honda",
+  "model_name": "CB650R ABS"
+}

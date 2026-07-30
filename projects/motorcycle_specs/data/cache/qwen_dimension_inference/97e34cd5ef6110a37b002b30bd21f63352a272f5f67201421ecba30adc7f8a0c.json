@@ -1,0 +1,16 @@
+{
+  "decision": "INFER|UNKNOWN",
+  "confidence": "MEDIUM|LOW",
+  "length_mm": null,
+  "width_mm": null,
+  "height_mm": null,
+  "wheelbase_mm": null,
+  "seat_height_mm": null,
+  "ground_clearance_mm": null,
+  "explanation": "The Gas Gas TXT Pro Racing 300 is a motocross bike, but specific dimensional data varies significantly across model years and markets. Without access to an official catalog or verified technical documentation for this exact variant, dimensions cannot be reliably inferred. Known similar models (e.g., KTM 300 SX-F) suggest approximate ranges, but direct cross-model extrapolation is not valid. Therefore, all dimensions are marked as unknown with medium to low confidence due to uncertainty in model-specific details.",
+  "status": "SUCCESS",
+  "prompt_version": "motorcycle-dimension-inference-v1",
+  "model": "qwen-flash",
+  "make": "Gas Gas",
+  "model_name": "TXT Pro Racing 300"
+}

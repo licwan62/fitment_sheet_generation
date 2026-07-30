@@ -1,0 +1,16 @@
+{
+  "decision": "MATCH",
+  "selected_candidate": "husaberg fe 400 e",
+  "confidence": "HIGH",
+  "match_basis": "MARKET_ALIAS",
+  "explanation": "The input 'FX470E' is a likely typo or misinterpretation of the correct model 'FE 400 E', which was marketed by Husaberg. The 'FX' series does not exist in Husaberg's catalog; the 'FE' series is the correct designation for their 400cc enduro models. The '470' displacement is inconsistent with the known 400cc engine, suggesting a typo where '470' should be '400'. The 'E' suffix aligns with the 'FE 400 E' model. Thus, this is a clear case of a plausible typo matching a real catalog model.",
+  "canonical_model_alias": "fe 400 e",
+  "configuration_tokens": [],
+  "brand_aliases": [],
+  "model_aliases": [],
+  "status": "SUCCESS",
+  "prompt_version": "motorcycle-candidate-resolution-v4",
+  "model": "qwen-flash",
+  "make": "Husaberg",
+  "model_name": "FX470E"
+}

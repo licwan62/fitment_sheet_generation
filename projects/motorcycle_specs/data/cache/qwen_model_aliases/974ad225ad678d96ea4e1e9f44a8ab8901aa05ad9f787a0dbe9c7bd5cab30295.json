@@ -1,0 +1,18 @@
+{
+  "decision": "NO_MATCH",
+  "selected_candidate": "",
+  "confidence": "HIGH",
+  "match_basis": "NONE",
+  "explanation": "The K1200LTS is a distinct model with a touring-oriented configuration, featuring a larger fuel tank, luggage options, and a more upright riding position compared to the K 1200LT and K 1200RS. The K 1200LT is a base touring model without the 'S' (Sport) designation, while the K 1200RS is a sport-tourer variant. The 'LTS' suffix denotes a specific configuration not present in either candidate.",
+  "canonical_model_alias": "",
+  "configuration_tokens": [
+    "LTS"
+  ],
+  "brand_aliases": [],
+  "model_aliases": [],
+  "status": "SUCCESS",
+  "prompt_version": "motorcycle-candidate-resolution-v4",
+  "model": "qwen-flash",
+  "make": "BMW",
+  "model_name": "K1200LTS"
+}

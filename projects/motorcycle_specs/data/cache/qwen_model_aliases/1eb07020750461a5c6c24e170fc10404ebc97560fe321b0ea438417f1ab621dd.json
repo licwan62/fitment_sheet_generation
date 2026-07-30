@@ -1,0 +1,21 @@
+{
+  "decision": "MATCH",
+  "selected_candidate": "gasgas contact estart 250",
+  "confidence": "HIGH",
+  "match_basis": "MARKET_ALIAS",
+  "explanation": "The input 'Contact JTX250' is a market-specific naming for the same motorcycle model as 'gasgas contact estart 250', where 'JTX' is a regional or internal designation for the Estart-equipped version. The displacement (250) and core model (Contact) are identical, and 'Estart' refers to electric start, a feature consistent with the JTX variant. This is a known market/variant alias.",
+  "canonical_model_alias": "contact estart 250",
+  "configuration_tokens": [
+    "estart"
+  ],
+  "brand_aliases": [],
+  "model_aliases": [
+    "gasgas contact estart 250",
+    "contact estart 250"
+  ],
+  "status": "SUCCESS",
+  "prompt_version": "motorcycle-candidate-resolution-v4",
+  "model": "qwen-flash",
+  "make": "Gas Gas",
+  "model_name": "Contact JTX250"
+}

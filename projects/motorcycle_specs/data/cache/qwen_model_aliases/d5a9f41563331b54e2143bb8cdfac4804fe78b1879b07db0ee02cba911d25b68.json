@@ -1,0 +1,22 @@
+{
+  "decision": "MATCH",
+  "selected_candidate": "Honda VT750C2 Shadow",
+  "confidence": "HIGH",
+  "match_basis": "MARKET_ALIAS",
+  "explanation": "The input 'VT750C2BS Shadow Phantom ABS' is a market-specific configuration of the VT750C2 Shadow, with 'Phantom ABS' being a regional or marketing name for the same model. The core model identifier (VT750C2) and base model (Shadow) match exactly, and the suffixes are configuration or branding variations. The candidate 'Honda VT750C2 Shadow' represents the canonical form of this motorcycle.",
+  "canonical_model_alias": "VT750C2 Shadow",
+  "configuration_tokens": [
+    "BS",
+    "Phantom",
+    "ABS"
+  ],
+  "brand_aliases": [],
+  "model_aliases": [
+    "VT750C2 Shadow"
+  ],
+  "status": "SUCCESS",
+  "prompt_version": "motorcycle-candidate-resolution-v4",
+  "model": "qwen-flash",
+  "make": "Honda",
+  "model_name": "VT750C2BS Shadow Phantom ABS"
+}

@@ -1,0 +1,20 @@
+{
+  "decision": "NO_MATCH",
+  "selected_candidate": "",
+  "confidence": "HIGH",
+  "match_basis": "NONE",
+  "explanation": "The input model 'R1150GS Sport' is a specific variant of the R1150GS with sport-oriented features, but none of the catalog candidates ('R 1150GS', 'R 1150RT', 'R 1150RS') represent the same underlying motorcycle. The 'R 1150GS' is a base model, while 'R 1150RT' and 'R 1150RS' are distinct models with different purposes and configurations. The 'Sport' designation indicates a configuration not present in any candidate.",
+  "canonical_model_alias": "R 1150GS",
+  "configuration_tokens": [
+    "Sport"
+  ],
+  "brand_aliases": [],
+  "model_aliases": [
+    "R 1150GS"
+  ],
+  "status": "SUCCESS",
+  "prompt_version": "motorcycle-candidate-resolution-v4",
+  "model": "qwen-flash",
+  "make": "BMW",
+  "model_name": "R1150GS Sport"
+}

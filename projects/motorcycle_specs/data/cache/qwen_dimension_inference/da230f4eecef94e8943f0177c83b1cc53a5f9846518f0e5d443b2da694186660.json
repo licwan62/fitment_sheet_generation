@@ -1,0 +1,16 @@
+{
+  "decision": "INFER|UNKNOWN",
+  "confidence": "MEDIUM|LOW",
+  "length_mm": null,
+  "width_mm": null,
+  "height_mm": null,
+  "wheelbase_mm": null,
+  "seat_height_mm": null,
+  "ground_clearance_mm": null,
+  "explanation": "No official catalog data available for Beta 498 RR. Dimensions vary significantly across model years and markets. Inferred dimensions from similar Beta enduro/motocross models are approximate and not confirmed for this specific variant. Uncertainty due to lack of verified specifications.",
+  "status": "SUCCESS",
+  "prompt_version": "motorcycle-dimension-inference-v1",
+  "model": "qwen-flash",
+  "make": "Beta",
+  "model_name": "498 RR"
+}

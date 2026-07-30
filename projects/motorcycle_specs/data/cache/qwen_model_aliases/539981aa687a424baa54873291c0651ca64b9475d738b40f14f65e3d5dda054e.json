@@ -1,0 +1,21 @@
+{
+  "decision": "MATCH",
+  "selected_candidate": "Suzuki GSX-R1000 ABS",
+  "confidence": "HIGH",
+  "match_basis": "SAME_NAME",
+  "explanation": "The input 'GSX-R1000R ABS' and the candidate 'Suzuki GSX-R1000 ABS' refer to the same underlying motorcycle model, with minor differences in naming convention (R vs. no R in displacement designation) that are consistent with Suzuki's marketing practices. The 'R' suffix in '1000R' is a known configuration label for the high-performance variant, and 'ABS' is present in both. The absence of 'R' in the candidate title does not indicate a different model, as it is a common shorthand in catalog listings.",
+  "canonical_model_alias": "GSX-R1000 ABS",
+  "configuration_tokens": [
+    "ABS"
+  ],
+  "brand_aliases": [],
+  "model_aliases": [
+    "GSX-R1000 ABS",
+    "GSX-R1000R"
+  ],
+  "status": "SUCCESS",
+  "prompt_version": "motorcycle-candidate-resolution-v4",
+  "model": "qwen-flash",
+  "make": "Suzuki",
+  "model_name": "GSX-R1000R ABS"
+}

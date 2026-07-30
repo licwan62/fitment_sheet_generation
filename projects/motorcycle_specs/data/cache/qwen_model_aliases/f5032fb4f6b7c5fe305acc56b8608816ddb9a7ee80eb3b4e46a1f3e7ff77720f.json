@@ -1,0 +1,18 @@
+{
+  "decision": "MATCH",
+  "selected_candidate": "Road Glide \n\t\t\t\t\t\t\tST",
+  "confidence": "HIGH",
+  "match_basis": "SAME_NAME",
+  "explanation": "The input model 'FLTRXST Road Glide ST' is a specific configuration of the Harley-Davidson Road Glide ST, and the candidate 'Road Glide ST' matches it exactly in name and model identity, with no conflicting or differing attributes. The 'FLTRXST' designation is a valid model code for this variant, and the candidate title correctly represents the same motorcycle.",
+  "canonical_model_alias": "Road Glide ST",
+  "configuration_tokens": [],
+  "brand_aliases": [],
+  "model_aliases": [
+    "Road Glide ST"
+  ],
+  "status": "SUCCESS",
+  "prompt_version": "motorcycle-candidate-resolution-v4",
+  "model": "qwen-flash",
+  "make": "Harley-Davidson",
+  "model_name": "FLTRXST Road Glide ST"
+}

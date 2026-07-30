@@ -1,0 +1,16 @@
+{
+  "decision": "NO_MATCH",
+  "selected_candidate": "",
+  "confidence": "HIGH",
+  "match_basis": "NONE",
+  "explanation": "The CRF250RX is a different model from both CRF 250X and CRF 250L. The RX variant is a high-performance off-road motorcycle with specific suspension, engine tuning, and frame design distinct from the standard CRF 250X and the CRF 250L (a dual-sport model). No evidence suggests they are the same underlying motorcycle or that one is a market name, abbreviation, or typo of the other.",
+  "canonical_model_alias": "",
+  "configuration_tokens": [],
+  "brand_aliases": [],
+  "model_aliases": [],
+  "status": "SUCCESS",
+  "prompt_version": "motorcycle-candidate-resolution-v4",
+  "model": "qwen-flash",
+  "make": "Honda",
+  "model_name": "CRF250RX"
+}

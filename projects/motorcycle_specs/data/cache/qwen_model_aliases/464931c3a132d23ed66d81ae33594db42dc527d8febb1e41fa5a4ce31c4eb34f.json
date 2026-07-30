@@ -1,0 +1,16 @@
+{
+  "decision": "NO_MATCH",
+  "selected_candidate": "",
+  "confidence": "HIGH",
+  "match_basis": "NONE",
+  "explanation": "The input model 'HUV 4421 GXP' does not correspond to any of the catalog candidates, which are all Husqvarna 401 or 125 cc models. The input contains a non-standard identifier 'HUV 4421 GXP' that does not match known Husqvarna model designations, and no candidate shares the same displacement, name, or configuration. The candidates are all 401 cc or 125 cc models, but none match the input's unique identifier.",
+  "canonical_model_alias": "",
+  "configuration_tokens": [],
+  "brand_aliases": [],
+  "model_aliases": [],
+  "status": "SUCCESS",
+  "prompt_version": "motorcycle-candidate-resolution-v4",
+  "model": "qwen-flash",
+  "make": "Husqvarna",
+  "model_name": "HUV 4421 GXP"
+}

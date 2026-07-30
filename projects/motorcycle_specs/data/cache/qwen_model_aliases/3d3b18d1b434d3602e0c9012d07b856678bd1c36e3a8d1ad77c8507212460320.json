@@ -1,0 +1,21 @@
+{
+  "decision": "MATCH",
+  "selected_candidate": "harley davidson cvo softail deluxe flstnse",
+  "confidence": "HIGH",
+  "match_basis": "SAME_NAME",
+  "explanation": "The input model 'FLSTNSE CVO Softail Deluxe' is a direct match in name and configuration to the candidate 'harley davidson cvo softail deluxe flstnse', with only case variation and minor formatting difference. The model code FLSTNSE and CVO designation are identical, confirming it refers to the same motorcycle.",
+  "canonical_model_alias": "cvo softail deluxe flstnse",
+  "configuration_tokens": [
+    "CVO",
+    "flstnse"
+  ],
+  "brand_aliases": [],
+  "model_aliases": [
+    "cvo softail deluxe flstnse"
+  ],
+  "status": "SUCCESS",
+  "prompt_version": "motorcycle-candidate-resolution-v4",
+  "model": "qwen-flash",
+  "make": "Harley-Davidson",
+  "model_name": "FLSTNSE CVO Softail Deluxe"
+}

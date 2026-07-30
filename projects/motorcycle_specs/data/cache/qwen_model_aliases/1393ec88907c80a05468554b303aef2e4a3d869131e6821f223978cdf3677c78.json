@@ -1,0 +1,19 @@
+{
+  "decision": "MATCH",
+  "selected_candidate": "gasgas contact estart 250",
+  "confidence": "HIGH",
+  "match_basis": "MARKET_ALIAS",
+  "explanation": "'Contact JTR250' is a market-specific designation for the Gas Gas Contact Estart 250, with 'JTR' likely denoting a regional or configuration label. The core model identity matches exactly with 'gasgas contact estart 250' in the catalog.",
+  "canonical_model_alias": "contact estart 250",
+  "configuration_tokens": [],
+  "brand_aliases": [],
+  "model_aliases": [
+    "gasgas contact estart 250",
+    "contact estart 250"
+  ],
+  "status": "SUCCESS",
+  "prompt_version": "motorcycle-candidate-resolution-v4",
+  "model": "qwen-flash",
+  "make": "Gas Gas",
+  "model_name": "Contact JTR250"
+}

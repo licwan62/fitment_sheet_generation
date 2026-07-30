@@ -1,0 +1,16 @@
+{
+  "decision": "INFER|UNKNOWN",
+  "confidence": "MEDIUM|LOW",
+  "length_mm": null,
+  "width_mm": null,
+  "height_mm": null,
+  "wheelbase_mm": null,
+  "seat_height_mm": null,
+  "ground_clearance_mm": null,
+  "explanation": "The R1100R SE is a variant of the R1100R, but specific dimensions for the SE trim are not consistently documented. Variations in model year and market configuration may affect dimensions. Without definitive source data or clear differentiation from standard R1100R specs, reliable inference is limited.",
+  "status": "SUCCESS",
+  "prompt_version": "motorcycle-dimension-inference-v1",
+  "model": "qwen-flash",
+  "make": "BMW",
+  "model_name": "R1100R SE"
+}

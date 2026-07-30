@@ -1,0 +1,21 @@
+{
+  "decision": "MATCH",
+  "selected_candidate": "CMX \n\t\t1100T Rebel / DCT",
+  "confidence": "HIGH",
+  "match_basis": "SAME_NAME",
+  "explanation": "The input model 'CMX1100 Rebel 1100T DCT' matches the catalog candidate 'CMX \n\t\t1100T Rebel / DCT' as the same underlying motorcycle, with identical displacement (1100), model name (Rebel), and transmission type (DCT). The variation in spacing and formatting is negligible. The 'T' suffix denotes a specific configuration, consistent across both entries.",
+  "canonical_model_alias": "CMX 1100T Rebel / DCT",
+  "configuration_tokens": [
+    "T",
+    "DCT"
+  ],
+  "brand_aliases": [],
+  "model_aliases": [
+    "CMX 1100T Rebel / DCT"
+  ],
+  "status": "SUCCESS",
+  "prompt_version": "motorcycle-candidate-resolution-v4",
+  "model": "qwen-flash",
+  "make": "Honda",
+  "model_name": "CMX1100 Rebel 1100T DCT"
+}

@@ -1,0 +1,18 @@
+{
+  "decision": "MATCH",
+  "selected_candidate": "CHF \n\t\t50 M etropolitan Scooter",
+  "confidence": "HIGH",
+  "match_basis": "MARKET_ALIAS",
+  "explanation": "The input 'NCH50 Metropolitan' refers to the Honda Metropolitan 50, a model sold in North America with the chassis code NCH50. The candidate 'CHF 50 Metropolitan Scooter' uses the correct chassis code CHF (common for the 50cc Metropolitan in other markets) and includes the full model name 'Metropolitan Scooter', confirming it is the same underlying motorcycle with a regional variation in naming and chassis code. The spelling 'M etropolitan' is a likely typo or formatting artifact, but the core identity matches.",
+  "canonical_model_alias": "CHF 50 Metropolitan Scooter",
+  "configuration_tokens": [],
+  "brand_aliases": [],
+  "model_aliases": [
+    "CHF 50 M etropolitan Scooter"
+  ],
+  "status": "SUCCESS",
+  "prompt_version": "motorcycle-candidate-resolution-v4",
+  "model": "qwen-flash",
+  "make": "Honda",
+  "model_name": "NCH50 Metropolitan"
+}

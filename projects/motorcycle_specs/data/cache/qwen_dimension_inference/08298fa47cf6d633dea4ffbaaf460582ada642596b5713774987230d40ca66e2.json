@@ -1,0 +1,16 @@
+{
+  "decision": "INFER|UNKNOWN",
+  "confidence": "MEDIUM|LOW",
+  "length_mm": null,
+  "width_mm": null,
+  "height_mm": null,
+  "wheelbase_mm": null,
+  "seat_height_mm": null,
+  "ground_clearance_mm": null,
+  "explanation": "The Honda CA72 Dream 250 is a vintage model from the early 1960s, and no definitive factory specifications are available for its exact dimensions. Variations across production years and markets make precise measurements uncertain. Without access to original catalog data or verified technical documentation, dimensions cannot be reliably inferred. Therefore, all values are marked as unknown.",
+  "status": "SUCCESS",
+  "prompt_version": "motorcycle-dimension-inference-v1",
+  "model": "qwen-flash",
+  "make": "Honda",
+  "model_name": "CA72 Dream 250"
+}

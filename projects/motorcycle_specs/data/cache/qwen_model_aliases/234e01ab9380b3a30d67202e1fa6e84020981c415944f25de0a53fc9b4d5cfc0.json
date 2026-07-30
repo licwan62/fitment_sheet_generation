@@ -1,0 +1,20 @@
+{
+  "decision": "MATCH",
+  "selected_candidate": "GL 1200 Gold Wing",
+  "confidence": "HIGH",
+  "match_basis": "MARKET_ALIAS",
+  "explanation": "The 'GL1200L Gold Wing Limited' is a market-specific variant of the GL1200 Gold Wing, with 'Limited' being a trim level or market designation. The core model identity (GL1200 Gold Wing) matches the candidate, and 'Limited' is a configuration label rather than a distinct model. The candidate 'GL 1200 Gold Wing' represents the base model that includes the Limited variant in its naming lineage.",
+  "canonical_model_alias": "GL 1200 Gold Wing",
+  "configuration_tokens": [
+    "Limited"
+  ],
+  "brand_aliases": [],
+  "model_aliases": [
+    "GL 1200 Gold Wing"
+  ],
+  "status": "SUCCESS",
+  "prompt_version": "motorcycle-candidate-resolution-v4",
+  "model": "qwen-flash",
+  "make": "Honda",
+  "model_name": "GL1200L Gold Wing Limited"
+}

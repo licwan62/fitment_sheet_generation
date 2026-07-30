@@ -1,0 +1,19 @@
+{
+  "decision": "MATCH",
+  "selected_candidate": "Harley-Davidson XLH Sportster 1200",
+  "confidence": "HIGH",
+  "match_basis": "MARKET_ALIAS",
+  "explanation": "The XLH1200 is the correct model designation for the Harley-Davidson Sportster 1200, and 'XLH Sportster 1200' is the full catalog name used in official listings. The 'XR 1200' is a market-specific or alternate naming variant (commonly used in Europe), and 'Harley-Davidson FX 1200' is incorrect as FX refers to a different model line. The XLH Sportster 1200 is the canonical form.",
+  "canonical_model_alias": "XLH Sportster 1200",
+  "configuration_tokens": [],
+  "brand_aliases": [],
+  "model_aliases": [
+    "Sportster 1200",
+    "XLH Sportster 1200"
+  ],
+  "status": "SUCCESS",
+  "prompt_version": "motorcycle-candidate-resolution-v4",
+  "model": "qwen-flash",
+  "make": "Harley-Davidson",
+  "model_name": "XLH1200"
+}

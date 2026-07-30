@@ -1,0 +1,16 @@
+{
+  "decision": "NO_MATCH",
+  "selected_candidate": "",
+  "confidence": "HIGH",
+  "match_basis": "NONE",
+  "explanation": "The input model 'Athena ProStreet V111 Carb' is not found in the catalog candidates, and no known market name, historical alias, abbreviation, or plausible typo matches any candidate. The model appears to be a custom or non-standard designation not present in the available catalog.",
+  "canonical_model_alias": "",
+  "configuration_tokens": [],
+  "brand_aliases": [],
+  "model_aliases": [],
+  "status": "SUCCESS",
+  "prompt_version": "motorcycle-candidate-resolution-v4",
+  "model": "qwen-flash",
+  "make": "Big Bear Choppers",
+  "model_name": "Athena ProStreet V111 Carb"
+}

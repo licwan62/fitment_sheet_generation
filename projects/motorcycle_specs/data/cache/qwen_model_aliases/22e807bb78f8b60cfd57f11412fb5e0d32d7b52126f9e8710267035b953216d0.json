@@ -1,0 +1,20 @@
+{
+  "decision": "MATCH",
+  "selected_candidate": "G 310GS 40 Years Edition",
+  "confidence": "HIGH",
+  "match_basis": "SAME_NAME",
+  "explanation": "The input model 'G310GS 40 Years GS Edition' is functionally identical to the catalog candidate 'G 310GS 40 Years Edition', differing only in minor spacing and capitalization. The '40 Years GS Edition' is a known limited edition variant of the G 310GS, and the naming convention aligns with BMW's official presentation. No other model in the list shares the same displacement, platform, or edition identity.",
+  "canonical_model_alias": "G 310GS 40 Years Edition",
+  "configuration_tokens": [
+    "40 Years Edition"
+  ],
+  "brand_aliases": [],
+  "model_aliases": [
+    "G 310GS 40 Years Edition"
+  ],
+  "status": "SUCCESS",
+  "prompt_version": "motorcycle-candidate-resolution-v4",
+  "model": "qwen-flash",
+  "make": "BMW",
+  "model_name": "G310GS 40 Years GS Edition"
+}

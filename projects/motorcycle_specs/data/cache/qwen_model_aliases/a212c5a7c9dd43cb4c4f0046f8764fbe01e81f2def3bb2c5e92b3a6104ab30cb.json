@@ -1,0 +1,16 @@
+{
+  "decision": "NO_MATCH",
+  "selected_candidate": "",
+  "confidence": "HIGH",
+  "match_basis": "NONE",
+  "explanation": "The input model 'QuattroNove X' refers to a specific Benelli motorcycle with a 900cc engine and the 'QuattroNove' designation, which is not present in any of the catalog candidates. The candidates either have different displacements (e.g., 250, 354, 400), different names (e.g., Tornado, Leoncino), or lack the 'QuattroNove' identifier entirely. No candidate matches the exact model identity, including known market variants, historical names, abbreviations, or plausible typos.",
+  "canonical_model_alias": "",
+  "configuration_tokens": [],
+  "brand_aliases": [],
+  "model_aliases": [],
+  "status": "SUCCESS",
+  "prompt_version": "motorcycle-candidate-resolution-v4",
+  "model": "qwen-flash",
+  "make": "Benelli",
+  "model_name": "QuattroNove X"
+}

@@ -1,0 +1,16 @@
+{
+  "decision": "NO_MATCH",
+  "selected_candidate": "",
+  "confidence": "HIGH",
+  "match_basis": "NONE",
+  "explanation": "The input model 'Pulsar N 160 FI ABS UG' is not present in the catalog candidates list. No matching or equivalent model is found among the available candidates, and no known market name, historical alias, abbreviation, or plausible typo of this exact model exists in the provided catalog. The model's specific configuration (FI, ABS, UG) and displacement (160) are unique and not matched by any candidate.",
+  "canonical_model_alias": "",
+  "configuration_tokens": [],
+  "brand_aliases": [],
+  "model_aliases": [],
+  "status": "SUCCESS",
+  "prompt_version": "motorcycle-candidate-resolution-v4",
+  "model": "qwen-flash",
+  "make": "Bajaj",
+  "model_name": "Pulsar N 160 FI ABS UG"
+}

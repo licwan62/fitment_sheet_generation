@@ -1,0 +1,20 @@
+{
+  "decision": "MATCH",
+  "selected_candidate": "harley davidson softail heritage classic 114 flhcs",
+  "confidence": "HIGH",
+  "match_basis": "ABBREVIATION",
+  "explanation": "FLHCS is the model code for the Harley-Davidson Softail Heritage Classic 114, and 'Softail Heritage Classic 114' is the standard catalog name. The candidate 'harley davidson softail heritage classic 114 flhcs' includes the correct model code and matches the same underlying motorcycle.",
+  "canonical_model_alias": "softail heritage classic 114 flhcs",
+  "configuration_tokens": [
+    "flhcs"
+  ],
+  "brand_aliases": [],
+  "model_aliases": [
+    "softail heritage classic 114 flhcs"
+  ],
+  "status": "SUCCESS",
+  "prompt_version": "motorcycle-candidate-resolution-v4",
+  "model": "qwen-flash",
+  "make": "Harley-Davidson",
+  "model_name": "FLHCS Heritage Classic 114"
+}

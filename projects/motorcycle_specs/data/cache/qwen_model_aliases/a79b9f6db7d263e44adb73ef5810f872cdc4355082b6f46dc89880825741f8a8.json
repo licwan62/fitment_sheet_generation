@@ -1,0 +1,18 @@
+{
+  "decision": "MATCH",
+  "selected_candidate": "Harley-Davidson Model DLD",
+  "confidence": "HIGH",
+  "match_basis": "SAME_NAME",
+  "explanation": "The input 'DLD' directly matches the catalog candidate 'Harley-Davidson Model DLD', which is a known model designation in Harley-Davidson's historical lineup. No other candidate shares this exact model identifier.",
+  "canonical_model_alias": "Model DLD",
+  "configuration_tokens": [],
+  "brand_aliases": [],
+  "model_aliases": [
+    "Model DLD"
+  ],
+  "status": "SUCCESS",
+  "prompt_version": "motorcycle-candidate-resolution-v4",
+  "model": "qwen-flash",
+  "make": "Harley-Davidson",
+  "model_name": "DLD"
+}

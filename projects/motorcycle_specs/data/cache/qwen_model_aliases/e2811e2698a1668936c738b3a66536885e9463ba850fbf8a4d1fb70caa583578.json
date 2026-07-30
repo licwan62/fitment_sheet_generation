@@ -1,0 +1,16 @@
+{
+  "decision": "NO_MATCH",
+  "selected_candidate": "",
+  "confidence": "HIGH",
+  "match_basis": "NONE",
+  "explanation": "The input model 'Pulsar 220 Neon' is a distinct variant with a specific market or trim name ('Neon') not present in the candidate 'Pulsar 220 DTS-FI', which refers to a different configuration or version. The presence of 'Neon' indicates a unique styling or feature set, and no evidence suggests it is a market alias, abbreviation, or typo for the DTS-FI model. The models are not the same underlying motorcycle.",
+  "canonical_model_alias": "",
+  "configuration_tokens": [],
+  "brand_aliases": [],
+  "model_aliases": [],
+  "status": "SUCCESS",
+  "prompt_version": "motorcycle-candidate-resolution-v4",
+  "model": "qwen-flash",
+  "make": "Bajaj",
+  "model_name": "Pulsar 220 Neon"
+}

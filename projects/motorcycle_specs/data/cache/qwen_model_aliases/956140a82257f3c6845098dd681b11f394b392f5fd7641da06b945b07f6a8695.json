@@ -1,0 +1,16 @@
+{
+  "decision": "NO_MATCH",
+  "selected_candidate": "",
+  "confidence": "HIGH",
+  "match_basis": "NONE",
+  "explanation": "GL 150 DS is a Honda Gold Wing model, while all catalog candidates are different models (e.g., scooters, motocross, or sport bikes) with no overlap in platform, design, or identity. The GL 150 DS does not match any candidate by name, configuration, or known alias.",
+  "canonical_model_alias": "",
+  "configuration_tokens": [],
+  "brand_aliases": [],
+  "model_aliases": [],
+  "status": "SUCCESS",
+  "prompt_version": "motorcycle-candidate-resolution-v4",
+  "model": "qwen-flash",
+  "make": "Honda",
+  "model_name": "GL 150 DS"
+}

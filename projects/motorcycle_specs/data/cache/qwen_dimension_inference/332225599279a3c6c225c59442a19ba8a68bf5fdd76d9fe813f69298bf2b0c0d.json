@@ -1,0 +1,16 @@
+{
+  "decision": "INFER|UNKNOWN",
+  "confidence": "LOW",
+  "length_mm": null,
+  "width_mm": null,
+  "height_mm": null,
+  "wheelbase_mm": null,
+  "seat_height_mm": null,
+  "ground_clearance_mm": null,
+  "explanation": "E-TON Beamer 50 is a small electric motorcycle primarily targeted at youth or entry-level riders. However, no official specifications are publicly available for this model, and the manufacturer's documentation does not consistently detail dimensions across markets or years. Without verified data from a catalog or technical manual, dimensions cannot be reliably inferred. Variations in design or market-specific configurations may exist, making precise estimation uncertain.",
+  "status": "SUCCESS",
+  "prompt_version": "motorcycle-dimension-inference-v1",
+  "model": "qwen-flash",
+  "make": "E-TON",
+  "model_name": "Beamer 50"
+}

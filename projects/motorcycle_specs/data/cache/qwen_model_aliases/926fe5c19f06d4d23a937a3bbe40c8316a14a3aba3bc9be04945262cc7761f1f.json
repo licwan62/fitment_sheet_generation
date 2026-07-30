@@ -1,0 +1,18 @@
+{
+  "decision": "MATCH",
+  "selected_candidate": "Suzuki Boulevard C50T Special",
+  "confidence": "HIGH",
+  "match_basis": "MARKET_ALIAS",
+  "explanation": "The input 'C50T Boulevard Special' refers to the same motorcycle model as 'Suzuki Boulevard C50T Special', with 'C50T' being a market-specific designation for the 500cc variant in certain regions. The name variation is due to regional naming conventions, but the underlying model is identical.",
+  "canonical_model_alias": "Boulevard C50T Special",
+  "configuration_tokens": [],
+  "brand_aliases": [],
+  "model_aliases": [
+    "Boulevard C50T Special"
+  ],
+  "status": "SUCCESS",
+  "prompt_version": "motorcycle-candidate-resolution-v4",
+  "model": "qwen-flash",
+  "make": "Suzuki",
+  "model_name": "C50T Boulevard Special"
+}

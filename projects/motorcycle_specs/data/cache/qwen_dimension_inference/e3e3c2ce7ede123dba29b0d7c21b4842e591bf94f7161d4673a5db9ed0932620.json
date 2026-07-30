@@ -1,0 +1,16 @@
+{
+  "decision": "INFER|UNKNOWN",
+  "confidence": "LOW",
+  "length_mm": null,
+  "width_mm": null,
+  "height_mm": null,
+  "wheelbase_mm": null,
+  "seat_height_mm": null,
+  "ground_clearance_mm": null,
+  "explanation": "The Buell X1 Lightning is a limited-production model with no widely available official dimensions. Variations across production years and markets are possible, and no reliable catalog or verified source provides consistent measurements. Inferred dimensions from similar Buell models are not sufficiently accurate for confident assignment.",
+  "status": "SUCCESS",
+  "prompt_version": "motorcycle-dimension-inference-v1",
+  "model": "qwen-flash",
+  "make": "Buell",
+  "model_name": "X1 Lightning"
+}

@@ -1,0 +1,19 @@
+{
+  "decision": "MATCH",
+  "selected_candidate": "gasgas txt boy 50",
+  "confidence": "HIGH",
+  "match_basis": "MARKET_ALIAS",
+  "explanation": "'EC Boy 50' is a market-specific naming variant of the 'TXT Boy 50' model, with 'EC' and 'TXT' being interchangeable designations for the same youth-oriented off-road motorcycle line from Gas Gas. The displacement (50) matches exactly, and 'Boy' is a consistent model series identifier across variants.",
+  "canonical_model_alias": "txt boy 50",
+  "configuration_tokens": [],
+  "brand_aliases": [],
+  "model_aliases": [
+    "gasgas txt boy 50",
+    "txt boy 50"
+  ],
+  "status": "SUCCESS",
+  "prompt_version": "motorcycle-candidate-resolution-v4",
+  "model": "qwen-flash",
+  "make": "Gas Gas",
+  "model_name": "EC Boy 50"
+}

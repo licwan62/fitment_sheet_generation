@@ -1,0 +1,16 @@
+{
+  "decision": "INFER|UNKNOWN",
+  "confidence": "MEDIUM|LOW",
+  "length_mm": null,
+  "width_mm": null,
+  "height_mm": null,
+  "wheelbase_mm": null,
+  "seat_height_mm": null,
+  "ground_clearance_mm": null,
+  "explanation": "The model 'HUV 4421 D' does not correspond to any known Husqvarna motorcycle in public records or catalogs. Without a confirmed model identity or reference documentation, dimensions cannot be reliably inferred. The designation may refer to a non-motorcycle product (e.g., industrial equipment) or a misidentified variant. Therefore, the result is marked as UNKNOWN with medium to low confidence.",
+  "status": "SUCCESS",
+  "prompt_version": "motorcycle-dimension-inference-v1",
+  "model": "qwen-flash",
+  "make": "Husqvarna",
+  "model_name": "HUV 4421 D"
+}

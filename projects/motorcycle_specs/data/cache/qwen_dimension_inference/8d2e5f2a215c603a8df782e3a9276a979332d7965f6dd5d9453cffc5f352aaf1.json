@@ -1,0 +1,16 @@
+{
+  "decision": "INFER|UNKNOWN",
+  "confidence": "MEDIUM|LOW",
+  "length_mm": null,
+  "width_mm": null,
+  "height_mm": null,
+  "wheelbase_mm": null,
+  "seat_height_mm": null,
+  "ground_clearance_mm": null,
+  "explanation": "The Ducati 748 Monoposto is a limited-production track-focused variant of the 748 series, with no official catalog dimensions publicly documented. Variations in design across production years and lack of standardized data make precise dimension estimation uncertain. Dimensions may differ significantly from standard 748 models due to modifications for racing use, including altered frame geometry, reduced weight components, and aerodynamic enhancements. Without definitive manufacturer specifications or verified measurements, accurate inference is not possible.",
+  "status": "SUCCESS",
+  "prompt_version": "motorcycle-dimension-inference-v1",
+  "model": "qwen-flash",
+  "make": "Ducati",
+  "model_name": "748 Monoposto"
+}

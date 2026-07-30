@@ -1,0 +1,18 @@
+{
+  "decision": "MATCH",
+  "selected_candidate": "beta rr 2t 250",
+  "confidence": "HIGH",
+  "match_basis": "SAME_NAME",
+  "explanation": "The input '250 RR (2 Stroke)' refers to the same motorcycle model as 'beta rr 2t 250', with identical displacement, engine type, and model series. The term '2T' is the standard abbreviation for '2 Stroke', and the order of tokens does not change the identity. This is a direct match in model identity.",
+  "canonical_model_alias": "rr 2t 250",
+  "configuration_tokens": [],
+  "brand_aliases": [],
+  "model_aliases": [
+    "rr 2t 250"
+  ],
+  "status": "SUCCESS",
+  "prompt_version": "motorcycle-candidate-resolution-v4",
+  "model": "qwen-flash",
+  "make": "Beta",
+  "model_name": "250 RR (2 Stroke)"
+}

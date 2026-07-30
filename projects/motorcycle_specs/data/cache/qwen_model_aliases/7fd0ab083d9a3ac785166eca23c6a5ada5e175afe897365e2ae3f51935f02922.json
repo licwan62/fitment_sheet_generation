@@ -1,0 +1,16 @@
+{
+  "decision": "MATCH",
+  "selected_candidate": "gasgas txt 250 pro",
+  "confidence": "HIGH",
+  "match_basis": "MARKET_ALIAS",
+  "explanation": "The model 'TXT Sr.' is a market-specific designation for the Gas Gas TXT 250 Pro, commonly used in certain regions to denote the higher-spec or senior version of the TXT series. The displacement (250) and platform match exactly.",
+  "canonical_model_alias": "txt 250 pro",
+  "configuration_tokens": [],
+  "brand_aliases": [],
+  "model_aliases": [],
+  "status": "SUCCESS",
+  "prompt_version": "motorcycle-candidate-resolution-v4",
+  "model": "qwen-flash",
+  "make": "Gas Gas",
+  "model_name": "TXT Sr."
+}

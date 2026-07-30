@@ -1,0 +1,18 @@
+{
+  "decision": "MATCH",
+  "selected_candidate": "Boulevard M109R B.O.S.S.",
+  "confidence": "HIGH",
+  "match_basis": "MARKET_ALIAS",
+  "explanation": "The 'M109R2 Boulevard' is a market-specific or configuration variant of the Boulevard M109R B.O.S.S., with '2' likely indicating a model year or special edition label. The core model identity (Boulevard M109R) and the B.O.S.S. designation confirm it is the same underlying motorcycle.",
+  "canonical_model_alias": "Boulevard M109R B.O.S.S.",
+  "configuration_tokens": [
+    "2"
+  ],
+  "brand_aliases": [],
+  "model_aliases": [],
+  "status": "SUCCESS",
+  "prompt_version": "motorcycle-candidate-resolution-v4",
+  "model": "qwen-flash",
+  "make": "Suzuki",
+  "model_name": "M109R2 Boulevard"
+}

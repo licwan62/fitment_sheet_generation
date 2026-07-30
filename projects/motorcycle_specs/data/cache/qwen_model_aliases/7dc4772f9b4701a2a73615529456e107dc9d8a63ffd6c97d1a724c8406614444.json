@@ -1,0 +1,18 @@
+{
+  "decision": "MATCH",
+  "selected_candidate": "RR 250 Enduro",
+  "confidence": "HIGH",
+  "match_basis": "SAME_NAME",
+  "explanation": "The input '250 RR' and the candidate 'RR 250 Enduro' refer to the same underlying motorcycle model, with only word order and minor formatting differences. The displacement (250) and model designation (RR) are identical, and 'Enduro' is a standard configuration label for this model. No other identity-bearing tokens differ.",
+  "canonical_model_alias": "RR 250 Enduro",
+  "configuration_tokens": [],
+  "brand_aliases": [],
+  "model_aliases": [
+    "RR 250 Enduro"
+  ],
+  "status": "SUCCESS",
+  "prompt_version": "motorcycle-candidate-resolution-v4",
+  "model": "qwen-flash",
+  "make": "Beta",
+  "model_name": "250 RR"
+}

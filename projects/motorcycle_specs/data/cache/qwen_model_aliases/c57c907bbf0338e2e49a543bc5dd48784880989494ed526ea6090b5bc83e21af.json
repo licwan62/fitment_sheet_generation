@@ -1,0 +1,16 @@
+{
+  "decision": "NO_MATCH",
+  "selected_candidate": "",
+  "confidence": "HIGH",
+  "match_basis": "NONE",
+  "explanation": "The model 'M2L Cyclone' is not found in the catalog candidates, and no known variant or alias of this model exists under Buell's official naming conventions. The M2L designation does not correspond to any documented Buell motorcycle model, including the Cyclone series, which typically includes models like the XB12S, XB12X, or M2. No plausible market name, historical alias, abbreviation, or typo matches the input.",
+  "canonical_model_alias": "",
+  "configuration_tokens": [],
+  "brand_aliases": [],
+  "model_aliases": [],
+  "status": "SUCCESS",
+  "prompt_version": "motorcycle-candidate-resolution-v4",
+  "model": "qwen-flash",
+  "make": "Buell",
+  "model_name": "M2L Cyclone"
+}

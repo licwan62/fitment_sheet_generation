@@ -1,0 +1,18 @@
+{
+  "decision": "MATCH",
+  "selected_candidate": "aprilia caponord 1200 abs travelpack",
+  "confidence": "HIGH",
+  "match_basis": "SAME_NAME",
+  "explanation": "The input 'Caponord 1200 ABS Travel Pack' is a direct match in meaning and configuration to the catalog candidate 'aprilia caponord 1200 abs travelpack', with only minor casing and spacing differences. The term 'Travel Pack' is a known configuration variant of the Caponord 1200 ABS, and no other candidate shares both the model name and configuration.",
+  "canonical_model_alias": "caponord 1200 abs travelpack",
+  "configuration_tokens": [
+    "travelpack"
+  ],
+  "brand_aliases": [],
+  "model_aliases": [],
+  "status": "SUCCESS",
+  "prompt_version": "motorcycle-candidate-resolution-v4",
+  "model": "qwen-flash",
+  "make": "Aprilia",
+  "model_name": "Caponord 1200 ABS Travel Pack"
+}

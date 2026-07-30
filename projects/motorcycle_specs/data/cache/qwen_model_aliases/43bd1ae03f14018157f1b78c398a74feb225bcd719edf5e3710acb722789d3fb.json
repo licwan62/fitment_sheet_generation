@@ -1,0 +1,18 @@
+{
+  "decision": "MATCH",
+  "selected_candidate": "X-Pulse 200",
+  "confidence": "HIGH",
+  "match_basis": "MARKET_ALIAS",
+  "explanation": "The input 'Xpulse 200 2V FI' is a variant of the Hero X-Pulse 200 model, with '2V FI' indicating a dual valve fuel-injected engine configuration. The catalog candidate 'X-Pulse 200' is the base model name used in some markets and regions, with the same underlying motorcycle identity. The difference in spacing ('Xpulse' vs 'X-Pulse') is a known typographical variation in branding, and '2V FI' is a configuration detail not altering the core model identity.",
+  "canonical_model_alias": "X-Pulse 200",
+  "configuration_tokens": [
+    "2V FI"
+  ],
+  "brand_aliases": [],
+  "model_aliases": [],
+  "status": "SUCCESS",
+  "prompt_version": "motorcycle-candidate-resolution-v4",
+  "model": "qwen-flash",
+  "make": "Hero",
+  "model_name": "Xpulse 200 2V FI"
+}

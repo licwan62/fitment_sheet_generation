@@ -1,0 +1,18 @@
+{
+  "decision": "MATCH",
+  "selected_candidate": "buell ulysses xb12x",
+  "confidence": "HIGH",
+  "match_basis": "SAME_NAME",
+  "explanation": "The input 'XB12X Ulysses' is the same model as 'buell ulysses xb12x' in the catalog, with identical displacement, model designation, and name. The capitalization and order of words differ only superficially.",
+  "canonical_model_alias": "buell ulysses xb12x",
+  "configuration_tokens": [],
+  "brand_aliases": [],
+  "model_aliases": [
+    "ulysses xb12x"
+  ],
+  "status": "SUCCESS",
+  "prompt_version": "motorcycle-candidate-resolution-v4",
+  "model": "qwen-flash",
+  "make": "Buell",
+  "model_name": "XB12X Ulysses"
+}

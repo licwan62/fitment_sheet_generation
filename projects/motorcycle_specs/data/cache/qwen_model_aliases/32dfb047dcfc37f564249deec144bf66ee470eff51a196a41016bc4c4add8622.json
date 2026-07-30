@@ -1,0 +1,16 @@
+{
+  "decision": "MATCH",
+  "selected_candidate": "BMW R nineT Urban GS",
+  "confidence": "HIGH",
+  "match_basis": "SAME_NAME",
+  "explanation": "The input 'R nine T Urban G/S' is a variant of the same model as 'BMW R nineT Urban GS', with only minor formatting differences (space vs. hyphen, capitalization). The core model identity, including displacement, engine type, and configuration, is identical. The term 'G/S' is the correct designation for the 'Urban GS' variant in BMW's nomenclature.",
+  "canonical_model_alias": "R nineT Urban GS",
+  "configuration_tokens": [],
+  "brand_aliases": [],
+  "model_aliases": [],
+  "status": "SUCCESS",
+  "prompt_version": "motorcycle-candidate-resolution-v4",
+  "model": "qwen-flash",
+  "make": "BMW",
+  "model_name": "R nine T Urban G/S"
+}

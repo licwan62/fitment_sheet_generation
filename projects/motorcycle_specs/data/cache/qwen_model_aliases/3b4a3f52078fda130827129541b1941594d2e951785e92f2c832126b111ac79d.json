@@ -1,0 +1,18 @@
+{
+  "decision": "MATCH",
+  "selected_candidate": "Harley-Davidson VRSCSE Screamin Eagle V-Rod",
+  "confidence": "HIGH",
+  "match_basis": "SAME_NAME",
+  "explanation": "The input 'VRSCSE2 Screamin Eagle V-Rod 2' refers to the same model as 'Harley-Davidson VRSCSE Screamin Eagle V-Rod', with 'SE2' being a configuration or market-specific suffix that does not change the core model identity. The base model name, displacement, and engine type are identical. The variation in 'SE2' is consistent with known model designation variants for this V-Rod variant.",
+  "canonical_model_alias": "VRSCSE Screamin Eagle V-Rod",
+  "configuration_tokens": [
+    "SE2"
+  ],
+  "brand_aliases": [],
+  "model_aliases": [],
+  "status": "SUCCESS",
+  "prompt_version": "motorcycle-candidate-resolution-v4",
+  "model": "qwen-flash",
+  "make": "Harley-Davidson",
+  "model_name": "VRSCSE2 Screamin Eagle V-Rod 2"
+}

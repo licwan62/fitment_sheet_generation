@@ -1,0 +1,16 @@
+{
+  "decision": "NO_MATCH",
+  "selected_candidate": "",
+  "confidence": "HIGH",
+  "match_basis": "NONE",
+  "explanation": "The model 'RSS1200' is not a known variant or alias of any of the listed Buell catalog candidates. The Buell RSS1200 does not exist in Buell's official model lineup; the closest models are the 1125 series and Ulysses series, but none match the RSS1200 designation in displacement, name, or configuration. There is no evidence that 'RSS1200' refers to any of the provided candidates through market naming, abbreviation, typo, or historical usage.",
+  "canonical_model_alias": "",
+  "configuration_tokens": [],
+  "brand_aliases": [],
+  "model_aliases": [],
+  "status": "SUCCESS",
+  "prompt_version": "motorcycle-candidate-resolution-v4",
+  "model": "qwen-flash",
+  "make": "Buell",
+  "model_name": "RSS1200"
+}

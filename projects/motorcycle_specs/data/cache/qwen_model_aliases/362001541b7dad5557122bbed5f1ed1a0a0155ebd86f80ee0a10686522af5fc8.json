@@ -1,0 +1,18 @@
+{
+  "decision": "MATCH",
+  "selected_candidate": "Honda Elite SA 50",
+  "confidence": "HIGH",
+  "match_basis": "MARKET_ALIAS",
+  "explanation": "'SB50 Elite' is a market-specific or regional designation for the Honda Elite SA 50, with 'SB' likely representing a model code or regional variant. The displacement (50) and model name (Elite) align exactly, and the SA 50 is the known international model corresponding to this variant.",
+  "canonical_model_alias": "Elite SA 50",
+  "configuration_tokens": [],
+  "brand_aliases": [],
+  "model_aliases": [
+    "Elite SA 50"
+  ],
+  "status": "SUCCESS",
+  "prompt_version": "motorcycle-candidate-resolution-v4",
+  "model": "qwen-flash",
+  "make": "Honda",
+  "model_name": "SB50 Elite"
+}

@@ -1,0 +1,20 @@
+{
+  "decision": "MATCH",
+  "selected_candidate": "R 1100S",
+  "confidence": "HIGH",
+  "match_basis": "HISTORICAL_ALIAS",
+  "explanation": "The R1100SA is a variant of the R1100S, with 'SA' denoting a sport-advantage configuration. The R1100S was marketed in various configurations including the SA version, and BMW used 'SA' as a model suffix for this specific variant. The R1100RS is a different model altogether, being a sport-touring variant with distinct design and engineering features. Thus, R1100S is the correct historical alias for R1100SA.",
+  "canonical_model_alias": "R 1100S",
+  "configuration_tokens": [
+    "SA"
+  ],
+  "brand_aliases": [],
+  "model_aliases": [
+    "R 1100S"
+  ],
+  "status": "SUCCESS",
+  "prompt_version": "motorcycle-candidate-resolution-v4",
+  "model": "qwen-flash",
+  "make": "BMW",
+  "model_name": "R1100SA"
+}

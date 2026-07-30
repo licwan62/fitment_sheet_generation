@@ -1,0 +1,20 @@
+{
+  "decision": "MATCH",
+  "selected_candidate": "harley davidson softail heritage classic flhc",
+  "confidence": "HIGH",
+  "match_basis": "ABBREVIATION",
+  "explanation": "The input 'FLHC Heritage Classic 107' uses the standard Harley-Davidson model code FLHC, which is the official designation for the Softail Heritage Classic 107. The candidate 'harley davidson softail heritage classic flhc' matches this model exactly in name and configuration, with 'FLHC' being the recognized abbreviation for the model series. The displacement (107) is consistent across both.",
+  "canonical_model_alias": "softail heritage classic flhc",
+  "configuration_tokens": [
+    "107"
+  ],
+  "brand_aliases": [],
+  "model_aliases": [
+    "Heritage Classic 107"
+  ],
+  "status": "SUCCESS",
+  "prompt_version": "motorcycle-candidate-resolution-v4",
+  "model": "qwen-flash",
+  "make": "Harley-Davidson",
+  "model_name": "FLHC Heritage Classic 107"
+}

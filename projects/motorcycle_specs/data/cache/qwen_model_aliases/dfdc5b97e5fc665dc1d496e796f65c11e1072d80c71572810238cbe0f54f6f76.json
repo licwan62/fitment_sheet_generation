@@ -1,0 +1,21 @@
+{
+  "decision": "MATCH",
+  "selected_candidate": "R 1300GS \n\t\tAdventure Dark (France only)",
+  "confidence": "HIGH",
+  "match_basis": "MARKET_ALIAS",
+  "explanation": "The input 'R1300GS Adventure' refers to the same underlying motorcycle model as the candidate 'R 1300GS Adventure Dark (France only)', which is a market-specific variant (France-only) of the R1300GS Adventure. The core model identity, including displacement and platform, is identical. The 'Dark' designation is a color/trim configuration, not a different model.",
+  "canonical_model_alias": "R 1300GS Adventure",
+  "configuration_tokens": [
+    "Dark",
+    "France only"
+  ],
+  "brand_aliases": [],
+  "model_aliases": [
+    "R 1300GS Adventure Dark (France only)"
+  ],
+  "status": "SUCCESS",
+  "prompt_version": "motorcycle-candidate-resolution-v4",
+  "model": "qwen-flash",
+  "make": "BMW",
+  "model_name": "R1300GS Adventure"
+}

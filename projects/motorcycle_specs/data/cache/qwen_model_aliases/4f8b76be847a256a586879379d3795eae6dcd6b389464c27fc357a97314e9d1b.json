@@ -1,0 +1,16 @@
+{
+  "decision": "NO_MATCH",
+  "selected_candidate": "",
+  "confidence": "HIGH",
+  "match_basis": "NONE",
+  "explanation": "The input model '748 Monoposto' is a specific racing-oriented variant of the Ducati 748, featuring a single-seat (monoposto) configuration. None of the catalog candidates are the same model: '748 Biposto' is the dual-seat version, '748SPS' is a different performance variant, and the others are entirely different models (Monster series). No candidate matches the 748 Monoposto in identity, including market names, abbreviations, or typos.",
+  "canonical_model_alias": "",
+  "configuration_tokens": [],
+  "brand_aliases": [],
+  "model_aliases": [],
+  "status": "SUCCESS",
+  "prompt_version": "motorcycle-candidate-resolution-v4",
+  "model": "qwen-flash",
+  "make": "Ducati",
+  "model_name": "748 Monoposto"
+}

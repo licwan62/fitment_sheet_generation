@@ -1,0 +1,16 @@
+{
+  "decision": "INFER",
+  "confidence": "MEDIUM",
+  "length_mm": 2050,
+  "width_mm": 860,
+  "height_mm": 1100,
+  "wheelbase_mm": 1370,
+  "seat_height_mm": 790,
+  "ground_clearance_mm": 145,
+  "explanation": "Inferred from typical dimensions of similar 250cc naked bikes in CFMOTO's lineup (e.g., 250NK FI shares platform with 300NK), using standard proportions for lightweight sport-naked motorcycles. Dimensions are estimated based on model class and manufacturer design trends, not verified by official specs.",
+  "status": "SUCCESS",
+  "prompt_version": "motorcycle-dimension-inference-v1",
+  "model": "qwen-flash",
+  "make": "CFMOTO",
+  "model_name": "250NK FI"
+}

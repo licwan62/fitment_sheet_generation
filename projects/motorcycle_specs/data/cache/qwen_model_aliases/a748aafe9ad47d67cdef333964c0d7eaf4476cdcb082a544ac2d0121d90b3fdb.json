@@ -1,0 +1,20 @@
+{
+  "decision": "MATCH",
+  "selected_candidate": "CB 400T \n\t\tHawk",
+  "confidence": "HIGH",
+  "match_basis": "MARKET_ALIAS",
+  "explanation": "The input 'CB400TI Hawk I' refers to the Honda CB400T Hawk, a model marketed in certain regions with the 'I' suffix denoting a specific configuration or market variant. The catalog candidate 'CB 400T \n\t\tHawk' is the correct and canonical title for this model, with 'I' being a configuration label rather than a distinct model identifier. The core model identity (CB400T Hawk) matches exactly.",
+  "canonical_model_alias": "CB 400T Hawk",
+  "configuration_tokens": [
+    "I"
+  ],
+  "brand_aliases": [],
+  "model_aliases": [
+    "CB 400T Hawk"
+  ],
+  "status": "SUCCESS",
+  "prompt_version": "motorcycle-candidate-resolution-v4",
+  "model": "qwen-flash",
+  "make": "Honda",
+  "model_name": "CB400TI Hawk I"
+}

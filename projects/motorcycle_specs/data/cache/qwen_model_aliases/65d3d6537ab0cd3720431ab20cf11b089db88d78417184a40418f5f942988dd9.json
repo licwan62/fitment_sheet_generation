@@ -1,0 +1,16 @@
+{
+  "decision": "NO_MATCH",
+  "selected_candidate": "",
+  "confidence": "HIGH",
+  "match_basis": "NONE",
+  "explanation": "The input model 'CB92 Benly Super Sport 125' is a distinct vintage Honda motorcycle from the 1970s, known for its sporty design and 125cc engine. None of the catalog candidates match this specific model in terms of name, displacement, or historical identity. The candidates are either different models (e.g., CB125R Neo Sports Cafe, CBR125R), unrelated variants (Super Cub series), or modern reinterpretations (Concept, ABS). No candidate represents the same underlying motorcycle.",
+  "canonical_model_alias": "",
+  "configuration_tokens": [],
+  "brand_aliases": [],
+  "model_aliases": [],
+  "status": "SUCCESS",
+  "prompt_version": "motorcycle-candidate-resolution-v4",
+  "model": "qwen-flash",
+  "make": "Honda",
+  "model_name": "CB92 Benly Super Sport 125"
+}

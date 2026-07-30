@@ -1,0 +1,16 @@
+{
+  "decision": "INFER|UNKNOWN",
+  "confidence": "LOW",
+  "length_mm": null,
+  "width_mm": null,
+  "height_mm": null,
+  "wheelbase_mm": null,
+  "seat_height_mm": null,
+  "ground_clearance_mm": null,
+  "explanation": "The Big Bear Choppers Titanium S V111 Carb is a custom motorcycle with no publicly available catalog specifications. Dimensions vary significantly across custom builds, and no consistent data exists for this specific model variant. Without verified manufacturer data or reliable visual reference, dimensions cannot be reliably inferred.",
+  "status": "SUCCESS",
+  "prompt_version": "motorcycle-dimension-inference-v1",
+  "model": "qwen-flash",
+  "make": "Big Bear Choppers",
+  "model_name": "Titanium S V111 Carb"
+}

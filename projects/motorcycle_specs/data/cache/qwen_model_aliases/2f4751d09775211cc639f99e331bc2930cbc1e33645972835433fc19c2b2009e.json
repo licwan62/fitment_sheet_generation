@@ -1,0 +1,16 @@
+{
+  "decision": "NO_MATCH",
+  "selected_candidate": "",
+  "confidence": "HIGH",
+  "match_basis": "NONE",
+  "explanation": "The input model 'F900XR LWR' is not present in the catalog candidates. The F 900XR is a distinct model, and 'LWR' is not a known market or configuration variant of it in the provided list. The candidates include different models (e.g., F 900R, F 900GS), none of which match the F900XR LWR identity.",
+  "canonical_model_alias": "",
+  "configuration_tokens": [],
+  "brand_aliases": [],
+  "model_aliases": [],
+  "status": "SUCCESS",
+  "prompt_version": "motorcycle-candidate-resolution-v4",
+  "model": "qwen-flash",
+  "make": "BMW",
+  "model_name": "F900XR LWR"
+}

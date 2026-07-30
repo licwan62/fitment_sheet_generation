@@ -1,0 +1,18 @@
+{
+  "decision": "MATCH",
+  "selected_candidate": "Honda PA50 Camino",
+  "confidence": "HIGH",
+  "match_basis": "MARKET_ALIAS",
+  "explanation": "The Honda PA50 I is a variant of the PA50 series marketed in certain regions as the 'Camino'. This is a known regional or market-specific name for the same underlying model, with identical displacement and platform. The 'I' suffix likely denotes a version or iteration within the PA50 lineup, consistent with the Camino's identity.",
+  "canonical_model_alias": "PA50 Camino",
+  "configuration_tokens": [],
+  "brand_aliases": [],
+  "model_aliases": [
+    "PA50 Camino"
+  ],
+  "status": "SUCCESS",
+  "prompt_version": "motorcycle-candidate-resolution-v4",
+  "model": "qwen-flash",
+  "make": "Honda",
+  "model_name": "PA50 I"
+}

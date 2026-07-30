@@ -1,0 +1,11 @@
+{
+  "status": "TIMEOUT",
+  "prompt_version": "motorcycle-candidate-resolution-v4",
+  "model": "qwen-flash",
+  "make": "Beta",
+  "model_name": "EVO 300 (2 Stroke)",
+  "candidate_titles": [],
+  "error_type": "ReadTimeout",
+  "status_code": null,
+  "retryable": true
+}

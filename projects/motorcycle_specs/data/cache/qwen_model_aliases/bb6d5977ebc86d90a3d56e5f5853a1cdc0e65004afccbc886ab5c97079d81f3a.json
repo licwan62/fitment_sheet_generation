@@ -1,0 +1,21 @@
+{
+  "decision": "MATCH",
+  "selected_candidate": "XRE 300",
+  "confidence": "HIGH",
+  "match_basis": "SAME_NAME",
+  "explanation": "The input model 'XRE300 ABS DLX' is a configuration of the XRE300 motorcycle. The candidate 'XRE 300' represents the base model, and 'ABS DLX' is a configuration label (equipment variant) that does not change the underlying model identity. The catalog candidate 'XRE 300 Sahara' is a different variant (market-specific trim), but 'XRE 300' matches the core model exactly.",
+  "canonical_model_alias": "XRE 300",
+  "configuration_tokens": [
+    "ABS",
+    "DLX"
+  ],
+  "brand_aliases": [],
+  "model_aliases": [
+    "XRE 300"
+  ],
+  "status": "SUCCESS",
+  "prompt_version": "motorcycle-candidate-resolution-v4",
+  "model": "qwen-flash",
+  "make": "Honda",
+  "model_name": "XRE300 ABS DLX"
+}

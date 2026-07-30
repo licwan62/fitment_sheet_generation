@@ -1,0 +1,21 @@
+{
+  "decision": "MATCH",
+  "selected_candidate": "GL 1800 Gold Wing Tour / DCT Airbag DCT",
+  "confidence": "HIGH",
+  "match_basis": "MARKET_ALIAS",
+  "explanation": "The input 'GL1800HPN Gold Wing Audio/Comfort/Navi' refers to the Honda GL1800 Gold Wing Tour model with premium features including audio, comfort, and navigation. The candidate 'GL 1800 Gold Wing Tour / DCT Airbag DCT' is the correct market-specific configuration for the high-end Gold Wing Tour with DCT transmission and airbag, which aligns with the HPN (High Performance Navigation) designation used in certain markets. The naming differences are due to regional marketing labels and feature groupings, but the core model identity is identical.",
+  "canonical_model_alias": "GL 1800 Gold Wing Tour / DCT Airbag DCT",
+  "configuration_tokens": [
+    "DCT",
+    "Airbag DCT"
+  ],
+  "brand_aliases": [],
+  "model_aliases": [
+    "GL 1800 Gold Wing Tour / DCT Airbag DCT"
+  ],
+  "status": "SUCCESS",
+  "prompt_version": "motorcycle-candidate-resolution-v4",
+  "model": "qwen-flash",
+  "make": "Honda",
+  "model_name": "GL1800HPN Gold Wing Audio/Comfort/Navi"
+}

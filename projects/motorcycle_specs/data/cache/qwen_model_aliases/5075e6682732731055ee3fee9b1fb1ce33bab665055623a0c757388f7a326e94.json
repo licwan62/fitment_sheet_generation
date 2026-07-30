@@ -1,0 +1,16 @@
+{
+  "decision": "NO_MATCH",
+  "selected_candidate": "",
+  "confidence": "HIGH",
+  "match_basis": "NONE",
+  "explanation": "The input model 'NSS250A Reflex ABS' is not found in the catalog candidates, and no matching candidate exists for this specific Honda motorcycle configuration. The model name includes a unique identifier (NSS250A), feature (Reflex ABS), and likely refers to a specific market or configuration variant not present in the provided candidate list.",
+  "canonical_model_alias": "",
+  "configuration_tokens": [],
+  "brand_aliases": [],
+  "model_aliases": [],
+  "status": "SUCCESS",
+  "prompt_version": "motorcycle-candidate-resolution-v4",
+  "model": "qwen-flash",
+  "make": "Honda",
+  "model_name": "NSS250A Reflex ABS"
+}

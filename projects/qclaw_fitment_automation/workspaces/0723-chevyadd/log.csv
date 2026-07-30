@@ -1,0 +1,6 @@
+﻿文件名,开始时间,结束时间,状态,发送次数,输出文件名,备注
+"list.tsv","2026-07-23 19:36:10","2026-07-23 19:50:49","页面错误","2","list_result_12.md","异常: Playwright browser 请求失败 (tab-new): {""ok"":false,""error"":""browserContext.newPage: Target page, context or browser has been closed\n    at activePage (D:\\Home\\Scripts\\fitment_sheet_generation\\projects\\qclaw_fitment_automation\\playwright_browser_bridge.js:62:85)\n    at async runAction (D:\\Home\\Scripts\\fitment_sheet_generation\\projects\\qclaw_fitment_automation\\playwright_browser_bridge.js:93:16)\n    at async Server. (D:\\Home\\Scripts\\fitment_sheet_generation\\projects\\qclaw_fitment_automation\\playwright_browser_bridge.js:167:20)""}"
+"list.tsv","2026-07-23 19:50:59","2026-07-23 20:10:30","页面错误","1","list_result_13.md","等待回复超过 900 秒"
+"list.tsv","2026-07-23 21:13:00","2026-07-23 22:23:44","页面错误","6","list_result_15.md","等待回复超过 1000 秒"
+"list.tsv","2026-07-23 22:53:36","2026-07-23 23:23:53","页面错误","1","list_result_16.md","等待回复超过 1800 秒"
+"list.tsv","2026-07-24 00:17:26","2026-07-24 04:15:23","页面错误","5","list_result_17.md","等待回复超过 9999 秒"

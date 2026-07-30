@@ -1,0 +1,16 @@
+{
+  "decision": "INFER|UNKNOWN",
+  "confidence": "LOW",
+  "length_mm": null,
+  "width_mm": null,
+  "height_mm": null,
+  "wheelbase_mm": null,
+  "seat_height_mm": null,
+  "ground_clearance_mm": null,
+  "explanation": "The BMW K75/3A is a rare and obscure model designation with no verifiable public documentation or consistent data across sources. The '3A' suffix does not correspond to any known official BMW motorcycle variant in the K75 series, which typically includes models like K75S, K75T, and K75C. Without clear evidence of this specific model's dimensions or production details, dimension estimation is unreliable. Therefore, all dimensions are marked as unknown.",
+  "status": "SUCCESS",
+  "prompt_version": "motorcycle-dimension-inference-v1",
+  "model": "qwen-flash",
+  "make": "BMW",
+  "model_name": "K75/3A"
+}

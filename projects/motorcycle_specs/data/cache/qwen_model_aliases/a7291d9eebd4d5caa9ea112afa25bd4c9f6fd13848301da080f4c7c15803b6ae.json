@@ -1,0 +1,18 @@
+{
+  "decision": "MATCH",
+  "selected_candidate": "R nineT R12",
+  "confidence": "HIGH",
+  "match_basis": "SAME_NAME",
+  "explanation": "The input 'R 12 nine T' is a direct variant of the catalog candidate 'R nineT R12', with only the order of the model name elements swapped. Both refer to the same motorcycle model: the BMW R nineT with a 1200cc engine, marketed as the R 12 nineT in some regions and listed as R nineT R12 in others. The displacement (1200cc) and core model identity are identical.",
+  "canonical_model_alias": "R nineT R12",
+  "configuration_tokens": [],
+  "brand_aliases": [],
+  "model_aliases": [
+    "R nineT R12"
+  ],
+  "status": "SUCCESS",
+  "prompt_version": "motorcycle-candidate-resolution-v4",
+  "model": "qwen-flash",
+  "make": "BMW",
+  "model_name": "R 12 nine T"
+}

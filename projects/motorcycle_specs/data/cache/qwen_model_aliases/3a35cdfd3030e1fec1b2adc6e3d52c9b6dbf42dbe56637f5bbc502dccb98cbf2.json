@@ -1,0 +1,16 @@
+{
+  "decision": "MATCH",
+  "selected_candidate": "Harley-Davidson FXSB 1340 Low Rider",
+  "confidence": "HIGH",
+  "match_basis": "SAME_NAME",
+  "explanation": "The input 'FXSB Low Rider - Belt' refers to the Harley-Davidson FXSB 1340 Low Rider, which is a belt-drive model. The catalog candidate 'Harley-Davidson FXSB 1340 Low Rider' matches exactly in model code (FXSB), displacement (1340cc), and name (Low Rider), confirming it is the same underlying motorcycle.",
+  "canonical_model_alias": "FXSB 1340 Low Rider",
+  "configuration_tokens": [],
+  "brand_aliases": [],
+  "model_aliases": [],
+  "status": "SUCCESS",
+  "prompt_version": "motorcycle-candidate-resolution-v4",
+  "model": "qwen-flash",
+  "make": "Harley-Davidson",
+  "model_name": "FXSB Low Rider - Belt"
+}

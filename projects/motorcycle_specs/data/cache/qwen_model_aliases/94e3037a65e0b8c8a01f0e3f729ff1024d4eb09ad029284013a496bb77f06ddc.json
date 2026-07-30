@@ -1,0 +1,18 @@
+{
+  "decision": "MATCH",
+  "selected_candidate": "Honda Dream 50 R",
+  "confidence": "HIGH",
+  "match_basis": "SAME_NAME",
+  "explanation": "The input 'CB50R Dream 50' refers to the same motorcycle model as 'Honda Dream 50 R', with 'CB50R' being a known model designation used in some markets for the Dream 50. The core model identity—Dream 50—is identical, and the variation in prefix (CB vs. Dream) is a known regional or catalog naming convention for the same machine.",
+  "canonical_model_alias": "Dream 50 R",
+  "configuration_tokens": [],
+  "brand_aliases": [],
+  "model_aliases": [
+    "Dream 50 R"
+  ],
+  "status": "SUCCESS",
+  "prompt_version": "motorcycle-candidate-resolution-v4",
+  "model": "qwen-flash",
+  "make": "Honda",
+  "model_name": "CB50R Dream 50"
+}

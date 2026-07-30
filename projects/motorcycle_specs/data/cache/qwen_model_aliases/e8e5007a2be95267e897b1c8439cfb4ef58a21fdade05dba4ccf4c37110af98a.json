@@ -1,0 +1,16 @@
+{
+  "decision": "NO_MATCH",
+  "selected_candidate": "",
+  "confidence": "HIGH",
+  "match_basis": "NONE",
+  "explanation": "The input model XL80S has a displacement of 80cc, while all catalog candidates (XL 250S, XL 500S, XL 125S) have significantly different displacements and are distinct models. No known market name, historical alias, abbreviation, or typo links XL80S to any of these candidates. The model identity is not preserved across displacement differences.",
+  "canonical_model_alias": "",
+  "configuration_tokens": [],
+  "brand_aliases": [],
+  "model_aliases": [],
+  "status": "SUCCESS",
+  "prompt_version": "motorcycle-candidate-resolution-v4",
+  "model": "qwen-flash",
+  "make": "Honda",
+  "model_name": "XL80S"
+}

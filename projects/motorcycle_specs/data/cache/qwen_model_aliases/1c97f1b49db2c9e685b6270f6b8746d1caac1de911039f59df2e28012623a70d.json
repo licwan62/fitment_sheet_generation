@@ -1,0 +1,22 @@
+{
+  "decision": "MATCH",
+  "selected_candidate": "GSX 550ES",
+  "confidence": "HIGH",
+  "match_basis": "MARKET_ALIAS",
+  "explanation": "The GS550ES is a known market designation for the Suzuki GSX 550ES model, with 'GSX' being the international marketing name and 'GS550ES' the domestic Japanese naming convention. The model is identical across both designations, differing only in branding and regional naming. The displacement (550) and configuration (E, S) are consistent.",
+  "canonical_model_alias": "GSX 550ES",
+  "configuration_tokens": [
+    "E",
+    "S"
+  ],
+  "brand_aliases": [],
+  "model_aliases": [
+    "GSX 550ES",
+    "GS 550E"
+  ],
+  "status": "SUCCESS",
+  "prompt_version": "motorcycle-candidate-resolution-v4",
+  "model": "qwen-flash",
+  "make": "Suzuki",
+  "model_name": "GS550ES"
+}

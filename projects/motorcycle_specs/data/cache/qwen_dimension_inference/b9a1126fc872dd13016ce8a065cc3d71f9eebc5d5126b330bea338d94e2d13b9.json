@@ -1,0 +1,16 @@
+{
+  "decision": "UNKNOWN",
+  "confidence": "LOW",
+  "length_mm": null,
+  "width_mm": null,
+  "height_mm": null,
+  "wheelbase_mm": null,
+  "seat_height_mm": null,
+  "ground_clearance_mm": null,
+  "explanation": "Cobra CX50 SRX FWE is not a widely recognized or documented motorcycle model. The manufacturer Cobra is not a major known motorcycle producer, and the model name does not correspond to any verified production motorcycle in available databases. Without reliable references or catalog data, dimensions cannot be reliably inferred. Model identity and specifications are uncertain.",
+  "status": "SUCCESS",
+  "prompt_version": "motorcycle-dimension-inference-v1",
+  "model": "qwen-flash",
+  "make": "Cobra",
+  "model_name": "CX50 SRX FWE"
+}

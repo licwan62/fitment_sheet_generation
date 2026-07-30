@@ -1,0 +1,16 @@
+{
+  "decision": "NO_MATCH",
+  "selected_candidate": "",
+  "confidence": "HIGH",
+  "match_basis": "NONE",
+  "explanation": "The input 'RS250' is not a valid Suzuki motorcycle model. The catalog candidates include various Suzuki models, but none match the RS250 designation. The 'RM 250' and 'DR 250S' are real Suzuki models, but they are distinct from an RS250. There is no known Suzuki RS250 model in the historical or current lineup. Therefore, no candidate matches the input.",
+  "canonical_model_alias": "",
+  "configuration_tokens": [],
+  "brand_aliases": [],
+  "model_aliases": [],
+  "status": "SUCCESS",
+  "prompt_version": "motorcycle-candidate-resolution-v4",
+  "model": "qwen-flash",
+  "make": "Suzuki",
+  "model_name": "RS250"
+}

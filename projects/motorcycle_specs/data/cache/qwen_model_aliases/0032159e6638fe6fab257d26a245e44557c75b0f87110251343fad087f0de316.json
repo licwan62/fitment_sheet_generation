@@ -1,0 +1,19 @@
+{
+  "decision": "MATCH",
+  "selected_candidate": "CHF \n\t\t50 M etropolitan Scooter",
+  "confidence": "HIGH",
+  "match_basis": "MARKET_ALIAS",
+  "explanation": "The 'NCW50 Metropolitan' is a Honda model known in some markets as the 'CHF 50 Metropolitan Scooter', with 'CHF' being a catalog code used for the same model. The name 'Metropolitan' and displacement '50' are identical, and the variation in prefix is a known market-specific catalog designation.",
+  "canonical_model_alias": "50 Metropolitan Scooter",
+  "configuration_tokens": [],
+  "brand_aliases": [],
+  "model_aliases": [
+    "CHF 50 M etropolitan Scooter",
+    "50 Metropolitan Scooter"
+  ],
+  "status": "SUCCESS",
+  "prompt_version": "motorcycle-candidate-resolution-v4",
+  "model": "qwen-flash",
+  "make": "Honda",
+  "model_name": "NCW50 Metropolitan"
+}

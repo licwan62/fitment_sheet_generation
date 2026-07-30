@@ -1,0 +1,20 @@
+{
+  "decision": "MATCH",
+  "selected_candidate": "Honda CL 100S",
+  "confidence": "HIGH",
+  "match_basis": "MARKET_ALIAS",
+  "explanation": "The input 'CL100/S Scrambler' refers to the Honda CL100S, a scrambler variant of the CL100 series. The '/S' suffix is a common market or configuration designation for the Scrambler version, and 'CL 100S' in the catalog is the canonical expression of this model. The name 'Scrambler' aligns with the model's intended use and historical marketing. No other candidate matches the CL100S identity.",
+  "canonical_model_alias": "CL 100S",
+  "configuration_tokens": [
+    "S"
+  ],
+  "brand_aliases": [],
+  "model_aliases": [
+    "CL 100S"
+  ],
+  "status": "SUCCESS",
+  "prompt_version": "motorcycle-candidate-resolution-v4",
+  "model": "qwen-flash",
+  "make": "Honda",
+  "model_name": "CL100/S Scrambler"
+}

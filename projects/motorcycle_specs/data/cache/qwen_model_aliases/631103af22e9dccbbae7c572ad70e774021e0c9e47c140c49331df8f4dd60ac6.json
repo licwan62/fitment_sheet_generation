@@ -1,0 +1,20 @@
+{
+  "decision": "MATCH",
+  "selected_candidate": "NC 750X / DCT",
+  "confidence": "HIGH",
+  "match_basis": "SAME_NAME",
+  "explanation": "The input model 'NC750XA' is a variant of the NC750X with DCT transmission, and 'NC 750X / DCT' is the correct catalog title for this model. The 'A' suffix in 'NC750XA' likely denotes a market-specific configuration or trim level, but the core model identity (NC750X with DCT) matches exactly.",
+  "canonical_model_alias": "NC 750X / DCT",
+  "configuration_tokens": [
+    "A"
+  ],
+  "brand_aliases": [],
+  "model_aliases": [
+    "NC 750X / DCT"
+  ],
+  "status": "SUCCESS",
+  "prompt_version": "motorcycle-candidate-resolution-v4",
+  "model": "qwen-flash",
+  "make": "Honda",
+  "model_name": "NC750XA"
+}

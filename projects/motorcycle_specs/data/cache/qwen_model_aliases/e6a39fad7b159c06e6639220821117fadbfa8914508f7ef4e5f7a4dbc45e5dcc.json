@@ -1,0 +1,18 @@
+{
+  "decision": "MATCH",
+  "selected_candidate": "ducati monster 30 anniversario",
+  "confidence": "HIGH",
+  "match_basis": "SAME_NAME",
+  "explanation": "The input 'Monster 30th Anniversario' is a direct reference to the same model as 'ducati monster 30 anniversario', with only minor variation in phrasing ('30th' vs '30') and capitalization. The core identity—Ducati Monster 30 Anniversario—is unambiguously matched.",
+  "canonical_model_alias": "monster 30 anniversario",
+  "configuration_tokens": [],
+  "brand_aliases": [],
+  "model_aliases": [
+    "monster 30 anniversario"
+  ],
+  "status": "SUCCESS",
+  "prompt_version": "motorcycle-candidate-resolution-v4",
+  "model": "qwen-flash",
+  "make": "Ducati",
+  "model_name": "Monster 30th Anniversario"
+}

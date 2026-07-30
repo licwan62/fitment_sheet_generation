@@ -1,0 +1,16 @@
+{
+  "decision": "INFER|UNKNOWN",
+  "confidence": "MEDIUM|LOW",
+  "length_mm": null,
+  "width_mm": null,
+  "height_mm": null,
+  "wheelbase_mm": null,
+  "seat_height_mm": null,
+  "ground_clearance_mm": null,
+  "explanation": "The Aprilia Sportcity 50 is a small-displacement scooter primarily marketed in Europe, but specific factory dimensions are not consistently documented in public sources. Without access to official technical specifications or a verified catalog page, and due to potential variations by model year and regional market, reliable inference of exact dimensions cannot be confidently made. Therefore, all dimensions are marked as unknown.",
+  "status": "SUCCESS",
+  "prompt_version": "motorcycle-dimension-inference-v1",
+  "model": "qwen-flash",
+  "make": "Aprilia",
+  "model_name": "Sportcity 50"
+}

@@ -1,0 +1,16 @@
+{
+  "decision": "INFER|UNKNOWN",
+  "confidence": "MEDIUM|LOW",
+  "length_mm": null,
+  "width_mm": null,
+  "height_mm": null,
+  "wheelbase_mm": null,
+  "seat_height_mm": null,
+  "ground_clearance_mm": null,
+  "explanation": "The Honda VF700F Interceptor was produced from 1983 to 1986 with variations across model years and markets. Without a specific year or market reference, dimensional consistency cannot be confirmed. Known dimensions vary slightly between early and later models, and no definitive catalog source is available for verification. Therefore, inferred values are uncertain.",
+  "status": "SUCCESS",
+  "prompt_version": "motorcycle-dimension-inference-v1",
+  "model": "qwen-flash",
+  "make": "Honda",
+  "model_name": "VF700F Interceptor"
+}

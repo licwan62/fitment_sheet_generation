@@ -1,0 +1,16 @@
+{
+  "decision": "NO_MATCH",
+  "selected_candidate": "",
+  "confidence": "HIGH",
+  "match_basis": "NONE",
+  "explanation": "The input model 'CRF250R' is a different motorcycle model from the catalog candidates 'CRF 250L', 'CRF 250M', and 'CRF 250X'. The 'R' in CRF250R denotes a motocross race-oriented model, while the 'L', 'M', and 'X' suffixes denote different configurations (e.g., dual-sport, mid-range, or cross-country), which are distinct models with different geometries, suspension setups, and intended use. No evidence supports that any candidate is a market name, abbreviation, or typo for CRF250R. Therefore, no match exists.",
+  "canonical_model_alias": "CRF250R",
+  "configuration_tokens": [],
+  "brand_aliases": [],
+  "model_aliases": [],
+  "status": "SUCCESS",
+  "prompt_version": "motorcycle-candidate-resolution-v4",
+  "model": "qwen-flash",
+  "make": "Honda",
+  "model_name": "CRF250R"
+}

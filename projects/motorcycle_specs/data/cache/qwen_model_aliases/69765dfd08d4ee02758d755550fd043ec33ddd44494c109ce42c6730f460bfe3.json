@@ -1,0 +1,18 @@
+{
+  "decision": "MATCH",
+  "selected_candidate": "bigdog ridgeback",
+  "confidence": "HIGH",
+  "match_basis": "SAME_NAME",
+  "explanation": "The input model 'Ridgeback' exactly matches the catalog candidate 'bigdog ridgeback' in name and identity, with no conflicting or differing attributes.",
+  "canonical_model_alias": "ridgeback",
+  "configuration_tokens": [],
+  "brand_aliases": [],
+  "model_aliases": [
+    "bigdog ridgeback"
+  ],
+  "status": "SUCCESS",
+  "prompt_version": "motorcycle-candidate-resolution-v4",
+  "model": "qwen-flash",
+  "make": "Big Dog",
+  "model_name": "Ridgeback"
+}

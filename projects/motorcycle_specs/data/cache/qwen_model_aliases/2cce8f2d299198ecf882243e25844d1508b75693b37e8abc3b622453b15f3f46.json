@@ -1,0 +1,20 @@
+{
+  "decision": "MATCH",
+  "selected_candidate": "Honda ST 1100 Pan-European ABS",
+  "confidence": "HIGH",
+  "match_basis": "MARKET_ALIAS",
+  "explanation": "The input 'ST1100 ABS' refers to the Honda ST 1100 Pan-European model, which was marketed with ABS as a standard feature in certain regions. 'ST1100 ABS' is a common shorthand for the full model name 'Honda ST 1100 Pan-European ABS', and the absence of 'Pan-European' in the input does not change the underlying model identity. The presence of ABS confirms it is the same model variant.",
+  "canonical_model_alias": "ST 1100 Pan-European ABS",
+  "configuration_tokens": [
+    "ABS"
+  ],
+  "brand_aliases": [],
+  "model_aliases": [
+    "ST 1100 Pan-European ABS"
+  ],
+  "status": "SUCCESS",
+  "prompt_version": "motorcycle-candidate-resolution-v4",
+  "model": "qwen-flash",
+  "make": "Honda",
+  "model_name": "ST1100 ABS"
+}

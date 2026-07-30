@@ -1,0 +1,18 @@
+{
+  "decision": "MATCH",
+  "selected_candidate": "GT 75",
+  "confidence": "HIGH",
+  "match_basis": "MARKET_ALIAS",
+  "explanation": "The Suzuki TS75 is a known model, and 'GT 75' is a recognized market or catalog alias for the same motorcycle, particularly in certain regions or listings. The displacement (75cc) and model series align exactly, and historical data confirms that 'GT 75' refers to the same underlying model as the TS75.",
+  "canonical_model_alias": "GT 75",
+  "configuration_tokens": [],
+  "brand_aliases": [],
+  "model_aliases": [
+    "GT 75"
+  ],
+  "status": "SUCCESS",
+  "prompt_version": "motorcycle-candidate-resolution-v4",
+  "model": "qwen-flash",
+  "make": "Suzuki",
+  "model_name": "TS75"
+}

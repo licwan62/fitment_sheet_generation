@@ -1,0 +1,11 @@
+{
+  "status": "API_ERROR",
+  "prompt_version": "motorcycle-candidate-resolution-v3",
+  "model": "qwen-flash",
+  "make": "Honda",
+  "model_name": "MB5",
+  "candidate_titles": [
+    "MB 50 / MB 5 Bobcat"
+  ],
+  "error_type": "HTTPStatusError"
+}
