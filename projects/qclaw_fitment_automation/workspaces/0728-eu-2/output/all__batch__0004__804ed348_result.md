@@ -1319,3 +1319,12 @@ EU-CITROEN-JUMPER-III-BUS-VAN-L4H2-01	6363	2050	2524	Citroën Relay Product & Te
 --- 脚本异常 ---
 异常: DIMENSION_GROUP EU-JEEP-COMMANDER-XK-SUV-01 的 WidthMM 与既有最终值冲突
 
+
+--- 本地最终 TSV 已更新 ---
+- 本批 Ktype 映射：all_301-400_ktype_dimension_mapping_final.tsv
+- 本批尺寸组：all_301-400_dimension_groups_final.tsv
+- 累计 Ktype 映射：all_1-100_ktype_dimension_mapping_final.tsv（1915 行）
+- 累计尺寸组：all_1-100_dimension_groups_final.tsv（964 行）
+
+- 尺寸冲突协调：
+  - EU-JEEP-COMMANDER-XK-SUV-01 -> EU-JEEP-COMMANDER-XK-SUV-02：4787x1900x1826 与 4787x1899x1826，创建新尺寸组

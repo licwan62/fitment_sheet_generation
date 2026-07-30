@@ -2124,3 +2124,7 @@ id	Ktype	NormalizedBodyStyle	Generation	BodyCode	Doors	DIMENSION_GROUP_ID	MatchC
 --- 脚本异常 ---
 异常: 已打开消息操作菜单，但没有找到【在新聊天中分支】
 
+
+--- 脚本异常 ---
+异常: Playwright browser 请求失败 (tab-new): {"ok":false,"error":"page.goto: net::ERR_CONNECTION_TIMED_OUT at https://chatgpt.com/c/6a6933b4-93ec-83ea-b5f5-9474ec3faec8\nCall log:\n\u001b[2m  - navigating to \"https://chatgpt.com/c/6a6933b4-93ec-83ea-b5f5-9474ec3faec8\", waiting until \"domcontentloaded\"\u001b[22m\n\n    at runAction (D:\\Licheng\\Repo\\fitment_sheet_generation\\projects\\qclaw_fitment_automation\\playwright_browser_bridge.js:149:25)\n    at async Server. (D:\\Licheng\\Repo\\fitment_sheet_generation\\projects\\qclaw_fitment_automation\\playwright_browser_bridge.js:222:16)"}
+

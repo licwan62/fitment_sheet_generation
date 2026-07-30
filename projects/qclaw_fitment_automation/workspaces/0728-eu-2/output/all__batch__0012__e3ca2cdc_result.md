@@ -1792,3 +1792,59 @@ EU-CHEVROLET-ASTRO-II-CARGO-VAN-1998-2005-01	4821	1969	1913	Chevrolet 1998 Light
 --- 脚本异常 ---
 异常: 已打开消息操作菜单，但没有找到【在新聊天中分支】
 
+
+--- 发送 / checkpoint 续跑到 Round 22 ---
+继续当前批次并采用缓存优先模式。尺寸组只在首次创建或纠错时完整核对一次三维和来源；后续 Ktype 只判断关联哪个现有 DIMENSION_GROUP_ID，不重复抓取，不输出缓存来源或匹配理由。仍有 PENDING 时，CONTINUE 轮仅输出：1) 更新点；2) 当前批次进度；3) 本轮新增/修改的 Ktype 映射 TSV（无变化写“无”）；4) 本轮首次创建/修正的 DIMENSION_GROUP TSV（复用既有组不重复输出，无变化写“无”）；5) 下一步优先处理。若当前或上一轮进度已经是 PENDING=0，本轮不要继续检索或再次输出 CONTINUE，必须立刻汇总并输出两张最终完整 TSV、两个任务指定 sandbox 下载链接和“推进信号：COMPLETE”。执行顺序固定为：第一阶段优先消除 PENDING 并补齐会阻塞两张最终表的数据。检测到 PENDING=0 后，第二阶段最多只做一次轻量机械收尾：核对固定表头、id 与 DIMENSION_GROUP_ID 唯一、映射引用闭合、长宽高和来源非空、两个任务指定下载链接齐全。第二阶段不得重新逐车型、逐年份或逐来源做深度检索，不得为了提高置信度反复核对，也不得因非阻塞的排序或措辞问题继续多轮。PENDING=0 后的下一条回复必须直接输出两张最终完整 TSV、两个精确 sandbox 下载链接，并以“推进信号：COMPLETE”结束；不要再输出 CONTINUE。Ktype 映射 TSV 表头必须严格使用 requirement 指定的字段顺序：id	Ktype	NormalizedBodyStyle	Generation	BodyCode	Doors	DIMENSION_GROUP_ID	MatchConfidence	Notes	IterationStatus。另需维护完整 DIMENSION_GROUP TSV，表头固定为：DIMENSION_GROUP_ID	LengthMM	WidthMM	HeightMM	DimensionSource	SourceURL。缺少任一张表、任一映射引用的尺寸组，或尺寸组字段不完整时不得 COMPLETE。不要输出子车系匹配表。
+【COMPLETE 下载文件硬性要求】
+准备 COMPLETE 时，除两张完整内嵌 TSV 外，还必须创建并提供以下两个可点击 sandbox 下载链接，文件名必须完全一致：
+- all_1101-1200_ktype_dimension_mapping_final.tsv
+- all_1101-1200_dimension_groups_final.tsv
+缺少任一下载链接时不得输出推进信号：COMPLETE。
+
+
+--- Round 22 / checkpoint 续跑 ---
+## 更新点
+
+- 闭合 Chevrolet Astro II Cargo `21727、21728`。
+- 官方规格显示该车身长度、宽度不变，但名义高度分为三段：1995–1996、1997、1998–2005，因此每个 Ktype 拆成三个稳定物理分支。后驱与四驱在同一年度段三维一致，复用相同尺寸组。通用汽车+4通用汽车+4通用汽车+4
+- 1995–1996 分支复用既有尺寸组，不重复输出；本轮仅新增 1997 和 1998–2005 两个尺寸组。
+
+## 当前批次进度
+
+- 输入 Ktype：100
+- READY Ktype：89
+- READY 映射：116
+- PENDING／尚未闭合 Ktype：11
+- 已明确输出但尚未解决的 PENDING：0
+- 已确认尺寸组：81
+- 当前批次尚未完成。
+
+## 本轮新增/修改的 Ktype 映射 TSV
+
+```
+id	Ktype	NormalizedBodyStyle	Generation	BodyCode	Doors	DIMENSION_GROUP_ID	MatchConfidence	Notes	IterationStatus
+21727_95_96	21727	Van	Astro II	M	3	EU-CHEVROLET-ASTRO-II-CARGO-VAN-RWD-1995-01	HIGH	1995-1996外廓分支。	READY
+21727_97	21727	Van	Astro II	M	3	EU-CHEVROLET-ASTRO-II-CARGO-VAN-1997-01	HIGH	1997外廓分支。	READY
+21727_98plus	21727	Van	Astro II	M	3	EU-CHEVROLET-ASTRO-II-CARGO-VAN-1998-2005-01	HIGH	1998-2005外廓分支。	READY
+21728_95_96	21728	Van	Astro II	L	3	EU-CHEVROLET-ASTRO-II-CARGO-VAN-RWD-1995-01	HIGH	1995-1996四驱外廓分支。	READY
+21728_97	21728	Van	Astro II	L	3	EU-CHEVROLET-ASTRO-II-CARGO-VAN-1997-01	HIGH	1997四驱外廓分支。	READY
+21728_98plus	21728	Van	Astro II	L	3	EU-CHEVROLET-ASTRO-II-CARGO-VAN-1998-2005-01	HIGH	1998-2005四驱外廓分支。	READY
+```
+
+## 本轮首次创建/修正的 DIMENSION_GROUP TSV
+
+```
+DIMENSION_GROUP_ID	LengthMM	WidthMM	HeightMM	DimensionSource	SourceURL
+EU-CHEVROLET-ASTRO-II-CARGO-VAN-1997-01	4821	1969	1930	Chevrolet 1997 Light-Duty Truck Technical Guide Astro Cargo Van	https://www.gm.com/content/dam/company/no_search/heritage-archive-docs/vehicle-information-kits/chevrolet/1997-Chevrolet-Astro-Van.pdf
+EU-CHEVROLET-ASTRO-II-CARGO-VAN-1998-2005-01	4821	1969	1913	Chevrolet 1998 Light-Duty Truck Technical Guide Astro Cargo Van; Chevrolet 2005 Astro Restoration Kit	https://www.gm.com/content/dam/company/no_search/heritage-archive-docs/vehicle-information-kits/chevrolet/1998-Chevrolet-Astro-Van.pdf;https://www.gm.com/content/dam/company/no_search/heritage-archive-docs/vehicle-information-kits/chevrolet/2005-Chevrolet-Astro-Van.pdf
+```
+
+## 下一步优先处理
+
+- 闭合 Astro I Cargo `21721–21723`，按 1990–1991、1992、1993–1994 及 SWB／LWB 分支处理。
+- 处理 Mitsubishi L300 `21329` 与 Fiat Ducato Bus `21437` 的轴距、车顶边界。
+- 处理 Peugeot Boxer `21593、21594` 的厢式车、底盘、轴距和车顶分支。
+- 处理 Chevrolet C1500／C2500 `21786、21788、21789、21796` 的驾驶室和货斗组合。
+
+推进信号：CONTINUE
+

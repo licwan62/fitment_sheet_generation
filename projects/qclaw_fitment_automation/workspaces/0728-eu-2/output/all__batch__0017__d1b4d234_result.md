@@ -1500,3 +1500,15 @@ EU-LANCIA-PHEDRA-I-MPV-01	4750	1863	1759	Auto-Data.net	https://www.auto-data.net
 --- 脚本异常 ---
 异常: DIMENSION_GROUP EU-VW-TRANSPORTER-T5-CHASSIS-CAB-LWB-01 的 HeightMM 与既有最终值冲突
 
+
+--- 本地最终 TSV 已更新 ---
+- 本批 Ktype 映射：all_1601-1700_ktype_dimension_mapping_final.tsv
+- 本批尺寸组：all_1601-1700_dimension_groups_final.tsv
+- 累计 Ktype 映射：all_1-100_ktype_dimension_mapping_final.tsv（2532 行）
+- 累计尺寸组：all_1-100_dimension_groups_final.tsv（1339 行）
+
+- 尺寸冲突协调：
+  - EU-VW-TRANSPORTER-T5-CHASSIS-CAB-LWB-01 -> EU-VW-TRANSPORTER-T5-CHASSIS-CAB-LWB-02：5292x1904x1963 与 5292x1904x1949，创建新尺寸组
+  - EU-HYUNDAI-SONATA-NF-SEDAN-01 -> EU-HYUNDAI-SONATA-NF-SEDAN-02：4800x1830x1480 与 4800x1832x1475，创建新尺寸组
+  - EU-ALFA-ROMEO-159-SEDAN-01 -> EU-ALFA-ROMEO-159-SEDAN-02：4660x1828x1422 与 4660x1828x1417，创建新尺寸组
+  - EU-LANCIA-PHEDRA-I-MPV-01 -> EU-LANCIA-PHEDRA-I-MPV-02：4750x1863x1760 与 4750x1863x1759，创建新尺寸组

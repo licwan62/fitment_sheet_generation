@@ -2061,3 +2061,15 @@ EU-AUDI-A4-B7-CONVERTIBLE-01	4570	1780	1390	UltimateSpecs Audi A4 (B7) Cabriolet
 --- 脚本异常 ---
 异常: DIMENSION_GROUP EU-VW-POLO-IV-FACELIFT-HATCHBACK-3D-01 的 HeightMM 与既有最终值冲突
 
+
+--- 本地最终 TSV 已更新 ---
+- 本批 Ktype 映射：all_1001-1100_ktype_dimension_mapping_final.tsv
+- 本批尺寸组：all_1001-1100_dimension_groups_final.tsv
+- 累计 Ktype 映射：all_1-100_ktype_dimension_mapping_final.tsv（2275 行）
+- 累计尺寸组：all_1-100_dimension_groups_final.tsv（1179 行）
+
+- 尺寸冲突协调：
+  - EU-VW-POLO-IV-FACELIFT-HATCHBACK-3D-01 -> EU-VW-POLO-IV-FACELIFT-HATCHBACK-3D-02：3916x1650x1467 与 3916x1650x1459，创建新尺寸组
+  - EU-VW-POLO-IV-FACELIFT-HATCHBACK-5D-01 -> EU-VW-POLO-IV-FACELIFT-HATCHBACK-5D-02：3897x1650x1465 与 3916x1650x1459，创建新尺寸组
+  - EU-CITROEN-C5-I-PHASE-II-HATCHBACK-01 -> EU-CITROEN-C5-I-PHASE-II-HATCHBACK-02：4745x1780x1476 与 4750x1770x1480，创建新尺寸组
+  - EU-AUDI-A4-B7-CONVERTIBLE-01 -> EU-AUDI-A4-B7-CONVERTIBLE-02：4573x1777x1391 与 4570x1780x1390，创建新尺寸组

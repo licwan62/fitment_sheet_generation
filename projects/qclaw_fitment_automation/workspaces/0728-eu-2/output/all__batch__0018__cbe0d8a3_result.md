@@ -508,3 +508,389 @@ Nissan	Tiida	1.6	Stufenheck	Frontantrieb	Benzin	81	110	Sep 2007	Dec 2012	2024-03
 Nissan	Tiida	1.8	Stufenheck	Frontantrieb	Benzin	93	126	Sep 2007	Dec 2012	2024-03-01	23489
 Nissan	Tiida	1.5 DCI	Stufenheck	Frontantrieb	Diesel	78	106	Sep 2007	Dec 2012	2024-03-01	23490
 
+
+--- Round 1 / checkpoint 续跑 ---
+## 更新点
+
+* 首轮按物理车身聚类，已闭合 **11 个 DIMENSION_GROUP**，批量关联 **50 个 Ktype**，未对同组发动机版本重复抓取。
+* 已处理 Laguna III 两种车身、308 I、CX-7 ER、C-Class S204、Agila B、i30 FD、Clio III Grandtour、F430 Scuderia、Pro cee'd ED、Abarth Grande Punto 199。尺寸均采用明确的不含后视镜宽度口径。([汽车目录][1])
+* Peugeot 207 SW 暂不建组：当前来源分别给出 **1510 mm** 和 **1527 mm** 高度，存在车顶纵杆或测量口径差异，不能直接选取其中一个。([汽车目录][2])
+
+## 当前批次进度
+
+* 输入 Ktype：100
+* READY 输入 Ktype：50
+* READY 映射：50
+* PENDING 输入 Ktype：50
+* 已确认尺寸组：11
+* 当前批次尚未完成。
+
+## 本轮新增/修改的 Ktype 映射 TSV
+
+```tsv
+id	Ktype	NormalizedBodyStyle	Generation	BodyCode	Doors	DIMENSION_GROUP_ID	MatchConfidence	Notes	IterationStatus
+23369	23369	Hatchback	Laguna III		5	EU-RENAULT-LAGUNA-III-HATCHBACK-5D-01	HIGH		READY
+23370	23370	Hatchback	Laguna III		5	EU-RENAULT-LAGUNA-III-HATCHBACK-5D-01	HIGH		READY
+23371	23371	Hatchback	Laguna III		5	EU-RENAULT-LAGUNA-III-HATCHBACK-5D-01	HIGH		READY
+23372	23372	Hatchback	Laguna III		5	EU-RENAULT-LAGUNA-III-HATCHBACK-5D-01	HIGH		READY
+23373	23373	Hatchback	Laguna III		5	EU-RENAULT-LAGUNA-III-HATCHBACK-5D-01	HIGH		READY
+23374	23374	Wagon	Laguna III		5	EU-RENAULT-LAGUNA-III-WAGON-5D-01	HIGH		READY
+23375	23375	Wagon	Laguna III		5	EU-RENAULT-LAGUNA-III-WAGON-5D-01	HIGH		READY
+23376	23376	Wagon	Laguna III		5	EU-RENAULT-LAGUNA-III-WAGON-5D-01	HIGH		READY
+23377	23377	Wagon	Laguna III		5	EU-RENAULT-LAGUNA-III-WAGON-5D-01	HIGH		READY
+23378	23378	Wagon	Laguna III		5	EU-RENAULT-LAGUNA-III-WAGON-5D-01	HIGH		READY
+23379	23379	Hatchback	308 I	T7	5	EU-PEUGEOT-308-I-HATCHBACK-5D-01	HIGH		READY
+23380	23380	Hatchback	308 I	T7	5	EU-PEUGEOT-308-I-HATCHBACK-5D-01	HIGH		READY
+23381	23381	Hatchback	308 I	T7	5	EU-PEUGEOT-308-I-HATCHBACK-5D-01	HIGH		READY
+23382	23382	Hatchback	308 I	T7	5	EU-PEUGEOT-308-I-HATCHBACK-5D-01	HIGH		READY
+23383	23383	Hatchback	308 I	T7	5	EU-PEUGEOT-308-I-HATCHBACK-5D-01	HIGH		READY
+23384	23384	Hatchback	308 I	T7	5	EU-PEUGEOT-308-I-HATCHBACK-5D-01	HIGH		READY
+23395	23395	SUV	CX-7 I	ER	5	EU-MAZDA-CX-7-ER-SUV-5D-01	HIGH	欧洲版前期ER车身。	READY
+23399	23399	Wagon	C-Class W204	S204	5	EU-MERCEDES-BENZ-C-CLASS-S204-WAGON-5D-01	HIGH		READY
+23400	23400	Wagon	C-Class W204	S204	5	EU-MERCEDES-BENZ-C-CLASS-S204-WAGON-5D-01	HIGH		READY
+23401	23401	Wagon	C-Class W204	S204	5	EU-MERCEDES-BENZ-C-CLASS-S204-WAGON-5D-01	HIGH		READY
+23402	23402	Wagon	C-Class W204	S204	5	EU-MERCEDES-BENZ-C-CLASS-S204-WAGON-5D-01	HIGH		READY
+23403	23403	Wagon	C-Class W204	S204	5	EU-MERCEDES-BENZ-C-CLASS-S204-WAGON-5D-01	HIGH		READY
+23404	23404	Wagon	C-Class W204	S204	5	EU-MERCEDES-BENZ-C-CLASS-S204-WAGON-5D-01	HIGH		READY
+23408	23408	Wagon	C-Class W204	S204	5	EU-MERCEDES-BENZ-C-CLASS-S204-WAGON-5D-01	HIGH		READY
+23425	23425	Hatchback	Agila B		5	EU-OPEL-AGILA-B-HATCHBACK-5D-01	HIGH		READY
+23426	23426	Hatchback	Agila B		5	EU-OPEL-AGILA-B-HATCHBACK-5D-01	HIGH		READY
+23427	23427	Hatchback	Agila B		5	EU-OPEL-AGILA-B-HATCHBACK-5D-01	HIGH		READY
+23433	23433	Hatchback	i30 I	FD	5	EU-HYUNDAI-I30-FD-HATCHBACK-5D-01	HIGH		READY
+23434	23434	Hatchback	i30 I	FD	5	EU-HYUNDAI-I30-FD-HATCHBACK-5D-01	HIGH		READY
+23435	23435	Hatchback	i30 I	FD	5	EU-HYUNDAI-I30-FD-HATCHBACK-5D-01	HIGH		READY
+23436	23436	Hatchback	i30 I	FD	5	EU-HYUNDAI-I30-FD-HATCHBACK-5D-01	HIGH		READY
+23437	23437	Hatchback	i30 I	FD	5	EU-HYUNDAI-I30-FD-HATCHBACK-5D-01	HIGH		READY
+23451	23451	Wagon	Clio III		5	EU-RENAULT-CLIO-III-GRANDTOUR-WAGON-5D-01	HIGH		READY
+23452	23452	Wagon	Clio III		5	EU-RENAULT-CLIO-III-GRANDTOUR-WAGON-5D-01	HIGH		READY
+23453	23453	Wagon	Clio III		5	EU-RENAULT-CLIO-III-GRANDTOUR-WAGON-5D-01	HIGH		READY
+23454	23454	Wagon	Clio III		5	EU-RENAULT-CLIO-III-GRANDTOUR-WAGON-5D-01	HIGH		READY
+23455	23455	Wagon	Clio III		5	EU-RENAULT-CLIO-III-GRANDTOUR-WAGON-5D-01	HIGH		READY
+23456	23456	Wagon	Clio III		5	EU-RENAULT-CLIO-III-GRANDTOUR-WAGON-5D-01	HIGH		READY
+23457	23457	Wagon	Clio III		5	EU-RENAULT-CLIO-III-GRANDTOUR-WAGON-5D-01	HIGH		READY
+23458	23458	Wagon	Clio III		5	EU-RENAULT-CLIO-III-GRANDTOUR-WAGON-5D-01	HIGH		READY
+23459	23459	Wagon	C-Class W204	S204	5	EU-MERCEDES-BENZ-C-CLASS-S204-WAGON-5D-01	HIGH		READY
+23461	23461	Wagon	C-Class W204	S204	5	EU-MERCEDES-BENZ-C-CLASS-S204-WAGON-5D-01	HIGH		READY
+23463	23463	Coupe	F430	F131	2	EU-FERRARI-F430-SCUDERIA-COUPE-2D-01	HIGH	Scuderia固定外廓。	READY
+23470	23470	Hatchback	Pro cee'd I	ED	3	EU-KIA-PRO-CEED-ED-HATCHBACK-3D-01	HIGH	三门车身。	READY
+23471	23471	Hatchback	Pro cee'd I	ED	3	EU-KIA-PRO-CEED-ED-HATCHBACK-3D-01	HIGH	三门车身。	READY
+23472	23472	Hatchback	Pro cee'd I	ED	3	EU-KIA-PRO-CEED-ED-HATCHBACK-3D-01	HIGH	三门车身。	READY
+23474	23474	Hatchback	Pro cee'd I	ED	3	EU-KIA-PRO-CEED-ED-HATCHBACK-3D-01	HIGH	三门车身。	READY
+23475	23475	Hatchback	Pro cee'd I	ED	3	EU-KIA-PRO-CEED-ED-HATCHBACK-3D-01	HIGH	三门车身。	READY
+23476	23476	Hatchback	Pro cee'd I	ED	3	EU-KIA-PRO-CEED-ED-HATCHBACK-3D-01	HIGH	三门车身。	READY
+23484	23484	Hatchback	Grande Punto	199	3	EU-ABARTH-GRANDE-PUNTO-199-HATCHBACK-3D-01	HIGH	Abarth专用前后外廓。	READY
+```
+
+## 本轮新增/修改的 DIMENSION_GROUP TSV
+
+```tsv
+DIMENSION_GROUP_ID	LengthMM	WidthMM	HeightMM	DimensionSource	SourceURL
+EU-RENAULT-LAGUNA-III-HATCHBACK-5D-01	4695	1811	1445	Automobile-Catalog	https://www.automobile-catalog.com/car/2008/2957810/renault_laguna_2_0_16v.html
+EU-RENAULT-LAGUNA-III-WAGON-5D-01	4803	1811	1445	Automobile-Catalog	https://www.automobile-catalog.com/car/2011/2958500/renault_laguna_wagon_grandtour_gt_2_0_dci_180.html
+EU-PEUGEOT-308-I-HATCHBACK-5D-01	4276	1815	1498	Automobile-Catalog	https://www.automobile-catalog.com/car/2008/2621750/peugeot_308_1_4_vti_95.html
+EU-MAZDA-CX-7-ER-SUV-5D-01	4680	1870	1645	Automobile-Catalog	https://www.automobile-catalog.com/car/2008/1691615/mazda_cx-7.html
+EU-MERCEDES-BENZ-C-CLASS-S204-WAGON-5D-01	4596	1770	1459	Automobile-Catalog	https://www.automobile-catalog.com/car/2008/1550255/mercedes-benz_c_180_kompressor_t-modell_automatic.html
+EU-OPEL-AGILA-B-HATCHBACK-5D-01	3740	1680	1590	Automobile-Catalog	https://www.automobile-catalog.com/car/2008/2529530/opel_agila_1_3_cdti_ecoflex.html
+EU-HYUNDAI-I30-FD-HATCHBACK-5D-01	4245	1775	1480	Automobile-Catalog	https://www.automobile-catalog.com/car/2007/1181255/hyundai_i30_1_4_comfort.html
+EU-RENAULT-CLIO-III-GRANDTOUR-WAGON-5D-01	4202	1707	1497	Automobile-Catalog	https://www.automobile-catalog.com/car/2008/2952125/renault_clio_wagon_grandtour_1_2_16v_75.html
+EU-FERRARI-F430-SCUDERIA-COUPE-2D-01	4512	1923	1199	Automobile-Catalog	https://www.automobile-catalog.com/car/2008/707420/ferrari_430_scuderia.html
+EU-KIA-PRO-CEED-ED-HATCHBACK-3D-01	4250	1790	1450	Automobile-Catalog	https://www.automobile-catalog.com/car/2009/1359965/kia_pro_cee_d_1_6_cvvt_ex_automatic.html
+EU-ABARTH-GRANDE-PUNTO-199-HATCHBACK-3D-01	4041	1721	1490	Auto-Data	https://www.auto-data.net/en/abarth-grande-punto-199-1.4-t-jet-155hp-46793
+```
+
+## 下一步优先处理
+
+1. 优先闭合可批量复用的 Mazda2 DE、BMW E82/E81、Nissan Tiida C11 两种车身、Renault Kangoo II。
+2. 处理 Jaguar X-Type Estate、Opel Omega B、Citroën C5 I、Mini Clubman R55 的改款或配置边界。
+3. 单独解决 Peugeot 207 SW 高度口径冲突，以及 Range Rover I、Santana PS10 等门数或车身长度分支。
+
+推进信号：CONTINUE
+
+[1]: https://www.automobile-catalog.com/car/2008/2957810/renault_laguna_2_0_16v.html?utm_source=chatgpt.com "2008 Renault Laguna 2.0 16V Specs Review (103 kW ..."
+[2]: https://www.automobile-catalog.com/car/2008/2620520/peugeot_207_sw_1_4_vti_95.html?utm_source=chatgpt.com "2008 Peugeot 207 SW 1.4 VTi 95 Specs Review (70 kW ..."
+
+
+--- 发送 / 继续到 Round 2 ---
+继续当前批次并采用缓存优先模式。尺寸组只在首次创建或纠错时完整核对一次三维和来源；后续 Ktype 只判断关联哪个现有 DIMENSION_GROUP_ID，不重复抓取，不输出缓存来源或匹配理由。仍有 PENDING 时，CONTINUE 轮仅输出：1) 更新点；2) 当前批次进度；3) 本轮新增/修改的 Ktype 映射 TSV（无变化写“无”）；4) 本轮首次创建/修正的 DIMENSION_GROUP TSV（复用既有组不重复输出，无变化写“无”）；5) 下一步优先处理。若当前或上一轮进度已经是 PENDING=0，本轮不要继续检索或再次输出 CONTINUE，必须立刻汇总并输出两张最终完整 TSV、两个任务指定 sandbox 下载链接和“推进信号：COMPLETE”。执行顺序固定为：第一阶段优先消除 PENDING 并补齐会阻塞两张最终表的数据。检测到 PENDING=0 后，第二阶段最多只做一次轻量机械收尾：核对固定表头、id 与 DIMENSION_GROUP_ID 唯一、映射引用闭合、长宽高和来源非空、两个任务指定下载链接齐全。第二阶段不得重新逐车型、逐年份或逐来源做深度检索，不得为了提高置信度反复核对，也不得因非阻塞的排序或措辞问题继续多轮。PENDING=0 后的下一条回复必须直接输出两张最终完整 TSV、两个精确 sandbox 下载链接，并以“推进信号：COMPLETE”结束；不要再输出 CONTINUE。Ktype 映射 TSV 表头必须严格使用 requirement 指定的字段顺序：id	Ktype	NormalizedBodyStyle	Generation	BodyCode	Doors	DIMENSION_GROUP_ID	MatchConfidence	Notes	IterationStatus。另需维护完整 DIMENSION_GROUP TSV，表头固定为：DIMENSION_GROUP_ID	LengthMM	WidthMM	HeightMM	DimensionSource	SourceURL。缺少任一张表、任一映射引用的尺寸组，或尺寸组字段不完整时不得 COMPLETE。不要输出子车系匹配表。
+【COMPLETE 下载文件硬性要求】
+准备 COMPLETE 时，除两张完整内嵌 TSV 外，还必须创建并提供以下两个可点击 sandbox 下载链接，文件名必须完全一致：
+- all_1701-1800_ktype_dimension_mapping_final.tsv
+- all_1701-1800_dimension_groups_final.tsv
+缺少任一下载链接时不得输出推进信号：COMPLETE。
+
+
+--- Round 2 / checkpoint 续跑 ---
+## 更新点
+
+* 新闭合 BMW 1 Series E82 Coupe、E81 三门 Hatchback、Renault Kangoo II、Nissan Tiida C11 两种车身及 Renault Twingo II，共关联 19 个 Ktype。([汽车数据][1])
+* MINI Clubman R55 未强行合并：Cooper S、Cooper 和 Cooper D 的保险杠外廓长度分别为 3958、3937、3945 mm，建立三个独立尺寸组。([汽车目录][2])
+* Mazda 2 DE 已确认改款前后长度分别为 3900 和 3920 mm，但三个 Ktype 的具体改款分支覆盖仍需闭合，本轮不创建猜测性映射。([汽车目录][3])
+
+## 当前批次进度
+
+* 输入 Ktype：100
+* READY 输入 Ktype：72
+* READY 映射：72
+* PENDING 输入 Ktype：28
+* 已确认尺寸组：20
+* 当前批次尚未完成。
+
+## 本轮新增/修改的 Ktype 映射 TSV
+
+```tsv
+id	Ktype	NormalizedBodyStyle	Generation	BodyCode	Doors	DIMENSION_GROUP_ID	MatchConfidence	Notes	IterationStatus
+23429	23429	Coupe	1 Series I	E82	2	EU-BMW-1-SERIES-E82-COUPE-2D-01	HIGH		READY
+23430	23430	Coupe	1 Series I	E82	2	EU-BMW-1-SERIES-E82-COUPE-2D-01	HIGH		READY
+23431	23431	Coupe	1 Series I	E82	2	EU-BMW-1-SERIES-E82-COUPE-2D-01	HIGH		READY
+23432	23432	Hatchback	1 Series I	E81	3	EU-BMW-1-SERIES-E81-HATCHBACK-3D-01	HIGH	三门车身。	READY
+23444	23444	Wagon	Clubman I	R55	3	EU-MINI-CLUBMAN-R55-WAGON-COOPER-S-01	HIGH	Cooper S外廓分支。	READY
+23445	23445	Wagon	Clubman I	R55	3	EU-MINI-CLUBMAN-R55-WAGON-COOPER-S-01	HIGH	Cooper S外廓分支。	READY
+23446	23446	Wagon	Clubman I	R55	3	EU-MINI-CLUBMAN-R55-WAGON-COOPER-01	HIGH	Cooper标准外廓分支。	READY
+23447	23447	Wagon	Clubman I	R55	3	EU-MINI-CLUBMAN-R55-WAGON-COOPER-D-01	HIGH	Cooper D外廓分支。	READY
+23460	23460	MPV	Kangoo II		5	EU-RENAULT-KANGOO-II-MPV-5D-01	HIGH		READY
+23462	23462	MPV	Kangoo II		5	EU-RENAULT-KANGOO-II-MPV-5D-01	HIGH		READY
+23464	23464	MPV	Kangoo II		5	EU-RENAULT-KANGOO-II-MPV-5D-01	HIGH		READY
+23465	23465	MPV	Kangoo II		5	EU-RENAULT-KANGOO-II-MPV-5D-01	HIGH		READY
+23466	23466	MPV	Kangoo II		5	EU-RENAULT-KANGOO-II-MPV-5D-01	HIGH		READY
+23467	23467	Hatchback	Tiida I	C11	5	EU-NISSAN-TIIDA-C11-HATCHBACK-5D-01	HIGH	欧洲出口五门车身。	READY
+23468	23468	Hatchback	Tiida I	C11	5	EU-NISSAN-TIIDA-C11-HATCHBACK-5D-01	HIGH	欧洲出口五门车身。	READY
+23469	23469	Hatchback	Tiida I	C11	5	EU-NISSAN-TIIDA-C11-HATCHBACK-5D-01	HIGH	欧洲出口五门车身。	READY
+23485	23485	Hatchback	Twingo II		3	EU-RENAULT-TWINGO-II-HATCHBACK-3D-01	HIGH	标准非RS车身。	READY
+23486	23486	Hatchback	Twingo II		3	EU-RENAULT-TWINGO-II-HATCHBACK-3D-01	HIGH	标准非RS车身。	READY
+23487	23487	Hatchback	Twingo II		3	EU-RENAULT-TWINGO-II-HATCHBACK-3D-01	HIGH	标准非RS车身。	READY
+23488	23488	Sedan	Tiida I	C11	4	EU-NISSAN-TIIDA-C11-SEDAN-4D-01	HIGH	欧洲出口四门车身。	READY
+23489	23489	Sedan	Tiida I	C11	4	EU-NISSAN-TIIDA-C11-SEDAN-4D-01	HIGH	欧洲出口四门车身。	READY
+23490	23490	Sedan	Tiida I	C11	4	EU-NISSAN-TIIDA-C11-SEDAN-4D-01	HIGH	欧洲出口四门车身。	READY
+```
+
+## 本轮首次创建/修正的 DIMENSION_GROUP TSV
+
+```tsv
+DIMENSION_GROUP_ID	LengthMM	WidthMM	HeightMM	DimensionSource	SourceURL
+EU-BMW-1-SERIES-E82-COUPE-2D-01	4360	1748	1423	Auto-Data	https://www.auto-data.net/en/bmw-1-series-coupe-e82-120d-177hp-9835
+EU-BMW-1-SERIES-E81-HATCHBACK-3D-01	4239	1748	1421	Auto-Data	https://www.auto-data.net/en/bmw-1-series-hatchback-3dr-e81-123d-204hp-9820
+EU-MINI-CLUBMAN-R55-WAGON-COOPER-S-01	3958	1683	1432	Automobile-Catalog	https://www.automobile-catalog.com/car/2007/1753235/mini_cooper_s_clubman.html
+EU-MINI-CLUBMAN-R55-WAGON-COOPER-01	3937	1683	1426	Automobile-Catalog	https://www.automobile-catalog.com/car/2007/1753175/mini_cooper_clubman.html
+EU-MINI-CLUBMAN-R55-WAGON-COOPER-D-01	3945	1683	1426	Automobile-Catalog	https://www.automobile-catalog.com/car/2007/1753205/mini_cooper_d_clubman.html
+EU-RENAULT-KANGOO-II-MPV-5D-01	4213	1829	1839	Auto-Data	https://www.auto-data.net/en/renault-kangoo-ii-1.6-16v-106hp-33902
+EU-NISSAN-TIIDA-C11-HATCHBACK-5D-01	4302	1695	1533	Automobile-Catalog	https://www.automobile-catalog.com/car/2007/2291510/nissan_tiida_hatchback_1_6.html
+EU-RENAULT-TWINGO-II-HATCHBACK-3D-01	3600	1654	1470	Automobile-Catalog	https://www.automobile-catalog.com/car/2007/2955980/renault_twingo_1_2_60.html
+EU-NISSAN-TIIDA-C11-SEDAN-4D-01	4478	1695	1543	Automobile-Catalog	https://www.automobile-catalog.com/car/2007/2291450/nissan_tiida_sedan_1_6.html
+```
+
+## 下一步优先处理
+
+1. 批量闭合 Jaguar X-Type Estate、Opel Omega B Sedan/Caravan、Citroën C5 I Liftback/Wagon 和 Chrysler Grand Voyager V。
+2. 处理 Golf II、Suzuki Swift III、Lincoln LS、Dacia Solenza、Mercedes W211、Touareg R50、Jaguar XK II 和 Chevrolet HHR。
+3. 最后集中解决 Mazda 2 改款分支、Peugeot 207 SW 高度口径、Range Rover I 车身边界及 Santana PS10 分支。
+
+推进信号：CONTINUE
+
+[1]: https://www.auto-data.net/en/bmw-1-series-coupe-e82-120d-177hp-9835 "BMW 1 Series Coupe (E82) 120d (177 Hp) | Technical specs, data, fuel consumption, Dimensions"
+[2]: https://www.automobile-catalog.com/car/2007/1753235/mini_cooper_s_clubman.html?utm_source=chatgpt.com "2007 Mini Cooper S Clubman Specs Review (128.5 kW / 175 PS / 172 hp) (since August 2007 for Europe Japan )"
+[3]: https://www.automobile-catalog.com/make/mazda/2_2gen/2_2_1_hatch/2007.html?utm_source=chatgpt.com "2007 Mazda 2 2gen/I Hatch (DE) full range specs"
+
+
+--- 发送 / 继续到 Round 3 ---
+继续当前批次并采用缓存优先模式。尺寸组只在首次创建或纠错时完整核对一次三维和来源；后续 Ktype 只判断关联哪个现有 DIMENSION_GROUP_ID，不重复抓取，不输出缓存来源或匹配理由。仍有 PENDING 时，CONTINUE 轮仅输出：1) 更新点；2) 当前批次进度；3) 本轮新增/修改的 Ktype 映射 TSV（无变化写“无”）；4) 本轮首次创建/修正的 DIMENSION_GROUP TSV（复用既有组不重复输出，无变化写“无”）；5) 下一步优先处理。若当前或上一轮进度已经是 PENDING=0，本轮不要继续检索或再次输出 CONTINUE，必须立刻汇总并输出两张最终完整 TSV、两个任务指定 sandbox 下载链接和“推进信号：COMPLETE”。执行顺序固定为：第一阶段优先消除 PENDING 并补齐会阻塞两张最终表的数据。检测到 PENDING=0 后，第二阶段最多只做一次轻量机械收尾：核对固定表头、id 与 DIMENSION_GROUP_ID 唯一、映射引用闭合、长宽高和来源非空、两个任务指定下载链接齐全。第二阶段不得重新逐车型、逐年份或逐来源做深度检索，不得为了提高置信度反复核对，也不得因非阻塞的排序或措辞问题继续多轮。PENDING=0 后的下一条回复必须直接输出两张最终完整 TSV、两个精确 sandbox 下载链接，并以“推进信号：COMPLETE”结束；不要再输出 CONTINUE。Ktype 映射 TSV 表头必须严格使用 requirement 指定的字段顺序：id	Ktype	NormalizedBodyStyle	Generation	BodyCode	Doors	DIMENSION_GROUP_ID	MatchConfidence	Notes	IterationStatus。另需维护完整 DIMENSION_GROUP TSV，表头固定为：DIMENSION_GROUP_ID	LengthMM	WidthMM	HeightMM	DimensionSource	SourceURL。缺少任一张表、任一映射引用的尺寸组，或尺寸组字段不完整时不得 COMPLETE。不要输出子车系匹配表。
+【COMPLETE 下载文件硬性要求】
+准备 COMPLETE 时，除两张完整内嵌 TSV 外，还必须创建并提供以下两个可点击 sandbox 下载链接，文件名必须完全一致：
+- all_1701-1800_ktype_dimension_mapping_final.tsv
+- all_1701-1800_dimension_groups_final.tsv
+缺少任一下载链接时不得输出推进信号：COMPLETE。
+
+
+--- Round 3 / checkpoint 续跑 ---
+## 更新点
+
+* Peugeot 207 SW 的高度口径已闭合为 1527 mm，页面同时区分车身宽度、折叠后视镜宽度和含后视镜宽度，因此 `WidthMM=1748` 符合不含后视镜规则。([汽车数据][1])
+* Mazda2 DE 的同一批 Ktype 覆盖改款前后两种外廓：改款前长度 3900 mm，2010 改款后长度 3920 mm，因此分别派生 `prefl` 与 `facelift` 映射。([汽车数据][2])
+* Range Rover I 2.4 Turbo D 跨越 1986 年外廓更新，尺寸由 4460×1800×1785 mm 变为 4450×1818×1800 mm，已拆成两个物理分支。([汽车目录][3])
+* Chrysler Grand Voyager V 按明确的 Grand Voyager 长轴车身落盘；未采用与该长轴车身边界冲突的 5096 mm 聚合记录。([汽车数据][4])
+* 已完成固定表头、唯一性、引用闭合、正整数三维、来源完整及下载文件检查。
+
+## 当前批次进度
+
+* 输入 Ktype：100
+* READY 映射：104
+* PENDING 映射：0
+* 已确认尺寸组：40
+* 唯一 `id`：104
+* 唯一 `DIMENSION_GROUP_ID`：40
+* 映射引用闭合：通过
+* 孤立尺寸组：0
+
+## 最终完整 Ktype 映射 TSV
+
+```tsv
+id	Ktype	NormalizedBodyStyle	Generation	BodyCode	Doors	DIMENSION_GROUP_ID	MatchConfidence	Notes	IterationStatus
+23369	23369	Hatchback	Laguna III		5	EU-RENAULT-LAGUNA-III-HATCHBACK-5D-01	HIGH		READY
+23370	23370	Hatchback	Laguna III		5	EU-RENAULT-LAGUNA-III-HATCHBACK-5D-01	HIGH		READY
+23371	23371	Hatchback	Laguna III		5	EU-RENAULT-LAGUNA-III-HATCHBACK-5D-01	HIGH		READY
+23372	23372	Hatchback	Laguna III		5	EU-RENAULT-LAGUNA-III-HATCHBACK-5D-01	HIGH		READY
+23373	23373	Hatchback	Laguna III		5	EU-RENAULT-LAGUNA-III-HATCHBACK-5D-01	HIGH		READY
+23374	23374	Wagon	Laguna III		5	EU-RENAULT-LAGUNA-III-WAGON-5D-01	HIGH		READY
+23375	23375	Wagon	Laguna III		5	EU-RENAULT-LAGUNA-III-WAGON-5D-01	HIGH		READY
+23376	23376	Wagon	Laguna III		5	EU-RENAULT-LAGUNA-III-WAGON-5D-01	HIGH		READY
+23377	23377	Wagon	Laguna III		5	EU-RENAULT-LAGUNA-III-WAGON-5D-01	HIGH		READY
+23378	23378	Wagon	Laguna III		5	EU-RENAULT-LAGUNA-III-WAGON-5D-01	HIGH		READY
+23379	23379	Hatchback	308 I	T7	5	EU-PEUGEOT-308-I-HATCHBACK-5D-01	HIGH		READY
+23380	23380	Hatchback	308 I	T7	5	EU-PEUGEOT-308-I-HATCHBACK-5D-01	HIGH		READY
+23381	23381	Hatchback	308 I	T7	5	EU-PEUGEOT-308-I-HATCHBACK-5D-01	HIGH		READY
+23382	23382	Hatchback	308 I	T7	5	EU-PEUGEOT-308-I-HATCHBACK-5D-01	HIGH		READY
+23383	23383	Hatchback	308 I	T7	5	EU-PEUGEOT-308-I-HATCHBACK-5D-01	HIGH		READY
+23384	23384	Hatchback	308 I	T7	5	EU-PEUGEOT-308-I-HATCHBACK-5D-01	HIGH		READY
+23385	23385	Wagon	207 I		5	EU-PEUGEOT-207-I-SW-WAGON-5D-01	HIGH		READY
+23386	23386	Wagon	207 I		5	EU-PEUGEOT-207-I-SW-WAGON-5D-01	HIGH		READY
+23387	23387	Wagon	207 I		5	EU-PEUGEOT-207-I-SW-WAGON-5D-01	HIGH		READY
+23388	23388	Wagon	207 I		5	EU-PEUGEOT-207-I-SW-WAGON-5D-01	HIGH		READY
+23389	23389	Wagon	207 I		5	EU-PEUGEOT-207-I-SW-WAGON-5D-01	HIGH		READY
+23395	23395	SUV	CX-7 I	ER	5	EU-MAZDA-CX-7-ER-SUV-5D-01	HIGH	欧洲版前期ER车身。	READY
+23396_prefl	23396	Hatchback	Mazda2 II	DE	5	EU-MAZDA-2-DE-HATCHBACK-5D-PREFL-01	MEDIUM	Ktype覆盖2010改款前外廓。	READY
+23396_facelift	23396	Hatchback	Mazda2 II facelift	DE	5	EU-MAZDA-2-DE-HATCHBACK-5D-FACELIFT-01	MEDIUM	Ktype覆盖2010改款后外廓。	READY
+23397_prefl	23397	Hatchback	Mazda2 II	DE	5	EU-MAZDA-2-DE-HATCHBACK-5D-PREFL-01	MEDIUM	Ktype覆盖2010改款前外廓。	READY
+23397_facelift	23397	Hatchback	Mazda2 II facelift	DE	5	EU-MAZDA-2-DE-HATCHBACK-5D-FACELIFT-01	MEDIUM	Ktype覆盖2010改款后外廓。	READY
+23398_prefl	23398	Hatchback	Mazda2 II	DE	5	EU-MAZDA-2-DE-HATCHBACK-5D-PREFL-01	MEDIUM	Ktype覆盖2010改款前外廓。	READY
+23398_facelift	23398	Hatchback	Mazda2 II facelift	DE	5	EU-MAZDA-2-DE-HATCHBACK-5D-FACELIFT-01	MEDIUM	Ktype覆盖2010改款后外廓。	READY
+23399	23399	Wagon	C-Class W204	S204	5	EU-MERCEDES-BENZ-C-CLASS-S204-WAGON-5D-01	HIGH		READY
+23400	23400	Wagon	C-Class W204	S204	5	EU-MERCEDES-BENZ-C-CLASS-S204-WAGON-5D-01	HIGH		READY
+23401	23401	Wagon	C-Class W204	S204	5	EU-MERCEDES-BENZ-C-CLASS-S204-WAGON-5D-01	HIGH		READY
+23402	23402	Wagon	C-Class W204	S204	5	EU-MERCEDES-BENZ-C-CLASS-S204-WAGON-5D-01	HIGH		READY
+23403	23403	Wagon	C-Class W204	S204	5	EU-MERCEDES-BENZ-C-CLASS-S204-WAGON-5D-01	HIGH		READY
+23404	23404	Wagon	C-Class W204	S204	5	EU-MERCEDES-BENZ-C-CLASS-S204-WAGON-5D-01	HIGH		READY
+23406	23406	Hatchback	Golf II	19E	3	EU-VOLKSWAGEN-GOLF-II-GTI-HATCHBACK-3D-01	MEDIUM	100kW早期三门GTI 16V外廓。	READY
+23408	23408	Wagon	C-Class W204	S204	5	EU-MERCEDES-BENZ-C-CLASS-S204-WAGON-5D-01	HIGH		READY
+23411_prefl	23411	SUV	Range Rover I		5	EU-LAND-ROVER-RANGE-ROVER-I-SUV-5D-PREFL-01	MEDIUM	Ktype覆盖1986年外廓更新前分支。	READY
+23411_facelift	23411	SUV	Range Rover I		5	EU-LAND-ROVER-RANGE-ROVER-I-SUV-5D-FACELIFT-01	MEDIUM	Ktype覆盖1986年外廓更新后分支。	READY
+23425	23425	Hatchback	Agila B		5	EU-OPEL-AGILA-B-HATCHBACK-5D-01	HIGH		READY
+23426	23426	Hatchback	Agila B		5	EU-OPEL-AGILA-B-HATCHBACK-5D-01	HIGH		READY
+23427	23427	Hatchback	Agila B		5	EU-OPEL-AGILA-B-HATCHBACK-5D-01	HIGH		READY
+23428	23428	Wagon	X-Type I	X400	5	EU-JAGUAR-X-TYPE-X400-WAGON-5D-01	HIGH		READY
+23429	23429	Coupe	1 Series I	E82	2	EU-BMW-1-SERIES-E82-COUPE-2D-01	HIGH		READY
+23430	23430	Coupe	1 Series I	E82	2	EU-BMW-1-SERIES-E82-COUPE-2D-01	HIGH		READY
+23431	23431	Coupe	1 Series I	E82	2	EU-BMW-1-SERIES-E82-COUPE-2D-01	HIGH		READY
+23432	23432	Hatchback	1 Series I	E81	3	EU-BMW-1-SERIES-E81-HATCHBACK-3D-01	HIGH	三门车身。	READY
+23433	23433	Hatchback	i30 I	FD	5	EU-HYUNDAI-I30-FD-HATCHBACK-5D-01	HIGH		READY
+23434	23434	Hatchback	i30 I	FD	5	EU-HYUNDAI-I30-FD-HATCHBACK-5D-01	HIGH		READY
+23435	23435	Hatchback	i30 I	FD	5	EU-HYUNDAI-I30-FD-HATCHBACK-5D-01	HIGH		READY
+23436	23436	Hatchback	i30 I	FD	5	EU-HYUNDAI-I30-FD-HATCHBACK-5D-01	HIGH		READY
+23437	23437	Hatchback	i30 I	FD	5	EU-HYUNDAI-I30-FD-HATCHBACK-5D-01	HIGH		READY
+23438	23438	Sedan	Omega B facelift		4	EU-OPEL-OMEGA-B-FACELIFT-SEDAN-4D-01	HIGH		READY
+23439	23439	Wagon	Omega B facelift		5	EU-OPEL-OMEGA-B-FACELIFT-WAGON-5D-01	HIGH		READY
+23440	23440	Hatchback	C5 I Phase I		5	EU-CITROEN-C5-I-PHASE-I-HATCHBACK-5D-01	HIGH	五门掀背式车身。	READY
+23441	23441	Wagon	C5 I Phase I		5	EU-CITROEN-C5-I-PHASE-I-WAGON-5D-01	HIGH		READY
+23442	23442	MPV	Grand Voyager V	RT	5	EU-CHRYSLER-GRAND-VOYAGER-V-RT-MPV-5D-01	MEDIUM	欧洲Grand Voyager长轴车身。	READY
+23443	23443	Hatchback	Swift III	MZ	3	EU-SUZUKI-SWIFT-MZ-SPORT-HATCHBACK-3D-01	HIGH		READY
+23444	23444	Wagon	Clubman I	R55	3	EU-MINI-CLUBMAN-R55-WAGON-COOPER-S-01	HIGH	Cooper S外廓分支。	READY
+23445	23445	Wagon	Clubman I	R55	3	EU-MINI-CLUBMAN-R55-WAGON-COOPER-S-01	HIGH	Cooper S外廓分支。	READY
+23446	23446	Wagon	Clubman I	R55	3	EU-MINI-CLUBMAN-R55-WAGON-COOPER-01	HIGH	Cooper标准外廓分支。	READY
+23447	23447	Wagon	Clubman I	R55	3	EU-MINI-CLUBMAN-R55-WAGON-COOPER-D-01	HIGH	Cooper D外廓分支。	READY
+23448	23448	Sedan	LS I		4	EU-LINCOLN-LS-I-SEDAN-4D-01	HIGH		READY
+23449	23449	Sedan	Solenza		4	EU-DACIA-SOLENZA-SEDAN-4D-01	HIGH	原始BodyStyle为Schrägheck；可靠规格资料确认四门Sedan。	READY
+23450	23450	Sedan	Solenza		4	EU-DACIA-SOLENZA-SEDAN-4D-01	HIGH	原始BodyStyle为Schrägheck；可靠规格资料确认四门Sedan。	READY
+23451	23451	Wagon	Clio III		5	EU-RENAULT-CLIO-III-GRANDTOUR-WAGON-5D-01	HIGH		READY
+23452	23452	Wagon	Clio III		5	EU-RENAULT-CLIO-III-GRANDTOUR-WAGON-5D-01	HIGH		READY
+23453	23453	Wagon	Clio III		5	EU-RENAULT-CLIO-III-GRANDTOUR-WAGON-5D-01	HIGH		READY
+23454	23454	Wagon	Clio III		5	EU-RENAULT-CLIO-III-GRANDTOUR-WAGON-5D-01	HIGH		READY
+23455	23455	Wagon	Clio III		5	EU-RENAULT-CLIO-III-GRANDTOUR-WAGON-5D-01	HIGH		READY
+23456	23456	Wagon	Clio III		5	EU-RENAULT-CLIO-III-GRANDTOUR-WAGON-5D-01	HIGH		READY
+23457	23457	Wagon	Clio III		5	EU-RENAULT-CLIO-III-GRANDTOUR-WAGON-5D-01	HIGH		READY
+23458	23458	Wagon	Clio III		5	EU-RENAULT-CLIO-III-GRANDTOUR-WAGON-5D-01	HIGH		READY
+23459	23459	Wagon	C-Class W204	S204	5	EU-MERCEDES-BENZ-C-CLASS-S204-WAGON-5D-01	HIGH		READY
+23460	23460	MPV	Kangoo II		5	EU-RENAULT-KANGOO-II-MPV-5D-01	HIGH		READY
+23461	23461	Wagon	C-Class W204	S204	5	EU-MERCEDES-BENZ-C-CLASS-S204-WAGON-5D-01	HIGH		READY
+23462	23462	MPV	Kangoo II		5	EU-RENAULT-KANGOO-II-MPV-5D-01	HIGH		READY
+23463	23463	Coupe	F430	F131	2	EU-FERRARI-F430-SCUDERIA-COUPE-2D-01	HIGH	Scuderia固定外廓。	READY
+23464	23464	MPV	Kangoo II		5	EU-RENAULT-KANGOO-II-MPV-5D-01	HIGH		READY
+23465	23465	MPV	Kangoo II		5	EU-RENAULT-KANGOO-II-MPV-5D-01	HIGH		READY
+23466	23466	MPV	Kangoo II		5	EU-RENAULT-KANGOO-II-MPV-5D-01	HIGH		READY
+23467	23467	Hatchback	Tiida I	C11	5	EU-NISSAN-TIIDA-C11-HATCHBACK-5D-01	HIGH	欧洲出口五门车身。	READY
+23468	23468	Hatchback	Tiida I	C11	5	EU-NISSAN-TIIDA-C11-HATCHBACK-5D-01	HIGH	欧洲出口五门车身。	READY
+23469	23469	Hatchback	Tiida I	C11	5	EU-NISSAN-TIIDA-C11-HATCHBACK-5D-01	HIGH	欧洲出口五门车身。	READY
+23470	23470	Hatchback	Pro cee'd I	ED	3	EU-KIA-PRO-CEED-ED-HATCHBACK-3D-01	HIGH	三门车身。	READY
+23471	23471	Hatchback	Pro cee'd I	ED	3	EU-KIA-PRO-CEED-ED-HATCHBACK-3D-01	HIGH	三门车身。	READY
+23472	23472	Hatchback	Pro cee'd I	ED	3	EU-KIA-PRO-CEED-ED-HATCHBACK-3D-01	HIGH	三门车身。	READY
+23473	23473	Sedan	E-Class W211 facelift	W211	4	EU-MERCEDES-BENZ-E-CLASS-W211-FACELIFT-SEDAN-4D-01	HIGH		READY
+23474	23474	Hatchback	Pro cee'd I	ED	3	EU-KIA-PRO-CEED-ED-HATCHBACK-3D-01	HIGH	三门车身。	READY
+23475	23475	Hatchback	Pro cee'd I	ED	3	EU-KIA-PRO-CEED-ED-HATCHBACK-3D-01	HIGH	三门车身。	READY
+23476	23476	Hatchback	Pro cee'd I	ED	3	EU-KIA-PRO-CEED-ED-HATCHBACK-3D-01	HIGH	三门车身。	READY
+23477	23477	Sedan	E-Class W211 facelift	W211	4	EU-MERCEDES-BENZ-E-CLASS-W211-FACELIFT-SEDAN-4D-01	HIGH		READY
+23478	23478	SUV	PS-10/Anibal		5	EU-SANTANA-PS10-ANIBAL-SW-SUV-5D-01	MEDIUM	五门SW车身。	READY
+23479	23479	SUV	PS-10/Anibal		5	EU-SANTANA-PS10-ANIBAL-SW-SUV-5D-01	MEDIUM	五门SW车身。	READY
+23480	23480	SUV	PS-10/Anibal		5	EU-SANTANA-PS10-ANIBAL-SW-SUV-5D-01	MEDIUM	五门SW车身。	READY
+23481	23481	SUV	Touareg I facelift	7L	5	EU-VOLKSWAGEN-TOUAREG-7L-R50-SUV-5D-01	HIGH	R50宽体外廓。	READY
+23482	23482	Coupe	XK II	X150	2	EU-JAGUAR-XK-X150-COUPE-2D-01	MEDIUM	输入3.6版本对应欧洲X150同外廓车身。	READY
+23483	23483	Wagon	HHR		5	EU-CHEVROLET-HHR-WAGON-5D-01	HIGH		READY
+23484	23484	Hatchback	Grande Punto	199	3	EU-ABARTH-GRANDE-PUNTO-199-HATCHBACK-3D-01	HIGH	Abarth专用前后外廓。	READY
+23485	23485	Hatchback	Twingo II		3	EU-RENAULT-TWINGO-II-HATCHBACK-3D-01	HIGH	标准非RS车身。	READY
+23486	23486	Hatchback	Twingo II		3	EU-RENAULT-TWINGO-II-HATCHBACK-3D-01	HIGH	标准非RS车身。	READY
+23487	23487	Hatchback	Twingo II		3	EU-RENAULT-TWINGO-II-HATCHBACK-3D-01	HIGH	标准非RS车身。	READY
+23488	23488	Sedan	Tiida I	C11	4	EU-NISSAN-TIIDA-C11-SEDAN-4D-01	HIGH	欧洲出口四门车身。	READY
+23489	23489	Sedan	Tiida I	C11	4	EU-NISSAN-TIIDA-C11-SEDAN-4D-01	HIGH	欧洲出口四门车身。	READY
+23490	23490	Sedan	Tiida I	C11	4	EU-NISSAN-TIIDA-C11-SEDAN-4D-01	HIGH	欧洲出口四门车身。	READY
+```
+
+[下载 Ktype 映射表](sandbox:/mnt/data/all_1701-1800_ktype_dimension_mapping_final.tsv)
+
+## 最终完整 DIMENSION_GROUP TSV
+
+```tsv
+DIMENSION_GROUP_ID	LengthMM	WidthMM	HeightMM	DimensionSource	SourceURL
+EU-RENAULT-LAGUNA-III-HATCHBACK-5D-01	4695	1811	1445	Automobile-Catalog	https://www.automobile-catalog.com/car/2008/2957810/renault_laguna_2_0_16v.html
+EU-RENAULT-LAGUNA-III-WAGON-5D-01	4803	1811	1445	Automobile-Catalog	https://www.automobile-catalog.com/car/2011/2958500/renault_laguna_wagon_grandtour_gt_2_0_dci_180.html
+EU-PEUGEOT-308-I-HATCHBACK-5D-01	4276	1815	1498	Automobile-Catalog	https://www.automobile-catalog.com/car/2008/2621750/peugeot_308_1_4_vti_95.html
+EU-PEUGEOT-207-I-SW-WAGON-5D-01	4156	1748	1527	Auto-Data	https://www.auto-data.net/en/peugeot-207-sw-1.4-73hp-34054
+EU-MAZDA-CX-7-ER-SUV-5D-01	4680	1870	1645	Automobile-Catalog	https://www.automobile-catalog.com/car/2008/1691615/mazda_cx-7.html
+EU-MAZDA-2-DE-HATCHBACK-5D-PREFL-01	3900	1695	1475	Auto-Data	https://www.auto-data.net/en/mazda-2-ii-de-1.3i-75hp-11446
+EU-MAZDA-2-DE-HATCHBACK-5D-FACELIFT-01	3920	1695	1475	Auto-Data	https://www.auto-data.net/en/mazda-2-ii-de-facelift-2010-1.3i-75hp-17493
+EU-MERCEDES-BENZ-C-CLASS-S204-WAGON-5D-01	4596	1770	1459	Automobile-Catalog	https://www.automobile-catalog.com/car/2008/1550255/mercedes-benz_c_180_kompressor_t-modell_automatic.html
+EU-VOLKSWAGEN-GOLF-II-GTI-HATCHBACK-3D-01	3985	1665	1405	Auto-Data	https://www.auto-data.net/en/volkswagen-golf-ii-3-door-1.8-gti-16v-139hp-8771
+EU-LAND-ROVER-RANGE-ROVER-I-SUV-5D-PREFL-01	4460	1800	1785	Automobile-Catalog	https://www.automobile-catalog.com/car/1986/1397615/range_rover_turbo_d.html
+EU-LAND-ROVER-RANGE-ROVER-I-SUV-5D-FACELIFT-01	4450	1818	1800	Automobile-Catalog	https://www.automobile-catalog.com/car/1986/1397675/range_rover_turbo_d.html
+EU-OPEL-AGILA-B-HATCHBACK-5D-01	3740	1680	1590	Automobile-Catalog	https://www.automobile-catalog.com/car/2008/2529530/opel_agila_1_3_cdti_ecoflex.html
+EU-JAGUAR-X-TYPE-X400-WAGON-5D-01	4716	1789	1483	Auto-Data	https://www.auto-data.net/en/jaguar-x-type-estate-2.1-i-v6-156hp-sport-170
+EU-BMW-1-SERIES-E82-COUPE-2D-01	4360	1748	1423	Auto-Data	https://www.auto-data.net/en/bmw-1-series-coupe-e82-120d-177hp-9835
+EU-BMW-1-SERIES-E81-HATCHBACK-3D-01	4239	1748	1421	Auto-Data	https://www.auto-data.net/en/bmw-1-series-hatchback-3dr-e81-123d-204hp-9820
+EU-HYUNDAI-I30-FD-HATCHBACK-5D-01	4245	1775	1480	Automobile-Catalog	https://www.automobile-catalog.com/car/2007/1181255/hyundai_i30_1_4_comfort.html
+EU-OPEL-OMEGA-B-FACELIFT-SEDAN-4D-01	4898	1785	1455	Auto-Data	https://www.auto-data.net/en/opel-omega-b-facelift-1999-generation-5160
+EU-OPEL-OMEGA-B-FACELIFT-WAGON-5D-01	4898	1776	1545	Auto-Data	https://www.auto-data.net/en/opel-omega-model-245
+EU-CITROEN-C5-I-PHASE-I-HATCHBACK-5D-01	4618	1770	1476	Auto-Data	https://www.auto-data.net/en/citroen-c5-i-phase-i-2000-generation-3346
+EU-CITROEN-C5-I-PHASE-I-WAGON-5D-01	4760	1770	1520	Auto-Data	https://www.auto-data.net/en/citroen-c5-i-break-phase-i-2000-generation-3347
+EU-CHRYSLER-GRAND-VOYAGER-V-RT-MPV-5D-01	5143	1954	1750	Automobile-Catalog	https://www.automobile-catalog.com/make/chrysler/voyager_chrysler_5gen/voyager_chrysler_5gen_grand/2008.html
+EU-SUZUKI-SWIFT-MZ-SPORT-HATCHBACK-3D-01	3765	1690	1500	Auto-Data	https://www.auto-data.net/en/suzuki-swift-iv-1.6-i-16v-125hp-sport-16526
+EU-MINI-CLUBMAN-R55-WAGON-COOPER-S-01	3958	1683	1432	Automobile-Catalog	https://www.automobile-catalog.com/car/2007/1753235/mini_cooper_s_clubman.html
+EU-MINI-CLUBMAN-R55-WAGON-COOPER-01	3937	1683	1426	Automobile-Catalog	https://www.automobile-catalog.com/car/2007/1753175/mini_cooper_clubman.html
+EU-MINI-CLUBMAN-R55-WAGON-COOPER-D-01	3945	1683	1426	Automobile-Catalog	https://www.automobile-catalog.com/car/2007/1753205/mini_cooper_d_clubman.html
+EU-LINCOLN-LS-I-SEDAN-4D-01	4925	1860	1425	Auto-Data	https://www.auto-data.net/en/lincoln-ls-3.9-v8-32v-245hp-8200
+EU-DACIA-SOLENZA-SEDAN-4D-01	4080	1664	1379	Auto-Data	https://www.auto-data.net/en/dacia-solenza-1.4-i-75hp-15895
+EU-RENAULT-CLIO-III-GRANDTOUR-WAGON-5D-01	4202	1707	1497	Automobile-Catalog	https://www.automobile-catalog.com/car/2008/2952125/renault_clio_wagon_grandtour_1_2_16v_75.html
+EU-RENAULT-KANGOO-II-MPV-5D-01	4213	1829	1839	Auto-Data	https://www.auto-data.net/en/renault-kangoo-ii-1.6-16v-106hp-33902
+EU-FERRARI-F430-SCUDERIA-COUPE-2D-01	4512	1923	1199	Automobile-Catalog	https://www.automobile-catalog.com/car/2008/707420/ferrari_430_scuderia.html
+EU-NISSAN-TIIDA-C11-HATCHBACK-5D-01	4302	1695	1533	Automobile-Catalog	https://www.automobile-catalog.com/car/2007/2291510/nissan_tiida_hatchback_1_6.html
+EU-KIA-PRO-CEED-ED-HATCHBACK-3D-01	4250	1790	1450	Automobile-Catalog	https://www.automobile-catalog.com/car/2009/1359965/kia_pro_cee_d_1_6_cvvt_ex_automatic.html
+EU-MERCEDES-BENZ-E-CLASS-W211-FACELIFT-SEDAN-4D-01	4856	1822	1484	Auto-Data	https://www.auto-data.net/en/mercedes-benz-e-class-w211-facelift-2006-e-350-cgi-292hp-7g-tronic-45851
+EU-SANTANA-PS10-ANIBAL-SW-SUV-5D-01	4714	1750	2000	Auto-Data; Automobile-Catalog	https://www.auto-data.net/en/santana-ps-10-sw-generation-10884; https://www.automobile-catalog.com/car/2007/3042995/santana_ps-10_sw_anibal_civil_5p.html
+EU-VOLKSWAGEN-TOUAREG-7L-R50-SUV-5D-01	4754	1977	1703	Auto-Data	https://www.auto-data.net/fr/volkswagen-touareg-i-7l-facelift-2006-r50-5.0-tdi-v10-350hp-4xmotion-tiptronic-54823
+EU-JAGUAR-XK-X150-COUPE-2D-01	4791	1893	1322	Automobile-Catalog	https://www.automobile-catalog.com/car/2008/1292915/jaguar_xk_3_5_coupe.html
+EU-CHEVROLET-HHR-WAGON-5D-01	4475	1755	1603	Auto-Data	https://www.auto-data.net/en/chevrolet-hhr-2.4-i-16v-175hp-14368
+EU-ABARTH-GRANDE-PUNTO-199-HATCHBACK-3D-01	4041	1721	1490	Auto-Data	https://www.auto-data.net/en/abarth-grande-punto-199-1.4-t-jet-155hp-46793
+EU-RENAULT-TWINGO-II-HATCHBACK-3D-01	3600	1654	1470	Automobile-Catalog	https://www.automobile-catalog.com/car/2007/2955980/renault_twingo_1_2_60.html
+EU-NISSAN-TIIDA-C11-SEDAN-4D-01	4478	1695	1543	Automobile-Catalog	https://www.automobile-catalog.com/car/2007/2291450/nissan_tiida_sedan_1_6.html
+```
+
+[下载 DIMENSION_GROUP 表](sandbox:/mnt/data/all_1701-1800_dimension_groups_final.tsv)
+
+推进信号：COMPLETE
+
+[1]: https://www.auto-data.net/en/peugeot-207-sw-1.4-73hp-34054 "https://www.auto-data.net/en/peugeot-207-sw-1.4-73hp-34054"
+[2]: https://www.auto-data.net/en/mazda-2-ii-de-1.3i-75hp-11446 "https://www.auto-data.net/en/mazda-2-ii-de-1.3i-75hp-11446"
+[3]: https://www.automobile-catalog.com/car/1986/1397615/range_rover_turbo_d.html "https://www.automobile-catalog.com/car/1986/1397615/range_rover_turbo_d.html"
+[4]: https://www.auto-data.net/en/chrysler-grand-voyager-v-3.3i-v6-172hp-14765 "https://www.auto-data.net/en/chrysler-grand-voyager-v-3.3i-v6-172hp-14765"
+
+
+--- 本地最终 TSV 已更新 ---
+- 本批 Ktype 映射：all_1701-1800_ktype_dimension_mapping_final.tsv
+- 本批尺寸组：all_1701-1800_dimension_groups_final.tsv
+- 累计 Ktype 映射：all_1-100_ktype_dimension_mapping_final.tsv（2636 行）
+- 累计尺寸组：all_1-100_dimension_groups_final.tsv（1378 行）
+

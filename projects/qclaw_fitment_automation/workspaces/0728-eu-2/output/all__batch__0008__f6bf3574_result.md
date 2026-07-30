@@ -1251,3 +1251,14 @@ EU-FORD-USA-MUSTANG-V-CONVERTIBLE-2D-01	4765	1877	1415	Auto-Data Ford Mustang V 
 --- 脚本异常 ---
 异常: DIMENSION_GROUP EU-AUDI-A4-B7-WAGON-5D-01 的 HeightMM 与既有最终值冲突
 
+
+--- 本地最终 TSV 已更新 ---
+- 本批 Ktype 映射：all_701-800_ktype_dimension_mapping_final.tsv
+- 本批尺寸组：all_701-800_dimension_groups_final.tsv
+- 累计 Ktype 映射：all_1-100_ktype_dimension_mapping_final.tsv（2094 行）
+- 累计尺寸组：all_1-100_dimension_groups_final.tsv（1054 行）
+
+- 尺寸冲突协调：
+  - EU-DACIA-LOGAN-I-SEDAN-PREFL-01 -> EU-DACIA-LOGAN-I-SEDAN-PREFL-02：4247x1740x1534 与 4250x1735x1525，创建新尺寸组
+  - EU-DACIA-LOGAN-I-SEDAN-FACELIFT-01 -> EU-DACIA-LOGAN-I-SEDAN-FACELIFT-02：4290x1740x1534 与 4288x1740x1534，创建新尺寸组
+  - EU-AUDI-A4-B7-WAGON-5D-01 -> EU-AUDI-A4-B7-WAGON-5D-02：4586x1772x1453 与 4586x1772x1427，创建新尺寸组

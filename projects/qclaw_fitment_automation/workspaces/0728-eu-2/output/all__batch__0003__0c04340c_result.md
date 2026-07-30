@@ -2215,3 +2215,12 @@ Audi	Tt	3.2 V6 Quattro	Coupe	Allrad	Benzin	184	250	Aug 2006	Jun 2010	2024-03-01	
 VW	Touareg	3.6 V6 FSI	SUV	Allrad	Benzin	206	280	Oct 2005	May 2010	2024-03-01	19455
 Audi	A6 c6	S6 Quattro	Stufenheck	Allrad	Benzin	320	435	Mar 2006	Mar 2011	2024-03-01	19456
 
+
+--- 本地最终 TSV 已更新 ---
+- 本批 Ktype 映射：all_201-300_ktype_dimension_mapping_final.tsv
+- 本批尺寸组：all_201-300_dimension_groups_final.tsv
+- 累计 Ktype 映射：all_1-100_ktype_dimension_mapping_final.tsv（1758 行）
+- 累计尺寸组：all_1-100_dimension_groups_final.tsv（875 行）
+
+- 尺寸冲突协调：
+  - EU-OPEL-ASTRA-H-HATCHBACK-5D-01 -> EU-OPEL-ASTRA-H-HATCHBACK-5D-02：4249x1753x1467 与 4249x1753x1460，创建新尺寸组
