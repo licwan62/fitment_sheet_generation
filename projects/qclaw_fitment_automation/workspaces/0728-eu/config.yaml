@@ -23,6 +23,8 @@ project_layout:
   # 当前 EU TSV 直接放在项目根目录；结果、日志和 checkpoint 单独存放。
   input: .
   output: output
+  reply: replies
+  tables: tables
   log: log.csv
   summary: summary.txt
 
