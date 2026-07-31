@@ -2,7 +2,7 @@
     "powerquery.client.additionalSymbolsDirectories": [
         "d:/Home/Scripts/fitment_sheet_generation/fitment_sheet_generation/.vscode/excel-pq-symbols",
         "d:/Licheng/Repo/fitment_sheet_generation/.vscode/excel-pq-symbols",
-        "d:/Home/Scripts/fitment_sheet_generation/.vscode/excel-pq-symbols"
+        "/Users/wang/Documents/GitHub/fitment_sheet_generation/.vscode/excel-pq-symbols"
     ],
     "files.associations": {
         "*.log": "plaintext"

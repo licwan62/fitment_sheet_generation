@@ -33,7 +33,7 @@ powershell -NoProfile -ExecutionPolicy Bypass -File ".\run_from_config.ps1"
 macOS 首次运行先安装依赖：
 
 ```bash
-brew install --cask powershell
+brew install powershell
 python3 -m pip install PyYAML
 npm install
 npx playwright install chromium
