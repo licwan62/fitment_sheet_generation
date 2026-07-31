@@ -78,6 +78,26 @@ $reply
     if (@($aggregateDimensions | Where-Object { $_.DIMENSION_GROUP_ID -eq $derivedGroup }).Count -ne 1) {
         throw "checkpoint 本地恢复没有创建新尺寸组"
     }
+
+    # 历史 Markdown 末尾可能保留较晚写入的局部进度表。成功 checkpoint
+    # 恢复应优先使用已经发布的本批最终 TSV，而不是误取这组局部表。
+    @"
+$RequiredTsvHeader
+partial`tpartial`tHatchback`tTest`t`t5`tMISSING-GROUP`tHIGH`t`tREADY
+
+$RequiredDimensionGroupHeader
+PARTIAL-GROUP`t1`t1`t1`tpartial`thttps://example.com/partial
+"@ | Set-Content -LiteralPath $resultPath -Encoding UTF8
+    $checkpoint = [pscustomobject]@{ output_file = $resultPath }
+    $restored = Restore-CompletedTaskArtifacts -Task $task -Checkpoint $checkpoint
+    if ($null -eq $restored) {
+        throw "成功 checkpoint 没有从已发布的本批最终 TSV 恢复"
+    }
+    $restoredMappings = @(Read-StrictTsvRows `
+        -Path (Join-Path $testDir $names.MappingFileName) -Header $RequiredTsvHeader)
+    if ($restoredMappings.Count -ne 1 -or $restoredMappings[0].DIMENSION_GROUP_ID -ne $derivedGroup) {
+        throw "恢复时错误使用了历史 Markdown 末尾的局部进度表"
+    }
 }
 finally {
     Remove-Item -LiteralPath $testDir -Recurse -Force -ErrorAction SilentlyContinue

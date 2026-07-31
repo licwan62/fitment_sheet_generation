@@ -9,6 +9,10 @@ param(
     [string]$InputDir = "",
     [Alias("output_dir", "output-dir")]
     [string]$OutputDir = "",
+    [Alias("reply_dir", "reply-dir")]
+    [string]$ReplyDir = "",
+    [Alias("table_dir", "table-dir")]
+    [string]$TableDir = "",
     [Alias("log_path", "log-path")]
     [string]$LogPath = "",
     [Alias("summary_path", "summary-path")]
@@ -135,6 +139,8 @@ function Read-GnuStyleArguments {
 function Set-DefaultPaths {
     if ([string]::IsNullOrWhiteSpace($InputDir)) { $script:InputDir = Join-Path $ScriptRoot "input_sheets" }
     if ([string]::IsNullOrWhiteSpace($OutputDir)) { $script:OutputDir = Join-Path $ScriptRoot "output_sheets" }
+    if ([string]::IsNullOrWhiteSpace($ReplyDir)) { $script:ReplyDir = Join-Path $ScriptRoot "replies" }
+    if ([string]::IsNullOrWhiteSpace($TableDir)) { $script:TableDir = Join-Path $ScriptRoot "tables" }
     if ([string]::IsNullOrWhiteSpace($LogPath)) { $script:LogPath = Join-Path $ScriptRoot "log.csv" }
     if ([string]::IsNullOrWhiteSpace($SummaryPath)) { $script:SummaryPath = Join-Path $ScriptRoot "summary.txt" }
     if ([string]::IsNullOrWhiteSpace($RequirementPath)) {
@@ -148,6 +154,8 @@ function Resolve-ProjectPaths {
     $projectRoot = $ExecutionContext.SessionState.Path.GetUnresolvedProviderPathFromPSPath($Project)
     if (-not $ExplicitParameters.Contains("InputDir")) { $script:InputDir = Join-Path $projectRoot "input" }
     if (-not $ExplicitParameters.Contains("OutputDir")) { $script:OutputDir = Join-Path $projectRoot "output" }
+    if (-not $ExplicitParameters.Contains("ReplyDir")) { $script:ReplyDir = Join-Path $projectRoot "replies" }
+    if (-not $ExplicitParameters.Contains("TableDir")) { $script:TableDir = Join-Path $projectRoot "tables" }
     if (-not $ExplicitParameters.Contains("LogPath")) { $script:LogPath = Join-Path $projectRoot "log.csv" }
     if (-not $ExplicitParameters.Contains("SummaryPath")) { $script:SummaryPath = Join-Path $projectRoot "summary.txt" }
     if ([string]::IsNullOrWhiteSpace($ConversationArchivePath)) { $script:ConversationArchivePath = Join-Path $projectRoot "conversation_archives.json" }
@@ -1046,6 +1054,12 @@ function Test-Prerequisites {
     if (-not (Test-Path $OutputDir)) {
         New-Item -ItemType Directory -Path $OutputDir -Force | Out-Null
     }
+    if (-not [string]::IsNullOrWhiteSpace($ReplyDir) -and -not (Test-Path $ReplyDir)) {
+        New-Item -ItemType Directory -Path $ReplyDir -Force | Out-Null
+    }
+    if (-not [string]::IsNullOrWhiteSpace($TableDir) -and -not (Test-Path $TableDir)) {
+        New-Item -ItemType Directory -Path $TableDir -Force | Out-Null
+    }
     $logParent = Split-Path -Path $LogPath -Parent
     if ($logParent -and -not (Test-Path $logParent)) {
         New-Item -ItemType Directory -Path $logParent -Force | Out-Null
@@ -1079,10 +1093,11 @@ function Get-ProcessedFileSet {
 function Get-OutputFilePath {
     param([string]$BaseName)
 
-    $path = Join-Path $OutputDir "$BaseName`_result.md"
+    $replyBase = if (-not [string]::IsNullOrWhiteSpace($ReplyDir)) { $ReplyDir } else { $OutputDir }
+    $path = Join-Path $replyBase "$BaseName`_result.md"
     $counter = 2
     while (Test-Path $path) {
-        $path = Join-Path $OutputDir "$BaseName`_result_$counter.md"
+        $path = Join-Path $replyBase "$BaseName`_result_$counter.md"
         $counter++
     }
     return $path
@@ -1437,6 +1452,191 @@ function Save-TaskCheckpoint {
     $tempPath = "$($Task.CheckpointPath).tmp"
     $checkpoint | ConvertTo-Json -Depth 5 | Set-Content -LiteralPath $tempPath -Encoding UTF8
     Move-Item -LiteralPath $tempPath -Destination $Task.CheckpointPath -Force
+
+    Update-BatchProgressFromCheckpoint -Task $Task -Status $Status -Remarks $Remarks
+}
+
+function Get-BatchProgressPath {
+    if ([string]::IsNullOrWhiteSpace($CheckpointDir)) { return "" }
+    return (Join-Path $CheckpointDir "batch_progress.json")
+}
+
+function Get-BatchProgress {
+    $path = Get-BatchProgressPath
+    if ([string]::IsNullOrEmpty($path) -or -not (Test-Path -LiteralPath $path -PathType Leaf)) { return $null }
+    try {
+        return Get-Content -LiteralPath $path -Raw -Encoding UTF8 | ConvertFrom-Json
+    }
+    catch {
+        Write-Host "警告: batch_progress.json 读取失败: $($_.Exception.Message)" -ForegroundColor Yellow
+        return $null
+    }
+}
+
+function Save-BatchProgress {
+    param(
+        [int]$TotalBatches,
+        [int]$RowsPerBatch,
+        [int]$NextPendingIndex,
+        [object[]]$BatchEntries
+    )
+    $path = Get-BatchProgressPath
+    if ([string]::IsNullOrEmpty($path)) { return }
+    if (-not (Test-Path -LiteralPath $CheckpointDir)) {
+        New-Item -ItemType Directory -Path $CheckpointDir -Force | Out-Null
+    }
+    $batchJson = if ($BatchEntries.Count -gt 0) { $BatchEntries | ConvertTo-Json -Depth 3 } else { "[]" }
+    $progressJson = @"
+{
+    "version": 1,
+    "total_batches": $TotalBatches,
+    "rows_per_batch": $RowsPerBatch,
+    "updated_at": "$(Get-Date -Format 'yyyy-MM-dd HH:mm:ss')",
+    "next_pending_index": $NextPendingIndex,
+    "batches": $batchJson
+}
+"@
+    [System.IO.File]::WriteAllText($path, $progressJson, [System.Text.Encoding]::UTF8)
+}
+
+function Initialize-BatchProgress {
+    param([object[]]$Tasks)
+
+    $path = Get-BatchProgressPath
+    if ([string]::IsNullOrEmpty($path)) { return $null }
+
+    $existing = Get-BatchProgress
+
+    $batchList = New-Object System.Collections.ArrayList
+    $firstNonSuccess = -1
+
+    for ($i = 0; $i -lt $Tasks.Count; $i++) {
+        $task = $Tasks[$i]
+        $taskId = [string]$task.TaskId
+        $existingBatch = $null
+        if ($existing -and $existing.batches) {
+            $existingBatch = $existing.batches | Where-Object { $_.task_id -eq $taskId } | Select-Object -First 1
+        }
+
+        $checkpoint = Get-TaskCheckpoint -Task $task
+        $status = "pending"
+        $remarks = ""
+        $updatedAt = ""
+
+        if ($checkpoint) {
+            $status = switch ([string]$checkpoint.status) {
+                "成功" { "success" }
+                "进行中" { "processing" }
+                default { "error" }
+            }
+            $remarks = [string]$checkpoint.remarks
+            $updatedAt = [string]$checkpoint.updated_at
+        }
+        elseif ($existingBatch) {
+            $status = [string]$existingBatch.status
+            $remarks = [string]$existingBatch.remarks
+            $updatedAt = [string]$existingBatch.updated_at
+        }
+
+        if ($status -ne "success" -and $firstNonSuccess -lt 0) {
+            $firstNonSuccess = $i
+        }
+
+        [void]$batchList.Add([PSCustomObject]@{
+            index = $i
+            batch_number = ($i + 1)
+            task_id = $taskId
+            display_name = [string]$task.DisplayName
+            status = $status
+            remarks = $remarks
+            checkpoint_file = (Split-Path $task.CheckpointPath -Leaf)
+            updated_at = $updatedAt
+        })
+    }
+
+    $nextIdx = if ($firstNonSuccess -ge 0) { $firstNonSuccess } else { $Tasks.Count }
+
+    Save-BatchProgress -TotalBatches $Tasks.Count -RowsPerBatch $RowsPerTask -NextPendingIndex $nextIdx -BatchEntries @($batchList)
+
+    return (Get-BatchProgress)
+}
+
+function Update-BatchProgressFromCheckpoint {
+    param(
+        $Task,
+        [string]$Status,
+        [string]$Remarks = ""
+    )
+
+    $progress = Get-BatchProgress
+    if (-not $progress -or -not $progress.batches) { return }
+
+    $taskId = [string]$Task.TaskId
+    $batchEntry = $null
+    $batchIndex = -1
+    for ($i = 0; $i -lt $progress.batches.Count; $i++) {
+        if ([string]$progress.batches[$i].task_id -eq $taskId) {
+            $batchEntry = $progress.batches[$i]
+            $batchIndex = $i
+            break
+        }
+    }
+    if (-not $batchEntry) { return }
+
+    $newStatus = switch ($Status) {
+        "成功" { "success" }
+        "进行中" { "processing" }
+        default { "error" }
+    }
+
+    $batchEntry.status = $newStatus
+    $batchEntry.remarks = $Remarks
+    $batchEntry.updated_at = Get-Date -Format "yyyy-MM-dd HH:mm:ss"
+
+    $firstNonSuccess = -1
+    for ($i = 0; $i -lt $progress.batches.Count; $i++) {
+        if ([string]$progress.batches[$i].status -ne "success") {
+            $firstNonSuccess = $i
+            break
+        }
+    }
+    $nextIdx = if ($firstNonSuccess -ge 0) { $firstNonSuccess } else { $progress.batches.Count }
+
+    Save-BatchProgress -TotalBatches ([int]$progress.total_batches) -RowsPerBatch ([int]$progress.rows_per_batch) -NextPendingIndex $nextIdx -BatchEntries @($progress.batches)
+}
+
+function Show-BatchProgressSummary {
+    param([object]$Progress)
+
+    if (-not $Progress) { return }
+
+    $total = [int]$Progress.total_batches
+    $nextIdx = [int]$Progress.next_pending_index
+    $successCount = @($Progress.batches | Where-Object { $_.status -eq "success" }).Count
+    $errorCount = @($Progress.batches | Where-Object { $_.status -eq "error" }).Count
+    $pendingCount = @($Progress.batches | Where-Object { $_.status -eq "pending" }).Count
+    $processingCount = @($Progress.batches | Where-Object { $_.status -eq "processing" }).Count
+
+    Write-Host "`n批次进度总览:" -ForegroundColor Cyan
+    Write-Host "  总计: $total 批次 | 成功: $successCount | 错误: $errorCount | 处理中: $processingCount | 待处理: $pendingCount" -ForegroundColor Cyan
+
+    if ($nextIdx -ge $total) {
+        Write-Host "  所有批次已完成!" -ForegroundColor Green
+    }
+    else {
+        $nextBatch = $Progress.batches[$nextIdx]
+        Write-Host "  下一批次: #$($nextBatch.batch_number) $($nextBatch.display_name) [$($nextBatch.status)]" -ForegroundColor Yellow
+
+        $errorBatches = @($Progress.batches | Where-Object { $_.status -eq "error" })
+        if ($errorBatches.Count -gt 0) {
+            Write-Host "  错误批次列表:" -ForegroundColor Yellow
+            foreach ($eb in $errorBatches) {
+                $shortRemark = if ($eb.remarks.Length -gt 60) { $eb.remarks.Substring(0, 57) + "..." } else { $eb.remarks }
+                Write-Host "    #$($eb.batch_number) $($eb.display_name) - $shortRemark" -ForegroundColor DarkYellow
+            }
+        }
+    }
+    Write-Host ""
 }
 
 function Get-ReplyNarrativeText {
@@ -1688,23 +1888,14 @@ function Get-TaskFinalArtifactNames {
     }
     $prefix = ($prefix -replace '[^\p{L}\p{Nd}._-]+', '_').Trim("_")
 
-    # 分批模式使用首批文件名作为持续累计总表。第一批成功时创建，
-    # 后续每批成功后继续按主键去重追加到同一对文件。
-    $aggregatePrefix = if (
-        $Task.PSObject.Properties.Name -contains "BatchStartRow" -and
-        $RowsPerTask -gt 0
-    ) {
-        "$sourceBaseName`_1-$RowsPerTask"
-    }
-    else {
-        $sourceBaseName
-    }
+    # 分批模式使用固定文件名作为持续累计总表，放在 $TableDir。
+    # 第一批成功时创建，后续每批成功后继续按主键去重追加到同一对文件。
 
     return [pscustomobject]@{
         MappingFileName = "$prefix`_ktype_dimension_mapping_final.tsv"
         DimensionFileName = "$prefix`_dimension_groups_final.tsv"
-        AggregateMappingFileName = "$aggregatePrefix`_ktype_dimension_mapping_final.tsv"
-        AggregateDimensionFileName = "$aggregatePrefix`_dimension_groups_final.tsv"
+        AggregateMappingFileName = "ktype_mapping_final.tsv"
+        AggregateDimensionFileName = "dimension_groups_final.tsv"
     }
 }
 
@@ -1742,7 +1933,8 @@ function Get-TaskExistingDimensionGroupInstruction {
 
     if (-not $DimensionGroupEnabled) { return "" }
     $names = Get-TaskFinalArtifactNames -Task $Task
-    $aggregateDimensionPath = Join-Path $OutputDir $names.AggregateDimensionFileName
+    $tableBase = if (-not [string]::IsNullOrWhiteSpace($TableDir)) { $TableDir } else { $OutputDir }
+    $aggregateDimensionPath = Join-Path $tableBase $names.AggregateDimensionFileName
     if (-not (Test-Path -LiteralPath $aggregateDimensionPath -PathType Leaf)) { return "" }
 
     $lines = @([string]$Task.Content -split "`r?`n" | Where-Object {
@@ -1789,15 +1981,23 @@ $($cacheLines -join "`r`n")
 function Assert-OutputArtifactPath {
     param([string]$Path)
 
-    $outputRoot = [System.IO.Path]::GetFullPath($OutputDir).TrimEnd(
-        [System.IO.Path]::DirectorySeparatorChar,
-        [System.IO.Path]::AltDirectorySeparatorChar
-    ) + [System.IO.Path]::DirectorySeparatorChar
     $resolved = [System.IO.Path]::GetFullPath($Path)
-    if (-not $resolved.StartsWith($outputRoot, [StringComparison]::OrdinalIgnoreCase)) {
-        throw "最终 TSV 路径超出输出目录: $resolved"
+
+    $allowedRoots = @($OutputDir)
+    if (-not [string]::IsNullOrWhiteSpace($TableDir)) { $allowedRoots += $TableDir }
+    if (-not [string]::IsNullOrWhiteSpace($ReplyDir)) { $allowedRoots += $ReplyDir }
+
+    foreach ($root in $allowedRoots) {
+        $normalizedRoot = [System.IO.Path]::GetFullPath($root).TrimEnd(
+            [System.IO.Path]::DirectorySeparatorChar,
+            [System.IO.Path]::AltDirectorySeparatorChar
+        ) + [System.IO.Path]::DirectorySeparatorChar
+        if ($resolved.StartsWith($normalizedRoot, [StringComparison]::OrdinalIgnoreCase)) {
+            return $resolved
+        }
     }
-    return $resolved
+
+    throw "最终 TSV 路径超出允许目录: $resolved"
 }
 
 function ConvertTo-StrictTsvText {
@@ -1935,44 +2135,57 @@ function Restore-CompletedTaskArtifacts {
     )
 
     if (-not $DimensionGroupEnabled -or $null -eq $Checkpoint) { return $null }
+    $names = Get-TaskFinalArtifactNames -Task $Task
+    $mappingRows = @()
+    $dimensionRows = @()
+
     $resultPath = [string]$Checkpoint.output_file
-    if (-not $resultPath -or -not (Test-Path -LiteralPath $resultPath -PathType Leaf)) {
+    if (-not (Test-Path -LiteralPath $resultPath -PathType Leaf) -and -not [string]::IsNullOrWhiteSpace($ReplyDir)) {
+        $replyFallback = Join-Path $ReplyDir (Split-Path $resultPath -Leaf)
+        if (Test-Path -LiteralPath $replyFallback -PathType Leaf) { $resultPath = $replyFallback }
+    }
+    if (
+        ($mappingRows.Count -eq 0 -or $dimensionRows.Count -eq 0) -and
+        (-not $resultPath -or -not (Test-Path -LiteralPath $resultPath -PathType Leaf))
+    ) {
         Write-Host "警告: 成功 checkpoint 缺少可读结果文件，无法回填最终 TSV: $($Task.DisplayName)" -ForegroundColor Yellow
         return $null
     }
 
-    $text = Get-Content -LiteralPath $resultPath -Raw -Encoding UTF8
-    $mappingRows = @(Get-LastStrictTableRowsFromText -Text $text -Header $RequiredTsvHeader)
-    if ($mappingRows.Count -eq 0) {
-        # 兼容移除 EndDateStatus 前已经人工完成的 11 列 Ktype 映射表。
-        $legacyHeader = "id`tKtype`tNormalizedBodyStyle`tGeneration`tBodyCode`tDoors`tDIMENSION_GROUP_ID`tEndDateStatus`tMatchConfidence`tNotes`tIterationStatus"
-        $legacyRows = @(Get-LastStrictTableRowsFromText -Text $text -Header $legacyHeader)
-        if ($legacyRows.Count -gt 0) {
-            $mappingRows = @(
-                foreach ($row in $legacyRows) {
-                    [pscustomobject][ordered]@{
-                        id = [string]$row.id
-                        Ktype = [string]$row.Ktype
-                        NormalizedBodyStyle = [string]$row.NormalizedBodyStyle
-                        Generation = [string]$row.Generation
-                        BodyCode = [string]$row.BodyCode
-                        Doors = [string]$row.Doors
-                        DIMENSION_GROUP_ID = [string]$row.DIMENSION_GROUP_ID
-                        MatchConfidence = [string]$row.MatchConfidence
-                        Notes = [string]$row.Notes
-                        IterationStatus = [string]$row.IterationStatus
+    if ($mappingRows.Count -eq 0 -or $dimensionRows.Count -eq 0) {
+        $text = Get-Content -LiteralPath $resultPath -Raw -Encoding UTF8
+        $mappingRows = @(Get-LastStrictTableRowsFromText -Text $text -Header $RequiredTsvHeader)
+        if ($mappingRows.Count -eq 0) {
+            # 兼容移除 EndDateStatus 前已经人工完成的 11 列 Ktype 映射表。
+            $legacyHeader = "id`tKtype`tNormalizedBodyStyle`tGeneration`tBodyCode`tDoors`tDIMENSION_GROUP_ID`tEndDateStatus`tMatchConfidence`tNotes`tIterationStatus"
+            $legacyRows = @(Get-LastStrictTableRowsFromText -Text $text -Header $legacyHeader)
+            if ($legacyRows.Count -gt 0) {
+                $mappingRows = @(
+                    foreach ($row in $legacyRows) {
+                        [pscustomobject][ordered]@{
+                            id = [string]$row.id
+                            Ktype = [string]$row.Ktype
+                            NormalizedBodyStyle = [string]$row.NormalizedBodyStyle
+                            Generation = [string]$row.Generation
+                            BodyCode = [string]$row.BodyCode
+                            Doors = [string]$row.Doors
+                            DIMENSION_GROUP_ID = [string]$row.DIMENSION_GROUP_ID
+                            MatchConfidence = [string]$row.MatchConfidence
+                            Notes = [string]$row.Notes
+                            IterationStatus = [string]$row.IterationStatus
+                        }
                     }
-                }
-            )
+                )
+            }
         }
+        $dimensionRows = @(Get-LastStrictTableRowsFromText -Text $text -Header $RequiredDimensionGroupHeader)
     }
-    $dimensionRows = @(Get-LastStrictTableRowsFromText -Text $text -Header $RequiredDimensionGroupHeader)
+
     if ($mappingRows.Count -eq 0 -or $dimensionRows.Count -eq 0) {
         Write-Host "警告: 成功结果中找不到最终两张 TSV，无法回填: $($Task.DisplayName)" -ForegroundColor Yellow
         return $null
     }
 
-    $names = Get-TaskFinalArtifactNames -Task $Task
     $syntheticReply = @"
 $(ConvertTo-StrictTsvText -Header $RequiredTsvHeader -Rows $mappingRows)
 $(ConvertTo-StrictTsvText -Header $RequiredDimensionGroupHeader -Rows $dimensionRows)
@@ -2249,13 +2462,10 @@ function Publish-CompletedTaskTables {
     }
 
     $names = Get-TaskFinalArtifactNames -Task $Task
-    $batchMappingPath = Join-Path $OutputDir $names.MappingFileName
-    $batchDimensionPath = Join-Path $OutputDir $names.DimensionFileName
-    $aggregateMappingPath = Join-Path $OutputDir $names.AggregateMappingFileName
-    $aggregateDimensionPath = Join-Path $OutputDir $names.AggregateDimensionFileName
+    $tableBase = if (-not [string]::IsNullOrWhiteSpace($TableDir)) { $TableDir } else { $OutputDir }
+    $aggregateMappingPath = Join-Path $tableBase $names.AggregateMappingFileName
+    $aggregateDimensionPath = Join-Path $tableBase $names.AggregateDimensionFileName
 
-    # 必须先读取累计表再写本批文件。分批模式下首批文件名与累计表同名；
-    # 若先写首批快照，会在 checkpoint 恢复时覆盖已经追加的后续批次。
     $existingMappings = @(Read-StrictTsvRows -Path $aggregateMappingPath -Header $RequiredTsvHeader)
     $existingDimensions = @(Read-StrictTsvRows -Path $aggregateDimensionPath -Header $RequiredDimensionGroupHeader)
     $resolved = Resolve-DimensionGroupConflicts -ExistingDimensionRows $existingDimensions `
@@ -2265,12 +2475,6 @@ function Publish-CompletedTaskTables {
     $mergedMappings = @(Merge-FinalMappingRows -ExistingRows $existingMappings -NewRows $mappingRows)
     $mergedDimensions = @(Merge-FinalDimensionRows -ExistingRows $existingDimensions -NewRows $dimensionRows)
 
-    if (-not [string]::Equals($batchMappingPath, $aggregateMappingPath, [StringComparison]::OrdinalIgnoreCase)) {
-        Write-StrictTsvAtomic -Path $batchMappingPath -Header $RequiredTsvHeader -Rows $mappingRows
-    }
-    if (-not [string]::Equals($batchDimensionPath, $aggregateDimensionPath, [StringComparison]::OrdinalIgnoreCase)) {
-        Write-StrictTsvAtomic -Path $batchDimensionPath -Header $RequiredDimensionGroupHeader -Rows $dimensionRows
-    }
     Write-StrictTsvAtomic -Path $aggregateDimensionPath -Header $RequiredDimensionGroupHeader -Rows $mergedDimensions
     Write-StrictTsvAtomic -Path $aggregateMappingPath -Header $RequiredTsvHeader -Rows $mergedMappings
 
@@ -2285,9 +2489,7 @@ function Publish-CompletedTaskTables {
         }
         Add-Content -LiteralPath $ResultMarkdownPath -Encoding UTF8 -Value @"
 
---- 本地最终 TSV 已更新 ---
-- 本批 Ktype 映射：$($names.MappingFileName)
-- 本批尺寸组：$($names.DimensionFileName)
+--- 累计最终 TSV 已更新 ---
 - 累计 Ktype 映射：$($names.AggregateMappingFileName)（$($mergedMappings.Count) 行）
 - 累计尺寸组：$($names.AggregateDimensionFileName)（$($mergedDimensions.Count) 行）
 $conflictAuditText
@@ -2295,8 +2497,6 @@ $conflictAuditText
     }
 
     return [pscustomobject]@{
-        BatchMappingPath = $batchMappingPath
-        BatchDimensionPath = $batchDimensionPath
         AggregateMappingPath = $aggregateMappingPath
         AggregateDimensionPath = $aggregateDimensionPath
         AggregateMappingRows = $mergedMappings.Count
@@ -2593,6 +2793,7 @@ function Ensure-ChatGPTActive {
 
     if ($currentUrl -like "https://chatgpt.com*") { return }
 
+    $chatTabFound = $false
     try {
         $tabResult = Get-XBValue (Invoke-XBRun "tab")
         $tabs = @($tabResult.tabs)
@@ -2601,13 +2802,21 @@ function Ensure-ChatGPTActive {
             Write-Host "  切回 ChatGPT 标签页..." -ForegroundColor Gray
             Invoke-XBRun "tab" ([string]$chatTab.index) | Out-Null
             Start-Sleep -Seconds 1
-            return
+            $chatTabFound = $true
         }
     }
     catch { }
 
+    if ($chatTabFound) { return }
+
+    if ($script:_lastNewChatGPTTabAt -and ((Get-Date) - $script:_lastNewChatGPTTabAt).TotalSeconds -lt 15) {
+        Write-Host "  15 秒内已开过新 ChatGPT 标签页，跳过重复打开" -ForegroundColor Yellow
+        return
+    }
+
     Write-Host "  当前没有 ChatGPT 标签页，重新打开..." -ForegroundColor Yellow
     Invoke-XBRun "tab" "new" $ChatGptUrl | Out-Null
+    $script:_lastNewChatGPTTabAt = Get-Date
     Start-Sleep -Seconds 3
     try { Invoke-XBRun "wait" "--load" "networkidle" | Out-Null } catch { }
 }
@@ -3360,11 +3569,23 @@ function Invoke-ChatGPTConversationBranchOnce {
     if (!hasUser && hasAssistant) continue;
     turn.dispatchEvent(new MouseEvent('mouseover', { bubbles: true }));
     turn.dispatchEvent(new MouseEvent('mouseenter', { bubbles: true }));
+    turn.dispatchEvent(new MouseEvent('mousemove', { bubbles: true, clientX: 10, clientY: 10 }));
     const buttons = Array.from(turn.querySelectorAll('button')).filter(visible);
+    const sharePattern = /share|分享|复制|copy/i;
     const menu = buttons.reverse().find(button => {
       const label = textOf(button);
       const testId = button.getAttribute('data-testid') || '';
-      return /more|更多|操作|actions?/i.test(label) || /more|actions?/i.test(testId);
+      const ariaLabel = (button.getAttribute('aria-label') || '').toLowerCase();
+      if (sharePattern.test(label) || sharePattern.test(ariaLabel)) return false;
+      if (/more|更多|\.\.\.|⋯|ellipsis/i.test(label)) return true;
+      if (/more|actions?|menu/i.test(testId)) return true;
+      if (/more|更多|\.\.\.|⋯|ellipsis/i.test(ariaLabel)) return true;
+      const svg = button.querySelector('svg');
+      if (svg && buttons.indexOf(button) === buttons.length - 1) {
+        const pathCount = button.querySelectorAll('circle, path').length;
+        if (pathCount >= 3 && pathCount <= 5 && /more|menu|overflow/i.test(ariaLabel + ' ' + testId)) return true;
+      }
+      return false;
     });
     if (menu) {
       menu.click();
@@ -3376,7 +3597,6 @@ function Invoke-ChatGPTConversationBranchOnce {
 '@
     $menuResult = [string](Get-XBValue (Invoke-XBRun "eval" $openMenuScript))
     if ($menuResult -eq "menu-opened") {
-        Start-Sleep -Seconds 1
         $clickBranchScript = @'
 (() => {
   const visible = el => {
@@ -3387,14 +3607,19 @@ function Invoke-ChatGPTConversationBranchOnce {
   };
   const textOf = el => ((el.innerText || el.textContent || '') + ' ' + (el.getAttribute('aria-label') || '')).trim();
   const pattern = /branch in new chat|branch to new chat|在新聊天中分支|在新对话中分支|分支到新聊天/i;
-  const item = Array.from(document.querySelectorAll('[role="menuitem"], button, a'))
+  const item = Array.from(document.querySelectorAll('[role="menuitem"], [role="menu"] button, button, a'))
     .find(el => visible(el) && pattern.test(textOf(el)));
   if (!item) return false;
   item.click();
   return true;
 })()
 '@
-        $branchClicked = Get-XBValue (Invoke-XBRun "eval" $clickBranchScript)
+        $branchClicked = $false
+        for ($menuAttempt = 1; $menuAttempt -le 5; $menuAttempt++) {
+            Start-Sleep -Seconds 1
+            $branchClicked = Get-XBValue (Invoke-XBRun "eval" $clickBranchScript)
+            if ($branchClicked) { break }
+        }
         if (-not $branchClicked) {
             throw "已打开消息操作菜单，但没有找到【在新聊天中分支】"
         }
@@ -3649,7 +3874,9 @@ function Ensure-TaskConversationCapacity {
         [string]$OutputFile,
         [int]$Round,
         [int]$SendCount,
-        [string]$ConversationUrl
+        [string]$ConversationUrl,
+        [string]$InitialMessage = "",
+        [switch]$LargePayload
     )
 
     $state = Get-ChatGPTState
@@ -3663,7 +3890,43 @@ function Ensure-TaskConversationCapacity {
         throw "检测到对话长度上限，但无法取得父对话 URL"
     }
 
-    $newUrl = Start-ChatGPTConversationBranch -ParentUrl $parentUrl
+    $newUrl = ""
+    $branchSucceeded = $false
+    try {
+        $newUrl = Start-ChatGPTConversationBranch -ParentUrl $parentUrl
+        $branchSucceeded = $true
+    }
+    catch {
+        $branchError = $_.Exception.Message
+        if (-not [string]::IsNullOrWhiteSpace($InitialMessage)) {
+            Write-Host "  对话分支失败，降级为新建对话重发初始任务: $branchError" -ForegroundColor Yellow
+        }
+        else {
+            throw
+        }
+    }
+
+    if (-not $branchSucceeded) {
+        Start-ChatGPTNewConversation
+        Start-Sleep -Seconds 2
+        Write-Host "  新建对话已打开，重新发送初始任务消息..." -ForegroundColor Yellow
+        Send-TrackedChatGPTMessage -OutputFile $OutputFile -Label "新建对话重发 / Round $Round" -Message $InitialMessage -LargePayload:$LargePayload
+        $sendCountVal = $SendCount + 1
+        $newUrl = Wait-CurrentChatGPTConversationUrl
+
+        Add-Content -LiteralPath $OutputFile -Value @"
+
+--- 新建对话（分支降级） / Round $Round ---
+触发原因：对话分支 UI 不可用，自动降级为新建对话
+原对话：$parentUrl
+新对话：$newUrl
+"@ -Encoding UTF8
+
+        Save-TaskCheckpoint -Task $Task -Status "进行中" -Phase "waiting_reply" `
+            -Round $Round -SendCount $sendCountVal -OutputFile $OutputFile `
+            -ConversationUrl $newUrl -Remarks "分支降级：已新建对话并重新发送初始任务"
+        return $newUrl
+    }
     $checkpoint = Get-TaskCheckpoint -Task $Task
     $lineage = @(
         if ($checkpoint -and $checkpoint.PSObject.Properties.Name -contains "conversation_lineage") {
@@ -3857,15 +4120,23 @@ function Process-TSVTask {
         return
     }
     if ($checkpoint -and
-        (Test-ChatGPTConversationUrl -Url ([string]$checkpoint.conversation_url)) -and
-        (Test-Path -LiteralPath ([string]$checkpoint.output_file) -PathType Leaf)) {
-        $resumeFromCheckpoint = $true
-        $outputFile = [string]$checkpoint.output_file
-        $conversationUrl = [string]$checkpoint.conversation_url
-        $round = [Math]::Max(1, [int]$checkpoint.round)
-        $sendCount = [Math]::Max(0, [int]$checkpoint.send_count)
+        (Test-ChatGPTConversationUrl -Url ([string]$checkpoint.conversation_url))) {
+        $checkpointOutputFile = [string]$checkpoint.output_file
+        if (-not (Test-Path -LiteralPath $checkpointOutputFile -PathType Leaf) -and -not [string]::IsNullOrWhiteSpace($ReplyDir)) {
+            $replyFallback = Join-Path $ReplyDir (Split-Path $checkpointOutputFile -Leaf)
+            if (Test-Path -LiteralPath $replyFallback -PathType Leaf) {
+                $checkpointOutputFile = $replyFallback
+            }
+        }
+        if (Test-Path -LiteralPath $checkpointOutputFile -PathType Leaf) {
+            $resumeFromCheckpoint = $true
+            $outputFile = $checkpointOutputFile
+            $conversationUrl = [string]$checkpoint.conversation_url
+            $round = [Math]::Max(1, [int]$checkpoint.round)
+            $sendCount = [Math]::Max(0, [int]$checkpoint.send_count)
+        }
     }
-    else {
+    if (-not $resumeFromCheckpoint) {
         $outputFile = Get-OutputFilePath -BaseName $Task.BaseName
     }
 
@@ -3879,6 +4150,7 @@ function Process-TSVTask {
         $requirementContent = Get-Content $RequirementPath -Raw -Encoding UTF8
         $tsvContent = [string]$Task.Content
         $minimumFullTableRows = [Math]::Max(0, (@($tsvContent -split "`r?`n" | Where-Object { -not [string]::IsNullOrWhiteSpace($_) }).Count - 1))
+        $initialTaskMessage = Get-InitialTaskMessage -Task $Task -RequirementContent $requirementContent -TsvContent $tsvContent
         if ($resumeFromCheckpoint) {
             $localResumeReply = Format-CapturedReplyMarkdown -Text (
                 Get-LastSavedRoundReply -ResultMarkdownPath $outputFile
@@ -3983,9 +4255,8 @@ function Process-TSVTask {
         }
         elseif ($ConversationMode -eq "new") {
             Start-ChatGPTNewConversation
-            $message = Get-InitialTaskMessage -Task $Task -RequirementContent $requirementContent -TsvContent $tsvContent
             Write-Host "  正在发送首次任务..." -ForegroundColor Gray
-            Send-TrackedChatGPTMessage -OutputFile $outputFile -Label "首次任务" -Message $message -LargePayload
+            Send-TrackedChatGPTMessage -OutputFile $outputFile -Label "首次任务" -Message $initialTaskMessage -LargePayload
             Write-Host "  首次任务已发送。" -ForegroundColor Green
             $sendCount++
             $conversationUrl = Wait-CurrentChatGPTConversationUrl
@@ -4041,8 +4312,9 @@ function Process-TSVTask {
             $wait = Wait-ChatGPTReplyComplete
             if ($wait.ConversationLimitReached) {
                 $conversationUrl = Ensure-TaskConversationCapacity -Task $Task -OutputFile $outputFile `
-                    -Round $round -SendCount $sendCount -ConversationUrl $conversationUrl
-                Write-Host "  已切换到新聊天分支，继续等待第 $round 轮回复..." -ForegroundColor Cyan
+                    -Round $round -SendCount $sendCount -ConversationUrl $conversationUrl `
+                    -InitialMessage $initialTaskMessage -LargePayload
+                Write-Host "  已切换到新聊天，继续等待第 $round 轮回复..." -ForegroundColor Cyan
                 continue
             }
             $reply = Format-CapturedReplyMarkdown -Text ([string]$wait.Reply)
@@ -4317,6 +4589,36 @@ $unsuccessfulText
 完成时间：$(Get-Date -Format "yyyy-MM-dd HH:mm:ss")
 "@
 
+    $batchProgressSection = ""
+    if ($TaskGranularity -eq "batch") {
+        $bp = Get-BatchProgress
+        if ($bp) {
+            $bpTotal = [int]$bp.total_batches
+            $bpSuccess = @($bp.batches | Where-Object { $_.status -eq "success" }).Count
+            $bpError = @($bp.batches | Where-Object { $_.status -eq "error" }).Count
+            $bpPending = @($bp.batches | Where-Object { $_.status -eq "pending" }).Count
+            $bpProcessing = @($bp.batches | Where-Object { $_.status -eq "processing" }).Count
+            $bpNext = [int]$bp.next_pending_index
+            $errorLines = ""
+            foreach ($eb in @($bp.batches | Where-Object { $_.status -eq "error" })) {
+                $errorLines += "  #$($eb.batch_number) $($eb.display_name) - $($eb.remarks)`r`n"
+            }
+            $batchProgressSection = @"
+
+批次进度文件：$(Get-BatchProgressPath)
+批次成功数：$bpSuccess
+批次错误数：$bpError
+批次待处理数：$bpPending
+批次处理中数：$bpProcessing
+下一待处理批次索引：$bpNext
+错误批次明细：
+$(if ($errorLines) { $errorLines.TrimEnd() } else { "无" })
+"@
+        }
+    }
+
+    $summary += $batchProgressSection
+
     $summaryParent = Split-Path -Path $SummaryPath -Parent
     if ($summaryParent -and -not (Test-Path $summaryParent)) {
         New-Item -ItemType Directory -Path $summaryParent -Force | Out-Null
@@ -4370,9 +4672,27 @@ function Main {
     if ($TaskGranularity -eq "file" -and $OnlyFiles.Count -eq 0 -and $SkipProcessedFiles) {
         $processedSet = Get-ProcessedFileSet
     }
+
+    $batchProgress = $null
+    $batchSuccessSet = New-Object "System.Collections.Generic.HashSet[string]" ([StringComparer]::OrdinalIgnoreCase)
+    if ($TaskGranularity -eq "batch" -and -not [string]::IsNullOrWhiteSpace($CheckpointDir)) {
+        $batchProgress = Initialize-BatchProgress -Tasks $tasks
+        Show-BatchProgressSummary -Progress $batchProgress
+        foreach ($b in $batchProgress.batches) {
+            if ([string]$b.status -eq "success") {
+                [void]$batchSuccessSet.Add([string]$b.task_id)
+            }
+        }
+    }
+
     foreach ($task in $tasks) {
         if ($TaskGranularity -eq "file" -and $processedSet.Contains($task.LogName)) {
             Write-Host "跳过已处理文件: $($task.LogName)" -ForegroundColor Gray
+            continue
+        }
+
+        if ($TaskGranularity -eq "batch" -and $batchSuccessSet.Contains($task.TaskId)) {
+            Write-Host "跳过已成功批次: $($task.DisplayName)" -ForegroundColor Gray
             continue
         }
 

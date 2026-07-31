@@ -130,11 +130,14 @@ try {
     foreach ($project in $runProjects) {
         $inputPath = Join-Path $project.FullName ([string](Get-Value $layout "input" "input"))
         $outputPath = Join-Path $project.FullName ([string](Get-Value $layout "output" "output"))
+        $replyPath = Join-Path $project.FullName ([string](Get-Value $layout "reply" "replies"))
+        $tablePath = Join-Path $project.FullName ([string](Get-Value $layout "tables" "tables"))
         $logPath = Join-Path $project.FullName ([string](Get-Value $layout "log" "log.csv"))
         $summaryPath = Join-Path $project.FullName ([string](Get-Value $layout "summary" "summary.txt"))
         $arguments = @(
             "-NoProfile", "-ExecutionPolicy", "Bypass", "-File", $scriptPath,
             "-Project", $project.FullName, "-InputDir", $inputPath, "-OutputDir", $outputPath,
+            "-ReplyDir", $replyPath, "-TableDir", $tablePath,
             "-LogPath", $logPath, "-SummaryPath", $summaryPath, "-RequirementPath", $requirementPath,
             "-MaxRounds", [string](Get-Value $runtime "max_rounds" 30),
             "-MaxReplyWaitSeconds", [string](Get-Value $runtime "max_reply_wait_seconds" 900),
