@@ -4,10 +4,10 @@
   "task_name": "all 第 1801-1900 行",
   "vehicle": "all 第 1801-1900 行",
   "source_file": "all.tsv",
-  "status": "进行中",
-  "phase": "waiting_reply",
-  "round": 4,
-  "send_count": 4,
+  "status": "成功",
+  "phase": "finished",
+  "round": 12,
+  "send_count": 12,
   "output_file": "/Users/wang/Documents/GitHub/fitment_sheet_generation/projects/qclaw_fitment_automation/workspaces/0730-eu/output/all__batch__0019__f840717f_result.md",
   "conversation_url": "https://chatgpt.com/c/6a6caea2-9bd4-83ee-8d59-eaacc9710638",
   "conversation_branch_count": 0,
@@ -21,6 +21,6 @@
       "created_at": "2026-07-31 22:18:14"
     }
   ],
-  "remarks": "",
-  "updated_at": "2026-07-31 22:34:12"
+  "remarks": "检测到明确批次完成信号、两张完整表及下载链接；已更新本批与累计最终 TSV",
+  "updated_at": "2026-08-01 12:09:29"
 }

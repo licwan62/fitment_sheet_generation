@@ -984,3 +984,16 @@ EU-VW-GOLF-II-19E-VAN-3D-01	3985	1665	1415	Automobile-Catalog	https://www.automo
 --- 脚本异常 ---
 异常: ChatGPT 页面显示未登录
 
+
+--- 脚本异常 ---
+异常: ChatGPT 页面显示未登录
+
+
+--- 脚本异常 ---
+异常: ChatGPT 页面显示未登录
+
+
+--- 累计最终 TSV 已更新 ---
+- 累计 Ktype 映射：ktype_mapping_final.tsv（542 行）
+- 累计尺寸组：dimension_groups_final.tsv（283 行）
+

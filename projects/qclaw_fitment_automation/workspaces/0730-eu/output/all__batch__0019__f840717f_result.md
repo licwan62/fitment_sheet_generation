@@ -869,3 +869,883 @@ EU-MAN-TGE-I-VAN-L5H4-01	7391	2040	2798	MAN TGE official technical data	https://
 - all_1801-1900_dimension_groups_final.tsv
 缺少任一下载链接时不得输出推进信号：COMPLETE。
 
+
+--- Round 4 / checkpoint 续跑 ---
+## 更新点
+
+* 新增闭合 **7 个 Ktype、7 条映射**。
+* 首次创建 Ford Focus III facelift Hatchback/Sedan、Volkswagen Passat B8 Sedan、Mitsubishi Eclipse Cross I、Ferrari Portofino 共 **5 个尺寸组**。
+* Seat Leon Cupra R 直接复用既有 facelift 5-door 尺寸组。
+* Ford、Volkswagen、Mitsubishi 与 Ferrari 的新尺寸组均已按官方资料确认三维及不含后视镜宽度。
+
+## 当前批次进度
+
+* 输入 Ktype：100
+* READY Ktype：46
+* PENDING Ktype：54
+* READY 映射：111
+* 当前引用的已确认尺寸组：42
+* 本轮首次创建尺寸组：5
+* 当前批次尚未完成。
+
+## 本轮新增/修改的 Ktype 映射 TSV
+
+```tsv
+id	Ktype	NormalizedBodyStyle	Generation	BodyCode	Doors	DIMENSION_GROUP_ID	MatchConfidence	Notes	IterationStatus
+128973	128973	Sedan	Passat B8	3G2	4	EU-VW-PASSAT-B8-SEDAN-PREFL-01	HIGH	改款前轿车物理外廓。	READY
+129028	129028	SUV	Eclipse Cross I	GK1W	5	EU-MITSUBISHI-ECLIPSE-CROSS-I-GK1W-SUV-01	HIGH		READY
+129029	129029	SUV	Eclipse Cross I	GK1W	5	EU-MITSUBISHI-ECLIPSE-CROSS-I-GK1W-SUV-01	HIGH		READY
+129171	129171	Hatchback	Focus III facelift	DYB	5	EU-FORD-FOCUS-III-FACELIFT-HATCHBACK-5D-01	HIGH		READY
+129172	129172	Sedan	Focus III facelift	DYB	4	EU-FORD-FOCUS-III-FACELIFT-SEDAN-4D-01	HIGH		READY
+129205	129205	Hatchback	Leon III facelift	5F	5	EU-SEAT-LEON-III-5F-HATCHBACK-5D-FACELIFT-01	HIGH	Cupra R五门物理外廓。	READY
+129253	129253	Convertible	Portofino	F164	2	EU-FERRARI-PORTOFINO-F164-CONVERTIBLE-01	HIGH		READY
+```
+
+## 本轮首次创建/修正的 DIMENSION_GROUP TSV
+
+```tsv
+DIMENSION_GROUP_ID	LengthMM	WidthMM	HeightMM	DimensionSource	SourceURL
+EU-VW-PASSAT-B8-SEDAN-PREFL-01	4767	1832	1456	Volkswagen UK The Passat and Passat Estate official brochure	https://www.volkswagen.co.uk/idhub/content/dam/onehub_pkw/importers/gb/downloads/brochures/used-cars/passat/estate-v-iii/passat-estate-viii-brochure-dec-2016.pdf
+EU-MITSUBISHI-ECLIPSE-CROSS-I-GK1W-SUV-01	4405	1805	1685	Mitsubishi Motors Eclipse Cross Geneva 2017 official specifications	https://media.mitsubishicars.com/releases/mitsubishi-motors-to-globally-premiere-eclipse-cross-compact-suv-at-geneva-international-motor-show-2017
+EU-FORD-FOCUS-III-FACELIFT-HATCHBACK-5D-01	4358	1823	1484	Ford South Africa New Focus Q1 2018 official brochure	https://www.ford.co.za/content/dam/Ford/website-assets/latam/za/nameplate/focus/brochure/Focus-Brochure-Q1-2018_EBrochure.pdf
+EU-FORD-FOCUS-III-FACELIFT-SEDAN-4D-01	4534	1823	1484	Ford South Africa New Focus Q1 2018 official brochure	https://www.ford.co.za/content/dam/Ford/website-assets/latam/za/nameplate/focus/brochure/Focus-Brochure-Q1-2018_EBrochure.pdf
+EU-FERRARI-PORTOFINO-F164-CONVERTIBLE-01	4586	1938	1318	Ferrari Portofino official technical specifications	https://www.ferrari.com/en-EN/auto/ferrari-portofino
+```
+
+## 下一步优先处理
+
+1. 批量闭合 Opel Astra G Classic 的 Sedan、Hatchback、Wagon 车型簇。
+2. 处理 Opel Astra H Family 三种车身及 Ford Focus III Turnier。
+3. 处理 Porsche 718 GTS、Mercedes-Benz C217/A217 和 Suzuki Jimny Cabrio。
+4. 继续拆分 Fiat Ducato Bus、Van、Chassis Cab 的长度及车顶分支。
+
+推进信号：CONTINUE
+
+
+--- 发送 / 继续到 Round 5 ---
+继续当前批次并采用缓存优先模式。尺寸组只在首次创建或纠错时完整核对一次三维和来源；后续 Ktype 只判断关联哪个现有 DIMENSION_GROUP_ID，不重复抓取，不输出缓存来源或匹配理由。仍有 PENDING 时，CONTINUE 轮仅输出：1) 更新点；2) 当前批次进度；3) 本轮新增/修改的 Ktype 映射 TSV（无变化写“无”）；4) 本轮首次创建/修正的 DIMENSION_GROUP TSV（复用既有组不重复输出，无变化写“无”）；5) 下一步优先处理。若当前或上一轮进度已经是 PENDING=0，本轮不要继续检索或再次输出 CONTINUE，必须立刻汇总并输出两张最终完整 TSV、两个任务指定 sandbox 下载链接和“推进信号：COMPLETE”。执行顺序固定为：第一阶段优先消除 PENDING 并补齐会阻塞两张最终表的数据。检测到 PENDING=0 后，第二阶段最多只做一次轻量机械收尾：核对固定表头、id 与 DIMENSION_GROUP_ID 唯一、映射引用闭合、长宽高和来源非空、两个任务指定下载链接齐全。第二阶段不得重新逐车型、逐年份或逐来源做深度检索，不得为了提高置信度反复核对，也不得因非阻塞的排序或措辞问题继续多轮。PENDING=0 后的下一条回复必须直接输出两张最终完整 TSV、两个精确 sandbox 下载链接，并以“推进信号：COMPLETE”结束；不要再输出 CONTINUE。Ktype 映射 TSV 表头必须严格使用 requirement 指定的字段顺序：id	Ktype	NormalizedBodyStyle	Generation	BodyCode	Doors	DIMENSION_GROUP_ID	MatchConfidence	Notes	IterationStatus。另需维护完整 DIMENSION_GROUP TSV，表头固定为：DIMENSION_GROUP_ID	LengthMM	WidthMM	HeightMM	DimensionSource	SourceURL。缺少任一张表、任一映射引用的尺寸组，或尺寸组字段不完整时不得 COMPLETE。不要输出子车系匹配表。
+【COMPLETE 下载文件硬性要求】
+准备 COMPLETE 时，除两张完整内嵌 TSV 外，还必须创建并提供以下两个可点击 sandbox 下载链接，文件名必须完全一致：
+- all_1801-1900_ktype_dimension_mapping_final.tsv
+- all_1801-1900_dimension_groups_final.tsv
+缺少任一下载链接时不得输出推进信号：COMPLETE。
+
+
+--- Round 5 / checkpoint 续跑 ---
+## 更新点
+
+* 本轮闭合 **6 个 Ktype、6 条映射**。
+* 首次创建 Porsche 718 GTS Coupe/Convertible、Fiat Grande Punto 199 三门改款前车身、BMW M3 CS F80、DS 7 Crossback I、Ford Focus III facelift Wagon 共 **6 个尺寸组**。
+* Porsche 欧洲市场长度及不含后视镜宽度结合 Porsche 技术资料与欧洲规格页闭合；BMW、DS 和 Ford 使用厂商技术资料。
+* Grande Punto 与既有 4065 mm 的 Punto Evo 组外廓不同，建立 4030 mm 改款前独立组，未改写既有尺寸事实。([汽车目录][1])
+
+## 当前批次进度
+
+* 输入 Ktype：100
+* READY Ktype：52
+* PENDING Ktype：48
+* READY 映射：117
+* 当前引用的已确认尺寸组：48
+* 本轮首次创建尺寸组：6
+* 当前批次尚未完成。
+
+## 本轮新增/修改的 Ktype 映射 TSV
+
+```tsv
+id	Ktype	NormalizedBodyStyle	Generation	BodyCode	Doors	DIMENSION_GROUP_ID	MatchConfidence	Notes	IterationStatus
+128976	128976	Coupe	718 982	982	2	EU-PORSCHE-718-982-CAYMAN-GTS-COUPE-01	HIGH		READY
+128977	128977	Convertible	718 982	982	2	EU-PORSCHE-718-982-BOXSTER-GTS-CONVERTIBLE-01	HIGH		READY
+129035	129035	Van	Grande Punto	199	3	EU-FIAT-GRANDE-PUNTO-199-HATCHBACK-3D-PREFL-01	HIGH	三门商用车身。	READY
+129115	129115	Sedan	3 Series F80	F80	4	EU-BMW-3-F80-M3-CS-SEDAN-01	HIGH		READY
+129160	129160	SUV	DS 7 Crossback I		5	EU-DS-DS7-CROSSBACK-I-SUV-01	HIGH		READY
+129170	129170	Wagon	Focus III facelift	DYB	5	EU-FORD-FOCUS-III-FACELIFT-WAGON-5D-01	HIGH		READY
+```
+
+## 本轮首次创建/修正的 DIMENSION_GROUP TSV
+
+```tsv
+DIMENSION_GROUP_ID	LengthMM	WidthMM	HeightMM	DimensionSource	SourceURL
+EU-PORSCHE-718-982-CAYMAN-GTS-COUPE-01	4379	1801	1286	Porsche 718 Cayman GTS technical data;Automobile-Catalog Porsche 718 Cayman GTS Europe	https://newsroom.porsche.com/dam/jcr%3Afbd80b62-5236-4ff6-9f1b-e54ee42f6f7c/PCNA18_0996_us.pdf;https://www.automobile-catalog.com/car/2017/2872385/porsche_718_cayman_gts.html
+EU-PORSCHE-718-982-BOXSTER-GTS-CONVERTIBLE-01	4379	1801	1272	Porsche 718 Boxster GTS technical data;Automobile-Catalog Porsche 718 Boxster GTS Europe	https://newsroom.porsche.com/dam/jcr%3A59fc370f-12ba-438a-a85c-2ce0bf4442a9/PCNA18_1002_718BoxsterGTS-technical-specifications.pdf;https://www.automobile-catalog.com/car/2017/2872355/porsche_718_boxster_gts.html
+EU-FIAT-GRANDE-PUNTO-199-HATCHBACK-3D-PREFL-01	4030	1687	1490	Automobile-Catalog Fiat Grande Punto 1.3 Multijet 75 Europe	https://www.automobile-catalog.com/car/2006/728030/fiat_grande_punto_1_3_multijet_16v_75_dynamic.html
+EU-BMW-3-F80-M3-CS-SEDAN-01	4671	1877	1424	BMW Group PressClub M3 CS technical data	https://www.press.bmwgroup.com/global/article/attachment/T0275597EN/408532/M3_CS_Technical_Data_E.pdf
+EU-DS-DS7-CROSSBACK-I-SUV-01	4573	1895	1620	DS 7 CROSSBACK official price and specification guide	https://www.media.stellantis.com/uploads/uk/model-pricelist/ds7crossbackpricesandspecs-6172c7be26ee3.pdf
+EU-FORD-FOCUS-III-FACELIFT-WAGON-5D-01	4556	1823	1505	Ford New Focus official brochure	https://www.forddealers.co.nz/i/files/FordFocus_Brochure.pdf
+```
+
+## 下一步优先处理
+
+1. 批量闭合 Opel Astra G Classic Sedan、Hatchback、Wagon 车型簇。
+2. 处理 Opel Astra H Family Sedan、Hatchback、Wagon。
+3. 闭合 Mercedes-Benz C217/A217 普通版与 AMG 外廓分支。
+4. 处理 Fiat Ducato Bus、Van、Chassis Cab 的车长和车顶组合。
+5. 处理 Toyota Avalon、Suzuki Jimny Cabrio、Ford Escort VI 和剩余独立车型。
+
+推进信号：CONTINUE
+
+[1]: https://www.automobile-catalog.com/car/2006/728030/fiat_grande_punto_1_3_multijet_16v_75_dynamic.html?utm_source=chatgpt.com "2006 Fiat Grande Punto 1.3 Multijet 16V 75 Dynamic (man. 5)"
+
+
+--- 发送 / 继续到 Round 6 ---
+继续当前批次并采用缓存优先模式。尺寸组只在首次创建或纠错时完整核对一次三维和来源；后续 Ktype 只判断关联哪个现有 DIMENSION_GROUP_ID，不重复抓取，不输出缓存来源或匹配理由。仍有 PENDING 时，CONTINUE 轮仅输出：1) 更新点；2) 当前批次进度；3) 本轮新增/修改的 Ktype 映射 TSV（无变化写“无”）；4) 本轮首次创建/修正的 DIMENSION_GROUP TSV（复用既有组不重复输出，无变化写“无”）；5) 下一步优先处理。若当前或上一轮进度已经是 PENDING=0，本轮不要继续检索或再次输出 CONTINUE，必须立刻汇总并输出两张最终完整 TSV、两个任务指定 sandbox 下载链接和“推进信号：COMPLETE”。执行顺序固定为：第一阶段优先消除 PENDING 并补齐会阻塞两张最终表的数据。检测到 PENDING=0 后，第二阶段最多只做一次轻量机械收尾：核对固定表头、id 与 DIMENSION_GROUP_ID 唯一、映射引用闭合、长宽高和来源非空、两个任务指定下载链接齐全。第二阶段不得重新逐车型、逐年份或逐来源做深度检索，不得为了提高置信度反复核对，也不得因非阻塞的排序或措辞问题继续多轮。PENDING=0 后的下一条回复必须直接输出两张最终完整 TSV、两个精确 sandbox 下载链接，并以“推进信号：COMPLETE”结束；不要再输出 CONTINUE。Ktype 映射 TSV 表头必须严格使用 requirement 指定的字段顺序：id	Ktype	NormalizedBodyStyle	Generation	BodyCode	Doors	DIMENSION_GROUP_ID	MatchConfidence	Notes	IterationStatus。另需维护完整 DIMENSION_GROUP TSV，表头固定为：DIMENSION_GROUP_ID	LengthMM	WidthMM	HeightMM	DimensionSource	SourceURL。缺少任一张表、任一映射引用的尺寸组，或尺寸组字段不完整时不得 COMPLETE。不要输出子车系匹配表。
+【COMPLETE 下载文件硬性要求】
+准备 COMPLETE 时，除两张完整内嵌 TSV 外，还必须创建并提供以下两个可点击 sandbox 下载链接，文件名必须完全一致：
+- all_1801-1900_ktype_dimension_mapping_final.tsv
+- all_1801-1900_dimension_groups_final.tsv
+缺少任一下载链接时不得输出推进信号：COMPLETE。
+
+
+--- Round 6 / checkpoint 续跑 ---
+## 更新点
+
+* 闭合 Opel Astra G Classic II 与 Astra H Family 共 **13 个 Ktype、13 条映射**。
+* 首次创建 Sedan、Hatchback、Wagon 共 **6 个尺寸组**。
+* Astra G Classic II 官方技术资料明确区分 4-door、5-door 和 Caravan，并给出不含后视镜宽度 1709 mm。([Dixi-Car][1])
+* Astra H 官方用户手册分别确认五门、四门和旅行车的三维及不含后视镜宽度。([奥爵公用服务箱][2])
+
+## 当前批次进度
+
+* 输入 Ktype：100
+* READY Ktype：65
+* PENDING Ktype：35
+* READY 映射：130
+* 当前引用的已确认尺寸组：54
+* 本轮首次创建尺寸组：6
+* 当前批次尚未完成。
+
+## 本轮新增/修改的 Ktype 映射 TSV
+
+```tsv
+id	Ktype	NormalizedBodyStyle	Generation	BodyCode	Doors	DIMENSION_GROUP_ID	MatchConfidence	Notes	IterationStatus
+129055	129055	Sedan	Astra G Classic II	T98	4	EU-OPEL-ASTRA-G-CLASSIC-II-SEDAN-01	HIGH		READY
+129060	129060	Sedan	Astra G Classic II	T98	4	EU-OPEL-ASTRA-G-CLASSIC-II-SEDAN-01	HIGH		READY
+129062	129062	Hatchback	Astra G Classic II	T98	5	EU-OPEL-ASTRA-G-CLASSIC-II-HATCHBACK-5D-01	HIGH		READY
+129065	129065	Hatchback	Astra G Classic II	T98	5	EU-OPEL-ASTRA-G-CLASSIC-II-HATCHBACK-5D-01	HIGH		READY
+129066	129066	Hatchback	Astra G Classic II	T98	5	EU-OPEL-ASTRA-G-CLASSIC-II-HATCHBACK-5D-01	HIGH		READY
+129069	129069	Hatchback	Astra G Classic II	T98	5	EU-OPEL-ASTRA-G-CLASSIC-II-HATCHBACK-5D-01	HIGH		READY
+129072	129072	Wagon	Astra G Classic II	T98	5	EU-OPEL-ASTRA-G-CLASSIC-II-WAGON-01	HIGH		READY
+129075	129075	Wagon	Astra G Classic II	T98	5	EU-OPEL-ASTRA-G-CLASSIC-II-WAGON-01	HIGH		READY
+129076	129076	Wagon	Astra G Classic II	T98	5	EU-OPEL-ASTRA-G-CLASSIC-II-WAGON-01	HIGH		READY
+129087	129087	Wagon	Astra G Classic II	T98	5	EU-OPEL-ASTRA-G-CLASSIC-II-WAGON-01	HIGH		READY
+129088	129088	Wagon	Astra H Family	A04	5	EU-OPEL-ASTRA-H-FAMILY-WAGON-01	HIGH		READY
+129091	129091	Hatchback	Astra H Family	A04	5	EU-OPEL-ASTRA-H-FAMILY-HATCHBACK-5D-01	HIGH		READY
+129092	129092	Sedan	Astra H Family	A04	4	EU-OPEL-ASTRA-H-FAMILY-SEDAN-01	HIGH		READY
+```
+
+## 本轮首次创建/修正的 DIMENSION_GROUP TSV
+
+```tsv
+DIMENSION_GROUP_ID	LengthMM	WidthMM	HeightMM	DimensionSource	SourceURL
+EU-OPEL-ASTRA-G-CLASSIC-II-SEDAN-01	4252	1709	1425	General Motors Poland Opel Astra Classic II official technical data	https://dixi-car.pl/doc/opel-astra-classic-dane.pdf
+EU-OPEL-ASTRA-G-CLASSIC-II-HATCHBACK-5D-01	4110	1709	1425	General Motors Poland Opel Astra Classic II official technical data	https://dixi-car.pl/doc/opel-astra-classic-dane.pdf
+EU-OPEL-ASTRA-G-CLASSIC-II-WAGON-01	4288	1709	1465	General Motors Poland Opel Astra Classic II official technical data	https://dixi-car.pl/doc/opel-astra-classic-dane.pdf
+EU-OPEL-ASTRA-H-FAMILY-WAGON-01	4515	1753	1500	Opel Astra H official owner's manual	https://public-servicebox.opel.com/OVddb/OV/zh_CN/Astra_H/2010_2016/2012/manual_user/om_astra_2584_17_eu_my12_ed0811_9_zh_CN_online.pdf
+EU-OPEL-ASTRA-H-FAMILY-HATCHBACK-5D-01	4249	1753	1460	Opel Astra H official owner's manual	https://public-servicebox.opel.com/OVddb/OV/zh_CN/Astra_H/2010_2016/2012/manual_user/om_astra_2584_17_eu_my12_ed0811_9_zh_CN_online.pdf
+EU-OPEL-ASTRA-H-FAMILY-SEDAN-01	4587	1753	1458	Opel Astra H official owner's manual	https://public-servicebox.opel.com/OVddb/OV/zh_CN/Astra_H/2010_2016/2012/manual_user/om_astra_2584_17_eu_my12_ed0811_9_zh_CN_online.pdf
+```
+
+## 下一步优先处理
+
+1. 闭合 Mercedes-Benz S-Class C217 Coupe 与 A217 Cabriolet 的普通版和 AMG 外廓。
+2. 处理 Fiat Ducato Bus、Van、Chassis Cab 的长度、车顶及4×4分支。
+3. 处理 Toyota Avalon、Ford Aerostar、Transit、Escort VI 和 Dodge Journey。
+4. 闭合 Suzuki Jimny Cabrio、Kia Rio IV Sedan、VW Polo Sedan、Citroën DS3 Cabriolet等剩余独立车型。
+
+推进信号：CONTINUE
+
+[1]: https://dixi-car.pl/doc/opel-astra-classic-dane.pdf "PL_Astra_Classic_2007_tech.xls"
+[2]: https://public-servicebox.opel.com/OVddb/OV/zh_CN/Astra_H/2010_2016/2012/manual_user/om_astra_2584_17_eu_my12_ed0811_9_zh_CN_online.pdf?utm_source=chatgpt.com "Astra-H, v.9 (rev 5), zh-CN (Work nr: K589B_50)"
+
+
+--- 发送 / 继续到 Round 7 ---
+继续当前批次并采用缓存优先模式。尺寸组只在首次创建或纠错时完整核对一次三维和来源；后续 Ktype 只判断关联哪个现有 DIMENSION_GROUP_ID，不重复抓取，不输出缓存来源或匹配理由。仍有 PENDING 时，CONTINUE 轮仅输出：1) 更新点；2) 当前批次进度；3) 本轮新增/修改的 Ktype 映射 TSV（无变化写“无”）；4) 本轮首次创建/修正的 DIMENSION_GROUP TSV（复用既有组不重复输出，无变化写“无”）；5) 下一步优先处理。若当前或上一轮进度已经是 PENDING=0，本轮不要继续检索或再次输出 CONTINUE，必须立刻汇总并输出两张最终完整 TSV、两个任务指定 sandbox 下载链接和“推进信号：COMPLETE”。执行顺序固定为：第一阶段优先消除 PENDING 并补齐会阻塞两张最终表的数据。检测到 PENDING=0 后，第二阶段最多只做一次轻量机械收尾：核对固定表头、id 与 DIMENSION_GROUP_ID 唯一、映射引用闭合、长宽高和来源非空、两个任务指定下载链接齐全。第二阶段不得重新逐车型、逐年份或逐来源做深度检索，不得为了提高置信度反复核对，也不得因非阻塞的排序或措辞问题继续多轮。PENDING=0 后的下一条回复必须直接输出两张最终完整 TSV、两个精确 sandbox 下载链接，并以“推进信号：COMPLETE”结束；不要再输出 CONTINUE。Ktype 映射 TSV 表头必须严格使用 requirement 指定的字段顺序：id	Ktype	NormalizedBodyStyle	Generation	BodyCode	Doors	DIMENSION_GROUP_ID	MatchConfidence	Notes	IterationStatus。另需维护完整 DIMENSION_GROUP TSV，表头固定为：DIMENSION_GROUP_ID	LengthMM	WidthMM	HeightMM	DimensionSource	SourceURL。缺少任一张表、任一映射引用的尺寸组，或尺寸组字段不完整时不得 COMPLETE。不要输出子车系匹配表。
+【COMPLETE 下载文件硬性要求】
+准备 COMPLETE 时，除两张完整内嵌 TSV 外，还必须创建并提供以下两个可点击 sandbox 下载链接，文件名必须完全一致：
+- all_1801-1900_ktype_dimension_mapping_final.tsv
+- all_1801-1900_dimension_groups_final.tsv
+缺少任一下载链接时不得输出推进信号：COMPLETE。
+
+
+--- Round 7 / checkpoint 续跑 ---
+## 更新点
+
+* 本轮新增闭合 **10 个 Ktype、10 条映射**。
+* 首次创建 Citroën C3 I facelift、Ford Kuga II facelift、Toyota Avalon III、Volkswagen Polo VI GTI、Abarth Punto Evo、Citroën DS3 Cabrio Racing、Chevrolet Malibu VIII 和 Dodge Journey I 共 **8 个尺寸组**。
+* C3、Kuga、Avalon 与 Polo GTI 的三维及不含后视镜宽度已闭合。([汽车目录][1])
+* Abarth、DS3 Cabrio Racing、Malibu 和 Journey 的对应物理外廓已闭合。([汽车数据网][2])
+* 两个 Bentley Continental GT Speed Ktype 与既有 Continental GT II Coupe 尺寸组的三维一致，直接复用既有组，不重复建组。([CarsGuide][3])
+
+## 当前批次进度
+
+* 输入 Ktype：100
+* READY Ktype：75
+* PENDING Ktype：25
+* READY 映射：140
+* 当前引用的已确认尺寸组：63
+* 本轮首次创建尺寸组：8
+* 当前批次尚未完成。
+
+## 本轮新增/修改的 Ktype 映射 TSV
+
+```tsv
+id	Ktype	NormalizedBodyStyle	Generation	BodyCode	Doors	DIMENSION_GROUP_ID	MatchConfidence	Notes	IterationStatus
+128972	128972	Hatchback	C3 I facelift		5	EU-CITROEN-C3-I-FACELIFT-HATCHBACK-5D-01	HIGH		READY
+129015	129015	SUV	Kuga II facelift	DM2	5	EU-FORD-KUGA-II-FACELIFT-SUV-01	HIGH		READY
+129046	129046	Sedan	Avalon III	GSX30	4	EU-TOYOTA-AVALON-III-GSX30-SEDAN-01	HIGH		READY
+129081	129081	Hatchback	Polo VI	AW1	5	EU-VW-POLO-VI-AW1-GTI-HATCHBACK-01	HIGH	GTI专用保险杠及降低车身外廓。	READY
+129101	129101	Hatchback	Punto Evo	199	3	EU-ABARTH-PUNTO-EVO-199-HATCHBACK-3D-01	HIGH	Abarth宽体外廓。	READY
+129206	129206	Coupe	Continental GT II		2	EU-BENTLEY-CONTINENTAL-GT-II-V8S-COUPE-01	HIGH		READY
+129219	129219	Convertible	DS3 I Cabrio		2	EU-CITROEN-DS3-I-CABRIO-RACING-CONVERTIBLE-01	HIGH	Racing Cabrio物理外廓。	READY
+129222	129222	Sedan	Malibu VIII	V300	4	EU-CHEVROLET-MALIBU-VIII-V300-SEDAN-01	HIGH	欧洲市场V300轿车外廓。	READY
+129223	129223	Coupe	Continental GT II		2	EU-BENTLEY-CONTINENTAL-GT-II-V8S-COUPE-01	HIGH		READY
+129225	129225	MPV	Journey I	JC	5	EU-DODGE-JOURNEY-I-JC-MPV-01	HIGH		READY
+```
+
+## 本轮首次创建/修正的 DIMENSION_GROUP TSV
+
+```tsv
+DIMENSION_GROUP_ID	LengthMM	WidthMM	HeightMM	DimensionSource	SourceURL
+EU-CITROEN-C3-I-FACELIFT-HATCHBACK-5D-01	3860	1667	1510	Automobile-Catalog Citroen C3 1.1i Style Europe	https://www.automobile-catalog.com/car/2006/548495/citroen_c3_1_1i_style.html
+EU-FORD-KUGA-II-FACELIFT-SUV-01	4531	1838	1703	Automobile-Catalog Ford Kuga 2.0 TDCi Europe	https://www.automobile-catalog.com/car/2017/2455610/ford_kuga_2_0_tdci_150_2x4.html
+EU-TOYOTA-AVALON-III-GSX30-SEDAN-01	5009	1849	1486	Toyota 2006 Avalon official eBrochure	https://www.auto-brochures.com/makes/Toyota/Avalon/Toyota_US%20Avalon_2006.pdf
+EU-VW-POLO-VI-AW1-GTI-HATCHBACK-01	4067	1751	1438	Volkswagen UK The new Polo official brochure;Auto-Data Volkswagen Polo VI GTI 2.0 TSI DSG	https://www.volkswagen.co.uk/idhub/content/dam/onehub_pkw/importers/gb/downloads/brochures/used-cars/polo/polo-nf/polo-nf-brochure-dec-2017.pdf;https://www.auto-data.net/en/volkswagen-polo-vi-gti-2.0-tsi-200hp-dsg-32275
+EU-ABARTH-PUNTO-EVO-199-HATCHBACK-3D-01	4065	1721	1490	Auto-Data Abarth Punto Evo 199	https://www.auto-data.net/en/abarth-punto-model-3182
+EU-CITROEN-DS3-I-CABRIO-RACING-CONVERTIBLE-01	3948	1715	1458	Automobile-Catalog Citroen DS3 Cabrio Racing;Auto-Data Citroen DS3 Phase I Cabrio	https://www.automobile-catalog.com/car/2014/2086055/citroen_ds3_cabrio_racing.html;https://www.auto-data.net/en/citroen-ds-3-phase-i-cabrio-generation-4406
+EU-CHEVROLET-MALIBU-VIII-V300-SEDAN-01	4865	1855	1465	Automobile-Catalog Chevrolet Malibu 2.0 D LT Europe	https://www.automobile-catalog.com/car/2012/1777610/chevrolet_malibu_2_0_d_lt.html
+EU-DODGE-JOURNEY-I-JC-MPV-01	4888	1878	1691	Automobile-Catalog Dodge Journey SXT 2.0 CRD Europe	https://www.automobile-catalog.com/car/2009/1227215/dodge_journey_sxt_2_0l_crd.html
+```
+
+## 下一步优先处理
+
+1. 闭合 Mercedes-Benz C217/A217 Coupe、Cabriolet普通版及AMG外廓。
+2. 批量拆分 Fiat Ducato Bus、Van、Chassis Cab 的长度、轴距、车顶及4×4分支。
+3. 处理 Suzuki Jimny Cabrio三个Ktype、Ford Escort VI Sedan/Wagon和Ford Aerostar。
+4. 处理 Kia Rio IV Sedan、VW Polo Sedan、Mercedes-Benz G 300、Ford Transit及Partner/Berlingo商用车分支。
+
+推进信号：CONTINUE
+
+[1]: https://www.automobile-catalog.com/car/2006/548495/citroen_c3_1_1i_style.html?utm_source=chatgpt.com "2006 Citroen C3 1.1i Style Specs Review (44 kW / 60 PS / 59 hp) (for Europe )"
+[2]: https://www.auto-data.net/en/abarth-punto-model-3182?utm_source=chatgpt.com "Abarth Punto | Technical Specs, Fuel consumption, Dimensions"
+[3]: https://www.carsguide.com.au/bentley/continental/car-dimensions/2016?utm_source=chatgpt.com "Bentley Continental Dimensions 2016 - Length, Width, Height ..."
+
+
+--- 发送 / 继续到 Round 8 ---
+继续当前批次并采用缓存优先模式。尺寸组只在首次创建或纠错时完整核对一次三维和来源；后续 Ktype 只判断关联哪个现有 DIMENSION_GROUP_ID，不重复抓取，不输出缓存来源或匹配理由。仍有 PENDING 时，CONTINUE 轮仅输出：1) 更新点；2) 当前批次进度；3) 本轮新增/修改的 Ktype 映射 TSV（无变化写“无”）；4) 本轮首次创建/修正的 DIMENSION_GROUP TSV（复用既有组不重复输出，无变化写“无”）；5) 下一步优先处理。若当前或上一轮进度已经是 PENDING=0，本轮不要继续检索或再次输出 CONTINUE，必须立刻汇总并输出两张最终完整 TSV、两个任务指定 sandbox 下载链接和“推进信号：COMPLETE”。执行顺序固定为：第一阶段优先消除 PENDING 并补齐会阻塞两张最终表的数据。检测到 PENDING=0 后，第二阶段最多只做一次轻量机械收尾：核对固定表头、id 与 DIMENSION_GROUP_ID 唯一、映射引用闭合、长宽高和来源非空、两个任务指定下载链接齐全。第二阶段不得重新逐车型、逐年份或逐来源做深度检索，不得为了提高置信度反复核对，也不得因非阻塞的排序或措辞问题继续多轮。PENDING=0 后的下一条回复必须直接输出两张最终完整 TSV、两个精确 sandbox 下载链接，并以“推进信号：COMPLETE”结束；不要再输出 CONTINUE。Ktype 映射 TSV 表头必须严格使用 requirement 指定的字段顺序：id	Ktype	NormalizedBodyStyle	Generation	BodyCode	Doors	DIMENSION_GROUP_ID	MatchConfidence	Notes	IterationStatus。另需维护完整 DIMENSION_GROUP TSV，表头固定为：DIMENSION_GROUP_ID	LengthMM	WidthMM	HeightMM	DimensionSource	SourceURL。缺少任一张表、任一映射引用的尺寸组，或尺寸组字段不完整时不得 COMPLETE。不要输出子车系匹配表。
+【COMPLETE 下载文件硬性要求】
+准备 COMPLETE 时，除两张完整内嵌 TSV 外，还必须创建并提供以下两个可点击 sandbox 下载链接，文件名必须完全一致：
+- all_1801-1900_ktype_dimension_mapping_final.tsv
+- all_1801-1900_dimension_groups_final.tsv
+缺少任一下载链接时不得输出推进信号：COMPLETE。
+
+
+--- Round 8 / checkpoint 续跑 ---
+## 更新点
+
+* 本轮闭合 Mercedes-Benz S-Class C217/A217 facelift、Kia Rio IV Sedan 与 Volkswagen Polo V Sedan 共 **8 个 Ktype、8 条映射**。
+* 首次创建普通版与 AMG 版 S-Class Coupe/Cabriolet、Rio Sedan、Polo Sedan 共 **6 个尺寸组**。
+* Mercedes-AMG 组采用 Mercedes-Benz 官方补充手册明确的不含后视镜宽度；普通版 Coupe/Cabriolet 分别按欧洲市场车型资料闭合。
+* Rio Sedan 与 Polo Sedan 分别采用 Kia 和 Volkswagen 厂商规格资料。([Kia Media][1])
+
+## 当前批次进度
+
+* 输入 Ktype：100
+* READY Ktype：83
+* PENDING Ktype：17
+* READY 映射：148
+* 当前引用的已确认尺寸组：69
+* 本轮首次创建尺寸组：6
+* 当前批次尚未完成。
+
+## 本轮新增/修改的 Ktype 映射 TSV
+
+```tsv
+id	Ktype	NormalizedBodyStyle	Generation	BodyCode	Doors	DIMENSION_GROUP_ID	MatchConfidence	Notes	IterationStatus
+129005	129005	Convertible	S-Class A217 facelift	A217	2	EU-MERCEDES-AMG-S-CLASS-A217-S63-CONVERTIBLE-FACELIFT-01	HIGH	AMG S 63 Cabriolet外廓。	READY
+129007	129007	Coupe	S-Class C217 facelift	C217	2	EU-MERCEDES-AMG-S-CLASS-C217-S63-COUPE-FACELIFT-01	HIGH	AMG S 63 Coupe外廓。	READY
+129009	129009	Coupe	S-Class C217 facelift	C217	2	EU-MERCEDES-BENZ-S-CLASS-C217-COUPE-FACELIFT-01	HIGH	普通版Coupe外廓。	READY
+129010	129010	Coupe	S-Class C217 facelift	C217	2	EU-MERCEDES-BENZ-S-CLASS-C217-COUPE-FACELIFT-01	HIGH	普通版Coupe外廓。	READY
+129011	129011	Coupe	S-Class C217 facelift	C217	2	EU-MERCEDES-BENZ-S-CLASS-C217-COUPE-FACELIFT-01	HIGH	普通版Coupe外廓。	READY
+129012	129012	Convertible	S-Class A217 facelift	A217	2	EU-MERCEDES-BENZ-S-CLASS-A217-CONVERTIBLE-FACELIFT-01	HIGH	普通版Cabriolet外廓。	READY
+129056	129056	Sedan	Rio IV	YB	4	EU-KIA-RIO-IV-YB-SEDAN-PREFL-01	HIGH	改款前四门轿车外廓。	READY
+129067	129067	Sedan	Polo V Sedan facelift	602	4	EU-VW-POLO-V-602-SEDAN-FACELIFT-01	HIGH	Polo V四门轿车改款外廓。	READY
+```
+
+## 本轮首次创建/修正的 DIMENSION_GROUP TSV
+
+```tsv
+DIMENSION_GROUP_ID	LengthMM	WidthMM	HeightMM	DimensionSource	SourceURL
+EU-MERCEDES-AMG-S-CLASS-A217-S63-CONVERTIBLE-FACELIFT-01	5051	1913	1428	Mercedes-Benz Mercedes-AMG S-Class supplemental owner's manual	https://static.oneweb.mercedes-benz.com/css-oom-assets/no-no/pdf/mercedes-amg-s-klasse-ekstra-instruksjonsbok-mars-2020-1.pdf
+EU-MERCEDES-AMG-S-CLASS-C217-S63-COUPE-FACELIFT-01	5051	1913	1428	Mercedes-Benz Mercedes-AMG S-Class supplemental owner's manual	https://static.oneweb.mercedes-benz.com/css-oom-assets/no-no/pdf/mercedes-amg-s-klasse-ekstra-instruksjonsbok-mars-2020-1.pdf
+EU-MERCEDES-BENZ-S-CLASS-C217-COUPE-FACELIFT-01	5032	1899	1414	Automobile-Catalog Mercedes-Benz S 450 4MATIC Coupe Europe;Automobile-Catalog Mercedes-Benz S 560 4MATIC Coupe Europe	https://www.automobile-catalog.com/car/2017/2602985/mercedes-benz_s_450_4matic_coupe.html;https://www.automobile-catalog.com/car/2017/2603015/mercedes-benz_s_560_4matic_coupe.html
+EU-MERCEDES-BENZ-S-CLASS-A217-CONVERTIBLE-FACELIFT-01	5032	1899	1420	Automobile-Catalog Mercedes-Benz S 560 Cabriolet Europe	https://www.automobile-catalog.com/car/2018/2603075/mercedes-benz_s_560_cabriolet.html
+EU-KIA-RIO-IV-YB-SEDAN-PREFL-01	4384	1725	1450	Kia Media 2018 Rio official specifications	https://www.kiamedia.com/us/en/models/rio/2018/specifications
+EU-VW-POLO-V-602-SEDAN-FACELIFT-01	4390	1699	1467	Volkswagen South Africa Polo Sedan official specifications	https://www.vw.co.za/idhub/content/dam/onehub_pkw/importers/za/editorials/offers-and-products/brochures-and-specifications/brochures/passenger-vehicles/2021/september/polo-sedan-online-brochure-my22.pdf
+```
+
+## 下一步优先处理
+
+1. 闭合 Suzuki Jimny Cabrio 的生产阶段和外廓分支。
+2. 处理 Ford Escort VI Sedan/Wagon、Aerostar与Transit。
+3. 拆分 Fiat Ducato Bus、Van、Chassis Cab及4×4长度和车顶组合。
+4. 处理 Mercedes-Benz G 300、Partner/Berlingo商用车分支。
+
+推进信号：CONTINUE
+
+[1]: https://www.kiamedia.com/us/en/models/rio/2018/specifications?utm_source=chatgpt.com "2018 Kia Rio Specifications"
+
+
+--- 发送 / 继续到 Round 9 ---
+继续当前批次并采用缓存优先模式。尺寸组只在首次创建或纠错时完整核对一次三维和来源；后续 Ktype 只判断关联哪个现有 DIMENSION_GROUP_ID，不重复抓取，不输出缓存来源或匹配理由。仍有 PENDING 时，CONTINUE 轮仅输出：1) 更新点；2) 当前批次进度；3) 本轮新增/修改的 Ktype 映射 TSV（无变化写“无”）；4) 本轮首次创建/修正的 DIMENSION_GROUP TSV（复用既有组不重复输出，无变化写“无”）；5) 下一步优先处理。若当前或上一轮进度已经是 PENDING=0，本轮不要继续检索或再次输出 CONTINUE，必须立刻汇总并输出两张最终完整 TSV、两个任务指定 sandbox 下载链接和“推进信号：COMPLETE”。执行顺序固定为：第一阶段优先消除 PENDING 并补齐会阻塞两张最终表的数据。检测到 PENDING=0 后，第二阶段最多只做一次轻量机械收尾：核对固定表头、id 与 DIMENSION_GROUP_ID 唯一、映射引用闭合、长宽高和来源非空、两个任务指定下载链接齐全。第二阶段不得重新逐车型、逐年份或逐来源做深度检索，不得为了提高置信度反复核对，也不得因非阻塞的排序或措辞问题继续多轮。PENDING=0 后的下一条回复必须直接输出两张最终完整 TSV、两个精确 sandbox 下载链接，并以“推进信号：COMPLETE”结束；不要再输出 CONTINUE。Ktype 映射 TSV 表头必须严格使用 requirement 指定的字段顺序：id	Ktype	NormalizedBodyStyle	Generation	BodyCode	Doors	DIMENSION_GROUP_ID	MatchConfidence	Notes	IterationStatus。另需维护完整 DIMENSION_GROUP TSV，表头固定为：DIMENSION_GROUP_ID	LengthMM	WidthMM	HeightMM	DimensionSource	SourceURL。缺少任一张表、任一映射引用的尺寸组，或尺寸组字段不完整时不得 COMPLETE。不要输出子车系匹配表。
+【COMPLETE 下载文件硬性要求】
+准备 COMPLETE 时，除两张完整内嵌 TSV 外，还必须创建并提供以下两个可点击 sandbox 下载链接，文件名必须完全一致：
+- all_1801-1900_ktype_dimension_mapping_final.tsv
+- all_1801-1900_dimension_groups_final.tsv
+缺少任一下载链接时不得输出推进信号：COMPLETE。
+
+
+--- Round 9 / checkpoint 续跑 ---
+## 更新点
+
+* 闭合 Ford Aerostar E-4WD Extended、Mercedes-Benz G 300 W463 SWB/LWB，以及 Ford Escort VI Sedan/Wagon，共 **4 个 Ktype、5 条映射**。
+* 首次创建 **5 个 DIMENSION_GROUP**。Aerostar AWD 对应加长车身；G 300 明确拆分短轴三门与长轴五门；Escort VI 按 Sedan 和 Turnier 分组。([Edmunds][1])
+
+## 当前批次进度
+
+* 输入 Ktype：100
+* READY Ktype：87
+* PENDING Ktype：13
+* READY 映射：153
+* 当前引用的已确认尺寸组：74
+* 本轮首次创建尺寸组：5
+* 当前批次尚未完成。
+
+## 本轮新增/修改的 Ktype 映射 TSV
+
+```tsv
+id	Ktype	NormalizedBodyStyle	Generation	BodyCode	Doors	DIMENSION_GROUP_ID	MatchConfidence	Notes	IterationStatus
+129063	129063	MPV	Aerostar I	VN1		EU-FORD-AEROSTAR-VN1-MPV-E4WD-EXTENDED-01	HIGH	E-4WD加长车身外廓。	READY
+129165_swb	129165	SUV	G-Class W463	W463	3	EU-MERCEDES-BENZ-G-CLASS-W463-SUV-SWB-01	HIGH	短轴三门物理分支。	READY
+129165_lwb	129165	SUV	G-Class W463	W463	5	EU-MERCEDES-BENZ-G-CLASS-W463-SUV-LWB-01	HIGH	长轴五门物理分支。	READY
+129250	129250	Wagon	Escort VI	GAL	5	EU-FORD-ESCORT-VI-GAL-WAGON-01	HIGH		READY
+129252	129252	Sedan	Escort VI	GAL	4	EU-FORD-ESCORT-VI-GAL-SEDAN-01	HIGH		READY
+```
+
+## 本轮首次创建/修正的 DIMENSION_GROUP TSV
+
+```tsv
+DIMENSION_GROUP_ID	LengthMM	WidthMM	HeightMM	DimensionSource	SourceURL
+EU-FORD-AEROSTAR-VN1-MPV-E4WD-EXTENDED-01	4834	1821	1851	Automobile-Catalog 1994 Ford Aerostar XLT E-4WD Extended	https://www.automobile-catalog.com/car/1994/1501685/ford_aerostar_xlt_e-4wd_extended_4_0l_v-6_automatic.html
+EU-MERCEDES-BENZ-G-CLASS-W463-SUV-SWB-01	4185	1690	1908	Auto-Data Mercedes-Benz G-Class W463 G 300 SWB	https://www.auto-data.net/en/mercedes-benz-g-class-w463-g-300-170hp-4matic-42310
+EU-MERCEDES-BENZ-G-CLASS-W463-SUV-LWB-01	4635	1690	1936	Auto-Data Mercedes-Benz G-Class Long W463 G 300	https://www.auto-data.net/en/mercedes-benz-g-class-long-w463-g-300-170hp-4matic-automatic-42517
+EU-FORD-ESCORT-VI-GAL-WAGON-01	4268	1690	1410	Auto-Data Ford Escort VI Turnier GAL	https://www.auto-data.net/en/ford-escort-vi-turnier-gal-generation-1664
+EU-FORD-ESCORT-VI-GAL-SEDAN-01	4229	1690	1397	Auto-Data Ford Escort VI GAL	https://www.auto-data.net/en/ford-escort-vi-gal-1.4-71hp-7423
+```
+
+## 下一步优先处理
+
+1. 解决 Suzuki Jimny Cabrio 改款前后保险杠造成的长度分支，并闭合3个Ktype。
+2. 拆分 Fiat Ducato Bus、Van及Chassis Cab的长度、车顶和4×4组合。
+3. 处理 Ford Transit Van以及Peugeot Partner/Citroën Berlingo商用车分支。
+
+推进信号：CONTINUE
+
+[1]: https://www.edmunds.com/ford/aerostar/1997/features-specs/?utm_source=chatgpt.com "Used 1997 Ford Aerostar Specs & Features | Edmunds"
+
+
+--- 发送 / 继续到 Round 10 ---
+继续当前批次并采用缓存优先模式。尺寸组只在首次创建或纠错时完整核对一次三维和来源；后续 Ktype 只判断关联哪个现有 DIMENSION_GROUP_ID，不重复抓取，不输出缓存来源或匹配理由。仍有 PENDING 时，CONTINUE 轮仅输出：1) 更新点；2) 当前批次进度；3) 本轮新增/修改的 Ktype 映射 TSV（无变化写“无”）；4) 本轮首次创建/修正的 DIMENSION_GROUP TSV（复用既有组不重复输出，无变化写“无”）；5) 下一步优先处理。若当前或上一轮进度已经是 PENDING=0，本轮不要继续检索或再次输出 CONTINUE，必须立刻汇总并输出两张最终完整 TSV、两个任务指定 sandbox 下载链接和“推进信号：COMPLETE”。执行顺序固定为：第一阶段优先消除 PENDING 并补齐会阻塞两张最终表的数据。检测到 PENDING=0 后，第二阶段最多只做一次轻量机械收尾：核对固定表头、id 与 DIMENSION_GROUP_ID 唯一、映射引用闭合、长宽高和来源非空、两个任务指定下载链接齐全。第二阶段不得重新逐车型、逐年份或逐来源做深度检索，不得为了提高置信度反复核对，也不得因非阻塞的排序或措辞问题继续多轮。PENDING=0 后的下一条回复必须直接输出两张最终完整 TSV、两个精确 sandbox 下载链接，并以“推进信号：COMPLETE”结束；不要再输出 CONTINUE。Ktype 映射 TSV 表头必须严格使用 requirement 指定的字段顺序：id	Ktype	NormalizedBodyStyle	Generation	BodyCode	Doors	DIMENSION_GROUP_ID	MatchConfidence	Notes	IterationStatus。另需维护完整 DIMENSION_GROUP TSV，表头固定为：DIMENSION_GROUP_ID	LengthMM	WidthMM	HeightMM	DimensionSource	SourceURL。缺少任一张表、任一映射引用的尺寸组，或尺寸组字段不完整时不得 COMPLETE。不要输出子车系匹配表。
+【COMPLETE 下载文件硬性要求】
+准备 COMPLETE 时，除两张完整内嵌 TSV 外，还必须创建并提供以下两个可点击 sandbox 下载链接，文件名必须完全一致：
+- all_1801-1900_ktype_dimension_mapping_final.tsv
+- all_1801-1900_dimension_groups_final.tsv
+缺少任一下载链接时不得输出推进信号：COMPLETE。
+
+
+--- Round 10 / checkpoint 续跑 ---
+## 更新点
+
+* 闭合 Peugeot Partner II B9 的 L1/L2 Van、标准 Tepee 和高车身 Tepee 四个物理分支。
+* 闭合 Suzuki Jimny III 的早期 Cabrio、JB43 Cabrio，以及 2012 facelift 硬顶车身；Ktype `129108` 的输入开放式标记已按 2013 年 1.3 4WD 量产硬顶资料纠正。([汽车数据网][1])
+* 闭合 Citroën Berlingo II B9 Platform Cab。Peugeot 与 Citroën 资料均明确给出不含后视镜宽度。
+
+## 当前批次进度
+
+* 输入 Ktype：100
+* READY Ktype：92
+* PENDING Ktype：8
+* READY 映射：161
+* 当前引用的已确认尺寸组：82
+* 本轮首次创建尺寸组：8
+* 当前批次尚未完成。
+
+## 本轮新增/修改的 Ktype 映射 TSV
+
+```tsv
+id	Ktype	NormalizedBodyStyle	Generation	BodyCode	Doors	DIMENSION_GROUP_ID	MatchConfidence	Notes	IterationStatus
+129078_van_l1	129078	Van	Partner II	B9		EU-PEUGEOT-PARTNER-II-B9-VAN-L1-01	MEDIUM	L1厢式车物理分支。	READY
+129078_van_l2	129078	Van	Partner II	B9		EU-PEUGEOT-PARTNER-II-B9-VAN-L2-01	MEDIUM	L2加长厢式车物理分支。	READY
+129078_mpv_standard	129078	MPV	Partner II	B9	5	EU-PEUGEOT-PARTNER-II-B9-TEPEE-STANDARD-01	MEDIUM	标准高度Tepee物理分支。	READY
+129078_mpv_outdoor	129078	MPV	Partner II	B9	5	EU-PEUGEOT-PARTNER-II-B9-TEPEE-OUTDOOR-01	MEDIUM	高车身Tepee物理分支。	READY
+129105	129105	Convertible	Jimny III	JB33	3	EU-SUZUKI-JIMNY-III-JB33-CONVERTIBLE-PREFL-01	HIGH	早期Canvas Top物理外廓。	READY
+129107	129107	Convertible	Jimny III	JB43	3	EU-SUZUKI-JIMNY-III-JB43-CONVERTIBLE-01	HIGH	JB43 Canvas Top物理外廓。	READY
+129108	129108	SUV	Jimny III facelift	JB43	3	EU-SUZUKI-JIMNY-III-JB43-SUV-FACELIFT-2012-01	HIGH	输入开放式标记与2013量产资料冲突；按1.3 4WD硬顶车身闭合。	READY
+129210	129210	Chassis Cab	Berlingo II	B9	2	EU-CITROEN-BERLINGO-II-B9-PLATFORM-CAB-01	HIGH	Platform Cab物理外廓。	READY
+```
+
+## 本轮首次创建/修正的 DIMENSION_GROUP TSV
+
+```tsv
+DIMENSION_GROUP_ID	LengthMM	WidthMM	HeightMM	DimensionSource	SourceURL
+EU-PEUGEOT-PARTNER-II-B9-VAN-L1-01	4380	1810	1828	Peugeot Partner Van official prices and specifications brochure	https://www.charterspeugeot.com/wp-content/uploads/sites/15/2018/08/peugeot-partner-prices-specifications-brochure-08-2018.pdf
+EU-PEUGEOT-PARTNER-II-B9-VAN-L2-01	4628	1810	1834	Peugeot Partner Van official prices and specifications brochure	https://www.charterspeugeot.com/wp-content/uploads/sites/15/2018/08/peugeot-partner-prices-specifications-brochure-08-2018.pdf
+EU-PEUGEOT-PARTNER-II-B9-TEPEE-STANDARD-01	4380	1810	1801	Peugeot Partner Tepee official dimensions guide	https://www.autoeurope.no/peugeotfleet/documents/partner-dimensions.pdf
+EU-PEUGEOT-PARTNER-II-B9-TEPEE-OUTDOOR-01	4380	1810	1862	Peugeot Partner Tepee official dimensions guide	https://www.autoeurope.no/peugeotfleet/documents/partner-dimensions.pdf
+EU-SUZUKI-JIMNY-III-JB33-CONVERTIBLE-PREFL-01	3625	1600	1655	Auto-Data Suzuki Jimny Cabrio III 1.3 16V 80 Hp 4WD	https://www.auto-data.net/en/suzuki-jimny-cabrio-iii-1.3-16v-80hp-4wd-16460
+EU-SUZUKI-JIMNY-III-JB43-CONVERTIBLE-01	3625	1600	1665	Automobile-Catalog Suzuki Jimny Cabrio 1.3 4WD Europe	https://www.automobile-catalog.com/car/2007/3394025/suzuki_jimny_cabrio_1_3_4wd.html
+EU-SUZUKI-JIMNY-III-JB43-SUV-FACELIFT-2012-01	3675	1600	1705	Suzuki Jimny official brochure;Automobile-Catalog Suzuki Jimny 1.3 4WD Europe	https://autocatalogarchive.com/wp-content/uploads/2017/06/Suzuki-Jimny-2013-AU.pdf;https://www.automobile-catalog.com/car/2013/3394355/suzuki_jimny_1_3_4wd.html
+EU-CITROEN-BERLINGO-II-B9-PLATFORM-CAB-01	4237	1810	1822	Citroën Berlingo official UK brochure	https://xr793.com/wp-content/uploads/2022/09/2012-Citroen-Berlingo-UK.pdf
+```
+
+## 下一步优先处理
+
+1. 一次性闭合 Fiat Ducato X250/X290 Bus、Van和Chassis Cab的长度、车顶及4×4分支。
+2. 闭合 Ford Transit V184 RWD 2.3 Bi-fuel的SWB、MWB、LWB及对应车顶分支。
+3. PENDING 清零后立即进行一次机械收尾并输出两张最终完整TSV及指定下载链接。
+
+推进信号：CONTINUE
+
+[1]: https://www.auto-data.net/en/suzuki-jimny-cabrio-iii-1.3-16v-80hp-4wd-16460 "Suzuki Jimny Cabrio III 1.3 16V (80 Hp) 4WD | Technical specs, data, fuel consumption, Dimensions"
+
+
+--- 发送 / 继续到 Round 11 ---
+继续当前批次并采用缓存优先模式。尺寸组只在首次创建或纠错时完整核对一次三维和来源；后续 Ktype 只判断关联哪个现有 DIMENSION_GROUP_ID，不重复抓取，不输出缓存来源或匹配理由。仍有 PENDING 时，CONTINUE 轮仅输出：1) 更新点；2) 当前批次进度；3) 本轮新增/修改的 Ktype 映射 TSV（无变化写“无”）；4) 本轮首次创建/修正的 DIMENSION_GROUP TSV（复用既有组不重复输出，无变化写“无”）；5) 下一步优先处理。若当前或上一轮进度已经是 PENDING=0，本轮不要继续检索或再次输出 CONTINUE，必须立刻汇总并输出两张最终完整 TSV、两个任务指定 sandbox 下载链接和“推进信号：COMPLETE”。执行顺序固定为：第一阶段优先消除 PENDING 并补齐会阻塞两张最终表的数据。检测到 PENDING=0 后，第二阶段最多只做一次轻量机械收尾：核对固定表头、id 与 DIMENSION_GROUP_ID 唯一、映射引用闭合、长宽高和来源非空、两个任务指定下载链接齐全。第二阶段不得重新逐车型、逐年份或逐来源做深度检索，不得为了提高置信度反复核对，也不得因非阻塞的排序或措辞问题继续多轮。PENDING=0 后的下一条回复必须直接输出两张最终完整 TSV、两个精确 sandbox 下载链接，并以“推进信号：COMPLETE”结束；不要再输出 CONTINUE。Ktype 映射 TSV 表头必须严格使用 requirement 指定的字段顺序：id	Ktype	NormalizedBodyStyle	Generation	BodyCode	Doors	DIMENSION_GROUP_ID	MatchConfidence	Notes	IterationStatus。另需维护完整 DIMENSION_GROUP TSV，表头固定为：DIMENSION_GROUP_ID	LengthMM	WidthMM	HeightMM	DimensionSource	SourceURL。缺少任一张表、任一映射引用的尺寸组，或尺寸组字段不完整时不得 COMPLETE。不要输出子车系匹配表。
+【COMPLETE 下载文件硬性要求】
+准备 COMPLETE 时，除两张完整内嵌 TSV 外，还必须创建并提供以下两个可点击 sandbox 下载链接，文件名必须完全一致：
+- all_1801-1900_ktype_dimension_mapping_final.tsv
+- all_1801-1900_dimension_groups_final.tsv
+缺少任一下载链接时不得输出推进信号：COMPLETE。
+
+
+--- Round 11 / checkpoint 续跑 ---
+## 更新点
+
+* 本轮闭合 **5 个 Ktype、18 条映射**：Fiat Ducato 130 4×4 Bus/Van、Ducato 110 前驱 Bus/Van，以及 Ford Transit 2.3 Bi-fuel Van。
+* 首次创建 **16 个 DIMENSION_GROUP**。
+* Ford 官方车型资料确认 2.3 Petrol/LPG 后驱版本覆盖 SWB、MWB、LWB 的对应车顶分支，并给出不含后视镜宽度。
+* Fiat 官方价格表和乘用运输资料闭合 Ducato 110 的 L1/L2 Bus 与 Van 分支；Ducato-Dangel 130 4×4 分支按瑞士型式批准记录闭合。
+
+## 当前批次进度
+
+* 输入 Ktype：100
+* READY Ktype：97
+* PENDING Ktype：3
+* READY 映射：179
+* 当前引用的已确认尺寸组：98
+* 本轮首次创建尺寸组：16
+* 剩余 PENDING：`128964`、`128967`、`129241`
+* 当前批次尚未完成。
+
+## 本轮新增/修改的 Ktype 映射 TSV
+
+```tsv
+id	Ktype	NormalizedBodyStyle	Generation	BodyCode	Doors	DIMENSION_GROUP_ID	MatchConfidence	Notes	IterationStatus
+128963	128963	MPV	Ducato III	X250		EU-FIAT-DUCATO-III-X250-DANGEL-4X4-BUS-L3H2-01	MEDIUM	七座L3H2四驱Bus外廓。	READY
+128966_l1h1	128966	Van	Ducato III	X250		EU-FIAT-DUCATO-III-X250-DANGEL-4X4-VAN-L1H1-01	MEDIUM	L1H1四驱厢式车分支。	READY
+128966_l2h1	128966	Van	Ducato III	X250		EU-FIAT-DUCATO-III-X250-DANGEL-4X4-VAN-L2H1-01	MEDIUM	L2H1四驱厢式车分支。	READY
+128966_l3h2	128966	Van	Ducato III	X250		EU-FIAT-DUCATO-III-X250-DANGEL-4X4-VAN-L3H2-01	MEDIUM	L3H2四驱厢式车分支。	READY
+128966_l3h3	128966	Van	Ducato III	X250		EU-FIAT-DUCATO-III-X250-DANGEL-4X4-VAN-L3H3-01	MEDIUM	L3H3四驱厢式车分支。	READY
+128966_l4h2	128966	Van	Ducato III	X250		EU-FIAT-DUCATO-III-X250-DANGEL-4X4-VAN-L4H2-01	MEDIUM	L4H2四驱厢式车分支。	READY
+129077_swb_lowroof	129077	Van	Transit V184	V184		EU-FORD-TRANSIT-V184-VAN-SWB-LOWROOF-01	HIGH	SWB低顶物理分支。	READY
+129077_swb_midroof	129077	Van	Transit V184	V184		EU-FORD-TRANSIT-V184-VAN-SWB-MIDROOF-01	HIGH	SWB中顶物理分支。	READY
+129077_mwb_midroof	129077	Van	Transit V184	V184		EU-FORD-TRANSIT-V184-VAN-MWB-MIDROOF-01	HIGH	MWB中顶物理分支。	READY
+129077_mwb_highroof	129077	Van	Transit V184	V184		EU-FORD-TRANSIT-V184-VAN-MWB-HIGHROOF-01	HIGH	MWB高顶物理分支。	READY
+129077_lwb_midroof	129077	Van	Transit V184	V184		EU-FORD-TRANSIT-V184-VAN-LWB-MIDROOF-01	HIGH	LWB中顶物理分支。	READY
+129077_lwb_highroof	129077	Van	Transit V184	V184		EU-FORD-TRANSIT-V184-VAN-LWB-HIGHROOF-01	HIGH	LWB高顶物理分支。	READY
+129239_l1h1	129239	MPV	Ducato III facelift	X290		EU-FIAT-DUCATO-III-X290-L1H1-01	HIGH	L1H1乘用运输车分支。	READY
+129239_l2h2	129239	MPV	Ducato III facelift	X290		EU-FIAT-DUCATO-III-X290-L2H2-01	HIGH	L2H2乘用运输车分支。	READY
+129240_l1h1	129240	Van	Ducato III facelift	X290		EU-FIAT-DUCATO-III-X290-L1H1-01	HIGH	L1H1厢式车分支。	READY
+129240_l1h2	129240	Van	Ducato III facelift	X290		EU-FIAT-DUCATO-III-X290-L1H2-01	HIGH	L1H2厢式车分支。	READY
+129240_l2h1	129240	Van	Ducato III facelift	X290		EU-FIAT-DUCATO-III-X290-L2H1-01	HIGH	L2H1厢式车分支。	READY
+129240_l2h2	129240	Van	Ducato III facelift	X290		EU-FIAT-DUCATO-III-X290-L2H2-01	HIGH	L2H2厢式车分支。	READY
+```
+
+## 本轮首次创建/修正的 DIMENSION_GROUP TSV
+
+```tsv
+DIMENSION_GROUP_ID	LengthMM	WidthMM	HeightMM	DimensionSource	SourceURL
+EU-FIAT-DUCATO-III-X250-DANGEL-4X4-BUS-L3H2-01	5998	2050	2524	Motoro Swiss type-approval data for Fiat-Dangel Ducato 4x4	https://motoro.ch/en/fiche-technique/fiat-dangel/ducato-4x4-2-3
+EU-FIAT-DUCATO-III-X250-DANGEL-4X4-VAN-L1H1-01	4963	2050	2254	Motoro Swiss type-approval data for Fiat-Dangel Ducato 4x4	https://motoro.ch/en/fiche-technique/fiat-dangel/ducato-4x4-2-3
+EU-FIAT-DUCATO-III-X250-DANGEL-4X4-VAN-L2H1-01	5413	2050	2254	Motoro Swiss type-approval data for Fiat-Dangel Ducato 4x4	https://motoro.ch/en/fiche-technique/fiat-dangel/ducato-4x4-2-3
+EU-FIAT-DUCATO-III-X250-DANGEL-4X4-VAN-L3H2-01	5998	2050	2522	Motoro Swiss type-approval data for Fiat-Dangel Ducato 4x4	https://motoro.ch/en/fiche-technique/fiat-dangel/ducato-4x4-2-3
+EU-FIAT-DUCATO-III-X250-DANGEL-4X4-VAN-L3H3-01	5998	2050	2760	Motoro Swiss type-approval data for Fiat-Dangel Ducato 4x4	https://motoro.ch/en/fiche-technique/fiat-dangel/ducato-4x4-2-3
+EU-FIAT-DUCATO-III-X250-DANGEL-4X4-VAN-L4H2-01	6363	2050	2522	Motoro Swiss type-approval data for Fiat-Dangel Ducato 4x4	https://motoro.ch/en/fiche-technique/fiat-dangel/ducato-4x4-2-3
+EU-FORD-TRANSIT-V184-VAN-SWB-LOWROOF-01	4834	1974	2033	Ford Panel Vans official brochure	https://xr793.com/wp-content/uploads/2022/09/2005-Ford-Panel-Vans-Specs-UK.pdf
+EU-FORD-TRANSIT-V184-VAN-SWB-MIDROOF-01	4834	1974	2368	Ford Panel Vans official brochure	https://xr793.com/wp-content/uploads/2022/09/2005-Ford-Panel-Vans-Specs-UK.pdf
+EU-FORD-TRANSIT-V184-VAN-MWB-MIDROOF-01	5201	1974	2353	Ford Panel Vans official brochure	https://xr793.com/wp-content/uploads/2022/09/2005-Ford-Panel-Vans-Specs-UK.pdf
+EU-FORD-TRANSIT-V184-VAN-MWB-HIGHROOF-01	5201	1974	2674	Ford Panel Vans official brochure	https://xr793.com/wp-content/uploads/2022/09/2005-Ford-Panel-Vans-Specs-UK.pdf
+EU-FORD-TRANSIT-V184-VAN-LWB-MIDROOF-01	5651	1974	2354	Ford Panel Vans official brochure	https://xr793.com/wp-content/uploads/2022/09/2005-Ford-Panel-Vans-Specs-UK.pdf
+EU-FORD-TRANSIT-V184-VAN-LWB-HIGHROOF-01	5651	1974	2678	Ford Panel Vans official brochure	https://xr793.com/wp-content/uploads/2022/09/2005-Ford-Panel-Vans-Specs-UK.pdf
+EU-FIAT-DUCATO-III-X290-L1H1-01	4963	2050	2254	Fiat Professional New Ducato 2014 official price list;Fiat Professional New Ducato Passenger Transport official brochure	https://www.media.stellantis.com/uploads/uk/UK/2014/FIAT_PROF/PRICES/Fiat_Professional_NEW%20DUCATO%202014_Price_List_APR_2014.pdf;https://fiat.autospirit.ee/images/ducato/ducato_soiduauto.pdf
+EU-FIAT-DUCATO-III-X290-L1H2-01	4963	2050	2524	Fiat Professional New Ducato 2014 official price list	https://www.media.stellantis.com/uploads/uk/UK/2014/FIAT_PROF/PRICES/Fiat_Professional_NEW%20DUCATO%202014_Price_List_APR_2014.pdf
+EU-FIAT-DUCATO-III-X290-L2H1-01	5413	2050	2254	Fiat Professional New Ducato 2014 official price list	https://www.media.stellantis.com/uploads/uk/UK/2014/FIAT_PROF/PRICES/Fiat_Professional_NEW%20DUCATO%202014_Price_List_APR_2014.pdf
+EU-FIAT-DUCATO-III-X290-L2H2-01	5413	2050	2524	Fiat Professional New Ducato 2014 official price list;Fiat Professional New Ducato Passenger Transport official brochure	https://www.media.stellantis.com/uploads/uk/UK/2014/FIAT_PROF/PRICES/Fiat_Professional_NEW%20DUCATO%202014_Price_List_APR_2014.pdf;https://fiat.autospirit.ee/images/ducato/ducato_soiduauto.pdf
+```
+
+## 下一步优先处理
+
+1. 确认 `128964` 的 150 Multijet 4×4 Bus 可用车长及车顶分支。
+2. 确认 `128967` 的 150 Multijet 4×4 Van 是否除已发现的 L2H1 外还覆盖其他外廓。
+3. 确认 `129241` 的 110 Multijet X250 Chassis Cab 可用轴距及单排/双排驾驶室范围。
+4. 三项闭合后立即进行一次机械收尾并输出完整最终 TSV 与指定下载链接。
+
+推进信号：CONTINUE
+
+
+--- 发送 / 继续到 Round 12 ---
+继续当前批次并采用缓存优先模式。尺寸组只在首次创建或纠错时完整核对一次三维和来源；后续 Ktype 只判断关联哪个现有 DIMENSION_GROUP_ID，不重复抓取，不输出缓存来源或匹配理由。仍有 PENDING 时，CONTINUE 轮仅输出：1) 更新点；2) 当前批次进度；3) 本轮新增/修改的 Ktype 映射 TSV（无变化写“无”）；4) 本轮首次创建/修正的 DIMENSION_GROUP TSV（复用既有组不重复输出，无变化写“无”）；5) 下一步优先处理。若当前或上一轮进度已经是 PENDING=0，本轮不要继续检索或再次输出 CONTINUE，必须立刻汇总并输出两张最终完整 TSV、两个任务指定 sandbox 下载链接和“推进信号：COMPLETE”。执行顺序固定为：第一阶段优先消除 PENDING 并补齐会阻塞两张最终表的数据。检测到 PENDING=0 后，第二阶段最多只做一次轻量机械收尾：核对固定表头、id 与 DIMENSION_GROUP_ID 唯一、映射引用闭合、长宽高和来源非空、两个任务指定下载链接齐全。第二阶段不得重新逐车型、逐年份或逐来源做深度检索，不得为了提高置信度反复核对，也不得因非阻塞的排序或措辞问题继续多轮。PENDING=0 后的下一条回复必须直接输出两张最终完整 TSV、两个精确 sandbox 下载链接，并以“推进信号：COMPLETE”结束；不要再输出 CONTINUE。Ktype 映射 TSV 表头必须严格使用 requirement 指定的字段顺序：id	Ktype	NormalizedBodyStyle	Generation	BodyCode	Doors	DIMENSION_GROUP_ID	MatchConfidence	Notes	IterationStatus。另需维护完整 DIMENSION_GROUP TSV，表头固定为：DIMENSION_GROUP_ID	LengthMM	WidthMM	HeightMM	DimensionSource	SourceURL。缺少任一张表、任一映射引用的尺寸组，或尺寸组字段不完整时不得 COMPLETE。不要输出子车系匹配表。
+【COMPLETE 下载文件硬性要求】
+准备 COMPLETE 时，除两张完整内嵌 TSV 外，还必须创建并提供以下两个可点击 sandbox 下载链接，文件名必须完全一致：
+- all_1801-1900_ktype_dimension_mapping_final.tsv
+- all_1801-1900_dimension_groups_final.tsv
+缺少任一下载链接时不得输出推进信号：COMPLETE。
+
+
+--- Round 12 / checkpoint 续跑 ---
+## 更新点
+
+* 剩余 `128964`、`128967`、`129241` 已全部闭合。
+* `128964`、`128967` 复用已确认的 Fiat Ducato Dangel 4×4 尺寸组，没有重复建组。
+* `129241` 完成单排/双排驾驶室共 8 个物理分支，并首次创建对应尺寸组。
+* 已完成机械校验：表头正确、`id` 与 `DIMENSION_GROUP_ID` 唯一、映射引用全部闭合、尺寸及来源字段完整、无孤立尺寸组。
+
+## 当前批次进度
+
+* 输入 Ktype：100
+* READY Ktype：100
+* PENDING Ktype：0
+* 最终映射行：193
+* 最终 DIMENSION_GROUP：106
+* 机械校验：PASS
+
+## 最终完整 Ktype 映射 TSV
+
+```tsv
+id	Ktype	NormalizedBodyStyle	Generation	BodyCode	Doors	DIMENSION_GROUP_ID	MatchConfidence	Notes	IterationStatus
+128960_scab_l3	128960	Chassis Cab	TGE I		2	EU-MAN-TGE-I-CHASSIS-SCAB-L3-01	MEDIUM	单排驾驶室L3物理分支。	READY
+128960_scab_l4	128960	Chassis Cab	TGE I		2	EU-MAN-TGE-I-CHASSIS-SCAB-L4-01	MEDIUM	单排驾驶室L4物理分支。	READY
+128960_dcab_l3	128960	Chassis Cab	TGE I		4	EU-MAN-TGE-I-CHASSIS-DCAB-L3-01	MEDIUM	双排驾驶室L3物理分支。	READY
+128960_dcab_l4	128960	Chassis Cab	TGE I		4	EU-MAN-TGE-I-CHASSIS-DCAB-L4-01	MEDIUM	双排驾驶室L4物理分支。	READY
+128961_scab_l3	128961	Chassis Cab	Crafter II		2	EU-VW-CRAFTER-II-CHASSIS-SCAB-L3-01	MEDIUM	单排驾驶室L3物理分支。	READY
+128961_scab_l4	128961	Chassis Cab	Crafter II		2	EU-VW-CRAFTER-II-CHASSIS-SCAB-L4-01	MEDIUM	单排驾驶室L4物理分支。	READY
+128961_scab_l5	128961	Chassis Cab	Crafter II		2	EU-VW-CRAFTER-II-CHASSIS-SCAB-L5-01	MEDIUM	单排驾驶室L5物理分支。	READY
+128961_dcab_l3	128961	Chassis Cab	Crafter II		4	EU-VW-CRAFTER-II-CHASSIS-DCAB-L3-01	MEDIUM	双排驾驶室L3物理分支。	READY
+128961_dcab_l4	128961	Chassis Cab	Crafter II		4	EU-VW-CRAFTER-II-CHASSIS-DCAB-L4-01	MEDIUM	双排驾驶室L4物理分支。	READY
+128962_l3h2	128962	Van	Crafter II			EU-VW-CRAFTER-II-VAN-L3H2-01	MEDIUM	L3H2厢式车物理分支。	READY
+128962_l3h3	128962	Van	Crafter II			EU-VW-CRAFTER-II-VAN-L3H3-01	MEDIUM	L3H3厢式车物理分支。	READY
+128962_l4h3	128962	Van	Crafter II			EU-VW-CRAFTER-II-VAN-L4H3-01	MEDIUM	L4H3厢式车物理分支。	READY
+128962_l4h4	128962	Van	Crafter II			EU-VW-CRAFTER-II-VAN-L4H4-01	MEDIUM	L4H4厢式车物理分支。	READY
+128962_l5h3	128962	Van	Crafter II			EU-VW-CRAFTER-II-VAN-L5H3-01	MEDIUM	L5H3厢式车物理分支。	READY
+128962_l5h4	128962	Van	Crafter II			EU-VW-CRAFTER-II-VAN-L5H4-01	MEDIUM	L5H4厢式车物理分支。	READY
+128963	128963	MPV	Ducato III	X250		EU-FIAT-DUCATO-III-X250-DANGEL-4X4-BUS-L3H2-01	MEDIUM	七座L3H2四驱Bus外廓。	READY
+128964	128964	MPV	Ducato III facelift	X290		EU-FIAT-DUCATO-III-X250-DANGEL-4X4-BUS-L3H2-01	MEDIUM	七座L3H2四驱Bus外廓。	READY
+128966_l1h1	128966	Van	Ducato III	X250		EU-FIAT-DUCATO-III-X250-DANGEL-4X4-VAN-L1H1-01	MEDIUM	L1H1四驱厢式车分支。	READY
+128966_l2h1	128966	Van	Ducato III	X250		EU-FIAT-DUCATO-III-X250-DANGEL-4X4-VAN-L2H1-01	MEDIUM	L2H1四驱厢式车分支。	READY
+128966_l3h2	128966	Van	Ducato III	X250		EU-FIAT-DUCATO-III-X250-DANGEL-4X4-VAN-L3H2-01	MEDIUM	L3H2四驱厢式车分支。	READY
+128966_l3h3	128966	Van	Ducato III	X250		EU-FIAT-DUCATO-III-X250-DANGEL-4X4-VAN-L3H3-01	MEDIUM	L3H3四驱厢式车分支。	READY
+128966_l4h2	128966	Van	Ducato III	X250		EU-FIAT-DUCATO-III-X250-DANGEL-4X4-VAN-L4H2-01	MEDIUM	L4H2四驱厢式车分支。	READY
+128967_l1h1	128967	Van	Ducato III facelift	X290		EU-FIAT-DUCATO-III-X250-DANGEL-4X4-VAN-L1H1-01	MEDIUM	L1H1四驱厢式车分支。	READY
+128967_l2h1	128967	Van	Ducato III facelift	X290		EU-FIAT-DUCATO-III-X250-DANGEL-4X4-VAN-L2H1-01	MEDIUM	L2H1四驱厢式车分支。	READY
+128967_l3h2	128967	Van	Ducato III facelift	X290		EU-FIAT-DUCATO-III-X250-DANGEL-4X4-VAN-L3H2-01	MEDIUM	L3H2四驱厢式车分支。	READY
+128967_l3h3	128967	Van	Ducato III facelift	X290		EU-FIAT-DUCATO-III-X250-DANGEL-4X4-VAN-L3H3-01	MEDIUM	L3H3四驱厢式车分支。	READY
+128967_l4h2	128967	Van	Ducato III facelift	X290		EU-FIAT-DUCATO-III-X250-DANGEL-4X4-VAN-L4H2-01	MEDIUM	L4H2四驱厢式车分支。	READY
+128972	128972	Hatchback	C3 I facelift		5	EU-CITROEN-C3-I-FACELIFT-HATCHBACK-5D-01	HIGH		READY
+128973	128973	Sedan	Passat B8	3G2	4	EU-VW-PASSAT-B8-SEDAN-PREFL-01	HIGH	改款前轿车物理外廓。	READY
+128974	128974	SUV	Arona I	KJ7	5	EU-SEAT-ARONA-I-KJ7-SUV-01	HIGH		READY
+128976	128976	Coupe	718 982	982	2	EU-PORSCHE-718-982-CAYMAN-GTS-COUPE-01	HIGH		READY
+128977	128977	Convertible	718 982	982	2	EU-PORSCHE-718-982-BOXSTER-GTS-CONVERTIBLE-01	HIGH		READY
+128979_l3h2	128979	Van	TGE I			EU-MAN-TGE-I-VAN-L3H2-01	MEDIUM	L3H2厢式车物理分支。	READY
+128979_l3h3	128979	Van	TGE I			EU-MAN-TGE-I-VAN-L3H3-01	MEDIUM	L3H3厢式车物理分支。	READY
+128979_l4h3	128979	Van	TGE I			EU-MAN-TGE-I-VAN-L4H3-01	MEDIUM	L4H3厢式车物理分支。	READY
+128979_l4h4	128979	Van	TGE I			EU-MAN-TGE-I-VAN-L4H4-01	MEDIUM	L4H4厢式车物理分支。	READY
+128979_l5h3	128979	Van	TGE I			EU-MAN-TGE-I-VAN-L5H3-01	MEDIUM	L5H3厢式车物理分支。	READY
+128979_l5h4	128979	Van	TGE I			EU-MAN-TGE-I-VAN-L5H4-01	MEDIUM	L5H4厢式车物理分支。	READY
+128980_l3h2	128980	Van	TGE I			EU-MAN-TGE-I-VAN-L3H2-01	MEDIUM	L3H2厢式车物理分支。	READY
+128980_l3h3	128980	Van	TGE I			EU-MAN-TGE-I-VAN-L3H3-01	MEDIUM	L3H3厢式车物理分支。	READY
+128980_l4h3	128980	Van	TGE I			EU-MAN-TGE-I-VAN-L4H3-01	MEDIUM	L4H3厢式车物理分支。	READY
+128980_l4h4	128980	Van	TGE I			EU-MAN-TGE-I-VAN-L4H4-01	MEDIUM	L4H4厢式车物理分支。	READY
+128980_l5h3	128980	Van	TGE I			EU-MAN-TGE-I-VAN-L5H3-01	MEDIUM	L5H3厢式车物理分支。	READY
+128980_l5h4	128980	Van	TGE I			EU-MAN-TGE-I-VAN-L5H4-01	MEDIUM	L5H4厢式车物理分支。	READY
+128981_scab_l3	128981	Chassis Cab	TGE I		2	EU-MAN-TGE-I-CHASSIS-SCAB-L3-01	MEDIUM	单排驾驶室L3物理分支。	READY
+128981_scab_l4	128981	Chassis Cab	TGE I		2	EU-MAN-TGE-I-CHASSIS-SCAB-L4-01	MEDIUM	单排驾驶室L4物理分支。	READY
+128981_dcab_l3	128981	Chassis Cab	TGE I		4	EU-MAN-TGE-I-CHASSIS-DCAB-L3-01	MEDIUM	双排驾驶室L3物理分支。	READY
+128981_dcab_l4	128981	Chassis Cab	TGE I		4	EU-MAN-TGE-I-CHASSIS-DCAB-L4-01	MEDIUM	双排驾驶室L4物理分支。	READY
+128982_scab_l3	128982	Chassis Cab	TGE I		2	EU-MAN-TGE-I-CHASSIS-SCAB-L3-01	MEDIUM	单排驾驶室L3物理分支。	READY
+128982_scab_l4	128982	Chassis Cab	TGE I		2	EU-MAN-TGE-I-CHASSIS-SCAB-L4-01	MEDIUM	单排驾驶室L4物理分支。	READY
+128982_dcab_l3	128982	Chassis Cab	TGE I		4	EU-MAN-TGE-I-CHASSIS-DCAB-L3-01	MEDIUM	双排驾驶室L3物理分支。	READY
+128982_dcab_l4	128982	Chassis Cab	TGE I		4	EU-MAN-TGE-I-CHASSIS-DCAB-L4-01	MEDIUM	双排驾驶室L4物理分支。	READY
+129005	129005	Convertible	S-Class A217 facelift	A217	2	EU-MERCEDES-AMG-S-CLASS-A217-S63-CONVERTIBLE-FACELIFT-01	HIGH	AMG S 63 Cabriolet外廓。	READY
+129007	129007	Coupe	S-Class C217 facelift	C217	2	EU-MERCEDES-AMG-S-CLASS-C217-S63-COUPE-FACELIFT-01	HIGH	AMG S 63 Coupe外廓。	READY
+129009	129009	Coupe	S-Class C217 facelift	C217	2	EU-MERCEDES-BENZ-S-CLASS-C217-COUPE-FACELIFT-01	HIGH	普通版Coupe外廓。	READY
+129010	129010	Coupe	S-Class C217 facelift	C217	2	EU-MERCEDES-BENZ-S-CLASS-C217-COUPE-FACELIFT-01	HIGH	普通版Coupe外廓。	READY
+129011	129011	Coupe	S-Class C217 facelift	C217	2	EU-MERCEDES-BENZ-S-CLASS-C217-COUPE-FACELIFT-01	HIGH	普通版Coupe外廓。	READY
+129012	129012	Convertible	S-Class A217 facelift	A217	2	EU-MERCEDES-BENZ-S-CLASS-A217-CONVERTIBLE-FACELIFT-01	HIGH	普通版Cabriolet外廓。	READY
+129013	129013	SUV	EcoSport II		5	EU-FORD-ECOSPORT-II-SUV-01	HIGH		READY
+129015	129015	SUV	Kuga II facelift	DM2	5	EU-FORD-KUGA-II-FACELIFT-SUV-01	HIGH		READY
+129028	129028	SUV	Eclipse Cross I	GK1W	5	EU-MITSUBISHI-ECLIPSE-CROSS-I-GK1W-SUV-01	HIGH		READY
+129029	129029	SUV	Eclipse Cross I	GK1W	5	EU-MITSUBISHI-ECLIPSE-CROSS-I-GK1W-SUV-01	HIGH		READY
+129030	129030	Convertible	MINI R57	R57	2	EU-MINI-MINI-R57-CONVERTIBLE-COOPER-S-PREFL-01	HIGH	改款前Cooper S敞篷外廓。	READY
+129032	129032	SUV	X2 I	F39	5	EU-BMW-X2-F39-SUV-01	HIGH		READY
+129033	129033	SUV	X2 I	F39	5	EU-BMW-X2-F39-SUV-01	HIGH		READY
+129034	129034	SUV	X2 I	F39	5	EU-BMW-X2-F39-SUV-01	HIGH		READY
+129035	129035	Van	Grande Punto	199	3	EU-FIAT-GRANDE-PUNTO-199-HATCHBACK-3D-PREFL-01	HIGH	三门商用车身。	READY
+129038	129038	Hatchback	Prius III	ZVW35	5	EU-TOYOTA-PRIUS-III-XW30-PLUG-IN-HATCHBACK-01	HIGH		READY
+129041	129041	SUV	X2 I	F39	5	EU-BMW-X2-F39-SUV-01	HIGH		READY
+129046	129046	Sedan	Avalon III	GSX30	4	EU-TOYOTA-AVALON-III-GSX30-SEDAN-01	HIGH		READY
+129055	129055	Sedan	Astra G Classic II	T98	4	EU-OPEL-ASTRA-G-CLASSIC-II-SEDAN-01	HIGH		READY
+129056	129056	Sedan	Rio IV	YB	4	EU-KIA-RIO-IV-YB-SEDAN-PREFL-01	HIGH	改款前四门轿车外廓。	READY
+129059	129059	Liftback	Arteon I	3H	5	EU-VW-ARTEON-I-3H-LIFTBACK-PREFL-01	HIGH	改款前物理外廓。	READY
+129060	129060	Sedan	Astra G Classic II	T98	4	EU-OPEL-ASTRA-G-CLASSIC-II-SEDAN-01	HIGH		READY
+129062	129062	Hatchback	Astra G Classic II	T98	5	EU-OPEL-ASTRA-G-CLASSIC-II-HATCHBACK-5D-01	HIGH		READY
+129063	129063	MPV	Aerostar I	VN1		EU-FORD-AEROSTAR-VN1-MPV-E4WD-EXTENDED-01	HIGH	E-4WD加长车身外廓。	READY
+129065	129065	Hatchback	Astra G Classic II	T98	5	EU-OPEL-ASTRA-G-CLASSIC-II-HATCHBACK-5D-01	HIGH		READY
+129066	129066	Hatchback	Astra G Classic II	T98	5	EU-OPEL-ASTRA-G-CLASSIC-II-HATCHBACK-5D-01	HIGH		READY
+129067	129067	Sedan	Polo V Sedan facelift	602	4	EU-VW-POLO-V-602-SEDAN-FACELIFT-01	HIGH	Polo V四门轿车改款外廓。	READY
+129069	129069	Hatchback	Astra G Classic II	T98	5	EU-OPEL-ASTRA-G-CLASSIC-II-HATCHBACK-5D-01	HIGH		READY
+129072	129072	Wagon	Astra G Classic II	T98	5	EU-OPEL-ASTRA-G-CLASSIC-II-WAGON-01	HIGH		READY
+129075	129075	Wagon	Astra G Classic II	T98	5	EU-OPEL-ASTRA-G-CLASSIC-II-WAGON-01	HIGH		READY
+129076	129076	Wagon	Astra G Classic II	T98	5	EU-OPEL-ASTRA-G-CLASSIC-II-WAGON-01	HIGH		READY
+129077_swb_lowroof	129077	Van	Transit V184	V184		EU-FORD-TRANSIT-V184-VAN-SWB-LOWROOF-01	HIGH	SWB低顶物理分支。	READY
+129077_swb_midroof	129077	Van	Transit V184	V184		EU-FORD-TRANSIT-V184-VAN-SWB-MIDROOF-01	HIGH	SWB中顶物理分支。	READY
+129077_mwb_midroof	129077	Van	Transit V184	V184		EU-FORD-TRANSIT-V184-VAN-MWB-MIDROOF-01	HIGH	MWB中顶物理分支。	READY
+129077_mwb_highroof	129077	Van	Transit V184	V184		EU-FORD-TRANSIT-V184-VAN-MWB-HIGHROOF-01	HIGH	MWB高顶物理分支。	READY
+129077_lwb_midroof	129077	Van	Transit V184	V184		EU-FORD-TRANSIT-V184-VAN-LWB-MIDROOF-01	HIGH	LWB中顶物理分支。	READY
+129077_lwb_highroof	129077	Van	Transit V184	V184		EU-FORD-TRANSIT-V184-VAN-LWB-HIGHROOF-01	HIGH	LWB高顶物理分支。	READY
+129078_van_l1	129078	Van	Partner II	B9		EU-PEUGEOT-PARTNER-II-B9-VAN-L1-01	MEDIUM	L1厢式车物理分支。	READY
+129078_van_l2	129078	Van	Partner II	B9		EU-PEUGEOT-PARTNER-II-B9-VAN-L2-01	MEDIUM	L2加长厢式车物理分支。	READY
+129078_mpv_standard	129078	MPV	Partner II	B9	5	EU-PEUGEOT-PARTNER-II-B9-TEPEE-STANDARD-01	MEDIUM	标准高度Tepee物理分支。	READY
+129078_mpv_outdoor	129078	MPV	Partner II	B9	5	EU-PEUGEOT-PARTNER-II-B9-TEPEE-OUTDOOR-01	MEDIUM	高车身Tepee物理分支。	READY
+129081	129081	Hatchback	Polo VI	AW1	5	EU-VW-POLO-VI-AW1-GTI-HATCHBACK-01	HIGH	GTI专用保险杠及降低车身外廓。	READY
+129082	129082	Hatchback	Ibiza V	KJ1	5	EU-SEAT-IBIZA-V-KJ1-HATCHBACK-01	HIGH		READY
+129087	129087	Wagon	Astra G Classic II	T98	5	EU-OPEL-ASTRA-G-CLASSIC-II-WAGON-01	HIGH		READY
+129088	129088	Wagon	Astra H Family	A04	5	EU-OPEL-ASTRA-H-FAMILY-WAGON-01	HIGH		READY
+129091	129091	Hatchback	Astra H Family	A04	5	EU-OPEL-ASTRA-H-FAMILY-HATCHBACK-5D-01	HIGH		READY
+129092	129092	Sedan	Astra H Family	A04	4	EU-OPEL-ASTRA-H-FAMILY-SEDAN-01	HIGH		READY
+129093	129093	Hatchback	Ibiza V	KJ1	5	EU-SEAT-IBIZA-V-KJ1-HATCHBACK-01	HIGH		READY
+129101	129101	Hatchback	Punto Evo	199	3	EU-ABARTH-PUNTO-EVO-199-HATCHBACK-3D-01	HIGH	Abarth宽体外廓。	READY
+129105	129105	Convertible	Jimny III	JB33	3	EU-SUZUKI-JIMNY-III-JB33-CONVERTIBLE-PREFL-01	HIGH	早期Canvas Top物理外廓。	READY
+129107	129107	Convertible	Jimny III	JB43	3	EU-SUZUKI-JIMNY-III-JB43-CONVERTIBLE-01	HIGH	JB43 Canvas Top物理外廓。	READY
+129108	129108	SUV	Jimny III facelift	JB43	3	EU-SUZUKI-JIMNY-III-JB43-SUV-FACELIFT-2012-01	HIGH	输入开放式标记与2013量产资料冲突；按1.3 4WD硬顶车身闭合。	READY
+129115	129115	Sedan	3 Series F80	F80	4	EU-BMW-3-F80-M3-CS-SEDAN-01	HIGH		READY
+129118	129118	Hatchback	MINI F55	F55	5	EU-MINI-MINI-F55-HATCHBACK-ONE-01	HIGH		READY
+129119	129119	Hatchback	MINI F55	F55	5	EU-MINI-MINI-F55-HATCHBACK-ONE-01	HIGH		READY
+129121	129121	Hatchback	MINI F56	F56	3	EU-MINI-MINI-F56-HATCHBACK-ONE-01	HIGH		READY
+129125	129125	Hatchback	MINI F56	F56	3	EU-MINI-MINI-F56-HATCHBACK-ONE-01	HIGH		READY
+129127	129127	Convertible	MINI F57	F57	2	EU-MINI-MINI-F57-CONVERTIBLE-ONE-01	HIGH		READY
+129130	129130	SUV	Stelvio	949	5	EU-ALFA-ROMEO-STELVIO-949-SUV-01	HIGH		READY
+129160	129160	SUV	DS 7 Crossback I		5	EU-DS-DS7-CROSSBACK-I-SUV-01	HIGH		READY
+129165_swb	129165	SUV	G-Class W463	W463	3	EU-MERCEDES-BENZ-G-CLASS-W463-SUV-SWB-01	HIGH	短轴三门物理分支。	READY
+129165_lwb	129165	SUV	G-Class W463	W463	5	EU-MERCEDES-BENZ-G-CLASS-W463-SUV-LWB-01	HIGH	长轴五门物理分支。	READY
+129166_l3h2	129166	Van	Crafter II			EU-VW-CRAFTER-II-VAN-L3H2-01	MEDIUM	L3H2厢式车物理分支。	READY
+129166_l3h3	129166	Van	Crafter II			EU-VW-CRAFTER-II-VAN-L3H3-01	MEDIUM	L3H3厢式车物理分支。	READY
+129166_l4h3	129166	Van	Crafter II			EU-VW-CRAFTER-II-VAN-L4H3-01	MEDIUM	L4H3厢式车物理分支。	READY
+129166_l4h4	129166	Van	Crafter II			EU-VW-CRAFTER-II-VAN-L4H4-01	MEDIUM	L4H4厢式车物理分支。	READY
+129166_l5h3	129166	Van	Crafter II			EU-VW-CRAFTER-II-VAN-L5H3-01	MEDIUM	L5H3厢式车物理分支。	READY
+129166_l5h4	129166	Van	Crafter II			EU-VW-CRAFTER-II-VAN-L5H4-01	MEDIUM	L5H4厢式车物理分支。	READY
+129169	129169	SUV	Crossland X	P17	5	EU-OPEL-CROSSLAND-X-P17-SUV-01	HIGH		READY
+129170	129170	Wagon	Focus III facelift	DYB	5	EU-FORD-FOCUS-III-FACELIFT-WAGON-5D-01	HIGH		READY
+129171	129171	Hatchback	Focus III facelift	DYB	5	EU-FORD-FOCUS-III-FACELIFT-HATCHBACK-5D-01	HIGH		READY
+129172	129172	Sedan	Focus III facelift	DYB	4	EU-FORD-FOCUS-III-FACELIFT-SEDAN-4D-01	HIGH		READY
+129174_l3h2	129174	Van	Crafter II			EU-VW-CRAFTER-II-VAN-L3H2-01	MEDIUM	L3H2厢式车物理分支。	READY
+129174_l3h3	129174	Van	Crafter II			EU-VW-CRAFTER-II-VAN-L3H3-01	MEDIUM	L3H3厢式车物理分支。	READY
+129174_l4h3	129174	Van	Crafter II			EU-VW-CRAFTER-II-VAN-L4H3-01	MEDIUM	L4H3厢式车物理分支。	READY
+129174_l4h4	129174	Van	Crafter II			EU-VW-CRAFTER-II-VAN-L4H4-01	MEDIUM	L4H4厢式车物理分支。	READY
+129174_l5h3	129174	Van	Crafter II			EU-VW-CRAFTER-II-VAN-L5H3-01	MEDIUM	L5H3厢式车物理分支。	READY
+129174_l5h4	129174	Van	Crafter II			EU-VW-CRAFTER-II-VAN-L5H4-01	MEDIUM	L5H4厢式车物理分支。	READY
+129177_scab_l3	129177	Chassis Cab	Crafter II		2	EU-VW-CRAFTER-II-CHASSIS-SCAB-L3-01	MEDIUM	单排驾驶室L3物理分支。	READY
+129177_scab_l4	129177	Chassis Cab	Crafter II		2	EU-VW-CRAFTER-II-CHASSIS-SCAB-L4-01	MEDIUM	单排驾驶室L4物理分支。	READY
+129177_scab_l5	129177	Chassis Cab	Crafter II		2	EU-VW-CRAFTER-II-CHASSIS-SCAB-L5-01	MEDIUM	单排驾驶室L5物理分支。	READY
+129177_dcab_l3	129177	Chassis Cab	Crafter II		4	EU-VW-CRAFTER-II-CHASSIS-DCAB-L3-01	MEDIUM	双排驾驶室L3物理分支。	READY
+129177_dcab_l4	129177	Chassis Cab	Crafter II		4	EU-VW-CRAFTER-II-CHASSIS-DCAB-L4-01	MEDIUM	双排驾驶室L4物理分支。	READY
+129180	129180	Coupe	911 991.2	991.2	2	EU-PORSCHE-911-991-2-GT2-RS-COUPE-RWD-01	HIGH		READY
+129185	129185	Wagon	Panamera II	971	5	EU-PORSCHE-PANAMERA-II-971-SPORT-TURISMO-TURBO-01	HIGH	Turbo Sport Turismo物理外廓。	READY
+129187	129187	SUV	X2 I	F39	5	EU-BMW-X2-F39-SUV-01	HIGH		READY
+129195_l3h2	129195	Van	Crafter II			EU-VW-CRAFTER-II-VAN-L3H2-01	MEDIUM	L3H2厢式车物理分支。	READY
+129195_l3h3	129195	Van	Crafter II			EU-VW-CRAFTER-II-VAN-L3H3-01	MEDIUM	L3H3厢式车物理分支。	READY
+129195_l4h3	129195	Van	Crafter II			EU-VW-CRAFTER-II-VAN-L4H3-01	MEDIUM	L4H3厢式车物理分支。	READY
+129195_l4h4	129195	Van	Crafter II			EU-VW-CRAFTER-II-VAN-L4H4-01	MEDIUM	L4H4厢式车物理分支。	READY
+129195_l5h3	129195	Van	Crafter II			EU-VW-CRAFTER-II-VAN-L5H3-01	MEDIUM	L5H3厢式车物理分支。	READY
+129195_l5h4	129195	Van	Crafter II			EU-VW-CRAFTER-II-VAN-L5H4-01	MEDIUM	L5H4厢式车物理分支。	READY
+129196_scab_l3	129196	Chassis Cab	Crafter II		2	EU-VW-CRAFTER-II-CHASSIS-SCAB-L3-01	MEDIUM	单排驾驶室L3物理分支。	READY
+129196_scab_l4	129196	Chassis Cab	Crafter II		2	EU-VW-CRAFTER-II-CHASSIS-SCAB-L4-01	MEDIUM	单排驾驶室L4物理分支。	READY
+129196_scab_l5	129196	Chassis Cab	Crafter II		2	EU-VW-CRAFTER-II-CHASSIS-SCAB-L5-01	MEDIUM	单排驾驶室L5物理分支。	READY
+129196_dcab_l3	129196	Chassis Cab	Crafter II		4	EU-VW-CRAFTER-II-CHASSIS-DCAB-L3-01	MEDIUM	双排驾驶室L3物理分支。	READY
+129196_dcab_l4	129196	Chassis Cab	Crafter II		4	EU-VW-CRAFTER-II-CHASSIS-DCAB-L4-01	MEDIUM	双排驾驶室L4物理分支。	READY
+129197_scab_l3	129197	Chassis Cab	Crafter II		2	EU-VW-CRAFTER-II-CHASSIS-SCAB-L3-01	MEDIUM	单排驾驶室L3物理分支。	READY
+129197_scab_l4	129197	Chassis Cab	Crafter II		2	EU-VW-CRAFTER-II-CHASSIS-SCAB-L4-01	MEDIUM	单排驾驶室L4物理分支。	READY
+129197_scab_l5	129197	Chassis Cab	Crafter II		2	EU-VW-CRAFTER-II-CHASSIS-SCAB-L5-01	MEDIUM	单排驾驶室L5物理分支。	READY
+129197_dcab_l3	129197	Chassis Cab	Crafter II		4	EU-VW-CRAFTER-II-CHASSIS-DCAB-L3-01	MEDIUM	双排驾驶室L3物理分支。	READY
+129197_dcab_l4	129197	Chassis Cab	Crafter II		4	EU-VW-CRAFTER-II-CHASSIS-DCAB-L4-01	MEDIUM	双排驾驶室L4物理分支。	READY
+129198_scab_l3	129198	Chassis Cab	Crafter II		2	EU-VW-CRAFTER-II-CHASSIS-SCAB-L3-01	MEDIUM	单排驾驶室L3物理分支。	READY
+129198_scab_l4	129198	Chassis Cab	Crafter II		2	EU-VW-CRAFTER-II-CHASSIS-SCAB-L4-01	MEDIUM	单排驾驶室L4物理分支。	READY
+129198_scab_l5	129198	Chassis Cab	Crafter II		2	EU-VW-CRAFTER-II-CHASSIS-SCAB-L5-01	MEDIUM	单排驾驶室L5物理分支。	READY
+129198_dcab_l3	129198	Chassis Cab	Crafter II		4	EU-VW-CRAFTER-II-CHASSIS-DCAB-L3-01	MEDIUM	双排驾驶室L3物理分支。	READY
+129198_dcab_l4	129198	Chassis Cab	Crafter II		4	EU-VW-CRAFTER-II-CHASSIS-DCAB-L4-01	MEDIUM	双排驾驶室L4物理分支。	READY
+129201_scab_l3	129201	Chassis Cab	TGE I		2	EU-MAN-TGE-I-CHASSIS-SCAB-L3-01	MEDIUM	单排驾驶室L3物理分支。	READY
+129201_scab_l4	129201	Chassis Cab	TGE I		2	EU-MAN-TGE-I-CHASSIS-SCAB-L4-01	MEDIUM	单排驾驶室L4物理分支。	READY
+129201_dcab_l3	129201	Chassis Cab	TGE I		4	EU-MAN-TGE-I-CHASSIS-DCAB-L3-01	MEDIUM	双排驾驶室L3物理分支。	READY
+129201_dcab_l4	129201	Chassis Cab	TGE I		4	EU-MAN-TGE-I-CHASSIS-DCAB-L4-01	MEDIUM	双排驾驶室L4物理分支。	READY
+129202	129202	Van	Punto Evo	199	3	EU-FIAT-PUNTO-199-HATCHBACK-01	HIGH	三门商用Van与Punto 199同外廓。	READY
+129203	129203	Van	Punto Evo	199	3	EU-FIAT-PUNTO-199-HATCHBACK-01	HIGH	三门商用Van与Punto 199同外廓。	READY
+129204_scab_l3	129204	Chassis Cab	TGE I		2	EU-MAN-TGE-I-CHASSIS-SCAB-L3-01	MEDIUM	单排驾驶室L3物理分支。	READY
+129204_scab_l4	129204	Chassis Cab	TGE I		2	EU-MAN-TGE-I-CHASSIS-SCAB-L4-01	MEDIUM	单排驾驶室L4物理分支。	READY
+129204_dcab_l3	129204	Chassis Cab	TGE I		4	EU-MAN-TGE-I-CHASSIS-DCAB-L3-01	MEDIUM	双排驾驶室L3物理分支。	READY
+129204_dcab_l4	129204	Chassis Cab	TGE I		4	EU-MAN-TGE-I-CHASSIS-DCAB-L4-01	MEDIUM	双排驾驶室L4物理分支。	READY
+129205	129205	Hatchback	Leon III facelift	5F	5	EU-SEAT-LEON-III-5F-HATCHBACK-5D-FACELIFT-01	HIGH	Cupra R五门物理外廓。	READY
+129206	129206	Coupe	Continental GT II		2	EU-BENTLEY-CONTINENTAL-GT-II-V8S-COUPE-01	HIGH		READY
+129210	129210	Chassis Cab	Berlingo II	B9	2	EU-CITROEN-BERLINGO-II-B9-PLATFORM-CAB-01	HIGH	Platform Cab物理外廓。	READY
+129219	129219	Convertible	DS3 I Cabrio		2	EU-CITROEN-DS3-I-CABRIO-RACING-CONVERTIBLE-01	HIGH	Racing Cabrio物理外廓。	READY
+129222	129222	Sedan	Malibu VIII	V300	4	EU-CHEVROLET-MALIBU-VIII-V300-SEDAN-01	HIGH	欧洲市场V300轿车外廓。	READY
+129223	129223	Coupe	Continental GT II		2	EU-BENTLEY-CONTINENTAL-GT-II-V8S-COUPE-01	HIGH		READY
+129225	129225	MPV	Journey I	JC	5	EU-DODGE-JOURNEY-I-JC-MPV-01	HIGH		READY
+129239_l1h1	129239	MPV	Ducato III facelift	X290		EU-FIAT-DUCATO-III-X290-L1H1-01	HIGH	L1H1乘用运输车分支。	READY
+129239_l2h2	129239	MPV	Ducato III facelift	X290		EU-FIAT-DUCATO-III-X290-L2H2-01	HIGH	L2H2乘用运输车分支。	READY
+129240_l1h1	129240	Van	Ducato III facelift	X290		EU-FIAT-DUCATO-III-X290-L1H1-01	HIGH	L1H1厢式车分支。	READY
+129240_l1h2	129240	Van	Ducato III facelift	X290		EU-FIAT-DUCATO-III-X290-L1H2-01	HIGH	L1H2厢式车分支。	READY
+129240_l2h1	129240	Van	Ducato III facelift	X290		EU-FIAT-DUCATO-III-X290-L2H1-01	HIGH	L2H1厢式车分支。	READY
+129240_l2h2	129240	Van	Ducato III facelift	X290		EU-FIAT-DUCATO-III-X290-L2H2-01	HIGH	L2H2厢式车分支。	READY
+129241_scab_ch1	129241	Chassis Cab	Ducato III	X250	2	EU-FIAT-DUCATO-III-X250-CHASSIS-SCAB-CH1-01	MEDIUM	单排驾驶室CH1物理分支。	READY
+129241_scab_mh1	129241	Chassis Cab	Ducato III	X250	2	EU-FIAT-DUCATO-III-X250-CHASSIS-SCAB-MH1-01	MEDIUM	单排驾驶室MH1物理分支。	READY
+129241_scab_mlh1	129241	Chassis Cab	Ducato III	X250	2	EU-FIAT-DUCATO-III-X250-CHASSIS-SCAB-MLH1-01	MEDIUM	单排驾驶室MLH1物理分支。	READY
+129241_scab_lh1	129241	Chassis Cab	Ducato III	X250	2	EU-FIAT-DUCATO-III-X250-CHASSIS-SCAB-LH1-01	MEDIUM	单排驾驶室LH1物理分支。	READY
+129241_scab_xlh1	129241	Chassis Cab	Ducato III	X250	2	EU-FIAT-DUCATO-III-X250-CHASSIS-SCAB-XLH1-01	MEDIUM	单排驾驶室XLH1物理分支。	READY
+129241_dcab_mh1	129241	Chassis Cab	Ducato III	X250	4	EU-FIAT-DUCATO-III-X250-CHASSIS-DCAB-MH1-01	MEDIUM	双排驾驶室MH1物理分支。	READY
+129241_dcab_lh1	129241	Chassis Cab	Ducato III	X250	4	EU-FIAT-DUCATO-III-X250-CHASSIS-DCAB-LH1-01	MEDIUM	双排驾驶室LH1物理分支。	READY
+129241_dcab_xlh1	129241	Chassis Cab	Ducato III	X250	4	EU-FIAT-DUCATO-III-X250-CHASSIS-DCAB-XLH1-01	MEDIUM	双排驾驶室XLH1物理分支。	READY
+129250	129250	Wagon	Escort VI	GAL	5	EU-FORD-ESCORT-VI-GAL-WAGON-01	HIGH		READY
+129252	129252	Sedan	Escort VI	GAL	4	EU-FORD-ESCORT-VI-GAL-SEDAN-01	HIGH		READY
+129253	129253	Convertible	Portofino	F164	2	EU-FERRARI-PORTOFINO-F164-CONVERTIBLE-01	HIGH		READY
+```
+
+[下载 Ktype 映射表](sandbox:/mnt/data/all_1801-1900_ktype_dimension_mapping_final.tsv)
+
+## 最终完整 DIMENSION_GROUP TSV
+
+```tsv
+DIMENSION_GROUP_ID	LengthMM	WidthMM	HeightMM	DimensionSource	SourceURL
+EU-MAN-TGE-I-CHASSIS-SCAB-L3-01	5996	2033	2312	MAN TGE official technical data	https://www.man.eu/content/dam/man/countries/doc/bw-master/van/datenblaetter/tge/man-tge-technical-data-en.pdf/_jcr_content/renditions/original./man-tge-technical-data-en.pdf
+EU-MAN-TGE-I-CHASSIS-SCAB-L4-01	6846	2033	2305	MAN TGE official technical data	https://www.man.eu/content/dam/man/countries/doc/bw-master/van/datenblaetter/tge/man-tge-technical-data-en.pdf/_jcr_content/renditions/original./man-tge-technical-data-en.pdf
+EU-MAN-TGE-I-CHASSIS-DCAB-L3-01	5996	2037	2330	MAN TGE official technical data	https://www.man.eu/content/dam/man/countries/doc/bw-master/van/datenblaetter/tge/man-tge-technical-data-en.pdf/_jcr_content/renditions/original./man-tge-technical-data-en.pdf
+EU-MAN-TGE-I-CHASSIS-DCAB-L4-01	6846	2037	2321	MAN TGE official technical data	https://www.man.eu/content/dam/man/countries/doc/bw-master/van/datenblaetter/tge/man-tge-technical-data-en.pdf/_jcr_content/renditions/original./man-tge-technical-data-en.pdf
+EU-VW-CRAFTER-II-CHASSIS-SCAB-L3-01	5996	2040	2305	Volkswagen Crafter official chassis cab brochure	https://www.volkswagenvans.ie/idhub/content/dam/onehub_nfz/importers/ie/models/downloads/my26/Crafter%20Chassis%20Cab%20Dropside%20Brochure.pdf
+EU-VW-CRAFTER-II-CHASSIS-SCAB-L4-01	6846	2040	2305	Volkswagen Crafter official chassis cab brochure	https://www.volkswagenvans.ie/idhub/content/dam/onehub_nfz/importers/ie/models/downloads/my26/Crafter%20Chassis%20Cab%20Dropside%20Brochure.pdf
+EU-VW-CRAFTER-II-CHASSIS-SCAB-L5-01	7211	2040	2305	Volkswagen Crafter official body-builder guidelines	https://storage.customized-solution.com/csp-public/content/Technische-Informationen/Crafter/Body-builder-guidelines-Crafter-EN-48-2023_01.pdf
+EU-VW-CRAFTER-II-CHASSIS-DCAB-L3-01	5996	2040	2321	Volkswagen Crafter official chassis cab brochure	https://www.volkswagenvans.ie/idhub/content/dam/onehub_nfz/importers/ie/models/downloads/my26/Crafter%20Chassis%20Cab%20Dropside%20Brochure.pdf
+EU-VW-CRAFTER-II-CHASSIS-DCAB-L4-01	6846	2040	2321	Volkswagen Crafter official chassis cab brochure	https://www.volkswagenvans.ie/idhub/content/dam/onehub_nfz/importers/ie/models/downloads/my26/Crafter%20Chassis%20Cab%20Dropside%20Brochure.pdf
+EU-VW-CRAFTER-II-VAN-L3H2-01	5986	2040	2355	Volkswagen Crafter official body-builder guidelines	https://storage.customized-solution.com/csp-public/content/Technische-Informationen/Crafter/Body-builder-guidelines-Crafter-EN-48-2023_01.pdf
+EU-VW-CRAFTER-II-VAN-L3H3-01	5986	2040	2590	Volkswagen Crafter official body-builder guidelines	https://storage.customized-solution.com/csp-public/content/Technische-Informationen/Crafter/Body-builder-guidelines-Crafter-EN-48-2023_01.pdf
+EU-VW-CRAFTER-II-VAN-L4H3-01	6836	2040	2590	Volkswagen Crafter official body-builder guidelines	https://storage.customized-solution.com/csp-public/content/Technische-Informationen/Crafter/Body-builder-guidelines-Crafter-EN-48-2023_01.pdf
+EU-VW-CRAFTER-II-VAN-L4H4-01	6836	2040	2798	Volkswagen Crafter official body-builder guidelines	https://storage.customized-solution.com/csp-public/content/Technische-Informationen/Crafter/Body-builder-guidelines-Crafter-EN-48-2023_01.pdf
+EU-VW-CRAFTER-II-VAN-L5H3-01	7391	2040	2590	Volkswagen Crafter official body-builder guidelines	https://storage.customized-solution.com/csp-public/content/Technische-Informationen/Crafter/Body-builder-guidelines-Crafter-EN-48-2023_01.pdf
+EU-VW-CRAFTER-II-VAN-L5H4-01	7391	2040	2798	Volkswagen Crafter official body-builder guidelines	https://storage.customized-solution.com/csp-public/content/Technische-Informationen/Crafter/Body-builder-guidelines-Crafter-EN-48-2023_01.pdf
+EU-FIAT-DUCATO-III-X250-DANGEL-4X4-BUS-L3H2-01	5998	2050	2524	Motoro Swiss type-approval data for Fiat-Dangel Ducato 4x4	https://motoro.ch/en/fiche-technique/fiat-dangel/ducato-4x4-2-3
+EU-FIAT-DUCATO-III-X250-DANGEL-4X4-VAN-L1H1-01	4963	2050	2254	Motoro Swiss type-approval data for Fiat-Dangel Ducato 4x4	https://motoro.ch/en/fiche-technique/fiat-dangel/ducato-4x4-2-3
+EU-FIAT-DUCATO-III-X250-DANGEL-4X4-VAN-L2H1-01	5413	2050	2254	Motoro Swiss type-approval data for Fiat-Dangel Ducato 4x4	https://motoro.ch/en/fiche-technique/fiat-dangel/ducato-4x4-2-3
+EU-FIAT-DUCATO-III-X250-DANGEL-4X4-VAN-L3H2-01	5998	2050	2522	Motoro Swiss type-approval data for Fiat-Dangel Ducato 4x4	https://motoro.ch/en/fiche-technique/fiat-dangel/ducato-4x4-2-3
+EU-FIAT-DUCATO-III-X250-DANGEL-4X4-VAN-L3H3-01	5998	2050	2760	Motoro Swiss type-approval data for Fiat-Dangel Ducato 4x4	https://motoro.ch/en/fiche-technique/fiat-dangel/ducato-4x4-2-3
+EU-FIAT-DUCATO-III-X250-DANGEL-4X4-VAN-L4H2-01	6363	2050	2522	Motoro Swiss type-approval data for Fiat-Dangel Ducato 4x4	https://motoro.ch/en/fiche-technique/fiat-dangel/ducato-4x4-2-3
+EU-CITROEN-C3-I-FACELIFT-HATCHBACK-5D-01	3860	1667	1510	Automobile-Catalog Citroen C3 1.1i Style Europe	https://www.automobile-catalog.com/car/2006/548495/citroen_c3_1_1i_style.html
+EU-VW-PASSAT-B8-SEDAN-PREFL-01	4767	1832	1456	Volkswagen UK Passat official brochure	https://www.volkswagen.co.uk/idhub/content/dam/onehub_pkw/importers/gb/downloads/brochures/used-cars/passat/estate-v-iii/passat-estate-viii-brochure-dec-2016.pdf
+EU-SEAT-ARONA-I-KJ7-SUV-01	4138	1780	1552	SEAT Arona official specifications brochure	https://www.seat.com/content/dam/public/seat-website/car-shopping-tools/brochure-download/brochures/arona/cars-specs-brochure-KJ7-NA-december-2018.pdf
+EU-PORSCHE-718-982-CAYMAN-GTS-COUPE-01	4379	1801	1286	Porsche 718 Cayman GTS technical data;Automobile-Catalog Porsche 718 Cayman GTS Europe	https://newsroom.porsche.com/dam/jcr%3Afbd80b62-5236-4ff6-9f1b-e54ee42f6f7c/PCNA18_0996_us.pdf;https://www.automobile-catalog.com/car/2017/2872385/porsche_718_cayman_gts.html
+EU-PORSCHE-718-982-BOXSTER-GTS-CONVERTIBLE-01	4379	1801	1272	Porsche 718 Boxster GTS technical data;Automobile-Catalog Porsche 718 Boxster GTS Europe	https://newsroom.porsche.com/dam/jcr%3A59fc370f-12ba-438a-a85c-2ce0bf4442a9/PCNA18_1002_718BoxsterGTS-technical-specifications.pdf;https://www.automobile-catalog.com/car/2017/2872355/porsche_718_boxster_gts.html
+EU-MAN-TGE-I-VAN-L3H2-01	5986	2040	2355	MAN TGE official technical data	https://www.man.eu/content/dam/man/countries/doc/bw-master/van/datenblaetter/tge/man-tge-technical-data-en.pdf/_jcr_content/renditions/original./man-tge-technical-data-en.pdf
+EU-MAN-TGE-I-VAN-L3H3-01	5986	2040	2590	MAN TGE official technical data	https://www.man.eu/content/dam/man/countries/doc/bw-master/van/datenblaetter/tge/man-tge-technical-data-en.pdf/_jcr_content/renditions/original./man-tge-technical-data-en.pdf
+EU-MAN-TGE-I-VAN-L4H3-01	6836	2040	2590	MAN TGE official technical data	https://www.man.eu/content/dam/man/countries/doc/bw-master/van/datenblaetter/tge/man-tge-technical-data-en.pdf/_jcr_content/renditions/original./man-tge-technical-data-en.pdf
+EU-MAN-TGE-I-VAN-L4H4-01	6836	2040	2798	MAN TGE official technical data	https://www.man.eu/content/dam/man/countries/doc/bw-master/van/datenblaetter/tge/man-tge-technical-data-en.pdf/_jcr_content/renditions/original./man-tge-technical-data-en.pdf
+EU-MAN-TGE-I-VAN-L5H3-01	7391	2040	2590	MAN TGE official technical data	https://www.man.eu/content/dam/man/countries/doc/bw-master/van/datenblaetter/tge/man-tge-technical-data-en.pdf/_jcr_content/renditions/original./man-tge-technical-data-en.pdf
+EU-MAN-TGE-I-VAN-L5H4-01	7391	2040	2798	MAN TGE official technical data	https://www.man.eu/content/dam/man/countries/doc/bw-master/van/datenblaetter/tge/man-tge-technical-data-en.pdf/_jcr_content/renditions/original./man-tge-technical-data-en.pdf
+EU-MERCEDES-AMG-S-CLASS-A217-S63-CONVERTIBLE-FACELIFT-01	5051	1913	1428	Mercedes-Benz Mercedes-AMG S-Class supplemental owner's manual	https://static.oneweb.mercedes-benz.com/css-oom-assets/no-no/pdf/mercedes-amg-s-klasse-ekstra-instruksjonsbok-mars-2020-1.pdf
+EU-MERCEDES-AMG-S-CLASS-C217-S63-COUPE-FACELIFT-01	5051	1913	1428	Mercedes-Benz Mercedes-AMG S-Class supplemental owner's manual	https://static.oneweb.mercedes-benz.com/css-oom-assets/no-no/pdf/mercedes-amg-s-klasse-ekstra-instruksjonsbok-mars-2020-1.pdf
+EU-MERCEDES-BENZ-S-CLASS-C217-COUPE-FACELIFT-01	5032	1899	1414	Automobile-Catalog Mercedes-Benz S 450 4MATIC Coupe Europe;Automobile-Catalog Mercedes-Benz S 560 4MATIC Coupe Europe	https://www.automobile-catalog.com/car/2017/2602985/mercedes-benz_s_450_4matic_coupe.html;https://www.automobile-catalog.com/car/2017/2603015/mercedes-benz_s_560_4matic_coupe.html
+EU-MERCEDES-BENZ-S-CLASS-A217-CONVERTIBLE-FACELIFT-01	5032	1899	1420	Automobile-Catalog Mercedes-Benz S 560 Cabriolet Europe	https://www.automobile-catalog.com/car/2018/2603075/mercedes-benz_s_560_cabriolet.html
+EU-FORD-ECOSPORT-II-SUV-01	4273	1765	1650	Ford EcoSport official brochure	https://www.nl.ford.be/content/dam/guxeu/be/nl_be/documents/brochures/feature-pdfs/FT-New_EcoSport.pdf
+EU-FORD-KUGA-II-FACELIFT-SUV-01	4531	1838	1703	Automobile-Catalog Ford Kuga 2.0 TDCi Europe	https://www.automobile-catalog.com/car/2017/2455610/ford_kuga_2_0_tdci_150_2x4.html
+EU-MITSUBISHI-ECLIPSE-CROSS-I-GK1W-SUV-01	4405	1805	1685	Mitsubishi Motors Eclipse Cross Geneva 2017 official specifications	https://media.mitsubishicars.com/releases/mitsubishi-motors-to-globally-premiere-eclipse-cross-compact-suv-at-geneva-international-motor-show-2017
+EU-MINI-MINI-R57-CONVERTIBLE-COOPER-S-PREFL-01	3714	1683	1414	BMW Group PressClub MINI Cooper S Convertible technical specifications	https://www.press.bmwgroup.com/canada/article/attachment/T0031660EN/52392
+EU-BMW-X2-F39-SUV-01	4360	1824	1526	BMW Group PressClub BMW X2 technical specifications	https://www.press.bmwgroup.com/global/article/attachment/T0285189EN/414886
+EU-FIAT-GRANDE-PUNTO-199-HATCHBACK-3D-PREFL-01	4030	1687	1490	Automobile-Catalog Fiat Grande Punto 1.3 Multijet 75 Europe	https://www.automobile-catalog.com/car/2006/728030/fiat_grande_punto_1_3_multijet_16v_75_dynamic.html
+EU-TOYOTA-PRIUS-III-XW30-PLUG-IN-HATCHBACK-01	4480	1745	1490	Toyota Europe Prius Plug-in Hybrid technical data	https://newsroom.toyota.eu/2019-2014-toyota-geneva-motor-show-prius-plug-in-hybrid---towards-the-ultimate-eco-car/
+EU-TOYOTA-AVALON-III-GSX30-SEDAN-01	5009	1849	1486	Toyota 2006 Avalon official eBrochure	https://www.auto-brochures.com/makes/Toyota/Avalon/Toyota_US%20Avalon_2006.pdf
+EU-OPEL-ASTRA-G-CLASSIC-II-SEDAN-01	4252	1709	1425	General Motors Poland Opel Astra Classic II official technical data	https://dixi-car.pl/doc/opel-astra-classic-dane.pdf
+EU-KIA-RIO-IV-YB-SEDAN-PREFL-01	4384	1725	1450	Kia Media 2018 Rio official specifications	https://www.kiamedia.com/us/en/models/rio/2018/specifications
+EU-VW-ARTEON-I-3H-LIFTBACK-PREFL-01	4862	1871	1450	Volkswagen UK Arteon official price and specification guide	https://www.vwpress.co.uk/assets/documents/original/1826-New_Arteon_price_list_8_8_17_1.pdf
+EU-OPEL-ASTRA-G-CLASSIC-II-HATCHBACK-5D-01	4110	1709	1425	General Motors Poland Opel Astra Classic II official technical data	https://dixi-car.pl/doc/opel-astra-classic-dane.pdf
+EU-FORD-AEROSTAR-VN1-MPV-E4WD-EXTENDED-01	4834	1821	1851	Automobile-Catalog 1994 Ford Aerostar XLT E-4WD Extended	https://www.automobile-catalog.com/car/1994/1501685/ford_aerostar_xlt_e-4wd_extended_4_0l_v-6_automatic.html
+EU-VW-POLO-V-602-SEDAN-FACELIFT-01	4390	1699	1467	Volkswagen South Africa Polo Sedan official specifications	https://www.vw.co.za/idhub/content/dam/onehub_pkw/importers/za/editorials/offers-and-products/brochures-and-specifications/brochures/passenger-vehicles/2021/september/polo-sedan-online-brochure-my22.pdf
+EU-OPEL-ASTRA-G-CLASSIC-II-WAGON-01	4288	1709	1465	General Motors Poland Opel Astra Classic II official technical data	https://dixi-car.pl/doc/opel-astra-classic-dane.pdf
+EU-FORD-TRANSIT-V184-VAN-SWB-LOWROOF-01	4834	1974	2033	Ford Panel Vans official brochure	https://xr793.com/wp-content/uploads/2022/09/2005-Ford-Panel-Vans-Specs-UK.pdf
+EU-FORD-TRANSIT-V184-VAN-SWB-MIDROOF-01	4834	1974	2368	Ford Panel Vans official brochure	https://xr793.com/wp-content/uploads/2022/09/2005-Ford-Panel-Vans-Specs-UK.pdf
+EU-FORD-TRANSIT-V184-VAN-MWB-MIDROOF-01	5201	1974	2353	Ford Panel Vans official brochure	https://xr793.com/wp-content/uploads/2022/09/2005-Ford-Panel-Vans-Specs-UK.pdf
+EU-FORD-TRANSIT-V184-VAN-MWB-HIGHROOF-01	5201	1974	2674	Ford Panel Vans official brochure	https://xr793.com/wp-content/uploads/2022/09/2005-Ford-Panel-Vans-Specs-UK.pdf
+EU-FORD-TRANSIT-V184-VAN-LWB-MIDROOF-01	5651	1974	2354	Ford Panel Vans official brochure	https://xr793.com/wp-content/uploads/2022/09/2005-Ford-Panel-Vans-Specs-UK.pdf
+EU-FORD-TRANSIT-V184-VAN-LWB-HIGHROOF-01	5651	1974	2678	Ford Panel Vans official brochure	https://xr793.com/wp-content/uploads/2022/09/2005-Ford-Panel-Vans-Specs-UK.pdf
+EU-PEUGEOT-PARTNER-II-B9-VAN-L1-01	4380	1810	1828	Peugeot Partner Van official prices and specifications brochure	https://www.charterspeugeot.com/wp-content/uploads/sites/15/2018/08/peugeot-partner-prices-specifications-brochure-08-2018.pdf
+EU-PEUGEOT-PARTNER-II-B9-VAN-L2-01	4628	1810	1834	Peugeot Partner Van official prices and specifications brochure	https://www.charterspeugeot.com/wp-content/uploads/sites/15/2018/08/peugeot-partner-prices-specifications-brochure-08-2018.pdf
+EU-PEUGEOT-PARTNER-II-B9-TEPEE-STANDARD-01	4380	1810	1801	Peugeot Partner Tepee official dimensions guide	https://www.autoeurope.no/peugeotfleet/documents/partner-dimensions.pdf
+EU-PEUGEOT-PARTNER-II-B9-TEPEE-OUTDOOR-01	4380	1810	1862	Peugeot Partner Tepee official dimensions guide	https://www.autoeurope.no/peugeotfleet/documents/partner-dimensions.pdf
+EU-VW-POLO-VI-AW1-GTI-HATCHBACK-01	4067	1751	1438	Volkswagen UK new Polo official brochure;Auto-Data Volkswagen Polo VI GTI 2.0 TSI DSG	https://www.volkswagen.co.uk/idhub/content/dam/onehub_pkw/importers/gb/downloads/brochures/used-cars/polo/polo-nf/polo-nf-brochure-dec-2017.pdf;https://www.auto-data.net/en/volkswagen-polo-vi-gti-2.0-tsi-200hp-dsg-32275
+EU-SEAT-IBIZA-V-KJ1-HATCHBACK-01	4059	1780	1444	SEAT Ibiza official specifications brochure	https://www.seat.com/content/dam/public/seat-website/car-shopping-tools/brochure-download/brochures/ibiza/cars-specs-brochure-KJ1-NA-january-2019.pdf
+EU-OPEL-ASTRA-H-FAMILY-WAGON-01	4515	1753	1500	Opel Astra H official owner's manual	https://public-servicebox.opel.com/OVddb/OV/zh_CN/Astra_H/2010_2016/2012/manual_user/om_astra_2584_17_eu_my12_ed0811_9_zh_CN_online.pdf
+EU-OPEL-ASTRA-H-FAMILY-HATCHBACK-5D-01	4249	1753	1460	Opel Astra H official owner's manual	https://public-servicebox.opel.com/OVddb/OV/zh_CN/Astra_H/2010_2016/2012/manual_user/om_astra_2584_17_eu_my12_ed0811_9_zh_CN_online.pdf
+EU-OPEL-ASTRA-H-FAMILY-SEDAN-01	4587	1753	1458	Opel Astra H official owner's manual	https://public-servicebox.opel.com/OVddb/OV/zh_CN/Astra_H/2010_2016/2012/manual_user/om_astra_2584_17_eu_my12_ed0811_9_zh_CN_online.pdf
+EU-ABARTH-PUNTO-EVO-199-HATCHBACK-3D-01	4065	1721	1490	Auto-Data Abarth Punto Evo 199	https://www.auto-data.net/en/abarth-punto-model-3182
+EU-SUZUKI-JIMNY-III-JB33-CONVERTIBLE-PREFL-01	3625	1600	1655	Auto-Data Suzuki Jimny Cabrio III 1.3 16V 80 Hp 4WD	https://www.auto-data.net/en/suzuki-jimny-cabrio-iii-1.3-16v-80hp-4wd-16460
+EU-SUZUKI-JIMNY-III-JB43-CONVERTIBLE-01	3625	1600	1665	Automobile-Catalog Suzuki Jimny Cabrio 1.3 4WD Europe	https://www.automobile-catalog.com/car/2007/3394025/suzuki_jimny_cabrio_1_3_4wd.html
+EU-SUZUKI-JIMNY-III-JB43-SUV-FACELIFT-2012-01	3675	1600	1705	Suzuki Jimny official brochure;Automobile-Catalog Suzuki Jimny 1.3 4WD Europe	https://autocatalogarchive.com/wp-content/uploads/2017/06/Suzuki-Jimny-2013-AU.pdf;https://www.automobile-catalog.com/car/2013/3394355/suzuki_jimny_1_3_4wd.html
+EU-BMW-3-F80-M3-CS-SEDAN-01	4671	1877	1424	BMW Group PressClub M3 CS technical data	https://www.press.bmwgroup.com/global/article/attachment/T0275597EN/408532/M3_CS_Technical_Data_E.pdf
+EU-MINI-MINI-F55-HATCHBACK-ONE-01	3982	1727	1425	BMW Group PressClub MINI 5 door technical specifications	https://www.press.bmwgroup.com/global/article/attachment/T0274783EN/397685
+EU-MINI-MINI-F56-HATCHBACK-ONE-01	3821	1727	1414	BMW Group PressClub MINI 3 door technical specifications	https://www.press.bmwgroup.com/czech/article/attachment/T0284470CS/413623
+EU-MINI-MINI-F57-CONVERTIBLE-ONE-01	3821	1727	1415	BMW Group PressClub MINI Convertible technical specifications	https://www.press.bmwgroup.com/global/article/attachment/T0284420EN/413748
+EU-ALFA-ROMEO-STELVIO-949-SUV-01	4687	1903	1671	Alfa Romeo Stelvio Quadrifoglio official brochure	https://www.media.stellantis.com/uploads/uk/UK/2018/Alfa_Romeo/Press/Alfa_Romeo_Stelvio_Quadrifoglio_brochure.pdf
+EU-DS-DS7-CROSSBACK-I-SUV-01	4573	1895	1620	DS 7 CROSSBACK official price and specification guide	https://www.media.stellantis.com/uploads/uk/model-pricelist/ds7crossbackpricesandspecs-6172c7be26ee3.pdf
+EU-MERCEDES-BENZ-G-CLASS-W463-SUV-SWB-01	4185	1690	1908	Auto-Data Mercedes-Benz G-Class W463 G 300 SWB	https://www.auto-data.net/en/mercedes-benz-g-class-w463-g-300-170hp-4matic-42310
+EU-MERCEDES-BENZ-G-CLASS-W463-SUV-LWB-01	4635	1690	1936	Auto-Data Mercedes-Benz G-Class Long W463 G 300	https://www.auto-data.net/en/mercedes-benz-g-class-long-w463-g-300-170hp-4matic-automatic-42517
+EU-OPEL-CROSSLAND-X-P17-SUV-01	4212	1765	1590	Vauxhall Crossland X launch specifications archive	https://a3.myautoworld.com/36921/
+EU-FORD-FOCUS-III-FACELIFT-WAGON-5D-01	4556	1823	1505	Ford New Focus official brochure	https://www.forddealers.co.nz/i/files/FordFocus_Brochure.pdf
+EU-FORD-FOCUS-III-FACELIFT-HATCHBACK-5D-01	4358	1823	1484	Ford South Africa New Focus Q1 2018 official brochure	https://www.ford.co.za/content/dam/Ford/website-assets/latam/za/nameplate/focus/brochure/Focus-Brochure-Q1-2018_EBrochure.pdf
+EU-FORD-FOCUS-III-FACELIFT-SEDAN-4D-01	4534	1823	1484	Ford South Africa New Focus Q1 2018 official brochure	https://www.ford.co.za/content/dam/Ford/website-assets/latam/za/nameplate/focus/brochure/Focus-Brochure-Q1-2018_EBrochure.pdf
+EU-PORSCHE-911-991-2-GT2-RS-COUPE-RWD-01	4549	1880	1297	Porsche Goodwood 2017 official technical data	https://newsroom.porsche.com/dam/jcr%3A914d7fe5-dc87-415e-9bee-8fee16daa804/Goodwood_2017_DE_EN_V4.pdf
+EU-PORSCHE-PANAMERA-II-971-SPORT-TURISMO-TURBO-01	5049	1937	1432	Porsche Panamera Sport Turismo official press release	https://www.porsche.com/usa/aboutporsche/pressreleases/pag/?id=425281&pool=international-de
+EU-FIAT-PUNTO-199-HATCHBACK-01	4065	1687	1490	Fiat Punto Evo official brochure	https://autocatalogarchive.com/wp-content/uploads/2016/08/Fiat-Punto-2010-UK.pdf
+EU-SEAT-LEON-III-5F-HATCHBACK-5D-FACELIFT-01	4282	1816	1459	SEAT Leon official specifications brochure	https://www.seat.ps/content/dam/public/seat-website/car-shopping-tools/brochure-download/brochures/leon/cars-specs-brochure-5F1-NA-december-2018.pdf
+EU-BENTLEY-CONTINENTAL-GT-II-V8S-COUPE-01	4806	1944	1404	Honest John Bentley Continental GT technical specifications	https://www.honestjohn.co.uk/bentley/continental/gt/2010/specs/
+EU-CITROEN-BERLINGO-II-B9-PLATFORM-CAB-01	4237	1810	1822	Citroen Berlingo official UK brochure	https://xr793.com/wp-content/uploads/2022/09/2012-Citroen-Berlingo-UK.pdf
+EU-CITROEN-DS3-I-CABRIO-RACING-CONVERTIBLE-01	3948	1715	1458	Automobile-Catalog Citroen DS3 Cabrio Racing;Auto-Data Citroen DS3 Phase I Cabrio	https://www.automobile-catalog.com/car/2014/2086055/citroen_ds3_cabrio_racing.html;https://www.auto-data.net/en/citroen-ds-3-phase-i-cabrio-generation-4406
+EU-CHEVROLET-MALIBU-VIII-V300-SEDAN-01	4865	1855	1465	Automobile-Catalog Chevrolet Malibu 2.0 D LT Europe	https://www.automobile-catalog.com/car/2012/1777610/chevrolet_malibu_2_0_d_lt.html
+EU-DODGE-JOURNEY-I-JC-MPV-01	4888	1878	1691	Automobile-Catalog Dodge Journey SXT 2.0 CRD Europe	https://www.automobile-catalog.com/car/2009/1227215/dodge_journey_sxt_2_0l_crd.html
+EU-FIAT-DUCATO-III-X290-L1H1-01	4963	2050	2254	Fiat Professional New Ducato 2014 official price list;Fiat Professional New Ducato Passenger Transport official brochure	https://www.media.stellantis.com/uploads/uk/UK/2014/FIAT_PROF/PRICES/Fiat_Professional_NEW%20DUCATO%202014_Price_List_APR_2014.pdf;https://fiat.autospirit.ee/images/ducato/ducato_soiduauto.pdf
+EU-FIAT-DUCATO-III-X290-L2H2-01	5413	2050	2524	Fiat Professional New Ducato 2014 official price list;Fiat Professional New Ducato Passenger Transport official brochure	https://www.media.stellantis.com/uploads/uk/UK/2014/FIAT_PROF/PRICES/Fiat_Professional_NEW%20DUCATO%202014_Price_List_APR_2014.pdf;https://fiat.autospirit.ee/images/ducato/ducato_soiduauto.pdf
+EU-FIAT-DUCATO-III-X290-L1H2-01	4963	2050	2524	Fiat Professional New Ducato 2014 official price list	https://www.media.stellantis.com/uploads/uk/UK/2014/FIAT_PROF/PRICES/Fiat_Professional_NEW%20DUCATO%202014_Price_List_APR_2014.pdf
+EU-FIAT-DUCATO-III-X290-L2H1-01	5413	2050	2254	Fiat Professional New Ducato 2014 official price list	https://www.media.stellantis.com/uploads/uk/UK/2014/FIAT_PROF/PRICES/Fiat_Professional_NEW%20DUCATO%202014_Price_List_APR_2014.pdf
+EU-FIAT-DUCATO-III-X250-CHASSIS-SCAB-CH1-01	4908	2050	2254	Fiat Professional New Ducato converter technical specifications	https://www.media.stellantis.com/uploads/em/2014/schede_tecniche/DucatoTrasfConv_CT_ENG.pdf
+EU-FIAT-DUCATO-III-X250-CHASSIS-SCAB-MH1-01	5358	2050	2254	Fiat Professional New Ducato converter technical specifications	https://www.media.stellantis.com/uploads/em/2014/schede_tecniche/DucatoTrasfConv_CT_ENG.pdf
+EU-FIAT-DUCATO-III-X250-CHASSIS-SCAB-MLH1-01	5708	2050	2254	Fiat Professional New Ducato converter technical specifications	https://www.media.stellantis.com/uploads/em/2014/schede_tecniche/DucatoTrasfConv_CT_ENG.pdf
+EU-FIAT-DUCATO-III-X250-CHASSIS-SCAB-LH1-01	5943	2050	2254	Fiat Professional New Ducato converter technical specifications	https://www.media.stellantis.com/uploads/em/2014/schede_tecniche/DucatoTrasfConv_CT_ENG.pdf
+EU-FIAT-DUCATO-III-X250-CHASSIS-SCAB-XLH1-01	6308	2050	2254	Fiat Professional New Ducato converter technical specifications	https://www.media.stellantis.com/uploads/em/2014/schede_tecniche/DucatoTrasfConv_CT_ENG.pdf
+EU-FIAT-DUCATO-III-X250-CHASSIS-DCAB-MH1-01	5358	2050	2254	Fiat Professional New Ducato converter technical specifications	https://www.media.stellantis.com/uploads/em/2014/schede_tecniche/DucatoTrasfConv_CT_ENG.pdf
+EU-FIAT-DUCATO-III-X250-CHASSIS-DCAB-LH1-01	5943	2050	2254	Fiat Professional New Ducato converter technical specifications	https://www.media.stellantis.com/uploads/em/2014/schede_tecniche/DucatoTrasfConv_CT_ENG.pdf
+EU-FIAT-DUCATO-III-X250-CHASSIS-DCAB-XLH1-01	6308	2050	2254	Fiat Professional New Ducato converter technical specifications	https://www.media.stellantis.com/uploads/em/2014/schede_tecniche/DucatoTrasfConv_CT_ENG.pdf
+EU-FORD-ESCORT-VI-GAL-WAGON-01	4268	1690	1410	Auto-Data Ford Escort VI Turnier GAL	https://www.auto-data.net/en/ford-escort-vi-turnier-gal-generation-1664
+EU-FORD-ESCORT-VI-GAL-SEDAN-01	4229	1690	1397	Auto-Data Ford Escort VI GAL	https://www.auto-data.net/en/ford-escort-vi-gal-1.4-71hp-7423
+EU-FERRARI-PORTOFINO-F164-CONVERTIBLE-01	4586	1938	1318	Ferrari Portofino official technical specifications	https://www.ferrari.com/en-EN/auto/ferrari-portofino
+```
+
+[下载 DIMENSION_GROUP 表](sandbox:/mnt/data/all_1801-1900_dimension_groups_final.tsv)
+
+推进信号：COMPLETE
+
+
+--- 累计最终 TSV 已更新 ---
+- 累计 Ktype 映射：ktype_mapping_final.tsv（852 行）
+- 累计尺寸组：dimension_groups_final.tsv（458 行）
+
