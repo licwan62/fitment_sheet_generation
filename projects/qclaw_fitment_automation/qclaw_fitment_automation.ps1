@@ -600,6 +600,10 @@ function Invoke-ManualPlaywrightLogin {
 
 function Wait-ChatGPTLogin {
     $manualLoginAttempted = $false
+    # Grace period: ChatGPT may briefly show login UI while the authenticated session loads
+    # (especially through a proxy). Keep polling before concluding the user is logged out.
+    $graceSeconds = 30
+    $graceDeadline = (Get-Date).AddSeconds($graceSeconds)
     while ($true) {
         try {
             $state = Get-ChatGPTState
@@ -607,11 +611,23 @@ function Wait-ChatGPTLogin {
                 Write-Host "ChatGPT 已登录，输入框已就绪。" -ForegroundColor Green
                 return
             }
+            if ($state.loggedOut -and (Get-Date) -lt $graceDeadline) {
+                Write-Host "ChatGPT 页面仍在加载中（检测到登录 UI，等待页面完全渲染）..." -ForegroundColor DarkYellow
+                Start-Sleep -Seconds 2
+                continue
+            }
         }
         catch {
             Write-Host "ChatGPT 页面仍在加载，等待手动确认。" -ForegroundColor Yellow
             $state = $null
+            if ((Get-Date) -lt $graceDeadline) {
+                Start-Sleep -Seconds 2
+                continue
+            }
         }
+
+        # Past the grace period — reset deadline so it does not affect manual-login retries.
+        $graceDeadline = [datetime]::MinValue
 
         Write-Host "当前尚未检测到已登录的可输入页面。" -ForegroundColor Yellow
         if ($Browser -eq "playwright" -and -not $manualLoginAttempted) {
@@ -2736,6 +2752,8 @@ function Open-ChatGPT {
     Write-Host "打开 ChatGPT: $ChatGptUrl" -ForegroundColor Yellow
     $openArgs = @("run", "--browser", $Browser, "open", $ChatGptUrl)
     $allowCleanupRetry = $true
+    $networkRetryCount = 0
+    $maxNetworkRetries = 3
 
     while ($true) {
         $openResult = Invoke-XB @openArgs
@@ -2758,6 +2776,14 @@ function Open-ChatGPT {
             Write-Host "open 返回 ERR_ABORTED，改用新标签页打开 ChatGPT..." -ForegroundColor Yellow
             Invoke-XBRun "tab" "new" $ChatGptUrl | Out-Null
             break
+        }
+
+        if (($rawError -like "*ERR_TIMED_OUT*" -or $rawError -like "*net::ERR_*") -and $networkRetryCount -lt $maxNetworkRetries) {
+            $networkRetryCount++
+            $snippet = $rawError.Substring(0, [Math]::Min(120, $rawError.Length))
+            Write-Host "open 网络错误 ($snippet...)，10 秒后重试 ($networkRetryCount/$maxNetworkRetries)..." -ForegroundColor Yellow
+            Start-Sleep -Seconds 10
+            continue
         }
 
         $isSessionLost = Test-XBRecoverableError -Detail $rawError
@@ -3441,11 +3467,27 @@ function Wait-ChatGPTConversationIdle {
     $idleSince = $null
     $announcedWaiting = $false
     $lastState = $null
+    $loggedOutSince = $null
+    $loggedOutConfirmSeconds = 20
 
     while ((Get-Date) -lt $deadline) {
         $state = Get-ChatGPTState
         $lastState = $state
-        if ($state.loggedOut) { throw "ChatGPT 页面显示未登录" }
+        if ($state.loggedOut) {
+            if (-not $loggedOutSince) {
+                $loggedOutSince = Get-Date
+                Write-Host "  检测到登录 UI，等待 $loggedOutConfirmSeconds 秒确认…" -ForegroundColor DarkYellow
+            }
+            elseif (((Get-Date) - $loggedOutSince).TotalSeconds -ge $loggedOutConfirmSeconds) {
+                throw "ChatGPT 页面显示未登录（已持续 $loggedOutConfirmSeconds 秒）"
+            }
+        }
+        else {
+            if ($loggedOutSince) {
+                Write-Host "  登录状态恢复，继续工作。" -ForegroundColor Green
+                $loggedOutSince = $null
+            }
+        }
         if ($state.conversationLimitReached) { throw "ChatGPT 对话已达到长度上限，需要在新聊天中创建分支" }
         if ($state.pageError) { throw "ChatGPT 页面出现错误提示" }
 
@@ -3544,34 +3586,99 @@ function Invoke-ChatGPTConversationBranchOnce {
 
     Ensure-ChatGPTActive
     Write-Host "  对话达到长度上限，正在执行【在新聊天中分支】..." -ForegroundColor Yellow
-    $openMenuScript = @'
-(() => {
+
+    $visibleAndTextHelper = @'
   const visible = el => {
     if (!el) return false;
-    const style = getComputedStyle(el);
-    const rect = el.getBoundingClientRect();
-    return style.display !== 'none' && style.visibility !== 'hidden' && rect.width > 0 && rect.height > 0;
+    const s = getComputedStyle(el); const r = el.getBoundingClientRect();
+    return s.display !== 'none' && s.visibility !== 'hidden' && r.width > 0 && r.height > 0;
   };
   const textOf = el => ((el.innerText || el.textContent || '') + ' ' + (el.getAttribute('aria-label') || '')).trim();
-  const branchPattern = /branch in new chat|branch to new chat|在新聊天中分支|在新对话中分支|分支到新聊天/i;
-  const direct = Array.from(document.querySelectorAll('button, a, [role="menuitem"]'))
-    .find(el => visible(el) && branchPattern.test(textOf(el)));
-  if (direct) {
-    direct.click();
-    return 'branch-clicked';
-  }
+'@
 
-  const turns = Array.from(document.querySelectorAll('article, [data-testid*="conversation-turn"]'));
-  for (const turn of turns.reverse()) {
-    const ownRole = turn.getAttribute('data-message-author-role') || '';
-    const hasUser = ownRole === 'user' || !!turn.querySelector('[data-message-author-role="user"]');
-    const hasAssistant = ownRole === 'assistant' || !!turn.querySelector('[data-message-author-role="assistant"]');
-    if (!hasUser && hasAssistant) continue;
-    turn.dispatchEvent(new MouseEvent('mouseover', { bubbles: true }));
-    turn.dispatchEvent(new MouseEvent('mouseenter', { bubbles: true }));
-    turn.dispatchEvent(new MouseEvent('mousemove', { bubbles: true, clientX: 10, clientY: 10 }));
+    # Step 1: Check if branch button is already directly visible.
+    $directBranchScript = @"
+(() => {
+$visibleAndTextHelper
+  const pat = /branch in new chat|branch to new chat|在新聊天中分支|在新对话中分支|分支到新聊天/i;
+  const el = Array.from(document.querySelectorAll('button, a, [role="menuitem"]'))
+    .find(e => visible(e) && pat.test(textOf(e)));
+  if (el) { el.click(); return 'branch-clicked'; }
+  return '';
+})()
+"@
+    $directResult = [string](Get-XBValue (Invoke-XBRun "eval" $directBranchScript))
+    if ($directResult -eq "branch-clicked") {
+        Write-Host "  直接找到【在新聊天中分支】按钮并已点击。" -ForegroundColor DarkCyan
+    }
+    else {
+        # Step 2: Scroll last user message into view and hover to reveal action buttons.
+        $hoverScript = @"
+(() => {
+$visibleAndTextHelper
+  const turns = Array.from(document.querySelectorAll('[data-message-author-role="user"]'));
+  if (!turns.length) {
+    const all = Array.from(document.querySelectorAll('article, [data-testid*="conversation-turn"]'));
+    for (const t of all.reverse()) {
+      const role = t.getAttribute('data-message-author-role') || '';
+      if (role === 'user' || t.querySelector('[data-message-author-role="user"]')) { turns.push(t); break; }
+    }
+  }
+  if (!turns.length) return JSON.stringify({ ok: false, reason: 'no-user-turn', debug: '' });
+  const last = turns[turns.length - 1];
+  last.scrollIntoView({ block: 'center', behavior: 'instant' });
+  const rect = last.getBoundingClientRect();
+  const cx = rect.left + rect.width / 2;
+  const cy = rect.top + rect.height / 2;
+  ['mouseover','mouseenter','mousemove'].forEach(type =>
+    last.dispatchEvent(new MouseEvent(type, { bubbles: true, clientX: cx, clientY: cy }))
+  );
+  const allBtns = Array.from(last.querySelectorAll('button'));
+  const visBtns = allBtns.filter(visible);
+  return JSON.stringify({
+    ok: true,
+    turnTag: last.tagName,
+    turnRole: last.getAttribute('data-message-author-role'),
+    totalButtons: allBtns.length,
+    visibleButtons: visBtns.length,
+    visibleLabels: visBtns.map(b => textOf(b).substring(0, 40))
+  });
+})()
+"@
+        $hoverRaw = [string](Get-XBValue (Invoke-XBRun "eval" $hoverScript))
+        Write-Host "  hover 调试: $hoverRaw" -ForegroundColor DarkGray
+        try { $hoverInfo = $hoverRaw | ConvertFrom-Json } catch { $hoverInfo = $null }
+        if ($hoverInfo -and -not $hoverInfo.ok) {
+            throw "未找到任何用户消息，无法执行分支（原因: $($hoverInfo.reason)）"
+        }
+        Write-Host "  已定位最后一条用户消息（可见按钮: $($hoverInfo.visibleButtons)），等待操作按钮渲染…" -ForegroundColor DarkCyan
+        Start-Sleep -Seconds 2
+
+        # Step 3: Re-hover and find the "more actions" menu button.
+        $findMenuScript = @"
+(() => {
+$visibleAndTextHelper
+  const turns = Array.from(document.querySelectorAll('[data-message-author-role="user"]'));
+  if (!turns.length) {
+    const all = Array.from(document.querySelectorAll('article, [data-testid*="conversation-turn"]'));
+    for (const t of all.reverse()) {
+      const role = t.getAttribute('data-message-author-role') || '';
+      if (role === 'user' || t.querySelector('[data-message-author-role="user"]')) { turns.push(t); break; }
+    }
+  }
+  const candidates = turns.length ? [turns[turns.length - 1]] : [];
+  const sharePattern = /share|分享|复制|copy/i;
+  const allDebug = [];
+
+  for (const turn of candidates) {
+    const rect = turn.getBoundingClientRect();
+    const cx = rect.left + rect.width / 2;
+    const cy = rect.top + rect.height / 2;
+    ['mouseover','mouseenter','mousemove'].forEach(type =>
+      turn.dispatchEvent(new MouseEvent(type, { bubbles: true, clientX: cx, clientY: cy }))
+    );
     const buttons = Array.from(turn.querySelectorAll('button')).filter(visible);
-    const sharePattern = /share|分享|复制|copy/i;
+    for (const b of buttons) { allDebug.push(textOf(b).substring(0, 40)); }
     const menu = buttons.reverse().find(button => {
       const label = textOf(button);
       const testId = button.getAttribute('data-testid') || '';
@@ -3583,49 +3690,71 @@ function Invoke-ChatGPTConversationBranchOnce {
       const svg = button.querySelector('svg');
       if (svg && buttons.indexOf(button) === buttons.length - 1) {
         const pathCount = button.querySelectorAll('circle, path').length;
-        if (pathCount >= 3 && pathCount <= 5 && /more|menu|overflow/i.test(ariaLabel + ' ' + testId)) return true;
+        if (pathCount >= 3 && pathCount <= 5) return true;
       }
       return false;
     });
-    if (menu) {
-      menu.click();
-      return 'menu-opened';
-    }
+    if (menu) { menu.click(); return JSON.stringify({ ok: true, status: 'menu-opened' }); }
   }
-  return 'not-found';
+
+  // Fallback: any visible button on the page with "more"-like attributes.
+  const allButtons = Array.from(document.querySelectorAll('button')).filter(visible);
+  const fallback = allButtons.reverse().find(b => {
+    const al = (b.getAttribute('aria-label') || '').toLowerCase();
+    const td = (b.getAttribute('data-testid') || '').toLowerCase();
+    return /more|更多|\.\.\.|⋯|ellipsis/.test(al) || /more|actions?/.test(td);
+  });
+  if (fallback) { fallback.click(); return JSON.stringify({ ok: true, status: 'menu-opened-fallback' }); }
+  return JSON.stringify({ ok: false, status: 'not-found', debug: allDebug });
 })()
-'@
-    $menuResult = [string](Get-XBValue (Invoke-XBRun "eval" $openMenuScript))
-    if ($menuResult -eq "menu-opened") {
-        $clickBranchScript = @'
+"@
+        $menuResult = ""
+        $menuInfo = $null
+        for ($menuFindAttempt = 1; $menuFindAttempt -le 3; $menuFindAttempt++) {
+            $menuRaw = [string](Get-XBValue (Invoke-XBRun "eval" $findMenuScript))
+            Write-Host "  菜单查找 调试 ($menuFindAttempt/3): $menuRaw" -ForegroundColor DarkGray
+            try { $menuInfo = $menuRaw | ConvertFrom-Json } catch { $menuInfo = $null }
+            if ($menuInfo -and $menuInfo.ok) { $menuResult = $menuInfo.status; break }
+            if ($menuFindAttempt -lt 3) {
+                Write-Host "  第 $menuFindAttempt 次未找到更多操作按钮（可见: $($menuInfo.debug -join ', ')），重新 hover 后重试…" -ForegroundColor DarkYellow
+                Get-XBValue (Invoke-XBRun "eval" $hoverScript) | Out-Null
+                Start-Sleep -Seconds 2
+            }
+        }
+
+        if ($menuResult -like "menu-opened*") {
+            Write-Host "  已点击更多操作菜单，等待下拉项渲染…" -ForegroundColor DarkCyan
+            Start-Sleep -Seconds 2
+
+            # Step 4: Find and click "branch in new chat" in the opened menu.
+            $clickBranchScript = @"
 (() => {
-  const visible = el => {
-    if (!el) return false;
-    const style = getComputedStyle(el);
-    const rect = el.getBoundingClientRect();
-    return style.display !== 'none' && style.visibility !== 'hidden' && rect.width > 0 && rect.height > 0;
-  };
-  const textOf = el => ((el.innerText || el.textContent || '') + ' ' + (el.getAttribute('aria-label') || '')).trim();
+$visibleAndTextHelper
   const pattern = /branch in new chat|branch to new chat|在新聊天中分支|在新对话中分支|分支到新聊天/i;
-  const item = Array.from(document.querySelectorAll('[role="menuitem"], [role="menu"] button, button, a'))
-    .find(el => visible(el) && pattern.test(textOf(el)));
-  if (!item) return false;
-  item.click();
-  return true;
+  const all = Array.from(document.querySelectorAll('[role="menuitem"], [role="menu"] button, [role="menu"] a, button, a'));
+  const matches = all.filter(el => visible(el) && pattern.test(textOf(el)));
+  const debug = all.filter(visible).slice(-20).map(e => textOf(e).substring(0, 40));
+  if (matches.length) { matches[0].click(); return JSON.stringify({ ok: true }); }
+  return JSON.stringify({ ok: false, debug: debug });
 })()
-'@
-        $branchClicked = $false
-        for ($menuAttempt = 1; $menuAttempt -le 5; $menuAttempt++) {
-            Start-Sleep -Seconds 1
-            $branchClicked = Get-XBValue (Invoke-XBRun "eval" $clickBranchScript)
-            if ($branchClicked) { break }
+"@
+            $branchClicked = $false
+            for ($menuAttempt = 1; $menuAttempt -le 8; $menuAttempt++) {
+                $branchRaw = [string](Get-XBValue (Invoke-XBRun "eval" $clickBranchScript))
+                Write-Host "  分支按钮查找 调试 ($menuAttempt/8): $branchRaw" -ForegroundColor DarkGray
+                try { $branchInfo = $branchRaw | ConvertFrom-Json } catch { $branchInfo = $null }
+                if ($branchInfo -and $branchInfo.ok) { $branchClicked = $true; break }
+                Start-Sleep -Seconds 1
+            }
+            if (-not $branchClicked) {
+                $debugList = if ($branchInfo -and $branchInfo.debug) { $branchInfo.debug -join ' | ' } else { '无' }
+                throw "已打开消息操作菜单，但没有找到【在新聊天中分支】。菜单可见项: $debugList"
+            }
         }
-        if (-not $branchClicked) {
-            throw "已打开消息操作菜单，但没有找到【在新聊天中分支】"
+        else {
+            $debugList = if ($menuInfo -and $menuInfo.debug) { $menuInfo.debug -join ' | ' } else { $menuResult }
+            throw "没有找到最后一条用户消息的【在新聊天中分支】入口。用户消息上的按钮: $debugList"
         }
-    }
-    elseif ($menuResult -ne "branch-clicked") {
-        throw "没有找到最后一条用户消息的【在新聊天中分支】入口"
     }
 
     $deadline = (Get-Date).AddSeconds(30)
@@ -3742,6 +3871,8 @@ function Wait-ChatGPTReplyComplete {
     $lastReply = ""
     $stableSince = $null
     $strongContinuationSince = $null
+    $loggedOutSince = $null
+    $loggedOutConfirmSeconds = 20
 
     function Complete-WaitWithReply {
         param(
@@ -3765,7 +3896,21 @@ function Wait-ChatGPTReplyComplete {
 
     while ((Get-Date) -lt $deadline) {
         $state = Get-ChatGPTState
-        if ($state.loggedOut) { return @{ Ok = $false; Status = "登录失效"; Remark = "ChatGPT 页面显示未登录"; Reply = "" } }
+        if ($state.loggedOut) {
+            if (-not $loggedOutSince) {
+                $loggedOutSince = Get-Date
+                Write-Host "  检测到登录 UI，等待 $loggedOutConfirmSeconds 秒确认…" -ForegroundColor DarkYellow
+            }
+            elseif (((Get-Date) - $loggedOutSince).TotalSeconds -ge $loggedOutConfirmSeconds) {
+                return @{ Ok = $false; Status = "登录失效"; Remark = "ChatGPT 页面显示未登录（已持续 $loggedOutConfirmSeconds 秒）"; Reply = "" }
+            }
+        }
+        else {
+            if ($loggedOutSince) {
+                Write-Host "  登录状态恢复，继续等待回复。" -ForegroundColor Green
+                $loggedOutSince = $null
+            }
+        }
         if ($state.conversationLimitReached) {
             return @{
                 Ok = $false
@@ -4662,7 +4807,14 @@ function Main {
         return
     }
 
-    $state = Get-ChatGPTState
+    $postLoginRetry = 0
+    while ($postLoginRetry -lt 5) {
+        $state = Get-ChatGPTState
+        if (-not $state.loggedOut -and $state.inputReady) { break }
+        $postLoginRetry++
+        Write-Host "ChatGPT 页面尚未就绪（第 $postLoginRetry 次检查），等待 5 秒…" -ForegroundColor DarkYellow
+        Start-Sleep -Seconds 5
+    }
     if ($state.loggedOut -or -not $state.inputReady) {
         Write-Host "ChatGPT 当前不可输入。请在打开的浏览器里登录，并进入可发送消息的页面后再运行脚本。" -ForegroundColor Red
         throw "ChatGPT 当前不可输入"
