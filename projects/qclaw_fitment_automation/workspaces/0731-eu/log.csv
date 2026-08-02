@@ -1,0 +1,7 @@
+文件名,开始时间,结束时间,状态,发送次数,输出文件名,备注
+"all.tsv#all 第 1-100 行","2026-08-01 12:38:43","2026-08-01 21:12:50","脚本错误","29","all__batch__0001__e8699d96_result.md","异常: 检测到对话长度上限，但无法取得父对话 URL"
+"all.tsv#all 第 101-200 行","2026-08-01 21:12:55","2026-08-02 03:19:58","成功","25","all__batch__0002__6decc774_result.md","检测到明确批次完成信号、两张完整表及下载链接；已更新本批与累计最终 TSV"
+"all.tsv#all 第 201-300 行","2026-08-02 03:20:03","2026-08-02 06:34:36","回复超时","1","all__batch__0003__d587daaa_result.md","等待回复超过 9999 秒"
+"all.tsv#all 第 301-400 行","2026-08-02 06:34:41","2026-08-02 07:57:43","成功","5","all__batch__0004__fa032da6_result.md","检测到明确批次完成信号、两张完整表及下载链接；已更新本批与累计最终 TSV"
+"all.tsv#all 第 401-500 行","2026-08-02 07:57:48","2026-08-02 10:51:30","成功","16","all__batch__0005__20ef7fc3_result.md","检测到明确批次完成信号、两张完整表及下载链接；已更新本批与累计最终 TSV"
+"all.tsv#all 第 501-600 行","2026-08-02 10:51:35","2026-08-02 14:33:49","页面操作错误","14","all__batch__0006__00596c50_result.md","异常: Playwright browser 请求失败 (eval):  {   ""ok"": false,   ""error"": ""locator.waitFor: Timeout 20000ms exceeded.\nCall log:\n\u001B[2m  - waiting for locator(\u0027body\u0027)\u001B[22m\n\n    at runAction (/Users/admin/Documents/GitHub/fitment_sheet_generation/projects/qclaw_fitment_automation/playwright_browser_bridge.js:167:32)\n    at async Server.\u003Canonymous\u003E (/Users/admin/Documents/GitHub/fitment_sheet_generation/projects/qclaw_fitment_automation/playwright_browser_bridge.js:222:16)"" }"
