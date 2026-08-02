@@ -57,12 +57,13 @@ def build_run(tmp_path, statuses=("成功", "成功", "成功", "成功")):
             [[group_id, *dimensions, "source", f"https://example.com/{part}"]],
         )
     manifest = {
-        "version": 1,
+        "version": 2,
+        "hash_mode": "portable_utf8_lf_v1",
         "run_id": "test-run",
         "partition_count": 4,
         "task_count": 4,
         "input_files": [
-            {"path": "input.tsv", "sha256": merger.sha256(input_path)}
+            {"path": "input.tsv", "sha256": merger.portable_text_sha256(input_path)}
         ],
         "tasks": tasks,
     }
@@ -105,3 +106,10 @@ def test_input_hash_change_is_rejected(tmp_path):
         assert "哈希不匹配" in str(exc)
     else:
         raise AssertionError("changed input was not rejected")
+
+
+def test_manifest_accepts_equivalent_crlf_checkout(tmp_path):
+    project, _, manifest_path = build_run(tmp_path)
+    input_path = project / "input.tsv"
+    input_path.write_bytes(input_path.read_bytes().replace(b"\n", b"\r\n"))
+    merger.validate_manifest(project, manifest_path, 4)

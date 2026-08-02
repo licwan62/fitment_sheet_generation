@@ -13,6 +13,8 @@ param(
 
 $ErrorActionPreference = "Stop"
 if ([string]::IsNullOrWhiteSpace($ConfigPath)) { $ConfigPath = Join-Path $PSScriptRoot "config.yaml" }
+$runtimeModule = Join-Path (Join-Path $PSScriptRoot "powershell") "QClaw.Runtime.psm1"
+Import-Module $runtimeModule -Force
 
 function Get-Value {
     param($Object, [string]$Name, $Default = $null)
@@ -221,11 +223,11 @@ try {
         if ($partitionCount -gt 1) {
             $manifestPathValue = [string](Get-Value $partitionConfig "manifest_path" "partition_manifest.json")
             $manifestPath = Resolve-ConfigPath $manifestPathValue $project.FullName
-            $configHash = (Get-FileHash -LiteralPath $resolvedConfig -Algorithm SHA256).Hash.ToLowerInvariant()
-            $requirementHash = (Get-FileHash -LiteralPath $requirementPath -Algorithm SHA256).Hash.ToLowerInvariant()
+            $configHash = Get-QClawPortableTextHash -Path $resolvedConfig
+            $requirementHash = Get-QClawPortableTextHash -Path $requirementPath
             $promptIdentity = @(
                 Get-ChildItem -LiteralPath (Join-Path $PSScriptRoot "prompts") -File | Sort-Object Name | ForEach-Object {
-                    "$($_.Name):$((Get-FileHash -LiteralPath $_.FullName -Algorithm SHA256).Hash.ToLowerInvariant())"
+                    "$($_.Name):$(Get-QClawPortableTextHash -Path $_.FullName)"
                 }
             ) -join "`n"
             $promptHasher = [Security.Cryptography.SHA256]::Create()
@@ -241,8 +243,11 @@ try {
                 (Join-Path $PSScriptRoot "src/load_fitment_config.py"),
                 (Join-Path $PSScriptRoot "src/merge_partition_tables.py")
             )
-            $codeIdentity = @($codeFiles | Sort-Object | ForEach-Object {
-                "$(Split-Path $_ -Leaf):$((Get-FileHash -LiteralPath $_ -Algorithm SHA256).Hash.ToLowerInvariant())"
+            $codeIdentity = @($codeFiles | ForEach-Object {
+                $relativeCodePath = (Get-QClawRelativePath -BasePath $PSScriptRoot -TargetPath $_).Replace([IO.Path]::DirectorySeparatorChar, "/")
+                [pscustomobject]@{ Path = $relativeCodePath; Hash = (Get-QClawPortableTextHash -Path $_) }
+            } | Sort-Object Path | ForEach-Object {
+                "$($_.Path):$($_.Hash)"
             }) -join "`n"
             $codeHasher = [Security.Cryptography.SHA256]::Create()
             try {
