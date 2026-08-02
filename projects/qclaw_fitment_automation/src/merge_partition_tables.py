@@ -24,6 +24,13 @@ def sha256(path: Path) -> str:
     return digest.hexdigest()
 
 
+def portable_text_sha256(path: Path) -> str:
+    """Hash logical UTF-8 text independent of BOM and checkout line endings."""
+    text = path.read_text(encoding="utf-8-sig")
+    normalized = text.replace("\r\n", "\n").replace("\r", "\n")
+    return hashlib.sha256(normalized.encode("utf-8")).hexdigest()
+
+
 def read_json(path: Path):
     candidates = (path, Path(f"{path}.bak"))
     errors = []
@@ -78,8 +85,11 @@ def sequence(group_id):
 
 def validate_manifest(project_root: Path, manifest_path: Path, partition_count: int):
     manifest = read_json(manifest_path)
-    if manifest.get("version") != 1:
+    version = manifest.get("version")
+    if version not in (1, 2):
         raise ValueError(f"不支持的 manifest 版本: {manifest.get('version')}")
+    if version == 2 and manifest.get("hash_mode") != "portable_utf8_lf_v1":
+        raise ValueError(f"不支持的 manifest 哈希格式: {manifest.get('hash_mode')}")
     if manifest.get("partition_count") != partition_count:
         raise ValueError("manifest 分片数与命令行不一致")
     tasks = manifest.get("tasks") or []
@@ -92,7 +102,8 @@ def validate_manifest(project_root: Path, manifest_path: Path, partition_count: 
         path = project_root / Path(item["path"])
         if not path.is_file():
             raise FileNotFoundError(f"manifest 输入文件不存在: {path}")
-        if sha256(path) != item["sha256"]:
+        actual_hash = portable_text_sha256(path) if version == 2 else sha256(path)
+        if actual_hash != item["sha256"]:
             raise ValueError(f"manifest 输入文件哈希不匹配: {path}")
     return manifest
 

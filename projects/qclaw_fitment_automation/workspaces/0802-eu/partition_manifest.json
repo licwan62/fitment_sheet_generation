@@ -1,18 +1,18 @@
 {
-    "version":  1,
+    "version":  2,
     "run_id":  "e086ae81063f5cb759b1",
     "created_at":  "2026-08-02T16:25:58.8443634Z",
     "partition_count":  4,
     "partition_strategy":  "contiguous",
-    "config_sha256":  "0a7da3b8ec9afe77362ced6e6e03ee809303d3b290cb3e7cc193edbf52d09323",
-    "requirement_sha256":  "508ef104ab38162c734aea70b8f3fd1b0cc32a994377c0e46bbdc8e153a8bacf",
+    "config_sha256":  "31f94948066046048920a36576b2fffefe0fe809d2a6e55dcf89ab0197397223",
+    "requirement_sha256":  "94b3689a457d9cd9c9f77cbcf63499eaf3c6170f73f637ba86a8df53fe5344e7",
     "prompts_sha256":  "f7426d3aa22764604af5f23a0bdaa18fbc61d600cf4ee1af99a0fea9a14bd095",
-    "code_sha256":  "f88d262ded1de174ba2f1dd148309dbd2c22a5ce060cc86697883db07700b17d",
-    "git_commit":  "7f0fb48ccaa7fc9026b24f41ce2eabc8c99465bd",
+    "code_sha256":  "b5ce3ce59177e9a7e0624b5f140c1213a1169ede10ef15a4eae23df9245cba46",
+    "git_commit":  "65cfec646f50858ed350479e209f8063ac94e6f0",
     "input_files":  [
                         {
                             "path":  "left18448.tsv",
-                            "sha256":  "51f88cf8964ad32a3a65c9e958e70da04eca0415febd19ba937ad4398e0a6d1a",
+                            "sha256":  "74c2893eedef4120e0f4ec2e97c2053459ac15f26e75463124023646de3c6b36",
                             "bytes":  1432105
                         }
                     ],
@@ -1498,5 +1498,7 @@
                       "source_name":  "left18448.tsv",
                       "checkpoint_path":  "checkpoints/part-04/left18448__batch__0185__af591c1f.json"
                   }
-              ]
+              ],
+    "hash_mode":  "portable_utf8_lf_v1",
+    "migrated_at":  "2026-08-02T17:13:22.5763824Z"
 }

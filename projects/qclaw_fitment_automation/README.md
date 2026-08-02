@@ -60,6 +60,8 @@ PowerShell 7 通常不需要 `-NoProfile` 或 `-ExecutionPolicy Bypass`。使用
 powershell -NoProfile -ExecutionPolicy Bypass -File .\run_from_config.ps1 ...
 ```
 
+仓库中的 PowerShell 源文件统一使用 UTF-8 BOM。Windows PowerShell 5.1 会依靠 BOM 正确识别中文；请勿使用会自动移除 BOM 的编辑器设置保存 `.ps1` 或 `.psm1`。项目的 `.editorconfig` 已固定这一规则，测试也会检查。
+
 `Bypass` 只作用于本次子进程，不会永久修改系统执行策略。
 
 ## 当前 0802 EU 工作区
@@ -108,7 +110,7 @@ e086ae81063f5cb759b1
 
 ### 1. 同步运行材料
 
-四台设备必须使用完全一致的：
+在第一台设备生成 manifest 后，将以下文件提交到 Git，其他设备直接克隆或拉取同一提交：
 
 - 输入 TSV
 - `config.yaml`
@@ -117,7 +119,9 @@ e086ae81063f5cb759b1
 - PowerShell、Python 和 JavaScript 运行代码
 - `partition_manifest.json`
 
-启动时程序会重新计算哈希。任何一项不一致都会停止，不会继续执行一个可能重叠或漏项的分片。
+manifest v2 使用相对路径和“UTF-8 + LF”规范化哈希，因此仓库克隆到不同盘符、不同目录，或 Git 在 Windows/macOS/Linux 间转换 CRLF/LF，都不会改变分片身份。
+
+启动时只有会影响分片正确性的契约不一致才会停止：输入 TSV 的规范化内容、稳定 task ID、分片数量或分片策略。配置、requirement、提示词和代码哈希用于审计；它们不一致时会显示警告，但不会仅凭这些哈希阻断分片。应让各设备使用同一 Git commit，以保证输出口径一致。
 
 ### 2. 每台设备运行自己的分片
 
@@ -191,11 +195,16 @@ pwsh -File .\run_from_config.ps1 `
 manifest 会记录：
 
 - `run_id`
-- 配置、requirement、提示词和运行代码 SHA-256
-- Git commit，仅用于审计；脏工作树仍由代码 SHA-256 精确识别
-- 每个输入文件的相对路径、大小和 SHA-256
+- `hash_mode: portable_utf8_lf_v1`
+- 配置、requirement、提示词和运行代码的可移植 SHA-256（审计字段，不单独阻断运行）
+- Git commit，用于审计
+- 每个输入文件的相对路径、大小和可移植 SHA-256
 - 全部稳定 task ID
 - 每个 task 的分片和 checkpoint 路径
+
+可移植 SHA-256 会去掉 UTF-8 BOM，并把 CRLF/CR 统一为 LF 后计算。因此同一 Git 内容在不同系统的 checkout 结果仍视为一致；实际 TSV 单元格内容变化仍会被拒绝。
+
+旧 v1 manifest 在原设备执行一次普通 `-PreparePartitions` 即可安全原地升级。升级前会严格核对旧输入字节哈希、任务 ID 和分片边界；已有 checkpoint 时也不会改组，并保留原 `run_id`。
 
 如果 manifest 已经产生 checkpoint，普通准备命令不会静默改组。只有确认所有设备均已停止，并接受生成新 `run_id` 后才能运行：
 
@@ -438,7 +447,7 @@ pwsh -File .\test.ps1
 
 测试包括：
 
-- manifest 哈希、稳定分片和输入变化拦截
+- manifest 可移植哈希、跨目录/跨换行符克隆、稳定分片和输入变化拦截
 - 未完成 checkpoint 汇总门禁
 - 跨设备尺寸组 ID 冲突协调
 - checkpoint 本地严格表恢复
@@ -520,9 +529,13 @@ python .\src\merge_final_round_results.py --project .\workspaces\legacy-project
 
 新项目先执行 `-PreparePartitions`。当前 0802 工作区已经存在 manifest，不要重复准备。
 
-### 提示配置、输入、提示词或代码哈希不一致
+### 提示审计内容与 manifest 不同
 
-先停止当前设备，确认所有设备同步了相同文件。不要为了绕过错误直接强制重建；只有确定要开始新的运行身份时才使用 `-ForcePreparePartitions`。
+配置、requirement、提示词或代码哈希不同只会警告，不会阻断分片。建议执行 `git status` 和 `git rev-parse HEAD`，确认设备使用相同提交；如果任务 ID、输入内容或分片边界不同，程序仍会拒绝运行。不要为绕过契约错误直接强制重建。
+
+### 提示 manifest 使用旧版哈希格式
+
+在最初生成 v1 manifest、且原始输入仍保持不变的设备执行一次 `-PreparePartitions`。程序会安全升级为 v2 并保留 `run_id`；随后提交更新后的 `partition_manifest.json`，其他设备重新拉取即可。
 
 ### 汇总提示仍有任务未成功
 

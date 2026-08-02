@@ -1,4 +1,4 @@
-# qclaw 全量表补强自动化脚本
+﻿# qclaw 全量表补强自动化脚本
 # 通过 QClaw xbrowser 控制 ChatGPT 网页版，遍历 TSV，多轮发送“下一步”，保存结果。
 
 [CmdletBinding(PositionalBinding = $false)]
@@ -1282,7 +1282,8 @@ function Get-TSVTasks {
     foreach ($file in $Files) {
         $sourceBaseName = $file.BaseName
         if ([int]$baseNameCounts[$file.BaseName.ToLowerInvariant()] -gt 1) {
-            $pathHash = Get-StableTaskHash -Value $file.FullName
+            $portableSourcePath = (Get-QClawRelativePath -BasePath $Project -TargetPath $file.FullName).Replace([IO.Path]::DirectorySeparatorChar, "/")
+            $pathHash = Get-StableTaskHash -Value $portableSourcePath
             $sourceBaseName = "$($file.BaseName)__$($pathHash.Substring(0, 6))"
         }
         if ($TaskGranularity -eq "file") {
@@ -4958,6 +4959,14 @@ function Main {
             $existingManifest = Read-QClawJsonWithBackup -Path $TaskManifestPath
             if ($null -ne $existingManifest) {
                 try {
+                    if ([int]$existingManifest.version -eq 1) {
+                        $existingManifest = Update-QClawRunManifestV1 -Manifest $existingManifest -Tasks $allTasks -InputFiles $tsvFiles `
+                            -ProjectRoot $Project -Path $TaskManifestPath -PartitionCount $TaskPartitionCount -Strategy $TaskPartitionStrategy `
+                            -ConfigHash $RunConfigHash -RequirementHash $RunRequirementHash -PromptHash $RunPromptHash `
+                            -CodeHash $RunCodeHash -GitCommit $RunGitCommit
+                        Write-Host "已将运行清单原地升级为跨设备 v2 格式，run_id 保持不变: $($existingManifest.run_id)" -ForegroundColor Green
+                        return
+                    }
                     Assert-QClawRunManifest -Manifest $existingManifest -Tasks $allTasks -InputFiles $tsvFiles `
                         -ProjectRoot $Project -PartitionCount $TaskPartitionCount -Strategy $TaskPartitionStrategy `
                         -ConfigHash $RunConfigHash -RequirementHash $RunRequirementHash -PromptHash $RunPromptHash `
