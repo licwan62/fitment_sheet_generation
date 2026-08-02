@@ -2,7 +2,7 @@
     "version": 1,
     "total_batches": 58,
     "rows_per_batch": 100,
-    "updated_at": "2026-08-02 14:34:12",
+    "updated_at": "2026-08-02 20:48:37",
     "next_pending_index": 0,
     "batches": [
   {
@@ -11,9 +11,9 @@
     "task_id": "all__batch__0001__e8699d96",
     "display_name": "all 第 1-100 行",
     "status": "error",
-    "remarks": "异常: 检测到对话长度上限，但无法取得父对话 URL",
+    "remarks": "异常: ChatGPT 对话已达到长度上限，需要在新聊天中创建分支",
     "checkpoint_file": "all__batch__0001__e8699d96.json",
-    "updated_at": "2026-08-01 21:12:50"
+    "updated_at": "2026-08-02 15:29:59"
   },
   {
     "index": 1,
@@ -31,9 +31,9 @@
     "task_id": "all__batch__0003__d587daaa",
     "display_name": "all 第 201-300 行",
     "status": "error",
-    "remarks": "等待回复超过 9999 秒",
+    "remarks": "异常: 检测到对话长度上限，但无法取得父对话 URL",
     "checkpoint_file": "all__batch__0003__d587daaa.json",
-    "updated_at": "2026-08-02 06:34:36"
+    "updated_at": "2026-08-02 19:43:44"
   },
   {
     "index": 3,
@@ -60,10 +60,10 @@
     "batch_number": 6,
     "task_id": "all__batch__0006__00596c50",
     "display_name": "all 第 501-600 行",
-    "status": "error",
-    "remarks": "异常: Playwright browser 请求失败 (eval): \n{\n  \"ok\": false,\n  \"error\": \"locator.waitFor: Timeout 20000ms exceeded.\\nCall log:\\n\\u001B[2m  - waiting for locator(\\u0027body\\u0027)\\u001B[22m\\n\\n    at runAction (/Users/admin/Documents/GitHub/fitment_sheet_generation/projects/qclaw_fitment_automation/playwright_browser_bridge.js:167:32)\\n    at async Server.\\u003Canonymous\\u003E (/Users/admin/Documents/GitHub/fitment_sheet_generation/projects/qclaw_fitment_automation/playwright_browser_bridge.js:222:16)\"\n}",
+    "status": "success",
+    "remarks": "检测到明确批次完成信号、两张完整表及下载链接；已更新本批与累计最终 TSV",
     "checkpoint_file": "all__batch__0006__00596c50.json",
-    "updated_at": "2026-08-02 14:33:49"
+    "updated_at": "2026-08-02 20:10:57"
   },
   {
     "index": 6,
@@ -73,7 +73,7 @@
     "status": "processing",
     "remarks": "",
     "checkpoint_file": "all__batch__0007__a59c6c1a.json",
-    "updated_at": "2026-08-02 14:34:12"
+    "updated_at": "2026-08-02 20:48:37"
   },
   {
     "index": 7,

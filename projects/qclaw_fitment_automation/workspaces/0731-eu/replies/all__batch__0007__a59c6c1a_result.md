@@ -532,3 +532,229 @@ Ford	Focus iv turnier	1.0 Ecoboost Mhev	Kombi	Frontantrieb	Benzin/Elektro	92	125
 Hyundai	I30	1.5 T-gdi Hybrid 48V	Schrägheck	Frontantrieb	Benzin/Elektro	118	160	Mar 2020	-	2024-03-01	141040
 BMW	X2	Xdrive 25 E Plug-in-hybrid	SUV	Allrad	Benzin/Elektro	162	220	Mar 2020	Oct 2023	2024-03-01	141042
 
+
+--- Round 1 / checkpoint 续跑 ---
+更新点
+
+* 复用 7 个跨批次既有尺寸组，闭合 GLA H247、GLB X247、GLC X253 改款、Clio V、V90 II、BMW 3 G20 和 BMW 2 F44 的相关映射。
+* 根据 BMW 官方技术规格，首次建立 BMW 4 系 G22 两种外廓、5 系 G30/G31 改款、6 系 G32 改款和 X2 F39 插混尺寸组。430d 与 M440d 的车长、车高不同，未错误合并。
+* 根据 Tesla 2020–2024 Model Y 官方车主手册，建立第一代改款前尺寸组，宽度采用明确的不含后视镜口径。([Tesla][1])
+
+当前批次进度
+
+* READY 映射：39
+* PENDING 映射：61
+* 当前已引用尺寸组：14
+* 本轮首次创建尺寸组：7
+* 本轮复用跨批次尺寸组：7
+* 当前批次尚未完成。
+
+本轮新增/修改的 Ktype 映射 TSV
+
+```tsv
+id	Ktype	NormalizedBodyStyle	Generation	BodyCode	Doors	DIMENSION_GROUP_ID	MatchConfidence	Notes	IterationStatus
+140670	140670	SUV	GLA H247	H247	5	EU-MERCEDES-BENZ-GLA-H247-SUV-01	HIGH	H247五门SUV。	READY
+140686	140686	SUV	GLB X247	X247	5	EU-MERCEDES-BENZ-GLB-X247-SUV-01	HIGH	X247五门SUV。	READY
+140691	140691	SUV	GLC X253 facelift	X253	5	EU-MERCEDES-BENZ-GLC-X253-FACELIFT-2019-SUV-01	HIGH	X253 2019改款五门SUV。	READY
+140694	140694	SUV	GLC X253 facelift	X253	5	EU-MERCEDES-BENZ-GLC-X253-FACELIFT-2019-SUV-01	HIGH	X253 2019改款五门SUV。	READY
+140751	140751	Hatchback	Clio V		5	EU-RENAULT-CLIO-V-HATCHBACK-01	HIGH	Clio V五门掀背。	READY
+140850	140850	Coupe	4 Series G22	G22	2	EU-BMW-4-G22-COUPE-01	HIGH	G22 430d xDrive双门轿跑外廓。	READY
+140856	140856	Coupe	4 Series G22	G22	2	EU-BMW-4-G22-M440D-COUPE-01	HIGH	M440d xDrive因车长和车高不同独立建组。	READY
+140891	140891	SUV	GLC X253 facelift	X253	5	EU-MERCEDES-BENZ-GLC-X253-FACELIFT-2019-SUV-01	HIGH	X253 2019改款五门SUV。	READY
+140916	140916	Hatchback	6 Series Gran Turismo G32 LCI	G32	5	EU-BMW-6-G32-FACELIFT-GRAN-TURISMO-01	HIGH	G32改款五门Gran Turismo外廓。	READY
+140917	140917	Hatchback	6 Series Gran Turismo G32 LCI	G32	5	EU-BMW-6-G32-FACELIFT-GRAN-TURISMO-01	HIGH	G32改款五门Gran Turismo外廓。	READY
+140918	140918	Hatchback	6 Series Gran Turismo G32 LCI	G32	5	EU-BMW-6-G32-FACELIFT-GRAN-TURISMO-01	HIGH	G32改款五门Gran Turismo外廓。	READY
+140919	140919	Hatchback	6 Series Gran Turismo G32 LCI	G32	5	EU-BMW-6-G32-FACELIFT-GRAN-TURISMO-01	HIGH	G32改款五门Gran Turismo外廓。	READY
+140920	140920	Hatchback	6 Series Gran Turismo G32 LCI	G32	5	EU-BMW-6-G32-FACELIFT-GRAN-TURISMO-01	HIGH	G32改款五门Gran Turismo外廓。	READY
+140921	140921	Hatchback	6 Series Gran Turismo G32 LCI	G32	5	EU-BMW-6-G32-FACELIFT-GRAN-TURISMO-01	HIGH	G32改款五门Gran Turismo外廓。	READY
+140922	140922	Hatchback	6 Series Gran Turismo G32 LCI	G32	5	EU-BMW-6-G32-FACELIFT-GRAN-TURISMO-01	HIGH	G32改款五门Gran Turismo外廓。	READY
+140923	140923	Sedan	5 Series G30 LCI	G30	4	EU-BMW-5-G30-FACELIFT-SEDAN-01	HIGH	G30改款四门轿车外廓。	READY
+140924	140924	Sedan	5 Series G30 LCI	G30	4	EU-BMW-5-G30-FACELIFT-SEDAN-01	HIGH	G30改款四门轿车外廓。	READY
+140925	140925	Sedan	5 Series G30 LCI	G30	4	EU-BMW-5-G30-FACELIFT-SEDAN-01	HIGH	G30改款四门轿车外廓。	READY
+140926	140926	Sedan	5 Series G30 LCI	G30	4	EU-BMW-5-G30-FACELIFT-SEDAN-01	HIGH	G30改款四门轿车外廓。	READY
+140927	140927	Sedan	5 Series G30 LCI	G30	4	EU-BMW-5-G30-FACELIFT-SEDAN-01	HIGH	G30改款四门轿车外廓。	READY
+140928	140928	Sedan	5 Series G30 LCI	G30	4	EU-BMW-5-G30-FACELIFT-SEDAN-01	HIGH	G30改款四门轿车外廓。	READY
+140929	140929	Sedan	5 Series G30 LCI	G30	4	EU-BMW-5-G30-FACELIFT-SEDAN-01	HIGH	G30改款四门轿车外廓。	READY
+140930	140930	Sedan	5 Series G30 LCI	G30	4	EU-BMW-5-G30-FACELIFT-SEDAN-01	HIGH	G30改款四门轿车外廓。	READY
+140931	140931	Wagon	5 Series G31 LCI	G31	5	EU-BMW-5-G31-FACELIFT-WAGON-01	HIGH	G31改款五门旅行车外廓。	READY
+140932	140932	Wagon	5 Series G31 LCI	G31	5	EU-BMW-5-G31-FACELIFT-WAGON-01	HIGH	G31改款五门旅行车外廓。	READY
+140933	140933	Wagon	5 Series G31 LCI	G31	5	EU-BMW-5-G31-FACELIFT-WAGON-01	HIGH	G31改款五门旅行车外廓。	READY
+140934	140934	Wagon	5 Series G31 LCI	G31	5	EU-BMW-5-G31-FACELIFT-WAGON-01	HIGH	G31改款五门旅行车外廓。	READY
+140935	140935	Wagon	5 Series G31 LCI	G31	5	EU-BMW-5-G31-FACELIFT-WAGON-01	HIGH	G31改款五门旅行车外廓。	READY
+140936	140936	Wagon	5 Series G31 LCI	G31	5	EU-BMW-5-G31-FACELIFT-WAGON-01	HIGH	G31改款五门旅行车外廓。	READY
+140937	140937	Wagon	5 Series G31 LCI	G31	5	EU-BMW-5-G31-FACELIFT-WAGON-01	HIGH	G31改款五门旅行车外廓。	READY
+140957	140957	Wagon	V90 II		5	EU-VOLVO-V90-II-WAGON-01	HIGH	V90 II标准旅行车外廓。	READY
+140967	140967	Sedan	3 Series G20	G20	4	EU-BMW-3-G20-SEDAN-01	HIGH	G20四门轿车。	READY
+140979	140979	SUV	Model Y first generation pre-facelift		5	EU-TESLA-MODEL-Y-GEN1-PREFACELIFT-SUV-01	HIGH	2020–2024款第一代改款前五门SUV外廓。	READY
+140980	140980	SUV	Model Y first generation pre-facelift		5	EU-TESLA-MODEL-Y-GEN1-PREFACELIFT-SUV-01	HIGH	2020–2024款第一代改款前五门SUV外廓。	READY
+140981	140981	SUV	Model Y first generation pre-facelift		5	EU-TESLA-MODEL-Y-GEN1-PREFACELIFT-SUV-01	HIGH	2020–2024款第一代改款前五门SUV外廓。	READY
+141032	141032	Coupe	2 Series Gran Coupé F44	F44	4	EU-BMW-2-F44-GRAN-COUPE-01	HIGH	输入Coupe按前驱/四驱布局解析为F44四门Gran Coupé。	READY
+141033	141033	Coupe	2 Series Gran Coupé F44	F44	4	EU-BMW-2-F44-GRAN-COUPE-01	HIGH	输入Coupe按前驱/四驱布局解析为F44四门Gran Coupé。	READY
+141036	141036	Coupe	2 Series Gran Coupé F44	F44	4	EU-BMW-2-F44-GRAN-COUPE-01	HIGH	输入Coupe按前驱/四驱布局解析为F44四门Gran Coupé。	READY
+141042	141042	SUV	X2 F39	F39	5	EU-BMW-X2-F39-PHEV-SUV-01	HIGH	F39 xDrive25e五门SUV外廓。	READY
+```
+
+本轮新增/修改的 DIMENSION_GROUP TSV
+
+```tsv
+DIMENSION_GROUP_ID	LengthMM	WidthMM	HeightMM	DimensionSource	SourceURL
+EU-BMW-4-G22-COUPE-01	4768	1852	1390	BMW Group official technical specifications, BMW 430d xDrive Coupé (03/2021)	https://www.press.bmwgroup.com/global/article/attachment/T0326318EN/472221
+EU-BMW-4-G22-M440D-COUPE-01	4770	1852	1393	BMW Group official technical specifications, BMW M440d xDrive Coupé (03/2021)	https://www.press.bmwgroup.com/global/article/attachment/T0326318EN/472221
+EU-BMW-6-G32-FACELIFT-GRAN-TURISMO-01	5091	1902	1538	BMW Group official technical specifications, BMW 6 Series Gran Turismo (11/2020)	https://www.press.bmwgroup.com/global/article/attachment/T0308711EN/463959
+EU-BMW-5-G30-FACELIFT-SEDAN-01	4963	1868	1479	BMW Group official technical specifications, BMW 5 Series Sedan (05/2020)	https://www.press.bmwgroup.com/global/article/attachment/T0314291EN/457886
+EU-BMW-5-G31-FACELIFT-WAGON-01	4963	1868	1498	BMW Group official technical specifications, BMW 5 Series Touring (05/2020)	https://www.press.bmwgroup.com/global/article/attachment/T0314289EN/457890
+EU-TESLA-MODEL-Y-GEN1-PREFACELIFT-SUV-01	4751	1921	1624	Tesla Model Y Owner's Manual, 2020–2024 exterior dimensions	https://www.tesla.com/ownersmanual/2020_2024_modely/de_de/GUID-E47C4A6D-528E-419C-8C57-FD3864644C34.html
+EU-BMW-X2-F39-PHEV-SUV-01	4360	1824	1512	BMW Group official technical specifications, BMW X2 xDrive25e (05/2020)	https://www.press.bmwgroup.com/global/article/attachment/T0314293EN/457892
+```
+
+下一步优先处理
+
+1. 集中闭合 Mercedes-Benz 车型簇：GLE V167、GLA AMG H247、E-Class W213、A-Class V177、B-Class W247 和 GLC F-Cell。
+2. 批量处理 Hyundai i30 掀背与旅行车外廓，覆盖 6 个关联 Ktype。
+3. 处理 Maxus、VW Caddy 和 Transporter 商用车，先确认 SWB/LWB、车顶高度及厢式车/底盘分支，避免错误合并。
+
+推进信号：CONTINUE
+
+[1]: https://www.tesla.com/ownersmanual/2020_2024_modely/de_de/GUID-E47C4A6D-528E-419C-8C57-FD3864644C34.html "Abmessungen"
+
+
+--- 发送 / 继续到 Round 2 ---
+继续当前批次并采用缓存优先模式。尺寸组只在首次创建或纠错时完整核对一次三维和来源；后续 Ktype 只判断关联哪个现有 DIMENSION_GROUP_ID，不重复抓取，不输出缓存来源或匹配理由。仍有 PENDING 时，CONTINUE 轮仅输出：1) 更新点；2) 当前批次进度；3) 本轮新增/修改的 Ktype 映射 TSV（无变化写“无”）；4) 本轮首次创建/修正的 DIMENSION_GROUP TSV（复用既有组不重复输出，无变化写“无”）；5) 下一步优先处理。若当前或上一轮进度已经是 PENDING=0，本轮不要继续检索或再次输出 CONTINUE，必须立刻汇总并输出两张最终完整 TSV、两个任务指定 sandbox 下载链接和“推进信号：COMPLETE”。执行顺序固定为：第一阶段优先消除 PENDING 并补齐会阻塞两张最终表的数据。检测到 PENDING=0 后，第二阶段最多只做一次轻量机械收尾：核对固定表头、id 与 DIMENSION_GROUP_ID 唯一、映射引用闭合、长宽高和来源非空、两个任务指定下载链接齐全。第二阶段不得重新逐车型、逐年份或逐来源做深度检索，不得为了提高置信度反复核对，也不得因非阻塞的排序或措辞问题继续多轮。PENDING=0 后的下一条回复必须直接输出两张最终完整 TSV、两个精确 sandbox 下载链接，并以“推进信号：COMPLETE”结束；不要再输出 CONTINUE。Ktype 映射 TSV 表头必须严格使用 requirement 指定的字段顺序：id	Ktype	NormalizedBodyStyle	Generation	BodyCode	Doors	DIMENSION_GROUP_ID	MatchConfidence	Notes	IterationStatus。另需维护完整 DIMENSION_GROUP TSV，表头固定为：DIMENSION_GROUP_ID	LengthMM	WidthMM	HeightMM	DimensionSource	SourceURL。缺少任一张表、任一映射引用的尺寸组，或尺寸组字段不完整时不得 COMPLETE。不要输出子车系匹配表。
+【COMPLETE 下载文件硬性要求】
+准备 COMPLETE 时，除两张完整内嵌 TSV 外，还必须创建并提供以下两个可点击 sandbox 下载链接，文件名必须完全一致：
+- all_601-700_ktype_dimension_mapping_final.tsv
+- all_601-700_dimension_groups_final.tsv
+缺少任一下载链接时不得输出推进信号：COMPLETE。
+
+
+--- Round 2 / checkpoint 续跑 ---
+更新点
+
+* 闭合 Hyundai i30 2020 改款车型簇：4 个掀背 Ktype 共用一个尺寸组，2 个旅行车 Ktype 共用另一个尺寸组。Hyundai 官方技术表明确区分 Hatchback 与 Wagon，并给出不含后视镜宽度。([现代汽车新闻][1])
+* 闭合 Volvo XC40 T4 Plug-in Hybrid，采用 Volvo 官方 2020 XC40 Twin Engine 用户手册尺寸。([沃尔沃汽车][2])
+* 闭合两个 Volvo S60 III B5 Ktype，前驱和四驱不改变本批次所需物理外廓，共用一个尺寸组。([沃尔沃汽车][3])
+
+当前批次进度
+
+* READY 映射：48
+* PENDING 映射：52
+* 已确认尺寸组：18
+* 本轮新增尺寸组：4
+* 当前批次尚未完成。
+
+本轮新增/修改的 Ktype 映射 TSV
+
+```tsv
+id	Ktype	NormalizedBodyStyle	Generation	BodyCode	Doors	DIMENSION_GROUP_ID	MatchConfidence	Notes	IterationStatus
+140729	140729	Hatchback	i30 III facelift	PD	5	EU-HYUNDAI-I30-PD-FACELIFT-HATCHBACK-01	HIGH	PD改款五门掀背外廓。	READY
+140730	140730	Wagon	i30 III facelift	PD	5	EU-HYUNDAI-I30-PD-FACELIFT-WAGON-01	HIGH	PD改款五门旅行车外廓。	READY
+140731	140731	Hatchback	i30 III facelift	PD	5	EU-HYUNDAI-I30-PD-FACELIFT-HATCHBACK-01	HIGH	PD改款五门掀背外廓。	READY
+140732	140732	Wagon	i30 III facelift	PD	5	EU-HYUNDAI-I30-PD-FACELIFT-WAGON-01	HIGH	PD改款五门旅行车外廓。	READY
+140738	140738	Hatchback	i30 III facelift	PD	5	EU-HYUNDAI-I30-PD-FACELIFT-HATCHBACK-01	HIGH	PD改款五门掀背外廓。	READY
+140943	140943	SUV	XC40 I		5	EU-VOLVO-XC40-I-SUV-01	HIGH	2020 XC40 Twin Engine五门SUV外廓。	READY
+141022	141022	Sedan	S60 III		4	EU-VOLVO-S60-III-SEDAN-01	HIGH	第三代四门轿车外廓。	READY
+141023	141023	Sedan	S60 III		4	EU-VOLVO-S60-III-SEDAN-01	HIGH	第三代四门轿车外廓。	READY
+141040	141040	Hatchback	i30 III facelift	PD	5	EU-HYUNDAI-I30-PD-FACELIFT-HATCHBACK-01	HIGH	PD改款五门掀背外廓。	READY
+```
+
+本轮新增/修改的 DIMENSION_GROUP TSV
+
+```tsv
+DIMENSION_GROUP_ID	LengthMM	WidthMM	HeightMM	DimensionSource	SourceURL
+EU-HYUNDAI-I30-PD-FACELIFT-HATCHBACK-01	4340	1795	1455	Hyundai Motor Europe i30 Technical Specifications, February 2020	https://www.hyundai.news/newsroom/dam/eu/press-kits/20200226_i30/20200226_i30_Technical_Data_preliminary_Update.pdf
+EU-HYUNDAI-I30-PD-FACELIFT-WAGON-01	4585	1795	1465	Hyundai Motor Europe i30 Technical Specifications, February 2020	https://www.hyundai.news/newsroom/dam/eu/press-kits/20200226_i30/20200226_i30_Technical_Data_preliminary_Update.pdf
+EU-VOLVO-XC40-I-SUV-01	4425	1873	1658	Volvo XC40 Twin Engine 2020 owner's manual – Dimensions	https://www.volvocars.com/en-bh/support/car/xc40-twin-engine/article/766ee075f0e03896c0a8015109ee0749/
+EU-VOLVO-S60-III-SEDAN-01	4761	1850	1437	Volvo S60 Twin Engine 2020 owner's manual – Dimensions	https://www.volvocars.com/en-ca/support/car/s60-twin-engine/article/766ee075f0e03896c0a8015109ee0749/
+```
+
+下一步优先处理
+
+1. Mercedes-Benz A-Class、B-Class、E-Class 和 GLE 车型簇，优先寻找欧洲市场官方规格，避免直接套用可能存在保险杠差异的美国市场尺寸。
+2. 闭合 Porsche 911 Targa、Taycan、Cayenne GTS 和 McLaren 720S。
+3. 集中处理 Skoda E-Citigo、VW T-Cross、Nissan Juke、Ford Puma、Opel Mokka-e 等单一外廓乘用车。
+
+推进信号：CONTINUE
+
+[1]: https://www.hyundai.news/newsroom/dam/eu/press-kits/20200226_i30/20200226_i30_Technical_Data_preliminary_Update.pdf "20200226_i30 Technical Data_preliminary_Update"
+[2]: https://www.volvocars.com/en-bh/support/car/xc40-twin-engine/article/766ee075f0e03896c0a8015109ee0749/?utm_source=chatgpt.com "XC40 Twin Engine Dimensions | Volvo Support EN-BH"
+[3]: https://www.volvocars.com/en-ca/support/car/s60-twin-engine/article/766ee075f0e03896c0a8015109ee0749/?utm_source=chatgpt.com "S60 Twin Engine Dimensions | Volvo Support EN-CA"
+
+
+--- 发送 / 继续到 Round 3 ---
+继续当前批次并采用缓存优先模式。尺寸组只在首次创建或纠错时完整核对一次三维和来源；后续 Ktype 只判断关联哪个现有 DIMENSION_GROUP_ID，不重复抓取，不输出缓存来源或匹配理由。仍有 PENDING 时，CONTINUE 轮仅输出：1) 更新点；2) 当前批次进度；3) 本轮新增/修改的 Ktype 映射 TSV（无变化写“无”）；4) 本轮首次创建/修正的 DIMENSION_GROUP TSV（复用既有组不重复输出，无变化写“无”）；5) 下一步优先处理。若当前或上一轮进度已经是 PENDING=0，本轮不要继续检索或再次输出 CONTINUE，必须立刻汇总并输出两张最终完整 TSV、两个任务指定 sandbox 下载链接和“推进信号：COMPLETE”。执行顺序固定为：第一阶段优先消除 PENDING 并补齐会阻塞两张最终表的数据。检测到 PENDING=0 后，第二阶段最多只做一次轻量机械收尾：核对固定表头、id 与 DIMENSION_GROUP_ID 唯一、映射引用闭合、长宽高和来源非空、两个任务指定下载链接齐全。第二阶段不得重新逐车型、逐年份或逐来源做深度检索，不得为了提高置信度反复核对，也不得因非阻塞的排序或措辞问题继续多轮。PENDING=0 后的下一条回复必须直接输出两张最终完整 TSV、两个精确 sandbox 下载链接，并以“推进信号：COMPLETE”结束；不要再输出 CONTINUE。Ktype 映射 TSV 表头必须严格使用 requirement 指定的字段顺序：id	Ktype	NormalizedBodyStyle	Generation	BodyCode	Doors	DIMENSION_GROUP_ID	MatchConfidence	Notes	IterationStatus。另需维护完整 DIMENSION_GROUP TSV，表头固定为：DIMENSION_GROUP_ID	LengthMM	WidthMM	HeightMM	DimensionSource	SourceURL。缺少任一张表、任一映射引用的尺寸组，或尺寸组字段不完整时不得 COMPLETE。不要输出子车系匹配表。
+【COMPLETE 下载文件硬性要求】
+准备 COMPLETE 时，除两张完整内嵌 TSV 外，还必须创建并提供以下两个可点击 sandbox 下载链接，文件名必须完全一致：
+- all_601-700_ktype_dimension_mapping_final.tsv
+- all_601-700_dimension_groups_final.tsv
+缺少任一下载链接时不得输出推进信号：COMPLETE。
+
+
+--- Round 3 / checkpoint 续跑 ---
+更新点
+
+* 闭合 Mercedes-AMG GLA H247 车型簇。官方 AMG 手册确认全部 AMG GLA 的长宽为 4436×1849 mm；GLA 35 与非 S 的 GLA 45 高度均为 1588 mm，GLA 45 S 高度为 1585 mm，因此拆为两个尺寸组，未错误复用普通 GLA H247 的既有组。([Mercedes-Benz][1])
+* 闭合 GLE V167 车型簇：两个 GLE 350 de 共用插混外廓组；GLE 63 与 GLE 63 S 共用 AMG 外廓组。Mercedes-AMG 官方手册给出的 AMG SUV 三维为 4954×2018×1782 mm。([汽车数据网][2])
+* 闭合 A 250 e 两种车身、B 250 e、E 350 e 改款前及 E 300 de 改款后尺寸组；轿车、掀背和改款边界分别建组。([汽车数据网][3])
+
+当前批次进度
+
+* READY 映射：60
+* PENDING 映射：40
+* 已确认尺寸组：27
+* 本轮新增尺寸组：9
+* 当前批次尚未完成。
+
+本轮新增/修改的 Ktype 映射 TSV
+
+```tsv
+id	Ktype	NormalizedBodyStyle	Generation	BodyCode	Doors	DIMENSION_GROUP_ID	MatchConfidence	Notes	IterationStatus
+140709	140709	SUV	GLE V167	V167	5	EU-MERCEDES-BENZ-GLE-V167-PHEV-SUV-01	HIGH	V167插电混动五门SUV外廓。	READY
+140712	140712	SUV	GLE V167	V167	5	EU-MERCEDES-BENZ-GLE-V167-PHEV-SUV-01	HIGH	V167插电混动五门SUV外廓。	READY
+140713	140713	SUV	AMG GLE V167	V167	5	EU-MERCEDES-BENZ-GLE-V167-AMG-63-SUV-01	HIGH	V167 AMG 63五门SUV外廓。	READY
+140714	140714	SUV	AMG GLE V167	V167	5	EU-MERCEDES-BENZ-GLE-V167-AMG-63-SUV-01	HIGH	V167 AMG 63 S五门SUV外廓。	READY
+140736	140736	Sedan	A-Class Sedan V177	V177	4	EU-MERCEDES-BENZ-A-CLASS-V177-SEDAN-01	HIGH	V177四门插电混动轿车外廓。	READY
+140737	140737	Hatchback	A-Class W177	W177	5	EU-MERCEDES-BENZ-A-CLASS-W177-HATCHBACK-01	HIGH	W177五门插电混动掀背外廓。	READY
+140775	140775	Hatchback	B-Class W247	W247	5	EU-MERCEDES-BENZ-B-CLASS-W247-HATCHBACK-01	HIGH	W247五门插电混动车身外廓。	READY
+140776	140776	SUV	AMG GLA H247	H247	5	EU-MERCEDES-BENZ-GLA-H247-AMG-SUV-01	HIGH	H247 AMG GLA 35外廓。	READY
+140777	140777	SUV	AMG GLA H247	H247	5	EU-MERCEDES-BENZ-GLA-H247-AMG-SUV-01	HIGH	H247 AMG GLA 45非S外廓。	READY
+140778	140778	SUV	AMG GLA H247	H247	5	EU-MERCEDES-BENZ-GLA-H247-AMG-45S-SUV-01	HIGH	H247 AMG GLA 45 S高度不同，独立建组。	READY
+140787	140787	Sedan	E-Class W213	W213	4	EU-MERCEDES-BENZ-E-CLASS-W213-SEDAN-01	HIGH	W213改款前四门插电混动轿车外廓。	READY
+140789	140789	Sedan	E-Class W213 facelift	W213	4	EU-MERCEDES-BENZ-E-CLASS-W213-FACELIFT-SEDAN-01	HIGH	W213 2020改款四门插电混动轿车外廓。	READY
+```
+
+本轮新增/修改的 DIMENSION_GROUP TSV
+
+```tsv
+DIMENSION_GROUP_ID	LengthMM	WidthMM	HeightMM	DimensionSource	SourceURL
+EU-MERCEDES-BENZ-GLE-V167-PHEV-SUV-01	4924	1947	1795	Auto-Data Mercedes-Benz GLE SUV V167 GLE 350de technical specifications	https://www.auto-data.net/en/mercedes-benz-gle-suv-v167-gle-350de-320hp-plug-in-hybrid-4matic-9g-tronic-37678
+EU-MERCEDES-BENZ-GLE-V167-AMG-63-SUV-01	4954	2018	1782	Mercedes-Benz Mercedes-AMG GLE Owner's Manual Supplement March 2021	https://static.oneweb.mercedes-benz.com/css-oom-assets/en-bh/pdf/mercedes-amg-gle-owners-manual-supplement-march-2021-1.pdf
+EU-MERCEDES-BENZ-A-CLASS-V177-SEDAN-01	4549	1796	1458	Auto-Data Mercedes-Benz A-Class Sedan V177 A 250e technical specifications	https://www.auto-data.net/en/mercedes-benz-a-class-sedan-v177-a-250e-218hp-plug-in-hybrid-8g-dct-37688
+EU-MERCEDES-BENZ-A-CLASS-W177-HATCHBACK-01	4419	1796	1452	Auto-Data Mercedes-Benz A-Class W177 A 250e technical specifications	https://www.auto-data.net/en/mercedes-benz-a-class-w177-a-250e-218hp-plug-in-hybrid-8g-dct-37687
+EU-MERCEDES-BENZ-B-CLASS-W247-HATCHBACK-01	4419	1796	1562	Auto-Data Mercedes-Benz B-Class W247 B 250e technical specifications	https://www.auto-data.net/en/mercedes-benz-b-class-w247-b-250e-218hp-plug-in-hybrid-8g-dct-41799
+EU-MERCEDES-BENZ-GLA-H247-AMG-SUV-01	4436	1849	1588	Mercedes-Benz Mercedes-AMG GLA and GLB Owner's Manual Supplement March 2021	https://static.oneweb.mercedes-benz.com/css-oom-assets/en-om/pdf/mercedes-amg-gla-glb-owners-manual-supplement-march-2021-1.pdf
+EU-MERCEDES-BENZ-GLA-H247-AMG-45S-SUV-01	4436	1849	1585	Mercedes-Benz Mercedes-AMG GLA and GLB Owner's Manual Supplement March 2021	https://static.oneweb.mercedes-benz.com/css-oom-assets/en-om/pdf/mercedes-amg-gla-glb-owners-manual-supplement-march-2021-1.pdf
+EU-MERCEDES-BENZ-E-CLASS-W213-SEDAN-01	4923	1852	1468	Auto-Data Mercedes-Benz E-Class W213 E 350e technical specifications	https://www.auto-data.net/en/mercedes-benz-e-class-w213-e-350e-286hp-plug-in-hybrid-9g-tronic-29701
+EU-MERCEDES-BENZ-E-CLASS-W213-FACELIFT-SEDAN-01	4935	1852	1481	Auto-Data Mercedes-Benz E-Class W213 facelift E 300de 4MATIC technical specifications	https://www.auto-data.net/en/mercedes-benz-e-class-w213-facelift-2020-e-300de-306hp-plug-in-hybrid-4matic-9g-tronic-40972
+```
+
+下一步优先处理
+
+1. 闭合 Porsche 911 Targa 992、Taycan、Cayenne GTS 和 McLaren 720S。
+2. 批量处理 Skoda E-Citigo、VW T-Cross、Nissan Juke、Ford Puma、Opel Mokka-e 和 Suzuki Swift。
+3. 最后处理 Maxus、VW Transporter、RAM 1500、Toyota Hilux 等存在轴距、车顶、货斗或商用车分支的记录。
+
+推进信号：CONTINUE
+
+[1]: https://static.oneweb.mercedes-benz.com/css-oom-assets/en-om/pdf/mercedes-amg-gla-glb-owners-manual-supplement-march-2021-1.pdf "mercedes-amg-gla-glb-owners-manual-supplement-march-2021-1"
+[2]: https://www.auto-data.net/en/mercedes-benz-gle-suv-v167-gle-350de-320hp-plug-in-hybrid-4matic-9g-tronic-37678 "Mercedes-Benz GLE SUV (V167) GLE 350de (320 Hp) Plug-in Hybrid 4MATIC 9G-TRONIC | Technical specs, data, fuel consumption, Dimensions"
+[3]: https://www.auto-data.net/en/mercedes-benz-a-class-w177-a-250e-218hp-plug-in-hybrid-8g-dct-37687 "Mercedes-Benz A-class (W177) A 250e (218 Hp) Plug-in Hybrid 8G-DCT | Technical specs, data, fuel consumption, Dimensions"
+
+
+--- 发送 / 继续到 Round 4 ---
+继续当前批次并采用缓存优先模式。尺寸组只在首次创建或纠错时完整核对一次三维和来源；后续 Ktype 只判断关联哪个现有 DIMENSION_GROUP_ID，不重复抓取，不输出缓存来源或匹配理由。仍有 PENDING 时，CONTINUE 轮仅输出：1) 更新点；2) 当前批次进度；3) 本轮新增/修改的 Ktype 映射 TSV（无变化写“无”）；4) 本轮首次创建/修正的 DIMENSION_GROUP TSV（复用既有组不重复输出，无变化写“无”）；5) 下一步优先处理。若当前或上一轮进度已经是 PENDING=0，本轮不要继续检索或再次输出 CONTINUE，必须立刻汇总并输出两张最终完整 TSV、两个任务指定 sandbox 下载链接和“推进信号：COMPLETE”。执行顺序固定为：第一阶段优先消除 PENDING 并补齐会阻塞两张最终表的数据。检测到 PENDING=0 后，第二阶段最多只做一次轻量机械收尾：核对固定表头、id 与 DIMENSION_GROUP_ID 唯一、映射引用闭合、长宽高和来源非空、两个任务指定下载链接齐全。第二阶段不得重新逐车型、逐年份或逐来源做深度检索，不得为了提高置信度反复核对，也不得因非阻塞的排序或措辞问题继续多轮。PENDING=0 后的下一条回复必须直接输出两张最终完整 TSV、两个精确 sandbox 下载链接，并以“推进信号：COMPLETE”结束；不要再输出 CONTINUE。Ktype 映射 TSV 表头必须严格使用 requirement 指定的字段顺序：id	Ktype	NormalizedBodyStyle	Generation	BodyCode	Doors	DIMENSION_GROUP_ID	MatchConfidence	Notes	IterationStatus。另需维护完整 DIMENSION_GROUP TSV，表头固定为：DIMENSION_GROUP_ID	LengthMM	WidthMM	HeightMM	DimensionSource	SourceURL。缺少任一张表、任一映射引用的尺寸组，或尺寸组字段不完整时不得 COMPLETE。不要输出子车系匹配表。
+【COMPLETE 下载文件硬性要求】
+准备 COMPLETE 时，除两张完整内嵌 TSV 外，还必须创建并提供以下两个可点击 sandbox 下载链接，文件名必须完全一致：
+- all_601-700_ktype_dimension_mapping_final.tsv
+- all_601-700_dimension_groups_final.tsv
+缺少任一下载链接时不得输出推进信号：COMPLETE。
+

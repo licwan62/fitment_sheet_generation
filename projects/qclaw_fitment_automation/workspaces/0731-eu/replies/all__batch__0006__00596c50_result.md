@@ -1335,3 +1335,246 @@ id	Ktype	NormalizedBodyStyle	Generation	BodyCode	Doors	DIMENSION_GROUP_ID	MatchC
   "error": "locator.waitFor: Timeout 20000ms exceeded.\nCall log:\n\u001B[2m  - waiting for locator(\u0027body\u0027)\u001B[22m\n\n    at runAction (/Users/admin/Documents/GitHub/fitment_sheet_generation/projects/qclaw_fitment_automation/playwright_browser_bridge.js:167:32)\n    at async Server.\u003Canonymous\u003E (/Users/admin/Documents/GitHub/fitment_sheet_generation/projects/qclaw_fitment_automation/playwright_browser_bridge.js:222:16)"
 }
 
+
+--- 发送 / checkpoint 续跑到 Round 15 ---
+继续当前批次并采用缓存优先模式。尺寸组只在首次创建或纠错时完整核对一次三维和来源；后续 Ktype 只判断关联哪个现有 DIMENSION_GROUP_ID，不重复抓取，不输出缓存来源或匹配理由。仍有 PENDING 时，CONTINUE 轮仅输出：1) 更新点；2) 当前批次进度；3) 本轮新增/修改的 Ktype 映射 TSV（无变化写“无”）；4) 本轮首次创建/修正的 DIMENSION_GROUP TSV（复用既有组不重复输出，无变化写“无”）；5) 下一步优先处理。若当前或上一轮进度已经是 PENDING=0，本轮不要继续检索或再次输出 CONTINUE，必须立刻汇总并输出两张最终完整 TSV、两个任务指定 sandbox 下载链接和“推进信号：COMPLETE”。执行顺序固定为：第一阶段优先消除 PENDING 并补齐会阻塞两张最终表的数据。检测到 PENDING=0 后，第二阶段最多只做一次轻量机械收尾：核对固定表头、id 与 DIMENSION_GROUP_ID 唯一、映射引用闭合、长宽高和来源非空、两个任务指定下载链接齐全。第二阶段不得重新逐车型、逐年份或逐来源做深度检索，不得为了提高置信度反复核对，也不得因非阻塞的排序或措辞问题继续多轮。PENDING=0 后的下一条回复必须直接输出两张最终完整 TSV、两个精确 sandbox 下载链接，并以“推进信号：COMPLETE”结束；不要再输出 CONTINUE。Ktype 映射 TSV 表头必须严格使用 requirement 指定的字段顺序：id	Ktype	NormalizedBodyStyle	Generation	BodyCode	Doors	DIMENSION_GROUP_ID	MatchConfidence	Notes	IterationStatus。另需维护完整 DIMENSION_GROUP TSV，表头固定为：DIMENSION_GROUP_ID	LengthMM	WidthMM	HeightMM	DimensionSource	SourceURL。缺少任一张表、任一映射引用的尺寸组，或尺寸组字段不完整时不得 COMPLETE。不要输出子车系匹配表。
+【COMPLETE 下载文件硬性要求】
+准备 COMPLETE 时，除两张完整内嵌 TSV 外，还必须创建并提供以下两个可点击 sandbox 下载链接，文件名必须完全一致：
+- all_501-600_ktype_dimension_mapping_final.tsv
+- all_501-600_dimension_groups_final.tsv
+缺少任一下载链接时不得输出推进信号：COMPLETE。
+
+
+--- Round 15 / checkpoint 续跑 ---
+## 更新点
+
+* `140549` 已闭合为 **Autofurgone 500 封闭货厢**，尺寸为 `3470 × 1400 × 1650 mm`。
+* `140550` 已闭合为 **Autocarro 500 标准开放货斗**，尺寸为 `3470 × 1400 × 1360 mm`。同期资料明确指出两种车身长宽相同，但封闭货厢高度为 1.65 m，开放货斗高度为 1.36 m。([Scribd][1])
+* 已完成机械检查：固定表头正确、`id` 和 `DIMENSION_GROUP_ID` 唯一、全部引用闭合、尺寸与来源非空、两个指定文件已生成。
+
+## 当前批次进度
+
+* 输入 Ktype：100 / 100
+* READY 映射：122
+* PENDING 映射：0
+* DIMENSION_GROUP：70
+* 孤立尺寸组：0
+* 未闭合引用：0
+
+## 最终完整 Ktype 映射 TSV
+
+```tsv
+id	Ktype	NormalizedBodyStyle	Generation	BodyCode	Doors	DIMENSION_GROUP_ID	MatchConfidence	Notes	IterationStatus
+140429	140429	Hatchback	M.GO 6		3	EU-MICROCAR-MGO6-HATCHBACK-01	HIGH		READY
+140436	140436	SUV	GLE II	V167	5	EU-MERCEDES-BENZ-GLE-V167-SUV-01	HIGH		READY
+140437_prefl	140437	Wagon	E-Class V	S213	5	EU-MERCEDES-BENZ-E-CLASS-S213-WAGON-PREFL-01	HIGH	改款前物理外廓。	READY
+140437_facelift	140437	Wagon	E-Class V facelift	S213	5	EU-MERCEDES-BENZ-E-CLASS-S213-WAGON-FACELIFT-01	HIGH	改款后物理外廓。	READY
+140438	140438	Wagon	C-Class IV facelift	S205	5	EU-MERCEDES-BENZ-C-CLASS-S205-FACELIFT-WAGON-01	MEDIUM		READY
+140439	140439	Wagon	C-Class IV facelift	S205	5	EU-MERCEDES-BENZ-C-CLASS-S205-FACELIFT-WAGON-01	HIGH		READY
+140440	140440	Coupe	4 Series II	G22	2	EU-BMW-4-G22-COUPE-M440I-XDRIVE-01	HIGH	M440i xDrive外廓分支。	READY
+140441	140441	Hatchback	Jazz V		5	EU-HONDA-JAZZ-V-HATCHBACK-01	HIGH		READY
+140442	140442	Coupe	4 Series II	G22	2	EU-BMW-4-G22-COUPE-01	HIGH		READY
+140443	140443	Coupe	4 Series II	G22	2	EU-BMW-4-G22-COUPE-01	HIGH		READY
+140444	140444	Coupe	4 Series II	G22	2	EU-BMW-4-G22-COUPE-XDRIVE-01	HIGH		READY
+140445	140445	Coupe	4 Series II	G22	2	EU-BMW-4-G22-COUPE-01	HIGH		READY
+140446	140446	Coupe	4 Series II	G22	2	EU-BMW-4-G22-COUPE-01	HIGH		READY
+140448	140448	Coupe	4 Series II	G22	2	EU-BMW-4-G22-COUPE-XDRIVE-01	HIGH	xDrive外廓高度分支。	READY
+140449	140449	Hatchback	Leon IV	KL1	5	EU-SEAT-LEON-IV-KL-HATCHBACK-01	HIGH		READY
+140450	140450	Wagon	Leon IV	KL8	5	EU-SEAT-LEON-IV-KL-WAGON-01	HIGH		READY
+140451	140451	Hatchback	Superb III facelift		5	EU-SKODA-SUPERB-III-FACELIFT-HATCHBACK-IV-01	HIGH		READY
+140452	140452	Wagon	Superb III facelift		5	EU-SKODA-SUPERB-III-FACELIFT-WAGON-IV-01	HIGH		READY
+140456	140456	Coupe	SF90 Stradale		2	EU-FERRARI-SF90-STRADALE-COUPE-01	HIGH		READY
+140459_compact	140459	Van	Vito W447 facelift	W447		EU-MERCEDES-BENZ-VITO-W447-FACELIFT-COMPACT-01	MEDIUM	同一Ktype覆盖Compact车长分支。	READY
+140459_long	140459	Van	Vito W447 facelift	W447		EU-MERCEDES-BENZ-VITO-W447-FACELIFT-LONG-01	MEDIUM	同一Ktype覆盖Long车长分支。	READY
+140459_extralong	140459	Van	Vito W447 facelift	W447		EU-MERCEDES-BENZ-VITO-W447-FACELIFT-EXTRA-LONG-01	MEDIUM	同一Ktype覆盖Extra Long车长分支。	READY
+140460_compact	140460	Van	Vito W447 facelift	W447		EU-MERCEDES-BENZ-VITO-W447-FACELIFT-COMPACT-01	MEDIUM	同一Ktype覆盖Compact车长分支。	READY
+140460_long	140460	Van	Vito W447 facelift	W447		EU-MERCEDES-BENZ-VITO-W447-FACELIFT-LONG-01	MEDIUM	同一Ktype覆盖Long车长分支。	READY
+140460_extralong	140460	Van	Vito W447 facelift	W447		EU-MERCEDES-BENZ-VITO-W447-FACELIFT-EXTRA-LONG-01	MEDIUM	同一Ktype覆盖Extra Long车长分支。	READY
+140461_long	140461	Van	Vito W447 facelift	W447		EU-MERCEDES-BENZ-VITO-W447-FACELIFT-LONG-01	MEDIUM	4MATIC Ktype覆盖Long车长分支。	READY
+140461_extralong	140461	Van	Vito W447 facelift	W447		EU-MERCEDES-BENZ-VITO-W447-FACELIFT-EXTRA-LONG-01	MEDIUM	4MATIC Ktype覆盖Extra Long车长分支。	READY
+140462_compact	140462	Van	Vito W447 facelift	W447		EU-MERCEDES-BENZ-VITO-W447-FACELIFT-COMPACT-01	MEDIUM	同一Ktype覆盖Compact车长分支。	READY
+140462_long	140462	Van	Vito W447 facelift	W447		EU-MERCEDES-BENZ-VITO-W447-FACELIFT-LONG-01	MEDIUM	同一Ktype覆盖Long车长分支。	READY
+140462_extralong	140462	Van	Vito W447 facelift	W447		EU-MERCEDES-BENZ-VITO-W447-FACELIFT-EXTRA-LONG-01	MEDIUM	同一Ktype覆盖Extra Long车长分支。	READY
+140463_long	140463	Van	Vito W447 facelift	W447		EU-MERCEDES-BENZ-VITO-W447-FACELIFT-LONG-01	MEDIUM	4MATIC Ktype覆盖Long车长分支。	READY
+140463_extralong	140463	Van	Vito W447 facelift	W447		EU-MERCEDES-BENZ-VITO-W447-FACELIFT-EXTRA-LONG-01	MEDIUM	4MATIC Ktype覆盖Extra Long车长分支。	READY
+140464	140464	Sedan	S60 III		4	EU-VOLVO-S60-III-SEDAN-01	HIGH		READY
+140465	140465	Wagon	V60 II		5	EU-VOLVO-V60-II-WAGON-01	HIGH		READY
+140466	140466	Wagon	V60 II		5	EU-VOLVO-V60-II-WAGON-01	HIGH		READY
+140467	140467	Wagon	V60 II		5	EU-VOLVO-V60-II-WAGON-01	HIGH		READY
+140468	140468	Wagon	V60 II		5	EU-VOLVO-V60-II-WAGON-01	HIGH		READY
+140470	140470	Wagon	V60 II		5	EU-VOLVO-V60-II-WAGON-01	HIGH		READY
+140474	140474	SUV	XC40 I		5	EU-VOLVO-XC40-I-SUV-01	HIGH		READY
+140475	140475	SUV	XC40 I		5	EU-VOLVO-XC40-I-SUV-01	HIGH		READY
+140476	140476	SUV	XC40 I		5	EU-VOLVO-XC40-I-SUV-01	HIGH		READY
+140479	140479	SUV	XC60 II		5	EU-VOLVO-XC60-II-SUV-01	HIGH		READY
+140485_2dr	140485	Sedan	140 Series facelift II	142	2	EU-VOLVO-140-142-SEDAN-01	HIGH	142两门车身分支。	READY
+140485_4dr	140485	Sedan	140 Series facelift II	144	4	EU-VOLVO-140-144-SEDAN-01	HIGH	144四门车身分支。	READY
+140486_2dr	140486	Sedan	140 Series facelift I	142	2	EU-VOLVO-140-142-SEDAN-01	HIGH	142两门车身分支。	READY
+140486_4dr	140486	Sedan	140 Series facelift I	144	4	EU-VOLVO-140-144-SEDAN-01	HIGH	144四门车身分支。	READY
+140487	140487	Sedan	PV444	PV444	2	EU-VOLVO-PV444-SEDAN-01	HIGH		READY
+140488	140488	Sedan	PV444	PV444	2	EU-VOLVO-PV444-SEDAN-01	HIGH		READY
+140489	140489	SUV	XC90 II		5	EU-VOLVO-XC90-II-SUV-01	HIGH		READY
+140490	140490	Sedan	PV444	PV444	2	EU-VOLVO-PV444-SEDAN-01	HIGH		READY
+140491	140491	Sedan	PV444	PV444	2	EU-VOLVO-PV444-SEDAN-01	HIGH		READY
+140492	140492	Sedan	PV444	PV444	2	EU-VOLVO-PV444-SEDAN-01	HIGH		READY
+140493	140493	Wagon	Duett P210	P210	3	EU-VOLVO-DUETT-PV445-P210-WAGON-01	HIGH		READY
+140495	140495	Wagon	Duett PV445	PV445	3	EU-VOLVO-DUETT-PV445-P210-WAGON-01	HIGH		READY
+140496	140496	Wagon	Duett PV445	PV445	3	EU-VOLVO-DUETT-PV445-P210-WAGON-01	HIGH		READY
+140497	140497	Wagon	Duett PV445	PV445	3	EU-VOLVO-DUETT-PV445-P210-WAGON-01	HIGH		READY
+140498	140498	SUV	Puma II		5	EU-FORD-PUMA-II-SUV-01	HIGH		READY
+140499	140499	Sedan	Amazon 120 Series	P120	4	EU-VOLVO-AMAZON-P120-SEDAN-01	HIGH		READY
+140504	140504	Sedan	A3 IV (8Y)	8YS	4	EU-AUDI-A3-8Y-SEDAN-01	HIGH		READY
+140505	140505	Hatchback	Mondeo V facelift		5	EU-FORD-MONDEO-V-FACELIFT-HATCHBACK-01	HIGH	输入车身类型为Stufenheck，实际对应五门掀背外廓。	READY
+140506	140506	Sedan	A3 IV (8Y)	8YS	4	EU-AUDI-A3-8Y-SEDAN-01	HIGH		READY
+140511_swb	140511	Van	HiAce IV (H100)	RZH103R	4	EU-TOYOTA-HIACE-IV-H100-VAN-SWB-01	MEDIUM	RZH103R短轴厢式车分支。	READY
+140511_lwb	140511	Van	HiAce IV (H100)	RZH113R	4	EU-TOYOTA-HIACE-IV-H100-VAN-LWB-01	MEDIUM	RZH113R长轴厢式车分支。	READY
+140512_swb	140512	Van	HiAce IV (H100)	RZH103R	4	EU-TOYOTA-HIACE-IV-H100-VAN-SWB-01	MEDIUM	RZH103R短轴厢式车分支。	READY
+140512_lwb	140512	Van	HiAce IV (H100)	RZH113R	4	EU-TOYOTA-HIACE-IV-H100-VAN-LWB-01	MEDIUM	RZH113R长轴厢式车分支。	READY
+140515	140515	Hatchback	A3 IV (8Y)	8YA	5	EU-AUDI-A3-8Y-SPORTBACK-01	HIGH		READY
+140516	140516	Hatchback	A3 IV (8Y)	8YA	5	EU-AUDI-A3-8Y-SPORTBACK-01	HIGH		READY
+140517	140517	Sedan	A3 IV (8Y)	8YS	4	EU-AUDI-A3-8Y-SEDAN-01	HIGH		READY
+140518	140518	Sedan	A3 IV (8Y)	8YS	4	EU-AUDI-A3-8Y-SEDAN-01	HIGH		READY
+140519	140519	Hatchback	Leon IV	KL1	5	EU-SEAT-LEON-IV-KL-HATCHBACK-01	HIGH		READY
+140520	140520	Wagon	Leon IV	KL8	5	EU-SEAT-LEON-IV-KL-WAGON-01	HIGH		READY
+140522	140522	Hatchback	Captur I facelift		5	EU-RENAULT-CAPTUR-I-FACELIFT-HATCHBACK-01	HIGH		READY
+140523	140523	Van	Fiesta VII	B479	3	EU-FORD-FIESTA-VII-VAN-01	HIGH	三门厢式车物理外廓。	READY
+140525	140525	Hatchback	Captur II		5	EU-RENAULT-CAPTUR-II-HATCHBACK-01	HIGH		READY
+140532	140532	SUV	EcoSport II facelift		5	EU-FORD-ECOSPORT-II-FACELIFT-SUV-01	HIGH		READY
+140538	140538	Wagon	A6 C8		5	EU-AUDI-A6-C8-WAGON-PREFL-01	HIGH		READY
+140539	140539	Wagon	A6 C8		5	EU-AUDI-A6-C8-WAGON-PREFL-01	MEDIUM		READY
+140540	140540	SUV	Tivoli I facelift		5	EU-SSANGYONG-TIVOLI-I-FACELIFT-SUV-01	HIGH		READY
+140545_prefl	140545	Wagon	Matador I		5	EU-AMC-MATADOR-I-WAGON-01	MEDIUM	1971至1973年物理外廓。	READY
+140545_facelift	140545	Wagon	Matador II		5	EU-AMC-MATADOR-II-WAGON-01	MEDIUM	1974年增长后的物理外廓。	READY
+140546_2dr	140546	Sedan	Hornet I		2	EU-AMC-HORNET-I-SEDAN-2D-01	MEDIUM	输入Schrägheck已纠正为两门Sedan分支。	READY
+140546_4dr	140546	Sedan	Hornet I		4	EU-AMC-HORNET-I-SEDAN-4D-01	MEDIUM	输入Schrägheck已纠正为四门Sedan分支。	READY
+140548	140548	Coupe	Isetta		1	EU-ISO-ISETTA-COUPE-01	HIGH	单前门车身。	READY
+140549	140549	Van	Autofurgone 500			EU-ISO-AUTOFURGONE-500-VAN-01	MEDIUM	封闭货厢独立外廓。	READY
+140550	140550	Pickup	Autocarro 500			EU-ISO-AUTOCARRO-500-PICKUP-01	MEDIUM	标准开放货斗独立外廓。	READY
+140554_prefl	140554	Sedan	D3 S	G20	4	EU-ALPINA-D3-S-G20-SEDAN-PREFL-01	HIGH	改款前物理外廓。	READY
+140554_facelift	140554	Sedan	D3 S facelift	G20	4	EU-ALPINA-D3-S-G20-SEDAN-FACELIFT-01	HIGH	改款后物理外廓。	READY
+140555_prefl	140555	Wagon	D3 S	G21	5	EU-ALPINA-D3-S-G21-WAGON-PREFL-01	HIGH	改款前物理外廓。	READY
+140555_facelift	140555	Wagon	D3 S facelift	G21	5	EU-ALPINA-D3-S-G21-WAGON-FACELIFT-01	HIGH	改款后物理外廓。	READY
+140560	140560	Hatchback	JS50 I facelift		3	EU-LIGIER-JS50-I-FACELIFT-HATCHBACK-01	HIGH		READY
+140561_prefl	140561	SUV	Q5 II	FY	5	EU-AUDI-Q5-II-FY-SUV-01	MEDIUM	改款前物理外廓。	READY
+140561_facelift	140561	SUV	Q5 II facelift	FY	5	EU-AUDI-Q5-II-FACELIFT-2020-SUV-FWD-01	MEDIUM	改款后前驱物理外廓。	READY
+140562	140562	Coupe	Rivolta IR		2	EU-ISORIVOLTA-RIVOLTA-IR-COUPE-01	HIGH		READY
+140563	140563	Coupe	Rivolta IR		2	EU-ISORIVOLTA-RIVOLTA-IR-COUPE-01	HIGH		READY
+140564	140564	Coupe	Rivolta IR		2	EU-ISORIVOLTA-RIVOLTA-IR-COUPE-01	HIGH		READY
+140565	140565	Hatchback	IXO I facelift		3	EU-LIGIER-IXO-I-FACELIFT-HATCHBACK-01	HIGH		READY
+140566_r	140566	Hatchback	X-Too I		3	EU-LIGIER-X-TOO-I-HATCHBACK-R-01	HIGH	X-Too R长车身分支。	READY
+140566_s	140566	Hatchback	X-Too I		3	EU-LIGIER-X-TOO-I-HATCHBACK-S-01	HIGH	X-Too S短车身分支。	READY
+140567_prefl	140567	Coupe	Grifo Series I		2	EU-ISORIVOLTA-GRIFO-SERIES-I-COUPE-01	MEDIUM	1970年改款前物理外廓。	READY
+140567_facelift	140567	Coupe	Grifo Series II		2	EU-ISORIVOLTA-GRIFO-SERIES-II-COUPE-01	MEDIUM	1970年改款后物理外廓。	READY
+140568	140568	Hatchback	M12		3	EU-CASALINI-M12-HATCHBACK-01	HIGH		READY
+140569	140569	Coupe	Grifo Series I		2	EU-ISORIVOLTA-GRIFO-SERIES-I-COUPE-01	HIGH		READY
+140570_prefl	140570	Coupe	Grifo Series I		2	EU-ISORIVOLTA-GRIFO-SERIES-I-COUPE-01	MEDIUM	1970年改款前物理外廓。	READY
+140570_facelift	140570	Coupe	Grifo Series II		2	EU-ISORIVOLTA-GRIFO-SERIES-II-COUPE-01	MEDIUM	1970年改款后物理外廓。	READY
+140571	140571	Coupe	Grifo Series I 7 Litri		2	EU-ISORIVOLTA-GRIFO-7-LITRI-COUPE-01	HIGH	高发动机盖外廓。	READY
+140572	140572	Coupe	Grifo Series II Can-Am		2	EU-ISORIVOLTA-GRIFO-CAN-AM-COUPE-01	HIGH	Series II隐藏式前灯及高发动机盖外廓。	READY
+140573	140573	Coupe	Grifo Series II IR-8		2	EU-ISORIVOLTA-GRIFO-IR8-COUPE-01	HIGH	IR-8外廓。	READY
+140574	140574	Sedan	Fidia		4	EU-ISORIVOLTA-FIDIA-SEDAN-01	HIGH		READY
+140575	140575	Sedan	Fidia		4	EU-ISORIVOLTA-FIDIA-SEDAN-01	HIGH		READY
+140576	140576	Sedan	Fidia		4	EU-ISORIVOLTA-FIDIA-SEDAN-01	HIGH		READY
+140577	140577	Sedan	Fidia		4	EU-ISORIVOLTA-FIDIA-SEDAN-01	HIGH		READY
+140578	140578	Sedan	Fidia		4	EU-ISORIVOLTA-FIDIA-SEDAN-01	HIGH		READY
+140579	140579	Coupe	Lele		3	EU-ISORIVOLTA-LELE-COUPE-01	HIGH		READY
+140580	140580	Coupe	Lele		3	EU-ISORIVOLTA-LELE-COUPE-01	HIGH		READY
+140581	140581	Coupe	Lele		3	EU-ISORIVOLTA-LELE-COUPE-01	HIGH		READY
+140582	140582	Coupe	Lele		3	EU-ISORIVOLTA-LELE-COUPE-01	HIGH		READY
+140583	140583	Coupe	Lele		3	EU-ISORIVOLTA-LELE-COUPE-01	HIGH		READY
+140600_prefl	140600	SUV	XB7	G07	5	EU-ALPINA-XB7-G07-SUV-PREFL-01	MEDIUM	改款前物理外廓。	READY
+140600_facelift	140600	SUV	XB7 facelift	G07	5	EU-ALPINA-XB7-G07-SUV-FACELIFT-01	MEDIUM	改款后物理外廓。	READY
+140604	140604	Convertible	Huracán EVO		2	EU-LAMBORGHINI-HURACAN-EVO-RWD-SPYDER-01	HIGH	输入Targa对应EVO RWD Spyder开放式车身。	READY
+140610	140610	Coupe	5300 GT Strada		2	EU-BIZZARRINI-5300-GT-STRADA-COUPE-01	HIGH		READY
+140611	140611	Coupe	1900 GT Europa		2	EU-BIZZARRINI-1900-GT-EUROPA-COUPE-01	HIGH		READY
+```
+
+[下载 Ktype 映射表](sandbox:/mnt/data/all_501-600_ktype_dimension_mapping_final.tsv)
+
+## 最终完整 DIMENSION_GROUP TSV
+
+```tsv
+DIMENSION_GROUP_ID	LengthMM	WidthMM	HeightMM	DimensionSource	SourceURL
+EU-MICROCAR-MGO6-HATCHBACK-01	2999	1500	1560	Engine in Detail Microcar M.Go 6 X Diesel Progress ACT	https://www.engineindetail.com/pa/microcar-m-go-6-x-diesel-progress-act-2019
+EU-MERCEDES-BENZ-GLE-V167-SUV-01	4924	1947	1795	Auto-Data Mercedes-Benz GLE V167 GLE 350de	https://www.auto-data.net/en/mercedes-benz-gle-suv-v167-gle-350de-320hp-plug-in-hybrid-4matic-9g-tronic-37678
+EU-MERCEDES-BENZ-E-CLASS-S213-WAGON-PREFL-01	4933	1852	1475	Auto-Data Mercedes-Benz E-Class T-Modell S213 E 300de	https://www.auto-data.net/en/mercedes-benz-e-class-t-modell-s213-e-300de-306hp-plug-in-hybrid-9g-tronic-35179
+EU-MERCEDES-BENZ-E-CLASS-S213-WAGON-FACELIFT-01	4945	1852	1476	Auto-Data Mercedes-Benz E-Class T-Modell S213 facelift E 300de	https://www.auto-data.net/en/mercedes-benz-e-class-t-modell-s213-facelift-2020-e-300de-306hp-plug-in-hybrid-9g-tronic-40871
+EU-MERCEDES-BENZ-C-CLASS-S205-FACELIFT-WAGON-01	4702	1810	1457	Auto-Data Mercedes-Benz C-Class S205 facelift C 300de	https://www.auto-data.net/en/mercedes-benz-c-class-t-modell-s205-facelift-2018-c-300de-306hp-eq-power-9g-tronic-50968
+EU-BMW-4-G22-COUPE-M440I-XDRIVE-01	4770	1852	1393	BMW Group Technical specifications – The new BMW 4 Series Coupé (M440i xDrive)	https://www.press.bmwgroup.com/netherlands/article/attachment/T0309157NL/451837
+EU-HONDA-JAZZ-V-HATCHBACK-01	4044	1694	1526	Honda News Europe – 2020 Honda Jazz & Jazz Crosstar specifications	https://hondanews.eu/eu/el/cars/media/pressreleases/303367/2020-honda-jazz-and-jazz-crosstar-1
+EU-BMW-4-G22-COUPE-01	4768	1852	1383	BMW Group Technical specifications – The new BMW 4 Series Coupé (420i/430i/420d)	https://www.press.bmwgroup.com/netherlands/article/attachment/T0309157NL/451837
+EU-BMW-4-G22-COUPE-XDRIVE-01	4768	1852	1390	BMW Group Technical specifications – The new BMW 4 Series Coupé (420d xDrive)	https://www.press.bmwgroup.com/netherlands/article/attachment/T0309157NL/451837
+EU-SEAT-LEON-IV-KL-HATCHBACK-01	4368	1799	1456	SEAT official Leon Style dimensions	https://www.seat.com/carworlds/leon/leon-style
+EU-SEAT-LEON-IV-KL-WAGON-01	4642	1799	1450	SEAT official Leon Sportstourer Style dimensions	https://www.seat.com/carworlds/leon-sportstourer/style
+EU-SKODA-SUPERB-III-FACELIFT-HATCHBACK-IV-01	4869	1864	1468	Skoda Superb iV official technical data	https://cdn.skoda-storyboard.com/2019/09/TD-SUPERB-iV-en.pdf
+EU-SKODA-SUPERB-III-FACELIFT-WAGON-IV-01	4862	1864	1477	Skoda Superb iV official technical data	https://cdn.skoda-storyboard.com/2019/09/TD-SUPERB-iV-en.pdf
+EU-FERRARI-SF90-STRADALE-COUPE-01	4710	1972	1186	Ferrari SF90 Stradale official technical specifications	https://cdn.ferrari.com/cms/network/media/pdf/pr_ferrari_sf90_stradale_gbr.pdf
+EU-MERCEDES-BENZ-VITO-W447-FACELIFT-COMPACT-01	4895	1928	1910	Mercedes-Benz Vito Panel Van official brochure	https://www.kinahan.ie/custom/public/files/vito-panel-ebrochure-2021-1-.pdf
+EU-MERCEDES-BENZ-VITO-W447-FACELIFT-LONG-01	5140	1928	1910	Mercedes-Benz Vito Panel Van official brochure	https://www.kinahan.ie/custom/public/files/vito-panel-ebrochure-2021-1-.pdf
+EU-MERCEDES-BENZ-VITO-W447-FACELIFT-EXTRA-LONG-01	5370	1928	1910	Mercedes-Benz Vito Panel Van official brochure	https://www.kinahan.ie/custom/public/files/vito-panel-ebrochure-2021-1-.pdf
+EU-VOLVO-S60-III-SEDAN-01	4761	1850	1437	Volvo Support – S60 2020 dimensions	https://www.volvocars.com/jp/support/car/s60/19w17/article/b0804d54c7fc096bc0a81f6f065ad63e_0362eef4c7fc436fc0a81f6f7c27a289_766ee075f0e03896c0a8015109ee0749/
+EU-VOLVO-V60-II-WAGON-01	4761	1850	1437	Volvo Support – V60 dimensions	https://www.volvocars.com/cy/support/car/v60/19w17/article/b0804d54c7fc096bc0a81f6f065ad63e_0362eef4c7fc436fc0a81f6f7c27a289_766ee075f0e03896c0a8015109ee0749/
+EU-VOLVO-XC40-I-SUV-01	4425	1863	1658	Volvo Support – XC40 dimensions	https://www.volvocars.com/jp/support/car/xc40/18w17/article/b0804d54c7fc096bc0a81f6f065ad63e_0362eef4c7fc436fc0a81f6f7c27a289_0a9f81ad7fe71c97c0a8015176e5bb71/
+EU-VOLVO-XC60-II-SUV-01	4688	1902	1658	Volvo Support – XC60 dimensions	https://www.volvocars.com/en-th/support/car/xc60/article/766ee075f0e03896c0a8015109ee0749/
+EU-VOLVO-140-142-SEDAN-01	4640	1730	1440	Motorsporlari 1972 Volvo 142 Saloon technical specifications	https://eng.motorsporlari.net/car/tech_spec.asp?make=Volvo&specID=19748
+EU-VOLVO-140-144-SEDAN-01	4640	1730	1440	ADAC Volvo 144 2.0 DL technical data	https://www.adac.de/rund-ums-fahrzeug/autokatalog/marken-modelle/volvo/142-144-145/1generation-facelift-2/349620/
+EU-VOLVO-PV444-SEDAN-01	4500	1570	1520	Volvotips Volvo PV444 and PV544 specifications	https://volvotips.com/pv/specifications/
+EU-VOLVO-XC90-II-SUV-01	4950	1923	1776	Volvo Support – XC90 dimensions	https://www.volvocars.com/uk/support/car/xc90/18w17/article/b0804d54c7fc096bc0a81f6f065ad63e/0362eef4c7fc436fc0a81f6f7c27a289/0a9f81ad7fe71c97c0a8015176e5bb71/
+EU-VOLVO-DUETT-PV445-P210-WAGON-01	4400	1600	1700	Volvotips Volvo PV445 and P210 Duett specifications	https://volvotips.com/pv/specifications/
+EU-FORD-PUMA-II-SUV-01	4186	1805	1550	Auto-Data Ford Puma 1.5 EcoBlue	https://www.auto-data.net/en/ford-puma-1.5-ecoblue-120hp-41778
+EU-VOLVO-AMAZON-P120-SEDAN-01	4450	1620	1505	CarsGuide 1968 Volvo 122 dimensions	https://www.carsguide.com.au/volvo/122/car-dimensions/1968
+EU-AUDI-A3-8Y-SEDAN-01	4495	1816	1425	Audi MediaCenter – A3 Sportback and A3 Sedan 2020 facts and figures	https://www.audi-mediacenter.com/en/more-dynamic-than-ever-before-the-new-audi-a3-sportback-and-the-new-a3-sedan-2020-12974/facts-and-figures-12977
+EU-FORD-MONDEO-V-FACELIFT-HATCHBACK-01	4871	1852	1482	Auto-Data Ford Mondeo Hatchback facelift 2.0 EcoBlue	https://www.auto-data.net/en/ford-mondeo-iv-hatchback-facelift-2019-2.0-ecoblue-150hp-37284
+EU-TOYOTA-HIACE-IV-H100-VAN-SWB-01	4570	1690	1940	Carsales / RedBook 1998 Toyota Hiace RZH103R specifications;GoAuto Toyota Hiace RZH103R SWB exterior dimensions	https://www.carsales.com.au/research/toyota/hiace/1998/no-badge/f973ea03-43ab-44b1-afcc-bbf9849c2235/;https://www.goauto.com.au/car-reviews/toyota/hiace/swb-van/2003-10-07/55860.html
+EU-TOYOTA-HIACE-IV-H100-VAN-LWB-01	4830	1690	1930	Carsales / RedBook 1998 Toyota Hiace RZH113R specifications;GoAuto Toyota Hiace RZH113R LWB exterior dimensions	https://www.carsales.com.au/research/toyota/hiace/1998/no-badge/89389273-1a1d-4b60-a855-5565a27309c8/;https://www.goauto.com.au/car-reviews/toyota/hiace/lwb-van/2003-10-07/54510.html
+EU-AUDI-A3-8Y-SPORTBACK-01	4343	1816	1449	Audi MediaCenter – A3 Sportback and A3 Sedan 2020 facts and figures	https://www.audi-mediacenter.com/en/more-dynamic-than-ever-before-the-new-audi-a3-sportback-and-the-new-a3-sedan-2020-12974/facts-and-figures-12977
+EU-RENAULT-CAPTUR-I-FACELIFT-HATCHBACK-01	4122	1778	1556	Auto-Data Renault Captur facelift 2017 1.2 TCe	https://www.auto-data.net/en/renault-captur-facelift-2017-1.2-tce-120hp-start-stop-edc-29779
+EU-FORD-FIESTA-VII-VAN-01	4040	1735	1476	Ford Fiesta Van official brochure	https://www.ford.ie/content/dam/guxeu/ie/Documents/Feature-PDFs/FT-NEW_FIESTA_VAN.pdf
+EU-RENAULT-CAPTUR-II-HATCHBACK-01	4227	1797	1576	Auto-Data Renault Captur II E-TECH 1.6 specifications	https://www.auto-data.net/en/renault-captur-ii-e-tech-1.6-158hp-plug-in-hybrid-multimode-39733
+EU-FORD-ECOSPORT-II-FACELIFT-SUV-01	4096	1765	1653	Automobile-Catalog Ford EcoSport facelift exterior dimensions	https://www.automobile-catalog.com/car/2018/2629325/ford_ecosport_1_5_tdci_100.html
+EU-AUDI-A6-C8-WAGON-PREFL-01	4933	1886	1457	ADAC Audi A6 Avant 55 TFSI e sport quattro	https://www.adac.de/rund-ums-fahrzeug/autokatalog/marken-modelle/audi/a6/c8/312163/
+EU-SSANGYONG-TIVOLI-I-FACELIFT-SUV-01	4225	1810	1613	Auto-Data SsangYong Tivoli facelift 1.2 T-GDi	https://www.auto-data.net/en/ssangyong-tivoli-facelift-2019-1.2-t-gdi-128hp-42780
+EU-AMC-MATADOR-I-WAGON-01	5207	1962	1430	Automobile-Catalog 1971 AMC Matador Wagon	https://www.automobile-catalog.com/car/1971/70205/amc_matador_wagon_v-8_360_automatic.html
+EU-AMC-MATADOR-II-WAGON-01	5474	1961	1443	Automobile-Catalog 1974 AMC Matador Wagon	https://www.automobile-catalog.com/car/1974/71420/amc_matador_wagon_v-8_360-4_220_automatic.html
+EU-AMC-HORNET-I-SEDAN-2D-01	4553	1805	1336	Automobile-Catalog 1970 AMC Hornet Sedan 199	https://www.automobile-catalog.com/car/1970/68045/amc_hornet_sedan_199.html
+EU-AMC-HORNET-I-SEDAN-4D-01	4553	1805	1336	Automobile-Catalog 1970 AMC Hornet Sedan 199	https://www.automobile-catalog.com/car/1970/68045/amc_hornet_sedan_199.html
+EU-ISO-ISETTA-COUPE-01	2250	1340	1320	Automobile-Catalog 1954 Iso Isetta	https://www.automobile-catalog.com/car/1954/1240970/isetta.html
+EU-ISO-AUTOFURGONE-500-VAN-01	3470	1400	1650	Gazoline 308 – Iso utilitaires historical dimensions	https://fr.scribd.com/document/721289389/Gazoline-2023-03-fr-downmagaz-net
+EU-ISO-AUTOCARRO-500-PICKUP-01	3470	1400	1360	Gazoline 308 – Iso utilitaires historical dimensions	https://fr.scribd.com/document/721289389/Gazoline-2023-03-fr-downmagaz-net
+EU-ALPINA-D3-S-G20-SEDAN-PREFL-01	4719	1827	1440	Auto-Data Alpina D3 Sedan G20 S	https://www.auto-data.net/en/alpina-d3-sedan-g20-s-3.0-355hp-mild-hybrid-awd-switch-tronic-42604
+EU-ALPINA-D3-S-G20-SEDAN-FACELIFT-01	4723	1827	1440	Auto-Data Alpina D3 Sedan G20 facelift S	https://www.auto-data.net/en/alpina-d3-sedan-g20-facelift-2022-s-3.0-355hp-mild-hybrid-awd-switch-tronic-45873
+EU-ALPINA-D3-S-G21-WAGON-PREFL-01	4719	1827	1438	Auto-Data Alpina D3 Touring G21 S	https://www.auto-data.net/en/alpina-d3-touring-g21-s-3.0-355hp-mild-hybrid-awd-switch-tronic-42602
+EU-ALPINA-D3-S-G21-WAGON-FACELIFT-01	4723	1827	1438	Auto-Data Alpina D3 Touring G21 facelift S	https://www.auto-data.net/en/alpina-d3-touring-g21-facelift-2022-s-3.0-355hp-mild-hybrid-awd-swtich-tronic-45874
+EU-LIGIER-JS50-I-FACELIFT-HATCHBACK-01	2890	1500	1466	Ligier official JS50 external dimensions	https://www.ligier.lv/product/newjs50/
+EU-AUDI-Q5-II-FY-SUV-01	4671	1893	1661	Auto-Data Audi Q5 II (FY) generation specifications	https://www.auto-data.net/en/audi-q5-ii-fy-generation-5191
+EU-AUDI-Q5-II-FACELIFT-2020-SUV-FWD-01	4682	1893	1637	Audi Q5 35 TDI official technical data	https://prensa.audi.es/wp-content/uploads/2020/06/FT-Audi-Q51.pdf
+EU-ISORIVOLTA-RIVOLTA-IR-COUPE-01	4760	1752	1425	Automobile-Catalog Iso Rivolta IR 300	https://www.automobile-catalog.com/car/1963/1250525/iso_rivolta_ir_300.html
+EU-LIGIER-IXO-I-FACELIFT-HATCHBACK-01	3148	1524	1497	Auto-Data Ligier IXO 0.5 Progress	https://www.auto-data.net/en/ligier-ixo-0.5-progress-5hp-cvt-54700
+EU-LIGIER-X-TOO-I-HATCHBACK-R-01	3035	1475	1498	Ligier X-Too R and S official owner manual	https://www.caen-sud.com/wp-content/uploads/2022/08/MANUEL-UTILISATION-ET-ENTRETIEN-XTOO-R-ET-S-PROGRESS.pdf
+EU-LIGIER-X-TOO-I-HATCHBACK-S-01	2900	1475	1498	Ligier X-Too R and S official owner manual	https://www.caen-sud.com/wp-content/uploads/2022/08/MANUEL-UTILISATION-ET-ENTRETIEN-XTOO-R-ET-S-PROGRESS.pdf
+EU-ISORIVOLTA-GRIFO-SERIES-I-COUPE-01	4430	1770	1200	Automobile-Catalog Iso Grifo L GL 350 Series I	https://www.automobile-catalog.com/car/1968/1250900/iso_grifo_l_gl_350.html
+EU-ISORIVOLTA-GRIFO-SERIES-II-COUPE-01	4600	1770	1200	Automobile-Catalog Iso Grifo L 350 Series II	https://www.automobile-catalog.com/car/1972/1251170/iso_grifo_l_350.html
+EU-CASALINI-M12-HATCHBACK-01	3010	1500	1500	Automoto.it Casalini M12 SF technical sheet	https://www.automoto.it/catalogo/casalini/m12/m12-sf/102201
+EU-ISORIVOLTA-GRIFO-7-LITRI-COUPE-01	4430	1770	1220	Automobile-Catalog Iso Grifo 7 Litri	https://www.automobile-catalog.com/car/1969/1251050/iso_grifo_7_litri_2_32_axle_ratio.html
+EU-ISORIVOLTA-GRIFO-CAN-AM-COUPE-01	4600	1770	1220	Automobile-Catalog Iso Grifo Can-Am	https://www.automobile-catalog.com/car/1971/1251350/iso_grifo_can-am.html
+EU-ISORIVOLTA-GRIFO-IR8-COUPE-01	4600	1770	1200	Automobile-Catalog Iso Grifo IR-8	https://www.automobile-catalog.com/car/1974/1251470/iso_grifo_ir_8.html
+EU-ISORIVOLTA-FIDIA-SEDAN-01	4970	1780	1320	Automobile-Catalog 1969 Iso Rivolta Fidia; Automobile-Catalog 1974 Iso Rivolta Fidia	https://www.automobile-catalog.com/make/iso_rivolta/fidia_s4/fidia/1969.html;https://www.automobile-catalog.com/make/iso_rivolta/fidia_s4/fidia/1974.html
+EU-ISORIVOLTA-LELE-COUPE-01	4650	1750	1350	Automobile-Catalog 1972 Iso Rivolta Lele; Automobile-Catalog 1974 Iso Rivolta Lele IR 6	https://www.automobile-catalog.com/make/iso_rivolta/lele/lele/1972.html;https://www.automobile-catalog.com/car/1974/1251380/iso_rivolta_lele_ir_6.html
+EU-ALPINA-XB7-G07-SUV-PREFL-01	5151	2000	1797	Auto-Data Alpina XB7	https://www.auto-data.net/en/alpina-xb7-4.4-v8-621hp-xdrive-switch-tronic-42582
+EU-ALPINA-XB7-G07-SUV-FACELIFT-01	5178	2000	1797	Auto-Data Alpina XB7 facelift 2022	https://www.auto-data.net/en/alpina-xb7-facelift-2022-4.4-v8-621hp-mild-hybrid-xdrive-switch-tronic-45674
+EU-LAMBORGHINI-HURACAN-EVO-RWD-SPYDER-01	4520	1933	1180	Automobile-Catalog Lamborghini Huracán EVO RWD Spyder	https://www.automobile-catalog.com/car/2020/2975555/lamborghini_huracan_evo_rwd_spyder.html
+EU-BIZZARRINI-5300-GT-STRADA-COUPE-01	4370	1760	1110	Automobile-Catalog Bizzarrini GT Strada 5300	https://www.automobile-catalog.com/car/1966/261995/bizzarini_gt_strada_5300__gt_america_3_48_axle.html
+EU-BIZZARRINI-1900-GT-EUROPA-COUPE-01	3790	1620	1040	Automobile-Catalog Bizzarrini GT Europa 1900	https://www.automobile-catalog.com/car/1966/261920/bizzarini_gt_europa_1900_3_73_axle.html
+```
+
+[下载 DIMENSION_GROUP 表](sandbox:/mnt/data/all_501-600_dimension_groups_final.tsv)
+
+推进信号：COMPLETE
+
+[1]: https://fr.scribd.com/document/721289389/Gazoline-2023-03-fr-downmagaz-net "https://fr.scribd.com/document/721289389/Gazoline-2023-03-fr-downmagaz-net"
+
+
+--- 累计最终 TSV 已更新 ---
+- 累计 Ktype 映射：ktype_mapping_final.tsv（558 行）
+- 累计尺寸组：dimension_groups_final.tsv（290 行）
+
