@@ -289,6 +289,22 @@ def main():
         raise ValueError("runtime.max_rounds 必须大于 0")
     if int(runtime.get("max_reply_wait_seconds", 900)) <= 0:
         raise ValueError("runtime.max_reply_wait_seconds 必须大于 0")
+    timing = require_mapping(runtime.get("timing", {}), "runtime.timing")
+    timing_fields = {
+        "reply_stability_seconds": 0,
+        "operation_delay_seconds": 0,
+        "large_payload_delay_seconds": 0,
+        "post_reply_delay_seconds": 0,
+        "stuck_generating_grace_seconds": 1,
+        "xbrowser_retry_count": 0,
+        "recover_delay_seconds": 0,
+    }
+    for name, minimum in timing_fields.items():
+        if name not in timing:
+            continue
+        value = timing[name]
+        if isinstance(value, bool) or not isinstance(value, int) or value < minimum:
+            raise ValueError(f"runtime.timing.{name} 必须是大于等于 {minimum} 的整数")
     conversation = require_mapping(runtime.get("conversation", {}), "runtime.conversation")
     if conversation.get("mode", "new") not in {"new", "manual_resume", "archive_resume"}:
         raise ValueError(
@@ -389,6 +405,15 @@ def main():
             )
         if processing_mode != "batch" and rows_per_task < 0:
             raise ValueError("runtime.processing.rows_per_task 不能小于 0")
+        max_input_chars = processing.get("max_input_chars_per_task", 0)
+        if (
+            isinstance(max_input_chars, bool)
+            or not isinstance(max_input_chars, int)
+            or max_input_chars < 0
+        ):
+            raise ValueError(
+                "runtime.processing.max_input_chars_per_task 必须是大于等于 0 的整数"
+            )
         row_label_columns = processing.get("row_label_columns", [])
         if not isinstance(row_label_columns, list) or any(
             not isinstance(item, str) or not item.strip()
@@ -402,6 +427,28 @@ def main():
                 "processing.mode 为 row 或 batch 时 conversation.mode 必须是 new；"
                 "独立任务续跑由 checkpoint 自动完成"
             )
+        partitions = require_mapping(
+            processing.get("partitions", {}), "runtime.processing.partitions"
+        )
+        if partitions:
+            count = partitions.get("count", 1)
+            if isinstance(count, bool) or not isinstance(count, int) or count < 2:
+                raise ValueError(
+                    "runtime.processing.partitions.count 必须是大于等于 2 的整数"
+                )
+            strategy = partitions.get("strategy", "contiguous")
+            if strategy not in {"contiguous", "round_robin"}:
+                raise ValueError(
+                    "runtime.processing.partitions.strategy 只能是 contiguous 或 round_robin"
+                )
+            partitions["count"] = count
+            partitions["strategy"] = strategy
+            manifest_path = partitions.get("manifest_path", "partition_manifest.json")
+            if not isinstance(manifest_path, str) or not manifest_path.strip():
+                raise ValueError(
+                    "runtime.processing.partitions.manifest_path 必须是非空字符串"
+                )
+            partitions["manifest_path"] = manifest_path
     input_files = require_mapping(runtime.get("input_files", {}), "runtime.input_files")
     if input_files.get("order", "name_asc") not in {"name_asc", "name_desc", "modified_asc", "modified_desc"}:
         raise ValueError("runtime.input_files.order 值无效")

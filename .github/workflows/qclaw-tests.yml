@@ -1,0 +1,22 @@
+name: qclaw-tests
+
+on:
+  push:
+    paths:
+      - "projects/qclaw_fitment_automation/**"
+      - ".github/workflows/qclaw-tests.yml"
+  pull_request:
+    paths:
+      - "projects/qclaw_fitment_automation/**"
+
+jobs:
+  test:
+    runs-on: windows-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - run: python -m pip install -r projects/qclaw_fitment_automation/requirements-dev.txt
+      - shell: pwsh
+        run: ./projects/qclaw_fitment_automation/test.ps1

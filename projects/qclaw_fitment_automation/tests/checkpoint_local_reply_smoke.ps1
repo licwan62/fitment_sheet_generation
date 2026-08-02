@@ -9,6 +9,7 @@ New-Item -ItemType Directory -Path $testDir | Out-Null
 try {
     $script:RowsPerTask = 100
     $script:OutputDir = $testDir
+    $script:TableDir = $testDir
     $task = [pscustomobject]@{
         SourceBaseName = "all"
         SourceName = "all.tsv"

@@ -2,7 +2,13 @@
 param(
     [string]$ConfigPath = "",
     [ValidateSet("", "work", "check", "dry_run")]
-    [string]$Mode = ""
+    [string]$Mode = "",
+    [ValidateRange(0, [int]::MaxValue)]
+    [int]$PartitionIndex = 0,
+    [switch]$PreparePartitions,
+    [switch]$ForcePreparePartitions,
+    [switch]$MergePartitions,
+    [switch]$AllowIncompleteMerge
 )
 
 $ErrorActionPreference = "Stop"
@@ -12,6 +18,11 @@ function Get-Value {
     param($Object, [string]$Name, $Default = $null)
     if ($null -ne $Object -and $Object.PSObject.Properties.Name -contains $Name) { return $Object.$Name }
     return $Default
+}
+
+function ConvertTo-HexString {
+    param([Parameter(Mandatory)][byte[]]$Bytes)
+    return ([BitConverter]::ToString($Bytes) -replace "-", "").ToLowerInvariant()
 }
 
 function Resolve-ConfigPath {
@@ -81,6 +92,47 @@ $contract = $config.data_contract
 $requirementPath = [string]$config._meta.requirement_path
 if (-not (Test-Path -LiteralPath $requirementPath -PathType Leaf)) { throw "requirement 文件不存在: $requirementPath" }
 
+$processingConfig = Get-Value $runtime "processing" $null
+$partitionConfig = if ($processingConfig) { Get-Value $processingConfig "partitions" $null } else { $null }
+$partitionCount = if ($partitionConfig) { [int](Get-Value $partitionConfig "count" 1) } else { 1 }
+$partitionStrategy = if ($partitionConfig) { [string](Get-Value $partitionConfig "strategy" "contiguous") } else { "contiguous" }
+if ($partitionCount -gt 1 -and -not $MergePartitions -and -not $PreparePartitions) {
+    if ($PartitionIndex -eq 0) {
+        throw "已配置 $partitionCount 个设备分片；请用 -PartitionIndex 1..$partitionCount 指定本设备，或用 -MergePartitions 汇总。"
+    }
+    if ($PartitionIndex -gt $partitionCount) {
+        throw "PartitionIndex ($PartitionIndex) 不能大于配置的分片数 ($partitionCount)"
+    }
+}
+
+elseif ($PartitionIndex -gt 1) {
+    throw "当前配置未启用多设备分片，PartitionIndex 只能省略或设为 1"
+}
+
+if ($MergePartitions) {
+    if ($partitionCount -le 1) { throw "当前配置没有启用 runtime.processing.partitions" }
+    $merger = Join-Path (Join-Path $PSScriptRoot "src") "merge_partition_tables.py"
+    foreach ($project in $projects) {
+        $tableRoot = Join-Path $project.FullName ([string](Get-Value $layout "tables" "tables"))
+        $manifestPathValue = [string](Get-Value $partitionConfig "manifest_path" "partition_manifest.json")
+        $manifestPath = Resolve-ConfigPath $manifestPathValue $project.FullName
+        $mergeArguments = @(
+            $merger, "--project-root", $project.FullName, "--table-root", $tableRoot,
+            "--manifest", $manifestPath, "--partition-count", [string]$partitionCount
+        )
+        if ($AllowIncompleteMerge) { $mergeArguments += "--allow-incomplete" }
+        & $python.Source @mergeArguments
+        if ($LASTEXITCODE -ne 0) { throw "分片结果汇总失败: $($project.FullName)" }
+    }
+    return
+}
+if ($PreparePartitions -and $partitionCount -le 1) {
+    throw "当前配置没有启用 runtime.processing.partitions"
+}
+if ($ForcePreparePartitions -and -not $PreparePartitions) {
+    throw "-ForcePreparePartitions 必须与 -PreparePartitions 一起使用"
+}
+
 $fullColumns = @($contract.full_table.columns | ForEach-Object { [string]$_ })
 $dimensionGroupEnabled = [bool](Get-Value $contract.dimension_group_table "enabled" $false)
 $dimensionGroupColumns = if ($dimensionGroupEnabled) { @($contract.dimension_group_table.columns | ForEach-Object { [string]$_ }) } else { @() }
@@ -128,21 +180,91 @@ $failures = @()
 try {
     $runProjects = if ($effectiveMode -eq "check") { @($projects | Select-Object -First 1) } else { $projects }
     foreach ($project in $runProjects) {
+        $effectivePartitionIndex = if ($PreparePartitions -and $PartitionIndex -eq 0) { 1 } else { $PartitionIndex }
+        $partitionLeaf = if ($partitionCount -gt 1) { "part-{0:D2}" -f $effectivePartitionIndex } else { "" }
         $inputPath = Join-Path $project.FullName ([string](Get-Value $layout "input" "input"))
-        $outputPath = Join-Path $project.FullName ([string](Get-Value $layout "output" "output"))
-        $replyPath = Join-Path $project.FullName ([string](Get-Value $layout "reply" "replies"))
-        $tablePath = Join-Path $project.FullName ([string](Get-Value $layout "tables" "tables"))
-        $logPath = Join-Path $project.FullName ([string](Get-Value $layout "log" "log.csv"))
-        $summaryPath = Join-Path $project.FullName ([string](Get-Value $layout "summary" "summary.txt"))
+        $outputRoot = Join-Path $project.FullName ([string](Get-Value $layout "output" "output"))
+        $replyRoot = Join-Path $project.FullName ([string](Get-Value $layout "reply" "replies"))
+        $tableRoot = Join-Path $project.FullName ([string](Get-Value $layout "tables" "tables"))
+        $checkpointRoot = $null
+        $outputPath = if ($partitionLeaf) { Join-Path $outputRoot $partitionLeaf } else { $outputRoot }
+        $replyPath = if ($partitionLeaf) { Join-Path $replyRoot $partitionLeaf } else { $replyRoot }
+        $tablePath = if ($partitionLeaf) { Join-Path $tableRoot $partitionLeaf } else { $tableRoot }
+        $logPath = if ($partitionLeaf) { Join-Path (Join-Path $project.FullName "partitions/$partitionLeaf") "log.csv" } else { Join-Path $project.FullName ([string](Get-Value $layout "log" "log.csv")) }
+        $summaryPath = if ($partitionLeaf) { Join-Path (Join-Path $project.FullName "partitions/$partitionLeaf") "summary.txt" } else { Join-Path $project.FullName ([string](Get-Value $layout "summary" "summary.txt")) }
+        $eventLogPath = if ($partitionLeaf) { Join-Path (Join-Path $project.FullName "partitions/$partitionLeaf") "events.jsonl" } else { Join-Path $project.FullName "events.jsonl" }
         $arguments = @(
             "-NoProfile", "-ExecutionPolicy", "Bypass", "-File", $scriptPath,
             "-Project", $project.FullName, "-InputDir", $inputPath, "-OutputDir", $outputPath,
             "-ReplyDir", $replyPath, "-TableDir", $tablePath,
-            "-LogPath", $logPath, "-SummaryPath", $summaryPath, "-RequirementPath", $requirementPath,
+            "-LogPath", $logPath, "-SummaryPath", $summaryPath, "-EventLogPath", $eventLogPath, "-RequirementPath", $requirementPath,
             "-MaxRounds", [string](Get-Value $runtime "max_rounds" 30),
             "-MaxReplyWaitSeconds", [string](Get-Value $runtime "max_reply_wait_seconds" 900),
             "-Browser", [string](Get-Value $runtime "browser" "playwright")
         )
+        $timing = Get-Value $runtime "timing" $null
+        if ($timing) {
+            $timingArguments = [ordered]@{
+                reply_stability_seconds = "ReplyStabilityDelay"
+                operation_delay_seconds = "OperationDelay"
+                large_payload_delay_seconds = "LargePayloadDelay"
+                post_reply_delay_seconds = "PostReplyDelay"
+                stuck_generating_grace_seconds = "StuckGeneratingGraceSeconds"
+                xbrowser_retry_count = "XBrowserRetryCount"
+                recover_delay_seconds = "XBrowserRecoverDelay"
+            }
+            foreach ($property in $timingArguments.Keys) {
+                $value = Get-Value $timing $property $null
+                if ($null -ne $value) { $arguments += @("-$($timingArguments[$property])", [string]$value) }
+            }
+        }
+        if ($partitionCount -gt 1) {
+            $manifestPathValue = [string](Get-Value $partitionConfig "manifest_path" "partition_manifest.json")
+            $manifestPath = Resolve-ConfigPath $manifestPathValue $project.FullName
+            $configHash = (Get-FileHash -LiteralPath $resolvedConfig -Algorithm SHA256).Hash.ToLowerInvariant()
+            $requirementHash = (Get-FileHash -LiteralPath $requirementPath -Algorithm SHA256).Hash.ToLowerInvariant()
+            $promptIdentity = @(
+                Get-ChildItem -LiteralPath (Join-Path $PSScriptRoot "prompts") -File | Sort-Object Name | ForEach-Object {
+                    "$($_.Name):$((Get-FileHash -LiteralPath $_.FullName -Algorithm SHA256).Hash.ToLowerInvariant())"
+                }
+            ) -join "`n"
+            $promptHasher = [Security.Cryptography.SHA256]::Create()
+            try {
+                $promptHash = ConvertTo-HexString -Bytes $promptHasher.ComputeHash([Text.Encoding]::UTF8.GetBytes($promptIdentity))
+            }
+            finally { $promptHasher.Dispose() }
+            $codeFiles = @(
+                $scriptPath,
+                (Join-Path $PSScriptRoot "run_from_config.ps1"),
+                (Join-Path $PSScriptRoot "playwright_browser_bridge.js"),
+                (Join-Path $PSScriptRoot "powershell/QClaw.Runtime.psm1"),
+                (Join-Path $PSScriptRoot "src/load_fitment_config.py"),
+                (Join-Path $PSScriptRoot "src/merge_partition_tables.py")
+            )
+            $codeIdentity = @($codeFiles | Sort-Object | ForEach-Object {
+                "$(Split-Path $_ -Leaf):$((Get-FileHash -LiteralPath $_ -Algorithm SHA256).Hash.ToLowerInvariant())"
+            }) -join "`n"
+            $codeHasher = [Security.Cryptography.SHA256]::Create()
+            try {
+                $codeHash = ConvertTo-HexString -Bytes $codeHasher.ComputeHash([Text.Encoding]::UTF8.GetBytes($codeIdentity))
+            }
+            finally { $codeHasher.Dispose() }
+            $gitCommit = ""
+            try { $gitCommit = (& git -C $PSScriptRoot rev-parse HEAD 2>$null).Trim() } catch { }
+            $arguments += @(
+                "-TaskPartitionCount", [string]$partitionCount,
+                "-TaskPartitionIndex", [string]$effectivePartitionIndex,
+                "-TaskPartitionStrategy", $partitionStrategy,
+                "-TaskManifestPath", $manifestPath,
+                "-RunConfigHash", $configHash,
+                "-RunRequirementHash", $requirementHash,
+                "-RunPromptHash", $promptHash,
+                "-RunCodeHash", $codeHash,
+                "-RunGitCommit", $gitCommit
+            )
+            if ($PreparePartitions) { $arguments += "-PrepareTaskManifest" }
+            if ($ForcePreparePartitions) { $arguments += "-ForcePrepareTaskManifest" }
+        }
         $inputSources = Get-Value $runtime "input_sources" $null
         if ($inputSources) {
             $resolvedDirectories = @(
@@ -195,7 +317,11 @@ try {
             if ($archiveCode) { $arguments += @("-ConversationArchiveCode", $archiveCode) }
             $archivePath = [string](Get-Value $conversation "archive_path" "")
             if ($archivePath) {
-                $arguments += @("-ConversationArchivePath", (Resolve-ConfigPath $archivePath $configDir))
+                $resolvedArchivePath = Resolve-ConfigPath $archivePath $configDir
+                if ($partitionLeaf) {
+                    $resolvedArchivePath = Join-Path (Join-Path $project.FullName "partitions/$partitionLeaf") (Split-Path $resolvedArchivePath -Leaf)
+                }
+                $arguments += @("-ConversationArchivePath", $resolvedArchivePath)
             }
         }
         $processing = Get-Value $runtime "processing" $null
@@ -204,6 +330,10 @@ try {
             $rowsPerTask = [int](Get-Value $processing "rows_per_task" 0)
             if ($rowsPerTask -gt 0) {
                 $arguments += @("-RowsPerTask", [string]$rowsPerTask)
+            }
+            $maxInputChars = [int](Get-Value $processing "max_input_chars_per_task" 0)
+            if ($maxInputChars -gt 0) {
+                $arguments += @("-MaxInputCharsPerTask", [string]$maxInputChars)
             }
             $rowLabelColumns = @((Get-Value $processing "row_label_columns" @()))
             if ($rowLabelColumns.Count -gt 0) {
@@ -217,6 +347,7 @@ try {
             else {
                 $resolvedCheckpointPath = [System.IO.Path]::GetFullPath((Join-Path $project.FullName $checkpointPath))
             }
+            if ($partitionLeaf) { $resolvedCheckpointPath = Join-Path $resolvedCheckpointPath $partitionLeaf }
             $arguments += @("-CheckpointDir", $resolvedCheckpointPath)
         }
         $vehicleIteration = Get-Value $runtime "vehicle_iteration" $null

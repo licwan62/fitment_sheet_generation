@@ -97,6 +97,7 @@ try {
     $script:DimensionGroupEnabled = $true
     $script:RowsPerTask = 100
     $script:OutputDir = $contextTestDir
+    $script:TableDir = $contextTestDir
     $script:RequiredDimensionGroupHeader = "DIMENSION_GROUP_ID`tLengthMM`tWidthMM`tHeightMM`tDimensionSource`tSourceURL"
     $task = [pscustomobject]@{
         SourceBaseName = "all"

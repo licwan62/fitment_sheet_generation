@@ -17,6 +17,7 @@ param(
     [string]$LogPath = "",
     [Alias("summary_path", "summary-path")]
     [string]$SummaryPath = "",
+    [string]$EventLogPath = "",
     [Alias("requirement_path", "requirement-path")]
     [string]$RequirementPath = "",
     [string]$ChatGptUrl = "https://chatgpt.com/",
@@ -30,6 +31,8 @@ param(
     [string]$TaskGranularity = "file",
     [ValidateRange(0, [int]::MaxValue)]
     [int]$RowsPerTask = 0,
+    [ValidateRange(0, [int]::MaxValue)]
+    [int]$MaxInputCharsPerTask = 0,
     [string[]]$VehicleKeyColumns = @("MAKE", "MODEL"),
     [string[]]$RowLabelColumns = @(),
     [string]$CheckpointDir = "",
@@ -53,6 +56,20 @@ param(
     [double]$SimilarityThreshold = 0.95,
     [int]$MinNewChars = 100,
     [string[]]$OnlyFiles = @(),
+    [ValidateRange(1, [int]::MaxValue)]
+    [int]$TaskPartitionCount = 1,
+    [ValidateRange(1, [int]::MaxValue)]
+    [int]$TaskPartitionIndex = 1,
+    [ValidateSet("contiguous", "round_robin")]
+    [string]$TaskPartitionStrategy = "contiguous",
+    [string]$TaskManifestPath = "",
+    [string]$RunConfigHash = "",
+    [string]$RunRequirementHash = "",
+    [string]$RunPromptHash = "",
+    [string]$RunCodeHash = "",
+    [string]$RunGitCommit = "",
+    [switch]$PrepareTaskManifest,
+    [switch]$ForcePrepareTaskManifest,
     [switch]$ConfigureXBrowserQuick,
     [switch]$OpenOnly,
     [switch]$ListTasksOnly,
@@ -78,6 +95,18 @@ elseif (-not [string]::IsNullOrWhiteSpace($PSCommandPath)) {
 }
 else {
     (Get-Location).Path
+}
+
+$RuntimeModule = Join-Path (Join-Path $ScriptRoot "powershell") "QClaw.Runtime.psm1"
+if (Test-Path -LiteralPath $RuntimeModule -PathType Leaf) {
+    Import-Module $RuntimeModule -Force
+}
+
+function Get-QClawPromptText {
+    param([Parameter(Mandatory)][string]$Name)
+    $path = Join-Path (Join-Path $ScriptRoot "prompts") "$Name.txt"
+    if (-not (Test-Path -LiteralPath $path -PathType Leaf)) { throw "提示词模板不存在: $path" }
+    return (Get-Content -LiteralPath $path -Raw -Encoding UTF8).Trim()
 }
 
 function Set-ArgumentValue {
@@ -230,13 +259,13 @@ $AdditionalOutputItems = $(if ($DimensionGroupEnabled) { "；4) 本轮更新后�
 $RequiredExtraTablesText = $(if ($DimensionGroupEnabled) { "、完整 DIMENSION_GROUP TSV" } else { "" }) + $(if ($SubseriesEnabled) { "、子车系匹配表" } else { "" })
 $CompletionScopeText = if ($DimensionGroupEnabled) { "两张必需表均完整且全部映射闭合" } else { "全部必需输出完整且记录闭合" }
 $ContinueMessage = if ($DimensionGroupEnabled) {
-    '继续当前批次并采用缓存优先模式。尺寸组只在首次创建或纠错时完整核对一次三维和来源；后续 Ktype 只判断关联哪个现有 DIMENSION_GROUP_ID，不重复抓取，不输出缓存来源或匹配理由。仍有 PENDING 时，CONTINUE 轮仅输出：1) 更新点；2) 当前批次进度；3) 本轮新增/修改的 Ktype 映射 TSV（无变化写“无”）；4) 本轮首次创建/修正的 DIMENSION_GROUP TSV（复用既有组不重复输出，无变化写“无”）；5) 下一步优先处理。若当前或上一轮进度已经是 PENDING=0，本轮不要继续检索或再次输出 CONTINUE，必须立刻汇总并输出两张最终完整 TSV、两个任务指定 sandbox 下载链接和“推进信号：COMPLETE”。' + $PhaseOrderReminder + $HeaderReminder
+    (Get-QClawPromptText -Name "dimension_continue") + $PhaseOrderReminder + $HeaderReminder
 }
 else {
     '继续补强当前批次，并严格按以下格式回复：1) 更新点；2) 当前批次进度；3) 本轮更新后的完整 Ktype 映射 TSV（必须是真正更新过的 TSV，不能只写计划或说明，' + $HeaderReminder + '）' + $AdditionalOutputItems + '；下一步优先处理（有数据缺失时必须写下一步优先补缺失，缺失补齐后再写下一步优先核对）；若仍未完成，TSV 代码块外最后一行必须单独输出“推进信号：CONTINUE”；' + $CompletionScopeText + '时，最后一行才可单独输出“推进信号：COMPLETE”。' + $PhaseOrderReminder
 }
 $MissingSignalsMessage = if ($DimensionGroupEnabled) {
-    '你的上一轮回复缺少正常推进信号。继续当前批次：尺寸组首次建档后必须复用；仅输出本轮新增/修改的 Ktype 映射行和首次创建/修正的 DIMENSION_GROUP 行，无变化明确写“无”，并给出下一步优先处理。未完成输出“推进信号：CONTINUE”；只有同一回复包含两张最终完整表且全部映射闭合时才可 COMPLETE。' + $PhaseOrderReminder + $HeaderReminder
+    (Get-QClawPromptText -Name "dimension_missing_signal") + $PhaseOrderReminder + $HeaderReminder
 }
 else {
     '你的上一轮回复缺少正常推进信号。请立刻继续当前批次，并严格补齐以下内容：更新点、当前批次进度、本轮更新后的完整 Ktype 映射 TSV' + $RequiredExtraTablesText + '、下一步优先处理；如果还没完成，TSV 代码块外最后一行单独输出“推进信号：CONTINUE”；全部必需表完整且映射闭合才输出“推进信号：COMPLETE”。不得只给说明、计划、摘要或重复上一轮文本。' + $PhaseOrderReminder + $HeaderReminder
@@ -244,7 +273,7 @@ else {
 $FullTableRequestMessage = '给我当前批次更新后的完整可替换 Ktype 映射 TSV' + $RequiredExtraTablesText + '。必须包含未变更、已修改和合法拆分后的全部记录；不要只给变化部分、摘要或说明。若仍有数据缺失，先继续补缺失，不要提前完成。TSV 代码块外最后一行必须输出“推进信号：CONTINUE”或“推进信号：COMPLETE”。' + $PhaseOrderReminder + $HeaderReminder
 $CompletionFixMessage = '你刚才给了完成信号，但当前回复缺少完整 Ktype 映射 TSV' + $RequiredExtraTablesText + '，存在未引用/缺失/不完整的尺寸组，或仍有数据缺失。请补齐所有必需表；未完成时输出“推进信号：CONTINUE”，确认全部表完整且映射闭合后才输出“推进信号：COMPLETE”。' + $PhaseOrderReminder + $HeaderReminder
 $LightFinalizeMessage = if ($DimensionGroupEnabled) {
-    '立即执行轻量收尾。当前批次已经 PENDING=0；停止外部检索，不再逐车型、逐年份、逐来源复核，不要再输出 CONTINUE。使用本对话已累计确认的内容，立刻重建并在同一回复中输出最终完整 Ktype 映射 TSV 和最终完整 DIMENSION_GROUP TSV。只做机械检查：固定表头、唯一主键、映射引用闭合、三维与来源非空、任务指定文件名和两个可点击 sandbox 下载链接齐全。随后最后一行单独输出“推进信号：COMPLETE”。' + $HeaderReminder
+    (Get-QClawPromptText -Name "dimension_light_finalize") + $HeaderReminder
 }
 else {
     $ContinueMessage
@@ -1285,9 +1314,21 @@ function Get-TSVTasks {
                     Select-Object -Skip 1 |
                     Where-Object { -not [string]::IsNullOrWhiteSpace($_) }
             )
-            for ($offset = 0; $offset -lt $dataLines.Count; $offset += $RowsPerTask) {
-                $batchIndex = [int]($offset / $RowsPerTask) + 1
+            $offset = 0
+            $batchIndex = 0
+            while ($offset -lt $dataLines.Count) {
+                $batchIndex++
                 $takeCount = [Math]::Min($RowsPerTask, $dataLines.Count - $offset)
+                if ($MaxInputCharsPerTask -gt 0) {
+                    $characters = $header.Length + 2
+                    $takeCount = 0
+                    while ($takeCount -lt $RowsPerTask -and ($offset + $takeCount) -lt $dataLines.Count) {
+                        $nextLength = ([string]$dataLines[$offset + $takeCount]).Length + 2
+                        if ($takeCount -gt 0 -and ($characters + $nextLength) -gt $MaxInputCharsPerTask) { break }
+                        $characters += $nextLength
+                        $takeCount++
+                    }
+                }
                 $batchLines = @($dataLines[$offset..($offset + $takeCount - 1)])
                 $startRow = $offset + 1
                 $endRow = $offset + $takeCount
@@ -1308,6 +1349,7 @@ function Get-TSVTasks {
                     BaseName = $taskId
                     CheckpointPath = Join-Path $CheckpointDir "$taskId.json"
                 })
+                $offset += $takeCount
             }
             continue
         }
@@ -1402,14 +1444,60 @@ function Get-TSVTasks {
     return @($tasks | ForEach-Object { $_ })
 }
 
+function Add-RunEvent {
+    param(
+        [Parameter(Mandatory)][string]$Type,
+        $Task = $null,
+        [hashtable]$Data = @{}
+    )
+    if ([string]::IsNullOrWhiteSpace($EventLogPath)) { return }
+    $parent = Split-Path -Parent $EventLogPath
+    if ($parent -and -not (Test-Path -LiteralPath $parent -PathType Container)) {
+        New-Item -ItemType Directory -Path $parent -Force | Out-Null
+    }
+    $event = [ordered]@{
+        timestamp = (Get-Date).ToUniversalTime().ToString("o")
+        type = $Type
+        process_id = $PID
+        task_id = $(if ($null -ne $Task) { [string]$Task.TaskId } else { "" })
+        data = $Data
+    }
+    Add-Content -LiteralPath $EventLogPath -Value ($event | ConvertTo-Json -Depth 6 -Compress) -Encoding UTF8
+}
+
+function Select-TaskPartition {
+    param([object[]]$Tasks)
+
+    if ($TaskPartitionCount -le 1) { return @($Tasks) }
+    if ($TaskPartitionIndex -gt $TaskPartitionCount) {
+        throw "TaskPartitionIndex ($TaskPartitionIndex) 不能大于 TaskPartitionCount ($TaskPartitionCount)"
+    }
+
+    if ($TaskPartitionStrategy -eq "round_robin") {
+        return @(
+            for ($i = 0; $i -lt $Tasks.Count; $i++) {
+                if (($i % $TaskPartitionCount) + 1 -eq $TaskPartitionIndex) { $Tasks[$i] }
+            }
+        )
+    }
+
+    # 连续且尽量均分：前面的分片在不能整除时多一个任务。
+    $baseSize = [Math]::Floor($Tasks.Count / $TaskPartitionCount)
+    $remainder = $Tasks.Count % $TaskPartitionCount
+    $zeroBasedIndex = $TaskPartitionIndex - 1
+    $size = [int]$baseSize + $(if ($zeroBasedIndex -lt $remainder) { 1 } else { 0 })
+    $start = ([int]$baseSize * $zeroBasedIndex) + [Math]::Min($zeroBasedIndex, $remainder)
+    if ($size -le 0) { return @() }
+    return @($Tasks[$start..($start + $size - 1)])
+}
+
 function Get-TaskCheckpoint {
     param($Task)
-    if (-not (Test-Path -LiteralPath $Task.CheckpointPath -PathType Leaf)) { return $null }
     try {
-        return Get-Content -LiteralPath $Task.CheckpointPath -Raw -Encoding UTF8 | ConvertFrom-Json
+        return Read-QClawJsonWithBackup -Path $Task.CheckpointPath
     }
     catch {
-        Write-Host "警告: checkpoint 无法读取，将从新对话开始: $($Task.CheckpointPath)" -ForegroundColor Yellow
+        Write-Host "警告: checkpoint 及备份均无法读取，将从新对话开始: $($Task.CheckpointPath)" -ForegroundColor Yellow
         return $null
     }
 }
@@ -1451,6 +1539,7 @@ function Save-TaskCheckpoint {
     }
     $checkpoint = [ordered]@{
         version = 2
+        revision = $(if ($existing -and $existing.PSObject.Properties.Name -contains "revision") { [int]$existing.revision + 1 } else { 1 })
         task_id = $Task.TaskId
         task_name = $Task.DisplayName
         vehicle = $Task.DisplayName
@@ -1466,9 +1555,7 @@ function Save-TaskCheckpoint {
         remarks = $Remarks
         updated_at = Get-Date -Format "yyyy-MM-dd HH:mm:ss"
     }
-    $tempPath = "$($Task.CheckpointPath).tmp"
-    $checkpoint | ConvertTo-Json -Depth 5 | Set-Content -LiteralPath $tempPath -Encoding UTF8
-    Move-Item -LiteralPath $tempPath -Destination $Task.CheckpointPath -Force
+    Write-QClawAtomicText -Path $Task.CheckpointPath -Text ($checkpoint | ConvertTo-Json -Depth 5) -KeepBackup
 
     Update-BatchProgressFromCheckpoint -Task $Task -Status $Status -Remarks $Remarks
 }
@@ -1480,9 +1567,9 @@ function Get-BatchProgressPath {
 
 function Get-BatchProgress {
     $path = Get-BatchProgressPath
-    if ([string]::IsNullOrEmpty($path) -or -not (Test-Path -LiteralPath $path -PathType Leaf)) { return $null }
+    if ([string]::IsNullOrEmpty($path)) { return $null }
     try {
-        return Get-Content -LiteralPath $path -Raw -Encoding UTF8 | ConvertFrom-Json
+        return Read-QClawJsonWithBackup -Path $path
     }
     catch {
         Write-Host "警告: batch_progress.json 读取失败: $($_.Exception.Message)" -ForegroundColor Yellow
@@ -1502,18 +1589,15 @@ function Save-BatchProgress {
     if (-not (Test-Path -LiteralPath $CheckpointDir)) {
         New-Item -ItemType Directory -Path $CheckpointDir -Force | Out-Null
     }
-    $batchJson = if ($BatchEntries.Count -gt 0) { $BatchEntries | ConvertTo-Json -Depth 3 } else { "[]" }
-    $progressJson = @"
-{
-    "version": 1,
-    "total_batches": $TotalBatches,
-    "rows_per_batch": $RowsPerBatch,
-    "updated_at": "$(Get-Date -Format 'yyyy-MM-dd HH:mm:ss')",
-    "next_pending_index": $NextPendingIndex,
-    "batches": $batchJson
-}
-"@
-    [System.IO.File]::WriteAllText($path, $progressJson, [System.Text.Encoding]::UTF8)
+    $progress = [ordered]@{
+        version = 1
+        total_batches = $TotalBatches
+        rows_per_batch = $RowsPerBatch
+        updated_at = Get-Date -Format "yyyy-MM-dd HH:mm:ss"
+        next_pending_index = $NextPendingIndex
+        batches = @($BatchEntries)
+    }
+    Write-QClawAtomicText -Path $path -Text ($progress | ConvertTo-Json -Depth 5) -KeepBackup
 }
 
 function Initialize-BatchProgress {
@@ -2156,6 +2240,19 @@ function Restore-CompletedTaskArtifacts {
     $mappingRows = @()
     $dimensionRows = @()
 
+    # 成功任务优先恢复脚本已发布的本批严格 TSV；Markdown 末尾可能包含
+    # 更晚追加的局部进度表或异常说明，不能覆盖已经入库的最终事实。
+    $tableBase = if (-not [string]::IsNullOrWhiteSpace($TableDir)) { $TableDir } else { $OutputDir }
+    $publishedMappingPath = Join-Path $tableBase $names.MappingFileName
+    $publishedDimensionPath = Join-Path $tableBase $names.DimensionFileName
+    if (
+        (Test-Path -LiteralPath $publishedMappingPath -PathType Leaf) -and
+        (Test-Path -LiteralPath $publishedDimensionPath -PathType Leaf)
+    ) {
+        $mappingRows = @(Read-StrictTsvRows -Path $publishedMappingPath -Header $RequiredTsvHeader)
+        $dimensionRows = @(Read-StrictTsvRows -Path $publishedDimensionPath -Header $RequiredDimensionGroupHeader)
+    }
+
     $resultPath = [string]$Checkpoint.output_file
     if (-not (Test-Path -LiteralPath $resultPath -PathType Leaf) -and -not [string]::IsNullOrWhiteSpace($ReplyDir)) {
         $replyFallback = Join-Path $ReplyDir (Split-Path $resultPath -Leaf)
@@ -2480,6 +2577,8 @@ function Publish-CompletedTaskTables {
 
     $names = Get-TaskFinalArtifactNames -Task $Task
     $tableBase = if (-not [string]::IsNullOrWhiteSpace($TableDir)) { $TableDir } else { $OutputDir }
+    $taskMappingPath = Join-Path $tableBase $names.MappingFileName
+    $taskDimensionPath = Join-Path $tableBase $names.DimensionFileName
     $aggregateMappingPath = Join-Path $tableBase $names.AggregateMappingFileName
     $aggregateDimensionPath = Join-Path $tableBase $names.AggregateDimensionFileName
 
@@ -2489,6 +2588,8 @@ function Publish-CompletedTaskTables {
         -NewDimensionRows $dimensionRows -NewMappingRows $mappingRows
     $mappingRows = @($resolved.MappingRows)
     $dimensionRows = @($resolved.DimensionRows)
+    Write-StrictTsvAtomic -Path $taskDimensionPath -Header $RequiredDimensionGroupHeader -Rows $dimensionRows
+    Write-StrictTsvAtomic -Path $taskMappingPath -Header $RequiredTsvHeader -Rows $mappingRows
     $mergedMappings = @(Merge-FinalMappingRows -ExistingRows $existingMappings -NewRows $mappingRows)
     $mergedDimensions = @(Merge-FinalDimensionRows -ExistingRows $existingDimensions -NewRows $dimensionRows)
 
@@ -3791,22 +3892,27 @@ $visibleAndTextHelper
 function Start-ChatGPTConversationBranch {
     param([string]$ParentUrl, [string]$Message = "")
 
-    try {
-        return Invoke-ChatGPTConversationBranchOnce -ParentUrl $ParentUrl -Message $Message
-    }
-    catch {
+    $attempts = [Math]::Max(1, $XBrowserRetryCount + 1)
+    for ($attempt = 1; $attempt -le $attempts; $attempt++) {
         try {
-            $currentUrl = Get-CurrentChatGPTUrl
-            if (
-                (Test-ChatGPTConversationUrl -Url $currentUrl) -and
-                -not [string]::Equals($currentUrl, $ParentUrl, [StringComparison]::OrdinalIgnoreCase)
-            ) {
-                Write-Host "  分支操作已生效，恢复取得新对话 URL: $currentUrl" -ForegroundColor Green
-                return $currentUrl
-            }
+            return Invoke-ChatGPTConversationBranchOnce -ParentUrl $ParentUrl -Message $Message
         }
-        catch { }
-        throw
+        catch {
+            try {
+                $currentUrl = Get-CurrentChatGPTUrl
+                if (
+                    (Test-ChatGPTConversationUrl -Url $currentUrl) -and
+                    -not [string]::Equals($currentUrl, $ParentUrl, [StringComparison]::OrdinalIgnoreCase)
+                ) {
+                    Write-Host "  分支操作已生效，恢复取得新对话 URL: $currentUrl" -ForegroundColor Green
+                    return $currentUrl
+                }
+            }
+            catch { }
+            if ($attempt -ge $attempts) { throw }
+            Write-Host "  创建对话分支失败，等待后重试 ($attempt/$attempts): $($_.Exception.Message)" -ForegroundColor Yellow
+            Start-Sleep -Seconds $XBrowserRecoverDelay
+        }
     }
 }
 
@@ -4093,9 +4199,9 @@ function Test-ChatGPTConversationUrl {
 }
 
 function Get-ConversationArchiveRecords {
-    if (-not (Test-Path -LiteralPath $ConversationArchivePath -PathType Leaf)) { return @() }
     try {
-        $data = Get-Content -LiteralPath $ConversationArchivePath -Raw -Encoding UTF8 | ConvertFrom-Json
+        $data = Read-QClawJsonWithBackup -Path $ConversationArchivePath
+        if ($null -eq $data) { return @() }
         return @($data.conversations)
     }
     catch {
@@ -4116,8 +4222,8 @@ function Save-ConversationArchive {
     if ($parent -and -not (Test-Path -LiteralPath $parent)) {
         New-Item -ItemType Directory -Path $parent -Force | Out-Null
     }
-    @{ version = 1; conversations = $records } | ConvertTo-Json -Depth 10 |
-        Set-Content -LiteralPath $ConversationArchivePath -Encoding UTF8
+    $archive = @{ version = 1; conversations = $records } | ConvertTo-Json -Depth 10
+    Write-QClawAtomicText -Path $ConversationArchivePath -Text $archive -KeepBackup
     Write-Host "  对话已存档：$Code -> $Url" -ForegroundColor Green
 }
 
@@ -4231,6 +4337,7 @@ function Process-TSVTask {
             Write-Host "已从成功 checkpoint 更新累计最终 TSV: $($Task.DisplayName)" -ForegroundColor DarkGreen
         }
         Write-Host "跳过 checkpoint 已成功车型: $($Task.DisplayName)" -ForegroundColor Gray
+        Add-RunEvent -Type "task_skipped" -Task $Task -Data @{ reason = "checkpoint_success" }
         return
     }
     if ($checkpoint -and
@@ -4254,6 +4361,7 @@ function Process-TSVTask {
         $outputFile = Get-OutputFilePath -BaseName $Task.BaseName
     }
 
+    Add-RunEvent -Type "task_started" -Task $Task -Data @{ display_name = [string]$Task.DisplayName; source = [string]$Task.SourceName }
     Write-Host "`n处理任务: $($Task.DisplayName)（来源: $($Task.SourceName)）" -ForegroundColor Cyan
     if (-not $resumeFromCheckpoint) {
         "# 任务：$($Task.DisplayName)`r`n# 来源文件：$($Task.SourceName)`r`n# 任务 ID：$($Task.TaskId)`r`n" |
@@ -4653,6 +4761,7 @@ function Process-TSVTask {
     $endTime = Get-Date -Format "yyyy-MM-dd HH:mm:ss"
     Save-TaskCheckpoint -Task $Task -Status $status -Phase "finished" -Round $round -SendCount $sendCount -OutputFile $outputFile -ConversationUrl $conversationUrl -Remarks $remarks
     Add-LogEntry -FileName $fileName -StartTime $startTime -EndTime $endTime -Status $status -SendCount $sendCount -OutputFile $outputFile -Remarks $remarks
+    Add-RunEvent -Type "task_finished" -Task $Task -Data @{ status = $status; sends = $sendCount; rounds = $round; remarks = $remarks }
     Write-Host "完成: $fileName -> $status ($remarks)" -ForegroundColor $(if ($status -eq "成功") { "Green" } else { "Yellow" })
     if ($fatalBrowserFailure) {
         throw "浏览器基础设施失效，已停止整个项目以避免把后续批次批量标记为失败。当前任务可在重启后从 checkpoint 恢复。$remarks"
@@ -4829,7 +4938,7 @@ $(if ($errorLines) { $errorLines.TrimEnd() } else { "无" })
     if ($summaryParent -and -not (Test-Path $summaryParent)) {
         New-Item -ItemType Directory -Path $summaryParent -Force | Out-Null
     }
-    Set-Content -Path $SummaryPath -Value $summary -Encoding UTF8
+    Write-QClawAtomicText -Path $SummaryPath -Text $summary -KeepBackup
 }
 
 function Main {
@@ -4842,12 +4951,66 @@ function Main {
     }
 
     $tsvFiles = @(Get-ConfiguredInputFiles)
-    $tasks = @(Get-TSVTasks -Files $tsvFiles)
-    Write-Host "找到 $($tsvFiles.Count) 个去重后的 TSV 文件，生成 $($tasks.Count) 个独立任务（粒度: $TaskGranularity）。" -ForegroundColor Green
+    $allTasks = @(Get-TSVTasks -Files $tsvFiles)
+    $tasks = @()
+    if ($TaskPartitionCount -gt 1 -and -not [string]::IsNullOrWhiteSpace($TaskManifestPath)) {
+        if ($PrepareTaskManifest) {
+            $existingManifest = Read-QClawJsonWithBackup -Path $TaskManifestPath
+            if ($null -ne $existingManifest) {
+                try {
+                    Assert-QClawRunManifest -Manifest $existingManifest -Tasks $allTasks -InputFiles $tsvFiles `
+                        -ProjectRoot $Project -PartitionCount $TaskPartitionCount -Strategy $TaskPartitionStrategy `
+                        -ConfigHash $RunConfigHash -RequirementHash $RunRequirementHash -PromptHash $RunPromptHash `
+                        -CodeHash $RunCodeHash
+                    Write-Host "现有运行清单仍然有效，无需重建: $TaskManifestPath（run_id=$($existingManifest.run_id)）" -ForegroundColor Green
+                    return
+                }
+                catch {
+                    $manifestHasCheckpoints = @($existingManifest.tasks | Where-Object {
+                        $checkpointValue = [string]$_.checkpoint_path
+                        $checkpointValue -and (Test-Path -LiteralPath (Join-Path $Project $checkpointValue) -PathType Leaf)
+                    }).Count -gt 0
+                    if ($manifestHasCheckpoints -and -not $ForcePrepareTaskManifest) {
+                        throw "现有 manifest 已产生 checkpoint，拒绝静默改组。确认所有设备停止并接受新 run_id 后，使用 -ForcePreparePartitions。原校验错误: $($_.Exception.Message)"
+                    }
+                }
+            }
+            $manifest = New-QClawRunManifest -Tasks $allTasks -InputFiles $tsvFiles `
+                -ProjectRoot $Project -Path $TaskManifestPath -PartitionCount $TaskPartitionCount `
+                -Strategy $TaskPartitionStrategy -ConfigHash $RunConfigHash `
+                -RequirementHash $RunRequirementHash -PromptHash $RunPromptHash `
+                -CodeHash $RunCodeHash -GitCommit $RunGitCommit
+            Write-Host "已生成固定运行清单: $TaskManifestPath（run_id=$($manifest.run_id)）" -ForegroundColor Green
+            return
+        }
+        $manifest = Read-QClawJsonWithBackup -Path $TaskManifestPath
+        if ($null -eq $manifest) {
+            throw "缺少固定运行清单: $TaskManifestPath；请先执行 -PreparePartitions"
+        }
+        Assert-QClawRunManifest -Manifest $manifest -Tasks $allTasks -InputFiles $tsvFiles `
+            -ProjectRoot $Project -PartitionCount $TaskPartitionCount -Strategy $TaskPartitionStrategy `
+            -ConfigHash $RunConfigHash -RequirementHash $RunRequirementHash -PromptHash $RunPromptHash `
+            -CodeHash $RunCodeHash
+        $tasks = @(Select-QClawManifestPartition -Manifest $manifest -Tasks $allTasks -PartitionIndex $TaskPartitionIndex)
+        Write-Host "运行清单校验通过: run_id=$($manifest.run_id)" -ForegroundColor DarkGreen
+    }
+    else {
+        $tasks = @(Select-TaskPartition -Tasks $allTasks)
+    }
+    Write-Host "找到 $($tsvFiles.Count) 个去重后的 TSV 文件，生成 $($allTasks.Count) 个独立任务（粒度: $TaskGranularity）。" -ForegroundColor Green
+    if ($TaskPartitionCount -gt 1) {
+        Write-Host "当前只运行任务分片 $TaskPartitionIndex/$TaskPartitionCount（$TaskPartitionStrategy，共 $($tasks.Count) 个任务）。" -ForegroundColor Cyan
+    }
     if ($ListTasksOnly) {
         foreach ($file in $tsvFiles) { Write-Host "  [文件] $($file.FullName)" -ForegroundColor DarkCyan }
         foreach ($task in $tasks) { Write-Host "  [任务] $($task.TaskId) -> $($task.DisplayName)" }
         return
+    }
+    Add-RunEvent -Type "run_tasks_selected" -Data @{
+        total_tasks = $allTasks.Count
+        selected_tasks = $tasks.Count
+        partition_index = $TaskPartitionIndex
+        partition_count = $TaskPartitionCount
     }
 
     Test-Prerequisites

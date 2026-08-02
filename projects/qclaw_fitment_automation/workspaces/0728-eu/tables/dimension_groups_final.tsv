@@ -1,4 +1,4 @@
-DIMENSION_GROUP_ID	LengthMM	WidthMM	HeightMM	DimensionSource	SourceURL
+﻿DIMENSION_GROUP_ID	LengthMM	WidthMM	HeightMM	DimensionSource	SourceURL
 EU-OPEL-REKORD-C-SEDAN-01	4550	1754	1456	Automobile-Catalog Opel Rekord C Sedan specifications	https://www.automobile-catalog.com/car/1969/2412260/opel_rekord_1500_3gang.html
 EU-FORD-TRANSIT-VE6-SWB-LOWROOF-01	4606	1974	1974	Transit Center Ford Transit Mk3 specifications;Ford Transit 1991 official brochure	https://www.transitcenter.uk/transit-mk3-data-specification.php;https://autocatalogarchive.com/wp-content/uploads/2026/04/Ford-Transit-1991-UK.pdf
 EU-FORD-TRANSIT-VE6-LWB-MIDROOF-01	5358	1974	2653	Transit Center Ford Transit Mk3 specifications;Ford Transit 1991 official brochure	https://www.transitcenter.uk/transit-mk3-data-specification.php;https://autocatalogarchive.com/wp-content/uploads/2026/04/Ford-Transit-1991-UK.pdf
@@ -3526,3 +3526,10 @@ EU-PORSCHE-911-996-TARGA-FACELIFT-01	4430	1770	1305	Auto-Data Porsche 911 Targa 
 EU-DODGE-CARAVAN-III-MPV-SWB-01	4733	1920	1740	Auto-Data Dodge Caravan III SWB 2.4	https://www.auto-data.net/en/dodge-caravan-iii-swb-2.4-152hp-automatic-2941
 EU-DODGE-CARAVAN-III-MPV-LWB-01	5070	1950	1740	Auto-Data Dodge Caravan III LWB 3.0 V6	https://www.auto-data.net/en/dodge-caravan-iii-lwb-3.0-v6-152hp-automatic-31430
 EU-CADILLAC-CTS-I-SEDAN-4D-01	4828	1793	1440	Auto-Data Cadillac CTS I 3.2 V6	https://www.auto-data.net/en/cadillac-cts-i-3.2i-v6-24v-223hp-11701
+EU-BMW-2000-NEUE-KLASSE-SEDAN-4D-01	4500	1710	1445	Automobile-Catalog BMW 2000 1968	https://www.automobile-catalog.com/car/1968/77360/bmw_2000.html
+EU-RENAULT-MEGANE-III-CC-CONVERTIBLE-2D-01	4485	1811	1434	Automobile-Catalog Renault Megane CC 1.6 16V 110 2010	https://www.automobile-catalog.com/car/2010/2960060/renault_megane_cc_1_6_16v_110.html
+EU-BMW-3-E30-318IS-SEDAN-2D-01	4325	1645	1360	Automobile-Catalog BMW 318is 1990	https://www.automobile-catalog.com/car/1990/266540/bmw_318is_cat.html
+EU-BMW-3-E30-M3-SEDAN-2D-01	4345	1680	1370	Automobile-Catalog BMW M3 1988	https://www.automobile-catalog.com/car/1988/265610/bmw_m3_cat.html
+EU-BMW-3-E30-SEDAN-2D-IX-01	4325	1662	1400	Automobile-Catalog BMW 325ix 1988	https://www.automobile-catalog.com/car/1988/265940/bmw_325ix.html
+EU-BMW-3-E30-SEDAN-4D-IX-01	4325	1662	1400	Automobile-Catalog BMW 325ix 1988	https://www.automobile-catalog.com/car/1988/265940/bmw_325ix.html
+EU-ALFA-ROMEO-33-905A-WAGON-4X4-02	4142	1612	1370	Automobile-Catalog Alfa Romeo 33 1.5 4x4 Giardinetta 1985; Automobile-Catalog Alfa Romeo 33 1.7 ie 4x4 Sport Wagon 1990	https://www.automobile-catalog.com/car/1985/214925/alfa_romeo_33_1_5_4x4_giardinietta.html;https://www.automobile-catalog.com/car/1990/215270/alfa_romeo_33_1_7_ie_4x4_sport_wagon_cat.html

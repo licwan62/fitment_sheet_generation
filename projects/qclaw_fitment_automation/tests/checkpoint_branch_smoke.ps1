@@ -2,38 +2,23 @@
 $env:FITMENT_OPENCLAW_LIBRARY_ONLY = "1"
 . (Join-Path (Split-Path -Parent $PSScriptRoot) "qclaw_fitment_automation.ps1")
 
+$checkpointTestDir = Join-Path ([IO.Path]::GetTempPath()) ("fitment-checkpoint-branch-" + [guid]::NewGuid().ToString("N"))
+New-Item -ItemType Directory -Path $checkpointTestDir | Out-Null
 $task = [pscustomobject]@{
     TaskId = "test"
     DisplayName = "test"
     SourceName = "test.tsv"
-    CheckpointPath = "unused.json"
+    CheckpointPath = (Join-Path $checkpointTestDir "checkpoint.json")
 }
 
 # Checkpoint v2 must serialize a one-item root lineage as a JSON array.
-$script:capturedJson = ""
 function Get-TaskCheckpoint { param($Task) return $null }
-function Test-Path { param([string]$LiteralPath) return $true }
-function Set-Content {
-    param(
-        [Parameter(ValueFromPipeline = $true)]$Value,
-        [string]$LiteralPath,
-        [string]$Encoding
-    )
-    process { $script:capturedJson = [string]$Value }
-}
-function Move-Item {
-    param(
-        [string]$LiteralPath,
-        [string]$Destination,
-        [switch]$Force
-    )
-}
 
 Save-TaskCheckpoint -Task $task -Status "进行中" -Phase "waiting_reply" `
     -Round 1 -SendCount 1 -OutputFile "unused.md" `
     -ConversationUrl "https://chatgpt.com/c/root"
 
-$checkpoint = $script:capturedJson | ConvertFrom-Json
+$checkpoint = Get-Content -LiteralPath $task.CheckpointPath -Raw -Encoding UTF8 | ConvertFrom-Json
 if ($checkpoint.version -ne 2) { throw "checkpoint version is not 2" }
 if ($checkpoint.conversation_branch_count -ne 0) { throw "root branch count is not 0" }
 if (@($checkpoint.conversation_lineage).Count -ne 1) { throw "root lineage is not a one-item array" }
@@ -89,5 +74,7 @@ if ($script:savedLineage[1].trigger -ne "conversation_length_limit") {
     throw "branch trigger mismatch"
 }
 if ($script:savedLineage[1].round -ne 7) { throw "branch round mismatch" }
+
+Remove-Item -LiteralPath $checkpointTestDir -Recurse -Force -ErrorAction SilentlyContinue
 
 Write-Output "checkpoint_branch_smoke: OK"

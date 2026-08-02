@@ -2,18 +2,18 @@
     "version": 1,
     "total_batches": 150,
     "rows_per_batch": 100,
-    "updated_at": "2026-08-02 23:02:48",
-    "next_pending_index": 0,
+    "updated_at": "2026-08-02 23:17:26",
+    "next_pending_index": 1,
     "batches": [
     {
         "index":  0,
         "batch_number":  1,
         "task_id":  "10-19109__batch__0001__4b4a2c76",
         "display_name":  "10-19109 第 1-100 行",
-        "status":  "processing",
-        "remarks":  "",
+        "status":  "success",
+        "remarks":  "检测到明确批次完成信号、两张完整表及下载链接；已更新本批与累计最终 TSV",
         "checkpoint_file":  "10-19109__batch__0001__4b4a2c76.json",
-        "updated_at":  "2026-08-02 23:02:48"
+        "updated_at":  "2026-08-02 23:17:26"
     },
     {
         "index":  1,
