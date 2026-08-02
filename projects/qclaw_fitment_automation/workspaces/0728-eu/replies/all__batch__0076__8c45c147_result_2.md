@@ -792,3 +792,618 @@ EU-ASTON-MARTIN-V8-VANTAGE-V550-COUPE-01	4745	1924	1330	Automobile-Catalog 1997 
 --- 脚本异常 ---
 异常: ChatGPT 页面显示未登录
 
+
+--- 发送 / checkpoint 续跑到 Round 3 ---
+继续当前批次并采用缓存优先模式。尺寸组只在首次创建或纠错时完整核对一次三维和来源；后续 Ktype 只判断关联哪个现有 DIMENSION_GROUP_ID，不重复抓取，不输出缓存来源或匹配理由。仍有 PENDING 时，CONTINUE 轮仅输出：1) 更新点；2) 当前批次进度；3) 本轮新增/修改的 Ktype 映射 TSV（无变化写“无”）；4) 本轮首次创建/修正的 DIMENSION_GROUP TSV（复用既有组不重复输出，无变化写“无”）；5) 下一步优先处理。若当前或上一轮进度已经是 PENDING=0，本轮不要继续检索或再次输出 CONTINUE，必须立刻汇总并输出两张最终完整 TSV、两个任务指定 sandbox 下载链接和“推进信号：COMPLETE”。执行顺序固定为：第一阶段优先消除 PENDING 并补齐会阻塞两张最终表的数据。检测到 PENDING=0 后，第二阶段最多只做一次轻量机械收尾：核对固定表头、id 与 DIMENSION_GROUP_ID 唯一、映射引用闭合、长宽高和来源非空、两个任务指定下载链接齐全。第二阶段不得重新逐车型、逐年份或逐来源做深度检索，不得为了提高置信度反复核对，也不得因非阻塞的排序或措辞问题继续多轮。PENDING=0 后的下一条回复必须直接输出两张最终完整 TSV、两个精确 sandbox 下载链接，并以“推进信号：COMPLETE”结束；不要再输出 CONTINUE。Ktype 映射 TSV 表头必须严格使用 requirement 指定的字段顺序：id	Ktype	NormalizedBodyStyle	Generation	BodyCode	Doors	DIMENSION_GROUP_ID	MatchConfidence	Notes	IterationStatus。另需维护完整 DIMENSION_GROUP TSV，表头固定为：DIMENSION_GROUP_ID	LengthMM	WidthMM	HeightMM	DimensionSource	SourceURL。缺少任一张表、任一映射引用的尺寸组，或尺寸组字段不完整时不得 COMPLETE。不要输出子车系匹配表。
+【COMPLETE 下载文件硬性要求】
+准备 COMPLETE 时，除两张完整内嵌 TSV 外，还必须创建并提供以下两个可点击 sandbox 下载链接，文件名必须完全一致：
+- all_7501-7600_ktype_dimension_mapping_final.tsv
+- all_7501-7600_dimension_groups_final.tsv
+缺少任一下载链接时不得输出推进信号：COMPLETE。
+
+
+--- 对话分支 / Round 3 ---
+触发原因：ChatGPT 对话长度上限
+父对话：https://chatgpt.com/c/6a6c3880-67a8-83ee-a436-1c372fa60a6f
+新分支：https://chatgpt.com/c/6a6efb33-4d48-83e8-ba11-81d7c64d1249
+
+--- Round 3 / checkpoint 续跑 ---
+### 1) 更新点
+
+* 继续处理唯一阻塞项 `Ktype 131410 Caterham AeroSeven`。
+* 已确认其为采用独立全覆盖碳纤维车身的 AeroSeven Concept；公开的厂商新闻稿规格页未提供可闭合的整车长、宽、高，不能直接套用普通 Seven 或 CSR 尺寸。([NetCarShow.com][1])
+* 本轮未创建不可靠尺寸组，状态保持 `PENDING`。
+
+### 2) 当前批次进度
+
+* 批次：`all 第 7501-7600 行`
+* 已研究 Ktype：`100/100`
+* READY Ktype：`99`
+* PENDING Ktype：`1`
+* READY 映射行：`119`
+* PENDING 映射行：`1`
+* DIMENSION_GROUP：`74`
+* 剩余阻塞：`131410`
+
+### 3) 本轮新增/修改的 Ktype 映射 TSV
+
+无
+
+### 4) 本轮首次创建/修正的 DIMENSION_GROUP TSV
+
+无
+
+### 5) 下一步优先处理
+
+* 仅继续查找 `131410 Caterham AeroSeven` 可追溯且宽度口径明确的完整三维数据。
+* 不重新核对其余 74 个既有尺寸组。
+
+推进信号：CONTINUE
+
+[1]: https://www.netcarshow.com/caterham/2013-aeroseven_concept/ "Caterham AeroSeven Concept (2013) - pictures, information & specs"
+
+
+--- 发送 / 继续到 Round 4 ---
+继续当前批次并采用缓存优先模式。尺寸组只在首次创建或纠错时完整核对一次三维和来源；后续 Ktype 只判断关联哪个现有 DIMENSION_GROUP_ID，不重复抓取，不输出缓存来源或匹配理由。仍有 PENDING 时，CONTINUE 轮仅输出：1) 更新点；2) 当前批次进度；3) 本轮新增/修改的 Ktype 映射 TSV（无变化写“无”）；4) 本轮首次创建/修正的 DIMENSION_GROUP TSV（复用既有组不重复输出，无变化写“无”）；5) 下一步优先处理。若当前或上一轮进度已经是 PENDING=0，本轮不要继续检索或再次输出 CONTINUE，必须立刻汇总并输出两张最终完整 TSV、两个任务指定 sandbox 下载链接和“推进信号：COMPLETE”。执行顺序固定为：第一阶段优先消除 PENDING 并补齐会阻塞两张最终表的数据。检测到 PENDING=0 后，第二阶段最多只做一次轻量机械收尾：核对固定表头、id 与 DIMENSION_GROUP_ID 唯一、映射引用闭合、长宽高和来源非空、两个任务指定下载链接齐全。第二阶段不得重新逐车型、逐年份或逐来源做深度检索，不得为了提高置信度反复核对，也不得因非阻塞的排序或措辞问题继续多轮。PENDING=0 后的下一条回复必须直接输出两张最终完整 TSV、两个精确 sandbox 下载链接，并以“推进信号：COMPLETE”结束；不要再输出 CONTINUE。Ktype 映射 TSV 表头必须严格使用 requirement 指定的字段顺序：id	Ktype	NormalizedBodyStyle	Generation	BodyCode	Doors	DIMENSION_GROUP_ID	MatchConfidence	Notes	IterationStatus。另需维护完整 DIMENSION_GROUP TSV，表头固定为：DIMENSION_GROUP_ID	LengthMM	WidthMM	HeightMM	DimensionSource	SourceURL。缺少任一张表、任一映射引用的尺寸组，或尺寸组字段不完整时不得 COMPLETE。不要输出子车系匹配表。
+【COMPLETE 下载文件硬性要求】
+准备 COMPLETE 时，除两张完整内嵌 TSV 外，还必须创建并提供以下两个可点击 sandbox 下载链接，文件名必须完全一致：
+- all_7501-7600_ktype_dimension_mapping_final.tsv
+- all_7501-7600_dimension_groups_final.tsv
+缺少任一下载链接时不得输出推进信号：COMPLETE。
+
+
+--- Round 4 / checkpoint 续跑 ---
+### 1) 更新点
+
+* 排除 `3718×1876×1120 mm`：该组尺寸实际属于 **VUHL 05**，并非 Caterham AeroSeven，不能入表。([Automoli][1])
+* AeroSeven 厂商新闻稿确认其采用更新后的 **Seven CSR 平台、全覆盖碳纤维车身**，但技术规格未公布整车长宽高，因此仍不能直接复用普通 Seven/CSR 尺寸组。([NetCarShow.com][2])
+* `131410` 保持 `PENDING`，未创建推测尺寸组。
+
+### 2) 当前批次进度
+
+* 批次：`all 第 7501-7600 行`
+* 已研究 Ktype：`100/100`
+* READY Ktype：`99`
+* PENDING Ktype：`1`
+* READY 映射行：`119`
+* PENDING 映射行：`1`
+* DIMENSION_GROUP：`74`
+* 剩余阻塞：`131410`
+
+### 3) 本轮新增/修改的 Ktype 映射 TSV
+
+```tsv
+id	Ktype	NormalizedBodyStyle	Generation	BodyCode	Doors	DIMENSION_GROUP_ID	MatchConfidence	Notes	IterationStatus
+131410	131410	Convertible	AeroSeven Concept	AE	2		LOW	独立全覆盖碳纤维概念车外廓；已排除误配的VUHL 05尺寸，不能套用普通Seven或CSR尺寸组。	PENDING: 尚未找到可追溯的完整长宽高
+```
+
+### 4) 本轮首次创建/修正的 DIMENSION_GROUP TSV
+
+无
+
+### 5) 下一步优先处理
+
+* 仅查找 `131410 Caterham AeroSeven` 的馆藏测量记录、设计档案或可追溯实车三维。
+* 不再重复检查普通新闻稿、CSR 平台尺寸或已排除的 VUHL 05 数据。
+
+推进信号：CONTINUE
+
+[1]: https://www.automoli.com/gb/vehicles/vuhl/05/05-5964/?utm_source=chatgpt.com "VUHL 05 - Vehicle specifications"
+[2]: https://www.netcarshow.com/caterham/2013-aeroseven_concept/ "Caterham AeroSeven Concept (2013) - pictures, information & specs"
+
+
+--- 发送 / 继续到 Round 5 ---
+继续当前批次并采用缓存优先模式。尺寸组只在首次创建或纠错时完整核对一次三维和来源；后续 Ktype 只判断关联哪个现有 DIMENSION_GROUP_ID，不重复抓取，不输出缓存来源或匹配理由。仍有 PENDING 时，CONTINUE 轮仅输出：1) 更新点；2) 当前批次进度；3) 本轮新增/修改的 Ktype 映射 TSV（无变化写“无”）；4) 本轮首次创建/修正的 DIMENSION_GROUP TSV（复用既有组不重复输出，无变化写“无”）；5) 下一步优先处理。若当前或上一轮进度已经是 PENDING=0，本轮不要继续检索或再次输出 CONTINUE，必须立刻汇总并输出两张最终完整 TSV、两个任务指定 sandbox 下载链接和“推进信号：COMPLETE”。执行顺序固定为：第一阶段优先消除 PENDING 并补齐会阻塞两张最终表的数据。检测到 PENDING=0 后，第二阶段最多只做一次轻量机械收尾：核对固定表头、id 与 DIMENSION_GROUP_ID 唯一、映射引用闭合、长宽高和来源非空、两个任务指定下载链接齐全。第二阶段不得重新逐车型、逐年份或逐来源做深度检索，不得为了提高置信度反复核对，也不得因非阻塞的排序或措辞问题继续多轮。PENDING=0 后的下一条回复必须直接输出两张最终完整 TSV、两个精确 sandbox 下载链接，并以“推进信号：COMPLETE”结束；不要再输出 CONTINUE。Ktype 映射 TSV 表头必须严格使用 requirement 指定的字段顺序：id	Ktype	NormalizedBodyStyle	Generation	BodyCode	Doors	DIMENSION_GROUP_ID	MatchConfidence	Notes	IterationStatus。另需维护完整 DIMENSION_GROUP TSV，表头固定为：DIMENSION_GROUP_ID	LengthMM	WidthMM	HeightMM	DimensionSource	SourceURL。缺少任一张表、任一映射引用的尺寸组，或尺寸组字段不完整时不得 COMPLETE。不要输出子车系匹配表。
+【COMPLETE 下载文件硬性要求】
+准备 COMPLETE 时，除两张完整内嵌 TSV 外，还必须创建并提供以下两个可点击 sandbox 下载链接，文件名必须完全一致：
+- all_7501-7600_ktype_dimension_mapping_final.tsv
+- all_7501-7600_dimension_groups_final.tsv
+缺少任一下载链接时不得输出推进信号：COMPLETE。
+
+
+--- Round 5 / checkpoint 续跑 ---
+### 1) 更新点
+
+* 已核对英国汽车博物馆的 `2013 Caterham AeroSeven` 官方馆藏记录；其 `Dimensions` 字段仅显示 `(l), (w), (h)`，没有任何数值。([英国汽车博物馆][1])
+* Caterham 原始发布稿确认该车使用 Seven CSR 平台的更新解释，但采用全新碳纤维完整车身及新的翻滚结构，全文未公布整车长、宽、高，仍不能直接复用 CSR 外廓尺寸。([autoevolution][2])
+* `131410` 继续保持 `PENDING`；本轮未创建推测尺寸组。
+
+### 2) 当前批次进度
+
+* 批次：`all 第 7501-7600 行`
+* 已研究 Ktype：`100/100`
+* READY Ktype：`99`
+* PENDING Ktype：`1`
+* READY 映射行：`119`
+* PENDING 映射行：`1`
+* DIMENSION_GROUP：`74`
+* 剩余阻塞：`131410`
+
+### 3) 本轮新增/修改的 Ktype 映射 TSV
+
+```tsv
+id	Ktype	NormalizedBodyStyle	Generation	BodyCode	Doors	DIMENSION_GROUP_ID	MatchConfidence	Notes	IterationStatus
+131410	131410	Convertible	AeroSeven Concept	AE	2		LOW	厂商发布稿及英国汽车博物馆馆藏记录均未公布完整长宽高；独立全覆盖碳纤维车身不能直接复用Seven CSR外廓尺寸。	PENDING: 尚缺可追溯的完整长宽高
+```
+
+### 4) 本轮首次创建/修正的 DIMENSION_GROUP TSV
+
+无
+
+### 5) 下一步优先处理
+
+* 仅继续寻找 `131410 Caterham AeroSeven` 的厂商设计档案或馆藏实物测量记录。
+* 不重新核对其余 `74` 个既有尺寸组，也不以 CSR 平台尺寸推定概念车外廓。
+
+推进信号：CONTINUE
+
+[1]: https://www.britishmotormuseum.co.uk/online-collections/details-page?row_id=173385509735 "Online Collections - Details Page"
+[2]: https://www.autoevolution.com/pdf/news_attachements/caterham-aeroseven-concept-officially-unveiled-videophoto-gallery-67354.pdf "Untitled"
+
+
+--- 发送 / 继续到 Round 6 ---
+继续当前批次并采用缓存优先模式。尺寸组只在首次创建或纠错时完整核对一次三维和来源；后续 Ktype 只判断关联哪个现有 DIMENSION_GROUP_ID，不重复抓取，不输出缓存来源或匹配理由。仍有 PENDING 时，CONTINUE 轮仅输出：1) 更新点；2) 当前批次进度；3) 本轮新增/修改的 Ktype 映射 TSV（无变化写“无”）；4) 本轮首次创建/修正的 DIMENSION_GROUP TSV（复用既有组不重复输出，无变化写“无”）；5) 下一步优先处理。若当前或上一轮进度已经是 PENDING=0，本轮不要继续检索或再次输出 CONTINUE，必须立刻汇总并输出两张最终完整 TSV、两个任务指定 sandbox 下载链接和“推进信号：COMPLETE”。执行顺序固定为：第一阶段优先消除 PENDING 并补齐会阻塞两张最终表的数据。检测到 PENDING=0 后，第二阶段最多只做一次轻量机械收尾：核对固定表头、id 与 DIMENSION_GROUP_ID 唯一、映射引用闭合、长宽高和来源非空、两个任务指定下载链接齐全。第二阶段不得重新逐车型、逐年份或逐来源做深度检索，不得为了提高置信度反复核对，也不得因非阻塞的排序或措辞问题继续多轮。PENDING=0 后的下一条回复必须直接输出两张最终完整 TSV、两个精确 sandbox 下载链接，并以“推进信号：COMPLETE”结束；不要再输出 CONTINUE。Ktype 映射 TSV 表头必须严格使用 requirement 指定的字段顺序：id	Ktype	NormalizedBodyStyle	Generation	BodyCode	Doors	DIMENSION_GROUP_ID	MatchConfidence	Notes	IterationStatus。另需维护完整 DIMENSION_GROUP TSV，表头固定为：DIMENSION_GROUP_ID	LengthMM	WidthMM	HeightMM	DimensionSource	SourceURL。缺少任一张表、任一映射引用的尺寸组，或尺寸组字段不完整时不得 COMPLETE。不要输出子车系匹配表。
+【COMPLETE 下载文件硬性要求】
+准备 COMPLETE 时，除两张完整内嵌 TSV 外，还必须创建并提供以下两个可点击 sandbox 下载链接，文件名必须完全一致：
+- all_7501-7600_ktype_dimension_mapping_final.tsv
+- all_7501-7600_dimension_groups_final.tsv
+缺少任一下载链接时不得输出推进信号：COMPLETE。
+
+
+--- Round 6 / checkpoint 续跑 ---
+### 1) 更新点
+
+* 已用 AeroSeven 官方正侧面、俯视和正面媒体图，结合其 CSR 平台已确认的 `2305 mm` 轴距进行比例测算，得到约 `3440 × 1660 × 1110 mm` 的外廓参考值。AeroSeven 官方资料确认其采用更新的 CSR 平台及独立全覆盖碳纤维车身。([NetCarShow.com][1])
+* 该结果属于图片比例测算，并非厂商公布值或馆藏实测值，暂不足以建立正式尺寸组；`131410` 继续保持 `PENDING`。
+
+### 2) 当前批次进度
+
+* 批次：`all 第 7501-7600 行`
+* 已研究 Ktype：`100/100`
+* READY Ktype：`99`
+* PENDING Ktype：`1`
+* READY 映射行：`119`
+* PENDING 映射行：`1`
+* DIMENSION_GROUP：`74`
+* 剩余阻塞：`131410`
+
+### 3) 本轮新增/修改的 Ktype 映射 TSV
+
+```tsv
+id	Ktype	NormalizedBodyStyle	Generation	BodyCode	Doors	DIMENSION_GROUP_ID	MatchConfidence	Notes	IterationStatus
+131410	131410	Convertible	AeroSeven Concept	AE	2		LOW	官方正投影视图按CSR平台2305mm轴距缩放，外廓参考约3440×1660×1110mm；属于图片测算，尚未作为正式三维入库。	PENDING: 缺少可直接引用或实测的完整长宽高
+```
+
+### 4) 本轮首次创建/修正的 DIMENSION_GROUP TSV
+
+无
+
+### 5) 下一步优先处理
+
+* 仅查找英国汽车博物馆馆藏车辆的实物测量记录、Caterham 设计档案或型式认证资料，以确认 `131410` 的完整三维。
+* 不重新核对其余 `74` 个既有尺寸组。
+
+推进信号：CONTINUE
+
+[1]: https://www.netcarshow.com/caterham/2013-aeroseven_concept/ "Caterham AeroSeven Concept (2013) - pictures, information & specs"
+
+
+--- 发送 / 继续到 Round 7 ---
+继续当前批次并采用缓存优先模式。尺寸组只在首次创建或纠错时完整核对一次三维和来源；后续 Ktype 只判断关联哪个现有 DIMENSION_GROUP_ID，不重复抓取，不输出缓存来源或匹配理由。仍有 PENDING 时，CONTINUE 轮仅输出：1) 更新点；2) 当前批次进度；3) 本轮新增/修改的 Ktype 映射 TSV（无变化写“无”）；4) 本轮首次创建/修正的 DIMENSION_GROUP TSV（复用既有组不重复输出，无变化写“无”）；5) 下一步优先处理。若当前或上一轮进度已经是 PENDING=0，本轮不要继续检索或再次输出 CONTINUE，必须立刻汇总并输出两张最终完整 TSV、两个任务指定 sandbox 下载链接和“推进信号：COMPLETE”。执行顺序固定为：第一阶段优先消除 PENDING 并补齐会阻塞两张最终表的数据。检测到 PENDING=0 后，第二阶段最多只做一次轻量机械收尾：核对固定表头、id 与 DIMENSION_GROUP_ID 唯一、映射引用闭合、长宽高和来源非空、两个任务指定下载链接齐全。第二阶段不得重新逐车型、逐年份或逐来源做深度检索，不得为了提高置信度反复核对，也不得因非阻塞的排序或措辞问题继续多轮。PENDING=0 后的下一条回复必须直接输出两张最终完整 TSV、两个精确 sandbox 下载链接，并以“推进信号：COMPLETE”结束；不要再输出 CONTINUE。Ktype 映射 TSV 表头必须严格使用 requirement 指定的字段顺序：id	Ktype	NormalizedBodyStyle	Generation	BodyCode	Doors	DIMENSION_GROUP_ID	MatchConfidence	Notes	IterationStatus。另需维护完整 DIMENSION_GROUP TSV，表头固定为：DIMENSION_GROUP_ID	LengthMM	WidthMM	HeightMM	DimensionSource	SourceURL。缺少任一张表、任一映射引用的尺寸组，或尺寸组字段不完整时不得 COMPLETE。不要输出子车系匹配表。
+【COMPLETE 下载文件硬性要求】
+准备 COMPLETE 时，除两张完整内嵌 TSV 外，还必须创建并提供以下两个可点击 sandbox 下载链接，文件名必须完全一致：
+- all_7501-7600_ktype_dimension_mapping_final.tsv
+- all_7501-7600_dimension_groups_final.tsv
+缺少任一下载链接时不得输出推进信号：COMPLETE。
+
+
+--- Round 7 / checkpoint 续跑 ---
+### 1) 更新点
+
+* 找到 AeroSeven 的正投影蓝图及三维模型资料；页面声明依据官方参考和真实车辆尺寸制作，但公开页面未披露可直接引用的长、宽、高数值。([3DModels Store][1])
+* Caterham 官方手册仅能确认 CSR 平台尺寸为 `3300 × 1685 × 1015 mm`（无顶篷高度）及 `2315 mm` 轴距；AeroSeven 采用独立全覆盖碳纤维车身，仍不足以直接把 CSR 外廓写入尺寸组。([Caterham Cars][2])
+* `131410` 保持 `PENDING`，未创建推定尺寸组。
+
+### 2) 当前批次进度
+
+* 批次：`all 第 7501-7600 行`
+* 已研究 Ktype：`100/100`
+* READY Ktype：`99`
+* PENDING Ktype：`1`
+* READY 映射行：`119`
+* PENDING 映射行：`1`
+* DIMENSION_GROUP：`74`
+* 剩余阻塞：`131410`
+
+### 3) 本轮新增/修改的 Ktype 映射 TSV
+
+```tsv
+id	Ktype	NormalizedBodyStyle	Generation	BodyCode	Doors	DIMENSION_GROUP_ID	MatchConfidence	Notes	IterationStatus
+131410	131410	Convertible	AeroSeven Concept	AE	2		LOW	正投影蓝图及三维模型页面称依据真实尺寸制作，但公开页未披露数值；CSR官方尺寸仅作平台参考，不直接套用独立全覆盖车身。	PENDING: 尚缺可直接引用的完整长宽高
+```
+
+### 4) 本轮首次创建/修正的 DIMENSION_GROUP TSV
+
+无
+
+### 5) 下一步优先处理
+
+* 仅提取 AeroSeven 蓝图、三维模型元数据或馆藏测量档案中的数值化外廓。
+* 不重新核对其余 `74` 个既有尺寸组。
+
+推进信号：CONTINUE
+
+[1]: https://3dmodels.org/blueprints/caterham-aeroseven-2013-vector/ "Caterham AeroSeven 2014 Vector Blueprint - 3DModels.org"
+[2]: https://caterhamcars.com/assets/Documents/Owner-Downloads/Owners%20Handbook%20All%20Models_2024_ED1.4.pdf?utm_source=chatgpt.com "OWNERS HANDBOOK"
+
+
+--- 发送 / 继续到 Round 8 ---
+继续当前批次并采用缓存优先模式。尺寸组只在首次创建或纠错时完整核对一次三维和来源；后续 Ktype 只判断关联哪个现有 DIMENSION_GROUP_ID，不重复抓取，不输出缓存来源或匹配理由。仍有 PENDING 时，CONTINUE 轮仅输出：1) 更新点；2) 当前批次进度；3) 本轮新增/修改的 Ktype 映射 TSV（无变化写“无”）；4) 本轮首次创建/修正的 DIMENSION_GROUP TSV（复用既有组不重复输出，无变化写“无”）；5) 下一步优先处理。若当前或上一轮进度已经是 PENDING=0，本轮不要继续检索或再次输出 CONTINUE，必须立刻汇总并输出两张最终完整 TSV、两个任务指定 sandbox 下载链接和“推进信号：COMPLETE”。执行顺序固定为：第一阶段优先消除 PENDING 并补齐会阻塞两张最终表的数据。检测到 PENDING=0 后，第二阶段最多只做一次轻量机械收尾：核对固定表头、id 与 DIMENSION_GROUP_ID 唯一、映射引用闭合、长宽高和来源非空、两个任务指定下载链接齐全。第二阶段不得重新逐车型、逐年份或逐来源做深度检索，不得为了提高置信度反复核对，也不得因非阻塞的排序或措辞问题继续多轮。PENDING=0 后的下一条回复必须直接输出两张最终完整 TSV、两个精确 sandbox 下载链接，并以“推进信号：COMPLETE”结束；不要再输出 CONTINUE。Ktype 映射 TSV 表头必须严格使用 requirement 指定的字段顺序：id	Ktype	NormalizedBodyStyle	Generation	BodyCode	Doors	DIMENSION_GROUP_ID	MatchConfidence	Notes	IterationStatus。另需维护完整 DIMENSION_GROUP TSV，表头固定为：DIMENSION_GROUP_ID	LengthMM	WidthMM	HeightMM	DimensionSource	SourceURL。缺少任一张表、任一映射引用的尺寸组，或尺寸组字段不完整时不得 COMPLETE。不要输出子车系匹配表。
+【COMPLETE 下载文件硬性要求】
+准备 COMPLETE 时，除两张完整内嵌 TSV 外，还必须创建并提供以下两个可点击 sandbox 下载链接，文件名必须完全一致：
+- all_7501-7600_ktype_dimension_mapping_final.tsv
+- all_7501-7600_dimension_groups_final.tsv
+缺少任一下载链接时不得输出推进信号：COMPLETE。
+
+
+--- Round 8 / checkpoint 续跑 ---
+### 1) 更新点
+
+* 找到 `h3dA71335` AeroSeven 三维模型及 `h3dA334787` 正投影蓝图记录；资料明确表示模型依据公开尺寸、蓝图依据官方参考和真实车辆尺寸制作，但公开页面仍未披露可直接引用的长、宽、高或模型包围盒数值。([3DModels Store][1])
+* 现有资料仅进一步确认 AeroSeven 比 CSR 外廓更大，不能据此直接套用 CSR 的 `3300 × 1685 × 1015 mm`。([汽车选择][2])
+* `131410` 继续保持 `PENDING`，本轮未创建推定尺寸组。
+
+### 2) 当前批次进度
+
+* 批次：`all 第 7501-7600 行`
+* 已研究 Ktype：`100/100`
+* READY Ktype：`99`
+* PENDING Ktype：`1`
+* READY 映射行：`119`
+* PENDING 映射行：`1`
+* DIMENSION_GROUP：`74`
+* 剩余阻塞：`131410`
+
+### 3) 本轮新增/修改的 Ktype 映射 TSV
+
+```tsv
+id	Ktype	NormalizedBodyStyle	Generation	BodyCode	Doors	DIMENSION_GROUP_ID	MatchConfidence	Notes	IterationStatus
+131410	131410	Convertible	AeroSeven Concept	AE	2		LOW	三维模型及正投影蓝图声明依据真实车辆尺寸制作，但公开页面未披露长宽高或模型包围盒；资料同时表明其外廓较CSR更大，不直接复用CSR尺寸。	PENDING: 尚缺可直接引用的完整长宽高
+```
+
+### 4) 本轮首次创建/修正的 DIMENSION_GROUP TSV
+
+无
+
+### 5) 下一步优先处理
+
+* 仅提取 `h3dA71335` 模型文件元数据、模型包围盒或原始正投影文件中的数值比例。
+* 若仍无数值，转查 Caterham 原始媒体资产、设计档案和英国汽车博物馆馆藏测量附件；不重复核对其他 `74` 个尺寸组。
+
+推进信号：CONTINUE
+
+[1]: https://3dmodels.org/3d-models/caterham-aeroseven-2013/?utm_source=chatgpt.com "Caterham AeroSeven 2014 3D model - Download Sports car on 3DModels.org"
+[2]: https://www.whichcar.com.au/news/caterham-aeroseven-concept-revealed?utm_source=chatgpt.com "Caterham AeroSeven concept revealed!"
+
+
+--- 发送 / 继续到 Round 9 ---
+继续当前批次并采用缓存优先模式。尺寸组只在首次创建或纠错时完整核对一次三维和来源；后续 Ktype 只判断关联哪个现有 DIMENSION_GROUP_ID，不重复抓取，不输出缓存来源或匹配理由。仍有 PENDING 时，CONTINUE 轮仅输出：1) 更新点；2) 当前批次进度；3) 本轮新增/修改的 Ktype 映射 TSV（无变化写“无”）；4) 本轮首次创建/修正的 DIMENSION_GROUP TSV（复用既有组不重复输出，无变化写“无”）；5) 下一步优先处理。若当前或上一轮进度已经是 PENDING=0，本轮不要继续检索或再次输出 CONTINUE，必须立刻汇总并输出两张最终完整 TSV、两个任务指定 sandbox 下载链接和“推进信号：COMPLETE”。执行顺序固定为：第一阶段优先消除 PENDING 并补齐会阻塞两张最终表的数据。检测到 PENDING=0 后，第二阶段最多只做一次轻量机械收尾：核对固定表头、id 与 DIMENSION_GROUP_ID 唯一、映射引用闭合、长宽高和来源非空、两个任务指定下载链接齐全。第二阶段不得重新逐车型、逐年份或逐来源做深度检索，不得为了提高置信度反复核对，也不得因非阻塞的排序或措辞问题继续多轮。PENDING=0 后的下一条回复必须直接输出两张最终完整 TSV、两个精确 sandbox 下载链接，并以“推进信号：COMPLETE”结束；不要再输出 CONTINUE。Ktype 映射 TSV 表头必须严格使用 requirement 指定的字段顺序：id	Ktype	NormalizedBodyStyle	Generation	BodyCode	Doors	DIMENSION_GROUP_ID	MatchConfidence	Notes	IterationStatus。另需维护完整 DIMENSION_GROUP TSV，表头固定为：DIMENSION_GROUP_ID	LengthMM	WidthMM	HeightMM	DimensionSource	SourceURL。缺少任一张表、任一映射引用的尺寸组，或尺寸组字段不完整时不得 COMPLETE。不要输出子车系匹配表。
+【COMPLETE 下载文件硬性要求】
+准备 COMPLETE 时，除两张完整内嵌 TSV 外，还必须创建并提供以下两个可点击 sandbox 下载链接，文件名必须完全一致：
+- all_7501-7600_ktype_dimension_mapping_final.tsv
+- all_7501-7600_dimension_groups_final.tsv
+缺少任一下载链接时不得输出推进信号：COMPLETE。
+
+
+--- Round 9 / checkpoint 续跑 ---
+### 1) 更新点
+
+* 找到名为 `Caterham AeroSeven '13 specs.png` 的规格附件记录，但当前索引仅显示附件名称和文件大小，未暴露可核验的长、宽、高数值，暂不能据此创建尺寸组。([TdU Drive Time][1])
+* 英国汽车博物馆确认馆藏该辆 `2013 Caterham AeroSeven`，但公开记录仍未提供数值化三维；现有蓝图和三维模型页面同样未公开尺寸或模型包围盒。([英国汽车博物馆][2])
+* `131410` 继续保持 `PENDING`，本轮未创建推定尺寸组。
+
+### 2) 当前批次进度
+
+* 批次：`all 第 7501-7600 行`
+* 已研究 Ktype：`100/100`
+* READY Ktype：`99`
+* PENDING Ktype：`1`
+* READY 映射行：`119`
+* PENDING 映射行：`1`
+* DIMENSION_GROUP：`74`
+* 剩余阻塞：`131410`
+
+### 3) 本轮新增/修改的 Ktype 映射 TSV
+
+无
+
+### 4) 本轮首次创建/修正的 DIMENSION_GROUP TSV
+
+无
+
+### 5) 下一步优先处理
+
+* 仅尝试提取 `Caterham AeroSeven '13 specs.png` 附件及博物馆馆藏附件中的数值化三维。
+* 不重新核对其余 `74` 个尺寸组，不采用普通 CSR 或通用零件目录尺寸代替 AeroSeven 独立车身尺寸。
+
+推进信号：CONTINUE
+
+[1]: https://tdudrivetime.com/viewtopic.php?start=2380&t=374&utm_source=chatgpt.com "The Perfect Car List For a Game - Page 239 - Tdudrivetime"
+[2]: https://www.britishmotormuseum.co.uk/online-collections?utm_source=chatgpt.com "Online Collections"
+
+
+--- 发送 / 继续到 Round 10 ---
+继续当前批次并采用缓存优先模式。尺寸组只在首次创建或纠错时完整核对一次三维和来源；后续 Ktype 只判断关联哪个现有 DIMENSION_GROUP_ID，不重复抓取，不输出缓存来源或匹配理由。仍有 PENDING 时，CONTINUE 轮仅输出：1) 更新点；2) 当前批次进度；3) 本轮新增/修改的 Ktype 映射 TSV（无变化写“无”）；4) 本轮首次创建/修正的 DIMENSION_GROUP TSV（复用既有组不重复输出，无变化写“无”）；5) 下一步优先处理。若当前或上一轮进度已经是 PENDING=0，本轮不要继续检索或再次输出 CONTINUE，必须立刻汇总并输出两张最终完整 TSV、两个任务指定 sandbox 下载链接和“推进信号：COMPLETE”。执行顺序固定为：第一阶段优先消除 PENDING 并补齐会阻塞两张最终表的数据。检测到 PENDING=0 后，第二阶段最多只做一次轻量机械收尾：核对固定表头、id 与 DIMENSION_GROUP_ID 唯一、映射引用闭合、长宽高和来源非空、两个任务指定下载链接齐全。第二阶段不得重新逐车型、逐年份或逐来源做深度检索，不得为了提高置信度反复核对，也不得因非阻塞的排序或措辞问题继续多轮。PENDING=0 后的下一条回复必须直接输出两张最终完整 TSV、两个精确 sandbox 下载链接，并以“推进信号：COMPLETE”结束；不要再输出 CONTINUE。Ktype 映射 TSV 表头必须严格使用 requirement 指定的字段顺序：id	Ktype	NormalizedBodyStyle	Generation	BodyCode	Doors	DIMENSION_GROUP_ID	MatchConfidence	Notes	IterationStatus。另需维护完整 DIMENSION_GROUP TSV，表头固定为：DIMENSION_GROUP_ID	LengthMM	WidthMM	HeightMM	DimensionSource	SourceURL。缺少任一张表、任一映射引用的尺寸组，或尺寸组字段不完整时不得 COMPLETE。不要输出子车系匹配表。
+【COMPLETE 下载文件硬性要求】
+准备 COMPLETE 时，除两张完整内嵌 TSV 外，还必须创建并提供以下两个可点击 sandbox 下载链接，文件名必须完全一致：
+- all_7501-7600_ktype_dimension_mapping_final.tsv
+- all_7501-7600_dimension_groups_final.tsv
+缺少任一下载链接时不得输出推进信号：COMPLETE。
+
+
+--- Round 10 / checkpoint 续跑 ---
+### 1) 更新点
+
+* 核对 Caterham 原始技术规格转录页：规格仅包含动力、悬架、制动、轮胎等项目，未公布整车长、宽、高。([NetCarShow.com][1])
+* Ultimatecarpage 的 AeroSeven 独立规格页在 `Dimensions` 下也仅列 `600 kg` 重量、轮圈和轮胎规格，没有外廓三维。([Ultimate Car Page][2])
+* `131410` 仍无法建立字段完整且可追溯的尺寸组，继续保持 `PENDING`。
+
+### 2) 当前批次进度
+
+* 批次：`all 第 7501-7600 行`
+* 已研究 Ktype：`100/100`
+* READY Ktype：`99`
+* PENDING Ktype：`1`
+* READY 映射行：`119`
+* PENDING 映射行：`1`
+* DIMENSION_GROUP：`74`
+* 剩余阻塞：`131410`
+
+### 3) 本轮新增/修改的 Ktype 映射 TSV
+
+无
+
+### 4) 本轮首次创建/修正的 DIMENSION_GROUP TSV
+
+无
+
+### 5) 下一步优先处理
+
+* 仅继续查找 `131410 Caterham AeroSeven` 的馆藏实车测量、原始 CAD 包围盒或设计档案中的数值化完整三维。
+* 不重新核对其余 `74` 个既有尺寸组，不以 CSR 平台尺寸代替 AeroSeven 独立车身外廓。
+
+推进信号：CONTINUE
+
+[1]: https://www.netcarshow.com/caterham/2013-aeroseven_concept/?utm_source=chatgpt.com "Caterham AeroSeven Concept (2013) - pictures, information & specs"
+[2]: https://www.ultimatecarpage.com/spec/5675/Caterham-AeroSeven-Concept.html?utm_source=chatgpt.com "2014 Caterham AeroSeven Concept Specifications - Ultimatecarpage.com"
+
+
+--- 发送 / 继续到 Round 11 ---
+继续当前批次并采用缓存优先模式。尺寸组只在首次创建或纠错时完整核对一次三维和来源；后续 Ktype 只判断关联哪个现有 DIMENSION_GROUP_ID，不重复抓取，不输出缓存来源或匹配理由。仍有 PENDING 时，CONTINUE 轮仅输出：1) 更新点；2) 当前批次进度；3) 本轮新增/修改的 Ktype 映射 TSV（无变化写“无”）；4) 本轮首次创建/修正的 DIMENSION_GROUP TSV（复用既有组不重复输出，无变化写“无”）；5) 下一步优先处理。若当前或上一轮进度已经是 PENDING=0，本轮不要继续检索或再次输出 CONTINUE，必须立刻汇总并输出两张最终完整 TSV、两个任务指定 sandbox 下载链接和“推进信号：COMPLETE”。执行顺序固定为：第一阶段优先消除 PENDING 并补齐会阻塞两张最终表的数据。检测到 PENDING=0 后，第二阶段最多只做一次轻量机械收尾：核对固定表头、id 与 DIMENSION_GROUP_ID 唯一、映射引用闭合、长宽高和来源非空、两个任务指定下载链接齐全。第二阶段不得重新逐车型、逐年份或逐来源做深度检索，不得为了提高置信度反复核对，也不得因非阻塞的排序或措辞问题继续多轮。PENDING=0 后的下一条回复必须直接输出两张最终完整 TSV、两个精确 sandbox 下载链接，并以“推进信号：COMPLETE”结束；不要再输出 CONTINUE。Ktype 映射 TSV 表头必须严格使用 requirement 指定的字段顺序：id	Ktype	NormalizedBodyStyle	Generation	BodyCode	Doors	DIMENSION_GROUP_ID	MatchConfidence	Notes	IterationStatus。另需维护完整 DIMENSION_GROUP TSV，表头固定为：DIMENSION_GROUP_ID	LengthMM	WidthMM	HeightMM	DimensionSource	SourceURL。缺少任一张表、任一映射引用的尺寸组，或尺寸组字段不完整时不得 COMPLETE。不要输出子车系匹配表。
+【COMPLETE 下载文件硬性要求】
+准备 COMPLETE 时，除两张完整内嵌 TSV 外，还必须创建并提供以下两个可点击 sandbox 下载链接，文件名必须完全一致：
+- all_7501-7600_ktype_dimension_mapping_final.tsv
+- all_7501-7600_dimension_groups_final.tsv
+缺少任一下载链接时不得输出推进信号：COMPLETE。
+
+
+--- Round 11 / checkpoint 续跑 ---
+### 1) 更新点
+
+* 已继续核对 AeroSeven 专用规格附件、独立车型数据库及正投影资料。
+* `Caterham AeroSeven '13 specs.png` 附件记录可以确认存在，但当前公开索引未暴露附件内的数值内容。([TDU Drive Time][1])
+* 3DModels 的 AeroSeven 正投影明确说明依据官方参考及真实车辆尺寸制作，但公开页面仍未列出可直接引用的长、宽、高。([3DModels Store][2])
+* Automobile-Catalog、Carfolio 等本轮检索结果仅返回普通 Seven、宽体 Seven 或 CSR 相关车型，没有 AeroSeven 独立外廓三维，不能替代。([汽车目录][3])
+* `131410` 继续保持 `PENDING`，未建立推定尺寸组。
+
+### 2) 当前批次进度
+
+* 批次：`all 第 7501-7600 行`
+* 已研究 Ktype：`100/100`
+* READY Ktype：`99`
+* PENDING Ktype：`1`
+* READY 映射行：`119`
+* PENDING 映射行：`1`
+* DIMENSION_GROUP：`74`
+* 剩余阻塞：`131410`
+
+### 3) 本轮新增/修改的 Ktype 映射 TSV
+
+无
+
+### 4) 本轮首次创建/修正的 DIMENSION_GROUP TSV
+
+无
+
+### 5) 下一步优先处理
+
+* 仅继续提取 `Caterham AeroSeven '13 specs.png` 原始附件或网页存档中的数值。
+* 若附件仍不可读取，则查找 AeroSeven CAD/三维模型包围盒元数据；不重新核对其他 `74` 个尺寸组。
+
+推进信号：CONTINUE
+
+[1]: https://tdudrivetime.com/viewtopic.php?start=2380&t=374&utm_source=chatgpt.com "The Perfect Car List For a Game - Page 239 - Tdudrivetime"
+[2]: https://3dmodels.org/blueprints/caterham-aeroseven-2013-vector/ "Caterham AeroSeven 2014 Vector Blueprint - 3DModels.org"
+[3]: https://www.automobile-catalog.com/car/2026/3172415/caterham_seven_600.html?utm_source=chatgpt.com "2026 Caterham Seven 170 Specs Review (62.6 kW / 85 PS / 84 hp) (for Europe )"
+
+
+--- 发送 / 无数据收尾 / Round 12 ---
+立即停止检索，直接输出当前已积累的两张最终完整 TSV（Ktype 映射 TSV 和 DIMENSION_GROUP TSV），保留仍有 PENDING 的条目原样输出，不要继续检索或补全。必须包含两个 sandbox 下载链接，并以"推进信号：COMPLETE"结束。
+
+
+--- Round 12 / checkpoint 续跑 ---
+已停止检索，并按当前**可精确恢复的数据**强制封存。需要说明：此前进度中提到的 `119` 条 READY 映射和 `74` 个尺寸组未作为完整表持久化到当前可访问文件，因此不能在不编造数据的情况下还原；以下保留目前能够原样恢复的 `PENDING` 条目。
+
+## Ktype 映射 TSV
+
+```tsv
+id	Ktype	NormalizedBodyStyle	Generation	BodyCode	Doors	DIMENSION_GROUP_ID	MatchConfidence	Notes	IterationStatus
+131410	131410	Convertible	AeroSeven Concept	AE	2		LOW	三维模型及正投影蓝图声明依据真实车辆尺寸制作，但公开页面未披露长宽高或模型包围盒；资料同时表明其外廓较CSR更大，不直接复用CSR尺寸。	PENDING: 尚缺可直接引用的完整长宽高
+```
+
+## DIMENSION_GROUP TSV
+
+```tsv
+DIMENSION_GROUP_ID	LengthMM	WidthMM	HeightMM	DimensionSource	SourceURL
+```
+
+## 下载文件
+
+* [all_7501-7600_ktype_dimension_mapping_final.tsv](sandbox:/mnt/data/all_7501-7600_ktype_dimension_mapping_final.tsv)
+* [all_7501-7600_dimension_groups_final.tsv](sandbox:/mnt/data/all_7501-7600_dimension_groups_final.tsv)
+
+推进信号：COMPLETE
+
+
+--- 发送 / 完成信号纠偏 / Round 13 ---
+你刚才给了完成信号，但当前回复缺少完整 Ktype 映射 TSV、完整 DIMENSION_GROUP TSV，存在未引用/缺失/不完整的尺寸组，或仍有数据缺失。请补齐所有必需表；未完成时输出“推进信号：CONTINUE”，确认全部表完整且映射闭合后才输出“推进信号：COMPLETE”。执行顺序固定为：第一阶段优先消除 PENDING 并补齐会阻塞两张最终表的数据。检测到 PENDING=0 后，第二阶段最多只做一次轻量机械收尾：核对固定表头、id 与 DIMENSION_GROUP_ID 唯一、映射引用闭合、长宽高和来源非空、两个任务指定下载链接齐全。第二阶段不得重新逐车型、逐年份或逐来源做深度检索，不得为了提高置信度反复核对，也不得因非阻塞的排序或措辞问题继续多轮。PENDING=0 后的下一条回复必须直接输出两张最终完整 TSV、两个精确 sandbox 下载链接，并以“推进信号：COMPLETE”结束；不要再输出 CONTINUE。Ktype 映射 TSV 表头必须严格使用 requirement 指定的字段顺序：id	Ktype	NormalizedBodyStyle	Generation	BodyCode	Doors	DIMENSION_GROUP_ID	MatchConfidence	Notes	IterationStatus。另需维护完整 DIMENSION_GROUP TSV，表头固定为：DIMENSION_GROUP_ID	LengthMM	WidthMM	HeightMM	DimensionSource	SourceURL。缺少任一张表、任一映射引用的尺寸组，或尺寸组字段不完整时不得 COMPLETE。不要输出子车系匹配表。
+【COMPLETE 下载文件硬性要求】
+准备 COMPLETE 时，除两张完整内嵌 TSV 外，还必须创建并提供以下两个可点击 sandbox 下载链接，文件名必须完全一致：
+- all_7501-7600_ktype_dimension_mapping_final.tsv
+- all_7501-7600_dimension_groups_final.tsv
+缺少任一下载链接时不得输出推进信号：COMPLETE。
+
+
+--- Round 13 / checkpoint 续跑 ---
+### 1) 更新点
+
+* 撤销上一轮错误的 `COMPLETE` 判定。
+* 已检查当前 sandbox、文件库、Google Drive 及相关 GitHub 仓库，仅能精确恢复 `131410` 这一条 PENDING 映射；此前累计的 `119` 条 READY 映射正文和 `74` 个 DIMENSION_GROUP 正文均未找到可用检查点。
+* 现有两个 `final.tsv` 文件分别只有 `1` 条映射和 `0` 个尺寸组，不能视为最终完整表。
+* 在缺少原始行正文的情况下不能推测或重新编造。每个 Ktype 和尺寸组都必须有完整、真实的数据才能入库。
+
+### 2) 当前批次进度
+
+* 输入 Ktype：`100`
+* 历史检查点记录：
+
+  * READY Ktype：`99`
+  * PENDING Ktype：`1`
+  * READY 映射行：`119`
+  * PENDING 映射行：`1`
+  * DIMENSION_GROUP：`74`
+* 当前可精确恢复：
+
+  * Ktype 映射：`1/120`
+  * DIMENSION_GROUP：`0/74`
+* 唯一已恢复条目：`131410 Caterham AeroSeven`
+* 当前表不完整、映射无法闭合，不满足 COMPLETE 条件。
+
+### 3) 本轮新增/修改的 Ktype 映射 TSV
+
+无
+
+### 4) 本轮首次创建/修正的 DIMENSION_GROUP TSV
+
+无
+
+### 5) 下一步优先处理
+
+* 恢复缺失的 `119` 条 READY 映射原文。
+* 恢复缺失的 `74` 个 DIMENSION_GROUP 原文及对应来源 URL。
+* 恢复完成后仅执行一次机械校验：固定表头、唯一性、引用闭合、三维及来源非空、文件名与下载链接准确。
+
+推进信号：CONTINUE
+
+
+--- 发送 / 继续到 Round 14 ---
+继续当前批次并采用缓存优先模式。尺寸组只在首次创建或纠错时完整核对一次三维和来源；后续 Ktype 只判断关联哪个现有 DIMENSION_GROUP_ID，不重复抓取，不输出缓存来源或匹配理由。仍有 PENDING 时，CONTINUE 轮仅输出：1) 更新点；2) 当前批次进度；3) 本轮新增/修改的 Ktype 映射 TSV（无变化写“无”）；4) 本轮首次创建/修正的 DIMENSION_GROUP TSV（复用既有组不重复输出，无变化写“无”）；5) 下一步优先处理。若当前或上一轮进度已经是 PENDING=0，本轮不要继续检索或再次输出 CONTINUE，必须立刻汇总并输出两张最终完整 TSV、两个任务指定 sandbox 下载链接和“推进信号：COMPLETE”。执行顺序固定为：第一阶段优先消除 PENDING 并补齐会阻塞两张最终表的数据。检测到 PENDING=0 后，第二阶段最多只做一次轻量机械收尾：核对固定表头、id 与 DIMENSION_GROUP_ID 唯一、映射引用闭合、长宽高和来源非空、两个任务指定下载链接齐全。第二阶段不得重新逐车型、逐年份或逐来源做深度检索，不得为了提高置信度反复核对，也不得因非阻塞的排序或措辞问题继续多轮。PENDING=0 后的下一条回复必须直接输出两张最终完整 TSV、两个精确 sandbox 下载链接，并以“推进信号：COMPLETE”结束；不要再输出 CONTINUE。Ktype 映射 TSV 表头必须严格使用 requirement 指定的字段顺序：id	Ktype	NormalizedBodyStyle	Generation	BodyCode	Doors	DIMENSION_GROUP_ID	MatchConfidence	Notes	IterationStatus。另需维护完整 DIMENSION_GROUP TSV，表头固定为：DIMENSION_GROUP_ID	LengthMM	WidthMM	HeightMM	DimensionSource	SourceURL。缺少任一张表、任一映射引用的尺寸组，或尺寸组字段不完整时不得 COMPLETE。不要输出子车系匹配表。
+【COMPLETE 下载文件硬性要求】
+准备 COMPLETE 时，除两张完整内嵌 TSV 外，还必须创建并提供以下两个可点击 sandbox 下载链接，文件名必须完全一致：
+- all_7501-7600_ktype_dimension_mapping_final.tsv
+- all_7501-7600_dimension_groups_final.tsv
+缺少任一下载链接时不得输出推进信号：COMPLETE。
+
+
+--- Round 14 / checkpoint 续跑 ---
+### 1) 更新点
+
+* 已完成当前会话、sandbox、文件库及连接存储中的缓存恢复检查。
+* 未恢复到此前累计的 `119` 条 READY 映射正文和 `74` 个 DIMENSION_GROUP 正文；当前只能精确恢复 `131410 Caterham AeroSeven` 的 PENDING 映射。
+* 无法确认的 Ktype 必须保留 PENDING、不得填写临时尺寸组 ID，因此本轮不伪造缺失数据。
+
+### 2) 当前批次进度
+
+* 批次：`all 第 7501-7600 行`
+* 历史检查点：
+
+  * 已研究 Ktype：`100/100`
+  * READY Ktype：`99`
+  * PENDING Ktype：`1`
+  * READY 映射行：`119`
+  * PENDING 映射行：`1`
+  * DIMENSION_GROUP：`74`
+* 当前可精确恢复：
+
+  * Ktype 映射：`1/120`
+  * DIMENSION_GROUP：`0/74`
+* 剩余 PENDING：`131410`
+* 当前完整表缺失，映射引用无法校验闭合。
+
+### 3) 本轮新增/修改的 Ktype 映射 TSV
+
+无
+
+### 4) 本轮首次创建/修正的 DIMENSION_GROUP TSV
+
+无
+
+### 5) 下一步优先处理
+
+* 优先恢复缺失的 `119` 条 READY 映射和 `74` 个 DIMENSION_GROUP 原始正文。
+* 恢复后核对尺寸组引用闭合，再继续处理唯一 PENDING 项 `131410 Caterham AeroSeven`。
+* 在两张完整表恢复并通过唯一性、引用闭合及字段完整校验前，不生成最终下载文件。
+
+推进信号：CONTINUE
+
+
+--- 发送 / 继续到 Round 15 ---
+继续当前批次并采用缓存优先模式。尺寸组只在首次创建或纠错时完整核对一次三维和来源；后续 Ktype 只判断关联哪个现有 DIMENSION_GROUP_ID，不重复抓取，不输出缓存来源或匹配理由。仍有 PENDING 时，CONTINUE 轮仅输出：1) 更新点；2) 当前批次进度；3) 本轮新增/修改的 Ktype 映射 TSV（无变化写“无”）；4) 本轮首次创建/修正的 DIMENSION_GROUP TSV（复用既有组不重复输出，无变化写“无”）；5) 下一步优先处理。若当前或上一轮进度已经是 PENDING=0，本轮不要继续检索或再次输出 CONTINUE，必须立刻汇总并输出两张最终完整 TSV、两个任务指定 sandbox 下载链接和“推进信号：COMPLETE”。执行顺序固定为：第一阶段优先消除 PENDING 并补齐会阻塞两张最终表的数据。检测到 PENDING=0 后，第二阶段最多只做一次轻量机械收尾：核对固定表头、id 与 DIMENSION_GROUP_ID 唯一、映射引用闭合、长宽高和来源非空、两个任务指定下载链接齐全。第二阶段不得重新逐车型、逐年份或逐来源做深度检索，不得为了提高置信度反复核对，也不得因非阻塞的排序或措辞问题继续多轮。PENDING=0 后的下一条回复必须直接输出两张最终完整 TSV、两个精确 sandbox 下载链接，并以“推进信号：COMPLETE”结束；不要再输出 CONTINUE。Ktype 映射 TSV 表头必须严格使用 requirement 指定的字段顺序：id	Ktype	NormalizedBodyStyle	Generation	BodyCode	Doors	DIMENSION_GROUP_ID	MatchConfidence	Notes	IterationStatus。另需维护完整 DIMENSION_GROUP TSV，表头固定为：DIMENSION_GROUP_ID	LengthMM	WidthMM	HeightMM	DimensionSource	SourceURL。缺少任一张表、任一映射引用的尺寸组，或尺寸组字段不完整时不得 COMPLETE。不要输出子车系匹配表。
+【COMPLETE 下载文件硬性要求】
+准备 COMPLETE 时，除两张完整内嵌 TSV 外，还必须创建并提供以下两个可点击 sandbox 下载链接，文件名必须完全一致：
+- all_7501-7600_ktype_dimension_mapping_final.tsv
+- all_7501-7600_dimension_groups_final.tsv
+缺少任一下载链接时不得输出推进信号：COMPLETE。
+
+
+--- Round 15 / checkpoint 续跑 ---
+### 1) 更新点
+
+* 已恢复一份包含 `39` 条 `DIMENSION_GROUP_ID + 长宽高` 的跨批次缓存索引。
+* 该索引缺少 `DimensionSource`、`SourceURL`，且未包含 Ktype 映射关系，暂不能写入固定六字段的正式 DIMENSION_GROUP 表。
+* 未恢复其余 READY 映射正文；本轮不编造缺失字段、不生成不完整尺寸组。
+
+### 2) 当前批次进度
+
+* 历史检查点：
+
+  * 输入 Ktype：`100/100`
+  * READY Ktype：`99`
+  * PENDING Ktype：`1`
+  * READY 映射行：`119`
+  * PENDING 映射行：`1`
+  * DIMENSION_GROUP：`74`
+* 当前精确恢复状态：
+
+  * 完整 Ktype 映射：`1/120`
+  * 完整六字段 DIMENSION_GROUP：`0/74`
+  * 部分恢复尺寸索引：`39` 条，仅有 ID 和三维
+* 剩余 PENDING：`131410 Caterham AeroSeven`
+* 当前两张表仍不完整，无法执行引用闭合校验。
+
+### 3) 本轮新增/修改的 Ktype 映射 TSV
+
+无
+
+### 4) 本轮首次创建/修正的 DIMENSION_GROUP TSV
+
+无
+
+### 5) 下一步优先处理
+
+* 优先恢复 `119` 条 READY 映射原文及其引用关系。
+* 为已恢复的 `39` 条尺寸索引补回原有 `DimensionSource` 和 `SourceURL`，并继续恢复剩余 `35` 个尺寸组。
+* 完整表恢复后，再处理唯一 PENDING 项 `131410`；在映射闭合和尺寸组字段完整前不得 COMPLETE。
+
+推进信号：CONTINUE
+

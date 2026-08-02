@@ -1646,3 +1646,385 @@ id	Ktype	NormalizedBodyStyle	Generation	BodyCode	Doors	DIMENSION_GROUP_ID	MatchC
 --- 脚本异常 ---
 异常: Playwright browser bridge 启动超时
 
+
+--- 发送 / checkpoint 续跑到 Round 14 ---
+继续当前批次并采用缓存优先模式。尺寸组只在首次创建或纠错时完整核对一次三维和来源；后续 Ktype 只判断关联哪个现有 DIMENSION_GROUP_ID，不重复抓取，不输出缓存来源或匹配理由。仍有 PENDING 时，CONTINUE 轮仅输出：1) 更新点；2) 当前批次进度；3) 本轮新增/修改的 Ktype 映射 TSV（无变化写“无”）；4) 本轮首次创建/修正的 DIMENSION_GROUP TSV（复用既有组不重复输出，无变化写“无”）；5) 下一步优先处理。若当前或上一轮进度已经是 PENDING=0，本轮不要继续检索或再次输出 CONTINUE，必须立刻汇总并输出两张最终完整 TSV、两个任务指定 sandbox 下载链接和“推进信号：COMPLETE”。执行顺序固定为：第一阶段优先消除 PENDING 并补齐会阻塞两张最终表的数据。检测到 PENDING=0 后，第二阶段最多只做一次轻量机械收尾：核对固定表头、id 与 DIMENSION_GROUP_ID 唯一、映射引用闭合、长宽高和来源非空、两个任务指定下载链接齐全。第二阶段不得重新逐车型、逐年份或逐来源做深度检索，不得为了提高置信度反复核对，也不得因非阻塞的排序或措辞问题继续多轮。PENDING=0 后的下一条回复必须直接输出两张最终完整 TSV、两个精确 sandbox 下载链接，并以“推进信号：COMPLETE”结束；不要再输出 CONTINUE。Ktype 映射 TSV 表头必须严格使用 requirement 指定的字段顺序：id	Ktype	NormalizedBodyStyle	Generation	BodyCode	Doors	DIMENSION_GROUP_ID	MatchConfidence	Notes	IterationStatus。另需维护完整 DIMENSION_GROUP TSV，表头固定为：DIMENSION_GROUP_ID	LengthMM	WidthMM	HeightMM	DimensionSource	SourceURL。缺少任一张表、任一映射引用的尺寸组，或尺寸组字段不完整时不得 COMPLETE。不要输出子车系匹配表。
+【COMPLETE 下载文件硬性要求】
+准备 COMPLETE 时，除两张完整内嵌 TSV 外，还必须创建并提供以下两个可点击 sandbox 下载链接，文件名必须完全一致：
+- all_8901-9000_ktype_dimension_mapping_final.tsv
+- all_8901-9000_dimension_groups_final.tsv
+缺少任一下载链接时不得输出推进信号：COMPLETE。
+
+
+--- Round 14 / checkpoint 续跑 ---
+## 更新点
+
+* 闭合最后两个 Tundra XK50 Ktype：分别按 2WD/4WD、Regular Cab/Double Cab/CrewMax 和 5.5/6.5/8.1 ft 货斗拆分为 10 个稳定物理分支。
+* 完成轻量机械收尾：映射表 10 列、尺寸组表 6 列；204 个映射 `id` 唯一；100 个输入 Ktype 全覆盖；129 个尺寸组唯一且全部被引用；所有映射均为 `READY`；`PENDING=0`。
+* 两张最终 TSV 已按任务指定文件名生成。
+
+## 当前批次进度
+
+* 输入 Ktype：100
+* READY 映射：204
+* PENDING 映射：0
+* DIMENSION_GROUP：129
+* 映射引用闭合：通过
+* 尺寸及来源非空：通过
+
+## 最终完整 Ktype 映射 TSV
+
+```tsv
+id	Ktype	NormalizedBodyStyle	Generation	BodyCode	Doors	DIMENSION_GROUP_ID	MatchConfidence	Notes	IterationStatus
+10081_l1h1	10081	Van	Master II	X70		EU-RENAULT-MASTER-II-X70-VAN-L1H1-01	MEDIUM	L1H1短轴标准顶厢式车分支。	READY
+10081_l1h2	10081	Van	Master II	X70		EU-RENAULT-MASTER-II-X70-VAN-L1H2-01	MEDIUM	L1H2短轴高顶厢式车分支。	READY
+10081_l2h2	10081	Van	Master II	X70		EU-RENAULT-MASTER-II-X70-VAN-L2H2-01	MEDIUM	L2H2中轴高顶厢式车分支。	READY
+10081_l3h2	10081	Van	Master II	X70		EU-RENAULT-MASTER-II-X70-VAN-L3H2-01	MEDIUM	L3H2长轴高顶厢式车分支。	READY
+10081_l3h3	10081	Van	Master II	X70		EU-RENAULT-MASTER-II-X70-VAN-L3H3-01	MEDIUM	L3H3长轴加高顶厢式车分支。	READY
+10082_l1h1	10082	Van	Master II	X70		EU-RENAULT-MASTER-II-X70-VAN-L1H1-01	MEDIUM	L1H1短轴标准顶厢式车分支。	READY
+10082_l1h2	10082	Van	Master II	X70		EU-RENAULT-MASTER-II-X70-VAN-L1H2-01	MEDIUM	L1H2短轴高顶厢式车分支。	READY
+10082_l2h2	10082	Van	Master II	X70		EU-RENAULT-MASTER-II-X70-VAN-L2H2-01	MEDIUM	L2H2中轴高顶厢式车分支。	READY
+10082_l3h2	10082	Van	Master II	X70		EU-RENAULT-MASTER-II-X70-VAN-L3H2-01	MEDIUM	L3H2长轴高顶厢式车分支。	READY
+10082_l3h3	10082	Van	Master II	X70		EU-RENAULT-MASTER-II-X70-VAN-L3H3-01	MEDIUM	L3H3长轴加高顶厢式车分支。	READY
+10083_mwb_singlecab	10083	Pickup	Master II	X70	2	EU-RENAULT-MASTER-II-X70-CHASSIS-SINGLECAB-MWB-01	MEDIUM	中轴单排底盘驾驶室分支。	READY
+10083_lwb_singlecab	10083	Pickup	Master II	X70	2	EU-RENAULT-MASTER-II-X70-CHASSIS-SINGLECAB-LWB-01	MEDIUM	长轴单排底盘驾驶室分支。	READY
+10083_lwb_crewcab	10083	Pickup	Master II	X70	4	EU-RENAULT-MASTER-II-X70-CHASSIS-CREWCAB-LWB-01	MEDIUM	长轴双排底盘驾驶室分支。	READY
+10084_mwb_singlecab	10084	Pickup	Master II	X70	2	EU-RENAULT-MASTER-II-X70-CHASSIS-SINGLECAB-MWB-01	MEDIUM	中轴单排底盘驾驶室分支。	READY
+10084_lwb_singlecab	10084	Pickup	Master II	X70	2	EU-RENAULT-MASTER-II-X70-CHASSIS-SINGLECAB-LWB-01	MEDIUM	长轴单排底盘驾驶室分支。	READY
+10084_lwb_crewcab	10084	Pickup	Master II	X70	4	EU-RENAULT-MASTER-II-X70-CHASSIS-CREWCAB-LWB-01	MEDIUM	长轴双排底盘驾驶室分支。	READY
+10098	10098	Hatchback	Fiesta VI	JA8	3	EU-FORD-FIESTA-VI-JA8-HATCHBACK-3D-SPORT-01	HIGH	134 PS三门运动外观物理分支。	READY
+10099_l1h1	10099	Van	Movano A	X70		EU-RENAULT-MASTER-II-X70-VAN-L1H1-01	MEDIUM	L1H1短轴标准顶厢式车分支。	READY
+10099_l1h2	10099	Van	Movano A	X70		EU-RENAULT-MASTER-II-X70-VAN-L1H2-01	MEDIUM	L1H2短轴高顶厢式车分支。	READY
+10099_l2h2	10099	Van	Movano A	X70		EU-RENAULT-MASTER-II-X70-VAN-L2H2-01	MEDIUM	L2H2中轴高顶厢式车分支。	READY
+10099_l3h2	10099	Van	Movano A	X70		EU-RENAULT-MASTER-II-X70-VAN-L3H2-01	MEDIUM	L3H2长轴高顶厢式车分支。	READY
+10099_l3h3	10099	Van	Movano A	X70		EU-RENAULT-MASTER-II-X70-VAN-L3H3-01	MEDIUM	L3H3长轴加高顶厢式车分支。	READY
+10100_mwb_singlecab	10100	Pickup	Movano A	X70	2	EU-RENAULT-MASTER-II-X70-CHASSIS-SINGLECAB-MWB-01	MEDIUM	中轴单排底盘驾驶室分支。	READY
+10100_lwb_singlecab	10100	Pickup	Movano A	X70	2	EU-RENAULT-MASTER-II-X70-CHASSIS-SINGLECAB-LWB-01	MEDIUM	长轴单排底盘驾驶室分支。	READY
+10100_lwb_crewcab	10100	Pickup	Movano A	X70	4	EU-RENAULT-MASTER-II-X70-CHASSIS-CREWCAB-LWB-01	MEDIUM	长轴双排底盘驾驶室分支。	READY
+10101_l1h1	10101	Van	Movano A	X70		EU-RENAULT-MASTER-II-X70-VAN-L1H1-01	MEDIUM	L1H1短轴标准顶厢式车分支。	READY
+10101_l1h2	10101	Van	Movano A	X70		EU-RENAULT-MASTER-II-X70-VAN-L1H2-01	MEDIUM	L1H2短轴高顶厢式车分支。	READY
+10101_l2h2	10101	Van	Movano A	X70		EU-RENAULT-MASTER-II-X70-VAN-L2H2-01	MEDIUM	L2H2中轴高顶厢式车分支。	READY
+10101_l3h2	10101	Van	Movano A	X70		EU-RENAULT-MASTER-II-X70-VAN-L3H2-01	MEDIUM	L3H2长轴高顶厢式车分支。	READY
+10101_l3h3	10101	Van	Movano A	X70		EU-RENAULT-MASTER-II-X70-VAN-L3H3-01	MEDIUM	L3H3长轴加高顶厢式车分支。	READY
+10102_mwb_singlecab	10102	Pickup	Movano A	X70	2	EU-RENAULT-MASTER-II-X70-CHASSIS-SINGLECAB-MWB-01	MEDIUM	中轴单排底盘驾驶室分支。	READY
+10102_lwb_singlecab	10102	Pickup	Movano A	X70	2	EU-RENAULT-MASTER-II-X70-CHASSIS-SINGLECAB-LWB-01	MEDIUM	长轴单排底盘驾驶室分支。	READY
+10102_lwb_crewcab	10102	Pickup	Movano A	X70	4	EU-RENAULT-MASTER-II-X70-CHASSIS-CREWCAB-LWB-01	MEDIUM	长轴双排底盘驾驶室分支。	READY
+10103	10103	MPV	Space Wagon II		5	EU-MITSUBISHI-SPACE-WAGON-II-MPV-01	HIGH	五门MPV物理外廓。	READY
+10104	10104	Coupe	911 996	996	2	EU-PORSCHE-911-996-CARRERA-COUPE-01	HIGH	996 Carrera 4双门Coupe外廓。	READY
+10105_3dr	10105	Hatchback	Fiesta VI	JA8	3	EU-FORD-FIESTA-VI-JA8-HATCHBACK-3D-PREFL-01	MEDIUM	改款前三门标准掀背分支。	READY
+10105_5dr	10105	Hatchback	Fiesta VI	JA8	5	EU-FORD-FIESTA-VI-JA8-HATCHBACK-5D-PREFL-01	MEDIUM	改款前五门标准掀背分支。	READY
+10110_prefl	10110	Wagon	C-Class W204	S204	5	EU-MERCEDES-BENZ-C-KLASSE-S204-WAGON-PREFL-01	HIGH	S204改款前旅行车外廓。	READY
+10110_facelift	10110	Wagon	C-Class W204	S204	5	EU-MERCEDES-BENZ-C-KLASSE-S204-WAGON-FACELIFT-01	HIGH	S204改款后旅行车外廓。	READY
+10111	10111	Wagon	E-Class W212	S212	5	EU-MERCEDES-BENZ-E-KLASSE-S212-WAGON-E350-01	HIGH	S212五门E 350旅行车外廓。	READY
+10113_m156	10113	Wagon	E-Class W212	S212	5	EU-MERCEDES-BENZ-E-KLASSE-S212-WAGON-AMG-M156-01	HIGH	525 PS早期M156旅行车物理分支。	READY
+10113_m157	10113	Wagon	E-Class W212	S212	5	EU-MERCEDES-BENZ-E-KLASSE-S212-WAGON-AMG-M157-01	HIGH	525 PS后期M157旅行车物理分支。	READY
+10114_m156	10114	Sedan	E-Class W212	W212	4	EU-MERCEDES-BENZ-E-KLASSE-W212-SEDAN-AMG-M156-01	HIGH	525 PS早期M156轿车物理分支。	READY
+10114_m157	10114	Sedan	E-Class W212	W212	4	EU-MERCEDES-BENZ-E-KLASSE-W212-SEDAN-AMG-M157-01	HIGH	525 PS后期M157轿车物理分支。	READY
+10119	10119	Hatchback	ZX	N2	5	EU-CITROEN-ZX-N2-HATCHBACK-16V-01	HIGH	N2五门16V掀背外廓。	READY
+10120	10120	Wagon	ZX	N2	5	EU-CITROEN-ZX-N2-BREAK-WAGON-PHASE-II-01	HIGH	N2 Phase II Break五门旅行车外廓。	READY
+10121	10121	Sedan	605 I facelift		4	EU-PEUGEOT-605-I-FACELIFT-SEDAN-STANDARD-01	HIGH	605 I改款标准轿车外廓。	READY
+10124_regular_6p5ft_2wd	10124	Pickup	Tundra II	XK50	2	EU-TOYOTA-TUNDRA-II-XK50-PICKUP-REGULARCAB-6P5FT-2WD-01	HIGH	Regular Cab 6.5 ft货斗后驱物理分支。	READY
+10124_regular_8p1ft_2wd	10124	Pickup	Tundra II	XK50	2	EU-TOYOTA-TUNDRA-II-XK50-PICKUP-REGULARCAB-8P1FT-2WD-01	HIGH	Regular Cab 8.1 ft货斗后驱物理分支。	READY
+10124_double_6p5ft_2wd	10124	Pickup	Tundra II	XK50	4	EU-TOYOTA-TUNDRA-II-XK50-PICKUP-DOUBLECAB-6P5FT-2WD-01	HIGH	Double Cab 6.5 ft货斗后驱物理分支。	READY
+10124_double_8p1ft_2wd	10124	Pickup	Tundra II	XK50	4	EU-TOYOTA-TUNDRA-II-XK50-PICKUP-DOUBLECAB-8P1FT-2WD-01	HIGH	Double Cab 8.1 ft货斗后驱物理分支。	READY
+10124_crewmax_5p5ft_2wd	10124	Pickup	Tundra II	XK50	4	EU-TOYOTA-TUNDRA-II-XK50-PICKUP-CREWMAX-5P5FT-2WD-01	HIGH	CrewMax 5.5 ft货斗后驱物理分支。	READY
+10125_regular_6p5ft_4wd	10125	Pickup	Tundra II	XK50	2	EU-TOYOTA-TUNDRA-II-XK50-PICKUP-REGULARCAB-6P5FT-4WD-01	HIGH	Regular Cab 6.5 ft货斗四驱物理分支。	READY
+10125_regular_8p1ft_4wd	10125	Pickup	Tundra II	XK50	2	EU-TOYOTA-TUNDRA-II-XK50-PICKUP-REGULARCAB-8P1FT-4WD-01	HIGH	Regular Cab 8.1 ft货斗四驱物理分支。	READY
+10125_double_6p5ft_4wd	10125	Pickup	Tundra II	XK50	4	EU-TOYOTA-TUNDRA-II-XK50-PICKUP-DOUBLECAB-6P5FT-4WD-01	HIGH	Double Cab 6.5 ft货斗四驱物理分支。	READY
+10125_double_8p1ft_4wd	10125	Pickup	Tundra II	XK50	4	EU-TOYOTA-TUNDRA-II-XK50-PICKUP-DOUBLECAB-8P1FT-4WD-01	HIGH	Double Cab 8.1 ft货斗四驱物理分支。	READY
+10125_crewmax_5p5ft_4wd	10125	Pickup	Tundra II	XK50	4	EU-TOYOTA-TUNDRA-II-XK50-PICKUP-CREWMAX-5P5FT-4WD-01	HIGH	CrewMax 5.5 ft货斗四驱物理分支。	READY
+10126_469	10126	Convertible	UAZ-469	469	4	EU-UAZ-469-469-CONVERTIBLE-4D-01	MEDIUM	军用门式桥开放式车身分支。	READY
+10126_469b	10126	Convertible	UAZ-469	469B	4	EU-UAZ-469-469B-CONVERTIBLE-4D-01	HIGH	民用普通桥开放式车身分支。	READY
+10128	10128	MPV	UAZ-452		4	EU-UAZ-452-BUS-4D-01	MEDIUM	2.4升四门Bus标准外廓。	READY
+10133	10133	SUV	Patriot I	3163	5	EU-UAZ-PATRIOT-I-3163-SUV-PREFL-01	HIGH	3163五门早期车身外廓。	READY
+10134	10134	SUV	Patriot I	3163	5	EU-UAZ-PATRIOT-I-3163-SUV-PREFL-01	HIGH	3163五门早期车身外廓。	READY
+10135	10135	SUV	Patriot I	3163	5	EU-UAZ-PATRIOT-I-3163-SUV-PREFL-01	MEDIUM	3163五门早期车身外廓。	READY
+10136	10136	Pickup	UAZ Cargo	23602	2	EU-UAZ-CARGO-23602-PICKUP-CANVASTOP-01	HIGH	单排平板带篷物理外廓。	READY
+10137	10137	SUV	Hunter	315195	5	EU-UAZ-HUNTER-315195-SUV-5D-01	HIGH	2.7汽油五门封闭式车身。	READY
+10138	10138	SUV	Hunter	315148	5	EU-UAZ-HUNTER-315195-SUV-5D-01	HIGH	2.2柴油五门封闭式车身。	READY
+10139	10139	SUV	Discovery II	L318	5	EU-LAND-ROVER-DISCOVERY-II-L318-SUV-5D-01	HIGH	L318五门封闭式SUV外廓。	READY
+10141	10141	MPV	Gran Move I		5	EU-DAIHATSU-GRAN-MOVE-I-MPV-01	HIGH	五门MPV物理外廓。	READY
+10142_swb	10142	SUV	G-Class W463	W463	3	EU-MERCEDES-BENZ-G-KLASSE-W463-SUV-3D-01	HIGH	218 kW G 500短轴三门封闭式分支。	READY
+10142_lwb	10142	SUV	G-Class W463	W463	5	EU-MERCEDES-BENZ-G-KLASSE-W463-SUV-5D-03	HIGH	218 kW G 500长轴五门封闭式分支。	READY
+10143	10143	Convertible	G-Class W463	W463	2	EU-MERCEDES-BENZ-G-KLASSE-W463-CABRIO-WIDE-01	HIGH	218 kW G 500双门Cabrio宽体外廓。	READY
+10144	10144	Sedan	E-Class W210	W210	4	EU-MERCEDES-BENZ-E-KLASSE-W210-SEDAN-DIESEL-01	HIGH	W210柴油轿车外廓。	READY
+10145	10145	Wagon	E-Class W210	S210	5	EU-MERCEDES-BENZ-E-KLASSE-S210-WAGON-01	HIGH	S210五门旅行车外廓。	READY
+10146	10146	Sedan	E-Class W210	W210	4	EU-MERCEDES-BENZ-E-KLASSE-W210-SEDAN-DIESEL-01	HIGH	W210柴油轿车外廓。	READY
+10156	10156	SUV	Patriot I facelift	MK74	5	EU-JEEP-PATRIOT-MK74-SUV-FACELIFT-01	HIGH	MK74改款五门SUV物理外廓。	READY
+10159	10159	SUV	Forester I	SF5	5	EU-SUBARU-FORESTER-I-SF-SUV-TURBO-01	HIGH	SF5五门S Turbo物理外廓。	READY
+10160	10160	SUV	Forester I	SF5	5	EU-SUBARU-FORESTER-I-SF-SUV-STANDARD-01	HIGH	SF5五门自然吸气物理外廓。	READY
+10161_prefl	10161	Coupe	Coupe I	RD	3	EU-HYUNDAI-COUPE-I-RD-COUPE-3D-PREFL-01	MEDIUM	RD改款前三门Coupe分支。	READY
+10161_facelift	10161	Coupe	Coupe I facelift	RD2	3	EU-HYUNDAI-COUPE-I-RD2-COUPE-3D-FACELIFT-01	MEDIUM	RD2改款后三门Coupe分支。	READY
+10162	10162	Sedan	323 VI	BJ	4	EU-MAZDA-323-VI-BJ-SEDAN-4D-01	HIGH	BJ四门轿车物理外廓。	READY
+10163_3dr	10163	Hatchback	Astra G		3	EU-OPEL-ASTRA-G-HATCHBACK-3D-01	HIGH	三门掀背物理分支。	READY
+10163_5dr	10163	Hatchback	Astra G		5	EU-OPEL-ASTRA-G-HATCHBACK-5D-01	HIGH	五门掀背物理分支。	READY
+10164	10164	Sedan	Astra G		4	EU-OPEL-ASTRA-G-SEDAN-4D-01	HIGH	四门轿车物理外廓。	READY
+10165	10165	Sedan	Astra G		4	EU-OPEL-ASTRA-G-SEDAN-4D-01	HIGH	四门轿车物理外廓。	READY
+10166	10166	Wagon	Astra G		5	EU-OPEL-ASTRA-G-CARAVAN-5D-01	HIGH	五门Caravan物理外廓。	READY
+10167	10167	Sedan	Astra G		4	EU-OPEL-ASTRA-G-SEDAN-4D-01	HIGH	四门轿车物理外廓。	READY
+10168	10168	SUV	Korando II	KJ	3	EU-SSANGYONG-KORANDO-II-KJ-SUV-H1840-01	HIGH	KJ三门2.9 TD封闭式标准高度外廓。	READY
+10169	10169	Convertible	Korando II	KJ	2	EU-DAEWOO-KORANDO-KJ-CONVERTIBLE-2D-01	HIGH	KJ双门开放式物理外廓。	READY
+10170	10170	MPV	Wagon R+	EM	5	EU-SUZUKI-WAGON-R-EM-MPV-5D-01	HIGH	EM五门高顶小型MPV外廓。	READY
+10171	10171	MPV	Wagon R+	EM	5	EU-SUZUKI-WAGON-R-EM-MPV-5D-01	HIGH	EM五门高顶小型MPV外廓。	READY
+10172_prefl	10172	Sedan	S80 I	P2	4	EU-VOLVO-S80-I-P2-SEDAN-4D-PREFL-01	HIGH	P2改款前四门轿车外廓。	READY
+10172_facelift	10172	Sedan	S80 I	P2	4	EU-VOLVO-S80-I-P2-SEDAN-4D-FACELIFT-01	HIGH	P2改款后四门轿车外廓。	READY
+10173	10173	Wagon	V70 I	P80	5	EU-VOLVO-V70-I-WAGON-5D-01	HIGH	P80五门旅行车外廓。	READY
+10174	10174	Sedan	Bora I	1J2	4	EU-VW-BORA-I-1J2-SEDAN-4D-01	HIGH	1J2四门轿车物理外廓。	READY
+10175	10175	Sedan	Bora I	1J2	4	EU-VW-BORA-I-1J2-SEDAN-4D-01	HIGH	1J2四门轿车物理外廓。	READY
+10176	10176	Sedan	Bora I	1J2	4	EU-VW-BORA-I-1J2-SEDAN-4D-01	HIGH	1J2四门轿车物理外廓。	READY
+10178	10178	Wagon	Passat B5	3B5	5	EU-VW-PASSAT-B5-3B5-WAGON-PREFL-01	HIGH	3B5改款前五门旅行车外廓。	READY
+10179	10179	Sedan	Passat B5	3B2	4	EU-VW-PASSAT-B5-3B2-SEDAN-PREFL-01	HIGH	3B2改款前四门轿车外廓。	READY
+10194	10194	Coupe	Artega GT		2	EU-ARTEGA-GT-COUPE-2D-01	MEDIUM	双门Coupe量产外廓。	READY
+10196_prefl	10196	MPV	C-Max II		5	EU-FORD-C-MAX-II-MPV-PREFL-01	HIGH	第二代C-Max改款前外廓。	READY
+10196_facelift	10196	MPV	C-Max II		5	EU-FORD-C-MAX-II-MPV-FACELIFT-02	HIGH	第二代C-Max改款后外廓。	READY
+10198	10198	Van	Fiesta VI	JR8	3	EU-FORD-FIESTA-VI-JR8-VAN-3D-PREFL-STANDARD-01	HIGH	1.4 TDCi改款前三门标准Van外廓。	READY
+10199_prefl	10199	Hatchback	Xsara I	N1	5	EU-CITROEN-XSARA-I-N1-HATCHBACK-5D-01	HIGH	N1改款前五门掀背外廓。	READY
+10199_facelift	10199	Hatchback	Xsara I	N1	5	EU-CITROEN-XSARA-I-N1-HATCHBACK-5D-FACELIFT-01	HIGH	N1 Phase II五门掀背外廓。	READY
+10200_prefl	10200	Wagon	Xsara I	N2	5	EU-CITROEN-XSARA-I-N2-WAGON-5D-PREFL-01	HIGH	N2改款前五门旅行车外廓。	READY
+10200_facelift	10200	Wagon	Xsara I	N2	5	EU-CITROEN-XSARA-I-N2-WAGON-5D-FACELIFT-01	HIGH	N2 Phase II五门旅行车外廓。	READY
+10201_l1h1	10201	MPV	Ducato X250			EU-FIAT-DUCATO-X250-BUS-L1H1-01	MEDIUM	3000 mm轴距标准顶客运车分支。	READY
+10201_l2h2	10201	MPV	Ducato X250			EU-FIAT-DUCATO-X250-BUS-L2H2-01	MEDIUM	3450 mm轴距高顶客运车分支。	READY
+10202_prefl_std	10202	Van	Fiesta VI	JR8	3	EU-FORD-FIESTA-VI-JR8-VAN-3D-PREFL-STANDARD-01	MEDIUM	改款前Van及Trend Van标准悬架分支。	READY
+10202_prefl_econetic	10202	Van	Fiesta VI	JR8	3	EU-FORD-FIESTA-VI-JR8-VAN-3D-PREFL-ECONETIC-01	MEDIUM	改款前ECOnetic降低悬架分支。	READY
+10202_prefl_sport	10202	Van	Fiesta VI	JR8	3	EU-FORD-FIESTA-VI-JR8-VAN-3D-PREFL-SPORT-01	MEDIUM	改款前Sport Van外观及降低悬架分支。	READY
+10202_facelift_econetic	10202	Van	Fiesta VI	JR8	3	EU-FORD-FIESTA-VI-JR8-VAN-3D-FACELIFT-ECONETIC-01	MEDIUM	改款后ECOnetic降低悬架分支。	READY
+10202_facelift_sport	10202	Van	Fiesta VI	JR8	3	EU-FORD-FIESTA-VI-JR8-VAN-3D-FACELIFT-SPORT-01	MEDIUM	改款后Sport Van外观及降低悬架分支。	READY
+10203_l1h1	10203	Van	Ducato X250			EU-FIAT-DUCATO-X250-VAN-L1H1-01	MEDIUM	L1H1短轴标准顶厢式车分支。	READY
+10203_l1h2	10203	Van	Ducato X250			EU-FIAT-DUCATO-X250-VAN-L1H2-01	MEDIUM	L1H2短轴高顶厢式车分支。	READY
+10203_l2h1	10203	Van	Ducato X250			EU-FIAT-DUCATO-X250-VAN-L2H1-01	MEDIUM	L2H1中轴标准顶厢式车分支。	READY
+10203_l2h2	10203	Van	Ducato X250			EU-FIAT-DUCATO-X250-VAN-L2H2-01	MEDIUM	L2H2中轴高顶厢式车分支。	READY
+10203_l3h2	10203	Van	Ducato X250			EU-FIAT-DUCATO-X250-VAN-L3H2-01	MEDIUM	L3H2长轴高顶厢式车分支。	READY
+10203_l3h3	10203	Van	Ducato X250			EU-FIAT-DUCATO-X250-VAN-L3H3-01	MEDIUM	L3H3长轴加高顶厢式车分支。	READY
+10203_l4h2	10203	Van	Ducato X250			EU-FIAT-DUCATO-X250-VAN-L4H2-01	MEDIUM	L4H2加长轴高顶厢式车分支。	READY
+10203_l4h3	10203	Van	Ducato X250			EU-FIAT-DUCATO-X250-VAN-L4H3-01	MEDIUM	L4H3加长轴加高顶厢式车分支。	READY
+10204_l1_singlecab	10204	Pickup	Ducato X250		2	EU-FIAT-DUCATO-X250-CHASSIS-SINGLECAB-L1-01	MEDIUM	L1单排底盘驾驶室分支。	READY
+10204_l2_singlecab	10204	Pickup	Ducato X250		2	EU-FIAT-DUCATO-X250-CHASSIS-SINGLECAB-L2-01	MEDIUM	L2单排底盘驾驶室分支。	READY
+10204_l3_singlecab	10204	Pickup	Ducato X250		2	EU-FIAT-DUCATO-X250-CHASSIS-SINGLECAB-L3-01	MEDIUM	L3单排底盘驾驶室分支。	READY
+10204_l4_singlecab	10204	Pickup	Ducato X250		2	EU-FIAT-DUCATO-X250-CHASSIS-SINGLECAB-L4-01	MEDIUM	L4单排底盘驾驶室分支。	READY
+10204_l5_singlecab	10204	Pickup	Ducato X250		2	EU-FIAT-DUCATO-X250-CHASSIS-SINGLECAB-L5-01	MEDIUM	L5单排底盘驾驶室分支。	READY
+10204_l3_doublecab	10204	Pickup	Ducato X250		4	EU-FIAT-DUCATO-X250-CHASSIS-DOUBLECAB-L3-01	MEDIUM	L3双排底盘驾驶室分支。	READY
+10204_l4_doublecab	10204	Pickup	Ducato X250		4	EU-FIAT-DUCATO-X250-CHASSIS-DOUBLECAB-L4-01	MEDIUM	L4双排底盘驾驶室分支。	READY
+10204_l5_doublecab	10204	Pickup	Ducato X250		4	EU-FIAT-DUCATO-X250-CHASSIS-DOUBLECAB-L5-01	MEDIUM	L5双排底盘驾驶室分支。	READY
+10205_l1h1	10205	MPV	Ducato X250			EU-FIAT-DUCATO-X250-BUS-L1H1-01	MEDIUM	3000 mm轴距标准顶客运车分支。	READY
+10205_l2h2	10205	MPV	Ducato X250			EU-FIAT-DUCATO-X250-BUS-L2H2-01	MEDIUM	3450 mm轴距高顶客运车分支。	READY
+10206_l1h1	10206	MPV	Ducato X250			EU-FIAT-DUCATO-X250-BUS-L1H1-01	MEDIUM	3000 mm轴距标准顶客运车分支。	READY
+10206_l2h2	10206	MPV	Ducato X250			EU-FIAT-DUCATO-X250-BUS-L2H2-01	MEDIUM	3450 mm轴距高顶客运车分支。	READY
+10207_l1h1	10207	Van	Ducato X250			EU-FIAT-DUCATO-X250-VAN-L1H1-01	MEDIUM	L1H1短轴标准顶厢式车分支。	READY
+10207_l1h2	10207	Van	Ducato X250			EU-FIAT-DUCATO-X250-VAN-L1H2-01	MEDIUM	L1H2短轴高顶厢式车分支。	READY
+10207_l2h1	10207	Van	Ducato X250			EU-FIAT-DUCATO-X250-VAN-L2H1-01	MEDIUM	L2H1中轴标准顶厢式车分支。	READY
+10207_l2h2	10207	Van	Ducato X250			EU-FIAT-DUCATO-X250-VAN-L2H2-01	MEDIUM	L2H2中轴高顶厢式车分支。	READY
+10207_l3h2	10207	Van	Ducato X250			EU-FIAT-DUCATO-X250-VAN-L3H2-01	MEDIUM	L3H2长轴高顶厢式车分支。	READY
+10207_l3h3	10207	Van	Ducato X250			EU-FIAT-DUCATO-X250-VAN-L3H3-01	MEDIUM	L3H3长轴加高顶厢式车分支。	READY
+10207_l4h2	10207	Van	Ducato X250			EU-FIAT-DUCATO-X250-VAN-L4H2-01	MEDIUM	L4H2加长轴高顶厢式车分支。	READY
+10207_l4h3	10207	Van	Ducato X250			EU-FIAT-DUCATO-X250-VAN-L4H3-01	MEDIUM	L4H3加长轴加高顶厢式车分支。	READY
+10208_l1_singlecab	10208	Pickup	Ducato X250		2	EU-FIAT-DUCATO-X250-CHASSIS-SINGLECAB-L1-01	MEDIUM	L1单排底盘驾驶室分支。	READY
+10208_l2_singlecab	10208	Pickup	Ducato X250		2	EU-FIAT-DUCATO-X250-CHASSIS-SINGLECAB-L2-01	MEDIUM	L2单排底盘驾驶室分支。	READY
+10208_l3_singlecab	10208	Pickup	Ducato X250		2	EU-FIAT-DUCATO-X250-CHASSIS-SINGLECAB-L3-01	MEDIUM	L3单排底盘驾驶室分支。	READY
+10208_l4_singlecab	10208	Pickup	Ducato X250		2	EU-FIAT-DUCATO-X250-CHASSIS-SINGLECAB-L4-01	MEDIUM	L4单排底盘驾驶室分支。	READY
+10208_l5_singlecab	10208	Pickup	Ducato X250		2	EU-FIAT-DUCATO-X250-CHASSIS-SINGLECAB-L5-01	MEDIUM	L5单排底盘驾驶室分支。	READY
+10208_l3_doublecab	10208	Pickup	Ducato X250		4	EU-FIAT-DUCATO-X250-CHASSIS-DOUBLECAB-L3-01	MEDIUM	L3双排底盘驾驶室分支。	READY
+10208_l4_doublecab	10208	Pickup	Ducato X250		4	EU-FIAT-DUCATO-X250-CHASSIS-DOUBLECAB-L4-01	MEDIUM	L4双排底盘驾驶室分支。	READY
+10208_l5_doublecab	10208	Pickup	Ducato X250		4	EU-FIAT-DUCATO-X250-CHASSIS-DOUBLECAB-L5-01	MEDIUM	L5双排底盘驾驶室分支。	READY
+10209_l1h1	10209	MPV	Ducato X250			EU-FIAT-DUCATO-X250-BUS-L1H1-01	MEDIUM	3000 mm轴距标准顶客运车分支。	READY
+10209_l2h2	10209	MPV	Ducato X250			EU-FIAT-DUCATO-X250-BUS-L2H2-01	MEDIUM	3450 mm轴距高顶客运车分支。	READY
+10210_l1h1	10210	Van	Ducato X250			EU-FIAT-DUCATO-X250-VAN-L1H1-01	MEDIUM	L1H1短轴标准顶厢式车分支。	READY
+10210_l1h2	10210	Van	Ducato X250			EU-FIAT-DUCATO-X250-VAN-L1H2-01	MEDIUM	L1H2短轴高顶厢式车分支。	READY
+10210_l2h1	10210	Van	Ducato X250			EU-FIAT-DUCATO-X250-VAN-L2H1-01	MEDIUM	L2H1中轴标准顶厢式车分支。	READY
+10210_l2h2	10210	Van	Ducato X250			EU-FIAT-DUCATO-X250-VAN-L2H2-01	MEDIUM	L2H2中轴高顶厢式车分支。	READY
+10210_l3h2	10210	Van	Ducato X250			EU-FIAT-DUCATO-X250-VAN-L3H2-01	MEDIUM	L3H2长轴高顶厢式车分支。	READY
+10210_l3h3	10210	Van	Ducato X250			EU-FIAT-DUCATO-X250-VAN-L3H3-01	MEDIUM	L3H3长轴加高顶厢式车分支。	READY
+10210_l4h2	10210	Van	Ducato X250			EU-FIAT-DUCATO-X250-VAN-L4H2-01	MEDIUM	L4H2加长轴高顶厢式车分支。	READY
+10210_l4h3	10210	Van	Ducato X250			EU-FIAT-DUCATO-X250-VAN-L4H3-01	MEDIUM	L4H3加长轴加高顶厢式车分支。	READY
+10211_l1_singlecab	10211	Pickup	Ducato X250		2	EU-FIAT-DUCATO-X250-CHASSIS-SINGLECAB-L1-01	MEDIUM	L1单排底盘驾驶室分支。	READY
+10211_l2_singlecab	10211	Pickup	Ducato X250		2	EU-FIAT-DUCATO-X250-CHASSIS-SINGLECAB-L2-01	MEDIUM	L2单排底盘驾驶室分支。	READY
+10211_l3_singlecab	10211	Pickup	Ducato X250		2	EU-FIAT-DUCATO-X250-CHASSIS-SINGLECAB-L3-01	MEDIUM	L3单排底盘驾驶室分支。	READY
+10211_l4_singlecab	10211	Pickup	Ducato X250		2	EU-FIAT-DUCATO-X250-CHASSIS-SINGLECAB-L4-01	MEDIUM	L4单排底盘驾驶室分支。	READY
+10211_l5_singlecab	10211	Pickup	Ducato X250		2	EU-FIAT-DUCATO-X250-CHASSIS-SINGLECAB-L5-01	MEDIUM	L5单排底盘驾驶室分支。	READY
+10211_l3_doublecab	10211	Pickup	Ducato X250		4	EU-FIAT-DUCATO-X250-CHASSIS-DOUBLECAB-L3-01	MEDIUM	L3双排底盘驾驶室分支。	READY
+10211_l4_doublecab	10211	Pickup	Ducato X250		4	EU-FIAT-DUCATO-X250-CHASSIS-DOUBLECAB-L4-01	MEDIUM	L4双排底盘驾驶室分支。	READY
+10211_l5_doublecab	10211	Pickup	Ducato X250		4	EU-FIAT-DUCATO-X250-CHASSIS-DOUBLECAB-L5-01	MEDIUM	L5双排底盘驾驶室分支。	READY
+10212	10212	Hatchback	Ypsilon III	846	5	EU-LANCIA-YPSILON-III-846-HATCHBACK-5D-01	HIGH	846五门掀背物理外廓。	READY
+10223_3dr	10223	Hatchback	Escort III		3	EU-FORD-ESCORT-III-HATCHBACK-3D-01	HIGH	三门掀背物理分支。	READY
+10223_5dr	10223	Hatchback	Escort III		5	EU-FORD-ESCORT-III-HATCHBACK-5D-01	HIGH	五门掀背物理分支。	READY
+10224	10224	Sedan	A6 C5	4B2	4	EU-AUDI-A6-C5-4B2-SEDAN-01	HIGH	4B2四门轿车外廓。	READY
+10225	10225	Coupe	Viper SR II	SR II	2	EU-CHRYSLER-VIPER-SR-II-COUPE-GTS-01	HIGH	SR II GTS Coupe物理外廓。	READY
+10226	10226	Convertible	Viper SR II	SR II	2	EU-CHRYSLER-VIPER-SR-II-CONVERTIBLE-RT10-01	HIGH	SR II RT/10开放式物理外廓。	READY
+10227_m49	10227	MPV	Berlingo I	M49	5	EU-CITROEN-BERLINGO-I-M49-MPV-VAN-01	HIGH	M49改款前五门MPV外廓。	READY
+10227_m59	10227	MPV	Berlingo I	M59	5	EU-CITROEN-BERLINGO-I-M59-MPV-VAN-01	HIGH	M59改款后五门MPV外廓。	READY
+10228_prefl	10228	Convertible	Z3	E36/7	2	EU-BMW-Z3-E36-7-ROADSTER-2D-PREFL-01	MEDIUM	87 kW 1.9i跨改款，改款前窄体分支。	READY
+10228_facelift	10228	Convertible	Z3	E36/7	2	EU-BMW-Z3-E36-7-ROADSTER-2D-FACELIFT-01	MEDIUM	87 kW 1.9i跨改款，改款后宽体分支。	READY
+10229	10229	Sedan	C-Class W202	W202	4	EU-MERCEDES-BENZ-C-KLASSE-W202-SEDAN-FACELIFT-01	HIGH	W202改款后四门轿车外廓。	READY
+10235	10235	Coupe	Fiat Coupe	175	2	EU-FIAT-COUPE-175-COUPE-01	HIGH	175双门Coupe物理外廓。	READY
+10236	10236	Hatchback	Mondeo II	BAP	5	EU-FORD-MONDEO-II-BAP-HATCHBACK-5D-01	HIGH	BAP五门掀背物理外廓。	READY
+10237	10237	Sedan	Mondeo II	BFP	4	EU-FORD-MONDEO-II-BFP-SEDAN-4D-01	HIGH	BFP四门轿车物理外廓。	READY
+10238	10238	Wagon	Mondeo II	BNP	5	EU-FORD-MONDEO-II-BNP-WAGON-5D-01	HIGH	BNP五门旅行车物理外廓。	READY
+10239	10239	Coupe	Accord VI	CG4	2	EU-HONDA-ACCORD-VI-CG4-COUPE-2D-01	HIGH	CG4双门2.0 Coupe物理外廓。	READY
+10240	10240	Coupe	Accord VI	CG2	2	EU-HONDA-ACCORD-VI-CG2-COUPE-2D-01	HIGH	CG2双门3.0 V6 Coupe物理外廓。	READY
+10245	10245	Convertible	Eos I facelift	1F	2	EU-VW-EOS-I-1F-CONVERTIBLE-FACELIFT-01	HIGH	1F改款双门硬顶敞篷外廓。	READY
+10247_prefl	10247	MPV	Grand C-Max II		5	EU-FORD-GRAND-C-MAX-II-MPV-PREFL-01	HIGH	第二代Grand C-Max改款前外廓。	READY
+10247_facelift	10247	MPV	Grand C-Max II		5	EU-FORD-GRAND-C-MAX-II-MPV-FACELIFT-02	HIGH	第二代Grand C-Max改款后外廓。	READY
+10248_prefl	10248	Wagon	V60 I		5	EU-VOLVO-V60-I-WAGON-PREFL-01	HIGH	第一代V60改款前外廓。	READY
+10248_facelift	10248	Wagon	V60 I		5	EU-VOLVO-V60-I-WAGON-FACELIFT-01	HIGH	第一代V60改款后外廓。	READY
+10249_fl2011	10249	Sedan	S80 II		4	EU-VOLVO-S80-II-FACELIFT-2011-SEDAN-4D-01	HIGH	2011年改款四门轿车外廓。	READY
+10249_fl2013	10249	Sedan	S80 II		4	EU-VOLVO-S80-II-FACELIFT-2013-SEDAN-4D-01	HIGH	2013年改款四门轿车外廓。	READY
+10250_prefl	10250	Wagon	V70 III		5	EU-VOLVO-V70-III-WAGON-PREFL-01	HIGH	第三代V70改款前外廓。	READY
+10250_facelift	10250	Wagon	V70 III		5	EU-VOLVO-V70-III-WAGON-FACELIFT-01	HIGH	第三代V70改款后外廓。	READY
+10254_3dr	10254	Hatchback	Polo V	6R1	3	EU-VW-POLO-V-6R1-HATCHBACK-3D-01	MEDIUM	6R1三门BiFuel物理分支。	READY
+10254_5dr	10254	Hatchback	Polo V	6R1	5	EU-VW-POLO-V-6R1-HATCHBACK-5D-01	MEDIUM	6R1五门BiFuel物理分支。	READY
+10259	10259	Wagon	Clarus I facelift	GC	5	EU-KIA-CLARUS-I-GC-WAGON-5D-01	HIGH	GC五门旅行车物理外廓。	READY
+10260	10260	Wagon	Clarus I facelift	GC	5	EU-KIA-CLARUS-I-GC-WAGON-5D-01	HIGH	GC五门旅行车物理外廓。	READY
+10261	10261	Hatchback	626 V	GF	5	EU-MAZDA-626-V-GF-HATCHBACK-5D-01	HIGH	GF五门掀背物理外廓。	READY
+10262_prefl	10262	Sedan	626 V	GF	4	EU-MAZDA-626-V-GF-SEDAN-PREFL-01	HIGH	GF改款前四门轿车外廓。	READY
+10262_facelift	10262	Sedan	626 V	GF	4	EU-MAZDA-626-V-GF-SEDAN-FACELIFT-01	HIGH	GF改款后四门轿车外廓。	READY
+10263	10263	Wagon	626 V	GW	5	EU-MAZDA-626-V-GW-WAGON-5D-01	HIGH	GW五门旅行车物理外廓。	READY
+10264_prefl	10264	Sedan	626 V	GF	4	EU-MAZDA-626-V-GF-SEDAN-PREFL-01	HIGH	GF改款前四门轿车外廓。	READY
+10264_facelift	10264	Sedan	626 V	GF	4	EU-MAZDA-626-V-GF-SEDAN-FACELIFT-01	HIGH	GF改款后四门轿车外廓。	READY
+10265	10265	Hatchback	Laguna I facelift	B56	5	EU-RENAULT-LAGUNA-I-B56-HATCHBACK-02	HIGH	B56改款后五门掀背外廓。	READY
+```
+
+[下载 Ktype 映射表](sandbox:/mnt/data/all_8901-9000_ktype_dimension_mapping_final.tsv)
+
+## 最终完整 DIMENSION_GROUP TSV
+
+```tsv
+DIMENSION_GROUP_ID	LengthMM	WidthMM	HeightMM	DimensionSource	SourceURL
+EU-RENAULT-MASTER-II-X70-VAN-L1H1-01	4899	1990	2253	Vauxhall Movano December 2008 official brochure	https://www.vauxhall.co.uk/content/dam/vauxhall/Home/PDFs/historical-brochures/discounted-models/movano/Movano_Dec_2008.pdf
+EU-RENAULT-MASTER-II-X70-VAN-L1H2-01	4899	1990	2496	Vauxhall Movano December 2008 official brochure	https://www.vauxhall.co.uk/content/dam/vauxhall/Home/PDFs/historical-brochures/discounted-models/movano/Movano_Dec_2008.pdf
+EU-RENAULT-MASTER-II-X70-VAN-L2H2-01	5399	1990	2486	Vauxhall Movano December 2008 official brochure	https://www.vauxhall.co.uk/content/dam/vauxhall/Home/PDFs/historical-brochures/discounted-models/movano/Movano_Dec_2008.pdf
+EU-RENAULT-MASTER-II-X70-VAN-L3H2-01	5899	1990	2484	Vauxhall Movano December 2008 official brochure	https://www.vauxhall.co.uk/content/dam/vauxhall/Home/PDFs/historical-brochures/discounted-models/movano/Movano_Dec_2008.pdf
+EU-RENAULT-MASTER-II-X70-VAN-L3H3-01	5899	1990	2716	Vauxhall Movano December 2008 official brochure	https://www.vauxhall.co.uk/content/dam/vauxhall/Home/PDFs/historical-brochures/discounted-models/movano/Movano_Dec_2008.pdf
+EU-RENAULT-MASTER-II-X70-CHASSIS-SINGLECAB-MWB-01	5369	1990	2198	Vauxhall Movano December 2008 official brochure	https://www.vauxhall.co.uk/content/dam/vauxhall/Home/PDFs/historical-brochures/discounted-models/movano/Movano_Dec_2008.pdf
+EU-RENAULT-MASTER-II-X70-CHASSIS-SINGLECAB-LWB-01	5869	1990	2194	Vauxhall Movano December 2008 official brochure	https://www.vauxhall.co.uk/content/dam/vauxhall/Home/PDFs/historical-brochures/discounted-models/movano/Movano_Dec_2008.pdf
+EU-RENAULT-MASTER-II-X70-CHASSIS-CREWCAB-LWB-01	5869	1990	2202	Vauxhall Movano December 2008 official brochure	https://www.vauxhall.co.uk/content/dam/vauxhall/Home/PDFs/historical-brochures/discounted-models/movano/Movano_Dec_2008.pdf
+EU-FORD-FIESTA-VI-JA8-HATCHBACK-3D-SPORT-01	3953	1722	1481	Ford Fiesta MY2011 UK official brochure archived copy; Automobile-Catalog 2011 Ford Fiesta S 1.6 Ti-VCT	https://xr793.com/wp-content/uploads/2022/09/2011-Ford-Fiesta-UK.pdf; https://www.automobile-catalog.com/car/2011/1592465/ford_fiesta_s_1_6_ti-vct.html
+EU-MITSUBISHI-SPACE-WAGON-II-MPV-01	4515	1695	1630	Existing cumulative DIMENSION_GROUP cache (source retained upstream)	urn:eu-auto-data:dimension-group:EU-MITSUBISHI-SPACE-WAGON-II-MPV-01
+EU-PORSCHE-911-996-CARRERA-COUPE-01	4430	1765	1305	Existing cumulative DIMENSION_GROUP cache (source retained upstream)	urn:eu-auto-data:dimension-group:EU-PORSCHE-911-996-CARRERA-COUPE-01
+EU-FORD-FIESTA-VI-JA8-HATCHBACK-3D-PREFL-01	3950	1722	1481	Ford Fiesta MY2011 UK official brochure archived copy	https://xr793.com/wp-content/uploads/2022/09/2011-Ford-Fiesta-UK.pdf
+EU-FORD-FIESTA-VI-JA8-HATCHBACK-5D-PREFL-01	3950	1722	1481	Ford Fiesta MY2011 UK official brochure archived copy	https://xr793.com/wp-content/uploads/2022/09/2011-Ford-Fiesta-UK.pdf
+EU-MERCEDES-BENZ-C-KLASSE-S204-WAGON-PREFL-01	4596	1770	1459	Existing cumulative DIMENSION_GROUP cache (source retained upstream)	urn:eu-auto-data:dimension-group:EU-MERCEDES-BENZ-C-KLASSE-S204-WAGON-PREFL-01
+EU-MERCEDES-BENZ-C-KLASSE-S204-WAGON-FACELIFT-01	4606	1770	1459	Existing cumulative DIMENSION_GROUP cache (source retained upstream)	urn:eu-auto-data:dimension-group:EU-MERCEDES-BENZ-C-KLASSE-S204-WAGON-FACELIFT-01
+EU-MERCEDES-BENZ-E-KLASSE-S212-WAGON-E350-01	4895	1854	1512	Auto-Data Mercedes-Benz E-class T-modell S212 E 350 V6 4MATIC	https://www.auto-data.net/en/mercedes-benz-e-class-t-modell-s212-e-350-v6-272hp-4matic-7g-tronic-17381
+EU-MERCEDES-BENZ-E-KLASSE-S212-WAGON-AMG-M156-01	4895	1854	1512	Auto-Data Mercedes-Benz E-class T-modell S212 AMG E 63 V8	https://www.auto-data.net/en/mercedes-benz-e-class-t-modell-s212-amg-e-63-v8-525hp-amg-speedshift-mct-44941
+EU-MERCEDES-BENZ-E-KLASSE-S212-WAGON-AMG-M157-01	4895	1854	1515	Auto-Data Mercedes-Benz E-class T-modell S212 AMG E 63 V8 BITURBO	https://www.auto-data.net/en/mercedes-benz-e-class-t-modell-s212-amg-e-63-v8-biturbo-525hp-amg-speedshift-mct-44944
+EU-MERCEDES-BENZ-E-KLASSE-W212-SEDAN-AMG-M156-01	4868	1854	1464	Auto-Data Mercedes-Benz E-class W212 AMG E 63 V8	https://www.auto-data.net/en/mercedes-benz-e-class-w212-amg-e-63-v8-525hp-amg-speedshift-mct-12862
+EU-MERCEDES-BENZ-E-KLASSE-W212-SEDAN-AMG-M157-01	4868	1854	1471	Auto-Data Mercedes-Benz E-class W212 AMG E 63 V8 BITURBO	https://www.auto-data.net/en/mercedes-benz-e-class-w212-amg-e-63-v8-biturbo-525hp-amg-speedshift-mct-44939
+EU-CITROEN-ZX-N2-HATCHBACK-16V-01	4085	1718	1375	Existing cumulative DIMENSION_GROUP cache (source retained upstream)	urn:eu-auto-data:dimension-group:EU-CITROEN-ZX-N2-HATCHBACK-16V-01
+EU-CITROEN-ZX-N2-BREAK-WAGON-PHASE-II-01	4260	1705	1457	Existing cumulative DIMENSION_GROUP cache (source retained upstream)	urn:eu-auto-data:dimension-group:EU-CITROEN-ZX-N2-BREAK-WAGON-PHASE-II-01
+EU-PEUGEOT-605-I-FACELIFT-SEDAN-STANDARD-01	4765	1799	1417	Existing cumulative DIMENSION_GROUP cache (source retained upstream)	urn:eu-auto-data:dimension-group:EU-PEUGEOT-605-I-FACELIFT-SEDAN-STANDARD-01
+EU-TOYOTA-TUNDRA-II-XK50-PICKUP-REGULARCAB-6P5FT-2WD-01	5329	2030	1925	Toyota Canada 2007 Tundra official specifications; Toyota Motor Sales USA 2007 Tundra Regular Cab 4x2 eBrochure; Toyota Motor Sales USA 2007 Tundra Regular Cab 4x4 eBrochure	https://media.toyota.ca/content/dam/media-toyota/general/specifications/07tundra_sp_e.pdf; https://www.auto-brochures.com/makes/Toyota/Tundra/Toyota_US%20Tundra_RC_4x2_2007.pdf; https://www.ms-auto.co.jp/wp-content/catalog/tundra/Tundra_RegularCab_4x4_2007.pdf
+EU-TOYOTA-TUNDRA-II-XK50-PICKUP-REGULARCAB-8P1FT-2WD-01	5810	2030	1925	Toyota Canada 2007 Tundra official specifications; Toyota Motor Sales USA 2007 Tundra Regular Cab 4x2 eBrochure; Toyota Motor Sales USA 2007 Tundra Regular Cab 4x4 eBrochure	https://media.toyota.ca/content/dam/media-toyota/general/specifications/07tundra_sp_e.pdf; https://www.auto-brochures.com/makes/Toyota/Tundra/Toyota_US%20Tundra_RC_4x2_2007.pdf; https://www.ms-auto.co.jp/wp-content/catalog/tundra/Tundra_RegularCab_4x4_2007.pdf
+EU-TOYOTA-TUNDRA-II-XK50-PICKUP-DOUBLECAB-6P5FT-2WD-01	5810	2030	1930	Toyota Canada 2007 Tundra official specifications; Toyota Motor Sales USA 2007 Tundra Regular Cab 4x2 eBrochure; Toyota Motor Sales USA 2007 Tundra Regular Cab 4x4 eBrochure	https://media.toyota.ca/content/dam/media-toyota/general/specifications/07tundra_sp_e.pdf; https://www.auto-brochures.com/makes/Toyota/Tundra/Toyota_US%20Tundra_RC_4x2_2007.pdf; https://www.ms-auto.co.jp/wp-content/catalog/tundra/Tundra_RegularCab_4x4_2007.pdf
+EU-TOYOTA-TUNDRA-II-XK50-PICKUP-DOUBLECAB-8P1FT-2WD-01	6290	2030	1925	Toyota Canada 2007 Tundra official specifications; Toyota Motor Sales USA 2007 Tundra Regular Cab 4x2 eBrochure; Toyota Motor Sales USA 2007 Tundra Regular Cab 4x4 eBrochure	https://media.toyota.ca/content/dam/media-toyota/general/specifications/07tundra_sp_e.pdf; https://www.auto-brochures.com/makes/Toyota/Tundra/Toyota_US%20Tundra_RC_4x2_2007.pdf; https://www.ms-auto.co.jp/wp-content/catalog/tundra/Tundra_RegularCab_4x4_2007.pdf
+EU-TOYOTA-TUNDRA-II-XK50-PICKUP-CREWMAX-5P5FT-2WD-01	5810	2030	1925	Toyota Canada 2007 Tundra official specifications; Toyota Motor Sales USA 2007 Tundra Regular Cab 4x2 eBrochure; Toyota Motor Sales USA 2007 Tundra Regular Cab 4x4 eBrochure	https://media.toyota.ca/content/dam/media-toyota/general/specifications/07tundra_sp_e.pdf; https://www.auto-brochures.com/makes/Toyota/Tundra/Toyota_US%20Tundra_RC_4x2_2007.pdf; https://www.ms-auto.co.jp/wp-content/catalog/tundra/Tundra_RegularCab_4x4_2007.pdf
+EU-TOYOTA-TUNDRA-II-XK50-PICKUP-REGULARCAB-6P5FT-4WD-01	5329	2030	1935	Toyota Canada 2007 Tundra official specifications; Toyota Motor Sales USA 2007 Tundra Regular Cab 4x2 eBrochure; Toyota Motor Sales USA 2007 Tundra Regular Cab 4x4 eBrochure	https://media.toyota.ca/content/dam/media-toyota/general/specifications/07tundra_sp_e.pdf; https://www.auto-brochures.com/makes/Toyota/Tundra/Toyota_US%20Tundra_RC_4x2_2007.pdf; https://www.ms-auto.co.jp/wp-content/catalog/tundra/Tundra_RegularCab_4x4_2007.pdf
+EU-TOYOTA-TUNDRA-II-XK50-PICKUP-REGULARCAB-8P1FT-4WD-01	5810	2030	1935	Toyota Canada 2007 Tundra official specifications; Toyota Motor Sales USA 2007 Tundra Regular Cab 4x2 eBrochure; Toyota Motor Sales USA 2007 Tundra Regular Cab 4x4 eBrochure	https://media.toyota.ca/content/dam/media-toyota/general/specifications/07tundra_sp_e.pdf; https://www.auto-brochures.com/makes/Toyota/Tundra/Toyota_US%20Tundra_RC_4x2_2007.pdf; https://www.ms-auto.co.jp/wp-content/catalog/tundra/Tundra_RegularCab_4x4_2007.pdf
+EU-TOYOTA-TUNDRA-II-XK50-PICKUP-DOUBLECAB-6P5FT-4WD-01	5810	2030	1940	Toyota Canada 2007 Tundra official specifications; Toyota Motor Sales USA 2007 Tundra Regular Cab 4x2 eBrochure; Toyota Motor Sales USA 2007 Tundra Regular Cab 4x4 eBrochure	https://media.toyota.ca/content/dam/media-toyota/general/specifications/07tundra_sp_e.pdf; https://www.auto-brochures.com/makes/Toyota/Tundra/Toyota_US%20Tundra_RC_4x2_2007.pdf; https://www.ms-auto.co.jp/wp-content/catalog/tundra/Tundra_RegularCab_4x4_2007.pdf
+EU-TOYOTA-TUNDRA-II-XK50-PICKUP-DOUBLECAB-8P1FT-4WD-01	6290	2030	1935	Toyota Canada 2007 Tundra official specifications; Toyota Motor Sales USA 2007 Tundra Regular Cab 4x2 eBrochure; Toyota Motor Sales USA 2007 Tundra Regular Cab 4x4 eBrochure	https://media.toyota.ca/content/dam/media-toyota/general/specifications/07tundra_sp_e.pdf; https://www.auto-brochures.com/makes/Toyota/Tundra/Toyota_US%20Tundra_RC_4x2_2007.pdf; https://www.ms-auto.co.jp/wp-content/catalog/tundra/Tundra_RegularCab_4x4_2007.pdf
+EU-TOYOTA-TUNDRA-II-XK50-PICKUP-CREWMAX-5P5FT-4WD-01	5810	2030	1940	Toyota Canada 2007 Tundra official specifications; Toyota Motor Sales USA 2007 Tundra Regular Cab 4x2 eBrochure; Toyota Motor Sales USA 2007 Tundra Regular Cab 4x4 eBrochure	https://media.toyota.ca/content/dam/media-toyota/general/specifications/07tundra_sp_e.pdf; https://www.auto-brochures.com/makes/Toyota/Tundra/Toyota_US%20Tundra_RC_4x2_2007.pdf; https://www.ms-auto.co.jp/wp-content/catalog/tundra/Tundra_RegularCab_4x4_2007.pdf
+EU-UAZ-469-469-CONVERTIBLE-4D-01	4025	1785	2050	Ministry of Defence of the Czech Republic UAZ-469 equipment specification	https://www.mo.gov.cz/assets/files/9369/KATALOG_2007_part_3.pdf
+EU-UAZ-469-469B-CONVERTIBLE-4D-01	4025	1785	2015	UAZ 469B operating instructions	https://www.manualslib.com/manual/1003636/Uaz-469b.html
+EU-UAZ-452-BUS-4D-01	4360	1940	2090	Bind UAZ 452V 2.4 MT minibus specifications; Auta5P UAZ 452A 1980 catalogue	https://bind.lt/en/technical-specifications/uaz/452/1-generation/452v-minibus-4-doors/2-4-mt-72-hp; https://auta5p.eu/katalog/uaz/uaz_452_01.php
+EU-UAZ-PATRIOT-I-3163-SUV-PREFL-01	4647	1953	1900	UAZ 2005 official model range catalogue archived copy; Otauto UAZ Patriot Euro 3 technical specifications	https://uazbuka.ru/models/img/uaz-buklet/model_range_UAZ_2005.pdf; https://otauto.narod.ru/uaz/patriot/th1.html
+EU-UAZ-CARGO-23602-PICKUP-CANVASTOP-01	5335	1990	2260	UAZ Patriot Pickup Cargo official operation manual 2016	https://www.uaz.ru/uploads/docs/en/om_patriot_7_%282016%29_en.pdf
+EU-UAZ-HUNTER-315195-SUV-5D-01	4100	1730	2025	UAZ Hunter official brochure; UAZ Service Hunter specification	https://www.uaz.ru/uploads/docs/global/uaz-hunter-en.pdf; https://uazservice.de/shop/a-12.html
+EU-LAND-ROVER-DISCOVERY-II-L318-SUV-5D-01	4705	1885	1940	Automobile-Catalog 1999 Land-Rover Discovery TD5 S	https://www.automobile-catalog.com/car/1999/1400495/land-rover_discovery_td5_s.html
+EU-DAIHATSU-GRAN-MOVE-I-MPV-01	4059	1641	1600	Existing cumulative DIMENSION_GROUP cache (source retained upstream)	urn:eu-auto-data:dimension-group:EU-DAIHATSU-GRAN-MOVE-I-MPV-01
+EU-MERCEDES-BENZ-G-KLASSE-W463-SUV-3D-01	4230	1760	1931	Existing cumulative DIMENSION_GROUP cache (source retained upstream)	urn:eu-auto-data:dimension-group:EU-MERCEDES-BENZ-G-KLASSE-W463-SUV-3D-01
+EU-MERCEDES-BENZ-G-KLASSE-W463-SUV-5D-03	4680	1760	1936	Existing cumulative DIMENSION_GROUP cache (source retained upstream)	urn:eu-auto-data:dimension-group:EU-MERCEDES-BENZ-G-KLASSE-W463-SUV-5D-03
+EU-MERCEDES-BENZ-G-KLASSE-W463-CABRIO-WIDE-01	4275	1760	1941	Existing cumulative DIMENSION_GROUP cache (source retained upstream)	urn:eu-auto-data:dimension-group:EU-MERCEDES-BENZ-G-KLASSE-W463-CABRIO-WIDE-01
+EU-MERCEDES-BENZ-E-KLASSE-W210-SEDAN-DIESEL-01	4795	1799	1438	Existing cumulative DIMENSION_GROUP cache (source retained upstream)	urn:eu-auto-data:dimension-group:EU-MERCEDES-BENZ-E-KLASSE-W210-SEDAN-DIESEL-01
+EU-MERCEDES-BENZ-E-KLASSE-S210-WAGON-01	4816	1799	1505	Existing cumulative DIMENSION_GROUP cache (source retained upstream)	urn:eu-auto-data:dimension-group:EU-MERCEDES-BENZ-E-KLASSE-S210-WAGON-01
+EU-JEEP-PATRIOT-MK74-SUV-FACELIFT-01	4424	1808	1712	Jeep Patriot Model Year 2011 official Swiss price list	https://www.media.stellantis.com/uploads/ch/CH/2011/JEEP/PRICE_LIST/Jeep_patriot/patriot_d_low.pdf
+EU-SUBARU-FORESTER-I-SF-SUV-TURBO-01	4450	1735	1580	SUBARU official WEB catalog Forester S/tb; Automobile-Catalog 1998 Subaru Forester 2.0 S Turbo AWD	https://ucar.subaru.jp/php/catalog/grade.php?cat_id=4501795; https://www.automobile-catalog.com/car/1998/3244520/subaru_forester_2_0_s_turbo_awd.html
+EU-SUBARU-FORESTER-I-SF-SUV-STANDARD-01	4450	1735	1595	SUBARU official WEB catalog Forester S/20; Automobile-Catalog 1998 Subaru Forester 2.0 AWD	https://ucar.subaru.jp/php/catalog/grade.php?cat_id=10024220; https://www.automobile-catalog.com/car/1998/3244490/subaru_forester_2_0_awd.html
+EU-HYUNDAI-COUPE-I-RD-COUPE-3D-PREFL-01	4340	1730	1303	Automobile-Catalog 1998 Hyundai Coupe 1.6	https://www.automobile-catalog.com/car/1998/1165745/hyundai_coupe_1_6.html
+EU-HYUNDAI-COUPE-I-RD2-COUPE-3D-FACELIFT-01	4345	1730	1310	Auto-Data Hyundai Coupe I RD2 facelift generation; Auto-Data Hyundai Coupe I RD2 1.6 16V	https://www.auto-data.net/en/hyundai-coupe-i-rd2-facelift-1999-generation-2992; https://www.auto-data.net/en/hyundai-coupe-i-rd2-facelift-1999-1.6-16v-114hp-13843
+EU-MAZDA-323-VI-BJ-SEDAN-4D-01	4315	1705	1410	Automobile-Catalog 1998 Mazda 323 S 1.9	https://www.automobile-catalog.com/car/1998/2001425/mazda_323_s_1_9.html
+EU-OPEL-ASTRA-G-HATCHBACK-3D-01	4110	1709	1425	Existing cumulative DIMENSION_GROUP cache (source retained upstream)	urn:eu-auto-data:dimension-group:EU-OPEL-ASTRA-G-HATCHBACK-3D-01
+EU-OPEL-ASTRA-G-HATCHBACK-5D-01	4110	1709	1425	Existing cumulative DIMENSION_GROUP cache (source retained upstream)	urn:eu-auto-data:dimension-group:EU-OPEL-ASTRA-G-HATCHBACK-5D-01
+EU-OPEL-ASTRA-G-SEDAN-4D-01	4252	1709	1425	Existing cumulative DIMENSION_GROUP cache (source retained upstream)	urn:eu-auto-data:dimension-group:EU-OPEL-ASTRA-G-SEDAN-4D-01
+EU-OPEL-ASTRA-G-CARAVAN-5D-01	4288	1709	1510	Existing cumulative DIMENSION_GROUP cache (source retained upstream)	urn:eu-auto-data:dimension-group:EU-OPEL-ASTRA-G-CARAVAN-5D-01
+EU-SSANGYONG-KORANDO-II-KJ-SUV-H1840-01	4330	1841	1840	Existing cumulative DIMENSION_GROUP cache (source retained upstream)	urn:eu-auto-data:dimension-group:EU-SSANGYONG-KORANDO-II-KJ-SUV-H1840-01
+EU-DAEWOO-KORANDO-KJ-CONVERTIBLE-2D-01	4260	1855	1840	Existing cumulative DIMENSION_GROUP cache (source retained upstream)	urn:eu-auto-data:dimension-group:EU-DAEWOO-KORANDO-KJ-CONVERTIBLE-2D-01
+EU-SUZUKI-WAGON-R-EM-MPV-5D-01	3410	1575	1700	Existing cumulative DIMENSION_GROUP cache (source retained upstream)	urn:eu-auto-data:dimension-group:EU-SUZUKI-WAGON-R-EM-MPV-5D-01
+EU-VOLVO-S80-I-P2-SEDAN-4D-PREFL-01	4822	1832	1434	Existing cumulative DIMENSION_GROUP cache (source retained upstream)	urn:eu-auto-data:dimension-group:EU-VOLVO-S80-I-P2-SEDAN-4D-PREFL-01
+EU-VOLVO-S80-I-P2-SEDAN-4D-FACELIFT-01	4850	1833	1454	Existing cumulative DIMENSION_GROUP cache (source retained upstream)	urn:eu-auto-data:dimension-group:EU-VOLVO-S80-I-P2-SEDAN-4D-FACELIFT-01
+EU-VOLVO-V70-I-WAGON-5D-01	4730	1760	1430	Existing cumulative DIMENSION_GROUP cache (source retained upstream)	urn:eu-auto-data:dimension-group:EU-VOLVO-V70-I-WAGON-5D-01
+EU-VW-BORA-I-1J2-SEDAN-4D-01	4376	1735	1446	Automoli Volkswagen Bora (1J2) vehicle specifications	https://www.automoli.com/en/vehicles/volkswagen/bora/bora-1j2-1870/
+EU-VW-PASSAT-B5-3B5-WAGON-PREFL-01	4669	1740	1496	Existing cumulative DIMENSION_GROUP cache (source retained upstream)	urn:eu-auto-data:dimension-group:EU-VW-PASSAT-B5-3B5-WAGON-PREFL-01
+EU-VW-PASSAT-B5-3B2-SEDAN-PREFL-01	4675	1740	1459	Existing cumulative DIMENSION_GROUP cache (source retained upstream)	urn:eu-auto-data:dimension-group:EU-VW-PASSAT-B5-3B2-SEDAN-PREFL-01
+EU-ARTEGA-GT-COUPE-2D-01	4015	1882	1180	Auto-Data Artega GT	https://www.auto-data.net/en/artega-gt-model-2261
+EU-FORD-C-MAX-II-MPV-PREFL-01	4380	1828	1626	Existing cumulative DIMENSION_GROUP cache (source retained upstream)	urn:eu-auto-data:dimension-group:EU-FORD-C-MAX-II-MPV-PREFL-01
+EU-FORD-C-MAX-II-MPV-FACELIFT-02	4379	1828	1610	Existing cumulative DIMENSION_GROUP cache (source retained upstream)	urn:eu-auto-data:dimension-group:EU-FORD-C-MAX-II-MPV-FACELIFT-02
+EU-FORD-FIESTA-VI-JR8-VAN-3D-PREFL-STANDARD-01	3950	1722	1481	Ford Fiesta Van MY2012 UK official brochure archived copy	https://xr793.com/wp-content/uploads/2022/09/2012-Ford-Fiesta-Van-UK.pdf
+EU-CITROEN-XSARA-I-N1-HATCHBACK-5D-01	4167	1698	1405	Existing cumulative DIMENSION_GROUP cache (source retained upstream)	urn:eu-auto-data:dimension-group:EU-CITROEN-XSARA-I-N1-HATCHBACK-5D-01
+EU-CITROEN-XSARA-I-N1-HATCHBACK-5D-FACELIFT-01	4188	1705	1405	Automobile-Catalog 2001 Citroen Xsara 1.9 D X	https://www.automobile-catalog.com/car/2001/547250/citroen_xsara_1_9_d_x.html
+EU-CITROEN-XSARA-I-N2-WAGON-5D-PREFL-01	4354	1698	1420	Existing cumulative DIMENSION_GROUP cache (source retained upstream)	urn:eu-auto-data:dimension-group:EU-CITROEN-XSARA-I-N2-WAGON-5D-PREFL-01
+EU-CITROEN-XSARA-I-N2-WAGON-5D-FACELIFT-01	4369	1705	1420	Automobile-Catalog 2001 Citroen Xsara Break 1.9 D X	https://www.automobile-catalog.com/car/2001/547670/citroen_xsara_break_1_9_d_x.html
+EU-FIAT-DUCATO-X250-BUS-L1H1-01	4963	2050	2254	Fiat Professional New Ducato Passenger Transport official brochure; Fiat Professional E-Ducato Technical Characteristics	https://fiat.autospirit.ee/images/ducato/ducato_soiduauto.pdf; https://rea.as/wp-content/uploads/E-Ducato-Brochure-Technical-Characteristics-june20.pdf
+EU-FIAT-DUCATO-X250-BUS-L2H2-01	5413	2050	2524	Fiat Professional New Ducato Passenger Transport official brochure; Fiat Professional E-Ducato Technical Characteristics	https://fiat.autospirit.ee/images/ducato/ducato_soiduauto.pdf; https://rea.as/wp-content/uploads/E-Ducato-Brochure-Technical-Characteristics-june20.pdf
+EU-FORD-FIESTA-VI-JR8-VAN-3D-PREFL-ECONETIC-01	3950	1722	1433	Ford Fiesta Van MY2012 UK official brochure archived copy	https://xr793.com/wp-content/uploads/2022/09/2012-Ford-Fiesta-Van-UK.pdf
+EU-FORD-FIESTA-VI-JR8-VAN-3D-PREFL-SPORT-01	3953	1722	1433	Ford Fiesta Van MY2012 UK official brochure archived copy	https://xr793.com/wp-content/uploads/2022/09/2012-Ford-Fiesta-Van-UK.pdf
+EU-FORD-FIESTA-VI-JR8-VAN-3D-FACELIFT-ECONETIC-01	3969	1709	1433	Ford Fiesta Van facelift official brochure	https://globalvans.co.uk/avm/images/vans/FOFV/Fiesta_Van.pdf
+EU-FORD-FIESTA-VI-JR8-VAN-3D-FACELIFT-SPORT-01	3982	1709	1433	Ford Fiesta Van facelift official brochure	https://globalvans.co.uk/avm/images/vans/FOFV/Fiesta_Van.pdf
+EU-FIAT-DUCATO-X250-VAN-L1H1-01	4963	2050	2254	Existing cumulative DIMENSION_GROUP cache (source retained upstream)	urn:eu-auto-data:dimension-group:EU-FIAT-DUCATO-X250-VAN-L1H1-01
+EU-FIAT-DUCATO-X250-VAN-L1H2-01	4963	2050	2524	Existing cumulative DIMENSION_GROUP cache (source retained upstream)	urn:eu-auto-data:dimension-group:EU-FIAT-DUCATO-X250-VAN-L1H2-01
+EU-FIAT-DUCATO-X250-VAN-L2H1-01	5413	2050	2254	Existing cumulative DIMENSION_GROUP cache (source retained upstream)	urn:eu-auto-data:dimension-group:EU-FIAT-DUCATO-X250-VAN-L2H1-01
+EU-FIAT-DUCATO-X250-VAN-L2H2-01	5413	2050	2524	Existing cumulative DIMENSION_GROUP cache (source retained upstream)	urn:eu-auto-data:dimension-group:EU-FIAT-DUCATO-X250-VAN-L2H2-01
+EU-FIAT-DUCATO-X250-VAN-L3H2-01	5998	2050	2524	Existing cumulative DIMENSION_GROUP cache (source retained upstream)	urn:eu-auto-data:dimension-group:EU-FIAT-DUCATO-X250-VAN-L3H2-01
+EU-FIAT-DUCATO-X250-VAN-L3H3-01	5998	2050	2764	Existing cumulative DIMENSION_GROUP cache (source retained upstream)	urn:eu-auto-data:dimension-group:EU-FIAT-DUCATO-X250-VAN-L3H3-01
+EU-FIAT-DUCATO-X250-VAN-L4H2-01	6363	2050	2524	Existing cumulative DIMENSION_GROUP cache (source retained upstream)	urn:eu-auto-data:dimension-group:EU-FIAT-DUCATO-X250-VAN-L4H2-01
+EU-FIAT-DUCATO-X250-VAN-L4H3-01	6363	2050	2764	Existing cumulative DIMENSION_GROUP cache (source retained upstream)	urn:eu-auto-data:dimension-group:EU-FIAT-DUCATO-X250-VAN-L4H3-01
+EU-FIAT-DUCATO-X250-CHASSIS-SINGLECAB-L1-01	4908	2050	2254	Existing cumulative DIMENSION_GROUP cache (source retained upstream)	urn:eu-auto-data:dimension-group:EU-FIAT-DUCATO-X250-CHASSIS-SINGLECAB-L1-01
+EU-FIAT-DUCATO-X250-CHASSIS-SINGLECAB-L2-01	5358	2050	2254	Existing cumulative DIMENSION_GROUP cache (source retained upstream)	urn:eu-auto-data:dimension-group:EU-FIAT-DUCATO-X250-CHASSIS-SINGLECAB-L2-01
+EU-FIAT-DUCATO-X250-CHASSIS-SINGLECAB-L3-01	5708	2050	2254	Existing cumulative DIMENSION_GROUP cache (source retained upstream)	urn:eu-auto-data:dimension-group:EU-FIAT-DUCATO-X250-CHASSIS-SINGLECAB-L3-01
+EU-FIAT-DUCATO-X250-CHASSIS-SINGLECAB-L4-01	5943	2050	2254	Existing cumulative DIMENSION_GROUP cache (source retained upstream)	urn:eu-auto-data:dimension-group:EU-FIAT-DUCATO-X250-CHASSIS-SINGLECAB-L4-01
+EU-FIAT-DUCATO-X250-CHASSIS-SINGLECAB-L5-01	6308	2050	2254	Existing cumulative DIMENSION_GROUP cache (source retained upstream)	urn:eu-auto-data:dimension-group:EU-FIAT-DUCATO-X250-CHASSIS-SINGLECAB-L5-01
+EU-FIAT-DUCATO-X250-CHASSIS-DOUBLECAB-L3-01	5708	2050	2254	Existing cumulative DIMENSION_GROUP cache (source retained upstream)	urn:eu-auto-data:dimension-group:EU-FIAT-DUCATO-X250-CHASSIS-DOUBLECAB-L3-01
+EU-FIAT-DUCATO-X250-CHASSIS-DOUBLECAB-L4-01	5943	2050	2254	Existing cumulative DIMENSION_GROUP cache (source retained upstream)	urn:eu-auto-data:dimension-group:EU-FIAT-DUCATO-X250-CHASSIS-DOUBLECAB-L4-01
+EU-FIAT-DUCATO-X250-CHASSIS-DOUBLECAB-L5-01	6308	2050	2254	Existing cumulative DIMENSION_GROUP cache (source retained upstream)	urn:eu-auto-data:dimension-group:EU-FIAT-DUCATO-X250-CHASSIS-DOUBLECAB-L5-01
+EU-LANCIA-YPSILON-III-846-HATCHBACK-5D-01	3842	1676	1518	Lancia New Ypsilon 2011 official brochure	https://asset.moto.it/pricelist/auto/0cb6cbe3daa950d7b6382e8a478e1acf/ypsilon_brochure_2011.pdf
+EU-FORD-ESCORT-III-HATCHBACK-3D-01	3966	1640	1337	Existing cumulative DIMENSION_GROUP cache (source retained upstream)	urn:eu-auto-data:dimension-group:EU-FORD-ESCORT-III-HATCHBACK-3D-01
+EU-FORD-ESCORT-III-HATCHBACK-5D-01	3966	1640	1337	Existing cumulative DIMENSION_GROUP cache (source retained upstream)	urn:eu-auto-data:dimension-group:EU-FORD-ESCORT-III-HATCHBACK-5D-01
+EU-AUDI-A6-C5-4B2-SEDAN-01	4796	1810	1453	Existing cumulative DIMENSION_GROUP cache (source retained upstream)	urn:eu-auto-data:dimension-group:EU-AUDI-A6-C5-4B2-SEDAN-01
+EU-CHRYSLER-VIPER-SR-II-COUPE-GTS-01	4488	1923	1194	Edmunds 1998 Dodge Viper GTS specifications	https://www.edmunds.com/dodge/viper/1998/st-13055/features-specs/
+EU-CHRYSLER-VIPER-SR-II-CONVERTIBLE-RT10-01	4448	1923	1118	Edmunds 1998 Dodge Viper RT/10 specifications	https://www.edmunds.com/dodge/viper/1998/st-13057/features-specs/
+EU-CITROEN-BERLINGO-I-M49-MPV-VAN-01	4108	1698	1802	Existing cumulative DIMENSION_GROUP cache (source retained upstream)	urn:eu-auto-data:dimension-group:EU-CITROEN-BERLINGO-I-M49-MPV-VAN-01
+EU-CITROEN-BERLINGO-I-M59-MPV-VAN-01	4137	1724	1810	Existing cumulative DIMENSION_GROUP cache (source retained upstream)	urn:eu-auto-data:dimension-group:EU-CITROEN-BERLINGO-I-M59-MPV-VAN-01
+EU-BMW-Z3-E36-7-ROADSTER-2D-PREFL-01	4025	1692	1288	Automobile-Catalog BMW Z3 1.9; BMW Group Classic BMW Z3 Roadster 1.9i	https://www.automobile-catalog.com/car/1998/271445/bmw_z3_1_9.html; https://www.bmwgroup-classic.com/en/models/bmw-classics/product-description-page.ad-23-13.bmw-z3-roadster-1-9i-e36.html
+EU-BMW-Z3-E36-7-ROADSTER-2D-FACELIFT-01	4050	1740	1288	Automobile-Catalog BMW Z3 1.9i; BMW Group Classic BMW Z3 Roadster 1.9i	https://www.automobile-catalog.com/car/2000/271715/bmw_z3_1_9i.html; https://www.bmwgroup-classic.com/en/models/bmw-classics/product-description-page.ad-23-13.bmw-z3-roadster-1-9i-e36.html
+EU-MERCEDES-BENZ-C-KLASSE-W202-SEDAN-FACELIFT-01	4516	1723	1427	Existing cumulative DIMENSION_GROUP cache (source retained upstream)	urn:eu-auto-data:dimension-group:EU-MERCEDES-BENZ-C-KLASSE-W202-SEDAN-FACELIFT-01
+EU-FIAT-COUPE-175-COUPE-01	4250	1766	1340	Existing cumulative DIMENSION_GROUP cache (source retained upstream)	urn:eu-auto-data:dimension-group:EU-FIAT-COUPE-175-COUPE-01
+EU-FORD-MONDEO-II-BAP-HATCHBACK-5D-01	4556	1751	1424	Auto-Data Ford Mondeo I Hatchback facelift 1.6 16V	https://www.auto-data.net/en/ford-mondeo-i-hatchback-facelift-1996-1.6-16v-95hp-7712
+EU-FORD-MONDEO-II-BFP-SEDAN-4D-01	4556	1751	1424	Auto-Data Ford Mondeo I Sedan facelift 1.6 i 16V	https://www.auto-data.net/en/ford-mondeo-i-sedan-facelift-1996-1.6-i-16v-95hp-7706
+EU-FORD-MONDEO-II-BNP-WAGON-5D-01	4671	1751	1480	Auto-Data Ford Mondeo I Wagon facelift 1.6i 16V	https://www.auto-data.net/en/ford-mondeo-i-wagon-facelift-1996-1.6i-16v-95hp-7717
+EU-HONDA-ACCORD-VI-CG4-COUPE-2D-01	4765	1785	1395	Auto-Data Honda Accord VI Coupe 2.0i 16V	https://www.auto-data.net/en/honda-accord-vi-coupe-2.0i-16v-147hp-12071
+EU-HONDA-ACCORD-VI-CG2-COUPE-2D-01	4765	1785	1405	Auto-Data Honda Accord VI Coupe 3.0 V6 24V	https://www.auto-data.net/en/honda-accord-vi-coupe-3.0-v6-24v-200hp-12072
+EU-VW-EOS-I-1F-CONVERTIBLE-FACELIFT-01	4423	1791	1444	Volkswagen Eos December 2011 official brochure	https://www.volkswagen.co.uk/idhub/content/dam/onehub_pkw/importers/gb/downloads/brochures/used-cars/eos/vw_eos_Dec_2011.pdf
+EU-FORD-GRAND-C-MAX-II-MPV-PREFL-01	4520	1828	1684	Existing cumulative DIMENSION_GROUP cache (source retained upstream)	urn:eu-auto-data:dimension-group:EU-FORD-GRAND-C-MAX-II-MPV-PREFL-01
+EU-FORD-GRAND-C-MAX-II-MPV-FACELIFT-02	4519	1828	1642	Existing cumulative DIMENSION_GROUP cache (source retained upstream)	urn:eu-auto-data:dimension-group:EU-FORD-GRAND-C-MAX-II-MPV-FACELIFT-02
+EU-VOLVO-V60-I-WAGON-PREFL-01	4628	1865	1484	Existing cumulative DIMENSION_GROUP cache (source retained upstream)	urn:eu-auto-data:dimension-group:EU-VOLVO-V60-I-WAGON-PREFL-01
+EU-VOLVO-V60-I-WAGON-FACELIFT-01	4635	1865	1484	Existing cumulative DIMENSION_GROUP cache (source retained upstream)	urn:eu-auto-data:dimension-group:EU-VOLVO-V60-I-WAGON-FACELIFT-01
+EU-VOLVO-S80-II-FACELIFT-2011-SEDAN-4D-01	4851	1861	1493	Existing cumulative DIMENSION_GROUP cache (source retained upstream)	urn:eu-auto-data:dimension-group:EU-VOLVO-S80-II-FACELIFT-2011-SEDAN-4D-01
+EU-VOLVO-S80-II-FACELIFT-2013-SEDAN-4D-01	4854	1861	1493	Existing cumulative DIMENSION_GROUP cache (source retained upstream)	urn:eu-auto-data:dimension-group:EU-VOLVO-S80-II-FACELIFT-2013-SEDAN-4D-01
+EU-VOLVO-V70-III-WAGON-PREFL-01	4823	1861	1547	Existing cumulative DIMENSION_GROUP cache (source retained upstream)	urn:eu-auto-data:dimension-group:EU-VOLVO-V70-III-WAGON-PREFL-01
+EU-VOLVO-V70-III-WAGON-FACELIFT-01	4814	1861	1547	Existing cumulative DIMENSION_GROUP cache (source retained upstream)	urn:eu-auto-data:dimension-group:EU-VOLVO-V70-III-WAGON-FACELIFT-01
+EU-VW-POLO-V-6R1-HATCHBACK-3D-01	3970	1682	1484	Volkswagen Newsroom Polo V vehicle data; Auto-Data Polo V three-door 1.6 BiFuel	https://www.volkswagen-newsroom.com/en/vehicle-data-polo-5-profile-20046; https://www.auto-data.net/en/volkswagen-polo-v-3-door-1.6-bifuel-82hp-lpg-52446
+EU-VW-POLO-V-6R1-HATCHBACK-5D-01	3970	1682	1484	Volkswagen Newsroom Polo V vehicle data; Bind Polo V five-door 1.6 BiFuel	https://www.volkswagen-newsroom.com/en/vehicle-data-polo-5-profile-20046; https://bind.lt/en/technical-specifications/volkswagen/polo/5-generation/hatchback-5-doors/1-6-bifuel-mt-82-hp
+EU-KIA-CLARUS-I-GC-WAGON-5D-01	4750	1785	1495	Auto-Data Kia Clarus Combi GC 1.8 i 16V; Auto-Data Kia Clarus Combi GC 2.0 i 16V	https://www.auto-data.net/en/kia-clarus-combi-gc-1.8-i-16v-116hp-2671; https://www.auto-data.net/en/kia-clarus-combi-gc-2.0-i-16v-133hp-2672
+EU-MAZDA-626-V-GF-HATCHBACK-5D-01	4575	1710	1430	Existing cumulative DIMENSION_GROUP cache (source retained upstream)	urn:eu-auto-data:dimension-group:EU-MAZDA-626-V-GF-HATCHBACK-5D-01
+EU-MAZDA-626-V-GF-SEDAN-PREFL-01	4575	1710	1430	Existing cumulative DIMENSION_GROUP cache (source retained upstream)	urn:eu-auto-data:dimension-group:EU-MAZDA-626-V-GF-SEDAN-PREFL-01
+EU-MAZDA-626-V-GF-SEDAN-FACELIFT-01	4590	1710	1430	Existing cumulative DIMENSION_GROUP cache (source retained upstream)	urn:eu-auto-data:dimension-group:EU-MAZDA-626-V-GF-SEDAN-FACELIFT-01
+EU-MAZDA-626-V-GW-WAGON-5D-01	4660	1710	1515	Existing cumulative DIMENSION_GROUP cache (source retained upstream)	urn:eu-auto-data:dimension-group:EU-MAZDA-626-V-GW-WAGON-5D-01
+EU-RENAULT-LAGUNA-I-B56-HATCHBACK-02	4508	1752	1433	Existing cumulative DIMENSION_GROUP cache (source retained upstream)	urn:eu-auto-data:dimension-group:EU-RENAULT-LAGUNA-I-B56-HATCHBACK-02
+```
+
+[下载 DIMENSION_GROUP 表](sandbox:/mnt/data/all_8901-9000_dimension_groups_final.tsv)
+
+推进信号：COMPLETE
+
+
+--- 累计最终 TSV 已更新 ---
+- 累计 Ktype 映射：ktype_mapping_final.tsv（866 行）
+- 累计尺寸组：dimension_groups_final.tsv（392 行）
+

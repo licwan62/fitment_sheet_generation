@@ -4,11 +4,11 @@
     "task_name":  "all 第 6101-6200 行",
     "vehicle":  "all 第 6101-6200 行",
     "source_file":  "all.tsv",
-    "status":  "脚本错误",
+    "status":  "成功",
     "phase":  "finished",
     "round":  1,
     "send_count":  1,
-    "output_file":  "D:\\Home\\Scripts\\fitment_sheet_generation\\projects\\qclaw_fitment_automation\\workspaces\\0728-eu\\output\\all__batch__0062__f4663793_result.md",
+    "output_file":  "D:\\Home\\Scripts\\fitment_sheet_generation\\projects\\qclaw_fitment_automation\\workspaces\\0728-eu\\replies\\all__batch__0062__f4663793_result.md",
     "conversation_url":  "https://chatgpt.com/c/6a6b5f8a-5858-83ee-bf59-a19fbb295ccc",
     "conversation_branch_count":  0,
     "conversation_lineage":  [
@@ -21,6 +21,6 @@
                                      "created_at":  "2026-07-30 22:28:28"
                                  }
                              ],
-    "remarks":  "异常: ChatGPT 页面显示未登录",
-    "updated_at":  "2026-08-01 20:45:23"
+    "remarks":  "恢复时检测到明确批次完成信号、两张完整表及下载链接；已更新累计最终 TSV",
+    "updated_at":  "2026-08-02 15:08:26"
 }

@@ -23,6 +23,8 @@ project_layout:
   # 当前 EU TSV 直接放在项目根目录；结果、日志和 checkpoint 单独存放。
   input: .
   output: output
+  reply: replies
+  tables: tables
   log: log.csv
   summary: summary.txt
 
@@ -36,18 +38,17 @@ runtime:
     mode: new
     archive_code: ""
     archive_path: conversation_archives.json
-  # 输入来源同时声明目录和现有测试文件；运行器会按绝对路径自动去重。
+  # 读取当前项目目录下的 TSV；每个文件会在 processing 中按 100 行分批。
   input_sources:
     directories:
       - path: .
         pattern: "*.tsv"
         recursive: false
-    files:
-      - test.tsv
     order: name_asc
   processing:
-    # file 模式可以在整批内识别多个 Ktype 是否共享同一物理车身尺寸。
-    mode: file
+    # 每 100 条 Ktype 数据行建立一个独立对话；表头不计入 100 行。
+    mode: batch
+    rows_per_task: 100
     row_label_columns:
       - Make
       - Model

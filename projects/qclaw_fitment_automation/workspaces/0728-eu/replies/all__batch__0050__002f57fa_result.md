@@ -1033,3 +1033,307 @@ EU-FIAT-BRAVA-182-HATCHBACK-5D-01	4187	1741	1420	Automobile-Catalog 1997 Fiat Br
 --- 脚本异常 ---
 异常: ChatGPT 页面显示未登录
 
+
+--- 脚本异常 ---
+异常: ChatGPT 页面显示未登录
+
+
+--- 发送 / checkpoint 续跑到 Round 6 ---
+继续当前批次并采用缓存优先模式。尺寸组只在首次创建或纠错时完整核对一次三维和来源；后续 Ktype 只判断关联哪个现有 DIMENSION_GROUP_ID，不重复抓取，不输出缓存来源或匹配理由。仍有 PENDING 时，CONTINUE 轮仅输出：1) 更新点；2) 当前批次进度；3) 本轮新增/修改的 Ktype 映射 TSV（无变化写“无”）；4) 本轮首次创建/修正的 DIMENSION_GROUP TSV（复用既有组不重复输出，无变化写“无”）；5) 下一步优先处理。若当前或上一轮进度已经是 PENDING=0，本轮不要继续检索或再次输出 CONTINUE，必须立刻汇总并输出两张最终完整 TSV、两个任务指定 sandbox 下载链接和“推进信号：COMPLETE”。执行顺序固定为：第一阶段优先消除 PENDING 并补齐会阻塞两张最终表的数据。检测到 PENDING=0 后，第二阶段最多只做一次轻量机械收尾：核对固定表头、id 与 DIMENSION_GROUP_ID 唯一、映射引用闭合、长宽高和来源非空、两个任务指定下载链接齐全。第二阶段不得重新逐车型、逐年份或逐来源做深度检索，不得为了提高置信度反复核对，也不得因非阻塞的排序或措辞问题继续多轮。PENDING=0 后的下一条回复必须直接输出两张最终完整 TSV、两个精确 sandbox 下载链接，并以“推进信号：COMPLETE”结束；不要再输出 CONTINUE。Ktype 映射 TSV 表头必须严格使用 requirement 指定的字段顺序：id	Ktype	NormalizedBodyStyle	Generation	BodyCode	Doors	DIMENSION_GROUP_ID	MatchConfidence	Notes	IterationStatus。另需维护完整 DIMENSION_GROUP TSV，表头固定为：DIMENSION_GROUP_ID	LengthMM	WidthMM	HeightMM	DimensionSource	SourceURL。缺少任一张表、任一映射引用的尺寸组，或尺寸组字段不完整时不得 COMPLETE。不要输出子车系匹配表。
+【COMPLETE 下载文件硬性要求】
+准备 COMPLETE 时，除两张完整内嵌 TSV 外，还必须创建并提供以下两个可点击 sandbox 下载链接，文件名必须完全一致：
+- all_4901-5000_ktype_dimension_mapping_final.tsv
+- all_4901-5000_dimension_groups_final.tsv
+缺少任一下载链接时不得输出推进信号：COMPLETE。
+
+
+--- Round 6 / checkpoint 续跑 ---
+## 数据恢复异常
+
+上一轮状态确认为 **READY 130、PENDING 0、DIMENSION_GROUP 78**，但当前运行环境中上一轮生成的两个最终 TSV 已不存在。现有可恢复附件仅包含 **39 条跨批次尺寸索引**，没有完整的 130 条 Ktype 映射，也缺少完整 78 个尺寸组的 `DimensionSource` 和 `SourceURL`，无法通过机械收尾重建闭合结果。
+
+为避免生成伪造或缺行文件，本轮未创建以下两个误导性的同名文件：
+
+* `all_4901-5000_ktype_dimension_mapping_final.tsv`
+* `all_4901-5000_dimension_groups_final.tsv`
+
+因此不能诚信输出完整内嵌 TSV、sandbox 下载链接或完成信号。
+
+**状态：DATA_RECOVERY_BLOCKED**
+
+
+--- 发送 / 推进信号纠偏 / Round 7 ---
+你的上一轮回复缺少正常推进信号。继续当前批次：尺寸组首次建档后必须复用；仅输出本轮新增/修改的 Ktype 映射行和首次创建/修正的 DIMENSION_GROUP 行，无变化明确写“无”，并给出下一步优先处理。未完成输出“推进信号：CONTINUE”；只有同一回复包含两张最终完整表且全部映射闭合时才可 COMPLETE。执行顺序固定为：第一阶段优先消除 PENDING 并补齐会阻塞两张最终表的数据。检测到 PENDING=0 后，第二阶段最多只做一次轻量机械收尾：核对固定表头、id 与 DIMENSION_GROUP_ID 唯一、映射引用闭合、长宽高和来源非空、两个任务指定下载链接齐全。第二阶段不得重新逐车型、逐年份或逐来源做深度检索，不得为了提高置信度反复核对，也不得因非阻塞的排序或措辞问题继续多轮。PENDING=0 后的下一条回复必须直接输出两张最终完整 TSV、两个精确 sandbox 下载链接，并以“推进信号：COMPLETE”结束；不要再输出 CONTINUE。Ktype 映射 TSV 表头必须严格使用 requirement 指定的字段顺序：id	Ktype	NormalizedBodyStyle	Generation	BodyCode	Doors	DIMENSION_GROUP_ID	MatchConfidence	Notes	IterationStatus。另需维护完整 DIMENSION_GROUP TSV，表头固定为：DIMENSION_GROUP_ID	LengthMM	WidthMM	HeightMM	DimensionSource	SourceURL。缺少任一张表、任一映射引用的尺寸组，或尺寸组字段不完整时不得 COMPLETE。不要输出子车系匹配表。
+【COMPLETE 下载文件硬性要求】
+准备 COMPLETE 时，除两张完整内嵌 TSV 外，还必须创建并提供以下两个可点击 sandbox 下载链接，文件名必须完全一致：
+- all_4901-5000_ktype_dimension_mapping_final.tsv
+- all_4901-5000_dimension_groups_final.tsv
+缺少任一下载链接时不得输出推进信号：COMPLETE。
+
+
+--- Round 7 / checkpoint 续跑 ---
+## 1) 更新点
+
+* 已恢复 `all_4901-5000` 的跨批次尺寸索引，但该文件仅含 `DIMENSION_GROUP_ID + 长宽高`，不含完整 Ktype 映射，也不含 `DimensionSource`、`SourceURL`。
+* 本轮未重新检索车型、年份或来源。
+* 本轮无 Ktype 映射变更，无 DIMENSION_GROUP 创建或修正。
+
+## 2) 当前批次进度
+
+* 历史记录：READY 映射行 130
+* 历史记录：PENDING 映射行 0
+* 历史记录：DIMENSION_GROUP 78
+* 当前机械收尾阻塞：完整 10 列 Ktype 映射表和完整 6 列 DIMENSION_GROUP 表未恢复，暂时无法核验唯一性、引用闭合、来源完整性并生成两个指定下载文件。
+* 当前批次尚未达到可输出 COMPLETE 的条件。
+
+## 3) 本轮新增/修改的 Ktype 映射 TSV
+
+无
+
+## 4) 本轮首次创建/修正的 DIMENSION_GROUP TSV
+
+无
+
+## 5) 下一步优先处理
+
+优先恢复上一轮完整的 130 行 Ktype 映射表和 78 行 DIMENSION_GROUP 表；恢复后仅执行一次机械校验与指定文件导出，不重新进行逐车型深度检索。
+
+推进信号：CONTINUE
+
+
+--- 发送 / 继续到 Round 8 ---
+继续当前批次并采用缓存优先模式。尺寸组只在首次创建或纠错时完整核对一次三维和来源；后续 Ktype 只判断关联哪个现有 DIMENSION_GROUP_ID，不重复抓取，不输出缓存来源或匹配理由。仍有 PENDING 时，CONTINUE 轮仅输出：1) 更新点；2) 当前批次进度；3) 本轮新增/修改的 Ktype 映射 TSV（无变化写“无”）；4) 本轮首次创建/修正的 DIMENSION_GROUP TSV（复用既有组不重复输出，无变化写“无”）；5) 下一步优先处理。若当前或上一轮进度已经是 PENDING=0，本轮不要继续检索或再次输出 CONTINUE，必须立刻汇总并输出两张最终完整 TSV、两个任务指定 sandbox 下载链接和“推进信号：COMPLETE”。执行顺序固定为：第一阶段优先消除 PENDING 并补齐会阻塞两张最终表的数据。检测到 PENDING=0 后，第二阶段最多只做一次轻量机械收尾：核对固定表头、id 与 DIMENSION_GROUP_ID 唯一、映射引用闭合、长宽高和来源非空、两个任务指定下载链接齐全。第二阶段不得重新逐车型、逐年份或逐来源做深度检索，不得为了提高置信度反复核对，也不得因非阻塞的排序或措辞问题继续多轮。PENDING=0 后的下一条回复必须直接输出两张最终完整 TSV、两个精确 sandbox 下载链接，并以“推进信号：COMPLETE”结束；不要再输出 CONTINUE。Ktype 映射 TSV 表头必须严格使用 requirement 指定的字段顺序：id	Ktype	NormalizedBodyStyle	Generation	BodyCode	Doors	DIMENSION_GROUP_ID	MatchConfidence	Notes	IterationStatus。另需维护完整 DIMENSION_GROUP TSV，表头固定为：DIMENSION_GROUP_ID	LengthMM	WidthMM	HeightMM	DimensionSource	SourceURL。缺少任一张表、任一映射引用的尺寸组，或尺寸组字段不完整时不得 COMPLETE。不要输出子车系匹配表。
+【COMPLETE 下载文件硬性要求】
+准备 COMPLETE 时，除两张完整内嵌 TSV 外，还必须创建并提供以下两个可点击 sandbox 下载链接，文件名必须完全一致：
+- all_4901-5000_ktype_dimension_mapping_final.tsv
+- all_4901-5000_dimension_groups_final.tsv
+缺少任一下载链接时不得输出推进信号：COMPLETE。
+
+
+--- 对话分支 / Round 8 ---
+触发原因：ChatGPT 对话长度上限
+父对话：https://chatgpt.com/c/6a6ed541-3214-83ee-a704-8288284583e6
+新分支：https://chatgpt.com/c/6a6ed8db-1d14-83e8-bc67-925f0bedd5b1
+
+--- Round 8 / checkpoint 续跑 ---
+### 1) 更新点
+
+Ktype `131410`（Caterham AeroSeven）仍无法闭合三维。Caterham 发布资料仅确认其为基于 Seven CSR 平台、采用全新碳纤维车身的概念车，未公布长宽高；现存实车的英国汽车博物馆档案同样将 Dimensions 留空。因此不复用 CSR 尺寸，继续保持 PENDING。([autoevolution.com][1])
+
+### 2) 当前批次进度
+
+输入 Ktype：100
+READY Ktype：99
+PENDING Ktype：1
+READY 映射：119
+PENDING 映射：1
+DIMENSION_GROUP：74
+状态：CONTINUE
+
+### 3) 本轮新增/修改的 Ktype 映射 TSV
+
+无
+
+### 4) 本轮首次创建/修正的 DIMENSION_GROUP TSV
+
+无
+
+### 5) 下一步优先处理
+
+继续仅处理 `131410`，优先寻找 AeroSeven 原始工程规格表、展车测量档案或博物馆内部藏品记录中的完整长宽高；未取得三维前不建立尺寸组。
+
+[1]: https://www.autoevolution.com/pdf/news_attachements/caterham-aeroseven-concept-officially-unveiled-videophoto-gallery-67354.pdf "Untitled"
+
+
+--- 发送 / 无数据收尾 / Round 9 ---
+立即停止检索，直接输出当前已积累的两张最终完整 TSV（Ktype 映射 TSV 和 DIMENSION_GROUP TSV），保留仍有 PENDING 的条目原样输出，不要继续检索或补全。必须包含两个 sandbox 下载链接，并以"推进信号：COMPLETE"结束。
+
+
+--- Round 9 / checkpoint 续跑 ---
+无法诚实地标记为 COMPLETE：历史线程中记录的状态是 **120 条映射、74 个尺寸组**，但当前可恢复原文仅有 **4 条映射、39 个尺寸组**。缺失的 116 条映射和 35 个尺寸组没有可用正文；继续补写会构成数据伪造。
+
+已按指定文件名保存当前可恢复快照：
+
+* [下载 Ktype 映射 TSV](sandbox:/mnt/data/all_4901-5000_ktype_dimension_mapping_final.tsv)
+* [下载 DIMENSION_GROUP TSV](sandbox:/mnt/data/all_4901-5000_dimension_groups_final.tsv)
+
+### Ktype 映射 TSV（可恢复部分）
+
+```tsv
+id	Ktype	NormalizedBodyStyle	Generation	BodyCode	Doors	DIMENSION_GROUP_ID	MatchConfidence	Notes	IterationStatus
+139800	139800	Wagon	V90 II		5	EU-VOLVO-V90-II-WAGON-01	HIGH	标准旅行车外廓。	READY
+139801	139801	Wagon	V90 II		5	EU-VOLVO-V90-II-WAGON-01	HIGH	标准旅行车外廓。	READY
+139880	139880	Wagon	V90 II		5	EU-VOLVO-V90-II-WAGON-01	HIGH	标准旅行车外廓。	READY
+131410	131410	Convertible	AeroSeven Concept	AE	2		LOW	独立碳纤维概念车外廓；不能套用普通Seven或CSR尺寸组。	PENDING: 尚未找到可追溯且宽度口径明确的完整长宽高
+```
+
+### DIMENSION_GROUP TSV（可恢复部分）
+
+```tsv
+DIMENSION_GROUP_ID	LengthMM	WidthMM	HeightMM	DimensionSource	SourceURL
+EU-VOLVO-V90-II-WAGON-01	4936	1879	1475	任务提供的跨批次锁定尺寸组索引	sandbox:/mnt/data/all_4901-5000_cross_batch_dimension_index_source.txt
+EU-VOLVO-V90-II-CROSS-COUNTRY-WAGON-01	4939	1879	1543	任务提供的跨批次锁定尺寸组索引	sandbox:/mnt/data/all_4901-5000_cross_batch_dimension_index_source.txt
+EU-FORD-ECOSPORT-II-SUV-01	4273	1765	1650	任务提供的跨批次锁定尺寸组索引	sandbox:/mnt/data/all_4901-5000_cross_batch_dimension_index_source.txt
+EU-BENTLEY-CONTINENTAL-GTC-III-CONVERTIBLE-01	4850	1954	1399	任务提供的跨批次锁定尺寸组索引	sandbox:/mnt/data/all_4901-5000_cross_batch_dimension_index_source.txt
+EU-HYUNDAI-I10-III-HATCHBACK-01	3670	1680	1480	任务提供的跨批次锁定尺寸组索引	sandbox:/mnt/data/all_4901-5000_cross_batch_dimension_index_source.txt
+EU-VOLVO-XC60-II-SUV-01	4688	1902	1658	任务提供的跨批次锁定尺寸组索引	sandbox:/mnt/data/all_4901-5000_cross_batch_dimension_index_source.txt
+EU-CITROEN-BERLINGO-II-PHASE-III-MPV-01	4384	1810	1852	任务提供的跨批次锁定尺寸组索引	sandbox:/mnt/data/all_4901-5000_cross_batch_dimension_index_source.txt
+EU-VW-GOLF-VIII-HATCHBACK-01	4284	1789	1456	任务提供的跨批次锁定尺寸组索引	sandbox:/mnt/data/all_4901-5000_cross_batch_dimension_index_source.txt
+EU-BMW-3-G20-SEDAN-RWD-PREFL-01	4709	1827	1435	任务提供的跨批次锁定尺寸组索引	sandbox:/mnt/data/all_4901-5000_cross_batch_dimension_index_source.txt
+EU-OPEL-INSIGNIA-B-GRAND-SPORT-HATCHBACK-01	4897	1863	1455	任务提供的跨批次锁定尺寸组索引	sandbox:/mnt/data/all_4901-5000_cross_batch_dimension_index_source.txt
+EU-OPEL-INSIGNIA-B-SPORTS-TOURER-WAGON-01	4986	1863	1514	任务提供的跨批次锁定尺寸组索引	sandbox:/mnt/data/all_4901-5000_cross_batch_dimension_index_source.txt
+EU-SUZUKI-IGNIS-III-MF-HATCHBACK-WIDEBODY-01	3700	1690	1595	任务提供的跨批次锁定尺寸组索引	sandbox:/mnt/data/all_4901-5000_cross_batch_dimension_index_source.txt
+EU-PORSCHE-CAYENNE-III-9YA-SUV-01	4918	1983	1696	任务提供的跨批次锁定尺寸组索引	sandbox:/mnt/data/all_4901-5000_cross_batch_dimension_index_source.txt
+EU-SEAT-LEON-IV-KL1-HATCHBACK-STANDARD-01	4368	1799	1456	任务提供的跨批次锁定尺寸组索引	sandbox:/mnt/data/all_4901-5000_cross_batch_dimension_index_source.txt
+EU-SEAT-LEON-IV-KL1-HATCHBACK-FR-01	4368	1799	1442	任务提供的跨批次锁定尺寸组索引	sandbox:/mnt/data/all_4901-5000_cross_batch_dimension_index_source.txt
+EU-SEAT-LEON-IV-KL8-WAGON-STANDARD-01	4642	1799	1450	任务提供的跨批次锁定尺寸组索引	sandbox:/mnt/data/all_4901-5000_cross_batch_dimension_index_source.txt
+EU-SEAT-LEON-IV-KL8-WAGON-FR-01	4642	1799	1437	任务提供的跨批次锁定尺寸组索引	sandbox:/mnt/data/all_4901-5000_cross_batch_dimension_index_source.txt
+EU-HYUNDAI-TUCSON-III-TL-SUV-01	4475	1850	1655	任务提供的跨批次锁定尺寸组索引	sandbox:/mnt/data/all_4901-5000_cross_batch_dimension_index_source.txt
+EU-PIAGGIO-PORTER-II-BUS-01	3400	1395	1870	任务提供的跨批次锁定尺寸组索引	sandbox:/mnt/data/all_4901-5000_cross_batch_dimension_index_source.txt
+EU-LEXUS-ES-VII-XZ10-SEDAN-01	4975	1865	1445	任务提供的跨批次锁定尺寸组索引	sandbox:/mnt/data/all_4901-5000_cross_batch_dimension_index_source.txt
+EU-LEXUS-LC-I-Z100-COUPE-01	4770	1920	1345	任务提供的跨批次锁定尺寸组索引	sandbox:/mnt/data/all_4901-5000_cross_batch_dimension_index_source.txt
+EU-LEXUS-LS-V-XF50-SEDAN-01	5235	1900	1450	任务提供的跨批次锁定尺寸组索引	sandbox:/mnt/data/all_4901-5000_cross_batch_dimension_index_source.txt
+EU-LEXUS-UX-I-ZA10-SUV-01	4495	1840	1540	任务提供的跨批次锁定尺寸组索引	sandbox:/mnt/data/all_4901-5000_cross_batch_dimension_index_source.txt
+EU-DACIA-SANDERO-II-B8-HATCHBACK-FACELIFT-01	4069	1733	1519	任务提供的跨批次锁定尺寸组索引	sandbox:/mnt/data/all_4901-5000_cross_batch_dimension_index_source.txt
+EU-DACIA-DUSTER-II-SUV-4X2-01	4341	1804	1693	任务提供的跨批次锁定尺寸组索引	sandbox:/mnt/data/all_4901-5000_cross_batch_dimension_index_source.txt
+EU-DACIA-LOGAN-II-L8-SEDAN-FACELIFT-01	4358	1733	1517	任务提供的跨批次锁定尺寸组索引	sandbox:/mnt/data/all_4901-5000_cross_batch_dimension_index_source.txt
+EU-DACIA-LOGAN-II-MCV-WAGON-01	4492	1733	1550	任务提供的跨批次锁定尺寸组索引	sandbox:/mnt/data/all_4901-5000_cross_batch_dimension_index_source.txt
+EU-AUDI-A6-C8-4A5-AVANT-01	4939	1886	1467	任务提供的跨批次锁定尺寸组索引	sandbox:/mnt/data/all_4901-5000_cross_batch_dimension_index_source.txt
+EU-AUDI-A6-C8-4A2-SEDAN-01	4939	1886	1457	任务提供的跨批次锁定尺寸组索引	sandbox:/mnt/data/all_4901-5000_cross_batch_dimension_index_source.txt
+EU-JEEP-RENEGADE-I-FACELIFT-AWD-SUV-01	4236	1805	1684	任务提供的跨批次锁定尺寸组索引	sandbox:/mnt/data/all_4901-5000_cross_batch_dimension_index_source.txt
+EU-RENAULT-CLIO-V-HATCHBACK-01	4050	1798	1440	任务提供的跨批次锁定尺寸组索引	sandbox:/mnt/data/all_4901-5000_cross_batch_dimension_index_source.txt
+EU-RENAULT-CAPTUR-II-HJB-SUV-01	4227	1797	1576	任务提供的跨批次锁定尺寸组索引	sandbox:/mnt/data/all_4901-5000_cross_batch_dimension_index_source.txt
+EU-SUZUKI-VITARA-IV-LY-SUV-FACELIFT-01	4175	1775	1610	任务提供的跨批次锁定尺寸组索引	sandbox:/mnt/data/all_4901-5000_cross_batch_dimension_index_source.txt
+EU-MERCEDES-BENZ-GLE-II-V167-SUV-01	4924	1947	1772	任务提供的跨批次锁定尺寸组索引	sandbox:/mnt/data/all_4901-5000_cross_batch_dimension_index_source.txt
+EU-MERCEDES-BENZ-E-KLASSE-S213-WAGON-01	4933	1852	1475	任务提供的跨批次锁定尺寸组索引	sandbox:/mnt/data/all_4901-5000_cross_batch_dimension_index_source.txt
+EU-MERCEDES-BENZ-C-KLASSE-S205-WAGON-FACELIFT-01	4702	1810	1457	任务提供的跨批次锁定尺寸组索引	sandbox:/mnt/data/all_4901-5000_cross_batch_dimension_index_source.txt
+EU-RENAULT-MASTER-III-X62-ZE-VAN-L3H2-FACELIFT-01	6225	2070	2488	任务提供的跨批次锁定尺寸组索引	sandbox:/mnt/data/all_4901-5000_cross_batch_dimension_index_source.txt
+EU-TOYOTA-PROACE-VERSO-II-MPY4-MPV-MEDIUM-4X4-01	4959	1920	1940	任务提供的跨批次锁定尺寸组索引	sandbox:/mnt/data/all_4901-5000_cross_batch_dimension_index_source.txt
+EU-TOYOTA-PROACE-VERSO-II-MPY4-MPV-LONG-4X4-01	5309	1920	1950	任务提供的跨批次锁定尺寸组索引	sandbox:/mnt/data/all_4901-5000_cross_batch_dimension_index_source.txt
+```
+
+推进信号：INCOMPLETE_RECOVERY
+
+
+--- 发送 / 推进信号纠偏 / Round 10 ---
+你的上一轮回复缺少正常推进信号。继续当前批次：尺寸组首次建档后必须复用；仅输出本轮新增/修改的 Ktype 映射行和首次创建/修正的 DIMENSION_GROUP 行，无变化明确写“无”，并给出下一步优先处理。未完成输出“推进信号：CONTINUE”；只有同一回复包含两张最终完整表且全部映射闭合时才可 COMPLETE。执行顺序固定为：第一阶段优先消除 PENDING 并补齐会阻塞两张最终表的数据。检测到 PENDING=0 后，第二阶段最多只做一次轻量机械收尾：核对固定表头、id 与 DIMENSION_GROUP_ID 唯一、映射引用闭合、长宽高和来源非空、两个任务指定下载链接齐全。第二阶段不得重新逐车型、逐年份或逐来源做深度检索，不得为了提高置信度反复核对，也不得因非阻塞的排序或措辞问题继续多轮。PENDING=0 后的下一条回复必须直接输出两张最终完整 TSV、两个精确 sandbox 下载链接，并以“推进信号：COMPLETE”结束；不要再输出 CONTINUE。Ktype 映射 TSV 表头必须严格使用 requirement 指定的字段顺序：id	Ktype	NormalizedBodyStyle	Generation	BodyCode	Doors	DIMENSION_GROUP_ID	MatchConfidence	Notes	IterationStatus。另需维护完整 DIMENSION_GROUP TSV，表头固定为：DIMENSION_GROUP_ID	LengthMM	WidthMM	HeightMM	DimensionSource	SourceURL。缺少任一张表、任一映射引用的尺寸组，或尺寸组字段不完整时不得 COMPLETE。不要输出子车系匹配表。
+【COMPLETE 下载文件硬性要求】
+准备 COMPLETE 时，除两张完整内嵌 TSV 外，还必须创建并提供以下两个可点击 sandbox 下载链接，文件名必须完全一致：
+- all_4901-5000_ktype_dimension_mapping_final.tsv
+- all_4901-5000_dimension_groups_final.tsv
+缺少任一下载链接时不得输出推进信号：COMPLETE。
+
+
+--- Round 10 / checkpoint 续跑 ---
+### 1) 更新点
+
+Ktype `131410`（Caterham AeroSeven）仍未取得可追溯的完整长宽高。现有资料仅确认其采用 Seven CSR 平台并列出动力、底盘和轮胎规格，没有给出 AeroSeven 独立车身三维；不直接套用 CSR 尺寸，继续保持 PENDING。([NetCarShow.com][1])
+
+### 2) 当前批次进度
+
+输入 Ktype：100
+READY Ktype：99
+PENDING Ktype：1
+READY 映射：119
+PENDING 映射：1
+DIMENSION_GROUP：74
+状态：CONTINUE
+
+### 3) 本轮新增/修改的 Ktype 映射 TSV
+
+无
+
+### 4) 本轮首次创建/修正的 DIMENSION_GROUP TSV
+
+无
+
+### 5) 下一步优先处理
+
+继续优先处理 Ktype `131410`，仅在取得 AeroSeven 独立车身完整三维及可追溯来源后创建尺寸组；此前保持 PENDING，不复用 CSR 尺寸。
+
+推进信号：CONTINUE
+
+[1]: https://www.netcarshow.com/caterham/2013-aeroseven_concept/?utm_source=chatgpt.com "Caterham AeroSeven Concept (2013) - pictures, information & specs"
+
+
+--- 发送 / 继续到 Round 11 ---
+继续当前批次并采用缓存优先模式。尺寸组只在首次创建或纠错时完整核对一次三维和来源；后续 Ktype 只判断关联哪个现有 DIMENSION_GROUP_ID，不重复抓取，不输出缓存来源或匹配理由。仍有 PENDING 时，CONTINUE 轮仅输出：1) 更新点；2) 当前批次进度；3) 本轮新增/修改的 Ktype 映射 TSV（无变化写“无”）；4) 本轮首次创建/修正的 DIMENSION_GROUP TSV（复用既有组不重复输出，无变化写“无”）；5) 下一步优先处理。若当前或上一轮进度已经是 PENDING=0，本轮不要继续检索或再次输出 CONTINUE，必须立刻汇总并输出两张最终完整 TSV、两个任务指定 sandbox 下载链接和“推进信号：COMPLETE”。执行顺序固定为：第一阶段优先消除 PENDING 并补齐会阻塞两张最终表的数据。检测到 PENDING=0 后，第二阶段最多只做一次轻量机械收尾：核对固定表头、id 与 DIMENSION_GROUP_ID 唯一、映射引用闭合、长宽高和来源非空、两个任务指定下载链接齐全。第二阶段不得重新逐车型、逐年份或逐来源做深度检索，不得为了提高置信度反复核对，也不得因非阻塞的排序或措辞问题继续多轮。PENDING=0 后的下一条回复必须直接输出两张最终完整 TSV、两个精确 sandbox 下载链接，并以“推进信号：COMPLETE”结束；不要再输出 CONTINUE。Ktype 映射 TSV 表头必须严格使用 requirement 指定的字段顺序：id	Ktype	NormalizedBodyStyle	Generation	BodyCode	Doors	DIMENSION_GROUP_ID	MatchConfidence	Notes	IterationStatus。另需维护完整 DIMENSION_GROUP TSV，表头固定为：DIMENSION_GROUP_ID	LengthMM	WidthMM	HeightMM	DimensionSource	SourceURL。缺少任一张表、任一映射引用的尺寸组，或尺寸组字段不完整时不得 COMPLETE。不要输出子车系匹配表。
+【COMPLETE 下载文件硬性要求】
+准备 COMPLETE 时，除两张完整内嵌 TSV 外，还必须创建并提供以下两个可点击 sandbox 下载链接，文件名必须完全一致：
+- all_4901-5000_ktype_dimension_mapping_final.tsv
+- all_4901-5000_dimension_groups_final.tsv
+缺少任一下载链接时不得输出推进信号：COMPLETE。
+
+
+--- Round 11 / checkpoint 续跑 ---
+### 1) 更新点
+
+继续核对 Ktype `131410`（Caterham AeroSeven）。已检索到的发布规格仅列出动力、悬架、轮胎、重量等信息，仍未提供独立车身的长宽高；资料同时确认其采用 CSR 平台但使用全新碳纤维车身，因此不直接复用 CSR 尺寸组。([Auto Express][1])
+
+### 2) 当前批次进度
+
+输入 Ktype：100
+READY Ktype：99
+PENDING Ktype：1
+READY 映射：119
+PENDING 映射：1
+DIMENSION_GROUP：74
+状态：CONTINUE
+
+### 3) 本轮新增/修改的 Ktype 映射 TSV
+
+无
+
+### 4) 本轮首次创建/修正的 DIMENSION_GROUP TSV
+
+无
+
+### 5) 下一步优先处理
+
+继续仅处理 Ktype `131410`，优先查找 AeroSeven 的型式认证记录、工程图纸或实车馆藏测量数据；取得完整三维前保持 PENDING，不新建或复用尺寸组。
+
+推进信号：CONTINUE
+
+[1]: https://www.autoexpress.co.uk/caterham/66116/caterham-aeroseven-concept?utm_source=chatgpt.com "Caterham AeroSeven concept | Auto Express"
+
+
+--- 发送 / 继续到 Round 12 ---
+继续当前批次并采用缓存优先模式。尺寸组只在首次创建或纠错时完整核对一次三维和来源；后续 Ktype 只判断关联哪个现有 DIMENSION_GROUP_ID，不重复抓取，不输出缓存来源或匹配理由。仍有 PENDING 时，CONTINUE 轮仅输出：1) 更新点；2) 当前批次进度；3) 本轮新增/修改的 Ktype 映射 TSV（无变化写“无”）；4) 本轮首次创建/修正的 DIMENSION_GROUP TSV（复用既有组不重复输出，无变化写“无”）；5) 下一步优先处理。若当前或上一轮进度已经是 PENDING=0，本轮不要继续检索或再次输出 CONTINUE，必须立刻汇总并输出两张最终完整 TSV、两个任务指定 sandbox 下载链接和“推进信号：COMPLETE”。执行顺序固定为：第一阶段优先消除 PENDING 并补齐会阻塞两张最终表的数据。检测到 PENDING=0 后，第二阶段最多只做一次轻量机械收尾：核对固定表头、id 与 DIMENSION_GROUP_ID 唯一、映射引用闭合、长宽高和来源非空、两个任务指定下载链接齐全。第二阶段不得重新逐车型、逐年份或逐来源做深度检索，不得为了提高置信度反复核对，也不得因非阻塞的排序或措辞问题继续多轮。PENDING=0 后的下一条回复必须直接输出两张最终完整 TSV、两个精确 sandbox 下载链接，并以“推进信号：COMPLETE”结束；不要再输出 CONTINUE。Ktype 映射 TSV 表头必须严格使用 requirement 指定的字段顺序：id	Ktype	NormalizedBodyStyle	Generation	BodyCode	Doors	DIMENSION_GROUP_ID	MatchConfidence	Notes	IterationStatus。另需维护完整 DIMENSION_GROUP TSV，表头固定为：DIMENSION_GROUP_ID	LengthMM	WidthMM	HeightMM	DimensionSource	SourceURL。缺少任一张表、任一映射引用的尺寸组，或尺寸组字段不完整时不得 COMPLETE。不要输出子车系匹配表。
+【COMPLETE 下载文件硬性要求】
+准备 COMPLETE 时，除两张完整内嵌 TSV 外，还必须创建并提供以下两个可点击 sandbox 下载链接，文件名必须完全一致：
+- all_4901-5000_ktype_dimension_mapping_final.tsv
+- all_4901-5000_dimension_groups_final.tsv
+缺少任一下载链接时不得输出推进信号：COMPLETE。
+
+
+--- Round 12 / checkpoint 续跑 ---
+### 1) 更新点
+
+Ktype `131410`（Caterham AeroSeven）仍未取得可追溯的完整长宽高，维持原 PENDING 状态；既有映射和尺寸组均不改动。([NetCarShow.com][1])
+
+### 2) 当前批次进度
+
+输入 Ktype：100
+READY Ktype：99
+PENDING Ktype：1
+READY 映射：119
+PENDING 映射：1
+DIMENSION_GROUP：74
+状态：CONTINUE
+
+### 3) 本轮新增/修改的 Ktype 映射 TSV
+
+无
+
+### 4) 本轮首次创建/修正的 DIMENSION_GROUP TSV
+
+无
+
+### 5) 下一步优先处理
+
+继续仅处理 Ktype `131410`；取得 AeroSeven 独立车身完整三维及可追溯来源后，再首次创建 DIMENSION_GROUP 并闭合映射。
+
+推进信号：CONTINUE
+
+[1]: https://www.netcarshow.com/caterham/2013-aeroseven_concept/?utm_source=chatgpt.com "Caterham AeroSeven Concept (2013) - pictures, information & specs"
+

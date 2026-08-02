@@ -1119,3 +1119,123 @@ EU-MERCEDES-BENZ-SPRINTER-II-W906-VAN-EXTRALONG-SUPERHIGHROOF-4X4-FACELIFT-01	73
 --- 脚本异常 ---
 异常: ChatGPT 页面显示未登录
 
+
+--- 脚本异常 ---
+异常: ChatGPT 页面显示未登录
+
+
+--- 发送 / checkpoint 续跑到 Round 7 ---
+继续当前批次并采用缓存优先模式。尺寸组只在首次创建或纠错时完整核对一次三维和来源；后续 Ktype 只判断关联哪个现有 DIMENSION_GROUP_ID，不重复抓取，不输出缓存来源或匹配理由。仍有 PENDING 时，CONTINUE 轮仅输出：1) 更新点；2) 当前批次进度；3) 本轮新增/修改的 Ktype 映射 TSV（无变化写“无”）；4) 本轮首次创建/修正的 DIMENSION_GROUP TSV（复用既有组不重复输出，无变化写“无”）；5) 下一步优先处理。若当前或上一轮进度已经是 PENDING=0，本轮不要继续检索或再次输出 CONTINUE，必须立刻汇总并输出两张最终完整 TSV、两个任务指定 sandbox 下载链接和“推进信号：COMPLETE”。执行顺序固定为：第一阶段优先消除 PENDING 并补齐会阻塞两张最终表的数据。检测到 PENDING=0 后，第二阶段最多只做一次轻量机械收尾：核对固定表头、id 与 DIMENSION_GROUP_ID 唯一、映射引用闭合、长宽高和来源非空、两个任务指定下载链接齐全。第二阶段不得重新逐车型、逐年份或逐来源做深度检索，不得为了提高置信度反复核对，也不得因非阻塞的排序或措辞问题继续多轮。PENDING=0 后的下一条回复必须直接输出两张最终完整 TSV、两个精确 sandbox 下载链接，并以“推进信号：COMPLETE”结束；不要再输出 CONTINUE。Ktype 映射 TSV 表头必须严格使用 requirement 指定的字段顺序：id	Ktype	NormalizedBodyStyle	Generation	BodyCode	Doors	DIMENSION_GROUP_ID	MatchConfidence	Notes	IterationStatus。另需维护完整 DIMENSION_GROUP TSV，表头固定为：DIMENSION_GROUP_ID	LengthMM	WidthMM	HeightMM	DimensionSource	SourceURL。缺少任一张表、任一映射引用的尺寸组，或尺寸组字段不完整时不得 COMPLETE。不要输出子车系匹配表。
+【COMPLETE 下载文件硬性要求】
+准备 COMPLETE 时，除两张完整内嵌 TSV 外，还必须创建并提供以下两个可点击 sandbox 下载链接，文件名必须完全一致：
+- all_5401-5500_ktype_dimension_mapping_final.tsv
+- all_5401-5500_dimension_groups_final.tsv
+缺少任一下载链接时不得输出推进信号：COMPLETE。
+
+
+--- 对话分支 / Round 7 ---
+触发原因：ChatGPT 对话长度上限
+父对话：https://chatgpt.com/c/6a6af7e7-3d40-83e8-a2b5-3977354ae440
+新分支：https://chatgpt.com/c/6a6edcf7-9964-83e8-b849-dd36beb349d9
+
+--- Round 7 / checkpoint 续跑 ---
+本轮**无法合规输出 COMPLETE**。
+
+历史状态已到 **PENDING=0**，但当前运行区、文件库及 Google Drive 中均未找到该批次的两张完整累计 TSV；现有内容只有进度摘要和部分增量记录，无法可靠还原全部 100 个 Ktype 映射及所有被引用的尺寸组。按硬性规则，缺少任一完整表或引用尺寸组时不得 COMPLETE，因此不会伪造 TSV、下载文件或 sandbox 链接。
+
+本轮不输出 CONTINUE，也不重新逐车型检索。请重新上传上一轮的两张完整累计 TSV，或项目目录中的 `mapping_final.tsv` 与 `dimension_groups_final.tsv`；随后只执行一次机械校验，并导出：
+
+* `all_5401-5500_ktype_dimension_mapping_final.tsv`
+* `all_5401-5500_dimension_groups_final.tsv`
+
+
+--- 发送 / 推进信号纠偏 / Round 8 ---
+你的上一轮回复缺少正常推进信号。继续当前批次：尺寸组首次建档后必须复用；仅输出本轮新增/修改的 Ktype 映射行和首次创建/修正的 DIMENSION_GROUP 行，无变化明确写“无”，并给出下一步优先处理。未完成输出“推进信号：CONTINUE”；只有同一回复包含两张最终完整表且全部映射闭合时才可 COMPLETE。执行顺序固定为：第一阶段优先消除 PENDING 并补齐会阻塞两张最终表的数据。检测到 PENDING=0 后，第二阶段最多只做一次轻量机械收尾：核对固定表头、id 与 DIMENSION_GROUP_ID 唯一、映射引用闭合、长宽高和来源非空、两个任务指定下载链接齐全。第二阶段不得重新逐车型、逐年份或逐来源做深度检索，不得为了提高置信度反复核对，也不得因非阻塞的排序或措辞问题继续多轮。PENDING=0 后的下一条回复必须直接输出两张最终完整 TSV、两个精确 sandbox 下载链接，并以“推进信号：COMPLETE”结束；不要再输出 CONTINUE。Ktype 映射 TSV 表头必须严格使用 requirement 指定的字段顺序：id	Ktype	NormalizedBodyStyle	Generation	BodyCode	Doors	DIMENSION_GROUP_ID	MatchConfidence	Notes	IterationStatus。另需维护完整 DIMENSION_GROUP TSV，表头固定为：DIMENSION_GROUP_ID	LengthMM	WidthMM	HeightMM	DimensionSource	SourceURL。缺少任一张表、任一映射引用的尺寸组，或尺寸组字段不完整时不得 COMPLETE。不要输出子车系匹配表。
+【COMPLETE 下载文件硬性要求】
+准备 COMPLETE 时，除两张完整内嵌 TSV 外，还必须创建并提供以下两个可点击 sandbox 下载链接，文件名必须完全一致：
+- all_5401-5500_ktype_dimension_mapping_final.tsv
+- all_5401-5500_dimension_groups_final.tsv
+缺少任一下载链接时不得输出推进信号：COMPLETE。
+
+
+--- Round 8 / checkpoint 续跑 ---
+1. 更新点
+   补齐正常推进信号。本轮未重新检索车型或尺寸来源；当前阻塞仍是两张完整累计 TSV 缺失，无法执行最终引用闭合校验及生成指定下载文件。
+
+2. 当前批次进度
+   当前不能认定为可交付的 `PENDING=0`。
+   文件级阻塞：2
+
+* 完整 Ktype 映射累计表缺失
+* 完整 DIMENSION_GROUP 累计表缺失
+
+3. 本轮新增/修改的 Ktype 映射 TSV
+   无
+
+4. 本轮首次创建/修正的 DIMENSION_GROUP TSV
+   无
+
+5. 下一步优先处理
+   优先恢复上一轮完整累计映射表和尺寸组表；恢复后仅执行一次机械收尾，核对固定表头、主键唯一、引用闭合、尺寸及来源非空，并生成两个指定文件。
+
+推进信号：CONTINUE
+
+
+--- 发送 / 继续到 Round 9 ---
+继续当前批次并采用缓存优先模式。尺寸组只在首次创建或纠错时完整核对一次三维和来源；后续 Ktype 只判断关联哪个现有 DIMENSION_GROUP_ID，不重复抓取，不输出缓存来源或匹配理由。仍有 PENDING 时，CONTINUE 轮仅输出：1) 更新点；2) 当前批次进度；3) 本轮新增/修改的 Ktype 映射 TSV（无变化写“无”）；4) 本轮首次创建/修正的 DIMENSION_GROUP TSV（复用既有组不重复输出，无变化写“无”）；5) 下一步优先处理。若当前或上一轮进度已经是 PENDING=0，本轮不要继续检索或再次输出 CONTINUE，必须立刻汇总并输出两张最终完整 TSV、两个任务指定 sandbox 下载链接和“推进信号：COMPLETE”。执行顺序固定为：第一阶段优先消除 PENDING 并补齐会阻塞两张最终表的数据。检测到 PENDING=0 后，第二阶段最多只做一次轻量机械收尾：核对固定表头、id 与 DIMENSION_GROUP_ID 唯一、映射引用闭合、长宽高和来源非空、两个任务指定下载链接齐全。第二阶段不得重新逐车型、逐年份或逐来源做深度检索，不得为了提高置信度反复核对，也不得因非阻塞的排序或措辞问题继续多轮。PENDING=0 后的下一条回复必须直接输出两张最终完整 TSV、两个精确 sandbox 下载链接，并以“推进信号：COMPLETE”结束；不要再输出 CONTINUE。Ktype 映射 TSV 表头必须严格使用 requirement 指定的字段顺序：id	Ktype	NormalizedBodyStyle	Generation	BodyCode	Doors	DIMENSION_GROUP_ID	MatchConfidence	Notes	IterationStatus。另需维护完整 DIMENSION_GROUP TSV，表头固定为：DIMENSION_GROUP_ID	LengthMM	WidthMM	HeightMM	DimensionSource	SourceURL。缺少任一张表、任一映射引用的尺寸组，或尺寸组字段不完整时不得 COMPLETE。不要输出子车系匹配表。
+【COMPLETE 下载文件硬性要求】
+准备 COMPLETE 时，除两张完整内嵌 TSV 外，还必须创建并提供以下两个可点击 sandbox 下载链接，文件名必须完全一致：
+- all_5401-5500_ktype_dimension_mapping_final.tsv
+- all_5401-5500_dimension_groups_final.tsv
+缺少任一下载链接时不得输出推进信号：COMPLETE。
+
+
+--- Round 9 / checkpoint 续跑 ---
+1. 更新点
+   未检出当前批次的完整累计映射表或完整尺寸组表；本轮不重复检索已建档尺寸组，不新增未经累计表闭合验证的数据。
+
+2. 当前批次进度
+   PENDING：2 个文件级阻塞
+
+* 完整 Ktype 映射累计表待恢复
+* 完整 DIMENSION_GROUP 累计表待恢复
+
+尚不能执行引用闭合、唯一性及完整字段的最终机械校验。
+
+3. 本轮新增/修改的 Ktype 映射 TSV
+   无
+
+4. 本轮首次创建/修正的 DIMENSION_GROUP TSV
+   无
+
+5. 下一步优先处理
+   优先恢复当前批次最近一次完整累计 TSV；恢复后仅补齐阻塞行。若确认 PENDING=0，则下一轮直接执行一次机械收尾并输出两张最终完整 TSV及两个指定 sandbox 下载链接。
+
+推进信号：CONTINUE
+
+
+--- 发送 / 无数据收尾 / Round 10 ---
+立即停止检索，直接输出当前已积累的两张最终完整 TSV（Ktype 映射 TSV 和 DIMENSION_GROUP TSV），保留仍有 PENDING 的条目原样输出，不要继续检索或补全。必须包含两个 sandbox 下载链接，并以"推进信号：COMPLETE"结束。
+
+
+--- Round 10 / checkpoint 续跑 ---
+已停止检索。当前运行区没有可恢复的累计数据行，因此只能导出**仅含固定表头的当前快照**；这不代表此前历史批次的数据已闭合。
+
+**Ktype 映射 TSV**
+
+```tsv
+id	Ktype	NormalizedBodyStyle	Generation	BodyCode	Doors	DIMENSION_GROUP_ID	MatchConfidence	Notes	IterationStatus
+```
+
+**DIMENSION_GROUP TSV**
+
+```tsv
+DIMENSION_GROUP_ID	LengthMM	WidthMM	HeightMM	DimensionSource	SourceURL
+```
+
+[下载 Ktype 映射 TSV](sandbox:/mnt/data/all_5401-5500_ktype_dimension_mapping_final.tsv)
+
+[下载 DIMENSION_GROUP TSV](sandbox:/mnt/data/all_5401-5500_dimension_groups_final.tsv)
+
+推进信号：COMPLETE
+

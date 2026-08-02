@@ -632,3 +632,8 @@ Ford	Transit	1.5 1100	Bus	Heckantrieb	Benzin	44	60	Nov 1965	Jul 1971	2024-03-01	
 --- 脚本异常 ---
 异常: ChatGPT 页面显示未登录
 
+
+--- 累计最终 TSV 已更新 ---
+- 累计 Ktype 映射：ktype_mapping_final.tsv（319 行）
+- 累计尺寸组：dimension_groups_final.tsv（88 行）
+

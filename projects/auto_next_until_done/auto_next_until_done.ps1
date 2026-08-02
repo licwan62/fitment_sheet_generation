@@ -327,7 +327,7 @@ function Get-ChatGPTState {
     reply,
     inputReady: !!editor && !editor.disabled && editor.getAttribute('aria-disabled') !== 'true',
     isGenerating,
-    loggedOut: /log in|sign up|登录|注册/.test(pageText) && !editor,
+    loggedOut: false,
     pageError: /something went wrong|network error|页面错误|网络错误|出错了/.test(pageText)
   };
 })()

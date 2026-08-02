@@ -2986,7 +2986,7 @@ function Get-ChatGPTState {
     inputReady: !!editor && !editor.disabled && editor.getAttribute('aria-disabled') !== 'true',
     isGenerating,
     hasStopButton: isGenerating,
-    loggedOut: hasLoginControl || (/log in|sign up|登录|注册/.test(pageText) && !editor),
+    loggedOut: hasLoginControl,
     pageError: /something went wrong|network error|页面错误|网络错误|出错了/.test(pageText),
     conversationLimitReached
   };
@@ -3582,18 +3582,43 @@ function Start-ChatGPTNewConversation {
 }
 
 function Invoke-ChatGPTConversationBranchOnce {
-    param([string]$ParentUrl)
+    param([string]$ParentUrl, [string]$Message = "")
 
     Ensure-ChatGPTActive
     Write-Host "  对话达到长度上限，正在执行【在新聊天中分支】..." -ForegroundColor Yellow
 
+<<<<<<< Updated upstream
     $visibleAndTextHelper = @'
+=======
+    $prepareScript = @'
+(() => {
+  window.scrollTo(0, document.body.scrollHeight);
+  const turns = Array.from(document.querySelectorAll('[data-message-author-role="user"]'));
+  if (turns.length > 0) {
+    const last = turns[turns.length - 1];
+    last.scrollIntoView({ behavior: 'instant', block: 'center' });
+    for (let i = 0; i < 3; i++) {
+      last.dispatchEvent(new MouseEvent('mouseover', { bubbles: true }));
+      last.dispatchEvent(new MouseEvent('mouseenter', { bubbles: true }));
+      last.dispatchEvent(new MouseEvent('mousemove', { bubbles: true, clientX: 10, clientY: 10 }));
+    }
+  }
+  return turns.length;
+})()
+'@
+    try { Invoke-XBRun "eval" $prepareScript | Out-Null } catch { }
+    Start-Sleep -Seconds 2
+
+    $findBranchScript = @'
+(() => {
+>>>>>>> Stashed changes
   const visible = el => {
     if (!el) return false;
     const s = getComputedStyle(el); const r = el.getBoundingClientRect();
     return s.display !== 'none' && s.visibility !== 'hidden' && r.width > 0 && r.height > 0;
   };
   const textOf = el => ((el.innerText || el.textContent || '') + ' ' + (el.getAttribute('aria-label') || '')).trim();
+<<<<<<< Updated upstream
 '@
 
     # Step 1: Check if branch button is already directly visible.
@@ -3754,58 +3779,187 @@ $visibleAndTextHelper
         else {
             $debugList = if ($menuInfo -and $menuInfo.debug) { $menuInfo.debug -join ' | ' } else { $menuResult }
             throw "没有找到最后一条用户消息的【在新聊天中分支】入口。用户消息上的按钮: $debugList"
+=======
+  const branchPattern = /branch|分支|开始新对话|新.*聊天.*分支|新.*对话.*分支|create.*new.*chat|新.*聊天|continue.*new/i;
+
+  const selectors = 'button, a, [role="menuitem"], [role="button"], [role="dialog"] button, [role="alertdialog"] button, [data-testid] button, section button';
+  const all = Array.from(document.querySelectorAll(selectors));
+  const direct = all.find(el => visible(el) && branchPattern.test(textOf(el)));
+  if (direct) {
+    direct.click();
+    return 'branch-clicked';
+  }
+
+  const sections = Array.from(document.querySelectorAll('main section, [data-message-author-role] section, main div > section'));
+  for (const section of sections.reverse()) {
+    const btns = Array.from(section.querySelectorAll('button')).filter(visible);
+    const hit = btns.find(b => branchPattern.test(textOf(b)));
+    if (hit) {
+      hit.click();
+      return 'branch-clicked';
+    }
+  }
+
+  const lastUser = document.querySelectorAll('[data-message-author-role="user"]');
+  if (lastUser.length > 0) {
+    const el = lastUser[lastUser.length - 1];
+    let node = el;
+    for (let i = 0; i < 8; i++) {
+      node = node.parentElement;
+      if (!node) break;
+      const btns = Array.from(node.querySelectorAll('button')).filter(visible);
+      const hit = btns.find(b => branchPattern.test(textOf(b)));
+      if (hit) {
+        hit.click();
+        return 'branch-clicked';
+      }
+    }
+  }
+
+  return 'not-found';
+})()
+'@
+    $branchClicked = $false
+    $pollDeadline = (Get-Date).AddSeconds(15)
+    while (-not $branchClicked -and (Get-Date) -lt $pollDeadline) {
+        $result = [string](Get-XBValue (Invoke-XBRun "eval" $findBranchScript))
+        if ($result -eq "branch-clicked") {
+            $branchClicked = $true
+            break
+        }
+        Start-Sleep -Seconds 1
+    }
+
+    if (-not $branchClicked) {
+        $openMenuScript = @'
+(() => {
+  const visible = el => {
+    if (!el) return false;
+    const style = getComputedStyle(el);
+    const rect = el.getBoundingClientRect();
+    return style.display !== 'none' && style.visibility !== 'hidden' && rect.width > 0 && rect.height > 0;
+  };
+  const textOf = el => ((el.innerText || el.textContent || '') + ' ' + (el.getAttribute('aria-label') || '')).trim();
+
+  const allTurns = Array.from(document.querySelectorAll('[data-message-author-role="user"]'));
+  if (allTurns.length === 0) return 'no-turns';
+  const turn = allTurns[allTurns.length - 1];
+  turn.scrollIntoView({ behavior: 'instant', block: 'center' });
+  for (let i = 0; i < 5; i++) {
+    turn.dispatchEvent(new MouseEvent('mouseover', { bubbles: true }));
+    turn.dispatchEvent(new MouseEvent('mouseenter', { bubbles: true }));
+    turn.dispatchEvent(new MouseEvent('mousemove', { bubbles: true, clientX: 10, clientY: 10 }));
+  }
+  const buttons = Array.from(turn.querySelectorAll('button')).filter(visible);
+  const parentButtons = Array.from(turn.parentElement.querySelectorAll('button')).filter(visible);
+  const allButtons = buttons.length > 0 ? buttons : parentButtons;
+  const sharePattern = /share|分享|复制|copy/i;
+  const menu = allButtons.reverse().find(button => {
+    const label = textOf(button);
+    const testId = button.getAttribute('data-testid') || '';
+    const ariaLabel = (button.getAttribute('aria-label') || '').toLowerCase();
+    if (sharePattern.test(label) || sharePattern.test(ariaLabel)) return false;
+    if (/more|更多|\.\.\.|⋯|ellipsis/i.test(label)) return true;
+    if (/more|actions?|menu/i.test(testId)) return true;
+    if (/more|更多|\.\.\.|⋯|ellipsis/i.test(ariaLabel)) return true;
+    const svg = button.querySelector('svg');
+    if (svg && allButtons.indexOf(button) === allButtons.length - 1) {
+      const pathCount = button.querySelectorAll('circle, path').length;
+      if (pathCount >= 3 && pathCount <= 5 && /more|menu|overflow/i.test(ariaLabel + ' ' + testId)) return true;
+    }
+    return false;
+  });
+  if (menu) {
+    menu.click();
+    return 'menu-opened';
+  }
+  return 'not-found';
+})()
+'@
+        $menuResult = [string](Get-XBValue (Invoke-XBRun "eval" $openMenuScript))
+        if ($menuResult -eq "menu-opened") {
+            $clickBranchScript = @'
+(() => {
+  const visible = el => {
+    if (!el) return false;
+    const style = getComputedStyle(el);
+    const rect = el.getBoundingClientRect();
+    return style.display !== 'none' && style.visibility !== 'hidden' && rect.width > 0 && rect.height > 0;
+  };
+  const textOf = el => ((el.innerText || el.textContent || '') + ' ' + (el.getAttribute('aria-label') || '')).trim();
+  const pattern = /branch|分支|开始新对话|新.*聊天.*分支|新.*对话.*分支|create.*new.*chat|新.*聊天|continue.*new/i;
+  const selectors = '[role="menuitem"], [role="menu"] button, [role="dialog"] button, [role="popover"] button, section button, button, a';
+  const item = Array.from(document.querySelectorAll(selectors))
+    .find(el => visible(el) && pattern.test(textOf(el)));
+  if (item) { item.click(); return true; }
+  return false;
+})()
+'@
+            for ($menuAttempt = 1; $menuAttempt -le 8; $menuAttempt++) {
+                Start-Sleep -Seconds 1
+                $clicked = Get-XBValue (Invoke-XBRun "eval" $clickBranchScript)
+                if ($clicked) { $branchClicked = $true; break }
+            }
+            if (-not $branchClicked) {
+                throw "已打开消息操作菜单，但没有找到【在新聊天中分支】"
+            }
+        }
+        else {
+            throw "没有找到最后一条用户消息的【在新聊天中分支】入口 (menuResult=$menuResult)"
+>>>>>>> Stashed changes
         }
     }
 
-    $deadline = (Get-Date).AddSeconds(30)
+    $deadline = (Get-Date).AddSeconds(60)
+    $sentMessage = $false
     do {
         Start-Sleep -Seconds 1
         try {
             $newUrl = Get-CurrentChatGPTUrl
-            if (
-                (Test-ChatGPTConversationUrl -Url $newUrl) -and
-                -not [string]::Equals($newUrl, $ParentUrl, [StringComparison]::OrdinalIgnoreCase)
-            ) {
+            if ([string]::Equals($newUrl, $ParentUrl, [StringComparison]::OrdinalIgnoreCase)) { continue }
+            if (Test-ChatGPTConversationUrl -Url $newUrl) {
                 Write-Host "  已创建新聊天分支: $newUrl" -ForegroundColor Green
                 return $newUrl
+            }
+            if (-not $sentMessage -and -not [string]::IsNullOrWhiteSpace($Message) -and $newUrl -match 'chatgpt\.com/?(\?|$|new)' -and $newUrl -notmatch '[?&]prompt=') {
+                Write-Host "  新对话页面已打开，发送续跑消息以获取对话 ID..." -ForegroundColor Gray
+                try {
+                    Wait-ChatGPTConversationIdle -TimeoutSeconds 15 | Out-Null
+                    Send-ChatGPTMessage -Message $Message
+                    $sentMessage = $true
+                    Write-Host "  续跑消息已发送，等待新对话 URL..." -ForegroundColor Gray
+                }
+                catch {
+                    Write-Host "  发送续跑消息失败: $($_.Exception.Message)" -ForegroundColor Yellow
+                }
             }
         }
         catch { }
     } while ((Get-Date) -lt $deadline)
 
-    throw "已点击【在新聊天中分支】，但 30 秒内未取得新的对话 URL"
+    throw "已点击【在新聊天中分支】，但 60 秒内未取得新的对话 URL"
 }
 
 function Start-ChatGPTConversationBranch {
-    param([string]$ParentUrl)
+    param([string]$ParentUrl, [string]$Message = "")
 
-    $lastError = ""
-    for ($attempt = 1; $attempt -le 3; $attempt++) {
-        try {
-            return Invoke-ChatGPTConversationBranchOnce -ParentUrl $ParentUrl
-        }
-        catch {
-            $lastError = $_.Exception.Message
-            try {
-                $currentUrl = Get-CurrentChatGPTUrl
-                if (
-                    (Test-ChatGPTConversationUrl -Url $currentUrl) -and
-                    -not [string]::Equals($currentUrl, $ParentUrl, [StringComparison]::OrdinalIgnoreCase)
-                ) {
-                    Write-Host "  分支操作已生效，恢复取得新对话 URL: $currentUrl" -ForegroundColor Green
-                    return $currentUrl
-                }
-            }
-            catch { }
-
-            if ($attempt -ge 3) { break }
-            Write-Host "  对话分支操作失败，重新加载父对话后重试 ($attempt/2): $lastError" -ForegroundColor Yellow
-            Invoke-XBRun "open" $ParentUrl | Out-Null
-            Start-Sleep -Seconds 3
-        }
+    try {
+        return Invoke-ChatGPTConversationBranchOnce -ParentUrl $ParentUrl -Message $Message
     }
-
-    throw "对话分支失败（已尝试 3 次）: $lastError"
+    catch {
+        try {
+            $currentUrl = Get-CurrentChatGPTUrl
+            if (
+                (Test-ChatGPTConversationUrl -Url $currentUrl) -and
+                -not [string]::Equals($currentUrl, $ParentUrl, [StringComparison]::OrdinalIgnoreCase)
+            ) {
+                Write-Host "  分支操作已生效，恢复取得新对话 URL: $currentUrl" -ForegroundColor Green
+                return $currentUrl
+            }
+        }
+        catch { }
+        throw
+    }
 }
 
 function Send-ChatGPTMessage {
@@ -4021,6 +4175,7 @@ function Ensure-TaskConversationCapacity {
         [int]$SendCount,
         [string]$ConversationUrl,
         [string]$InitialMessage = "",
+        [string]$BranchMessage = "",
         [switch]$LargePayload
     )
 
@@ -4035,43 +4190,7 @@ function Ensure-TaskConversationCapacity {
         throw "检测到对话长度上限，但无法取得父对话 URL"
     }
 
-    $newUrl = ""
-    $branchSucceeded = $false
-    try {
-        $newUrl = Start-ChatGPTConversationBranch -ParentUrl $parentUrl
-        $branchSucceeded = $true
-    }
-    catch {
-        $branchError = $_.Exception.Message
-        if (-not [string]::IsNullOrWhiteSpace($InitialMessage)) {
-            Write-Host "  对话分支失败，降级为新建对话重发初始任务: $branchError" -ForegroundColor Yellow
-        }
-        else {
-            throw
-        }
-    }
-
-    if (-not $branchSucceeded) {
-        Start-ChatGPTNewConversation
-        Start-Sleep -Seconds 2
-        Write-Host "  新建对话已打开，重新发送初始任务消息..." -ForegroundColor Yellow
-        Send-TrackedChatGPTMessage -OutputFile $OutputFile -Label "新建对话重发 / Round $Round" -Message $InitialMessage -LargePayload:$LargePayload
-        $sendCountVal = $SendCount + 1
-        $newUrl = Wait-CurrentChatGPTConversationUrl
-
-        Add-Content -LiteralPath $OutputFile -Value @"
-
---- 新建对话（分支降级） / Round $Round ---
-触发原因：对话分支 UI 不可用，自动降级为新建对话
-原对话：$parentUrl
-新对话：$newUrl
-"@ -Encoding UTF8
-
-        Save-TaskCheckpoint -Task $Task -Status "进行中" -Phase "waiting_reply" `
-            -Round $Round -SendCount $sendCountVal -OutputFile $OutputFile `
-            -ConversationUrl $newUrl -Remarks "分支降级：已新建对话并重新发送初始任务"
-        return $newUrl
-    }
+    $newUrl = Start-ChatGPTConversationBranch -ParentUrl $parentUrl -Message $BranchMessage
     $checkpoint = Get-TaskCheckpoint -Task $Task
     $lineage = @(
         if ($checkpoint -and $checkpoint.PSObject.Properties.Name -contains "conversation_lineage") {
@@ -4234,6 +4353,8 @@ function Process-TSVTask {
     $startTime = Get-Date -Format "yyyy-MM-dd HH:mm:ss"
     $sendCount = 0
     $nextCount = 0
+    $consecutiveEmptyTsvCount = 0
+    $emptyTsvFinalSent = $false
     $round = 1
     $previousReply = ""
     $requestedFullTable = $false
@@ -4322,11 +4443,47 @@ function Process-TSVTask {
                 Invoke-XBRun "tab" "new" $conversationUrl | Out-Null
                 Start-Sleep -Seconds 3
                 try { Invoke-XBRun "wait" "--load" "networkidle" | Out-Null } catch { }
+                $pageLoadOk = $false
+                for ($pageLoadAttempt = 1; $pageLoadAttempt -le 5; $pageLoadAttempt++) {
+                    $pageCheck = @'
+(() => {
+  const turns = document.querySelectorAll('article, [data-message-author-role]');
+  if (turns.length > 0) return 'ok';
+  const body = (document.body && document.body.innerText || '').trim();
+  if (body.length > 200) return 'ok';
+  return 'blank';
+})()
+'@
+                    $pageStatus = [string](Get-XBValue (Invoke-XBRun "eval" $pageCheck))
+                    if ($pageStatus -eq "ok") { $pageLoadOk = $true; break }
+                    Write-Host "  对话页面尚未加载完成（$pageStatus），等待重试 ($pageLoadAttempt/5)..." -ForegroundColor Yellow
+                    Start-Sleep -Seconds 3
+                }
+                if (-not $pageLoadOk) {
+                    Write-Host "  对话页面多次加载仍为空白，尝试重新导航..." -ForegroundColor Yellow
+                    Invoke-XBRun "open" $conversationUrl | Out-Null
+                    Start-Sleep -Seconds 5
+                    try { Invoke-XBRun "wait" "--load" "networkidle" | Out-Null } catch { }
+                }
                 if ([string]$checkpoint.phase -eq "waiting_reply") {
                 # 进程可能在消息已经由其他已登录页面完成后才恢复。先检查
                 # 服务器端现有最后回复，避免把一个已完成的回复永远当作
-                # “仍在等待的新回复”。
-                $idleState = Wait-ChatGPTConversationIdle -TimeoutSeconds $MaxReplyWaitSeconds
+                # "仍在等待的新回复"。
+                try {
+                    $idleState = Wait-ChatGPTConversationIdle -TimeoutSeconds $MaxReplyWaitSeconds
+                }
+                catch {
+                    if ($_.Exception.Message -match '长度上限') {
+                        $parentUrl = Get-CurrentChatGPTUrl
+                        if (-not (Test-ChatGPTConversationUrl -Url $parentUrl)) { $parentUrl = $conversationUrl }
+                        Write-Host "  等待空闲时检测到对话长度上限，执行分支..." -ForegroundColor Yellow
+                        $conversationUrl = Start-ChatGPTConversationBranch -ParentUrl $parentUrl -Message $taskContinueMessage
+                        Start-Sleep -Seconds 3
+                        try { Invoke-XBRun "wait" "--load" "networkidle" | Out-Null } catch { }
+                        $idleState = Wait-ChatGPTConversationIdle -TimeoutSeconds $MaxReplyWaitSeconds
+                    }
+                    else { throw }
+                }
                 try {
                     $resumeReply = Copy-LastChatGPTReplyMarkdown -FallbackReply ([string]$idleState.reply)
                 }
@@ -4356,8 +4513,23 @@ function Process-TSVTask {
             }
             elseif ([string]$checkpoint.phase -ne "waiting_reply") {
                 $conversationUrl = Ensure-TaskConversationCapacity -Task $Task -OutputFile $outputFile `
-                    -Round $round -SendCount $sendCount -ConversationUrl $conversationUrl
-                $idleState = Wait-ChatGPTConversationIdle -TimeoutSeconds $MaxReplyWaitSeconds
+                    -Round $round -SendCount $sendCount -ConversationUrl $conversationUrl `
+                    -BranchMessage $taskContinueMessage
+                try {
+                    $idleState = Wait-ChatGPTConversationIdle -TimeoutSeconds $MaxReplyWaitSeconds
+                }
+                catch {
+                    if ($_.Exception.Message -match '长度上限') {
+                        $parentUrl = Get-CurrentChatGPTUrl
+                        if (-not (Test-ChatGPTConversationUrl -Url $parentUrl)) { $parentUrl = $conversationUrl }
+                        Write-Host "  等待空闲时检测到对话长度上限，执行分支..." -ForegroundColor Yellow
+                        $conversationUrl = Start-ChatGPTConversationBranch -ParentUrl $parentUrl -Message $taskContinueMessage
+                        Start-Sleep -Seconds 3
+                        try { Invoke-XBRun "wait" "--load" "networkidle" | Out-Null } catch { }
+                        $idleState = Wait-ChatGPTConversationIdle -TimeoutSeconds $MaxReplyWaitSeconds
+                    }
+                    else { throw }
+                }
                 try {
                     $resumeReply = Copy-LastChatGPTReplyMarkdown -FallbackReply ([string]$idleState.reply)
                 }
@@ -4419,8 +4591,23 @@ function Process-TSVTask {
             Write-Host "  已接管所选对话，检查当前对话是否仍在生成..." -ForegroundColor Gray
             try { $conversationUrl = Get-CurrentChatGPTUrl } catch { }
             $conversationUrl = Ensure-TaskConversationCapacity -Task $Task -OutputFile $outputFile `
-                -Round $round -SendCount $sendCount -ConversationUrl $conversationUrl
-            $idleState = Wait-ChatGPTConversationIdle -TimeoutSeconds $MaxReplyWaitSeconds
+                -Round $round -SendCount $sendCount -ConversationUrl $conversationUrl `
+                -BranchMessage $taskContinueMessage
+            try {
+                $idleState = Wait-ChatGPTConversationIdle -TimeoutSeconds $MaxReplyWaitSeconds
+            }
+            catch {
+                if ($_.Exception.Message -match '长度上限') {
+                    $parentUrl = Get-CurrentChatGPTUrl
+                    if (-not (Test-ChatGPTConversationUrl -Url $parentUrl)) { $parentUrl = $conversationUrl }
+                    Write-Host "  等待空闲时检测到对话长度上限，执行分支..." -ForegroundColor Yellow
+                    $conversationUrl = Start-ChatGPTConversationBranch -ParentUrl $parentUrl -Message $taskContinueMessage
+                    Start-Sleep -Seconds 3
+                    try { Invoke-XBRun "wait" "--load" "networkidle" | Out-Null } catch { }
+                    $idleState = Wait-ChatGPTConversationIdle -TimeoutSeconds $MaxReplyWaitSeconds
+                }
+                else { throw }
+            }
             Write-Host "  对话已空闲，保存当前最后一条回复..." -ForegroundColor Green
             try {
                 $existingReply = Copy-LastChatGPTReplyMarkdown -FallbackReply ([string]$idleState.reply)
@@ -4458,7 +4645,7 @@ function Process-TSVTask {
             if ($wait.ConversationLimitReached) {
                 $conversationUrl = Ensure-TaskConversationCapacity -Task $Task -OutputFile $outputFile `
                     -Round $round -SendCount $sendCount -ConversationUrl $conversationUrl `
-                    -InitialMessage $initialTaskMessage -LargePayload
+                    -InitialMessage $initialTaskMessage -BranchMessage $taskContinueMessage -LargePayload
                 Write-Host "  已切换到新聊天，继续等待第 $round 轮回复..." -ForegroundColor Cyan
                 continue
             }
@@ -4477,6 +4664,30 @@ function Process-TSVTask {
             }
 
             $hasFullTable = Test-ReplyContainsFullTable -Reply $reply -MinimumRows $minimumFullTableRows -Task $Task
+            $replyHasTsv = Test-ReplyContainsTSV -Reply $reply
+            if ($replyHasTsv) {
+                $consecutiveEmptyTsvCount = 0
+            } else {
+                $consecutiveEmptyTsvCount++
+                Write-Host "  本轮回复无 TSV 数据（连续 $consecutiveEmptyTsvCount/3 轮）" -ForegroundColor Yellow
+                if ($consecutiveEmptyTsvCount -ge 3 -and -not $emptyTsvFinalSent) {
+                    Write-Host "  连续 3 轮无 TSV，发送直接完成收尾 prompt..." -ForegroundColor Yellow
+                    $emptyTsvFinalMessage = '立即停止检索，直接输出当前已积累的两张最终完整 TSV（Ktype 映射 TSV 和 DIMENSION_GROUP TSV），保留仍有 PENDING 的条目原样输出，不要继续检索或补全。必须包含两个 sandbox 下载链接，并以"推进信号：COMPLETE"结束。'
+                    $emptyTsvFinalSent = $true
+                    $previousReply = $reply
+                    $nextCount++
+                    $round++
+                    Send-TrackedChatGPTMessage -OutputFile $outputFile -Label "无数据收尾 / Round $round" -Message $emptyTsvFinalMessage
+                    $sendCount++
+                    Save-TaskCheckpoint -Task $Task -Status "进行中" -Phase "waiting_reply" -Round $round -SendCount $sendCount -OutputFile $outputFile -ConversationUrl $conversationUrl
+                    continue
+                }
+                if ($consecutiveEmptyTsvCount -ge 3 -and $emptyTsvFinalSent) {
+                    $status = "无数据跳过"
+                    $remarks = "连续多轮回复均未给出 TSV 数据（已发送收尾 prompt 仍无数据），视为无可处理数据"
+                    break
+                }
+            }
             if ((Test-FullTableRequestSignal -Text $reply) -and (-not $hasFullTable)) {
                 Write-Host "  检测到全部/所有可入库，但未给完整表，发送完整全量表请求..." -ForegroundColor Yellow
                 if ($nextCount -ge $MaxNextSteps) {
@@ -4659,6 +4870,7 @@ function Generate-Summary {
         "脚本错误" = 0
         "登录失效" = 0
         "偏离终止" = 0
+        "无数据跳过" = 0
         "进行中" = 0
         "未处理" = 0
     }
@@ -4724,6 +4936,7 @@ function Generate-Summary {
 脚本错误数：$($count["脚本错误"])
 登录失效数：$($count["登录失效"])
 偏离终止数：$($count["偏离终止"])
+无数据跳过数：$($count["无数据跳过"])
 进行中数：$($count["进行中"])
 未处理数：$($count["未处理"])
 失败数：$failed
