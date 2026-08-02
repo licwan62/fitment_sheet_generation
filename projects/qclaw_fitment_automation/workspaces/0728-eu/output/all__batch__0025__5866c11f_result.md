@@ -1044,3 +1044,271 @@ EU-ALFA-ROMEO-ALFASUD-III-HATCHBACK-5D-01	3995	1590	1370	Automobile-Catalog Alfa
 
 推进信号：CONTINUE
 
+
+--- 发送 / checkpoint 续跑到 Round 8 ---
+继续当前批次并采用缓存优先模式。尺寸组只在首次创建或纠错时完整核对一次三维和来源；后续 Ktype 只判断关联哪个现有 DIMENSION_GROUP_ID，不重复抓取，不输出缓存来源或匹配理由。仍有 PENDING 时，CONTINUE 轮仅输出：1) 更新点；2) 当前批次进度；3) 本轮新增/修改的 Ktype 映射 TSV（无变化写“无”）；4) 本轮首次创建/修正的 DIMENSION_GROUP TSV（复用既有组不重复输出，无变化写“无”）；5) 下一步优先处理。若当前或上一轮进度已经是 PENDING=0，本轮不要继续检索或再次输出 CONTINUE，必须立刻汇总并输出两张最终完整 TSV、两个任务指定 sandbox 下载链接和“推进信号：COMPLETE”。执行顺序固定为：第一阶段优先消除 PENDING 并补齐会阻塞两张最终表的数据。检测到 PENDING=0 后，第二阶段最多只做一次轻量机械收尾：核对固定表头、id 与 DIMENSION_GROUP_ID 唯一、映射引用闭合、长宽高和来源非空、两个任务指定下载链接齐全。第二阶段不得重新逐车型、逐年份或逐来源做深度检索，不得为了提高置信度反复核对，也不得因非阻塞的排序或措辞问题继续多轮。PENDING=0 后的下一条回复必须直接输出两张最终完整 TSV、两个精确 sandbox 下载链接，并以“推进信号：COMPLETE”结束；不要再输出 CONTINUE。Ktype 映射 TSV 表头必须严格使用 requirement 指定的字段顺序：id	Ktype	NormalizedBodyStyle	Generation	BodyCode	Doors	DIMENSION_GROUP_ID	MatchConfidence	Notes	IterationStatus。另需维护完整 DIMENSION_GROUP TSV，表头固定为：DIMENSION_GROUP_ID	LengthMM	WidthMM	HeightMM	DimensionSource	SourceURL。缺少任一张表、任一映射引用的尺寸组，或尺寸组字段不完整时不得 COMPLETE。不要输出子车系匹配表。
+【COMPLETE 下载文件硬性要求】
+准备 COMPLETE 时，除两张完整内嵌 TSV 外，还必须创建并提供以下两个可点击 sandbox 下载链接，文件名必须完全一致：
+- all_2401-2500_ktype_dimension_mapping_final.tsv
+- all_2401-2500_dimension_groups_final.tsv
+缺少任一下载链接时不得输出推进信号：COMPLETE。
+
+
+--- Round 8 / checkpoint 续跑 ---
+## 更新点
+
+* Peugeot J5 最后 5 个 Ktype 已闭合：Bus 关联标准 Minibus 外廓；`Pritsche/Fahrgestell` 拆分短轴与长轴底盘驾驶室。
+* J5 标准 Minibus 使用 `4765 × 1965 × 2100 mm`；底盘驾驶室短轴、长轴分别使用 `4712 × 1965 × 1900 mm` 和 `5489 × 1965 × 1900 mm`。280P/290P Bus 与 280L/290L Chassis 的车身代码边界已核对。([Truck1][1])
+* 已完成轻量机械检查：表头正确、映射 `id` 唯一、尺寸组 ID 唯一、映射引用全部闭合，无孤立尺寸组，无空尺寸或空来源。
+
+## 当前批次进度
+
+* 输入 Ktype：**100**
+* READY 映射行：**144**
+* READY Ktype：**100/100**
+* PENDING：**0**
+* DIMENSION_GROUP：**71**
+* 当前批次已完成。
+
+## 最终完整 Ktype 映射 TSV
+
+```tsv
+id	Ktype	NormalizedBodyStyle	Generation	BodyCode	Doors	DIMENSION_GROUP_ID	MatchConfidence	Notes	IterationStatus
+2468	2468	Hatchback	106 I		3	EU-PEUGEOT-106-I-HATCHBACK-LEMANS-01	HIGH	Le Mans为三门专属外廓。	READY
+2469_3dr	2469	Hatchback	106 I		3	EU-PEUGEOT-106-I-HATCHBACK-3D-STANDARD-01	HIGH	1.6 XS三门外廓。	READY
+2469_5dr	2469	Hatchback	106 I		5	EU-PEUGEOT-106-I-HATCHBACK-5D-STANDARD-01	HIGH	1.6 XT五门外廓。	READY
+2470	2470	MPV	J5 I	280P		EU-PEUGEOT-J5-280P-MINIBUS-STANDARD-01	HIGH	标准轴距Minibus外廓。	READY
+2471_swb	2471	Pickup	J5 I	280L	2	EU-PEUGEOT-J5-280L-CHASSIS-CAB-SWB-01	MEDIUM	短轴双门底盘驾驶室外廓。	READY
+2471_lwb	2471	Pickup	J5 I	280L	2	EU-PEUGEOT-J5-280L-CHASSIS-CAB-LWB-01	MEDIUM	长轴双门底盘驾驶室外廓。	READY
+2472	2472	MPV	J5 I facelift	290P		EU-PEUGEOT-J5-280P-MINIBUS-STANDARD-01	HIGH	标准轴距Minibus外廓。	READY
+2473	2473	MPV	J5 I	280P		EU-PEUGEOT-J5-280P-MINIBUS-STANDARD-01	HIGH	标准轴距Minibus外廓。	READY
+2474	2474	MPV	J5 I facelift	290P		EU-PEUGEOT-J5-280P-MINIBUS-STANDARD-01	HIGH	标准轴距Minibus外廓。	READY
+2475_3dr	2475	Hatchback	306 Phase I		3	EU-PEUGEOT-306-PHASE-I-HATCHBACK-3D-01	HIGH	64 PS柴油版对应改款前三门外廓。	READY
+2475_5dr	2475	Hatchback	306 Phase I		5	EU-PEUGEOT-306-PHASE-I-HATCHBACK-5D-01	HIGH	64 PS柴油版对应改款前五门外廓。	READY
+2476_3dr	2476	Hatchback	306 Phase I		3	EU-PEUGEOT-306-PHASE-I-HATCHBACK-3D-01	HIGH	90 PS DT改款前三门外廓。	READY
+2476_5dr	2476	Hatchback	306 Phase I		5	EU-PEUGEOT-306-PHASE-I-HATCHBACK-5D-01	HIGH	90 PS DT改款前五门外廓。	READY
+2477	2477	MPV	Touran I (GP2)	1T3	5	EU-VW-TOURAN-I-GP2-MPV-01	HIGH		READY
+2478_3dr	2478	Hatchback	306 Phase I		3	EU-PEUGEOT-306-PHASE-I-HATCHBACK-3D-01	HIGH	1.1改款前三门外廓。	READY
+2478_5dr	2478	Hatchback	306 Phase I		5	EU-PEUGEOT-306-PHASE-I-HATCHBACK-5D-01	HIGH	1.1改款前五门外廓。	READY
+2479	2479	SUV	Cayenne II	92A	5	EU-PORSCHE-CAYENNE-II-SUV-TURBO-01	HIGH		READY
+2480_prefl_3dr	2480	Hatchback	306 Phase I		3	EU-PEUGEOT-306-PHASE-I-HATCHBACK-3D-01	HIGH	改款前三门外廓。	READY
+2480_prefl_5dr	2480	Hatchback	306 Phase I		5	EU-PEUGEOT-306-PHASE-I-HATCHBACK-5D-01	HIGH	改款前五门外廓。	READY
+2480_facelift_3dr	2480	Hatchback	306 facelift		3	EU-PEUGEOT-306-FACELIFT-HATCHBACK-3D-01	HIGH	1997年后改款三门外廓。	READY
+2480_facelift_5dr	2480	Hatchback	306 facelift		5	EU-PEUGEOT-306-FACELIFT-HATCHBACK-5D-01	HIGH	1997年后改款五门外廓。	READY
+2481	2481	SUV	Cayenne II	92A	5	EU-PORSCHE-CAYENNE-II-SUV-DIESEL-01	HIGH		READY
+2482_prefl_3dr	2482	Hatchback	306 Phase I		3	EU-PEUGEOT-306-PHASE-I-HATCHBACK-3D-01	HIGH	89 PS改款前三门外廓。	READY
+2482_prefl_5dr	2482	Hatchback	306 Phase I		5	EU-PEUGEOT-306-PHASE-I-HATCHBACK-5D-01	HIGH	89 PS改款前五门外廓。	READY
+2482_facelift_5dr	2482	Hatchback	306 facelift		5	EU-PEUGEOT-306-FACELIFT-HATCHBACK-5D-01	MEDIUM	改款后88/89 PS五门外廓。	READY
+2483	2483	SUV	Range Rover III	L322	5	EU-LAND-ROVER-RANGE-ROVER-III-SUV-2010-01	HIGH		READY
+2484_3dr	2484	Hatchback	306 Phase I		3	EU-PEUGEOT-306-PHASE-I-HATCHBACK-3D-01	HIGH	101 PS版本对应改款前三门外廓。	READY
+2484_5dr	2484	Hatchback	306 Phase I		5	EU-PEUGEOT-306-PHASE-I-HATCHBACK-5D-01	HIGH	101 PS版本对应改款前五门外廓。	READY
+2485_3dr	2485	Hatchback	306 Phase I XSi		3	EU-PEUGEOT-306-PHASE-I-XSI-HATCHBACK-3D-01	HIGH	XSi三门运动外廓。	READY
+2485_5dr	2485	Hatchback	306 Phase I XSi		5	EU-PEUGEOT-306-PHASE-I-XSI-HATCHBACK-5D-01	HIGH	XSi五门运动外廓。	READY
+2486	2486	Hatchback	306 Phase I S16		3	EU-PEUGEOT-306-PHASE-I-S16-HATCHBACK-3D-01	HIGH	S16仅三门运动外廓。	READY
+2487	2487	Hatchback	Samba	51A	3	EU-TALBOT-SAMBA-HATCHBACK-01	HIGH		READY
+2488	2488	Hatchback	Samba	51A	3	EU-TALBOT-SAMBA-HATCHBACK-01	HIGH		READY
+2489	2489	Hatchback	Samba	51A	3	EU-TALBOT-SAMBA-HATCHBACK-01	HIGH		READY
+2490	2490	Convertible	Samba	51E	2	EU-TALBOT-SAMBA-CONVERTIBLE-01	HIGH		READY
+2491	2491	Hatchback	Horizon		5	EU-TALBOT-HORIZON-HATCHBACK-01	HIGH		READY
+2492	2492	Hatchback	Horizon		5	EU-TALBOT-HORIZON-HATCHBACK-01	HIGH		READY
+2493	2493	Hatchback	Horizon		5	EU-TALBOT-HORIZON-HATCHBACK-01	HIGH		READY
+2494	2494	MPV	Grand C-MAX II		5	EU-FORD-GRAND-C-MAX-II-MPV-01	HIGH		READY
+2495	2495	Hatchback	Horizon		5	EU-TALBOT-HORIZON-HATCHBACK-01	HIGH		READY
+2496	2496	Hatchback	Horizon		5	EU-TALBOT-HORIZON-HATCHBACK-01	HIGH		READY
+2497	2497	Hatchback	Horizon		5	EU-TALBOT-HORIZON-HATCHBACK-01	HIGH		READY
+2498	2498	Hatchback	Horizon		5	EU-TALBOT-HORIZON-HATCHBACK-01	HIGH		READY
+2499	2499	Hatchback	Horizon		5	EU-TALBOT-HORIZON-HATCHBACK-01	HIGH		READY
+2500	2500	Hatchback	Simca 1307		5	EU-TALBOT-1307-1308-HATCHBACK-01	HIGH	VariantName明确为Simca 1307。	READY
+2501	2501	Hatchback	Simca 1308		5	EU-TALBOT-1307-1308-HATCHBACK-01	HIGH	VariantName明确为Simca 1308。	READY
+2502	2502	Hatchback	Simca 1308		5	EU-TALBOT-1307-1308-HATCHBACK-01	HIGH	VariantName明确为Simca 1308。	READY
+2503	2503	Hatchback	Talbot 1510		5	EU-TALBOT-1510-HATCHBACK-01	HIGH	VariantName明确为1510。	READY
+2504	2504	Sedan	Solara		4	EU-TALBOT-SOLARA-SEDAN-01	HIGH		READY
+2505	2505	Sedan	Solara		4	EU-TALBOT-SOLARA-SEDAN-01	HIGH		READY
+2506	2506	Sedan	Solara		4	EU-TALBOT-SOLARA-SEDAN-01	HIGH		READY
+2507	2507	Sedan	Solara		4	EU-TALBOT-SOLARA-SEDAN-01	HIGH		READY
+2508	2508	Sedan	Solara		4	EU-TALBOT-SOLARA-SEDAN-01	HIGH		READY
+2509	2509	Sedan	Tagora		4	EU-TALBOT-TAGORA-SEDAN-01	MEDIUM	输入2.1对应2156cc的2.2 GL/GLS外廓。	READY
+2510	2510	Coupe	Murena		3	EU-TALBOT-MURENA-COUPE-01	MEDIUM	输入2.1/116 PS按同期2.2-litre量产分支映射。	READY
+2511	2511	MPV	Rancho		3	EU-TALBOT-RANCHO-MPV-01	HIGH		READY
+2512_series3_4dr	2512	Sedan	Alfasud III	901	4	EU-ALFA-ROMEO-ALFASUD-III-SEDAN-4D-01	MEDIUM	第三系列四门快背外廓。	READY
+2512_series3_3dr	2512	Hatchback	Alfasud III	901	3	EU-ALFA-ROMEO-ALFASUD-III-HATCHBACK-3D-01	MEDIUM	第三系列三门掀背外廓。	READY
+2512_series3_5dr	2512	Hatchback	Alfasud III	901	5	EU-ALFA-ROMEO-ALFASUD-III-HATCHBACK-5D-01	MEDIUM	第三系列五门掀背外廓。	READY
+2513_series1_4dr	2513	Sedan	Alfasud I	901	4	EU-ALFA-ROMEO-ALFASUD-I-SEDAN-4D-01	HIGH	第一系列四门快背车身。	READY
+2513_series2_4dr	2513	Sedan	Alfasud II	901	4	EU-ALFA-ROMEO-ALFASUD-II-SEDAN-4D-01	HIGH	第二系列四门快背车身。	READY
+2513_series3_4dr	2513	Sedan	Alfasud III	901	4	EU-ALFA-ROMEO-ALFASUD-III-SEDAN-4D-01	HIGH	第三系列四门快背车身。	READY
+2513_series3_3dr	2513	Hatchback	Alfasud III	901	3	EU-ALFA-ROMEO-ALFASUD-III-HATCHBACK-3D-01	HIGH	第三系列三门掀背车身。	READY
+2515_series1_2dr	2515	Sedan	Alfasud I TI	901	2	EU-ALFA-ROMEO-ALFASUD-I-TI-SEDAN-2D-01	HIGH	第一系列TI双门快背外廓。	READY
+2515_series2_2dr	2515	Sedan	Alfasud II TI	901	2	EU-ALFA-ROMEO-ALFASUD-II-TI-SEDAN-2D-01	HIGH	第二系列TI双门快背外廓。	READY
+2515_series3_2dr	2515	Sedan	Alfasud III TI	901	2	EU-ALFA-ROMEO-ALFASUD-III-TI-SEDAN-2D-01	HIGH	第三系列初期TI双门快背外廓。	READY
+2515_series3_3dr	2515	Hatchback	Alfasud III TI	901	3	EU-ALFA-ROMEO-ALFASUD-III-TI-HATCHBACK-3D-01	HIGH	第三系列后期TI三门掀背外廓。	READY
+2516	2516	Sedan	Alfasud II	901	4	EU-ALFA-ROMEO-ALFASUD-II-SEDAN-4D-01	HIGH		READY
+2517	2517	Sedan	Alfasud I TI	901	2	EU-ALFA-ROMEO-ALFASUD-I-TI-SEDAN-2D-01	HIGH		READY
+2518_series2_4dr	2518	Sedan	Alfasud II Super	901	4	EU-ALFA-ROMEO-ALFASUD-II-SEDAN-4D-01	HIGH	第二系列Super四门快背外廓。	READY
+2518_series3_4dr	2518	Sedan	Alfasud III	901	4	EU-ALFA-ROMEO-ALFASUD-III-SEDAN-4D-01	MEDIUM	第三系列四门快背外廓。	READY
+2518_series3_3dr	2518	Hatchback	Alfasud III	901	3	EU-ALFA-ROMEO-ALFASUD-III-HATCHBACK-3D-01	MEDIUM	第三系列三门掀背外廓。	READY
+2518_series3_5dr	2518	Hatchback	Alfasud III	901	5	EU-ALFA-ROMEO-ALFASUD-III-HATCHBACK-5D-01	MEDIUM	第三系列五门掀背外廓。	READY
+2519_series2_super_4dr	2519	Sedan	Alfasud II Super	901	4	EU-ALFA-ROMEO-ALFASUD-II-SEDAN-4D-01	MEDIUM	Super四门快背外廓。	READY
+2519_series2_ti_2dr	2519	Sedan	Alfasud II TI	901	2	EU-ALFA-ROMEO-ALFASUD-II-TI-SEDAN-2D-01	MEDIUM	TI双门快背外廓。	READY
+2519_series3_sc_3dr	2519	Hatchback	Alfasud III SC	901	3	EU-ALFA-ROMEO-ALFASUD-III-HATCHBACK-3D-01	MEDIUM	SC三门掀背外廓。	READY
+2519_series3_sc_5dr	2519	Hatchback	Alfasud III SC	901	5	EU-ALFA-ROMEO-ALFASUD-III-HATCHBACK-5D-01	MEDIUM	SC五门掀背外廓。	READY
+2519_series3_ti_2dr	2519	Sedan	Alfasud III TI	901	2	EU-ALFA-ROMEO-ALFASUD-III-TI-SEDAN-2D-01	MEDIUM	改款初期TI双门快背外廓。	READY
+2519_series3_ti_3dr	2519	Hatchback	Alfasud III TI	901	3	EU-ALFA-ROMEO-ALFASUD-III-TI-HATCHBACK-3D-01	MEDIUM	后期TI三门掀背外廓。	READY
+2520_2dr	2520	Sedan	Alfasud III TI	901	2	EU-ALFA-ROMEO-ALFASUD-III-TI-SEDAN-2D-01	HIGH	改款初期双门快背车身。	READY
+2520_3dr	2520	Hatchback	Alfasud III TI	901	3	EU-ALFA-ROMEO-ALFASUD-III-TI-HATCHBACK-3D-01	HIGH	后期三门掀背车身。	READY
+2521	2521	Sedan	Alfasud II TI	901	2	EU-ALFA-ROMEO-ALFASUD-II-TI-SEDAN-2D-01	HIGH		READY
+2522_2dr	2522	Sedan	Alfasud III TI	901	2	EU-ALFA-ROMEO-ALFASUD-III-TI-SEDAN-2D-01	HIGH	改款初期双门快背车身。	READY
+2522_3dr	2522	Hatchback	Alfasud III TI	901	3	EU-ALFA-ROMEO-ALFASUD-III-TI-HATCHBACK-3D-01	HIGH	后期三门掀背车身。	READY
+2523	2523	Coupe	Sprint II	902A	3	EU-ALFA-ROMEO-SPRINT-902A-COUPE-QV-01	HIGH	输入TI Sprint对应105 PS Quadrifoglio Verde外廓。	READY
+2524	2524	Wagon	Alfasud Giardinetta	904A	3	EU-ALFA-ROMEO-ALFASUD-904A-WAGON-01	HIGH		READY
+2525	2525	Wagon	Alfasud Giardinetta	904B2	3	EU-ALFA-ROMEO-ALFASUD-904B2-WAGON-01	HIGH		READY
+2526	2526	Hatchback	Alfa Romeo 33 I	905	5	EU-ALFA-ROMEO-33-905-HATCHBACK-FWD-01	HIGH		READY
+2527	2527	Hatchback	Alfa Romeo 33 I	905	5	EU-ALFA-ROMEO-33-905-HATCHBACK-4X4-01	HIGH	四驱车身高度独立。	READY
+2528	2528	Wagon	Alfa Romeo 33 I	905A	5	EU-ALFA-ROMEO-33-905-WAGON-FWD-01	HIGH		READY
+2529	2529	Wagon	Alfa Romeo 33 I	905A	5	EU-ALFA-ROMEO-33-905-WAGON-FWD-01	HIGH		READY
+2530	2530	Wagon	Alfa Romeo 33 I	905A	5	EU-ALFA-ROMEO-33-905-WAGON-FWD-01	HIGH		READY
+2531	2531	Wagon	Alfa Romeo 33 I	905A	5	EU-ALFA-ROMEO-33-905-WAGON-FWD-01	HIGH		READY
+2532	2532	Sedan	Alfa 6 I facelift	119	4	EU-ALFA-ROMEO-ALFA-6-119-SEDAN-FACELIFT-01	HIGH		READY
+2533_prefl	2533	Sedan	Alfa 6 I pre-facelift	119	4	EU-ALFA-ROMEO-ALFA-6-119-SEDAN-PREFL-01	HIGH	生产区间覆盖第一系列外廓。	READY
+2533_facelift	2533	Sedan	Alfa 6 I facelift	119	4	EU-ALFA-ROMEO-ALFA-6-119-SEDAN-FACELIFT-01	HIGH	生产区间覆盖1983年改款后外廓。	READY
+2534	2534	SUV	Range Rover III	L322	5	EU-LAND-ROVER-RANGE-ROVER-III-SUV-2010-01	HIGH		READY
+2535	2535	Hatchback	Alfa Romeo 33 II	907A	5	EU-ALFA-ROMEO-33-907-HATCHBACK-4X4-01	HIGH		READY
+2536	2536	Hatchback	Alfa Romeo 33 II	907A	5	EU-ALFA-ROMEO-33-907-HATCHBACK-4X4-01	HIGH		READY
+2537	2537	Wagon	Alfa Romeo 33 II	907B	5	EU-ALFA-ROMEO-33-907-WAGON-4X4-01	HIGH		READY
+2538	2538	Hatchback	A7 Sportback I (C7)	4G8	5	EU-AUDI-A7-C7-SPORTBACK-01	HIGH		READY
+2539	2539	Wagon	Alfa Romeo 33 II	907B	5	EU-ALFA-ROMEO-33-907-WAGON-4X4-01	HIGH		READY
+2540	2540	Sedan	Nuova 500 N	110	2	EU-FIAT-500-110-SEDAN-01	HIGH		READY
+2541	2541	Sedan	Nuova 500 F/L/R	110	2	EU-FIAT-500-110-SEDAN-01	HIGH		READY
+2542	2542	Wagon	500 Giardiniera	120	3	EU-FIAT-500-120-GIARDINIERA-WAGON-01	HIGH		READY
+2543_series1_3dr	2543	Hatchback	127 Series I		3	EU-FIAT-127-SERIES-I-HATCHBACK-3D-01	HIGH	第一系列低压缩三门外廓。	READY
+2543_series2_3dr	2543	Hatchback	127 Series II		3	EU-FIAT-127-SERIES-II-HATCHBACK-3D-01	HIGH	第二系列低压缩三门外廓。	READY
+2544_series1_3dr	2544	Hatchback	127 Series I		3	EU-FIAT-127-SERIES-I-HATCHBACK-3D-01	HIGH	第一系列标准三门外廓。	READY
+2544_series1_special_3dr	2544	Hatchback	127 Series I Special		3	EU-FIAT-127-SERIES-I-SPECIAL-HATCHBACK-3D-01	HIGH	Special保险杠造成长度差异。	READY
+2544_series2_3dr	2544	Hatchback	127 Series II		3	EU-FIAT-127-SERIES-II-HATCHBACK-3D-01	HIGH	第二系列三门外廓。	READY
+2544_series2_5dr	2544	Hatchback	127 Series II		5	EU-FIAT-127-SERIES-II-HATCHBACK-5D-01	HIGH	第二系列五门外廓。	READY
+2544_series3_3dr	2544	Hatchback	127 Series III		3	EU-FIAT-127-SERIES-III-HATCHBACK-3D-01	HIGH	第三系列三门外廓。	READY
+2545_series2_3dr	2545	Hatchback	127 Series II		3	EU-FIAT-127-SERIES-II-HATCHBACK-3D-01	MEDIUM	第二系列三门物理外廓。	READY
+2545_series3_3dr	2545	Hatchback	127 Series III		3	EU-FIAT-127-SERIES-III-HATCHBACK-3D-01	MEDIUM	第三系列三门物理外廓。	READY
+2545_series3_5dr	2545	Hatchback	127 Series III		5	EU-FIAT-127-SERIES-III-HATCHBACK-5D-01	MEDIUM	第三系列五门物理外廓。	READY
+2545_unificata_3dr	2545	Hatchback	127 Unificata		3	EU-FIAT-127-UNIFICATA-HATCHBACK-3D-01	MEDIUM	后期Unificata三门物理外廓。	READY
+2546	2546	Hatchback	127 Series II Sport		3	EU-FIAT-127-SERIES-II-SPORT-HATCHBACK-3D-01	HIGH		READY
+2547	2547	Hatchback	127 Series III Sport		3	EU-FIAT-127-SERIES-III-HATCHBACK-3D-01	HIGH		READY
+2548_early	2548	Hatchback	127 Diesel early		3	EU-FIAT-127-DIESEL-EARLY-HATCHBACK-3D-01	MEDIUM	早期柴油三门外廓。	READY
+2548_facelift	2548	Hatchback	127 Unificata Diesel		3	EU-FIAT-127-UNIFICATA-HATCHBACK-3D-01	MEDIUM	后期柴油三门外廓。	READY
+2549	2549	Wagon	127 Panorama		3	EU-FIAT-127-PANORAMA-WAGON-01	HIGH		READY
+2550	2550	Hatchback	Panda I facelift	141	3	EU-FIAT-PANDA-I-HATCHBACK-FACELIFT-01	HIGH	1986年起改款外廓。	READY
+2551	2551	Hatchback	Panda I pre-facelift	141	3	EU-FIAT-PANDA-I-HATCHBACK-PREFL-01	HIGH	1986年前外廓。	READY
+2552_prefl	2552	Hatchback	Panda I pre-facelift	141	3	EU-FIAT-PANDA-I-HATCHBACK-PREFL-01	HIGH	生产区间覆盖1986年改款前外廓。	READY
+2552_facelift	2552	Hatchback	Panda I facelift	141	3	EU-FIAT-PANDA-I-HATCHBACK-FACELIFT-01	HIGH	生产区间覆盖1986年改款后外廓。	READY
+2553	2553	Hatchback	Panda I pre-facelift	141	3	EU-FIAT-PANDA-I-PREFL-4X4-01	HIGH		READY
+2554	2554	Hatchback	Panda I facelift	141	3	EU-FIAT-PANDA-I-FACELIFT-4X4-01	HIGH		READY
+2555	2555	Hatchback	Panda I facelift	141	3	EU-FIAT-PANDA-I-FACELIFT-4X4-01	HIGH		READY
+2556	2556	Hatchback	Panda I facelift	141	3	EU-FIAT-PANDA-I-HATCHBACK-FACELIFT-01	HIGH		READY
+2557	2557	MPV	ix20	JC	5	EU-HYUNDAI-IX20-JC-MPV-01	HIGH	输入BodyStyle为Schrägheck，车型资料归为小型MPV。	READY
+2558	2558	Hatchback	Panda I facelift	141	3	EU-FIAT-PANDA-I-HATCHBACK-FACELIFT-01	HIGH		READY
+2559	2559	Hatchback	Panda I facelift	141	3	EU-FIAT-PANDA-I-FACELIFT-4X4-01	HIGH		READY
+2560	2560	Hatchback	Panda I facelift	141	3	EU-FIAT-PANDA-I-HATCHBACK-FACELIFT-01	HIGH		READY
+2561	2561	Hatchback	Panda I facelift	141	3	EU-FIAT-PANDA-I-FACELIFT-4X4-TREKKING-01	HIGH	Trekking加高外廓。	READY
+2562	2562	Hatchback	Panda I facelift	141	3	EU-FIAT-PANDA-I-HATCHBACK-FACELIFT-01	HIGH		READY
+2563	2563	Van	Panda I facelift	141	3	EU-FIAT-PANDA-I-HATCHBACK-FACELIFT-01	MEDIUM	封闭货运版复用同代三门外部车身。	READY
+2564	2564	Van	Panda I facelift	141	3	EU-FIAT-PANDA-I-HATCHBACK-FACELIFT-01	MEDIUM	封闭货运版复用同代三门外部车身。	READY
+2565	2565	Hatchback	Fiat 126 I		2	EU-FIAT-126-EARLY-STANDARD-01	HIGH		READY
+2566_standard	2566	Hatchback	Fiat 126 650 standard		2	EU-FIAT-126-EARLY-STANDARD-01	MEDIUM	标准车身外廓。	READY
+2566_economic	2566	Hatchback	Fiat 126 650 Economic		2	EU-FIAT-126-650-ECONOMIC-01	MEDIUM	Economic车身外廓。	READY
+2566_personal	2566	Hatchback	Fiat 126 650 Personal		2	EU-FIAT-126-650-PERSONAL-01	MEDIUM	Personal车身外廓。	READY
+2566_facelift	2566	Hatchback	Fiat 126 650 facelift		2	EU-FIAT-126-650-FACELIFT-01	MEDIUM	后期改款车身外廓。	READY
+2567	2567	Hatchback	Fiat 126 BIS		3	EU-FIAT-126-BIS-HATCHBACK-01	HIGH	704发动机对应带后尾门的BIS车身。	READY
+2568	2568	Convertible	124 Sport Spider I		2	EU-FIAT-124-SPORT-SPIDER-I-CONVERTIBLE-01	MEDIUM	按90 PS首代124 Sport Spider外廓映射。	READY
+```
+
+[下载 Ktype 映射表](sandbox:/mnt/data/all_2401-2500_ktype_dimension_mapping_final.tsv)
+
+## 最终完整 DIMENSION_GROUP TSV
+
+```tsv
+DIMENSION_GROUP_ID	LengthMM	WidthMM	HeightMM	DimensionSource	SourceURL
+EU-PEUGEOT-106-I-HATCHBACK-LEMANS-01	3564	1607	1360	Automobile-Catalog Peugeot 106 Le Mans	https://www.automobile-catalog.com/car/1994/2608535/peugeot_106_le_mans.html
+EU-PEUGEOT-106-I-HATCHBACK-3D-STANDARD-01	3564	1590	1367	Automobile-Catalog Peugeot 106 1.6i XS	https://www.automobile-catalog.com/car/1994/2608595/peugeot_106_1_6i_xs.html
+EU-PEUGEOT-106-I-HATCHBACK-5D-STANDARD-01	3564	1590	1367	Automobile-Catalog Peugeot 106 1.6i XT	https://www.automobile-catalog.com/car/1994/2608610/peugeot_106_1_6i_xt.html
+EU-PEUGEOT-J5-280P-MINIBUS-STANDARD-01	4765	1965	2100	Truck1 Peugeot J5 Minibus 2.5 D;Truck1 Peugeot J5 Minibus 2.0	https://www.truck1.eu/blog/peugeot-j5-minibus-2-5-d-73-hp-tech-specs-t30521;https://www.truck1.eu/blog/peugeot-j5-minibus-2-0-75-hp-tech-specs-t30506
+EU-PEUGEOT-J5-280L-CHASSIS-CAB-SWB-01	4712	1965	1900	Zoomcar Peugeot J5 Chassis Cab 1400 D Short	https://zoomcar.fr/fiche-technique-utilitaire/top-peugeot/j5-chassis-cabine-j5-chassis-cab-1400-d-court-NAT56839.html
+EU-PEUGEOT-J5-280L-CHASSIS-CAB-LWB-01	5489	1965	1900	Zoomcar Peugeot J5 Chassis Cab 1400 D Long	https://zoomcar.fr/fiche-technique-utilitaire/top-peugeot/j5-chassis-cabine-j5-chassis-cab-1400-d-long-NAT56838.html
+EU-PEUGEOT-306-PHASE-I-HATCHBACK-3D-01	3995	1692	1380	Auto-Data Peugeot 306 Hatchback 1.9 DT 90	https://www.auto-data.net/en/peugeot-306-hatchback-7a-c-1.9-dt-90hp-5716
+EU-PEUGEOT-306-PHASE-I-HATCHBACK-5D-01	3995	1692	1380	Auto-Data Peugeot 306 Hatchback 1.9 DT 90	https://www.auto-data.net/en/peugeot-306-hatchback-7a-c-1.9-dt-90hp-5716
+EU-VW-TOURAN-I-GP2-MPV-01	4397	1794	1634	Volkswagen The New Touran official brochure	https://autocatalogarchive.com/wp-content/uploads/2019/07/VW-Touran-2010-UK.pdf
+EU-PORSCHE-CAYENNE-II-SUV-TURBO-01	4846	1939	1702	Automobile-Catalog Porsche Cayenne Turbo	https://www.automobile-catalog.com/car/2010/2869655/porsche_cayenne_turbo.html
+EU-PEUGEOT-306-FACELIFT-HATCHBACK-3D-01	4030	1690	1380	Auto-Data Peugeot 306 Hatchback facelift generation	https://www.auto-data.net/en/peugeot-306-hatchback-facelift-1997-generation-6618
+EU-PEUGEOT-306-FACELIFT-HATCHBACK-5D-01	4030	1690	1380	Auto-Data Peugeot 306 Hatchback facelift generation	https://www.auto-data.net/en/peugeot-306-hatchback-facelift-1997-generation-6618
+EU-PORSCHE-CAYENNE-II-SUV-DIESEL-01	4846	1939	1705	Automobile-Catalog Porsche Cayenne Diesel	https://www.automobile-catalog.com/car/2011/2869625/porsche_cayenne_diesel.html
+EU-LAND-ROVER-RANGE-ROVER-III-SUV-2010-01	4972	1956	1865	Automobile-Catalog Range Rover 4.4 TDV8 Vogue;Automobile-Catalog Range Rover 5.0 V8 Vogue	https://www.automobile-catalog.com/car/2011/1404485/range_rover_4_4_tdv8_vouge.html;https://www.automobile-catalog.com/car/2010/1404500/range_rover_5_0_v8_vouge.html
+EU-PEUGEOT-306-PHASE-I-XSI-HATCHBACK-3D-01	3995	1692	1367	Auto-Data Peugeot 306 Hatchback 2.0 XSi 121	https://www.auto-data.net/en/peugeot-306-hatchback-7a-c-2.0-xsi-121hp-5722
+EU-PEUGEOT-306-PHASE-I-XSI-HATCHBACK-5D-01	3995	1692	1367	Auto-Data Peugeot 306 Hatchback 2.0 XSi 121	https://www.auto-data.net/en/peugeot-306-hatchback-7a-c-2.0-xsi-121hp-5722
+EU-PEUGEOT-306-PHASE-I-S16-HATCHBACK-3D-01	3995	1695	1365	Auto-Data Peugeot 306 S16 152;Auto-Data Peugeot 306 S16 163	https://www.auto-data.net/en/peugeot-306-hatchback-7a-c-2.0-s16-152hp-5720;https://www.auto-data.net/en/peugeot-306-hatchback-7a-c-2.0-s16-163hp-5721
+EU-TALBOT-SAMBA-HATCHBACK-01	3506	1528	1362	Automobile-Catalog Talbot Samba 1.4 GLS	https://www.automobile-catalog.com/car/1983/55535/talbot_samba_1_4_gls.html
+EU-TALBOT-SAMBA-CONVERTIBLE-01	3506	1528	1362	Automobile-Catalog Talbot Samba Cabriolet 1.4	https://www.automobile-catalog.com/car/1983/3118040/talbot_samba_1_4.html
+EU-TALBOT-HORIZON-HATCHBACK-01	3960	1680	1410	Automobile-Catalog Talbot Horizon 1.1 LS	https://www.automobile-catalog.com/car/1980/3116495/talbot_horizon_1_1_ls_59.html
+EU-FORD-GRAND-C-MAX-II-MPV-01	4520	1828	1684	Auto-Data Ford Grand C-MAX II 2.0 TDCi 163	https://www.auto-data.net/en/ford-grand-c-max-ii-2.0-duratorq-tdci-163hp-dpf-powershift-19881
+EU-TALBOT-1307-1308-HATCHBACK-01	4245	1680	1400	Automobile-Catalog Simca 1307 S	https://www.automobile-catalog.com/car/1978/28220/simca_1307_s.html
+EU-TALBOT-1510-HATCHBACK-01	4318	1680	1390	Automobile-Catalog Talbot 1510 1.6 GLS	https://www.automobile-catalog.com/car/1980/3112475/talbot_1510_1_6_gls.html
+EU-TALBOT-SOLARA-SEDAN-01	4393	1680	1390	Automobile-Catalog Talbot Solara 1.6 GLS	https://www.automobile-catalog.com/car/1982/3113480/talbot_solara_1_6_gls.html
+EU-TALBOT-TAGORA-SEDAN-01	4628	1810	1444	Automobile-Catalog Talbot Tagora GLS;Engine in Detail Talbot Tagora	https://www.automobile-catalog.com/car/1980/3118355/talbot_tagora_gls.html;https://www.engineindetail.com/cars/talbot/tagora
+EU-TALBOT-MURENA-COUPE-01	4070	1752	1220	Automobile-Catalog Talbot-Matra Murena 2.2-litre	https://www.automobile-catalog.com/car/1981/1458620/talbot_matra_murena_2_2-litre.html
+EU-TALBOT-RANCHO-MPV-01	4315	1665	1735	Automobile-Catalog Talbot-Matra Rancho	https://www.automobile-catalog.com/car/1983/1458710/talbot_matra_rancho.html
+EU-ALFA-ROMEO-ALFASUD-III-SEDAN-4D-01	3995	1590	1370	Automobile-Catalog Alfa Romeo Alfasud 1.2 4M	https://www.automobile-catalog.com/car/1980/44450/alfa_romeo_alfasud_1_2.html
+EU-ALFA-ROMEO-ALFASUD-III-HATCHBACK-3D-01	3995	1590	1370	Automobile-Catalog Alfa Romeo Alfasud 1.2 3-Porte	https://www.automobile-catalog.com/car/1981/143195/alfa_romeo_alfasud_1_2_3-porte.html
+EU-ALFA-ROMEO-ALFASUD-III-HATCHBACK-5D-01	3995	1590	1370	Automobile-Catalog Alfa Romeo Alfasud 1.3 SC 5-Porte	https://www.automobile-catalog.com/car/1982/143330/alfa_romeo_alfasud_1_3_sc_5-porte.html
+EU-ALFA-ROMEO-ALFASUD-I-SEDAN-4D-01	3890	1590	1370	Automobile-Catalog Alfa Romeo Alfasud	https://www.automobile-catalog.com/car/1972/27740/alfa_romeo_alfasud.html
+EU-ALFA-ROMEO-ALFASUD-II-SEDAN-4D-01	3935	1590	1370	Automobile-Catalog Alfa Romeo Alfasud Super 1.3	https://www.automobile-catalog.com/car/1977/35855/alfa_romeo_alfasud_super_1_3.html
+EU-ALFA-ROMEO-ALFASUD-I-TI-SEDAN-2D-01	3926	1590	1370	Automobile-Catalog Alfa Romeo Alfasud Ti 1.3	https://www.automobile-catalog.com/car/1977/143090/alfa_romeo_alfasud_ti_1_3.html
+EU-ALFA-ROMEO-ALFASUD-II-TI-SEDAN-2D-01	3935	1590	1370	Automobile-Catalog Alfa Romeo Alfasud Ti 1.5	https://www.automobile-catalog.com/car/1978/35900/alfa_romeo_alfasud_ti_1_5.html
+EU-ALFA-ROMEO-ALFASUD-III-TI-SEDAN-2D-01	3995	1616	1370	Automobile-Catalog Alfa Romeo Alfasud Ti 1.3	https://www.automobile-catalog.com/car/1980/143180/alfa_romeo_alfasud_ti_1_3.html
+EU-ALFA-ROMEO-ALFASUD-III-TI-HATCHBACK-3D-01	3995	1616	1370	Automobile-Catalog Alfa Romeo Alfasud Ti 1.3 3-Porte	https://www.automobile-catalog.com/car/1981/143240/alfa_romeo_alfasud_ti_1_3_3-porte.html
+EU-ALFA-ROMEO-SPRINT-902A-COUPE-QV-01	4024	1620	1295	Automobile-Catalog Alfa Romeo Sprint 1.5 Quadrifoglio Verde	https://www.automobile-catalog.com/car/1983/41660/alfa_romeo_sprint_1_5_quadrifoglio_verde.html
+EU-ALFA-ROMEO-ALFASUD-904A-WAGON-01	3935	1590	1370	Auto-Data Alfa Romeo Alfasud Giardinetta 1.2	https://www.auto-data.net/en/alfa-romeo-alfasud-giardinetta-904-1.2-63hp-1343
+EU-ALFA-ROMEO-ALFASUD-904B2-WAGON-01	3975	1590	1370	Automobile-Catalog Alfa Romeo Alfasud Giardinetta 1.3	https://www.automobile-catalog.com/car/1979/143135/alfa_romeo_alfasud_giardinietta_1_3.html
+EU-ALFA-ROMEO-33-905-HATCHBACK-FWD-01	4015	1612	1303	Automobile-Catalog Alfa Romeo 33 1.5	https://www.automobile-catalog.com/car/1983/48725/alfa_romeo_33_1_5.html
+EU-ALFA-ROMEO-33-905-HATCHBACK-4X4-01	4015	1612	1345	Automobile-Catalog Alfa Romeo 33 1.5 4x4	https://www.automobile-catalog.com/car/1987/215045/alfa_romeo_33_1_5_4x4.html
+EU-ALFA-ROMEO-33-905-WAGON-FWD-01	4142	1612	1345	Automobile-Catalog Alfa Romeo 33 1.5 Giardinetta	https://www.automobile-catalog.com/car/1986/215075/alfa_romeo_33_1_5_giardinietta.html
+EU-ALFA-ROMEO-ALFA-6-119-SEDAN-FACELIFT-01	4679	1685	1395	Automobile-Catalog Alfa Romeo Alfa 6 2.5 Iniezione Quadrifoglio Oro	https://www.automobile-catalog.com/car/1985/49775/alfa_romeo_alfa_6_2_5_iniezione_quadrifoglio_oro.html
+EU-ALFA-ROMEO-ALFA-6-119-SEDAN-PREFL-01	4760	1685	1395	Automobile-Catalog Alfa Romeo Alfa 6	https://www.automobile-catalog.com/car/1982/24500/alfa_romeo_alfa_6.html
+EU-ALFA-ROMEO-33-907-HATCHBACK-4X4-01	4075	1614	1375	Automobile-Catalog Alfa Romeo 33 16V Permanent 4 Quadrifoglio Verde	https://www.automobile-catalog.com/car/1991/216875/alfa_romeo_33_1_7_ie_16v_permanent_4_quadrifoglio_verde_s.html
+EU-ALFA-ROMEO-33-907-WAGON-4X4-01	4200	1614	1375	Automobile-Catalog Alfa Romeo 33 1.7 ie Sport Wagon 4x4	https://www.automobile-catalog.com/car/1992/217055/alfa_romeo_33_1_7_ie_sport_wagon_4x4.html
+EU-AUDI-A7-C7-SPORTBACK-01	4969	1911	1420	Audi A7 Sportback official technical data	https://www.ausmotive.com/downloads/Audi/A7-Sportback-tech-data-Mar2011.pdf
+EU-FIAT-500-110-SEDAN-01	2970	1320	1325	Automobile-Catalog Fiat 500 Economica	https://www.automobile-catalog.com/car/1958/708695/fiat_500_economica_standard.html
+EU-FIAT-500-120-GIARDINIERA-WAGON-01	3185	1323	1354	Automobile-Catalog Fiat 500 Giardiniera	https://www.automobile-catalog.com/car/1960/708800/fiat_500_giardiniera.html
+EU-FIAT-127-SERIES-I-HATCHBACK-3D-01	3595	1527	1380	Automobile-Catalog Fiat 127 Tre Porte	https://www.automobile-catalog.com/car/1972/711125/fiat_127_tre_porte.html
+EU-FIAT-127-SERIES-II-HATCHBACK-3D-01	3645	1527	1380	Automobile-Catalog Fiat 127 900 CL 3P	https://www.automobile-catalog.com/car/1979/2067110/fiat_127_900_cl_3p_low_compr.html
+EU-FIAT-127-SERIES-I-SPECIAL-HATCHBACK-3D-01	3635	1527	1380	Automobile-Catalog Fiat 127 Special 3 Porte 45PS	https://www.automobile-catalog.com/car/1974/711320/fiat_127_special_3_porte.html
+EU-FIAT-127-SERIES-II-HATCHBACK-5D-01	3645	1527	1380	Automobile-Catalog Fiat 127 900 CL 5 Porte	https://www.automobile-catalog.com/car/1981/711455/fiat_127_c_5_porte.html
+EU-FIAT-127-SERIES-III-HATCHBACK-3D-01	3711	1552	1370	Automobile-Catalog Fiat 127 1050 Super 3-door	https://www.automobile-catalog.com/car/1982/711530/fiat_127_super.html
+EU-FIAT-127-SERIES-III-HATCHBACK-5D-01	3711	1552	1370	Automobile-Catalog Fiat 127 1050 Super 5 Porte	https://www.automobile-catalog.com/car/1982/711560/fiat_127_super_5_porte.html
+EU-FIAT-127-UNIFICATA-HATCHBACK-3D-01	3745	1545	1405	Automobile-Catalog Fiat 127 1050	https://www.automobile-catalog.com/car/1984/711590/fiat_127_1050.html
+EU-FIAT-127-SERIES-II-SPORT-HATCHBACK-3D-01	3645	1536	1380	Automobile-Catalog Fiat 127 Sport	https://www.automobile-catalog.com/car/1980/711425/fiat_127_sport.html
+EU-FIAT-127-DIESEL-EARLY-HATCHBACK-3D-01	3745	1545	1410	Automobile-Catalog Fiat 127 D	https://www.automobile-catalog.com/car/1981/711500/fiat_127_d.html
+EU-FIAT-127-PANORAMA-WAGON-01	3920	1545	1425	Automobile-Catalog Fiat 127 Panorama D	https://www.automobile-catalog.com/car/1981/711485/fiat_127_panorama_d.html
+EU-FIAT-PANDA-I-HATCHBACK-FACELIFT-01	3408	1494	1420	Automobile-Catalog Fiat Panda 750 L	https://www.automobile-catalog.com/car/1986/715055/fiat_panda_750_l_5-speed.html
+EU-FIAT-PANDA-I-HATCHBACK-PREFL-01	3380	1460	1445	Automobile-Catalog Fiat Panda 45 Super	https://www.automobile-catalog.com/car/1986/28925/fiat_panda_45_super_5-speed.html
+EU-FIAT-PANDA-I-PREFL-4X4-01	3390	1485	1470	Automobile-Catalog Fiat Panda 4x4	https://www.automobile-catalog.com/car/1984/49220/fiat_panda_4x4.html
+EU-FIAT-PANDA-I-FACELIFT-4X4-01	3408	1500	1468	Automobile-Catalog Fiat Panda 1000 4x4	https://www.automobile-catalog.com/car/1991/31340/fiat_panda_1000_4x4.html
+EU-HYUNDAI-IX20-JC-MPV-01	4100	1765	1600	Hyundai ix20 official brochure (archived)	https://autocatalogarchive.com/wp-content/uploads/2016/10/Hyundai-ix20-2012-UK.pdf
+EU-FIAT-PANDA-I-FACELIFT-4X4-TREKKING-01	3408	1500	1485	Auto Bild Klassik Fiat Panda 4x4 Trekking	https://www.autobild.de/klassik/artikel/fiat-panda-4x4-trekking-1300570.html
+EU-FIAT-126-EARLY-STANDARD-01	3054	1377	1335	Automobile-Catalog Fiat 126	https://www.automobile-catalog.com/car/1972/711065/fiat_126.html
+EU-FIAT-126-650-ECONOMIC-01	3070	1377	1335	Automobile-Catalog Fiat 126 Economic	https://www.automobile-catalog.com/car/1981/711095/fiat_126.html
+EU-FIAT-126-650-PERSONAL-01	3129	1382	1335	Automobile-Catalog Fiat 126 Personal	https://www.automobile-catalog.com/car/1977/711080/fiat_126_personal.html
+EU-FIAT-126-650-FACELIFT-01	3109	1377	1335	Automobile-Catalog Fiat 126 facelift	https://www.automobile-catalog.com/car/1985/2066855/fiat_126.html
+EU-FIAT-126-BIS-HATCHBACK-01	3107	1377	1343	Automobile-Catalog Fiat 126 BIS	https://www.automobile-catalog.com/car/1987/717935/fiat_126_bis.html
+EU-FIAT-124-SPORT-SPIDER-I-CONVERTIBLE-01	3971	1613	1250	Automobile-Catalog Fiat 124 Sport Spider 1400	https://www.automobile-catalog.com/car/1968/709790/fiat_124_sport_spider_1400.html
+```
+
+[下载 DIMENSION_GROUP 表](sandbox:/mnt/data/all_2401-2500_dimension_groups_final.tsv)
+
+推进信号：COMPLETE
+
+[1]: https://www.truck1.eu/blog/peugeot-j5-minibus-2-5-d-73-hp-tech-specs-t30521?srsltid=AfmBOoq3NlqgCP_deivdo0Sda_kHUhbZVzi4Ur1MtSj5Nf3Wp7eOoD8q&utm_source=chatgpt.com "Peugeot J5 Minibus 2.5 D (73 Hp) - Tech specs"
+
+
+--- 本地最终 TSV 已更新 ---
+- 本批 Ktype 映射：all_2401-2500_ktype_dimension_mapping_final.tsv
+- 本批尺寸组：all_2401-2500_dimension_groups_final.tsv
+- 累计 Ktype 映射：all_1-100_ktype_dimension_mapping_final.tsv（4408 行）
+- 累计尺寸组：all_1-100_dimension_groups_final.tsv（1266 行）
+

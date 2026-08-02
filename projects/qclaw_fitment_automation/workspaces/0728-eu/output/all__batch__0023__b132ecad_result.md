@@ -1005,3 +1005,281 @@ EU-PEUGEOT-104-C01-COUPE-MID-01	3305	1522	1360	Automobile-Catalog Peugeot 104 ZL
 
 推进信号：CONTINUE
 
+
+--- 发送 / checkpoint 续跑到 Round 8 ---
+继续当前批次并采用缓存优先模式。尺寸组只在首次创建或纠错时完整核对一次三维和来源；后续 Ktype 只判断关联哪个现有 DIMENSION_GROUP_ID，不重复抓取，不输出缓存来源或匹配理由。仍有 PENDING 时，CONTINUE 轮仅输出：1) 更新点；2) 当前批次进度；3) 本轮新增/修改的 Ktype 映射 TSV（无变化写“无”）；4) 本轮首次创建/修正的 DIMENSION_GROUP TSV（复用既有组不重复输出，无变化写“无”）；5) 下一步优先处理。若当前或上一轮进度已经是 PENDING=0，本轮不要继续检索或再次输出 CONTINUE，必须立刻汇总并输出两张最终完整 TSV、两个任务指定 sandbox 下载链接和“推进信号：COMPLETE”。执行顺序固定为：第一阶段优先消除 PENDING 并补齐会阻塞两张最终表的数据。检测到 PENDING=0 后，第二阶段最多只做一次轻量机械收尾：核对固定表头、id 与 DIMENSION_GROUP_ID 唯一、映射引用闭合、长宽高和来源非空、两个任务指定下载链接齐全。第二阶段不得重新逐车型、逐年份或逐来源做深度检索，不得为了提高置信度反复核对，也不得因非阻塞的排序或措辞问题继续多轮。PENDING=0 后的下一条回复必须直接输出两张最终完整 TSV、两个精确 sandbox 下载链接，并以“推进信号：COMPLETE”结束；不要再输出 CONTINUE。Ktype 映射 TSV 表头必须严格使用 requirement 指定的字段顺序：id	Ktype	NormalizedBodyStyle	Generation	BodyCode	Doors	DIMENSION_GROUP_ID	MatchConfidence	Notes	IterationStatus。另需维护完整 DIMENSION_GROUP TSV，表头固定为：DIMENSION_GROUP_ID	LengthMM	WidthMM	HeightMM	DimensionSource	SourceURL。缺少任一张表、任一映射引用的尺寸组，或尺寸组字段不完整时不得 COMPLETE。不要输出子车系匹配表。
+【COMPLETE 下载文件硬性要求】
+准备 COMPLETE 时，除两张完整内嵌 TSV 外，还必须创建并提供以下两个可点击 sandbox 下载链接，文件名必须完全一致：
+- all_2201-2300_ktype_dimension_mapping_final.tsv
+- all_2201-2300_dimension_groups_final.tsv
+缺少任一下载链接时不得输出推进信号：COMPLETE。
+
+
+--- Round 8 / checkpoint 续跑 ---
+## 更新点
+
+* 剩余 16 个 Peugeot 205 Ktype 已全部闭合。普通低配车身、标准宽度车身、早期柴油窄体/标准宽度以及后期低车高柴油外廓均已分别建立或复用尺寸组。相关资料明确使用不含后视镜宽度。([汽车目录][1])
+* 已完成机械收尾检查：映射表严格 10 列、尺寸组表严格 6 列；`id` 和 `DIMENSION_GROUP_ID` 唯一；映射引用全部闭合；不存在孤立尺寸组或空缺尺寸/来源。
+
+## 当前批次进度
+
+* 输入 Ktype：100
+* READY 输入 Ktype：100/100
+* 最终映射行：164
+* PENDING：0
+* 最终尺寸组：62
+* 当前批次已完成。
+
+## 最终完整 Ktype 映射 TSV
+
+```tsv
+id	Ktype	NormalizedBodyStyle	Generation	BodyCode	Doors	DIMENSION_GROUP_ID	MatchConfidence	Notes	IterationStatus
+2244	2244	Van	C15	VD	3	EU-CITROEN-C15-VD-VAN-01	HIGH	VD 三门厢式车外廓。	READY
+2245	2245	Van	C15	VD	3	EU-CITROEN-C15-VD-VAN-01	HIGH	VD 三门厢式车外廓。	READY
+2246	2246	Van	C15	VD	3	EU-CITROEN-C15-VD-VAN-01	HIGH	VD 三门厢式车外廓。	READY
+2247	2247	Van	C15	VD	3	EU-CITROEN-C15-VD-VAN-01	HIGH	VD 三门厢式车外廓。	READY
+2248	2248	Hatchback	XM Y3	Y3	5	EU-CITROEN-XM-Y3-HATCHBACK-01	HIGH	Y3 五门掀背外廓。	READY
+2249	2249	Hatchback	XM Y3	Y3	5	EU-CITROEN-XM-Y3-HATCHBACK-01	HIGH	Y3 五门掀背外廓。	READY
+2250	2250	Hatchback	XM Y3	Y3	5	EU-CITROEN-XM-Y3-HATCHBACK-01	HIGH	Y3 五门掀背外廓。	READY
+2251	2251	Hatchback	XM Y3	Y3	5	EU-CITROEN-XM-Y3-HATCHBACK-01	HIGH	Y3 五门掀背外廓。	READY
+2252	2252	Hatchback	XM Y3	Y3	5	EU-CITROEN-XM-Y3-HATCHBACK-01	HIGH	Y3 五门掀背外廓。	READY
+2253	2253	Hatchback	XM Y3	Y3	5	EU-CITROEN-XM-Y3-HATCHBACK-01	HIGH	Y3 五门掀背外廓。	READY
+2254	2254	Wagon	XM Break Y3	Y3	5	EU-CITROEN-XM-Y3-WAGON-01	HIGH	Y3 五门 Break 外廓。	READY
+2255	2255	Wagon	XM Break Y3	Y3	5	EU-CITROEN-XM-Y3-WAGON-01	HIGH	Y3 五门 Break 外廓。	READY
+2256	2256	Wagon	XM Break Y3	Y3	5	EU-CITROEN-XM-Y3-WAGON-01	HIGH	Y3 五门 Break 外廓。	READY
+2257	2257	Wagon	XM Break Y3	Y3	5	EU-CITROEN-XM-Y3-WAGON-01	HIGH	Y3 五门 Break 外廓。	READY
+2258_3dr	2258	Hatchback	ZX N2	N2	3	EU-CITROEN-ZX-N2-HATCHBACK-STD-01	HIGH	三门普通车身外廓。	READY
+2258_5dr	2258	Hatchback	ZX N2	N2	5	EU-CITROEN-ZX-N2-HATCHBACK-STD-01	HIGH	五门普通车身外廓。	READY
+2259_3dr	2259	Hatchback	ZX N2	N2	3	EU-CITROEN-ZX-N2-HATCHBACK-STD-01	HIGH	三门普通车身外廓。	READY
+2259_5dr	2259	Hatchback	ZX N2	N2	5	EU-CITROEN-ZX-N2-HATCHBACK-STD-01	HIGH	五门普通车身外廓。	READY
+2260_3dr	2260	Hatchback	ZX N2	N2	3	EU-CITROEN-ZX-N2-HATCHBACK-STD-01	HIGH	三门普通车身外廓。	READY
+2260_5dr	2260	Hatchback	ZX N2	N2	5	EU-CITROEN-ZX-N2-HATCHBACK-STD-01	HIGH	五门普通车身外廓。	READY
+2261_3dr	2261	Hatchback	ZX N2	N2	3	EU-CITROEN-ZX-N2-HATCHBACK-STD-01	HIGH	三门普通车身外廓。	READY
+2261_5dr	2261	Hatchback	ZX N2	N2	5	EU-CITROEN-ZX-N2-HATCHBACK-STD-01	HIGH	五门普通车身外廓。	READY
+2262_3dr	2262	Hatchback	ZX N2	N2	3	EU-CITROEN-ZX-N2-HATCHBACK-STD-01	HIGH	三门普通车身外廓。	READY
+2262_5dr	2262	Hatchback	ZX N2	N2	5	EU-CITROEN-ZX-N2-HATCHBACK-STD-01	HIGH	五门普通车身外廓。	READY
+2263	2263	Hatchback	ZX N2	N2	5	EU-CITROEN-ZX-N2-HATCHBACK-VOLCANE-01	HIGH	五门 Volcane 外廓。	READY
+2264_3dr	2264	Hatchback	ZX N2	N2	3	EU-CITROEN-ZX-N2-HATCHBACK-VOLCANE-01	HIGH	三门 Volcane 外廓。	READY
+2264_5dr	2264	Hatchback	ZX N2	N2	5	EU-CITROEN-ZX-N2-HATCHBACK-VOLCANE-01	HIGH	五门 Volcane 外廓。	READY
+2265	2265	Hatchback	ZX N2	N2	3	EU-CITROEN-ZX-N2-HATCHBACK-16V-01	HIGH	三门 16V 性能外廓。	READY
+2266_prefl	2266	Hatchback	Xantia X1	X1	5	EU-CITROEN-XANTIA-X1-HATCHBACK-01	MEDIUM	Ktype 跨 X1/X2；X1 改款前五门掀背分支。	READY
+2266_facelift	2266	Hatchback	Xantia X2	X2	5	EU-CITROEN-XANTIA-X2-HATCHBACK-01	MEDIUM	Ktype 跨 X1/X2；X2 改款后五门掀背分支。	READY
+2267_prefl	2267	Hatchback	Xantia X1	X1	5	EU-CITROEN-XANTIA-X1-HATCHBACK-01	MEDIUM	Ktype 跨 X1/X2；X1 改款前五门掀背分支。	READY
+2267_facelift	2267	Hatchback	Xantia X2	X2	5	EU-CITROEN-XANTIA-X2-HATCHBACK-01	MEDIUM	Ktype 跨 X1/X2；X2 改款后五门掀背分支。	READY
+2268_prefl	2268	Hatchback	Xantia X1	X1	5	EU-CITROEN-XANTIA-X1-HATCHBACK-01	HIGH	Ktype 跨 X1/X2；X1 改款前五门掀背分支。	READY
+2268_facelift	2268	Hatchback	Xantia X2	X2	5	EU-CITROEN-XANTIA-X2-HATCHBACK-01	HIGH	Ktype 跨 X1/X2；X2 改款后五门掀背分支。	READY
+2269	2269	Hatchback	Xantia X1	X1	5	EU-CITROEN-XANTIA-X1-HATCHBACK-01	HIGH	X1 改款前五门掀背外廓。	READY
+2270_prefl	2270	Sedan	DS Series 2		4	EU-CITROEN-DS-SERIES-2-SEDAN-01	HIGH	1967 年车身尺寸变化前的四门轿车分支。	READY
+2270_facelift	2270	Sedan	DS Series 3		4	EU-CITROEN-DS-SERIES-3-SEDAN-01	HIGH	1967 年车身尺寸变化后的四门轿车分支。	READY
+2271	2271	Sedan	DS Series 3		4	EU-CITROEN-DS-SERIES-3-SEDAN-01	HIGH	Series 3 四门轿车外廓。	READY
+2272	2272	Sedan	DS Series 3		4	EU-CITROEN-DS-SERIES-3-SEDAN-01	HIGH	Series 3 四门轿车外廓。	READY
+2273	2273	Sedan	DS Series 3		4	EU-CITROEN-DS-SERIES-3-SEDAN-01	HIGH	Series 3 四门轿车外廓。	READY
+2274	2274	Wagon	DS Series 3		5	EU-CITROEN-DS-SERIES-3-WAGON-01	HIGH	Series 3 五门旅行车外廓。	READY
+2275	2275	Hatchback	104		5	EU-PEUGEOT-104-LATE-HATCHBACK-5D-01	HIGH	后期五门 Berline 普通外廓。	READY
+2276	2276	Hatchback	104		5	EU-PEUGEOT-104-LATE-HATCHBACK-5D-01	HIGH	后期五门 Berline 普通外廓。	READY
+2278_4dr	2278	Sedan	104 early Berline	A01	4	EU-PEUGEOT-104-A01-SEDAN-4D-01	HIGH	早期四门 Fastback Sedan，无后部尾门。	READY
+2278_5dr_prefl	2278	Hatchback	104 five-door	A01	5	EU-PEUGEOT-104-A01-HATCHBACK-5D-MID-01	HIGH	1976 年起五门掀背车身分支。	READY
+2278_5dr_facelift	2278	Hatchback	104 facelift	A01	5	EU-PEUGEOT-104-LATE-HATCHBACK-5D-01	HIGH	1978 年后加长五门掀背车身分支。	READY
+2279	2279	Hatchback	104		5	EU-PEUGEOT-104-LATE-HATCHBACK-5D-01	HIGH	后期五门 Berline 普通外廓。	READY
+2280_prefl	2280	Coupe	104 Z Coupe early	C01	3	EU-PEUGEOT-104-C01-COUPE-EARLY-01	HIGH	早期短车身三门 Coupé 分支。	READY
+2280_facelift_1978	2280	Coupe	104 Z Coupe 1978 facelift	C01	3	EU-PEUGEOT-104-C01-COUPE-MID-01	HIGH	1978 年改款三门 Coupé 分支。	READY
+2280_facelift_1980	2280	Coupe	104 Z Coupe 1980 facelift	C01	3	EU-PEUGEOT-104-Z-COUPE-01	HIGH	后期加长三门 Coupé 分支。	READY
+2282	2282	Coupe	104 Z	Z	3	EU-PEUGEOT-104-Z-COUPE-01	HIGH	104 Z 后期三门短车身外廓。	READY
+2283	2283	Hatchback	104		5	EU-PEUGEOT-104-LATE-HATCHBACK-5D-01	HIGH	五门 Berline 普通外廓。	READY
+2284	2284	Coupe	104 Z	Z	3	EU-PEUGEOT-104-Z-COUPE-01	HIGH	104 Z 后期三门短车身外廓。	READY
+2285_prefl	2285	Coupe	104 ZS Coupe early	C01	3	EU-PEUGEOT-104-C01-COUPE-EARLY-01	HIGH	早期 ZS 三门 Coupé 分支。	READY
+2285_facelift_1978	2285	Coupe	104 ZS Coupe 1978 facelift	C01	3	EU-PEUGEOT-104-C01-COUPE-MID-01	HIGH	1978 年改款 ZS 三门 Coupé 分支。	READY
+2285_facelift_1980	2285	Coupe	104 ZS Coupe 1980 facelift	C01	3	EU-PEUGEOT-104-Z-COUPE-01	HIGH	后期加长 ZS 三门 Coupé 分支。	READY
+2286	2286	Hatchback	104		5	EU-PEUGEOT-104-SR-HATCHBACK-5D-01	HIGH	SR 五门外廓。	READY
+2287	2287	Hatchback	104		5	EU-PEUGEOT-104-S-HATCHBACK-5D-01	HIGH	S 五门外廓。	READY
+2288	2288	Coupe	104 Z	Z	3	EU-PEUGEOT-104-Z-COUPE-01	HIGH	104 Z 后期三门短车身外廓。	READY
+2289	2289	Sedan	204		4	EU-PEUGEOT-204-LATE-SEDAN-01	HIGH	1975 至 1977 后期四门 Berline 外廓。	READY
+2290	2290	Sedan	204		4	EU-PEUGEOT-204-EARLY-SEDAN-01	HIGH	早期四门 Berline 外廓。	READY
+2291_prefl	2291	Sedan	204		4	EU-PEUGEOT-204-EARLY-SEDAN-01	HIGH	Ktype 跨尺寸变化；早期四门 Berline 分支。	READY
+2291_facelift	2291	Sedan	204		4	EU-PEUGEOT-204-LATE-SEDAN-01	HIGH	Ktype 跨尺寸变化；后期四门 Berline 分支。	READY
+2292_3dr	2292	Hatchback	205 I	20A/C	3	EU-PEUGEOT-205-I-BASE-HATCHBACK-3D-01	HIGH	三门低配窄车身外廓。	READY
+2292_5dr	2292	Hatchback	205 I	20A/C	5	EU-PEUGEOT-205-I-BASE-HATCHBACK-5D-01	HIGH	五门低配窄车身外廓。	READY
+2293_3dr	2293	Hatchback	205 I	20A/C	3	EU-PEUGEOT-205-I-BASE-HATCHBACK-3D-01	HIGH	三门低配窄车身外廓。	READY
+2293_5dr	2293	Hatchback	205 I	20A/C	5	EU-PEUGEOT-205-I-BASE-HATCHBACK-5D-01	HIGH	五门低配窄车身外廓。	READY
+2294_3dr	2294	Hatchback	205 II	20A/C	3	EU-PEUGEOT-205-II-BASE-HATCHBACK-3D-01	HIGH	三门低配窄车身外廓。	READY
+2294_5dr	2294	Hatchback	205 II	20A/C	5	EU-PEUGEOT-205-II-BASE-HATCHBACK-5D-01	HIGH	五门低配窄车身外廓。	READY
+2295_3dr_base	2295	Hatchback	205 I	20A/C	3	EU-PEUGEOT-205-I-BASE-HATCHBACK-3D-01	MEDIUM	三门低配窄车身分支。	READY
+2295_5dr_base	2295	Hatchback	205 I	20A/C	5	EU-PEUGEOT-205-I-BASE-HATCHBACK-5D-01	MEDIUM	五门低配窄车身分支。	READY
+2295_3dr_wide	2295	Hatchback	205 I	20A/C	3	EU-PEUGEOT-205-I-STANDARD-HATCHBACK-3D-01	MEDIUM	三门标准宽度分支。	READY
+2295_5dr_wide	2295	Hatchback	205 I	20A/C	5	EU-PEUGEOT-205-I-STANDARD-HATCHBACK-5D-01	MEDIUM	五门标准宽度分支。	READY
+2296_3dr_base	2296	Hatchback	205 II	20A/C	3	EU-PEUGEOT-205-II-BASE-HATCHBACK-3D-01	MEDIUM	三门低配窄车身分支。	READY
+2296_5dr_base	2296	Hatchback	205 II	20A/C	5	EU-PEUGEOT-205-II-BASE-HATCHBACK-5D-01	MEDIUM	五门低配窄车身分支。	READY
+2296_3dr_wide	2296	Hatchback	205 II	20A/C	3	EU-PEUGEOT-205-II-STANDARD-HATCHBACK-3D-01	MEDIUM	三门标准宽度分支。	READY
+2296_5dr_wide	2296	Hatchback	205 II	20A/C	5	EU-PEUGEOT-205-II-STANDARD-HATCHBACK-5D-01	MEDIUM	五门标准宽度分支。	READY
+2297_3dr_base	2297	Hatchback	205 II	20A/C	3	EU-PEUGEOT-205-II-BASE-HATCHBACK-3D-01	MEDIUM	三门低配窄车身分支。	READY
+2297_5dr_base	2297	Hatchback	205 II	20A/C	5	EU-PEUGEOT-205-II-BASE-HATCHBACK-5D-01	MEDIUM	五门低配窄车身分支。	READY
+2297_3dr_wide	2297	Hatchback	205 II	20A/C	3	EU-PEUGEOT-205-II-STANDARD-HATCHBACK-3D-01	MEDIUM	三门标准宽度分支。	READY
+2297_5dr_wide	2297	Hatchback	205 II	20A/C	5	EU-PEUGEOT-205-II-STANDARD-HATCHBACK-5D-01	MEDIUM	五门标准宽度分支。	READY
+2298	2298	Convertible	205 Cabriolet		2	EU-PEUGEOT-205-CABRIOLET-NARROW-01	HIGH	CJ 二门窄体敞篷外廓。	READY
+2299_3dr_base	2299	Hatchback	205 I	20A/C	3	EU-PEUGEOT-205-I-BASE-HATCHBACK-3D-01	MEDIUM	三门低配窄车身分支。	READY
+2299_5dr_base	2299	Hatchback	205 I	20A/C	5	EU-PEUGEOT-205-I-BASE-HATCHBACK-5D-01	MEDIUM	五门低配窄车身分支。	READY
+2299_3dr_wide	2299	Hatchback	205 I	20A/C	3	EU-PEUGEOT-205-I-STANDARD-HATCHBACK-3D-01	MEDIUM	三门标准宽度分支。	READY
+2299_5dr_wide	2299	Hatchback	205 I	20A/C	5	EU-PEUGEOT-205-I-STANDARD-HATCHBACK-5D-01	MEDIUM	五门标准宽度分支。	READY
+2300	2300	Convertible	205 Cabriolet		2	EU-PEUGEOT-205-CABRIOLET-NARROW-01	HIGH	CJ 二门窄体敞篷外廓。	READY
+2301_3dr	2301	Hatchback	205 II	20A/C	3	EU-PEUGEOT-205-II-STANDARD-HATCHBACK-3D-01	HIGH	三门标准宽度外廓。	READY
+2301_5dr	2301	Hatchback	205 II	20A/C	5	EU-PEUGEOT-205-II-STANDARD-HATCHBACK-5D-01	HIGH	五门标准宽度外廓。	READY
+2302_3dr	2302	Hatchback	205 I	20A/C	3	EU-PEUGEOT-205-I-SPORT-HATCHBACK-3D-01	HIGH	三门 XS 运动型外廓。	READY
+2302_5dr	2302	Hatchback	205 I	20A/C	5	EU-PEUGEOT-205-I-SPORT-HATCHBACK-5D-01	HIGH	五门 GT 运动型外廓。	READY
+2303	2303	Convertible	205 Cabriolet		2	EU-PEUGEOT-205-CABRIOLET-NARROW-01	HIGH	CT 二门窄体敞篷外廓。	READY
+2304_3dr	2304	Hatchback	205 II	20A/C	3	EU-PEUGEOT-205-II-SPORT-HATCHBACK-3D-01	HIGH	三门 XS 运动型外廓。	READY
+2304_5dr	2304	Hatchback	205 II	20A/C	5	EU-PEUGEOT-205-II-SPORT-HATCHBACK-5D-01	HIGH	五门 GT 运动型外廓。	READY
+2306_3dr	2306	Hatchback	205 I	20A/C	3	EU-PEUGEOT-205-I-SPORT-HATCHBACK-3D-01	HIGH	三门 XS 运动型外廓。	READY
+2306_5dr	2306	Hatchback	205 I	20A/C	5	EU-PEUGEOT-205-I-SPORT-HATCHBACK-5D-01	HIGH	五门 GT 运动型外廓。	READY
+2307_3dr	2307	Hatchback	205 II	20A/C	3	EU-PEUGEOT-205-II-SPORT-HATCHBACK-3D-01	HIGH	三门 XS 运动型外廓。	READY
+2307_5dr	2307	Hatchback	205 II	20A/C	5	EU-PEUGEOT-205-II-SPORT-HATCHBACK-5D-01	HIGH	五门 GT 运动型外廓。	READY
+2308_3dr	2308	Hatchback	205 I facelift	20A/C	3	EU-PEUGEOT-205-I-AUTOMATIC-HATCHBACK-3D-01	HIGH	三门 Automatic 外廓。	READY
+2308_5dr	2308	Hatchback	205 I facelift	20A/C	5	EU-PEUGEOT-205-I-AUTOMATIC-HATCHBACK-5D-01	HIGH	五门 Automatic 外廓。	READY
+2309	2309	Convertible	205 Cabriolet	20A/C	2	EU-PEUGEOT-205-I-CTI-CONVERTIBLE-EARLY-01	HIGH	早期 CTI 二门敞篷外廓。	READY
+2310	2310	Hatchback	205 II	20A/C	3	EU-PEUGEOT-205-II-GTI-HATCHBACK-3D-01	HIGH	三门 GTI 宽体外廓。	READY
+2312_3dr	2312	Hatchback	205 I	20A/C	3	EU-PEUGEOT-205-I-SPORT-HATCHBACK-3D-01	HIGH	三门运动型外廓。	READY
+2312_5dr	2312	Hatchback	205 I	20A/C	5	EU-PEUGEOT-205-I-SPORT-HATCHBACK-5D-01	HIGH	五门运动型外廓。	READY
+2313	2313	Hatchback	205 I	20A/C	3	EU-PEUGEOT-205-I-GTI-HATCHBACK-3D-01	HIGH	三门 GTI 宽体外廓。	READY
+2314	2314	Hatchback	205 I	20A/C	3	EU-PEUGEOT-205-I-GTI-HATCHBACK-3D-01	HIGH	三门 GTI 宽体外廓。	READY
+2315	2315	Hatchback	205 II	20A/C	3	EU-PEUGEOT-205-II-GTI-HATCHBACK-3D-01	HIGH	三门 GTI 宽体外廓。	READY
+2316_3dr_base	2316	Hatchback	205 II	20A/C	3	EU-PEUGEOT-205-II-DIESEL-BASE-HATCHBACK-3D-01	MEDIUM	三门早期柴油低配窄车身分支。	READY
+2316_5dr_base	2316	Hatchback	205 II	20A/C	5	EU-PEUGEOT-205-II-DIESEL-BASE-HATCHBACK-5D-01	MEDIUM	五门早期柴油低配窄车身分支。	READY
+2316_3dr_wide	2316	Hatchback	205 II	20A/C	3	EU-PEUGEOT-205-II-DIESEL-WIDE-HATCHBACK-3D-01	MEDIUM	三门早期柴油标准宽度分支。	READY
+2316_5dr_wide	2316	Hatchback	205 II	20A/C	5	EU-PEUGEOT-205-II-DIESEL-WIDE-HATCHBACK-5D-01	MEDIUM	五门早期柴油标准宽度分支。	READY
+2316_3dr_late	2316	Hatchback	205 II	20A/C	3	EU-PEUGEOT-205-II-DIESEL-LATE-HATCHBACK-3D-01	MEDIUM	三门后期低车高柴油分支。	READY
+2316_5dr_late	2316	Hatchback	205 II	20A/C	5	EU-PEUGEOT-205-II-DIESEL-LATE-HATCHBACK-5D-01	MEDIUM	五门后期低车高柴油分支。	READY
+2317_3dr_base	2317	Hatchback	205 I	20A/C	3	EU-PEUGEOT-205-I-DIESEL-BASE-HATCHBACK-3D-01	MEDIUM	三门柴油低配窄车身分支。	READY
+2317_5dr_base	2317	Hatchback	205 I	20A/C	5	EU-PEUGEOT-205-I-DIESEL-BASE-HATCHBACK-5D-01	MEDIUM	五门柴油低配窄车身分支。	READY
+2317_3dr_wide	2317	Hatchback	205 I	20A/C	3	EU-PEUGEOT-205-I-STANDARD-HATCHBACK-3D-01	MEDIUM	三门柴油标准宽度分支。	READY
+2317_5dr_wide	2317	Hatchback	205 I	20A/C	5	EU-PEUGEOT-205-I-STANDARD-HATCHBACK-5D-01	MEDIUM	五门柴油标准宽度分支。	READY
+2318	2318	Sedan	Sonata V NF facelift	NF	4	EU-HYUNDAI-SONATA-NF-FACELIFT-SEDAN-01	HIGH	NF 2008 facelift 四门轿车外廓。	READY
+2319_3dr_base	2319	Hatchback	205 II	20A/C	3	EU-PEUGEOT-205-II-DIESEL-BASE-HATCHBACK-3D-01	MEDIUM	三门早期柴油低配窄车身分支。	READY
+2319_5dr_base	2319	Hatchback	205 II	20A/C	5	EU-PEUGEOT-205-II-DIESEL-BASE-HATCHBACK-5D-01	MEDIUM	五门早期柴油低配窄车身分支。	READY
+2319_3dr_wide	2319	Hatchback	205 II	20A/C	3	EU-PEUGEOT-205-II-DIESEL-WIDE-HATCHBACK-3D-01	MEDIUM	三门早期柴油标准宽度分支。	READY
+2319_5dr_wide	2319	Hatchback	205 II	20A/C	5	EU-PEUGEOT-205-II-DIESEL-WIDE-HATCHBACK-5D-01	MEDIUM	五门早期柴油标准宽度分支。	READY
+2319_3dr_late	2319	Hatchback	205 II	20A/C	3	EU-PEUGEOT-205-II-DIESEL-LATE-HATCHBACK-3D-01	MEDIUM	三门后期低车高柴油分支。	READY
+2319_5dr_late	2319	Hatchback	205 II	20A/C	5	EU-PEUGEOT-205-II-DIESEL-LATE-HATCHBACK-5D-01	MEDIUM	五门后期低车高柴油分支。	READY
+2320_3dr	2320	Hatchback	205 II	20A/C	3	EU-PEUGEOT-205-II-BASE-1.0-HATCHBACK-3D-01	HIGH	三门1.0 低配窄车身外廓。	READY
+2320_5dr	2320	Hatchback	205 II	20A/C	5	EU-PEUGEOT-205-II-BASE-1.0-HATCHBACK-5D-01	HIGH	五门1.0 低配窄车身外廓。	READY
+2321	2321	Convertible	205 Cabriolet		2	EU-PEUGEOT-205-CABRIOLET-NARROW-01	HIGH	CJ 二门窄体敞篷外廓。	READY
+2322_3dr_base	2322	Hatchback	205 II	20A/C	3	EU-PEUGEOT-205-II-BASE-HATCHBACK-3D-01	MEDIUM	三门低配窄车身分支。	READY
+2322_5dr_base	2322	Hatchback	205 II	20A/C	5	EU-PEUGEOT-205-II-BASE-HATCHBACK-5D-01	MEDIUM	五门低配窄车身分支。	READY
+2322_3dr_wide	2322	Hatchback	205 II	20A/C	3	EU-PEUGEOT-205-II-STANDARD-HATCHBACK-3D-01	MEDIUM	三门标准宽度分支。	READY
+2322_5dr_wide	2322	Hatchback	205 II	20A/C	5	EU-PEUGEOT-205-II-STANDARD-HATCHBACK-5D-01	MEDIUM	五门标准宽度分支。	READY
+2323_3dr	2323	Hatchback	205 II	20A/C	3	EU-PEUGEOT-205-II-BASE-HATCHBACK-3D-01	HIGH	三门催化版低配窄车身外廓。	READY
+2323_5dr	2323	Hatchback	205 II	20A/C	5	EU-PEUGEOT-205-II-BASE-HATCHBACK-5D-01	HIGH	五门催化版低配窄车身外廓。	READY
+2324_3dr	2324	Hatchback	205 II	20A/C	3	EU-PEUGEOT-205-II-STANDARD-HATCHBACK-3D-01	HIGH	三门标准宽度外廓。	READY
+2324_5dr	2324	Hatchback	205 II	20A/C	5	EU-PEUGEOT-205-II-STANDARD-HATCHBACK-5D-01	HIGH	五门标准宽度外廓。	READY
+2325	2325	Convertible	205 Cabriolet		2	EU-PEUGEOT-205-CABRIOLET-NARROW-01	HIGH	CJ 二门窄体敞篷外廓。	READY
+2326_3dr	2326	Hatchback	205 II	20A/C	3	EU-PEUGEOT-205-II-AUTOMATIC-HATCHBACK-3D-01	HIGH	三门 Automatic 外廓。	READY
+2326_5dr	2326	Hatchback	205 II	20A/C	5	EU-PEUGEOT-205-II-AUTOMATIC-HATCHBACK-5D-01	HIGH	五门 Automatic 外廓。	READY
+2327	2327	Convertible	205 Cabriolet		2	EU-PEUGEOT-205-CABRIOLET-NARROW-01	HIGH	CJ 二门窄体敞篷外廓。	READY
+2328	2328	Hatchback	205 II	20A/C	3	EU-PEUGEOT-205-II-GTI-HATCHBACK-3D-01	HIGH	三门 GTI 宽体外廓。	READY
+2329_prefl	2329	Convertible	205 Cabriolet	20A/C	2	EU-PEUGEOT-205-I-CTI-CONVERTIBLE-EARLY-01	HIGH	Ktype 跨敞篷高度变化；早期 CTI 分支。	READY
+2329_facelift	2329	Convertible	205 Cabriolet	20A/C	2	EU-PEUGEOT-205-I-CTI-CONVERTIBLE-LATE-01	HIGH	Ktype 跨敞篷高度变化；后期 CTI 分支。	READY
+2330	2330	Hatchback	205 II	20A/C	3	EU-PEUGEOT-205-II-GTI-HATCHBACK-3D-01	HIGH	三门 GTI 宽体外廓。	READY
+2332	2332	Hatchback	205 II	20A/C	3	EU-PEUGEOT-205-II-GTI-HATCHBACK-3D-01	HIGH	三门 GTI 催化版宽体外廓。	READY
+2334	2334	Convertible	304		2	EU-PEUGEOT-304-CABRIOLET-01	HIGH	二门 Cabriolet 外廓。	READY
+2335	2335	Sedan	305 I	581A	4	EU-PEUGEOT-305-I-SEDAN-BASE-01	HIGH	305 I 普通四门轿车外廓。	READY
+2336	2336	Sedan	305 II	581M	4	EU-PEUGEOT-305-II-SEDAN-BASE-01	HIGH	305 II 普通四门轿车外廓。	READY
+2337	2337	Sedan	305 II	581M	4	EU-PEUGEOT-305-II-SEDAN-BASE-01	HIGH	305 II 普通四门轿车外廓。	READY
+2338_base	2338	Sedan	305 I	581A	4	EU-PEUGEOT-305-I-SEDAN-BASE-01	MEDIUM	Ktype 覆盖普通车身配置分支。	READY
+2338_wide	2338	Sedan	305 I	581A	4	EU-PEUGEOT-305-I-SEDAN-WIDE-01	MEDIUM	Ktype 覆盖宽体低车高配置分支。	READY
+2339_base	2339	Sedan	305 II	581M	4	EU-PEUGEOT-305-II-SEDAN-BASE-01	MEDIUM	Ktype 覆盖普通车身配置分支。	READY
+2339_wide	2339	Sedan	305 II	581M	4	EU-PEUGEOT-305-II-SEDAN-WIDE-01	MEDIUM	Ktype 覆盖宽体高车身配置分支。	READY
+2340	2340	Sedan	305 II	581M	4	EU-PEUGEOT-305-II-SEDAN-SPORT-01	HIGH	S5 或 GT 运动型低车高外廓。	READY
+2341	2341	Sedan	305 II	581M	4	EU-PEUGEOT-305-II-SEDAN-SPORT-01	HIGH	GT 运动型低车高外廓。	READY
+2342_base	2342	Sedan	305 II	581M	4	EU-PEUGEOT-305-II-SEDAN-BASE-01	MEDIUM	Ktype 覆盖 GL 普通车身配置分支。	READY
+2342_wide	2342	Sedan	305 II	581M	4	EU-PEUGEOT-305-II-SEDAN-WIDE-01	MEDIUM	Ktype 覆盖 GR 或 SR 宽体配置分支。	READY
+2343	2343	Sedan	305 II	581M	4	EU-PEUGEOT-305-II-SEDAN-SPORT-01	HIGH	GT 或 GTX 运动型低车高外廓。	READY
+2344_base	2344	Sedan	305 I	581A	4	EU-PEUGEOT-305-I-SEDAN-BASE-01	MEDIUM	GLD 普通车身分支。	READY
+2344_wide	2344	Sedan	305 I	581A	4	EU-PEUGEOT-305-I-SEDAN-WIDE-01	MEDIUM	SRD 宽体低车高分支。	READY
+2345	2345	Sedan	305 II	581M	4	EU-PEUGEOT-305-II-SEDAN-BASE-01	HIGH	GLD 普通车身外廓。	READY
+2346	2346	Sedan	305 II	581M	4	EU-PEUGEOT-305-II-SEDAN-WIDE-01	HIGH	SRD 宽体高车身外廓。	READY
+2347	2347	Wagon	305 II Break	581E	5	EU-PEUGEOT-305-II-BREAK-BASE-01	HIGH	305 II Break 普通五门旅行车外廓。	READY
+2348	2348	Wagon	305 I Break	581D	5	EU-PEUGEOT-305-I-BREAK-01	HIGH	305 I Break 五门旅行车外廓。	READY
+2349	2349	Wagon	305 II Break	581E	5	EU-PEUGEOT-305-II-BREAK-WIDE-01	HIGH	305 II Break SR 宽体五门旅行车外廓。	READY
+```
+
+[下载 Ktype 映射表](sandbox:/mnt/data/all_2201-2300_ktype_dimension_mapping_final.tsv)
+
+## 最终完整 DIMENSION_GROUP TSV
+
+```tsv
+DIMENSION_GROUP_ID	LengthMM	WidthMM	HeightMM	DimensionSource	SourceURL
+EU-CITROEN-C15-VD-VAN-01	3995	1636	1801	Citroën Origins official C15 dimension drawing	https://www.citroenorigins.com/sites/default/files/styles/large/public/2023-07/dimensions_du_c15.jpg
+EU-CITROEN-XM-Y3-HATCHBACK-01	4708	1794	1385	Auto-Data Citroën XM Y3 2.0 i	https://www.auto-data.net/en/citroen-xm-y3-2.0-i-122hp-15050
+EU-CITROEN-XM-Y3-WAGON-01	4963	1794	1467	Automobile-Catalog Citroën XM Break 2.0 Injection	https://www.automobile-catalog.com/car/1991/541595/citroen_xm_break_2_0_injection.html
+EU-CITROEN-ZX-N2-HATCHBACK-STD-01	4071	1702	1399	Automobile-Catalog Citroën ZX Avantage 1.6i; Auto-Data Citroën ZX Phase II 3-door 1.4i; Auto-Data Citroën ZX Phase II 5-door 1.4i	https://www.automobile-catalog.com/car/1991/541880/citroen_zx_avantage_1_6i_without_cat.html;https://www.auto-data.net/en/citroen-zx-n2-phase-ii-3-door-1.4-i-75hp-46680;https://www.auto-data.net/en/citroen-zx-n2-phase-ii-5-door-1.4-i-75hp-46674
+EU-CITROEN-ZX-N2-HATCHBACK-VOLCANE-01	4085	1707	1386	Automobile-Catalog Citroën ZX Volcane 1.9i; Automobile-Catalog Citroën ZX Volcane 2.0i	https://www.automobile-catalog.com/car/1992/542090/citroen_zx_volcane_1_9i.html;https://www.automobile-catalog.com/car/1993/542255/citroen_zx_volcane_2_0i.html
+EU-CITROEN-ZX-N2-HATCHBACK-16V-01	4085	1718	1375	Automobile-Catalog Citroën ZX 16V	https://www.automobile-catalog.com/car/1994/542270/citroen_zx_16v.html
+EU-CITROEN-XANTIA-X1-HATCHBACK-01	4444	1755	1387	Auto-Data Citroën Xantia X1 1.6i	https://www.auto-data.net/en/citroen-xantia-x1-1.6i-88hp-14957
+EU-CITROEN-XANTIA-X2-HATCHBACK-01	4524	1755	1400	Auto-Data Citroën Xantia X2 2.0 i	https://www.auto-data.net/en/citroen-xantia-x2-2.0-i-121hp-14944
+EU-CITROEN-DS-SERIES-2-SEDAN-01	4838	1790	1470	Automobile-Catalog Citroën DS 21 1966	https://www.automobile-catalog.com/car/1966/127070/citroen_ds_21.html
+EU-CITROEN-DS-SERIES-3-SEDAN-01	4874	1803	1470	Automobile-Catalog Citroën DS 23 Injection; Automobile-Catalog Citroën DS 20	https://www.automobile-catalog.com/car/1972/162875/citroen_ds_23_injection.html;https://www.automobile-catalog.com/car/1972/127490/citroen_ds_20.html
+EU-CITROEN-DS-SERIES-3-WAGON-01	5026	1803	1530	Automobile-Catalog Citroën DS 23 Break	https://www.automobile-catalog.com/car/1975/127775/citroen_ds_23_break.html
+EU-PEUGEOT-104-LATE-HATCHBACK-5D-01	3616	1522	1402	Automobile-Catalog Peugeot 104 GL 950	https://www.automobile-catalog.com/car/1983/2567195/peugeot_104_gl_950.html
+EU-PEUGEOT-104-A01-SEDAN-4D-01	3580	1520	1390	Automobile-Catalog Peugeot 104 L 1973	https://www.automobile-catalog.com/car/1973/24365/peugeot_104_l.html
+EU-PEUGEOT-104-A01-HATCHBACK-5D-MID-01	3582	1522	1402	Automobile-Catalog Peugeot 104 GL 1977	https://www.automobile-catalog.com/car/1977/2566505/peugeot_104_gl.html
+EU-PEUGEOT-104-C01-COUPE-EARLY-01	3300	1520	1360	Automobile-Catalog Peugeot 104 Coupe 1975	https://www.automobile-catalog.com/car/1975/2566430/peugeot_104_coupe.html
+EU-PEUGEOT-104-C01-COUPE-MID-01	3305	1522	1360	Automobile-Catalog Peugeot 104 ZL 1979	https://www.automobile-catalog.com/car/1979/2566775/peugeot_104_zl.html
+EU-PEUGEOT-104-Z-COUPE-01	3366	1522	1360	Automobile-Catalog Peugeot 104 ZS	https://www.automobile-catalog.com/car/1980/2567045/peugeot_104_coupe_zs.html
+EU-PEUGEOT-104-SR-HATCHBACK-5D-01	3616	1540	1410	Automobile-Catalog Peugeot 104 SR	https://www.automobile-catalog.com/car/1980/31550/peugeot_104_sr.html
+EU-PEUGEOT-104-S-HATCHBACK-5D-01	3616	1522	1390	Automobile-Catalog Peugeot 104 S	https://www.automobile-catalog.com/car/1980/24590/peugeot_104_s.html
+EU-PEUGEOT-204-LATE-SEDAN-01	3980	1570	1400	Automobile-Catalog Peugeot 204 Berline Grand Luxe	https://www.automobile-catalog.com/car/1975/2555915/peugeot_204_berline_grand_luxe.html
+EU-PEUGEOT-204-EARLY-SEDAN-01	3990	1560	1400	Automobile-Catalog Peugeot 204 Berline Grand Luxe	https://www.automobile-catalog.com/car/1966/2555525/peugeot_204_berline_grand_luxe.html
+EU-PEUGEOT-205-I-BASE-HATCHBACK-3D-01	3705	1562	1374	Automobile-Catalog Peugeot 205 XL (GL) 1.1 5-sp	https://www.automobile-catalog.com/car/1984/2574815/peugeot_205_xl_gl_1_1_5-sp.html
+EU-PEUGEOT-205-I-BASE-HATCHBACK-5D-01	3705	1562	1374	Automobile-Catalog Peugeot 205 GL 1.1 5-sp	https://www.automobile-catalog.com/car/1984/2574800/peugeot_205_gl_1_1_5-sp.html
+EU-PEUGEOT-205-II-BASE-HATCHBACK-3D-01	3705	1562	1374	Automobile-Catalog Peugeot 205 XL (GL) 1.1 5-sp	https://www.automobile-catalog.com/car/1990/2575385/peugeot_205_xl_gl_1_1_5-sp.html
+EU-PEUGEOT-205-II-BASE-HATCHBACK-5D-01	3705	1562	1374	Automobile-Catalog Peugeot 205 Junior 1.1i catalyst	https://www.automobile-catalog.com/car/1990/2577140/peugeot_205_junior_1_1i_cat.html
+EU-PEUGEOT-205-I-STANDARD-HATCHBACK-3D-01	3705	1572	1373	Auto-Data Peugeot 205 I 3-door 1.4 60 Hp	https://www.auto-data.net/en/peugeot-205-i-741a-c-3-door-1.4-60hp-46256
+EU-PEUGEOT-205-I-STANDARD-HATCHBACK-5D-01	3705	1572	1373	Auto-Data Peugeot 205 I 1.4 60 Hp	https://www.auto-data.net/en/peugeot-205-i-741a-c-1.4-60hp-5666
+EU-PEUGEOT-205-II-STANDARD-HATCHBACK-3D-01	3705	1572	1374	Automobile-Catalog Peugeot 205 XR (GR) 1.4	https://www.automobile-catalog.com/car/1988/2575535/peugeot_205_xr_gr_1_4.html
+EU-PEUGEOT-205-II-STANDARD-HATCHBACK-5D-01	3705	1572	1374	Automobile-Catalog Peugeot 205 SR 1.4	https://www.automobile-catalog.com/car/1990/2576165/peugeot_205_sr_1_4.html
+EU-PEUGEOT-205-CABRIOLET-NARROW-01	3705	1572	1381	Automobile-Catalog Peugeot 205 CT; Automobile-Catalog Peugeot 205 CJ 1.4	https://www.automobile-catalog.com/car/1987/2575280/peugeot_205_ct.html;https://www.automobile-catalog.com/car/1991/2576255/peugeot_205_cj_1_4.html
+EU-PEUGEOT-205-I-SPORT-HATCHBACK-3D-01	3705	1572	1365	Automobile-Catalog Peugeot 205 XS	https://www.automobile-catalog.com/car/1986/2575235/peugeot_205_xs.html
+EU-PEUGEOT-205-I-SPORT-HATCHBACK-5D-01	3705	1572	1365	Automobile-Catalog Peugeot 205 XT/GT	https://www.automobile-catalog.com/car/1986/2574875/peugeot_205_xt_gt.html
+EU-PEUGEOT-205-II-SPORT-HATCHBACK-3D-01	3705	1572	1365	Automobile-Catalog Peugeot 205 XS	https://www.automobile-catalog.com/car/1988/2575565/peugeot_205_xs.html
+EU-PEUGEOT-205-II-SPORT-HATCHBACK-5D-01	3705	1572	1365	Automobile-Catalog Peugeot 205 GT	https://www.automobile-catalog.com/car/1988/2575550/peugeot_205_gt.html
+EU-PEUGEOT-205-I-AUTOMATIC-HATCHBACK-3D-01	3705	1572	1350	Automobile-Catalog Peugeot 205 Automatic	https://www.automobile-catalog.com/car/1986/2575085/peugeot_205_automatic.html
+EU-PEUGEOT-205-I-AUTOMATIC-HATCHBACK-5D-01	3705	1572	1350	Automobile-Catalog Peugeot 205 Automatic	https://www.automobile-catalog.com/car/1986/2575085/peugeot_205_automatic.html
+EU-PEUGEOT-205-I-CTI-CONVERTIBLE-EARLY-01	3705	1589	1354	Automobile-Catalog Peugeot 205 CTI; Automobile-Catalog Peugeot 205 CTI 1.9 catalyst	https://www.automobile-catalog.com/car/1987/54095/peugeot_205_cabrio_cti.html;https://www.automobile-catalog.com/car/1989/2575310/peugeot_205_cti_1_9_cat.html
+EU-PEUGEOT-205-II-GTI-HATCHBACK-3D-01	3705	1589	1355	Automobile-Catalog Peugeot 205 GTI 1.9	https://www.automobile-catalog.com/car/1988/63185/peugeot_205_gti_1_9.html
+EU-PEUGEOT-205-I-GTI-HATCHBACK-3D-01	3705	1589	1355	Automobile-Catalog Peugeot 205 GTI	https://www.automobile-catalog.com/car/1985/49025/peugeot_205_gti.html
+EU-PEUGEOT-205-II-DIESEL-BASE-HATCHBACK-3D-01	3705	1562	1376	Automobile-Catalog Peugeot 205 XLD (GLD) 5-sp	https://www.automobile-catalog.com/car/1988/2577575/peugeot_205_xld_gld_5-sp.html
+EU-PEUGEOT-205-II-DIESEL-BASE-HATCHBACK-5D-01	3705	1562	1376	Automobile-Catalog Peugeot 205 XLD (GLD) 1.9 D	https://www.automobile-catalog.com/car/1990/2576045/peugeot_205_xld_gld_1_9.html
+EU-PEUGEOT-205-II-DIESEL-WIDE-HATCHBACK-3D-01	3705	1572	1376	Automobile-Catalog Peugeot 205 XRD (GRD)	https://www.automobile-catalog.com/car/1988/2577680/peugeot_205_xrd_grd.html
+EU-PEUGEOT-205-II-DIESEL-WIDE-HATCHBACK-5D-01	3705	1572	1376	Automobile-Catalog Peugeot 205 XRD (GRD)	https://www.automobile-catalog.com/car/1988/2577680/peugeot_205_xrd_grd.html
+EU-PEUGEOT-205-II-DIESEL-LATE-HATCHBACK-3D-01	3705	1572	1350	Automobile-Catalog Peugeot 205 XLD (GLD) 1.9 D	https://www.automobile-catalog.com/car/1992/2576660/peugeot_205_xld_gld_1_9_d.html
+EU-PEUGEOT-205-II-DIESEL-LATE-HATCHBACK-5D-01	3705	1572	1350	Automobile-Catalog Peugeot 205 XLD (GLD) 1.9 D	https://www.automobile-catalog.com/car/1992/2576660/peugeot_205_xld_gld_1_9_d.html
+EU-PEUGEOT-205-I-DIESEL-BASE-HATCHBACK-3D-01	3705	1562	1376	Automobile-Catalog Peugeot 205 XLD (GLD) 4-sp	https://www.automobile-catalog.com/car/1985/2574920/peugeot_205_xld_gld_4-sp.html
+EU-PEUGEOT-205-I-DIESEL-BASE-HATCHBACK-5D-01	3705	1562	1376	Automobile-Catalog Peugeot 205 GLD 4-sp	https://www.automobile-catalog.com/car/1984/2574665/peugeot_205_gld_4-sp.html
+EU-HYUNDAI-SONATA-NF-FACELIFT-SEDAN-01	4800	1832	1475	Auto-Data Hyundai Sonata V NF facelift 2008	https://www.auto-data.net/en/hyundai-sonata-v-nf-facelift-2008-generation-5468
+EU-PEUGEOT-205-II-BASE-1.0-HATCHBACK-3D-01	3705	1562	1376	Automobile-Catalog Peugeot 205 Junior 1.0	https://www.automobile-catalog.com/car/1990/2577110/peugeot_205_junior.html
+EU-PEUGEOT-205-II-BASE-1.0-HATCHBACK-5D-01	3705	1562	1376	Automobile-Catalog Peugeot 205 Junior 1.0	https://www.automobile-catalog.com/car/1990/2577110/peugeot_205_junior.html
+EU-PEUGEOT-205-II-AUTOMATIC-HATCHBACK-3D-01	3705	1572	1350	Automobile-Catalog Peugeot 205 Automatic 1.6	https://www.automobile-catalog.com/car/1991/2576285/peugeot_205_automatic_1_6.html
+EU-PEUGEOT-205-II-AUTOMATIC-HATCHBACK-5D-01	3705	1572	1350	Automobile-Catalog Peugeot 205 Automatic 1.6	https://www.automobile-catalog.com/car/1991/2576285/peugeot_205_automatic_1_6.html
+EU-PEUGEOT-205-I-CTI-CONVERTIBLE-LATE-01	3705	1589	1381	Automobile-Catalog Peugeot 205 CTI 1.6; Automobile-Catalog Peugeot 205 CTI 1.9 catalyst	https://www.automobile-catalog.com/car/1992/2576495/peugeot_205_cti_1_6.html;https://www.automobile-catalog.com/car/1993/2576735/peugeot_205_cti_1_9_cat.html
+EU-PEUGEOT-304-CABRIOLET-01	3750	1570	1330	Automobile-Catalog Peugeot 304 Cabriolet S	https://www.automobile-catalog.com/car/1973/2556095/peugeot_304_cabriolet_s.html
+EU-PEUGEOT-305-I-SEDAN-BASE-01	4237	1630	1405	Automobile-Catalog Peugeot 305 GL; Automobile-Catalog Peugeot 305 GLD	https://www.automobile-catalog.com/car/1980/2568005/peugeot_305_gl.html;https://www.automobile-catalog.com/car/1981/2568080/peugeot_305_gld.html
+EU-PEUGEOT-305-II-SEDAN-BASE-01	4263	1630	1407	Automobile-Catalog Peugeot 305 GL; Automobile-Catalog Peugeot 305 GLD 5sp	https://www.automobile-catalog.com/car/1983/2568185/peugeot_305_gl.html;https://www.automobile-catalog.com/car/1983/2568380/peugeot_305_gld_5sp.html
+EU-PEUGEOT-305-I-SEDAN-WIDE-01	4237	1642	1400	Automobile-Catalog Peugeot 305 SR; Automobile-Catalog Peugeot 305 SRD	https://www.automobile-catalog.com/car/1979/37715/peugeot_305_sr.html;https://www.automobile-catalog.com/car/1980/2568095/peugeot_305_srd.html
+EU-PEUGEOT-305-II-SEDAN-WIDE-01	4263	1636	1411	Automobile-Catalog Peugeot 305 SR; Automobile-Catalog Peugeot 305 GR; Automobile-Catalog Peugeot 305 SRD	https://www.automobile-catalog.com/car/1983/2568260/peugeot_305_sr.html;https://www.automobile-catalog.com/car/1983/2568245/peugeot_305_gr.html;https://www.automobile-catalog.com/car/1985/2569115/peugeot_305_srd.html
+EU-PEUGEOT-305-II-SEDAN-SPORT-01	4263	1636	1396	Automobile-Catalog Peugeot 305 GT; Automobile-Catalog Peugeot 305 GTX	https://www.automobile-catalog.com/car/1983/28070/peugeot_305_gt.html;https://www.automobile-catalog.com/car/1986/2568545/peugeot_305_gtx.html
+EU-PEUGEOT-305-II-BREAK-BASE-01	4283	1630	1426	Automobile-Catalog Peugeot 305 Break GL	https://www.automobile-catalog.com/car/1983/2568200/peugeot_305_break_gl.html
+EU-PEUGEOT-305-I-BREAK-01	4259	1640	1426	Automobile-Catalog Peugeot 305 Break GL; Automobile-Catalog Peugeot 305 Break GLS	https://www.automobile-catalog.com/car/1980/2568110/peugeot_305_break_gl.html;https://www.automobile-catalog.com/car/1980/2568170/peugeot_305_break_gls.html
+EU-PEUGEOT-305-II-BREAK-WIDE-01	4283	1636	1426	Automobile-Catalog Peugeot 305 Break SR	https://www.automobile-catalog.com/car/1983/2568305/peugeot_305_break_sr.html
+```
+
+[下载 DIMENSION_GROUP 表](sandbox:/mnt/data/all_2201-2300_dimension_groups_final.tsv)
+
+推进信号：COMPLETE
+
+[1]: https://www.automobile-catalog.com/car/1984/2574800/peugeot_205_gl_1_1_5-sp.html "https://www.automobile-catalog.com/car/1984/2574800/peugeot_205_gl_1_1_5-sp.html"
+
+
+--- 本地最终 TSV 已更新 ---
+- 本批 Ktype 映射：all_2201-2300_ktype_dimension_mapping_final.tsv
+- 本批尺寸组：all_2201-2300_dimension_groups_final.tsv
+- 累计 Ktype 映射：all_1-100_ktype_dimension_mapping_final.tsv（4264 行）
+- 累计尺寸组：all_1-100_dimension_groups_final.tsv（1195 行）
+

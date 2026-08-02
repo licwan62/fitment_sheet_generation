@@ -1,0 +1,26 @@
+﻿{
+    "version":  2,
+    "task_id":  "all__batch__0074__7612fe4f",
+    "task_name":  "all 第 7301-7400 行",
+    "vehicle":  "all 第 7301-7400 行",
+    "source_file":  "all.tsv",
+    "status":  "脚本错误",
+    "phase":  "finished",
+    "round":  5,
+    "send_count":  5,
+    "output_file":  "D:\\Home\\Scripts\\fitment_sheet_generation\\projects\\qclaw_fitment_automation\\workspaces\\0728-eu\\output\\all__batch__0074__7612fe4f_result_2.md",
+    "conversation_url":  "https://chatgpt.com/c/6a6c1c1a-07dc-83e8-907d-7daab5ae2179",
+    "conversation_branch_count":  0,
+    "conversation_lineage":  [
+                                 {
+                                     "branch_index":  0,
+                                     "url":  "https://chatgpt.com/c/6a6c1c1a-07dc-83e8-907d-7daab5ae2179",
+                                     "parent_url":  "",
+                                     "trigger":  "initial",
+                                     "round":  1,
+                                     "created_at":  "2026-07-31 11:53:00"
+                                 }
+                             ],
+    "remarks":  "异常: ChatGPT 页面显示未登录",
+    "updated_at":  "2026-08-01 20:47:17"
+}
