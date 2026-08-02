@@ -670,3 +670,668 @@ Ford	Focus ii turnier	2.0 LPG	Kombi	Frontantrieb	Benzin/Autogas (LPG)	107	145	Ju
 Ford	Focus ii turnier	1.6 LPG	Kombi	Frontantrieb	Benzin/Autogas (LPG)	85	115	Oct 2009	Sep 2012	2024-03-01	33345
 Ford	Focus ii	1.6 LPG	Schrägheck	Frontantrieb	Benzin/Autogas (LPG)	85	115	Oct 2009	Jul 2011	2024-03-01	33346
 
+
+--- Round 1 / checkpoint 续跑 ---
+## 更新点
+
+* 按缓存优先完成既有尺寸组关联，已覆盖 77 个输入 Ktype。
+* 新建并闭合 Ferrari F430 Coupe、F430 Spider 两个尺寸([法拉利][1])([法拉利][1])
+* 未对复用尺寸组重复输出三维和来源。
+* 剩余 PENDING 集中于 H-1 Cargo、G-Class Cabriolet、Modus、Integra、Master III、Audi A1、Touareg II、Ibiza IV ST。
+
+## 当前批次进度
+
+* 输入 Ktype：100
+* 已闭合输入 Ktype：77
+* PENDING 输入 Ktype：23
+* READY 映射行：96
+* PENDING 映射行：23
+* 本轮首次创建尺寸组：2
+* 当前批次尚未完成。
+
+## 本轮新增/修改的 Ktype 映射 TSV
+
+```tsv
+id	Ktype	NormalizedBodyStyle	Generation	BodyCode	Doors	DIMENSION_GROUP_ID	MatchConfidence	Notes	IterationStatus
+33132	33132	SUV	ix35 LM	LM	5	EU-HYUNDAI-IX35-LM-SUV-5D-01	HIGH		READY
+33133	33133	SUV	ix35 LM	LM	5	EU-HYUNDAI-IX35-LM-SUV-5D-01	HIGH		READY
+33134	33134	SUV	ix35 LM	LM	5	EU-HYUNDAI-IX35-LM-SUV-5D-01	HIGH		READY
+33135	33135	SUV	ix35 LM	LM	5	EU-HYUNDAI-IX35-LM-SUV-5D-01	HIGH		READY
+33149	33149	SUV	ix35 LM	LM	5	EU-HYUNDAI-IX35-LM-SUV-5D-01	HIGH		READY
+33152	33152	Van	H-1 TQ	TQ			LOW	需确认短/长轴及车顶高度分支。	PENDING: H-1 Cargo外廓分支未闭合
+33153	33153	Van	H-1 TQ	TQ			LOW	需确认短/长轴及车顶高度分支。	PENDING: H-1 Cargo外廓分支未闭合
+33163	33163	Convertible	F430	F131	2	EU-FERRARI-F430-F131-CONVERTIBLE-2D-01	HIGH		READY
+33164	33164	Coupe	F430	F131	2	EU-FERRARI-F430-F131-COUPE-2D-01	HIGH		READY
+33165	33165	Coupe	F430	F131	2	EU-FERRARI-F430-SCUDERIA-COUPE-2D-01	HIGH		READY
+33176	33176	Wagon	i30 FD	FD	5	EU-HYUNDAI-I30-FD-CW-WAGON-5D-01	HIGH		READY
+33191	33191	Sedan	Insignia A facelift	G09	4	EU-OPEL-INSIGNIA-A-FACELIFT-SEDAN-01	HIGH		READY
+33192	33192	Hatchback	SX4 S-Cross I	JY	5	EU-SUZUKI-SX4-S-CROSS-I-HATCHBACK-01	HIGH		READY
+33193	33193	Convertible	G-Class W463	W463	2		LOW	需确认G 500 Cabriolet短轴外廓及不含后视镜宽度。	PENDING: G-Class Cabriolet尺寸未闭合
+33195	33195	Hatchback	Modus I	J77	5		LOW	需排除Grand Modus并闭合标准Modus外廓。	PENDING: Modus/Grand边界未闭合
+33203	33203	Coupe	Integra III	DC2	3		LOW	需闭合欧洲版DC2三维及宽度口径。	PENDING: Integra DC2尺寸未闭合
+33209_3dr	33209	SUV	Pajero IV	V80	3	EU-MITSUBISHI-PAJERO-IV-SUV-3D-01	MEDIUM	短轴三门分支。	READY
+33209_5dr	33209	SUV	Pajero IV	V90	5	EU-MITSUBISHI-PAJERO-IV-SUV-5D-01	MEDIUM	长轴五门分支。	READY
+33211	33211	Hatchback	Jazz III	GE	5	EU-HONDA-JAZZ-III-GE-HATCHBACK-5D-01	HIGH		READY
+33213	33213	Convertible	Corvette C6	C6	2	EU-CHEVROLET-CORVETTE-C6-CONVERTIBLE-01	HIGH		READY
+33230_prefl	33230	Van	207 I	WC	3	EU-PEUGEOT-207-I-HATCHBACK-3D-PREFL-01	MEDIUM	三门厢式版改款前外廓。	READY
+33230_facelift	33230	Van	207 I	WC	3	EU-PEUGEOT-207-I-HATCHBACK-3D-FACELIFT-01	MEDIUM	三门厢式版改款后外廓。	READY
+33231_prefl	33231	Van	207 I	WC	3	EU-PEUGEOT-207-I-HATCHBACK-3D-PREFL-01	MEDIUM	三门厢式版改款前外廓。	READY
+33231_facelift	33231	Van	207 I	WC	3	EU-PEUGEOT-207-I-HATCHBACK-3D-FACELIFT-01	MEDIUM	三门厢式版改款后外廓。	READY
+33243	33243	Hatchback	Fabia II facelift	5J2	5	EU-SKODA-FABIA-II-HATCHBACK-01	HIGH		READY
+33244	33244	Wagon	Fabia II Combi facelift	5J5	5	EU-SKODA-FABIA-II-COMBI-FACELIFT-WAGON-5D-01	HIGH		READY
+33245	33245	Hatchback	Octavia II facelift	1Z3	5	EU-SKODA-OCTAVIA-II-HATCHBACK-5D-FACELIFT-01	HIGH		READY
+33246	33246	Wagon	Octavia II facelift	1Z5	5	EU-SKODA-OCTAVIA-II-1Z5-WAGON-FACELIFT-01	HIGH		READY
+33247	33247	MPV	Roomster I facelift	5J	5	EU-SKODA-ROOMSTER-I-MPV-FACELIFT-01	HIGH		READY
+33248	33248	MPV	Altea I facelift	5P1	5	EU-SEAT-ALTEA-I-MPV-FACELIFT-01	HIGH		READY
+33249	33249	MPV	Altea I facelift	5P1	5	EU-SEAT-ALTEA-I-MPV-FACELIFT-01	HIGH		READY
+33250	33250	Hatchback	Leon II facelift	1P1	5	EU-SEAT-LEON-II-HATCHBACK-FACELIFT-01	HIGH		READY
+33251	33251	Hatchback	A3 II facelift	8P1	3	EU-AUDI-A3-II-HATCHBACK-3D-FACELIFT-01	HIGH		READY
+33252	33252	Hatchback	A3 II facelift	8PA	5	EU-AUDI-A3-II-HATCHBACK-5D-FACELIFT-01	HIGH		READY
+33258	33258	MPV	Berlingo II	B9	5	EU-CITROEN-BERLINGO-II-B9-MPV-5D-01	HIGH		READY
+33259_3dr	33259	Hatchback	207 I facelift	WC	3	EU-PEUGEOT-207-I-HATCHBACK-3D-FACELIFT-01	MEDIUM	三门分支。	READY
+33259_5dr	33259	Hatchback	207 I facelift	WA	5	EU-PEUGEOT-207-I-HATCHBACK-5D-FACELIFT-01	MEDIUM	五门分支。	READY
+33260_3dr	33260	Hatchback	207 I facelift	WC	3	EU-PEUGEOT-207-I-HATCHBACK-3D-FACELIFT-01	MEDIUM	三门分支。	READY
+33260_5dr	33260	Hatchback	207 I facelift	WA	5	EU-PEUGEOT-207-I-HATCHBACK-5D-FACELIFT-01	MEDIUM	五门分支。	READY
+33261_3dr	33261	Hatchback	207 I facelift	WC	3	EU-PEUGEOT-207-I-HATCHBACK-3D-FACELIFT-01	MEDIUM	三门分支。	READY
+33261_5dr	33261	Hatchback	207 I facelift	WA	5	EU-PEUGEOT-207-I-HATCHBACK-5D-FACELIFT-01	MEDIUM	五门分支。	READY
+33262	33262	Convertible	207 CC facelift	WD	2	EU-PEUGEOT-207-CC-CONVERTIBLE-FACELIFT-01	HIGH		READY
+33263	33263	Convertible	207 CC facelift	WD	2	EU-PEUGEOT-207-CC-CONVERTIBLE-FACELIFT-01	HIGH		READY
+33264	33264	Wagon	207 SW I	WK	5	EU-PEUGEOT-207-I-SW-WAGON-5D-01	HIGH		READY
+33265	33265	Wagon	207 SW I	WK	5	EU-PEUGEOT-207-I-SW-WAGON-5D-01	HIGH		READY
+33266	33266	MPV	3008 I	T84	5	EU-PEUGEOT-3008-I-T84-MPV-5D-01	HIGH		READY
+33267	33267	Hatchback	308 I	T7	5	EU-PEUGEOT-308-I-HATCHBACK-5D-01	HIGH		READY
+33269	33269	Hatchback	308 I	T7	5	EU-PEUGEOT-308-I-HATCHBACK-5D-01	HIGH		READY
+33270	33270	Hatchback	308 I	T7	5	EU-PEUGEOT-308-I-HATCHBACK-5D-01	HIGH		READY
+33271	33271	Hatchback	308 I	T7	5	EU-PEUGEOT-308-I-HATCHBACK-5D-01	HIGH		READY
+33272	33272	Wagon	308 SW I	T7	5	EU-PEUGEOT-308-SW-I-PHASE-I-WAGON-5D-01	HIGH		READY
+33273	33273	Wagon	308 SW I	T7	5	EU-PEUGEOT-308-SW-I-PHASE-I-WAGON-5D-01	HIGH		READY
+33274_l1h1	33274	MPV	Boxer II	250		EU-PEUGEOT-BOXER-II-BUS-L1H1-01	HIGH	L1H1客车分支。	READY
+33274_l2h2	33274	MPV	Boxer II	250		EU-PEUGEOT-BOXER-II-BUS-L2H2-01	HIGH	L2H2客车分支。	READY
+33274_l3h2	33274	MPV	Boxer II	250		EU-PEUGEOT-BOXER-II-BUS-L3H2-01	HIGH	L3H2客车分支。	READY
+33275_l1h1	33275	Van	Boxer II	250		EU-PEUGEOT-BOXER-II-VAN-L1H1-01	HIGH	L1H1厢式车分支。	READY
+33275_l1h2	33275	Van	Boxer II	250		EU-PEUGEOT-BOXER-II-VAN-L1H2-01	HIGH	L1H2厢式车分支。	READY
+33275_l2h1	33275	Van	Boxer II	250		EU-PEUGEOT-BOXER-II-VAN-L2H1-01	HIGH	L2H1厢式车分支。	READY
+33275_l2h2	33275	Van	Boxer II	250		EU-PEUGEOT-BOXER-II-VAN-L2H2-01	HIGH	L2H2厢式车分支。	READY
+33275_l3h2	33275	Van	Boxer II	250		EU-PEUGEOT-BOXER-II-VAN-L3H2-01	HIGH	L3H2厢式车分支。	READY
+33275_l3h3	33275	Van	Boxer II	250		EU-PEUGEOT-BOXER-II-VAN-L3H3-01	HIGH	L3H3厢式车分支。	READY
+33275_l4h2	33275	Van	Boxer II	250		EU-PEUGEOT-BOXER-II-VAN-L4H2-01	HIGH	L4H2厢式车分支。	READY
+33275_l4h3	33275	Van	Boxer II	250		EU-PEUGEOT-BOXER-II-VAN-L4H3-01	HIGH	L4H3厢式车分支。	READY
+33276_l1	33276	Chassis Cab	Boxer II	250	2	EU-PEUGEOT-BOXER-II-CHASSIS-L1-01	HIGH	L1底盘驾驶室分支。	READY
+33276_l2	33276	Chassis Cab	Boxer II	250	2	EU-PEUGEOT-BOXER-II-CHASSIS-L2-01	HIGH	L2底盘驾驶室分支。	READY
+33276_l3	33276	Chassis Cab	Boxer II	250	2	EU-PEUGEOT-BOXER-II-CHASSIS-L3-01	HIGH	L3底盘驾驶室分支。	READY
+33276_l4	33276	Chassis Cab	Boxer II	250	2	EU-PEUGEOT-BOXER-II-CHASSIS-L4-01	HIGH	L4底盘驾驶室分支。	READY
+33277_mpv	33277	MPV	Kangoo II			EU-RENAULT-KANGOO-II-MPV-5D-01	MEDIUM	乘用MPV分支。	READY
+33277_van	33277	Van	Kangoo II			EU-RENAULT-KANGOO-II-VAN-01	MEDIUM	厢式车分支。	READY
+33278	33278	Van	Master III	X62			LOW	需按FWD闭合可用L/H外廓分支。	PENDING: Master III FWD尺寸分支未闭合
+33279	33279	Van	Master III	X62			LOW	需按FWD闭合可用L/H外廓分支。	PENDING: Master III FWD尺寸分支未闭合
+33280	33280	Van	Master III	X62			LOW	需按RWD闭合可用L/H外廓分支。	PENDING: Master III RWD尺寸分支未闭合
+33281	33281	Van	Master III	X62			LOW	需按RWD闭合可用L/H外廓分支。	PENDING: Master III RWD尺寸分支未闭合
+33298	33298	Hatchback	Giulietta	940	5	EU-ALFA-ROMEO-GIULIETTA-940-HATCHBACK-5D-01	HIGH		READY
+33299	33299	Hatchback	Giulietta	940	5	EU-ALFA-ROMEO-GIULIETTA-940-HATCHBACK-5D-01	HIGH		READY
+33300	33300	Hatchback	Giulietta	940	5	EU-ALFA-ROMEO-GIULIETTA-940-HATCHBACK-5D-01	HIGH		READY
+33301	33301	Hatchback	Giulietta	940	5	EU-ALFA-ROMEO-GIULIETTA-940-HATCHBACK-5D-01	HIGH		READY
+33302	33302	Hatchback	Giulietta	940	5	EU-ALFA-ROMEO-GIULIETTA-940-HATCHBACK-5D-01	HIGH		READY
+33303	33303	Hatchback	A1 I	8X1	3		LOW	2010起三门A1，需闭合官方三维及宽度口径。	PENDING: Audi A1 8X1尺寸未闭合
+33304	33304	Hatchback	A1 I	8X1	3		LOW	2010起三门A1，需闭合官方三维及宽度口径。	PENDING: Audi A1 8X1尺寸未闭合
+33305	33305	Hatchback	A1 I	8X1	3		LOW	2010起三门A1，需闭合官方三维及宽度口径。	PENDING: Audi A1 8X1尺寸未闭合
+33306	33306	SUV	Touareg II	7P5	5		LOW	生产期跨2014改款，需确认改款前后外廓并拆分。	PENDING: Touareg II改款边界未闭合
+33307	33307	SUV	Touareg II	7P5	5		LOW	生产期跨2014改款，需确认改款前后外廓并拆分。	PENDING: Touareg II改款边界未闭合
+33308	33308	SUV	Touareg II	7P5	5		LOW	生产期跨2014改款，需确认改款前后外廓并拆分。	PENDING: Touareg II改款边界未闭合
+33309	33309	SUV	Touareg II	7P5	5		LOW	生产期跨2014改款，需确认改款前后外廓并拆分。	PENDING: Touareg II改款边界未闭合
+33311	33311	Hatchback	Fabia II facelift	5J2	5	EU-SKODA-FABIA-II-HATCHBACK-01	HIGH		READY
+33312	33312	Wagon	Fabia II Combi facelift	5J5	5	EU-SKODA-FABIA-II-COMBI-FACELIFT-WAGON-5D-01	HIGH		READY
+33313	33313	MPV	Roomster I facelift	5J	5	EU-SKODA-ROOMSTER-I-MPV-FACELIFT-01	HIGH		READY
+33314	33314	Hatchback	Fabia II facelift	5J2	5	EU-SKODA-FABIA-II-HATCHBACK-01	HIGH		READY
+33315	33315	Hatchback	Fabia II facelift	5J2	5	EU-SKODA-FABIA-II-HATCHBACK-01	HIGH		READY
+33316	33316	Wagon	Fabia II Combi facelift	5J5	5	EU-SKODA-FABIA-II-COMBI-FACELIFT-WAGON-5D-01	HIGH		READY
+33317	33317	Wagon	Fabia II Combi facelift	5J5	5	EU-SKODA-FABIA-II-COMBI-FACELIFT-WAGON-5D-01	HIGH		READY
+33320	33320	MPV	Roomster I facelift	5J	5	EU-SKODA-ROOMSTER-I-MPV-FACELIFT-01	HIGH		READY
+33321	33321	MPV	Roomster I facelift	5J	5	EU-SKODA-ROOMSTER-I-MPV-FACELIFT-01	HIGH		READY
+33322	33322	Wagon	Superb II	3T5	5	EU-SKODA-SUPERB-II-3T5-WAGON-5D-PREFL-01	HIGH		READY
+33323	33323	Van	C2 I	JM	3	EU-CITROEN-C2-I-HATCHBACK-3D-01	MEDIUM	三门厢式版与乘用车外廓一致。	READY
+33324	33324	Wagon	Ibiza IV ST	6J8	5		LOW	需闭合ST旅行版三维及不含后视镜宽度。	PENDING: Ibiza IV ST尺寸未闭合
+33325	33325	Wagon	Ibiza IV ST	6J8	5		LOW	需闭合ST旅行版三维及不含后视镜宽度。	PENDING: Ibiza IV ST尺寸未闭合
+33326	33326	Wagon	Ibiza IV ST	6J8	5		LOW	需闭合ST旅行版三维及不含后视镜宽度。	PENDING: Ibiza IV ST尺寸未闭合
+33327	33327	Wagon	Ibiza IV ST	6J8	5		LOW	需闭合ST旅行版三维及不含后视镜宽度。	PENDING: Ibiza IV ST尺寸未闭合
+33328	33328	Wagon	Ibiza IV ST	6J8	5		LOW	需闭合ST旅行版三维及不含后视镜宽度。	PENDING: Ibiza IV ST尺寸未闭合
+33329	33329	Wagon	Ibiza IV ST	6J8	5		LOW	需闭合ST旅行版三维及不含后视镜宽度。	PENDING: Ibiza IV ST尺寸未闭合
+33330	33330	Wagon	Ibiza IV ST	6J8	5		LOW	需闭合ST旅行版三维及不含后视镜宽度。	PENDING: Ibiza IV ST尺寸未闭合
+33331	33331	MPV	C-Max I facelift	DM2	5	EU-FORD-C-MAX-I-FACELIFT-MPV-5D-01	HIGH		READY
+33332	33332	MPV	C-Max I facelift	DM2	5	EU-FORD-C-MAX-I-FACELIFT-MPV-5D-01	HIGH		READY
+33333	33333	Hatchback	Fiesta VII	CB1		EU-FORD-FIESTA-VII-CB1-HATCHBACK-01	MEDIUM	当前Ktype未区分三门/五门，外廓尺寸组一致。	READY
+33334	33334	Hatchback	Fiesta VII	CB1		EU-FORD-FIESTA-VII-CB1-HATCHBACK-01	MEDIUM	当前Ktype未区分三门/五门，外廓尺寸组一致。	READY
+33335	33335	Van	Fiesta VII	CB1	3	EU-FORD-FIESTA-VII-CB1-HATCHBACK-01	HIGH	三门厢式版与乘用车外廓一致。	READY
+33336	33336	Van	Fiesta VII	CB1	3	EU-FORD-FIESTA-VII-CB1-HATCHBACK-01	HIGH	三门厢式版与乘用车外廓一致。	READY
+33337	33337	Van	Fiesta VII	CB1	3	EU-FORD-FIESTA-VII-CB1-HATCHBACK-01	HIGH	三门厢式版与乘用车外廓一致。	READY
+33338	33338	SUV	Kuga I	C394	5	EU-FORD-KUGA-I-C394-SUV-5D-01	HIGH		READY
+33339	33339	SUV	Kuga I	C394	5	EU-FORD-KUGA-I-C394-SUV-5D-01	HIGH		READY
+33340	33340	SUV	Kuga I	C394	5	EU-FORD-KUGA-I-C394-SUV-5D-01	HIGH		READY
+33341	33341	Van	C-Crosser I	CW0	5	EU-CITROEN-C-CROSSER-I-SUV-5D-01	MEDIUM	商用厢式版与SUV外廓一致。	READY
+33342	33342	Hatchback	Focus II facelift	DA3		EU-FORD-FOCUS-II-HATCHBACK-FACELIFT-01	MEDIUM	当前Ktype未区分三门/五门，复用已闭合外廓组。	READY
+33343	33343	Hatchback	Focus II facelift	DA3		EU-FORD-FOCUS-II-HATCHBACK-FACELIFT-01	MEDIUM	当前Ktype未区分三门/五门，复用已闭合外廓组。	READY
+33344	33344	Wagon	Focus II facelift	DA3	5	EU-FORD-FOCUS-II-WAGON-FACELIFT-01	HIGH		READY
+33345	33345	Wagon	Focus II facelift	DA3	5	EU-FORD-FOCUS-II-WAGON-FACELIFT-01	HIGH		READY
+33346	33346	Hatchback	Focus II facelift	DA3		EU-FORD-FOCUS-II-HATCHBACK-FACELIFT-01	MEDIUM	当前Ktype未区分三门/五门，复用已闭合外廓组。	READY
+```
+
+## 本轮新增/修改的 DIMENSION_GROUP TSV
+
+```tsv
+DIMENSION_GROUP_ID	LengthMM	WidthMM	HeightMM	DimensionSource	SourceURL
+EU-FERRARI-F430-F131-CONVERTIBLE-2D-01	4511	1923	1234	Ferrari F430 Spider official model page	https://www.ferrari.com/en-EN/auto/f430-spider
+EU-FERRARI-F430-F131-COUPE-2D-01	4511	1923	1214	Ferrari F430 official model page	https://www.ferrari.com/en-EN/auto/f430
+```
+
+## 下一步优先处理
+
+1. 优先闭合 Renault Master III 的 FWD/RWD 长度与车顶组合，一次解决 4 个 Ktype。
+2. 批量闭合 Audi A1、Touareg II 改款前后、Ibiza IV ST 三个重复引用量较高的尺寸组。
+3. 最后处理 H-1 Cargo、G-Class Cabriolet、Modus、Integra 四个独立外廓。
+
+推进信号：CONTINUE
+
+[1]: https://www.ferrari.com/en-EN/auto/f430-spider?utm_source=chatgpt.com "Ferrari F430 Spider (2005) - Ferrari.com"
+
+
+--- 发送 / 继续到 Round 2 ---
+继续当前批次并采用缓存优先模式。尺寸组只在首次创建或纠错时完整核对一次三维和来源；后续 Ktype 只判断关联哪个现有 DIMENSION_GROUP_ID，不重复抓取，不输出缓存来源或匹配理由。仍有 PENDING 时，CONTINUE 轮仅输出：1) 更新点；2) 当前批次进度；3) 本轮新增/修改的 Ktype 映射 TSV（无变化写“无”）；4) 本轮首次创建/修正的 DIMENSION_GROUP TSV（复用既有组不重复输出，无变化写“无”）；5) 下一步优先处理。若当前或上一轮进度已经是 PENDING=0，本轮不要继续检索或再次输出 CONTINUE，必须立刻汇总并输出两张最终完整 TSV、两个任务指定 sandbox 下载链接和“推进信号：COMPLETE”。执行顺序固定为：第一阶段优先消除 PENDING 并补齐会阻塞两张最终表的数据。检测到 PENDING=0 后，第二阶段最多只做一次轻量机械收尾：核对固定表头、id 与 DIMENSION_GROUP_ID 唯一、映射引用闭合、长宽高和来源非空、两个任务指定下载链接齐全。第二阶段不得重新逐车型、逐年份或逐来源做深度检索，不得为了提高置信度反复核对，也不得因非阻塞的排序或措辞问题继续多轮。PENDING=0 后的下一条回复必须直接输出两张最终完整 TSV、两个精确 sandbox 下载链接，并以“推进信号：COMPLETE”结束；不要再输出 CONTINUE。Ktype 映射 TSV 表头必须严格使用 requirement 指定的字段顺序：id	Ktype	NormalizedBodyStyle	Generation	BodyCode	Doors	DIMENSION_GROUP_ID	MatchConfidence	Notes	IterationStatus。另需维护完整 DIMENSION_GROUP TSV，表头固定为：DIMENSION_GROUP_ID	LengthMM	WidthMM	HeightMM	DimensionSource	SourceURL。缺少任一张表、任一映射引用的尺寸组，或尺寸组字段不完整时不得 COMPLETE。不要输出子车系匹配表。
+【COMPLETE 下载文件硬性要求】
+准备 COMPLETE 时，除两张完整内嵌 TSV 外，还必须创建并提供以下两个可点击 sandbox 下载链接，文件名必须完全一致：
+- all_4501-4600_ktype_dimension_mapping_final.tsv
+- all_4501-4600_dimension_groups_final.tsv
+缺少任一下载链接时不得输出推进信号：COMPLETE。
+
+
+--- Round 2 / checkpoint 续跑 ---
+## 更新点
+
+* 闭合 Hyundai H-1 Cargo、Renault Modus、Audi A1 8X1、SEAT Ibiza IV ST 四个外廓家族，共消除 13 个 PENDING。
+* Audi A1 使用原厂技术数据确认 `3954 × 1740 × 1416 mm`，其中宽度明确为不含后视镜；Ibiza ST 技术规格确认 `4236 × 1693 × 1445 mm`。([奥迪新闻][1])
+* H-1 使用 2009 年车主手册规格闭合为 `5125 × 1920 × 1925 mm`；33195 的生产期截至 2007 年，闭合为标准轴距 Modus，而非后续 Grand Modus。([汽车手册在线][2])
+* 本轮未重复输出任何已存在尺寸组。
+
+## 当前批次进度
+
+* 输入 Ktype：100
+* 已闭合输入 Ktype：90
+* PENDING 输入 Ktype：10
+* READY 映射行：109
+* PENDING 映射行：10
+* 本轮首次创建尺寸组：4
+* 当前批次尚未完成。
+
+## 本轮新增/修改的 Ktype 映射 TSV
+
+```tsv
+id	Ktype	NormalizedBodyStyle	Generation	BodyCode	Doors	DIMENSION_GROUP_ID	MatchConfidence	Notes	IterationStatus
+33152	33152	Van	H-1 TQ	TQ		EU-HYUNDAI-H-1-TQ-VAN-01	HIGH		READY
+33153	33153	Van	H-1 TQ	TQ		EU-HYUNDAI-H-1-TQ-VAN-01	HIGH		READY
+33195	33195	Hatchback	Modus I	J77	5	EU-RENAULT-MODUS-I-HATCHBACK-5D-01	HIGH	生产期早于Grand Modus，闭合为标准Modus外廓。	READY
+33303	33303	Hatchback	A1 I	8X1	3	EU-AUDI-A1-8X1-HATCHBACK-3D-01	HIGH		READY
+33304	33304	Hatchback	A1 I	8X1	3	EU-AUDI-A1-8X1-HATCHBACK-3D-01	HIGH		READY
+33305	33305	Hatchback	A1 I	8X1	3	EU-AUDI-A1-8X1-HATCHBACK-3D-01	HIGH		READY
+33324	33324	Wagon	Ibiza IV ST	6J8	5	EU-SEAT-IBIZA-IV-ST-6J8-WAGON-5D-01	HIGH		READY
+33325	33325	Wagon	Ibiza IV ST	6J8	5	EU-SEAT-IBIZA-IV-ST-6J8-WAGON-5D-01	HIGH		READY
+33326	33326	Wagon	Ibiza IV ST	6J8	5	EU-SEAT-IBIZA-IV-ST-6J8-WAGON-5D-01	HIGH		READY
+33327	33327	Wagon	Ibiza IV ST	6J8	5	EU-SEAT-IBIZA-IV-ST-6J8-WAGON-5D-01	HIGH		READY
+33328	33328	Wagon	Ibiza IV ST	6J8	5	EU-SEAT-IBIZA-IV-ST-6J8-WAGON-5D-01	HIGH		READY
+33329	33329	Wagon	Ibiza IV ST	6J8	5	EU-SEAT-IBIZA-IV-ST-6J8-WAGON-5D-01	HIGH		READY
+33330	33330	Wagon	Ibiza IV ST	6J8	5	EU-SEAT-IBIZA-IV-ST-6J8-WAGON-5D-01	HIGH		READY
+```
+
+## 本轮新增/修改的 DIMENSION_GROUP TSV
+
+```tsv
+DIMENSION_GROUP_ID	LengthMM	WidthMM	HeightMM	DimensionSource	SourceURL
+EU-HYUNDAI-H-1-TQ-VAN-01	5125	1920	1925	Hyundai H-1 (Grand Starex) 2009 Owner's Manual	https://www.carmanualsonline.info/hyundai-h-1-grand-starex-2009-owner-s-manual-rhd-uk-australia/?srch=dimensions
+EU-RENAULT-MODUS-I-HATCHBACK-5D-01	3792	1695	1589	Automobile-Catalog 2004 Renault Modus 1.6 16V 88 specifications	https://www.automobile-catalog.com/car/2004/2951165/renault_modus_1_6_16v_88.html
+EU-AUDI-A1-8X1-HATCHBACK-3D-01	3954	1740	1416	Audi UK A1 1.4 TFSI official technical data	https://press.audi.co.uk/assets/documents/original/9527-AudiUK00000111A114TFSIStronic122g.pdf
+EU-SEAT-IBIZA-IV-ST-6J8-WAGON-5D-01	4236	1693	1445	SEAT Ibiza ST technical specifications	https://www.motorshow.me/uploadImages/GalleryDocs/Doc6003.pdf
+```
+
+## 下一步优先处理
+
+1. 闭合 Renault Master III 的 FWD/RWD、长度、车顶高度及改款边界，处理 33278–33281。
+2. 按具体发动机生产期判断 Touareg II 是否需要改款前后双分支，处理 33306–33309。
+3. 最后解决 G 500 Cabriolet 高度来源冲突和 Integra DC2 欧洲版宽度冲突。
+
+推进信号：CONTINUE
+
+[1]: https://press.audi.co.uk/assets/documents/original/9527-AudiUK00000111A114TFSIStronic122g.pdf "A1 1.4 TFSI S tronic 122g Technical Data UK October 2010.xls"
+[2]: https://www.carmanualsonline.info/hyundai-h-1-grand-starex-2009-owner-s-manual-rhd-uk-australia/?srch=dimensions&utm_source=chatgpt.com "dimensions Hyundai H-1 (Grand Starex) 2009 Owner's Manual - RHD (UK, Australia) (303 Pages)"
+
+
+--- 发送 / 继续到 Round 3 ---
+继续当前批次并采用缓存优先模式。尺寸组只在首次创建或纠错时完整核对一次三维和来源；后续 Ktype 只判断关联哪个现有 DIMENSION_GROUP_ID，不重复抓取，不输出缓存来源或匹配理由。仍有 PENDING 时，CONTINUE 轮仅输出：1) 更新点；2) 当前批次进度；3) 本轮新增/修改的 Ktype 映射 TSV（无变化写“无”）；4) 本轮首次创建/修正的 DIMENSION_GROUP TSV（复用既有组不重复输出，无变化写“无”）；5) 下一步优先处理。若当前或上一轮进度已经是 PENDING=0，本轮不要继续检索或再次输出 CONTINUE，必须立刻汇总并输出两张最终完整 TSV、两个任务指定 sandbox 下载链接和“推进信号：COMPLETE”。执行顺序固定为：第一阶段优先消除 PENDING 并补齐会阻塞两张最终表的数据。检测到 PENDING=0 后，第二阶段最多只做一次轻量机械收尾：核对固定表头、id 与 DIMENSION_GROUP_ID 唯一、映射引用闭合、长宽高和来源非空、两个任务指定下载链接齐全。第二阶段不得重新逐车型、逐年份或逐来源做深度检索，不得为了提高置信度反复核对，也不得因非阻塞的排序或措辞问题继续多轮。PENDING=0 后的下一条回复必须直接输出两张最终完整 TSV、两个精确 sandbox 下载链接，并以“推进信号：COMPLETE”结束；不要再输出 CONTINUE。Ktype 映射 TSV 表头必须严格使用 requirement 指定的字段顺序：id	Ktype	NormalizedBodyStyle	Generation	BodyCode	Doors	DIMENSION_GROUP_ID	MatchConfidence	Notes	IterationStatus。另需维护完整 DIMENSION_GROUP TSV，表头固定为：DIMENSION_GROUP_ID	LengthMM	WidthMM	HeightMM	DimensionSource	SourceURL。缺少任一张表、任一映射引用的尺寸组，或尺寸组字段不完整时不得 COMPLETE。不要输出子车系匹配表。
+【COMPLETE 下载文件硬性要求】
+准备 COMPLETE 时，除两张完整内嵌 TSV 外，还必须创建并提供以下两个可点击 sandbox 下载链接，文件名必须完全一致：
+- all_4501-4600_ktype_dimension_mapping_final.tsv
+- all_4501-4600_dimension_groups_final.tsv
+缺少任一下载链接时不得输出推进信号：COMPLETE。
+
+
+--- Round 3 / checkpoint 续跑 ---
+## 更新点
+
+* 33193 已按 2012 年改款前后拆分为两个 G 500 Cabriolet 外廓。
+* 33203 已闭合为 Honda Integra III DC2 三门 Coupe 尺寸组。
+* 33306–33309 已按 Touareg II 改款前后外廓拆分；官方资料确认车长由 4795 mm 变为 4801 mm，车身宽度均为 1940 mm，高度均为 1732 mm。([大众汽车英国][1])
+* Touareg 的 3.6 FSI、V8 TDI 与 Hybrid 均存在改款后版本，因此保留改款前后两个物理分支。([vw.ca][2])
+* 本轮共消除 6 个 PENDING；当前仅剩 Renault Master III 四个 Ktype。
+
+## 当前批次进度
+
+* 输入 Ktype：100
+* 已闭合输入 Ktype：96
+* PENDING 输入 Ktype：4
+* READY 映射行：120
+* PENDING 映射行：4
+* 本轮首次创建尺寸组：5
+* 当前批次尚未完成。
+
+## 本轮新增/修改的 Ktype 映射 TSV
+
+```tsv
+id	Ktype	NormalizedBodyStyle	Generation	BodyCode	Doors	DIMENSION_GROUP_ID	MatchConfidence	Notes	IterationStatus
+33193_prefl	33193	Convertible	G-Class W463	W463	2	EU-MERCEDES-BENZ-G-CLASS-W463-CONVERTIBLE-PREFL-01	HIGH	2012改款前敞篷外廓。	READY
+33193_facelift	33193	Convertible	G-Class W463 facelift	W463	2	EU-MERCEDES-BENZ-G-CLASS-W463-CONVERTIBLE-FACELIFT-01	HIGH	2012改款后敞篷外廓。	READY
+33203	33203	Coupe	Integra III	DC2	3	EU-HONDA-INTEGRA-III-DC2-COUPE-3D-01	HIGH	三门Liftback Coupe外廓。	READY
+33306_prefl	33306	SUV	Touareg II pre-facelift	7P	5	EU-VW-TOUAREG-II-7P-SUV-PREFL-01	HIGH	2014改款前外廓。	READY
+33306_facelift	33306	SUV	Touareg II facelift	7P	5	EU-VW-TOUAREG-II-7P-SUV-FACELIFT-01	HIGH	2014改款后外廓。	READY
+33307_prefl	33307	SUV	Touareg II pre-facelift	7P	5	EU-VW-TOUAREG-II-7P-SUV-PREFL-01	HIGH	2014改款前外廓。	READY
+33307_facelift	33307	SUV	Touareg II facelift	7P	5	EU-VW-TOUAREG-II-7P-SUV-FACELIFT-01	MEDIUM	2014改款后外廓。	READY
+33308_prefl	33308	SUV	Touareg II pre-facelift	7P	5	EU-VW-TOUAREG-II-7P-SUV-PREFL-01	HIGH	2014改款前外廓。	READY
+33308_facelift	33308	SUV	Touareg II facelift	7P	5	EU-VW-TOUAREG-II-7P-SUV-FACELIFT-01	HIGH	2014改款后外廓。	READY
+33309_prefl	33309	SUV	Touareg II pre-facelift	7P	5	EU-VW-TOUAREG-II-7P-SUV-PREFL-01	HIGH	2014改款前外廓。	READY
+33309_facelift	33309	SUV	Touareg II facelift	7P	5	EU-VW-TOUAREG-II-7P-SUV-FACELIFT-01	HIGH	2014改款后外廓。	READY
+```
+
+## 本轮新增/修改的 DIMENSION_GROUP TSV
+
+```tsv
+DIMENSION_GROUP_ID	LengthMM	WidthMM	HeightMM	DimensionSource	SourceURL
+EU-MERCEDES-BENZ-G-CLASS-W463-CONVERTIBLE-PREFL-01	4257	1760	1941	Mercedes-Benz Public Archive G 500 short wheelbase 2008–2012	https://mercedes-benz-publicarchive.com/marsClassic/en/instance/ko/G-500-kurzer-Radstand-2008---2012.xhtml?oid=191039063
+EU-MERCEDES-BENZ-G-CLASS-W463-CONVERTIBLE-FACELIFT-01	4257	1760	1951	Auto-Data Mercedes-Benz G-Class Cabriolet W463 facelift 2012 G 500	https://www.auto-data.net/en/mercedes-benz-g-class-cabriolet-w463-facelift-2012-g-500-v8-388hp-4matic-7g-tronic-plus-42490
+EU-HONDA-INTEGRA-III-DC2-COUPE-3D-01	4380	1710	1335	Auto-Data Honda Integra III DC2; CarsGuide 2000 Honda Integra GSi dimensions	https://www.auto-data.net/en/honda-integra-iii-dc2-generation-2579;https://www.carsguide.com.au/honda/integra/car-dimensions/2000
+EU-VW-TOUAREG-II-7P-SUV-PREFL-01	4795	1940	1732	Volkswagen UK Touareg official brochure February 2011	https://www.volkswagen.co.uk/idhub/content/dam/onehub_pkw/importers/gb/downloads/brochures/used-cars/touareg/touareg-nf/vw-touareg-nf-brochure-feb-2011.pdf
+EU-VW-TOUAREG-II-7P-SUV-FACELIFT-01	4801	1940	1732	Volkswagen UK Touareg official brochure December 2015	https://www.volkswagen.co.uk/idhub/content/dam/onehub_pkw/importers/gb/downloads/brochures/used-cars/touareg/touareg-fl/vw-touareg-fl-brochure-dec-2015.pdf
+```
+
+## 下一步优先处理
+
+1. 一次性闭合 Master III FWD 的 L1/L2/L3 与 H1/H2/H3 外廓组合，并同步更新 33278、33279。
+2. 闭合 Master III RWD 的 L3/L4、H2/H3 及 SRW/DRW 差异，并同步更新 33280、33281。
+3. 四个 Master Ktype 闭合后立即进行一次机械检查并输出两张最终完整 TSV 与指定下载链接。
+
+推进信号：CONTINUE
+
+[1]: https://www.volkswagen.co.uk/idhub/content/dam/onehub_pkw/importers/gb/downloads/brochures/used-cars/touareg/touareg-nf/vw-touareg-nf-brochure-feb-2011.pdf?utm_source=chatgpt.com "TOUAREG"
+[2]: https://www.vw.ca/idhub/content/dam/onehub_pkw/importers/ca/2022/en/editorial-pieces/older-model-content/buyers-guides/touareg/2015-Volkswagen-Touareg.pdf?utm_source=chatgpt.com "2015 Touareg"
+
+
+--- 发送 / 继续到 Round 4 ---
+继续当前批次并采用缓存优先模式。尺寸组只在首次创建或纠错时完整核对一次三维和来源；后续 Ktype 只判断关联哪个现有 DIMENSION_GROUP_ID，不重复抓取，不输出缓存来源或匹配理由。仍有 PENDING 时，CONTINUE 轮仅输出：1) 更新点；2) 当前批次进度；3) 本轮新增/修改的 Ktype 映射 TSV（无变化写“无”）；4) 本轮首次创建/修正的 DIMENSION_GROUP TSV（复用既有组不重复输出，无变化写“无”）；5) 下一步优先处理。若当前或上一轮进度已经是 PENDING=0，本轮不要继续检索或再次输出 CONTINUE，必须立刻汇总并输出两张最终完整 TSV、两个任务指定 sandbox 下载链接和“推进信号：COMPLETE”。执行顺序固定为：第一阶段优先消除 PENDING 并补齐会阻塞两张最终表的数据。检测到 PENDING=0 后，第二阶段最多只做一次轻量机械收尾：核对固定表头、id 与 DIMENSION_GROUP_ID 唯一、映射引用闭合、长宽高和来源非空、两个任务指定下载链接齐全。第二阶段不得重新逐车型、逐年份或逐来源做深度检索，不得为了提高置信度反复核对，也不得因非阻塞的排序或措辞问题继续多轮。PENDING=0 后的下一条回复必须直接输出两张最终完整 TSV、两个精确 sandbox 下载链接，并以“推进信号：COMPLETE”结束；不要再输出 CONTINUE。Ktype 映射 TSV 表头必须严格使用 requirement 指定的字段顺序：id	Ktype	NormalizedBodyStyle	Generation	BodyCode	Doors	DIMENSION_GROUP_ID	MatchConfidence	Notes	IterationStatus。另需维护完整 DIMENSION_GROUP TSV，表头固定为：DIMENSION_GROUP_ID	LengthMM	WidthMM	HeightMM	DimensionSource	SourceURL。缺少任一张表、任一映射引用的尺寸组，或尺寸组字段不完整时不得 COMPLETE。不要输出子车系匹配表。
+【COMPLETE 下载文件硬性要求】
+准备 COMPLETE 时，除两张完整内嵌 TSV 外，还必须创建并提供以下两个可点击 sandbox 下载链接，文件名必须完全一致：
+- all_4501-4600_ktype_dimension_mapping_final.tsv
+- all_4501-4600_dimension_groups_final.tsv
+缺少任一下载链接时不得输出推进信号：COMPLETE。
+
+
+--- Round 4 / checkpoint 续跑 ---
+## 更新点
+
+* 闭合 33278、33279 的 FWD 六种 L/H 外廓，以及 33280 的 RWD 七种 L/H、SRW/DRW 外廓。
+* Renault 官方尺寸表明确列出各分支的总长、`2070 mm` 不含后视镜宽度及空载高度；高度存在配置区间时，按“最大外部高度”口径采用该配置区间上限。
+* 33281 尚未闭合：其生产期跨越 2019 年外观更新，更新后的车长变为 L3 `6225 mm`、L4 `6875 mm`，不能直接复用本轮建立的 2010–2019 组；仍需完成改款后 RWD 的 SRW/DRW 分支边界。
+
+## 当前批次进度
+
+* 输入 Ktype：100
+* 已闭合输入 Ktype：99
+* PENDING 输入 Ktype：1
+* READY 映射行：139
+* PENDING 映射行：1
+* 本轮首次创建尺寸组：13
+* 当前批次尚未完成。
+
+## 本轮新增/修改的 Ktype 映射 TSV
+
+```tsv
+id	Ktype	NormalizedBodyStyle	Generation	BodyCode	Doors	DIMENSION_GROUP_ID	MatchConfidence	Notes	IterationStatus
+33278_l1h1	33278	Van	Master III	X62		EU-RENAULT-MASTER-III-X62-VAN-FWD-L1H1-PREFL-01	HIGH	FWD L1H1外廓。	READY
+33278_l1h2	33278	Van	Master III	X62		EU-RENAULT-MASTER-III-X62-VAN-FWD-L1H2-PREFL-01	HIGH	FWD L1H2外廓。	READY
+33278_l2h2	33278	Van	Master III	X62		EU-RENAULT-MASTER-III-X62-VAN-FWD-L2H2-PREFL-01	HIGH	FWD L2H2外廓。	READY
+33278_l2h3	33278	Van	Master III	X62		EU-RENAULT-MASTER-III-X62-VAN-FWD-L2H3-PREFL-01	HIGH	FWD L2H3外廓。	READY
+33278_l3h2	33278	Van	Master III	X62		EU-RENAULT-MASTER-III-X62-VAN-FWD-L3H2-PREFL-01	HIGH	FWD L3H2外廓。	READY
+33278_l3h3	33278	Van	Master III	X62		EU-RENAULT-MASTER-III-X62-VAN-FWD-L3H3-PREFL-01	HIGH	FWD L3H3外廓。	READY
+33279_l1h1	33279	Van	Master III	X62		EU-RENAULT-MASTER-III-X62-VAN-FWD-L1H1-PREFL-01	HIGH	FWD L1H1外廓。	READY
+33279_l1h2	33279	Van	Master III	X62		EU-RENAULT-MASTER-III-X62-VAN-FWD-L1H2-PREFL-01	HIGH	FWD L1H2外廓。	READY
+33279_l2h2	33279	Van	Master III	X62		EU-RENAULT-MASTER-III-X62-VAN-FWD-L2H2-PREFL-01	HIGH	FWD L2H2外廓。	READY
+33279_l2h3	33279	Van	Master III	X62		EU-RENAULT-MASTER-III-X62-VAN-FWD-L2H3-PREFL-01	HIGH	FWD L2H3外廓。	READY
+33279_l3h2	33279	Van	Master III	X62		EU-RENAULT-MASTER-III-X62-VAN-FWD-L3H2-PREFL-01	HIGH	FWD L3H2外廓。	READY
+33279_l3h3	33279	Van	Master III	X62		EU-RENAULT-MASTER-III-X62-VAN-FWD-L3H3-PREFL-01	HIGH	FWD L3H3外廓。	READY
+33280_l3h2_srw	33280	Van	Master III	X62		EU-RENAULT-MASTER-III-X62-VAN-RWD-L3H2-SRW-PREFL-01	HIGH	RWD L3H2单后轮外廓。	READY
+33280_l3h2_drw	33280	Van	Master III	X62		EU-RENAULT-MASTER-III-X62-VAN-RWD-L3H2-DRW-PREFL-01	HIGH	RWD L3H2双后轮外廓。	READY
+33280_l3h3_drw	33280	Van	Master III	X62		EU-RENAULT-MASTER-III-X62-VAN-RWD-L3H3-DRW-PREFL-01	HIGH	RWD L3H3双后轮外廓。	READY
+33280_l4h2_srw	33280	Van	Master III	X62		EU-RENAULT-MASTER-III-X62-VAN-RWD-L4H2-SRW-PREFL-01	HIGH	RWD L4H2单后轮外廓。	READY
+33280_l4h2_drw	33280	Van	Master III	X62		EU-RENAULT-MASTER-III-X62-VAN-RWD-L4H2-DRW-PREFL-01	HIGH	RWD L4H2双后轮外廓。	READY
+33280_l4h3_srw	33280	Van	Master III	X62		EU-RENAULT-MASTER-III-X62-VAN-RWD-L4H3-SRW-PREFL-01	HIGH	RWD L4H3单后轮外廓。	READY
+33280_l4h3_drw	33280	Van	Master III	X62		EU-RENAULT-MASTER-III-X62-VAN-RWD-L4H3-DRW-PREFL-01	HIGH	RWD L4H3双后轮外廓。	READY
+```
+
+## 本轮新增/修改的 DIMENSION_GROUP TSV
+
+```tsv
+DIMENSION_GROUP_ID	LengthMM	WidthMM	HeightMM	DimensionSource	SourceURL
+EU-RENAULT-MASTER-III-X62-VAN-FWD-L1H1-PREFL-01	5048	2070	2303	Renault UK Master official press kit January 2018, Master Panel FWD dimensions	https://www.press.renault.co.uk/assets/documents/original/14002-RenaultMasterPressKitJanuary2018.pdf
+EU-RENAULT-MASTER-III-X62-VAN-FWD-L1H2-PREFL-01	5048	2070	2496	Renault UK Master official press kit January 2018, Master Panel FWD dimensions	https://www.press.renault.co.uk/assets/documents/original/14002-RenaultMasterPressKitJanuary2018.pdf
+EU-RENAULT-MASTER-III-X62-VAN-FWD-L2H2-PREFL-01	5548	2070	2499	Renault UK Master official press kit January 2018, Master Panel FWD dimensions	https://www.press.renault.co.uk/assets/documents/original/14002-RenaultMasterPressKitJanuary2018.pdf
+EU-RENAULT-MASTER-III-X62-VAN-FWD-L2H3-PREFL-01	5548	2070	2749	Renault UK Master official press kit January 2018, Master Panel FWD dimensions	https://www.press.renault.co.uk/assets/documents/original/14002-RenaultMasterPressKitJanuary2018.pdf
+EU-RENAULT-MASTER-III-X62-VAN-FWD-L3H2-PREFL-01	6198	2070	2488	Renault UK Master official press kit January 2018, Master Panel FWD dimensions	https://www.press.renault.co.uk/assets/documents/original/14002-RenaultMasterPressKitJanuary2018.pdf
+EU-RENAULT-MASTER-III-X62-VAN-FWD-L3H3-PREFL-01	6198	2070	2744	Renault UK Master official press kit January 2018, Master Panel FWD dimensions	https://www.press.renault.co.uk/assets/documents/original/14002-RenaultMasterPressKitJanuary2018.pdf
+EU-RENAULT-MASTER-III-X62-VAN-RWD-L3H2-SRW-PREFL-01	6198	2070	2527	Renault UK Master official press kit January 2018, Master Panel RWD dimensions	https://www.press.renault.co.uk/assets/documents/original/14002-RenaultMasterPressKitJanuary2018.pdf
+EU-RENAULT-MASTER-III-X62-VAN-RWD-L3H2-DRW-PREFL-01	6198	2070	2549	Renault UK Master official press kit January 2018, Master Panel RWD dimensions	https://www.press.renault.co.uk/assets/documents/original/14002-RenaultMasterPressKitJanuary2018.pdf
+EU-RENAULT-MASTER-III-X62-VAN-RWD-L3H3-DRW-PREFL-01	6198	2070	2815	Renault UK Master official press kit January 2018, Master Panel RWD dimensions	https://www.press.renault.co.uk/assets/documents/original/14002-RenaultMasterPressKitJanuary2018.pdf
+EU-RENAULT-MASTER-III-X62-VAN-RWD-L4H2-SRW-PREFL-01	6848	2070	2527	Renault UK Master official press kit January 2018, Master Panel RWD dimensions	https://www.press.renault.co.uk/assets/documents/original/14002-RenaultMasterPressKitJanuary2018.pdf
+EU-RENAULT-MASTER-III-X62-VAN-RWD-L4H2-DRW-PREFL-01	6848	2070	2557	Renault UK Master official press kit January 2018, Master Panel RWD dimensions	https://www.press.renault.co.uk/assets/documents/original/14002-RenaultMasterPressKitJanuary2018.pdf
+EU-RENAULT-MASTER-III-X62-VAN-RWD-L4H3-SRW-PREFL-01	6848	2070	2786	Renault UK Master official press kit January 2018, Master Panel RWD dimensions	https://www.press.renault.co.uk/assets/documents/original/14002-RenaultMasterPressKitJanuary2018.pdf
+EU-RENAULT-MASTER-III-X62-VAN-RWD-L4H3-DRW-PREFL-01	6848	2070	2808	Renault UK Master official press kit January 2018, Master Panel RWD dimensions	https://www.press.renault.co.uk/assets/documents/original/14002-RenaultMasterPressKitJanuary2018.pdf
+```
+
+## 下一步优先处理
+
+闭合 33281 的 2019–2024 RWD L3/L4、H2/H3 与 SRW/DRW 外廓；完成后 `PENDING=0`，下一轮直接进行机械收尾并输出两张最终完整 TSV、两个指定下载链接和 `COMPLETE`。
+
+推进信号：CONTINUE
+
+
+--- 发送 / 继续到 Round 5 ---
+继续当前批次并采用缓存优先模式。尺寸组只在首次创建或纠错时完整核对一次三维和来源；后续 Ktype 只判断关联哪个现有 DIMENSION_GROUP_ID，不重复抓取，不输出缓存来源或匹配理由。仍有 PENDING 时，CONTINUE 轮仅输出：1) 更新点；2) 当前批次进度；3) 本轮新增/修改的 Ktype 映射 TSV（无变化写“无”）；4) 本轮首次创建/修正的 DIMENSION_GROUP TSV（复用既有组不重复输出，无变化写“无”）；5) 下一步优先处理。若当前或上一轮进度已经是 PENDING=0，本轮不要继续检索或再次输出 CONTINUE，必须立刻汇总并输出两张最终完整 TSV、两个任务指定 sandbox 下载链接和“推进信号：COMPLETE”。执行顺序固定为：第一阶段优先消除 PENDING 并补齐会阻塞两张最终表的数据。检测到 PENDING=0 后，第二阶段最多只做一次轻量机械收尾：核对固定表头、id 与 DIMENSION_GROUP_ID 唯一、映射引用闭合、长宽高和来源非空、两个任务指定下载链接齐全。第二阶段不得重新逐车型、逐年份或逐来源做深度检索，不得为了提高置信度反复核对，也不得因非阻塞的排序或措辞问题继续多轮。PENDING=0 后的下一条回复必须直接输出两张最终完整 TSV、两个精确 sandbox 下载链接，并以“推进信号：COMPLETE”结束；不要再输出 CONTINUE。Ktype 映射 TSV 表头必须严格使用 requirement 指定的字段顺序：id	Ktype	NormalizedBodyStyle	Generation	BodyCode	Doors	DIMENSION_GROUP_ID	MatchConfidence	Notes	IterationStatus。另需维护完整 DIMENSION_GROUP TSV，表头固定为：DIMENSION_GROUP_ID	LengthMM	WidthMM	HeightMM	DimensionSource	SourceURL。缺少任一张表、任一映射引用的尺寸组，或尺寸组字段不完整时不得 COMPLETE。不要输出子车系匹配表。
+【COMPLETE 下载文件硬性要求】
+准备 COMPLETE 时，除两张完整内嵌 TSV 外，还必须创建并提供以下两个可点击 sandbox 下载链接，文件名必须完全一致：
+- all_4501-4600_ktype_dimension_mapping_final.tsv
+- all_4501-4600_dimension_groups_final.tsv
+缺少任一下载链接时不得输出推进信号：COMPLETE。
+
+
+--- Round 5 / checkpoint 续跑 ---
+## 更新点
+
+* 已闭合最后一个 PENDING：Ktype `33281`。
+* `33281` 按 2019 改款前后、L3/L4、H2/H3、SRW/DRW 外廓拆分；改款后官方尺寸图确认车长为 `6225/6875 mm`、车身宽度为 `2070 mm`，并分别列出 H2/H3 高度及单后轮、双后轮配置。([雷诺新闻][1])
+* 已完成机械检查：映射表 10 列、尺寸组表 6 列；`id` 与 `DIMENSION_GROUP_ID` 唯一；全部引用闭合；无孤立尺寸组；三维、来源和 URL 均非空。
+* 已创建两个任务指定 TSV 文件。
+
+## 当前批次进度
+
+* 输入 Ktype：100
+* READY 映射行：154
+* PENDING 映射行：0
+* DIMENSION_GROUP：85
+* 当前批次已完成。
+
+## 最终完整 Ktype 映射 TSV
+
+```tsv
+id	Ktype	NormalizedBodyStyle	Generation	BodyCode	Doors	DIMENSION_GROUP_ID	MatchConfidence	Notes	IterationStatus
+33132	33132	SUV	ix35 LM	LM	5	EU-HYUNDAI-IX35-LM-SUV-5D-01	HIGH		READY
+33133	33133	SUV	ix35 LM	LM	5	EU-HYUNDAI-IX35-LM-SUV-5D-01	HIGH		READY
+33134	33134	SUV	ix35 LM	LM	5	EU-HYUNDAI-IX35-LM-SUV-5D-01	HIGH		READY
+33135	33135	SUV	ix35 LM	LM	5	EU-HYUNDAI-IX35-LM-SUV-5D-01	HIGH		READY
+33149	33149	SUV	ix35 LM	LM	5	EU-HYUNDAI-IX35-LM-SUV-5D-01	HIGH		READY
+33152	33152	Van	H-1 TQ	TQ		EU-HYUNDAI-H-1-TQ-VAN-01	HIGH		READY
+33153	33153	Van	H-1 TQ	TQ		EU-HYUNDAI-H-1-TQ-VAN-01	HIGH		READY
+33163	33163	Convertible	F430	F131	2	EU-FERRARI-F430-F131-CONVERTIBLE-2D-01	HIGH		READY
+33164	33164	Coupe	F430	F131	2	EU-FERRARI-F430-F131-COUPE-2D-01	HIGH		READY
+33165	33165	Coupe	F430	F131	2	EU-FERRARI-F430-SCUDERIA-COUPE-2D-01	HIGH		READY
+33176	33176	Wagon	i30 FD	FD	5	EU-HYUNDAI-I30-FD-CW-WAGON-5D-01	HIGH		READY
+33191	33191	Sedan	Insignia A facelift	G09	4	EU-OPEL-INSIGNIA-A-FACELIFT-SEDAN-01	HIGH		READY
+33192	33192	Hatchback	SX4 S-Cross I	JY	5	EU-SUZUKI-SX4-S-CROSS-I-HATCHBACK-01	HIGH		READY
+33193_prefl	33193	Convertible	G-Class W463	W463	2	EU-MERCEDES-BENZ-G-CLASS-W463-CONVERTIBLE-PREFL-01	HIGH	2012改款前敞篷外廓。	READY
+33193_facelift	33193	Convertible	G-Class W463 facelift	W463	2	EU-MERCEDES-BENZ-G-CLASS-W463-CONVERTIBLE-FACELIFT-01	HIGH	2012改款后敞篷外廓。	READY
+33195	33195	Hatchback	Modus I	J77	5	EU-RENAULT-MODUS-I-HATCHBACK-5D-01	HIGH	生产期早于Grand Modus，闭合为标准Modus外廓。	READY
+33203	33203	Coupe	Integra III	DC2	3	EU-HONDA-INTEGRA-III-DC2-COUPE-3D-01	HIGH	三门Liftback Coupe外廓。	READY
+33209_3dr	33209	SUV	Pajero IV	V80	3	EU-MITSUBISHI-PAJERO-IV-SUV-3D-01	MEDIUM	短轴三门分支。	READY
+33209_5dr	33209	SUV	Pajero IV	V90	5	EU-MITSUBISHI-PAJERO-IV-SUV-5D-01	MEDIUM	长轴五门分支。	READY
+33211	33211	Hatchback	Jazz III	GE	5	EU-HONDA-JAZZ-III-GE-HATCHBACK-5D-01	HIGH		READY
+33213	33213	Convertible	Corvette C6	C6	2	EU-CHEVROLET-CORVETTE-C6-CONVERTIBLE-01	HIGH		READY
+33230_prefl	33230	Van	207 I	WC	3	EU-PEUGEOT-207-I-HATCHBACK-3D-PREFL-01	MEDIUM	三门厢式版改款前外廓。	READY
+33230_facelift	33230	Van	207 I	WC	3	EU-PEUGEOT-207-I-HATCHBACK-3D-FACELIFT-01	MEDIUM	三门厢式版改款后外廓。	READY
+33231_prefl	33231	Van	207 I	WC	3	EU-PEUGEOT-207-I-HATCHBACK-3D-PREFL-01	MEDIUM	三门厢式版改款前外廓。	READY
+33231_facelift	33231	Van	207 I	WC	3	EU-PEUGEOT-207-I-HATCHBACK-3D-FACELIFT-01	MEDIUM	三门厢式版改款后外廓。	READY
+33243	33243	Hatchback	Fabia II facelift	5J2	5	EU-SKODA-FABIA-II-HATCHBACK-01	HIGH		READY
+33244	33244	Wagon	Fabia II Combi facelift	5J5	5	EU-SKODA-FABIA-II-COMBI-FACELIFT-WAGON-5D-01	HIGH		READY
+33245	33245	Hatchback	Octavia II facelift	1Z3	5	EU-SKODA-OCTAVIA-II-HATCHBACK-5D-FACELIFT-01	HIGH		READY
+33246	33246	Wagon	Octavia II facelift	1Z5	5	EU-SKODA-OCTAVIA-II-1Z5-WAGON-FACELIFT-01	HIGH		READY
+33247	33247	MPV	Roomster I facelift	5J	5	EU-SKODA-ROOMSTER-I-MPV-FACELIFT-01	HIGH		READY
+33248	33248	MPV	Altea I facelift	5P1	5	EU-SEAT-ALTEA-I-MPV-FACELIFT-01	HIGH		READY
+33249	33249	MPV	Altea I facelift	5P1	5	EU-SEAT-ALTEA-I-MPV-FACELIFT-01	HIGH		READY
+33250	33250	Hatchback	Leon II facelift	1P1	5	EU-SEAT-LEON-II-HATCHBACK-FACELIFT-01	HIGH		READY
+33251	33251	Hatchback	A3 II facelift	8P1	3	EU-AUDI-A3-II-HATCHBACK-3D-FACELIFT-01	HIGH		READY
+33252	33252	Hatchback	A3 II facelift	8PA	5	EU-AUDI-A3-II-HATCHBACK-5D-FACELIFT-01	HIGH		READY
+33258	33258	MPV	Berlingo II	B9	5	EU-CITROEN-BERLINGO-II-B9-MPV-5D-01	HIGH		READY
+33259_3dr	33259	Hatchback	207 I facelift	WC	3	EU-PEUGEOT-207-I-HATCHBACK-3D-FACELIFT-01	MEDIUM	三门分支。	READY
+33259_5dr	33259	Hatchback	207 I facelift	WA	5	EU-PEUGEOT-207-I-HATCHBACK-5D-FACELIFT-01	MEDIUM	五门分支。	READY
+33260_3dr	33260	Hatchback	207 I facelift	WC	3	EU-PEUGEOT-207-I-HATCHBACK-3D-FACELIFT-01	MEDIUM	三门分支。	READY
+33260_5dr	33260	Hatchback	207 I facelift	WA	5	EU-PEUGEOT-207-I-HATCHBACK-5D-FACELIFT-01	MEDIUM	五门分支。	READY
+33261_3dr	33261	Hatchback	207 I facelift	WC	3	EU-PEUGEOT-207-I-HATCHBACK-3D-FACELIFT-01	MEDIUM	三门分支。	READY
+33261_5dr	33261	Hatchback	207 I facelift	WA	5	EU-PEUGEOT-207-I-HATCHBACK-5D-FACELIFT-01	MEDIUM	五门分支。	READY
+33262	33262	Convertible	207 CC facelift	WD	2	EU-PEUGEOT-207-CC-CONVERTIBLE-FACELIFT-01	HIGH		READY
+33263	33263	Convertible	207 CC facelift	WD	2	EU-PEUGEOT-207-CC-CONVERTIBLE-FACELIFT-01	HIGH		READY
+33264	33264	Wagon	207 SW I	WK	5	EU-PEUGEOT-207-I-SW-WAGON-5D-01	HIGH		READY
+33265	33265	Wagon	207 SW I	WK	5	EU-PEUGEOT-207-I-SW-WAGON-5D-01	HIGH		READY
+33266	33266	MPV	3008 I	T84	5	EU-PEUGEOT-3008-I-T84-MPV-5D-01	HIGH		READY
+33267	33267	Hatchback	308 I	T7	5	EU-PEUGEOT-308-I-HATCHBACK-5D-01	HIGH		READY
+33269	33269	Hatchback	308 I	T7	5	EU-PEUGEOT-308-I-HATCHBACK-5D-01	HIGH		READY
+33270	33270	Hatchback	308 I	T7	5	EU-PEUGEOT-308-I-HATCHBACK-5D-01	HIGH		READY
+33271	33271	Hatchback	308 I	T7	5	EU-PEUGEOT-308-I-HATCHBACK-5D-01	HIGH		READY
+33272	33272	Wagon	308 SW I	T7	5	EU-PEUGEOT-308-SW-I-PHASE-I-WAGON-5D-01	HIGH		READY
+33273	33273	Wagon	308 SW I	T7	5	EU-PEUGEOT-308-SW-I-PHASE-I-WAGON-5D-01	HIGH		READY
+33274_l1h1	33274	MPV	Boxer II	250		EU-PEUGEOT-BOXER-II-BUS-L1H1-01	HIGH	L1H1客车分支。	READY
+33274_l2h2	33274	MPV	Boxer II	250		EU-PEUGEOT-BOXER-II-BUS-L2H2-01	HIGH	L2H2客车分支。	READY
+33274_l3h2	33274	MPV	Boxer II	250		EU-PEUGEOT-BOXER-II-BUS-L3H2-01	HIGH	L3H2客车分支。	READY
+33275_l1h1	33275	Van	Boxer II	250		EU-PEUGEOT-BOXER-II-VAN-L1H1-01	HIGH	L1H1厢式车分支。	READY
+33275_l1h2	33275	Van	Boxer II	250		EU-PEUGEOT-BOXER-II-VAN-L1H2-01	HIGH	L1H2厢式车分支。	READY
+33275_l2h1	33275	Van	Boxer II	250		EU-PEUGEOT-BOXER-II-VAN-L2H1-01	HIGH	L2H1厢式车分支。	READY
+33275_l2h2	33275	Van	Boxer II	250		EU-PEUGEOT-BOXER-II-VAN-L2H2-01	HIGH	L2H2厢式车分支。	READY
+33275_l3h2	33275	Van	Boxer II	250		EU-PEUGEOT-BOXER-II-VAN-L3H2-01	HIGH	L3H2厢式车分支。	READY
+33275_l3h3	33275	Van	Boxer II	250		EU-PEUGEOT-BOXER-II-VAN-L3H3-01	HIGH	L3H3厢式车分支。	READY
+33275_l4h2	33275	Van	Boxer II	250		EU-PEUGEOT-BOXER-II-VAN-L4H2-01	HIGH	L4H2厢式车分支。	READY
+33275_l4h3	33275	Van	Boxer II	250		EU-PEUGEOT-BOXER-II-VAN-L4H3-01	HIGH	L4H3厢式车分支。	READY
+33276_l1	33276	Chassis Cab	Boxer II	250	2	EU-PEUGEOT-BOXER-II-CHASSIS-L1-01	HIGH	L1底盘驾驶室分支。	READY
+33276_l2	33276	Chassis Cab	Boxer II	250	2	EU-PEUGEOT-BOXER-II-CHASSIS-L2-01	HIGH	L2底盘驾驶室分支。	READY
+33276_l3	33276	Chassis Cab	Boxer II	250	2	EU-PEUGEOT-BOXER-II-CHASSIS-L3-01	HIGH	L3底盘驾驶室分支。	READY
+33276_l4	33276	Chassis Cab	Boxer II	250	2	EU-PEUGEOT-BOXER-II-CHASSIS-L4-01	HIGH	L4底盘驾驶室分支。	READY
+33277_mpv	33277	MPV	Kangoo II			EU-RENAULT-KANGOO-II-MPV-5D-01	MEDIUM	乘用MPV分支。	READY
+33277_van	33277	Van	Kangoo II			EU-RENAULT-KANGOO-II-VAN-01	MEDIUM	厢式车分支。	READY
+33278_l1h1	33278	Van	Master III	X62		EU-RENAULT-MASTER-III-X62-VAN-FWD-L1H1-PREFL-01	HIGH	FWD L1H1外廓。	READY
+33278_l1h2	33278	Van	Master III	X62		EU-RENAULT-MASTER-III-X62-VAN-FWD-L1H2-PREFL-01	HIGH	FWD L1H2外廓。	READY
+33278_l2h2	33278	Van	Master III	X62		EU-RENAULT-MASTER-III-X62-VAN-FWD-L2H2-PREFL-01	HIGH	FWD L2H2外廓。	READY
+33278_l2h3	33278	Van	Master III	X62		EU-RENAULT-MASTER-III-X62-VAN-FWD-L2H3-PREFL-01	HIGH	FWD L2H3外廓。	READY
+33278_l3h2	33278	Van	Master III	X62		EU-RENAULT-MASTER-III-X62-VAN-FWD-L3H2-PREFL-01	HIGH	FWD L3H2外廓。	READY
+33278_l3h3	33278	Van	Master III	X62		EU-RENAULT-MASTER-III-X62-VAN-FWD-L3H3-PREFL-01	HIGH	FWD L3H3外廓。	READY
+33279_l1h1	33279	Van	Master III	X62		EU-RENAULT-MASTER-III-X62-VAN-FWD-L1H1-PREFL-01	HIGH	FWD L1H1外廓。	READY
+33279_l1h2	33279	Van	Master III	X62		EU-RENAULT-MASTER-III-X62-VAN-FWD-L1H2-PREFL-01	HIGH	FWD L1H2外廓。	READY
+33279_l2h2	33279	Van	Master III	X62		EU-RENAULT-MASTER-III-X62-VAN-FWD-L2H2-PREFL-01	HIGH	FWD L2H2外廓。	READY
+33279_l2h3	33279	Van	Master III	X62		EU-RENAULT-MASTER-III-X62-VAN-FWD-L2H3-PREFL-01	HIGH	FWD L2H3外廓。	READY
+33279_l3h2	33279	Van	Master III	X62		EU-RENAULT-MASTER-III-X62-VAN-FWD-L3H2-PREFL-01	HIGH	FWD L3H2外廓。	READY
+33279_l3h3	33279	Van	Master III	X62		EU-RENAULT-MASTER-III-X62-VAN-FWD-L3H3-PREFL-01	HIGH	FWD L3H3外廓。	READY
+33280_l3h2_srw	33280	Van	Master III	X62		EU-RENAULT-MASTER-III-X62-VAN-RWD-L3H2-SRW-PREFL-01	HIGH	RWD L3H2单后轮外廓。	READY
+33280_l3h2_drw	33280	Van	Master III	X62		EU-RENAULT-MASTER-III-X62-VAN-RWD-L3H2-DRW-PREFL-01	HIGH	RWD L3H2双后轮外廓。	READY
+33280_l3h3_drw	33280	Van	Master III	X62		EU-RENAULT-MASTER-III-X62-VAN-RWD-L3H3-DRW-PREFL-01	HIGH	RWD L3H3双后轮外廓。	READY
+33280_l4h2_srw	33280	Van	Master III	X62		EU-RENAULT-MASTER-III-X62-VAN-RWD-L4H2-SRW-PREFL-01	HIGH	RWD L4H2单后轮外廓。	READY
+33280_l4h2_drw	33280	Van	Master III	X62		EU-RENAULT-MASTER-III-X62-VAN-RWD-L4H2-DRW-PREFL-01	HIGH	RWD L4H2双后轮外廓。	READY
+33280_l4h3_srw	33280	Van	Master III	X62		EU-RENAULT-MASTER-III-X62-VAN-RWD-L4H3-SRW-PREFL-01	HIGH	RWD L4H3单后轮外廓。	READY
+33280_l4h3_drw	33280	Van	Master III	X62		EU-RENAULT-MASTER-III-X62-VAN-RWD-L4H3-DRW-PREFL-01	HIGH	RWD L4H3双后轮外廓。	READY
+33281_l3h2_srw_prefl	33281	Van	Master III	X62		EU-RENAULT-MASTER-III-X62-VAN-RWD-L3H2-SRW-PREFL-01	HIGH	2019改款前RWD L3H2单后轮外廓。	READY
+33281_l3h2_drw_prefl	33281	Van	Master III	X62		EU-RENAULT-MASTER-III-X62-VAN-RWD-L3H2-DRW-PREFL-01	HIGH	2019改款前RWD L3H2双后轮外廓。	READY
+33281_l3h3_drw_prefl	33281	Van	Master III	X62		EU-RENAULT-MASTER-III-X62-VAN-RWD-L3H3-DRW-PREFL-01	HIGH	2019改款前RWD L3H3双后轮外廓。	READY
+33281_l4h2_srw_prefl	33281	Van	Master III	X62		EU-RENAULT-MASTER-III-X62-VAN-RWD-L4H2-SRW-PREFL-01	HIGH	2019改款前RWD L4H2单后轮外廓。	READY
+33281_l4h2_drw_prefl	33281	Van	Master III	X62		EU-RENAULT-MASTER-III-X62-VAN-RWD-L4H2-DRW-PREFL-01	HIGH	2019改款前RWD L4H2双后轮外廓。	READY
+33281_l4h3_srw_prefl	33281	Van	Master III	X62		EU-RENAULT-MASTER-III-X62-VAN-RWD-L4H3-SRW-PREFL-01	HIGH	2019改款前RWD L4H3单后轮外廓。	READY
+33281_l4h3_drw_prefl	33281	Van	Master III	X62		EU-RENAULT-MASTER-III-X62-VAN-RWD-L4H3-DRW-PREFL-01	HIGH	2019改款前RWD L4H3双后轮外廓。	READY
+33281_l3h2_srw_facelift	33281	Van	Master III facelift	X62		EU-RENAULT-MASTER-III-X62-VAN-RWD-L3H2-SRW-FACELIFT-01	HIGH	2019改款后RWD L3H2单后轮外廓。	READY
+33281_l3h2_drw_facelift	33281	Van	Master III facelift	X62		EU-RENAULT-MASTER-III-X62-VAN-RWD-L3H2-DRW-FACELIFT-01	HIGH	2019改款后RWD L3H2双后轮外廓。	READY
+33281_l3h3_srw_facelift	33281	Van	Master III facelift	X62		EU-RENAULT-MASTER-III-X62-VAN-RWD-L3H3-SRW-FACELIFT-01	HIGH	2019改款后RWD L3H3单后轮外廓。	READY
+33281_l3h3_drw_facelift	33281	Van	Master III facelift	X62		EU-RENAULT-MASTER-III-X62-VAN-RWD-L3H3-DRW-FACELIFT-01	HIGH	2019改款后RWD L3H3双后轮外廓。	READY
+33281_l4h2_srw_facelift	33281	Van	Master III facelift	X62		EU-RENAULT-MASTER-III-X62-VAN-RWD-L4H2-SRW-FACELIFT-01	HIGH	2019改款后RWD L4H2单后轮外廓。	READY
+33281_l4h2_drw_facelift	33281	Van	Master III facelift	X62		EU-RENAULT-MASTER-III-X62-VAN-RWD-L4H2-DRW-FACELIFT-01	HIGH	2019改款后RWD L4H2双后轮外廓。	READY
+33281_l4h3_srw_facelift	33281	Van	Master III facelift	X62		EU-RENAULT-MASTER-III-X62-VAN-RWD-L4H3-SRW-FACELIFT-01	HIGH	2019改款后RWD L4H3单后轮外廓。	READY
+33281_l4h3_drw_facelift	33281	Van	Master III facelift	X62		EU-RENAULT-MASTER-III-X62-VAN-RWD-L4H3-DRW-FACELIFT-01	HIGH	2019改款后RWD L4H3双后轮外廓。	READY
+33298	33298	Hatchback	Giulietta	940	5	EU-ALFA-ROMEO-GIULIETTA-940-HATCHBACK-5D-01	HIGH		READY
+33299	33299	Hatchback	Giulietta	940	5	EU-ALFA-ROMEO-GIULIETTA-940-HATCHBACK-5D-01	HIGH		READY
+33300	33300	Hatchback	Giulietta	940	5	EU-ALFA-ROMEO-GIULIETTA-940-HATCHBACK-5D-01	HIGH		READY
+33301	33301	Hatchback	Giulietta	940	5	EU-ALFA-ROMEO-GIULIETTA-940-HATCHBACK-5D-01	HIGH		READY
+33302	33302	Hatchback	Giulietta	940	5	EU-ALFA-ROMEO-GIULIETTA-940-HATCHBACK-5D-01	HIGH		READY
+33303	33303	Hatchback	A1 I	8X1	3	EU-AUDI-A1-8X1-HATCHBACK-3D-01	HIGH		READY
+33304	33304	Hatchback	A1 I	8X1	3	EU-AUDI-A1-8X1-HATCHBACK-3D-01	HIGH		READY
+33305	33305	Hatchback	A1 I	8X1	3	EU-AUDI-A1-8X1-HATCHBACK-3D-01	HIGH		READY
+33306_prefl	33306	SUV	Touareg II pre-facelift	7P	5	EU-VW-TOUAREG-II-7P-SUV-PREFL-01	HIGH	2014改款前外廓。	READY
+33306_facelift	33306	SUV	Touareg II facelift	7P	5	EU-VW-TOUAREG-II-7P-SUV-FACELIFT-01	HIGH	2014改款后外廓。	READY
+33307_prefl	33307	SUV	Touareg II pre-facelift	7P	5	EU-VW-TOUAREG-II-7P-SUV-PREFL-01	HIGH	2014改款前外廓。	READY
+33307_facelift	33307	SUV	Touareg II facelift	7P	5	EU-VW-TOUAREG-II-7P-SUV-FACELIFT-01	MEDIUM	2014改款后外廓。	READY
+33308_prefl	33308	SUV	Touareg II pre-facelift	7P	5	EU-VW-TOUAREG-II-7P-SUV-PREFL-01	HIGH	2014改款前外廓。	READY
+33308_facelift	33308	SUV	Touareg II facelift	7P	5	EU-VW-TOUAREG-II-7P-SUV-FACELIFT-01	HIGH	2014改款后外廓。	READY
+33309_prefl	33309	SUV	Touareg II pre-facelift	7P	5	EU-VW-TOUAREG-II-7P-SUV-PREFL-01	HIGH	2014改款前外廓。	READY
+33309_facelift	33309	SUV	Touareg II facelift	7P	5	EU-VW-TOUAREG-II-7P-SUV-FACELIFT-01	HIGH	2014改款后外廓。	READY
+33311	33311	Hatchback	Fabia II facelift	5J2	5	EU-SKODA-FABIA-II-HATCHBACK-01	HIGH		READY
+33312	33312	Wagon	Fabia II Combi facelift	5J5	5	EU-SKODA-FABIA-II-COMBI-FACELIFT-WAGON-5D-01	HIGH		READY
+33313	33313	MPV	Roomster I facelift	5J	5	EU-SKODA-ROOMSTER-I-MPV-FACELIFT-01	HIGH		READY
+33314	33314	Hatchback	Fabia II facelift	5J2	5	EU-SKODA-FABIA-II-HATCHBACK-01	HIGH		READY
+33315	33315	Hatchback	Fabia II facelift	5J2	5	EU-SKODA-FABIA-II-HATCHBACK-01	HIGH		READY
+33316	33316	Wagon	Fabia II Combi facelift	5J5	5	EU-SKODA-FABIA-II-COMBI-FACELIFT-WAGON-5D-01	HIGH		READY
+33317	33317	Wagon	Fabia II Combi facelift	5J5	5	EU-SKODA-FABIA-II-COMBI-FACELIFT-WAGON-5D-01	HIGH		READY
+33320	33320	MPV	Roomster I facelift	5J	5	EU-SKODA-ROOMSTER-I-MPV-FACELIFT-01	HIGH		READY
+33321	33321	MPV	Roomster I facelift	5J	5	EU-SKODA-ROOMSTER-I-MPV-FACELIFT-01	HIGH		READY
+33322	33322	Wagon	Superb II	3T5	5	EU-SKODA-SUPERB-II-3T5-WAGON-5D-PREFL-01	HIGH		READY
+33323	33323	Van	C2 I	JM	3	EU-CITROEN-C2-I-HATCHBACK-3D-01	MEDIUM	三门厢式版与乘用车外廓一致。	READY
+33324	33324	Wagon	Ibiza IV ST	6J8	5	EU-SEAT-IBIZA-IV-ST-6J8-WAGON-5D-01	HIGH		READY
+33325	33325	Wagon	Ibiza IV ST	6J8	5	EU-SEAT-IBIZA-IV-ST-6J8-WAGON-5D-01	HIGH		READY
+33326	33326	Wagon	Ibiza IV ST	6J8	5	EU-SEAT-IBIZA-IV-ST-6J8-WAGON-5D-01	HIGH		READY
+33327	33327	Wagon	Ibiza IV ST	6J8	5	EU-SEAT-IBIZA-IV-ST-6J8-WAGON-5D-01	HIGH		READY
+33328	33328	Wagon	Ibiza IV ST	6J8	5	EU-SEAT-IBIZA-IV-ST-6J8-WAGON-5D-01	HIGH		READY
+33329	33329	Wagon	Ibiza IV ST	6J8	5	EU-SEAT-IBIZA-IV-ST-6J8-WAGON-5D-01	HIGH		READY
+33330	33330	Wagon	Ibiza IV ST	6J8	5	EU-SEAT-IBIZA-IV-ST-6J8-WAGON-5D-01	HIGH		READY
+33331	33331	MPV	C-Max I facelift	DM2	5	EU-FORD-C-MAX-I-FACELIFT-MPV-5D-01	HIGH		READY
+33332	33332	MPV	C-Max I facelift	DM2	5	EU-FORD-C-MAX-I-FACELIFT-MPV-5D-01	HIGH		READY
+33333	33333	Hatchback	Fiesta VII	CB1		EU-FORD-FIESTA-VII-CB1-HATCHBACK-01	MEDIUM	当前Ktype未区分三门/五门，外廓尺寸组一致。	READY
+33334	33334	Hatchback	Fiesta VII	CB1		EU-FORD-FIESTA-VII-CB1-HATCHBACK-01	MEDIUM	当前Ktype未区分三门/五门，外廓尺寸组一致。	READY
+33335	33335	Van	Fiesta VII	CB1	3	EU-FORD-FIESTA-VII-CB1-HATCHBACK-01	HIGH	三门厢式版与乘用车外廓一致。	READY
+33336	33336	Van	Fiesta VII	CB1	3	EU-FORD-FIESTA-VII-CB1-HATCHBACK-01	HIGH	三门厢式版与乘用车外廓一致。	READY
+33337	33337	Van	Fiesta VII	CB1	3	EU-FORD-FIESTA-VII-CB1-HATCHBACK-01	HIGH	三门厢式版与乘用车外廓一致。	READY
+33338	33338	SUV	Kuga I	C394	5	EU-FORD-KUGA-I-C394-SUV-5D-01	HIGH		READY
+33339	33339	SUV	Kuga I	C394	5	EU-FORD-KUGA-I-C394-SUV-5D-01	HIGH		READY
+33340	33340	SUV	Kuga I	C394	5	EU-FORD-KUGA-I-C394-SUV-5D-01	HIGH		READY
+33341	33341	Van	C-Crosser I	CW0	5	EU-CITROEN-C-CROSSER-I-SUV-5D-01	MEDIUM	商用厢式版与SUV外廓一致。	READY
+33342	33342	Hatchback	Focus II facelift	DA3		EU-FORD-FOCUS-II-HATCHBACK-FACELIFT-01	MEDIUM	当前Ktype未区分三门/五门，复用已闭合外廓组。	READY
+33343	33343	Hatchback	Focus II facelift	DA3		EU-FORD-FOCUS-II-HATCHBACK-FACELIFT-01	MEDIUM	当前Ktype未区分三门/五门，复用已闭合外廓组。	READY
+33344	33344	Wagon	Focus II facelift	DA3	5	EU-FORD-FOCUS-II-WAGON-FACELIFT-01	HIGH		READY
+33345	33345	Wagon	Focus II facelift	DA3	5	EU-FORD-FOCUS-II-WAGON-FACELIFT-01	HIGH		READY
+33346	33346	Hatchback	Focus II facelift	DA3		EU-FORD-FOCUS-II-HATCHBACK-FACELIFT-01	MEDIUM	当前Ktype未区分三门/五门，复用已闭合外廓组。	READY
+```
+
+[下载 Ktype 映射表](sandbox:/mnt/data/all_4501-4600_ktype_dimension_mapping_final.tsv)
+
+## 最终完整 DIMENSION_GROUP TSV
+
+```tsv
+DIMENSION_GROUP_ID	LengthMM	WidthMM	HeightMM	DimensionSource	SourceURL
+EU-HYUNDAI-IX35-LM-SUV-5D-01	4410	1820	1660	AutoData1 Hyundai ix35 2.0 CVVT specifications	https://www.autodata1.com/en/car/hyundai/ix35/ix35-20-cvvt-163-hp
+EU-HYUNDAI-H-1-TQ-VAN-01	5125	1920	1925	Hyundai H-1 (Grand Starex) 2009 Owner's Manual	https://www.carmanualsonline.info/hyundai-h-1-grand-starex-2009-owner-s-manual-rhd-uk-australia/?srch=dimensions
+EU-FERRARI-F430-F131-CONVERTIBLE-2D-01	4511	1923	1234	Ferrari F430 Spider official model page	https://www.ferrari.com/en-EN/auto/f430-spider
+EU-FERRARI-F430-F131-COUPE-2D-01	4511	1923	1214	Ferrari F430 official model page	https://www.ferrari.com/en-EN/auto/f430
+EU-FERRARI-F430-SCUDERIA-COUPE-2D-01	4512	1923	1199	Ferrari 430 Scuderia official model page	https://www.ferrari.com/en-EN/auto/430-scuderia
+EU-HYUNDAI-I30-FD-CW-WAGON-5D-01	4475	1775	1565	Hyundai Heritage i30 FD/CW	https://www.hyundai.com/kr/ko/brand/brandstory/heritage/2000-i30-fd-cw
+EU-OPEL-INSIGNIA-A-FACELIFT-SEDAN-01	4842	1858	1498	Vauxhall Insignia official specification guide June 2013	https://www.vauxhall.co.uk/content/dam/vauxhall/Home/PDFs/historical-brochures/discounted-models/insignia-a/Insignia_Spec_PG_12_June_2013.pdf
+EU-SUZUKI-SX4-S-CROSS-I-HATCHBACK-01	4300	1765	1575	Auto-Data Suzuki SX4 S-Cross model specifications	https://www.auto-data.net/en/suzuki-sx4-model-1911
+EU-MERCEDES-BENZ-G-CLASS-W463-CONVERTIBLE-PREFL-01	4257	1760	1941	Mercedes-Benz Public Archive G 500 short wheelbase 2008–2012	https://mercedes-benz-publicarchive.com/marsClassic/en/instance/ko/G-500-kurzer-Radstand-2008---2012.xhtml?oid=191039063
+EU-MERCEDES-BENZ-G-CLASS-W463-CONVERTIBLE-FACELIFT-01	4257	1760	1951	Auto-Data Mercedes-Benz G-Class Cabriolet W463 facelift 2012 G 500	https://www.auto-data.net/en/mercedes-benz-g-class-cabriolet-w463-facelift-2012-g-500-v8-388hp-4matic-7g-tronic-plus-42490
+EU-RENAULT-MODUS-I-HATCHBACK-5D-01	3792	1695	1589	Automobile-Catalog 2004 Renault Modus 1.6 16V specifications	https://www.automobile-catalog.com/car/2004/2951165/renault_modus_1_6_16v_88.html
+EU-HONDA-INTEGRA-III-DC2-COUPE-3D-01	4380	1710	1335	Auto-Data Honda Integra III DC2; CarsGuide 2000 Honda Integra dimensions	https://www.auto-data.net/en/honda-integra-iii-dc2-generation-2579;https://www.carsguide.com.au/honda/integra/car-dimensions/2000
+EU-MITSUBISHI-PAJERO-IV-SUV-3D-01	4385	1875	1870	Auto-Data Mitsubishi Pajero IV generation specifications	https://www.auto-data.net/en/mitsubishi-pajero-iv-generation-3400
+EU-MITSUBISHI-PAJERO-IV-SUV-5D-01	4900	1875	1870	Auto-Data Mitsubishi Pajero IV generation specifications	https://www.auto-data.net/en/mitsubishi-pajero-iv-generation-3400
+EU-HONDA-JAZZ-III-GE-HATCHBACK-5D-01	3900	1695	1525	Auto-Data Honda Jazz model specifications	https://www.auto-data.net/en/honda-jazz-model-1289
+EU-CHEVROLET-CORVETTE-C6-CONVERTIBLE-01	4435	1844	1246	C6 Registry Corvette Convertible specifications	https://www.c6registry.com/January04/Convertible/specifications.htm
+EU-PEUGEOT-207-I-HATCHBACK-3D-PREFL-01	4030	1720	1472	Auto-Data Peugeot 207 model specifications	https://www.auto-data.net/en/peugeot-207-model-572
+EU-PEUGEOT-207-I-HATCHBACK-3D-FACELIFT-01	4045	1748	1472	Auto-Data Peugeot 207 model specifications	https://www.auto-data.net/en/peugeot-207-model-572
+EU-SKODA-FABIA-II-HATCHBACK-01	3992	1642	1498	Auto-Data Skoda Fabia II specifications	https://www.auto-data.net/en/skoda-fabia-ii-generation-3089
+EU-SKODA-FABIA-II-COMBI-FACELIFT-WAGON-5D-01	4247	1642	1498	Auto-Data Skoda Fabia II Combi facelift specifications	https://www.auto-data.net/en/skoda-fabia-ii-combi-facelift-2010-1.2-mpi-70hp-20327
+EU-SKODA-OCTAVIA-II-HATCHBACK-5D-FACELIFT-01	4569	1769	1462	Auto-Data Skoda Octavia II facelift generation	https://www.auto-data.net/en/skoda-octavia-ii-facelift-2009-generation-3094
+EU-SKODA-OCTAVIA-II-1Z5-WAGON-FACELIFT-01	4569	1769	1462	Auto-Data Skoda Octavia II facelift generation	https://www.auto-data.net/en/skoda-octavia-ii-facelift-2009-generation-3094
+EU-SKODA-ROOMSTER-I-MPV-FACELIFT-01	4214	1684	1607	Auto-Data Skoda Roomster facelift specifications	https://www.auto-data.net/en/skoda-roomster-facelift-2010-1.4-86hp-19232
+EU-SEAT-ALTEA-I-MPV-FACELIFT-01	4282	1768	1576	Auto-Data Seat Altea facelift 2009 specifications	https://www.auto-data.net/en/seat-altea-facelift-2009-generation-4202
+EU-SEAT-LEON-II-HATCHBACK-FACELIFT-01	4323	1768	1458	AutoData1 Seat Leon II facelift specifications	https://www.autodata1.com/en/car/seat/leon/leon-ii-1p-facelift-2009-fr-20-tdi-cr-170-hp-dpf-dsg
+EU-AUDI-A3-II-HATCHBACK-3D-FACELIFT-01	4238	1765	1421	auto motor und sport Audi A3 8P/8PA technical data	https://www.auto-motor-und-sport.de/marken-modelle/audi/a3/8p-8pa/technische-daten/
+EU-AUDI-A3-II-HATCHBACK-5D-FACELIFT-01	4292	1765	1423	auto motor und sport Audi A3 8P/8PA technical data	https://www.auto-motor-und-sport.de/marken-modelle/audi/a3/8p-8pa/technische-daten/
+EU-CITROEN-BERLINGO-II-B9-MPV-5D-01	4380	1810	1801	Auto-Data Citroen Berlingo model specifications	https://www.auto-data.net/en/citroen-berlingo-model-1694
+EU-PEUGEOT-207-I-HATCHBACK-5D-FACELIFT-01	4045	1748	1472	Auto-Data Peugeot 207 model specifications	https://www.auto-data.net/en/peugeot-207-model-572
+EU-PEUGEOT-207-CC-CONVERTIBLE-FACELIFT-01	4044	1748	1393	Auto-Data Peugeot 207 CC facelift generation	https://www.auto-data.net/en/peugeot-207-cc-facelift-2009-generation-6456
+EU-PEUGEOT-207-I-SW-WAGON-5D-01	4156	1748	1527	Auto-Data Peugeot 207 SW generation	https://www.auto-data.net/en/peugeot-207-sw-generation-6453
+EU-PEUGEOT-3008-I-T84-MPV-5D-01	4365	1837	1628	Auto-Data Peugeot 3008 model specifications	https://www.auto-data.net/en/peugeot-3008-model-577
+EU-PEUGEOT-308-I-HATCHBACK-5D-01	4276	1815	1498	Auto-Data Peugeot 308 model specifications	https://www.auto-data.net/en/peugeot-308-model-573
+EU-PEUGEOT-308-SW-I-PHASE-I-WAGON-5D-01	4500	1815	1564	Auto-Data Peugeot 308 model specifications	https://www.auto-data.net/en/peugeot-308-model-573
+EU-PEUGEOT-BOXER-II-BUS-L1H1-01	4963	2050	2254	Peugeot Boxer 2008 Owner Manual technical data	https://www.carmanualsonline.info/peugeot-boxer-2008-owner-s-manual/?srch=technical+data
+EU-PEUGEOT-BOXER-II-BUS-L2H2-01	5413	2050	2522	Peugeot Boxer 2008 Owner Manual technical data	https://www.carmanualsonline.info/peugeot-boxer-2008-owner-s-manual/?srch=technical+data
+EU-PEUGEOT-BOXER-II-BUS-L3H2-01	5998	2050	2522	Peugeot Boxer 2008 Owner Manual technical data	https://www.carmanualsonline.info/peugeot-boxer-2008-owner-s-manual/?srch=technical+data
+EU-PEUGEOT-BOXER-II-VAN-L1H1-01	4963	2050	2254	Peugeot Boxer 2008 Owner Manual technical data	https://www.carmanualsonline.info/peugeot-boxer-2008-owner-s-manual/?srch=technical+data
+EU-PEUGEOT-BOXER-II-VAN-L1H2-01	4963	2050	2522	Peugeot Boxer 2008 Owner Manual technical data	https://www.carmanualsonline.info/peugeot-boxer-2008-owner-s-manual/?srch=technical+data
+EU-PEUGEOT-BOXER-II-VAN-L2H1-01	5413	2050	2254	Peugeot Boxer 2008 Owner Manual technical data	https://www.carmanualsonline.info/peugeot-boxer-2008-owner-s-manual/?srch=technical+data
+EU-PEUGEOT-BOXER-II-VAN-L2H2-01	5413	2050	2522	Peugeot Boxer 2008 Owner Manual technical data	https://www.carmanualsonline.info/peugeot-boxer-2008-owner-s-manual/?srch=technical+data
+EU-PEUGEOT-BOXER-II-VAN-L3H2-01	5998	2050	2522	Peugeot Boxer 2008 Owner Manual technical data	https://www.carmanualsonline.info/peugeot-boxer-2008-owner-s-manual/?srch=technical+data
+EU-PEUGEOT-BOXER-II-VAN-L3H3-01	5998	2050	2760	Peugeot Boxer 2008 Owner Manual technical data	https://www.carmanualsonline.info/peugeot-boxer-2008-owner-s-manual/?srch=technical+data
+EU-PEUGEOT-BOXER-II-VAN-L4H2-01	6363	2050	2522	Peugeot Boxer 2008 Owner Manual technical data	https://www.carmanualsonline.info/peugeot-boxer-2008-owner-s-manual/?srch=technical+data
+EU-PEUGEOT-BOXER-II-VAN-L4H3-01	6363	2050	2760	Peugeot Boxer 2008 Owner Manual technical data	https://www.carmanualsonline.info/peugeot-boxer-2008-owner-s-manual/?srch=technical+data
+EU-PEUGEOT-BOXER-II-CHASSIS-L1-01	4908	2050	2254	Peugeot Boxer 2008 Owner Manual technical data	https://www.carmanualsonline.info/peugeot-boxer-2008-owner-s-manual/?srch=technical+data
+EU-PEUGEOT-BOXER-II-CHASSIS-L2-01	5358	2050	2254	Peugeot Boxer 2008 Owner Manual technical data	https://www.carmanualsonline.info/peugeot-boxer-2008-owner-s-manual/?srch=technical+data
+EU-PEUGEOT-BOXER-II-CHASSIS-L3-01	5943	2050	2254	Peugeot Boxer 2008 Owner Manual technical data	https://www.carmanualsonline.info/peugeot-boxer-2008-owner-s-manual/?srch=technical+data
+EU-PEUGEOT-BOXER-II-CHASSIS-L4-01	6308	2050	2270	Peugeot Boxer 2008 Owner Manual technical data	https://www.carmanualsonline.info/peugeot-boxer-2008-owner-s-manual/?srch=technical+data
+EU-RENAULT-KANGOO-II-MPV-5D-01	4213	1829	1839	Auto-Data Renault Kangoo model specifications	https://www.auto-data.net/en/renault-kangoo-model-1045
+EU-RENAULT-KANGOO-II-VAN-01	4213	1829	1844	Auto-Data Renault Kangoo model specifications	https://www.auto-data.net/en/renault-kangoo-model-1045
+EU-RENAULT-MASTER-III-X62-VAN-FWD-L1H1-PREFL-01	5048	2070	2303	Renault UK Master official press kit January 2018, panel van dimensions	https://www.press.renault.co.uk/assets/documents/original/14002-RenaultMasterPressKitJanuary2018.pdf
+EU-RENAULT-MASTER-III-X62-VAN-FWD-L1H2-PREFL-01	5048	2070	2496	Renault UK Master official press kit January 2018, panel van dimensions	https://www.press.renault.co.uk/assets/documents/original/14002-RenaultMasterPressKitJanuary2018.pdf
+EU-RENAULT-MASTER-III-X62-VAN-FWD-L2H2-PREFL-01	5548	2070	2499	Renault UK Master official press kit January 2018, panel van dimensions	https://www.press.renault.co.uk/assets/documents/original/14002-RenaultMasterPressKitJanuary2018.pdf
+EU-RENAULT-MASTER-III-X62-VAN-FWD-L2H3-PREFL-01	5548	2070	2749	Renault UK Master official press kit January 2018, panel van dimensions	https://www.press.renault.co.uk/assets/documents/original/14002-RenaultMasterPressKitJanuary2018.pdf
+EU-RENAULT-MASTER-III-X62-VAN-FWD-L3H2-PREFL-01	6198	2070	2488	Renault UK Master official press kit January 2018, panel van dimensions	https://www.press.renault.co.uk/assets/documents/original/14002-RenaultMasterPressKitJanuary2018.pdf
+EU-RENAULT-MASTER-III-X62-VAN-FWD-L3H3-PREFL-01	6198	2070	2744	Renault UK Master official press kit January 2018, panel van dimensions	https://www.press.renault.co.uk/assets/documents/original/14002-RenaultMasterPressKitJanuary2018.pdf
+EU-RENAULT-MASTER-III-X62-VAN-RWD-L3H2-SRW-PREFL-01	6198	2070	2527	Renault UK Master official press kit January 2018, panel van dimensions	https://www.press.renault.co.uk/assets/documents/original/14002-RenaultMasterPressKitJanuary2018.pdf
+EU-RENAULT-MASTER-III-X62-VAN-RWD-L3H2-DRW-PREFL-01	6198	2070	2549	Renault UK Master official press kit January 2018, panel van dimensions	https://www.press.renault.co.uk/assets/documents/original/14002-RenaultMasterPressKitJanuary2018.pdf
+EU-RENAULT-MASTER-III-X62-VAN-RWD-L3H3-DRW-PREFL-01	6198	2070	2815	Renault UK Master official press kit January 2018, panel van dimensions	https://www.press.renault.co.uk/assets/documents/original/14002-RenaultMasterPressKitJanuary2018.pdf
+EU-RENAULT-MASTER-III-X62-VAN-RWD-L4H2-SRW-PREFL-01	6848	2070	2527	Renault UK Master official press kit January 2018, panel van dimensions	https://www.press.renault.co.uk/assets/documents/original/14002-RenaultMasterPressKitJanuary2018.pdf
+EU-RENAULT-MASTER-III-X62-VAN-RWD-L4H2-DRW-PREFL-01	6848	2070	2557	Renault UK Master official press kit January 2018, panel van dimensions	https://www.press.renault.co.uk/assets/documents/original/14002-RenaultMasterPressKitJanuary2018.pdf
+EU-RENAULT-MASTER-III-X62-VAN-RWD-L4H3-SRW-PREFL-01	6848	2070	2786	Renault UK Master official press kit January 2018, panel van dimensions	https://www.press.renault.co.uk/assets/documents/original/14002-RenaultMasterPressKitJanuary2018.pdf
+EU-RENAULT-MASTER-III-X62-VAN-RWD-L4H3-DRW-PREFL-01	6848	2070	2808	Renault UK Master official press kit January 2018, panel van dimensions	https://www.press.renault.co.uk/assets/documents/original/14002-RenaultMasterPressKitJanuary2018.pdf
+EU-RENAULT-MASTER-III-X62-VAN-RWD-L3H2-SRW-FACELIFT-01	6225	2070	2549	Renault UK Master official brochure April 2022, rear-wheel-drive panel van dimensions	https://www.press.renault.co.uk/assets/documents/original/20329-MasterBrochureApril2022.pdf
+EU-RENAULT-MASTER-III-X62-VAN-RWD-L3H2-DRW-FACELIFT-01	6225	2070	2549	Renault UK Master official brochure April 2022, rear-wheel-drive panel van dimensions	https://www.press.renault.co.uk/assets/documents/original/20329-MasterBrochureApril2022.pdf
+EU-RENAULT-MASTER-III-X62-VAN-RWD-L3H3-SRW-FACELIFT-01	6225	2070	2815	Renault UK Master official brochure April 2022, rear-wheel-drive panel van dimensions	https://www.press.renault.co.uk/assets/documents/original/20329-MasterBrochureApril2022.pdf
+EU-RENAULT-MASTER-III-X62-VAN-RWD-L3H3-DRW-FACELIFT-01	6225	2070	2815	Renault UK Master official brochure April 2022, rear-wheel-drive panel van dimensions	https://www.press.renault.co.uk/assets/documents/original/20329-MasterBrochureApril2022.pdf
+EU-RENAULT-MASTER-III-X62-VAN-RWD-L4H2-SRW-FACELIFT-01	6875	2070	2557	Renault UK Master official brochure April 2022, rear-wheel-drive panel van dimensions	https://www.press.renault.co.uk/assets/documents/original/20329-MasterBrochureApril2022.pdf
+EU-RENAULT-MASTER-III-X62-VAN-RWD-L4H2-DRW-FACELIFT-01	6875	2070	2557	Renault UK Master official brochure April 2022, rear-wheel-drive panel van dimensions	https://www.press.renault.co.uk/assets/documents/original/20329-MasterBrochureApril2022.pdf
+EU-RENAULT-MASTER-III-X62-VAN-RWD-L4H3-SRW-FACELIFT-01	6875	2070	2808	Renault UK Master official brochure April 2022, rear-wheel-drive panel van dimensions	https://www.press.renault.co.uk/assets/documents/original/20329-MasterBrochureApril2022.pdf
+EU-RENAULT-MASTER-III-X62-VAN-RWD-L4H3-DRW-FACELIFT-01	6875	2070	2808	Renault UK Master official brochure April 2022, rear-wheel-drive panel van dimensions	https://www.press.renault.co.uk/assets/documents/original/20329-MasterBrochureApril2022.pdf
+EU-ALFA-ROMEO-GIULIETTA-940-HATCHBACK-5D-01	4351	1798	1465	Auto-Data Alfa Romeo Giulietta Type 940 specifications	https://www.auto-data.net/en/alfa-romeo-giulietta-type-940-facelift-2016-1.750-tbi-240hp-tct-22851
+EU-AUDI-A1-8X1-HATCHBACK-3D-01	3954	1740	1416	Audi UK A1 1.4 TFSI official technical data	https://press.audi.co.uk/assets/documents/original/9527-AudiUK00000111A114TFSIStronic122g.pdf
+EU-VW-TOUAREG-II-7P-SUV-PREFL-01	4795	1940	1732	Volkswagen UK Touareg official brochure February 2011	https://www.volkswagen.co.uk/idhub/content/dam/onehub_pkw/importers/gb/downloads/brochures/used-cars/touareg/touareg-nf/vw-touareg-nf-brochure-feb-2011.pdf
+EU-VW-TOUAREG-II-7P-SUV-FACELIFT-01	4801	1940	1732	Volkswagen UK Touareg official brochure December 2015	https://www.volkswagen.co.uk/idhub/content/dam/onehub_pkw/importers/gb/downloads/brochures/used-cars/touareg/touareg-fl/vw-touareg-fl-brochure-dec-2015.pdf
+EU-SKODA-SUPERB-II-3T5-WAGON-5D-PREFL-01	4838	1817	1510	Auto-Data Skoda Superb II Combi specifications	https://www.auto-data.net/en/skoda-superb-ii-combi-2.0-tdi-cr-140hp-dsg-19320
+EU-CITROEN-C2-I-HATCHBACK-3D-01	3666	1659	1474	Auto-Data Citroen C2 model specifications	https://www.auto-data.net/en/citroen-c2-model-1695
+EU-SEAT-IBIZA-IV-ST-6J8-WAGON-5D-01	4236	1693	1445	SEAT Ibiza ST technical specifications	https://www.motorshow.me/uploadImages/GalleryDocs/Doc6003.pdf
+EU-FORD-C-MAX-I-FACELIFT-MPV-5D-01	4372	1825	1588	Auto-Data Ford C-Max I facelift specifications	https://www.auto-data.net/en/ford-c-max-facelift-2007-generation-1012
+EU-FORD-FIESTA-VII-CB1-HATCHBACK-01	3950	1709	1481	Auto-Data Ford Fiesta VII specifications	https://www.auto-data.net/en/ford-fiesta-vii-generation-1017
+EU-FORD-KUGA-I-C394-SUV-5D-01	4443	1842	1710	Auto-Data Ford Kuga I specifications	https://www.auto-data.net/en/ford-kuga-i-generation-1019
+EU-CITROEN-C-CROSSER-I-SUV-5D-01	4645	1805	1715	Auto-Data Citroen C-Crosser specifications	https://www.auto-data.net/en/citroen-c-crosser-generation-3765
+EU-FORD-FOCUS-II-HATCHBACK-FACELIFT-01	4337	1839	1500	Auto-Data Ford Focus II facelift specifications	https://www.auto-data.net/en/ford-focus-ii-hatchback-facelift-2008-generation-997
+EU-FORD-FOCUS-II-WAGON-FACELIFT-01	4468	1839	1503	Auto-Data Ford Focus II facelift specifications	https://www.auto-data.net/en/ford-focus-ii-hatchback-facelift-2008-generation-997
+```
+
+[下载 DIMENSION_GROUP 表](sandbox:/mnt/data/all_4501-4600_dimension_groups_final.tsv)
+
+推进信号：COMPLETE
+
+[1]: https://www.press.renault.co.uk/assets/documents/original/20329-MasterBrochureApril2022.pdf "https://www.press.renault.co.uk/assets/documents/original/20329-MasterBrochureApril2022.pdf"
+
+
+--- 累计最终 TSV 已更新 ---
+- 累计 Ktype 映射：ktype_mapping_final.tsv（7415 行）
+- 累计尺寸组：dimension_groups_final.tsv（2895 行）
+
