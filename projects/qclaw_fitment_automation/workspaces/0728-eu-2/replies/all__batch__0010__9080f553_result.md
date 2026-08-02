@@ -2991,3 +2991,1050 @@ Peugeot	Boxer	2	Pritsche/Fahrgestell	Frontantrieb	Benzin	81	110	Dec 2001	Apr 200
 触发原因：对话分支 UI 不可用，自动降级为新建对话
 原对话：https://chatgpt.com/c/6a6933b4-93ec-83ea-b5f5-9474ec3faec8
 新对话：https://chatgpt.com/c/6a6cc18c-62a0-83ea-9e51-7e4566f7da4c
+
+--- Round 35 / checkpoint 续跑 ---
+## 更新点
+
+* 已闭合 27 个 Ktype，共形成 29 条 READY 映射；其中 21 个既有尺寸组直接复用，未重复抓取。
+* 首次创建 5 个尺寸组：Seat Cordoba I、Toyota Camry XV40、Mitsubishi Eclipse IV、Volvo S40 I、VW Golf IV Variant。([汽车目录][1])
+* Mercedes-Benz 190/W201 的直接规格页面出现 `4420×1678×1390` 与 `4450×1690×1375` 两套冲突数据，Ktype `20136`–`20138` 本轮未强行建组。([汽车数据网][2])
+
+## 当前批次进度
+
+* 输入 Ktype：100
+* READY Ktype：27
+* READY 映射行：29
+* PENDING Ktype：73
+* 已确认尺寸组：26
+
+  * 复用已有尺寸组：21
+  * 本轮首次创建：5
+* 当前批次尚未完成。
+
+## 本轮新增/修改的 Ktype 映射 TSV
+
+```tsv
+id	Ktype	NormalizedBodyStyle	Generation	BodyCode	Doors	DIMENSION_GROUP_ID	MatchConfidence	Notes	IterationStatus
+20119	20119	Wagon	A4 B8 facelift	8K5	5	EU-AUDI-A4-B8-AVANT-FACELIFT-WAGON-8K5-01	HIGH	8K5 Avant 改款车身。	READY
+20122	20122	Sedan	124	W124	4	EU-MERCEDES-BENZ-124-W124-SEDAN-4D-01	HIGH	W124 四门轿车。	READY
+20143	20143	Sedan	Cordoba I	6K2	4	EU-SEAT-CORDOBA-I-6K2-SEDAN-4D-01	HIGH	6K2 四门轿车。	READY
+20152	20152	Hatchback	XM Y3	Y3	5	EU-CITROEN-XM-Y3-HATCHBACK-5D-01	HIGH	Y3 五门掀背车身。	READY
+20170	20170	Convertible	911 997	997	2	EU-PORSCHE-911-997-CARRERA-4S-CONVERTIBLE-01	HIGH	Carrera 4S 宽体敞篷分支。	READY
+20195	20195	Convertible	205 I		2	EU-PEUGEOT-205-I-CABRIOLET-01	HIGH	205 Cabriolet 双门车身。	READY
+20302	20302	Sedan	19 I	L53	4	EU-RENAULT-19-I-CHAMADE-L53-SEDAN-4D-01	HIGH	Chamade L53 四门轿车。	READY
+20332	20332	Sedan	Camry VI	XV40	4	EU-TOYOTA-CAMRY-VI-XV40-SEDAN-4D-01	HIGH	XV40 四门轿车。	READY
+20403	20403	Wagon	Primera P12	WP12	5	EU-NISSAN-PRIMERA-P12-WAGON-01	HIGH	WP12 五门旅行车。	READY
+20433	20433	SUV	Sportage II	KM	5	EU-KIA-SPORTAGE-II-KM-SUV-01	HIGH	KM 五门 SUV。	READY
+20440	20440	Hatchback	Civic VI		3	EU-HONDA-CIVIC-VI-HATCHBACK-3D-01	HIGH	三门 Hatchback 分支。	READY
+20447	20447	Coupe	Eclipse IV	DK	2	EU-MITSUBISHI-ECLIPSE-IV-DK-COUPE-2D-01	HIGH	DK 双门 Coupe。	READY
+20459	20459	Sedan	S40 I	VS	4	EU-VOLVO-S40-I-VS-SEDAN-4D-01	HIGH	VS 四门轿车。	READY
+20469	20469	MPV	Expert I			EU-PEUGEOT-EXPERT-I-BUS-01	HIGH	第一代乘用 Bus 外廓。	READY
+20470	20470	MPV	Expert I			EU-PEUGEOT-EXPERT-I-BUS-01	HIGH	第一代乘用 Bus 外廓。	READY
+20545	20545	SUV	Antara A	L07	5	EU-OPEL-ANTARA-A-SUV-01	HIGH	L07 五门 SUV。	READY
+20547	20547	Coupe	Beretta L	L	2	EU-CHEVROLET-BERETTA-L-COUPE-2D-01	HIGH	L-body 双门 Coupe。	READY
+20548	20548	Coupe	Beretta L	L	2	EU-CHEVROLET-BERETTA-L-COUPE-2D-01	HIGH	L-body 双门 Coupe。	READY
+20549	20549	Coupe	Beretta L	L	2	EU-CHEVROLET-BERETTA-L-COUPE-2D-01	HIGH	L-body 双门 Coupe。	READY
+20556	20556	Wagon	Golf IV Variant	1J5	5	EU-VW-GOLF-IV-VARIANT-1J5-WAGON-5D-01	HIGH	1J5 五门旅行车。	READY
+20620_prefl	20620	Sedan	Park Avenue I	G	4	EU-BUICK-PARK-AVENUE-I-ULTRA-SEDAN-PREFL-01	MEDIUM	生产区间跨外廓改款，拆分改款前。	READY
+20620_facelift	20620	Sedan	Park Avenue I	G	4	EU-BUICK-PARK-AVENUE-I-ULTRA-SEDAN-FACELIFT-01	MEDIUM	生产区间跨外廓改款，拆分改款后。	READY
+20623	20623	Hatchback	Atos Prime	MX	5	EU-HYUNDAI-ATOS-PRIME-HATCHBACK-5D-01	HIGH	MX 五门车身。	READY
+20636_prefl	20636	Convertible	9-3 II	YS3F	2	EU-SAAB-9-3-II-CONVERTIBLE-PREFL-01	MEDIUM	生产区间跨改款，拆分改款前敞篷车身。	READY
+20636_facelift	20636	Convertible	9-3 II	YS3F	2	EU-SAAB-9-3-II-CONVERTIBLE-FACELIFT-01	MEDIUM	生产区间跨改款，拆分改款后敞篷车身。	READY
+20640	20640	Convertible	CLK II	A209	2	EU-MERCEDES-BENZ-CLK-A209-FACELIFT-CONVERTIBLE-2D-01	HIGH	A209 改款敞篷车身。	READY
+20643	20643	SUV	Pathfinder III	R51	5	EU-NISSAN-PATHFINDER-III-R51-SUV-01	HIGH	R51 五门 SUV。	READY
+20646	20646	Wagon	9-5 I facelift 2005	YS3E	5	EU-SAAB-9-5-FACELIFT-2005-WAGON-01	HIGH	2005 改款五门旅行车。	READY
+20683	20683	Coupe	3 Series E92 facelift	E92	2	EU-BMW-3-E92-COUPE-2D-FACELIFT-01	HIGH	E92 改款双门 Coupe。	READY
+```
+
+## 本轮新增/修改的 DIMENSION_GROUP TSV
+
+```tsv
+DIMENSION_GROUP_ID	LengthMM	WidthMM	HeightMM	DimensionSource	SourceURL
+EU-SEAT-CORDOBA-I-6K2-SEDAN-4D-01	4142	1640	1408	Automobile-Catalog 1997 Seat Cordoba 1.4	https://www.automobile-catalog.com/car/1997/3065810/seat_cordoba_1_4.html
+EU-TOYOTA-CAMRY-VI-XV40-SEDAN-4D-01	4805	1820	1460	Auto-Data Toyota Camry VI (XV40) 2.4i 158 hp	https://www.auto-data.net/en/toyota-camry-vi-xv40-2.4i-16v-158hp-31250
+EU-MITSUBISHI-ECLIPSE-IV-DK-COUPE-2D-01	4565	1835	1358	Automobile-Catalog 2006 Mitsubishi Eclipse GS	https://www.automobile-catalog.com/car/2006/2007470/mitsubishi_eclipse_gs.html
+EU-VOLVO-S40-I-VS-SEDAN-4D-01	4516	1720	1422	Auto-Data Volvo S40 (VS) generation	https://www.auto-data.net/en/volvo-s40-vs-generation-1972
+EU-VW-GOLF-IV-VARIANT-1J5-WAGON-5D-01	4397	1735	1485	Volkswagen Newsroom Golf IV Variant vehicle data	https://www.volkswagen-newsroom.com/en/vehicle-data-golf-4-variant-profile-19523
+```
+
+## 下一步优先处理
+
+1. 先解决可批量闭合的普通乘用车组：Volvo 960、Saab 9000/9-5、Lada Samara、Proton Persona、Honda Accord及 Mazda 323。
+2. 集中拆分商用车外廓：Fiat Ducato、Citroën C25、VW Transporter T4/T5、Hyundai H-1，按轴距、车顶和车身形式处理。
+3. 单独处理存在来源冲突或门数不明的 W201、Jetta I、Peugeot 205、Peugeot 605、Fiat Marea、Chevrolet Corsica。
+
+推进信号：CONTINUE
+
+[1]: https://www.automobile-catalog.com/car/1997/3065810/seat_cordoba_1_4.html?utm_source=chatgpt.com "1997 Seat Cordoba 1.4 Specs Review (44 kW ..."
+[2]: https://www.auto-data.net/en/mercedes-benz-190-w201-e-2.3-cat-132hp-12808?utm_source=chatgpt.com "Mercedes-Benz 190 (W201) E 2.3 CAT (132 Hp)"
+
+
+--- 发送 / 继续到 Round 36 ---
+继续当前批次并采用缓存优先模式。尺寸组只在首次创建或纠错时完整核对一次三维和来源；后续 Ktype 只判断关联哪个现有 DIMENSION_GROUP_ID，不重复抓取，不输出缓存来源或匹配理由。仍有 PENDING 时，CONTINUE 轮仅输出：1) 更新点；2) 当前批次进度；3) 本轮新增/修改的 Ktype 映射 TSV（无变化写“无”）；4) 本轮首次创建/修正的 DIMENSION_GROUP TSV（复用既有组不重复输出，无变化写“无”）；5) 下一步优先处理。若当前或上一轮进度已经是 PENDING=0，本轮不要继续检索或再次输出 CONTINUE，必须立刻汇总并输出两张最终完整 TSV、两个任务指定 sandbox 下载链接和“推进信号：COMPLETE”。执行顺序固定为：第一阶段优先消除 PENDING 并补齐会阻塞两张最终表的数据。检测到 PENDING=0 后，第二阶段最多只做一次轻量机械收尾：核对固定表头、id 与 DIMENSION_GROUP_ID 唯一、映射引用闭合、长宽高和来源非空、两个任务指定下载链接齐全。第二阶段不得重新逐车型、逐年份或逐来源做深度检索，不得为了提高置信度反复核对，也不得因非阻塞的排序或措辞问题继续多轮。PENDING=0 后的下一条回复必须直接输出两张最终完整 TSV、两个精确 sandbox 下载链接，并以“推进信号：COMPLETE”结束；不要再输出 CONTINUE。Ktype 映射 TSV 表头必须严格使用 requirement 指定的字段顺序：id	Ktype	NormalizedBodyStyle	Generation	BodyCode	Doors	DIMENSION_GROUP_ID	MatchConfidence	Notes	IterationStatus。另需维护完整 DIMENSION_GROUP TSV，表头固定为：DIMENSION_GROUP_ID	LengthMM	WidthMM	HeightMM	DimensionSource	SourceURL。缺少任一张表、任一映射引用的尺寸组，或尺寸组字段不完整时不得 COMPLETE。不要输出子车系匹配表。
+【COMPLETE 下载文件硬性要求】
+准备 COMPLETE 时，除两张完整内嵌 TSV 外，还必须创建并提供以下两个可点击 sandbox 下载链接，文件名必须完全一致：
+- all_901-1000_ktype_dimension_mapping_final.tsv
+- all_901-1000_dimension_groups_final.tsv
+缺少任一下载链接时不得输出推进信号：COMPLETE。
+
+
+--- Round 36 / checkpoint 续跑 ---
+## 更新点
+
+* 本轮新增闭合 18 个 Ktype，形成 18 条 READY 映射。
+* 首次创建 12 个尺寸组，覆盖 Volvo 960、Peugeot 605、Fiat Marea、Lada Samara、Porsche 911 Carrera S Cabriolet、Honda Civic Fastback、Saab 9-3 Cabriolet、Lotus Esprit GT3、Mazda 323 S VI、VW Vento 和 Honda Accord VI。([汽车数据网][1])
+* 另外直接复用 3 个已有尺寸组，关联 Volvo 740、Maserati Biturbo 430 和 Daihatsu Sirion II；未重复输出既有尺寸组。
+
+## 当前批次进度
+
+* 输入 Ktype：100
+* READY Ktype：45
+* READY 映射：47
+* PENDING Ktype：55
+* 当前批次已引用尺寸组：41
+* 当前批次尚未完成。
+
+## 本轮新增/修改的 Ktype 映射 TSV
+
+```tsv
+id	Ktype	NormalizedBodyStyle	Generation	BodyCode	Doors	DIMENSION_GROUP_ID	MatchConfidence	Notes	IterationStatus
+20209	20209	Sedan	960	964	4	EU-VOLVO-960-964-SEDAN-4D-01	HIGH	964 四门轿车外廓。	READY
+20210	20210	Sedan	960	964	4	EU-VOLVO-960-964-SEDAN-4D-01	HIGH	964 四门轿车外廓。	READY
+20214	20214	Wagon	960	965	5	EU-VOLVO-960-965-WAGON-5D-01	HIGH	965 五门旅行车外廓。	READY
+20280	20280	Sedan	605	6B	4	EU-PEUGEOT-605-6B-SEDAN-4D-01	HIGH	6B 四门轿车外廓。	READY
+20281	20281	Sedan	605	6B	4	EU-PEUGEOT-605-6B-SEDAN-4D-01	HIGH	6B 四门轿车外廓。	READY
+20317	20317	Sedan	740	744	4	EU-VOLVO-740-SEDAN-PREFL-01	HIGH	744 四门轿车外廓。	READY
+20319	20319	Sedan	740	744	4	EU-VOLVO-740-SEDAN-PREFL-01	HIGH	744 四门轿车外廓。	READY
+20436	20436	Sedan	Biturbo			EU-MASERATI-BITURBO-420-SI-SEDAN-01	MEDIUM	430 四门长轴 Biturbo 外廓。	READY
+20481	20481	Sedan	Marea 185 facelift	185	4	EU-FIAT-MAREA-185-FACELIFT-SEDAN-4D-01	MEDIUM	185 改款四门轿车外廓。	READY
+20498	20498	Sedan	Samara I	21099	4	EU-LADA-SAMARA-I-21099-SEDAN-4D-01	HIGH	21099 四门轿车外廓。	READY
+20506	20506	Convertible	911 997	997	2	EU-PORSCHE-911-997-CARRERA-S-CONVERTIBLE-01	HIGH	997 Carrera S 后驱敞篷外廓。	READY
+20511	20511	Hatchback	Civic VI Fastback		5	EU-HONDA-CIVIC-VI-FASTBACK-5D-01	HIGH	五门 Fastback 外廓。	READY
+20634	20634	Hatchback	Sirion II	M3	5	EU-DAIHATSU-SIRION-II-M3-FACELIFT-HATCHBACK-5D-01	MEDIUM	M3 五门外廓。	READY
+20637	20637	Convertible	9-3 I	YS3D	2	EU-SAAB-9-3-I-YS3D-CONVERTIBLE-2D-01	HIGH	YS3D 双门敞篷外廓。	READY
+20649	20649	Coupe	Esprit S4		2	EU-LOTUS-ESPRIT-S4-GT3-COUPE-2D-01	HIGH	GT3 双门 Coupe 外廓。	READY
+20654	20654	Sedan	323 S VI facelift	BJ	4	EU-MAZDA-323-S-VI-BJ-FACELIFT-SEDAN-4D-01	HIGH	BJ 改款四门轿车外廓。	READY
+20659	20659	Sedan	Vento	1HX0	4	EU-VW-VENTO-1HX0-SEDAN-4D-01	HIGH	1HX0 四门轿车外廓。	READY
+20663	20663	Sedan	Accord VI		4	EU-HONDA-ACCORD-VI-SEDAN-4D-01	HIGH	欧洲版 Accord VI 四门轿车外廓。	READY
+```
+
+## 本轮首次创建/修正的 DIMENSION_GROUP TSV
+
+```tsv
+DIMENSION_GROUP_ID	LengthMM	WidthMM	HeightMM	DimensionSource	SourceURL
+EU-VOLVO-960-964-SEDAN-4D-01	4871	1750	1411	Auto-Data Volvo 960 (964) 2.0 i 16V	https://www.auto-data.net/en/volvo-960-964-2.0-i-16v-190hp-9355
+EU-VOLVO-960-965-WAGON-5D-01	4850	1750	1434	Auto-Data Volvo 960 Kombi (965) 3.0 i 24V	https://www.auto-data.net/en/volvo-960-kombi-965-3.0-i-24v-204hp-9362
+EU-PEUGEOT-605-6B-SEDAN-4D-01	4765	1799	1415	Auto-Data Peugeot 605 (6B) 3.0	https://www.auto-data.net/en/peugeot-605-6b-3.0-167hp-5332
+EU-FIAT-MAREA-185-FACELIFT-SEDAN-4D-01	4393	1740	1420	Auto-Data Fiat Marea (185) 1.8 i 16V	https://www.auto-data.net/en/fiat-marea-185-1.8-i-16v-132hp-7196
+EU-LADA-SAMARA-I-21099-SEDAN-4D-01	4205	1650	1402	Auto-Data Lada 21099-20 generation	https://www.auto-data.net/en/lada-21099-20-generation-2832
+EU-PORSCHE-911-997-CARRERA-S-CONVERTIBLE-01	4427	1808	1300	Auto-Data Porsche 911 Cabriolet (997) Carrera S 3.8	https://www.auto-data.net/en/porsche-911-cabriolet-997-carrera-s-3.8-355hp-6588
+EU-HONDA-CIVIC-VI-FASTBACK-5D-01	4325	1695	1390	Auto-Data Honda Civic VI Fastback	https://www.auto-data.net/en/honda-civic-model-1307
+EU-SAAB-9-3-I-YS3D-CONVERTIBLE-2D-01	4629	1711	1423	Auto-Data Saab 9-3 Convertible I 2.0 T	https://www.auto-data.net/en/saab-9-3-convertible-i-2.0-t-205hp-11967
+EU-LOTUS-ESPRIT-S4-GT3-COUPE-2D-01	4369	1883	1150	Auto-Data Lotus Esprit 2.0 i 16V Turbo GT3	https://www.auto-data.net/en/lotus-esprit-2.0-i-16v-turbo-gt3-243hp-8298
+EU-MAZDA-323-S-VI-BJ-FACELIFT-SEDAN-4D-01	4390	1705	1410	Auto-Data Mazda 323 S VI (BJ) 2.0 DiTD	https://www.auto-data.net/en/mazda-323-s-vi-bj-2.0-ditd-101hp-11150
+EU-VW-VENTO-1HX0-SEDAN-4D-01	4380	1695	1415	Auto-Data Volkswagen Vento (1HX0) 2.0	https://www.auto-data.net/en/volkswagen-vento-1hx0-2.0-115hp-8851
+EU-HONDA-ACCORD-VI-SEDAN-4D-01	4595	1750	1430	Auto-Data Honda Accord VI	https://www.auto-data.net/en/honda-accord-model-1282
+```
+
+## 下一步优先处理
+
+1. 批量闭合 Lada Samara 掀背、Saab 9000/9-5、Proton Persona 400 和 Mazda 323 的剩余普通乘用车。
+2. 处理 Porsche 911、Ford Mustang、Chevrolet Corsica 和 Nissan Laurel/Sunny 的代际及改款边界。
+3. 最后集中拆分 Fiat Ducato、Citroën C25、VW Transporter T4/T5、Hyundai H-1 等商用车的轴距、车顶和车身形式。
+
+推进信号：CONTINUE
+
+[1]: https://www.auto-data.net/en/volvo-960-model-926 "Volvo 960 | Technical Specs, Fuel consumption, Dimensions"
+
+
+--- 发送 / 继续到 Round 37 ---
+继续当前批次并采用缓存优先模式。尺寸组只在首次创建或纠错时完整核对一次三维和来源；后续 Ktype 只判断关联哪个现有 DIMENSION_GROUP_ID，不重复抓取，不输出缓存来源或匹配理由。仍有 PENDING 时，CONTINUE 轮仅输出：1) 更新点；2) 当前批次进度；3) 本轮新增/修改的 Ktype 映射 TSV（无变化写“无”）；4) 本轮首次创建/修正的 DIMENSION_GROUP TSV（复用既有组不重复输出，无变化写“无”）；5) 下一步优先处理。若当前或上一轮进度已经是 PENDING=0，本轮不要继续检索或再次输出 CONTINUE，必须立刻汇总并输出两张最终完整 TSV、两个任务指定 sandbox 下载链接和“推进信号：COMPLETE”。执行顺序固定为：第一阶段优先消除 PENDING 并补齐会阻塞两张最终表的数据。检测到 PENDING=0 后，第二阶段最多只做一次轻量机械收尾：核对固定表头、id 与 DIMENSION_GROUP_ID 唯一、映射引用闭合、长宽高和来源非空、两个任务指定下载链接齐全。第二阶段不得重新逐车型、逐年份或逐来源做深度检索，不得为了提高置信度反复核对，也不得因非阻塞的排序或措辞问题继续多轮。PENDING=0 后的下一条回复必须直接输出两张最终完整 TSV、两个精确 sandbox 下载链接，并以“推进信号：COMPLETE”结束；不要再输出 CONTINUE。Ktype 映射 TSV 表头必须严格使用 requirement 指定的字段顺序：id	Ktype	NormalizedBodyStyle	Generation	BodyCode	Doors	DIMENSION_GROUP_ID	MatchConfidence	Notes	IterationStatus。另需维护完整 DIMENSION_GROUP TSV，表头固定为：DIMENSION_GROUP_ID	LengthMM	WidthMM	HeightMM	DimensionSource	SourceURL。缺少任一张表、任一映射引用的尺寸组，或尺寸组字段不完整时不得 COMPLETE。不要输出子车系匹配表。
+【COMPLETE 下载文件硬性要求】
+准备 COMPLETE 时，除两张完整内嵌 TSV 外，还必须创建并提供以下两个可点击 sandbox 下载链接，文件名必须完全一致：
+- all_901-1000_ktype_dimension_mapping_final.tsv
+- all_901-1000_dimension_groups_final.tsv
+缺少任一下载链接时不得输出推进信号：COMPLETE。
+
+
+--- Round 37 / checkpoint 续跑 ---
+## 更新点
+
+* 本轮新增闭合 8 个 Ktype，共新增 9 条 READY 映射。
+* Mercedes-Benz 190/W201 按直接版本规格将 `2.3 CAT 132 hp` 与 `2.3 E/2.6 CAT` 分成两个尺寸组，不再强行合并冲突三维。([汽车数据网][1])
+* Lada Samara 的输入生产区间覆盖 21093 与 2114 两种不同外廓，拆成两个派生映射。([汽车数据网][2])
+* 新增闭合 Honda Civic VIII Sedan、Nissan Laurel C32 和 Proton Persona I Sedan。([汽车数据网][3])
+
+## 当前批次进度
+
+* 输入 Ktype：100
+* READY Ktype：53
+* READY 映射：56
+* PENDING Ktype：47
+* 当前批次已引用尺寸组：48
+* 当前批次尚未完成。
+
+## 本轮新增/修改的 Ktype 映射 TSV
+
+```tsv
+id	Ktype	NormalizedBodyStyle	Generation	BodyCode	Doors	DIMENSION_GROUP_ID	MatchConfidence	Notes	IterationStatus
+20136	20136	Sedan	190 W201	W201	4	EU-MERCEDES-BENZ-190-W201-SEDAN-4D-01	HIGH	2.3 CAT 132 hp外廓。	READY
+20137	20137	Sedan	190 W201	W201	4	EU-MERCEDES-BENZ-190-W201-SEDAN-4D-02	HIGH	2.3 E 136 hp外廓。	READY
+20138	20138	Sedan	190 W201	W201	4	EU-MERCEDES-BENZ-190-W201-SEDAN-4D-02	HIGH	2.6 CAT 160 hp外廓。	READY
+20166_21093	20166	Hatchback	Samara I	21093	5	EU-LADA-SAMARA-I-21093-HATCHBACK-5D-01	MEDIUM	Ktype生产区间覆盖21093与2114两种外廓。	READY
+20166_2114	20166	Hatchback	Samara I	2114	5	EU-LADA-SAMARA-I-2114-HATCHBACK-5D-01	MEDIUM	Ktype生产区间覆盖21093与2114两种外廓。	READY
+20348	20348	Sedan	Civic VIII		4	EU-HONDA-CIVIC-VIII-SEDAN-4D-01	HIGH	1.8四门轿车外廓。	READY
+20358	20358	Sedan	Laurel V	C32	4	EU-NISSAN-LAUREL-V-C32-SEDAN-4D-01	HIGH	C32四门轿车外廓。	READY
+20361	20361	Sedan	Laurel V	C32	4	EU-NISSAN-LAUREL-V-C32-SEDAN-4D-01	HIGH	C32四门轿车外廓。	READY
+20443	20443	Sedan	Persona I		4	EU-PROTON-PERSONA-I-SEDAN-4D-01	HIGH	416四门轿车外廓。	READY
+```
+
+## 本轮首次创建/修正的 DIMENSION_GROUP TSV
+
+```tsv
+DIMENSION_GROUP_ID	LengthMM	WidthMM	HeightMM	DimensionSource	SourceURL
+EU-MERCEDES-BENZ-190-W201-SEDAN-4D-01	4420	1678	1390	Auto-Data Mercedes-Benz 190 W201 E 2.3 CAT 132 Hp	https://www.auto-data.net/en/mercedes-benz-190-w201-e-2.3-cat-132hp-12808
+EU-MERCEDES-BENZ-190-W201-SEDAN-4D-02	4450	1690	1375	Auto-Data Mercedes-Benz 190 W201 E 2.3 136 Hp;Auto-Data Mercedes-Benz 190 W201 E 2.6 CAT 160 Hp	https://www.auto-data.net/en/mercedes-benz-190-w201-e-2.3-136hp-12801;https://www.auto-data.net/en/mercedes-benz-190-w201-e-2.6-cat-160hp-12806
+EU-LADA-SAMARA-I-21093-HATCHBACK-5D-01	4006	1650	1402	Auto-Data Lada 21093 1.5 72 Hp	https://www.auto-data.net/en/lada-21093-1.5-72hp-13271
+EU-LADA-SAMARA-I-2114-HATCHBACK-5D-01	4122	1620	1415	Auto-Data Lada 2114 1.6 i 8V 81 Hp	https://www.auto-data.net/en/lada-2114-1.6-i-8v-81hp-13273
+EU-HONDA-CIVIC-VIII-SEDAN-4D-01	4545	1750	1435	Auto-Data Honda Civic VIII Sedan 1.8i 16V 140 Hp	https://www.auto-data.net/en/honda-civic-viii-sedan-1.8i-16v-140hp-12215
+EU-NISSAN-LAUREL-V-C32-SEDAN-4D-01	4650	1690	1415	Nissan Heritage Collection Laurel C32 Sedan Grand Extra	https://www.nissan-global.com/EN/HERITAGE_COLLECTION/laurel_sedan_grand_extra.html
+EU-PROTON-PERSONA-I-SEDAN-4D-01	4360	1680	1385	Auto-Data Proton Persona I 1.6 i 416 GLXi 95 Hp	https://www.auto-data.net/en/proton-persona-i-1.6-i-416-glxi-95hp-8257
+```
+
+## 下一步优先处理
+
+1. 闭合 Mitsubishi Colt IV、Honda CRX II、Subaru Impreza GC、Mercedes-Benz CL203 和 Toyota RAV4 III。
+2. 处理 Saab 9000、Saab 9-5 Sedan/Wagon 的改款边界。
+3. 最后集中拆分 Ducato、C25、Transporter T4/T5、Hyundai H-1 和 Boxer 商用车分支。
+
+推进信号：CONTINUE
+
+[1]: https://www.auto-data.net/en/mercedes-benz-190-w201-e-2.3-cat-132hp-12808 "Mercedes-Benz 190 (W201) E 2.3 CAT (132 Hp) | Technical specs, data, fuel consumption, Dimensions"
+[2]: https://www.auto-data.net/en/lada-21093-1.5-72hp-13271 "Lada 21093 1.5 (72 Hp) | Technical specs, data, fuel consumption, Dimensions"
+[3]: https://www.auto-data.net/en/honda-civic-viii-sedan-1.8i-16v-140hp-12215?utm_source=chatgpt.com "Honda Civic VIII Sedan 1.8i 16V (140 Hp)"
+
+
+--- 发送 / 继续到 Round 38 ---
+继续当前批次并采用缓存优先模式。尺寸组只在首次创建或纠错时完整核对一次三维和来源；后续 Ktype 只判断关联哪个现有 DIMENSION_GROUP_ID，不重复抓取，不输出缓存来源或匹配理由。仍有 PENDING 时，CONTINUE 轮仅输出：1) 更新点；2) 当前批次进度；3) 本轮新增/修改的 Ktype 映射 TSV（无变化写“无”）；4) 本轮首次创建/修正的 DIMENSION_GROUP TSV（复用既有组不重复输出，无变化写“无”）；5) 下一步优先处理。若当前或上一轮进度已经是 PENDING=0，本轮不要继续检索或再次输出 CONTINUE，必须立刻汇总并输出两张最终完整 TSV、两个任务指定 sandbox 下载链接和“推进信号：COMPLETE”。执行顺序固定为：第一阶段优先消除 PENDING 并补齐会阻塞两张最终表的数据。检测到 PENDING=0 后，第二阶段最多只做一次轻量机械收尾：核对固定表头、id 与 DIMENSION_GROUP_ID 唯一、映射引用闭合、长宽高和来源非空、两个任务指定下载链接齐全。第二阶段不得重新逐车型、逐年份或逐来源做深度检索，不得为了提高置信度反复核对，也不得因非阻塞的排序或措辞问题继续多轮。PENDING=0 后的下一条回复必须直接输出两张最终完整 TSV、两个精确 sandbox 下载链接，并以“推进信号：COMPLETE”结束；不要再输出 CONTINUE。Ktype 映射 TSV 表头必须严格使用 requirement 指定的字段顺序：id	Ktype	NormalizedBodyStyle	Generation	BodyCode	Doors	DIMENSION_GROUP_ID	MatchConfidence	Notes	IterationStatus。另需维护完整 DIMENSION_GROUP TSV，表头固定为：DIMENSION_GROUP_ID	LengthMM	WidthMM	HeightMM	DimensionSource	SourceURL。缺少任一张表、任一映射引用的尺寸组，或尺寸组字段不完整时不得 COMPLETE。不要输出子车系匹配表。
+【COMPLETE 下载文件硬性要求】
+准备 COMPLETE 时，除两张完整内嵌 TSV 外，还必须创建并提供以下两个可点击 sandbox 下载链接，文件名必须完全一致：
+- all_901-1000_ktype_dimension_mapping_final.tsv
+- all_901-1000_dimension_groups_final.tsv
+缺少任一下载链接时不得输出推进信号：COMPLETE。
+
+
+--- Round 38 / checkpoint 续跑 ---
+## 更新点
+
+* 本轮新增闭合 8 个 Ktype，新增 12 条 READY 映射。
+* Peugeot 205 复用既有尺寸组；Mercedes-Benz CL203、Fiat Panda III、Saab 9-3 I 及 Saab 9-5 三个外廓阶段完成首次建组。([汽车数据网][1])
+* Saab 9-5 跨改款 Ktype 按改款前、2001 改款和 2005 改款拆分；2005 改款尺寸组直接复用已有缓存。
+
+## 当前批次进度
+
+* 输入 Ktype：100
+* READY Ktype：61
+* READY 映射：68
+* PENDING Ktype：39
+* 当前批次已引用尺寸组：56
+* 当前批次尚未完成。
+
+## 本轮新增/修改的 Ktype 映射 TSV
+
+```tsv
+id	Ktype	NormalizedBodyStyle	Generation	BodyCode	Doors	DIMENSION_GROUP_ID	MatchConfidence	Notes	IterationStatus
+20204_3dr	20204	Hatchback	205 I facelift	20A/C	3	EU-PEUGEOT-205-I-FACELIFT-HATCHBACK-01	HIGH	1.0版本覆盖三门外廓。	READY
+20204_5dr	20204	Hatchback	205 I facelift	20A/C	5	EU-PEUGEOT-205-I-FACELIFT-HATCHBACK-01	HIGH	1.0版本覆盖五门外廓。	READY
+20205_3dr	20205	Hatchback	205 I facelift	20A/C	3	EU-PEUGEOT-205-I-FACELIFT-HATCHBACK-01	HIGH	XA三门商用衍生外廓。	READY
+20460	20460	Coupe	C-Class Sport Coupe CL203	CL203	3	EU-MERCEDES-BENZ-C-CLASS-CL203-SPORT-COUPE-3D-01	MEDIUM	输入版本名称与功率标签不一致；CL203三门外廓已确认。	READY
+20475	20475	Hatchback	Panda III	319	5	EU-FIAT-PANDA-III-319-HATCHBACK-5D-01	HIGH	319五门前驱车身。	READY
+20565_prefl	20565	Sedan	9-5 I	YS3E	4	EU-SAAB-9-5-PREFL-SEDAN-4D-01	MEDIUM	Ktype生产区间覆盖改款前车身。	READY
+20565_facelift2001	20565	Sedan	9-5 I facelift 2001	YS3E	4	EU-SAAB-9-5-FACELIFT-2001-SEDAN-4D-01	MEDIUM	Ktype生产区间覆盖2001改款车身。	READY
+20565_facelift2005	20565	Sedan	9-5 I facelift 2005	YS3E	4	EU-SAAB-9-5-FACELIFT-2005-SEDAN-01	MEDIUM	Ktype生产区间覆盖2005改款车身。	READY
+20566	20566	Sedan	9-5 I	YS3E	4	EU-SAAB-9-5-PREFL-SEDAN-4D-01	HIGH	改款前四门轿车外廓。	READY
+20635_3dr	20635	Hatchback	9-3 I	YS3D	3	EU-SAAB-9-3-I-YS3D-HATCHBACK-01	HIGH	2.3T版本覆盖三门掀背外廓。	READY
+20635_5dr	20635	Hatchback	9-3 I	YS3D	5	EU-SAAB-9-3-I-YS3D-HATCHBACK-01	HIGH	2.3T版本覆盖五门掀背外廓。	READY
+20647	20647	Wagon	9-5 I	YS3E	5	EU-SAAB-9-5-PREFL-WAGON-5D-01	HIGH	改款前五门旅行车外廓。	READY
+```
+
+## 本轮首次创建/修正的 DIMENSION_GROUP TSV
+
+```tsv
+DIMENSION_GROUP_ID	LengthMM	WidthMM	HeightMM	DimensionSource	SourceURL
+EU-MERCEDES-BENZ-C-CLASS-CL203-SPORT-COUPE-3D-01	4343	1728	1406	Auto-Data Mercedes-Benz C-class Sport Coupe CL203 C 200 Kompressor 163 Hp;Auto-Data Mercedes-Benz C-class Sport Coupe CL203 facelift 2004 C 200 Kompressor 163 Hp	https://www.auto-data.net/en/mercedes-benz-c-class-sport-coupe-cl203-c-200-kompressor-163hp-12591;https://www.auto-data.net/en/mercedes-benz-c-class-sport-coupe-cl203-facelift-2004-c-200-kompressor-163hp-44250
+EU-FIAT-PANDA-III-319-HATCHBACK-5D-01	3653	1643	1551	Auto-Data Fiat Panda III 319 0.9 TwinAir Turbo 85 Hp	https://www.auto-data.net/en/fiat-panda-iii-319-0.9-twin-air-turbo-85hp-start-stop-18364
+EU-SAAB-9-5-PREFL-SEDAN-4D-01	4810	1790	1450	Auto-Data Saab 9-5 2.0 T 16V 185 Hp	https://www.auto-data.net/en/saab-9-5-2.0-t-16v-185hp-11844
+EU-SAAB-9-5-FACELIFT-2001-SEDAN-4D-01	4827	1792	1475	Auto-Data Saab 9-5 facelift 2001 generation	https://www.auto-data.net/en/saab-9-5-facelift-2001-generation-7159
+EU-SAAB-9-3-I-YS3D-HATCHBACK-01	4629	1711	1428	Auto-Data Saab 9-3 I 2.3 T 230 Hp	https://www.auto-data.net/en/saab-9-3-i-2.3-t-230hp-11965
+EU-SAAB-9-5-PREFL-WAGON-5D-01	4808	1792	1497	Auto-Data Saab 9-5 Sport Combi generation	https://www.auto-data.net/en/saab-9-5-sport-combi-generation-2532
+```
+
+## 下一步优先处理
+
+1. 闭合 Mitsubishi Colt IV、Honda CRX II、Subaru Impreza GC、Proton Persona Hatchback 和 Mazda 323 Sedan。
+2. 处理 Ford Mustang SN95/New Edge、Porsche 911 Turbo S、Chevrolet Corsica、Nissan Sunny及 Patrol Y61 的改款边界。
+3. 最后集中处理 Ducato、C25、Transporter T4/T5、Hyundai H-1、Voyager 和 Boxer 的轴距、车顶与车身分支。
+
+推进信号：CONTINUE
+
+[1]: https://www.auto-data.net/en/peugeot-205-i-20a-c-facelift-1987-1.0-i-50hp-5639?utm_source=chatgpt.com "Peugeot 205 I (20A/C, facelift 1987) 1.0 i (50 Hp) | Technical specs, data, fuel consumption, Dimensions"
+
+
+--- 发送 / 继续到 Round 39 ---
+继续当前批次并采用缓存优先模式。尺寸组只在首次创建或纠错时完整核对一次三维和来源；后续 Ktype 只判断关联哪个现有 DIMENSION_GROUP_ID，不重复抓取，不输出缓存来源或匹配理由。仍有 PENDING 时，CONTINUE 轮仅输出：1) 更新点；2) 当前批次进度；3) 本轮新增/修改的 Ktype 映射 TSV（无变化写“无”）；4) 本轮首次创建/修正的 DIMENSION_GROUP TSV（复用既有组不重复输出，无变化写“无”）；5) 下一步优先处理。若当前或上一轮进度已经是 PENDING=0，本轮不要继续检索或再次输出 CONTINUE，必须立刻汇总并输出两张最终完整 TSV、两个任务指定 sandbox 下载链接和“推进信号：COMPLETE”。执行顺序固定为：第一阶段优先消除 PENDING 并补齐会阻塞两张最终表的数据。检测到 PENDING=0 后，第二阶段最多只做一次轻量机械收尾：核对固定表头、id 与 DIMENSION_GROUP_ID 唯一、映射引用闭合、长宽高和来源非空、两个任务指定下载链接齐全。第二阶段不得重新逐车型、逐年份或逐来源做深度检索，不得为了提高置信度反复核对，也不得因非阻塞的排序或措辞问题继续多轮。PENDING=0 后的下一条回复必须直接输出两张最终完整 TSV、两个精确 sandbox 下载链接，并以“推进信号：COMPLETE”结束；不要再输出 CONTINUE。Ktype 映射 TSV 表头必须严格使用 requirement 指定的字段顺序：id	Ktype	NormalizedBodyStyle	Generation	BodyCode	Doors	DIMENSION_GROUP_ID	MatchConfidence	Notes	IterationStatus。另需维护完整 DIMENSION_GROUP TSV，表头固定为：DIMENSION_GROUP_ID	LengthMM	WidthMM	HeightMM	DimensionSource	SourceURL。缺少任一张表、任一映射引用的尺寸组，或尺寸组字段不完整时不得 COMPLETE。不要输出子车系匹配表。
+【COMPLETE 下载文件硬性要求】
+准备 COMPLETE 时，除两张完整内嵌 TSV 外，还必须创建并提供以下两个可点击 sandbox 下载链接，文件名必须完全一致：
+- all_901-1000_ktype_dimension_mapping_final.tsv
+- all_901-1000_dimension_groups_final.tsv
+缺少任一下载链接时不得输出推进信号：COMPLETE。
+
+
+--- Round 39 / checkpoint 续跑 ---
+## 更新点
+
+* 本轮新增闭合 9 个 Ktype，新增 10 条 READY 映射。
+* 首次创建 8 个尺寸组；Saab 9-5 Ktype `20567` 直接复用已建的 2001 改款轿车尺寸组。
+* Fiat Palio Hatchback 当前证据三维与累计表既有组不同，未覆盖旧组，按规则创建 `-02` 新组。([汽车数据网][1])
+* Palio Weekend 汽油版与 JTD 版高度不同，分别建立尺寸组；Nubira II Hatchback 按直接版本页面新建 J150 组。([汽车数据网][2])
+
+## 当前批次进度
+
+* 输入 Ktype：100
+* READY Ktype：70
+* READY 映射：78
+* PENDING Ktype：30
+* 当前批次已引用尺寸组：64
+* 当前批次尚未完成。
+
+## 本轮新增/修改的 Ktype 映射 TSV
+
+```tsv
+id	Ktype	NormalizedBodyStyle	Generation	BodyCode	Doors	DIMENSION_GROUP_ID	MatchConfidence	Notes	IterationStatus
+20133	20133	Hatchback	Colt IV	CA4A	3	EU-MITSUBISHI-COLT-IV-CA4A-HATCHBACK-3D-01	MEDIUM	CA4A三门掀背外廓。	READY
+20415	20415	Coupe	CRX II		3	EU-HONDA-CRX-II-COUPE-3D-01	MEDIUM	CRX II三门车身外廓。	READY
+20427	20427	Sedan	Impreza I WRX	GC8	4	EU-SUBARU-IMPREZA-I-GC8-WRX-SEDAN-4D-01	HIGH	GC8四门WRX外廓。	READY
+20442	20442	Hatchback	Persona I Compact		3	EU-PROTON-PERSONA-I-COMPACT-HATCHBACK-3D-01	HIGH	318i三门Compact外廓。	READY
+20567	20567	Sedan	9-5 I facelift 2001	YS3E	4	EU-SAAB-9-5-FACELIFT-2001-SEDAN-4D-01	MEDIUM	2001改款四门轿车外廓。	READY
+20569_3dr	20569	Hatchback	Palio I	178	3	EU-FIAT-PALIO-I-178-HATCHBACK-02	MEDIUM	同一Ktype覆盖三门外廓。	READY
+20569_5dr	20569	Hatchback	Palio I	178	5	EU-FIAT-PALIO-I-178-HATCHBACK-02	MEDIUM	同一Ktype覆盖五门外廓。	READY
+20576	20576	Wagon	Palio Weekend	178	5	EU-FIAT-PALIO-WEEKEND-178-WAGON-5D-01	MEDIUM	80 hp五门Weekend外廓。	READY
+20581	20581	Wagon	Palio Weekend	178	5	EU-FIAT-PALIO-WEEKEND-178-JTD-WAGON-5D-01	HIGH	1.9 JTD五门Weekend外廓。	READY
+20586	20586	Hatchback	Nubira II	J150	5	EU-DAEWOO-NUBIRA-J150-HATCHBACK-5D-01	HIGH	J150五门掀背外廓。	READY
+```
+
+## 本轮首次创建/修正的 DIMENSION_GROUP TSV
+
+```tsv
+DIMENSION_GROUP_ID	LengthMM	WidthMM	HeightMM	DimensionSource	SourceURL
+EU-MITSUBISHI-COLT-IV-CA4A-HATCHBACK-3D-01	3955	1690	1370	Auto-Data Mitsubishi Colt IV CAO generation	https://www.auto-data.net/en/mitsubishi-colt-iv-cao-generation-3469
+EU-HONDA-CRX-II-COUPE-3D-01	3755	1675	1270	Auto-Data Honda CRX II ED EE 1.6 i 16V 124 Hp	https://www.auto-data.net/en/honda-crx-ii-ed-ee-1.6-i-16v-124hp-12375
+EU-SUBARU-IMPREZA-I-GC8-WRX-SEDAN-4D-01	4340	1690	1405	Automobile-Catalog 1996 Subaru Impreza WRX 280 PS	https://www.automobile-catalog.com/car/1996/3239645/subaru_impreza_wrx.html
+EU-PROTON-PERSONA-I-COMPACT-HATCHBACK-3D-01	3995	1710	1365	Auto-Data Proton Persona I Compact 1.8 318i 135 Hp	https://www.auto-data.net/en/proton-persona-i-compact-1.8-i-16v-318-i-135hp-8236
+EU-FIAT-PALIO-I-178-HATCHBACK-02	3735	1626	1446	Auto-Data Fiat Palio 178 1.2 i 68 Hp	https://www.auto-data.net/en/fiat-palio-178-1.2-i-68hp-6854
+EU-FIAT-PALIO-WEEKEND-178-WAGON-5D-01	4130	1626	1475	Auto-Data Fiat Palio Weekend 178 1.2 16V 80 Hp	https://www.auto-data.net/en/fiat-palio-weekend-178-1.2-16v-80hp-6839
+EU-FIAT-PALIO-WEEKEND-178-JTD-WAGON-5D-01	4130	1626	1515	Auto-Data Fiat Palio Weekend 178 1.9 JTD 80 Hp	https://www.auto-data.net/en/fiat-palio-weekend-178-1.9-jtd-80hp-6849
+EU-DAEWOO-NUBIRA-J150-HATCHBACK-5D-01	4280	1700	1430	Auto-Data Daewoo Nubira Hatchback II 2.0 CDX 126 Hp	https://www.auto-data.net/en/daewoo-nubira-hatchback-ii-2.0-i-16v-cdx-126hp-16329
+```
+
+## 下一步优先处理
+
+1. 闭合 Jetta I、Mazda 323 Sedan、Nissan Sunny、Chevrolet Corsica 和 Toyota RAV4 III。
+2. 处理 Porsche 911、Ford Mustang、L200、Korando 和 Patrol 的特殊车身边界。
+3. 最后集中拆分 Ducato、C25、Transporter T4/T5、Hyundai H-1、Voyager 和 Boxer 商用车分支。
+
+推进信号：CONTINUE
+
+[1]: https://www.auto-data.net/en/mitsubishi-colt-iv-cao-generation-3469 "Mitsubishi Colt IV (CAO) | Technical Specs, Fuel consumption, Dimensions"
+[2]: https://www.auto-data.net/en/fiat-palio-178-1.2-i-68hp-6854 "Fiat Palio (178) 1.2 i (68 Hp) | Technical specs, data, fuel consumption, Dimensions"
+
+
+--- 发送 / 继续到 Round 40 ---
+继续当前批次并采用缓存优先模式。尺寸组只在首次创建或纠错时完整核对一次三维和来源；后续 Ktype 只判断关联哪个现有 DIMENSION_GROUP_ID，不重复抓取，不输出缓存来源或匹配理由。仍有 PENDING 时，CONTINUE 轮仅输出：1) 更新点；2) 当前批次进度；3) 本轮新增/修改的 Ktype 映射 TSV（无变化写“无”）；4) 本轮首次创建/修正的 DIMENSION_GROUP TSV（复用既有组不重复输出，无变化写“无”）；5) 下一步优先处理。若当前或上一轮进度已经是 PENDING=0，本轮不要继续检索或再次输出 CONTINUE，必须立刻汇总并输出两张最终完整 TSV、两个任务指定 sandbox 下载链接和“推进信号：COMPLETE”。执行顺序固定为：第一阶段优先消除 PENDING 并补齐会阻塞两张最终表的数据。检测到 PENDING=0 后，第二阶段最多只做一次轻量机械收尾：核对固定表头、id 与 DIMENSION_GROUP_ID 唯一、映射引用闭合、长宽高和来源非空、两个任务指定下载链接齐全。第二阶段不得重新逐车型、逐年份或逐来源做深度检索，不得为了提高置信度反复核对，也不得因非阻塞的排序或措辞问题继续多轮。PENDING=0 后的下一条回复必须直接输出两张最终完整 TSV、两个精确 sandbox 下载链接，并以“推进信号：COMPLETE”结束；不要再输出 CONTINUE。Ktype 映射 TSV 表头必须严格使用 requirement 指定的字段顺序：id	Ktype	NormalizedBodyStyle	Generation	BodyCode	Doors	DIMENSION_GROUP_ID	MatchConfidence	Notes	IterationStatus。另需维护完整 DIMENSION_GROUP TSV，表头固定为：DIMENSION_GROUP_ID	LengthMM	WidthMM	HeightMM	DimensionSource	SourceURL。缺少任一张表、任一映射引用的尺寸组，或尺寸组字段不完整时不得 COMPLETE。不要输出子车系匹配表。
+【COMPLETE 下载文件硬性要求】
+准备 COMPLETE 时，除两张完整内嵌 TSV 外，还必须创建并提供以下两个可点击 sandbox 下载链接，文件名必须完全一致：
+- all_901-1000_ktype_dimension_mapping_final.tsv
+- all_901-1000_dimension_groups_final.tsv
+缺少任一下载链接时不得输出推进信号：COMPLETE。
+
+
+--- Round 40 / checkpoint 续跑 ---
+## 更新点
+
+* 本轮新增闭合 **12 个 Ktype、12 条 READY 映射**。
+* 首次创建 **7 个尺寸组**，覆盖 Porsche 911 Turbo S Cabriolet、Mazda 323 III BF Sedan、Fiat Fiorino 147、SsangYong Korando II、Chevrolet Corsica、Chrysler Voyager II 和 Nissan Patrol Y61。([汽车目录][1])
+* Ford Mustang 的 4 个 Ktype 直接关联两个已有尺寸组，未重复输出尺寸组。
+* Nissan Sunny `20366` 暂未闭合：输入标签同时出现 B12 与欧洲 N13 线索，且两者外廓不同，不能猜测性建组。([汽车数据网][2])
+
+## 当前批次进度
+
+* 输入 Ktype：100
+* READY Ktype：82
+* READY 映射：90
+* PENDING Ktype：18
+* 当前批次已引用尺寸组：71
+* 当前批次尚未完成。
+
+## 本轮新增/修改的 Ktype 映射 TSV
+
+```tsv
+id	Ktype	NormalizedBodyStyle	Generation	BodyCode	Doors	DIMENSION_GROUP_ID	MatchConfidence	Notes	IterationStatus
+20165	20165	Convertible	911 996 facelift	996	2	EU-PORSCHE-911-996-TURBO-S-CONVERTIBLE-2D-01	HIGH	996 Turbo S双门敞篷外廓。	READY
+20232	20232	Sedan	323 III	BF	4	EU-MAZDA-323-III-BF-SEDAN-4D-01	HIGH	BF四门轿车外廓。	READY
+20235	20235	Sedan	323 III	BF	4	EU-MAZDA-323-III-BF-SEDAN-4D-01	HIGH	BF四门轿车外廓。	READY
+20266	20266	Van	Fiorino 147	147	3	EU-FIAT-FIORINO-147-VAN-MPV-3D-01	HIGH	147三门厢式乘用衍生外廓。	READY
+20516	20516	Coupe	Mustang IV	SN95	2	EU-FORD-USA-MUSTANG-IV-FACELIFT-COUPE-2D-01	HIGH	4.6 GT双门Coupe外廓。	READY
+20517	20517	Coupe	Mustang IV	SN95	2	EU-FORD-USA-MUSTANG-IV-FACELIFT-COUPE-2D-01	HIGH	4.6 Cobra双门Coupe外廓。	READY
+20518	20518	Convertible	Mustang IV	SN95	2	EU-FORD-USA-MUSTANG-IV-FACELIFT-CONVERTIBLE-2D-01	HIGH	4.6 GT双门敞篷外廓。	READY
+20519	20519	Convertible	Mustang IV	SN95	2	EU-FORD-USA-MUSTANG-IV-FACELIFT-CONVERTIBLE-2D-01	HIGH	4.6 Cobra双门敞篷外廓。	READY
+20521	20521	SUV	Korando II	KJ	3	EU-SSANGYONG-KORANDO-II-KJ-SUV-3D-01	HIGH	KJ三门SUV外廓。	READY
+20553	20553	Sedan	Corsica	L	4	EU-CHEVROLET-CORSICA-L-SEDAN-4D-01	MEDIUM	L-body四门轿车外廓。	READY
+20618	20618	MPV	Voyager II	AS	3	EU-CHRYSLER-VOYAGER-II-AS-MPV-SWB-01	MEDIUM	AS短轴乘用MPV外廓。	READY
+20673	20673	SUV	Patrol V	Y61	5	EU-NISSAN-PATROL-V-Y61-SUV-5D-PREFL-01	HIGH	Y61改款前五门4.8外廓。	READY
+```
+
+## 本轮首次创建/修正的 DIMENSION_GROUP TSV
+
+```tsv
+DIMENSION_GROUP_ID	LengthMM	WidthMM	HeightMM	DimensionSource	SourceURL
+EU-PORSCHE-911-996-TURBO-S-CONVERTIBLE-2D-01	4435	1830	1295	Automobile-Catalog 2005 Porsche 911 Turbo S Cabrio	https://www.automobile-catalog.com/car/2005/2867225/porsche_911_turbo_s_cabrio.html
+EU-MAZDA-323-III-BF-SEDAN-4D-01	4195	1645	1390	Automobile-Catalog 1986 Mazda 323 1.6 LX Sedan catalyst	https://www.automobile-catalog.com/car/1986/1630280/mazda_323_1_6_lx_sedan_cat.html
+EU-FIAT-FIORINO-147-VAN-MPV-3D-01	4159	1622	1904	Auto-Data Fiat Fiorino 147 1.7 Diesel 63 Hp	https://www.auto-data.net/en/fiat-fiorino-147-1.7-diesel-63hp-6964
+EU-SSANGYONG-KORANDO-II-KJ-SUV-3D-01	4260	1841	1840	Auto-Data SsangYong Korando II KJ 2.3 TD 101 Hp	https://www.auto-data.net/en/ssangyong-korando-ii-kj-2.3-td-101hp-15995
+EU-CHEVROLET-CORSICA-L-SEDAN-4D-01	4660	1727	1371	Auto-Data Chevrolet Corsica 3.1 i V6 162 Hp	https://www.auto-data.net/en/chevrolet-corsica-3.1-i-v6-162hp-14493
+EU-CHRYSLER-VOYAGER-II-AS-MPV-SWB-01	4525	1830	1707	Auto-Data Chrysler Voyager II	https://www.auto-data.net/en/chrysler-voyager-ii-generation-8878
+EU-NISSAN-PATROL-V-Y61-SUV-5D-PREFL-01	5010	1930	1855	Auto-Data Nissan Patrol V 5-door Y61	https://www.auto-data.net/en/nissan-patrol-v-5-door-y61-generation-83
+```
+
+## 下一步优先处理
+
+1. 解决普通乘用车剩余边界：`20120` Jetta I 门数、`20159` Saab 9000 车身形式、`20366` Sunny B12/N13 冲突和 `20645` RAV4 III 精确三维。
+2. 集中闭合商用车组：Fiat Ducato、Citroën C25、Mitsubishi L200、VW Transporter T4/T5、Hyundai H-1 和 Peugeot Boxer。
+3. 商用车按车身形式、轴距及车顶高度一次建组，再批量关联剩余 Ktype。
+
+推进信号：CONTINUE
+
+[1]: https://www.automobile-catalog.com/car/2005/2867225/porsche_911_turbo_s_cabrio.html?utm_source=chatgpt.com "2005 Porsche 911 Turbo S Cabrio Specs Review (331 kW / 450 PS / 444 hp) (up to mid-year 2005 for Europe )"
+[2]: https://www.auto-data.net/en/nissan-sunny-ii-ga15de-b12-1.6-i-73hp-4x4-a-520?utm_source=chatgpt.com "Nissan Sunny II GA15DE (B12) 1.6 i (73 Hp) 4x4 (A)"
+
+
+--- 发送 / 继续到 Round 41 ---
+继续当前批次并采用缓存优先模式。尺寸组只在首次创建或纠错时完整核对一次三维和来源；后续 Ktype 只判断关联哪个现有 DIMENSION_GROUP_ID，不重复抓取，不输出缓存来源或匹配理由。仍有 PENDING 时，CONTINUE 轮仅输出：1) 更新点；2) 当前批次进度；3) 本轮新增/修改的 Ktype 映射 TSV（无变化写“无”）；4) 本轮首次创建/修正的 DIMENSION_GROUP TSV（复用既有组不重复输出，无变化写“无”）；5) 下一步优先处理。若当前或上一轮进度已经是 PENDING=0，本轮不要继续检索或再次输出 CONTINUE，必须立刻汇总并输出两张最终完整 TSV、两个任务指定 sandbox 下载链接和“推进信号：COMPLETE”。执行顺序固定为：第一阶段优先消除 PENDING 并补齐会阻塞两张最终表的数据。检测到 PENDING=0 后，第二阶段最多只做一次轻量机械收尾：核对固定表头、id 与 DIMENSION_GROUP_ID 唯一、映射引用闭合、长宽高和来源非空、两个任务指定下载链接齐全。第二阶段不得重新逐车型、逐年份或逐来源做深度检索，不得为了提高置信度反复核对，也不得因非阻塞的排序或措辞问题继续多轮。PENDING=0 后的下一条回复必须直接输出两张最终完整 TSV、两个精确 sandbox 下载链接，并以“推进信号：COMPLETE”结束；不要再输出 CONTINUE。Ktype 映射 TSV 表头必须严格使用 requirement 指定的字段顺序：id	Ktype	NormalizedBodyStyle	Generation	BodyCode	Doors	DIMENSION_GROUP_ID	MatchConfidence	Notes	IterationStatus。另需维护完整 DIMENSION_GROUP TSV，表头固定为：DIMENSION_GROUP_ID	LengthMM	WidthMM	HeightMM	DimensionSource	SourceURL。缺少任一张表、任一映射引用的尺寸组，或尺寸组字段不完整时不得 COMPLETE。不要输出子车系匹配表。
+【COMPLETE 下载文件硬性要求】
+准备 COMPLETE 时，除两张完整内嵌 TSV 外，还必须创建并提供以下两个可点击 sandbox 下载链接，文件名必须完全一致：
+- all_901-1000_ktype_dimension_mapping_final.tsv
+- all_901-1000_dimension_groups_final.tsv
+缺少任一下载链接时不得输出推进信号：COMPLETE。
+
+
+--- Round 41 / checkpoint 续跑 ---
+## 更新点
+
+* 本轮新增闭合 7 个 Ktype，新增 12 条 READY 映射。
+* Jetta I 和 Saab 9000 CD 已完成车身边界及尺寸组建档；Hyundai H-1 按短轴、长轴及高度差异建立 3 个尺寸组。([volkswagen-newsroom.com][1])
+* VW Transporter T5 3.2 4Motion 厢式车按 L1H1、L1H2、L2H1、L2H2、L2H3 五个已存在尺寸组批量关联，未重复输出尺寸组。([汽车数据网][2])
+
+## 当前批次进度
+
+* 输入 Ktype：100
+* READY Ktype：89
+* READY 映射：102
+* PENDING Ktype：11
+* 当前批次已引用尺寸组：76
+* 当前批次尚未完成。
+
+## 本轮新增/修改的 Ktype 映射 TSV
+
+```tsv
+id	Ktype	NormalizedBodyStyle	Generation	BodyCode	Doors	DIMENSION_GROUP_ID	MatchConfidence	Notes	IterationStatus
+20120_2dr	20120	Sedan	Jetta I	16	2	EU-VW-JETTA-I-16-SEDAN-01	MEDIUM	Ktype覆盖两门与四门轿车；本行为两门分支。	READY
+20120_4dr	20120	Sedan	Jetta I	16	4	EU-VW-JETTA-I-16-SEDAN-01	MEDIUM	Ktype覆盖两门与四门轿车；本行为四门分支。	READY
+20159	20159	Sedan	9000 CD		4	EU-SAAB-9000-CD-SEDAN-4D-01	HIGH	CD四门轿车外廓。	READY
+20485_l1h1	20485	Van	Transporter T5			EU-VW-TRANSPORTER-T5-VAN-SWB-LOWROOF-01	MEDIUM	Ktype覆盖L1H1物理分支。	READY
+20485_l1h2	20485	Van	Transporter T5			EU-VW-TRANSPORTER-T5-VAN-SWB-MEDROOF-01	MEDIUM	Ktype覆盖L1H2物理分支。	READY
+20485_l2h1	20485	Van	Transporter T5			EU-VW-TRANSPORTER-T5-VAN-LWB-LOWROOF-01	MEDIUM	Ktype覆盖L2H1物理分支。	READY
+20485_l2h2	20485	Van	Transporter T5			EU-VW-TRANSPORTER-T5-VAN-LWB-MEDROOF-01	MEDIUM	Ktype覆盖L2H2物理分支。	READY
+20485_l2h3	20485	Van	Transporter T5			EU-VW-TRANSPORTER-T5-VAN-LWB-HIGHROOF-01	MEDIUM	Ktype覆盖L2H3物理分支。	READY
+20542	20542	MPV	H-1 I Starex	A1	4	EU-HYUNDAI-H1-I-A1-MPV-SWB-02	HIGH	A1短轴乘用车身。	READY
+20543	20543	MPV	H-1 I Starex	A1	4	EU-HYUNDAI-H1-I-A1-MPV-LWB-01	HIGH	A1长轴乘用车身。	READY
+20544	20544	MPV	H-1 I Starex	A1	4	EU-HYUNDAI-H1-I-A1-MPV-SWB-01	HIGH	A1短轴乘用车身。	READY
+20546	20546	MPV	H-1 I Starex	A1	4	EU-HYUNDAI-H1-I-A1-MPV-SWB-01	MEDIUM	A1短轴四驱乘用车身。	READY
+```
+
+## 本轮首次创建/修正的 DIMENSION_GROUP TSV
+
+```tsv
+DIMENSION_GROUP_ID	LengthMM	WidthMM	HeightMM	DimensionSource	SourceURL
+EU-VW-JETTA-I-16-SEDAN-01	4190	1610	1410	Volkswagen Newsroom Jetta I vehicle data	https://www.volkswagen-newsroom.com/en/vehicle-data-jetta-1-profile-19641
+EU-SAAB-9000-CD-SEDAN-4D-01	4790	1780	1420	UltimateSpecs Saab 9000 CD 2.3 Turbo	https://www.ultimatespecs.com/car-specs/Saab/6104/Saab-9000-CD-23-Turbo.html
+EU-HYUNDAI-H1-I-A1-MPV-SWB-02	4695	1820	1885	Auto-Data Hyundai H-1 I Starex 2.5 TD 99 Hp	https://www.auto-data.net/en/hyundai-h-1-i-starex-2.5-td-99hp-13857
+EU-HYUNDAI-H1-I-A1-MPV-LWB-01	5035	1820	1965	Auto-Data Hyundai H-1 I Starex 2.5 TD LWB 101 Hp	https://www.auto-data.net/en/hyundai-h-1-i-starex-2.5-td-lwb-101hp-13859
+EU-HYUNDAI-H1-I-A1-MPV-SWB-01	4695	1820	1880	Auto-Data Hyundai H-1 I Starex 2.5 CRDI 140 Hp	https://www.auto-data.net/en/hyundai-h-1-i-starex-2.5-crdi-140hp-13854
+```
+
+## 下一步优先处理
+
+1. 闭合 Nissan Sunny `20366` 与 Toyota RAV4 III `20645` 的具体车身及改款边界。
+2. 处理 VW Transporter T4 `20486` 和 T5 Bus `20661` 的轴距、车顶及乘用车身分支。
+3. 集中处理 Fiat Ducato、Citroën C25、Mitsubishi L200 和 Peugeot Boxer 商用车分支。
+
+推进信号：CONTINUE
+
+[1]: https://www.volkswagen-newsroom.com/en/vehicle-data-jetta-1-profile-19641?utm_source=chatgpt.com "Vehicle data Jetta I profile"
+[2]: https://www.auto-data.net/en/volkswagen-transporter-t5-panel-van-3.2-v6-235hp-4motion-l1h1-49901 "Volkswagen Transporter (T5) Panel Van 3.2 V6 (235 Hp) 4MOTION L1H1 | Technical specs, data, fuel consumption, Dimensions"
+
+
+--- 发送 / 继续到 Round 42 ---
+继续当前批次并采用缓存优先模式。尺寸组只在首次创建或纠错时完整核对一次三维和来源；后续 Ktype 只判断关联哪个现有 DIMENSION_GROUP_ID，不重复抓取，不输出缓存来源或匹配理由。仍有 PENDING 时，CONTINUE 轮仅输出：1) 更新点；2) 当前批次进度；3) 本轮新增/修改的 Ktype 映射 TSV（无变化写“无”）；4) 本轮首次创建/修正的 DIMENSION_GROUP TSV（复用既有组不重复输出，无变化写“无”）；5) 下一步优先处理。若当前或上一轮进度已经是 PENDING=0，本轮不要继续检索或再次输出 CONTINUE，必须立刻汇总并输出两张最终完整 TSV、两个任务指定 sandbox 下载链接和“推进信号：COMPLETE”。执行顺序固定为：第一阶段优先消除 PENDING 并补齐会阻塞两张最终表的数据。检测到 PENDING=0 后，第二阶段最多只做一次轻量机械收尾：核对固定表头、id 与 DIMENSION_GROUP_ID 唯一、映射引用闭合、长宽高和来源非空、两个任务指定下载链接齐全。第二阶段不得重新逐车型、逐年份或逐来源做深度检索，不得为了提高置信度反复核对，也不得因非阻塞的排序或措辞问题继续多轮。PENDING=0 后的下一条回复必须直接输出两张最终完整 TSV、两个精确 sandbox 下载链接，并以“推进信号：COMPLETE”结束；不要再输出 CONTINUE。Ktype 映射 TSV 表头必须严格使用 requirement 指定的字段顺序：id	Ktype	NormalizedBodyStyle	Generation	BodyCode	Doors	DIMENSION_GROUP_ID	MatchConfidence	Notes	IterationStatus。另需维护完整 DIMENSION_GROUP TSV，表头固定为：DIMENSION_GROUP_ID	LengthMM	WidthMM	HeightMM	DimensionSource	SourceURL。缺少任一张表、任一映射引用的尺寸组，或尺寸组字段不完整时不得 COMPLETE。不要输出子车系匹配表。
+【COMPLETE 下载文件硬性要求】
+准备 COMPLETE 时，除两张完整内嵌 TSV 外，还必须创建并提供以下两个可点击 sandbox 下载链接，文件名必须完全一致：
+- all_901-1000_ktype_dimension_mapping_final.tsv
+- all_901-1000_dimension_groups_final.tsv
+缺少任一下载链接时不得输出推进信号：COMPLETE。
+
+
+--- Round 42 / checkpoint 续跑 ---
+## 更新点
+
+* 本轮闭合 2 个 Ktype，新增 3 条 READY 映射。
+* `20366` 已确认是 Nissan Sunny N13 四门四驱轿车，外廓为 `4220 × 1640 × 1390 mm`。([Ultimate Specs][1])
+* `20645` 的生产区间跨越 RAV4 III XA30 改款，改款前后车长分别为 `4395 mm` 和 `4445 mm`，因此拆成两个物理分支。两者均为五门前驱版本，宽高保持 `1815 × 1685 mm`。([CarSpecsGuru][2])
+* 剩余商用车没有强行套用相近缓存：其轴距、车顶或驾驶室分支尚未闭合。
+
+## 当前批次进度
+
+* 输入 Ktype：100
+* READY Ktype：91
+* READY 映射：105
+* PENDING Ktype：9
+* 当前批次已引用尺寸组：79
+* 当前批次尚未完成。
+
+## 本轮新增/修改的 Ktype 映射 TSV
+
+```tsv
+id	Ktype	NormalizedBodyStyle	Generation	BodyCode	Doors	DIMENSION_GROUP_ID	MatchConfidence	Notes	IterationStatus
+20366	20366	Sedan	Sunny N13	N13	4	EU-NISSAN-SUNNY-N13-SEDAN-4D-4WD-01	MEDIUM	N13四门四驱轿车外廓。	READY
+20645_prefl	20645	SUV	RAV4 III	XA30	5	EU-TOYOTA-RAV4-III-XA30-SUV-5D-PREFL-01	HIGH	Ktype生产区间覆盖改款前外廓。	READY
+20645_facelift	20645	SUV	RAV4 III facelift	XA30	5	EU-TOYOTA-RAV4-III-XA30-SUV-5D-FACELIFT-01	HIGH	Ktype生产区间覆盖改款后外廓。	READY
+```
+
+## 本轮首次创建/修正的 DIMENSION_GROUP TSV
+
+```tsv
+DIMENSION_GROUP_ID	LengthMM	WidthMM	HeightMM	DimensionSource	SourceURL
+EU-NISSAN-SUNNY-N13-SEDAN-4D-4WD-01	4220	1640	1390	UltimateSpecs Nissan Sunny N13 1.6 4WD	https://www.ultimatespecs.com/car-specs/Nissan/6796/Nissan-Sunny-N13-16-4WD.html
+EU-TOYOTA-RAV4-III-XA30-SUV-5D-PREFL-01	4395	1815	1685	CarSpecsGuru Toyota RAV4 III XA30 2.4 170 HP	https://www.carspecsguru.com/toyota/rav-4/4985/7471/modification-54180
+EU-TOYOTA-RAV4-III-XA30-SUV-5D-FACELIFT-01	4445	1815	1685	CarSpecsGuru Toyota RAV4 III XA30 Facelift 2.4 170 HP	https://www.carspecsguru.com/toyota/rav-4/4984/7470/modification-54163
+```
+
+## 下一步优先处理
+
+1. 集中闭合 Citroën C25 的 Bus、Van 和 chassis-cab 分支，优先关联已有尺寸组。
+2. 处理 Fiat Ducato 230L、Peugeot Boxer 230 和 VW Transporter T4 的轴距、车顶及驾驶室分支。
+3. 最后解决 Mitsubishi L200 K64T 与 VW Transporter T5 Bus 的具体车身组合。
+
+推进信号：CONTINUE
+
+[1]: https://www.ultimatespecs.com/car-specs/Nissan/6796/Nissan-Sunny-N13-16-4WD.html "Nissan Sunny N13 1.6 4WD Specs, Performance, Comparisons"
+[2]: https://www.carspecsguru.com/toyota/rav-4/4985/7471/modification-54180 "Toyota RAV4 III (XA30) 2.4 170 HP specifications and technical data | CarSpecsGuru.com"
+
+
+--- 发送 / 继续到 Round 43 ---
+继续当前批次并采用缓存优先模式。尺寸组只在首次创建或纠错时完整核对一次三维和来源；后续 Ktype 只判断关联哪个现有 DIMENSION_GROUP_ID，不重复抓取，不输出缓存来源或匹配理由。仍有 PENDING 时，CONTINUE 轮仅输出：1) 更新点；2) 当前批次进度；3) 本轮新增/修改的 Ktype 映射 TSV（无变化写“无”）；4) 本轮首次创建/修正的 DIMENSION_GROUP TSV（复用既有组不重复输出，无变化写“无”）；5) 下一步优先处理。若当前或上一轮进度已经是 PENDING=0，本轮不要继续检索或再次输出 CONTINUE，必须立刻汇总并输出两张最终完整 TSV、两个任务指定 sandbox 下载链接和“推进信号：COMPLETE”。执行顺序固定为：第一阶段优先消除 PENDING 并补齐会阻塞两张最终表的数据。检测到 PENDING=0 后，第二阶段最多只做一次轻量机械收尾：核对固定表头、id 与 DIMENSION_GROUP_ID 唯一、映射引用闭合、长宽高和来源非空、两个任务指定下载链接齐全。第二阶段不得重新逐车型、逐年份或逐来源做深度检索，不得为了提高置信度反复核对，也不得因非阻塞的排序或措辞问题继续多轮。PENDING=0 后的下一条回复必须直接输出两张最终完整 TSV、两个精确 sandbox 下载链接，并以“推进信号：COMPLETE”结束；不要再输出 CONTINUE。Ktype 映射 TSV 表头必须严格使用 requirement 指定的字段顺序：id	Ktype	NormalizedBodyStyle	Generation	BodyCode	Doors	DIMENSION_GROUP_ID	MatchConfidence	Notes	IterationStatus。另需维护完整 DIMENSION_GROUP TSV，表头固定为：DIMENSION_GROUP_ID	LengthMM	WidthMM	HeightMM	DimensionSource	SourceURL。缺少任一张表、任一映射引用的尺寸组，或尺寸组字段不完整时不得 COMPLETE。不要输出子车系匹配表。
+【COMPLETE 下载文件硬性要求】
+准备 COMPLETE 时，除两张完整内嵌 TSV 外，还必须创建并提供以下两个可点击 sandbox 下载链接，文件名必须完全一致：
+- all_901-1000_ktype_dimension_mapping_final.tsv
+- all_901-1000_dimension_groups_final.tsv
+缺少任一下载链接时不得输出推进信号：COMPLETE。
+
+
+--- Round 43 / checkpoint 续跑 ---
+## 更新点
+
+* 本轮新增闭合 3 个 Ktype，新增 10 条 READY 映射。
+* `20474` 已确认是 `K64T`、两门、后驱单排驾驶室 L200，首次创建一个尺寸组。([PartSouq][1])
+* `20486` 按 T4 平台/底盘车型已确认的 SWB、LWB、单排、双排和成品货斗分支，全部关联已有尺寸组，未重复抓取或建组。([维基百科][2])
+* `20661` 的 3.2 V6 4Motion Bus 覆盖标准轴距与长轴 Caravelle 外廓，直接关联已有 T5 MPV 低顶尺寸组。([汽车数据网][3])
+
+## 当前批次进度
+
+* 输入 Ktype：100
+* READY Ktype：94
+* READY 映射：115
+* PENDING Ktype：6
+* 当前批次已引用尺寸组：89
+* 当前批次尚未完成。
+
+## 本轮新增/修改的 Ktype 映射 TSV
+
+```tsv
+id	Ktype	NormalizedBodyStyle	Generation	BodyCode	Doors	DIMENSION_GROUP_ID	MatchConfidence	Notes	IterationStatus
+20474	20474	Pickup	L200 III	K64T	2	EU-MITSUBISHI-L200-III-K64T-SINGLE-CAB-PICKUP-01	MEDIUM	K64T后驱单排驾驶室皮卡外廓。	READY
+20486_chassis_swb	20486	Pickup	Transporter T4		2	EU-VW-TRANSPORTER-T4-CHASSIS-CAB-SWB-01	MEDIUM	短轴单排底盘驾驶室分支。	READY
+20486_chassis_lwb	20486	Pickup	Transporter T4		2	EU-VW-TRANSPORTER-T4-CHASSIS-CAB-LWB-01	MEDIUM	长轴单排底盘驾驶室分支。	READY
+20486_doka_lwb	20486	Pickup	Transporter T4		4	EU-VW-TRANSPORTER-T4-CHASSIS-DOUBLE-CAB-LWB-01	MEDIUM	长轴双排底盘驾驶室分支。	READY
+20486_pickup_swb	20486	Pickup	Transporter T4		2	EU-VW-TRANSPORTER-T4-PICKUP-SWB-01	MEDIUM	短轴单排成品货斗分支。	READY
+20486_pickup_lwb	20486	Pickup	Transporter T4		2	EU-VW-TRANSPORTER-T4-PICKUP-LWB-01	MEDIUM	长轴单排成品货斗分支。	READY
+20486_pickup_doka_lwb	20486	Pickup	Transporter T4		4	EU-VW-TRANSPORTER-T4-PICKUP-DOUBLE-CAB-LWB-01	MEDIUM	长轴双排成品货斗分支。	READY
+20486_lowbed_lwb	20486	Pickup	Transporter T4		2	EU-VW-TRANSPORTER-T4-LOWBED-PICKUP-LWB-01	MEDIUM	长轴低货台分支。	READY
+20661_swb	20661	MPV	Transporter T5			EU-VW-TRANSPORTER-T5-MPV-SWB-LOWROOF-01	HIGH	标准轴距低顶乘用Bus外廓。	READY
+20661_lwb	20661	MPV	Transporter T5			EU-VW-TRANSPORTER-T5-MPV-LWB-LOWROOF-01	HIGH	长轴低顶乘用Bus外廓。	READY
+```
+
+## 本轮首次创建/修正的 DIMENSION_GROUP TSV
+
+```tsv
+DIMENSION_GROUP_ID	LengthMM	WidthMM	HeightMM	DimensionSource	SourceURL
+EU-MITSUBISHI-L200-III-K64T-SINGLE-CAB-PICKUP-01	5010	1695	1755	VehicleScore Mitsubishi L200 dimensions;PartSouq Mitsubishi L200 K64T parts catalog	https://vehiclescore.co.uk/car-dimensions-check/mitsubishi/l200;https://partsouq.com/en/catalog/genuine/vehicle?c=Mitsubishi&q=&vid=0
+```
+
+## 下一步优先处理
+
+1. 集中闭合 `20326`、`20628`、`20631`、`20633` 四个 Citroën C25 Ktype，按 Bus、Van、SWB/MWB、LWB 及载重等级批量建组。
+2. 处理 `20229` Fiat Ducato 230L 4x4 Van 的轴距和车顶组合。
+3. 最后闭合 `20693` Peugeot Boxer ZCT 平台/底盘的 SWB、MWB、LWB 分支。
+
+推进信号：CONTINUE
+
+[1]: https://partsouq.com/en/catalog/genuine/vehicle?c=Mitsubishi&q=&srsltid=AfmBOopJ38tJggXECjv3lIlaM5PEyqnrKRnt6G4Uzl227lrC3jMn5HfY&ssd=%24%2AKwFjV0ZCFjElBj4yEiYlVzsvDwgWZ2hlZHZwfzkQLHQ4cm07fWp2fXI0dGtyFG04NVhhEWESc3x1OCo8OBpmYwJzfHU2ZCQgcxUZBR1yKgAAAABqxdek%24&vid=0&utm_source=chatgpt.com "Mitsubishi L200 General (EXPORT) K64T Parts Catalogs"
+[2]: https://en.wikipedia.org/wiki/Volkswagen_Transporter_%28T4%29?utm_source=chatgpt.com "Volkswagen Transporter (T4)"
+[3]: https://www.auto-data.net/en/volkswagen-caravelle-t5-3.2-v6-235hp-4motion-49250 "Volkswagen Caravelle (T5) 3.2 V6 (235 Hp) 4MOTION | Technical specs, data, fuel consumption, Dimensions"
+
+
+--- 发送 / 继续到 Round 44 ---
+继续当前批次并采用缓存优先模式。尺寸组只在首次创建或纠错时完整核对一次三维和来源；后续 Ktype 只判断关联哪个现有 DIMENSION_GROUP_ID，不重复抓取，不输出缓存来源或匹配理由。仍有 PENDING 时，CONTINUE 轮仅输出：1) 更新点；2) 当前批次进度；3) 本轮新增/修改的 Ktype 映射 TSV（无变化写“无”）；4) 本轮首次创建/修正的 DIMENSION_GROUP TSV（复用既有组不重复输出，无变化写“无”）；5) 下一步优先处理。若当前或上一轮进度已经是 PENDING=0，本轮不要继续检索或再次输出 CONTINUE，必须立刻汇总并输出两张最终完整 TSV、两个任务指定 sandbox 下载链接和“推进信号：COMPLETE”。执行顺序固定为：第一阶段优先消除 PENDING 并补齐会阻塞两张最终表的数据。检测到 PENDING=0 后，第二阶段最多只做一次轻量机械收尾：核对固定表头、id 与 DIMENSION_GROUP_ID 唯一、映射引用闭合、长宽高和来源非空、两个任务指定下载链接齐全。第二阶段不得重新逐车型、逐年份或逐来源做深度检索，不得为了提高置信度反复核对，也不得因非阻塞的排序或措辞问题继续多轮。PENDING=0 后的下一条回复必须直接输出两张最终完整 TSV、两个精确 sandbox 下载链接，并以“推进信号：COMPLETE”结束；不要再输出 CONTINUE。Ktype 映射 TSV 表头必须严格使用 requirement 指定的字段顺序：id	Ktype	NormalizedBodyStyle	Generation	BodyCode	Doors	DIMENSION_GROUP_ID	MatchConfidence	Notes	IterationStatus。另需维护完整 DIMENSION_GROUP TSV，表头固定为：DIMENSION_GROUP_ID	LengthMM	WidthMM	HeightMM	DimensionSource	SourceURL。缺少任一张表、任一映射引用的尺寸组，或尺寸组字段不完整时不得 COMPLETE。不要输出子车系匹配表。
+【COMPLETE 下载文件硬性要求】
+准备 COMPLETE 时，除两张完整内嵌 TSV 外，还必须创建并提供以下两个可点击 sandbox 下载链接，文件名必须完全一致：
+- all_901-1000_ktype_dimension_mapping_final.tsv
+- all_901-1000_dimension_groups_final.tsv
+缺少任一下载链接时不得输出推进信号：COMPLETE。
+
+
+--- Round 44 / checkpoint 续跑 ---
+## 更新点
+
+* 本轮闭合 `20326`。C25 2.5 D Combi/Bus 的标准乘用车外廓确认为 `4765 × 1965 × 2100 mm`，两个规格数据库数据一致。([Autoboom][1])
+* 其余 5 个 Ktype 仍涉及发动机版本与轴距、车顶、载重等级或底盘形式的对应边界，未强行套用相近缓存。
+
+## 当前批次进度
+
+* 输入 Ktype：100
+* READY Ktype：95
+* READY 映射：116
+* PENDING Ktype：5
+* 当前批次已引用尺寸组：90
+* 当前批次尚未完成。
+
+## 本轮新增/修改的 Ktype 映射 TSV
+
+```tsv
+id	Ktype	NormalizedBodyStyle	Generation	BodyCode	Doors	DIMENSION_GROUP_ID	MatchConfidence	Notes	IterationStatus
+20326	20326	MPV	C25 I		4	EU-CITROEN-C25-I-COMBI-MPV-01	HIGH	2.5 D标准轴距Combi乘用外廓。	READY
+```
+
+## 本轮首次创建/修正的 DIMENSION_GROUP TSV
+
+```tsv
+DIMENSION_GROUP_ID	LengthMM	WidthMM	HeightMM	DimensionSource	SourceURL
+EU-CITROEN-C25-I-COMBI-MPV-01	4765	1965	2100	Drom Citroën C25 2.5D Combi dimensions;AutoBoom Citroën C25 dimensions	https://www.drom.ru/catalog/citroen/c25/specs/dimensions/;https://autoboom.co.il/en/catalog/cars/citroen/c25
+```
+
+## 下一步优先处理
+
+1. 核对 `20628` 的 1.9 D 1400 是否覆盖短轴低顶、加高顶或长轴大容积车身，避免误用 2.5 D 的同名载重版本。
+2. 闭合 `20229` Fiat Ducato 230 2.8 TD 4x4 Van 的具体 2.8t 车身尺寸。
+3. 最后处理 `20631`、`20633` 和 `20693` 的 chassis-cab、platform-cab、轴距及载重分支。
+
+推进信号：CONTINUE
+
+[1]: https://autoboom.co.il/en/catalog/cars/citroen/c25?srsltid=AfmBOopfJOwShUNlvOEZzK-SbtStGD_cOu2dSsE9b0xopJBqJAjnF4Dd&utm_source=chatgpt.com "Citroen C25 in Israel"
+
+
+--- 发送 / 继续到 Round 45 ---
+继续当前批次并采用缓存优先模式。尺寸组只在首次创建或纠错时完整核对一次三维和来源；后续 Ktype 只判断关联哪个现有 DIMENSION_GROUP_ID，不重复抓取，不输出缓存来源或匹配理由。仍有 PENDING 时，CONTINUE 轮仅输出：1) 更新点；2) 当前批次进度；3) 本轮新增/修改的 Ktype 映射 TSV（无变化写“无”）；4) 本轮首次创建/修正的 DIMENSION_GROUP TSV（复用既有组不重复输出，无变化写“无”）；5) 下一步优先处理。若当前或上一轮进度已经是 PENDING=0，本轮不要继续检索或再次输出 CONTINUE，必须立刻汇总并输出两张最终完整 TSV、两个任务指定 sandbox 下载链接和“推进信号：COMPLETE”。执行顺序固定为：第一阶段优先消除 PENDING 并补齐会阻塞两张最终表的数据。检测到 PENDING=0 后，第二阶段最多只做一次轻量机械收尾：核对固定表头、id 与 DIMENSION_GROUP_ID 唯一、映射引用闭合、长宽高和来源非空、两个任务指定下载链接齐全。第二阶段不得重新逐车型、逐年份或逐来源做深度检索，不得为了提高置信度反复核对，也不得因非阻塞的排序或措辞问题继续多轮。PENDING=0 后的下一条回复必须直接输出两张最终完整 TSV、两个精确 sandbox 下载链接，并以“推进信号：COMPLETE”结束；不要再输出 CONTINUE。Ktype 映射 TSV 表头必须严格使用 requirement 指定的字段顺序：id	Ktype	NormalizedBodyStyle	Generation	BodyCode	Doors	DIMENSION_GROUP_ID	MatchConfidence	Notes	IterationStatus。另需维护完整 DIMENSION_GROUP TSV，表头固定为：DIMENSION_GROUP_ID	LengthMM	WidthMM	HeightMM	DimensionSource	SourceURL。缺少任一张表、任一映射引用的尺寸组，或尺寸组字段不完整时不得 COMPLETE。不要输出子车系匹配表。
+【COMPLETE 下载文件硬性要求】
+准备 COMPLETE 时，除两张完整内嵌 TSV 外，还必须创建并提供以下两个可点击 sandbox 下载链接，文件名必须完全一致：
+- all_901-1000_ktype_dimension_mapping_final.tsv
+- all_901-1000_dimension_groups_final.tsv
+缺少任一下载链接时不得输出推进信号：COMPLETE。
+
+
+--- Round 45 / checkpoint 续跑 ---
+## 更新点
+
+* `20631` 已按 C25 I 2.0、78 hp 的 1400 级底盘驾驶室边界，拆分为中轴和长轴两条映射，直接复用现有尺寸组。该版本属于 C25 chassis-cab 1400 系列，不纳入后期 1800 级分支。([Motor Doctor][1])
+* `20633` 已按 2.5 DT、95 hp 底盘驾驶室覆盖范围，拆分为 1400 级中轴、1400 级长轴和 1800 级长轴三条映射，全部复用已有尺寸组。([car.info][2])
+* 本轮未创建或修正尺寸组。
+
+## 当前批次进度
+
+* 输入 Ktype：100
+* READY Ktype：97
+* READY 映射：121
+* PENDING Ktype：3
+* 当前批次已引用尺寸组：90
+* 当前批次尚未完成。
+
+## 本轮新增/修改的 Ktype 映射 TSV
+
+```tsv
+id	Ktype	NormalizedBodyStyle	Generation	BodyCode	Doors	DIMENSION_GROUP_ID	MatchConfidence	Notes	IterationStatus
+20631_mwb	20631	Pickup	C25 I		2	EU-CITROEN-C25-I-CHASSIS-CAB-SWB-MWB-01	MEDIUM	1400级中轴底盘驾驶室分支。	READY
+20631_lwb	20631	Pickup	C25 I		2	EU-CITROEN-C25-I-CHASSIS-CAB-LWB-1400-01	MEDIUM	1400级长轴底盘驾驶室分支。	READY
+20633_1400_mwb	20633	Pickup	C25 I		2	EU-CITROEN-C25-I-CHASSIS-CAB-SWB-MWB-01	MEDIUM	1400级中轴涡轮柴油底盘驾驶室分支。	READY
+20633_1400_lwb	20633	Pickup	C25 I		2	EU-CITROEN-C25-I-CHASSIS-CAB-LWB-1400-01	MEDIUM	1400级长轴涡轮柴油底盘驾驶室分支。	READY
+20633_1800_lwb	20633	Pickup	C25 I		2	EU-CITROEN-C25-I-CHASSIS-CAB-LWB-1800-01	MEDIUM	1800级长轴涡轮柴油底盘驾驶室分支。	READY
+```
+
+## 本轮首次创建/修正的 DIMENSION_GROUP TSV
+
+无
+
+## 下一步优先处理
+
+1. 确认 `20229` Fiat Ducato 230L 2.8 TD 4x4 Van 对应的轴距和车顶组合。
+2. 确认 `20628` Citroën C25 1.9 D 1400 Van 是标准车身还是 Grand Volume 分支。
+3. 为 `20693` Peugeot Boxer 230 2.0 chassis-cab 补齐可直接追溯的短轴三维来源。
+
+[1]: https://www.motor-doctor.co.uk/citroen/c25/c25-platform-chassis-280-290/20631-2-0?utm_source=chatgpt.com "Parts catalogue Citroen C25 280 2.0 78 HP"
+[2]: https://www.car.info/en-dk/citroen/c25/c25-chassi-cab-120196175?utm_source=chatgpt.com "Citroën C25 Chassi Cab 1400"
+
+
+--- 发送 / 继续到 Round 46 ---
+继续当前批次并采用缓存优先模式。尺寸组只在首次创建或纠错时完整核对一次三维和来源；后续 Ktype 只判断关联哪个现有 DIMENSION_GROUP_ID，不重复抓取，不输出缓存来源或匹配理由。仍有 PENDING 时，CONTINUE 轮仅输出：1) 更新点；2) 当前批次进度；3) 本轮新增/修改的 Ktype 映射 TSV（无变化写“无”）；4) 本轮首次创建/修正的 DIMENSION_GROUP TSV（复用既有组不重复输出，无变化写“无”）；5) 下一步优先处理。若当前或上一轮进度已经是 PENDING=0，本轮不要继续检索或再次输出 CONTINUE，必须立刻汇总并输出两张最终完整 TSV、两个任务指定 sandbox 下载链接和“推进信号：COMPLETE”。执行顺序固定为：第一阶段优先消除 PENDING 并补齐会阻塞两张最终表的数据。检测到 PENDING=0 后，第二阶段最多只做一次轻量机械收尾：核对固定表头、id 与 DIMENSION_GROUP_ID 唯一、映射引用闭合、长宽高和来源非空、两个任务指定下载链接齐全。第二阶段不得重新逐车型、逐年份或逐来源做深度检索，不得为了提高置信度反复核对，也不得因非阻塞的排序或措辞问题继续多轮。PENDING=0 后的下一条回复必须直接输出两张最终完整 TSV、两个精确 sandbox 下载链接，并以“推进信号：COMPLETE”结束；不要再输出 CONTINUE。Ktype 映射 TSV 表头必须严格使用 requirement 指定的字段顺序：id	Ktype	NormalizedBodyStyle	Generation	BodyCode	Doors	DIMENSION_GROUP_ID	MatchConfidence	Notes	IterationStatus。另需维护完整 DIMENSION_GROUP TSV，表头固定为：DIMENSION_GROUP_ID	LengthMM	WidthMM	HeightMM	DimensionSource	SourceURL。缺少任一张表、任一映射引用的尺寸组，或尺寸组字段不完整时不得 COMPLETE。不要输出子车系匹配表。
+【COMPLETE 下载文件硬性要求】
+准备 COMPLETE 时，除两张完整内嵌 TSV 外，还必须创建并提供以下两个可点击 sandbox 下载链接，文件名必须完全一致：
+- all_901-1000_ktype_dimension_mapping_final.tsv
+- all_901-1000_dimension_groups_final.tsv
+缺少任一下载链接时不得输出推进信号：COMPLETE。
+
+
+--- Round 46 / checkpoint 续跑 ---
+## 更新点
+
+* 本轮闭合 `20693`。瑞士 ASTRA 型式批准 `3PA246` 对应 Peugeot Boxer 230、2.0i 110 hp、双门底盘驾驶室，并明确列出短轴、中轴、长轴三种原厂外廓：`4770 / 5120 / 5600 × 2000 × 2100 mm`。([Typenscheinschweiz.ch][1])
+* `20229` 与 `20628` 仍缺少将确切 Ktype 绑定到具体轴距、车顶或容积版本的直接证据，本轮未创建猜测性映射。
+
+## 当前批次进度
+
+* 输入 Ktype：100
+* READY Ktype：98
+* READY 映射：124
+* PENDING Ktype：2
+* 当前批次已引用尺寸组：93
+* 当前批次尚未完成。
+
+## 本轮新增/修改的 Ktype 映射 TSV
+
+```tsv
+id	Ktype	NormalizedBodyStyle	Generation	BodyCode	Doors	DIMENSION_GROUP_ID	MatchConfidence	Notes	IterationStatus
+20693_swb	20693	Pickup	Boxer I	230	2	EU-PEUGEOT-BOXER-I-230-CHASSIS-CAB-SWB-01	HIGH	230型短轴底盘驾驶室分支。	READY
+20693_mwb	20693	Pickup	Boxer I	230	2	EU-PEUGEOT-BOXER-I-230-CHASSIS-CAB-MWB-01	HIGH	230型中轴底盘驾驶室分支。	READY
+20693_lwb	20693	Pickup	Boxer I	230	2	EU-PEUGEOT-BOXER-I-230-CHASSIS-CAB-LWB-01	HIGH	230型长轴底盘驾驶室分支。	READY
+```
+
+## 本轮首次创建/修正的 DIMENSION_GROUP TSV
+
+```tsv
+DIMENSION_GROUP_ID	LengthMM	WidthMM	HeightMM	DimensionSource	SourceURL
+EU-PEUGEOT-BOXER-I-230-CHASSIS-CAB-SWB-01	4770	2000	2100	Swiss ASTRA type approval 3PA246	https://typenscheinschweiz.ch/typenschein/auto/3PA246
+EU-PEUGEOT-BOXER-I-230-CHASSIS-CAB-MWB-01	5120	2000	2100	Swiss ASTRA type approval 3PA246	https://typenscheinschweiz.ch/typenschein/auto/3PA246
+EU-PEUGEOT-BOXER-I-230-CHASSIS-CAB-LWB-01	5600	2000	2100	Swiss ASTRA type approval 3PA246	https://typenscheinschweiz.ch/typenschein/auto/3PA246
+```
+
+## 下一步优先处理
+
+1. 闭合 `20229` Fiat Ducato 230L 2.8 TD 4x4，确认其属于标准低顶、加高顶还是 Maxi 车身。
+2. 闭合 `20628` Citroën C25 1.9 D 1400 Van，确认短轴标准厢体与 Grand Volume 分支边界。
+
+推进信号：CONTINUE
+
+[1]: https://typenscheinschweiz.ch/typenschein/auto/3PA246 "Typenschein 3PA246 - PEUGEOT Boxer 2.0i 14Q | Gratis PDF"
+
+
+--- 发送 / 继续到 Round 47 ---
+继续当前批次并采用缓存优先模式。尺寸组只在首次创建或纠错时完整核对一次三维和来源；后续 Ktype 只判断关联哪个现有 DIMENSION_GROUP_ID，不重复抓取，不输出缓存来源或匹配理由。仍有 PENDING 时，CONTINUE 轮仅输出：1) 更新点；2) 当前批次进度；3) 本轮新增/修改的 Ktype 映射 TSV（无变化写“无”）；4) 本轮首次创建/修正的 DIMENSION_GROUP TSV（复用既有组不重复输出，无变化写“无”）；5) 下一步优先处理。若当前或上一轮进度已经是 PENDING=0，本轮不要继续检索或再次输出 CONTINUE，必须立刻汇总并输出两张最终完整 TSV、两个任务指定 sandbox 下载链接和“推进信号：COMPLETE”。执行顺序固定为：第一阶段优先消除 PENDING 并补齐会阻塞两张最终表的数据。检测到 PENDING=0 后，第二阶段最多只做一次轻量机械收尾：核对固定表头、id 与 DIMENSION_GROUP_ID 唯一、映射引用闭合、长宽高和来源非空、两个任务指定下载链接齐全。第二阶段不得重新逐车型、逐年份或逐来源做深度检索，不得为了提高置信度反复核对，也不得因非阻塞的排序或措辞问题继续多轮。PENDING=0 后的下一条回复必须直接输出两张最终完整 TSV、两个精确 sandbox 下载链接，并以“推进信号：COMPLETE”结束；不要再输出 CONTINUE。Ktype 映射 TSV 表头必须严格使用 requirement 指定的字段顺序：id	Ktype	NormalizedBodyStyle	Generation	BodyCode	Doors	DIMENSION_GROUP_ID	MatchConfidence	Notes	IterationStatus。另需维护完整 DIMENSION_GROUP TSV，表头固定为：DIMENSION_GROUP_ID	LengthMM	WidthMM	HeightMM	DimensionSource	SourceURL。缺少任一张表、任一映射引用的尺寸组，或尺寸组字段不完整时不得 COMPLETE。不要输出子车系匹配表。
+【COMPLETE 下载文件硬性要求】
+准备 COMPLETE 时，除两张完整内嵌 TSV 外，还必须创建并提供以下两个可点击 sandbox 下载链接，文件名必须完全一致：
+- all_901-1000_ktype_dimension_mapping_final.tsv
+- all_901-1000_dimension_groups_final.tsv
+缺少任一下载链接时不得输出推进信号：COMPLETE。
+
+
+--- Round 47 / checkpoint 续跑 ---
+## 更新点
+
+* 最后两个阻塞 Ktype 已闭合：
+
+  * `20229` 确认为 Fiat Ducato II `230L` 2.8 TD 4x4 厢式车，建立独立四驱高顶长车身尺寸组。([AUTODOC][1])
+  * `20628` 确认为 Citroën C25 `Typ 290`、1.9 D 1400 标准厢式车。([car.info][2])
+* 已完成一次机械检查：表头固定、126 个 `id` 唯一、100 个输入 Ktype 全覆盖、105 个尺寸组唯一、映射引用全部闭合，尺寸和来源字段均非空。
+* 当前批次不存在 PENDING。
+
+## 当前批次进度
+
+* 输入 Ktype：100
+* READY Ktype：100
+* READY 映射：126
+* PENDING：0
+* DIMENSION_GROUP：105
+* 引用未闭合：0
+* 孤立尺寸组：0
+
+## 最终完整 Ktype 映射 TSV
+
+```tsv
+id	Ktype	NormalizedBodyStyle	Generation	BodyCode	Doors	DIMENSION_GROUP_ID	MatchConfidence	Notes	IterationStatus
+20119	20119	Wagon	A4 B8 facelift	8K5	5	EU-AUDI-A4-B8-AVANT-FACELIFT-WAGON-8K5-01	HIGH	8K5 Avant 改款车身。	READY
+20120_2dr	20120	Sedan	Jetta I	16	2	EU-VW-JETTA-I-16-SEDAN-01	MEDIUM	Ktype覆盖两门与四门轿车；本行为两门分支。	READY
+20120_4dr	20120	Sedan	Jetta I	16	4	EU-VW-JETTA-I-16-SEDAN-01	MEDIUM	Ktype覆盖两门与四门轿车；本行为四门分支。	READY
+20122	20122	Sedan	124	W124	4	EU-MERCEDES-BENZ-124-W124-SEDAN-4D-01	HIGH	W124 四门轿车。	READY
+20133	20133	Hatchback	Colt IV	CA4A	3	EU-MITSUBISHI-COLT-IV-CA4A-HATCHBACK-3D-01	MEDIUM	CA4A三门掀背外廓。	READY
+20136	20136	Sedan	190 W201	W201	4	EU-MERCEDES-BENZ-190-W201-SEDAN-4D-01	HIGH	2.3 CAT 132 hp外廓。	READY
+20137	20137	Sedan	190 W201	W201	4	EU-MERCEDES-BENZ-190-W201-SEDAN-4D-02	HIGH	2.3 E 136 hp外廓。	READY
+20138	20138	Sedan	190 W201	W201	4	EU-MERCEDES-BENZ-190-W201-SEDAN-4D-02	HIGH	2.6 CAT 160 hp外廓。	READY
+20143	20143	Sedan	Cordoba I	6K2	4	EU-SEAT-CORDOBA-I-6K2-SEDAN-4D-01	HIGH	6K2 四门轿车。	READY
+20152	20152	Hatchback	XM Y3	Y3	5	EU-CITROEN-XM-Y3-HATCHBACK-5D-01	HIGH	Y3 五门掀背车身。	READY
+20159	20159	Sedan	9000 CD		4	EU-SAAB-9000-CD-SEDAN-4D-01	HIGH	CD四门轿车外廓。	READY
+20165	20165	Convertible	911 996 facelift	996	2	EU-PORSCHE-911-996-TURBO-S-CONVERTIBLE-2D-01	HIGH	996 Turbo S双门敞篷外廓。	READY
+20166_21093	20166	Hatchback	Samara I	21093	5	EU-LADA-SAMARA-I-21093-HATCHBACK-5D-01	MEDIUM	Ktype生产区间覆盖21093与2114两种外廓。	READY
+20166_2114	20166	Hatchback	Samara I	2114	5	EU-LADA-SAMARA-I-2114-HATCHBACK-5D-01	MEDIUM	Ktype生产区间覆盖21093与2114两种外廓。	READY
+20170	20170	Convertible	911 997	997	2	EU-PORSCHE-911-997-CARRERA-4S-CONVERTIBLE-01	HIGH	Carrera 4S 宽体敞篷分支。	READY
+20195	20195	Convertible	205 I		2	EU-PEUGEOT-205-I-CABRIOLET-01	HIGH	205 Cabriolet 双门车身。	READY
+20204_3dr	20204	Hatchback	205 I facelift	20A/C	3	EU-PEUGEOT-205-I-FACELIFT-HATCHBACK-01	HIGH	1.0版本覆盖三门外廓。	READY
+20204_5dr	20204	Hatchback	205 I facelift	20A/C	5	EU-PEUGEOT-205-I-FACELIFT-HATCHBACK-01	HIGH	1.0版本覆盖五门外廓。	READY
+20205_3dr	20205	Hatchback	205 I facelift	20A/C	3	EU-PEUGEOT-205-I-FACELIFT-HATCHBACK-01	HIGH	XA三门商用衍生外廓。	READY
+20209	20209	Sedan	960	964	4	EU-VOLVO-960-964-SEDAN-4D-01	HIGH	964 四门轿车外廓。	READY
+20210	20210	Sedan	960	964	4	EU-VOLVO-960-964-SEDAN-4D-01	HIGH	964 四门轿车外廓。	READY
+20214	20214	Wagon	960	965	5	EU-VOLVO-960-965-WAGON-5D-01	HIGH	965 五门旅行车外廓。	READY
+20229	20229	Van	Ducato II	230L	3	EU-FIAT-DUCATO-II-230L-4X4-VAN-01	MEDIUM	230L四驱高顶长车身外廓。	READY
+20232	20232	Sedan	323 III	BF	4	EU-MAZDA-323-III-BF-SEDAN-4D-01	HIGH	BF四门轿车外廓。	READY
+20235	20235	Sedan	323 III	BF	4	EU-MAZDA-323-III-BF-SEDAN-4D-01	HIGH	BF四门轿车外廓。	READY
+20266	20266	Van	Fiorino 147	147	3	EU-FIAT-FIORINO-147-VAN-MPV-3D-01	HIGH	147三门厢式乘用衍生外廓。	READY
+20280	20280	Sedan	605	6B	4	EU-PEUGEOT-605-6B-SEDAN-4D-01	HIGH	6B 四门轿车外廓。	READY
+20281	20281	Sedan	605	6B	4	EU-PEUGEOT-605-6B-SEDAN-4D-01	HIGH	6B 四门轿车外廓。	READY
+20302	20302	Sedan	19 I	L53	4	EU-RENAULT-19-I-CHAMADE-L53-SEDAN-4D-01	HIGH	Chamade L53 四门轿车。	READY
+20317	20317	Sedan	740	744	4	EU-VOLVO-740-SEDAN-PREFL-01	HIGH	744 四门轿车外廓。	READY
+20319	20319	Sedan	740	744	4	EU-VOLVO-740-SEDAN-PREFL-01	HIGH	744 四门轿车外廓。	READY
+20326	20326	MPV	C25 I		4	EU-CITROEN-C25-I-COMBI-MPV-01	HIGH	2.5 D标准轴距Combi乘用外廓。	READY
+20332	20332	Sedan	Camry VI	XV40	4	EU-TOYOTA-CAMRY-VI-XV40-SEDAN-4D-01	HIGH	XV40 四门轿车。	READY
+20348	20348	Sedan	Civic VIII		4	EU-HONDA-CIVIC-VIII-SEDAN-4D-01	HIGH	1.8四门轿车外廓。	READY
+20358	20358	Sedan	Laurel V	C32	4	EU-NISSAN-LAUREL-V-C32-SEDAN-4D-01	HIGH	C32四门轿车外廓。	READY
+20361	20361	Sedan	Laurel V	C32	4	EU-NISSAN-LAUREL-V-C32-SEDAN-4D-01	HIGH	C32四门轿车外廓。	READY
+20366	20366	Sedan	Sunny N13	N13	4	EU-NISSAN-SUNNY-N13-SEDAN-4D-4WD-01	MEDIUM	N13四门四驱轿车外廓。	READY
+20403	20403	Wagon	Primera P12	WP12	5	EU-NISSAN-PRIMERA-P12-WAGON-01	HIGH	WP12 五门旅行车。	READY
+20415	20415	Coupe	CRX II		3	EU-HONDA-CRX-II-COUPE-3D-01	MEDIUM	CRX II三门车身外廓。	READY
+20427	20427	Sedan	Impreza I WRX	GC8	4	EU-SUBARU-IMPREZA-I-GC8-WRX-SEDAN-4D-01	HIGH	GC8四门WRX外廓。	READY
+20433	20433	SUV	Sportage II	KM	5	EU-KIA-SPORTAGE-II-KM-SUV-01	HIGH	KM 五门 SUV。	READY
+20436	20436	Sedan	Biturbo			EU-MASERATI-BITURBO-420-SI-SEDAN-01	MEDIUM	430 四门长轴 Biturbo 外廓。	READY
+20440	20440	Hatchback	Civic VI		3	EU-HONDA-CIVIC-VI-HATCHBACK-3D-01	HIGH	三门 Hatchback 分支。	READY
+20442	20442	Hatchback	Persona I Compact		3	EU-PROTON-PERSONA-I-COMPACT-HATCHBACK-3D-01	HIGH	318i三门Compact外廓。	READY
+20443	20443	Sedan	Persona I		4	EU-PROTON-PERSONA-I-SEDAN-4D-01	HIGH	416四门轿车外廓。	READY
+20447	20447	Coupe	Eclipse IV	DK	2	EU-MITSUBISHI-ECLIPSE-IV-DK-COUPE-2D-01	HIGH	DK 双门 Coupe。	READY
+20459	20459	Sedan	S40 I	VS	4	EU-VOLVO-S40-I-VS-SEDAN-4D-01	HIGH	VS 四门轿车。	READY
+20460	20460	Coupe	C-Class Sport Coupe CL203	CL203	3	EU-MERCEDES-BENZ-C-CLASS-CL203-SPORT-COUPE-3D-01	MEDIUM	输入版本名称与功率标签不一致；CL203三门外廓已确认。	READY
+20469	20469	MPV	Expert I			EU-PEUGEOT-EXPERT-I-BUS-01	HIGH	第一代乘用 Bus 外廓。	READY
+20470	20470	MPV	Expert I			EU-PEUGEOT-EXPERT-I-BUS-01	HIGH	第一代乘用 Bus 外廓。	READY
+20474	20474	Pickup	L200 III	K64T	2	EU-MITSUBISHI-L200-III-K64T-SINGLE-CAB-PICKUP-01	MEDIUM	K64T后驱单排驾驶室皮卡外廓。	READY
+20475	20475	Hatchback	Panda III	319	5	EU-FIAT-PANDA-III-319-HATCHBACK-5D-01	HIGH	319五门前驱车身。	READY
+20481	20481	Sedan	Marea 185 facelift	185	4	EU-FIAT-MAREA-185-FACELIFT-SEDAN-4D-01	MEDIUM	185 改款四门轿车外廓。	READY
+20485_l1h1	20485	Van	Transporter T5			EU-VW-TRANSPORTER-T5-VAN-SWB-LOWROOF-01	MEDIUM	Ktype覆盖L1H1物理分支。	READY
+20485_l1h2	20485	Van	Transporter T5			EU-VW-TRANSPORTER-T5-VAN-SWB-MEDROOF-01	MEDIUM	Ktype覆盖L1H2物理分支。	READY
+20485_l2h1	20485	Van	Transporter T5			EU-VW-TRANSPORTER-T5-VAN-LWB-LOWROOF-01	MEDIUM	Ktype覆盖L2H1物理分支。	READY
+20485_l2h2	20485	Van	Transporter T5			EU-VW-TRANSPORTER-T5-VAN-LWB-MEDROOF-01	MEDIUM	Ktype覆盖L2H2物理分支。	READY
+20485_l2h3	20485	Van	Transporter T5			EU-VW-TRANSPORTER-T5-VAN-LWB-HIGHROOF-01	MEDIUM	Ktype覆盖L2H3物理分支。	READY
+20486_chassis_swb	20486	Pickup	Transporter T4		2	EU-VW-TRANSPORTER-T4-CHASSIS-CAB-SWB-01	MEDIUM	短轴单排底盘驾驶室分支。	READY
+20486_chassis_lwb	20486	Pickup	Transporter T4		2	EU-VW-TRANSPORTER-T4-CHASSIS-CAB-LWB-01	MEDIUM	长轴单排底盘驾驶室分支。	READY
+20486_doka_lwb	20486	Pickup	Transporter T4		4	EU-VW-TRANSPORTER-T4-CHASSIS-DOUBLE-CAB-LWB-01	MEDIUM	长轴双排底盘驾驶室分支。	READY
+20486_pickup_swb	20486	Pickup	Transporter T4		2	EU-VW-TRANSPORTER-T4-PICKUP-SWB-01	MEDIUM	短轴单排成品货斗分支。	READY
+20486_pickup_lwb	20486	Pickup	Transporter T4		2	EU-VW-TRANSPORTER-T4-PICKUP-LWB-01	MEDIUM	长轴单排成品货斗分支。	READY
+20486_pickup_doka_lwb	20486	Pickup	Transporter T4		4	EU-VW-TRANSPORTER-T4-PICKUP-DOUBLE-CAB-LWB-01	MEDIUM	长轴双排成品货斗分支。	READY
+20486_lowbed_lwb	20486	Pickup	Transporter T4		2	EU-VW-TRANSPORTER-T4-LOWBED-PICKUP-LWB-01	MEDIUM	长轴低货台分支。	READY
+20498	20498	Sedan	Samara I	21099	4	EU-LADA-SAMARA-I-21099-SEDAN-4D-01	HIGH	21099 四门轿车外廓。	READY
+20506	20506	Convertible	911 997	997	2	EU-PORSCHE-911-997-CARRERA-S-CONVERTIBLE-01	HIGH	997 Carrera S 后驱敞篷外廓。	READY
+20511	20511	Hatchback	Civic VI Fastback		5	EU-HONDA-CIVIC-VI-FASTBACK-5D-01	HIGH	五门 Fastback 外廓。	READY
+20516	20516	Coupe	Mustang IV	SN95	2	EU-FORD-USA-MUSTANG-IV-FACELIFT-COUPE-2D-01	HIGH	4.6 GT双门Coupe外廓。	READY
+20517	20517	Coupe	Mustang IV	SN95	2	EU-FORD-USA-MUSTANG-IV-FACELIFT-COUPE-2D-01	HIGH	4.6 Cobra双门Coupe外廓。	READY
+20518	20518	Convertible	Mustang IV	SN95	2	EU-FORD-USA-MUSTANG-IV-FACELIFT-CONVERTIBLE-2D-01	HIGH	4.6 GT双门敞篷外廓。	READY
+20519	20519	Convertible	Mustang IV	SN95	2	EU-FORD-USA-MUSTANG-IV-FACELIFT-CONVERTIBLE-2D-01	HIGH	4.6 Cobra双门敞篷外廓。	READY
+20521	20521	SUV	Korando II	KJ	3	EU-SSANGYONG-KORANDO-II-KJ-SUV-3D-01	HIGH	KJ三门SUV外廓。	READY
+20542	20542	MPV	H-1 I Starex	A1	4	EU-HYUNDAI-H1-I-A1-MPV-SWB-02	HIGH	A1短轴乘用车身。	READY
+20543	20543	MPV	H-1 I Starex	A1	4	EU-HYUNDAI-H1-I-A1-MPV-LWB-01	HIGH	A1长轴乘用车身。	READY
+20544	20544	MPV	H-1 I Starex	A1	4	EU-HYUNDAI-H1-I-A1-MPV-SWB-01	HIGH	A1短轴乘用车身。	READY
+20545	20545	SUV	Antara A	L07	5	EU-OPEL-ANTARA-A-SUV-01	HIGH	L07 五门 SUV。	READY
+20546	20546	MPV	H-1 I Starex	A1	4	EU-HYUNDAI-H1-I-A1-MPV-SWB-01	MEDIUM	A1短轴四驱乘用车身。	READY
+20547	20547	Coupe	Beretta L	L	2	EU-CHEVROLET-BERETTA-L-COUPE-2D-01	HIGH	L-body 双门 Coupe。	READY
+20548	20548	Coupe	Beretta L	L	2	EU-CHEVROLET-BERETTA-L-COUPE-2D-01	HIGH	L-body 双门 Coupe。	READY
+20549	20549	Coupe	Beretta L	L	2	EU-CHEVROLET-BERETTA-L-COUPE-2D-01	HIGH	L-body 双门 Coupe。	READY
+20553	20553	Sedan	Corsica	L	4	EU-CHEVROLET-CORSICA-L-SEDAN-4D-01	MEDIUM	L-body四门轿车外廓。	READY
+20556	20556	Wagon	Golf IV Variant	1J5	5	EU-VW-GOLF-IV-VARIANT-1J5-WAGON-5D-01	HIGH	1J5 五门旅行车。	READY
+20565_prefl	20565	Sedan	9-5 I	YS3E	4	EU-SAAB-9-5-PREFL-SEDAN-4D-01	MEDIUM	Ktype生产区间覆盖改款前车身。	READY
+20565_facelift2001	20565	Sedan	9-5 I facelift 2001	YS3E	4	EU-SAAB-9-5-FACELIFT-2001-SEDAN-4D-01	MEDIUM	Ktype生产区间覆盖2001改款车身。	READY
+20565_facelift2005	20565	Sedan	9-5 I facelift 2005	YS3E	4	EU-SAAB-9-5-FACELIFT-2005-SEDAN-01	MEDIUM	Ktype生产区间覆盖2005改款车身。	READY
+20566	20566	Sedan	9-5 I	YS3E	4	EU-SAAB-9-5-PREFL-SEDAN-4D-01	HIGH	改款前四门轿车外廓。	READY
+20567	20567	Sedan	9-5 I facelift 2001	YS3E	4	EU-SAAB-9-5-FACELIFT-2001-SEDAN-4D-01	MEDIUM	2001改款四门轿车外廓。	READY
+20569_3dr	20569	Hatchback	Palio I	178	3	EU-FIAT-PALIO-I-178-HATCHBACK-02	MEDIUM	同一Ktype覆盖三门外廓。	READY
+20569_5dr	20569	Hatchback	Palio I	178	5	EU-FIAT-PALIO-I-178-HATCHBACK-02	MEDIUM	同一Ktype覆盖五门外廓。	READY
+20576	20576	Wagon	Palio Weekend	178	5	EU-FIAT-PALIO-WEEKEND-178-WAGON-5D-01	MEDIUM	80 hp五门Weekend外廓。	READY
+20581	20581	Wagon	Palio Weekend	178	5	EU-FIAT-PALIO-WEEKEND-178-JTD-WAGON-5D-01	HIGH	1.9 JTD五门Weekend外廓。	READY
+20586	20586	Hatchback	Nubira II	J150	5	EU-DAEWOO-NUBIRA-J150-HATCHBACK-5D-01	HIGH	J150五门掀背外廓。	READY
+20618	20618	MPV	Voyager II	AS	3	EU-CHRYSLER-VOYAGER-II-AS-MPV-SWB-01	MEDIUM	AS短轴乘用MPV外廓。	READY
+20620_prefl	20620	Sedan	Park Avenue I	G	4	EU-BUICK-PARK-AVENUE-I-ULTRA-SEDAN-PREFL-01	MEDIUM	生产区间跨外廓改款，拆分改款前。	READY
+20620_facelift	20620	Sedan	Park Avenue I	G	4	EU-BUICK-PARK-AVENUE-I-ULTRA-SEDAN-FACELIFT-01	MEDIUM	生产区间跨外廓改款，拆分改款后。	READY
+20623	20623	Hatchback	Atos Prime	MX	5	EU-HYUNDAI-ATOS-PRIME-HATCHBACK-5D-01	HIGH	MX 五门车身。	READY
+20628	20628	Van	C25 I	290	3	EU-CITROEN-C25-I-TYP290-VAN-1400-01	MEDIUM	1.9 D 1400 Typ 290标准厢式车身。	READY
+20631_mwb	20631	Pickup	C25 I		2	EU-CITROEN-C25-I-CHASSIS-CAB-SWB-MWB-01	MEDIUM	1400级中轴底盘驾驶室分支。	READY
+20631_lwb	20631	Pickup	C25 I		2	EU-CITROEN-C25-I-CHASSIS-CAB-LWB-1400-01	MEDIUM	1400级长轴底盘驾驶室分支。	READY
+20633_1400_mwb	20633	Pickup	C25 I		2	EU-CITROEN-C25-I-CHASSIS-CAB-SWB-MWB-01	MEDIUM	1400级中轴涡轮柴油底盘驾驶室分支。	READY
+20633_1400_lwb	20633	Pickup	C25 I		2	EU-CITROEN-C25-I-CHASSIS-CAB-LWB-1400-01	MEDIUM	1400级长轴涡轮柴油底盘驾驶室分支。	READY
+20633_1800_lwb	20633	Pickup	C25 I		2	EU-CITROEN-C25-I-CHASSIS-CAB-LWB-1800-01	MEDIUM	1800级长轴涡轮柴油底盘驾驶室分支。	READY
+20634	20634	Hatchback	Sirion II	M3	5	EU-DAIHATSU-SIRION-II-M3-FACELIFT-HATCHBACK-5D-01	MEDIUM	M3 五门外廓。	READY
+20635_3dr	20635	Hatchback	9-3 I	YS3D	3	EU-SAAB-9-3-I-YS3D-HATCHBACK-01	HIGH	2.3T版本覆盖三门掀背外廓。	READY
+20635_5dr	20635	Hatchback	9-3 I	YS3D	5	EU-SAAB-9-3-I-YS3D-HATCHBACK-01	HIGH	2.3T版本覆盖五门掀背外廓。	READY
+20636_prefl	20636	Convertible	9-3 II	YS3F	2	EU-SAAB-9-3-II-CONVERTIBLE-PREFL-01	MEDIUM	生产区间跨改款，拆分改款前敞篷车身。	READY
+20636_facelift	20636	Convertible	9-3 II	YS3F	2	EU-SAAB-9-3-II-CONVERTIBLE-FACELIFT-01	MEDIUM	生产区间跨改款，拆分改款后敞篷车身。	READY
+20637	20637	Convertible	9-3 I	YS3D	2	EU-SAAB-9-3-I-YS3D-CONVERTIBLE-2D-01	HIGH	YS3D 双门敞篷外廓。	READY
+20640	20640	Convertible	CLK II	A209	2	EU-MERCEDES-BENZ-CLK-A209-FACELIFT-CONVERTIBLE-2D-01	HIGH	A209 改款敞篷车身。	READY
+20643	20643	SUV	Pathfinder III	R51	5	EU-NISSAN-PATHFINDER-III-R51-SUV-01	HIGH	R51 五门 SUV。	READY
+20645_prefl	20645	SUV	RAV4 III	XA30	5	EU-TOYOTA-RAV4-III-XA30-SUV-5D-PREFL-01	HIGH	Ktype生产区间覆盖改款前外廓。	READY
+20645_facelift	20645	SUV	RAV4 III facelift	XA30	5	EU-TOYOTA-RAV4-III-XA30-SUV-5D-FACELIFT-01	HIGH	Ktype生产区间覆盖改款后外廓。	READY
+20646	20646	Wagon	9-5 I facelift 2005	YS3E	5	EU-SAAB-9-5-FACELIFT-2005-WAGON-01	HIGH	2005 改款五门旅行车。	READY
+20647	20647	Wagon	9-5 I	YS3E	5	EU-SAAB-9-5-PREFL-WAGON-5D-01	HIGH	改款前五门旅行车外廓。	READY
+20649	20649	Coupe	Esprit S4		2	EU-LOTUS-ESPRIT-S4-GT3-COUPE-2D-01	HIGH	GT3 双门 Coupe 外廓。	READY
+20654	20654	Sedan	323 S VI facelift	BJ	4	EU-MAZDA-323-S-VI-BJ-FACELIFT-SEDAN-4D-01	HIGH	BJ 改款四门轿车外廓。	READY
+20659	20659	Sedan	Vento	1HX0	4	EU-VW-VENTO-1HX0-SEDAN-4D-01	HIGH	1HX0 四门轿车外廓。	READY
+20661_swb	20661	MPV	Transporter T5			EU-VW-TRANSPORTER-T5-MPV-SWB-LOWROOF-01	HIGH	标准轴距低顶乘用Bus外廓。	READY
+20661_lwb	20661	MPV	Transporter T5			EU-VW-TRANSPORTER-T5-MPV-LWB-LOWROOF-01	HIGH	长轴低顶乘用Bus外廓。	READY
+20663	20663	Sedan	Accord VI		4	EU-HONDA-ACCORD-VI-SEDAN-4D-01	HIGH	欧洲版 Accord VI 四门轿车外廓。	READY
+20673	20673	SUV	Patrol V	Y61	5	EU-NISSAN-PATROL-V-Y61-SUV-5D-PREFL-01	HIGH	Y61改款前五门4.8外廓。	READY
+20683	20683	Coupe	3 Series E92 facelift	E92	2	EU-BMW-3-E92-COUPE-2D-FACELIFT-01	HIGH	E92 改款双门 Coupe。	READY
+20693_swb	20693	Pickup	Boxer I	230	2	EU-PEUGEOT-BOXER-I-230-CHASSIS-CAB-SWB-01	HIGH	230型短轴底盘驾驶室分支。	READY
+20693_mwb	20693	Pickup	Boxer I	230	2	EU-PEUGEOT-BOXER-I-230-CHASSIS-CAB-MWB-01	HIGH	230型中轴底盘驾驶室分支。	READY
+20693_lwb	20693	Pickup	Boxer I	230	2	EU-PEUGEOT-BOXER-I-230-CHASSIS-CAB-LWB-01	HIGH	230型长轴底盘驾驶室分支。	READY
+```
+
+[下载 Ktype 映射表](sandbox:/mnt/data/all_901-1000_ktype_dimension_mapping_final.tsv)
+
+## 最终完整 DIMENSION_GROUP TSV
+
+```tsv
+DIMENSION_GROUP_ID	LengthMM	WidthMM	HeightMM	DimensionSource	SourceURL
+EU-AUDI-A4-B8-AVANT-FACELIFT-WAGON-8K5-01	4699	1826	1436	Auto-Data Audi A4 Avant B8 facelift 3.0 TDI quattro	https://www.auto-data.net/en/audi-a4-avant-b8-8k-facelift-2011-3.0-tdi-v6-clean-diesel-245hp-quattro-s-tronic-18913
+EU-VW-JETTA-I-16-SEDAN-01	4190	1610	1410	Volkswagen Newsroom Jetta I vehicle data	https://www.volkswagen-newsroom.com/en/vehicle-data-jetta-1-profile-19641
+EU-MERCEDES-BENZ-124-W124-SEDAN-4D-01	4740	1740	1428	Auto-Data Mercedes-Benz W124 facelift 200	https://www.auto-data.net/en/mercedes-benz-w124-facelift-1989-200-105hp-43325
+EU-MITSUBISHI-COLT-IV-CA4A-HATCHBACK-3D-01	3955	1690	1370	Auto-Data Mitsubishi Colt IV CAO generation	https://www.auto-data.net/en/mitsubishi-colt-iv-cao-generation-3469
+EU-MERCEDES-BENZ-190-W201-SEDAN-4D-01	4420	1678	1390	Auto-Data Mercedes-Benz 190 W201 E 2.3 CAT 132 Hp	https://www.auto-data.net/en/mercedes-benz-190-w201-e-2.3-cat-132hp-12808
+EU-MERCEDES-BENZ-190-W201-SEDAN-4D-02	4450	1690	1375	Auto-Data Mercedes-Benz 190 W201 E 2.3 136 Hp;Auto-Data Mercedes-Benz 190 W201 E 2.6 CAT 160 Hp	https://www.auto-data.net/en/mercedes-benz-190-w201-e-2.3-136hp-12801;https://www.auto-data.net/en/mercedes-benz-190-w201-e-2.6-cat-160hp-12806
+EU-SEAT-CORDOBA-I-6K2-SEDAN-4D-01	4142	1640	1408	Automobile-Catalog 1997 Seat Cordoba 1.4	https://www.automobile-catalog.com/car/1997/3065810/seat_cordoba_1_4.html
+EU-CITROEN-XM-Y3-HATCHBACK-5D-01	4709	1793	1385	Auto-Data Citroën XM Y3 generation	https://www.auto-data.net/en/citroen-xm-y3-generation-3319
+EU-SAAB-9000-CD-SEDAN-4D-01	4790	1780	1420	UltimateSpecs Saab 9000 CD 2.3 Turbo	https://www.ultimatespecs.com/car-specs/Saab/6104/Saab-9000-CD-23-Turbo.html
+EU-PORSCHE-911-996-TURBO-S-CONVERTIBLE-2D-01	4435	1830	1295	Automobile-Catalog 2005 Porsche 911 Turbo S Cabrio	https://www.automobile-catalog.com/car/2005/2867225/porsche_911_turbo_s_cabrio.html
+EU-LADA-SAMARA-I-21093-HATCHBACK-5D-01	4006	1650	1402	Auto-Data Lada 21093 1.5 72 Hp	https://www.auto-data.net/en/lada-21093-1.5-72hp-13271
+EU-LADA-SAMARA-I-2114-HATCHBACK-5D-01	4122	1620	1415	Auto-Data Lada 2114 1.6 i 8V 81 Hp	https://www.auto-data.net/en/lada-2114-1.6-i-8v-81hp-13273
+EU-PORSCHE-911-997-CARRERA-4S-CONVERTIBLE-01	4427	1852	1300	Auto-Data Porsche 911 Cabriolet 997 Carrera 4S	https://www.auto-data.net/en/porsche-911-cabriolet-997-carrera-4s-3.8-355hp-36747
+EU-PEUGEOT-205-I-CABRIOLET-01	3705	1590	1375	Auto-Data Peugeot 205 I Cabrio generation	https://www.auto-data.net/en/peugeot-205-i-cabrio-741b-20d-generation-1276
+EU-PEUGEOT-205-I-FACELIFT-HATCHBACK-01	3705	1560	1375	Auto-Data Peugeot 205 I facelift 1.0	https://www.auto-data.net/en/peugeot-205-i-20a-c-facelift-1987-1.0-i-50hp-5639
+EU-VOLVO-960-964-SEDAN-4D-01	4871	1750	1411	Auto-Data Volvo 960 (964) 2.0 i 16V	https://www.auto-data.net/en/volvo-960-964-2.0-i-16v-190hp-9355
+EU-VOLVO-960-965-WAGON-5D-01	4850	1750	1434	Auto-Data Volvo 960 Kombi (965) 3.0 i 24V	https://www.auto-data.net/en/volvo-960-kombi-965-3.0-i-24v-204hp-9362
+EU-FIAT-DUCATO-II-230L-4X4-VAN-01	5505	1998	2490	AutoDoc Fiat Ducato 230L 2.8 TD 4x4 vehicle boundary;Autogidas Fiat Ducato II Maxi specifications;TruckScout24 Fiat Ducato 230L 4x4 measured dimensions	https://www.autodoc.co.uk/car-parts/filter-set-13001/fiat/ducato/ducato-box-230l/20229-2-8-td-4x4;https://autogidas.lt/en/auto-katalogas/fiat/ducato/ii-maxi-232.620.1-1998-2002-k37953;https://www.truckscout24.com/tsp/ts-202-36-595
+EU-MAZDA-323-III-BF-SEDAN-4D-01	4195	1645	1390	Automobile-Catalog 1986 Mazda 323 1.6 LX Sedan catalyst	https://www.automobile-catalog.com/car/1986/1630280/mazda_323_1_6_lx_sedan_cat.html
+EU-FIAT-FIORINO-147-VAN-MPV-3D-01	4159	1622	1904	Auto-Data Fiat Fiorino 147 1.7 Diesel 63 Hp	https://www.auto-data.net/en/fiat-fiorino-147-1.7-diesel-63hp-6964
+EU-PEUGEOT-605-6B-SEDAN-4D-01	4765	1799	1415	Auto-Data Peugeot 605 (6B) 3.0	https://www.auto-data.net/en/peugeot-605-6b-3.0-167hp-5332
+EU-RENAULT-19-I-CHAMADE-L53-SEDAN-4D-01	4262	1694	1412	Auto-Data Renault 19 I Chamade L53 generation	https://www.auto-data.net/en/renault-19-i-chamade-l53-generation-2191
+EU-VOLVO-740-SEDAN-PREFL-01	4785	1760	1430	Auto-Data Volvo 740 model	https://www.auto-data.net/en/volvo-740-model-930
+EU-CITROEN-C25-I-COMBI-MPV-01	4765	1965	2100	Drom Citroën C25 2.5D Combi dimensions;AutoBoom Citroën C25 dimensions	https://www.drom.ru/catalog/citroen/c25/specs/dimensions/;https://autoboom.co.il/en/catalog/cars/citroen/c25
+EU-TOYOTA-CAMRY-VI-XV40-SEDAN-4D-01	4805	1820	1460	Auto-Data Toyota Camry VI (XV40) 2.4i 158 hp	https://www.auto-data.net/en/toyota-camry-vi-xv40-2.4i-16v-158hp-31250
+EU-HONDA-CIVIC-VIII-SEDAN-4D-01	4545	1750	1435	Auto-Data Honda Civic VIII Sedan 1.8i 16V 140 Hp	https://www.auto-data.net/en/honda-civic-viii-sedan-1.8i-16v-140hp-12215
+EU-NISSAN-LAUREL-V-C32-SEDAN-4D-01	4650	1690	1415	Nissan Heritage Collection Laurel C32 Sedan Grand Extra	https://www.nissan-global.com/EN/HERITAGE_COLLECTION/laurel_sedan_grand_extra.html
+EU-NISSAN-SUNNY-N13-SEDAN-4D-4WD-01	4220	1640	1390	UltimateSpecs Nissan Sunny N13 1.6 4WD	https://www.ultimatespecs.com/car-specs/Nissan/6796/Nissan-Sunny-N13-16-4WD.html
+EU-NISSAN-PRIMERA-P12-WAGON-01	4675	1760	1480	Auto-Data Nissan Primera Wagon P12 1.6	https://www.auto-data.net/en/nissan-primera-wagon-p12-1.6-i-16v-109hp-606
+EU-HONDA-CRX-II-COUPE-3D-01	3755	1675	1270	Auto-Data Honda CRX II ED EE 1.6 i 16V 124 Hp	https://www.auto-data.net/en/honda-crx-ii-ed-ee-1.6-i-16v-124hp-12375
+EU-SUBARU-IMPREZA-I-GC8-WRX-SEDAN-4D-01	4340	1690	1405	Automobile-Catalog 1996 Subaru Impreza WRX 280 PS	https://www.automobile-catalog.com/car/1996/3239645/subaru_impreza_wrx.html
+EU-KIA-SPORTAGE-II-KM-SUV-01	4350	1840	1730	Auto-Data Kia Sportage II 2.0 CRDi	https://www.auto-data.net/en/kia-sportage-ii-2.0-crdi-113hp-4wd-2719
+EU-MASERATI-BITURBO-420-SI-SEDAN-01	4400	1730	1360	Auto-Data Maserati Biturbo generation	https://www.auto-data.net/en/maserati-biturbo-generation-2233
+EU-HONDA-CIVIC-VI-HATCHBACK-3D-01	4190	1695	1375	Auto-Data Honda Civic VI Hatchback generation	https://www.auto-data.net/en/honda-civic-vi-hatchback-generation-2630
+EU-PROTON-PERSONA-I-COMPACT-HATCHBACK-3D-01	3995	1710	1365	Auto-Data Proton Persona I Compact 1.8 318i 135 Hp	https://www.auto-data.net/en/proton-persona-i-compact-1.8-i-16v-318-i-135hp-8236
+EU-PROTON-PERSONA-I-SEDAN-4D-01	4360	1680	1385	Auto-Data Proton Persona I 1.6 i 416 GLXi 95 Hp	https://www.auto-data.net/en/proton-persona-i-1.6-i-416-glxi-95hp-8257
+EU-MITSUBISHI-ECLIPSE-IV-DK-COUPE-2D-01	4565	1835	1358	Automobile-Catalog 2006 Mitsubishi Eclipse GS	https://www.automobile-catalog.com/car/2006/2007470/mitsubishi_eclipse_gs.html
+EU-VOLVO-S40-I-VS-SEDAN-4D-01	4516	1720	1422	Auto-Data Volvo S40 (VS) generation	https://www.auto-data.net/en/volvo-s40-vs-generation-1972
+EU-MERCEDES-BENZ-C-CLASS-CL203-SPORT-COUPE-3D-01	4343	1728	1406	Auto-Data Mercedes-Benz C-class Sport Coupe CL203 C 200 Kompressor 163 Hp;Auto-Data Mercedes-Benz C-class Sport Coupe CL203 facelift 2004 C 200 Kompressor 163 Hp	https://www.auto-data.net/en/mercedes-benz-c-class-sport-coupe-cl203-c-200-kompressor-163hp-12591;https://www.auto-data.net/en/mercedes-benz-c-class-sport-coupe-cl203-facelift-2004-c-200-kompressor-163hp-44250
+EU-PEUGEOT-EXPERT-I-BUS-01	4440	1810	1940	Auto.ru Peugeot Expert I specifications	https://auto.ru/catalog/cars/peugeot/expert/specifications/
+EU-MITSUBISHI-L200-III-K64T-SINGLE-CAB-PICKUP-01	5010	1695	1755	VehicleScore Mitsubishi L200 dimensions;PartSouq Mitsubishi L200 K64T parts catalog	https://vehiclescore.co.uk/car-dimensions-check/mitsubishi/l200;https://partsouq.com/en/catalog/genuine/vehicle?c=Mitsubishi&q=&vid=0
+EU-FIAT-PANDA-III-319-HATCHBACK-5D-01	3653	1643	1551	Auto-Data Fiat Panda III 319 0.9 TwinAir Turbo 85 Hp	https://www.auto-data.net/en/fiat-panda-iii-319-0.9-twin-air-turbo-85hp-start-stop-18364
+EU-FIAT-MAREA-185-FACELIFT-SEDAN-4D-01	4393	1740	1420	Auto-Data Fiat Marea (185) 1.8 i 16V	https://www.auto-data.net/en/fiat-marea-185-1.8-i-16v-132hp-7196
+EU-VW-TRANSPORTER-T5-VAN-SWB-LOWROOF-01	4890	1904	1969	Volkswagen Transporter T5.II specifications	https://vandimensions.com/media/pages/database/volkswagen/transporter-t5/d326887c85-1626523397/volkswagen_transporter_t5ii_specifications_201403.pdf
+EU-VW-TRANSPORTER-T5-VAN-SWB-MEDROOF-01	4890	1904	2170	Volkswagen Transporter T5.II specifications	https://vandimensions.com/media/pages/database/volkswagen/transporter-t5/d326887c85-1626523397/volkswagen_transporter_t5ii_specifications_201403.pdf
+EU-VW-TRANSPORTER-T5-VAN-LWB-LOWROOF-01	5290	1904	1969	Volkswagen Transporter T5.II specifications	https://vandimensions.com/media/pages/database/volkswagen/transporter-t5/d326887c85-1626523397/volkswagen_transporter_t5ii_specifications_201403.pdf
+EU-VW-TRANSPORTER-T5-VAN-LWB-MEDROOF-01	5290	1904	2170	Volkswagen Transporter T5.II specifications	https://vandimensions.com/media/pages/database/volkswagen/transporter-t5/d326887c85-1626523397/volkswagen_transporter_t5ii_specifications_201403.pdf
+EU-VW-TRANSPORTER-T5-VAN-LWB-HIGHROOF-01	5290	1904	2470	Volkswagen Transporter T5.II specifications	https://vandimensions.com/media/pages/database/volkswagen/transporter-t5/d326887c85-1626523397/volkswagen_transporter_t5ii_specifications_201403.pdf
+EU-VW-TRANSPORTER-T4-CHASSIS-CAB-SWB-01	4736	1840	1920	Volkswagen Transporter T4 workshop manual	https://www.manualslib.com/manual/807945/Volkswagen-Transporter-T4-2007.html
+EU-VW-TRANSPORTER-T4-CHASSIS-CAB-LWB-01	5136	1840	1920	Volkswagen Transporter T4 workshop manual	https://www.manualslib.com/manual/807945/Volkswagen-Transporter-T4-2007.html
+EU-VW-TRANSPORTER-T4-CHASSIS-DOUBLE-CAB-LWB-01	5136	1840	1910	Volkswagen Transporter T4 workshop manual	https://www.manualslib.com/manual/807945/Volkswagen-Transporter-T4-2007.html
+EU-VW-TRANSPORTER-T4-PICKUP-SWB-01	4871	1970	1910	Volkswagen Transporter T4 workshop manual	https://www.manualslib.com/manual/807945/Volkswagen-Transporter-T4-2007.html
+EU-VW-TRANSPORTER-T4-PICKUP-LWB-01	5271	1970	1910	Volkswagen Transporter T4 workshop manual	https://www.manualslib.com/manual/807945/Volkswagen-Transporter-T4-2007.html
+EU-VW-TRANSPORTER-T4-PICKUP-DOUBLE-CAB-LWB-01	5271	1970	1910	Volkswagen Transporter T4 workshop manual	https://www.manualslib.com/manual/807945/Volkswagen-Transporter-T4-2007.html
+EU-VW-TRANSPORTER-T4-LOWBED-PICKUP-LWB-01	5271	1970	1910	Volkswagen Transporter T4 workshop manual	https://www.manualslib.com/manual/807945/Volkswagen-Transporter-T4-2007.html
+EU-LADA-SAMARA-I-21099-SEDAN-4D-01	4205	1650	1402	Auto-Data Lada 21099-20 generation	https://www.auto-data.net/en/lada-21099-20-generation-2832
+EU-PORSCHE-911-997-CARRERA-S-CONVERTIBLE-01	4427	1808	1300	Auto-Data Porsche 911 Cabriolet (997) Carrera S 3.8	https://www.auto-data.net/en/porsche-911-cabriolet-997-carrera-s-3.8-355hp-6588
+EU-HONDA-CIVIC-VI-FASTBACK-5D-01	4325	1695	1390	Auto-Data Honda Civic VI Fastback	https://www.auto-data.net/en/honda-civic-model-1307
+EU-FORD-USA-MUSTANG-IV-FACELIFT-COUPE-2D-01	4661	1857	1359	Auto-Data Ford Mustang IV generation	https://www.auto-data.net/en/ford-mustang-iv-generation-1716
+EU-FORD-USA-MUSTANG-IV-FACELIFT-CONVERTIBLE-2D-01	4653	1857	1350	Auto-Data Ford Mustang IV Convertible generation	https://www.auto-data.net/en/ford-mustang-iv-convertible-generation-1715
+EU-SSANGYONG-KORANDO-II-KJ-SUV-3D-01	4260	1841	1840	Auto-Data SsangYong Korando II KJ 2.3 TD 101 Hp	https://www.auto-data.net/en/ssangyong-korando-ii-kj-2.3-td-101hp-15995
+EU-HYUNDAI-H1-I-A1-MPV-SWB-02	4695	1820	1885	Auto-Data Hyundai H-1 I Starex 2.5 TD 99 Hp	https://www.auto-data.net/en/hyundai-h-1-i-starex-2.5-td-99hp-13857
+EU-HYUNDAI-H1-I-A1-MPV-LWB-01	5035	1820	1965	Auto-Data Hyundai H-1 I Starex 2.5 TD LWB 101 Hp	https://www.auto-data.net/en/hyundai-h-1-i-starex-2.5-td-lwb-101hp-13859
+EU-HYUNDAI-H1-I-A1-MPV-SWB-01	4695	1820	1880	Auto-Data Hyundai H-1 I Starex 2.5 CRDI 140 Hp	https://www.auto-data.net/en/hyundai-h-1-i-starex-2.5-crdi-140hp-13854
+EU-OPEL-ANTARA-A-SUV-01	4576	1850	1704	Auto-Data Opel Antara 2.4 ECOTEC 4x4	https://www.auto-data.net/en/opel-antara-2.4-ecotec-140hp-4x4-1826
+EU-CHEVROLET-BERETTA-L-COUPE-2D-01	4757	1735	1346	Auto-Data Chevrolet Beretta 3.1 i V6	https://www.auto-data.net/en/chevrolet-beretta-3.1-i-v6-162hp-14462
+EU-CHEVROLET-CORSICA-L-SEDAN-4D-01	4660	1727	1371	Auto-Data Chevrolet Corsica 3.1 i V6 162 Hp	https://www.auto-data.net/en/chevrolet-corsica-3.1-i-v6-162hp-14493
+EU-VW-GOLF-IV-VARIANT-1J5-WAGON-5D-01	4397	1735	1485	Volkswagen Newsroom Golf IV Variant vehicle data	https://www.volkswagen-newsroom.com/en/vehicle-data-golf-4-variant-profile-19523
+EU-SAAB-9-5-PREFL-SEDAN-4D-01	4810	1790	1450	Auto-Data Saab 9-5 2.0 T 16V 185 Hp	https://www.auto-data.net/en/saab-9-5-2.0-t-16v-185hp-11844
+EU-SAAB-9-5-FACELIFT-2001-SEDAN-4D-01	4827	1792	1475	Auto-Data Saab 9-5 facelift 2001 generation	https://www.auto-data.net/en/saab-9-5-facelift-2001-generation-7159
+EU-SAAB-9-5-FACELIFT-2005-SEDAN-01	4836	1792	1448	Auto-Data Saab 9-5 facelift 2005 generation	https://www.auto-data.net/en/saab-9-5-facelift-2005-generation-8066
+EU-FIAT-PALIO-I-178-HATCHBACK-02	3735	1626	1446	Auto-Data Fiat Palio 178 1.2 i 68 Hp	https://www.auto-data.net/en/fiat-palio-178-1.2-i-68hp-6854
+EU-FIAT-PALIO-WEEKEND-178-WAGON-5D-01	4130	1626	1475	Auto-Data Fiat Palio Weekend 178 1.2 16V 80 Hp	https://www.auto-data.net/en/fiat-palio-weekend-178-1.2-16v-80hp-6839
+EU-FIAT-PALIO-WEEKEND-178-JTD-WAGON-5D-01	4130	1626	1515	Auto-Data Fiat Palio Weekend 178 1.9 JTD 80 Hp	https://www.auto-data.net/en/fiat-palio-weekend-178-1.9-jtd-80hp-6849
+EU-DAEWOO-NUBIRA-J150-HATCHBACK-5D-01	4280	1700	1430	Auto-Data Daewoo Nubira Hatchback II 2.0 CDX 126 Hp	https://www.auto-data.net/en/daewoo-nubira-hatchback-ii-2.0-i-16v-cdx-126hp-16329
+EU-CHRYSLER-VOYAGER-II-AS-MPV-SWB-01	4525	1830	1707	Auto-Data Chrysler Voyager II	https://www.auto-data.net/en/chrysler-voyager-ii-generation-8878
+EU-BUICK-PARK-AVENUE-I-ULTRA-SEDAN-PREFL-01	5215	1869	1400	Automobile-Catalog 1991 Buick Park Avenue Ultra	https://www.automobile-catalog.com/car/1991/321530/buick_park_avenue_ultra.html
+EU-BUICK-PARK-AVENUE-I-ULTRA-SEDAN-FACELIFT-01	5230	1882	1400	Automobile-Catalog 1995 Buick Park Avenue Ultra	https://www.automobile-catalog.com/car/1995/322025/buick_park_avenue_ultra.html
+EU-HYUNDAI-ATOS-PRIME-HATCHBACK-5D-01	3495	1485	1580	Auto-Data Hyundai Atos Prime 1.1	https://www.auto-data.net/en/hyundai-atos-prime-1.1-i-12v-59hp-automatic-24813
+EU-CITROEN-C25-I-TYP290-VAN-1400-01	4765	1965	2100	Car.info Citroën C25 Van 1400 Typ 290;AutoBoom Citroën C25 dimensions	https://www.car.info/en-se/citroen/c25/c25-van-1400-typ-290-120201016;https://autoboom.co.il/en/catalog/cars/citroen/c25
+EU-CITROEN-C25-I-CHASSIS-CAB-SWB-MWB-01	4989	1965	2108	Zoomcar Citroën C25 chassis cab 1400 medium	https://zoomcar.fr/fiche-technique-utilitaire/citroen/c25-chassis-cabine-c25-chassis-cab-1400-tbo-d-moyen-NAT57338.html
+EU-CITROEN-C25-I-CHASSIS-CAB-LWB-1400-01	5442	1965	2108	Drom Citroën C25 2.5D Long	https://www.drom.ru/catalog/lcv/citroen/c25/290063/
+EU-CITROEN-C25-I-CHASSIS-CAB-LWB-1800-01	5442	1965	2080	Zoomcar Citroën C25 chassis cab 1800 turbo diesel long	https://zoomcar.fr/fiche-technique-utilitaire/citroen/c25-chassis-cabine-c25-chassis-cab-1800-tbo-d-long-NAT56156.html
+EU-DAIHATSU-SIRION-II-M3-FACELIFT-HATCHBACK-5D-01	3605	1665	1550	ADAC Daihatsu Sirion II facelift	https://www.adac.de/rund-ums-fahrzeug/autokatalog/marken-modelle/daihatsu/sirion/2generation-facelift/211704/
+EU-SAAB-9-3-I-YS3D-HATCHBACK-01	4629	1711	1428	Auto-Data Saab 9-3 I 2.3 T 230 Hp	https://www.auto-data.net/en/saab-9-3-i-2.3-t-230hp-11965
+EU-SAAB-9-3-II-CONVERTIBLE-PREFL-01	4635	1762	1434	Auto-Data Saab 9-3 Convertible II	https://www.auto-data.net/en/saab-9-3-convertible-ii-2.0-t-150hp-11947
+EU-SAAB-9-3-II-CONVERTIBLE-FACELIFT-01	4647	1780	1437	Auto-Data Saab 9-3 Convertible II facelift	https://www.auto-data.net/en/saab-9-3-convertible-ii-facelift-2007-2.8t-v6-280hp-54601
+EU-SAAB-9-3-I-YS3D-CONVERTIBLE-2D-01	4629	1711	1423	Auto-Data Saab 9-3 Convertible I 2.0 T	https://www.auto-data.net/en/saab-9-3-convertible-i-2.0-t-205hp-11967
+EU-MERCEDES-BENZ-CLK-A209-FACELIFT-CONVERTIBLE-2D-01	4652	1740	1413	Auto-Data Mercedes-Benz CLK A209 facelift	https://www.auto-data.net/en/mercedes-benz-clk-a209-facelift-2005-clk-280-231hp-23477
+EU-NISSAN-PATHFINDER-III-R51-SUV-01	4740	1850	1865	Automobile-Catalog 2005 Nissan Pathfinder 2.5 dCi	https://www.automobile-catalog.com/car/2005/2313500/nissan_pathfinder_2_5_dci.html
+EU-TOYOTA-RAV4-III-XA30-SUV-5D-PREFL-01	4395	1815	1685	CarSpecsGuru Toyota RAV4 III XA30 2.4 170 HP	https://www.carspecsguru.com/toyota/rav-4/4985/7471/modification-54180
+EU-TOYOTA-RAV4-III-XA30-SUV-5D-FACELIFT-01	4445	1815	1685	CarSpecsGuru Toyota RAV4 III XA30 Facelift 2.4 170 HP	https://www.carspecsguru.com/toyota/rav-4/4984/7470/modification-54163
+EU-SAAB-9-5-FACELIFT-2005-WAGON-01	4841	1792	1459	Auto-Data Saab 9-5 Sport Combi facelift 2005 generation	https://www.auto-data.net/en/saab-9-5-sport-combi-facelift-2005-generation-8067
+EU-SAAB-9-5-PREFL-WAGON-5D-01	4808	1792	1497	Auto-Data Saab 9-5 Sport Combi generation	https://www.auto-data.net/en/saab-9-5-sport-combi-generation-2532
+EU-LOTUS-ESPRIT-S4-GT3-COUPE-2D-01	4369	1883	1150	Auto-Data Lotus Esprit 2.0 i 16V Turbo GT3	https://www.auto-data.net/en/lotus-esprit-2.0-i-16v-turbo-gt3-243hp-8298
+EU-MAZDA-323-S-VI-BJ-FACELIFT-SEDAN-4D-01	4390	1705	1410	Auto-Data Mazda 323 S VI (BJ) 2.0 DiTD	https://www.auto-data.net/en/mazda-323-s-vi-bj-2.0-ditd-101hp-11150
+EU-VW-VENTO-1HX0-SEDAN-4D-01	4380	1695	1415	Auto-Data Volkswagen Vento (1HX0) 2.0	https://www.auto-data.net/en/volkswagen-vento-1hx0-2.0-115hp-8851
+EU-VW-TRANSPORTER-T5-MPV-SWB-LOWROOF-01	4890	1904	1959	Volkswagen Transporter T5.II specifications	https://vandimensions.com/media/pages/database/volkswagen/transporter-t5/d326887c85-1626523397/volkswagen_transporter_t5ii_specifications_201403.pdf
+EU-VW-TRANSPORTER-T5-MPV-LWB-LOWROOF-01	5290	1904	1959	Volkswagen Transporter T5.II specifications	https://vandimensions.com/media/pages/database/volkswagen/transporter-t5/d326887c85-1626523397/volkswagen_transporter_t5ii_specifications_201403.pdf
+EU-HONDA-ACCORD-VI-SEDAN-4D-01	4595	1750	1430	Auto-Data Honda Accord VI	https://www.auto-data.net/en/honda-accord-model-1282
+EU-NISSAN-PATROL-V-Y61-SUV-5D-PREFL-01	5010	1930	1855	Auto-Data Nissan Patrol V 5-door Y61	https://www.auto-data.net/en/nissan-patrol-v-5-door-y61-generation-83
+EU-BMW-3-E92-COUPE-2D-FACELIFT-01	4612	1782	1375	Auto-Data BMW 3 Series Coupe E92 LCI 330i	https://www.auto-data.net/en/bmw-3-series-coupe-e92-lci-facelift-2010-330i-272hp-17228
+EU-PEUGEOT-BOXER-I-230-CHASSIS-CAB-SWB-01	4770	2000	2100	Swiss ASTRA type approval 3PA246	https://typenscheinschweiz.ch/typenschein/auto/3PA246
+EU-PEUGEOT-BOXER-I-230-CHASSIS-CAB-MWB-01	5120	2000	2100	Swiss ASTRA type approval 3PA246	https://typenscheinschweiz.ch/typenschein/auto/3PA246
+EU-PEUGEOT-BOXER-I-230-CHASSIS-CAB-LWB-01	5600	2000	2100	Swiss ASTRA type approval 3PA246	https://typenscheinschweiz.ch/typenschein/auto/3PA246
+```
+
+[下载 DIMENSION_GROUP 表](sandbox:/mnt/data/all_901-1000_dimension_groups_final.tsv)
+
+推进信号：COMPLETE
+
+[1]: https://www.autodoc.co.uk/car-parts/filter-set-13001/fiat/ducato/ducato-box-230l/20229-2-8-td-4x4?utm_source=chatgpt.com "Fiat Ducato 230L 2.8 TD 4x4 Service kit (122 hp 8140.43)"
+[2]: https://www.car.info/en-se/citroen/c25/c25-van-1400-typ-290-120201016?utm_source=chatgpt.com "Citroën C25 Van 1400 Typ 290 1991 - 1994"
+
+
+--- 累计最终 TSV 已更新 ---
+- 累计 Ktype 映射：ktype_mapping_final.tsv（5285 行）
+- 累计尺寸组：dimension_groups_final.tsv（2302 行）
+

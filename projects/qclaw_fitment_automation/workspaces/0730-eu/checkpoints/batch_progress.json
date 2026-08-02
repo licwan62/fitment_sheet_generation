@@ -1,0 +1,1039 @@
+﻿{
+    "version": 1,
+    "total_batches": 103,
+    "rows_per_batch": 100,
+    "updated_at": "2026-08-02 20:53:12",
+    "next_pending_index": 1,
+    "batches": [
+  {
+    "index": 0,
+    "batch_number": 1,
+    "task_id": "all__batch__0001__a0cf2888",
+    "display_name": "all 第 1-100 行",
+    "status": "success",
+    "remarks": "检测到明确批次完成信号、两张完整表及下载链接；已更新本批与累计最终 TSV",
+    "checkpoint_file": "all__batch__0001__a0cf2888.json",
+    "updated_at": "2026-08-01 04:26:26"
+  },
+  {
+    "index": 1,
+    "batch_number": 2,
+    "task_id": "all__batch__0002__51cab29e",
+    "display_name": "all 第 101-200 行",
+    "status": "error",
+    "remarks": "等待回复超过 9999 秒",
+    "checkpoint_file": "all__batch__0002__51cab29e.json",
+    "updated_at": "2026-08-01 08:56:32"
+  },
+  {
+    "index": 2,
+    "batch_number": 3,
+    "task_id": "all__batch__0003__14164a4d",
+    "display_name": "all 第 201-300 行",
+    "status": "success",
+    "remarks": "检测到明确批次完成信号、两张完整表及下载链接；已更新本批与累计最终 TSV",
+    "checkpoint_file": "all__batch__0003__14164a4d.json",
+    "updated_at": "2026-07-31 04:42:00"
+  },
+  {
+    "index": 3,
+    "batch_number": 4,
+    "task_id": "all__batch__0004__1abf47d9",
+    "display_name": "all 第 301-400 行",
+    "status": "success",
+    "remarks": "检测到明确批次完成信号、两张完整表及下载链接；已更新本批与累计最终 TSV",
+    "checkpoint_file": "all__batch__0004__1abf47d9.json",
+    "updated_at": "2026-07-31 05:26:47"
+  },
+  {
+    "index": 4,
+    "batch_number": 5,
+    "task_id": "all__batch__0005__500a7e64",
+    "display_name": "all 第 401-500 行",
+    "status": "success",
+    "remarks": "检测到明确批次完成信号、两张完整表及下载链接；已更新本批与累计最终 TSV",
+    "checkpoint_file": "all__batch__0005__500a7e64.json",
+    "updated_at": "2026-07-31 09:51:23"
+  },
+  {
+    "index": 5,
+    "batch_number": 6,
+    "task_id": "all__batch__0006__159788e9",
+    "display_name": "all 第 501-600 行",
+    "status": "success",
+    "remarks": "检测到明确批次完成信号、两张完整表及下载链接；已更新本批与累计最终 TSV",
+    "checkpoint_file": "all__batch__0006__159788e9.json",
+    "updated_at": "2026-07-31 11:22:31"
+  },
+  {
+    "index": 6,
+    "batch_number": 7,
+    "task_id": "all__batch__0007__a7be9a3c",
+    "display_name": "all 第 601-700 行",
+    "status": "success",
+    "remarks": "检测到明确批次完成信号、两张完整表及下载链接；已更新本批与累计最终 TSV",
+    "checkpoint_file": "all__batch__0007__a7be9a3c.json",
+    "updated_at": "2026-08-01 10:26:39"
+  },
+  {
+    "index": 7,
+    "batch_number": 8,
+    "task_id": "all__batch__0008__055d95c8",
+    "display_name": "all 第 701-800 行",
+    "status": "success",
+    "remarks": "恢复时检测到明确批次完成信号、两张完整表及下载链接；已更新累计最终 TSV",
+    "checkpoint_file": "all__batch__0008__055d95c8.json",
+    "updated_at": "2026-08-01 10:26:51"
+  },
+  {
+    "index": 8,
+    "batch_number": 9,
+    "task_id": "all__batch__0009__0eebcbf1",
+    "display_name": "all 第 801-900 行",
+    "status": "success",
+    "remarks": "检测到明确批次完成信号、两张完整表及下载链接；已更新本批与累计最终 TSV",
+    "checkpoint_file": "all__batch__0009__0eebcbf1.json",
+    "updated_at": "2026-07-31 14:00:22"
+  },
+  {
+    "index": 9,
+    "batch_number": 10,
+    "task_id": "all__batch__0010__3d292511",
+    "display_name": "all 第 901-1000 行",
+    "status": "success",
+    "remarks": "检测到明确批次完成信号、两张完整表及下载链接；已更新本批与累计最终 TSV",
+    "checkpoint_file": "all__batch__0010__3d292511.json",
+    "updated_at": "2026-07-31 15:04:43"
+  },
+  {
+    "index": 10,
+    "batch_number": 11,
+    "task_id": "all__batch__0011__8fcd62c6",
+    "display_name": "all 第 1001-1100 行",
+    "status": "success",
+    "remarks": "检测到明确批次完成信号、两张完整表及下载链接；已更新本批与累计最终 TSV",
+    "checkpoint_file": "all__batch__0011__8fcd62c6.json",
+    "updated_at": "2026-07-31 16:14:24"
+  },
+  {
+    "index": 11,
+    "batch_number": 12,
+    "task_id": "all__batch__0012__ac577ce3",
+    "display_name": "all 第 1101-1200 行",
+    "status": "success",
+    "remarks": "检测到明确批次完成信号、两张完整表及下载链接；已更新本批与累计最终 TSV",
+    "checkpoint_file": "all__batch__0012__ac577ce3.json",
+    "updated_at": "2026-07-31 17:26:37"
+  },
+  {
+    "index": 12,
+    "batch_number": 13,
+    "task_id": "all__batch__0013__9e1aedd0",
+    "display_name": "all 第 1201-1300 行",
+    "status": "success",
+    "remarks": "检测到明确批次完成信号、两张完整表及下载链接；已更新本批与累计最终 TSV",
+    "checkpoint_file": "all__batch__0013__9e1aedd0.json",
+    "updated_at": "2026-07-31 18:28:33"
+  },
+  {
+    "index": 13,
+    "batch_number": 14,
+    "task_id": "all__batch__0014__37414895",
+    "display_name": "all 第 1301-1400 行",
+    "status": "success",
+    "remarks": "检测到明确批次完成信号、两张完整表及下载链接；已更新本批与累计最终 TSV",
+    "checkpoint_file": "all__batch__0014__37414895.json",
+    "updated_at": "2026-07-31 19:11:10"
+  },
+  {
+    "index": 14,
+    "batch_number": 15,
+    "task_id": "all__batch__0015__3b5c219b",
+    "display_name": "all 第 1401-1500 行",
+    "status": "success",
+    "remarks": "检测到明确批次完成信号、两张完整表及下载链接；已更新本批与累计最终 TSV",
+    "checkpoint_file": "all__batch__0015__3b5c219b.json",
+    "updated_at": "2026-07-31 20:16:15"
+  },
+  {
+    "index": 15,
+    "batch_number": 16,
+    "task_id": "all__batch__0016__16580b4d",
+    "display_name": "all 第 1501-1600 行",
+    "status": "success",
+    "remarks": "检测到明确批次完成信号、两张完整表及下载链接；已更新本批与累计最终 TSV",
+    "checkpoint_file": "all__batch__0016__16580b4d.json",
+    "updated_at": "2026-07-31 21:14:30"
+  },
+  {
+    "index": 16,
+    "batch_number": 17,
+    "task_id": "all__batch__0017__8a5261c3",
+    "display_name": "all 第 1601-1700 行",
+    "status": "success",
+    "remarks": "检测到明确批次完成信号、两张完整表及下载链接；已更新本批与累计最终 TSV",
+    "checkpoint_file": "all__batch__0017__8a5261c3.json",
+    "updated_at": "2026-07-31 22:09:10"
+  },
+  {
+    "index": 17,
+    "batch_number": 18,
+    "task_id": "all__batch__0018__c57f805a",
+    "display_name": "all 第 1701-1800 行",
+    "status": "success",
+    "remarks": "检测到明确批次完成信号、两张完整表及下载链接；已更新本批与累计最终 TSV",
+    "checkpoint_file": "all__batch__0018__c57f805a.json",
+    "updated_at": "2026-08-01 11:14:36"
+  },
+  {
+    "index": 18,
+    "batch_number": 19,
+    "task_id": "all__batch__0019__f840717f",
+    "display_name": "all 第 1801-1900 行",
+    "status": "success",
+    "remarks": "检测到明确批次完成信号、两张完整表及下载链接；已更新本批与累计最终 TSV",
+    "checkpoint_file": "all__batch__0019__f840717f.json",
+    "updated_at": "2026-08-01 12:09:29"
+  },
+  {
+    "index": 19,
+    "batch_number": 20,
+    "task_id": "all__batch__0020__08e9bbeb",
+    "display_name": "all 第 1901-2000 行",
+    "status": "success",
+    "remarks": "检测到明确批次完成信号、两张完整表及下载链接；已更新本批与累计最终 TSV",
+    "checkpoint_file": "all__batch__0020__08e9bbeb.json",
+    "updated_at": "2026-08-01 12:45:57"
+  },
+  {
+    "index": 20,
+    "batch_number": 21,
+    "task_id": "all__batch__0021__2734e70c",
+    "display_name": "all 第 2001-2100 行",
+    "status": "success",
+    "remarks": "检测到明确批次完成信号、两张完整表及下载链接；已更新本批与累计最终 TSV",
+    "checkpoint_file": "all__batch__0021__2734e70c.json",
+    "updated_at": "2026-08-01 13:20:32"
+  },
+  {
+    "index": 21,
+    "batch_number": 22,
+    "task_id": "all__batch__0022__b7a215b0",
+    "display_name": "all 第 2101-2200 行",
+    "status": "success",
+    "remarks": "检测到明确批次完成信号、两张完整表及下载链接；已更新本批与累计最终 TSV",
+    "checkpoint_file": "all__batch__0022__b7a215b0.json",
+    "updated_at": "2026-08-01 14:38:13"
+  },
+  {
+    "index": 22,
+    "batch_number": 23,
+    "task_id": "all__batch__0023__1c938f94",
+    "display_name": "all 第 2201-2300 行",
+    "status": "success",
+    "remarks": "检测到明确批次完成信号、两张完整表及下载链接；已更新本批与累计最终 TSV",
+    "checkpoint_file": "all__batch__0023__1c938f94.json",
+    "updated_at": "2026-08-01 16:26:57"
+  },
+  {
+    "index": 23,
+    "batch_number": 24,
+    "task_id": "all__batch__0024__a1a8004f",
+    "display_name": "all 第 2301-2400 行",
+    "status": "success",
+    "remarks": "检测到明确批次完成信号、两张完整表及下载链接；已更新本批与累计最终 TSV",
+    "checkpoint_file": "all__batch__0024__a1a8004f.json",
+    "updated_at": "2026-08-01 20:10:55"
+  },
+  {
+    "index": 24,
+    "batch_number": 25,
+    "task_id": "all__batch__0025__35a31638",
+    "display_name": "all 第 2401-2500 行",
+    "status": "success",
+    "remarks": "检测到明确批次完成信号、两张完整表及下载链接；已更新本批与累计最终 TSV",
+    "checkpoint_file": "all__batch__0025__35a31638.json",
+    "updated_at": "2026-08-01 20:39:12"
+  },
+  {
+    "index": 25,
+    "batch_number": 26,
+    "task_id": "all__batch__0026__9c49d03f",
+    "display_name": "all 第 2501-2600 行",
+    "status": "success",
+    "remarks": "检测到明确批次完成信号、两张完整表及下载链接；已更新本批与累计最终 TSV",
+    "checkpoint_file": "all__batch__0026__9c49d03f.json",
+    "updated_at": "2026-08-01 21:45:00"
+  },
+  {
+    "index": 26,
+    "batch_number": 27,
+    "task_id": "all__batch__0027__7f151459",
+    "display_name": "all 第 2601-2700 行",
+    "status": "success",
+    "remarks": "检测到明确批次完成信号、两张完整表及下载链接；已更新本批与累计最终 TSV",
+    "checkpoint_file": "all__batch__0027__7f151459.json",
+    "updated_at": "2026-08-01 22:56:16"
+  },
+  {
+    "index": 27,
+    "batch_number": 28,
+    "task_id": "all__batch__0028__0823adff",
+    "display_name": "all 第 2701-2800 行",
+    "status": "success",
+    "remarks": "检测到明确批次完成信号、两张完整表及下载链接；已更新本批与累计最终 TSV",
+    "checkpoint_file": "all__batch__0028__0823adff.json",
+    "updated_at": "2026-08-01 23:36:14"
+  },
+  {
+    "index": 28,
+    "batch_number": 29,
+    "task_id": "all__batch__0029__1229325b",
+    "display_name": "all 第 2801-2900 行",
+    "status": "success",
+    "remarks": "检测到明确批次完成信号、两张完整表及下载链接；已更新本批与累计最终 TSV",
+    "checkpoint_file": "all__batch__0029__1229325b.json",
+    "updated_at": "2026-08-02 00:13:26"
+  },
+  {
+    "index": 29,
+    "batch_number": 30,
+    "task_id": "all__batch__0030__b33cae41",
+    "display_name": "all 第 2901-3000 行",
+    "status": "success",
+    "remarks": "检测到明确批次完成信号、两张完整表及下载链接；已更新本批与累计最终 TSV",
+    "checkpoint_file": "all__batch__0030__b33cae41.json",
+    "updated_at": "2026-08-02 01:02:21"
+  },
+  {
+    "index": 30,
+    "batch_number": 31,
+    "task_id": "all__batch__0031__47f7956c",
+    "display_name": "all 第 3001-3100 行",
+    "status": "success",
+    "remarks": "检测到明确批次完成信号、两张完整表及下载链接；已更新本批与累计最终 TSV",
+    "checkpoint_file": "all__batch__0031__47f7956c.json",
+    "updated_at": "2026-08-02 01:45:37"
+  },
+  {
+    "index": 31,
+    "batch_number": 32,
+    "task_id": "all__batch__0032__67a75159",
+    "display_name": "all 第 3101-3200 行",
+    "status": "success",
+    "remarks": "检测到明确批次完成信号、两张完整表及下载链接；已更新本批与累计最终 TSV",
+    "checkpoint_file": "all__batch__0032__67a75159.json",
+    "updated_at": "2026-08-02 03:03:00"
+  },
+  {
+    "index": 32,
+    "batch_number": 33,
+    "task_id": "all__batch__0033__c5df6c32",
+    "display_name": "all 第 3201-3300 行",
+    "status": "success",
+    "remarks": "检测到明确批次完成信号、两张完整表及下载链接；已更新本批与累计最终 TSV",
+    "checkpoint_file": "all__batch__0033__c5df6c32.json",
+    "updated_at": "2026-08-02 03:43:04"
+  },
+  {
+    "index": 33,
+    "batch_number": 34,
+    "task_id": "all__batch__0034__cd457769",
+    "display_name": "all 第 3301-3400 行",
+    "status": "success",
+    "remarks": "检测到明确批次完成信号、两张完整表及下载链接；已更新本批与累计最终 TSV",
+    "checkpoint_file": "all__batch__0034__cd457769.json",
+    "updated_at": "2026-08-02 04:00:47"
+  },
+  {
+    "index": 34,
+    "batch_number": 35,
+    "task_id": "all__batch__0035__2f76d7cc",
+    "display_name": "all 第 3401-3500 行",
+    "status": "success",
+    "remarks": "检测到明确批次完成信号、两张完整表及下载链接；已更新本批与累计最终 TSV",
+    "checkpoint_file": "all__batch__0035__2f76d7cc.json",
+    "updated_at": "2026-08-02 04:32:58"
+  },
+  {
+    "index": 35,
+    "batch_number": 36,
+    "task_id": "all__batch__0036__73d35b92",
+    "display_name": "all 第 3501-3600 行",
+    "status": "success",
+    "remarks": "检测到明确批次完成信号、两张完整表及下载链接；已更新本批与累计最终 TSV",
+    "checkpoint_file": "all__batch__0036__73d35b92.json",
+    "updated_at": "2026-08-02 04:55:45"
+  },
+  {
+    "index": 36,
+    "batch_number": 37,
+    "task_id": "all__batch__0037__2fb60692",
+    "display_name": "all 第 3601-3700 行",
+    "status": "success",
+    "remarks": "检测到明确批次完成信号、两张完整表及下载链接；已更新本批与累计最终 TSV",
+    "checkpoint_file": "all__batch__0037__2fb60692.json",
+    "updated_at": "2026-08-02 05:35:39"
+  },
+  {
+    "index": 37,
+    "batch_number": 38,
+    "task_id": "all__batch__0038__08f6eddb",
+    "display_name": "all 第 3701-3800 行",
+    "status": "success",
+    "remarks": "检测到明确批次完成信号、两张完整表及下载链接；已更新本批与累计最终 TSV",
+    "checkpoint_file": "all__batch__0038__08f6eddb.json",
+    "updated_at": "2026-08-02 06:00:52"
+  },
+  {
+    "index": 38,
+    "batch_number": 39,
+    "task_id": "all__batch__0039__76afc231",
+    "display_name": "all 第 3801-3900 行",
+    "status": "success",
+    "remarks": "检测到明确批次完成信号、两张完整表及下载链接；已更新本批与累计最终 TSV",
+    "checkpoint_file": "all__batch__0039__76afc231.json",
+    "updated_at": "2026-08-02 06:21:40"
+  },
+  {
+    "index": 39,
+    "batch_number": 40,
+    "task_id": "all__batch__0040__080784a7",
+    "display_name": "all 第 3901-4000 行",
+    "status": "success",
+    "remarks": "检测到明确批次完成信号、两张完整表及下载链接；已更新本批与累计最终 TSV",
+    "checkpoint_file": "all__batch__0040__080784a7.json",
+    "updated_at": "2026-08-02 06:46:35"
+  },
+  {
+    "index": 40,
+    "batch_number": 41,
+    "task_id": "all__batch__0041__13e474a7",
+    "display_name": "all 第 4001-4100 行",
+    "status": "success",
+    "remarks": "检测到明确批次完成信号、两张完整表及下载链接；已更新本批与累计最终 TSV",
+    "checkpoint_file": "all__batch__0041__13e474a7.json",
+    "updated_at": "2026-08-02 07:04:04"
+  },
+  {
+    "index": 41,
+    "batch_number": 42,
+    "task_id": "all__batch__0042__a92c77b9",
+    "display_name": "all 第 4101-4200 行",
+    "status": "success",
+    "remarks": "检测到明确批次完成信号、两张完整表及下载链接；已更新本批与累计最终 TSV",
+    "checkpoint_file": "all__batch__0042__a92c77b9.json",
+    "updated_at": "2026-08-02 07:32:02"
+  },
+  {
+    "index": 42,
+    "batch_number": 43,
+    "task_id": "all__batch__0043__360f93d5",
+    "display_name": "all 第 4201-4300 行",
+    "status": "success",
+    "remarks": "检测到明确批次完成信号、两张完整表及下载链接；已更新本批与累计最终 TSV",
+    "checkpoint_file": "all__batch__0043__360f93d5.json",
+    "updated_at": "2026-08-02 08:39:14"
+  },
+  {
+    "index": 43,
+    "batch_number": 44,
+    "task_id": "all__batch__0044__7b5dc2cd",
+    "display_name": "all 第 4301-4400 行",
+    "status": "success",
+    "remarks": "检测到明确批次完成信号、两张完整表及下载链接；已更新本批与累计最终 TSV",
+    "checkpoint_file": "all__batch__0044__7b5dc2cd.json",
+    "updated_at": "2026-08-02 09:14:00"
+  },
+  {
+    "index": 44,
+    "batch_number": 45,
+    "task_id": "all__batch__0045__d2e305c3",
+    "display_name": "all 第 4401-4500 行",
+    "status": "success",
+    "remarks": "检测到明确批次完成信号、两张完整表及下载链接；已更新本批与累计最终 TSV",
+    "checkpoint_file": "all__batch__0045__d2e305c3.json",
+    "updated_at": "2026-08-02 09:58:30"
+  },
+  {
+    "index": 45,
+    "batch_number": 46,
+    "task_id": "all__batch__0046__0884ee44",
+    "display_name": "all 第 4501-4600 行",
+    "status": "success",
+    "remarks": "检测到明确批次完成信号、两张完整表及下载链接；已更新本批与累计最终 TSV",
+    "checkpoint_file": "all__batch__0046__0884ee44.json",
+    "updated_at": "2026-08-02 10:57:54"
+  },
+  {
+    "index": 46,
+    "batch_number": 47,
+    "task_id": "all__batch__0047__61454df4",
+    "display_name": "all 第 4601-4700 行",
+    "status": "success",
+    "remarks": "检测到明确批次完成信号、两张完整表及下载链接；已更新本批与累计最终 TSV",
+    "checkpoint_file": "all__batch__0047__61454df4.json",
+    "updated_at": "2026-08-02 11:38:44"
+  },
+  {
+    "index": 47,
+    "batch_number": 48,
+    "task_id": "all__batch__0048__a4f30557",
+    "display_name": "all 第 4701-4800 行",
+    "status": "success",
+    "remarks": "检测到明确批次完成信号、两张完整表及下载链接；已更新本批与累计最终 TSV",
+    "checkpoint_file": "all__batch__0048__a4f30557.json",
+    "updated_at": "2026-08-02 12:03:26"
+  },
+  {
+    "index": 48,
+    "batch_number": 49,
+    "task_id": "all__batch__0049__45eee80c",
+    "display_name": "all 第 4801-4900 行",
+    "status": "success",
+    "remarks": "检测到明确批次完成信号、两张完整表及下载链接；已更新本批与累计最终 TSV",
+    "checkpoint_file": "all__batch__0049__45eee80c.json",
+    "updated_at": "2026-08-02 12:44:39"
+  },
+  {
+    "index": 49,
+    "batch_number": 50,
+    "task_id": "all__batch__0050__4e28c4d4",
+    "display_name": "all 第 4901-5000 行",
+    "status": "success",
+    "remarks": "检测到明确批次完成信号、两张完整表及下载链接；已更新本批与累计最终 TSV",
+    "checkpoint_file": "all__batch__0050__4e28c4d4.json",
+    "updated_at": "2026-08-02 13:23:51"
+  },
+  {
+    "index": 50,
+    "batch_number": 51,
+    "task_id": "all__batch__0051__5fd6857b",
+    "display_name": "all 第 5001-5100 行",
+    "status": "success",
+    "remarks": "检测到明确批次完成信号、两张完整表及下载链接；已更新本批与累计最终 TSV",
+    "checkpoint_file": "all__batch__0051__5fd6857b.json",
+    "updated_at": "2026-08-02 16:57:56"
+  },
+  {
+    "index": 51,
+    "batch_number": 52,
+    "task_id": "all__batch__0052__2fad9274",
+    "display_name": "all 第 5101-5200 行",
+    "status": "success",
+    "remarks": "检测到明确批次完成信号、两张完整表及下载链接；已更新本批与累计最终 TSV",
+    "checkpoint_file": "all__batch__0052__2fad9274.json",
+    "updated_at": "2026-08-02 17:31:10"
+  },
+  {
+    "index": 52,
+    "batch_number": 53,
+    "task_id": "all__batch__0053__52c7cc2b",
+    "display_name": "all 第 5201-5300 行",
+    "status": "success",
+    "remarks": "检测到明确批次完成信号、两张完整表及下载链接；已更新本批与累计最终 TSV",
+    "checkpoint_file": "all__batch__0053__52c7cc2b.json",
+    "updated_at": "2026-08-02 18:22:57"
+  },
+  {
+    "index": 53,
+    "batch_number": 54,
+    "task_id": "all__batch__0054__f1b80d26",
+    "display_name": "all 第 5301-5400 行",
+    "status": "success",
+    "remarks": "检测到明确批次完成信号、两张完整表及下载链接；已更新本批与累计最终 TSV",
+    "checkpoint_file": "all__batch__0054__f1b80d26.json",
+    "updated_at": "2026-08-02 19:06:29"
+  },
+  {
+    "index": 54,
+    "batch_number": 55,
+    "task_id": "all__batch__0055__49ff9e71",
+    "display_name": "all 第 5401-5500 行",
+    "status": "success",
+    "remarks": "检测到明确批次完成信号、两张完整表及下载链接；已更新本批与累计最终 TSV",
+    "checkpoint_file": "all__batch__0055__49ff9e71.json",
+    "updated_at": "2026-08-02 19:34:50"
+  },
+  {
+    "index": 55,
+    "batch_number": 56,
+    "task_id": "all__batch__0056__b74c0089",
+    "display_name": "all 第 5501-5600 行",
+    "status": "success",
+    "remarks": "检测到明确批次完成信号、两张完整表及下载链接；已更新本批与累计最终 TSV",
+    "checkpoint_file": "all__batch__0056__b74c0089.json",
+    "updated_at": "2026-08-02 20:05:11"
+  },
+  {
+    "index": 56,
+    "batch_number": 57,
+    "task_id": "all__batch__0057__215a9d2a",
+    "display_name": "all 第 5601-5700 行",
+    "status": "success",
+    "remarks": "检测到明确批次完成信号、两张完整表及下载链接；已更新本批与累计最终 TSV",
+    "checkpoint_file": "all__batch__0057__215a9d2a.json",
+    "updated_at": "2026-08-02 20:40:02"
+  },
+  {
+    "index": 57,
+    "batch_number": 58,
+    "task_id": "all__batch__0058__cfc6c2a2",
+    "display_name": "all 第 5701-5800 行",
+    "status": "processing",
+    "remarks": "",
+    "checkpoint_file": "all__batch__0058__cfc6c2a2.json",
+    "updated_at": "2026-08-02 20:53:12"
+  },
+  {
+    "index": 58,
+    "batch_number": 59,
+    "task_id": "all__batch__0059__e352b5cf",
+    "display_name": "all 第 5801-5900 行",
+    "status": "pending",
+    "remarks": "",
+    "checkpoint_file": "all__batch__0059__e352b5cf.json",
+    "updated_at": ""
+  },
+  {
+    "index": 59,
+    "batch_number": 60,
+    "task_id": "all__batch__0060__c0f6c174",
+    "display_name": "all 第 5901-6000 行",
+    "status": "pending",
+    "remarks": "",
+    "checkpoint_file": "all__batch__0060__c0f6c174.json",
+    "updated_at": ""
+  },
+  {
+    "index": 60,
+    "batch_number": 61,
+    "task_id": "all__batch__0061__1c854897",
+    "display_name": "all 第 6001-6100 行",
+    "status": "pending",
+    "remarks": "",
+    "checkpoint_file": "all__batch__0061__1c854897.json",
+    "updated_at": ""
+  },
+  {
+    "index": 61,
+    "batch_number": 62,
+    "task_id": "all__batch__0062__d6e2ca78",
+    "display_name": "all 第 6101-6200 行",
+    "status": "pending",
+    "remarks": "",
+    "checkpoint_file": "all__batch__0062__d6e2ca78.json",
+    "updated_at": ""
+  },
+  {
+    "index": 62,
+    "batch_number": 63,
+    "task_id": "all__batch__0063__5f25e5ca",
+    "display_name": "all 第 6201-6300 行",
+    "status": "pending",
+    "remarks": "",
+    "checkpoint_file": "all__batch__0063__5f25e5ca.json",
+    "updated_at": ""
+  },
+  {
+    "index": 63,
+    "batch_number": 64,
+    "task_id": "all__batch__0064__96a1eaf3",
+    "display_name": "all 第 6301-6400 行",
+    "status": "pending",
+    "remarks": "",
+    "checkpoint_file": "all__batch__0064__96a1eaf3.json",
+    "updated_at": ""
+  },
+  {
+    "index": 64,
+    "batch_number": 65,
+    "task_id": "all__batch__0065__0acf5fd0",
+    "display_name": "all 第 6401-6500 行",
+    "status": "pending",
+    "remarks": "",
+    "checkpoint_file": "all__batch__0065__0acf5fd0.json",
+    "updated_at": ""
+  },
+  {
+    "index": 65,
+    "batch_number": 66,
+    "task_id": "all__batch__0066__ce8316da",
+    "display_name": "all 第 6501-6600 行",
+    "status": "pending",
+    "remarks": "",
+    "checkpoint_file": "all__batch__0066__ce8316da.json",
+    "updated_at": ""
+  },
+  {
+    "index": 66,
+    "batch_number": 67,
+    "task_id": "all__batch__0067__ca175709",
+    "display_name": "all 第 6601-6700 行",
+    "status": "pending",
+    "remarks": "",
+    "checkpoint_file": "all__batch__0067__ca175709.json",
+    "updated_at": ""
+  },
+  {
+    "index": 67,
+    "batch_number": 68,
+    "task_id": "all__batch__0068__c9fdd07c",
+    "display_name": "all 第 6701-6800 行",
+    "status": "pending",
+    "remarks": "",
+    "checkpoint_file": "all__batch__0068__c9fdd07c.json",
+    "updated_at": ""
+  },
+  {
+    "index": 68,
+    "batch_number": 69,
+    "task_id": "all__batch__0069__32606743",
+    "display_name": "all 第 6801-6900 行",
+    "status": "pending",
+    "remarks": "",
+    "checkpoint_file": "all__batch__0069__32606743.json",
+    "updated_at": ""
+  },
+  {
+    "index": 69,
+    "batch_number": 70,
+    "task_id": "all__batch__0070__a439fef2",
+    "display_name": "all 第 6901-7000 行",
+    "status": "pending",
+    "remarks": "",
+    "checkpoint_file": "all__batch__0070__a439fef2.json",
+    "updated_at": ""
+  },
+  {
+    "index": 70,
+    "batch_number": 71,
+    "task_id": "all__batch__0071__3e7751bb",
+    "display_name": "all 第 7001-7100 行",
+    "status": "pending",
+    "remarks": "",
+    "checkpoint_file": "all__batch__0071__3e7751bb.json",
+    "updated_at": ""
+  },
+  {
+    "index": 71,
+    "batch_number": 72,
+    "task_id": "all__batch__0072__a4934486",
+    "display_name": "all 第 7101-7200 行",
+    "status": "pending",
+    "remarks": "",
+    "checkpoint_file": "all__batch__0072__a4934486.json",
+    "updated_at": ""
+  },
+  {
+    "index": 72,
+    "batch_number": 73,
+    "task_id": "all__batch__0073__67384afb",
+    "display_name": "all 第 7201-7300 行",
+    "status": "pending",
+    "remarks": "",
+    "checkpoint_file": "all__batch__0073__67384afb.json",
+    "updated_at": ""
+  },
+  {
+    "index": 73,
+    "batch_number": 74,
+    "task_id": "all__batch__0074__b850315c",
+    "display_name": "all 第 7301-7400 行",
+    "status": "pending",
+    "remarks": "",
+    "checkpoint_file": "all__batch__0074__b850315c.json",
+    "updated_at": ""
+  },
+  {
+    "index": 74,
+    "batch_number": 75,
+    "task_id": "all__batch__0075__36bc7429",
+    "display_name": "all 第 7401-7500 行",
+    "status": "pending",
+    "remarks": "",
+    "checkpoint_file": "all__batch__0075__36bc7429.json",
+    "updated_at": ""
+  },
+  {
+    "index": 75,
+    "batch_number": 76,
+    "task_id": "all__batch__0076__c085f2c9",
+    "display_name": "all 第 7501-7600 行",
+    "status": "pending",
+    "remarks": "",
+    "checkpoint_file": "all__batch__0076__c085f2c9.json",
+    "updated_at": ""
+  },
+  {
+    "index": 76,
+    "batch_number": 77,
+    "task_id": "all__batch__0077__bae9daed",
+    "display_name": "all 第 7601-7700 行",
+    "status": "pending",
+    "remarks": "",
+    "checkpoint_file": "all__batch__0077__bae9daed.json",
+    "updated_at": ""
+  },
+  {
+    "index": 77,
+    "batch_number": 78,
+    "task_id": "all__batch__0078__d4ebeb43",
+    "display_name": "all 第 7701-7800 行",
+    "status": "pending",
+    "remarks": "",
+    "checkpoint_file": "all__batch__0078__d4ebeb43.json",
+    "updated_at": ""
+  },
+  {
+    "index": 78,
+    "batch_number": 79,
+    "task_id": "all__batch__0079__1f7c5920",
+    "display_name": "all 第 7801-7900 行",
+    "status": "pending",
+    "remarks": "",
+    "checkpoint_file": "all__batch__0079__1f7c5920.json",
+    "updated_at": ""
+  },
+  {
+    "index": 79,
+    "batch_number": 80,
+    "task_id": "all__batch__0080__e893bfe7",
+    "display_name": "all 第 7901-8000 行",
+    "status": "pending",
+    "remarks": "",
+    "checkpoint_file": "all__batch__0080__e893bfe7.json",
+    "updated_at": ""
+  },
+  {
+    "index": 80,
+    "batch_number": 81,
+    "task_id": "all__batch__0081__afda2e38",
+    "display_name": "all 第 8001-8100 行",
+    "status": "pending",
+    "remarks": "",
+    "checkpoint_file": "all__batch__0081__afda2e38.json",
+    "updated_at": ""
+  },
+  {
+    "index": 81,
+    "batch_number": 82,
+    "task_id": "all__batch__0082__3d1f52bb",
+    "display_name": "all 第 8101-8200 行",
+    "status": "pending",
+    "remarks": "",
+    "checkpoint_file": "all__batch__0082__3d1f52bb.json",
+    "updated_at": ""
+  },
+  {
+    "index": 82,
+    "batch_number": 83,
+    "task_id": "all__batch__0083__e7b59e8a",
+    "display_name": "all 第 8201-8300 行",
+    "status": "pending",
+    "remarks": "",
+    "checkpoint_file": "all__batch__0083__e7b59e8a.json",
+    "updated_at": ""
+  },
+  {
+    "index": 83,
+    "batch_number": 84,
+    "task_id": "all__batch__0084__d40211e5",
+    "display_name": "all 第 8301-8400 行",
+    "status": "pending",
+    "remarks": "",
+    "checkpoint_file": "all__batch__0084__d40211e5.json",
+    "updated_at": ""
+  },
+  {
+    "index": 84,
+    "batch_number": 85,
+    "task_id": "all__batch__0085__30592b0e",
+    "display_name": "all 第 8401-8500 行",
+    "status": "pending",
+    "remarks": "",
+    "checkpoint_file": "all__batch__0085__30592b0e.json",
+    "updated_at": ""
+  },
+  {
+    "index": 85,
+    "batch_number": 86,
+    "task_id": "all__batch__0086__455d4b5a",
+    "display_name": "all 第 8501-8600 行",
+    "status": "pending",
+    "remarks": "",
+    "checkpoint_file": "all__batch__0086__455d4b5a.json",
+    "updated_at": ""
+  },
+  {
+    "index": 86,
+    "batch_number": 87,
+    "task_id": "all__batch__0087__59d91e61",
+    "display_name": "all 第 8601-8700 行",
+    "status": "pending",
+    "remarks": "",
+    "checkpoint_file": "all__batch__0087__59d91e61.json",
+    "updated_at": ""
+  },
+  {
+    "index": 87,
+    "batch_number": 88,
+    "task_id": "all__batch__0088__e2de217d",
+    "display_name": "all 第 8701-8800 行",
+    "status": "pending",
+    "remarks": "",
+    "checkpoint_file": "all__batch__0088__e2de217d.json",
+    "updated_at": ""
+  },
+  {
+    "index": 88,
+    "batch_number": 89,
+    "task_id": "all__batch__0089__458cf792",
+    "display_name": "all 第 8801-8900 行",
+    "status": "pending",
+    "remarks": "",
+    "checkpoint_file": "all__batch__0089__458cf792.json",
+    "updated_at": ""
+  },
+  {
+    "index": 89,
+    "batch_number": 90,
+    "task_id": "all__batch__0090__b9cd8838",
+    "display_name": "all 第 8901-9000 行",
+    "status": "pending",
+    "remarks": "",
+    "checkpoint_file": "all__batch__0090__b9cd8838.json",
+    "updated_at": ""
+  },
+  {
+    "index": 90,
+    "batch_number": 91,
+    "task_id": "all__batch__0091__f730ef0b",
+    "display_name": "all 第 9001-9100 行",
+    "status": "pending",
+    "remarks": "",
+    "checkpoint_file": "all__batch__0091__f730ef0b.json",
+    "updated_at": ""
+  },
+  {
+    "index": 91,
+    "batch_number": 92,
+    "task_id": "all__batch__0092__fcb433e6",
+    "display_name": "all 第 9101-9200 行",
+    "status": "pending",
+    "remarks": "",
+    "checkpoint_file": "all__batch__0092__fcb433e6.json",
+    "updated_at": ""
+  },
+  {
+    "index": 92,
+    "batch_number": 93,
+    "task_id": "all__batch__0093__8a1cba32",
+    "display_name": "all 第 9201-9300 行",
+    "status": "pending",
+    "remarks": "",
+    "checkpoint_file": "all__batch__0093__8a1cba32.json",
+    "updated_at": ""
+  },
+  {
+    "index": 93,
+    "batch_number": 94,
+    "task_id": "all__batch__0094__d5d207cc",
+    "display_name": "all 第 9301-9400 行",
+    "status": "pending",
+    "remarks": "",
+    "checkpoint_file": "all__batch__0094__d5d207cc.json",
+    "updated_at": ""
+  },
+  {
+    "index": 94,
+    "batch_number": 95,
+    "task_id": "all__batch__0095__e4b3efe6",
+    "display_name": "all 第 9401-9500 行",
+    "status": "pending",
+    "remarks": "",
+    "checkpoint_file": "all__batch__0095__e4b3efe6.json",
+    "updated_at": ""
+  },
+  {
+    "index": 95,
+    "batch_number": 96,
+    "task_id": "all__batch__0096__48d5a6c3",
+    "display_name": "all 第 9501-9600 行",
+    "status": "pending",
+    "remarks": "",
+    "checkpoint_file": "all__batch__0096__48d5a6c3.json",
+    "updated_at": ""
+  },
+  {
+    "index": 96,
+    "batch_number": 97,
+    "task_id": "all__batch__0097__5a20604d",
+    "display_name": "all 第 9601-9700 行",
+    "status": "pending",
+    "remarks": "",
+    "checkpoint_file": "all__batch__0097__5a20604d.json",
+    "updated_at": ""
+  },
+  {
+    "index": 97,
+    "batch_number": 98,
+    "task_id": "all__batch__0098__fda30662",
+    "display_name": "all 第 9701-9800 行",
+    "status": "pending",
+    "remarks": "",
+    "checkpoint_file": "all__batch__0098__fda30662.json",
+    "updated_at": ""
+  },
+  {
+    "index": 98,
+    "batch_number": 99,
+    "task_id": "all__batch__0099__ff7c2e77",
+    "display_name": "all 第 9801-9900 行",
+    "status": "pending",
+    "remarks": "",
+    "checkpoint_file": "all__batch__0099__ff7c2e77.json",
+    "updated_at": ""
+  },
+  {
+    "index": 99,
+    "batch_number": 100,
+    "task_id": "all__batch__0100__fd8584b6",
+    "display_name": "all 第 9901-10000 行",
+    "status": "pending",
+    "remarks": "",
+    "checkpoint_file": "all__batch__0100__fd8584b6.json",
+    "updated_at": ""
+  },
+  {
+    "index": 100,
+    "batch_number": 101,
+    "task_id": "all__batch__0101__bc99d809",
+    "display_name": "all 第 10001-10100 行",
+    "status": "pending",
+    "remarks": "",
+    "checkpoint_file": "all__batch__0101__bc99d809.json",
+    "updated_at": ""
+  },
+  {
+    "index": 101,
+    "batch_number": 102,
+    "task_id": "all__batch__0102__ce743652",
+    "display_name": "all 第 10101-10200 行",
+    "status": "pending",
+    "remarks": "",
+    "checkpoint_file": "all__batch__0102__ce743652.json",
+    "updated_at": ""
+  },
+  {
+    "index": 102,
+    "batch_number": 103,
+    "task_id": "all__batch__0103__4f24cc32",
+    "display_name": "all 第 10201-10259 行",
+    "status": "pending",
+    "remarks": "",
+    "checkpoint_file": "all__batch__0103__4f24cc32.json",
+    "updated_at": ""
+  }
+]
+}
