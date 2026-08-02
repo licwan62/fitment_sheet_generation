@@ -1305,3 +1305,12 @@ EU-LAND-ROVER-RANGE-ROVER-I-VOGUE-EFI-5D-1985-86-01	4460	1800	1785	Automobile-Ca
 --- 脚本异常 ---
 异常: DIMENSION_GROUP EU-JAGUAR-XJ-SERIES-III-SEDAN-01 的 HeightMM 与既有最终值冲突
 
+
+--- 本地最终 TSV 已更新 ---
+- 本批 Ktype 映射：all_3001-3100_ktype_dimension_mapping_final.tsv
+- 本批尺寸组：all_3001-3100_dimension_groups_final.tsv
+- 累计 Ktype 映射：all_1-100_ktype_dimension_mapping_final.tsv（4574 行）
+- 累计尺寸组：all_1-100_dimension_groups_final.tsv（1324 行）
+
+- 尺寸冲突协调：
+  - EU-JAGUAR-XJ-SERIES-III-SEDAN-01 -> EU-JAGUAR-XJ-SERIES-III-SEDAN-02：4959x1770x1377 与 4959x1770x1372，创建新尺寸组

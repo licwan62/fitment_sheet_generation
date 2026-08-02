@@ -1080,3 +1080,12 @@ EU-AUDI-200-C2-SEDAN-01	4695	1768	1390	Automobile-Catalog 1980 Audi 200 5T	https
 --- 脚本异常 ---
 异常: DIMENSION_GROUP EU-AUDI-100-C3-SEDAN-01 的 HeightMM 与既有最终值冲突
 
+
+--- 本地最终 TSV 已更新 ---
+- 本批 Ktype 映射：all_1201-1300_ktype_dimension_mapping_final.tsv
+- 本批尺寸组：all_1201-1300_dimension_groups_final.tsv
+- 累计 Ktype 映射：all_1-100_ktype_dimension_mapping_final.tsv（4100 行）
+- 累计尺寸组：all_1-100_dimension_groups_final.tsv（1134 行）
+
+- 尺寸冲突协调：
+  - EU-AUDI-100-C3-SEDAN-01 -> EU-AUDI-100-C3-SEDAN-02：4793x1814x1422 与 4793x1814x1421，创建新尺寸组
