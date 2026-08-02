@@ -1,4 +1,4 @@
-﻿# qclaw 全量表补强自动化脚本
+# qclaw 全量表补强自动化脚本
 # 通过 QClaw xbrowser 控制 ChatGPT 网页版，遍历 TSV，多轮发送“下一步”，保存结果。
 
 [CmdletBinding(PositionalBinding = $false)]
@@ -890,6 +890,7 @@ function Test-XBRecoverableError {
         "Protocol error",
         "CDP",
         "browser has disconnected",
+        "context or browser has been closed",
         "Failed to open a new tab",
         "Target.createTarget",
         "websocket",
@@ -3587,38 +3588,13 @@ function Invoke-ChatGPTConversationBranchOnce {
     Ensure-ChatGPTActive
     Write-Host "  对话达到长度上限，正在执行【在新聊天中分支】..." -ForegroundColor Yellow
 
-<<<<<<< Updated upstream
     $visibleAndTextHelper = @'
-=======
-    $prepareScript = @'
-(() => {
-  window.scrollTo(0, document.body.scrollHeight);
-  const turns = Array.from(document.querySelectorAll('[data-message-author-role="user"]'));
-  if (turns.length > 0) {
-    const last = turns[turns.length - 1];
-    last.scrollIntoView({ behavior: 'instant', block: 'center' });
-    for (let i = 0; i < 3; i++) {
-      last.dispatchEvent(new MouseEvent('mouseover', { bubbles: true }));
-      last.dispatchEvent(new MouseEvent('mouseenter', { bubbles: true }));
-      last.dispatchEvent(new MouseEvent('mousemove', { bubbles: true, clientX: 10, clientY: 10 }));
-    }
-  }
-  return turns.length;
-})()
-'@
-    try { Invoke-XBRun "eval" $prepareScript | Out-Null } catch { }
-    Start-Sleep -Seconds 2
-
-    $findBranchScript = @'
-(() => {
->>>>>>> Stashed changes
   const visible = el => {
     if (!el) return false;
     const s = getComputedStyle(el); const r = el.getBoundingClientRect();
     return s.display !== 'none' && s.visibility !== 'hidden' && r.width > 0 && r.height > 0;
   };
   const textOf = el => ((el.innerText || el.textContent || '') + ' ' + (el.getAttribute('aria-label') || '')).trim();
-<<<<<<< Updated upstream
 '@
 
     # Step 1: Check if branch button is already directly visible.
@@ -3779,134 +3755,6 @@ $visibleAndTextHelper
         else {
             $debugList = if ($menuInfo -and $menuInfo.debug) { $menuInfo.debug -join ' | ' } else { $menuResult }
             throw "没有找到最后一条用户消息的【在新聊天中分支】入口。用户消息上的按钮: $debugList"
-=======
-  const branchPattern = /branch|分支|开始新对话|新.*聊天.*分支|新.*对话.*分支|create.*new.*chat|新.*聊天|continue.*new/i;
-
-  const selectors = 'button, a, [role="menuitem"], [role="button"], [role="dialog"] button, [role="alertdialog"] button, [data-testid] button, section button';
-  const all = Array.from(document.querySelectorAll(selectors));
-  const direct = all.find(el => visible(el) && branchPattern.test(textOf(el)));
-  if (direct) {
-    direct.click();
-    return 'branch-clicked';
-  }
-
-  const sections = Array.from(document.querySelectorAll('main section, [data-message-author-role] section, main div > section'));
-  for (const section of sections.reverse()) {
-    const btns = Array.from(section.querySelectorAll('button')).filter(visible);
-    const hit = btns.find(b => branchPattern.test(textOf(b)));
-    if (hit) {
-      hit.click();
-      return 'branch-clicked';
-    }
-  }
-
-  const lastUser = document.querySelectorAll('[data-message-author-role="user"]');
-  if (lastUser.length > 0) {
-    const el = lastUser[lastUser.length - 1];
-    let node = el;
-    for (let i = 0; i < 8; i++) {
-      node = node.parentElement;
-      if (!node) break;
-      const btns = Array.from(node.querySelectorAll('button')).filter(visible);
-      const hit = btns.find(b => branchPattern.test(textOf(b)));
-      if (hit) {
-        hit.click();
-        return 'branch-clicked';
-      }
-    }
-  }
-
-  return 'not-found';
-})()
-'@
-    $branchClicked = $false
-    $pollDeadline = (Get-Date).AddSeconds(15)
-    while (-not $branchClicked -and (Get-Date) -lt $pollDeadline) {
-        $result = [string](Get-XBValue (Invoke-XBRun "eval" $findBranchScript))
-        if ($result -eq "branch-clicked") {
-            $branchClicked = $true
-            break
-        }
-        Start-Sleep -Seconds 1
-    }
-
-    if (-not $branchClicked) {
-        $openMenuScript = @'
-(() => {
-  const visible = el => {
-    if (!el) return false;
-    const style = getComputedStyle(el);
-    const rect = el.getBoundingClientRect();
-    return style.display !== 'none' && style.visibility !== 'hidden' && rect.width > 0 && rect.height > 0;
-  };
-  const textOf = el => ((el.innerText || el.textContent || '') + ' ' + (el.getAttribute('aria-label') || '')).trim();
-
-  const allTurns = Array.from(document.querySelectorAll('[data-message-author-role="user"]'));
-  if (allTurns.length === 0) return 'no-turns';
-  const turn = allTurns[allTurns.length - 1];
-  turn.scrollIntoView({ behavior: 'instant', block: 'center' });
-  for (let i = 0; i < 5; i++) {
-    turn.dispatchEvent(new MouseEvent('mouseover', { bubbles: true }));
-    turn.dispatchEvent(new MouseEvent('mouseenter', { bubbles: true }));
-    turn.dispatchEvent(new MouseEvent('mousemove', { bubbles: true, clientX: 10, clientY: 10 }));
-  }
-  const buttons = Array.from(turn.querySelectorAll('button')).filter(visible);
-  const parentButtons = Array.from(turn.parentElement.querySelectorAll('button')).filter(visible);
-  const allButtons = buttons.length > 0 ? buttons : parentButtons;
-  const sharePattern = /share|分享|复制|copy/i;
-  const menu = allButtons.reverse().find(button => {
-    const label = textOf(button);
-    const testId = button.getAttribute('data-testid') || '';
-    const ariaLabel = (button.getAttribute('aria-label') || '').toLowerCase();
-    if (sharePattern.test(label) || sharePattern.test(ariaLabel)) return false;
-    if (/more|更多|\.\.\.|⋯|ellipsis/i.test(label)) return true;
-    if (/more|actions?|menu/i.test(testId)) return true;
-    if (/more|更多|\.\.\.|⋯|ellipsis/i.test(ariaLabel)) return true;
-    const svg = button.querySelector('svg');
-    if (svg && allButtons.indexOf(button) === allButtons.length - 1) {
-      const pathCount = button.querySelectorAll('circle, path').length;
-      if (pathCount >= 3 && pathCount <= 5 && /more|menu|overflow/i.test(ariaLabel + ' ' + testId)) return true;
-    }
-    return false;
-  });
-  if (menu) {
-    menu.click();
-    return 'menu-opened';
-  }
-  return 'not-found';
-})()
-'@
-        $menuResult = [string](Get-XBValue (Invoke-XBRun "eval" $openMenuScript))
-        if ($menuResult -eq "menu-opened") {
-            $clickBranchScript = @'
-(() => {
-  const visible = el => {
-    if (!el) return false;
-    const style = getComputedStyle(el);
-    const rect = el.getBoundingClientRect();
-    return style.display !== 'none' && style.visibility !== 'hidden' && rect.width > 0 && rect.height > 0;
-  };
-  const textOf = el => ((el.innerText || el.textContent || '') + ' ' + (el.getAttribute('aria-label') || '')).trim();
-  const pattern = /branch|分支|开始新对话|新.*聊天.*分支|新.*对话.*分支|create.*new.*chat|新.*聊天|continue.*new/i;
-  const selectors = '[role="menuitem"], [role="menu"] button, [role="dialog"] button, [role="popover"] button, section button, button, a';
-  const item = Array.from(document.querySelectorAll(selectors))
-    .find(el => visible(el) && pattern.test(textOf(el)));
-  if (item) { item.click(); return true; }
-  return false;
-})()
-'@
-            for ($menuAttempt = 1; $menuAttempt -le 8; $menuAttempt++) {
-                Start-Sleep -Seconds 1
-                $clicked = Get-XBValue (Invoke-XBRun "eval" $clickBranchScript)
-                if ($clicked) { $branchClicked = $true; break }
-            }
-            if (-not $branchClicked) {
-                throw "已打开消息操作菜单，但没有找到【在新聊天中分支】"
-            }
-        }
-        else {
-            throw "没有找到最后一条用户消息的【在新聊天中分支】入口 (menuResult=$menuResult)"
->>>>>>> Stashed changes
         }
     }
 

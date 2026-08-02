@@ -29,7 +29,7 @@ project_layout:
   summary: summary.txt
 
 runtime:
-  max_rounds: 150
+  max_rounds: 100
   # 欧洲历史车型资料可能需要较长检索时间，沿用 moto 工作区的长等待配置。
   max_reply_wait_seconds: 9999
   browser: playwright

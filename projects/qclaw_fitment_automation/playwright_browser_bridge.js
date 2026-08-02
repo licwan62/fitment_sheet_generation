@@ -86,7 +86,17 @@ async function ensureBrowser() {
 async function activePage() {
   await ensureBrowser();
   if (!currentPage || currentPage.isClosed()) {
-    currentPage = context.pages().find((page) => !page.isClosed()) || await context.newPage();
+    try {
+      currentPage = context.pages().find((page) => !page.isClosed()) || await context.newPage();
+    } catch (error) {
+      if (isClosedTargetError(error)) {
+        await resetBrowserState();
+        await ensureBrowser();
+        currentPage = context.pages().find((page) => !page.isClosed()) || await context.newPage();
+      } else {
+        throw error;
+      }
+    }
   }
   return currentPage;
 }
@@ -102,7 +112,7 @@ function pageInfo(page, index) {
   };
 }
 
-async function runAction(action, body) {
+async function runAction(action, body, existingPage) {
   if (action === "init") {
     await ensureBrowser();
     return { enabled: true, backend: "playwright", userDataDir };
@@ -117,7 +127,7 @@ async function runAction(action, body) {
     return { success: true };
   }
 
-  const page = await activePage();
+  const page = existingPage || await activePage();
   if (action === "open") {
     const targetUrl = new URL(body.url);
     const matchingPages = context.pages().filter((item) => {
@@ -219,11 +229,21 @@ const server = http.createServer(async (request, response) => {
     const body = await readBody(request);
     let result;
     try {
-      result = await runAction(body.action, body);
+      if (body.action === "init" || body.action === "cleanup") {
+        result = await runAction(body.action, body);
+      } else {
+        const page = await activePage();
+        result = await runAction(body.action, body, page);
+      }
     } catch (error) {
       if (body.action === "cleanup" || !isClosedTargetError(error)) throw error;
       await resetBrowserState();
-      result = await runAction(body.action, body);
+      if (body.action === "init") {
+        result = await runAction(body.action, body);
+      } else {
+        const page = await activePage();
+        result = await runAction(body.action, body, page);
+      }
     }
     json(response, 200, { ok: true, result });
   } catch (error) {
