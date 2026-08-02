@@ -11,7 +11,7 @@ $task = [pscustomobject]@{
     CheckpointPath = (Join-Path $checkpointTestDir "checkpoint.json")
 }
 
-# Checkpoint v2 must serialize a one-item root lineage as a JSON array.
+# Checkpoint v3 must serialize a one-item root lineage as a JSON array.
 function Get-TaskCheckpoint { param($Task) return $null }
 
 Save-TaskCheckpoint -Task $task -Status "进行中" -Phase "waiting_reply" `
@@ -19,7 +19,7 @@ Save-TaskCheckpoint -Task $task -Status "进行中" -Phase "waiting_reply" `
     -ConversationUrl "https://chatgpt.com/c/root"
 
 $checkpoint = Get-Content -LiteralPath $task.CheckpointPath -Raw -Encoding UTF8 | ConvertFrom-Json
-if ($checkpoint.version -ne 2) { throw "checkpoint version is not 2" }
+if ($checkpoint.version -ne 3) { throw "checkpoint version is not 3" }
 if ($checkpoint.conversation_branch_count -ne 0) { throw "root branch count is not 0" }
 if (@($checkpoint.conversation_lineage).Count -ne 1) { throw "root lineage is not a one-item array" }
 if ($checkpoint.conversation_lineage[0].url -ne "https://chatgpt.com/c/root") {
