@@ -973,3 +973,242 @@ EU-TOYOTA-MODEL-F-R20-MPV-4D-01	4285	1670	1815	Automobile-Catalog Toyota Model F
 - all_3401-3500_dimension_groups_final.tsv
 缺少任一下载链接时不得输出推进信号：COMPLETE。
 
+
+--- Round 7 / checkpoint 恢复已完成回复 ---
+## 更新点
+
+* 已闭合剩余 13 个 Ktype，新增 20 行映射和 10 个尺寸组，覆盖 Land Cruiser 80、70、60 系列及 Hilux V 的不同车身分支。Toyota 官方资料确认 HDJ81V 为 `4820 × 1900 × 1900 mm`，并明确 Prado 70 存在三门短轴和五门长轴车身。([丰田官网][1])
+* Land Cruiser 70 的 LJ70/KZJ70、LJ73 以及 Land Cruiser 60 柴油和涡轮柴油外廓已分别闭合；Hilux V 按 Regular Cab、Double Cab、Xtracab 拆分。([汽车数据][2])
+* 已完成一次机械收尾检查：固定表头正确、`id` 与 `DIMENSION_GROUP_ID` 唯一、所有引用闭合、尺寸与来源完整、无孤立尺寸组。
+
+## 当前批次进度
+
+* 输入 Ktype：100
+* READY 输入 Ktype：100
+* READY 映射行：127
+* PENDING：0
+* DIMENSION_GROUP：67
+* 机械检查：通过
+
+## 最终完整 Ktype 映射 TSV
+
+```tsv
+id	Ktype	NormalizedBodyStyle	Generation	BodyCode	Doors	DIMENSION_GROUP_ID	MatchConfidence	Notes	IterationStatus
+3520	3520	Hatchback	Lancer VIII Sportback	CX_A	5	EU-MITSUBISHI-LANCER-VIII-CXA-HATCHBACK-5D-01	HIGH		READY
+3521	3521	Hatchback	Carina II I (T15)	AT151	5	EU-TOYOTA-CARINA-II-T15-HATCHBACK-5D-STD-01	HIGH	普通外廓分支。	READY
+3522	3522	Sedan	Carina II I (T15)	ST150	4	EU-TOYOTA-CARINA-II-T15-SEDAN-4D-GLI-01	HIGH	GLi外廓分支。	READY
+3523	3523	Hatchback	Carina II I (T15)	ST150	5	EU-TOYOTA-CARINA-II-T15-HATCHBACK-5D-GLI-01	HIGH	GLi外廓分支。	READY
+3524	3524	Hatchback	Carina II I (T15)	CT150	5	EU-TOYOTA-CARINA-II-T15-HATCHBACK-5D-STD-01	HIGH	普通外廓分支。	READY
+3525	3525	Sedan	Carina II II (T170)	AT171	4	EU-TOYOTA-CARINA-II-T170-SEDAN-4D-01	HIGH		READY
+3526	3526	Hatchback	Carina II II (T170)	AT171	5	EU-TOYOTA-CARINA-II-T170-HATCHBACK-5D-01	HIGH		READY
+3527	3527	Sedan	Carina II II (T170)	AT171	4	EU-TOYOTA-CARINA-II-T170-SEDAN-4D-01	HIGH		READY
+3528	3528	Hatchback	Carina II II (T170)	AT171	5	EU-TOYOTA-CARINA-II-T170-HATCHBACK-5D-01	HIGH		READY
+3529	3529	Sedan	Carina II II (T170)	ST171	4	EU-TOYOTA-CARINA-II-T170-SEDAN-4D-01	HIGH		READY
+3530	3530	Hatchback	Carina II II (T170)	ST171	5	EU-TOYOTA-CARINA-II-T170-HATCHBACK-5D-01	HIGH		READY
+3531	3531	Sedan	Carina II II (T170)	AT171	4	EU-TOYOTA-CARINA-II-T170-SEDAN-4D-01	HIGH		READY
+3532	3532	Hatchback	Carina II II (T170)	AT171	5	EU-TOYOTA-CARINA-II-T170-HATCHBACK-5D-01	HIGH		READY
+3533	3533	Wagon	Carina II II (T170)	AT171G	5	EU-TOYOTA-CARINA-II-T170-WAGON-5D-01	HIGH		READY
+3534	3534	Wagon	Carina II II (T170)	AT171G	5	EU-TOYOTA-CARINA-II-T170-WAGON-5D-01	HIGH		READY
+3535	3535	Wagon	Carina II II (T170)	AT171G	5	EU-TOYOTA-CARINA-II-T170-WAGON-5D-01	HIGH		READY
+3536_prefl	3536	Wagon	3 Series Touring (E91)	E91	5	EU-BMW-3-E91-WAGON-5D-PREFL-01	MEDIUM	输入生产区间跨越2008年外观改款；改款前物理外廓。	READY
+3536_facelift	3536	Wagon	3 Series Touring (E91 LCI)	E91	5	EU-BMW-3-E91-WAGON-5D-FACELIFT-01	MEDIUM	输入生产区间跨越2008年外观改款；改款后物理外廓。	READY
+3537_l10_prefl	3537	Hatchback	Tercel I (L10)	AL11	3	EU-TOYOTA-TERCEL-I-L10-HATCHBACK-3D-PREFL-01	MEDIUM	L10改款前三门掀背物理分支。	READY
+3537_l10_facelift	3537	Hatchback	Tercel I (L10)	AL11	3	EU-TOYOTA-TERCEL-I-L10-HATCHBACK-3D-FACELIFT-01	MEDIUM	L10改款后三门掀背物理分支。	READY
+3537_l20_3dr	3537	Hatchback	Tercel II (L20)	AL20	3	EU-TOYOTA-TERCEL-II-L20-HATCHBACK-3D-01	MEDIUM	L20三门物理分支。	READY
+3537_l20_5dr	3537	Hatchback	Tercel II (L20)	AL20	5	EU-TOYOTA-TERCEL-II-L20-HATCHBACK-5D-01	MEDIUM	L20五门物理分支。	READY
+3538	3538	Hatchback	Camry I (V10)	V10	5	EU-TOYOTA-CAMRY-I-V10-HATCHBACK-5D-01	HIGH		READY
+3539	3539	Sedan	Camry I (V10)	V10	4	EU-TOYOTA-CAMRY-I-V10-SEDAN-4D-01	HIGH		READY
+3540	3540	Sedan	Camry I (V10)	V10	4	EU-TOYOTA-CAMRY-I-V10-SEDAN-4D-01	HIGH		READY
+3541	3541	Hatchback	Lancer VIII Sportback	CX_A	5	EU-MITSUBISHI-LANCER-VIII-CXA-HATCHBACK-5D-01	HIGH		READY
+3542	3542	Sedan	Camry II (V20)	V20	4	EU-TOYOTA-CAMRY-II-V20-SEDAN-4D-01	HIGH		READY
+3543	3543	Sedan	Camry II (V20)	V20	4	EU-TOYOTA-CAMRY-II-V20-SEDAN-4D-01	MEDIUM	输入目录结束日期晚于主要车型资料年份，物理车身仍对应V20四门轿车。	READY
+3544	3544	Sedan	Camry II (V20)	V20	4	EU-TOYOTA-CAMRY-II-V20-SEDAN-4D-01	HIGH		READY
+3545	3545	Sedan	Camry II (V20)	V20	4	EU-TOYOTA-CAMRY-II-V20-SEDAN-4D-01	HIGH		READY
+3546	3546	Sedan	Camry II (V20)	V20	4	EU-TOYOTA-CAMRY-II-V20-SEDAN-4D-01	HIGH		READY
+3547	3547	Sedan	Camry III (XV10)	XV10	4	EU-TOYOTA-CAMRY-III-XV10-SEDAN-4D-01	HIGH		READY
+3548	3548	Sedan	Camry III (XV10)	XV10	4	EU-TOYOTA-CAMRY-III-XV10-SEDAN-4D-01	HIGH		READY
+3549	3549	Wagon	Camry II Wagon (V20)	V20	5	EU-TOYOTA-CAMRY-II-V20-WAGON-5D-01	HIGH		READY
+3550	3550	Wagon	Camry II Wagon (V20)	V20	5	EU-TOYOTA-CAMRY-II-V20-WAGON-5D-01	MEDIUM	输入目录结束日期晚于主要车型资料年份，物理车身仍对应V20五门旅行车。	READY
+3551	3551	Wagon	Camry II Wagon (V20)	V20	5	EU-TOYOTA-CAMRY-II-V20-WAGON-5D-01	HIGH		READY
+3552	3552	Wagon	Camry II Wagon (V20)	V20	5	EU-TOYOTA-CAMRY-II-V20-WAGON-5D-01	HIGH		READY
+3553	3553	Wagon	Camry III Wagon (XV10)	XV10	5	EU-TOYOTA-CAMRY-III-XV10-WAGON-5D-01	HIGH		READY
+3554	3554	Wagon	Camry II Wagon (V20)	V20	5	EU-TOYOTA-CAMRY-II-V20-WAGON-5D-01	HIGH		READY
+3555	3555	Wagon	Camry III Wagon (XV10)	XV10	5	EU-TOYOTA-CAMRY-III-XV10-WAGON-5D-01	HIGH		READY
+3556	3556	Sedan	Crown VI (S110)	MS112	4	EU-TOYOTA-CROWN-VI-S110-SEDAN-4D-01	HIGH		READY
+3557	3557	Sedan	323 II (BD)	BD	4	EU-MAZDA-323-II-BD-SEDAN-4D-01	HIGH		READY
+3558_3dr	3558	Hatchback	323 II (BD)	BD105	3	EU-MAZDA-323-II-BD-HATCHBACK-3D-01	MEDIUM	三门物理分支。	READY
+3558_5dr	3558	Hatchback	323 II (BD)	BD105	5	EU-MAZDA-323-II-BD-HATCHBACK-5D-01	MEDIUM	五门物理分支。	READY
+3559_3dr	3559	Hatchback	323 II (BD)	BD105	3	EU-MAZDA-323-II-BD-HATCHBACK-3D-01	MEDIUM	三门物理分支。	READY
+3559_5dr	3559	Hatchback	323 II (BD)	BD105	5	EU-MAZDA-323-II-BD-HATCHBACK-5D-01	MEDIUM	五门物理分支。	READY
+3560	3560	Hatchback	Lancer VIII Sportback	CX_A	5	EU-MITSUBISHI-LANCER-VIII-CXA-HATCHBACK-5D-01	HIGH		READY
+3561	3561	Hatchback	323 III (BF)	BF	3	EU-MAZDA-323-III-BF-HATCHBACK-3D-01	HIGH		READY
+3562_3dr	3562	Hatchback	323 III (BF)	BF103	3	EU-MAZDA-323-III-BF-HATCHBACK-3D-01	MEDIUM	三门物理分支。	READY
+3562_5dr	3562	Hatchback	323 III (BF)	BF103	5	EU-MAZDA-323-III-BF-HATCHBACK-5D-01	MEDIUM	五门物理分支。	READY
+3563	3563	Sedan	323 III (BF)	BF103	4	EU-MAZDA-323-III-BF-SEDAN-4D-01	HIGH		READY
+3564_3dr	3564	Hatchback	323 III (BF)	BF5S	3	EU-MAZDA-323-III-BF-HATCHBACK-3D-01	MEDIUM	三门物理分支。	READY
+3564_5dr	3564	Hatchback	323 III (BF)	BF5S	5	EU-MAZDA-323-III-BF-HATCHBACK-5D-01	MEDIUM	五门物理分支。	READY
+3565	3565	Sedan	323 III (BF)	BF	4	EU-MAZDA-323-III-BF-SEDAN-4D-01	HIGH		READY
+3566_prefl	3566	Coupe	Celica II (A40/A50)		2	EU-TOYOTA-CELICA-II-A40A50-COUPE-2D-PREFL-01	MEDIUM	生产区间跨越Phase I与Phase II；改款前外廓。	READY
+3566_facelift	3566	Coupe	Celica II (A40/A50)		2	EU-TOYOTA-CELICA-II-A40A50-COUPE-2D-FACELIFT-01	HIGH	生产区间跨越Phase I与Phase II；改款后外廓。	READY
+3567_prefl	3567	Coupe	Celica II (A40/A50)		2	EU-TOYOTA-CELICA-II-A40A50-COUPE-2D-PREFL-01	HIGH	生产区间跨越Phase I与Phase II；改款前外廓。	READY
+3567_facelift	3567	Coupe	Celica II (A40/A50)		2	EU-TOYOTA-CELICA-II-A40A50-COUPE-2D-FACELIFT-01	HIGH	生产区间跨越Phase I与Phase II；改款后外廓。	READY
+3568_prefl	3568	Hatchback	Celica II (A40/A50)		3	EU-TOYOTA-CELICA-II-A40A50-HATCHBACK-3D-1600-PREFL-01	HIGH	生产区间跨越Phase I与Phase II；改款前外廓。	READY
+3568_facelift	3568	Hatchback	Celica II (A40/A50)		3	EU-TOYOTA-CELICA-II-A40A50-HATCHBACK-3D-1600-FACELIFT-01	HIGH	生产区间跨越Phase I与Phase II；改款后外廓。	READY
+3569	3569	Coupe	B3 Coupe (E92)	E92	2	EU-ALPINA-B3-E92-COUPE-2D-GT3-01	HIGH	GT3专属外廓。	READY
+3570	3570	Wagon	B5 Touring (F11)	F11	5	EU-ALPINA-B5-F11-WAGON-5D-BITURBO-01	HIGH		READY
+3571_prefl	3571	Hatchback	Celica II (A40/A50)		3	EU-TOYOTA-CELICA-II-A40A50-HATCHBACK-3D-1600-PREFL-01	MEDIUM	生产区间跨越Phase I与Phase II；改款前外廓。	READY
+3571_facelift	3571	Hatchback	Celica II (A40/A50)		3	EU-TOYOTA-CELICA-II-A40A50-HATCHBACK-3D-1600-FACELIFT-01	MEDIUM	生产区间跨越Phase I与Phase II；改款后外廓。	READY
+3572_prefl	3572	Coupe	Celica II (A40/A50)		2	EU-TOYOTA-CELICA-II-A40A50-COUPE-2D-PREFL-01	MEDIUM	生产区间跨越Phase I与Phase II；改款前外廓。	READY
+3572_facelift	3572	Coupe	Celica II (A40/A50)		2	EU-TOYOTA-CELICA-II-A40A50-COUPE-2D-FACELIFT-01	MEDIUM	生产区间跨越Phase I与Phase II；改款后外廓。	READY
+3573	3573	Hatchback	Celica II (A40/A50)		3	EU-TOYOTA-CELICA-II-A40A50-HATCHBACK-3D-2000-XT-FACELIFT-01	HIGH	Phase II 2000 XT外廓。	READY
+3574_prefl	3574	Hatchback	Celica II (A40/A50)		3	EU-TOYOTA-CELICA-II-A40A50-HATCHBACK-3D-2000-XT-PREFL-01	MEDIUM	生产区间跨越Phase I与Phase II；改款前外廓。	READY
+3574_facelift	3574	Hatchback	Celica II (A40/A50)		3	EU-TOYOTA-CELICA-II-A40A50-HATCHBACK-3D-2000-XT-FACELIFT-01	MEDIUM	生产区间跨越Phase I与Phase II；改款后外廓。	READY
+3575_prefl	3575	Hatchback	Celica II (A40/A50)		3	EU-TOYOTA-CELICA-II-A40A50-HATCHBACK-3D-2000-GT-PREFL-01	MEDIUM	生产区间跨越Phase I与Phase II；改款前外廓。	READY
+3575_facelift	3575	Hatchback	Celica II (A40/A50)		3	EU-TOYOTA-CELICA-II-A40A50-HATCHBACK-3D-2000-GT-FACELIFT-01	MEDIUM	生产区间跨越Phase I与Phase II；改款后外廓。	READY
+3576	3576	Hatchback	Celica III (A60)	RA61	3	EU-TOYOTA-CELICA-III-A60-HATCHBACK-3D-01	HIGH		READY
+3577	3577	Hatchback	Celica IV (T16)	AT160	3	EU-TOYOTA-CELICA-IV-T16-HATCHBACK-3D-FWD-01	HIGH		READY
+3578	3578	Hatchback	Celica IV (T16)	ST162	3	EU-TOYOTA-CELICA-IV-T16-HATCHBACK-3D-FWD-01	HIGH		READY
+3579	3579	Hatchback	Celica IV (T16)	AT160	3	EU-TOYOTA-CELICA-IV-T16-HATCHBACK-3D-FWD-01	HIGH		READY
+3580	3580	Hatchback	Celica IV (T16)	ST162	3	EU-TOYOTA-CELICA-IV-T16-HATCHBACK-3D-FWD-01	HIGH		READY
+3581	3581	Hatchback	Celica IV (T16)	ST165	3	EU-TOYOTA-CELICA-IV-T16-HATCHBACK-3D-4WD-01	HIGH	四驱涡轮三门掀背外廓；修正原二门Coupe映射。	READY
+3582	3582	Coupe	Celica IV (T16)	ST162	2	EU-TOYOTA-CELICA-IV-T16-COUPE-2D-FWD-01	HIGH	二门折背Coupe物理外廓。	READY
+3583	3583	Convertible	Celica Cabrio (T16)	ST162	2	EU-TOYOTA-CELICA-IV-T16-CONVERTIBLE-2D-01	HIGH		READY
+3584	3584	Convertible	Celica Cabrio (T16)	ST162	2	EU-TOYOTA-CELICA-IV-T16-CONVERTIBLE-2D-01	HIGH		READY
+3585	3585	Coupe	Supra III (A70)	A70	3	EU-TOYOTA-SUPRA-III-A70-COUPE-3D-01	MEDIUM	功率标定存在市场差异，物理外廓为A70三门车身。	READY
+3586	3586	Coupe	Supra III (A70)	A70	3	EU-TOYOTA-SUPRA-III-A70-COUPE-3D-01	HIGH		READY
+3587	3587	Coupe	Supra III (A70)	A70	3	EU-TOYOTA-SUPRA-III-A70-COUPE-3D-01	MEDIUM	功率标定存在市场差异，物理外廓为A70三门车身。	READY
+3588	3588	Coupe	MR2 I (AW11)	AW11	2	EU-TOYOTA-MR2-I-AW11-COUPE-2D-01	HIGH		READY
+3589	3589	Coupe	MR2 I (AW11)	AW11	2	EU-TOYOTA-MR2-I-AW11-COUPE-2D-01	HIGH		READY
+3590	3590	Targa	MR2 II (SW20)	SW20	2	EU-TOYOTA-MR2-II-SW20-TARGA-2D-01	HIGH	可靠资料将该SW20车身标为Targa。	READY
+3591_narrow	3591	Hatchback	Celica Supra II (A60)	MA61	3	EU-TOYOTA-CELICA-SUPRA-II-A60-HATCHBACK-3D-NARROW-01	MEDIUM	早期窄体物理分支。	READY
+3591_wide	3591	Hatchback	Celica Supra II (A60)	MA61	3	EU-TOYOTA-CELICA-SUPRA-II-A60-HATCHBACK-3D-WIDE-01	MEDIUM	后期宽体物理分支。	READY
+3592_swb	3592	MPV	Hiace II (H20/H30)	RH20	4	EU-TOYOTA-HIACE-II-H20-MPV-4D-SWB-01	MEDIUM	RH20短轴客车分支。	READY
+3592_lwb	3592	MPV	Hiace II (H20/H30)	RH30	4	EU-TOYOTA-HIACE-II-H30-MPV-4D-LWB-01	MEDIUM	RH30长轴客车分支。	READY
+3593_swb	3593	MPV	Hiace III (H50/H60)	YH51	4	EU-TOYOTA-HIACE-III-H50-MPV-4D-SWB-01	MEDIUM	YH51短轴客车分支。	READY
+3593_lwb	3593	MPV	Hiace III (H50/H60)	YH61	4	EU-TOYOTA-HIACE-III-H60-MPV-4D-LWB-01	MEDIUM	YH61长轴客车分支。	READY
+3594_swb	3594	MPV	Hiace III (H50/H60)	LH51	4	EU-TOYOTA-HIACE-III-H50-MPV-4D-SWB-01	MEDIUM	LH51短轴客车分支。	READY
+3594_lwb	3594	MPV	Hiace III (H50/H60)	LH61	4	EU-TOYOTA-HIACE-III-H60-MPV-4D-LWB-01	MEDIUM	LH61长轴客车分支。	READY
+3595	3595	Van	LiteAce II (M20)	KM20V	4	EU-TOYOTA-LITEACE-II-M20-VAN-4D-01	HIGH		READY
+3596_prefl	3596	MPV	LiteAce III (M30)	KM30G	4	EU-TOYOTA-LITEACE-III-M30-MPV-4D-PREFL-01	MEDIUM	1989年中期改款前外廓。	READY
+3596_facelift	3596	MPV	LiteAce III (M30)	KM30G	4	EU-TOYOTA-LITEACE-III-M30-MPV-4D-FACELIFT-01	MEDIUM	1989年中期改款后外廓。	READY
+3597	3597	SUV	Land Cruiser 80	HDJ81	5	EU-TOYOTA-LAND-CRUISER-80-SUV-5D-TD-01	HIGH		READY
+3598_swb	3598	SUV	Land Cruiser 70	RJ70	3	EU-TOYOTA-LAND-CRUISER-70-SUV-3D-SWB-01	MEDIUM	短轴三门物理分支。	READY
+3598_mwb	3598	SUV	Land Cruiser 70	RJ73	3	EU-TOYOTA-LAND-CRUISER-70-SUV-3D-MWB-01	MEDIUM	中轴三门物理分支。	READY
+3599_swb	3599	SUV	Land Cruiser 70	RJ70	3	EU-TOYOTA-LAND-CRUISER-70-SUV-3D-SWB-01	MEDIUM	短轴三门物理分支。	READY
+3599_mwb	3599	SUV	Land Cruiser 70	RJ73	3	EU-TOYOTA-LAND-CRUISER-70-SUV-3D-MWB-01	MEDIUM	中轴三门物理分支。	READY
+3600	3600	SUV	Land Cruiser 70	LJ70	3	EU-TOYOTA-LAND-CRUISER-70-SUV-3D-SWB-01	HIGH		READY
+3601_swb	3601	SUV	Land Cruiser 70	LJ70	3	EU-TOYOTA-LAND-CRUISER-70-SUV-3D-SWB-01	MEDIUM	短轴三门物理分支。	READY
+3601_mwb	3601	SUV	Land Cruiser 70	LJ73	3	EU-TOYOTA-LAND-CRUISER-70-SUV-3D-MWB-01	MEDIUM	中轴三门物理分支。	READY
+3602	3602	SUV	Land Cruiser 70	LJ70	3	EU-TOYOTA-LAND-CRUISER-70-SUV-3D-SWB-01	HIGH		READY
+3603	3603	Convertible	Land Cruiser 70 Hardtop	LJ70	2	EU-TOYOTA-LAND-CRUISER-70-CONVERTIBLE-2D-SWB-HARDTOP-01	MEDIUM	短轴可拆硬顶开放式车身。	READY
+3604_swb	3604	SUV	Land Cruiser Prado 70	KZJ70	3	EU-TOYOTA-LAND-CRUISER-70-SUV-3D-SWB-01	MEDIUM	短轴三门物理分支。	READY
+3604_mwb	3604	SUV	Land Cruiser 70	KZJ73	3	EU-TOYOTA-LAND-CRUISER-70-SUV-3D-MWB-01	MEDIUM	中轴三门物理分支。	READY
+3604_lwb	3604	SUV	Land Cruiser Prado 70	KZJ78	5	EU-TOYOTA-LAND-CRUISER-PRADO-70-SUV-5D-LWB-01	MEDIUM	长轴五门物理分支。	READY
+3605	3605	Convertible	Land Cruiser 70 Hardtop	KZJ70	2	EU-TOYOTA-LAND-CRUISER-70-CONVERTIBLE-2D-SWB-HARDTOP-01	MEDIUM	短轴可拆硬顶开放式车身。	READY
+3606	3606	SUV	Land Cruiser 60	HJ60	5	EU-TOYOTA-LAND-CRUISER-60-SUV-5D-DIESEL-01	HIGH		READY
+3607	3607	SUV	Land Cruiser 60	HJ60	5	EU-TOYOTA-LAND-CRUISER-60-SUV-5D-DIESEL-01	HIGH		READY
+3608	3608	SUV	Land Cruiser 60	HJ61	5	EU-TOYOTA-LAND-CRUISER-60-SUV-5D-TURBODIESEL-01	HIGH		READY
+3609	3609	MPV	Model F (R20)	YR20	4	EU-TOYOTA-MODEL-F-R20-MPV-4D-01	HIGH		READY
+3610	3610	MPV	Model F (R20)	YR21	4	EU-TOYOTA-MODEL-F-R20-MPV-4D-01	HIGH		READY
+3611	3611	MPV	Model F (R20)	YR21	4	EU-TOYOTA-MODEL-F-R20-MPV-4D-01	HIGH		READY
+3612_regularcab	3612	Pickup	Hilux V	LN85	2	EU-TOYOTA-HILUX-V-PICKUP-2D-REGULARCAB-01	MEDIUM	单排短轴驾驶室物理分支。	READY
+3612_doublecab	3612	Pickup	Hilux V	LN85	4	EU-TOYOTA-HILUX-V-PICKUP-4D-DOUBLECAB-01	MEDIUM	双排四门驾驶室物理分支。	READY
+3612_xtracab	3612	Pickup	Hilux V	LN90	2	EU-TOYOTA-HILUX-V-PICKUP-2D-XTRACAB-01	MEDIUM	加长驾驶室物理分支。	READY
+3613	3613	Wagon	Tercel II 4WD (L20)	AL25	5	EU-TOYOTA-TERCEL-II-AL25-WAGON-5D-4WD-01	HIGH	五门四驱旅行车物理外廓。	READY
+3614	3614	Wagon	Tercel II 4WD (L20)	AL25	5	EU-TOYOTA-TERCEL-II-AL25-WAGON-5D-4WD-01	MEDIUM	五门四驱旅行车物理外廓。	READY
+3615	3615	Coupe	Celica V (T18)	T18	3	EU-TOYOTA-CELICA-V-T18-COUPE-3D-01	HIGH		READY
+3616	3616	Coupe	Celica V (T18)	T18	3	EU-TOYOTA-CELICA-V-T18-COUPE-3D-01	HIGH		READY
+3617	3617	Convertible	Celica Cabrio (T18)	ST182	2	EU-TOYOTA-CELICA-V-T18-CONVERTIBLE-2D-01	MEDIUM		READY
+3618	3618	Coupe	Celica V (T18)	T18	3	EU-TOYOTA-CELICA-V-T18-COUPE-3D-01	HIGH	四驱版本与本代已核对三维一致。	READY
+3619	3619	Coupe	Celica V (T18)	T18	3	EU-TOYOTA-CELICA-V-T18-COUPE-3D-01	HIGH	四驱版本与本代已核对三维一致。	READY
+```
+
+[下载 Ktype 映射表](sandbox:/mnt/data/all_3401-3500_ktype_dimension_mapping_final.tsv)
+
+## 最终完整 DIMENSION_GROUP TSV
+
+```tsv
+DIMENSION_GROUP_ID	LengthMM	WidthMM	HeightMM	DimensionSource	SourceURL
+EU-MITSUBISHI-LANCER-VIII-CXA-HATCHBACK-5D-01	4585	1760	1515	Automobile-Catalog Mitsubishi Lancer Sportback 1.8; Automobile-Catalog Mitsubishi Lancer Sportback 1.8 DI-D ClearTec	https://www.automobile-catalog.com/car/2009/1996220/mitsubishi_lancer_sportback_1_8.html;https://www.automobile-catalog.com/car/2010/1996385/mitsubishi_lancer_sportback_1_8_di-d_cleartec_inform.html
+EU-TOYOTA-CARINA-II-T15-HATCHBACK-5D-STD-01	4360	1670	1365	Automobile-Catalog Toyota Carina II Liftback 1.6 DX	https://www.automobile-catalog.com/car/1986/3516365/toyota_carina_ii_liftback_1_6_dx.html
+EU-TOYOTA-CARINA-II-T15-SEDAN-4D-GLI-01	4390	1670	1365	Automobile-Catalog Toyota Carina II Sedan 1.8 GLi	https://www.automobile-catalog.com/car/1986/3516440/toyota_carina_ii_sedan_1_8_gli.html
+EU-TOYOTA-CARINA-II-T15-HATCHBACK-5D-GLI-01	4390	1670	1365	Automobile-Catalog Toyota Carina II Liftback 1.8 GLi	https://www.automobile-catalog.com/car/1987/3516200/toyota_carina_ii_liftback_1_8_gli_automatic.html
+EU-TOYOTA-CARINA-II-T170-SEDAN-4D-01	4440	1690	1370	Automobile-Catalog Toyota Carina II Sedan 1.6 XLi	https://www.automobile-catalog.com/car/1990/3547850/toyota_carina_ii_sedan_1_6_xli_automatic.html
+EU-TOYOTA-CARINA-II-T170-HATCHBACK-5D-01	4440	1690	1370	Automobile-Catalog Toyota Carina II Liftback 1.6 XLi	https://www.automobile-catalog.com/car/1990/3547895/toyota_carina_ii_liftback_1_6_xli.html
+EU-TOYOTA-CARINA-II-T170-WAGON-5D-01	4435	1690	1400	Automobile-Catalog Toyota Carina II Wagon 1.6 XL	https://www.automobile-catalog.com/car/1990/3547700/toyota_carina_ii_wagon_1_6_xl.html
+EU-BMW-3-E91-WAGON-5D-PREFL-01	4520	1817	1418	Auto-Data BMW 3 Series Touring E91 325i	https://www.auto-data.net/en/bmw-3-series-touring-e91-325i-218hp-9945
+EU-BMW-3-E91-WAGON-5D-FACELIFT-01	4527	1817	1418	Auto-Data BMW 3 Series Touring E91 LCI 325i	https://www.auto-data.net/en/bmw-3-series-touring-e91-lci-facelift-2008-325i-218hp-17216
+EU-TOYOTA-TERCEL-I-L10-HATCHBACK-3D-PREFL-01	3960	1550	1370	Automobile-Catalog Toyota Tercel Liftback Coupe Phase I Europe	https://www.automobile-catalog.com/car/1979/45515/toyota_tercel_liftback_coupe.html
+EU-TOYOTA-TERCEL-I-L10-HATCHBACK-3D-FACELIFT-01	3980	1550	1370	Automobile-Catalog Toyota Tercel Liftback Coupe facelift Europe	https://www.automobile-catalog.com/car/1981/3481670/toyota_tercel_liftback_coupe_5-speed.html
+EU-TOYOTA-TERCEL-II-L20-HATCHBACK-3D-01	3880	1615	1390	Automobile-Catalog Toyota Tercel 1.3 DX Europe	https://www.automobile-catalog.com/car/1982/29555/toyota_tercel_1_3.html
+EU-TOYOTA-TERCEL-II-L20-HATCHBACK-5D-01	3880	1615	1390	Automobile-Catalog Toyota Tercel 1.3 DX Europe	https://www.automobile-catalog.com/car/1982/29555/toyota_tercel_1_3.html
+EU-TOYOTA-CAMRY-I-V10-HATCHBACK-5D-01	4415	1690	1370	Auto-Data Toyota Camry I Hatchback (V10) generation specifications	https://www.auto-data.net/en/toyota-camry-i-hatchback-v10-generation-1020
+EU-TOYOTA-CAMRY-I-V10-SEDAN-4D-01	4460	1690	1395	Auto-Data Toyota Camry I (V10) generation specifications	https://www.auto-data.net/en/toyota-camry-i-v10-generation-1019
+EU-TOYOTA-CAMRY-II-V20-SEDAN-4D-01	4520	1710	1400	Auto-Data Toyota Camry II (V20) 1.8 technical specifications	https://www.auto-data.net/en/toyota-camry-ii-v20-1.8-90hp-3939
+EU-TOYOTA-CAMRY-III-XV10-SEDAN-4D-01	4725	1770	1415	Auto-Data Toyota Camry III (XV10) 2.2 technical specifications	https://www.auto-data.net/en/toyota-camry-iii-xv10-2.2-136hp-3932
+EU-TOYOTA-CAMRY-II-V20-WAGON-5D-01	4610	1710	1440	Auto-Data Toyota Camry II Wagon (V20) 2.0 GLi technical specifications	https://www.auto-data.net/en/toyota-camry-ii-wagon-v20-2.0-gli-128hp-3934
+EU-TOYOTA-CAMRY-III-XV10-WAGON-5D-01	4795	1770	1420	Auto-Data Toyota Camry III Wagon (XV10) 2.2 technical specifications	https://www.auto-data.net/en/toyota-camry-iii-wagon-xv10-2.2-136hp-3930
+EU-TOYOTA-CROWN-VI-S110-SEDAN-4D-01	4860	1715	1430	Automobile-Catalog Toyota Crown 2.8 Super Saloon	https://www.automobile-catalog.com/car/1980/45650/toyota_crown_i.html
+EU-MAZDA-323-II-BD-SEDAN-4D-01	4155	1630	1375	Automobile-Catalog Mazda 323 1.5 CD Sedan	https://www.automobile-catalog.com/car/1982/1623965/mazda_323_1_5_cd_sedan.html
+EU-MAZDA-323-II-BD-HATCHBACK-3D-01	3955	1630	1375	Automobile-Catalog Mazda 323 1.5 GLS 3/5-door	https://www.automobile-catalog.com/car/1982/25730/mazda_323_1500_s.html
+EU-MAZDA-323-II-BD-HATCHBACK-5D-01	3955	1630	1375	Automobile-Catalog Mazda 323 1.5 GLS 3/5-door	https://www.automobile-catalog.com/car/1982/25730/mazda_323_1500_s.html
+EU-MAZDA-323-III-BF-HATCHBACK-3D-01	3990	1645	1390	Automobile-Catalog Mazda 323 1.1 LX three-door	https://www.automobile-catalog.com/car/1986/52025/mazda_323_1_1_lx.html
+EU-MAZDA-323-III-BF-HATCHBACK-5D-01	3990	1645	1390	Automobile-Catalog Mazda 323 1.5 GLX five-door	https://www.automobile-catalog.com/car/1986/1630010/mazda_323_1_5_glx.html
+EU-MAZDA-323-III-BF-SEDAN-4D-01	4195	1645	1390	Automobile-Catalog Mazda 323 1.5 GLX Sedan	https://www.automobile-catalog.com/car/1985/1630220/mazda_323_1_5_glx_sedan.html
+EU-TOYOTA-CELICA-II-A40A50-COUPE-2D-PREFL-01	4330	1635	1320	Automobile-Catalog Toyota Celica Coupe 1600 ST Phase I Europe	https://www.automobile-catalog.com/car/1978/3493220/toyota_celica_coupe_1600_st.html
+EU-TOYOTA-CELICA-II-A40A50-COUPE-2D-FACELIFT-01	4370	1635	1320	Automobile-Catalog Toyota Celica Coupe 1600 LT Phase II Europe; Automobile-Catalog Toyota Celica Coupe 1600 ST Phase II Europe	https://www.automobile-catalog.com/car/1980/3493415/toyota_celica_coupe_1600_lt.html;https://www.automobile-catalog.com/car/1980/3493445/toyota_celica_coupe_1600_st.html
+EU-TOYOTA-CELICA-II-A40A50-HATCHBACK-3D-1600-PREFL-01	4330	1635	1310	Automobile-Catalog Toyota Celica Liftback 1600 ST Phase I Europe	https://www.automobile-catalog.com/car/1978/3493265/toyota_celica_liftback_1600_st_5-speed.html
+EU-TOYOTA-CELICA-II-A40A50-HATCHBACK-3D-1600-FACELIFT-01	4370	1635	1310	Automobile-Catalog Toyota Celica Liftback 1600 ST Phase II Europe	https://www.automobile-catalog.com/car/1980/3493475/toyota_celica_liftback_1600_st.html
+EU-ALPINA-B3-E92-COUPE-2D-GT3-01	4668	1782	1405	Auto-Data Alpina B3 Coupe (E92) GT3 technical specifications	https://www.auto-data.net/en/alpina-b3-coupe-e92-gt3-3.0-408hp-switch-tronic-18321
+EU-ALPINA-B5-F11-WAGON-5D-BITURBO-01	4913	1860	1453	Auto-Data Alpina B5 Touring (F11) Biturbo technical specifications	https://www.auto-data.net/en/alpina-b5-touring-f11-4.4-v8-540hp-biturbo-18325
+EU-TOYOTA-CELICA-II-A40A50-HATCHBACK-3D-2000-XT-PREFL-01	4330	1640	1320	Automobile-Catalog Toyota Celica Liftback 2000 XT Phase I Europe	https://www.automobile-catalog.com/car/1978/3493310/toyota_celica_liftback_2000_xt.html
+EU-TOYOTA-CELICA-II-A40A50-HATCHBACK-3D-2000-XT-FACELIFT-01	4370	1640	1320	Automobile-Catalog Toyota Celica Liftback 2000 XT Phase II Europe	https://www.automobile-catalog.com/car/1980/3493520/toyota_celica_liftback_2000_xt_automatic.html
+EU-TOYOTA-CELICA-II-A40A50-HATCHBACK-3D-2000-GT-PREFL-01	4330	1640	1315	Automobile-Catalog Toyota Celica Liftback 2000 GT Phase I Europe	https://www.automobile-catalog.com/car/1978/28655/toyota_celica_2000_gt.html
+EU-TOYOTA-CELICA-II-A40A50-HATCHBACK-3D-2000-GT-FACELIFT-01	4370	1640	1315	Automobile-Catalog Toyota Celica Liftback 2000 GT Phase II Europe	https://www.automobile-catalog.com/car/1980/3493490/toyota_celica_liftback_2000_gt.html
+EU-TOYOTA-CELICA-III-A60-HATCHBACK-3D-01	4450	1665	1320	Automobile-Catalog Toyota Celica 2000 XT Liftback	https://www.automobile-catalog.com/car/1982/50210/toyota_celica_xt_liftback.html
+EU-TOYOTA-CELICA-IV-T16-HATCHBACK-3D-FWD-01	4365	1710	1290	Auto-Data Toyota Celica T16 2.0 GTi	https://www.auto-data.net/en/toyota-celica-t16-2.0-gti-140hp-3142
+EU-TOYOTA-CELICA-IV-T16-HATCHBACK-3D-4WD-01	4380	1710	1290	Auto-Data Toyota Celica T16 2.0 Turbo 4x4	https://www.auto-data.net/en/toyota-celica-t16-2.0-turbo-185hp-4x4-3143
+EU-TOYOTA-CELICA-IV-T16-COUPE-2D-FWD-01	4410	1710	1290	Automobile-Catalog Toyota Celica fourth-generation export Coupe	https://www.automobile-catalog.com/make/toyota/celica_4gen/celica_4_export_coupe/1986.html
+EU-TOYOTA-CELICA-IV-T16-CONVERTIBLE-2D-01	4410	1690	1320	Automobile-Catalog Toyota Celica 2.0 GT Cabrio	https://www.automobile-catalog.com/car/1988/3520040/toyota_celica_2_0_gt_cabrio.html
+EU-TOYOTA-SUPRA-III-A70-COUPE-3D-01	4620	1745	1310	Auto-Data Toyota Supra III A70 3.0 24V; Auto-Data Toyota Supra III A70 3.0 Turbo	https://www.auto-data.net/en/toyota-supra-iii-a70-3.0-24v-190hp-automatic-46697;https://www.auto-data.net/en/toyota-supra-iii-a70-3.0-turbo-235hp-automatic-3458
+EU-TOYOTA-MR2-I-AW11-COUPE-2D-01	3925	1665	1250	Auto-Data Toyota MR2 W1 generation specifications	https://www.auto-data.net/en/toyota-mr-2-w1-generation-1001
+EU-TOYOTA-MR2-II-SW20-TARGA-2D-01	4140	1695	1240	Auto-Data Toyota MR2 W2 SW20 2.0 16V technical specifications	https://www.auto-data.net/en/toyota-mr-2-w2-2.0-16v-sw20-156hp-automatic-28460
+EU-TOYOTA-CELICA-SUPRA-II-A60-HATCHBACK-3D-NARROW-01	4620	1685	1315	Automobile-Catalog Toyota Celica Supra 2.8i narrow body	https://www.automobile-catalog.com/car/1982/3504725/toyota_celica_supra_2_8i.html
+EU-TOYOTA-CELICA-SUPRA-II-A60-HATCHBACK-3D-WIDE-01	4620	1720	1315	Automobile-Catalog Toyota Celica Supra 2.8i wide body	https://www.automobile-catalog.com/car/1983/3504770/toyota_celica_supra_2_8i_wide.html
+EU-TOYOTA-HIACE-II-H20-MPV-4D-SWB-01	4340	1690	1925	Toyota 75 Years Hiace second-generation specifications	https://www.toyota-global.com/company/history_of_toyota/75years/vehicle_lineage/car/id60001848B/index.html
+EU-TOYOTA-HIACE-II-H30-MPV-4D-LWB-01	4690	1690	1920	Toyota 75 Years Hiace second-generation specifications	https://www.toyota-global.com/company/history_of_toyota/75years/vehicle_lineage/car/id60001848B/index.html
+EU-TOYOTA-HIACE-III-H50-MPV-4D-SWB-01	4425	1690	1890	Toyota 75 Years Hiace third-generation specifications; Drom Toyota Hiace YH51 Short Base Commuter	https://www.toyota-global.com/company/history_of_toyota/75years/vehicle_lineage/car/id60015287/index.html;https://www.drom.ru/catalog/toyota/hiace/319660/
+EU-TOYOTA-HIACE-III-H60-MPV-4D-LWB-01	4690	1690	1890	Toyota 75 Years Hiace third-generation specifications; Drom Toyota Hiace YH61 nine-seat body	https://www.toyota-global.com/company/history_of_toyota/75years/vehicle_lineage/car/id60015287/index.html;https://www.drom.ru/catalog/toyota/hiace/319428/
+EU-TOYOTA-LITEACE-II-M20-VAN-4D-01	3900	1625	1765	Toyota 75 Years LiteAce second-generation van specifications	https://www.toyota-global.com/company/history_of_toyota/75years/vehicle_lineage/car/id60015748/index.html
+EU-TOYOTA-LITEACE-III-M30-MPV-4D-PREFL-01	4000	1650	1910	Automobile-Catalog Toyota Lite Ace 1.5 Combi Europe	https://www.automobile-catalog.com/car/1986/3606200/toyota_lite_ace_1_5_combi.html
+EU-TOYOTA-LITEACE-III-M30-MPV-4D-FACELIFT-01	3995	1650	1900	Automobile-Catalog Toyota Lite Ace 1.5 Combi facelift Europe	https://www.automobile-catalog.com/car/1989/3606260/toyota_lite_ace_1_5_combi.html
+EU-TOYOTA-LAND-CRUISER-80-SUV-5D-TD-01	4820	1900	1900	Toyota 75 Years Land Cruiser 80 HDJ81V specifications	https://www.toyota-global.com/company/history_of_toyota/75years/vehicle_lineage/car/id60013935/index.html
+EU-TOYOTA-LAND-CRUISER-70-SUV-3D-SWB-01	3975	1690	1870	Auto-Data Toyota Land Cruiser J70 LJ70 2.4 TD specifications;Auto-Data Toyota Land Cruiser J70 KZJ70 3.0 TD specifications	https://www.auto-data.net/en/toyota-land-cruiser-j70-j73-2.4-td-lj70-86hp-4wd-3740;https://www.auto-data.net/en/toyota-land-cruiser-j70-j73-3.0-td-kzj70-125hp-4wd-3735
+EU-TOYOTA-LAND-CRUISER-70-SUV-3D-MWB-01	4405	1790	1950	Auto-Data Toyota Land Cruiser J73 2.4 TD specifications	https://www.auto-data.net/en/toyota-land-cruiser-j70-j73-2.4-td-lj73-86hp-4wd-3734
+EU-TOYOTA-LAND-CRUISER-70-CONVERTIBLE-2D-SWB-HARDTOP-01	4040	1690	1890	UltimateSpecs Toyota Land Cruiser V 2.4 HardTop	https://www.ultimatespecs.com/car-specs/Toyota/5341/Toyota-Land-Cruiser-V-24-HardTop.html
+EU-TOYOTA-LAND-CRUISER-PRADO-70-SUV-5D-LWB-01	4585	1690	1890	Toyota 75 Years Land Cruiser Prado 70 SX5 specifications	https://www.toyota-global.com/company/history_of_toyota/75years/vehicle_lineage/car/id60012614/index.html
+EU-TOYOTA-LAND-CRUISER-60-SUV-5D-DIESEL-01	4750	1800	1845	Auto-Data Toyota Land Cruiser J60 4.0 Diesel 101 Hp specifications;Auto-Data Toyota Land Cruiser J60 4.0 Diesel 103 Hp specifications	https://www.auto-data.net/en/toyota-land-cruiser-j60-wagon-4.0-diesel-101hp-4wd-3744;https://www.auto-data.net/en/toyota-land-cruiser-j60-wagon-4.0-diesel-103hp-4wd-3745
+EU-TOYOTA-LAND-CRUISER-60-SUV-5D-TURBODIESEL-01	4750	1800	1830	Auto-Data Toyota Land Cruiser J60 4.0 Turbo-D 136 Hp specifications	https://www.auto-data.net/en/toyota-land-cruiser-j60-wagon-4.0-turbo-d-136hp-4wd-3747
+EU-TOYOTA-MODEL-F-R20-MPV-4D-01	4285	1670	1815	Automobile-Catalog Toyota Model F Space Cruiser 1.8; Automobile-Catalog Toyota Model F Space Cruiser 2.0	https://www.automobile-catalog.com/car/1984/31130/toyota_f_1_8.html;https://www.automobile-catalog.com/car/1985/56135/toyota_f_2_0.html
+EU-TOYOTA-HILUX-V-PICKUP-2D-REGULARCAB-01	4435	1689	1750	Drom Toyota Hilux LN85 2.4D Regular Cab	https://www.drom.ru/catalog/toyota/hilux_pick_up/250221/
+EU-TOYOTA-HILUX-V-PICKUP-4D-DOUBLECAB-01	4725	1689	1585	Drom Toyota Hilux LN85 2.4D Double Cab	https://www.drom.ru/catalog/toyota/hilux_pick_up/250220/
+EU-TOYOTA-HILUX-V-PICKUP-2D-XTRACAB-01	4905	1689	1735	Drom Toyota Hilux LN90 2.4D Xtracab	https://www.drom.ru/catalog/toyota/hilux_pick_up/250212/
+EU-TOYOTA-TERCEL-II-AL25-WAGON-5D-4WD-01	4175	1615	1510	Automobile-Catalog Toyota Tercel 4WD	https://www.automobile-catalog.com/car/1983/25535/toyota_tercel_4wd.html
+EU-TOYOTA-CELICA-V-T18-COUPE-3D-01	4420	1690	1300	Auto-Data Toyota Celica T18 generation specifications; Auto-Data Toyota Celica T18 2.0 Turbo 4WD technical specifications	https://www.auto-data.net/en/toyota-celica-t18-generation-770;https://www.auto-data.net/en/toyota-celica-t18-2.0-i-16v-turbo-208hp-4wd-3137
+EU-TOYOTA-CELICA-V-T18-CONVERTIBLE-2D-01	4430	1705	1320	ADAC Toyota Celica Cabrio 2.0 GTi	https://www.adac.de/rund-ums-fahrzeug/autokatalog/marken-modelle/toyota/celica/t18/348676/
+```
+
+[下载 DIMENSION_GROUP 表](sandbox:/mnt/data/all_3401-3500_dimension_groups_final.tsv)
+
+推进信号：COMPLETE
+
+[1]: https://www.toyota-global.com/company/history_of_toyota/75years/vehicle_lineage/car/id60013935/index.html "https://www.toyota-global.com/company/history_of_toyota/75years/vehicle_lineage/car/id60013935/index.html"
+[2]: https://www.auto-data.net/en/toyota-land-cruiser-j70-j73-2.4-td-lj70-86hp-4wd-3740 "https://www.auto-data.net/en/toyota-land-cruiser-j70-j73-2.4-td-lj70-86hp-4wd-3740"
+
+
+--- 本地最终 TSV 已更新 ---
+- 本批 Ktype 映射：all_3401-3500_ktype_dimension_mapping_final.tsv
+- 本批尺寸组：all_3401-3500_dimension_groups_final.tsv
+- 累计 Ktype 映射：all_1-100_ktype_dimension_mapping_final.tsv（4701 行）
+- 累计尺寸组：all_1-100_dimension_groups_final.tsv（1391 行）
+

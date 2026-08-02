@@ -938,3 +938,12 @@ EU-OPEL-ASCONA-C-SEDAN-H1385-01	4366	1668	1385	Auto-Data Opel Ascona C 1.6 S (90
 --- 脚本异常 ---
 异常: DIMENSION_GROUP EU-FORD-ORION-II-SEDAN-01 的 LengthMM 与既有最终值冲突
 
+
+--- 本地最终 TSV 已更新 ---
+- 本批 Ktype 映射：all_701-800_ktype_dimension_mapping_final.tsv
+- 本批尺寸组：all_701-800_dimension_groups_final.tsv
+- 累计 Ktype 映射：all_1-100_ktype_dimension_mapping_final.tsv（3967 行）
+- 累计尺寸组：all_1-100_dimension_groups_final.tsv（1103 行）
+
+- 尺寸冲突协调：
+  - EU-FORD-ORION-II-SEDAN-01 -> EU-FORD-ORION-II-SEDAN-02：4213x1640x1389 与 4210x1640x1390，创建新尺寸组
