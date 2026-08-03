@@ -1,11 +1,11 @@
 {
     "version":  1,
-    "revision":  71,
+    "revision":  89,
     "task_id":  "left18448__batch__0073__532d84c3",
     "source_file":  "left18448.tsv",
     "source_start_row":  7201,
     "source_end_row":  7300,
-    "round":  34,
+    "round":  53,
     "ktype_progress":  {
                            "17454":  {
                                          "status":  "ready",
@@ -19,7 +19,7 @@
                                                                      "EU-ISUZU-TROOPER-III-SUV-SWB-01"
                                                                  ],
                                          "pending_reason":  "",
-                                         "last_updated_round":  34
+                                         "last_updated_round":  53
                                      },
                            "14860":  {
                                          "status":  "ready",
@@ -33,10 +33,10 @@
                                                                      "EU-ISUZU-TROOPER-III-SUV-LWB-01"
                                                                  ],
                                          "pending_reason":  "",
-                                         "last_updated_round":  34
+                                         "last_updated_round":  53
                                      },
                            "34050":  {
-                                         "status":  "pending",
+                                         "status":  "ready",
                                          "source_rows":  [
                                                              7203
                                                          ],
@@ -44,13 +44,13 @@
                                                              "34050"
                                                          ],
                                          "dimension_group_ids":  [
-
+                                                                     "EU-IVECO-DAILY-II-CHASSIS-CAB-WB2800-PREFL-01"
                                                                  ],
-                                         "pending_reason":  "当前快照尚未闭合物理外廓与完整尺寸；映射缺少 DIMENSION_GROUP_ID",
-                                         "last_updated_round":  34
+                                         "pending_reason":  "",
+                                         "last_updated_round":  53
                                      },
                            "34055":  {
-                                         "status":  "pending",
+                                         "status":  "ready",
                                          "source_rows":  [
                                                              7204
                                                          ],
@@ -58,13 +58,13 @@
                                                              "34055"
                                                          ],
                                          "dimension_group_ids":  [
-
+                                                                     "EU-IVECO-DAILY-I-VAN-WB3200-STANDARD-01"
                                                                  ],
-                                         "pending_reason":  "当前快照尚未闭合物理外廓与完整尺寸；映射缺少 DIMENSION_GROUP_ID",
-                                         "last_updated_round":  34
+                                         "pending_reason":  "",
+                                         "last_updated_round":  53
                                      },
                            "34067":  {
-                                         "status":  "pending",
+                                         "status":  "ready",
                                          "source_rows":  [
                                                              7205
                                                          ],
@@ -72,13 +72,13 @@
                                                              "34067"
                                                          ],
                                          "dimension_group_ids":  [
-
+                                                                     "EU-IVECO-DAILY-II-CHASSIS-CAB-WB2800-PREFL-01"
                                                                  ],
-                                         "pending_reason":  "当前快照尚未闭合物理外廓与完整尺寸；映射缺少 DIMENSION_GROUP_ID",
-                                         "last_updated_round":  34
+                                         "pending_reason":  "",
+                                         "last_updated_round":  53
                                      },
                            "34070":  {
-                                         "status":  "pending",
+                                         "status":  "ready",
                                          "source_rows":  [
                                                              7206
                                                          ],
@@ -86,13 +86,13 @@
                                                              "34070"
                                                          ],
                                          "dimension_group_ids":  [
-
+                                                                     "EU-IVECO-DAILY-I-VAN-WB3200-STANDARD-01"
                                                                  ],
-                                         "pending_reason":  "当前快照尚未闭合物理外廓与完整尺寸；映射缺少 DIMENSION_GROUP_ID",
-                                         "last_updated_round":  34
+                                         "pending_reason":  "",
+                                         "last_updated_round":  53
                                      },
                            "34060":  {
-                                         "status":  "pending",
+                                         "status":  "ready",
                                          "source_rows":  [
                                                              7207
                                                          ],
@@ -100,13 +100,13 @@
                                                              "34060"
                                                          ],
                                          "dimension_group_ids":  [
-
+                                                                     "EU-IVECO-DAILY-II-CHASSIS-CAB-WB2800-PREFL-01"
                                                                  ],
-                                         "pending_reason":  "当前快照尚未闭合物理外廓与完整尺寸；映射缺少 DIMENSION_GROUP_ID",
-                                         "last_updated_round":  34
+                                         "pending_reason":  "",
+                                         "last_updated_round":  53
                                      },
                            "34063":  {
-                                         "status":  "pending",
+                                         "status":  "ready",
                                          "source_rows":  [
                                                              7208
                                                          ],
@@ -114,13 +114,13 @@
                                                              "34063"
                                                          ],
                                          "dimension_group_ids":  [
-
+                                                                     "EU-IVECO-DAILY-I-VAN-WB3200-STANDARD-01"
                                                                  ],
-                                         "pending_reason":  "当前快照尚未闭合物理外廓与完整尺寸；映射缺少 DIMENSION_GROUP_ID",
-                                         "last_updated_round":  34
+                                         "pending_reason":  "",
+                                         "last_updated_round":  53
                                      },
                            "34078":  {
-                                         "status":  "pending",
+                                         "status":  "ready",
                                          "source_rows":  [
                                                              7209
                                                          ],
@@ -128,13 +128,13 @@
                                                              "34078"
                                                          ],
                                          "dimension_group_ids":  [
-
+                                                                     "EU-IVECO-DAILY-II-CHASSIS-CAB-WB2800-PREFL-01"
                                                                  ],
-                                         "pending_reason":  "当前快照尚未闭合物理外廓与完整尺寸；映射缺少 DIMENSION_GROUP_ID",
-                                         "last_updated_round":  34
+                                         "pending_reason":  "",
+                                         "last_updated_round":  53
                                      },
                            "156109":  {
-                                          "status":  "pending",
+                                          "status":  "ready",
                                           "source_rows":  [
                                                               7210
                                                           ],
@@ -142,10 +142,10 @@
                                                               "156109"
                                                           ],
                                           "dimension_group_ids":  [
-
+                                                                      "EU-IVECO-DAILY-II-CHASSIS-CAB-40W-WB2800-PREFL-01"
                                                                   ],
-                                          "pending_reason":  "当前快照尚未闭合物理外廓与完整尺寸；映射缺少 DIMENSION_GROUP_ID",
-                                          "last_updated_round":  34
+                                          "pending_reason":  "",
+                                          "last_updated_round":  53
                                       },
                            "156110":  {
                                           "status":  "pending",
@@ -159,10 +159,10 @@
 
                                                                   ],
                                           "pending_reason":  "当前快照尚未闭合物理外廓与完整尺寸；映射缺少 DIMENSION_GROUP_ID",
-                                          "last_updated_round":  34
+                                          "last_updated_round":  53
                                       },
                            "34079":  {
-                                         "status":  "pending",
+                                         "status":  "ready",
                                          "source_rows":  [
                                                              7212
                                                          ],
@@ -170,10 +170,10 @@
                                                              "34079"
                                                          ],
                                          "dimension_group_ids":  [
-
+                                                                     "EU-IVECO-DAILY-I-VAN-WB3200-STANDARD-01"
                                                                  ],
-                                         "pending_reason":  "当前快照尚未闭合物理外廓与完整尺寸；映射缺少 DIMENSION_GROUP_ID",
-                                         "last_updated_round":  34
+                                         "pending_reason":  "",
+                                         "last_updated_round":  53
                                      },
                            "156108":  {
                                           "status":  "pending",
@@ -187,10 +187,10 @@
 
                                                                   ],
                                           "pending_reason":  "当前快照尚未闭合物理外廓与完整尺寸；映射缺少 DIMENSION_GROUP_ID",
-                                          "last_updated_round":  34
+                                          "last_updated_round":  53
                                       },
                            "34134":  {
-                                         "status":  "pending",
+                                         "status":  "ready",
                                          "source_rows":  [
                                                              7214
                                                          ],
@@ -198,13 +198,13 @@
                                                              "34134"
                                                          ],
                                          "dimension_group_ids":  [
-
+                                                                     "EU-IVECO-DAILY-II-CHASSIS-CAB-WB2800-PREFL-01"
                                                                  ],
-                                         "pending_reason":  "当前快照尚未闭合物理外廓与完整尺寸；映射缺少 DIMENSION_GROUP_ID",
-                                         "last_updated_round":  34
+                                         "pending_reason":  "",
+                                         "last_updated_round":  53
                                      },
                            "34135":  {
-                                         "status":  "pending",
+                                         "status":  "ready",
                                          "source_rows":  [
                                                              7215
                                                          ],
@@ -212,13 +212,13 @@
                                                              "34135"
                                                          ],
                                          "dimension_group_ids":  [
-
+                                                                     "EU-IVECO-DAILY-I-VAN-WB3200-STANDARD-01"
                                                                  ],
-                                         "pending_reason":  "当前快照尚未闭合物理外廓与完整尺寸；映射缺少 DIMENSION_GROUP_ID",
-                                         "last_updated_round":  34
+                                         "pending_reason":  "",
+                                         "last_updated_round":  53
                                      },
                            "34087":  {
-                                         "status":  "pending",
+                                         "status":  "ready",
                                          "source_rows":  [
                                                              7216
                                                          ],
@@ -226,13 +226,13 @@
                                                              "34087"
                                                          ],
                                          "dimension_group_ids":  [
-
+                                                                     "EU-IVECO-DAILY-II-CHASSIS-CAB-WB2800-PREFL-01"
                                                                  ],
-                                         "pending_reason":  "当前快照尚未闭合物理外廓与完整尺寸；映射缺少 DIMENSION_GROUP_ID",
-                                         "last_updated_round":  34
+                                         "pending_reason":  "",
+                                         "last_updated_round":  53
                                      },
                            "34089":  {
-                                         "status":  "pending",
+                                         "status":  "ready",
                                          "source_rows":  [
                                                              7217
                                                          ],
@@ -240,13 +240,13 @@
                                                              "34089"
                                                          ],
                                          "dimension_group_ids":  [
-
+                                                                     "EU-IVECO-DAILY-I-VAN-WB3200-STANDARD-01"
                                                                  ],
-                                         "pending_reason":  "当前快照尚未闭合物理外廓与完整尺寸；映射缺少 DIMENSION_GROUP_ID",
-                                         "last_updated_round":  34
+                                         "pending_reason":  "",
+                                         "last_updated_round":  53
                                      },
                            "34096":  {
-                                         "status":  "pending",
+                                         "status":  "ready",
                                          "source_rows":  [
                                                              7218
                                                          ],
@@ -254,13 +254,13 @@
                                                              "34096"
                                                          ],
                                          "dimension_group_ids":  [
-
+                                                                     "EU-IVECO-DAILY-II-CHASSIS-CAB-WB2800-PREFL-01"
                                                                  ],
-                                         "pending_reason":  "当前快照尚未闭合物理外廓与完整尺寸；映射缺少 DIMENSION_GROUP_ID",
-                                         "last_updated_round":  34
+                                         "pending_reason":  "",
+                                         "last_updated_round":  53
                                      },
                            "34099":  {
-                                         "status":  "pending",
+                                         "status":  "ready",
                                          "source_rows":  [
                                                              7219
                                                          ],
@@ -268,13 +268,13 @@
                                                              "34099"
                                                          ],
                                          "dimension_group_ids":  [
-
+                                                                     "EU-IVECO-DAILY-I-VAN-WB3200-STANDARD-01"
                                                                  ],
-                                         "pending_reason":  "当前快照尚未闭合物理外廓与完整尺寸；映射缺少 DIMENSION_GROUP_ID",
-                                         "last_updated_round":  34
+                                         "pending_reason":  "",
+                                         "last_updated_round":  53
                                      },
                            "106498":  {
-                                          "status":  "pending",
+                                          "status":  "ready",
                                           "source_rows":  [
                                                               7220
                                                           ],
@@ -282,13 +282,13 @@
                                                               "106498"
                                                           ],
                                           "dimension_group_ids":  [
-
+                                                                      "EU-IVECO-DAILY-II-VAN-40-4X4-FACELIFT-01"
                                                                   ],
-                                          "pending_reason":  "当前快照尚未闭合物理外廓与完整尺寸；映射缺少 DIMENSION_GROUP_ID",
-                                          "last_updated_round":  34
+                                          "pending_reason":  "",
+                                          "last_updated_round":  53
                                       },
                            "146444":  {
-                                          "status":  "pending",
+                                          "status":  "ready",
                                           "source_rows":  [
                                                               7221
                                                           ],
@@ -296,24 +296,30 @@
                                                               "146444"
                                                           ],
                                           "dimension_group_ids":  [
-
+                                                                      "EU-IVECO-DAILY-II-VAN-30-WB2800-01"
                                                                   ],
-                                          "pending_reason":  "当前快照尚未闭合物理外廓与完整尺寸；映射缺少 DIMENSION_GROUP_ID",
-                                          "last_updated_round":  34
+                                          "pending_reason":  "",
+                                          "last_updated_round":  53
                                       },
                            "34051":  {
-                                         "status":  "pending",
+                                         "status":  "ready",
                                          "source_rows":  [
                                                              7222
                                                          ],
                                          "mapping_ids":  [
-                                                             "34051"
+                                                             "34051_wb2800_prefl_chassis",
+                                                             "34051_wb3310_prefl_chassis",
+                                                             "34051_wb2800_facelift_chassis",
+                                                             "34051_wb3300_facelift_chassis"
                                                          ],
                                          "dimension_group_ids":  [
-
+                                                                     "EU-IVECO-DAILY-II-CHASSIS-CAB-WB2800-PREFL-01",
+                                                                     "EU-IVECO-DAILY-II-CHASSIS-CAB-WB3310-PREFL-01",
+                                                                     "EU-IVECO-DAILY-II-CHASSIS-CAB-WB2800-FACELIFT-01",
+                                                                     "EU-IVECO-DAILY-II-CHASSIS-CAB-WB3300-FACELIFT-01"
                                                                  ],
-                                         "pending_reason":  "当前快照尚未闭合物理外廓与完整尺寸；映射缺少 DIMENSION_GROUP_ID",
-                                         "last_updated_round":  34
+                                         "pending_reason":  "",
+                                         "last_updated_round":  53
                                      },
                            "34056":  {
                                          "status":  "ready",
@@ -333,7 +339,7 @@
                                                                      "EU-IVECO-DAILY-II-VAN-35-8-PREFL-VE12-01"
                                                                  ],
                                          "pending_reason":  "",
-                                         "last_updated_round":  34
+                                         "last_updated_round":  53
                                      },
                            "34057":  {
                                          "status":  "ready",
@@ -353,21 +359,27 @@
                                                                      "EU-IVECO-DAILY-II-VAN-35-8-PREFL-VE12-01"
                                                                  ],
                                          "pending_reason":  "",
-                                         "last_updated_round":  34
+                                         "last_updated_round":  53
                                      },
                            "34367":  {
-                                         "status":  "pending",
+                                         "status":  "ready",
                                          "source_rows":  [
                                                              7225
                                                          ],
                                          "mapping_ids":  [
-                                                             "34367"
+                                                             "34367_wb2800_prefl_chassis",
+                                                             "34367_wb3310_prefl_chassis",
+                                                             "34367_wb2800_facelift_chassis",
+                                                             "34367_wb3300_facelift_chassis"
                                                          ],
                                          "dimension_group_ids":  [
-
+                                                                     "EU-IVECO-DAILY-II-CHASSIS-CAB-WB2800-PREFL-01",
+                                                                     "EU-IVECO-DAILY-II-CHASSIS-CAB-WB3310-PREFL-01",
+                                                                     "EU-IVECO-DAILY-II-CHASSIS-CAB-WB2800-FACELIFT-01",
+                                                                     "EU-IVECO-DAILY-II-CHASSIS-CAB-WB3300-FACELIFT-01"
                                                                  ],
-                                         "pending_reason":  "当前快照尚未闭合物理外廓与完整尺寸；映射缺少 DIMENSION_GROUP_ID",
-                                         "last_updated_round":  34
+                                         "pending_reason":  "",
+                                         "last_updated_round":  53
                                      },
                            "34417":  {
                                          "status":  "ready",
@@ -387,7 +399,7 @@
                                                                      "EU-IVECO-DAILY-II-VAN-35-8-PREFL-VE12-01"
                                                                  ],
                                          "pending_reason":  "",
-                                         "last_updated_round":  34
+                                         "last_updated_round":  53
                                      },
                            "34069":  {
                                          "status":  "pending",
@@ -408,7 +420,7 @@
                                                                      "EU-IVECO-DAILY-II-CHASSIS-CAB-WB3950-FACELIFT-01"
                                                                  ],
                                          "pending_reason":  "平台货斗各轴距完整三维未闭合；映射缺少 DIMENSION_GROUP_ID",
-                                         "last_updated_round":  34
+                                         "last_updated_round":  53
                                      },
                            "34071":  {
                                          "status":  "ready",
@@ -424,7 +436,7 @@
                                                                      "EU-IVECO-DAILY-II-VAN-35-10-PREFL-H2-01"
                                                                  ],
                                          "pending_reason":  "",
-                                         "last_updated_round":  34
+                                         "last_updated_round":  53
                                      },
                            "34072":  {
                                          "status":  "ready",
@@ -440,7 +452,7 @@
                                                                      "EU-IVECO-DAILY-II-VAN-35-10-FACELIFT-H2-01"
                                                                  ],
                                          "pending_reason":  "",
-                                         "last_updated_round":  34
+                                         "last_updated_round":  53
                                      },
                            "34332":  {
                                          "status":  "pending",
@@ -459,7 +471,7 @@
                                                                      "EU-IVECO-DAILY-II-CHASSIS-CAB-WB3600-PREFL-01"
                                                                  ],
                                          "pending_reason":  "平台货斗各轴距完整三维未闭合；映射缺少 DIMENSION_GROUP_ID",
-                                         "last_updated_round":  34
+                                         "last_updated_round":  53
                                      },
                            "34371":  {
                                          "status":  "pending",
@@ -478,7 +490,7 @@
                                                                      "EU-IVECO-DAILY-II-CHASSIS-CAB-WB3600-PREFL-01"
                                                                  ],
                                          "pending_reason":  "平台货斗各轴距完整三维未闭合；映射缺少 DIMENSION_GROUP_ID",
-                                         "last_updated_round":  34
+                                         "last_updated_round":  53
                                      },
                            "34372":  {
                                          "status":  "ready",
@@ -494,7 +506,7 @@
                                                                      "EU-IVECO-DAILY-II-VAN-35-10-PREFL-H2-01"
                                                                  ],
                                          "pending_reason":  "",
-                                         "last_updated_round":  34
+                                         "last_updated_round":  53
                                      },
                            "34074":  {
                                          "status":  "pending",
@@ -513,7 +525,7 @@
                                                                      "EU-IVECO-DAILY-II-CHASSIS-CAB-WB3600-PREFL-01"
                                                                  ],
                                          "pending_reason":  "平台货斗完整三维未闭合；映射缺少 DIMENSION_GROUP_ID",
-                                         "last_updated_round":  34
+                                         "last_updated_round":  53
                                      },
                            "34075":  {
                                          "status":  "pending",
@@ -534,7 +546,7 @@
                                                                      "EU-IVECO-DAILY-II-CHASSIS-CAB-WB3950-FACELIFT-01"
                                                                  ],
                                          "pending_reason":  "平台货斗完整三维未闭合；映射缺少 DIMENSION_GROUP_ID",
-                                         "last_updated_round":  34
+                                         "last_updated_round":  53
                                      },
                            "34076":  {
                                          "status":  "ready",
@@ -550,7 +562,7 @@
                                                                      "EU-IVECO-DAILY-II-VAN-35-12-WB3950-HIGHROOF-01"
                                                                  ],
                                          "pending_reason":  "",
-                                         "last_updated_round":  34
+                                         "last_updated_round":  53
                                      },
                            "53378":  {
                                          "status":  "ready",
@@ -570,10 +582,10 @@
                                                                      "EU-IVECO-DAILY-II-VAN-35-12-FACELIFT-VS12-01"
                                                                  ],
                                          "pending_reason":  "",
-                                         "last_updated_round":  34
+                                         "last_updated_round":  53
                                      },
                            "34077":  {
-                                         "status":  "pending",
+                                         "status":  "ready",
                                          "source_rows":  [
                                                              7237
                                                          ],
@@ -581,10 +593,10 @@
                                                              "34077"
                                                          ],
                                          "dimension_group_ids":  [
-
+                                                                     "EU-IVECO-DAILY-II-DUMPTRUCK-35-12-K-WB3300-FACELIFT-01"
                                                                  ],
-                                         "pending_reason":  "当前快照尚未闭合物理外廓与完整尺寸；映射缺少 DIMENSION_GROUP_ID",
-                                         "last_updated_round":  34
+                                         "pending_reason":  "",
+                                         "last_updated_round":  53
                                      },
                            "34061":  {
                                          "status":  "pending",
@@ -611,7 +623,7 @@
                                                                      "EU-IVECO-DAILY-II-CHASSIS-CAB-WB3950-FACELIFT-01"
                                                                  ],
                                          "pending_reason":  "平台货斗各时期完整三维未闭合；映射缺少 DIMENSION_GROUP_ID",
-                                         "last_updated_round":  34
+                                         "last_updated_round":  53
                                      },
                            "34064":  {
                                          "status":  "ready",
@@ -627,7 +639,7 @@
                                                                      "EU-IVECO-DAILY-II-VAN-35-8-PREFL-VE12-01"
                                                                  ],
                                          "pending_reason":  "",
-                                         "last_updated_round":  34
+                                         "last_updated_round":  53
                                      },
                            "34065":  {
                                          "status":  "ready",
@@ -647,7 +659,7 @@
                                                                      "EU-IVECO-DAILY-II-VAN-35-8-FACELIFT-VS14-01"
                                                                  ],
                                          "pending_reason":  "",
-                                         "last_updated_round":  34
+                                         "last_updated_round":  53
                                      },
                            "34369":  {
                                          "status":  "pending",
@@ -674,7 +686,7 @@
                                                                      "EU-IVECO-DAILY-II-CHASSIS-CAB-WB3950-FACELIFT-01"
                                                                  ],
                                          "pending_reason":  "平台货斗各时期完整三维未闭合；映射缺少 DIMENSION_GROUP_ID",
-                                         "last_updated_round":  34
+                                         "last_updated_round":  53
                                      },
                            "34370":  {
                                          "status":  "ready",
@@ -690,10 +702,10 @@
                                                                      "EU-IVECO-DAILY-II-VAN-35-8-PREFL-VE12-01"
                                                                  ],
                                          "pending_reason":  "",
-                                         "last_updated_round":  34
+                                         "last_updated_round":  53
                                      },
                            "34081":  {
-                                         "status":  "pending",
+                                         "status":  "ready",
                                          "source_rows":  [
                                                              7243
                                                          ],
@@ -701,69 +713,83 @@
                                                              "34081"
                                                          ],
                                          "dimension_group_ids":  [
-
+                                                                     "EU-IVECO-DAILY-II-VAN-40-4X4-FACELIFT-01"
                                                                  ],
-                                         "pending_reason":  "当前快照尚未闭合物理外廓与完整尺寸；映射缺少 DIMENSION_GROUP_ID",
-                                         "last_updated_round":  34
+                                         "pending_reason":  "",
+                                         "last_updated_round":  53
                                      },
                            "34136":  {
-                                         "status":  "pending",
+                                         "status":  "ready",
                                          "source_rows":  [
                                                              7244
                                                          ],
                                          "mapping_ids":  [
-                                                             "34136"
+                                                             "34136_wb2800_chassis",
+                                                             "34136_wb3200_chassis"
                                                          ],
                                          "dimension_group_ids":  [
-
+                                                                     "EU-IVECO-DAILY-II-CHASSIS-CAB-40W-WB2800-FACELIFT-01",
+                                                                     "EU-IVECO-DAILY-II-CHASSIS-CAB-40W-WB3200-FACELIFT-01"
                                                                  ],
-                                         "pending_reason":  "当前快照尚未闭合物理外廓与完整尺寸；映射缺少 DIMENSION_GROUP_ID",
-                                         "last_updated_round":  34
+                                         "pending_reason":  "",
+                                         "last_updated_round":  53
                                      },
                            "146464":  {
-                                          "status":  "pending",
+                                          "status":  "ready",
                                           "source_rows":  [
                                                               7245
                                                           ],
                                           "mapping_ids":  [
-                                                              "146464"
+                                                              "146464_wb2800_prefl_chassis",
+                                                              "146464_wb3200_prefl_chassis",
+                                                              "146464_wb2800_facelift_chassis",
+                                                              "146464_wb3200_facelift_chassis"
                                                           ],
                                           "dimension_group_ids":  [
-
+                                                                      "EU-IVECO-DAILY-II-CHASSIS-CAB-40W-WB2800-PREFL-01",
+                                                                      "EU-IVECO-DAILY-II-CHASSIS-CAB-40W-WB3200-PREFL-01",
+                                                                      "EU-IVECO-DAILY-II-CHASSIS-CAB-40W-WB2800-FACELIFT-01",
+                                                                      "EU-IVECO-DAILY-II-CHASSIS-CAB-40W-WB3200-FACELIFT-01"
                                                                   ],
-                                          "pending_reason":  "当前快照尚未闭合物理外廓与完整尺寸；映射缺少 DIMENSION_GROUP_ID",
-                                          "last_updated_round":  34
+                                          "pending_reason":  "",
+                                          "last_updated_round":  53
                                       },
                            "146466":  {
-                                          "status":  "pending",
+                                          "status":  "ready",
                                           "source_rows":  [
                                                               7246
                                                           ],
                                           "mapping_ids":  [
-                                                              "146466"
+                                                              "146466_wb2800_chassis",
+                                                              "146466_wb3310_chassis",
+                                                              "146466_wb3600_chassis"
                                                           ],
                                           "dimension_group_ids":  [
-
+                                                                      "EU-IVECO-DAILY-II-CHASSIS-CAB-WB2800-PREFL-01",
+                                                                      "EU-IVECO-DAILY-II-CHASSIS-CAB-WB3310-PREFL-01",
+                                                                      "EU-IVECO-DAILY-II-CHASSIS-CAB-WB3600-PREFL-01"
                                                                   ],
-                                          "pending_reason":  "当前快照尚未闭合物理外廓与完整尺寸；映射缺少 DIMENSION_GROUP_ID",
-                                          "last_updated_round":  34
+                                          "pending_reason":  "",
+                                          "last_updated_round":  53
                                       },
                            "34097":  {
-                                         "status":  "pending",
+                                         "status":  "ready",
                                          "source_rows":  [
                                                              7247
                                                          ],
                                          "mapping_ids":  [
-                                                             "34097"
+                                                             "34097_wb3310_chassis",
+                                                             "34097_wb3600_chassis"
                                                          ],
                                          "dimension_group_ids":  [
-
+                                                                     "EU-IVECO-DAILY-II-CHASSIS-CAB-49-WB3310-PREFL-01",
+                                                                     "EU-IVECO-DAILY-II-CHASSIS-CAB-49-WB3600-PREFL-01"
                                                                  ],
-                                         "pending_reason":  "当前快照尚未闭合物理外廓与完整尺寸；映射缺少 DIMENSION_GROUP_ID",
-                                         "last_updated_round":  34
+                                         "pending_reason":  "",
+                                         "last_updated_round":  53
                                      },
                            "34098":  {
-                                         "status":  "pending",
+                                         "status":  "ready",
                                          "source_rows":  [
                                                              7248
                                                          ],
@@ -771,13 +797,13 @@
                                                              "34098"
                                                          ],
                                          "dimension_group_ids":  [
-
+                                                                     "EU-IVECO-DAILY-II-CHASSIS-CAB-49-WB3300-FACELIFT-01"
                                                                  ],
-                                         "pending_reason":  "当前快照尚未闭合物理外廓与完整尺寸；映射缺少 DIMENSION_GROUP_ID",
-                                         "last_updated_round":  34
+                                         "pending_reason":  "",
+                                         "last_updated_round":  53
                                      },
                            "146441":  {
-                                          "status":  "pending",
+                                          "status":  "ready",
                                           "source_rows":  [
                                                               7249
                                                           ],
@@ -785,13 +811,13 @@
                                                               "146441"
                                                           ],
                                           "dimension_group_ids":  [
-
+                                                                      "EU-IVECO-DAILY-II-VAN-49-FACELIFT-01"
                                                                   ],
-                                          "pending_reason":  "当前快照尚未闭合物理外廓与完整尺寸；映射缺少 DIMENSION_GROUP_ID",
-                                          "last_updated_round":  34
+                                          "pending_reason":  "",
+                                          "last_updated_round":  53
                                       },
                            "34100":  {
-                                         "status":  "pending",
+                                         "status":  "ready",
                                          "source_rows":  [
                                                              7250
                                                          ],
@@ -799,10 +825,10 @@
                                                              "34100"
                                                          ],
                                          "dimension_group_ids":  [
-
+                                                                     "EU-IVECO-DAILY-II-VAN-49-PREFL-01"
                                                                  ],
-                                         "pending_reason":  "当前快照尚未闭合物理外廓与完整尺寸；映射缺少 DIMENSION_GROUP_ID",
-                                         "last_updated_round":  34
+                                         "pending_reason":  "",
+                                         "last_updated_round":  53
                                      },
                            "34103":  {
                                          "status":  "pending",
@@ -819,10 +845,10 @@
                                                                      "EU-IVECO-DAILY-II-CHASSIS-CAB-49-WB3600-PREFL-01"
                                                                  ],
                                          "pending_reason":  "平台货斗完整三维未闭合；映射缺少 DIMENSION_GROUP_ID",
-                                         "last_updated_round":  34
+                                         "last_updated_round":  53
                                      },
                            "34104":  {
-                                         "status":  "pending",
+                                         "status":  "ready",
                                          "source_rows":  [
                                                              7252
                                                          ],
@@ -830,13 +856,13 @@
                                                              "34104"
                                                          ],
                                          "dimension_group_ids":  [
-
+                                                                     "EU-IVECO-DAILY-II-CHASSIS-CAB-49-WB3300-FACELIFT-01"
                                                                  ],
-                                         "pending_reason":  "当前快照尚未闭合物理外廓与完整尺寸；映射缺少 DIMENSION_GROUP_ID",
-                                         "last_updated_round":  34
+                                         "pending_reason":  "",
+                                         "last_updated_round":  53
                                      },
                            "34105":  {
-                                         "status":  "pending",
+                                         "status":  "ready",
                                          "source_rows":  [
                                                              7253
                                                          ],
@@ -844,13 +870,13 @@
                                                              "34105"
                                                          ],
                                          "dimension_group_ids":  [
-
+                                                                     "EU-IVECO-DAILY-II-VAN-49-PREFL-01"
                                                                  ],
-                                         "pending_reason":  "当前快照尚未闭合物理外廓与完整尺寸；映射缺少 DIMENSION_GROUP_ID",
-                                         "last_updated_round":  34
+                                         "pending_reason":  "",
+                                         "last_updated_round":  53
                                      },
                            "34106":  {
-                                         "status":  "pending",
+                                         "status":  "ready",
                                          "source_rows":  [
                                                              7254
                                                          ],
@@ -858,13 +884,13 @@
                                                              "34106"
                                                          ],
                                          "dimension_group_ids":  [
-
+                                                                     "EU-IVECO-DAILY-II-VAN-49-FACELIFT-01"
                                                                  ],
-                                         "pending_reason":  "当前快照尚未闭合物理外廓与完整尺寸；映射缺少 DIMENSION_GROUP_ID",
-                                         "last_updated_round":  34
+                                         "pending_reason":  "",
+                                         "last_updated_round":  53
                                      },
                            "34108":  {
-                                         "status":  "pending",
+                                         "status":  "ready",
                                          "source_rows":  [
                                                              7255
                                                          ],
@@ -872,13 +898,13 @@
                                                              "34108"
                                                          ],
                                          "dimension_group_ids":  [
-
+                                                                     "EU-IVECO-DAILY-II-CHASSIS-CAB-49-WB3600-PREFL-01"
                                                                  ],
-                                         "pending_reason":  "当前快照尚未闭合物理外廓与完整尺寸；映射缺少 DIMENSION_GROUP_ID",
-                                         "last_updated_round":  34
+                                         "pending_reason":  "",
+                                         "last_updated_round":  53
                                      },
                            "34109":  {
-                                         "status":  "pending",
+                                         "status":  "ready",
                                          "source_rows":  [
                                                              7256
                                                          ],
@@ -886,13 +912,13 @@
                                                              "34109"
                                                          ],
                                          "dimension_group_ids":  [
-
+                                                                     "EU-IVECO-DAILY-II-CHASSIS-CAB-49-WB3300-FACELIFT-01"
                                                                  ],
-                                         "pending_reason":  "当前快照尚未闭合物理外廓与完整尺寸；映射缺少 DIMENSION_GROUP_ID",
-                                         "last_updated_round":  34
+                                         "pending_reason":  "",
+                                         "last_updated_round":  53
                                      },
                            "34082":  {
-                                         "status":  "pending",
+                                         "status":  "ready",
                                          "source_rows":  [
                                                              7257
                                                          ],
@@ -900,13 +926,13 @@
                                                              "34082"
                                                          ],
                                          "dimension_group_ids":  [
-
+                                                                     "EU-IVECO-DAILY-II-VAN-49-PREFL-01"
                                                                  ],
-                                         "pending_reason":  "当前快照尚未闭合物理外廓与完整尺寸；映射缺少 DIMENSION_GROUP_ID",
-                                         "last_updated_round":  34
+                                         "pending_reason":  "",
+                                         "last_updated_round":  53
                                      },
                            "34083":  {
-                                         "status":  "pending",
+                                         "status":  "ready",
                                          "source_rows":  [
                                                              7258
                                                          ],
@@ -914,13 +940,13 @@
                                                              "34083"
                                                          ],
                                          "dimension_group_ids":  [
-
+                                                                     "EU-IVECO-DAILY-II-VAN-49-FACELIFT-01"
                                                                  ],
-                                         "pending_reason":  "当前快照尚未闭合物理外廓与完整尺寸；映射缺少 DIMENSION_GROUP_ID",
-                                         "last_updated_round":  34
+                                         "pending_reason":  "",
+                                         "last_updated_round":  53
                                      },
                            "34086":  {
-                                         "status":  "pending",
+                                         "status":  "ready",
                                          "source_rows":  [
                                                              7259
                                                          ],
@@ -928,13 +954,13 @@
                                                              "34086"
                                                          ],
                                          "dimension_group_ids":  [
-
+                                                                     "EU-IVECO-DAILY-II-VAN-49-FACELIFT-01"
                                                                  ],
-                                         "pending_reason":  "当前快照尚未闭合物理外廓与完整尺寸；映射缺少 DIMENSION_GROUP_ID",
-                                         "last_updated_round":  34
+                                         "pending_reason":  "",
+                                         "last_updated_round":  53
                                      },
                            "34092":  {
-                                         "status":  "pending",
+                                         "status":  "ready",
                                          "source_rows":  [
                                                              7260
                                                          ],
@@ -942,13 +968,13 @@
                                                              "34092"
                                                          ],
                                          "dimension_group_ids":  [
-
+                                                                     "EU-IVECO-DAILY-II-VAN-49-PREFL-01"
                                                                  ],
-                                         "pending_reason":  "当前快照尚未闭合物理外廓与完整尺寸；映射缺少 DIMENSION_GROUP_ID",
-                                         "last_updated_round":  34
+                                         "pending_reason":  "",
+                                         "last_updated_round":  53
                                      },
                            "34093":  {
-                                         "status":  "pending",
+                                         "status":  "ready",
                                          "source_rows":  [
                                                              7261
                                                          ],
@@ -956,13 +982,13 @@
                                                              "34093"
                                                          ],
                                          "dimension_group_ids":  [
-
+                                                                     "EU-IVECO-DAILY-II-VAN-49-FACELIFT-01"
                                                                  ],
-                                         "pending_reason":  "当前快照尚未闭合物理外廓与完整尺寸；映射缺少 DIMENSION_GROUP_ID",
-                                         "last_updated_round":  34
+                                         "pending_reason":  "",
+                                         "last_updated_round":  53
                                      },
                            "34095":  {
-                                         "status":  "pending",
+                                         "status":  "ready",
                                          "source_rows":  [
                                                              7262
                                                          ],
@@ -970,13 +996,13 @@
                                                              "34095"
                                                          ],
                                          "dimension_group_ids":  [
-
+                                                                     "EU-IVECO-DAILY-II-VAN-49-FACELIFT-01"
                                                                  ],
-                                         "pending_reason":  "当前快照尚未闭合物理外廓与完整尺寸；映射缺少 DIMENSION_GROUP_ID",
-                                         "last_updated_round":  34
+                                         "pending_reason":  "",
+                                         "last_updated_round":  53
                                      },
                            "146451":  {
-                                          "status":  "pending",
+                                          "status":  "ready",
                                           "source_rows":  [
                                                               7263
                                                           ],
@@ -984,13 +1010,13 @@
                                                               "146451"
                                                           ],
                                           "dimension_group_ids":  [
-
+                                                                      "EU-IVECO-DAILY-II-VAN-49-PREFL-01"
                                                                   ],
-                                          "pending_reason":  "当前快照尚未闭合物理外廓与完整尺寸；映射缺少 DIMENSION_GROUP_ID",
-                                          "last_updated_round":  34
+                                          "pending_reason":  "",
+                                          "last_updated_round":  53
                                       },
                            "108243":  {
-                                          "status":  "pending",
+                                          "status":  "ready",
                                           "source_rows":  [
                                                               7264
                                                           ],
@@ -998,24 +1024,26 @@
                                                               "108243"
                                                           ],
                                           "dimension_group_ids":  [
-
+                                                                      "EU-IVECO-DAILY-III-FULL-BODY-SWB-LOW-01"
                                                                   ],
-                                          "pending_reason":  "当前快照尚未闭合物理外廓与完整尺寸；映射缺少 DIMENSION_GROUP_ID",
-                                          "last_updated_round":  34
+                                          "pending_reason":  "",
+                                          "last_updated_round":  53
                                       },
                            "34244":  {
-                                         "status":  "pending",
+                                         "status":  "ready",
                                          "source_rows":  [
                                                              7265
                                                          ],
                                          "mapping_ids":  [
-                                                             "34244"
+                                                             "34244_wb3000_chassis",
+                                                             "34244_wb3450_chassis"
                                                          ],
                                          "dimension_group_ids":  [
-
+                                                                     "EU-IVECO-DAILY-III-CHASSIS-CAB-29L-WB3000-01",
+                                                                     "EU-IVECO-DAILY-III-CHASSIS-CAB-29L-WB3450-01"
                                                                  ],
-                                         "pending_reason":  "当前快照尚未闭合物理外廓与完整尺寸；映射缺少 DIMENSION_GROUP_ID",
-                                         "last_updated_round":  34
+                                         "pending_reason":  "",
+                                         "last_updated_round":  53
                                      },
                            "34245":  {
                                          "status":  "ready",
@@ -1033,21 +1061,23 @@
                                                                      "EU-IVECO-DAILY-III-VAN-XLONG-HIGHROOF-01"
                                                                  ],
                                          "pending_reason":  "",
-                                         "last_updated_round":  34
+                                         "last_updated_round":  53
                                      },
                            "34163":  {
-                                         "status":  "pending",
+                                         "status":  "ready",
                                          "source_rows":  [
                                                              7267
                                                          ],
                                          "mapping_ids":  [
-                                                             "34163"
+                                                             "34163_wb3000_chassis",
+                                                             "34163_wb3450_chassis"
                                                          ],
                                          "dimension_group_ids":  [
-
+                                                                     "EU-IVECO-DAILY-III-CHASSIS-CAB-29L-WB3000-01",
+                                                                     "EU-IVECO-DAILY-III-CHASSIS-CAB-29L-WB3450-01"
                                                                  ],
-                                         "pending_reason":  "当前快照尚未闭合物理外廓与完整尺寸；映射缺少 DIMENSION_GROUP_ID",
-                                         "last_updated_round":  34
+                                         "pending_reason":  "",
+                                         "last_updated_round":  53
                                      },
                            "34164":  {
                                          "status":  "ready",
@@ -1067,21 +1097,23 @@
                                                                      "EU-IVECO-DAILY-III-VAN-LONG-HIGHROOF-01"
                                                                  ],
                                          "pending_reason":  "",
-                                         "last_updated_round":  34
+                                         "last_updated_round":  53
                                      },
                            "34246":  {
-                                         "status":  "pending",
+                                         "status":  "ready",
                                          "source_rows":  [
                                                              7269
                                                          ],
                                          "mapping_ids":  [
-                                                             "34246"
+                                                             "34246_wb3000_chassis",
+                                                             "34246_wb3450_chassis"
                                                          ],
                                          "dimension_group_ids":  [
-
+                                                                     "EU-IVECO-DAILY-III-CHASSIS-CAB-29L-WB3000-01",
+                                                                     "EU-IVECO-DAILY-III-CHASSIS-CAB-29L-WB3450-01"
                                                                  ],
-                                         "pending_reason":  "当前快照尚未闭合物理外廓与完整尺寸；映射缺少 DIMENSION_GROUP_ID",
-                                         "last_updated_round":  34
+                                         "pending_reason":  "",
+                                         "last_updated_round":  53
                                      },
                            "34247":  {
                                          "status":  "ready",
@@ -1097,21 +1129,23 @@
                                                                      "EU-IVECO-DAILY-III-VAN-LONG-HIGHROOF-01"
                                                                  ],
                                          "pending_reason":  "",
-                                         "last_updated_round":  34
+                                         "last_updated_round":  53
                                      },
                            "34240":  {
-                                         "status":  "pending",
+                                         "status":  "ready",
                                          "source_rows":  [
                                                              7271
                                                          ],
                                          "mapping_ids":  [
-                                                             "34240"
+                                                             "34240_wb3000_chassis",
+                                                             "34240_wb3450_chassis"
                                                          ],
                                          "dimension_group_ids":  [
-
+                                                                     "EU-IVECO-DAILY-III-CHASSIS-CAB-29L-WB3000-01",
+                                                                     "EU-IVECO-DAILY-III-CHASSIS-CAB-29L-WB3450-01"
                                                                  ],
-                                         "pending_reason":  "当前快照尚未闭合物理外廓与完整尺寸；映射缺少 DIMENSION_GROUP_ID",
-                                         "last_updated_round":  34
+                                         "pending_reason":  "",
+                                         "last_updated_round":  53
                                      },
                            "34248":  {
                                          "status":  "ready",
@@ -1127,21 +1161,23 @@
                                                                      "EU-IVECO-DAILY-III-VAN-LONG-HIGHROOF-01"
                                                                  ],
                                          "pending_reason":  "",
-                                         "last_updated_round":  34
+                                         "last_updated_round":  53
                                      },
                            "34282":  {
-                                         "status":  "pending",
+                                         "status":  "ready",
                                          "source_rows":  [
                                                              7273
                                                          ],
                                          "mapping_ids":  [
-                                                             "34282"
+                                                             "34282_wb3000_chassis",
+                                                             "34282_wb3450_chassis"
                                                          ],
                                          "dimension_group_ids":  [
-
+                                                                     "EU-IVECO-DAILY-III-CHASSIS-CAB-29L-WB3000-01",
+                                                                     "EU-IVECO-DAILY-III-CHASSIS-CAB-29L-WB3450-01"
                                                                  ],
-                                         "pending_reason":  "当前快照尚未闭合物理外廓与完整尺寸；映射缺少 DIMENSION_GROUP_ID",
-                                         "last_updated_round":  34
+                                         "pending_reason":  "",
+                                         "last_updated_round":  53
                                      },
                            "34425":  {
                                          "status":  "ready",
@@ -1165,35 +1201,39 @@
                                                                      "EU-IVECO-DAILY-III-VAN-XLONG-HIGHROOF-01"
                                                                  ],
                                          "pending_reason":  "",
-                                         "last_updated_round":  34
+                                         "last_updated_round":  53
                                      },
                            "34161":  {
-                                         "status":  "pending",
+                                         "status":  "ready",
                                          "source_rows":  [
                                                              7275
                                                          ],
                                          "mapping_ids":  [
-                                                             "34161"
+                                                             "34161_wb3000_chassis",
+                                                             "34161_wb3450_chassis"
                                                          ],
                                          "dimension_group_ids":  [
-
+                                                                     "EU-IVECO-DAILY-III-CHASSIS-CAB-29L-WB3000-01",
+                                                                     "EU-IVECO-DAILY-III-CHASSIS-CAB-29L-WB3450-01"
                                                                  ],
-                                         "pending_reason":  "当前快照尚未闭合物理外廓与完整尺寸；映射缺少 DIMENSION_GROUP_ID",
-                                         "last_updated_round":  34
+                                         "pending_reason":  "",
+                                         "last_updated_round":  53
                                      },
                            "34420":  {
-                                         "status":  "pending",
+                                         "status":  "ready",
                                          "source_rows":  [
                                                              7276
                                                          ],
                                          "mapping_ids":  [
-                                                             "34420"
+                                                             "34420_wb3000_chassis",
+                                                             "34420_wb3450_chassis"
                                                          ],
                                          "dimension_group_ids":  [
-
+                                                                     "EU-IVECO-DAILY-III-CHASSIS-CAB-29L-WB3000-01",
+                                                                     "EU-IVECO-DAILY-III-CHASSIS-CAB-29L-WB3450-01"
                                                                  ],
-                                         "pending_reason":  "当前快照尚未闭合物理外廓与完整尺寸；映射缺少 DIMENSION_GROUP_ID",
-                                         "last_updated_round":  34
+                                         "pending_reason":  "",
+                                         "last_updated_round":  53
                                      },
                            "34162":  {
                                          "status":  "ready",
@@ -1213,7 +1253,7 @@
                                                                      "EU-IVECO-DAILY-III-VAN-LONG-HIGHROOF-01"
                                                                  ],
                                          "pending_reason":  "",
-                                         "last_updated_round":  34
+                                         "last_updated_round":  53
                                      },
                            "34450":  {
                                          "status":  "ready",
@@ -1233,10 +1273,10 @@
                                                                      "EU-IVECO-DAILY-III-VAN-LONG-HIGHROOF-01"
                                                                  ],
                                          "pending_reason":  "",
-                                         "last_updated_round":  34
+                                         "last_updated_round":  53
                                      },
                            "34263":  {
-                                         "status":  "pending",
+                                         "status":  "ready",
                                          "source_rows":  [
                                                              7279
                                                          ],
@@ -1247,8 +1287,7 @@
                                                              "34263_35c_wb3000",
                                                              "34263_35c_wb3450",
                                                              "34263_35c_wb3750",
-                                                             "34263_35c_wb4100",
-                                                             "34263"
+                                                             "34263_35c_wb4100"
                                                          ],
                                          "dimension_group_ids":  [
                                                                      "EU-IVECO-DAILY-III-CHASSIS-CAB-35S-WB3000-01",
@@ -1259,11 +1298,11 @@
                                                                      "EU-IVECO-DAILY-III-CHASSIS-CAB-35C-WB3750-01",
                                                                      "EU-IVECO-DAILY-III-CHASSIS-CAB-35C-WB4100-01"
                                                                  ],
-                                         "pending_reason":  "当前快照尚未闭合物理外廓与完整尺寸；映射缺少 DIMENSION_GROUP_ID",
-                                         "last_updated_round":  34
+                                         "pending_reason":  "",
+                                         "last_updated_round":  53
                                      },
                            "34264":  {
-                                         "status":  "pending",
+                                         "status":  "ready",
                                          "source_rows":  [
                                                              7280
                                                          ],
@@ -1274,8 +1313,7 @@
                                                              "34264_35c_wb3000",
                                                              "34264_35c_wb3450",
                                                              "34264_35c_wb3750",
-                                                             "34264_35c_wb4100",
-                                                             "34264"
+                                                             "34264_35c_wb4100"
                                                          ],
                                          "dimension_group_ids":  [
                                                                      "EU-IVECO-DAILY-III-CHASSIS-CAB-35S-WB3000-01",
@@ -1286,8 +1324,8 @@
                                                                      "EU-IVECO-DAILY-III-CHASSIS-CAB-35C-WB3750-01",
                                                                      "EU-IVECO-DAILY-III-CHASSIS-CAB-35C-WB4100-01"
                                                                  ],
-                                         "pending_reason":  "当前快照尚未闭合物理外廓与完整尺寸；映射缺少 DIMENSION_GROUP_ID",
-                                         "last_updated_round":  34
+                                         "pending_reason":  "",
+                                         "last_updated_round":  53
                                      },
                            "34265":  {
                                          "status":  "ready",
@@ -1323,7 +1361,7 @@
                                                                      "EU-IVECO-DAILY-III-VAN-35C-7012-HIGHROOF-01"
                                                                  ],
                                          "pending_reason":  "",
-                                         "last_updated_round":  34
+                                         "last_updated_round":  53
                                      },
                            "34430":  {
                                          "status":  "ready",
@@ -1343,10 +1381,10 @@
                                                                      "EU-IVECO-DAILY-III-VAN-35C-7012-HIGHROOF-01"
                                                                  ],
                                          "pending_reason":  "",
-                                         "last_updated_round":  34
+                                         "last_updated_round":  53
                                      },
                            "34431":  {
-                                         "status":  "pending",
+                                         "status":  "ready",
                                          "source_rows":  [
                                                              7283
                                                          ],
@@ -1354,8 +1392,7 @@
                                                              "34431_35c_wb3000",
                                                              "34431_35c_wb3450",
                                                              "34431_35c_wb3750",
-                                                             "34431_35c_wb4100",
-                                                             "34431"
+                                                             "34431_35c_wb4100"
                                                          ],
                                          "dimension_group_ids":  [
                                                                      "EU-IVECO-DAILY-III-CHASSIS-CAB-35C-WB3000-01",
@@ -1363,11 +1400,11 @@
                                                                      "EU-IVECO-DAILY-III-CHASSIS-CAB-35C-WB3750-01",
                                                                      "EU-IVECO-DAILY-III-CHASSIS-CAB-35C-WB4100-01"
                                                                  ],
-                                         "pending_reason":  "当前快照尚未闭合物理外廓与完整尺寸；映射缺少 DIMENSION_GROUP_ID",
-                                         "last_updated_round":  34
+                                         "pending_reason":  "",
+                                         "last_updated_round":  53
                                      },
                            "34426":  {
-                                         "status":  "pending",
+                                         "status":  "ready",
                                          "source_rows":  [
                                                              7284
                                                          ],
@@ -1378,8 +1415,7 @@
                                                              "34426_35c_wb3000",
                                                              "34426_35c_wb3450",
                                                              "34426_35c_wb3750",
-                                                             "34426_35c_wb4100",
-                                                             "34426"
+                                                             "34426_35c_wb4100"
                                                          ],
                                          "dimension_group_ids":  [
                                                                      "EU-IVECO-DAILY-III-CHASSIS-CAB-35S-WB3000-01",
@@ -1390,8 +1426,8 @@
                                                                      "EU-IVECO-DAILY-III-CHASSIS-CAB-35C-WB3750-01",
                                                                      "EU-IVECO-DAILY-III-CHASSIS-CAB-35C-WB4100-01"
                                                                  ],
-                                         "pending_reason":  "当前快照尚未闭合物理外廓与完整尺寸；映射缺少 DIMENSION_GROUP_ID",
-                                         "last_updated_round":  34
+                                         "pending_reason":  "",
+                                         "last_updated_round":  53
                                      },
                            "34427":  {
                                          "status":  "ready",
@@ -1423,21 +1459,27 @@
                                                                      "EU-IVECO-DAILY-III-VAN-35C-7012-HIGHROOF-01"
                                                                  ],
                                          "pending_reason":  "",
-                                         "last_updated_round":  34
+                                         "last_updated_round":  53
                                      },
                            "34241":  {
-                                         "status":  "pending",
+                                         "status":  "ready",
                                          "source_rows":  [
                                                              7286
                                                          ],
                                          "mapping_ids":  [
-                                                             "34241"
+                                                             "34241_35c_wb3000",
+                                                             "34241_35c_wb3450",
+                                                             "34241_35c_wb3750",
+                                                             "34241_35c_wb4100"
                                                          ],
                                          "dimension_group_ids":  [
-
+                                                                     "EU-IVECO-DAILY-III-CHASSIS-CAB-35C-WB3000-01",
+                                                                     "EU-IVECO-DAILY-III-CHASSIS-CAB-35C-WB3450-01",
+                                                                     "EU-IVECO-DAILY-III-CHASSIS-CAB-35C-WB3750-01",
+                                                                     "EU-IVECO-DAILY-III-CHASSIS-CAB-35C-WB4100-01"
                                                                  ],
-                                         "pending_reason":  "当前快照尚未闭合物理外廓与完整尺寸；映射缺少 DIMENSION_GROUP_ID",
-                                         "last_updated_round":  34
+                                         "pending_reason":  "",
+                                         "last_updated_round":  53
                                      },
                            "34442":  {
                                          "status":  "ready",
@@ -1469,10 +1511,10 @@
                                                                      "EU-IVECO-DAILY-III-VAN-35C-7012-HIGHROOF-01"
                                                                  ],
                                          "pending_reason":  "",
-                                         "last_updated_round":  34
+                                         "last_updated_round":  53
                                      },
                            "34443":  {
-                                         "status":  "pending",
+                                         "status":  "ready",
                                          "source_rows":  [
                                                              7288
                                                          ],
@@ -1483,8 +1525,7 @@
                                                              "34443_35c_wb3000",
                                                              "34443_35c_wb3450",
                                                              "34443_35c_wb3750",
-                                                             "34443_35c_wb4100",
-                                                             "34443"
+                                                             "34443_35c_wb4100"
                                                          ],
                                          "dimension_group_ids":  [
                                                                      "EU-IVECO-DAILY-III-CHASSIS-CAB-35S-WB3000-01",
@@ -1495,22 +1536,34 @@
                                                                      "EU-IVECO-DAILY-III-CHASSIS-CAB-35C-WB3750-01",
                                                                      "EU-IVECO-DAILY-III-CHASSIS-CAB-35C-WB4100-01"
                                                                  ],
-                                         "pending_reason":  "当前快照尚未闭合物理外廓与完整尺寸；映射缺少 DIMENSION_GROUP_ID",
-                                         "last_updated_round":  34
+                                         "pending_reason":  "",
+                                         "last_updated_round":  53
                                      },
                            "34421":  {
-                                         "status":  "pending",
+                                         "status":  "ready",
                                          "source_rows":  [
                                                              7289
                                                          ],
                                          "mapping_ids":  [
-                                                             "34421"
+                                                             "34421_35s_wb3000",
+                                                             "34421_35s_wb3450",
+                                                             "34421_35s_wb3750",
+                                                             "34421_35c_wb3000",
+                                                             "34421_35c_wb3450",
+                                                             "34421_35c_wb3750",
+                                                             "34421_35c_wb4100"
                                                          ],
                                          "dimension_group_ids":  [
-
+                                                                     "EU-IVECO-DAILY-III-CHASSIS-CAB-35S-WB3000-01",
+                                                                     "EU-IVECO-DAILY-III-CHASSIS-CAB-35S-WB3450-01",
+                                                                     "EU-IVECO-DAILY-III-CHASSIS-CAB-35S-WB3750-01",
+                                                                     "EU-IVECO-DAILY-III-CHASSIS-CAB-35C-WB3000-01",
+                                                                     "EU-IVECO-DAILY-III-CHASSIS-CAB-35C-WB3450-01",
+                                                                     "EU-IVECO-DAILY-III-CHASSIS-CAB-35C-WB3750-01",
+                                                                     "EU-IVECO-DAILY-III-CHASSIS-CAB-35C-WB4100-01"
                                                                  ],
-                                         "pending_reason":  "当前快照尚未闭合物理外廓与完整尺寸；映射缺少 DIMENSION_GROUP_ID",
-                                         "last_updated_round":  34
+                                         "pending_reason":  "",
+                                         "last_updated_round":  53
                                      },
                            "34262":  {
                                          "status":  "ready",
@@ -1542,7 +1595,7 @@
                                                                      "EU-IVECO-DAILY-III-VAN-35S-7012-HIGHROOF-01"
                                                                  ],
                                          "pending_reason":  "",
-                                         "last_updated_round":  34
+                                         "last_updated_round":  53
                                      },
                            "34168":  {
                                          "status":  "ready",
@@ -1572,24 +1625,36 @@
                                                                      "EU-IVECO-DAILY-III-VAN-35S-7012-HIGHROOF-01"
                                                                  ],
                                          "pending_reason":  "",
-                                         "last_updated_round":  34
+                                         "last_updated_round":  53
                                      },
                            "34167":  {
-                                         "status":  "pending",
+                                         "status":  "ready",
                                          "source_rows":  [
                                                              7292
                                                          ],
                                          "mapping_ids":  [
-                                                             "34167"
+                                                             "34167_35s_wb3000",
+                                                             "34167_35s_wb3450",
+                                                             "34167_35s_wb3750",
+                                                             "34167_35c_wb3000",
+                                                             "34167_35c_wb3450",
+                                                             "34167_35c_wb3750",
+                                                             "34167_35c_wb4100"
                                                          ],
                                          "dimension_group_ids":  [
-
+                                                                     "EU-IVECO-DAILY-III-CHASSIS-CAB-35S-WB3000-01",
+                                                                     "EU-IVECO-DAILY-III-CHASSIS-CAB-35S-WB3450-01",
+                                                                     "EU-IVECO-DAILY-III-CHASSIS-CAB-35S-WB3750-01",
+                                                                     "EU-IVECO-DAILY-III-CHASSIS-CAB-35C-WB3000-01",
+                                                                     "EU-IVECO-DAILY-III-CHASSIS-CAB-35C-WB3450-01",
+                                                                     "EU-IVECO-DAILY-III-CHASSIS-CAB-35C-WB3750-01",
+                                                                     "EU-IVECO-DAILY-III-CHASSIS-CAB-35C-WB4100-01"
                                                                  ],
-                                         "pending_reason":  "当前快照尚未闭合物理外廓与完整尺寸；映射缺少 DIMENSION_GROUP_ID",
-                                         "last_updated_round":  34
+                                         "pending_reason":  "",
+                                         "last_updated_round":  53
                                      },
                            "114522":  {
-                                          "status":  "pending",
+                                          "status":  "ready",
                                           "source_rows":  [
                                                               7293
                                                           ],
@@ -1597,10 +1662,10 @@
                                                               "114522"
                                                           ],
                                           "dimension_group_ids":  [
-
+                                                                      "EU-IVECO-DAILY-III-FULL-BODY-SWB-LOW-01"
                                                                   ],
-                                          "pending_reason":  "当前快照尚未闭合物理外廓与完整尺寸；映射缺少 DIMENSION_GROUP_ID",
-                                          "last_updated_round":  34
+                                          "pending_reason":  "",
+                                          "last_updated_round":  53
                                       },
                            "34170":  {
                                          "status":  "ready",
@@ -1648,10 +1713,10 @@
                                                                      "EU-IVECO-DAILY-III-VAN-35C-7012-HIGHROOF-01"
                                                                  ],
                                          "pending_reason":  "",
-                                         "last_updated_round":  34
+                                         "last_updated_round":  53
                                      },
                            "114523":  {
-                                          "status":  "pending",
+                                          "status":  "ready",
                                           "source_rows":  [
                                                               7295
                                                           ],
@@ -1659,27 +1724,39 @@
                                                               "114523"
                                                           ],
                                           "dimension_group_ids":  [
-
+                                                                      "EU-IVECO-DAILY-III-FULL-BODY-SWB-LOW-01"
                                                                   ],
-                                          "pending_reason":  "当前快照尚未闭合物理外廓与完整尺寸；映射缺少 DIMENSION_GROUP_ID",
-                                          "last_updated_round":  34
+                                          "pending_reason":  "",
+                                          "last_updated_round":  53
                                       },
                            "34169":  {
-                                         "status":  "pending",
+                                         "status":  "ready",
                                          "source_rows":  [
                                                              7296
                                                          ],
                                          "mapping_ids":  [
-                                                             "34169"
+                                                             "34169_35s_wb3000",
+                                                             "34169_35s_wb3450",
+                                                             "34169_35s_wb3750",
+                                                             "34169_35c_wb3000",
+                                                             "34169_35c_wb3450",
+                                                             "34169_35c_wb3750",
+                                                             "34169_35c_wb4100"
                                                          ],
                                          "dimension_group_ids":  [
-
+                                                                     "EU-IVECO-DAILY-III-CHASSIS-CAB-35S-WB3000-01",
+                                                                     "EU-IVECO-DAILY-III-CHASSIS-CAB-35S-WB3450-01",
+                                                                     "EU-IVECO-DAILY-III-CHASSIS-CAB-35S-WB3750-01",
+                                                                     "EU-IVECO-DAILY-III-CHASSIS-CAB-35C-WB3000-01",
+                                                                     "EU-IVECO-DAILY-III-CHASSIS-CAB-35C-WB3450-01",
+                                                                     "EU-IVECO-DAILY-III-CHASSIS-CAB-35C-WB3750-01",
+                                                                     "EU-IVECO-DAILY-III-CHASSIS-CAB-35C-WB4100-01"
                                                                  ],
-                                         "pending_reason":  "当前快照尚未闭合物理外廓与完整尺寸；映射缺少 DIMENSION_GROUP_ID",
-                                         "last_updated_round":  34
+                                         "pending_reason":  "",
+                                         "last_updated_round":  53
                                      },
                            "114535":  {
-                                          "status":  "pending",
+                                          "status":  "ready",
                                           "source_rows":  [
                                                               7297
                                                           ],
@@ -1687,10 +1764,10 @@
                                                               "114535"
                                                           ],
                                           "dimension_group_ids":  [
-
+                                                                      "EU-IVECO-DAILY-III-FULL-BODY-SWB-LOW-01"
                                                                   ],
-                                          "pending_reason":  "当前快照尚未闭合物理外廓与完整尺寸；映射缺少 DIMENSION_GROUP_ID",
-                                          "last_updated_round":  34
+                                          "pending_reason":  "",
+                                          "last_updated_round":  53
                                       },
                            "34249":  {
                                          "status":  "ready",
@@ -1734,7 +1811,7 @@
                                                                      "EU-IVECO-DAILY-III-VAN-35C-7012-HIGHROOF-01"
                                                                  ],
                                          "pending_reason":  "",
-                                         "last_updated_round":  34
+                                         "last_updated_round":  53
                                      },
                            "34422":  {
                                          "status":  "ready",
@@ -1752,7 +1829,7 @@
                                                                      "EU-IVECO-DAILY-III-VAN-35S-5477-MIDROOF-01"
                                                                  ],
                                          "pending_reason":  "",
-                                         "last_updated_round":  34
+                                         "last_updated_round":  53
                                      },
                            "34166":  {
                                          "status":  "ready",
@@ -1800,89 +1877,29 @@
                                                                      "EU-IVECO-DAILY-III-VAN-35C-7012-HIGHROOF-01"
                                                                  ],
                                          "pending_reason":  "",
-                                         "last_updated_round":  34
+                                         "last_updated_round":  53
                                      }
                        },
     "progress":  {
                      "input_ktype_count":  100,
-                     "ready_ktype_count":  30,
-                     "pending_ktype_count":  70,
+                     "ready_ktype_count":  90,
+                     "pending_ktype_count":  10,
                      "pending_ktypes":  [
-                                            "34050",
-                                            "34055",
-                                            "34067",
-                                            "34070",
-                                            "34060",
-                                            "34063",
-                                            "34078",
-                                            "156109",
                                             "156110",
-                                            "34079",
                                             "156108",
-                                            "34134",
-                                            "34135",
-                                            "34087",
-                                            "34089",
-                                            "34096",
-                                            "34099",
-                                            "106498",
-                                            "146444",
-                                            "34051",
-                                            "34367",
                                             "34069",
                                             "34332",
                                             "34371",
                                             "34074",
                                             "34075",
-                                            "34077",
                                             "34061",
                                             "34369",
-                                            "34081",
-                                            "34136",
-                                            "146464",
-                                            "146466",
-                                            "34097",
-                                            "34098",
-                                            "146441",
-                                            "34100",
-                                            "34103",
-                                            "34104",
-                                            "34105",
-                                            "34106",
-                                            "34108",
-                                            "34109",
-                                            "34082",
-                                            "34083",
-                                            "34086",
-                                            "34092",
-                                            "34093",
-                                            "34095",
-                                            "146451",
-                                            "108243",
-                                            "34244",
-                                            "34163",
-                                            "34246",
-                                            "34240",
-                                            "34282",
-                                            "34161",
-                                            "34420",
-                                            "34263",
-                                            "34264",
-                                            "34431",
-                                            "34426",
-                                            "34241",
-                                            "34443",
-                                            "34421",
-                                            "34167",
-                                            "114522",
-                                            "114523",
-                                            "34169",
-                                            "114535"
+                                            "34103"
                                         ]
                  },
     "artifacts":  {
                       "current_mapping":  "D:\\Licheng\\Repo\\fitment_sheet_generation\\projects\\qclaw_fitment_automation\\workspaces\\0802-eu\\checkpoints\\part-02\\task-state\\left18448__batch__0073__532d84c3\\current_mapping.tsv",
                       "current_dimension_groups":  "D:\\Licheng\\Repo\\fitment_sheet_generation\\projects\\qclaw_fitment_automation\\workspaces\\0802-eu\\checkpoints\\part-02\\task-state\\left18448__batch__0073__532d84c3\\current_dimension_groups.tsv"
                   },
-    "updated_at":  "2026-08-04 00:01:19"
+    "updated_at":  "2026-08-04 00:43:56"
 }

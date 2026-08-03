@@ -2,8 +2,8 @@
     "version":  1,
     "total_batches":  46,
     "rows_per_batch":  100,
-    "updated_at":  "2026-08-04 00:01:02",
-    "next_pending_index":  25,
+    "updated_at":  "2026-08-04 06:11:23",
+    "next_pending_index":  45,
     "batches":  [
                     {
                         "index":  0,
@@ -260,210 +260,210 @@
                         "batch_number":  26,
                         "task_id":  "left18448__batch__0073__532d84c3",
                         "display_name":  "left18448 第 7201-7300 行",
-                        "status":  "processing",
-                        "remarks":  "",
+                        "status":  "success",
+                        "remarks":  "检测到明确批次完成信号、两张完整表及下载链接；已更新本批与累计最终 TSV",
                         "checkpoint_file":  "left18448__batch__0073__532d84c3.json",
-                        "updated_at":  "2026-08-04 00:00:38"
+                        "updated_at":  "2026-08-04 00:55:08"
                     },
                     {
                         "index":  26,
                         "batch_number":  27,
                         "task_id":  "left18448__batch__0074__789f5361",
                         "display_name":  "left18448 第 7301-7400 行",
-                        "status":  "processing",
-                        "remarks":  "",
+                        "status":  "success",
+                        "remarks":  "检测到明确批次完成信号、两张完整表及下载链接；已更新本批与累计最终 TSV",
                         "checkpoint_file":  "left18448__batch__0074__789f5361.json",
-                        "updated_at":  "2026-08-03 23:52:32"
+                        "updated_at":  "2026-08-04 01:47:54"
                     },
                     {
                         "index":  27,
                         "batch_number":  28,
                         "task_id":  "left18448__batch__0075__b2e0996a",
                         "display_name":  "left18448 第 7401-7500 行",
-                        "status":  "pending",
-                        "remarks":  "",
+                        "status":  "success",
+                        "remarks":  "检测到明确批次完成信号、两张完整表及下载链接；已更新本批与累计最终 TSV",
                         "checkpoint_file":  "left18448__batch__0075__b2e0996a.json",
-                        "updated_at":  ""
+                        "updated_at":  "2026-08-04 02:06:11"
                     },
                     {
                         "index":  28,
                         "batch_number":  29,
                         "task_id":  "left18448__batch__0076__5e6e5c2c",
                         "display_name":  "left18448 第 7501-7600 行",
-                        "status":  "pending",
-                        "remarks":  "",
+                        "status":  "success",
+                        "remarks":  "检测到明确批次完成信号、两张完整表及下载链接；已更新本批与累计最终 TSV",
                         "checkpoint_file":  "left18448__batch__0076__5e6e5c2c.json",
-                        "updated_at":  ""
+                        "updated_at":  "2026-08-04 02:21:45"
                     },
                     {
                         "index":  29,
                         "batch_number":  30,
                         "task_id":  "left18448__batch__0077__a65756b0",
                         "display_name":  "left18448 第 7601-7700 行",
-                        "status":  "pending",
-                        "remarks":  "",
+                        "status":  "success",
+                        "remarks":  "检测到明确批次完成信号、两张完整表及下载链接；已更新本批与累计最终 TSV",
                         "checkpoint_file":  "left18448__batch__0077__a65756b0.json",
-                        "updated_at":  ""
+                        "updated_at":  "2026-08-04 02:32:39"
                     },
                     {
                         "index":  30,
                         "batch_number":  31,
                         "task_id":  "left18448__batch__0078__694c7a1f",
                         "display_name":  "left18448 第 7701-7800 行",
-                        "status":  "pending",
-                        "remarks":  "",
+                        "status":  "success",
+                        "remarks":  "检测到明确批次完成信号、两张完整表及下载链接；已更新本批与累计最终 TSV",
                         "checkpoint_file":  "left18448__batch__0078__694c7a1f.json",
-                        "updated_at":  ""
+                        "updated_at":  "2026-08-04 02:47:16"
                     },
                     {
                         "index":  31,
                         "batch_number":  32,
                         "task_id":  "left18448__batch__0079__dfb2bdcf",
                         "display_name":  "left18448 第 7801-7900 行",
-                        "status":  "pending",
-                        "remarks":  "",
+                        "status":  "success",
+                        "remarks":  "检测到明确批次完成信号、两张完整表及下载链接；已更新本批与累计最终 TSV",
                         "checkpoint_file":  "left18448__batch__0079__dfb2bdcf.json",
-                        "updated_at":  ""
+                        "updated_at":  "2026-08-04 03:00:37"
                     },
                     {
                         "index":  32,
                         "batch_number":  33,
                         "task_id":  "left18448__batch__0080__90114922",
                         "display_name":  "left18448 第 7901-8000 行",
-                        "status":  "pending",
-                        "remarks":  "",
+                        "status":  "success",
+                        "remarks":  "检测到明确批次完成信号、两张完整表及下载链接；已更新本批与累计最终 TSV",
                         "checkpoint_file":  "left18448__batch__0080__90114922.json",
-                        "updated_at":  ""
+                        "updated_at":  "2026-08-04 03:13:19"
                     },
                     {
                         "index":  33,
                         "batch_number":  34,
                         "task_id":  "left18448__batch__0081__b8384225",
                         "display_name":  "left18448 第 8001-8100 行",
-                        "status":  "pending",
-                        "remarks":  "",
+                        "status":  "success",
+                        "remarks":  "检测到明确批次完成信号、两张完整表及下载链接；已更新本批与累计最终 TSV",
                         "checkpoint_file":  "left18448__batch__0081__b8384225.json",
-                        "updated_at":  ""
+                        "updated_at":  "2026-08-04 03:24:27"
                     },
                     {
                         "index":  34,
                         "batch_number":  35,
                         "task_id":  "left18448__batch__0082__8c7d1cf1",
                         "display_name":  "left18448 第 8101-8200 行",
-                        "status":  "pending",
-                        "remarks":  "",
+                        "status":  "success",
+                        "remarks":  "检测到明确批次完成信号、两张完整表及下载链接；已更新本批与累计最终 TSV",
                         "checkpoint_file":  "left18448__batch__0082__8c7d1cf1.json",
-                        "updated_at":  ""
+                        "updated_at":  "2026-08-04 03:31:54"
                     },
                     {
                         "index":  35,
                         "batch_number":  36,
                         "task_id":  "left18448__batch__0083__b160b312",
                         "display_name":  "left18448 第 8201-8300 行",
-                        "status":  "pending",
-                        "remarks":  "",
+                        "status":  "success",
+                        "remarks":  "检测到明确批次完成信号、两张完整表及下载链接；已更新本批与累计最终 TSV",
                         "checkpoint_file":  "left18448__batch__0083__b160b312.json",
-                        "updated_at":  ""
+                        "updated_at":  "2026-08-04 03:40:15"
                     },
                     {
                         "index":  36,
                         "batch_number":  37,
                         "task_id":  "left18448__batch__0084__b95defbc",
                         "display_name":  "left18448 第 8301-8400 行",
-                        "status":  "pending",
-                        "remarks":  "",
+                        "status":  "success",
+                        "remarks":  "检测到明确批次完成信号、两张完整表及下载链接；已更新本批与累计最终 TSV",
                         "checkpoint_file":  "left18448__batch__0084__b95defbc.json",
-                        "updated_at":  ""
+                        "updated_at":  "2026-08-04 03:49:54"
                     },
                     {
                         "index":  37,
                         "batch_number":  38,
                         "task_id":  "left18448__batch__0085__6d53cb53",
                         "display_name":  "left18448 第 8401-8500 行",
-                        "status":  "pending",
-                        "remarks":  "",
+                        "status":  "success",
+                        "remarks":  "检测到明确批次完成信号、两张完整表及下载链接；已更新本批与累计最终 TSV",
                         "checkpoint_file":  "left18448__batch__0085__6d53cb53.json",
-                        "updated_at":  ""
+                        "updated_at":  "2026-08-04 04:13:04"
                     },
                     {
                         "index":  38,
                         "batch_number":  39,
                         "task_id":  "left18448__batch__0086__04b1b49e",
                         "display_name":  "left18448 第 8501-8600 行",
-                        "status":  "pending",
-                        "remarks":  "",
+                        "status":  "success",
+                        "remarks":  "检测到明确批次完成信号、两张完整表及下载链接；已更新本批与累计最终 TSV",
                         "checkpoint_file":  "left18448__batch__0086__04b1b49e.json",
-                        "updated_at":  ""
+                        "updated_at":  "2026-08-04 04:27:17"
                     },
                     {
                         "index":  39,
                         "batch_number":  40,
                         "task_id":  "left18448__batch__0087__68b57551",
                         "display_name":  "left18448 第 8601-8700 行",
-                        "status":  "pending",
-                        "remarks":  "",
+                        "status":  "success",
+                        "remarks":  "检测到明确批次完成信号、两张完整表及下载链接；已更新本批与累计最终 TSV",
                         "checkpoint_file":  "left18448__batch__0087__68b57551.json",
-                        "updated_at":  ""
+                        "updated_at":  "2026-08-04 04:42:31"
                     },
                     {
                         "index":  40,
                         "batch_number":  41,
                         "task_id":  "left18448__batch__0088__7a342a00",
                         "display_name":  "left18448 第 8701-8800 行",
-                        "status":  "pending",
-                        "remarks":  "",
+                        "status":  "success",
+                        "remarks":  "检测到明确批次完成信号、两张完整表及下载链接；已更新本批与累计最终 TSV",
                         "checkpoint_file":  "left18448__batch__0088__7a342a00.json",
-                        "updated_at":  ""
+                        "updated_at":  "2026-08-04 04:56:14"
                     },
                     {
                         "index":  41,
                         "batch_number":  42,
                         "task_id":  "left18448__batch__0089__0a5d6b55",
                         "display_name":  "left18448 第 8801-8900 行",
-                        "status":  "pending",
-                        "remarks":  "",
+                        "status":  "success",
+                        "remarks":  "检测到明确批次完成信号、两张完整表及下载链接；已更新本批与累计最终 TSV",
                         "checkpoint_file":  "left18448__batch__0089__0a5d6b55.json",
-                        "updated_at":  ""
+                        "updated_at":  "2026-08-04 05:12:14"
                     },
                     {
                         "index":  42,
                         "batch_number":  43,
                         "task_id":  "left18448__batch__0090__f3cc1935",
                         "display_name":  "left18448 第 8901-9000 行",
-                        "status":  "pending",
-                        "remarks":  "",
+                        "status":  "success",
+                        "remarks":  "检测到明确批次完成信号、两张完整表及下载链接；已更新本批与累计最终 TSV",
                         "checkpoint_file":  "left18448__batch__0090__f3cc1935.json",
-                        "updated_at":  ""
+                        "updated_at":  "2026-08-04 05:20:16"
                     },
                     {
                         "index":  43,
                         "batch_number":  44,
                         "task_id":  "left18448__batch__0091__5de39dd6",
                         "display_name":  "left18448 第 9001-9100 行",
-                        "status":  "pending",
-                        "remarks":  "",
+                        "status":  "success",
+                        "remarks":  "检测到明确批次完成信号、两张完整表及下载链接；已更新本批与累计最终 TSV",
                         "checkpoint_file":  "left18448__batch__0091__5de39dd6.json",
-                        "updated_at":  ""
+                        "updated_at":  "2026-08-04 05:39:42"
                     },
                     {
                         "index":  44,
                         "batch_number":  45,
                         "task_id":  "left18448__batch__0092__3554bcf4",
                         "display_name":  "left18448 第 9101-9200 行",
-                        "status":  "pending",
-                        "remarks":  "",
+                        "status":  "success",
+                        "remarks":  "检测到明确批次完成信号、两张完整表及下载链接；已更新本批与累计最终 TSV",
                         "checkpoint_file":  "left18448__batch__0092__3554bcf4.json",
-                        "updated_at":  ""
+                        "updated_at":  "2026-08-04 05:58:04"
                     },
                     {
                         "index":  45,
                         "batch_number":  46,
                         "task_id":  "left18448__batch__0093__a16aad3e",
                         "display_name":  "left18448 第 9201-9300 行",
-                        "status":  "pending",
+                        "status":  "processing",
                         "remarks":  "",
                         "checkpoint_file":  "left18448__batch__0093__a16aad3e.json",
-                        "updated_at":  ""
+                        "updated_at":  "2026-08-04 06:11:23"
                     }
                 ]
 }
