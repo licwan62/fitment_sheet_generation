@@ -1,0 +1,27 @@
+{
+    "version":  2,
+    "revision":  62,
+    "task_id":  "left18448__batch__0033__b6cfb8ef",
+    "task_name":  "left18448 第 3201-3300 行",
+    "vehicle":  "left18448 第 3201-3300 行",
+    "source_file":  "left18448.tsv",
+    "status":  "进行中",
+    "phase":  "waiting_reply",
+    "round":  31,
+    "send_count":  31,
+    "output_file":  "D:\\Home\\Scripts\\fitment_sheet_generation\\projects\\qclaw_fitment_automation\\workspaces\\0802-eu\\replies\\part-01\\left18448__batch__0033__b6cfb8ef_result_2.md",
+    "conversation_url":  "https://chatgpt.com/c/6a70522a-37b4-83e8-a685-82ff853f9241",
+    "conversation_branch_count":  0,
+    "conversation_lineage":  [
+                                 {
+                                     "branch_index":  0,
+                                     "url":  "https://chatgpt.com/c/6a70522a-37b4-83e8-a685-82ff853f9241",
+                                     "parent_url":  "",
+                                     "trigger":  "initial",
+                                     "round":  1,
+                                     "created_at":  "2026-08-03 16:32:42"
+                                 }
+                             ],
+    "remarks":  "",
+    "updated_at":  "2026-08-03 18:58:55"
+}
