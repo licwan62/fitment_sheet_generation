@@ -48,10 +48,38 @@ npx playwright install chromium
 macOS 可先安装 PowerShell：
 
 ```bash
-brew install powershell
+brew install --cask powershell
 python3 -m pip install PyYAML
 npm install
 npx playwright install chromium
+```
+
+### Windows 与 macOS 命令语法
+
+请先进入本项目目录，再执行后文命令：
+
+Windows PowerShell：
+
+```powershell
+Set-Location D:\Home\Scripts\fitment_sheet_generation\projects\qclaw_fitment_automation
+```
+
+macOS Terminal（zsh/bash）：
+
+```bash
+cd /path/to/fitment_sheet_generation/projects/qclaw_fitment_automation
+```
+
+两种终端的续行符和路径写法不同：
+
+- Windows PowerShell：行末使用反引号 `` ` ``，路径通常写成 `.\workspaces\...`。
+- macOS zsh/bash：行末使用反斜杠 `\`，路径写成 `./workspaces/...`。
+- 不要在 macOS 的 zsh/bash 中使用 PowerShell 反引号续行；否则下一行的 `-ConfigPath`、`-PartitionIndex` 等参数会被当成独立命令。
+
+macOS 示例使用 `run_from_config.sh`，它会自动定位同目录的 PowerShell 脚本并调用 `pwsh`。也可以把命令写在一行，例如：
+
+```bash
+./run_from_config.sh -ConfigPath ./workspaces/0802-eu/config.yaml -PartitionIndex 4
 ```
 
 PowerShell 7 通常不需要 `-NoProfile` 或 `-ExecutionPolicy Bypass`。使用 Windows PowerShell 5.1 时，可以继续采用：
@@ -125,11 +153,19 @@ manifest v2 使用相对路径和“UTF-8 + LF”规范化哈希，因此仓库�
 
 ### 2. 每台设备运行自己的分片
 
-设备 1：
+设备 1（Windows PowerShell）：
 
 ```powershell
 pwsh -File .\run_from_config.ps1 `
   -ConfigPath .\workspaces\0802-eu\config.yaml `
+  -PartitionIndex 1
+```
+
+设备 1（macOS zsh/bash）：
+
+```bash
+./run_from_config.sh \
+  -ConfigPath ./workspaces/0802-eu/config.yaml \
   -PartitionIndex 1
 ```
 
@@ -145,6 +181,8 @@ pwsh -File .\run_from_config.ps1 `
 
 ### 3. 预览任务，不打开浏览器
 
+Windows PowerShell：
+
 ```powershell
 pwsh -File .\run_from_config.ps1 `
   -ConfigPath .\workspaces\0802-eu\config.yaml `
@@ -152,7 +190,18 @@ pwsh -File .\run_from_config.ps1 `
   -PartitionIndex 1
 ```
 
+macOS zsh/bash：
+
+```bash
+./run_from_config.sh \
+  -ConfigPath ./workspaces/0802-eu/config.yaml \
+  -Mode dry_run \
+  -PartitionIndex 1
+```
+
 ### 4. 检查登录和页面控制
+
+Windows PowerShell：
 
 ```powershell
 pwsh -File .\run_from_config.ps1 `
@@ -161,7 +210,18 @@ pwsh -File .\run_from_config.ps1 `
   -PartitionIndex 1
 ```
 
+macOS zsh/bash：
+
+```bash
+./run_from_config.sh \
+  -ConfigPath ./workspaces/0802-eu/config.yaml \
+  -Mode check \
+  -PartitionIndex 1
+```
+
 ### 5. 全部分片完成后汇总
+
+Windows PowerShell：
 
 ```powershell
 pwsh -File .\run_from_config.ps1 `
@@ -169,14 +229,33 @@ pwsh -File .\run_from_config.ps1 `
   -MergePartitions
 ```
 
+macOS zsh/bash：
+
+```bash
+./run_from_config.sh \
+  -ConfigPath ./workspaces/0802-eu/config.yaml \
+  -MergePartitions
+```
+
 正式汇总要求 manifest 中的每个任务都存在状态为 `成功` 的 checkpoint。累计表存在但任务未全部完成时，汇总仍会失败。
 
 如确实需要生成诊断用途的部分结果，可以显式使用：
+
+Windows PowerShell：
 
 ```powershell
 pwsh -File .\run_from_config.ps1 `
   -ConfigPath .\workspaces\0802-eu\config.yaml `
   -MergePartitions `
+  -AllowIncompleteMerge
+```
+
+macOS zsh/bash：
+
+```bash
+./run_from_config.sh \
+  -ConfigPath ./workspaces/0802-eu/config.yaml \
+  -MergePartitions \
   -AllowIncompleteMerge
 ```
 
@@ -186,9 +265,19 @@ pwsh -File .\run_from_config.ps1 `
 
 新工作区第一次运行前执行：
 
+Windows PowerShell：
+
 ```powershell
 pwsh -File .\run_from_config.ps1 `
   -ConfigPath .\workspaces\new-project\config.yaml `
+  -PreparePartitions
+```
+
+macOS zsh/bash：
+
+```bash
+./run_from_config.sh \
+  -ConfigPath ./workspaces/new-project/config.yaml \
   -PreparePartitions
 ```
 
@@ -208,10 +297,21 @@ manifest 会记录：
 
 如果 manifest 已经产生 checkpoint，普通准备命令不会静默改组。只有确认所有设备均已停止，并接受生成新 `run_id` 后才能运行：
 
+Windows PowerShell：
+
 ```powershell
 pwsh -File .\run_from_config.ps1 `
   -ConfigPath .\workspaces\new-project\config.yaml `
   -PreparePartitions `
+  -ForcePreparePartitions
+```
+
+macOS zsh/bash：
+
+```bash
+./run_from_config.sh \
+  -ConfigPath ./workspaces/new-project/config.yaml \
+  -PreparePartitions \
   -ForcePreparePartitions
 ```
 
@@ -384,14 +484,16 @@ data_contract:
 
 ## 断点恢复和写入安全
 
-- checkpoint 记录状态、阶段、轮次、发送次数、输出文件、当前对话 URL 和完整对话分支链。
+- checkpoint v3 记录状态、阶段、轮次、发送次数、输出文件、当前对话 URL、完整对话分支链，以及每个 Ktype 的 READY/PENDING 状态、原始行号、映射 ID、尺寸组和阻塞原因。旧 checkpoint 在下次恢复时自动迁移。
+- 每个任务在 `checkpoints/.../task-state/<task_id>/` 维护 `current_mapping.tsv`、`current_dimension_groups.tsv` 和 `progress.json`。PENDING TSV 不单独持久化；创建新分支时根据 JSON 中的 Ktype 与原始行号即时从任务输入组装。
+- 每轮回复必须先合并 TSV 增量、重算 Ktype 状态并原子落盘，checkpoint 进入 `state_saved` 后才允许发送下一个推进器。
 - checkpoint、批次进度、对话存档和 summary 使用临时文件加原子替换。
 - 覆盖前保留 `.bak`；主 JSON 损坏时会尝试读取备份。
 - 每次 checkpoint 更新会增加 `revision`。
 - Markdown 回复和 `events.jsonl` 采用追加写入，便于保留崩溃前最后事件。
 - 成功 checkpoint 缺少严格批次表时，恢复流程会尝试从最后一个完整 Round 重建；无法通过当前校验时不会静默记为成功。
 
-当 ChatGPT 对话达到长度上限时，脚本会尝试“在新聊天中分支”，记录父子 URL，并按照 `runtime.timing.xbrowser_retry_count` 重试失败的分支操作。
+当 ChatGPT 对话达到长度上限时，脚本会尝试“在新聊天中分支”，记录父子 URL，并按照 `runtime.timing.xbrowser_retry_count` 重试失败的分支操作。新对话不依赖旧对话回忆：脚本会发送压缩 requirement、checkpoint 中的 PENDING 摘要、对应原始 TSV 行，以及可直接复用的已确认映射和尺寸组。
 
 ## 浏览器后端
 
@@ -435,14 +537,30 @@ openclaw --version
 
 安装测试依赖：
 
+Windows PowerShell：
+
 ```powershell
 python -m pip install -r .\requirements-dev.txt
 ```
 
+macOS zsh/bash：
+
+```bash
+python3 -m pip install -r ./requirements-dev.txt
+```
+
 运行全部无真实浏览器测试：
+
+Windows PowerShell：
 
 ```powershell
 pwsh -File .\test.ps1
+```
+
+macOS zsh/bash：
+
+```bash
+pwsh -File ./test.ps1
 ```
 
 测试包括：
@@ -491,6 +609,8 @@ CI 使用 Windows、PowerShell 7 和 Python 3.12。
 
 旧参数入口仍可使用：
 
+Windows PowerShell：
+
 ```powershell
 pwsh -File .\qclaw_fitment_automation.ps1 `
   -Project .\workspaces\legacy-project `
@@ -498,9 +618,20 @@ pwsh -File .\qclaw_fitment_automation.ps1 `
   -MaxRounds 80
 ```
 
+macOS zsh/bash：
+
+```bash
+pwsh -File ./qclaw_fitment_automation.ps1 \
+  -Project ./workspaces/legacy-project \
+  -RequirementPath ./requirements/eu_autodata.md \
+  -MaxRounds 80
+```
+
 直接入口不会自动提供 config-driven manifest 保护。新项目应使用 `run_from_config.ps1`。
 
 ### 旧式 TSV 文件拆分
+
+Windows PowerShell：
 
 ```powershell
 python .\src\split_origin_tsv.py `
@@ -511,14 +642,33 @@ python .\src\split_origin_tsv.py `
   --write
 ```
 
+macOS zsh/bash：
+
+```bash
+python3 ./src/split_origin_tsv.py \
+  --origin ./full.tsv \
+  --output-dir ./input_sheets \
+  --prefix split \
+  --chunk-size 20 \
+  --write
+```
+
 当前 `processing.mode: batch` 已能在运行时分批，一般不再需要预先生成大量拆分文件。
 
 ### 从旧 Markdown 恢复结果
 
 `merge_final_round_results.py` 仅用于没有严格批次 TSV 和 checkpoint 的历史任务：
 
+Windows PowerShell：
+
 ```powershell
 python .\src\merge_final_round_results.py --project .\workspaces\legacy-project
+```
+
+macOS zsh/bash：
+
+```bash
+python3 ./src/merge_final_round_results.py --project ./workspaces/legacy-project
 ```
 
 新的多设备任务必须使用 `-MergePartitions`，以获得完成度门禁、尺寸组冲突协调和最终审计。
