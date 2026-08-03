@@ -2,7 +2,7 @@
     "version":  1,
     "total_batches":  46,
     "rows_per_batch":  100,
-    "updated_at":  "2026-08-03 23:52:25",
+    "updated_at":  "2026-08-04 00:01:02",
     "next_pending_index":  25,
     "batches":  [
                     {
@@ -260,10 +260,10 @@
                         "batch_number":  26,
                         "task_id":  "left18448__batch__0073__532d84c3",
                         "display_name":  "left18448 第 7201-7300 行",
-                        "status":  "error",
-                        "remarks":  "异常: 已打开消息操作菜单，但没有找到【在新聊天中分支】。菜单可见项: 展开 | 复制消息 | 分享提示 | 编辑消息 | 思考了 2m 36s | DENSO\n+1 | AUTODOC\n+2\nAUTODOC France\n+2 | 开始新对话 | 复制回复 | 喜欢 | 不喜欢 | 切换模型 | 更多操作 | 来源 来源 |  | 添加文件等 | 高 | 开始听写 | 启动语音功能 | 今天，23:12",
+                        "status":  "processing",
+                        "remarks":  "",
                         "checkpoint_file":  "left18448__batch__0073__532d84c3.json",
-                        "updated_at":  "2026-08-03 23:13:47"
+                        "updated_at":  "2026-08-04 00:00:38"
                     },
                     {
                         "index":  26,
@@ -273,7 +273,7 @@
                         "status":  "processing",
                         "remarks":  "",
                         "checkpoint_file":  "left18448__batch__0074__789f5361.json",
-                        "updated_at":  "2026-08-03 23:52:25"
+                        "updated_at":  "2026-08-03 23:52:32"
                     },
                     {
                         "index":  27,

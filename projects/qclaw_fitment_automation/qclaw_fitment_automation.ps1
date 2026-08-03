@@ -1503,6 +1503,260 @@ function Get-TaskCheckpoint {
     }
 }
 
+function Get-TaskStatePaths {
+    param($Task)
+    $stateDir = Join-Path $CheckpointDir ("task-state/" + [string]$Task.TaskId)
+    return [pscustomobject]@{
+        Directory = $stateDir
+        Mapping = Join-Path $stateDir "current_mapping.tsv"
+        Dimensions = Join-Path $stateDir "current_dimension_groups.tsv"
+        Progress = Join-Path $stateDir "progress.json"
+    }
+}
+
+function Get-TaskInputRecords {
+    param($Task)
+    $lines = @(([string]$Task.Content) -split "`r?`n" | Where-Object { -not [string]::IsNullOrWhiteSpace($_) })
+    if ($lines.Count -lt 2) { return @() }
+    $header = $lines[0].TrimStart([char]0xFEFF)
+    $columns = @($header -split "`t")
+    $ktypeIndex = [Array]::IndexOf($columns, "Ktype")
+    if ($ktypeIndex -lt 0) { throw "任务输入缺少 Ktype 列: $($Task.DisplayName)" }
+    $records = New-Object System.Collections.Generic.List[object]
+    for ($index = 1; $index -lt $lines.Count; $index++) {
+        $values = @($lines[$index] -split "`t")
+        if ($values.Count -ne $columns.Count) { throw "任务输入第 $index 行列数与表头不一致" }
+        $sourceRow = if ($Task.PSObject.Properties.Name -contains "BatchStartRow") {
+            [int]$Task.BatchStartRow + $index - 1
+        } else { $index }
+        $records.Add([pscustomobject]@{
+            Ktype = [string]$values[$ktypeIndex]
+            SourceRow = $sourceRow
+            RawLine = [string]$lines[$index]
+            Header = $header
+        })
+    }
+    return @($records | ForEach-Object { $_ })
+}
+
+function Merge-TaskStateRows {
+    param(
+        [object[]]$ExistingRows,
+        [object[]]$NewRows,
+        [string]$KeyColumn
+    )
+    $orderedKeys = New-Object System.Collections.Generic.List[string]
+    $byKey = [ordered]@{}
+    foreach ($row in @($ExistingRows)) {
+        $key = ([string]$row.$KeyColumn).Trim()
+        if (-not $key) { continue }
+        if (-not $byKey.Contains($key)) { $orderedKeys.Add($key) }
+        $byKey[$key] = $row
+    }
+    foreach ($row in @($NewRows)) {
+        $key = ([string]$row.$KeyColumn).Trim()
+        if (-not $key) { throw "状态增量包含空 $KeyColumn" }
+        if (-not $byKey.Contains($key)) { $orderedKeys.Add($key) }
+        $byKey[$key] = $row
+    }
+    return @($orderedKeys | ForEach-Object { $byKey[$_] })
+}
+
+function Update-TaskKtypeState {
+    param(
+        $Task,
+        [string]$Reply = "",
+        [int]$Round = 0
+    )
+    $paths = Get-TaskStatePaths -Task $Task
+    if (-not (Test-Path -LiteralPath $paths.Directory -PathType Container)) {
+        New-Item -ItemType Directory -Path $paths.Directory -Force | Out-Null
+    }
+
+    $existingMappings = @(Read-StrictTsvRows -Path $paths.Mapping -Header $RequiredTsvHeader)
+    $existingDimensions = @(Read-StrictTsvRows -Path $paths.Dimensions -Header $RequiredDimensionGroupHeader)
+    $newMappings = @(Get-ConfiguredFullTableRowsFromText -Text $Reply)
+    $newDimensions = @(Get-ConfiguredDimensionGroupRowsFromText -Text $Reply)
+
+    # A COMPLETE response is an authoritative full snapshot; do not retain an
+    # obsolete id that was intentionally removed by a later split/collapse.
+    $authoritativeSnapshot = (-not [string]::IsNullOrWhiteSpace($Reply)) -and `
+        (Test-CompletionSignal -Text $Reply) -and $newMappings.Count -gt 0 -and $newDimensions.Count -gt 0
+    if ($authoritativeSnapshot) {
+        $existingMappings = @()
+        $existingDimensions = @()
+    }
+
+    # A derived mapping supersedes a stale id=Ktype placeholder, but preserves
+    # other already-confirmed derived rows that are absent from this delta.
+    $derivedKtypes = @{}
+    foreach ($row in $newMappings) {
+        $ktype = ([string]$row.Ktype).Trim()
+        if (([string]$row.id).Trim() -ne $ktype) { $derivedKtypes[$ktype] = $true }
+    }
+    if ($derivedKtypes.Count -gt 0) {
+        $existingMappings = @($existingMappings | Where-Object {
+            $ktype = ([string]$_.Ktype).Trim()
+            -not ($derivedKtypes.ContainsKey($ktype) -and ([string]$_.id).Trim() -eq $ktype)
+        })
+    }
+
+    $mappingRows = @(Merge-TaskStateRows -ExistingRows $existingMappings -NewRows $newMappings -KeyColumn "id")
+    $dimensionRows = @(Merge-TaskStateRows -ExistingRows $existingDimensions -NewRows $newDimensions -KeyColumn "DIMENSION_GROUP_ID")
+    $dimensionById = @{}
+    foreach ($row in $dimensionRows) { $dimensionById[([string]$row.DIMENSION_GROUP_ID).Trim()] = $row }
+
+    $inputRecords = @(Get-TaskInputRecords -Task $Task)
+    $inputByKtype = [ordered]@{}
+    foreach ($record in $inputRecords) {
+        if (-not $inputByKtype.Contains([string]$record.Ktype)) {
+            $inputByKtype[[string]$record.Ktype] = New-Object System.Collections.Generic.List[object]
+        }
+        $inputByKtype[[string]$record.Ktype].Add($record)
+    }
+
+    $progressByKtype = [ordered]@{}
+    $pendingKtypes = New-Object System.Collections.Generic.List[string]
+    foreach ($ktype in $inputByKtype.Keys) {
+        $rows = @($mappingRows | Where-Object { ([string]$_.Ktype).Trim() -eq $ktype })
+        $reasons = New-Object System.Collections.Generic.List[string]
+        if ($rows.Count -eq 0) { $reasons.Add("尚未产生 Ktype 映射") }
+        foreach ($row in $rows) {
+            $iteration = ([string]$row.IterationStatus).Trim()
+            $groupId = ([string]$row.DIMENSION_GROUP_ID).Trim()
+            if ($iteration -notmatch '^(?i)READY$') {
+                $reason = ($iteration -replace '^(?i)PENDING\s*[:：]?\s*', '').Trim()
+                $reasons.Add($(if ($reason) { $reason } else { "映射尚未 READY" }))
+            }
+            if (-not $groupId) { $reasons.Add("映射缺少 DIMENSION_GROUP_ID") }
+            elseif (-not $dimensionById.ContainsKey($groupId)) { $reasons.Add("尺寸组未落盘: $groupId") }
+            else {
+                $dimension = $dimensionById[$groupId]
+                foreach ($field in @("LengthMM", "WidthMM", "HeightMM", "DimensionSource", "SourceURL")) {
+                    if ([string]::IsNullOrWhiteSpace([string]$dimension.$field)) { $reasons.Add("尺寸组 $groupId 缺少 $field") }
+                }
+            }
+        }
+        $uniqueReasons = @($reasons | Select-Object -Unique)
+        $status = if ($uniqueReasons.Count -eq 0) { "ready" } else { "pending" }
+        if ($status -eq "pending") { $pendingKtypes.Add($ktype) }
+        $sourceRows = @($inputByKtype[$ktype] | ForEach-Object { [int]$_.SourceRow })
+        $progressByKtype[$ktype] = [ordered]@{
+            status = $status
+            source_rows = $sourceRows
+            mapping_ids = @($rows | ForEach-Object { [string]$_.id })
+            dimension_group_ids = @($rows | ForEach-Object { [string]$_.DIMENSION_GROUP_ID } | Where-Object { $_ } | Select-Object -Unique)
+            pending_reason = $uniqueReasons -join "；"
+            last_updated_round = $Round
+        }
+    }
+
+    Write-StrictTsvAtomic -Path $paths.Mapping -Header $RequiredTsvHeader -Rows $mappingRows
+    Write-StrictTsvAtomic -Path $paths.Dimensions -Header $RequiredDimensionGroupHeader -Rows $dimensionRows
+    $stateRevision = 1
+    try {
+        $oldProgress = Read-QClawJsonWithBackup -Path $paths.Progress
+        if ($oldProgress -and $oldProgress.revision) { $stateRevision = [int]$oldProgress.revision + 1 }
+    } catch { }
+    $progress = [ordered]@{
+        version = 1
+        revision = $stateRevision
+        task_id = [string]$Task.TaskId
+        source_file = [string]$Task.SourceName
+        source_start_row = $(if ($Task.PSObject.Properties.Name -contains "BatchStartRow") { [int]$Task.BatchStartRow } else { 1 })
+        source_end_row = $(if ($Task.PSObject.Properties.Name -contains "BatchEndRow") { [int]$Task.BatchEndRow } else { $inputRecords.Count })
+        round = $Round
+        ktype_progress = $progressByKtype
+        progress = [ordered]@{
+            input_ktype_count = $inputByKtype.Count
+            ready_ktype_count = $inputByKtype.Count - $pendingKtypes.Count
+            pending_ktype_count = $pendingKtypes.Count
+            pending_ktypes = @($pendingKtypes)
+        }
+        artifacts = [ordered]@{
+            current_mapping = $paths.Mapping
+            current_dimension_groups = $paths.Dimensions
+        }
+        updated_at = Get-Date -Format "yyyy-MM-dd HH:mm:ss"
+    }
+    Write-QClawAtomicText -Path $paths.Progress -Text ($progress | ConvertTo-Json -Depth 12) -KeepBackup
+    Write-Host "  Ktype 状态已保存: READY=$($progress.progress.ready_ktype_count) | PENDING=$($progress.progress.pending_ktype_count) | revision=$stateRevision" -ForegroundColor DarkCyan
+    return [pscustomobject]$progress
+}
+
+function Get-TaskBranchHandoffMessage {
+    param($Task, [string]$FallbackMessage = "")
+    $paths = Get-TaskStatePaths -Task $Task
+    if (-not (Test-Path -LiteralPath $paths.Progress -PathType Leaf)) { return $FallbackMessage }
+    $progress = Read-QClawJsonWithBackup -Path $paths.Progress
+    $mappingRows = @(Read-StrictTsvRows -Path $paths.Mapping -Header $RequiredTsvHeader)
+    $dimensionRows = @(Read-StrictTsvRows -Path $paths.Dimensions -Header $RequiredDimensionGroupHeader)
+    $pendingSet = @{}; foreach ($ktype in @($progress.progress.pending_ktypes)) { $pendingSet[[string]$ktype] = $true }
+    $inputRecords = @(Get-TaskInputRecords -Task $Task)
+    $pendingLines = New-Object System.Collections.Generic.List[string]
+    $pendingHeader = if ($inputRecords.Count -gt 0) { [string]$inputRecords[0].Header } else { (([string]$Task.Content -split "`r?`n")[0]) }
+    $pendingLines.Add($pendingHeader)
+    foreach ($record in $inputRecords) {
+        if ($pendingSet.ContainsKey([string]$record.Ktype)) { $pendingLines.Add([string]$record.RawLine) }
+    }
+    $pendingInput = ($pendingLines -join "`r`n") + "`r`n"
+    $relatedMappings = @($mappingRows | Where-Object { $pendingSet.ContainsKey(([string]$_.Ktype).Trim()) })
+    if ($pendingSet.Count -eq 0) { $relatedMappings = @($mappingRows) }
+    $relatedGroupSet = @{}; foreach ($row in $relatedMappings) { if ($row.DIMENSION_GROUP_ID) { $relatedGroupSet[[string]$row.DIMENSION_GROUP_ID] = $true } }
+    $relatedDimensions = @($dimensionRows | Where-Object { $relatedGroupSet.ContainsKey(([string]$_.DIMENSION_GROUP_ID).Trim()) })
+    $mappingText = ConvertTo-StrictTsvText -Header $RequiredTsvHeader -Rows $relatedMappings
+    $dimensionText = ConvertTo-StrictTsvText -Header $RequiredDimensionGroupHeader -Rows $relatedDimensions
+    $requirementContent = Get-Content -LiteralPath $RequirementPath -Raw -Encoding UTF8
+    $progressSummary = "READY=$([int]$progress.progress.ready_ktype_count)；PENDING=$([int]$progress.progress.pending_ktype_count)；revision=$([int]$progress.revision)"
+    return @"
+【Checkpoint 续跑交接】
+这是新对话中的独立续跑任务。以下交接内容是唯一可信进度；不要读取或回忆旧聊天。
+仅处理 PENDING TSV 中的 Ktype，不得复查 READY 项或已闭合尺寸组。当前进度：$progressSummary。
+
+【Requirement】
+$requirementContent
+
+【PENDING 已确认的部分映射；可直接复用】
+```tsv
+$($mappingText.TrimEnd())
+```
+
+【PENDING 相关的已有尺寸组；可直接复用】
+```tsv
+$($dimensionText.TrimEnd())
+```
+
+【本次唯一输入：PENDING 原始 TSV】
+```tsv
+$($pendingInput.TrimEnd())
+```
+
+只输出本轮新增/修改的映射和尺寸组。不得重复检索已确认内容。PENDING 清零后立即输出推进信号：COMPLETE。
+"@
+}
+
+function Restore-TaskKtypeStateFromResultMarkdown {
+    param(
+        $Task,
+        [string]$ResultMarkdownPath,
+        [int]$FallbackRound = 0
+    )
+    $state = Update-TaskKtypeState -Task $Task -Round 0
+    if (-not (Test-Path -LiteralPath $ResultMarkdownPath -PathType Leaf)) { return $state }
+    $history = Get-Content -LiteralPath $ResultMarkdownPath -Raw -Encoding UTF8
+    $segments = @($history -split '(?m)^--- Round [^\r\n]*---\s*$')
+    $historyRound = 0
+    foreach ($segment in $segments) {
+        if ($segment -notmatch [regex]::Escape($RequiredTsvHeader)) { continue }
+        $historyRound++
+        $state = Update-TaskKtypeState -Task $Task -Reply $segment -Round $historyRound
+    }
+    if ($historyRound -eq 0 -and $FallbackRound -gt 0) {
+        $state = Update-TaskKtypeState -Task $Task -Round $FallbackRound
+    }
+    return $state
+}
+
 function Save-TaskCheckpoint {
     param(
         $Task,
@@ -1513,7 +1767,8 @@ function Save-TaskCheckpoint {
         [string]$OutputFile,
         [string]$ConversationUrl,
         [string]$Remarks = "",
-        [object[]]$ConversationLineage
+        [object[]]$ConversationLineage,
+        $TaskState
     )
 
     if (-not (Test-Path -LiteralPath $CheckpointDir)) {
@@ -1538,8 +1793,11 @@ function Save-TaskCheckpoint {
             created_at = Get-Date -Format "yyyy-MM-dd HH:mm:ss"
         })
     }
+    if (-not $PSBoundParameters.ContainsKey("TaskState") -and $existing -and $existing.PSObject.Properties.Name -contains "ktype_state") {
+        $TaskState = $existing.ktype_state
+    }
     $checkpoint = [ordered]@{
-        version = 2
+        version = 3
         revision = $(if ($existing -and $existing.PSObject.Properties.Name -contains "revision") { [int]$existing.revision + 1 } else { 1 })
         task_id = $Task.TaskId
         task_name = $Task.DisplayName
@@ -1553,10 +1811,11 @@ function Save-TaskCheckpoint {
         conversation_url = $ConversationUrl
         conversation_branch_count = [Math]::Max(0, $lineage.Count - 1)
         conversation_lineage = $lineage
+        ktype_state = $TaskState
         remarks = $Remarks
         updated_at = Get-Date -Format "yyyy-MM-dd HH:mm:ss"
     }
-    Write-QClawAtomicText -Path $Task.CheckpointPath -Text ($checkpoint | ConvertTo-Json -Depth 5) -KeepBackup
+    Write-QClawAtomicText -Path $Task.CheckpointPath -Text ($checkpoint | ConvertTo-Json -Depth 15) -KeepBackup
 
     Update-BatchProgressFromCheckpoint -Task $Task -Status $Status -Remarks $Remarks
 }
@@ -2088,6 +2347,7 @@ function Assert-OutputArtifactPath {
     $allowedRoots = @($OutputDir)
     if (-not [string]::IsNullOrWhiteSpace($TableDir)) { $allowedRoots += $TableDir }
     if (-not [string]::IsNullOrWhiteSpace($ReplyDir)) { $allowedRoots += $ReplyDir }
+    if (-not [string]::IsNullOrWhiteSpace($CheckpointDir)) { $allowedRoots += $CheckpointDir }
 
     foreach ($root in $allowedRoots) {
         $normalizedRoot = [System.IO.Path]::GetFullPath($root).TrimEnd(
@@ -3703,9 +3963,25 @@ function Invoke-ChatGPTConversationBranchOnce {
     $directBranchScript = @"
 (() => {
 $visibleAndTextHelper
-  const pat = /branch in new chat|branch to new chat|在新聊天中分支|在新对话中分支|分支到新聊天/i;
-  const el = Array.from(document.querySelectorAll('button, a, [role="menuitem"]'))
-    .find(e => visible(e) && pat.test(textOf(e)));
+  const legacyPattern = /branch in new chat|branch to new chat|在新聊天中分支|在新对话中分支|分支到新聊天/i;
+  const newLabelPattern = /^(?:start (?:a )?new chat|start new conversation|开始新对话|开始新聊天)$/i;
+  const limitPattern = /conversation.{0,30}(?:length )?limit|reached.{0,30}(?:length )?limit|对话.{0,12}长度上限|已达到.{0,12}上限|开始新聊天以继续/i;
+  const candidates = Array.from(document.querySelectorAll('button, a, [role="menuitem"]')).filter(visible);
+  let el = candidates.find(e => legacyPattern.test(textOf(e)));
+  if (!el) {
+    // The current UI renders "开始新对话" in the length-limit banner,
+    // outside the message action menu.  Require a nearby limit warning so an
+    // unrelated sidebar/new-chat button can never satisfy this fallback.
+    el = candidates.find(e => {
+      if (!newLabelPattern.test(textOf(e).trim())) return false;
+      let container = e;
+      for (let depth = 0; container && depth < 7; depth++, container = container.parentElement) {
+        const text = textOf(container);
+        if (text.length <= 1000 && limitPattern.test(text)) return true;
+      }
+      return false;
+    });
+  }
   if (el) { el.click(); return 'branch-clicked'; }
   return '';
 })()
@@ -3833,10 +4109,16 @@ $visibleAndTextHelper
             $clickBranchScript = @"
 (() => {
 $visibleAndTextHelper
-  const pattern = /branch in new chat|branch to new chat|在新聊天中分支|在新对话中分支|分支到新聊天/i;
-  const all = Array.from(document.querySelectorAll('[role="menuitem"], [role="menu"] button, [role="menu"] a, button, a'));
-  const matches = all.filter(el => visible(el) && pattern.test(textOf(el)));
-  const debug = all.filter(visible).slice(-20).map(e => textOf(e).substring(0, 40));
+  const legacyPattern = /branch in new chat|branch to new chat|在新聊天中分支|在新对话中分支|分支到新聊天/i;
+  // ChatGPT currently labels the same user-message menu action as
+  // "Start new chat" / "开始新对话".  That wording is also used by unrelated
+  // page controls, so only accept it inside the menu that was just opened.
+  const newLabelPattern = /^(?:start (?:a )?new chat|start new conversation|开始新对话|开始新聊天)$/i;
+  const menuItems = Array.from(document.querySelectorAll(
+    '[role="menuitem"], [role="menu"] button, [role="menu"] a, [data-radix-menu-content] button, [data-radix-menu-content] a'
+  )).filter(visible);
+  const matches = menuItems.filter(el => legacyPattern.test(textOf(el)) || newLabelPattern.test(textOf(el).trim()));
+  const debug = menuItems.slice(-20).map(e => textOf(e).substring(0, 40));
   if (matches.length) { matches[0].click(); return JSON.stringify({ ok: true }); }
   return JSON.stringify({ ok: false, debug: debug });
 })()
@@ -3866,12 +4148,34 @@ $visibleAndTextHelper
         Start-Sleep -Seconds 1
         try {
             $newUrl = Get-CurrentChatGPTUrl
-            if ([string]::Equals($newUrl, $ParentUrl, [StringComparison]::OrdinalIgnoreCase)) { continue }
             if (Test-ChatGPTConversationUrl -Url $newUrl) {
-                Write-Host "  已创建新聊天分支: $newUrl" -ForegroundColor Green
-                return $newUrl
+                if (-not [string]::Equals($newUrl, $ParentUrl, [StringComparison]::OrdinalIgnoreCase)) {
+                    Write-Host "  已创建新聊天分支: $newUrl" -ForegroundColor Green
+                    return $newUrl
+                }
             }
-            if (-not $sentMessage -and -not [string]::IsNullOrWhiteSpace($Message) -and $newUrl -match 'chatgpt\.com/?(\?|$|new)' -and $newUrl -notmatch '[?&]prompt=') {
+
+            $newChatReady = $false
+            if ([string]::Equals($newUrl, $ParentUrl, [StringComparison]::OrdinalIgnoreCase)) {
+                # The new length-limit CTA can clear the conversation while keeping
+                # the parent URL until the first message creates a conversation ID.
+                $newChatReadyScript = @'
+(() => {
+  const userTurns = document.querySelectorAll('[data-message-author-role="user"]');
+  const composer = document.querySelector('textarea, [contenteditable="true"], #prompt-textarea');
+  if (userTurns.length !== 0 || !composer) return false;
+  const s = getComputedStyle(composer); const r = composer.getBoundingClientRect();
+  return s.display !== 'none' && s.visibility !== 'hidden' && r.width > 0 && r.height > 0;
+})()
+'@
+                $newChatReady = [bool](Get-XBValue (Invoke-XBRun "eval" $newChatReadyScript))
+            }
+
+            # The current length-limit CTA opens /?prompt=... with the branch
+            # message prefilled.  It is still a new-chat page and must be
+            # submitted before ChatGPT assigns the stable /c/<id> URL.
+            $isNewChatUrl = $newUrl -match 'chatgpt\.com/?(\?|$|new)'
+            if (-not $sentMessage -and -not [string]::IsNullOrWhiteSpace($Message) -and ($isNewChatUrl -or $newChatReady)) {
                 Write-Host "  新对话页面已打开，发送续跑消息以获取对话 ID..." -ForegroundColor Gray
                 try {
                     Wait-ChatGPTConversationIdle -TimeoutSeconds 15 | Out-Null
@@ -3883,6 +4187,7 @@ $visibleAndTextHelper
                     Write-Host "  发送续跑消息失败: $($_.Exception.Message)" -ForegroundColor Yellow
                 }
             }
+            if ([string]::Equals($newUrl, $ParentUrl, [StringComparison]::OrdinalIgnoreCase)) { continue }
         }
         catch { }
     } while ((Get-Date) -lt $deadline)
@@ -4145,7 +4450,8 @@ function Ensure-TaskConversationCapacity {
         throw "检测到对话长度上限，但无法取得父对话 URL"
     }
 
-    $newUrl = Start-ChatGPTConversationBranch -ParentUrl $parentUrl -Message $BranchMessage
+    $handoffMessage = Get-TaskBranchHandoffMessage -Task $Task -FallbackMessage $BranchMessage
+    $newUrl = Start-ChatGPTConversationBranch -ParentUrl $parentUrl -Message $handoffMessage
     $checkpoint = Get-TaskCheckpoint -Task $Task
     $lineage = @(
         if ($checkpoint -and $checkpoint.PSObject.Properties.Name -contains "conversation_lineage") {
@@ -4373,7 +4679,17 @@ function Process-TSVTask {
         $requirementContent = Get-Content $RequirementPath -Raw -Encoding UTF8
         $tsvContent = [string]$Task.Content
         $minimumFullTableRows = [Math]::Max(0, (@($tsvContent -split "`r?`n" | Where-Object { -not [string]::IsNullOrWhiteSpace($_) }).Count - 1))
+        # Initialize/migrate the per-Ktype state before any browser action.  Old
+        # v2 checkpoints therefore gain deterministic per-Ktype progress on
+        # their next resume without discarding the original conversation URL.
+        $taskState = if ($resumeFromCheckpoint -and (Test-Path -LiteralPath $outputFile -PathType Leaf)) {
+            Restore-TaskKtypeStateFromResultMarkdown -Task $Task -ResultMarkdownPath $outputFile -FallbackRound ([Math]::Max(0, $round - 1))
+        } else {
+            Update-TaskKtypeState -Task $Task -Round ([Math]::Max(0, $round - 1))
+        }
         $initialTaskMessage = Get-InitialTaskMessage -Task $Task -RequirementContent $requirementContent -TsvContent $tsvContent
+        Save-TaskCheckpoint -Task $Task -Status "进行中" -Phase "state_prepared" -Round $round `
+            -SendCount $sendCount -OutputFile $outputFile -ConversationUrl $conversationUrl -TaskState $taskState
         if ($resumeFromCheckpoint) {
             $localResumeReply = Format-CapturedReplyMarkdown -Text (
                 Get-LastSavedRoundReply -ResultMarkdownPath $outputFile
@@ -4434,7 +4750,8 @@ function Process-TSVTask {
                         $parentUrl = Get-CurrentChatGPTUrl
                         if (-not (Test-ChatGPTConversationUrl -Url $parentUrl)) { $parentUrl = $conversationUrl }
                         Write-Host "  等待空闲时检测到对话长度上限，执行分支..." -ForegroundColor Yellow
-                        $conversationUrl = Start-ChatGPTConversationBranch -ParentUrl $parentUrl -Message $taskContinueMessage
+                        $branchHandoffMessage = Get-TaskBranchHandoffMessage -Task $Task -FallbackMessage $taskContinueMessage
+                        $conversationUrl = Start-ChatGPTConversationBranch -ParentUrl $parentUrl -Message $branchHandoffMessage
                         Start-Sleep -Seconds 3
                         try { Invoke-XBRun "wait" "--load" "networkidle" | Out-Null } catch { }
                         $idleState = Wait-ChatGPTConversationIdle -TimeoutSeconds $MaxReplyWaitSeconds
@@ -4480,7 +4797,8 @@ function Process-TSVTask {
                         $parentUrl = Get-CurrentChatGPTUrl
                         if (-not (Test-ChatGPTConversationUrl -Url $parentUrl)) { $parentUrl = $conversationUrl }
                         Write-Host "  等待空闲时检测到对话长度上限，执行分支..." -ForegroundColor Yellow
-                        $conversationUrl = Start-ChatGPTConversationBranch -ParentUrl $parentUrl -Message $taskContinueMessage
+                        $branchHandoffMessage = Get-TaskBranchHandoffMessage -Task $Task -FallbackMessage $taskContinueMessage
+                        $conversationUrl = Start-ChatGPTConversationBranch -ParentUrl $parentUrl -Message $branchHandoffMessage
                         Start-Sleep -Seconds 3
                         try { Invoke-XBRun "wait" "--load" "networkidle" | Out-Null } catch { }
                         $idleState = Wait-ChatGPTConversationIdle -TimeoutSeconds $MaxReplyWaitSeconds
@@ -4558,7 +4876,8 @@ function Process-TSVTask {
                     $parentUrl = Get-CurrentChatGPTUrl
                     if (-not (Test-ChatGPTConversationUrl -Url $parentUrl)) { $parentUrl = $conversationUrl }
                     Write-Host "  等待空闲时检测到对话长度上限，执行分支..." -ForegroundColor Yellow
-                    $conversationUrl = Start-ChatGPTConversationBranch -ParentUrl $parentUrl -Message $taskContinueMessage
+                    $branchHandoffMessage = Get-TaskBranchHandoffMessage -Task $Task -FallbackMessage $taskContinueMessage
+                    $conversationUrl = Start-ChatGPTConversationBranch -ParentUrl $parentUrl -Message $branchHandoffMessage
                     Start-Sleep -Seconds 3
                     try { Invoke-XBRun "wait" "--load" "networkidle" | Out-Null } catch { }
                     $idleState = Wait-ChatGPTConversationIdle -TimeoutSeconds $MaxReplyWaitSeconds
@@ -4612,7 +4931,10 @@ function Process-TSVTask {
             Add-Content -Path $outputFile -Value "`r`n$roundTitle`r`n$reply`r`n" -Encoding UTF8
             Write-Host "  第 $round 轮回复已落盘（$($reply.Length) 字符）：$(Split-Path $outputFile -Leaf)" -ForegroundColor Green
             try { $conversationUrl = Get-CurrentChatGPTUrl } catch { }
-            Save-TaskCheckpoint -Task $Task -Status "进行中" -Phase "reply_saved" -Round $round -SendCount $sendCount -OutputFile $outputFile -ConversationUrl $conversationUrl
+            # Merge reply deltas and atomically persist READY/PENDING before any
+            # code path is allowed to send another prompt.
+            $taskState = Update-TaskKtypeState -Task $Task -Reply $reply -Round $round
+            Save-TaskCheckpoint -Task $Task -Status "进行中" -Phase "state_saved" -Round $round -SendCount $sendCount -OutputFile $outputFile -ConversationUrl $conversationUrl -TaskState $taskState
 
             if (-not $wait.Ok) {
                 $status = $wait.Status

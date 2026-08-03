@@ -2735,3 +2735,99 @@ id	Ktype	NormalizedBodyStyle	Generation	BodyCode	Doors	DIMENSION_GROUP_ID	MatchC
 AUTODOC France
 +2 | 开始新对话 | 复制回复 | 喜欢 | 不喜欢 | 切换模型 | 更多操作 | 来源 来源 |  | 添加文件等 | 高 | 开始听写 | 启动语音功能 | 今天，23:12
 
+
+--- 发送 / checkpoint 续跑到 Round 36 ---
+继续当前批次并采用缓存优先模式。尺寸组只在首次创建或纠错时完整核对一次三维和来源；后续 Ktype 只判断关联哪个现有 DIMENSION_GROUP_ID，不重复抓取，不输出缓存来源或匹配理由。仍有 PENDING 时，CONTINUE 轮仅输出：1) 更新点；2) 当前批次进度；3) 本轮新增/修改的 Ktype 映射 TSV（无变化写“无”）；4) 本轮首次创建/修正的 DIMENSION_GROUP TSV（复用既有组不重复输出，无变化写“无”）；5) 下一步优先处理。若当前或上一轮进度已经是 PENDING=0，本轮不要继续检索或再次输出 CONTINUE，必须立刻汇总并输出两张最终完整 TSV、两个任务指定 sandbox 下载链接和“推进信号：COMPLETE”。执行顺序固定为：第一阶段优先消除 PENDING 并补齐会阻塞两张最终表的数据。检测到 PENDING=0 后，第二阶段最多只做一次轻量机械收尾：核对固定表头、id 与 DIMENSION_GROUP_ID 唯一、映射引用闭合、长宽高和来源非空、两个任务指定下载链接齐全。第二阶段不得重新逐车型、逐年份或逐来源做深度检索，不得为了提高置信度反复核对，也不得因非阻塞的排序或措辞问题继续多轮。PENDING=0 后的下一条回复必须直接输出两张最终完整 TSV、两个精确 sandbox 下载链接，并以“推进信号：COMPLETE”结束；不要再输出 CONTINUE。Ktype 映射 TSV 表头必须严格使用 requirement 指定的字段顺序：id	Ktype	NormalizedBodyStyle	Generation	BodyCode	Doors	DIMENSION_GROUP_ID	MatchConfidence	Notes	IterationStatus。另需维护完整 DIMENSION_GROUP TSV，表头固定为：DIMENSION_GROUP_ID	LengthMM	WidthMM	HeightMM	DimensionSource	SourceURL。缺少任一张表、任一映射引用的尺寸组，或尺寸组字段不完整时不得 COMPLETE。不要输出子车系匹配表。
+【COMPLETE 下载文件硬性要求】
+准备 COMPLETE 时，除两张完整内嵌 TSV 外，还必须创建并提供以下两个可点击 sandbox 下载链接，文件名必须完全一致：
+- left18448_7201-7300_ktype_dimension_mapping_final.tsv
+- left18448_7201-7300_dimension_groups_final.tsv
+缺少任一下载链接时不得输出推进信号：COMPLETE。
+
+
+--- 对话分支 / Round 36 ---
+触发原因：ChatGPT 对话长度上限
+父对话：https://chatgpt.com/c/6a708c94-df14-83ee-8188-fb0002b1df6b
+新分支：https://chatgpt.com/c/6a70ba33-aec8-83ee-b757-d39dc72de5e8
+
+--- Round 36 / checkpoint 续跑 ---
+### 更新点
+
+本轮闭合 Daily III 的 **35S / 35C 单排底盘驾驶室**：建立 3 个 35S 轴距组和 4 个 35C 轴距组，并将发动机功率不同但物理外廓相同的 5 个 Ktype 批量关联。35S 与 35C 在 3000 mm 轴距下长度不同，因此保持独立尺寸组；其余轴距也按底盘系列分别保留。([二手车目录][1])
+
+`34263` 的 VariantName 含 `V`，但输入 BodyStyle 明确为 `Pritsche/Fahrgestell`，本轮按底盘驾驶室处理并将映射置信度保留为 `MEDIUM`。
+
+### 当前批进度
+
+READY Ktype：35
+PENDING Ktype：65
+本轮闭合 Ktype：5
+
+### 本轮新增/修改的 Ktype TSV
+
+```tsv
+id	Ktype	NormalizedBodyStyle	Generation	BodyCode	Doors	DIMENSION_GROUP_ID	MatchConfidence	Notes	IterationStatus
+34263_35s_wb3000	34263	Chassis Cab	Daily III	35S	2	EU-IVECO-DAILY-III-CHASSIS-CAB-35S-WB3000-01	MEDIUM	按输入车身字段归入底盘驾驶室；35S分支，3000轴距。	READY
+34263_35s_wb3450	34263	Chassis Cab	Daily III	35S	2	EU-IVECO-DAILY-III-CHASSIS-CAB-35S-WB3450-01	MEDIUM	按输入车身字段归入底盘驾驶室；35S分支，3450轴距。	READY
+34263_35s_wb3750	34263	Chassis Cab	Daily III	35S	2	EU-IVECO-DAILY-III-CHASSIS-CAB-35S-WB3750-01	MEDIUM	按输入车身字段归入底盘驾驶室；35S分支，3750轴距。	READY
+34263_35c_wb3000	34263	Chassis Cab	Daily III	35C	2	EU-IVECO-DAILY-III-CHASSIS-CAB-35C-WB3000-01	MEDIUM	按输入车身字段归入底盘驾驶室；35C分支，3000轴距。	READY
+34263_35c_wb3450	34263	Chassis Cab	Daily III	35C	2	EU-IVECO-DAILY-III-CHASSIS-CAB-35C-WB3450-01	MEDIUM	按输入车身字段归入底盘驾驶室；35C分支，3450轴距。	READY
+34263_35c_wb3750	34263	Chassis Cab	Daily III	35C	2	EU-IVECO-DAILY-III-CHASSIS-CAB-35C-WB3750-01	MEDIUM	按输入车身字段归入底盘驾驶室；35C分支，3750轴距。	READY
+34263_35c_wb4100	34263	Chassis Cab	Daily III	35C	2	EU-IVECO-DAILY-III-CHASSIS-CAB-35C-WB4100-01	MEDIUM	按输入车身字段归入底盘驾驶室；35C分支，4100轴距。	READY
+34264_35s_wb3000	34264	Chassis Cab	Daily III	35S	2	EU-IVECO-DAILY-III-CHASSIS-CAB-35S-WB3000-01	HIGH	35S分支，3000轴距。	READY
+34264_35s_wb3450	34264	Chassis Cab	Daily III	35S	2	EU-IVECO-DAILY-III-CHASSIS-CAB-35S-WB3450-01	HIGH	35S分支，3450轴距。	READY
+34264_35s_wb3750	34264	Chassis Cab	Daily III	35S	2	EU-IVECO-DAILY-III-CHASSIS-CAB-35S-WB3750-01	HIGH	35S分支，3750轴距。	READY
+34264_35c_wb3000	34264	Chassis Cab	Daily III	35C	2	EU-IVECO-DAILY-III-CHASSIS-CAB-35C-WB3000-01	HIGH	35C分支，3000轴距。	READY
+34264_35c_wb3450	34264	Chassis Cab	Daily III	35C	2	EU-IVECO-DAILY-III-CHASSIS-CAB-35C-WB3450-01	HIGH	35C分支，3450轴距。	READY
+34264_35c_wb3750	34264	Chassis Cab	Daily III	35C	2	EU-IVECO-DAILY-III-CHASSIS-CAB-35C-WB3750-01	HIGH	35C分支，3750轴距。	READY
+34264_35c_wb4100	34264	Chassis Cab	Daily III	35C	2	EU-IVECO-DAILY-III-CHASSIS-CAB-35C-WB4100-01	HIGH	35C分支，4100轴距。	READY
+34431_35c_wb3000	34431	Chassis Cab	Daily III	35C	2	EU-IVECO-DAILY-III-CHASSIS-CAB-35C-WB3000-01	HIGH	35C分支，3000轴距。	READY
+34431_35c_wb3450	34431	Chassis Cab	Daily III	35C	2	EU-IVECO-DAILY-III-CHASSIS-CAB-35C-WB3450-01	HIGH	35C分支，3450轴距。	READY
+34431_35c_wb3750	34431	Chassis Cab	Daily III	35C	2	EU-IVECO-DAILY-III-CHASSIS-CAB-35C-WB3750-01	HIGH	35C分支，3750轴距。	READY
+34431_35c_wb4100	34431	Chassis Cab	Daily III	35C	2	EU-IVECO-DAILY-III-CHASSIS-CAB-35C-WB4100-01	HIGH	35C分支，4100轴距。	READY
+34426_35s_wb3000	34426	Chassis Cab	Daily III	35S	2	EU-IVECO-DAILY-III-CHASSIS-CAB-35S-WB3000-01	HIGH	35S分支，3000轴距。	READY
+34426_35s_wb3450	34426	Chassis Cab	Daily III	35S	2	EU-IVECO-DAILY-III-CHASSIS-CAB-35S-WB3450-01	HIGH	35S分支，3450轴距。	READY
+34426_35s_wb3750	34426	Chassis Cab	Daily III	35S	2	EU-IVECO-DAILY-III-CHASSIS-CAB-35S-WB3750-01	HIGH	35S分支，3750轴距。	READY
+34426_35c_wb3000	34426	Chassis Cab	Daily III	35C	2	EU-IVECO-DAILY-III-CHASSIS-CAB-35C-WB3000-01	HIGH	35C分支，3000轴距。	READY
+34426_35c_wb3450	34426	Chassis Cab	Daily III	35C	2	EU-IVECO-DAILY-III-CHASSIS-CAB-35C-WB3450-01	HIGH	35C分支，3450轴距。	READY
+34426_35c_wb3750	34426	Chassis Cab	Daily III	35C	2	EU-IVECO-DAILY-III-CHASSIS-CAB-35C-WB3750-01	HIGH	35C分支，3750轴距。	READY
+34426_35c_wb4100	34426	Chassis Cab	Daily III	35C	2	EU-IVECO-DAILY-III-CHASSIS-CAB-35C-WB4100-01	HIGH	35C分支，4100轴距。	READY
+34443_35s_wb3000	34443	Chassis Cab	Daily III	35S	2	EU-IVECO-DAILY-III-CHASSIS-CAB-35S-WB3000-01	HIGH	35S分支，3000轴距。	READY
+34443_35s_wb3450	34443	Chassis Cab	Daily III	35S	2	EU-IVECO-DAILY-III-CHASSIS-CAB-35S-WB3450-01	HIGH	35S分支，3450轴距。	READY
+34443_35s_wb3750	34443	Chassis Cab	Daily III	35S	2	EU-IVECO-DAILY-III-CHASSIS-CAB-35S-WB3750-01	HIGH	35S分支，3750轴距。	READY
+34443_35c_wb3000	34443	Chassis Cab	Daily III	35C	2	EU-IVECO-DAILY-III-CHASSIS-CAB-35C-WB3000-01	HIGH	35C分支，3000轴距。	READY
+34443_35c_wb3450	34443	Chassis Cab	Daily III	35C	2	EU-IVECO-DAILY-III-CHASSIS-CAB-35C-WB3450-01	HIGH	35C分支，3450轴距。	READY
+34443_35c_wb3750	34443	Chassis Cab	Daily III	35C	2	EU-IVECO-DAILY-III-CHASSIS-CAB-35C-WB3750-01	HIGH	35C分支，3750轴距。	READY
+34443_35c_wb4100	34443	Chassis Cab	Daily III	35C	2	EU-IVECO-DAILY-III-CHASSIS-CAB-35C-WB4100-01	HIGH	35C分支，4100轴距。	READY
+```
+
+### 本轮首次创建/修正的 DIMENSION_GROUP TSV
+
+```tsv
+DIMENSION_GROUP_ID	LengthMM	WidthMM	HeightMM	DimensionSource	SourceURL
+EU-IVECO-DAILY-III-CHASSIS-CAB-35S-WB3000-01	5077	1996	2220	Használtautó IVECO Daily 35 S 10 chassis catalogue	https://katalogus.hasznaltauto.hu/iveco/daily_35_s_10/50314
+EU-IVECO-DAILY-III-CHASSIS-CAB-35S-WB3450-01	5899	1996	2220	Használtautó IVECO Daily 35 S 10 chassis catalogue	https://katalogus.hasznaltauto.hu/iveco/daily_35_s_10/50315
+EU-IVECO-DAILY-III-CHASSIS-CAB-35S-WB3750-01	6509	1996	2220	Használtautó IVECO Daily 35 S 10 chassis catalogue	https://katalogus.hasznaltauto.hu/iveco/daily_35_s_10/50316
+EU-IVECO-DAILY-III-CHASSIS-CAB-35C-WB3000-01	5334	1996	2220	Használtautó IVECO Daily 35 C 10 chassis catalogue	https://katalogus.hasznaltauto.hu/iveco/daily_35_c_10/50325
+EU-IVECO-DAILY-III-CHASSIS-CAB-35C-WB3450-01	5899	1996	2220	Használtautó IVECO Daily 35 C 10 chassis catalogue	https://katalogus.hasznaltauto.hu/iveco/daily_35_c_10/50326
+EU-IVECO-DAILY-III-CHASSIS-CAB-35C-WB3750-01	6509	1996	2220	Használtautó IVECO Daily 35 C 10 chassis catalogue	https://katalogus.hasznaltauto.hu/iveco/daily_35_c_10/50327
+EU-IVECO-DAILY-III-CHASSIS-CAB-35C-WB4100-01	6909	1996	2220	Használtautó IVECO Daily 35 C 10 chassis catalogue	https://katalogus.hasznaltauto.hu/iveco/daily_35_c_10/50328
+```
+
+### 下一步优先处理
+
+优先闭合 Daily III `29 L` 底盘族的独立轴距组；随后处理跨越 2002 年阶段边界的 `35 C/S 9、11、13、15`，避免把后期底盘尺寸直接套用到未核实的早期外廓。
+
+推进信号：CONTINUE
+
+[1]: https://katalogus.hasznaltauto.hu/iveco/daily_35_s_10/50314 "Autókatalógus - IVECO Daily 35 S 10 (2 ajtós, 95.20 LE) (2005-2007)"
+
+
+--- 发送 / 继续到 Round 37 ---
+继续当前批次并采用缓存优先模式。尺寸组只在首次创建或纠错时完整核对一次三维和来源；后续 Ktype 只判断关联哪个现有 DIMENSION_GROUP_ID，不重复抓取，不输出缓存来源或匹配理由。仍有 PENDING 时，CONTINUE 轮仅输出：1) 更新点；2) 当前批次进度；3) 本轮新增/修改的 Ktype 映射 TSV（无变化写“无”）；4) 本轮首次创建/修正的 DIMENSION_GROUP TSV（复用既有组不重复输出，无变化写“无”）；5) 下一步优先处理。若当前或上一轮进度已经是 PENDING=0，本轮不要继续检索或再次输出 CONTINUE，必须立刻汇总并输出两张最终完整 TSV、两个任务指定 sandbox 下载链接和“推进信号：COMPLETE”。执行顺序固定为：第一阶段优先消除 PENDING 并补齐会阻塞两张最终表的数据。检测到 PENDING=0 后，第二阶段最多只做一次轻量机械收尾：核对固定表头、id 与 DIMENSION_GROUP_ID 唯一、映射引用闭合、长宽高和来源非空、两个任务指定下载链接齐全。第二阶段不得重新逐车型、逐年份或逐来源做深度检索，不得为了提高置信度反复核对，也不得因非阻塞的排序或措辞问题继续多轮。PENDING=0 后的下一条回复必须直接输出两张最终完整 TSV、两个精确 sandbox 下载链接，并以“推进信号：COMPLETE”结束；不要再输出 CONTINUE。Ktype 映射 TSV 表头必须严格使用 requirement 指定的字段顺序：id	Ktype	NormalizedBodyStyle	Generation	BodyCode	Doors	DIMENSION_GROUP_ID	MatchConfidence	Notes	IterationStatus。另需维护完整 DIMENSION_GROUP TSV，表头固定为：DIMENSION_GROUP_ID	LengthMM	WidthMM	HeightMM	DimensionSource	SourceURL。缺少任一张表、任一映射引用的尺寸组，或尺寸组字段不完整时不得 COMPLETE。不要输出子车系匹配表。
+【COMPLETE 下载文件硬性要求】
+准备 COMPLETE 时，除两张完整内嵌 TSV 外，还必须创建并提供以下两个可点击 sandbox 下载链接，文件名必须完全一致：
+- left18448_7201-7300_ktype_dimension_mapping_final.tsv
+- left18448_7201-7300_dimension_groups_final.tsv
+缺少任一下载链接时不得输出推进信号：COMPLETE。
+
