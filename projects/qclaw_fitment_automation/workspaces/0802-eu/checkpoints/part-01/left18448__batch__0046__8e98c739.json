@@ -1,0 +1,20 @@
+{
+    "version":  2,
+    "revision":  1,
+    "task_id":  "left18448__batch__0046__8e98c739",
+    "task_name":  "left18448 第 4501-4600 行",
+    "vehicle":  "left18448 第 4501-4600 行",
+    "source_file":  "left18448.tsv",
+    "status":  "脚本错误",
+    "phase":  "finished",
+    "round":  1,
+    "send_count":  0,
+    "output_file":  "D:\\Home\\Scripts\\fitment_sheet_generation\\projects\\qclaw_fitment_automation\\workspaces\\0802-eu\\replies\\part-01\\left18448__batch__0046__8e98c739_result.md",
+    "conversation_url":  "",
+    "conversation_branch_count":  0,
+    "conversation_lineage":  [
+
+                             ],
+    "remarks":  "异常: Playwright browser bridge 启动超时",
+    "updated_at":  "2026-08-03 06:46:06"
+}
