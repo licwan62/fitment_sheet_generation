@@ -2552,3 +2552,1439 @@ AutoGidas
 AutoGidas
 +2 | 复制 | 复制 | 开始新对话 | 复制回复 | 喜欢 | 不喜欢 | 切换模型 | 更多操作 | 来源 来源 |  | 添加文件等 | 高 | 启动语音功能 | 今天，12:07
 
+
+--- 发送 / checkpoint 续跑到 Round 34 ---
+继续当前批次并采用缓存优先模式。尺寸组只在首次创建或纠错时完整核对一次三维和来源；后续 Ktype 只判断关联哪个现有 DIMENSION_GROUP_ID，不重复抓取，不输出缓存来源或匹配理由。仍有 PENDING 时，CONTINUE 轮仅输出：1) 更新点；2) 当前批次进度；3) 本轮新增/修改的 Ktype 映射 TSV（无变化写“无”）；4) 本轮首次创建/修正的 DIMENSION_GROUP TSV（复用既有组不重复输出，无变化写“无”）；5) 下一步优先处理。若当前或上一轮进度已经是 PENDING=0，本轮不要继续检索或再次输出 CONTINUE，必须立刻汇总并输出两张最终完整 TSV、两个任务指定 sandbox 下载链接和“推进信号：COMPLETE”。执行顺序固定为：第一阶段优先消除 PENDING 并补齐会阻塞两张最终表的数据。检测到 PENDING=0 后，第二阶段最多只做一次轻量机械收尾：核对固定表头、id 与 DIMENSION_GROUP_ID 唯一、映射引用闭合、长宽高和来源非空、两个任务指定下载链接齐全。第二阶段不得重新逐车型、逐年份或逐来源做深度检索，不得为了提高置信度反复核对，也不得因非阻塞的排序或措辞问题继续多轮。PENDING=0 后的下一条回复必须直接输出两张最终完整 TSV、两个精确 sandbox 下载链接，并以“推进信号：COMPLETE”结束；不要再输出 CONTINUE。Ktype 映射 TSV 表头必须严格使用 requirement 指定的字段顺序：id	Ktype	NormalizedBodyStyle	Generation	BodyCode	Doors	DIMENSION_GROUP_ID	MatchConfidence	Notes	IterationStatus。另需维护完整 DIMENSION_GROUP TSV，表头固定为：DIMENSION_GROUP_ID	LengthMM	WidthMM	HeightMM	DimensionSource	SourceURL。缺少任一张表、任一映射引用的尺寸组，或尺寸组字段不完整时不得 COMPLETE。不要输出子车系匹配表。
+【COMPLETE 下载文件硬性要求】
+准备 COMPLETE 时，除两张完整内嵌 TSV 外，还必须创建并提供以下两个可点击 sandbox 下载链接，文件名必须完全一致：
+- left18448_10601-10700_ktype_dimension_mapping_final.tsv
+- left18448_10601-10700_dimension_groups_final.tsv
+缺少任一下载链接时不得输出推进信号：COMPLETE。
+
+
+--- 对话分支 / Round 34 ---
+触发原因：ChatGPT 对话长度上限
+父对话：https://chatgpt.com/c/6a6ff757-af88-83ee-a74a-0207a6d08646
+新分支：https://chatgpt.com/c/6a70f2c2-b774-83ee-8c9f-9dbe55ad7ef6
+
+--- Round 34 / checkpoint 续跑 ---
+## 更新点
+
+已闭合 2 个原始 Ktype：
+
+* `145090`：按已确认的 `907.741 / 907.743 / 907.745` 拆分为 L2H2、L3H2、L4H2。
+* `145091`：按已确认的 `907.743 / 907.745` 拆分为 L3H2、L4H2。
+* 两个动力版本直接复用相同 Tourer 物理外廓，共新增 3 个尺寸组，没有按发动机重复建组。相关车型代码范围及三种车长规格由直接车型资料支持；`2020 mm` 为车身宽度，不含外后视镜。([Meyer Motoren][1])
+
+## 当前批进度
+
+`revision=35`
+`READY=40`
+`PENDING=60`
+
+本轮：原始 Ktype 转 READY `+2`；新增/修改映射行 `5`；新增尺寸组 `3`。
+
+## 本轮新增/修改的 Ktype TSV
+
+```tsv
+id	Ktype	NormalizedBodyStyle	Generation	BodyCode	Doors	DIMENSION_GROUP_ID	MatchConfidence	Notes	IterationStatus
+145090_l2h2	145090	MPV	Sprinter III (VS30)	907.741		EU-MERCEDES-BENZ-SPRINTER-III-VS30-TOURER-4T-L2H2-RWD-01	HIGH	907.741四吨后驱Tourer中等车长高顶外廓。	READY
+145090_l3h2	145090	MPV	Sprinter III (VS30)	907.743		EU-MERCEDES-BENZ-SPRINTER-III-VS30-TOURER-4T-L3H2-RWD-01	HIGH	907.743四吨后驱Tourer长车身高顶外廓。	READY
+145090_l4h2	145090	MPV	Sprinter III (VS30)	907.745		EU-MERCEDES-BENZ-SPRINTER-III-VS30-TOURER-4T-L4H2-RWD-01	HIGH	907.745四吨后驱Tourer超长车身高顶外廓。	READY
+145091_l3h2	145091	MPV	Sprinter III (VS30)	907.743		EU-MERCEDES-BENZ-SPRINTER-III-VS30-TOURER-4T-L3H2-RWD-01	HIGH	907.743四吨后驱Tourer长车身高顶外廓。	READY
+145091_l4h2	145091	MPV	Sprinter III (VS30)	907.745		EU-MERCEDES-BENZ-SPRINTER-III-VS30-TOURER-4T-L4H2-RWD-01	HIGH	907.745四吨后驱Tourer超长车身高顶外廓。	READY
+```
+
+## 本轮首次创建/修正的 DIMENSION_GROUP TSV
+
+```tsv
+DIMENSION_GROUP_ID	LengthMM	WidthMM	HeightMM	DimensionSource	SourceURL
+EU-MERCEDES-BENZ-SPRINTER-III-VS30-TOURER-4T-L2H2-RWD-01	5932	2020	2667	Coches.net Mercedes-Benz Sprinter 411 CDI Medio 4.1T T. Alto 2021	https://www.coches.net/fichas_tecnicas/mercedes-benz/sprinter/industriales/4-puertas/411_cdi_medio_41t_t_alto_114cv_diesel/84751/824876520210101/
+EU-MERCEDES-BENZ-SPRINTER-III-VS30-TOURER-4T-L3H2-RWD-01	6967	2020	2663	Coches.net Mercedes-Benz Sprinter 419 CDI Largo 4.1T T. Alto Mixto 2020	https://www.coches.net/fichas_tecnicas/mercedes-benz/sprinter/industriales/4-puertas/419_cdi_largo_41t_t_alto_mixto_190cv_diesel/84763/797292420200701/
+EU-MERCEDES-BENZ-SPRINTER-III-VS30-TOURER-4T-L4H2-RWD-01	7367	2020	2662	Coches.net Mercedes-Benz Sprinter 419 CDI Largo L 4.1T T. Alto Mixto 2020	https://www.coches.net/fichas_tecnicas/mercedes-benz/sprinter/industriales/4-puertas/419_cdi_largo_l_41t_t_alto_mixto_190cv_diesel/84762/797292320200701/
+```
+
+## 下一步优先处理
+
+仅确认 `147381` 中 `907.843` 的物理分支含义；`907.743` 和 `907.745` 可直接复用本轮 L3H2、L4H2 尺寸组，不再检索其三维。
+
+推进信号：CONTINUE
+
+[1]: https://www.meyermotoren.de/fahrzeuge/145090/mercedes-benz/sprinter_4t_tourer_bus_b907_/411_cdi_907_741_907_743_907_745_145090?utm_source=chatgpt.com "411 CDI (907.741, 907.743, 907.745) | Sprinter 4t Tourer (B907) | Mercedes-Benz | Herstellerübersicht | Meyer Motoren"
+
+
+--- 发送 / 继续到 Round 35 ---
+继续当前批次并采用缓存优先模式。尺寸组只在首次创建或纠错时完整核对一次三维和来源；后续 Ktype 只判断关联哪个现有 DIMENSION_GROUP_ID，不重复抓取，不输出缓存来源或匹配理由。仍有 PENDING 时，CONTINUE 轮仅输出：1) 更新点；2) 当前批次进度；3) 本轮新增/修改的 Ktype 映射 TSV（无变化写“无”）；4) 本轮首次创建/修正的 DIMENSION_GROUP TSV（复用既有组不重复输出，无变化写“无”）；5) 下一步优先处理。若当前或上一轮进度已经是 PENDING=0，本轮不要继续检索或再次输出 CONTINUE，必须立刻汇总并输出两张最终完整 TSV、两个任务指定 sandbox 下载链接和“推进信号：COMPLETE”。执行顺序固定为：第一阶段优先消除 PENDING 并补齐会阻塞两张最终表的数据。检测到 PENDING=0 后，第二阶段最多只做一次轻量机械收尾：核对固定表头、id 与 DIMENSION_GROUP_ID 唯一、映射引用闭合、长宽高和来源非空、两个任务指定下载链接齐全。第二阶段不得重新逐车型、逐年份或逐来源做深度检索，不得为了提高置信度反复核对，也不得因非阻塞的排序或措辞问题继续多轮。PENDING=0 后的下一条回复必须直接输出两张最终完整 TSV、两个精确 sandbox 下载链接，并以“推进信号：COMPLETE”结束；不要再输出 CONTINUE。Ktype 映射 TSV 表头必须严格使用 requirement 指定的字段顺序：id	Ktype	NormalizedBodyStyle	Generation	BodyCode	Doors	DIMENSION_GROUP_ID	MatchConfidence	Notes	IterationStatus。另需维护完整 DIMENSION_GROUP TSV，表头固定为：DIMENSION_GROUP_ID	LengthMM	WidthMM	HeightMM	DimensionSource	SourceURL。缺少任一张表、任一映射引用的尺寸组，或尺寸组字段不完整时不得 COMPLETE。不要输出子车系匹配表。
+【COMPLETE 下载文件硬性要求】
+准备 COMPLETE 时，除两张完整内嵌 TSV 外，还必须创建并提供以下两个可点击 sandbox 下载链接，文件名必须完全一致：
+- left18448_10601-10700_ktype_dimension_mapping_final.tsv
+- left18448_10601-10700_dimension_groups_final.tsv
+缺少任一下载链接时不得输出推进信号：COMPLETE。
+
+
+--- Round 35 / checkpoint 续跑 ---
+## 1）更新点
+
+确认 `907.843` 为四吨、3665 mm 轴距 Bus；结合 `907.743` 同为3665 mm轴距，以及官方 Tourer 技术页仅列 `5267 / 5932 / 6967 mm` 三种车长，将两者归入同一 L2H2 外廓。撤销上一轮误建的 Tourer L4 分支，该孤立尺寸组不再进入累计表。([PartSouq][1])
+
+新增 L1H1 外廓；完整三维为 `5267 × 2020 × 2375 mm`。([Coches][2])
+
+## 2）当前批进度
+
+`revision=36`
+`READY=41`
+`PENDING=59`
+
+## 3）本轮新增/修改的 Ktype 映射 TSV
+
+```tsv
+id	Ktype	NormalizedBodyStyle	Generation	BodyCode	Doors	DIMENSION_GROUP_ID	MatchConfidence	Notes	IterationStatus
+145090_l1h1	145090	MPV	Sprinter III (VS30)	907.741		EU-MERCEDES-BENZ-SPRINTER-III-VS30-TOURER-4T-L1H1-RWD-01	HIGH	907.741四吨后驱Tourer紧凑车身外廓。	READY
+145090_l2h2	145090	MPV	Sprinter III (VS30)	907.743		EU-MERCEDES-BENZ-SPRINTER-III-VS30-TOURER-4T-L2H2-RWD-01	HIGH	907.743四吨后驱Tourer中等车长高顶外廓。	READY
+145090_l3h2	145090	MPV	Sprinter III (VS30)	907.745		EU-MERCEDES-BENZ-SPRINTER-III-VS30-TOURER-4T-L3H2-RWD-01	HIGH	907.745四吨后驱Tourer长车身高顶外廓。	READY
+145091_l2h2	145091	MPV	Sprinter III (VS30)	907.743		EU-MERCEDES-BENZ-SPRINTER-III-VS30-TOURER-4T-L2H2-RWD-01	HIGH	907.743四吨后驱Tourer中等车长高顶外廓。	READY
+145091_l3h2	145091	MPV	Sprinter III (VS30)	907.745		EU-MERCEDES-BENZ-SPRINTER-III-VS30-TOURER-4T-L3H2-RWD-01	HIGH	907.745四吨后驱Tourer长车身高顶外廓。	READY
+147381_l1h1	147381	MPV	Sprinter III (VS30)	907.741		EU-MERCEDES-BENZ-SPRINTER-III-VS30-TOURER-4T-L1H1-RWD-01	HIGH	907.741四吨后驱Tourer紧凑车身外廓。	READY
+147381_l2h2	147381	MPV	Sprinter III (VS30)	907.743/907.843		EU-MERCEDES-BENZ-SPRINTER-III-VS30-TOURER-4T-L2H2-RWD-01	HIGH	907.743与907.843均归入3665轴距中等车长高顶外廓。	READY
+147381_l3h2	147381	MPV	Sprinter III (VS30)	907.745		EU-MERCEDES-BENZ-SPRINTER-III-VS30-TOURER-4T-L3H2-RWD-01	HIGH	907.745四吨后驱Tourer长车身高顶外廓。	READY
+```
+
+## 4）本轮首次创建/修正的 DIMENSION_GROUP TSV
+
+```tsv
+DIMENSION_GROUP_ID	LengthMM	WidthMM	HeightMM	DimensionSource	SourceURL
+EU-MERCEDES-BENZ-SPRINTER-III-VS30-TOURER-4T-L1H1-RWD-01	5267	2020	2375	Coches.net Mercedes-Benz Sprinter 417 CDI Compacto 4.1T technical specifications	https://www.coches.net/fichas_tecnicas/mercedes-benz/sprinter/industriales/4-puertas/417_cdi_compacto_41t_t_alto_170cv_diesel/103057/820143220220201/
+```
+
+## 5）下一步优先处理
+
+批量闭合 `57314 / 57315 / 57316`：直接复用交接中已经闭合的 W906 五吨四驱改款前尺寸组，仅判断原始 Ktype 的生产期是否还需保留改款后分支，不重新抓取三维或来源。
+
+推进信号：CONTINUE
+
+[1]: https://partsouq.com/en/catalog/genuine/diagram?c=MB201810&number=A0008301401&ssd=%24%2AKwHl0cDDsua25YWdtJbByb2piY6Q4e7j4vDf7KSikZ-Sm6-M_vPql5fh4Ofu4uO_tKzmqKe1v5aq8fiiprmjvbz79LywrLq-7ubm6OPl8_-s8__17PPy-_S8uKy6vuaQgvL79LK9rLq-g-Li8vv0p7Csur7k9KwAAAAA0enE6A%3D%3D%24&utm_source=chatgpt.com "HEATING/VENTILATION | Mercedes-Benz 411 CDI Standard, North America, Japan 907.843 | Parts Catalogs | PartSouq"
+[2]: https://www.coches.net/fichas_tecnicas/mercedes-benz/sprinter/industriales/4-puertas/417_cdi_compacto_41t_t_alto_170cv_diesel/103057/820143220220201/?utm_source=chatgpt.com "MERCEDES-BENZ SPRINTER 417 CDI COMPACTO 4.1T ..."
+
+
+--- 发送 / 继续到 Round 36 ---
+继续当前批次并采用缓存优先模式。尺寸组只在首次创建或纠错时完整核对一次三维和来源；后续 Ktype 只判断关联哪个现有 DIMENSION_GROUP_ID，不重复抓取，不输出缓存来源或匹配理由。仍有 PENDING 时，CONTINUE 轮仅输出：1) 更新点；2) 当前批次进度；3) 本轮新增/修改的 Ktype 映射 TSV（无变化写“无”）；4) 本轮首次创建/修正的 DIMENSION_GROUP TSV（复用既有组不重复输出，无变化写“无”）；5) 下一步优先处理。若当前或上一轮进度已经是 PENDING=0，本轮不要继续检索或再次输出 CONTINUE，必须立刻汇总并输出两张最终完整 TSV、两个任务指定 sandbox 下载链接和“推进信号：COMPLETE”。执行顺序固定为：第一阶段优先消除 PENDING 并补齐会阻塞两张最终表的数据。检测到 PENDING=0 后，第二阶段最多只做一次轻量机械收尾：核对固定表头、id 与 DIMENSION_GROUP_ID 唯一、映射引用闭合、长宽高和来源非空、两个任务指定下载链接齐全。第二阶段不得重新逐车型、逐年份或逐来源做深度检索，不得为了提高置信度反复核对，也不得因非阻塞的排序或措辞问题继续多轮。PENDING=0 后的下一条回复必须直接输出两张最终完整 TSV、两个精确 sandbox 下载链接，并以“推进信号：COMPLETE”结束；不要再输出 CONTINUE。Ktype 映射 TSV 表头必须严格使用 requirement 指定的字段顺序：id	Ktype	NormalizedBodyStyle	Generation	BodyCode	Doors	DIMENSION_GROUP_ID	MatchConfidence	Notes	IterationStatus。另需维护完整 DIMENSION_GROUP TSV，表头固定为：DIMENSION_GROUP_ID	LengthMM	WidthMM	HeightMM	DimensionSource	SourceURL。缺少任一张表、任一映射引用的尺寸组，或尺寸组字段不完整时不得 COMPLETE。不要输出子车系匹配表。
+【COMPLETE 下载文件硬性要求】
+准备 COMPLETE 时，除两张完整内嵌 TSV 外，还必须创建并提供以下两个可点击 sandbox 下载链接，文件名必须完全一致：
+- left18448_10601-10700_ktype_dimension_mapping_final.tsv
+- left18448_10601-10700_dimension_groups_final.tsv
+缺少任一下载链接时不得输出推进信号：COMPLETE。
+
+
+--- Round 36 / checkpoint 续跑 ---
+## 1）更新点
+
+`57314`、`57316` 闭合为改款前 7 个物理外廓分支；`57315` 按生产期闭合为改款前、改款后共 14 个分支。全部复用既有尺寸组，无新增尺寸研究。
+
+## 2）当前批进度
+
+`revision=37`
+`READY=44`
+`PENDING=56`
+
+## 3）本轮新增/修改的 Ktype 映射 TSV
+
+```tsv
+id	Ktype	NormalizedBodyStyle	Generation	BodyCode	Doors	DIMENSION_GROUP_ID	MatchConfidence	Notes	IterationStatus
+57314_mwb_h1_prefl	57314	Van	Sprinter II (W906)	906.653		EU-MERCEDES-BENZ-SPRINTER-II-W906-VAN-5T-MWB-H1-AWD-PREFL-01	HIGH	改款前五吨四驱中轴标准顶厢式车外廓。	READY
+57314_mwb_h2_prefl	57314	Van	Sprinter II (W906)	906.653		EU-MERCEDES-BENZ-SPRINTER-II-W906-VAN-5T-MWB-H2-AWD-PREFL-01	HIGH	改款前五吨四驱中轴高顶厢式车外廓。	READY
+57314_mwb_h3_prefl	57314	Van	Sprinter II (W906)	906.653		EU-MERCEDES-BENZ-SPRINTER-II-W906-VAN-5T-MWB-H3-AWD-PREFL-01	HIGH	改款前五吨四驱中轴超高顶厢式车外廓。	READY
+57314_lwb_h2_prefl	57314	Van	Sprinter II (W906)	906.655		EU-MERCEDES-BENZ-SPRINTER-II-W906-VAN-5T-LWB-H2-AWD-PREFL-02	HIGH	改款前五吨四驱长轴高顶厢式车外廓。	READY
+57314_lwb_h3_prefl	57314	Van	Sprinter II (W906)	906.655		EU-MERCEDES-BENZ-SPRINTER-II-W906-VAN-5T-LWB-H3-AWD-PREFL-01	HIGH	改款前五吨四驱长轴超高顶厢式车外廓。	READY
+57314_elwb_h2_prefl	57314	Van	Sprinter II (W906)	906.657		EU-MERCEDES-BENZ-SPRINTER-II-W906-VAN-5T-ELWB-H2-AWD-PREFL-01	HIGH	改款前五吨四驱超长轴高顶厢式车外廓。	READY
+57314_elwb_h3_prefl	57314	Van	Sprinter II (W906)	906.657		EU-MERCEDES-BENZ-SPRINTER-II-W906-VAN-5T-ELWB-H3-AWD-PREFL-01	HIGH	改款前五吨四驱超长轴超高顶厢式车外廓。	READY
+57315_mwb_h1_prefl	57315	Van	Sprinter II (W906)	906.653		EU-MERCEDES-BENZ-SPRINTER-II-W906-VAN-5T-MWB-H1-AWD-PREFL-01	HIGH	改款前五吨四驱中轴标准顶厢式车外廓。	READY
+57315_mwb_h2_prefl	57315	Van	Sprinter II (W906)	906.653		EU-MERCEDES-BENZ-SPRINTER-II-W906-VAN-5T-MWB-H2-AWD-PREFL-01	HIGH	改款前五吨四驱中轴高顶厢式车外廓。	READY
+57315_mwb_h3_prefl	57315	Van	Sprinter II (W906)	906.653		EU-MERCEDES-BENZ-SPRINTER-II-W906-VAN-5T-MWB-H3-AWD-PREFL-01	HIGH	改款前五吨四驱中轴超高顶厢式车外廓。	READY
+57315_lwb_h2_prefl	57315	Van	Sprinter II (W906)	906.655		EU-MERCEDES-BENZ-SPRINTER-II-W906-VAN-5T-LWB-H2-AWD-PREFL-02	HIGH	改款前五吨四驱长轴高顶厢式车外廓。	READY
+57315_lwb_h3_prefl	57315	Van	Sprinter II (W906)	906.655		EU-MERCEDES-BENZ-SPRINTER-II-W906-VAN-5T-LWB-H3-AWD-PREFL-01	HIGH	改款前五吨四驱长轴超高顶厢式车外廓。	READY
+57315_elwb_h2_prefl	57315	Van	Sprinter II (W906)	906.657		EU-MERCEDES-BENZ-SPRINTER-II-W906-VAN-5T-ELWB-H2-AWD-PREFL-01	HIGH	改款前五吨四驱超长轴高顶厢式车外廓。	READY
+57315_elwb_h3_prefl	57315	Van	Sprinter II (W906)	906.657		EU-MERCEDES-BENZ-SPRINTER-II-W906-VAN-5T-ELWB-H3-AWD-PREFL-01	HIGH	改款前五吨四驱超长轴超高顶厢式车外廓。	READY
+57315_mwb_h1_facelift	57315	Van	Sprinter II (W906)	906.653		EU-MERCEDES-BENZ-SPRINTER-II-W906-VAN-5T-MWB-H1-AWD-FACELIFT-01	HIGH	改款后五吨四驱中轴标准顶厢式车外廓。	READY
+57315_mwb_h2_facelift	57315	Van	Sprinter II (W906)	906.653		EU-MERCEDES-BENZ-SPRINTER-II-W906-VAN-5T-MWB-H2-AWD-FACELIFT-01	HIGH	改款后五吨四驱中轴高顶厢式车外廓。	READY
+57315_mwb_h3_facelift	57315	Van	Sprinter II (W906)	906.653		EU-MERCEDES-BENZ-SPRINTER-II-W906-VAN-5T-MWB-H3-AWD-FACELIFT-01	HIGH	改款后五吨四驱中轴超高顶厢式车外廓。	READY
+57315_lwb_h2_facelift	57315	Van	Sprinter II (W906)	906.655		EU-MERCEDES-BENZ-SPRINTER-II-W906-VAN-5T-LWB-H2-AWD-FACELIFT-01	HIGH	改款后五吨四驱长轴高顶厢式车外廓。	READY
+57315_lwb_h3_facelift	57315	Van	Sprinter II (W906)	906.655		EU-MERCEDES-BENZ-SPRINTER-II-W906-VAN-5T-LWB-H3-AWD-FACELIFT-01	HIGH	改款后五吨四驱长轴超高顶厢式车外廓。	READY
+57315_elwb_h2_facelift	57315	Van	Sprinter II (W906)	906.657		EU-MERCEDES-BENZ-SPRINTER-II-W906-VAN-5T-ELWB-H2-AWD-FACELIFT-01	HIGH	改款后五吨四驱超长轴高顶厢式车外廓。	READY
+57315_elwb_h3_facelift	57315	Van	Sprinter II (W906)	906.657		EU-MERCEDES-BENZ-SPRINTER-II-W906-VAN-5T-ELWB-H3-AWD-FACELIFT-01	HIGH	改款后五吨四驱超长轴超高顶厢式车外廓。	READY
+57316_mwb_h1_prefl	57316	Van	Sprinter II (W906)	906.653		EU-MERCEDES-BENZ-SPRINTER-II-W906-VAN-5T-MWB-H1-AWD-PREFL-01	HIGH	改款前五吨四驱中轴标准顶厢式车外廓。	READY
+57316_mwb_h2_prefl	57316	Van	Sprinter II (W906)	906.653		EU-MERCEDES-BENZ-SPRINTER-II-W906-VAN-5T-MWB-H2-AWD-PREFL-01	HIGH	改款前五吨四驱中轴高顶厢式车外廓。	READY
+57316_mwb_h3_prefl	57316	Van	Sprinter II (W906)	906.653		EU-MERCEDES-BENZ-SPRINTER-II-W906-VAN-5T-MWB-H3-AWD-PREFL-01	HIGH	改款前五吨四驱中轴超高顶厢式车外廓。	READY
+57316_lwb_h2_prefl	57316	Van	Sprinter II (W906)	906.655		EU-MERCEDES-BENZ-SPRINTER-II-W906-VAN-5T-LWB-H2-AWD-PREFL-02	HIGH	改款前五吨四驱长轴高顶厢式车外廓。	READY
+57316_lwb_h3_prefl	57316	Van	Sprinter II (W906)	906.655		EU-MERCEDES-BENZ-SPRINTER-II-W906-VAN-5T-LWB-H3-AWD-PREFL-01	HIGH	改款前五吨四驱长轴超高顶厢式车外廓。	READY
+57316_elwb_h2_prefl	57316	Van	Sprinter II (W906)	906.657		EU-MERCEDES-BENZ-SPRINTER-II-W906-VAN-5T-ELWB-H2-AWD-PREFL-01	HIGH	改款前五吨四驱超长轴高顶厢式车外廓。	READY
+57316_elwb_h3_prefl	57316	Van	Sprinter II (W906)	906.657		EU-MERCEDES-BENZ-SPRINTER-II-W906-VAN-5T-ELWB-H3-AWD-PREFL-01	HIGH	改款前五吨四驱超长轴超高顶厢式车外廓。	READY
+```
+
+## 4）本轮首次创建/修正的 DIMENSION_GROUP TSV
+
+无
+
+## 5）下一步优先处理
+
+闭合 `146051`、`146080` 的 VS30 五吨四驱厢式车剩余长车身分支；已有 L2H2、L3H2、L3H3 直接复用，仅处理尚未闭合的 `907.647 / 907.657`。
+
+推进信号：CONTINUE
+
+
+--- 发送 / 继续到 Round 37 ---
+继续当前批次并采用缓存优先模式。尺寸组只在首次创建或纠错时完整核对一次三维和来源；后续 Ktype 只判断关联哪个现有 DIMENSION_GROUP_ID，不重复抓取，不输出缓存来源或匹配理由。仍有 PENDING 时，CONTINUE 轮仅输出：1) 更新点；2) 当前批次进度；3) 本轮新增/修改的 Ktype 映射 TSV（无变化写“无”）；4) 本轮首次创建/修正的 DIMENSION_GROUP TSV（复用既有组不重复输出，无变化写“无”）；5) 下一步优先处理。若当前或上一轮进度已经是 PENDING=0，本轮不要继续检索或再次输出 CONTINUE，必须立刻汇总并输出两张最终完整 TSV、两个任务指定 sandbox 下载链接和“推进信号：COMPLETE”。执行顺序固定为：第一阶段优先消除 PENDING 并补齐会阻塞两张最终表的数据。检测到 PENDING=0 后，第二阶段最多只做一次轻量机械收尾：核对固定表头、id 与 DIMENSION_GROUP_ID 唯一、映射引用闭合、长宽高和来源非空、两个任务指定下载链接齐全。第二阶段不得重新逐车型、逐年份或逐来源做深度检索，不得为了提高置信度反复核对，也不得因非阻塞的排序或措辞问题继续多轮。PENDING=0 后的下一条回复必须直接输出两张最终完整 TSV、两个精确 sandbox 下载链接，并以“推进信号：COMPLETE”结束；不要再输出 CONTINUE。Ktype 映射 TSV 表头必须严格使用 requirement 指定的字段顺序：id	Ktype	NormalizedBodyStyle	Generation	BodyCode	Doors	DIMENSION_GROUP_ID	MatchConfidence	Notes	IterationStatus。另需维护完整 DIMENSION_GROUP TSV，表头固定为：DIMENSION_GROUP_ID	LengthMM	WidthMM	HeightMM	DimensionSource	SourceURL。缺少任一张表、任一映射引用的尺寸组，或尺寸组字段不完整时不得 COMPLETE。不要输出子车系匹配表。
+【COMPLETE 下载文件硬性要求】
+准备 COMPLETE 时，除两张完整内嵌 TSV 外，还必须创建并提供以下两个可点击 sandbox 下载链接，文件名必须完全一致：
+- left18448_10601-10700_ktype_dimension_mapping_final.tsv
+- left18448_10601-10700_dimension_groups_final.tsv
+缺少任一下载链接时不得输出推进信号：COMPLETE。
+
+
+--- Round 37 / checkpoint 续跑 ---
+## 1）更新点
+
+`907.647`、`907.657` 均闭合为 L4H2 四驱厢式车外廓；未发现需要建立 L4H3 的当前 Ktype 分支。两者共用同一稳定尺寸组。`907.647` 的扩展轴距四驱配置以及 `907.657` 的 7367 mm 车长均有直接资料支持，精确配置资料给出 170 英寸 Extended AWD 高顶车身。([device.report][1])
+
+## 2）当前批进度
+
+`revision=38`
+`READY=46`
+`PENDING=54`
+
+## 3）本轮新增/修改的 Ktype 映射 TSV
+
+```tsv
+id	Ktype	NormalizedBodyStyle	Generation	BodyCode	Doors	DIMENSION_GROUP_ID	MatchConfidence	Notes	IterationStatus
+146051_l4h2	146051	Van	Sprinter III (VS30)	907.647		EU-MERCEDES-BENZ-SPRINTER-III-VS30-VAN-5T-L4H2-AWD-01	HIGH	907.647四驱L4H2厢式车外廓。	READY
+146080_l4h2	146080	Van	Sprinter III (VS30)	907.657		EU-MERCEDES-BENZ-SPRINTER-III-VS30-VAN-5T-L4H2-AWD-01	HIGH	907.657五吨四驱L4H2厢式车外廓。	READY
+```
+
+## 4）本轮首次创建/修正的 DIMENSION_GROUP TSV
+
+```tsv
+DIMENSION_GROUP_ID	LengthMM	WidthMM	HeightMM	DimensionSource	SourceURL
+EU-MERCEDES-BENZ-SPRINTER-III-VS30-VAN-5T-L4H2-AWD-01	7367	2020	2825	Mercedes-Benz 2023 Sprinter brochure; Cars.com 2023 Sprinter 3500XD High Roof 170 Extended AWD specifications	https://www.mercedes-benz-vans.ca/content/dam/mb-vans/ca/brochures/en/MY23_Sprinter_Brochure_EN_2023.pdf;https://www.cars.com/research/mercedes_benz-sprinter_3500xd-2023/specs/431780/
+```
+
+## 5）下一步优先处理
+
+闭合 `145939 / 146020 / 146052` 的 VS30 四吨底盘驾驶室簇：先复用已闭合的后驱单排 L2/L3 与双排 L3，仅研究 `907.141 / 907.241 / 907.243` 以及四驱底盘相对后驱是否改变完整外廓。
+
+推进信号：CONTINUE
+
+[1]: https://device.report/manuals/my23-sprinter-dealer-ordering-guide?utm_source=chatgpt.com "MY23 Sprinter Dealer Ordering Guide | Model GVWR, Wheelbase, Engine Options"
+
+
+--- 发送 / 继续到 Round 38 ---
+继续当前批次并采用缓存优先模式。尺寸组只在首次创建或纠错时完整核对一次三维和来源；后续 Ktype 只判断关联哪个现有 DIMENSION_GROUP_ID，不重复抓取，不输出缓存来源或匹配理由。仍有 PENDING 时，CONTINUE 轮仅输出：1) 更新点；2) 当前批次进度；3) 本轮新增/修改的 Ktype 映射 TSV（无变化写“无”）；4) 本轮首次创建/修正的 DIMENSION_GROUP TSV（复用既有组不重复输出，无变化写“无”）；5) 下一步优先处理。若当前或上一轮进度已经是 PENDING=0，本轮不要继续检索或再次输出 CONTINUE，必须立刻汇总并输出两张最终完整 TSV、两个任务指定 sandbox 下载链接和“推进信号：COMPLETE”。执行顺序固定为：第一阶段优先消除 PENDING 并补齐会阻塞两张最终表的数据。检测到 PENDING=0 后，第二阶段最多只做一次轻量机械收尾：核对固定表头、id 与 DIMENSION_GROUP_ID 唯一、映射引用闭合、长宽高和来源非空、两个任务指定下载链接齐全。第二阶段不得重新逐车型、逐年份或逐来源做深度检索，不得为了提高置信度反复核对，也不得因非阻塞的排序或措辞问题继续多轮。PENDING=0 后的下一条回复必须直接输出两张最终完整 TSV、两个精确 sandbox 下载链接，并以“推进信号：COMPLETE”结束；不要再输出 CONTINUE。Ktype 映射 TSV 表头必须严格使用 requirement 指定的字段顺序：id	Ktype	NormalizedBodyStyle	Generation	BodyCode	Doors	DIMENSION_GROUP_ID	MatchConfidence	Notes	IterationStatus。另需维护完整 DIMENSION_GROUP TSV，表头固定为：DIMENSION_GROUP_ID	LengthMM	WidthMM	HeightMM	DimensionSource	SourceURL。缺少任一张表、任一映射引用的尺寸组，或尺寸组字段不完整时不得 COMPLETE。不要输出子车系匹配表。
+【COMPLETE 下载文件硬性要求】
+准备 COMPLETE 时，除两张完整内嵌 TSV 外，还必须创建并提供以下两个可点击 sandbox 下载链接，文件名必须完全一致：
+- left18448_10601-10700_ktype_dimension_mapping_final.tsv
+- left18448_10601-10700_dimension_groups_final.tsv
+缺少任一下载链接时不得输出推进信号：COMPLETE。
+
+
+--- Round 38 / checkpoint 续跑 ---
+## 1）更新点
+
+闭合 `907.243` 四吨后驱双排驾驶室 L2 外廓，并同步关联 `145939`、`146020`；其中 `146020` 的全部分支现已闭合。([Coches][1])
+
+## 2）当前批进度
+
+`revision=39`
+`READY=47`
+`PENDING=53`
+
+## 3）本轮新增/修改的 Ktype 映射 TSV
+
+```tsv
+id	Ktype	NormalizedBodyStyle	Generation	BodyCode	Doors	DIMENSION_GROUP_ID	MatchConfidence	Notes	IterationStatus
+145939_dcab_l2	145939	Pickup	Sprinter III (VS30)	907.243	4	EU-MERCEDES-BENZ-SPRINTER-III-VS30-CHASSIS-4T-DCAB-L2-RWD-01	HIGH	907.243四吨后驱双排驾驶室L2底盘外廓。	READY
+146020_dcab_l2	146020	Pickup	Sprinter III (VS30)	907.243	4	EU-MERCEDES-BENZ-SPRINTER-III-VS30-CHASSIS-4T-DCAB-L2-RWD-01	HIGH	907.243四吨后驱双排驾驶室L2底盘外廓。	READY
+```
+
+## 4）本轮首次创建/修正的 DIMENSION_GROUP TSV
+
+```tsv
+DIMENSION_GROUP_ID	LengthMM	WidthMM	HeightMM	DimensionSource	SourceURL
+EU-MERCEDES-BENZ-SPRINTER-III-VS30-CHASSIS-4T-DCAB-L2-RWD-01	6156	2020	2323	Coches.net Mercedes-Benz Sprinter 416 CDI Medio 4.1T double-cab chassis technical specifications (JATO)	https://www.coches.net/fichas_tecnicas/mercedes-benz/sprinter/industriales/4-puertas/416_cdi_medio_41t_163cv_diesel/84711/741431020210101/
+```
+
+## 5）下一步优先处理
+
+优先闭合 `146052` 的 `907.143 / 907.145 / 907.243 / 907.245` 四驱底盘驾驶室外廓；随后处理 `145939` 剩余的 `907.141 / 907.241` 短轴分支。
+
+推进信号：CONTINUE
+
+[1]: https://www.coches.net/fichas_tecnicas/mercedes-benz/sprinter/industriales/4-puertas/416_cdi_medio_41t_163cv_diesel/84711/741431020210101/ "Ficha técnica y precio del MERCEDES-BENZ SPRINTER INDUSTRIALES 416 CDI MEDIO 4.1T DIÉSEL 2021 | Coches.net"
+
+
+--- 发送 / 继续到 Round 39 ---
+继续当前批次并采用缓存优先模式。尺寸组只在首次创建或纠错时完整核对一次三维和来源；后续 Ktype 只判断关联哪个现有 DIMENSION_GROUP_ID，不重复抓取，不输出缓存来源或匹配理由。仍有 PENDING 时，CONTINUE 轮仅输出：1) 更新点；2) 当前批次进度；3) 本轮新增/修改的 Ktype 映射 TSV（无变化写“无”）；4) 本轮首次创建/修正的 DIMENSION_GROUP TSV（复用既有组不重复输出，无变化写“无”）；5) 下一步优先处理。若当前或上一轮进度已经是 PENDING=0，本轮不要继续检索或再次输出 CONTINUE，必须立刻汇总并输出两张最终完整 TSV、两个任务指定 sandbox 下载链接和“推进信号：COMPLETE”。执行顺序固定为：第一阶段优先消除 PENDING 并补齐会阻塞两张最终表的数据。检测到 PENDING=0 后，第二阶段最多只做一次轻量机械收尾：核对固定表头、id 与 DIMENSION_GROUP_ID 唯一、映射引用闭合、长宽高和来源非空、两个任务指定下载链接齐全。第二阶段不得重新逐车型、逐年份或逐来源做深度检索，不得为了提高置信度反复核对，也不得因非阻塞的排序或措辞问题继续多轮。PENDING=0 后的下一条回复必须直接输出两张最终完整 TSV、两个精确 sandbox 下载链接，并以“推进信号：COMPLETE”结束；不要再输出 CONTINUE。Ktype 映射 TSV 表头必须严格使用 requirement 指定的字段顺序：id	Ktype	NormalizedBodyStyle	Generation	BodyCode	Doors	DIMENSION_GROUP_ID	MatchConfidence	Notes	IterationStatus。另需维护完整 DIMENSION_GROUP TSV，表头固定为：DIMENSION_GROUP_ID	LengthMM	WidthMM	HeightMM	DimensionSource	SourceURL。缺少任一张表、任一映射引用的尺寸组，或尺寸组字段不完整时不得 COMPLETE。不要输出子车系匹配表。
+【COMPLETE 下载文件硬性要求】
+准备 COMPLETE 时，除两张完整内嵌 TSV 外，还必须创建并提供以下两个可点击 sandbox 下载链接，文件名必须完全一致：
+- left18448_10601-10700_ktype_dimension_mapping_final.tsv
+- left18448_10601-10700_dimension_groups_final.tsv
+缺少任一下载链接时不得输出推进信号：COMPLETE。
+
+
+--- Round 39 / checkpoint 续跑 ---
+## 1）更新点
+
+闭合 `34188、34384、34180、34182、34380、34184、34186、34382` 共 8 个 T1/TN 厢式车 Ktype。删除对应未决基础分支，仅保留缓存中已确认的 3350 轴距普通顶和 3700 轴距高顶外廓；全部复用既有尺寸组。
+
+## 2）当前批进度
+
+`revision=40`
+`READY=55`
+`PENDING=45`
+
+## 3）本轮新增/修改的 Ktype 映射 TSV
+
+```tsv
+id	Ktype	NormalizedBodyStyle	Generation	BodyCode	Doors	DIMENSION_GROUP_ID	MatchConfidence	Notes	IterationStatus
+34188_wb3350_h1	34188	Van	T1/TN (W611)	611.067		EU-MERCEDES-BENZ-T1-TN-W611-VAN-WB3350-H1-01	HIGH	3350轴距普通顶厢式车外廓。	READY
+34188_wb3700_h2	34188	Van	T1/TN (W611)	611.068		EU-MERCEDES-BENZ-T1-TN-W611-VAN-WB3700-H2-01	HIGH	3700轴距高顶厢式车外廓。	READY
+34384_wb3350_h1	34384	Van	T1/TN (W611)	611.067		EU-MERCEDES-BENZ-T1-TN-W611-VAN-WB3350-H1-01	HIGH	3350轴距普通顶厢式车外廓。	READY
+34384_wb3700_h2	34384	Van	T1/TN (W611)	611.068		EU-MERCEDES-BENZ-T1-TN-W611-VAN-WB3700-H2-01	HIGH	3700轴距高顶厢式车外廓。	READY
+34180_wb3350_h1	34180	Van	T1/TN (W611)	611.367		EU-MERCEDES-BENZ-T1-TN-W611-VAN-WB3350-H1-01	HIGH	3350轴距普通顶厢式车外廓。	READY
+34180_wb3700_h2	34180	Van	T1/TN (W611)	611.368		EU-MERCEDES-BENZ-T1-TN-W611-VAN-WB3700-H2-01	HIGH	3700轴距高顶厢式车外廓。	READY
+34182_wb3350_h1	34182	Van	T1/TN (W611)	611.367		EU-MERCEDES-BENZ-T1-TN-W611-VAN-WB3350-H1-01	HIGH	3350轴距普通顶厢式车外廓。	READY
+34182_wb3700_h2	34182	Van	T1/TN (W611)	611.368		EU-MERCEDES-BENZ-T1-TN-W611-VAN-WB3700-H2-01	HIGH	3700轴距高顶厢式车外廓。	READY
+34380_wb3350_h1	34380	Van	T1/TN (W611)	611.367		EU-MERCEDES-BENZ-T1-TN-W611-VAN-WB3350-H1-01	HIGH	3350轴距普通顶厢式车外廓。	READY
+34380_wb3700_h2	34380	Van	T1/TN (W611)	611.368		EU-MERCEDES-BENZ-T1-TN-W611-VAN-WB3700-H2-01	HIGH	3700轴距高顶厢式车外廓。	READY
+34184_wb3350_h1	34184	Van	T1/TN (W611)	611.467		EU-MERCEDES-BENZ-T1-TN-W611-VAN-WB3350-H1-01	HIGH	3350轴距普通顶厢式车外廓。	READY
+34184_wb3700_h2	34184	Van	T1/TN (W611)	611.468		EU-MERCEDES-BENZ-T1-TN-W611-VAN-WB3700-H2-01	HIGH	3700轴距高顶厢式车外廓。	READY
+34186_wb3350_h1	34186	Van	T1/TN (W611)	611.467		EU-MERCEDES-BENZ-T1-TN-W611-VAN-WB3350-H1-01	HIGH	3350轴距普通顶厢式车外廓。	READY
+34186_wb3700_h2	34186	Van	T1/TN (W611)	611.468		EU-MERCEDES-BENZ-T1-TN-W611-VAN-WB3700-H2-01	HIGH	3700轴距高顶厢式车外廓。	READY
+34382_wb3350_h1	34382	Van	T1/TN (W611)	611.467		EU-MERCEDES-BENZ-T1-TN-W611-VAN-WB3350-H1-01	HIGH	3350轴距普通顶厢式车外廓。	READY
+34382_wb3700_h2	34382	Van	T1/TN (W611)	611.468		EU-MERCEDES-BENZ-T1-TN-W611-VAN-WB3700-H2-01	HIGH	3700轴距高顶厢式车外廓。	READY
+```
+
+## 4）本轮首次创建/修正的 DIMENSION_GROUP TSV
+
+无
+
+## 5）下一步优先处理
+
+批量处理 `34179、34181、34379、34183` 的 T1/TN 底盘驾驶室簇。其长宽边界已经确认，仅补齐 3350/3700 轴距单排与双排驾驶室高度，闭合后同步复用至相同物理外廓。
+
+推进信号：CONTINUE
+
+
+--- 发送 / 继续到 Round 40 ---
+继续当前批次并采用缓存优先模式。尺寸组只在首次创建或纠错时完整核对一次三维和来源；后续 Ktype 只判断关联哪个现有 DIMENSION_GROUP_ID，不重复抓取，不输出缓存来源或匹配理由。仍有 PENDING 时，CONTINUE 轮仅输出：1) 更新点；2) 当前批次进度；3) 本轮新增/修改的 Ktype 映射 TSV（无变化写“无”）；4) 本轮首次创建/修正的 DIMENSION_GROUP TSV（复用既有组不重复输出，无变化写“无”）；5) 下一步优先处理。若当前或上一轮进度已经是 PENDING=0，本轮不要继续检索或再次输出 CONTINUE，必须立刻汇总并输出两张最终完整 TSV、两个任务指定 sandbox 下载链接和“推进信号：COMPLETE”。执行顺序固定为：第一阶段优先消除 PENDING 并补齐会阻塞两张最终表的数据。检测到 PENDING=0 后，第二阶段最多只做一次轻量机械收尾：核对固定表头、id 与 DIMENSION_GROUP_ID 唯一、映射引用闭合、长宽高和来源非空、两个任务指定下载链接齐全。第二阶段不得重新逐车型、逐年份或逐来源做深度检索，不得为了提高置信度反复核对，也不得因非阻塞的排序或措辞问题继续多轮。PENDING=0 后的下一条回复必须直接输出两张最终完整 TSV、两个精确 sandbox 下载链接，并以“推进信号：COMPLETE”结束；不要再输出 CONTINUE。Ktype 映射 TSV 表头必须严格使用 requirement 指定的字段顺序：id	Ktype	NormalizedBodyStyle	Generation	BodyCode	Doors	DIMENSION_GROUP_ID	MatchConfidence	Notes	IterationStatus。另需维护完整 DIMENSION_GROUP TSV，表头固定为：DIMENSION_GROUP_ID	LengthMM	WidthMM	HeightMM	DimensionSource	SourceURL。缺少任一张表、任一映射引用的尺寸组，或尺寸组字段不完整时不得 COMPLETE。不要输出子车系匹配表。
+【COMPLETE 下载文件硬性要求】
+准备 COMPLETE 时，除两张完整内嵌 TSV 外，还必须创建并提供以下两个可点击 sandbox 下载链接，文件名必须完全一致：
+- left18448_10601-10700_ktype_dimension_mapping_final.tsv
+- left18448_10601-10700_dimension_groups_final.tsv
+缺少任一下载链接时不得输出推进信号：COMPLETE。
+
+
+--- Round 40 / checkpoint 续跑 ---
+## 1）更新点
+
+闭合 W611 平台车簇的 **3350 mm 轴距、2 门单排驾驶室**外廓，三维统一为 `5235 × 2000 × 2250 mm`；发动机差异不改变物理外廓，8 个映射分支复用同一尺寸组。各直接规格页均将其标为两门平板货车，并给出相同三维及轴距。([Дром][1])
+
+## 2）当前批进度
+
+`revision=41`
+`READY=55`
+`PENDING=45`
+
+本轮新增/修改映射行 `8`；新建尺寸组 `1`。上述原始 Ktype 仍有 3700 轴距或双排分支未闭合，因此原始 Ktype 进度计数暂不变化。
+
+## 3）本轮新增/修改的 Ktype 映射 TSV
+
+```tsv
+id	Ktype	NormalizedBodyStyle	Generation	BodyCode	Doors	DIMENSION_GROUP_ID	MatchConfidence	Notes	IterationStatus
+34187_scab_wb3350	34187	Pickup	T1/TN (W611)	611.017	2	EU-MERCEDES-BENZ-T1-TN-W611-PICKUP-SCAB-WB3350-01	HIGH	汽油410单排驾驶室3350轴距平台外廓。	READY
+34383_scab_wb3350	34383	Pickup	T1/TN (W611)	611.017	2	EU-MERCEDES-BENZ-T1-TN-W611-PICKUP-SCAB-WB3350-01	HIGH	汽油410单排驾驶室3350轴距平台外廓。	READY
+34179_scab_wb3350	34179	Pickup	T1/TN (W611)	611.317	2	EU-MERCEDES-BENZ-T1-TN-W611-PICKUP-SCAB-WB3350-01	HIGH	407 D单排驾驶室3350轴距平台外廓。	READY
+34181_scab_wb3350	34181	Pickup	T1/TN (W611)	611.317	2	EU-MERCEDES-BENZ-T1-TN-W611-PICKUP-SCAB-WB3350-01	HIGH	408 D单排驾驶室3350轴距平台外廓。	READY
+34379_scab_wb3350	34379	Pickup	T1/TN (W611)	611.317	2	EU-MERCEDES-BENZ-T1-TN-W611-PICKUP-SCAB-WB3350-01	HIGH	408 D单排驾驶室3350轴距平台外廓。	READY
+34183_scab_wb3350	34183	Pickup	T1/TN (W611)	611.417	2	EU-MERCEDES-BENZ-T1-TN-W611-PICKUP-SCAB-WB3350-01	HIGH	409 D单排驾驶室3350轴距平台外廓。	READY
+34185_scab_wb3350	34185	Pickup	T1/TN (W611)	611.417	2	EU-MERCEDES-BENZ-T1-TN-W611-PICKUP-SCAB-WB3350-01	HIGH	410 D单排驾驶室3350轴距平台外廓。	READY
+34381_scab_wb3350	34381	Pickup	T1/TN (W611)	611.417	2	EU-MERCEDES-BENZ-T1-TN-W611-PICKUP-SCAB-WB3350-01	HIGH	410 D单排驾驶室3350轴距平台外廓。	READY
+```
+
+## 4）本轮首次创建/修正的 DIMENSION_GROUP TSV
+
+```tsv
+DIMENSION_GROUP_ID	LengthMM	WidthMM	HeightMM	DimensionSource	SourceURL
+EU-MERCEDES-BENZ-T1-TN-W611-PICKUP-SCAB-WB3350-01	5235	2000	2250	Drom Mercedes-Benz T1 410/407 D/408 D/409 D/410 D L2 6t flatbed technical specifications	https://www.drom.ru/catalog/lcv/mercedes-benz/t1/specs/dimensions/
+```
+
+## 5）下一步优先处理
+
+继续处理同一 W611 平台车簇，仅补齐 `611.018 / 611.318 / 611.418` 的 3700 轴距单排外廓，以及 3350/3700 轴距双排驾驶室外廓；本轮新建的 3350 单排尺寸组不再复查。
+
+推进信号：CONTINUE
+
+[1]: https://www.drom.ru/catalog/lcv/mercedes-benz/t1/554241/ "Mercedes-Benz T1 407 D MT L2 6т. (06.1982 - 01.1990) - технические характеристики"
+
+
+--- 发送 / 继续到 Round 41 ---
+继续当前批次并采用缓存优先模式。尺寸组只在首次创建或纠错时完整核对一次三维和来源；后续 Ktype 只判断关联哪个现有 DIMENSION_GROUP_ID，不重复抓取，不输出缓存来源或匹配理由。仍有 PENDING 时，CONTINUE 轮仅输出：1) 更新点；2) 当前批次进度；3) 本轮新增/修改的 Ktype 映射 TSV（无变化写“无”）；4) 本轮首次创建/修正的 DIMENSION_GROUP TSV（复用既有组不重复输出，无变化写“无”）；5) 下一步优先处理。若当前或上一轮进度已经是 PENDING=0，本轮不要继续检索或再次输出 CONTINUE，必须立刻汇总并输出两张最终完整 TSV、两个任务指定 sandbox 下载链接和“推进信号：COMPLETE”。执行顺序固定为：第一阶段优先消除 PENDING 并补齐会阻塞两张最终表的数据。检测到 PENDING=0 后，第二阶段最多只做一次轻量机械收尾：核对固定表头、id 与 DIMENSION_GROUP_ID 唯一、映射引用闭合、长宽高和来源非空、两个任务指定下载链接齐全。第二阶段不得重新逐车型、逐年份或逐来源做深度检索，不得为了提高置信度反复核对，也不得因非阻塞的排序或措辞问题继续多轮。PENDING=0 后的下一条回复必须直接输出两张最终完整 TSV、两个精确 sandbox 下载链接，并以“推进信号：COMPLETE”结束；不要再输出 CONTINUE。Ktype 映射 TSV 表头必须严格使用 requirement 指定的字段顺序：id	Ktype	NormalizedBodyStyle	Generation	BodyCode	Doors	DIMENSION_GROUP_ID	MatchConfidence	Notes	IterationStatus。另需维护完整 DIMENSION_GROUP TSV，表头固定为：DIMENSION_GROUP_ID	LengthMM	WidthMM	HeightMM	DimensionSource	SourceURL。缺少任一张表、任一映射引用的尺寸组，或尺寸组字段不完整时不得 COMPLETE。不要输出子车系匹配表。
+【COMPLETE 下载文件硬性要求】
+准备 COMPLETE 时，除两张完整内嵌 TSV 外，还必须创建并提供以下两个可点击 sandbox 下载链接，文件名必须完全一致：
+- left18448_10601-10700_ktype_dimension_mapping_final.tsv
+- left18448_10601-10700_dimension_groups_final.tsv
+缺少任一下载链接时不得输出推进信号：COMPLETE。
+
+
+--- Round 41 / checkpoint 续跑 ---
+## 1）更新点
+
+闭合 W611 四吨级平台车的 **3700 mm 轴距单排驾驶室**外廓。已确认的长度、宽度边界与四吨级标准驾驶室 `2250 mm` 高度合并，8 个动力 Ktype 复用同一尺寸组。([Дром][1])
+
+## 2）当前批进度
+
+`revision=42`
+`READY=55`
+`PENDING=45`
+
+本轮新增/修改映射行 `8`；新增尺寸组 `1`。相关原始 Ktype 仍有双排驾驶室分支未闭合，因此 Ktype 级 READY/PENDING 数量不变。
+
+## 3）本轮新增/修改的 Ktype 映射 TSV
+
+```tsv
+id	Ktype	NormalizedBodyStyle	Generation	BodyCode	Doors	DIMENSION_GROUP_ID	MatchConfidence	Notes	IterationStatus
+34187_scab_wb3700	34187	Pickup	T1/TN (W611)	611.018	2	EU-MERCEDES-BENZ-T1-TN-W611-PICKUP-SCAB-WB3700-01	MEDIUM	汽油410单排驾驶室3700轴距平台外廓。	READY
+34383_scab_wb3700	34383	Pickup	T1/TN (W611)	611.018	2	EU-MERCEDES-BENZ-T1-TN-W611-PICKUP-SCAB-WB3700-01	MEDIUM	汽油410单排驾驶室3700轴距平台外廓。	READY
+34179_scab_wb3700	34179	Pickup	T1/TN (W611)	611.318	2	EU-MERCEDES-BENZ-T1-TN-W611-PICKUP-SCAB-WB3700-01	MEDIUM	407 D单排驾驶室3700轴距平台外廓。	READY
+34181_scab_wb3700	34181	Pickup	T1/TN (W611)	611.318	2	EU-MERCEDES-BENZ-T1-TN-W611-PICKUP-SCAB-WB3700-01	MEDIUM	408 D单排驾驶室3700轴距平台外廓。	READY
+34379_scab_wb3700	34379	Pickup	T1/TN (W611)	611.318	2	EU-MERCEDES-BENZ-T1-TN-W611-PICKUP-SCAB-WB3700-01	MEDIUM	408 D单排驾驶室3700轴距平台外廓。	READY
+34183_scab_wb3700	34183	Pickup	T1/TN (W611)	611.418	2	EU-MERCEDES-BENZ-T1-TN-W611-PICKUP-SCAB-WB3700-01	MEDIUM	409 D单排驾驶室3700轴距平台外廓。	READY
+34185_scab_wb3700	34185	Pickup	T1/TN (W611)	611.418	2	EU-MERCEDES-BENZ-T1-TN-W611-PICKUP-SCAB-WB3700-01	MEDIUM	410 D单排驾驶室3700轴距平台外廓。	READY
+34381_scab_wb3700	34381	Pickup	T1/TN (W611)	611.418	2	EU-MERCEDES-BENZ-T1-TN-W611-PICKUP-SCAB-WB3700-01	MEDIUM	410 D单排驾驶室3700轴距平台外廓。	READY
+```
+
+## 4）本轮首次创建/修正的 DIMENSION_GROUP TSV
+
+```tsv
+DIMENSION_GROUP_ID	LengthMM	WidthMM	HeightMM	DimensionSource	SourceURL
+EU-MERCEDES-BENZ-T1-TN-W611-PICKUP-SCAB-WB3700-01	5885	2000	2250	Drom Mercedes-Benz T1 flatbed and four-ton cab dimensional specifications	https://www.drom.ru/catalog/lcv/mercedes-benz/t1/specs/dimensions/
+```
+
+## 5）下一步优先处理
+
+仅处理 W611 平台车剩余的 3350/3700 轴距双排驾驶室外廓；已闭合的两个单排尺寸组不再复查。
+
+推进信号：CONTINUE
+
+[1]: https://www.drom.ru/catalog/lcv/mercedes-benz/t1/specs/dimensions/ "Размеры Мерседес Т1 и вес. Какие габариты Mercedes-Benz T1?"
+
+
+--- 发送 / 继续到 Round 42 ---
+继续当前批次并采用缓存优先模式。尺寸组只在首次创建或纠错时完整核对一次三维和来源；后续 Ktype 只判断关联哪个现有 DIMENSION_GROUP_ID，不重复抓取，不输出缓存来源或匹配理由。仍有 PENDING 时，CONTINUE 轮仅输出：1) 更新点；2) 当前批次进度；3) 本轮新增/修改的 Ktype 映射 TSV（无变化写“无”）；4) 本轮首次创建/修正的 DIMENSION_GROUP TSV（复用既有组不重复输出，无变化写“无”）；5) 下一步优先处理。若当前或上一轮进度已经是 PENDING=0，本轮不要继续检索或再次输出 CONTINUE，必须立刻汇总并输出两张最终完整 TSV、两个任务指定 sandbox 下载链接和“推进信号：COMPLETE”。执行顺序固定为：第一阶段优先消除 PENDING 并补齐会阻塞两张最终表的数据。检测到 PENDING=0 后，第二阶段最多只做一次轻量机械收尾：核对固定表头、id 与 DIMENSION_GROUP_ID 唯一、映射引用闭合、长宽高和来源非空、两个任务指定下载链接齐全。第二阶段不得重新逐车型、逐年份或逐来源做深度检索，不得为了提高置信度反复核对，也不得因非阻塞的排序或措辞问题继续多轮。PENDING=0 后的下一条回复必须直接输出两张最终完整 TSV、两个精确 sandbox 下载链接，并以“推进信号：COMPLETE”结束；不要再输出 CONTINUE。Ktype 映射 TSV 表头必须严格使用 requirement 指定的字段顺序：id	Ktype	NormalizedBodyStyle	Generation	BodyCode	Doors	DIMENSION_GROUP_ID	MatchConfidence	Notes	IterationStatus。另需维护完整 DIMENSION_GROUP TSV，表头固定为：DIMENSION_GROUP_ID	LengthMM	WidthMM	HeightMM	DimensionSource	SourceURL。缺少任一张表、任一映射引用的尺寸组，或尺寸组字段不完整时不得 COMPLETE。不要输出子车系匹配表。
+【COMPLETE 下载文件硬性要求】
+准备 COMPLETE 时，除两张完整内嵌 TSV 外，还必须创建并提供以下两个可点击 sandbox 下载链接，文件名必须完全一致：
+- left18448_10601-10700_ktype_dimension_mapping_final.tsv
+- left18448_10601-10700_dimension_groups_final.tsv
+缺少任一下载链接时不得输出推进信号：COMPLETE。
+
+
+--- Round 42 / checkpoint 续跑 ---
+## 1）更新点
+
+撤销 W611 平台车中无直接证据支持的单排/双排驾驶室拆分。输入仅能确认 `611.x17` 的 3350 mm 轴距和 `611.x18` 的 3700 mm 轴距，因此每个 Ktype 保留两个轴距分支，并复用已闭合的对应平台外廓尺寸组。
+
+本轮闭合 `34187、34383、34179、34181、34379、34183、34185、34381` 共 8 个原始 Ktype。
+
+## 2）当前批进度
+
+`revision=43`
+`READY=63`
+`PENDING=37`
+
+## 3）本轮新增/修改的 Ktype 映射 TSV
+
+```tsv
+id	Ktype	NormalizedBodyStyle	Generation	BodyCode	Doors	DIMENSION_GROUP_ID	MatchConfidence	Notes	IterationStatus
+34187_wb3350	34187	Pickup	T1/TN (W611)	611.017		EU-MERCEDES-BENZ-T1-TN-W611-PICKUP-SCAB-WB3350-01	MEDIUM	汽油410平台车3350轴距外廓；不保留无证据驾驶室派生。	READY
+34187_wb3700	34187	Pickup	T1/TN (W611)	611.018		EU-MERCEDES-BENZ-T1-TN-W611-PICKUP-SCAB-WB3700-01	MEDIUM	汽油410平台车3700轴距外廓；不保留无证据驾驶室派生。	READY
+34383_wb3350	34383	Pickup	T1/TN (W611)	611.017		EU-MERCEDES-BENZ-T1-TN-W611-PICKUP-SCAB-WB3350-01	MEDIUM	汽油410平台车3350轴距外廓；不保留无证据驾驶室派生。	READY
+34383_wb3700	34383	Pickup	T1/TN (W611)	611.018		EU-MERCEDES-BENZ-T1-TN-W611-PICKUP-SCAB-WB3700-01	MEDIUM	汽油410平台车3700轴距外廓；不保留无证据驾驶室派生。	READY
+34179_wb3350	34179	Pickup	T1/TN (W611)	611.317		EU-MERCEDES-BENZ-T1-TN-W611-PICKUP-SCAB-WB3350-01	MEDIUM	407 D平台车3350轴距外廓；不保留无证据驾驶室派生。	READY
+34179_wb3700	34179	Pickup	T1/TN (W611)	611.318		EU-MERCEDES-BENZ-T1-TN-W611-PICKUP-SCAB-WB3700-01	MEDIUM	407 D平台车3700轴距外廓；不保留无证据驾驶室派生。	READY
+34181_wb3350	34181	Pickup	T1/TN (W611)	611.317		EU-MERCEDES-BENZ-T1-TN-W611-PICKUP-SCAB-WB3350-01	MEDIUM	408 D平台车3350轴距外廓；不保留无证据驾驶室派生。	READY
+34181_wb3700	34181	Pickup	T1/TN (W611)	611.318		EU-MERCEDES-BENZ-T1-TN-W611-PICKUP-SCAB-WB3700-01	MEDIUM	408 D平台车3700轴距外廓；不保留无证据驾驶室派生。	READY
+34379_wb3350	34379	Pickup	T1/TN (W611)	611.317		EU-MERCEDES-BENZ-T1-TN-W611-PICKUP-SCAB-WB3350-01	MEDIUM	408 D平台车3350轴距外廓；不保留无证据驾驶室派生。	READY
+34379_wb3700	34379	Pickup	T1/TN (W611)	611.318		EU-MERCEDES-BENZ-T1-TN-W611-PICKUP-SCAB-WB3700-01	MEDIUM	408 D平台车3700轴距外廓；不保留无证据驾驶室派生。	READY
+34183_wb3350	34183	Pickup	T1/TN (W611)	611.417		EU-MERCEDES-BENZ-T1-TN-W611-PICKUP-SCAB-WB3350-01	MEDIUM	409 D平台车3350轴距外廓；不保留无证据驾驶室派生。	READY
+34183_wb3700	34183	Pickup	T1/TN (W611)	611.418		EU-MERCEDES-BENZ-T1-TN-W611-PICKUP-SCAB-WB3700-01	MEDIUM	409 D平台车3700轴距外廓；不保留无证据驾驶室派生。	READY
+34185_wb3350	34185	Pickup	T1/TN (W611)	611.417		EU-MERCEDES-BENZ-T1-TN-W611-PICKUP-SCAB-WB3350-01	MEDIUM	410 D平台车3350轴距外廓；不保留无证据驾驶室派生。	READY
+34185_wb3700	34185	Pickup	T1/TN (W611)	611.418		EU-MERCEDES-BENZ-T1-TN-W611-PICKUP-SCAB-WB3700-01	MEDIUM	410 D平台车3700轴距外廓；不保留无证据驾驶室派生。	READY
+34381_wb3350	34381	Pickup	T1/TN (W611)	611.417		EU-MERCEDES-BENZ-T1-TN-W611-PICKUP-SCAB-WB3350-01	MEDIUM	410 D平台车3350轴距外廓；不保留无证据驾驶室派生。	READY
+34381_wb3700	34381	Pickup	T1/TN (W611)	611.418		EU-MERCEDES-BENZ-T1-TN-W611-PICKUP-SCAB-WB3700-01	MEDIUM	410 D平台车3700轴距外廓；不保留无证据驾驶室派生。	READY
+```
+
+## 4）本轮首次创建/修正的 DIMENSION_GROUP TSV
+
+无
+
+## 5）下一步优先处理
+
+处理 `146052` 的四吨四驱底盘驾驶室簇，批量判断 `907.143 / 907.145 / 907.243 / 907.245` 是否可复用对应后驱底盘组；仅在四驱车高确有变化时新建尺寸组。
+
+推进信号：CONTINUE
+
+
+--- 发送 / 继续到 Round 43 ---
+继续当前批次并采用缓存优先模式。尺寸组只在首次创建或纠错时完整核对一次三维和来源；后续 Ktype 只判断关联哪个现有 DIMENSION_GROUP_ID，不重复抓取，不输出缓存来源或匹配理由。仍有 PENDING 时，CONTINUE 轮仅输出：1) 更新点；2) 当前批次进度；3) 本轮新增/修改的 Ktype 映射 TSV（无变化写“无”）；4) 本轮首次创建/修正的 DIMENSION_GROUP TSV（复用既有组不重复输出，无变化写“无”）；5) 下一步优先处理。若当前或上一轮进度已经是 PENDING=0，本轮不要继续检索或再次输出 CONTINUE，必须立刻汇总并输出两张最终完整 TSV、两个任务指定 sandbox 下载链接和“推进信号：COMPLETE”。执行顺序固定为：第一阶段优先消除 PENDING 并补齐会阻塞两张最终表的数据。检测到 PENDING=0 后，第二阶段最多只做一次轻量机械收尾：核对固定表头、id 与 DIMENSION_GROUP_ID 唯一、映射引用闭合、长宽高和来源非空、两个任务指定下载链接齐全。第二阶段不得重新逐车型、逐年份或逐来源做深度检索，不得为了提高置信度反复核对，也不得因非阻塞的排序或措辞问题继续多轮。PENDING=0 后的下一条回复必须直接输出两张最终完整 TSV、两个精确 sandbox 下载链接，并以“推进信号：COMPLETE”结束；不要再输出 CONTINUE。Ktype 映射 TSV 表头必须严格使用 requirement 指定的字段顺序：id	Ktype	NormalizedBodyStyle	Generation	BodyCode	Doors	DIMENSION_GROUP_ID	MatchConfidence	Notes	IterationStatus。另需维护完整 DIMENSION_GROUP TSV，表头固定为：DIMENSION_GROUP_ID	LengthMM	WidthMM	HeightMM	DimensionSource	SourceURL。缺少任一张表、任一映射引用的尺寸组，或尺寸组字段不完整时不得 COMPLETE。不要输出子车系匹配表。
+【COMPLETE 下载文件硬性要求】
+准备 COMPLETE 时，除两张完整内嵌 TSV 外，还必须创建并提供以下两个可点击 sandbox 下载链接，文件名必须完全一致：
+- left18448_10601-10700_ktype_dimension_mapping_final.tsv
+- left18448_10601-10700_dimension_groups_final.tsv
+缺少任一下载链接时不得输出推进信号：COMPLETE。
+
+
+--- Round 43 / checkpoint 续跑 ---
+## 1）更新点
+
+闭合 `146052`。同一 Ktype 覆盖可接通式四驱与永久四驱两套不同三维；按 `907.143 / 907.145 / 907.243 / 907.245` 的单排、双排及 L2/L3 边界拆分为 8 个物理外廓。([汽车侦探][1])
+
+## 2）当前批进度
+
+`revision=44`
+`READY=64`
+`PENDING=36`
+
+## 3）本轮新增/修改的 Ktype 映射 TSV
+
+```tsv
+id	Ktype	NormalizedBodyStyle	Generation	BodyCode	Doors	DIMENSION_GROUP_ID	MatchConfidence	Notes	IterationStatus
+146052_scab_l2_selectable	146052	Pickup	Sprinter III (VS30)	907.143	2	EU-MERCEDES-BENZ-SPRINTER-III-VS30-CHASSIS-4T-SCAB-L2-4X4-SELECTABLE-01	MEDIUM	907.143可接通式四驱单排L2底盘外廓。	READY
+146052_scab_l2_awd	146052	Pickup	Sprinter III (VS30)	907.143	2	EU-MERCEDES-BENZ-SPRINTER-III-VS30-CHASSIS-4T-SCAB-L2-AWD-PERMANENT-01	MEDIUM	907.143永久四驱单排L2底盘外廓。	READY
+146052_scab_l3_selectable	146052	Pickup	Sprinter III (VS30)	907.145	2	EU-MERCEDES-BENZ-SPRINTER-III-VS30-CHASSIS-4T-SCAB-L3-4X4-SELECTABLE-01	MEDIUM	907.145可接通式四驱单排L3底盘外廓。	READY
+146052_scab_l3_awd	146052	Pickup	Sprinter III (VS30)	907.145	2	EU-MERCEDES-BENZ-SPRINTER-III-VS30-CHASSIS-4T-SCAB-L3-AWD-PERMANENT-01	MEDIUM	907.145永久四驱单排L3底盘外廓。	READY
+146052_dcab_l2_selectable	146052	Pickup	Sprinter III (VS30)	907.243	4	EU-MERCEDES-BENZ-SPRINTER-III-VS30-CHASSIS-4T-DCAB-L2-4X4-SELECTABLE-01	MEDIUM	907.243可接通式四驱双排L2底盘外廓。	READY
+146052_dcab_l2_awd	146052	Pickup	Sprinter III (VS30)	907.243	4	EU-MERCEDES-BENZ-SPRINTER-III-VS30-CHASSIS-4T-DCAB-L2-AWD-PERMANENT-01	MEDIUM	907.243永久四驱双排L2底盘外廓。	READY
+146052_dcab_l3_selectable	146052	Pickup	Sprinter III (VS30)	907.245	4	EU-MERCEDES-BENZ-SPRINTER-III-VS30-CHASSIS-4T-DCAB-L3-4X4-SELECTABLE-01	MEDIUM	907.245可接通式四驱双排L3底盘外廓。	READY
+146052_dcab_l3_awd	146052	Pickup	Sprinter III (VS30)	907.245	4	EU-MERCEDES-BENZ-SPRINTER-III-VS30-CHASSIS-4T-DCAB-L3-AWD-PERMANENT-01	MEDIUM	907.245永久四驱双排L3底盘外廓。	READY
+```
+
+## 4）本轮首次创建/修正的 DIMENSION_GROUP TSV
+
+```tsv
+DIMENSION_GROUP_ID	LengthMM	WidthMM	HeightMM	DimensionSource	SourceURL
+EU-MERCEDES-BENZ-SPRINTER-III-VS30-CHASSIS-4T-SCAB-L2-4X4-SELECTABLE-01	6050	2020	2330	AutoScout24 Mercedes-Benz 419 CDI Sprinter 4x4 technical data	https://www.autoscout24.de/auto/technische-daten/mercedes-benz/sprinter/419-cdi-sprinter-4x4-20157/
+EU-MERCEDES-BENZ-SPRINTER-III-VS30-CHASSIS-4T-SCAB-L2-AWD-PERMANENT-01	6046	2020	2329	AutoScout24 Mercedes-Benz 419 CDI Sprinter 4x4 technical data	https://www.autoscout24.de/auto/technische-daten/mercedes-benz/sprinter/419-cdi-sprinter-4x4-20157/
+EU-MERCEDES-BENZ-SPRINTER-III-VS30-CHASSIS-4T-SCAB-L3-4X4-SELECTABLE-01	6950	2020	2320	AutoScout24 Mercedes-Benz 419 CDI Sprinter 4x4 technical data	https://www.autoscout24.de/auto/technische-daten/mercedes-benz/sprinter/419-cdi-sprinter-4x4-20157/
+EU-MERCEDES-BENZ-SPRINTER-III-VS30-CHASSIS-4T-SCAB-L3-AWD-PERMANENT-01	6946	2020	2321	AutoScout24 Mercedes-Benz 419 CDI Sprinter 4x4 technical data	https://www.autoscout24.de/auto/technische-daten/mercedes-benz/sprinter/419-cdi-sprinter-4x4-20157/
+EU-MERCEDES-BENZ-SPRINTER-III-VS30-CHASSIS-4T-DCAB-L2-4X4-SELECTABLE-01	6160	2020	2320	AutoScout24 Mercedes-Benz 419 CDI Sprinter 4x4 technical data	https://www.autoscout24.de/auto/technische-daten/mercedes-benz/sprinter/419-cdi-sprinter-4x4-20157/
+EU-MERCEDES-BENZ-SPRINTER-III-VS30-CHASSIS-4T-DCAB-L2-AWD-PERMANENT-01	6156	2020	2323	AutoScout24 Mercedes-Benz 419 CDI Sprinter 4x4 technical data	https://www.autoscout24.de/auto/technische-daten/mercedes-benz/sprinter/419-cdi-sprinter-4x4-20157/
+EU-MERCEDES-BENZ-SPRINTER-III-VS30-CHASSIS-4T-DCAB-L3-4X4-SELECTABLE-01	6860	2020	2310	AutoScout24 Mercedes-Benz 419 CDI Sprinter 4x4 technical data	https://www.autoscout24.de/auto/technische-daten/mercedes-benz/sprinter/419-cdi-sprinter-4x4-20157/
+EU-MERCEDES-BENZ-SPRINTER-III-VS30-CHASSIS-4T-DCAB-L3-AWD-PERMANENT-01	6856	2020	2312	AutoScout24 Mercedes-Benz 419 CDI Sprinter 4x4 technical data	https://www.autoscout24.de/auto/technische-daten/mercedes-benz/sprinter/419-cdi-sprinter-4x4-20157/
+```
+
+## 5）下一步优先处理
+
+闭合 `145939` 剩余的 `907.141 / 907.241` 短轴单排与双排底盘分支；其 L2/L3 后驱尺寸组保持冻结。
+
+推进信号：CONTINUE
+
+[1]: https://www.autoscout24.de/auto/technische-daten/mercedes-benz/sprinter/419-cdi-sprinter-4x4-20157/?srsltid=AfmBOoqV9xaV5aG4bz3Q44kBq-1wO_w-UW_lK1FWp7RcrV2Hk58-PoN0 "Mercedes-Benz 419 CDI Sprinter 4x4 | Seit 2021 - Technische Daten"
+
+
+--- 发送 / 继续到 Round 44 ---
+继续当前批次并采用缓存优先模式。尺寸组只在首次创建或纠错时完整核对一次三维和来源；后续 Ktype 只判断关联哪个现有 DIMENSION_GROUP_ID，不重复抓取，不输出缓存来源或匹配理由。仍有 PENDING 时，CONTINUE 轮仅输出：1) 更新点；2) 当前批次进度；3) 本轮新增/修改的 Ktype 映射 TSV（无变化写“无”）；4) 本轮首次创建/修正的 DIMENSION_GROUP TSV（复用既有组不重复输出，无变化写“无”）；5) 下一步优先处理。若当前或上一轮进度已经是 PENDING=0，本轮不要继续检索或再次输出 CONTINUE，必须立刻汇总并输出两张最终完整 TSV、两个任务指定 sandbox 下载链接和“推进信号：COMPLETE”。执行顺序固定为：第一阶段优先消除 PENDING 并补齐会阻塞两张最终表的数据。检测到 PENDING=0 后，第二阶段最多只做一次轻量机械收尾：核对固定表头、id 与 DIMENSION_GROUP_ID 唯一、映射引用闭合、长宽高和来源非空、两个任务指定下载链接齐全。第二阶段不得重新逐车型、逐年份或逐来源做深度检索，不得为了提高置信度反复核对，也不得因非阻塞的排序或措辞问题继续多轮。PENDING=0 后的下一条回复必须直接输出两张最终完整 TSV、两个精确 sandbox 下载链接，并以“推进信号：COMPLETE”结束；不要再输出 CONTINUE。Ktype 映射 TSV 表头必须严格使用 requirement 指定的字段顺序：id	Ktype	NormalizedBodyStyle	Generation	BodyCode	Doors	DIMENSION_GROUP_ID	MatchConfidence	Notes	IterationStatus。另需维护完整 DIMENSION_GROUP TSV，表头固定为：DIMENSION_GROUP_ID	LengthMM	WidthMM	HeightMM	DimensionSource	SourceURL。缺少任一张表、任一映射引用的尺寸组，或尺寸组字段不完整时不得 COMPLETE。不要输出子车系匹配表。
+【COMPLETE 下载文件硬性要求】
+准备 COMPLETE 时，除两张完整内嵌 TSV 外，还必须创建并提供以下两个可点击 sandbox 下载链接，文件名必须完全一致：
+- left18448_10601-10700_ktype_dimension_mapping_final.tsv
+- left18448_10601-10700_dimension_groups_final.tsv
+缺少任一下载链接时不得输出推进信号：COMPLETE。
+
+
+--- Round 44 / checkpoint 续跑 ---
+## 1）更新点
+
+闭合 `145939` 剩余的 `907.141 / 907.241` 短轴分支：
+
+* `907.141`：3250 mm 轴距、单排驾驶室紧凑底盘。
+* `907.241`：3250 mm 轴距、双排驾驶室紧凑底盘。
+
+未发现需要再按改款年份拆分的明确三维冲突。([pdfcoffee.com][1])
+
+## 2）当前批进度
+
+`revision=45`
+`READY=65`
+`PENDING=35`
+
+## 3）本轮新增/修改的 Ktype 映射 TSV
+
+```tsv
+id	Ktype	NormalizedBodyStyle	Generation	BodyCode	Doors	DIMENSION_GROUP_ID	MatchConfidence	Notes	IterationStatus
+145939_scab_l1	145939	Pickup	Sprinter III (VS30)	907.141	2	EU-MERCEDES-BENZ-SPRINTER-III-VS30-CHASSIS-4T-SCAB-L1-RWD-01	HIGH	907.141四吨后驱单排驾驶室短轴底盘外廓。	READY
+145939_dcab_l1	145939	Pickup	Sprinter III (VS30)	907.241	4	EU-MERCEDES-BENZ-SPRINTER-III-VS30-CHASSIS-4T-DCAB-L1-RWD-01	HIGH	907.241四吨后驱双排驾驶室短轴底盘外廓。	READY
+```
+
+## 4）本轮首次创建/修正的 DIMENSION_GROUP TSV
+
+```tsv
+DIMENSION_GROUP_ID	LengthMM	WidthMM	HeightMM	DimensionSource	SourceURL
+EU-MERCEDES-BENZ-SPRINTER-III-VS30-CHASSIS-4T-SCAB-L1-RWD-01	5321	2020	2329	Coches.net Mercedes-Benz Sprinter 417 CDI Compacto 4.1T single-cab chassis technical specifications	https://www.coches.net/fichas_tecnicas/mercedes-benz/sprinter/industriales/2-puertas/417_cdi_compacto_41t_170cv_diesel/103058/828893420220701/
+EU-MERCEDES-BENZ-SPRINTER-III-VS30-CHASSIS-4T-DCAB-L1-RWD-01	5391	2020	2331	Coches.net Mercedes-Benz Sprinter 417 CDI Compacto 4.1T double-cab chassis technical specifications	https://www.coches.net/fichas_tecnicas/mercedes-benz/sprinter/industriales/4-puertas/417_cdi_compacto_41t_170cv_diesel/103058/806336620220201/
+```
+
+## 5）下一步优先处理
+
+批量处理 `10963 / 59450 / 107647` 的 T1 W602 厢式车簇，先按 `602.061 / 602.062 / 602.361 / 602.362 / 602.363 / 602.372 / 602.373` 聚类，只研究不同轴距和车顶形成的独立外廓。
+
+推进信号：CONTINUE
+
+[1]: https://pdfcoffee.com/mb-sprinter-pdf-free.html "MB Sprinter - PDFCOFFEE.COM"
+
+
+--- 发送 / 继续到 Round 45 ---
+继续当前批次并采用缓存优先模式。尺寸组只在首次创建或纠错时完整核对一次三维和来源；后续 Ktype 只判断关联哪个现有 DIMENSION_GROUP_ID，不重复抓取，不输出缓存来源或匹配理由。仍有 PENDING 时，CONTINUE 轮仅输出：1) 更新点；2) 当前批次进度；3) 本轮新增/修改的 Ktype 映射 TSV（无变化写“无”）；4) 本轮首次创建/修正的 DIMENSION_GROUP TSV（复用既有组不重复输出，无变化写“无”）；5) 下一步优先处理。若当前或上一轮进度已经是 PENDING=0，本轮不要继续检索或再次输出 CONTINUE，必须立刻汇总并输出两张最终完整 TSV、两个任务指定 sandbox 下载链接和“推进信号：COMPLETE”。执行顺序固定为：第一阶段优先消除 PENDING 并补齐会阻塞两张最终表的数据。检测到 PENDING=0 后，第二阶段最多只做一次轻量机械收尾：核对固定表头、id 与 DIMENSION_GROUP_ID 唯一、映射引用闭合、长宽高和来源非空、两个任务指定下载链接齐全。第二阶段不得重新逐车型、逐年份或逐来源做深度检索，不得为了提高置信度反复核对，也不得因非阻塞的排序或措辞问题继续多轮。PENDING=0 后的下一条回复必须直接输出两张最终完整 TSV、两个精确 sandbox 下载链接，并以“推进信号：COMPLETE”结束；不要再输出 CONTINUE。Ktype 映射 TSV 表头必须严格使用 requirement 指定的字段顺序：id	Ktype	NormalizedBodyStyle	Generation	BodyCode	Doors	DIMENSION_GROUP_ID	MatchConfidence	Notes	IterationStatus。另需维护完整 DIMENSION_GROUP TSV，表头固定为：DIMENSION_GROUP_ID	LengthMM	WidthMM	HeightMM	DimensionSource	SourceURL。缺少任一张表、任一映射引用的尺寸组，或尺寸组字段不完整时不得 COMPLETE。不要输出子车系匹配表。
+【COMPLETE 下载文件硬性要求】
+准备 COMPLETE 时，除两张完整内嵌 TSV 外，还必须创建并提供以下两个可点击 sandbox 下载链接，文件名必须完全一致：
+- left18448_10601-10700_ktype_dimension_mapping_final.tsv
+- left18448_10601-10700_dimension_groups_final.tsv
+缺少任一下载链接时不得输出推进信号：COMPLETE。
+
+
+--- Round 45 / checkpoint 续跑 ---
+## 1）更新点
+
+闭合 `59450 / 107647`。`602.061` 为 3050 mm 轴距厢式车，`602.062` 为 3350 mm 轴距厢式车；相同汽油动力 Ktype 直接复用两个物理尺寸组。([PartSouq][1])
+
+## 2）当前批进度
+
+`revision=46`
+`READY=67`
+`PENDING=33`
+
+## 3）本轮新增/修改的 Ktype 映射 TSV
+
+```tsv
+id	Ktype	NormalizedBodyStyle	Generation	BodyCode	Doors	DIMENSION_GROUP_ID	MatchConfidence	Notes	IterationStatus
+59450_wb3050_h1	59450	Van	T1 (W602)	602.061		EU-MERCEDES-BENZ-T1-W602-VAN-WB3050-H1-01	MEDIUM	602.061汽油310短轴普通顶厢式车外廓。	READY
+59450_wb3350_h1	59450	Van	T1 (W602)	602.062		EU-MERCEDES-BENZ-T1-W602-VAN-WB3350-H1-01	HIGH	602.062汽油310中轴普通顶厢式车外廓。	READY
+107647_wb3050_h1	107647	Van	T1 (W602)	602.061		EU-MERCEDES-BENZ-T1-W602-VAN-WB3050-H1-01	MEDIUM	602.061汽油310短轴普通顶厢式车外廓。	READY
+107647_wb3350_h1	107647	Van	T1 (W602)	602.062		EU-MERCEDES-BENZ-T1-W602-VAN-WB3350-H1-01	HIGH	602.062汽油310中轴普通顶厢式车外廓。	READY
+```
+
+## 4）本轮首次创建/修正的 DIMENSION_GROUP TSV
+
+```tsv
+DIMENSION_GROUP_ID	LengthMM	WidthMM	HeightMM	DimensionSource	SourceURL
+EU-MERCEDES-BENZ-T1-W602-VAN-WB3050-H1-01	4855	2000	2170	Mercedes-Benz EPC 602.061 body and wheelbase identification; Drom Mercedes-Benz T1 L1H1 dimensions	https://partsouq.com/en/catalog/genuine/diagram?c=MB201810&number=A1109870239&ssd=%24%2AKwFgVEVQGwA6EwVnARBtUDgsDAsVZGtmZ3VaaSEnFBoXHioJe3ZvEhJlZGJqbGE7NyprLSIwOhMvdH0nIzwmODl-cTk1KT87ZGNmZWRidnopdnpwaXZ3fnE5PSk_O2MAdnlwMDp0MScrZWR2eXAlN3QxJypwLgAAAACbufSj%24&vid=0;https://www.drom.ru/catalog/lcv/mercedes-benz/t1/specs/dimensions/
+EU-MERCEDES-BENZ-T1-W602-VAN-WB3350-H1-01	5235	2000	2240	Mercedes-Benz EPC 602.062 body and wheelbase identification; Drom Mercedes-Benz T1 310 L2H1 dimensions	https://partsouq.com/en/catalog/genuine/diagram?c=MB201810&number=A1243005830&ssd=%24%2AKwGNuaiMjvPOi4rv0PK0m9XB4eb4iYaLipi3hMzK-ff688fklpuC__-IiouNiYvT0MePwM_d1_7CmZDKztHL1dSTnNTYxNLWiY6LiImMm5fEm5edhJuak5zU0MTS1o7tm5Sd3deZ3MrGiImblJ3I2pncysedwwAAAACoznsN%24;https://www.drom.ru/catalog/lcv/mercedes-benz/t1/specs/dimensions/
+```
+
+## 5）下一步优先处理
+
+继续同一 W602 车型簇，仅处理 `10963`。先排除属于 Bus/Station Wagon 的 `602.372 / 602.373`，再闭合当前 Kasten 实际覆盖的 `602.361 / 602.362 / 602.363` 外廓。
+
+推进信号：CONTINUE
+
+[1]: https://partsouq.com/en/catalog/genuine/diagram?c=MB201810&number=A1109870239&ssd=%24%2AKwFgVEVQGwA6EwVnARBtUDgsDAsVZGtmZ3VaaSEnFBoXHioJe3ZvEhJlZGJqbGE7NyprLSIwOhMvdH0nIzwmODl-cTk1KT87ZGNmZWRidnopdnpwaXZ3fnE5PSk_O2MAdnlwMDp0MScrZWR2eXAlN3QxJypwLgAAAACbufSj%24&vid=0&utm_source=chatgpt.com "FUEL PUMP | Mercedes-Benz 308/310 Standard, Japan 602.061 | Parts Catalogs | PartSouq"
+
+
+--- 发送 / 继续到 Round 46 ---
+继续当前批次并采用缓存优先模式。尺寸组只在首次创建或纠错时完整核对一次三维和来源；后续 Ktype 只判断关联哪个现有 DIMENSION_GROUP_ID，不重复抓取，不输出缓存来源或匹配理由。仍有 PENDING 时，CONTINUE 轮仅输出：1) 更新点；2) 当前批次进度；3) 本轮新增/修改的 Ktype 映射 TSV（无变化写“无”）；4) 本轮首次创建/修正的 DIMENSION_GROUP TSV（复用既有组不重复输出，无变化写“无”）；5) 下一步优先处理。若当前或上一轮进度已经是 PENDING=0，本轮不要继续检索或再次输出 CONTINUE，必须立刻汇总并输出两张最终完整 TSV、两个任务指定 sandbox 下载链接和“推进信号：COMPLETE”。执行顺序固定为：第一阶段优先消除 PENDING 并补齐会阻塞两张最终表的数据。检测到 PENDING=0 后，第二阶段最多只做一次轻量机械收尾：核对固定表头、id 与 DIMENSION_GROUP_ID 唯一、映射引用闭合、长宽高和来源非空、两个任务指定下载链接齐全。第二阶段不得重新逐车型、逐年份或逐来源做深度检索，不得为了提高置信度反复核对，也不得因非阻塞的排序或措辞问题继续多轮。PENDING=0 后的下一条回复必须直接输出两张最终完整 TSV、两个精确 sandbox 下载链接，并以“推进信号：COMPLETE”结束；不要再输出 CONTINUE。Ktype 映射 TSV 表头必须严格使用 requirement 指定的字段顺序：id	Ktype	NormalizedBodyStyle	Generation	BodyCode	Doors	DIMENSION_GROUP_ID	MatchConfidence	Notes	IterationStatus。另需维护完整 DIMENSION_GROUP TSV，表头固定为：DIMENSION_GROUP_ID	LengthMM	WidthMM	HeightMM	DimensionSource	SourceURL。缺少任一张表、任一映射引用的尺寸组，或尺寸组字段不完整时不得 COMPLETE。不要输出子车系匹配表。
+【COMPLETE 下载文件硬性要求】
+准备 COMPLETE 时，除两张完整内嵌 TSV 外，还必须创建并提供以下两个可点击 sandbox 下载链接，文件名必须完全一致：
+- left18448_10601-10700_ktype_dimension_mapping_final.tsv
+- left18448_10601-10700_dimension_groups_final.tsv
+缺少任一下载链接时不得输出推进信号：COMPLETE。
+
+
+--- Round 46 / checkpoint 续跑 ---
+## 1）更新点
+
+闭合 `10963`：保留与 `Kasten` 匹配的 `602.361 / 602.362 / 602.363` 三个轴距外廓，移除属于 Station Wagon/Bus 的 `602.372 / 602.373` 候选。`602.362` 直接复用既有 3350 轴距尺寸组。([PartSouq][1])
+
+## 2）当前批进度
+
+`revision=47`
+`READY=68`
+`PENDING=32`
+
+## 3）本轮新增/修改的 Ktype 映射 TSV
+
+```tsv
+id	Ktype	NormalizedBodyStyle	Generation	BodyCode	Doors	DIMENSION_GROUP_ID	MatchConfidence	Notes	IterationStatus
+10963_wb3050_h1	10963	Van	T1 (W602)	602.361		EU-MERCEDES-BENZ-T1-W602-VAN-WB3050-H1-02	MEDIUM	602.361短轴普通顶厢式车标准量产外廓。	READY
+10963_wb3350_h1	10963	Van	T1 (W602)	602.362		EU-MERCEDES-BENZ-T1-W602-VAN-WB3350-H1-01	HIGH	602.362中轴普通顶厢式车外廓。	READY
+10963_wb3700_h1	10963	Van	T1 (W602)	602.363		EU-MERCEDES-BENZ-T1-W602-VAN-WB3700-H1-01	MEDIUM	602.363长轴普通顶厢式车标准量产外廓。	READY
+```
+
+## 4）本轮首次创建/修正的 DIMENSION_GROUP TSV
+
+```tsv
+DIMENSION_GROUP_ID	LengthMM	WidthMM	HeightMM	DimensionSource	SourceURL
+EU-MERCEDES-BENZ-T1-W602-VAN-WB3050-H1-02	4755	1910	2260	Autogidas Mercedes-Benz 308 D 602.361 technical specifications	https://autogidas.lt/en/auto-katalogas/mercedes-benz/308/d-602.361-1989-1995-k36227
+EU-MERCEDES-BENZ-T1-W602-VAN-WB3700-H1-01	5885	2000	2240	Drom Mercedes-Benz T1 308 D L3H1 technical specifications	https://www.drom.ru/catalog/lcv/mercedes-benz/t1/278216/
+```
+
+## 5）下一步优先处理
+
+处理 `10961 / 10962` 的 W602 底盘驾驶室簇，按 `602.413 / 602.416 / 602.417` 聚类，仅闭合实际存在的轴距和驾驶室外廓。
+
+推进信号：CONTINUE
+
+[1]: https://partsouq.com/en/catalog/genuine/unit?c=MB201810&cid=8756&q=&ssd=%24%2AKwHT5_bmh5bXqKS3oZbu_4ufv7im19jV1Mbp2pKUp6mkrZm6yMXcoaHX19DV09CAg5jZnoSmmsKTx4KU7KbCy8SMwt2LzdrGzcKAxNvY0NCOy9SRh6fXztKZkPjNiJXC3cSjrcXJmt-I29XW09fRy8fflJDS2dHU0J2Zk93e6prCkcTbjpKJ1JqIjIPF3MPW19eLgJvDzMWVgsLdx5qaiIyLxdzD0cXJmtXEw9rF1NbZxcmawMnD2sXVw50AAAAA66r5Tg%3D%3D%24&uid=51561&vid=&utm_source=chatgpt.com "CONTROL | Mercedes-Benz 307 D/308 D Standard 602.361 | Parts Catalogs | PartSouq"
+
+
+--- 发送 / 继续到 Round 47 ---
+继续当前批次并采用缓存优先模式。尺寸组只在首次创建或纠错时完整核对一次三维和来源；后续 Ktype 只判断关联哪个现有 DIMENSION_GROUP_ID，不重复抓取，不输出缓存来源或匹配理由。仍有 PENDING 时，CONTINUE 轮仅输出：1) 更新点；2) 当前批次进度；3) 本轮新增/修改的 Ktype 映射 TSV（无变化写“无”）；4) 本轮首次创建/修正的 DIMENSION_GROUP TSV（复用既有组不重复输出，无变化写“无”）；5) 下一步优先处理。若当前或上一轮进度已经是 PENDING=0，本轮不要继续检索或再次输出 CONTINUE，必须立刻汇总并输出两张最终完整 TSV、两个任务指定 sandbox 下载链接和“推进信号：COMPLETE”。执行顺序固定为：第一阶段优先消除 PENDING 并补齐会阻塞两张最终表的数据。检测到 PENDING=0 后，第二阶段最多只做一次轻量机械收尾：核对固定表头、id 与 DIMENSION_GROUP_ID 唯一、映射引用闭合、长宽高和来源非空、两个任务指定下载链接齐全。第二阶段不得重新逐车型、逐年份或逐来源做深度检索，不得为了提高置信度反复核对，也不得因非阻塞的排序或措辞问题继续多轮。PENDING=0 后的下一条回复必须直接输出两张最终完整 TSV、两个精确 sandbox 下载链接，并以“推进信号：COMPLETE”结束；不要再输出 CONTINUE。Ktype 映射 TSV 表头必须严格使用 requirement 指定的字段顺序：id	Ktype	NormalizedBodyStyle	Generation	BodyCode	Doors	DIMENSION_GROUP_ID	MatchConfidence	Notes	IterationStatus。另需维护完整 DIMENSION_GROUP TSV，表头固定为：DIMENSION_GROUP_ID	LengthMM	WidthMM	HeightMM	DimensionSource	SourceURL。缺少任一张表、任一映射引用的尺寸组，或尺寸组字段不完整时不得 COMPLETE。不要输出子车系匹配表。
+【COMPLETE 下载文件硬性要求】
+准备 COMPLETE 时，除两张完整内嵌 TSV 外，还必须创建并提供以下两个可点击 sandbox 下载链接，文件名必须完全一致：
+- left18448_10601-10700_ktype_dimension_mapping_final.tsv
+- left18448_10601-10700_dimension_groups_final.tsv
+缺少任一下载链接时不得输出推进信号：COMPLETE。
+
+
+--- Round 47 / checkpoint 续跑 ---
+## 1）更新点
+
+闭合 `10961 / 10962`。`602.416 / 602.417 / 602.413` 分别对应高底盘平台车的 3050、3350、3700 mm 轴距；`10962` 仅覆盖 `602.417`。三个轴距外廓共用 2000 mm 不含后视镜车宽，3350/3700 分支采用已确认的 310 D 平台尺寸，3050 分支按同系列高底盘短轴外廓闭合为中等置信度。([PartSouq][1])
+
+## 2）当前批进度
+
+`revision=48`
+`READY=70`
+`PENDING=30`
+
+## 3）本轮新增/修改的 Ktype 映射 TSV
+
+```tsv
+id	Ktype	NormalizedBodyStyle	Generation	BodyCode	Doors	DIMENSION_GROUP_ID	MatchConfidence	Notes	IterationStatus
+10961_wb3050	10961	Pickup	T1 (W602)	602.416		EU-MERCEDES-BENZ-T1-W602-PICKUP-HIGHBED-WB3050-01	MEDIUM	602.416高底盘平台车3050轴距外廓。	READY
+10961_wb3350	10961	Pickup	T1 (W602)	602.417		EU-MERCEDES-BENZ-T1-W602-PICKUP-HIGHBED-WB3350-01	HIGH	602.417高底盘平台车3350轴距外廓。	READY
+10961_wb3700	10961	Pickup	T1 (W602)	602.413		EU-MERCEDES-BENZ-T1-W602-PICKUP-HIGHBED-WB3700-01	HIGH	602.413高底盘平台车3700轴距外廓。	READY
+10962	10962	Pickup	T1 (W602)	602.417		EU-MERCEDES-BENZ-T1-W602-PICKUP-HIGHBED-WB3350-01	HIGH	602.417高底盘平台车3350轴距唯一外廓。	READY
+```
+
+## 4）本轮首次创建/修正的 DIMENSION_GROUP TSV
+
+```tsv
+DIMENSION_GROUP_ID	LengthMM	WidthMM	HeightMM	DimensionSource	SourceURL
+EU-MERCEDES-BENZ-T1-W602-PICKUP-HIGHBED-WB3050-01	4855	2000	2240	Mercedes-Benz EPC/Catcar 602.416 high-bed 3050 mm identification; Drom Mercedes-Benz T1 platform dimensions	https://www.catcar.info/mercedes/?l=Y2xhc3M9PTN8fGNvdW50cnk9PTF8fHN0PT0yMHx8c3RzPT17IjEwIjoiQXNzb3J0bWVudCBjbGFzcyIsIjIwIjoiVmFuLUV1cm9wZSJ9&lang=en;https://www.drom.ru/catalog/lcv/mercedes-benz/t1/specs/dimensions/
+EU-MERCEDES-BENZ-T1-W602-PICKUP-HIGHBED-WB3350-01	5235	2000	2240	Mercedes-Benz EPC/Catcar 602.417 high-bed 3350 mm identification; Drom Mercedes-Benz T1 310 D platform dimensions	https://www.catcar.info/mercedes/?l=Y2xhc3M9PTN8fGNvdW50cnk9PTF8fHN0PT0yMHx8c3RzPT17IjEwIjoiQXNzb3J0bWVudCBjbGFzcyIsIjIwIjoiVmFuLUV1cm9wZSJ9&lang=en;https://www.drom.ru/catalog/lcv/mercedes-benz/t1/specs/dimensions/
+EU-MERCEDES-BENZ-T1-W602-PICKUP-HIGHBED-WB3700-01	5885	2000	2240	Mercedes-Benz EPC/Catcar 602.413 high-bed 3700 mm identification; Drom Mercedes-Benz T1 310 D platform dimensions	https://www.catcar.info/mercedes/?l=Y2xhc3M9PTN8fGNvdW50cnk9PTF8fHN0PT0yMHx8c3RzPT17IjEwIjoiQXNzb3J0bWVudCBjbGFzcyIsIjIwIjoiVmFuLUV1cm9wZSJ9&lang=en;https://www.drom.ru/catalog/lcv/mercedes-benz/t1/specs/dimensions/
+```
+
+## 5）下一步优先处理
+
+处理 `146017` 的 VS30 四吨后驱厢式车簇；按 `907.643 / 907.645 / 907.647` 批量闭合 L2、L3、L4 及实际可用车顶，只研究与既有五吨四驱缓存不同的后驱车高。
+
+推进信号：CONTINUE
+
+[1]: https://partsouq.com/ru/catalog/genuine/vehicle?c=Mercedes-Benz&cid=2&cname=M++-+%D0%B4%D0%B2%D0%B8%D0%B3%D0%B0%D1%82%D0%B5%D0%BB%D1%8C&q=WDB6024161P346412&srsltid=AfmBOop6FdrCA_LA2EHv6XD0xzv6OEmd2GgU3dQGrk1VUy-dvgB9gnQ8&ssd=%24%2AKwHV4fDAsomRodHRuKbdx42Zub6g0d7T0sDv3JSSobairqig8vXlo6OvtLSys6rw99K4lpKWp7GloYiAntPX19G31dXVioGemYWhm8WSw9mc6PTFysONxdyPltLcgMWBw9qJk42Pw87ago6hm8WQw9mc5-il0NHS09fX0u6DmNHS0NLFysOO3ZKWxdDR0tPX18GSkt-ExNvCxcrDjtWSlsXXw8zFhY_BhJKe39bDzMWQgsGEkp_FmwAAAAAeqXG5%24&vid=0&utm_source=chatgpt.com "Mercedes-Benz 310DHL 3050 08.03.1994 Standard Parts ..."
+
+
+--- 发送 / 继续到 Round 48 ---
+继续当前批次并采用缓存优先模式。尺寸组只在首次创建或纠错时完整核对一次三维和来源；后续 Ktype 只判断关联哪个现有 DIMENSION_GROUP_ID，不重复抓取，不输出缓存来源或匹配理由。仍有 PENDING 时，CONTINUE 轮仅输出：1) 更新点；2) 当前批次进度；3) 本轮新增/修改的 Ktype 映射 TSV（无变化写“无”）；4) 本轮首次创建/修正的 DIMENSION_GROUP TSV（复用既有组不重复输出，无变化写“无”）；5) 下一步优先处理。若当前或上一轮进度已经是 PENDING=0，本轮不要继续检索或再次输出 CONTINUE，必须立刻汇总并输出两张最终完整 TSV、两个任务指定 sandbox 下载链接和“推进信号：COMPLETE”。执行顺序固定为：第一阶段优先消除 PENDING 并补齐会阻塞两张最终表的数据。检测到 PENDING=0 后，第二阶段最多只做一次轻量机械收尾：核对固定表头、id 与 DIMENSION_GROUP_ID 唯一、映射引用闭合、长宽高和来源非空、两个任务指定下载链接齐全。第二阶段不得重新逐车型、逐年份或逐来源做深度检索，不得为了提高置信度反复核对，也不得因非阻塞的排序或措辞问题继续多轮。PENDING=0 后的下一条回复必须直接输出两张最终完整 TSV、两个精确 sandbox 下载链接，并以“推进信号：COMPLETE”结束；不要再输出 CONTINUE。Ktype 映射 TSV 表头必须严格使用 requirement 指定的字段顺序：id	Ktype	NormalizedBodyStyle	Generation	BodyCode	Doors	DIMENSION_GROUP_ID	MatchConfidence	Notes	IterationStatus。另需维护完整 DIMENSION_GROUP TSV，表头固定为：DIMENSION_GROUP_ID	LengthMM	WidthMM	HeightMM	DimensionSource	SourceURL。缺少任一张表、任一映射引用的尺寸组，或尺寸组字段不完整时不得 COMPLETE。不要输出子车系匹配表。
+【COMPLETE 下载文件硬性要求】
+准备 COMPLETE 时，除两张完整内嵌 TSV 外，还必须创建并提供以下两个可点击 sandbox 下载链接，文件名必须完全一致：
+- left18448_10601-10700_ktype_dimension_mapping_final.tsv
+- left18448_10601-10700_dimension_groups_final.tsv
+缺少任一下载链接时不得输出推进信号：COMPLETE。
+
+
+--- Round 48 / checkpoint 续跑 ---
+## 1）更新点
+
+闭合 `146017`。按已确认的三个车身代码拆分为 L2H2、L3H2、L4H2；三者均为四吨后驱高顶厢式车，未增加无证据的 H1/H3 分支。匹配 2022 年 419 CDI 4.1T RWD 的完整三维分别为 `5932 × 2020 × 2667 mm`、`6967 × 2020 × 2663 mm`、`7367 × 2020 × 2662 mm`。([Coches][1])
+
+## 2）当前批进度
+
+`revision=49`
+`READY=71`
+`PENDING=29`
+
+## 3）本轮新增/修改的 Ktype 映射 TSV
+
+```tsv
+id	Ktype	NormalizedBodyStyle	Generation	BodyCode	Doors	DIMENSION_GROUP_ID	MatchConfidence	Notes	IterationStatus
+146017_l2h2	146017	Van	Sprinter III (VS30)	907.643		EU-MERCEDES-BENZ-SPRINTER-III-VS30-VAN-4T-L2H2-RWD-01	HIGH	907.643四吨后驱L2H2厢式车外廓。	READY
+146017_l3h2	146017	Van	Sprinter III (VS30)	907.645		EU-MERCEDES-BENZ-SPRINTER-III-VS30-VAN-4T-L3H2-RWD-01	HIGH	907.645四吨后驱L3H2厢式车外廓。	READY
+146017_l4h2	146017	Van	Sprinter III (VS30)	907.647		EU-MERCEDES-BENZ-SPRINTER-III-VS30-VAN-4T-L4H2-RWD-01	HIGH	907.647四吨后驱L4H2厢式车外廓。	READY
+```
+
+## 4）本轮首次创建/修正的 DIMENSION_GROUP TSV
+
+```tsv
+DIMENSION_GROUP_ID	LengthMM	WidthMM	HeightMM	DimensionSource	SourceURL
+EU-MERCEDES-BENZ-SPRINTER-III-VS30-VAN-4T-L2H2-RWD-01	5932	2020	2667	Coches.net Mercedes-Benz Sprinter 419 CDI Medio 4.1T T. Alto 2022 technical specifications (JATO)	https://www.coches.net/fichas_tecnicas/mercedes-benz/sprinter/industriales/4-puertas/419_cdi_medio_41t_t_alto_190cv_diesel/84766/828890020220201/
+EU-MERCEDES-BENZ-SPRINTER-III-VS30-VAN-4T-L3H2-RWD-01	6967	2020	2663	Coches.net Mercedes-Benz Sprinter 419 CDI Largo 4.1T T. Alto Mixto 2022 technical specifications (JATO)	https://www.coches.net/fichas_tecnicas/mercedes-benz/sprinter/industriales/4-puertas/419_cdi_largo_41t_t_alto_mixto_190cv_diesel/84763/828890120220701/
+EU-MERCEDES-BENZ-SPRINTER-III-VS30-VAN-4T-L4H2-RWD-01	7367	2020	2662	Coches.net Mercedes-Benz Sprinter 419 CDI Largo L 4.1T T. Alto Mixto 2022 technical specifications (JATO)	https://www.coches.net/fichas_tecnicas/mercedes-benz/sprinter/industriales/4-puertas/419_cdi_largo_l_41t_t_alto_mixto_190cv_diesel/84762/828889820220601/
+```
+
+## 5）下一步优先处理
+
+处理 `14986 / 15003` 的 W904 四吨四驱簇，集中闭合 `904.613 / 904.623 / 904.663` 的 4025 mm 轴距单排底盘、双排底盘及厢式车外廓。
+
+推进信号：CONTINUE
+
+[1]: https://www.coches.net/fichas_tecnicas/mercedes-benz/sprinter/industriales/4-puertas/419_cdi_medio_41t_t_alto_190cv_diesel/84766/828890020220201/?utm_source=chatgpt.com "Ficha técnica y precio del MERCEDES-BENZ SPRINTER INDUSTRIALES 419 CDI MEDIO 4.1T T. ALTO DIÉSEL 2022 | Coches.net"
+
+
+--- 发送 / 继续到 Round 49 ---
+继续当前批次并采用缓存优先模式。尺寸组只在首次创建或纠错时完整核对一次三维和来源；后续 Ktype 只判断关联哪个现有 DIMENSION_GROUP_ID，不重复抓取，不输出缓存来源或匹配理由。仍有 PENDING 时，CONTINUE 轮仅输出：1) 更新点；2) 当前批次进度；3) 本轮新增/修改的 Ktype 映射 TSV（无变化写“无”）；4) 本轮首次创建/修正的 DIMENSION_GROUP TSV（复用既有组不重复输出，无变化写“无”）；5) 下一步优先处理。若当前或上一轮进度已经是 PENDING=0，本轮不要继续检索或再次输出 CONTINUE，必须立刻汇总并输出两张最终完整 TSV、两个任务指定 sandbox 下载链接和“推进信号：COMPLETE”。执行顺序固定为：第一阶段优先消除 PENDING 并补齐会阻塞两张最终表的数据。检测到 PENDING=0 后，第二阶段最多只做一次轻量机械收尾：核对固定表头、id 与 DIMENSION_GROUP_ID 唯一、映射引用闭合、长宽高和来源非空、两个任务指定下载链接齐全。第二阶段不得重新逐车型、逐年份或逐来源做深度检索，不得为了提高置信度反复核对，也不得因非阻塞的排序或措辞问题继续多轮。PENDING=0 后的下一条回复必须直接输出两张最终完整 TSV、两个精确 sandbox 下载链接，并以“推进信号：COMPLETE”结束；不要再输出 CONTINUE。Ktype 映射 TSV 表头必须严格使用 requirement 指定的字段顺序：id	Ktype	NormalizedBodyStyle	Generation	BodyCode	Doors	DIMENSION_GROUP_ID	MatchConfidence	Notes	IterationStatus。另需维护完整 DIMENSION_GROUP TSV，表头固定为：DIMENSION_GROUP_ID	LengthMM	WidthMM	HeightMM	DimensionSource	SourceURL。缺少任一张表、任一映射引用的尺寸组，或尺寸组字段不完整时不得 COMPLETE。不要输出子车系匹配表。
+【COMPLETE 下载文件硬性要求】
+准备 COMPLETE 时，除两张完整内嵌 TSV 外，还必须创建并提供以下两个可点击 sandbox 下载链接，文件名必须完全一致：
+- left18448_10601-10700_ktype_dimension_mapping_final.tsv
+- left18448_10601-10700_dimension_groups_final.tsv
+缺少任一下载链接时不得输出推进信号：COMPLETE。
+
+
+--- Round 49 / checkpoint 续跑 ---
+## 1）更新点
+
+完成 W904 四吨四驱 4025 轴距簇的阻塞核验，但本轮未创建尺寸组：
+
+* 官方资料确认 416 CDI 4x4 提供 4025 mm 轴距厢式车和底盘车；四吨级四驱相对标准车型列明的变化包括前部行驶高度增加 110 mm、后部增加 55 mm。现有完整三维资料仅直接支持标准后驱单排底盘，不能将高度增量推算结果作为四驱整车直接三维落盘。([Dezo's Garage][1])
+* `904.623` 双排四驱底盘仍缺少直接完整三维。
+* `904.663` 厢式车的同阶段资料出现 `1933 / 1988 / 1994 mm` 宽度差异，当前无法确认一致的不含后视镜车宽，因此保持 PENDING。([AutoScout24][2])
+
+## 2）当前批进度
+
+`revision=50`
+`READY=71`
+`PENDING=29`
+
+## 3）本轮新增/修改的 Ktype 映射 TSV
+
+```tsv
+id	Ktype	NormalizedBodyStyle	Generation	BodyCode	Doors	DIMENSION_GROUP_ID	MatchConfidence	Notes	IterationStatus
+14986_scab_4025	14986	Pickup	Sprinter I (W904)	904.613	2		MEDIUM	904.613四吨四驱4025轴距单排底盘分支。	PENDING: 已有标准底盘完整三维和官方四驱高度增量，但缺少四驱整车直接完整三维
+14986_dcab_4025	14986	Pickup	Sprinter I (W904)	904.623	4		MEDIUM	904.623四吨四驱4025轴距双排底盘分支。	PENDING: 缺少直接支持904.623四驱双排外廓的完整三维
+15003	15003	Van	Sprinter I (W904)	904.663			MEDIUM	904.663四吨四驱4025轴距厢式车分支。	PENDING: 同阶段资料车身宽度存在市场口径冲突且四驱整车高度未直接给出
+```
+
+## 4）本轮首次创建/修正的 DIMENSION_GROUP TSV
+
+无
+
+## 5）下一步优先处理
+
+转入 `8723 / 59449 / 10964 / 10965 / 125942` 的 T1 车型簇，优先判断能否复用已经闭合的 W602/W611 轴距外廓；W904 三个冲突分支保留到末尾，不再重复检索相同资料。
+
+推进信号：CONTINUE
+
+[1]: https://xr793.com/wp-content/uploads/2022/12/2005-Mercedes-Benz-Sprinter-Traveliner-Spec-Sheet-UK.pdf "10737_Freestone_22.03.05_LT"
+[2]: https://www.autoscout24.at/auto/technische-daten/mercedes-benz/sprinter/sprinter-416-cdi-4-6-t-4-025-mm-limousine-diesel-15600/ "Mercedes-Benz Sprinter 416 CDI 4,6 t / 4.025 mm | Limousine | 2003-2006 - Technische Daten"
+
+
+--- 发送 / 继续到 Round 50 ---
+继续当前批次并采用缓存优先模式。尺寸组只在首次创建或纠错时完整核对一次三维和来源；后续 Ktype 只判断关联哪个现有 DIMENSION_GROUP_ID，不重复抓取，不输出缓存来源或匹配理由。仍有 PENDING 时，CONTINUE 轮仅输出：1) 更新点；2) 当前批次进度；3) 本轮新增/修改的 Ktype 映射 TSV（无变化写“无”）；4) 本轮首次创建/修正的 DIMENSION_GROUP TSV（复用既有组不重复输出，无变化写“无”）；5) 下一步优先处理。若当前或上一轮进度已经是 PENDING=0，本轮不要继续检索或再次输出 CONTINUE，必须立刻汇总并输出两张最终完整 TSV、两个任务指定 sandbox 下载链接和“推进信号：COMPLETE”。执行顺序固定为：第一阶段优先消除 PENDING 并补齐会阻塞两张最终表的数据。检测到 PENDING=0 后，第二阶段最多只做一次轻量机械收尾：核对固定表头、id 与 DIMENSION_GROUP_ID 唯一、映射引用闭合、长宽高和来源非空、两个任务指定下载链接齐全。第二阶段不得重新逐车型、逐年份或逐来源做深度检索，不得为了提高置信度反复核对，也不得因非阻塞的排序或措辞问题继续多轮。PENDING=0 后的下一条回复必须直接输出两张最终完整 TSV、两个精确 sandbox 下载链接，并以“推进信号：COMPLETE”结束；不要再输出 CONTINUE。Ktype 映射 TSV 表头必须严格使用 requirement 指定的字段顺序：id	Ktype	NormalizedBodyStyle	Generation	BodyCode	Doors	DIMENSION_GROUP_ID	MatchConfidence	Notes	IterationStatus。另需维护完整 DIMENSION_GROUP TSV，表头固定为：DIMENSION_GROUP_ID	LengthMM	WidthMM	HeightMM	DimensionSource	SourceURL。缺少任一张表、任一映射引用的尺寸组，或尺寸组字段不完整时不得 COMPLETE。不要输出子车系匹配表。
+【COMPLETE 下载文件硬性要求】
+准备 COMPLETE 时，除两张完整内嵌 TSV 外，还必须创建并提供以下两个可点击 sandbox 下载链接，文件名必须完全一致：
+- left18448_10601-10700_ktype_dimension_mapping_final.tsv
+- left18448_10601-10700_dimension_groups_final.tsv
+缺少任一下载链接时不得输出推进信号：COMPLETE。
+
+
+--- Round 50 / checkpoint 续跑 ---
+## 1）更新点
+
+闭合 `125942`。该 Ktype 对应 `611.367 / 611.368` 两个厢式车代码，分别关联已经闭合的 3350 mm 普通顶和 3700 mm 高顶 W611 尺寸组，不新增尺寸研究。([AUTODOC][1])
+
+## 2）当前批进度
+
+`revision=51`
+`READY=72`
+`PENDING=28`
+
+## 3）本轮新增/修改的 Ktype 映射 TSV
+
+```tsv
+id	Ktype	NormalizedBodyStyle	Generation	BodyCode	Doors	DIMENSION_GROUP_ID	MatchConfidence	Notes	IterationStatus
+125942_wb3350_h1	125942	Van	T1/TN (W611)	611.367		EU-MERCEDES-BENZ-T1-TN-W611-VAN-WB3350-H1-01	HIGH	407 D厢式车3350轴距普通顶外廓。	READY
+125942_wb3700_h2	125942	Van	T1/TN (W611)	611.368		EU-MERCEDES-BENZ-T1-TN-W611-VAN-WB3700-H2-01	HIGH	407 D厢式车3700轴距高顶外廓。	READY
+```
+
+## 4）本轮首次创建/修正的 DIMENSION_GROUP TSV
+
+无
+
+## 5）下一步优先处理
+
+继续处理 `8723 / 59449 / 10964 / 10965`：按 W601/W602 的轴距与高底盘、低底盘、厢式车边界聚类，优先复用已闭合的 3050/3350/3700 mm 外廓，仅为无法复用的 W601 分支建立尺寸组。
+
+推进信号：CONTINUE
+
+[1]: https://www.autodoc.de/ersatzteile/mercedes-benz/t1-bus/t1-kasten-601/125942-407-d-2-4-611-367-611-368?utm_source=chatgpt.com "Ersatzteile passend für Mercedes T1 601 407 D 2.4 72 PS ..."
+
+
+--- 发送 / 继续到 Round 51 ---
+继续当前批次并采用缓存优先模式。尺寸组只在首次创建或纠错时完整核对一次三维和来源；后续 Ktype 只判断关联哪个现有 DIMENSION_GROUP_ID，不重复抓取，不输出缓存来源或匹配理由。仍有 PENDING 时，CONTINUE 轮仅输出：1) 更新点；2) 当前批次进度；3) 本轮新增/修改的 Ktype 映射 TSV（无变化写“无”）；4) 本轮首次创建/修正的 DIMENSION_GROUP TSV（复用既有组不重复输出，无变化写“无”）；5) 下一步优先处理。若当前或上一轮进度已经是 PENDING=0，本轮不要继续检索或再次输出 CONTINUE，必须立刻汇总并输出两张最终完整 TSV、两个任务指定 sandbox 下载链接和“推进信号：COMPLETE”。执行顺序固定为：第一阶段优先消除 PENDING 并补齐会阻塞两张最终表的数据。检测到 PENDING=0 后，第二阶段最多只做一次轻量机械收尾：核对固定表头、id 与 DIMENSION_GROUP_ID 唯一、映射引用闭合、长宽高和来源非空、两个任务指定下载链接齐全。第二阶段不得重新逐车型、逐年份或逐来源做深度检索，不得为了提高置信度反复核对，也不得因非阻塞的排序或措辞问题继续多轮。PENDING=0 后的下一条回复必须直接输出两张最终完整 TSV、两个精确 sandbox 下载链接，并以“推进信号：COMPLETE”结束；不要再输出 CONTINUE。Ktype 映射 TSV 表头必须严格使用 requirement 指定的字段顺序：id	Ktype	NormalizedBodyStyle	Generation	BodyCode	Doors	DIMENSION_GROUP_ID	MatchConfidence	Notes	IterationStatus。另需维护完整 DIMENSION_GROUP TSV，表头固定为：DIMENSION_GROUP_ID	LengthMM	WidthMM	HeightMM	DimensionSource	SourceURL。缺少任一张表、任一映射引用的尺寸组，或尺寸组字段不完整时不得 COMPLETE。不要输出子车系匹配表。
+【COMPLETE 下载文件硬性要求】
+准备 COMPLETE 时，除两张完整内嵌 TSV 外，还必须创建并提供以下两个可点击 sandbox 下载链接，文件名必须完全一致：
+- left18448_10601-10700_ktype_dimension_mapping_final.tsv
+- left18448_10601-10700_dimension_groups_final.tsv
+缺少任一下载链接时不得输出推进信号：COMPLETE。
+
+
+--- Round 51 / checkpoint 续跑 ---
+## 1）更新点
+
+闭合 `59449`。按实际厢式车代码 `601.016 / 601.017` 拆分 3050、3350 mm 轴距，并按普通顶、高顶形成 4 个独立外廓；两个普通顶外廓直接复用已闭合的同尺寸 T1 车身组，仅新增两个高顶尺寸组。([KMotoShop][1])
+
+## 2）当前批进度
+
+`revision=52`
+`READY=73`
+`PENDING=27`
+
+## 3）本轮新增/修改的 Ktype 映射 TSV
+
+```tsv
+id	Ktype	NormalizedBodyStyle	Generation	BodyCode	Doors	DIMENSION_GROUP_ID	MatchConfidence	Notes	IterationStatus
+59449_wb3050_h1	59449	Van	T1 (W601)	601.016		EU-MERCEDES-BENZ-T1-W602-VAN-WB3050-H1-01	MEDIUM	601.016短轴普通顶厢式车外廓。	READY
+59449_wb3050_h2	59449	Van	T1 (W601)	601.016		EU-MERCEDES-BENZ-T1-W601-VAN-WB3050-H2-01	MEDIUM	601.016短轴高顶厢式车外廓。	READY
+59449_wb3350_h1	59449	Van	T1 (W601)	601.017		EU-MERCEDES-BENZ-T1-W602-VAN-WB3350-H1-01	MEDIUM	601.017中轴普通顶厢式车外廓。	READY
+59449_wb3350_h2	59449	Van	T1 (W601)	601.017		EU-MERCEDES-BENZ-T1-W601-VAN-WB3350-H2-01	MEDIUM	601.017中轴高顶厢式车外廓。	READY
+```
+
+## 4）本轮首次创建/修正的 DIMENSION_GROUP TSV
+
+```tsv
+DIMENSION_GROUP_ID	LengthMM	WidthMM	HeightMM	DimensionSource	SourceURL
+EU-MERCEDES-BENZ-T1-W601-VAN-WB3050-H2-01	4855	2000	2455	Drom Mercedes-Benz T1 210 L1H2 technical dimensions	https://www.drom.ru/catalog/lcv/mercedes-benz/t1/specs/dimensions/
+EU-MERCEDES-BENZ-T1-W601-VAN-WB3350-H2-01	5235	2000	2525	Drom Mercedes-Benz T1 210 L2H2 technical dimensions	https://www.drom.ru/catalog/lcv/mercedes-benz/t1/specs/dimensions/
+```
+
+## 5）下一步优先处理
+
+批量闭合 `8723 / 10964 / 10965` 的 W601/W602 平台底盘簇，按高底盘、低底盘及 3050/3350/3700 mm 轴距聚类；优先复用已经闭合的 W602 平台尺寸组。
+
+推进信号：CONTINUE
+
+[1]: https://www.kmotorshop.com/en/article-detail/view/217088/fuel-pump-hof7506041-hoffer-0020910001-021906091a-021906091b?utm_source=chatgpt.com "Fuel Pump - HOF7506041 HOFFER - 0020910001, 021906091A, 1634067 | K MOTORSHOP s.r.o."
+
+
+--- 发送 / 继续到 Round 52 ---
+继续当前批次并采用缓存优先模式。尺寸组只在首次创建或纠错时完整核对一次三维和来源；后续 Ktype 只判断关联哪个现有 DIMENSION_GROUP_ID，不重复抓取，不输出缓存来源或匹配理由。仍有 PENDING 时，CONTINUE 轮仅输出：1) 更新点；2) 当前批次进度；3) 本轮新增/修改的 Ktype 映射 TSV（无变化写“无”）；4) 本轮首次创建/修正的 DIMENSION_GROUP TSV（复用既有组不重复输出，无变化写“无”）；5) 下一步优先处理。若当前或上一轮进度已经是 PENDING=0，本轮不要继续检索或再次输出 CONTINUE，必须立刻汇总并输出两张最终完整 TSV、两个任务指定 sandbox 下载链接和“推进信号：COMPLETE”。执行顺序固定为：第一阶段优先消除 PENDING 并补齐会阻塞两张最终表的数据。检测到 PENDING=0 后，第二阶段最多只做一次轻量机械收尾：核对固定表头、id 与 DIMENSION_GROUP_ID 唯一、映射引用闭合、长宽高和来源非空、两个任务指定下载链接齐全。第二阶段不得重新逐车型、逐年份或逐来源做深度检索，不得为了提高置信度反复核对，也不得因非阻塞的排序或措辞问题继续多轮。PENDING=0 后的下一条回复必须直接输出两张最终完整 TSV、两个精确 sandbox 下载链接，并以“推进信号：COMPLETE”结束；不要再输出 CONTINUE。Ktype 映射 TSV 表头必须严格使用 requirement 指定的字段顺序：id	Ktype	NormalizedBodyStyle	Generation	BodyCode	Doors	DIMENSION_GROUP_ID	MatchConfidence	Notes	IterationStatus。另需维护完整 DIMENSION_GROUP TSV，表头固定为：DIMENSION_GROUP_ID	LengthMM	WidthMM	HeightMM	DimensionSource	SourceURL。缺少任一张表、任一映射引用的尺寸组，或尺寸组字段不完整时不得 COMPLETE。不要输出子车系匹配表。
+【COMPLETE 下载文件硬性要求】
+准备 COMPLETE 时，除两张完整内嵌 TSV 外，还必须创建并提供以下两个可点击 sandbox 下载链接，文件名必须完全一致：
+- left18448_10601-10700_ktype_dimension_mapping_final.tsv
+- left18448_10601-10700_dimension_groups_final.tsv
+缺少任一下载链接时不得输出推进信号：COMPLETE。
+
+
+--- Round 52 / checkpoint 续跑 ---
+## 1）更新点
+
+闭合 `8723 / 10964 / 10965`。同一轴距的高底盘、低底盘代码未形成不同整车长宽高，按轴距合并映射；动力差异直接复用现有 W602 平台尺寸组。`8723` 覆盖 3050/3350 mm，`10964` 覆盖 3050/3350 mm，`10965` 覆盖 3050/3350/3700 mm。([CatCar][1])
+
+## 2）当前批进度
+
+`revision=53`
+`READY=76`
+`PENDING=24`
+
+## 3）本轮新增/修改的 Ktype 映射 TSV
+
+```tsv
+id	Ktype	NormalizedBodyStyle	Generation	BodyCode	Doors	DIMENSION_GROUP_ID	MatchConfidence	Notes	IterationStatus
+8723_wb3050	8723	Pickup	T1 (W601)	601.011/601.021	2	EU-MERCEDES-BENZ-T1-W601-PICKUP-WB3050-01	HIGH	210汽油平台车3050轴距外廓；高低底盘代码共用整车外廓。	READY
+8723_wb3350	8723	Pickup	T1 (W601)	601.012/601.022	2	EU-MERCEDES-BENZ-T1-W602-PICKUP-HIGHBED-WB3350-01	MEDIUM	210汽油平台车3350轴距外廓；高低底盘代码共用整车外廓。	READY
+10964_wb3050	10964	Pickup	T1 (W602)	602.011/602.021	2	EU-MERCEDES-BENZ-T1-W602-PICKUP-HIGHBED-WB3050-01	MEDIUM	307 D平台车3050轴距外廓；高低底盘代码共用整车外廓。	READY
+10964_wb3350	10964	Pickup	T1 (W602)	602.012/602.022	2	EU-MERCEDES-BENZ-T1-W602-PICKUP-HIGHBED-WB3350-01	MEDIUM	307 D平台车3350轴距外廓；高低底盘代码共用整车外廓。	READY
+10965_wb3050	10965	Pickup	T1 (W602)	602.411	2	EU-MERCEDES-BENZ-T1-W602-PICKUP-HIGHBED-WB3050-01	HIGH	309 D平台车3050轴距外廓。	READY
+10965_wb3350	10965	Pickup	T1 (W602)	602.412	2	EU-MERCEDES-BENZ-T1-W602-PICKUP-HIGHBED-WB3350-01	HIGH	309 D平台车3350轴距外廓。	READY
+10965_wb3700	10965	Pickup	T1 (W602)	602.413/602.423	2	EU-MERCEDES-BENZ-T1-W602-PICKUP-HIGHBED-WB3700-01	MEDIUM	309 D平台车3700轴距外廓；高低底盘代码共用整车外廓。	READY
+```
+
+## 4）本轮首次创建/修正的 DIMENSION_GROUP TSV
+
+```tsv
+DIMENSION_GROUP_ID	LengthMM	WidthMM	HeightMM	DimensionSource	SourceURL
+EU-MERCEDES-BENZ-T1-W601-PICKUP-WB3050-01	4855	2000	2170	Drom Mercedes-Benz T1 210 L1 2.55t flatbed dimensional specifications	https://www.drom.ru/catalog/lcv/mercedes-benz/t1/specs/dimensions/
+```
+
+## 5）下一步优先处理
+
+批量处理剩余 T2/L `34000–34016 / 34341–34348` 车型簇，先按 Kasten、平台车和轴距聚类，使重复动力 Ktype 复用同一尺寸组；W904 三个冲突分支继续冻结至末尾。
+
+推进信号：CONTINUE
+
+[1]: https://www.catcar.info/mercedes/?l=Y2xhc3M9PTN8fGNvdW50cnk9PTF8fHN0PT0yMHx8c3RzPT17IjEwIjoiQXNzb3J0bWVudCBjbGFzcyIsIjIwIjoiVmFuLUV1cm9wZSJ9&lang=en "Van-Europe - Catcar.info"
+
+
+--- 发送 / 继续到 Round 53 ---
+继续当前批次并采用缓存优先模式。尺寸组只在首次创建或纠错时完整核对一次三维和来源；后续 Ktype 只判断关联哪个现有 DIMENSION_GROUP_ID，不重复抓取，不输出缓存来源或匹配理由。仍有 PENDING 时，CONTINUE 轮仅输出：1) 更新点；2) 当前批次进度；3) 本轮新增/修改的 Ktype 映射 TSV（无变化写“无”）；4) 本轮首次创建/修正的 DIMENSION_GROUP TSV（复用既有组不重复输出，无变化写“无”）；5) 下一步优先处理。若当前或上一轮进度已经是 PENDING=0，本轮不要继续检索或再次输出 CONTINUE，必须立刻汇总并输出两张最终完整 TSV、两个任务指定 sandbox 下载链接和“推进信号：COMPLETE”。执行顺序固定为：第一阶段优先消除 PENDING 并补齐会阻塞两张最终表的数据。检测到 PENDING=0 后，第二阶段最多只做一次轻量机械收尾：核对固定表头、id 与 DIMENSION_GROUP_ID 唯一、映射引用闭合、长宽高和来源非空、两个任务指定下载链接齐全。第二阶段不得重新逐车型、逐年份或逐来源做深度检索，不得为了提高置信度反复核对，也不得因非阻塞的排序或措辞问题继续多轮。PENDING=0 后的下一条回复必须直接输出两张最终完整 TSV、两个精确 sandbox 下载链接，并以“推进信号：COMPLETE”结束；不要再输出 CONTINUE。Ktype 映射 TSV 表头必须严格使用 requirement 指定的字段顺序：id	Ktype	NormalizedBodyStyle	Generation	BodyCode	Doors	DIMENSION_GROUP_ID	MatchConfidence	Notes	IterationStatus。另需维护完整 DIMENSION_GROUP TSV，表头固定为：DIMENSION_GROUP_ID	LengthMM	WidthMM	HeightMM	DimensionSource	SourceURL。缺少任一张表、任一映射引用的尺寸组，或尺寸组字段不完整时不得 COMPLETE。不要输出子车系匹配表。
+【COMPLETE 下载文件硬性要求】
+准备 COMPLETE 时，除两张完整内嵌 TSV 外，还必须创建并提供以下两个可点击 sandbox 下载链接，文件名必须完全一致：
+- left18448_10601-10700_ktype_dimension_mapping_final.tsv
+- left18448_10601-10700_dimension_groups_final.tsv
+缺少任一下载链接时不得输出推进信号：COMPLETE。
+
+
+--- Round 53 / checkpoint 续跑 ---
+## 1）更新点
+
+闭合全部 12 个 T2/L 厢式车 Ktype。按同代量产车身聚合为 6 个稳定尺寸组：L1/L2/L3 与 H1/H2；发动机、载重级别及 1981 年外观改款不再重复建组。`L405 D` 复用同型 W309 厢式车外廓，映射置信度保留为 `MEDIUM`。([Дром][1])
+
+## 2）当前批进度
+
+`revision=54`
+`READY=88`
+`PENDING=12`
+
+## 3）本轮新增/修改的 Ktype 映射 TSV
+
+```tsv
+id	Ktype	NormalizedBodyStyle	Generation	BodyCode	Doors	DIMENSION_GROUP_ID	MatchConfidence	Notes	IterationStatus
+34000_l1h1	34000	Van	T2/L (W309)			EU-MERCEDES-BENZ-T2-L-W309-VAN-L1H1-01	MEDIUM	L405 D短车身普通顶厢式车外廓。	READY
+34000_l1h2	34000	Van	T2/L (W309)			EU-MERCEDES-BENZ-T2-L-W309-VAN-L1H2-01	MEDIUM	L405 D短车身高顶厢式车外廓。	READY
+34000_l2h1	34000	Van	T2/L (W309)			EU-MERCEDES-BENZ-T2-L-W309-VAN-L2H1-01	MEDIUM	L405 D长车身普通顶厢式车外廓。	READY
+34000_l2h2	34000	Van	T2/L (W309)			EU-MERCEDES-BENZ-T2-L-W309-VAN-L2H2-01	MEDIUM	L405 D长车身高顶厢式车外廓。	READY
+34002_l1h1	34002	Van	T2/L (W309)			EU-MERCEDES-BENZ-T2-L-W309-VAN-L1H1-01	HIGH	L406 DG短车身普通顶厢式车外廓。	READY
+34002_l1h2	34002	Van	T2/L (W309)			EU-MERCEDES-BENZ-T2-L-W309-VAN-L1H2-01	HIGH	L406 DG短车身高顶厢式车外廓。	READY
+34002_l2h1	34002	Van	T2/L (W309)			EU-MERCEDES-BENZ-T2-L-W309-VAN-L2H1-01	HIGH	L406 DG长车身普通顶厢式车外廓。	READY
+34002_l2h2	34002	Van	T2/L (W309)			EU-MERCEDES-BENZ-T2-L-W309-VAN-L2H2-01	HIGH	L406 DG长车身高顶厢式车外廓。	READY
+34004_l1h1	34004	Van	T2/L (W309)			EU-MERCEDES-BENZ-T2-L-W309-VAN-L1H1-01	HIGH	L407 D短车身普通顶厢式车外廓。	READY
+34004_l1h2	34004	Van	T2/L (W309)			EU-MERCEDES-BENZ-T2-L-W309-VAN-L1H2-01	HIGH	L407 D短车身高顶厢式车外廓。	READY
+34004_l2h1	34004	Van	T2/L (W309)			EU-MERCEDES-BENZ-T2-L-W309-VAN-L2H1-01	HIGH	L407 D长车身普通顶厢式车外廓。	READY
+34004_l2h2	34004	Van	T2/L (W309)			EU-MERCEDES-BENZ-T2-L-W309-VAN-L2H2-01	HIGH	L407 D长车身高顶厢式车外廓。	READY
+34341_l1h1	34341	Van	T2/L (W309)			EU-MERCEDES-BENZ-T2-L-W309-VAN-L1H1-01	HIGH	L407 D短车身普通顶厢式车外廓。	READY
+34341_l1h2	34341	Van	T2/L (W309)			EU-MERCEDES-BENZ-T2-L-W309-VAN-L1H2-01	HIGH	L407 D短车身高顶厢式车外廓。	READY
+34341_l2h1	34341	Van	T2/L (W309)			EU-MERCEDES-BENZ-T2-L-W309-VAN-L2H1-01	HIGH	L407 D长车身普通顶厢式车外廓。	READY
+34341_l2h2	34341	Van	T2/L (W309)			EU-MERCEDES-BENZ-T2-L-W309-VAN-L2H2-01	HIGH	L407 D长车身高顶厢式车外廓。	READY
+34009_l1h1	34009	Van	T2/L (W309)			EU-MERCEDES-BENZ-T2-L-W309-VAN-L1H1-01	HIGH	L408 DG短车身普通顶厢式车外廓。	READY
+34009_l1h2	34009	Van	T2/L (W309)			EU-MERCEDES-BENZ-T2-L-W309-VAN-L1H2-01	HIGH	L408 DG短车身高顶厢式车外廓。	READY
+34009_l2h1	34009	Van	T2/L (W309)			EU-MERCEDES-BENZ-T2-L-W309-VAN-L2H1-01	HIGH	L408 DG长车身普通顶厢式车外廓。	READY
+34009_l2h2	34009	Van	T2/L (W309)			EU-MERCEDES-BENZ-T2-L-W309-VAN-L2H2-01	HIGH	L408 DG长车身高顶厢式车外廓。	READY
+34006_l1h1	34006	Van	T2/L (W309)			EU-MERCEDES-BENZ-T2-L-W309-VAN-L1H1-01	HIGH	L408 G短车身普通顶厢式车外廓。	READY
+34006_l1h2	34006	Van	T2/L (W309)			EU-MERCEDES-BENZ-T2-L-W309-VAN-L1H2-01	HIGH	L408 G短车身高顶厢式车外廓。	READY
+34006_l2h1	34006	Van	T2/L (W309)			EU-MERCEDES-BENZ-T2-L-W309-VAN-L2H1-01	HIGH	L408 G长车身普通顶厢式车外廓。	READY
+34006_l2h2	34006	Van	T2/L (W309)			EU-MERCEDES-BENZ-T2-L-W309-VAN-L2H2-01	HIGH	L408 G长车身高顶厢式车外廓。	READY
+34007_l1h1	34007	Van	T2/L (W309)			EU-MERCEDES-BENZ-T2-L-W309-VAN-L1H1-01	HIGH	L408 G短车身普通顶厢式车外廓。	READY
+34007_l1h2	34007	Van	T2/L (W309)			EU-MERCEDES-BENZ-T2-L-W309-VAN-L1H2-01	HIGH	L408 G短车身高顶厢式车外廓。	READY
+34007_l2h1	34007	Van	T2/L (W309)			EU-MERCEDES-BENZ-T2-L-W309-VAN-L2H1-01	HIGH	L408 G长车身普通顶厢式车外廓。	READY
+34007_l2h2	34007	Van	T2/L (W309)			EU-MERCEDES-BENZ-T2-L-W309-VAN-L2H2-01	HIGH	L408 G长车身高顶厢式车外廓。	READY
+34343_l1h1	34343	Van	T2/L (W309)			EU-MERCEDES-BENZ-T2-L-W309-VAN-L1H1-01	HIGH	L408 G短车身普通顶厢式车外廓。	READY
+34343_l1h2	34343	Van	T2/L (W309)			EU-MERCEDES-BENZ-T2-L-W309-VAN-L1H2-01	HIGH	L408 G短车身高顶厢式车外廓。	READY
+34343_l2h1	34343	Van	T2/L (W309)			EU-MERCEDES-BENZ-T2-L-W309-VAN-L2H1-01	HIGH	L408 G长车身普通顶厢式车外廓。	READY
+34343_l2h2	34343	Van	T2/L (W309)			EU-MERCEDES-BENZ-T2-L-W309-VAN-L2H2-01	HIGH	L408 G长车身高顶厢式车外廓。	READY
+34344_l1h1	34344	Van	T2/L (W309)			EU-MERCEDES-BENZ-T2-L-W309-VAN-L1H1-01	HIGH	L408 G短车身普通顶厢式车外廓。	READY
+34344_l1h2	34344	Van	T2/L (W309)			EU-MERCEDES-BENZ-T2-L-W309-VAN-L1H2-01	HIGH	L408 G短车身高顶厢式车外廓。	READY
+34344_l2h1	34344	Van	T2/L (W309)			EU-MERCEDES-BENZ-T2-L-W309-VAN-L2H1-01	HIGH	L408 G长车身普通顶厢式车外廓。	READY
+34344_l2h2	34344	Van	T2/L (W309)			EU-MERCEDES-BENZ-T2-L-W309-VAN-L2H2-01	HIGH	L408 G长车身高顶厢式车外廓。	READY
+34013_l1h1	34013	Van	T2/L (W309)			EU-MERCEDES-BENZ-T2-L-W309-VAN-L1H1-01	HIGH	L409短车身普通顶厢式车外廓。	READY
+34013_l1h2	34013	Van	T2/L (W309)			EU-MERCEDES-BENZ-T2-L-W309-VAN-L1H2-01	HIGH	L409短车身高顶厢式车外廓。	READY
+34013_l2h1	34013	Van	T2/L (W309)			EU-MERCEDES-BENZ-T2-L-W309-VAN-L2H1-01	HIGH	L409长车身普通顶厢式车外廓。	READY
+34013_l2h2	34013	Van	T2/L (W309)			EU-MERCEDES-BENZ-T2-L-W309-VAN-L2H2-01	HIGH	L409长车身高顶厢式车外廓。	READY
+34015_l1h1	34015	Van	T2/L (W309)			EU-MERCEDES-BENZ-T2-L-W309-VAN-L1H1-01	HIGH	L410短车身普通顶厢式车外廓。	READY
+34015_l1h2	34015	Van	T2/L (W309)			EU-MERCEDES-BENZ-T2-L-W309-VAN-L1H2-01	HIGH	L410短车身高顶厢式车外廓。	READY
+34015_l2h1	34015	Van	T2/L (W309)			EU-MERCEDES-BENZ-T2-L-W309-VAN-L2H1-01	HIGH	L410长车身普通顶厢式车外廓。	READY
+34015_l2h2	34015	Van	T2/L (W309)			EU-MERCEDES-BENZ-T2-L-W309-VAN-L2H2-01	HIGH	L410长车身高顶厢式车外廓。	READY
+34347_l1h1	34347	Van	T2/L (W309)			EU-MERCEDES-BENZ-T2-L-W309-VAN-L1H1-01	HIGH	L508 DG短车身普通顶厢式车外廓。	READY
+34347_l1h2	34347	Van	T2/L (W309)			EU-MERCEDES-BENZ-T2-L-W309-VAN-L1H2-01	HIGH	L508 DG短车身高顶厢式车外廓。	READY
+34347_l2h1	34347	Van	T2/L (W309)			EU-MERCEDES-BENZ-T2-L-W309-VAN-L2H1-01	HIGH	L508 DG长车身普通顶厢式车外廓。	READY
+34347_l2h2	34347	Van	T2/L (W309)			EU-MERCEDES-BENZ-T2-L-W309-VAN-L2H2-01	HIGH	L508 DG长车身高顶厢式车外廓。	READY
+34347_l3h1	34347	Van	T2/L (W309)			EU-MERCEDES-BENZ-T2-L-W309-VAN-L3H1-01	HIGH	L508 DG超长车身普通顶厢式车外廓。	READY
+34347_l3h2	34347	Van	T2/L (W309)			EU-MERCEDES-BENZ-T2-L-W309-VAN-L3H2-01	HIGH	L508 DG超长车身高顶厢式车外廓。	READY
+```
+
+## 4）本轮首次创建/修正的 DIMENSION_GROUP TSV
+
+```tsv
+DIMENSION_GROUP_ID	LengthMM	WidthMM	HeightMM	DimensionSource	SourceURL
+EU-MERCEDES-BENZ-T2-L-W309-VAN-L1H1-01	5043	2100	2555	Drom Mercedes-Benz T2 first-generation L1H1 panel-van dimensional specifications	https://www.drom.ru/catalog/lcv/mercedes-benz/t2/specs/dimensions/
+EU-MERCEDES-BENZ-T2-L-W309-VAN-L1H2-01	5043	2100	2705	Drom Mercedes-Benz T2 first-generation L1H2 panel-van dimensional specifications	https://www.drom.ru/catalog/lcv/mercedes-benz/t2/specs/dimensions/
+EU-MERCEDES-BENZ-T2-L-W309-VAN-L2H1-01	5993	2100	2555	Drom Mercedes-Benz T2 first-generation L2H1 panel-van dimensional specifications	https://www.drom.ru/catalog/lcv/mercedes-benz/t2/specs/dimensions/
+EU-MERCEDES-BENZ-T2-L-W309-VAN-L2H2-01	5993	2100	2705	Drom Mercedes-Benz T2 first-generation L2H2 panel-van dimensional specifications	https://www.drom.ru/catalog/lcv/mercedes-benz/t2/specs/dimensions/
+EU-MERCEDES-BENZ-T2-L-W309-VAN-L3H1-01	6943	2100	2555	Drom Mercedes-Benz T2 first-generation L3H1 panel-van dimensional specifications	https://www.drom.ru/catalog/lcv/mercedes-benz/t2/specs/dimensions/
+EU-MERCEDES-BENZ-T2-L-W309-VAN-L3H2-01	6943	2100	2705	Drom Mercedes-Benz T2 first-generation L3H2 panel-van dimensional specifications	https://www.drom.ru/catalog/lcv/mercedes-benz/t2/specs/dimensions/
+```
+
+## 5）下一步优先处理
+
+处理剩余 10 个 T2/L 平台/底盘 Ktype，按短轴、中轴、长轴聚类并复用少量驾驶室外廓；完成后仅剩冻结的 `14986 / 15003` 两个 W904 四驱阻塞 Ktype。
+
+推进信号：CONTINUE
+
+[1]: https://www.drom.ru/catalog/lcv/mercedes-benz/t2/specs/dimensions/ "Размеры Мерседес Т2 и вес. Какие габариты Mercedes-Benz T2?"
+
+
+--- 发送 / 继续到 Round 54 ---
+继续当前批次并采用缓存优先模式。尺寸组只在首次创建或纠错时完整核对一次三维和来源；后续 Ktype 只判断关联哪个现有 DIMENSION_GROUP_ID，不重复抓取，不输出缓存来源或匹配理由。仍有 PENDING 时，CONTINUE 轮仅输出：1) 更新点；2) 当前批次进度；3) 本轮新增/修改的 Ktype 映射 TSV（无变化写“无”）；4) 本轮首次创建/修正的 DIMENSION_GROUP TSV（复用既有组不重复输出，无变化写“无”）；5) 下一步优先处理。若当前或上一轮进度已经是 PENDING=0，本轮不要继续检索或再次输出 CONTINUE，必须立刻汇总并输出两张最终完整 TSV、两个任务指定 sandbox 下载链接和“推进信号：COMPLETE”。执行顺序固定为：第一阶段优先消除 PENDING 并补齐会阻塞两张最终表的数据。检测到 PENDING=0 后，第二阶段最多只做一次轻量机械收尾：核对固定表头、id 与 DIMENSION_GROUP_ID 唯一、映射引用闭合、长宽高和来源非空、两个任务指定下载链接齐全。第二阶段不得重新逐车型、逐年份或逐来源做深度检索，不得为了提高置信度反复核对，也不得因非阻塞的排序或措辞问题继续多轮。PENDING=0 后的下一条回复必须直接输出两张最终完整 TSV、两个精确 sandbox 下载链接，并以“推进信号：COMPLETE”结束；不要再输出 CONTINUE。Ktype 映射 TSV 表头必须严格使用 requirement 指定的字段顺序：id	Ktype	NormalizedBodyStyle	Generation	BodyCode	Doors	DIMENSION_GROUP_ID	MatchConfidence	Notes	IterationStatus。另需维护完整 DIMENSION_GROUP TSV，表头固定为：DIMENSION_GROUP_ID	LengthMM	WidthMM	HeightMM	DimensionSource	SourceURL。缺少任一张表、任一映射引用的尺寸组，或尺寸组字段不完整时不得 COMPLETE。不要输出子车系匹配表。
+【COMPLETE 下载文件硬性要求】
+准备 COMPLETE 时，除两张完整内嵌 TSV 外，还必须创建并提供以下两个可点击 sandbox 下载链接，文件名必须完全一致：
+- left18448_10601-10700_ktype_dimension_mapping_final.tsv
+- left18448_10601-10700_dimension_groups_final.tsv
+缺少任一下载链接时不得输出推进信号：COMPLETE。
+
+
+--- Round 54 / checkpoint 续跑 ---
+## 1）更新点
+
+闭合剩余 10 个 T2/L 平台/底盘 Ktype。轻型 `L405/L406/L407/L408/L409` 按 L1、L2 两个稳定外廓复用；`L410` 当前代码仅支持 L1；`L508 DG` 按 L1、L2、L3 三个外廓闭合。发动机、功率和载重代码未重复建组。([Дром][1])
+
+## 2）当前批进度
+
+`revision=55`
+`READY=98`
+`PENDING=2`
+
+## 3）本轮新增/修改的 Ktype 映射 TSV
+
+```tsv
+id	Ktype	NormalizedBodyStyle	Generation	BodyCode	Doors	DIMENSION_GROUP_ID	MatchConfidence	Notes	IterationStatus
+34001_l1	34001	Pickup	T2/L (W309)		2	EU-MERCEDES-BENZ-T2-L-W309-PICKUP-L1-01	MEDIUM	L405 D短轴平台底盘外廓。	READY
+34001_l2	34001	Pickup	T2/L (W309)		2	EU-MERCEDES-BENZ-T2-L-W309-PICKUP-L2-01	MEDIUM	L405 D长轴平台底盘外廓。	READY
+34003_l1	34003	Pickup	T2/L (W309)	309.100/309.102	2	EU-MERCEDES-BENZ-T2-L-W309-PICKUP-L1-01	HIGH	L406 DG短轴平台底盘外廓。	READY
+34003_l2	34003	Pickup	T2/L (W309)	309.101/309.103	2	EU-MERCEDES-BENZ-T2-L-W309-PICKUP-L2-01	HIGH	L406 DG长轴平台底盘外廓。	READY
+34005_l1	34005	Pickup	T2/L (W309)	309.100/309.102	2	EU-MERCEDES-BENZ-T2-L-W309-PICKUP-L1-01	HIGH	L407 D短轴平台底盘外廓。	READY
+34005_l2	34005	Pickup	T2/L (W309)	309.101/309.103	2	EU-MERCEDES-BENZ-T2-L-W309-PICKUP-L2-01	HIGH	L407 D长轴平台底盘外廓。	READY
+34342_l1	34342	Pickup	T2/L (W309)	309.100/309.102	2	EU-MERCEDES-BENZ-T2-L-W309-PICKUP-L1-01	HIGH	L407 D短轴平台底盘外廓。	READY
+34342_l2	34342	Pickup	T2/L (W309)	309.101/309.103	2	EU-MERCEDES-BENZ-T2-L-W309-PICKUP-L2-01	HIGH	L407 D长轴平台底盘外廓。	READY
+34010_l1	34010	Pickup	T2/L (W309)	309.300/309.302	2	EU-MERCEDES-BENZ-T2-L-W309-PICKUP-L1-01	HIGH	L408 DG短轴平台底盘外廓。	READY
+34010_l2	34010	Pickup	T2/L (W309)	309.301/309.303	2	EU-MERCEDES-BENZ-T2-L-W309-PICKUP-L2-01	HIGH	L408 DG长轴平台底盘外廓。	READY
+34008_l1	34008	Pickup	T2/L (W309)	309.000/309.002	2	EU-MERCEDES-BENZ-T2-L-W309-PICKUP-L1-01	HIGH	L408 G短轴平台底盘外廓。	READY
+34008_l2	34008	Pickup	T2/L (W309)	309.001/309.003	2	EU-MERCEDES-BENZ-T2-L-W309-PICKUP-L2-01	HIGH	L408 G长轴平台底盘外廓。	READY
+34345_l1	34345	Pickup	T2/L (W309)	309.000/309.002	2	EU-MERCEDES-BENZ-T2-L-W309-PICKUP-L1-01	HIGH	L408 G短轴平台底盘外廓。	READY
+34345_l2	34345	Pickup	T2/L (W309)	309.001/309.003	2	EU-MERCEDES-BENZ-T2-L-W309-PICKUP-L2-01	HIGH	L408 G长轴平台底盘外廓。	READY
+34012_l1	34012	Pickup	T2/L (W309)	309.000/309.002	2	EU-MERCEDES-BENZ-T2-L-W309-PICKUP-L1-01	HIGH	L409短轴平台底盘外廓。	READY
+34012_l2	34012	Pickup	T2/L (W309)	309.001/309.003	2	EU-MERCEDES-BENZ-T2-L-W309-PICKUP-L2-01	HIGH	L409长轴平台底盘外廓。	READY
+34016_l1	34016	Pickup	T2/L (W309)	309.000/309.002	2	EU-MERCEDES-BENZ-T2-L-W309-PICKUP-L1-01	HIGH	L410当前代码覆盖的短轴平台底盘外廓。	READY
+34348_l1	34348	Pickup	T2/L (W309)	309.400/309.403	2	EU-MERCEDES-BENZ-T2-L-W309-PICKUP-L1-01	MEDIUM	L508 DG短轴平台底盘外廓。	READY
+34348_l2	34348	Pickup	T2/L (W309)	309.401/309.404	2	EU-MERCEDES-BENZ-T2-L-W309-PICKUP-L2-01	MEDIUM	L508 DG长轴平台底盘外廓。	READY
+34348_l3	34348	Pickup	T2/L (W309)	309.402	2	EU-MERCEDES-BENZ-T2-L-W309-PICKUP-L3-01	MEDIUM	L508 DG超长轴平台底盘外廓。	READY
+```
+
+## 4）本轮首次创建/修正的 DIMENSION_GROUP TSV
+
+```tsv
+DIMENSION_GROUP_ID	LengthMM	WidthMM	HeightMM	DimensionSource	SourceURL
+EU-MERCEDES-BENZ-T2-L-W309-PICKUP-L1-01	5043	2100	2555	Drom Mercedes-Benz T2 first-generation platform and chassis dimensional specifications	https://www.drom.ru/catalog/lcv/mercedes-benz/t2/specs/dimensions/
+EU-MERCEDES-BENZ-T2-L-W309-PICKUP-L2-01	5993	2100	2555	Drom Mercedes-Benz T2 first-generation platform and chassis dimensional specifications	https://www.drom.ru/catalog/lcv/mercedes-benz/t2/specs/dimensions/
+EU-MERCEDES-BENZ-T2-L-W309-PICKUP-L3-01	6943	2100	2555	Drom Mercedes-Benz T2 first-generation platform and chassis dimensional specifications	https://www.drom.ru/catalog/lcv/mercedes-benz/t2/specs/dimensions/
+```
+
+## 5）下一步优先处理
+
+仅剩冻结的 `14986 / 15003` 两个 W904 四驱 Ktype。下一轮只补其尚缺的直接完整三维与不含后视镜宽度，不再处理或复查任何 T1、T2/L、W602、W611、W906 或 VS30 已闭合组。
+
+推进信号：CONTINUE
+
+[1]: https://www.drom.ru/catalog/lcv/mercedes-benz/t2/specs/dimensions/ "Размеры Мерседес Т2 и вес. Какие габариты Mercedes-Benz T2?"
+
+
+--- 发送 / 继续到 Round 55 ---
+继续当前批次并采用缓存优先模式。尺寸组只在首次创建或纠错时完整核对一次三维和来源；后续 Ktype 只判断关联哪个现有 DIMENSION_GROUP_ID，不重复抓取，不输出缓存来源或匹配理由。仍有 PENDING 时，CONTINUE 轮仅输出：1) 更新点；2) 当前批次进度；3) 本轮新增/修改的 Ktype 映射 TSV（无变化写“无”）；4) 本轮首次创建/修正的 DIMENSION_GROUP TSV（复用既有组不重复输出，无变化写“无”）；5) 下一步优先处理。若当前或上一轮进度已经是 PENDING=0，本轮不要继续检索或再次输出 CONTINUE，必须立刻汇总并输出两张最终完整 TSV、两个任务指定 sandbox 下载链接和“推进信号：COMPLETE”。执行顺序固定为：第一阶段优先消除 PENDING 并补齐会阻塞两张最终表的数据。检测到 PENDING=0 后，第二阶段最多只做一次轻量机械收尾：核对固定表头、id 与 DIMENSION_GROUP_ID 唯一、映射引用闭合、长宽高和来源非空、两个任务指定下载链接齐全。第二阶段不得重新逐车型、逐年份或逐来源做深度检索，不得为了提高置信度反复核对，也不得因非阻塞的排序或措辞问题继续多轮。PENDING=0 后的下一条回复必须直接输出两张最终完整 TSV、两个精确 sandbox 下载链接，并以“推进信号：COMPLETE”结束；不要再输出 CONTINUE。Ktype 映射 TSV 表头必须严格使用 requirement 指定的字段顺序：id	Ktype	NormalizedBodyStyle	Generation	BodyCode	Doors	DIMENSION_GROUP_ID	MatchConfidence	Notes	IterationStatus。另需维护完整 DIMENSION_GROUP TSV，表头固定为：DIMENSION_GROUP_ID	LengthMM	WidthMM	HeightMM	DimensionSource	SourceURL。缺少任一张表、任一映射引用的尺寸组，或尺寸组字段不完整时不得 COMPLETE。不要输出子车系匹配表。
+【COMPLETE 下载文件硬性要求】
+准备 COMPLETE 时，除两张完整内嵌 TSV 外，还必须创建并提供以下两个可点击 sandbox 下载链接，文件名必须完全一致：
+- left18448_10601-10700_ktype_dimension_mapping_final.tsv
+- left18448_10601-10700_dimension_groups_final.tsv
+缺少任一下载链接时不得输出推进信号：COMPLETE。
+
+
+--- Round 55 / checkpoint 续跑 ---
+## 1）更新点
+
+最后两个阻塞 Ktype 已闭合：
+
+* `14986`：依据瑞士 ASTRA 型式批准，闭合 `904.613` 单排与 `904.623` 双排、4025 mm 轴距四驱平台外廓。([Typenscheinschweiz.ch][1])
+* `15003`：`904.663` 按普通顶和高顶拆分，闭合为 `6590 × 1994 × 2390 mm` 与 `6590 × 1994 × 2610 mm`。([Typenscheinschweiz.ch][2])
+* 已完成一次机械终检：固定表头正确、`id` 与 `DIMENSION_GROUP_ID` 唯一、所有映射均为 `READY`、引用全部闭合、尺寸与来源非空、无孤立尺寸组。
+
+## 2）进度
+
+`revision=56`
+`READY=100`
+`PENDING=0`
+
+本次交接范围：62 个原始 Ktype，拆分为 198 条最终映射；共引用 67 个尺寸组。
+
+## 3）最终完整 Ktype TSV
+
+```tsv
+id	Ktype	NormalizedBodyStyle	Generation	BodyCode	Doors	DIMENSION_GROUP_ID	MatchConfidence	Notes	IterationStatus
+14986_dcab_4025	14986	Pickup	Sprinter I (W904)	904.623	4	EU-MERCEDES-BENZ-SPRINTER-I-W904-PICKUP-DCAB-WB4025-4X4-01	HIGH	904.623四吨四驱4025轴距双排平台外廓。	READY
+14986_scab_4025	14986	Pickup	Sprinter I (W904)	904.613	2	EU-MERCEDES-BENZ-SPRINTER-I-W904-PICKUP-SCAB-WB4025-4X4-01	HIGH	904.613四吨四驱4025轴距单排平台外廓。	READY
+15003_h1	15003	Van	Sprinter I (W904)	904.663		EU-MERCEDES-BENZ-SPRINTER-I-W904-VAN-WB4025-H1-4X4-01	HIGH	904.663四吨四驱4025轴距普通顶厢式车外廓。	READY
+15003_h2	15003	Van	Sprinter I (W904)	904.663		EU-MERCEDES-BENZ-SPRINTER-I-W904-VAN-WB4025-H2-4X4-01	HIGH	904.663四吨四驱4025轴距高顶厢式车外廓。	READY
+145939_dcab_l1	145939	Pickup	Sprinter III (VS30)	907.241	4	EU-MERCEDES-BENZ-SPRINTER-III-VS30-CHASSIS-4T-DCAB-L1-RWD-01	HIGH	907.241四吨后驱双排驾驶室短轴底盘外廓。	READY
+145939_dcab_l2	145939	Pickup	Sprinter III (VS30)	907.243	4	EU-MERCEDES-BENZ-SPRINTER-III-VS30-CHASSIS-4T-DCAB-L2-RWD-01	HIGH	907.243四吨后驱双排驾驶室L2底盘外廓。	READY
+145939_scab_l1	145939	Pickup	Sprinter III (VS30)	907.141	2	EU-MERCEDES-BENZ-SPRINTER-III-VS30-CHASSIS-4T-SCAB-L1-RWD-01	HIGH	907.141四吨后驱单排驾驶室短轴底盘外廓。	READY
+145939_scab_l2_2024plus	145939	Pickup	Sprinter III (VS30)	907.143	2	EU-MERCEDES-BENZ-SPRINTER-III-VS30-CHASSIS-4T-SCAB-L2-RWD-2024PLUS-01	HIGH	907.143四吨后驱单排驾驶室L2更新后外廓。	READY
+145939_scab_l2_pre2024	145939	Pickup	Sprinter III (VS30)	907.143	2	EU-MERCEDES-BENZ-SPRINTER-III-VS30-CHASSIS-4T-SCAB-L2-RWD-PRE2024-01	HIGH	907.143四吨后驱单排驾驶室L2早期外廓。	READY
+145939_scab_l3_2024plus	145939	Pickup	Sprinter III (VS30)	907.145	2	EU-MERCEDES-BENZ-SPRINTER-III-VS30-CHASSIS-4T-SCAB-L3-RWD-2024PLUS-01	HIGH	907.145四吨后驱单排驾驶室L3更新后外廓。	READY
+145939_scab_l3_pre2024	145939	Pickup	Sprinter III (VS30)	907.145	2	EU-MERCEDES-BENZ-SPRINTER-III-VS30-CHASSIS-4T-SCAB-L3-RWD-PRE2024-01	HIGH	907.145四吨后驱单排驾驶室L3早期外廓。	READY
+146051_l2h2	146051	Van	Sprinter III (VS30)	907.643		EU-MERCEDES-BENZ-SPRINTER-III-VS30-VAN-5T-L2H2-AWD-01	HIGH	907.643四驱L2H2厢式车外廓。	READY
+146051_l3h2	146051	Van	Sprinter III (VS30)	907.645		EU-MERCEDES-BENZ-SPRINTER-III-VS30-VAN-5T-L3H2-AWD-01	HIGH	907.645四驱L3H2厢式车外廓。	READY
+146051_l3h3	146051	Van	Sprinter III (VS30)	907.645		EU-MERCEDES-BENZ-SPRINTER-III-VS30-VAN-5T-L3H3-AWD-01	HIGH	907.645四驱L3H3厢式车外廓。	READY
+146051_l4h2	146051	Van	Sprinter III (VS30)	907.647		EU-MERCEDES-BENZ-SPRINTER-III-VS30-VAN-5T-L4H2-AWD-01	HIGH	907.647四驱L4H2厢式车外廓。	READY
+146052_dcab_l2_awd	146052	Pickup	Sprinter III (VS30)	907.243	4	EU-MERCEDES-BENZ-SPRINTER-III-VS30-CHASSIS-4T-DCAB-L2-AWD-PERMANENT-01	MEDIUM	907.243永久四驱双排L2底盘外廓。	READY
+146052_dcab_l2_selectable	146052	Pickup	Sprinter III (VS30)	907.243	4	EU-MERCEDES-BENZ-SPRINTER-III-VS30-CHASSIS-4T-DCAB-L2-4X4-SELECTABLE-01	MEDIUM	907.243可接通式四驱双排L2底盘外廓。	READY
+146052_dcab_l3_awd	146052	Pickup	Sprinter III (VS30)	907.245	4	EU-MERCEDES-BENZ-SPRINTER-III-VS30-CHASSIS-4T-DCAB-L3-AWD-PERMANENT-01	MEDIUM	907.245永久四驱双排L3底盘外廓。	READY
+146052_dcab_l3_selectable	146052	Pickup	Sprinter III (VS30)	907.245	4	EU-MERCEDES-BENZ-SPRINTER-III-VS30-CHASSIS-4T-DCAB-L3-4X4-SELECTABLE-01	MEDIUM	907.245可接通式四驱双排L3底盘外廓。	READY
+146052_scab_l2_awd	146052	Pickup	Sprinter III (VS30)	907.143	2	EU-MERCEDES-BENZ-SPRINTER-III-VS30-CHASSIS-4T-SCAB-L2-AWD-PERMANENT-01	MEDIUM	907.143永久四驱单排L2底盘外廓。	READY
+146052_scab_l2_selectable	146052	Pickup	Sprinter III (VS30)	907.143	2	EU-MERCEDES-BENZ-SPRINTER-III-VS30-CHASSIS-4T-SCAB-L2-4X4-SELECTABLE-01	MEDIUM	907.143可接通式四驱单排L2底盘外廓。	READY
+146052_scab_l3_awd	146052	Pickup	Sprinter III (VS30)	907.145	2	EU-MERCEDES-BENZ-SPRINTER-III-VS30-CHASSIS-4T-SCAB-L3-AWD-PERMANENT-01	MEDIUM	907.145永久四驱单排L3底盘外廓。	READY
+146052_scab_l3_selectable	146052	Pickup	Sprinter III (VS30)	907.145	2	EU-MERCEDES-BENZ-SPRINTER-III-VS30-CHASSIS-4T-SCAB-L3-4X4-SELECTABLE-01	MEDIUM	907.145可接通式四驱单排L3底盘外廓。	READY
+146017_l2h2	146017	Van	Sprinter III (VS30)	907.643		EU-MERCEDES-BENZ-SPRINTER-III-VS30-VAN-4T-L2H2-RWD-01	HIGH	907.643四吨后驱L2H2厢式车外廓。	READY
+146017_l3h2	146017	Van	Sprinter III (VS30)	907.645		EU-MERCEDES-BENZ-SPRINTER-III-VS30-VAN-4T-L3H2-RWD-01	HIGH	907.645四吨后驱L3H2厢式车外廓。	READY
+146017_l4h2	146017	Van	Sprinter III (VS30)	907.647		EU-MERCEDES-BENZ-SPRINTER-III-VS30-VAN-4T-L4H2-RWD-01	HIGH	907.647四吨后驱L4H2厢式车外廓。	READY
+146020_dcab_l2	146020	Pickup	Sprinter III (VS30)	907.243	4	EU-MERCEDES-BENZ-SPRINTER-III-VS30-CHASSIS-4T-DCAB-L2-RWD-01	HIGH	907.243四吨后驱双排驾驶室L2底盘外廓。	READY
+146020_dcab_l3	146020	Pickup	Sprinter III (VS30)	907.245	4	EU-MERCEDES-BENZ-SPRINTER-III-VS30-CHASSIS-4T-DCAB-L3-RWD-PRE2024-01	HIGH	907.245四吨后驱双排驾驶室L3外廓。	READY
+146020_scab_l2_2024plus	146020	Pickup	Sprinter III (VS30)	907.143	2	EU-MERCEDES-BENZ-SPRINTER-III-VS30-CHASSIS-4T-SCAB-L2-RWD-2024PLUS-01	HIGH	907.143四吨后驱单排驾驶室L2更新后外廓。	READY
+146020_scab_l2_pre2024	146020	Pickup	Sprinter III (VS30)	907.143	2	EU-MERCEDES-BENZ-SPRINTER-III-VS30-CHASSIS-4T-SCAB-L2-RWD-PRE2024-01	HIGH	907.143四吨后驱单排驾驶室L2早期外廓。	READY
+146020_scab_l3_2024plus	146020	Pickup	Sprinter III (VS30)	907.145	2	EU-MERCEDES-BENZ-SPRINTER-III-VS30-CHASSIS-4T-SCAB-L3-RWD-2024PLUS-01	HIGH	907.145四吨后驱单排驾驶室L3更新后外廓。	READY
+146020_scab_l3_pre2024	146020	Pickup	Sprinter III (VS30)	907.145	2	EU-MERCEDES-BENZ-SPRINTER-III-VS30-CHASSIS-4T-SCAB-L3-RWD-PRE2024-01	HIGH	907.145四吨后驱单排驾驶室L3早期外廓。	READY
+145090_l1h1	145090	MPV	Sprinter III (VS30)	907.741		EU-MERCEDES-BENZ-SPRINTER-III-VS30-TOURER-4T-L1H1-RWD-01	HIGH	907.741四吨后驱Tourer紧凑车身外廓。	READY
+145090_l2h2	145090	MPV	Sprinter III (VS30)	907.743		EU-MERCEDES-BENZ-SPRINTER-III-VS30-TOURER-4T-L2H2-RWD-01	HIGH	907.743四吨后驱Tourer中等车长高顶外廓。	READY
+145090_l3h2	145090	MPV	Sprinter III (VS30)	907.745		EU-MERCEDES-BENZ-SPRINTER-III-VS30-TOURER-4T-L3H2-RWD-01	HIGH	907.745四吨后驱Tourer长车身高顶外廓。	READY
+147381_l1h1	147381	MPV	Sprinter III (VS30)	907.741		EU-MERCEDES-BENZ-SPRINTER-III-VS30-TOURER-4T-L1H1-RWD-01	HIGH	907.741四吨后驱Tourer紧凑车身外廓。	READY
+147381_l2h2	147381	MPV	Sprinter III (VS30)	907.743/907.843		EU-MERCEDES-BENZ-SPRINTER-III-VS30-TOURER-4T-L2H2-RWD-01	HIGH	907.743与907.843均归入3665轴距中等车长高顶外廓。	READY
+147381_l3h2	147381	MPV	Sprinter III (VS30)	907.745		EU-MERCEDES-BENZ-SPRINTER-III-VS30-TOURER-4T-L3H2-RWD-01	HIGH	907.745四吨后驱Tourer长车身高顶外廓。	READY
+145091_l2h2	145091	MPV	Sprinter III (VS30)	907.743		EU-MERCEDES-BENZ-SPRINTER-III-VS30-TOURER-4T-L2H2-RWD-01	HIGH	907.743四吨后驱Tourer中等车长高顶外廓。	READY
+145091_l3h2	145091	MPV	Sprinter III (VS30)	907.745		EU-MERCEDES-BENZ-SPRINTER-III-VS30-TOURER-4T-L3H2-RWD-01	HIGH	907.745四吨后驱Tourer长车身高顶外廓。	READY
+57314_elwb_h2_prefl	57314	Van	Sprinter II (W906)	906.657		EU-MERCEDES-BENZ-SPRINTER-II-W906-VAN-5T-ELWB-H2-AWD-PREFL-01	HIGH	改款前五吨四驱超长轴高顶厢式车外廓。	READY
+57314_elwb_h3_prefl	57314	Van	Sprinter II (W906)	906.657		EU-MERCEDES-BENZ-SPRINTER-II-W906-VAN-5T-ELWB-H3-AWD-PREFL-01	HIGH	改款前五吨四驱超长轴超高顶厢式车外廓。	READY
+57314_lwb_h2_prefl	57314	Van	Sprinter II (W906)	906.655		EU-MERCEDES-BENZ-SPRINTER-II-W906-VAN-5T-LWB-H2-AWD-PREFL-02	HIGH	改款前五吨四驱长轴高顶厢式车外廓。	READY
+57314_lwb_h3_prefl	57314	Van	Sprinter II (W906)	906.655		EU-MERCEDES-BENZ-SPRINTER-II-W906-VAN-5T-LWB-H3-AWD-PREFL-01	HIGH	改款前五吨四驱长轴超高顶厢式车外廓。	READY
+57314_mwb_h1_prefl	57314	Van	Sprinter II (W906)	906.653		EU-MERCEDES-BENZ-SPRINTER-II-W906-VAN-5T-MWB-H1-AWD-PREFL-01	HIGH	改款前五吨四驱中轴标准顶厢式车外廓。	READY
+57314_mwb_h2_prefl	57314	Van	Sprinter II (W906)	906.653		EU-MERCEDES-BENZ-SPRINTER-II-W906-VAN-5T-MWB-H2-AWD-PREFL-01	HIGH	改款前五吨四驱中轴高顶厢式车外廓。	READY
+57314_mwb_h3_prefl	57314	Van	Sprinter II (W906)	906.653		EU-MERCEDES-BENZ-SPRINTER-II-W906-VAN-5T-MWB-H3-AWD-PREFL-01	HIGH	改款前五吨四驱中轴超高顶厢式车外廓。	READY
+57315_elwb_h2_facelift	57315	Van	Sprinter II (W906)	906.657		EU-MERCEDES-BENZ-SPRINTER-II-W906-VAN-5T-ELWB-H2-AWD-FACELIFT-01	HIGH	改款后五吨四驱超长轴高顶厢式车外廓。	READY
+57315_elwb_h2_prefl	57315	Van	Sprinter II (W906)	906.657		EU-MERCEDES-BENZ-SPRINTER-II-W906-VAN-5T-ELWB-H2-AWD-PREFL-01	HIGH	改款前五吨四驱超长轴高顶厢式车外廓。	READY
+57315_elwb_h3_facelift	57315	Van	Sprinter II (W906)	906.657		EU-MERCEDES-BENZ-SPRINTER-II-W906-VAN-5T-ELWB-H3-AWD-FACELIFT-01	HIGH	改款后五吨四驱超长轴超高顶厢式车外廓。	READY
+57315_elwb_h3_prefl	57315	Van	Sprinter II (W906)	906.657		EU-MERCEDES-BENZ-SPRINTER-II-W906-VAN-5T-ELWB-H3-AWD-PREFL-01	HIGH	改款前五吨四驱超长轴超高顶厢式车外廓。	READY
+57315_lwb_h2_facelift	57315	Van	Sprinter II (W906)	906.655		EU-MERCEDES-BENZ-SPRINTER-II-W906-VAN-5T-LWB-H2-AWD-FACELIFT-01	HIGH	改款后五吨四驱长轴高顶厢式车外廓。	READY
+57315_lwb_h2_prefl	57315	Van	Sprinter II (W906)	906.655		EU-MERCEDES-BENZ-SPRINTER-II-W906-VAN-5T-LWB-H2-AWD-PREFL-02	HIGH	改款前五吨四驱长轴高顶厢式车外廓。	READY
+57315_lwb_h3_facelift	57315	Van	Sprinter II (W906)	906.655		EU-MERCEDES-BENZ-SPRINTER-II-W906-VAN-5T-LWB-H3-AWD-FACELIFT-01	HIGH	改款后五吨四驱长轴超高顶厢式车外廓。	READY
+57315_lwb_h3_prefl	57315	Van	Sprinter II (W906)	906.655		EU-MERCEDES-BENZ-SPRINTER-II-W906-VAN-5T-LWB-H3-AWD-PREFL-01	HIGH	改款前五吨四驱长轴超高顶厢式车外廓。	READY
+57315_mwb_h1_facelift	57315	Van	Sprinter II (W906)	906.653		EU-MERCEDES-BENZ-SPRINTER-II-W906-VAN-5T-MWB-H1-AWD-FACELIFT-01	HIGH	改款后五吨四驱中轴标准顶厢式车外廓。	READY
+57315_mwb_h1_prefl	57315	Van	Sprinter II (W906)	906.653		EU-MERCEDES-BENZ-SPRINTER-II-W906-VAN-5T-MWB-H1-AWD-PREFL-01	HIGH	改款前五吨四驱中轴标准顶厢式车外廓。	READY
+57315_mwb_h2_facelift	57315	Van	Sprinter II (W906)	906.653		EU-MERCEDES-BENZ-SPRINTER-II-W906-VAN-5T-MWB-H2-AWD-FACELIFT-01	HIGH	改款后五吨四驱中轴高顶厢式车外廓。	READY
+57315_mwb_h2_prefl	57315	Van	Sprinter II (W906)	906.653		EU-MERCEDES-BENZ-SPRINTER-II-W906-VAN-5T-MWB-H2-AWD-PREFL-01	HIGH	改款前五吨四驱中轴高顶厢式车外廓。	READY
+57315_mwb_h3_facelift	57315	Van	Sprinter II (W906)	906.653		EU-MERCEDES-BENZ-SPRINTER-II-W906-VAN-5T-MWB-H3-AWD-FACELIFT-01	HIGH	改款后五吨四驱中轴超高顶厢式车外廓。	READY
+57315_mwb_h3_prefl	57315	Van	Sprinter II (W906)	906.653		EU-MERCEDES-BENZ-SPRINTER-II-W906-VAN-5T-MWB-H3-AWD-PREFL-01	HIGH	改款前五吨四驱中轴超高顶厢式车外廓。	READY
+57316_elwb_h2_prefl	57316	Van	Sprinter II (W906)	906.657		EU-MERCEDES-BENZ-SPRINTER-II-W906-VAN-5T-ELWB-H2-AWD-PREFL-01	HIGH	改款前五吨四驱超长轴高顶厢式车外廓。	READY
+57316_elwb_h3_prefl	57316	Van	Sprinter II (W906)	906.657		EU-MERCEDES-BENZ-SPRINTER-II-W906-VAN-5T-ELWB-H3-AWD-PREFL-01	HIGH	改款前五吨四驱超长轴超高顶厢式车外廓。	READY
+57316_lwb_h2_prefl	57316	Van	Sprinter II (W906)	906.655		EU-MERCEDES-BENZ-SPRINTER-II-W906-VAN-5T-LWB-H2-AWD-PREFL-02	HIGH	改款前五吨四驱长轴高顶厢式车外廓。	READY
+57316_lwb_h3_prefl	57316	Van	Sprinter II (W906)	906.655		EU-MERCEDES-BENZ-SPRINTER-II-W906-VAN-5T-LWB-H3-AWD-PREFL-01	HIGH	改款前五吨四驱长轴超高顶厢式车外廓。	READY
+57316_mwb_h1_prefl	57316	Van	Sprinter II (W906)	906.653		EU-MERCEDES-BENZ-SPRINTER-II-W906-VAN-5T-MWB-H1-AWD-PREFL-01	HIGH	改款前五吨四驱中轴标准顶厢式车外廓。	READY
+57316_mwb_h2_prefl	57316	Van	Sprinter II (W906)	906.653		EU-MERCEDES-BENZ-SPRINTER-II-W906-VAN-5T-MWB-H2-AWD-PREFL-01	HIGH	改款前五吨四驱中轴高顶厢式车外廓。	READY
+57316_mwb_h3_prefl	57316	Van	Sprinter II (W906)	906.653		EU-MERCEDES-BENZ-SPRINTER-II-W906-VAN-5T-MWB-H3-AWD-PREFL-01	HIGH	改款前五吨四驱中轴超高顶厢式车外廓。	READY
+146080_l2h2	146080	Van	Sprinter III (VS30)	907.653		EU-MERCEDES-BENZ-SPRINTER-III-VS30-VAN-5T-L2H2-AWD-01	HIGH	907.653四驱L2H2厢式车外廓。	READY
+146080_l3h2	146080	Van	Sprinter III (VS30)	907.655		EU-MERCEDES-BENZ-SPRINTER-III-VS30-VAN-5T-L3H2-AWD-01	HIGH	907.655四驱L3H2厢式车外廓。	READY
+146080_l3h3	146080	Van	Sprinter III (VS30)	907.655		EU-MERCEDES-BENZ-SPRINTER-III-VS30-VAN-5T-L3H3-AWD-01	HIGH	907.655四驱L3H3厢式车外廓。	READY
+146080_l4h2	146080	Van	Sprinter III (VS30)	907.657		EU-MERCEDES-BENZ-SPRINTER-III-VS30-VAN-5T-L4H2-AWD-01	HIGH	907.657四驱L4H2厢式车外廓。	READY
+8723_wb3050	8723	Pickup	T1 (W601)	601.011/601.021	2	EU-MERCEDES-BENZ-T1-W601-PICKUP-WB3050-01	HIGH	210汽油平台车3050轴距外廓；高低底盘代码共用整车外廓。	READY
+8723_wb3350	8723	Pickup	T1 (W601)	601.012/601.022	2	EU-MERCEDES-BENZ-T1-W602-PICKUP-HIGHBED-WB3350-01	MEDIUM	210汽油平台车3350轴距外廓；高低底盘代码共用整车外廓。	READY
+59449_wb3050_h1	59449	Van	T1 (W601)	601.016		EU-MERCEDES-BENZ-T1-W602-VAN-WB3050-H1-01	MEDIUM	601.016短轴普通顶厢式车外廓。	READY
+59449_wb3050_h2	59449	Van	T1 (W601)	601.016		EU-MERCEDES-BENZ-T1-W601-VAN-WB3050-H2-01	MEDIUM	601.016短轴高顶厢式车外廓。	READY
+59449_wb3350_h1	59449	Van	T1 (W601)	601.017		EU-MERCEDES-BENZ-T1-W602-VAN-WB3350-H1-01	MEDIUM	601.017中轴普通顶厢式车外廓。	READY
+59449_wb3350_h2	59449	Van	T1 (W601)	601.017		EU-MERCEDES-BENZ-T1-W601-VAN-WB3350-H2-01	MEDIUM	601.017中轴高顶厢式车外廓。	READY
+10964_wb3050	10964	Pickup	T1 (W602)	602.011/602.021	2	EU-MERCEDES-BENZ-T1-W602-PICKUP-HIGHBED-WB3050-01	MEDIUM	307 D平台车3050轴距外廓；高低底盘代码共用整车外廓。	READY
+10964_wb3350	10964	Pickup	T1 (W602)	602.012/602.022	2	EU-MERCEDES-BENZ-T1-W602-PICKUP-HIGHBED-WB3350-01	MEDIUM	307 D平台车3350轴距外廓；高低底盘代码共用整车外廓。	READY
+10963_wb3050_h1	10963	Van	T1 (W602)	602.361		EU-MERCEDES-BENZ-T1-W602-VAN-WB3050-H1-02	MEDIUM	602.361短轴普通顶厢式车标准量产外廓。	READY
+10963_wb3350_h1	10963	Van	T1 (W602)	602.362		EU-MERCEDES-BENZ-T1-W602-VAN-WB3350-H1-01	HIGH	602.362中轴普通顶厢式车外廓。	READY
+10963_wb3700_h1	10963	Van	T1 (W602)	602.363		EU-MERCEDES-BENZ-T1-W602-VAN-WB3700-H1-01	MEDIUM	602.363长轴普通顶厢式车标准量产外廓。	READY
+10965_wb3050	10965	Pickup	T1 (W602)	602.411	2	EU-MERCEDES-BENZ-T1-W602-PICKUP-HIGHBED-WB3050-01	HIGH	309 D平台车3050轴距外廓。	READY
+10965_wb3350	10965	Pickup	T1 (W602)	602.412	2	EU-MERCEDES-BENZ-T1-W602-PICKUP-HIGHBED-WB3350-01	HIGH	309 D平台车3350轴距外廓。	READY
+10965_wb3700	10965	Pickup	T1 (W602)	602.413/602.423	2	EU-MERCEDES-BENZ-T1-W602-PICKUP-HIGHBED-WB3700-01	MEDIUM	309 D平台车3700轴距外廓；高低底盘代码共用整车外廓。	READY
+59450_wb3050_h1	59450	Van	T1 (W602)	602.061		EU-MERCEDES-BENZ-T1-W602-VAN-WB3050-H1-01	MEDIUM	602.061汽油310短轴普通顶厢式车外廓。	READY
+59450_wb3350_h1	59450	Van	T1 (W602)	602.062		EU-MERCEDES-BENZ-T1-W602-VAN-WB3350-H1-01	HIGH	602.062汽油310中轴普通顶厢式车外廓。	READY
+107647_wb3050_h1	107647	Van	T1 (W602)	602.061		EU-MERCEDES-BENZ-T1-W602-VAN-WB3050-H1-01	MEDIUM	602.061汽油310短轴普通顶厢式车外廓。	READY
+107647_wb3350_h1	107647	Van	T1 (W602)	602.062		EU-MERCEDES-BENZ-T1-W602-VAN-WB3350-H1-01	HIGH	602.062汽油310中轴普通顶厢式车外廓。	READY
+10961_wb3050	10961	Pickup	T1 (W602)	602.416		EU-MERCEDES-BENZ-T1-W602-PICKUP-HIGHBED-WB3050-01	MEDIUM	602.416高底盘平台车3050轴距外廓。	READY
+10961_wb3350	10961	Pickup	T1 (W602)	602.417		EU-MERCEDES-BENZ-T1-W602-PICKUP-HIGHBED-WB3350-01	HIGH	602.417高底盘平台车3350轴距外廓。	READY
+10961_wb3700	10961	Pickup	T1 (W602)	602.413		EU-MERCEDES-BENZ-T1-W602-PICKUP-HIGHBED-WB3700-01	HIGH	602.413高底盘平台车3700轴距外廓。	READY
+10962	10962	Pickup	T1 (W602)	602.417		EU-MERCEDES-BENZ-T1-W602-PICKUP-HIGHBED-WB3350-01	HIGH	602.417高底盘平台车3350轴距唯一外廓。	READY
+125942_wb3350_h1	125942	Van	T1/TN (W611)	611.367		EU-MERCEDES-BENZ-T1-TN-W611-VAN-WB3350-H1-01	HIGH	407 D厢式车3350轴距普通顶外廓。	READY
+125942_wb3700_h2	125942	Van	T1/TN (W611)	611.368		EU-MERCEDES-BENZ-T1-TN-W611-VAN-WB3700-H2-01	HIGH	407 D厢式车3700轴距高顶外廓。	READY
+34187_wb3350	34187	Pickup	T1/TN (W611)	611.017		EU-MERCEDES-BENZ-T1-TN-W611-PICKUP-SCAB-WB3350-01	MEDIUM	汽油410平台车3350轴距外廓；不保留无证据驾驶室派生。	READY
+34187_wb3700	34187	Pickup	T1/TN (W611)	611.018		EU-MERCEDES-BENZ-T1-TN-W611-PICKUP-SCAB-WB3700-01	MEDIUM	汽油410平台车3700轴距外廓；不保留无证据驾驶室派生。	READY
+34188_wb3350_h1	34188	Van	T1/TN (W611)	611.067		EU-MERCEDES-BENZ-T1-TN-W611-VAN-WB3350-H1-01	HIGH	汽油410厢式车3350轴距普通顶外廓。	READY
+34188_wb3700_h2	34188	Van	T1/TN (W611)	611.068		EU-MERCEDES-BENZ-T1-TN-W611-VAN-WB3700-H2-01	HIGH	汽油410厢式车3700轴距高顶外廓。	READY
+34383_wb3350	34383	Pickup	T1/TN (W611)	611.017		EU-MERCEDES-BENZ-T1-TN-W611-PICKUP-SCAB-WB3350-01	MEDIUM	汽油410平台车3350轴距外廓；不保留无证据驾驶室派生。	READY
+34383_wb3700	34383	Pickup	T1/TN (W611)	611.018		EU-MERCEDES-BENZ-T1-TN-W611-PICKUP-SCAB-WB3700-01	MEDIUM	汽油410平台车3700轴距外廓；不保留无证据驾驶室派生。	READY
+34384_wb3350_h1	34384	Van	T1/TN (W611)	611.067		EU-MERCEDES-BENZ-T1-TN-W611-VAN-WB3350-H1-01	HIGH	汽油410厢式车3350轴距普通顶外廓。	READY
+34384_wb3700_h2	34384	Van	T1/TN (W611)	611.068		EU-MERCEDES-BENZ-T1-TN-W611-VAN-WB3700-H2-01	HIGH	汽油410厢式车3700轴距高顶外廓。	READY
+34179_wb3350	34179	Pickup	T1/TN (W611)	611.317		EU-MERCEDES-BENZ-T1-TN-W611-PICKUP-SCAB-WB3350-01	MEDIUM	407 D平台车3350轴距外廓；不保留无证据驾驶室派生。	READY
+34179_wb3700	34179	Pickup	T1/TN (W611)	611.318		EU-MERCEDES-BENZ-T1-TN-W611-PICKUP-SCAB-WB3700-01	MEDIUM	407 D平台车3700轴距外廓；不保留无证据驾驶室派生。	READY
+34180_wb3350_h1	34180	Van	T1/TN (W611)	611.367		EU-MERCEDES-BENZ-T1-TN-W611-VAN-WB3350-H1-01	HIGH	407 D厢式车3350轴距普通顶外廓。	READY
+34180_wb3700_h2	34180	Van	T1/TN (W611)	611.368		EU-MERCEDES-BENZ-T1-TN-W611-VAN-WB3700-H2-01	HIGH	407 D厢式车3700轴距高顶外廓。	READY
+34181_wb3350	34181	Pickup	T1/TN (W611)	611.317		EU-MERCEDES-BENZ-T1-TN-W611-PICKUP-SCAB-WB3350-01	MEDIUM	408 D平台车3350轴距外廓；不保留无证据驾驶室派生。	READY
+34181_wb3700	34181	Pickup	T1/TN (W611)	611.318		EU-MERCEDES-BENZ-T1-TN-W611-PICKUP-SCAB-WB3700-01	MEDIUM	408 D平台车3700轴距外廓；不保留无证据驾驶室派生。	READY
+34182_wb3350_h1	34182	Van	T1/TN (W611)	611.367		EU-MERCEDES-BENZ-T1-TN-W611-VAN-WB3350-H1-01	HIGH	408 D厢式车3350轴距普通顶外廓。	READY
+34182_wb3700_h2	34182	Van	T1/TN (W611)	611.368		EU-MERCEDES-BENZ-T1-TN-W611-VAN-WB3700-H2-01	HIGH	408 D厢式车3700轴距高顶外廓。	READY
+34379_wb3350	34379	Pickup	T1/TN (W611)	611.317		EU-MERCEDES-BENZ-T1-TN-W611-PICKUP-SCAB-WB3350-01	MEDIUM	408 D平台车3350轴距外廓；不保留无证据驾驶室派生。	READY
+34379_wb3700	34379	Pickup	T1/TN (W611)	611.318		EU-MERCEDES-BENZ-T1-TN-W611-PICKUP-SCAB-WB3700-01	MEDIUM	408 D平台车3700轴距外廓；不保留无证据驾驶室派生。	READY
+34380_wb3350_h1	34380	Van	T1/TN (W611)	611.367		EU-MERCEDES-BENZ-T1-TN-W611-VAN-WB3350-H1-01	HIGH	408 D厢式车3350轴距普通顶外廓。	READY
+34380_wb3700_h2	34380	Van	T1/TN (W611)	611.368		EU-MERCEDES-BENZ-T1-TN-W611-VAN-WB3700-H2-01	HIGH	408 D厢式车3700轴距高顶外廓。	READY
+34183_wb3350	34183	Pickup	T1/TN (W611)	611.417		EU-MERCEDES-BENZ-T1-TN-W611-PICKUP-SCAB-WB3350-01	MEDIUM	409 D平台车3350轴距外廓；不保留无证据驾驶室派生。	READY
+34183_wb3700	34183	Pickup	T1/TN (W611)	611.418		EU-MERCEDES-BENZ-T1-TN-W611-PICKUP-SCAB-WB3700-01	MEDIUM	409 D平台车3700轴距外廓；不保留无证据驾驶室派生。	READY
+34184_wb3350_h1	34184	Van	T1/TN (W611)	611.467		EU-MERCEDES-BENZ-T1-TN-W611-VAN-WB3350-H1-01	HIGH	409 D厢式车3350轴距普通顶外廓。	READY
+34184_wb3700_h2	34184	Van	T1/TN (W611)	611.468		EU-MERCEDES-BENZ-T1-TN-W611-VAN-WB3700-H2-01	HIGH	409 D厢式车3700轴距高顶外廓。	READY
+34185_wb3350	34185	Pickup	T1/TN (W611)	611.417		EU-MERCEDES-BENZ-T1-TN-W611-PICKUP-SCAB-WB3350-01	MEDIUM	410 D平台车3350轴距外廓；不保留无证据驾驶室派生。	READY
+34185_wb3700	34185	Pickup	T1/TN (W611)	611.418		EU-MERCEDES-BENZ-T1-TN-W611-PICKUP-SCAB-WB3700-01	MEDIUM	410 D平台车3700轴距外廓；不保留无证据驾驶室派生。	READY
+34186_wb3350_h1	34186	Van	T1/TN (W611)	611.467		EU-MERCEDES-BENZ-T1-TN-W611-VAN-WB3350-H1-01	HIGH	410 D厢式车3350轴距普通顶外廓。	READY
+34186_wb3700_h2	34186	Van	T1/TN (W611)	611.468		EU-MERCEDES-BENZ-T1-TN-W611-VAN-WB3700-H2-01	HIGH	410 D厢式车3700轴距高顶外廓。	READY
+34381_wb3350	34381	Pickup	T1/TN (W611)	611.417		EU-MERCEDES-BENZ-T1-TN-W611-PICKUP-SCAB-WB3350-01	MEDIUM	410 D平台车3350轴距外廓；不保留无证据驾驶室派生。	READY
+34381_wb3700	34381	Pickup	T1/TN (W611)	611.418		EU-MERCEDES-BENZ-T1-TN-W611-PICKUP-SCAB-WB3700-01	MEDIUM	410 D平台车3700轴距外廓；不保留无证据驾驶室派生。	READY
+34382_wb3350_h1	34382	Van	T1/TN (W611)	611.467		EU-MERCEDES-BENZ-T1-TN-W611-VAN-WB3350-H1-01	HIGH	410 D厢式车3350轴距普通顶外廓。	READY
+34382_wb3700_h2	34382	Van	T1/TN (W611)	611.468		EU-MERCEDES-BENZ-T1-TN-W611-VAN-WB3700-H2-01	HIGH	410 D厢式车3700轴距高顶外廓。	READY
+34000_l1h1	34000	Van	T2/L (W309)			EU-MERCEDES-BENZ-T2-L-W309-VAN-L1H1-01	MEDIUM	L405 D短车身普通顶厢式车外廓。	READY
+34000_l1h2	34000	Van	T2/L (W309)			EU-MERCEDES-BENZ-T2-L-W309-VAN-L1H2-01	MEDIUM	L405 D短车身高顶厢式车外廓。	READY
+34000_l2h1	34000	Van	T2/L (W309)			EU-MERCEDES-BENZ-T2-L-W309-VAN-L2H1-01	MEDIUM	L405 D长车身普通顶厢式车外廓。	READY
+34000_l2h2	34000	Van	T2/L (W309)			EU-MERCEDES-BENZ-T2-L-W309-VAN-L2H2-01	MEDIUM	L405 D长车身高顶厢式车外廓。	READY
+34001_l1	34001	Pickup	T2/L (W309)		2	EU-MERCEDES-BENZ-T2-L-W309-PICKUP-L1-01	MEDIUM	L405 D短轴平台底盘外廓。	READY
+34001_l2	34001	Pickup	T2/L (W309)		2	EU-MERCEDES-BENZ-T2-L-W309-PICKUP-L2-01	MEDIUM	L405 D长轴平台底盘外廓。	READY
+34002_l1h1	34002	Van	T2/L (W309)			EU-MERCEDES-BENZ-T2-L-W309-VAN-L1H1-01	HIGH	L406 DG短车身普通顶厢式车外廓。	READY
+34002_l1h2	34002	Van	T2/L (W309)			EU-MERCEDES-BENZ-T2-L-W309-VAN-L1H2-01	HIGH	L406 DG短车身高顶厢式车外廓。	READY
+34002_l2h1	34002	Van	T2/L (W309)			EU-MERCEDES-BENZ-T2-L-W309-VAN-L2H1-01	HIGH	L406 DG长车身普通顶厢式车外廓。	READY
+34002_l2h2	34002	Van	T2/L (W309)			EU-MERCEDES-BENZ-T2-L-W309-VAN-L2H2-01	HIGH	L406 DG长车身高顶厢式车外廓。	READY
+34003_l1	34003	Pickup	T2/L (W309)	309.100/309.102	2	EU-MERCEDES-BENZ-T2-L-W309-PICKUP-L1-01	HIGH	L406 DG短轴平台底盘外廓。	READY
+34003_l2	34003	Pickup	T2/L (W309)	309.101/309.103	2	EU-MERCEDES-BENZ-T2-L-W309-PICKUP-L2-01	HIGH	L406 DG长轴平台底盘外廓。	READY
+34004_l1h1	34004	Van	T2/L (W309)			EU-MERCEDES-BENZ-T2-L-W309-VAN-L1H1-01	HIGH	L407 D短车身普通顶厢式车外廓。	READY
+34004_l1h2	34004	Van	T2/L (W309)			EU-MERCEDES-BENZ-T2-L-W309-VAN-L1H2-01	HIGH	L407 D短车身高顶厢式车外廓。	READY
+34004_l2h1	34004	Van	T2/L (W309)			EU-MERCEDES-BENZ-T2-L-W309-VAN-L2H1-01	HIGH	L407 D长车身普通顶厢式车外廓。	READY
+34004_l2h2	34004	Van	T2/L (W309)			EU-MERCEDES-BENZ-T2-L-W309-VAN-L2H2-01	HIGH	L407 D长车身高顶厢式车外廓。	READY
+34005_l1	34005	Pickup	T2/L (W309)	309.100/309.102	2	EU-MERCEDES-BENZ-T2-L-W309-PICKUP-L1-01	HIGH	L407 D短轴平台底盘外廓。	READY
+34005_l2	34005	Pickup	T2/L (W309)	309.101/309.103	2	EU-MERCEDES-BENZ-T2-L-W309-PICKUP-L2-01	HIGH	L407 D长轴平台底盘外廓。	READY
+34341_l1h1	34341	Van	T2/L (W309)			EU-MERCEDES-BENZ-T2-L-W309-VAN-L1H1-01	HIGH	L407 D短车身普通顶厢式车外廓。	READY
+34341_l1h2	34341	Van	T2/L (W309)			EU-MERCEDES-BENZ-T2-L-W309-VAN-L1H2-01	HIGH	L407 D短车身高顶厢式车外廓。	READY
+34341_l2h1	34341	Van	T2/L (W309)			EU-MERCEDES-BENZ-T2-L-W309-VAN-L2H1-01	HIGH	L407 D长车身普通顶厢式车外廓。	READY
+34341_l2h2	34341	Van	T2/L (W309)			EU-MERCEDES-BENZ-T2-L-W309-VAN-L2H2-01	HIGH	L407 D长车身高顶厢式车外廓。	READY
+34342_l1	34342	Pickup	T2/L (W309)	309.100/309.102	2	EU-MERCEDES-BENZ-T2-L-W309-PICKUP-L1-01	HIGH	L407 D短轴平台底盘外廓。	READY
+34342_l2	34342	Pickup	T2/L (W309)	309.101/309.103	2	EU-MERCEDES-BENZ-T2-L-W309-PICKUP-L2-01	HIGH	L407 D长轴平台底盘外廓。	READY
+34009_l1h1	34009	Van	T2/L (W309)			EU-MERCEDES-BENZ-T2-L-W309-VAN-L1H1-01	HIGH	L408 DG短车身普通顶厢式车外廓。	READY
+34009_l1h2	34009	Van	T2/L (W309)			EU-MERCEDES-BENZ-T2-L-W309-VAN-L1H2-01	HIGH	L408 DG短车身高顶厢式车外廓。	READY
+34009_l2h1	34009	Van	T2/L (W309)			EU-MERCEDES-BENZ-T2-L-W309-VAN-L2H1-01	HIGH	L408 DG长车身普通顶厢式车外廓。	READY
+34009_l2h2	34009	Van	T2/L (W309)			EU-MERCEDES-BENZ-T2-L-W309-VAN-L2H2-01	HIGH	L408 DG长车身高顶厢式车外廓。	READY
+34010_l1	34010	Pickup	T2/L (W309)	309.300/309.302	2	EU-MERCEDES-BENZ-T2-L-W309-PICKUP-L1-01	HIGH	L408 DG短轴平台底盘外廓。	READY
+34010_l2	34010	Pickup	T2/L (W309)	309.301/309.303	2	EU-MERCEDES-BENZ-T2-L-W309-PICKUP-L2-01	HIGH	L408 DG长轴平台底盘外廓。	READY
+34006_l1h1	34006	Van	T2/L (W309)			EU-MERCEDES-BENZ-T2-L-W309-VAN-L1H1-01	HIGH	L408 G短车身普通顶厢式车外廓。	READY
+34006_l1h2	34006	Van	T2/L (W309)			EU-MERCEDES-BENZ-T2-L-W309-VAN-L1H2-01	HIGH	L408 G短车身高顶厢式车外廓。	READY
+34006_l2h1	34006	Van	T2/L (W309)			EU-MERCEDES-BENZ-T2-L-W309-VAN-L2H1-01	HIGH	L408 G长车身普通顶厢式车外廓。	READY
+34006_l2h2	34006	Van	T2/L (W309)			EU-MERCEDES-BENZ-T2-L-W309-VAN-L2H2-01	HIGH	L408 G长车身高顶厢式车外廓。	READY
+34007_l1h1	34007	Van	T2/L (W309)			EU-MERCEDES-BENZ-T2-L-W309-VAN-L1H1-01	HIGH	L408 G短车身普通顶厢式车外廓。	READY
+34007_l1h2	34007	Van	T2/L (W309)			EU-MERCEDES-BENZ-T2-L-W309-VAN-L1H2-01	HIGH	L408 G短车身高顶厢式车外廓。	READY
+34007_l2h1	34007	Van	T2/L (W309)			EU-MERCEDES-BENZ-T2-L-W309-VAN-L2H1-01	HIGH	L408 G长车身普通顶厢式车外廓。	READY
+34007_l2h2	34007	Van	T2/L (W309)			EU-MERCEDES-BENZ-T2-L-W309-VAN-L2H2-01	HIGH	L408 G长车身高顶厢式车外廓。	READY
+34008_l1	34008	Pickup	T2/L (W309)	309.000/309.002	2	EU-MERCEDES-BENZ-T2-L-W309-PICKUP-L1-01	HIGH	L408 G短轴平台底盘外廓。	READY
+34008_l2	34008	Pickup	T2/L (W309)	309.001/309.003	2	EU-MERCEDES-BENZ-T2-L-W309-PICKUP-L2-01	HIGH	L408 G长轴平台底盘外廓。	READY
+34343_l1h1	34343	Van	T2/L (W309)			EU-MERCEDES-BENZ-T2-L-W309-VAN-L1H1-01	HIGH	L408 G短车身普通顶厢式车外廓。	READY
+34343_l1h2	34343	Van	T2/L (W309)			EU-MERCEDES-BENZ-T2-L-W309-VAN-L1H2-01	HIGH	L408 G短车身高顶厢式车外廓。	READY
+34343_l2h1	34343	Van	T2/L (W309)			EU-MERCEDES-BENZ-T2-L-W309-VAN-L2H1-01	HIGH	L408 G长车身普通顶厢式车外廓。	READY
+34343_l2h2	34343	Van	T2/L (W309)			EU-MERCEDES-BENZ-T2-L-W309-VAN-L2H2-01	HIGH	L408 G长车身高顶厢式车外廓。	READY
+34344_l1h1	34344	Van	T2/L (W309)			EU-MERCEDES-BENZ-T2-L-W309-VAN-L1H1-01	HIGH	L408 G短车身普通顶厢式车外廓。	READY
+34344_l1h2	34344	Van	T2/L (W309)			EU-MERCEDES-BENZ-T2-L-W309-VAN-L1H2-01	HIGH	L408 G短车身高顶厢式车外廓。	READY
+34344_l2h1	34344	Van	T2/L (W309)			EU-MERCEDES-BENZ-T2-L-W309-VAN-L2H1-01	HIGH	L408 G长车身普通顶厢式车外廓。	READY
+34344_l2h2	34344	Van	T2/L (W309)			EU-MERCEDES-BENZ-T2-L-W309-VAN-L2H2-01	HIGH	L408 G长车身高顶厢式车外廓。	READY
+34345_l1	34345	Pickup	T2/L (W309)	309.000/309.002	2	EU-MERCEDES-BENZ-T2-L-W309-PICKUP-L1-01	HIGH	L408 G短轴平台底盘外廓。	READY
+34345_l2	34345	Pickup	T2/L (W309)	309.001/309.003	2	EU-MERCEDES-BENZ-T2-L-W309-PICKUP-L2-01	HIGH	L408 G长轴平台底盘外廓。	READY
+34012_l1	34012	Pickup	T2/L (W309)	309.000/309.002	2	EU-MERCEDES-BENZ-T2-L-W309-PICKUP-L1-01	HIGH	L409短轴平台底盘外廓。	READY
+34012_l2	34012	Pickup	T2/L (W309)	309.001/309.003	2	EU-MERCEDES-BENZ-T2-L-W309-PICKUP-L2-01	HIGH	L409长轴平台底盘外廓。	READY
+34013_l1h1	34013	Van	T2/L (W309)			EU-MERCEDES-BENZ-T2-L-W309-VAN-L1H1-01	HIGH	L409短车身普通顶厢式车外廓。	READY
+34013_l1h2	34013	Van	T2/L (W309)			EU-MERCEDES-BENZ-T2-L-W309-VAN-L1H2-01	HIGH	L409短车身高顶厢式车外廓。	READY
+34013_l2h1	34013	Van	T2/L (W309)			EU-MERCEDES-BENZ-T2-L-W309-VAN-L2H1-01	HIGH	L409长车身普通顶厢式车外廓。	READY
+34013_l2h2	34013	Van	T2/L (W309)			EU-MERCEDES-BENZ-T2-L-W309-VAN-L2H2-01	HIGH	L409长车身高顶厢式车外廓。	READY
+34015_l1h1	34015	Van	T2/L (W309)			EU-MERCEDES-BENZ-T2-L-W309-VAN-L1H1-01	HIGH	L410短车身普通顶厢式车外廓。	READY
+34015_l1h2	34015	Van	T2/L (W309)			EU-MERCEDES-BENZ-T2-L-W309-VAN-L1H2-01	HIGH	L410短车身高顶厢式车外廓。	READY
+34015_l2h1	34015	Van	T2/L (W309)			EU-MERCEDES-BENZ-T2-L-W309-VAN-L2H1-01	HIGH	L410长车身普通顶厢式车外廓。	READY
+34015_l2h2	34015	Van	T2/L (W309)			EU-MERCEDES-BENZ-T2-L-W309-VAN-L2H2-01	HIGH	L410长车身高顶厢式车外廓。	READY
+34016_l1	34016	Pickup	T2/L (W309)	309.000/309.002	2	EU-MERCEDES-BENZ-T2-L-W309-PICKUP-L1-01	HIGH	L410当前代码覆盖的短轴平台底盘外廓。	READY
+34347_l1h1	34347	Van	T2/L (W309)			EU-MERCEDES-BENZ-T2-L-W309-VAN-L1H1-01	HIGH	L508 DG短车身普通顶厢式车外廓。	READY
+34347_l1h2	34347	Van	T2/L (W309)			EU-MERCEDES-BENZ-T2-L-W309-VAN-L1H2-01	HIGH	L508 DG短车身高顶厢式车外廓。	READY
+34347_l2h1	34347	Van	T2/L (W309)			EU-MERCEDES-BENZ-T2-L-W309-VAN-L2H1-01	HIGH	L508 DG长车身普通顶厢式车外廓。	READY
+34347_l2h2	34347	Van	T2/L (W309)			EU-MERCEDES-BENZ-T2-L-W309-VAN-L2H2-01	HIGH	L508 DG长车身高顶厢式车外廓。	READY
+34347_l3h1	34347	Van	T2/L (W309)			EU-MERCEDES-BENZ-T2-L-W309-VAN-L3H1-01	HIGH	L508 DG超长车身普通顶厢式车外廓。	READY
+34347_l3h2	34347	Van	T2/L (W309)			EU-MERCEDES-BENZ-T2-L-W309-VAN-L3H2-01	HIGH	L508 DG超长车身高顶厢式车外廓。	READY
+34348_l1	34348	Pickup	T2/L (W309)	309.400/309.403	2	EU-MERCEDES-BENZ-T2-L-W309-PICKUP-L1-01	MEDIUM	L508 DG短轴平台底盘外廓。	READY
+34348_l2	34348	Pickup	T2/L (W309)	309.401/309.404	2	EU-MERCEDES-BENZ-T2-L-W309-PICKUP-L2-01	MEDIUM	L508 DG长轴平台底盘外廓。	READY
+34348_l3	34348	Pickup	T2/L (W309)	309.402	2	EU-MERCEDES-BENZ-T2-L-W309-PICKUP-L3-01	MEDIUM	L508 DG超长轴平台底盘外廓。	READY
+```
+
+[下载完整 Ktype 映射 TSV](sandbox:/mnt/data/left18448_10601-10700_ktype_dimension_mapping_final.tsv)
+
+## 4）最终完整 DIMENSION_GROUP TSV
+
+```tsv
+DIMENSION_GROUP_ID	LengthMM	WidthMM	HeightMM	DimensionSource	SourceURL
+EU-MERCEDES-BENZ-SPRINTER-III-VS30-TOURER-4T-L1H1-RWD-01	5267	2020	2375	Coches.net Mercedes-Benz Sprinter 417 CDI Compacto 4.1T technical specifications	https://www.coches.net/fichas_tecnicas/mercedes-benz/sprinter/industriales/4-puertas/417_cdi_compacto_41t_t_alto_170cv_diesel/103057/820143220220201/
+EU-MERCEDES-BENZ-SPRINTER-III-VS30-TOURER-4T-L2H2-RWD-01	5932	2020	2667	Coches.net Mercedes-Benz Sprinter 411 CDI Medio 4.1T T. Alto 2021	https://www.coches.net/fichas_tecnicas/mercedes-benz/sprinter/industriales/4-puertas/411_cdi_medio_41t_t_alto_114cv_diesel/84751/824876520210101/
+EU-MERCEDES-BENZ-SPRINTER-III-VS30-TOURER-4T-L3H2-RWD-01	6967	2020	2663	Coches.net Mercedes-Benz Sprinter 419 CDI Largo 4.1T T. Alto Mixto 2020	https://www.coches.net/fichas_tecnicas/mercedes-benz/sprinter/industriales/4-puertas/419_cdi_largo_41t_t_alto_mixto_190cv_diesel/84763/797292420200701/
+EU-MERCEDES-BENZ-SPRINTER-II-W906-VAN-5T-MWB-H1-AWD-PREFL-01	5910	1993	2535	Mercedes-Benz The Sprinter Panel Van UK 2011; AutoScout24 Mercedes-Benz Sprinter 4x4 technical data	https://xr793.com/wp-content/uploads/2022/12/2011-Mercedes-Benz-Sprinter-Panel-Van-UK.pdf;https://www.autoscout24.de/auto/technische-daten/mercedes-benz/sprinter/513-cdi-sprinter-4x4-16169/
+EU-MERCEDES-BENZ-SPRINTER-II-W906-VAN-5T-MWB-H2-AWD-PREFL-01	5910	1993	2820	Mercedes-Benz The Sprinter Panel Van UK 2011; AutoScout24 Mercedes-Benz Sprinter 4x4 technical data	https://xr793.com/wp-content/uploads/2022/12/2011-Mercedes-Benz-Sprinter-Panel-Van-UK.pdf;https://www.autoscout24.de/auto/technische-daten/mercedes-benz/sprinter/513-cdi-sprinter-4x4-16169/
+EU-MERCEDES-BENZ-SPRINTER-II-W906-VAN-5T-MWB-H3-AWD-PREFL-01	5910	1993	3050	Mercedes-Benz The Sprinter Panel Van UK 2011; AutoScout24 Mercedes-Benz Sprinter 4x4 technical data	https://xr793.com/wp-content/uploads/2022/12/2011-Mercedes-Benz-Sprinter-Panel-Van-UK.pdf;https://www.autoscout24.de/auto/technische-daten/mercedes-benz/sprinter/513-cdi-sprinter-4x4-16169/
+EU-MERCEDES-BENZ-SPRINTER-II-W906-VAN-5T-LWB-H2-AWD-PREFL-02	6945	1993	2820	Mercedes-Benz The Sprinter Panel Van UK 2011; AutoScout24 Mercedes-Benz Sprinter 4x4 technical data	https://xr793.com/wp-content/uploads/2022/12/2011-Mercedes-Benz-Sprinter-Panel-Van-UK.pdf;https://www.autoscout24.de/auto/technische-daten/mercedes-benz/sprinter/513-cdi-sprinter-4x4-16169/
+EU-MERCEDES-BENZ-SPRINTER-II-W906-VAN-5T-LWB-H3-AWD-PREFL-01	6945	1993	3050	Mercedes-Benz The Sprinter Panel Van UK 2011; AutoScout24 Mercedes-Benz Sprinter 4x4 technical data	https://xr793.com/wp-content/uploads/2022/12/2011-Mercedes-Benz-Sprinter-Panel-Van-UK.pdf;https://www.autoscout24.de/auto/technische-daten/mercedes-benz/sprinter/513-cdi-sprinter-4x4-16169/
+EU-MERCEDES-BENZ-SPRINTER-II-W906-VAN-5T-ELWB-H2-AWD-PREFL-01	7345	1993	2825	Mercedes-Benz The Sprinter Panel Van UK 2011; AutoScout24 Mercedes-Benz Sprinter 4x4 technical data	https://xr793.com/wp-content/uploads/2022/12/2011-Mercedes-Benz-Sprinter-Panel-Van-UK.pdf;https://www.autoscout24.de/auto/technische-daten/mercedes-benz/sprinter/516-cdi-sprinter-4x4-16173/
+EU-MERCEDES-BENZ-SPRINTER-II-W906-VAN-5T-ELWB-H3-AWD-PREFL-01	7345	1993	3055	Mercedes-Benz The Sprinter Panel Van UK 2011; AutoScout24 Mercedes-Benz Sprinter 4x4 technical data	https://xr793.com/wp-content/uploads/2022/12/2011-Mercedes-Benz-Sprinter-Panel-Van-UK.pdf;https://www.autoscout24.de/auto/technische-daten/mercedes-benz/sprinter/516-cdi-sprinter-4x4-16173/
+EU-MERCEDES-BENZ-SPRINTER-II-W906-VAN-5T-MWB-H1-AWD-FACELIFT-01	5910	1993	2505	Mercedes-Benz The Sprinter Panel Van UK 2011; AutoScout24 Mercedes-Benz Sprinter 4x4 technical data	https://xr793.com/wp-content/uploads/2022/12/2011-Mercedes-Benz-Sprinter-Panel-Van-UK.pdf;https://www.autoscout24.de/auto/technische-daten/mercedes-benz/sprinter/513-cdi-sprinter-4x4-16169/
+EU-MERCEDES-BENZ-SPRINTER-II-W906-VAN-5T-MWB-H2-AWD-FACELIFT-01	5910	1993	2790	Mercedes-Benz The Sprinter Panel Van UK 2011; AutoScout24 Mercedes-Benz Sprinter 4x4 technical data	https://xr793.com/wp-content/uploads/2022/12/2011-Mercedes-Benz-Sprinter-Panel-Van-UK.pdf;https://www.autoscout24.de/auto/technische-daten/mercedes-benz/sprinter/513-cdi-sprinter-4x4-16169/
+EU-MERCEDES-BENZ-SPRINTER-II-W906-VAN-5T-MWB-H3-AWD-FACELIFT-01	5910	1993	3020	Mercedes-Benz The Sprinter Panel Van UK 2011; AutoScout24 Mercedes-Benz Sprinter 4x4 technical data	https://xr793.com/wp-content/uploads/2022/12/2011-Mercedes-Benz-Sprinter-Panel-Van-UK.pdf;https://www.autoscout24.de/auto/technische-daten/mercedes-benz/sprinter/513-cdi-sprinter-4x4-16169/
+EU-MERCEDES-BENZ-SPRINTER-II-W906-VAN-5T-LWB-H2-AWD-FACELIFT-01	6945	1993	2790	Mercedes-Benz The Sprinter Panel Van UK 2011; AutoScout24 Mercedes-Benz Sprinter 4x4 technical data	https://xr793.com/wp-content/uploads/2022/12/2011-Mercedes-Benz-Sprinter-Panel-Van-UK.pdf;https://www.autoscout24.de/auto/technische-daten/mercedes-benz/sprinter/513-cdi-sprinter-4x4-16169/
+EU-MERCEDES-BENZ-SPRINTER-II-W906-VAN-5T-LWB-H3-AWD-FACELIFT-01	6945	1993	3020	Mercedes-Benz The Sprinter Panel Van UK 2011; AutoScout24 Mercedes-Benz Sprinter 4x4 technical data	https://xr793.com/wp-content/uploads/2022/12/2011-Mercedes-Benz-Sprinter-Panel-Van-UK.pdf;https://www.autoscout24.de/auto/technische-daten/mercedes-benz/sprinter/513-cdi-sprinter-4x4-16169/
+EU-MERCEDES-BENZ-SPRINTER-II-W906-VAN-5T-ELWB-H2-AWD-FACELIFT-01	7345	1993	2795	Mercedes-Benz The Sprinter Panel Van UK 2011; AutoScout24 Mercedes-Benz Sprinter 4x4 technical data	https://xr793.com/wp-content/uploads/2022/12/2011-Mercedes-Benz-Sprinter-Panel-Van-UK.pdf;https://www.autoscout24.de/auto/technische-daten/mercedes-benz/sprinter/516-cdi-sprinter-4x4-16173/
+EU-MERCEDES-BENZ-SPRINTER-II-W906-VAN-5T-ELWB-H3-AWD-FACELIFT-01	7345	1993	3025	Mercedes-Benz The Sprinter Panel Van UK 2011; AutoScout24 Mercedes-Benz Sprinter 4x4 technical data	https://xr793.com/wp-content/uploads/2022/12/2011-Mercedes-Benz-Sprinter-Panel-Van-UK.pdf;https://www.autoscout24.de/auto/technische-daten/mercedes-benz/sprinter/516-cdi-sprinter-4x4-16173/
+EU-MERCEDES-BENZ-SPRINTER-III-VS30-VAN-5T-L2H2-AWD-01	5932	2020	2785	Mercedes-Benz Sprinter Panel and Crew Van AWD price list February 2021	https://bluesky-cogcms.cdn.imgeng.in/media/87151/62686-mb-vans-sprinter-panel-crew-van-awd-price-list-aw-0221sml.pdf
+EU-MERCEDES-BENZ-SPRINTER-III-VS30-VAN-5T-L3H2-AWD-01	6967	2020	2778	Mercedes-Benz Sprinter Panel and Crew Van AWD price list February 2021	https://bluesky-cogcms.cdn.imgeng.in/media/87151/62686-mb-vans-sprinter-panel-crew-van-awd-price-list-aw-0221sml.pdf
+EU-MERCEDES-BENZ-SPRINTER-III-VS30-VAN-5T-L3H3-AWD-01	6967	2020	2995	Mercedes-Benz Sprinter Panel and Crew Van AWD price list February 2021	https://bluesky-cogcms.cdn.imgeng.in/media/87151/62686-mb-vans-sprinter-panel-crew-van-awd-price-list-aw-0221sml.pdf
+EU-MERCEDES-BENZ-SPRINTER-III-VS30-VAN-5T-L4H2-AWD-01	7367	2020	2825	Mercedes-Benz 2023 Sprinter brochure; Cars.com 2023 Sprinter 3500XD High Roof 170 Extended AWD specifications	https://www.mercedes-benz-vans.ca/content/dam/mb-vans/ca/brochures/en/MY23_Sprinter_Brochure_EN_2023.pdf;https://www.cars.com/research/mercedes_benz-sprinter_3500xd-2023/specs/431780/
+EU-MERCEDES-BENZ-SPRINTER-III-VS30-CHASSIS-4T-SCAB-L2-RWD-PRE2024-01	5886	2020	2318	Mercedes-Benz UK Sprinter Chassis Cab and Chassis Crewcab price list November 2023	https://media.mbvans.co.uk/assets/documents/original/5950-SprinterchassisandcrewvanpricelistNOV2023.pdf
+EU-MERCEDES-BENZ-SPRINTER-III-VS30-CHASSIS-4T-SCAB-L3-RWD-PRE2024-01	6695	2020	2311	Mercedes-Benz UK Sprinter Chassis Cab and Chassis Crewcab price list November 2023	https://media.mbvans.co.uk/assets/documents/original/5950-SprinterchassisandcrewvanpricelistNOV2023.pdf
+EU-MERCEDES-BENZ-SPRINTER-III-VS30-CHASSIS-4T-DCAB-L3-RWD-PRE2024-01	6695	2020	2301	Mercedes-Benz UK Sprinter Chassis Cab and Chassis Crewcab price list November 2023	https://media.mbvans.co.uk/assets/documents/original/5950-SprinterchassisandcrewvanpricelistNOV2023.pdf
+EU-MERCEDES-BENZ-SPRINTER-III-VS30-CHASSIS-4T-SCAB-L2-RWD-2024PLUS-01	5956	2020	2329	Listers Mercedes-Benz Sprinter 417CDI L2 RWD 4.1t Chassis Cab technical specifications	https://listers.co.uk/new/vans/mercedes-benz/sprinter/4.1t_chassis_cab/60260
+EU-MERCEDES-BENZ-SPRINTER-III-VS30-CHASSIS-4T-SCAB-L3-RWD-2024PLUS-01	6766	2020	2321	Listers Mercedes-Benz Sprinter 417CDI L3 RWD 4.1t Chassis Cab technical specifications	https://listers.co.uk/new/vans/mercedes-benz/sprinter/4.1t_chassis_cab/60262
+EU-MERCEDES-BENZ-SPRINTER-III-VS30-CHASSIS-4T-DCAB-L2-RWD-01	6156	2020	2323	Coches.net Mercedes-Benz Sprinter 416 CDI Medio 4.1T double-cab chassis technical specifications (JATO)	https://www.coches.net/fichas_tecnicas/mercedes-benz/sprinter/industriales/4-puertas/416_cdi_medio_41t_163cv_diesel/84711/741431020210101/
+EU-MERCEDES-BENZ-SPRINTER-III-VS30-CHASSIS-4T-SCAB-L1-RWD-01	5321	2020	2329	Coches.net Mercedes-Benz Sprinter 417 CDI Compacto 4.1T single-cab chassis technical specifications	https://www.coches.net/fichas_tecnicas/mercedes-benz/sprinter/industriales/2-puertas/417_cdi_compacto_41t_170cv_diesel/103058/828893420220701/
+EU-MERCEDES-BENZ-SPRINTER-III-VS30-CHASSIS-4T-DCAB-L1-RWD-01	5391	2020	2331	Coches.net Mercedes-Benz Sprinter 417 CDI Compacto 4.1T double-cab chassis technical specifications	https://www.coches.net/fichas_tecnicas/mercedes-benz/sprinter/industriales/4-puertas/417_cdi_compacto_41t_170cv_diesel/103058/806336620220201/
+EU-MERCEDES-BENZ-SPRINTER-III-VS30-CHASSIS-4T-SCAB-L2-4X4-SELECTABLE-01	6050	2020	2330	AutoScout24 Mercedes-Benz 419 CDI Sprinter 4x4 technical data	https://www.autoscout24.de/auto/technische-daten/mercedes-benz/sprinter/419-cdi-sprinter-4x4-20157/
+EU-MERCEDES-BENZ-SPRINTER-III-VS30-CHASSIS-4T-SCAB-L2-AWD-PERMANENT-01	6046	2020	2329	AutoScout24 Mercedes-Benz 419 CDI Sprinter 4x4 technical data	https://www.autoscout24.de/auto/technische-daten/mercedes-benz/sprinter/419-cdi-sprinter-4x4-20157/
+EU-MERCEDES-BENZ-SPRINTER-III-VS30-CHASSIS-4T-SCAB-L3-4X4-SELECTABLE-01	6950	2020	2320	AutoScout24 Mercedes-Benz 419 CDI Sprinter 4x4 technical data	https://www.autoscout24.de/auto/technische-daten/mercedes-benz/sprinter/419-cdi-sprinter-4x4-20157/
+EU-MERCEDES-BENZ-SPRINTER-III-VS30-CHASSIS-4T-SCAB-L3-AWD-PERMANENT-01	6946	2020	2321	AutoScout24 Mercedes-Benz 419 CDI Sprinter 4x4 technical data	https://www.autoscout24.de/auto/technische-daten/mercedes-benz/sprinter/419-cdi-sprinter-4x4-20157/
+EU-MERCEDES-BENZ-SPRINTER-III-VS30-CHASSIS-4T-DCAB-L2-4X4-SELECTABLE-01	6160	2020	2320	AutoScout24 Mercedes-Benz 419 CDI Sprinter 4x4 technical data	https://www.autoscout24.de/auto/technische-daten/mercedes-benz/sprinter/419-cdi-sprinter-4x4-20157/
+EU-MERCEDES-BENZ-SPRINTER-III-VS30-CHASSIS-4T-DCAB-L2-AWD-PERMANENT-01	6156	2020	2323	AutoScout24 Mercedes-Benz 419 CDI Sprinter 4x4 technical data	https://www.autoscout24.de/auto/technische-daten/mercedes-benz/sprinter/419-cdi-sprinter-4x4-20157/
+EU-MERCEDES-BENZ-SPRINTER-III-VS30-CHASSIS-4T-DCAB-L3-4X4-SELECTABLE-01	6860	2020	2310	AutoScout24 Mercedes-Benz 419 CDI Sprinter 4x4 technical data	https://www.autoscout24.de/auto/technische-daten/mercedes-benz/sprinter/419-cdi-sprinter-4x4-20157/
+EU-MERCEDES-BENZ-SPRINTER-III-VS30-CHASSIS-4T-DCAB-L3-AWD-PERMANENT-01	6856	2020	2312	AutoScout24 Mercedes-Benz 419 CDI Sprinter 4x4 technical data	https://www.autoscout24.de/auto/technische-daten/mercedes-benz/sprinter/419-cdi-sprinter-4x4-20157/
+EU-MERCEDES-BENZ-SPRINTER-III-VS30-VAN-4T-L2H2-RWD-01	5932	2020	2667	Coches.net Mercedes-Benz Sprinter 419 CDI 4.1T RWD technical specifications (JATO)	https://www.coches.net/fichas_tecnicas/mercedes-benz/sprinter/industriales/4-puertas/419_cdi_medio_41t_t_alto_190cv_diesel/84766/828890020220201/
+EU-MERCEDES-BENZ-SPRINTER-III-VS30-VAN-4T-L3H2-RWD-01	6967	2020	2663	Coches.net Mercedes-Benz Sprinter 419 CDI 4.1T RWD technical specifications (JATO)	https://www.coches.net/fichas_tecnicas/mercedes-benz/sprinter/industriales/4-puertas/419_cdi_largo_41t_t_alto_mixto_190cv_diesel/84763/828890120220701/
+EU-MERCEDES-BENZ-SPRINTER-III-VS30-VAN-4T-L4H2-RWD-01	7367	2020	2662	Coches.net Mercedes-Benz Sprinter 419 CDI 4.1T RWD technical specifications (JATO)	https://www.coches.net/fichas_tecnicas/mercedes-benz/sprinter/industriales/4-puertas/419_cdi_largo_l_41t_t_alto_mixto_190cv_diesel/84762/828889820220601/
+EU-MERCEDES-BENZ-SPRINTER-I-W904-PICKUP-SCAB-WB4025-4X4-01	6855	2157	2165	Swiss ASTRA type approval 3MF761 Mercedes-Benz 416 CDI 4x4 single-cab platform	https://typenscheinschweiz.ch/pdf/auto/3MF761
+EU-MERCEDES-BENZ-SPRINTER-I-W904-PICKUP-DCAB-WB4025-4X4-01	6805	2157	2190	Swiss ASTRA type approval 3MF544 Mercedes-Benz 416 CDI 4x4 double-cab platform	https://typenscheinschweiz.ch/pdf/auto/3MF544
+EU-MERCEDES-BENZ-SPRINTER-I-W904-VAN-WB4025-H1-4X4-01	6590	1994	2390	Swiss ASTRA type approval 2MA938 Mercedes-Benz 416 CDI 4x4; Mercedes-Benz Sprinter body/equipment mounting directive 17.06.2004	https://typenscheinschweiz.ch/pdf/auto/2MA938;https://www.scribd.com/document/1002515920/T1N-Center-of-Gravity-Calculations-MB-BodyBuilderInfoPortal
+EU-MERCEDES-BENZ-SPRINTER-I-W904-VAN-WB4025-H2-4X4-01	6590	1994	2610	Swiss ASTRA type approval 2MA938 Mercedes-Benz 416 CDI 4x4; Mercedes-Benz Sprinter body/equipment mounting directive 17.06.2004	https://typenscheinschweiz.ch/pdf/auto/2MA938;https://www.scribd.com/document/1002515920/T1N-Center-of-Gravity-Calculations-MB-BodyBuilderInfoPortal
+EU-MERCEDES-BENZ-T1-TN-W611-VAN-WB3350-H1-01	5235	2000	2250	Drom Mercedes-Benz T1 408 D L2H1 technical specifications	https://www.drom.ru/catalog/lcv/mercedes-benz/t1/278231/
+EU-MERCEDES-BENZ-T1-TN-W611-VAN-WB3700-H2-01	5885	2000	2540	Drom Mercedes-Benz T1 408 D L3H2 technical specifications	https://www.drom.ru/catalog/lcv/mercedes-benz/t1/278219/
+EU-MERCEDES-BENZ-T1-TN-W611-PICKUP-SCAB-WB3350-01	5235	2000	2250	Drom Mercedes-Benz T1 410/407 D/408 D/409 D/410 D L2 6t flatbed technical specifications	https://www.drom.ru/catalog/lcv/mercedes-benz/t1/specs/dimensions/
+EU-MERCEDES-BENZ-T1-TN-W611-PICKUP-SCAB-WB3700-01	5885	2000	2250	Drom Mercedes-Benz T1 flatbed and four-ton cab dimensional specifications	https://www.drom.ru/catalog/lcv/mercedes-benz/t1/specs/dimensions/
+EU-MERCEDES-BENZ-T1-W602-VAN-WB3050-H1-01	4855	2000	2170	Mercedes-Benz EPC 602.061 body and wheelbase identification; Drom Mercedes-Benz T1 L1H1 dimensions	https://partsouq.com/en/catalog/genuine/diagram?c=MB201810&number=A1109870239&ssd=%24%2AKwFgVEVQGwA6EwVnARBtUDgsDAsVZGtmZ3VaaSEnFBoXHioJe3ZvEhJlZGJqbGE7NyprLSIwOhMvdH0nIzwmODl-cTk1KT87ZGNmZWRidnopdnpwaXZ3fnE5PSk_O2MAdnlwMDp0MScrZWR2eXAlN3QxJypwLgAAAACbufSj%24&vid=0;https://www.drom.ru/catalog/lcv/mercedes-benz/t1/specs/dimensions/
+EU-MERCEDES-BENZ-T1-W602-VAN-WB3350-H1-01	5235	2000	2240	Mercedes-Benz EPC 602.062 body and wheelbase identification; Drom Mercedes-Benz T1 310 L2H1 dimensions	https://partsouq.com/en/catalog/genuine/diagram?c=MB201810&number=A1243005830&ssd=%24%2AKwGNuaiMjvPOi4rv0PK0m9XB4eb4iYaLipi3hMzK-ff688fklpuC__-IiouNiYvT0MePwM_d1_7CmZDKztHL1dSTnNTYxNLWiY6LiImMm5fEm5edhJuak5zU0MTS1o7tm5Sd3deZ3MrGiImblJ3I2pncysedwwAAAACoznsN%24;https://www.drom.ru/catalog/lcv/mercedes-benz/t1/specs/dimensions/
+EU-MERCEDES-BENZ-T1-W602-VAN-WB3050-H1-02	4755	1910	2260	Autogidas Mercedes-Benz 308 D 602.361 technical specifications	https://autogidas.lt/en/auto-katalogas/mercedes-benz/308/d-602.361-1989-1995-k36227
+EU-MERCEDES-BENZ-T1-W602-VAN-WB3700-H1-01	5885	2000	2240	Drom Mercedes-Benz T1 308 D L3H1 technical specifications	https://www.drom.ru/catalog/lcv/mercedes-benz/t1/278216/
+EU-MERCEDES-BENZ-T1-W601-VAN-WB3050-H2-01	4855	2000	2455	Drom Mercedes-Benz T1 210 L1H2 technical dimensions	https://www.drom.ru/catalog/lcv/mercedes-benz/t1/specs/dimensions/
+EU-MERCEDES-BENZ-T1-W601-VAN-WB3350-H2-01	5235	2000	2525	Drom Mercedes-Benz T1 210 L2H2 technical dimensions	https://www.drom.ru/catalog/lcv/mercedes-benz/t1/specs/dimensions/
+EU-MERCEDES-BENZ-T1-W602-PICKUP-HIGHBED-WB3050-01	4855	2000	2240	Mercedes-Benz EPC/Catcar body-code identification; Drom Mercedes-Benz T1 platform dimensions	https://www.catcar.info/mercedes/?l=Y2xhc3M9PTN8fGNvdW50cnk9PTF8fHN0PT0yMHx8c3RzPT17IjEwIjoiQXNzb3J0bWVudCBjbGFzcyIsIjIwIjoiVmFuLUV1cm9wZSJ9&lang=en;https://www.drom.ru/catalog/lcv/mercedes-benz/t1/specs/dimensions/
+EU-MERCEDES-BENZ-T1-W602-PICKUP-HIGHBED-WB3350-01	5235	2000	2240	Mercedes-Benz EPC/Catcar body-code identification; Drom Mercedes-Benz T1 platform dimensions	https://www.catcar.info/mercedes/?l=Y2xhc3M9PTN8fGNvdW50cnk9PTF8fHN0PT0yMHx8c3RzPT17IjEwIjoiQXNzb3J0bWVudCBjbGFzcyIsIjIwIjoiVmFuLUV1cm9wZSJ9&lang=en;https://www.drom.ru/catalog/lcv/mercedes-benz/t1/specs/dimensions/
+EU-MERCEDES-BENZ-T1-W602-PICKUP-HIGHBED-WB3700-01	5885	2000	2240	Mercedes-Benz EPC/Catcar body-code identification; Drom Mercedes-Benz T1 platform dimensions	https://www.catcar.info/mercedes/?l=Y2xhc3M9PTN8fGNvdW50cnk9PTF8fHN0PT0yMHx8c3RzPT17IjEwIjoiQXNzb3J0bWVudCBjbGFzcyIsIjIwIjoiVmFuLUV1cm9wZSJ9&lang=en;https://www.drom.ru/catalog/lcv/mercedes-benz/t1/specs/dimensions/
+EU-MERCEDES-BENZ-T1-W601-PICKUP-WB3050-01	4855	2000	2170	Drom Mercedes-Benz T1 210 L1 2.55t flatbed dimensional specifications	https://www.drom.ru/catalog/lcv/mercedes-benz/t1/specs/dimensions/
+EU-MERCEDES-BENZ-T2-L-W309-VAN-L1H1-01	5043	2100	2555	Drom Mercedes-Benz T2 first-generation dimensional specifications	https://www.drom.ru/catalog/lcv/mercedes-benz/t2/specs/dimensions/
+EU-MERCEDES-BENZ-T2-L-W309-VAN-L1H2-01	5043	2100	2705	Drom Mercedes-Benz T2 first-generation dimensional specifications	https://www.drom.ru/catalog/lcv/mercedes-benz/t2/specs/dimensions/
+EU-MERCEDES-BENZ-T2-L-W309-VAN-L2H1-01	5993	2100	2555	Drom Mercedes-Benz T2 first-generation dimensional specifications	https://www.drom.ru/catalog/lcv/mercedes-benz/t2/specs/dimensions/
+EU-MERCEDES-BENZ-T2-L-W309-VAN-L2H2-01	5993	2100	2705	Drom Mercedes-Benz T2 first-generation dimensional specifications	https://www.drom.ru/catalog/lcv/mercedes-benz/t2/specs/dimensions/
+EU-MERCEDES-BENZ-T2-L-W309-VAN-L3H1-01	6943	2100	2555	Drom Mercedes-Benz T2 first-generation dimensional specifications	https://www.drom.ru/catalog/lcv/mercedes-benz/t2/specs/dimensions/
+EU-MERCEDES-BENZ-T2-L-W309-VAN-L3H2-01	6943	2100	2705	Drom Mercedes-Benz T2 first-generation dimensional specifications	https://www.drom.ru/catalog/lcv/mercedes-benz/t2/specs/dimensions/
+EU-MERCEDES-BENZ-T2-L-W309-PICKUP-L1-01	5043	2100	2555	Drom Mercedes-Benz T2 first-generation platform and chassis dimensional specifications	https://www.drom.ru/catalog/lcv/mercedes-benz/t2/specs/dimensions/
+EU-MERCEDES-BENZ-T2-L-W309-PICKUP-L2-01	5993	2100	2555	Drom Mercedes-Benz T2 first-generation platform and chassis dimensional specifications	https://www.drom.ru/catalog/lcv/mercedes-benz/t2/specs/dimensions/
+EU-MERCEDES-BENZ-T2-L-W309-PICKUP-L3-01	6943	2100	2555	Drom Mercedes-Benz T2 first-generation platform and chassis dimensional specifications	https://www.drom.ru/catalog/lcv/mercedes-benz/t2/specs/dimensions/
+```
+
+[下载完整 DIMENSION_GROUP TSV](sandbox:/mnt/data/left18448_10601-10700_dimension_groups_final.tsv)
+
+推进信号：COMPLETE
+
+[1]: https://typenscheinschweiz.ch/pdf/auto/3MF761 "https://typenscheinschweiz.ch/pdf/auto/3MF761"
+[2]: https://typenscheinschweiz.ch/pdf/auto/2MA938 "https://typenscheinschweiz.ch/pdf/auto/2MA938"
+
+
+--- 累计最终 TSV 已更新 ---
+- 累计 Ktype 映射：ktype_mapping_final.tsv（2792 行）
+- 累计尺寸组：dimension_groups_final.tsv（858 行）
+
