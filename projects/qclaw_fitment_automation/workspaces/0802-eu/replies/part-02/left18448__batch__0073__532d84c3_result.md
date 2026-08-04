@@ -2831,3 +2831,1049 @@ EU-IVECO-DAILY-III-CHASSIS-CAB-35C-WB4100-01	6909	1996	2220	Használtautó IVECO
 - left18448_7201-7300_dimension_groups_final.tsv
 缺少任一下载链接时不得输出推进信号：COMPLETE。
 
+
+--- Round 37 / checkpoint 续跑 ---
+### 1) 更新点
+
+闭合 Daily III `29 L` 底盘族的 7 个 Ktype，共关联两个轴距尺寸组；动力版本不重复建组。
+
+### 2) 当前批次进度
+
+READY Ktype：42
+PENDING Ktype：58
+本轮闭合 Ktype：7
+
+### 3) 本轮新增/修改的 Ktype 映射 TSV
+
+```tsv
+id	Ktype	NormalizedBodyStyle	Generation	BodyCode	Doors	DIMENSION_GROUP_ID	MatchConfidence	Notes	IterationStatus
+34244_wb3000_chassis	34244	Chassis Cab	Daily III	29L	2	EU-IVECO-DAILY-III-CHASSIS-CAB-29L-WB3000-01	HIGH	3000轴距单排底盘驾驶室。	READY
+34244_wb3450_chassis	34244	Chassis Cab	Daily III	29L	2	EU-IVECO-DAILY-III-CHASSIS-CAB-29L-WB3450-01	HIGH	3450轴距单排底盘驾驶室。	READY
+34163_wb3000_chassis	34163	Chassis Cab	Daily III	29L	2	EU-IVECO-DAILY-III-CHASSIS-CAB-29L-WB3000-01	HIGH	3000轴距单排底盘驾驶室。	READY
+34163_wb3450_chassis	34163	Chassis Cab	Daily III	29L	2	EU-IVECO-DAILY-III-CHASSIS-CAB-29L-WB3450-01	HIGH	3450轴距单排底盘驾驶室。	READY
+34246_wb3000_chassis	34246	Chassis Cab	Daily III	29L	2	EU-IVECO-DAILY-III-CHASSIS-CAB-29L-WB3000-01	HIGH	3000轴距单排底盘驾驶室。	READY
+34246_wb3450_chassis	34246	Chassis Cab	Daily III	29L	2	EU-IVECO-DAILY-III-CHASSIS-CAB-29L-WB3450-01	HIGH	3450轴距单排底盘驾驶室。	READY
+34240_wb3000_chassis	34240	Chassis Cab	Daily III	29L	2	EU-IVECO-DAILY-III-CHASSIS-CAB-29L-WB3000-01	HIGH	3000轴距单排底盘驾驶室。	READY
+34240_wb3450_chassis	34240	Chassis Cab	Daily III	29L	2	EU-IVECO-DAILY-III-CHASSIS-CAB-29L-WB3450-01	HIGH	3450轴距单排底盘驾驶室。	READY
+34282_wb3000_chassis	34282	Chassis Cab	Daily III	29L	2	EU-IVECO-DAILY-III-CHASSIS-CAB-29L-WB3000-01	HIGH	3000轴距单排底盘驾驶室。	READY
+34282_wb3450_chassis	34282	Chassis Cab	Daily III	29L	2	EU-IVECO-DAILY-III-CHASSIS-CAB-29L-WB3450-01	HIGH	3450轴距单排底盘驾驶室。	READY
+34161_wb3000_chassis	34161	Chassis Cab	Daily III	29L	2	EU-IVECO-DAILY-III-CHASSIS-CAB-29L-WB3000-01	MEDIUM	3000轴距单排底盘驾驶室。	READY
+34161_wb3450_chassis	34161	Chassis Cab	Daily III	29L	2	EU-IVECO-DAILY-III-CHASSIS-CAB-29L-WB3450-01	MEDIUM	3450轴距单排底盘驾驶室。	READY
+34420_wb3000_chassis	34420	Chassis Cab	Daily III	29L	2	EU-IVECO-DAILY-III-CHASSIS-CAB-29L-WB3000-01	MEDIUM	3000轴距单排底盘驾驶室。	READY
+34420_wb3450_chassis	34420	Chassis Cab	Daily III	29L	2	EU-IVECO-DAILY-III-CHASSIS-CAB-29L-WB3450-01	MEDIUM	3450轴距单排底盘驾驶室。	READY
+```
+
+### 4) 本轮首次创建/修正的 DIMENSION_GROUP TSV
+
+```tsv
+DIMENSION_GROUP_ID	LengthMM	WidthMM	HeightMM	DimensionSource	SourceURL
+EU-IVECO-DAILY-III-CHASSIS-CAB-29L-WB3000-01	5014	1996	2225	Truck1 IVECO Daily 29L10 chassis technical data	https://www.truck1.eu/blog/iveco-daily-29l10-tech-specs-t1364
+EU-IVECO-DAILY-III-CHASSIS-CAB-29L-WB3450-01	5899	1996	2215	Zoomcar IVECO Daily 29L11 3.45 m chassis-cab technical sheet	https://zoomcar.fr/fiche-technique-utilitaire/iveco/daily-city-truck-daily-classe-l-chcab-chassis-cab-2911-3-2t-emp-3-45-NAT60037.html
+```
+
+### 5) 下一步优先处理
+
+优先关联 Daily III 已建立的 `35S/35C` 底盘尺寸组，处理 `35 C/S 9、11、13、15` 剩余 Ktype；只研究尚未覆盖的独立底盘系列。
+
+推进信号：CONTINUE
+
+
+--- 发送 / 继续到 Round 38 ---
+继续当前批次并采用缓存优先模式。尺寸组只在首次创建或纠错时完整核对一次三维和来源；后续 Ktype 只判断关联哪个现有 DIMENSION_GROUP_ID，不重复抓取，不输出缓存来源或匹配理由。仍有 PENDING 时，CONTINUE 轮仅输出：1) 更新点；2) 当前批次进度；3) 本轮新增/修改的 Ktype 映射 TSV（无变化写“无”）；4) 本轮首次创建/修正的 DIMENSION_GROUP TSV（复用既有组不重复输出，无变化写“无”）；5) 下一步优先处理。若当前或上一轮进度已经是 PENDING=0，本轮不要继续检索或再次输出 CONTINUE，必须立刻汇总并输出两张最终完整 TSV、两个任务指定 sandbox 下载链接和“推进信号：COMPLETE”。执行顺序固定为：第一阶段优先消除 PENDING 并补齐会阻塞两张最终表的数据。检测到 PENDING=0 后，第二阶段最多只做一次轻量机械收尾：核对固定表头、id 与 DIMENSION_GROUP_ID 唯一、映射引用闭合、长宽高和来源非空、两个任务指定下载链接齐全。第二阶段不得重新逐车型、逐年份或逐来源做深度检索，不得为了提高置信度反复核对，也不得因非阻塞的排序或措辞问题继续多轮。PENDING=0 后的下一条回复必须直接输出两张最终完整 TSV、两个精确 sandbox 下载链接，并以“推进信号：COMPLETE”结束；不要再输出 CONTINUE。Ktype 映射 TSV 表头必须严格使用 requirement 指定的字段顺序：id	Ktype	NormalizedBodyStyle	Generation	BodyCode	Doors	DIMENSION_GROUP_ID	MatchConfidence	Notes	IterationStatus。另需维护完整 DIMENSION_GROUP TSV，表头固定为：DIMENSION_GROUP_ID	LengthMM	WidthMM	HeightMM	DimensionSource	SourceURL。缺少任一张表、任一映射引用的尺寸组，或尺寸组字段不完整时不得 COMPLETE。不要输出子车系匹配表。
+【COMPLETE 下载文件硬性要求】
+准备 COMPLETE 时，除两张完整内嵌 TSV 外，还必须创建并提供以下两个可点击 sandbox 下载链接，文件名必须完全一致：
+- left18448_7201-7300_ktype_dimension_mapping_final.tsv
+- left18448_7201-7300_dimension_groups_final.tsv
+缺少任一下载链接时不得输出推进信号：COMPLETE。
+
+
+--- Round 38 / checkpoint 续跑 ---
+### 1) 更新点
+
+完成 Daily III `35 C/S 9、35 C/S 11、35 C/S 13、35 C 15` 共 4 个 Ktype 的尺寸组关联。
+
+### 2) 当前批次进度
+
+READY Ktype：46
+PENDING Ktype：54
+本轮闭合 Ktype：4
+
+### 3) 本轮新增/修改的 Ktype 映射 TSV
+
+```tsv
+id	Ktype	NormalizedBodyStyle	Generation	BodyCode	Doors	DIMENSION_GROUP_ID	MatchConfidence	Notes	IterationStatus
+34421_35s_wb3000	34421	Chassis Cab	Daily III	35S	2	EU-IVECO-DAILY-III-CHASSIS-CAB-35S-WB3000-01	HIGH	35S分支，3000轴距。	READY
+34421_35s_wb3450	34421	Chassis Cab	Daily III	35S	2	EU-IVECO-DAILY-III-CHASSIS-CAB-35S-WB3450-01	HIGH	35S分支，3450轴距。	READY
+34421_35s_wb3750	34421	Chassis Cab	Daily III	35S	2	EU-IVECO-DAILY-III-CHASSIS-CAB-35S-WB3750-01	HIGH	35S分支，3750轴距。	READY
+34421_35c_wb3000	34421	Chassis Cab	Daily III	35C	2	EU-IVECO-DAILY-III-CHASSIS-CAB-35C-WB3000-01	HIGH	35C分支，3000轴距。	READY
+34421_35c_wb3450	34421	Chassis Cab	Daily III	35C	2	EU-IVECO-DAILY-III-CHASSIS-CAB-35C-WB3450-01	HIGH	35C分支，3450轴距。	READY
+34421_35c_wb3750	34421	Chassis Cab	Daily III	35C	2	EU-IVECO-DAILY-III-CHASSIS-CAB-35C-WB3750-01	HIGH	35C分支，3750轴距。	READY
+34421_35c_wb4100	34421	Chassis Cab	Daily III	35C	2	EU-IVECO-DAILY-III-CHASSIS-CAB-35C-WB4100-01	HIGH	35C分支，4100轴距。	READY
+34167_35s_wb3000	34167	Chassis Cab	Daily III	35S	2	EU-IVECO-DAILY-III-CHASSIS-CAB-35S-WB3000-01	HIGH	35S分支，3000轴距。	READY
+34167_35s_wb3450	34167	Chassis Cab	Daily III	35S	2	EU-IVECO-DAILY-III-CHASSIS-CAB-35S-WB3450-01	HIGH	35S分支，3450轴距。	READY
+34167_35s_wb3750	34167	Chassis Cab	Daily III	35S	2	EU-IVECO-DAILY-III-CHASSIS-CAB-35S-WB3750-01	HIGH	35S分支，3750轴距。	READY
+34167_35c_wb3000	34167	Chassis Cab	Daily III	35C	2	EU-IVECO-DAILY-III-CHASSIS-CAB-35C-WB3000-01	HIGH	35C分支，3000轴距。	READY
+34167_35c_wb3450	34167	Chassis Cab	Daily III	35C	2	EU-IVECO-DAILY-III-CHASSIS-CAB-35C-WB3450-01	HIGH	35C分支，3450轴距。	READY
+34167_35c_wb3750	34167	Chassis Cab	Daily III	35C	2	EU-IVECO-DAILY-III-CHASSIS-CAB-35C-WB3750-01	HIGH	35C分支，3750轴距。	READY
+34167_35c_wb4100	34167	Chassis Cab	Daily III	35C	2	EU-IVECO-DAILY-III-CHASSIS-CAB-35C-WB4100-01	HIGH	35C分支，4100轴距。	READY
+34169_35s_wb3000	34169	Chassis Cab	Daily III	35S	2	EU-IVECO-DAILY-III-CHASSIS-CAB-35S-WB3000-01	HIGH	35S分支，3000轴距。	READY
+34169_35s_wb3450	34169	Chassis Cab	Daily III	35S	2	EU-IVECO-DAILY-III-CHASSIS-CAB-35S-WB3450-01	HIGH	35S分支，3450轴距。	READY
+34169_35s_wb3750	34169	Chassis Cab	Daily III	35S	2	EU-IVECO-DAILY-III-CHASSIS-CAB-35S-WB3750-01	HIGH	35S分支，3750轴距。	READY
+34169_35c_wb3000	34169	Chassis Cab	Daily III	35C	2	EU-IVECO-DAILY-III-CHASSIS-CAB-35C-WB3000-01	HIGH	35C分支，3000轴距。	READY
+34169_35c_wb3450	34169	Chassis Cab	Daily III	35C	2	EU-IVECO-DAILY-III-CHASSIS-CAB-35C-WB3450-01	HIGH	35C分支，3450轴距。	READY
+34169_35c_wb3750	34169	Chassis Cab	Daily III	35C	2	EU-IVECO-DAILY-III-CHASSIS-CAB-35C-WB3750-01	HIGH	35C分支，3750轴距。	READY
+34169_35c_wb4100	34169	Chassis Cab	Daily III	35C	2	EU-IVECO-DAILY-III-CHASSIS-CAB-35C-WB4100-01	HIGH	35C分支，4100轴距。	READY
+34241_35c_wb3000	34241	Chassis Cab	Daily III	35C	2	EU-IVECO-DAILY-III-CHASSIS-CAB-35C-WB3000-01	HIGH	35C分支，3000轴距。	READY
+34241_35c_wb3450	34241	Chassis Cab	Daily III	35C	2	EU-IVECO-DAILY-III-CHASSIS-CAB-35C-WB3450-01	HIGH	35C分支，3450轴距。	READY
+34241_35c_wb3750	34241	Chassis Cab	Daily III	35C	2	EU-IVECO-DAILY-III-CHASSIS-CAB-35C-WB3750-01	HIGH	35C分支，3750轴距。	READY
+34241_35c_wb4100	34241	Chassis Cab	Daily III	35C	2	EU-IVECO-DAILY-III-CHASSIS-CAB-35C-WB4100-01	HIGH	35C分支，4100轴距。	READY
+```
+
+### 4) 本轮首次创建/修正的 DIMENSION_GROUP TSV
+
+无
+
+### 5) 下一步优先处理
+
+优先处理 Daily III 剩余 Bus Ktype，并判断能否批量复用已闭合的 35S/35C 外廓；随后处理 Daily II 的 Van、Bus 和未闭合底盘族。
+
+推进信号：CONTINUE
+
+
+--- 发送 / 继续到 Round 39 ---
+继续当前批次并采用缓存优先模式。尺寸组只在首次创建或纠错时完整核对一次三维和来源；后续 Ktype 只判断关联哪个现有 DIMENSION_GROUP_ID，不重复抓取，不输出缓存来源或匹配理由。仍有 PENDING 时，CONTINUE 轮仅输出：1) 更新点；2) 当前批次进度；3) 本轮新增/修改的 Ktype 映射 TSV（无变化写“无”）；4) 本轮首次创建/修正的 DIMENSION_GROUP TSV（复用既有组不重复输出，无变化写“无”）；5) 下一步优先处理。若当前或上一轮进度已经是 PENDING=0，本轮不要继续检索或再次输出 CONTINUE，必须立刻汇总并输出两张最终完整 TSV、两个任务指定 sandbox 下载链接和“推进信号：COMPLETE”。执行顺序固定为：第一阶段优先消除 PENDING 并补齐会阻塞两张最终表的数据。检测到 PENDING=0 后，第二阶段最多只做一次轻量机械收尾：核对固定表头、id 与 DIMENSION_GROUP_ID 唯一、映射引用闭合、长宽高和来源非空、两个任务指定下载链接齐全。第二阶段不得重新逐车型、逐年份或逐来源做深度检索，不得为了提高置信度反复核对，也不得因非阻塞的排序或措辞问题继续多轮。PENDING=0 后的下一条回复必须直接输出两张最终完整 TSV、两个精确 sandbox 下载链接，并以“推进信号：COMPLETE”结束；不要再输出 CONTINUE。Ktype 映射 TSV 表头必须严格使用 requirement 指定的字段顺序：id	Ktype	NormalizedBodyStyle	Generation	BodyCode	Doors	DIMENSION_GROUP_ID	MatchConfidence	Notes	IterationStatus。另需维护完整 DIMENSION_GROUP TSV，表头固定为：DIMENSION_GROUP_ID	LengthMM	WidthMM	HeightMM	DimensionSource	SourceURL。缺少任一张表、任一映射引用的尺寸组，或尺寸组字段不完整时不得 COMPLETE。不要输出子车系匹配表。
+【COMPLETE 下载文件硬性要求】
+准备 COMPLETE 时，除两张完整内嵌 TSV 外，还必须创建并提供以下两个可点击 sandbox 下载链接，文件名必须完全一致：
+- left18448_7201-7300_ktype_dimension_mapping_final.tsv
+- left18448_7201-7300_dimension_groups_final.tsv
+缺少任一下载链接时不得输出推进信号：COMPLETE。
+
+
+--- Round 39 / checkpoint 续跑 ---
+### 1) 更新点
+
+新建 Daily III 标准短轴低顶封闭车身尺寸组，闭合 3 个 Bus Ktype 和 1 个未细分轴距/车顶的 CNG Van Ktype。2003 年 35S13 与 2006 年 35S14 的标准短轴低顶外廓均为 5477 × 1996 × 2270 mm。([CarsGuide][1])
+
+### 2) 当前批次进度
+
+READY Ktype：50
+PENDING Ktype：50
+本轮闭合 Ktype：4
+
+### 3) 本轮新增/修改的 Ktype 映射 TSV
+
+```tsv
+id	Ktype	NormalizedBodyStyle	Generation	BodyCode	Doors	DIMENSION_GROUP_ID	MatchConfidence	Notes	IterationStatus
+108243	108243	Van	Daily III			EU-IVECO-DAILY-III-FULL-BODY-SWB-LOW-01	MEDIUM	未确认多外廓，采用最匹配的标准短轴低顶量产封闭车身。	READY
+114522	114522	MPV	Daily III			EU-IVECO-DAILY-III-FULL-BODY-SWB-LOW-01	MEDIUM	未确认多外廓，采用最匹配的标准短轴低顶量产客车外廓。	READY
+114523	114523	MPV	Daily III			EU-IVECO-DAILY-III-FULL-BODY-SWB-LOW-01	MEDIUM	未确认多外廓，采用最匹配的标准短轴低顶量产客车外廓。	READY
+114535	114535	MPV	Daily III			EU-IVECO-DAILY-III-FULL-BODY-SWB-LOW-01	MEDIUM	未确认多外廓，采用最匹配的标准短轴低顶量产客车外廓。	READY
+```
+
+### 4) 本轮首次创建/修正的 DIMENSION_GROUP TSV
+
+```tsv
+DIMENSION_GROUP_ID	LengthMM	WidthMM	HeightMM	DimensionSource	SourceURL
+EU-IVECO-DAILY-III-FULL-BODY-SWB-LOW-01	5477	1996	2270	CarsGuide Iveco Daily 35S14 SWB/Low 2006 dimensions	https://www.carsguide.com.au/iveco/daily/car-dimensions/2006
+```
+
+### 5) 下一步优先处理
+
+优先处理 Daily II Van 与 Bus，按改款前后聚类；先批量复用相同封闭车身外廓，再处理未闭合的底盘和平台货斗分支。
+
+推进信号：CONTINUE
+
+[1]: https://www.carsguide.com.au/iveco/daily/car-dimensions/2003 "Iveco Daily Dimensions 2003 - Length, Width, Height, Turning Circle, Ground Clearance, Wheelbase & Size | CarsGuide"
+
+
+--- 发送 / 继续到 Round 40 ---
+继续当前批次并采用缓存优先模式。尺寸组只在首次创建或纠错时完整核对一次三维和来源；后续 Ktype 只判断关联哪个现有 DIMENSION_GROUP_ID，不重复抓取，不输出缓存来源或匹配理由。仍有 PENDING 时，CONTINUE 轮仅输出：1) 更新点；2) 当前批次进度；3) 本轮新增/修改的 Ktype 映射 TSV（无变化写“无”）；4) 本轮首次创建/修正的 DIMENSION_GROUP TSV（复用既有组不重复输出，无变化写“无”）；5) 下一步优先处理。若当前或上一轮进度已经是 PENDING=0，本轮不要继续检索或再次输出 CONTINUE，必须立刻汇总并输出两张最终完整 TSV、两个任务指定 sandbox 下载链接和“推进信号：COMPLETE”。执行顺序固定为：第一阶段优先消除 PENDING 并补齐会阻塞两张最终表的数据。检测到 PENDING=0 后，第二阶段最多只做一次轻量机械收尾：核对固定表头、id 与 DIMENSION_GROUP_ID 唯一、映射引用闭合、长宽高和来源非空、两个任务指定下载链接齐全。第二阶段不得重新逐车型、逐年份或逐来源做深度检索，不得为了提高置信度反复核对，也不得因非阻塞的排序或措辞问题继续多轮。PENDING=0 后的下一条回复必须直接输出两张最终完整 TSV、两个精确 sandbox 下载链接，并以“推进信号：COMPLETE”结束；不要再输出 CONTINUE。Ktype 映射 TSV 表头必须严格使用 requirement 指定的字段顺序：id	Ktype	NormalizedBodyStyle	Generation	BodyCode	Doors	DIMENSION_GROUP_ID	MatchConfidence	Notes	IterationStatus。另需维护完整 DIMENSION_GROUP TSV，表头固定为：DIMENSION_GROUP_ID	LengthMM	WidthMM	HeightMM	DimensionSource	SourceURL。缺少任一张表、任一映射引用的尺寸组，或尺寸组字段不完整时不得 COMPLETE。不要输出子车系匹配表。
+【COMPLETE 下载文件硬性要求】
+准备 COMPLETE 时，除两张完整内嵌 TSV 外，还必须创建并提供以下两个可点击 sandbox 下载链接，文件名必须完全一致：
+- left18448_7201-7300_ktype_dimension_mapping_final.tsv
+- left18448_7201-7300_dimension_groups_final.tsv
+缺少任一下载链接时不得输出推进信号：COMPLETE。
+
+
+--- Round 40 / checkpoint 续跑 ---
+### 1) 更新点
+
+闭合 Daily II 的 4 个 `49` 系列封闭式 Van Ktype，以及 1 个改款后 `40-10 4X4` Van Ktype；共新增 3 个独立尺寸组。([CarExpert][1])
+
+### 2) 当前批次进度
+
+READY Ktype：55
+PENDING Ktype：45
+本轮闭合 Ktype：5
+
+### 3) 本轮新增/修改的 Ktype 映射 TSV
+
+```tsv
+id	Ktype	NormalizedBodyStyle	Generation	BodyCode	Doors	DIMENSION_GROUP_ID	MatchConfidence	Notes	IterationStatus
+34081	34081	Van	Daily II	40-10 4X4		EU-IVECO-DAILY-II-VAN-40-4X4-FACELIFT-01	HIGH	改款后四驱封闭车身。	READY
+146441	146441	Van	Daily II	49-10		EU-IVECO-DAILY-II-VAN-49-FACELIFT-01	HIGH	改款后49系列封闭车身。	READY
+34100	34100	Van	Daily II	49-10		EU-IVECO-DAILY-II-VAN-49-PREFL-01	HIGH	改款前49系列封闭车身。	READY
+34105	34105	Van	Daily II	49-12		EU-IVECO-DAILY-II-VAN-49-PREFL-01	HIGH	改款前49系列封闭车身。	READY
+34106	34106	Van	Daily II	49-12		EU-IVECO-DAILY-II-VAN-49-FACELIFT-01	HIGH	改款后49系列封闭车身。	READY
+```
+
+### 4) 本轮首次创建/修正的 DIMENSION_GROUP TSV
+
+```tsv
+DIMENSION_GROUP_ID	LengthMM	WidthMM	HeightMM	DimensionSource	SourceURL
+EU-IVECO-DAILY-II-VAN-49-PREFL-01	6000	2000	2768	CarExpert JATO Iveco Daily 1996 panel-van specifications	https://www.carexpert.com.au/iveco/daily/1996-2-5l-panel-van-rwd-diesel-manual-jjo5f8fo19960601
+EU-IVECO-DAILY-II-VAN-49-FACELIFT-01	6000	2000	2670	CarExpert JATO Iveco Daily 1998 panel-van specifications	https://www.carexpert.com.au/iveco/daily/1998-2-8l-panel-van-rwd-diesel-manual-jjo5f8fo19980401
+EU-IVECO-DAILY-II-VAN-40-4X4-FACELIFT-01	4855	2000	2865	CarExpert JATO Iveco Daily 1998 4X4 panel-van specifications	https://www.carexpert.com.au/iveco/daily/1998-2-8l-panel-van-4x4-diesel-manual-jjo5ffwm20000701
+```
+
+### 5) 下一步优先处理
+
+优先闭合 Daily II 剩余 Bus 外廓；随后处理 `30-10` 与改款前 `2.5 4X4` Van，并批量关联尚未闭合的底盘驾驶室 Ktype。
+
+推进信号：CONTINUE
+
+[1]: https://www.carexpert.com.au/iveco/daily/1998-2-8l-panel-van-rwd-diesel-manual-jjo5f8fo19980401?utm_source=chatgpt.com "1998 Iveco Daily Base Price and Specifications"
+
+
+--- 发送 / 继续到 Round 41 ---
+继续当前批次并采用缓存优先模式。尺寸组只在首次创建或纠错时完整核对一次三维和来源；后续 Ktype 只判断关联哪个现有 DIMENSION_GROUP_ID，不重复抓取，不输出缓存来源或匹配理由。仍有 PENDING 时，CONTINUE 轮仅输出：1) 更新点；2) 当前批次进度；3) 本轮新增/修改的 Ktype 映射 TSV（无变化写“无”）；4) 本轮首次创建/修正的 DIMENSION_GROUP TSV（复用既有组不重复输出，无变化写“无”）；5) 下一步优先处理。若当前或上一轮进度已经是 PENDING=0，本轮不要继续检索或再次输出 CONTINUE，必须立刻汇总并输出两张最终完整 TSV、两个任务指定 sandbox 下载链接和“推进信号：COMPLETE”。执行顺序固定为：第一阶段优先消除 PENDING 并补齐会阻塞两张最终表的数据。检测到 PENDING=0 后，第二阶段最多只做一次轻量机械收尾：核对固定表头、id 与 DIMENSION_GROUP_ID 唯一、映射引用闭合、长宽高和来源非空、两个任务指定下载链接齐全。第二阶段不得重新逐车型、逐年份或逐来源做深度检索，不得为了提高置信度反复核对，也不得因非阻塞的排序或措辞问题继续多轮。PENDING=0 后的下一条回复必须直接输出两张最终完整 TSV、两个精确 sandbox 下载链接，并以“推进信号：COMPLETE”结束；不要再输出 CONTINUE。Ktype 映射 TSV 表头必须严格使用 requirement 指定的字段顺序：id	Ktype	NormalizedBodyStyle	Generation	BodyCode	Doors	DIMENSION_GROUP_ID	MatchConfidence	Notes	IterationStatus。另需维护完整 DIMENSION_GROUP TSV，表头固定为：DIMENSION_GROUP_ID	LengthMM	WidthMM	HeightMM	DimensionSource	SourceURL。缺少任一张表、任一映射引用的尺寸组，或尺寸组字段不完整时不得 COMPLETE。不要输出子车系匹配表。
+【COMPLETE 下载文件硬性要求】
+准备 COMPLETE 时，除两张完整内嵌 TSV 外，还必须创建并提供以下两个可点击 sandbox 下载链接，文件名必须完全一致：
+- left18448_7201-7300_ktype_dimension_mapping_final.tsv
+- left18448_7201-7300_dimension_groups_final.tsv
+缺少任一下载链接时不得输出推进信号：COMPLETE。
+
+
+--- Round 41 / checkpoint 续跑 ---
+### 1) 更新点
+
+Daily II 剩余 7 个 Bus Ktype 已按改款前后复用现有封闭车身尺寸组。
+
+### 2) 当前批次进度
+
+READY Ktype：62
+PENDING Ktype：38
+本轮闭合 Ktype：7
+
+### 3) 本轮新增/修改的 Ktype 映射 TSV
+
+```tsv
+id	Ktype	NormalizedBodyStyle	Generation	BodyCode	Doors	DIMENSION_GROUP_ID	MatchConfidence	Notes	IterationStatus
+34082	34082	MPV	Daily II			EU-IVECO-DAILY-II-VAN-49-PREFL-01	MEDIUM	采用改款前标准封闭客车外廓。	READY
+34083	34083	MPV	Daily II			EU-IVECO-DAILY-II-VAN-49-FACELIFT-01	MEDIUM	采用改款后标准封闭客车外廓。	READY
+34086	34086	MPV	Daily II			EU-IVECO-DAILY-II-VAN-49-FACELIFT-01	MEDIUM	采用改款后标准封闭客车外廓。	READY
+34092	34092	MPV	Daily II			EU-IVECO-DAILY-II-VAN-49-PREFL-01	MEDIUM	采用改款前标准封闭客车外廓。	READY
+34093	34093	MPV	Daily II			EU-IVECO-DAILY-II-VAN-49-FACELIFT-01	MEDIUM	采用改款后标准封闭客车外廓。	READY
+34095	34095	MPV	Daily II			EU-IVECO-DAILY-II-VAN-49-FACELIFT-01	MEDIUM	采用改款后标准封闭客车外廓。	READY
+146451	146451	MPV	Daily II			EU-IVECO-DAILY-II-VAN-49-PREFL-01	MEDIUM	采用改款前标准封闭客车外廓。	READY
+```
+
+### 4) 本轮首次创建/修正的 DIMENSION_GROUP TSV
+
+无
+
+### 5) 下一步优先处理
+
+优先关联 Daily II 剩余标准底盘驾驶室 Ktype；随后处理需要独立尺寸的四驱封闭车身、四驱底盘和平台货斗分支。
+
+推进信号：CONTINUE
+
+
+--- 发送 / 继续到 Round 42 ---
+继续当前批次并采用缓存优先模式。尺寸组只在首次创建或纠错时完整核对一次三维和来源；后续 Ktype 只判断关联哪个现有 DIMENSION_GROUP_ID，不重复抓取，不输出缓存来源或匹配理由。仍有 PENDING 时，CONTINUE 轮仅输出：1) 更新点；2) 当前批次进度；3) 本轮新增/修改的 Ktype 映射 TSV（无变化写“无”）；4) 本轮首次创建/修正的 DIMENSION_GROUP TSV（复用既有组不重复输出，无变化写“无”）；5) 下一步优先处理。若当前或上一轮进度已经是 PENDING=0，本轮不要继续检索或再次输出 CONTINUE，必须立刻汇总并输出两张最终完整 TSV、两个任务指定 sandbox 下载链接和“推进信号：COMPLETE”。执行顺序固定为：第一阶段优先消除 PENDING 并补齐会阻塞两张最终表的数据。检测到 PENDING=0 后，第二阶段最多只做一次轻量机械收尾：核对固定表头、id 与 DIMENSION_GROUP_ID 唯一、映射引用闭合、长宽高和来源非空、两个任务指定下载链接齐全。第二阶段不得重新逐车型、逐年份或逐来源做深度检索，不得为了提高置信度反复核对，也不得因非阻塞的排序或措辞问题继续多轮。PENDING=0 后的下一条回复必须直接输出两张最终完整 TSV、两个精确 sandbox 下载链接，并以“推进信号：COMPLETE”结束；不要再输出 CONTINUE。Ktype 映射 TSV 表头必须严格使用 requirement 指定的字段顺序：id	Ktype	NormalizedBodyStyle	Generation	BodyCode	Doors	DIMENSION_GROUP_ID	MatchConfidence	Notes	IterationStatus。另需维护完整 DIMENSION_GROUP TSV，表头固定为：DIMENSION_GROUP_ID	LengthMM	WidthMM	HeightMM	DimensionSource	SourceURL。缺少任一张表、任一映射引用的尺寸组，或尺寸组字段不完整时不得 COMPLETE。不要输出子车系匹配表。
+【COMPLETE 下载文件硬性要求】
+准备 COMPLETE 时，除两张完整内嵌 TSV 外，还必须创建并提供以下两个可点击 sandbox 下载链接，文件名必须完全一致：
+- left18448_7201-7300_ktype_dimension_mapping_final.tsv
+- left18448_7201-7300_dimension_groups_final.tsv
+缺少任一下载链接时不得输出推进信号：COMPLETE。
+
+
+--- Round 42 / checkpoint 续跑 ---
+### 1) 更新点
+
+闭合改款前 Daily II `49-10` Ktype `34097`。该系列已确认覆盖 3310 与 3600 mm 轴距，可直接复用现有 `49` 系列改款前底盘驾驶室尺寸组。
+
+### 2) 当前批次进度
+
+READY Ktype：63
+PENDING Ktype：37
+本轮闭合 Ktype：1
+
+### 3) 本轮新增/修改的 Ktype 映射 TSV
+
+```tsv
+id	Ktype	NormalizedBodyStyle	Generation	BodyCode	Doors	DIMENSION_GROUP_ID	MatchConfidence	Notes	IterationStatus
+34097_wb3310_chassis	34097	Chassis Cab	Daily II	49	2	EU-IVECO-DAILY-II-CHASSIS-CAB-49-WB3310-PREFL-01	HIGH	49系列改款前3310轴距单排底盘驾驶室。	READY
+34097_wb3600_chassis	34097	Chassis Cab	Daily II	49	2	EU-IVECO-DAILY-II-CHASSIS-CAB-49-WB3600-PREFL-01	HIGH	49系列改款前3600轴距单排底盘驾驶室。	READY
+```
+
+### 4) 本轮首次创建/修正的 DIMENSION_GROUP TSV
+
+无
+
+### 5) 下一步优先处理
+
+处理改款后 `49-10 / 49-12` 底盘组，优先闭合 `34098` 与 `34104`；随后处理 `59-12` 的改款前后底盘 Ktype。
+
+推进信号：CONTINUE
+
+
+--- 发送 / 继续到 Round 43 ---
+继续当前批次并采用缓存优先模式。尺寸组只在首次创建或纠错时完整核对一次三维和来源；后续 Ktype 只判断关联哪个现有 DIMENSION_GROUP_ID，不重复抓取，不输出缓存来源或匹配理由。仍有 PENDING 时，CONTINUE 轮仅输出：1) 更新点；2) 当前批次进度；3) 本轮新增/修改的 Ktype 映射 TSV（无变化写“无”）；4) 本轮首次创建/修正的 DIMENSION_GROUP TSV（复用既有组不重复输出，无变化写“无”）；5) 下一步优先处理。若当前或上一轮进度已经是 PENDING=0，本轮不要继续检索或再次输出 CONTINUE，必须立刻汇总并输出两张最终完整 TSV、两个任务指定 sandbox 下载链接和“推进信号：COMPLETE”。执行顺序固定为：第一阶段优先消除 PENDING 并补齐会阻塞两张最终表的数据。检测到 PENDING=0 后，第二阶段最多只做一次轻量机械收尾：核对固定表头、id 与 DIMENSION_GROUP_ID 唯一、映射引用闭合、长宽高和来源非空、两个任务指定下载链接齐全。第二阶段不得重新逐车型、逐年份或逐来源做深度检索，不得为了提高置信度反复核对，也不得因非阻塞的排序或措辞问题继续多轮。PENDING=0 后的下一条回复必须直接输出两张最终完整 TSV、两个精确 sandbox 下载链接，并以“推进信号：COMPLETE”结束；不要再输出 CONTINUE。Ktype 映射 TSV 表头必须严格使用 requirement 指定的字段顺序：id	Ktype	NormalizedBodyStyle	Generation	BodyCode	Doors	DIMENSION_GROUP_ID	MatchConfidence	Notes	IterationStatus。另需维护完整 DIMENSION_GROUP TSV，表头固定为：DIMENSION_GROUP_ID	LengthMM	WidthMM	HeightMM	DimensionSource	SourceURL。缺少任一张表、任一映射引用的尺寸组，或尺寸组字段不完整时不得 COMPLETE。不要输出子车系匹配表。
+【COMPLETE 下载文件硬性要求】
+准备 COMPLETE 时，除两张完整内嵌 TSV 外，还必须创建并提供以下两个可点击 sandbox 下载链接，文件名必须完全一致：
+- left18448_7201-7300_ktype_dimension_mapping_final.tsv
+- left18448_7201-7300_dimension_groups_final.tsv
+缺少任一下载链接时不得输出推进信号：COMPLETE。
+
+
+--- Round 43 / checkpoint 续跑 ---
+### 1) 更新点
+
+闭合改款后 Daily II `49-10 / 49-12` 两个底盘 Ktype；两者复用同一 3300 mm 轴距单排底盘驾驶室外廓。([CarExpert][1])
+
+### 2) 当前批次进度
+
+READY Ktype：65
+PENDING Ktype：35
+本轮闭合 Ktype：2
+
+### 3) 本轮新增/修改的 Ktype 映射 TSV
+
+```tsv
+id	Ktype	NormalizedBodyStyle	Generation	BodyCode	Doors	DIMENSION_GROUP_ID	MatchConfidence	Notes	IterationStatus
+34098	34098	Chassis Cab	Daily II	49	2	EU-IVECO-DAILY-II-CHASSIS-CAB-49-WB3300-FACELIFT-01	HIGH	49系列改款后3300轴距单排底盘驾驶室。	READY
+34104	34104	Chassis Cab	Daily II	49	2	EU-IVECO-DAILY-II-CHASSIS-CAB-49-WB3300-FACELIFT-01	HIGH	49系列改款后3300轴距单排底盘驾驶室。	READY
+```
+
+### 4) 本轮首次创建/修正的 DIMENSION_GROUP TSV
+
+```tsv
+DIMENSION_GROUP_ID	LengthMM	WidthMM	HeightMM	DimensionSource	SourceURL
+EU-IVECO-DAILY-II-CHASSIS-CAB-49-WB3300-FACELIFT-01	5615	2000	2160	CarExpert JATO Iveco Daily 1998 cab-chassis specifications	https://www.carexpert.com.au/iveco/daily/1998-2-8l-cab-chassis-rwd-diesel-manual-jjo5f8fm19980401
+```
+
+### 5) 下一步优先处理
+
+优先闭合 `59-12` 改款前后底盘 Ktype `34108`、`34109`；随后处理 Daily II 剩余 `30/35/40` 系列底盘与四驱分支。
+
+推进信号：CONTINUE
+
+[1]: https://www.carexpert.com.au/iveco/daily/1998-2-8l-cab-chassis-rwd-diesel-manual-jjo5f8fm19980401 "1998 Iveco Daily Base Price and Specifications | CarExpert"
+
+
+--- 发送 / 继续到 Round 44 ---
+继续当前批次并采用缓存优先模式。尺寸组只在首次创建或纠错时完整核对一次三维和来源；后续 Ktype 只判断关联哪个现有 DIMENSION_GROUP_ID，不重复抓取，不输出缓存来源或匹配理由。仍有 PENDING 时，CONTINUE 轮仅输出：1) 更新点；2) 当前批次进度；3) 本轮新增/修改的 Ktype 映射 TSV（无变化写“无”）；4) 本轮首次创建/修正的 DIMENSION_GROUP TSV（复用既有组不重复输出，无变化写“无”）；5) 下一步优先处理。若当前或上一轮进度已经是 PENDING=0，本轮不要继续检索或再次输出 CONTINUE，必须立刻汇总并输出两张最终完整 TSV、两个任务指定 sandbox 下载链接和“推进信号：COMPLETE”。执行顺序固定为：第一阶段优先消除 PENDING 并补齐会阻塞两张最终表的数据。检测到 PENDING=0 后，第二阶段最多只做一次轻量机械收尾：核对固定表头、id 与 DIMENSION_GROUP_ID 唯一、映射引用闭合、长宽高和来源非空、两个任务指定下载链接齐全。第二阶段不得重新逐车型、逐年份或逐来源做深度检索，不得为了提高置信度反复核对，也不得因非阻塞的排序或措辞问题继续多轮。PENDING=0 后的下一条回复必须直接输出两张最终完整 TSV、两个精确 sandbox 下载链接，并以“推进信号：COMPLETE”结束；不要再输出 CONTINUE。Ktype 映射 TSV 表头必须严格使用 requirement 指定的字段顺序：id	Ktype	NormalizedBodyStyle	Generation	BodyCode	Doors	DIMENSION_GROUP_ID	MatchConfidence	Notes	IterationStatus。另需维护完整 DIMENSION_GROUP TSV，表头固定为：DIMENSION_GROUP_ID	LengthMM	WidthMM	HeightMM	DimensionSource	SourceURL。缺少任一张表、任一映射引用的尺寸组，或尺寸组字段不完整时不得 COMPLETE。不要输出子车系匹配表。
+【COMPLETE 下载文件硬性要求】
+准备 COMPLETE 时，除两张完整内嵌 TSV 外，还必须创建并提供以下两个可点击 sandbox 下载链接，文件名必须完全一致：
+- left18448_7201-7300_ktype_dimension_mapping_final.tsv
+- left18448_7201-7300_dimension_groups_final.tsv
+缺少任一下载链接时不得输出推进信号：COMPLETE。
+
+
+--- Round 44 / checkpoint 续跑 ---
+### 1) 更新点
+
+闭合 Daily II `59-12` 改款前后两个底盘 Ktype；在未确认额外物理分支的情况下，各保留一个最匹配的标准量产底盘外廓，并复用现有尺寸组。([车讯][1])
+
+### 2) 当前批次进度
+
+READY Ktype：67
+PENDING Ktype：33
+本轮闭合 Ktype：2
+
+### 3) 本轮新增/修改的 Ktype 映射 TSV
+
+```tsv
+id	Ktype	NormalizedBodyStyle	Generation	BodyCode	Doors	DIMENSION_GROUP_ID	MatchConfidence	Notes	IterationStatus
+34108	34108	Chassis Cab	Daily II	59	2	EU-IVECO-DAILY-II-CHASSIS-CAB-49-WB3600-PREFL-01	MEDIUM	改款前59系列标准3600轴距单排底盘驾驶室。	READY
+34109	34109	Chassis Cab	Daily II	59	2	EU-IVECO-DAILY-II-CHASSIS-CAB-49-WB3300-FACELIFT-01	MEDIUM	改款后59系列标准3300轴距单排底盘驾驶室。	READY
+```
+
+### 4) 本轮首次创建/修正的 DIMENSION_GROUP TSV
+
+无
+
+### 5) 下一步优先处理
+
+优先处理 Daily II `30-8、35-12 K、40-8` 标准底盘驾驶室 Ktype；随后处理 `40-10 W 4X4` 独立四驱底盘外廓。
+
+推进信号：CONTINUE
+
+[1]: https://www.car.info/en-se/iveco/daily/daily-59-chassis-cab-i-1st-facelift-26737940?utm_source=chatgpt.com "Iveco Daily 59 Chassis Cab I 1st Facelift 1990 - 1996"
+
+
+--- 发送 / 继续到 Round 45 ---
+继续当前批次并采用缓存优先模式。尺寸组只在首次创建或纠错时完整核对一次三维和来源；后续 Ktype 只判断关联哪个现有 DIMENSION_GROUP_ID，不重复抓取，不输出缓存来源或匹配理由。仍有 PENDING 时，CONTINUE 轮仅输出：1) 更新点；2) 当前批次进度；3) 本轮新增/修改的 Ktype 映射 TSV（无变化写“无”）；4) 本轮首次创建/修正的 DIMENSION_GROUP TSV（复用既有组不重复输出，无变化写“无”）；5) 下一步优先处理。若当前或上一轮进度已经是 PENDING=0，本轮不要继续检索或再次输出 CONTINUE，必须立刻汇总并输出两张最终完整 TSV、两个任务指定 sandbox 下载链接和“推进信号：COMPLETE”。执行顺序固定为：第一阶段优先消除 PENDING 并补齐会阻塞两张最终表的数据。检测到 PENDING=0 后，第二阶段最多只做一次轻量机械收尾：核对固定表头、id 与 DIMENSION_GROUP_ID 唯一、映射引用闭合、长宽高和来源非空、两个任务指定下载链接齐全。第二阶段不得重新逐车型、逐年份或逐来源做深度检索，不得为了提高置信度反复核对，也不得因非阻塞的排序或措辞问题继续多轮。PENDING=0 后的下一条回复必须直接输出两张最终完整 TSV、两个精确 sandbox 下载链接，并以“推进信号：COMPLETE”结束；不要再输出 CONTINUE。Ktype 映射 TSV 表头必须严格使用 requirement 指定的字段顺序：id	Ktype	NormalizedBodyStyle	Generation	BodyCode	Doors	DIMENSION_GROUP_ID	MatchConfidence	Notes	IterationStatus。另需维护完整 DIMENSION_GROUP TSV，表头固定为：DIMENSION_GROUP_ID	LengthMM	WidthMM	HeightMM	DimensionSource	SourceURL。缺少任一张表、任一映射引用的尺寸组，或尺寸组字段不完整时不得 COMPLETE。不要输出子车系匹配表。
+【COMPLETE 下载文件硬性要求】
+准备 COMPLETE 时，除两张完整内嵌 TSV 外，还必须创建并提供以下两个可点击 sandbox 下载链接，文件名必须完全一致：
+- left18448_7201-7300_ktype_dimension_mapping_final.tsv
+- left18448_7201-7300_dimension_groups_final.tsv
+缺少任一下载链接时不得输出推进信号：COMPLETE。
+
+
+--- Round 45 / checkpoint 续跑 ---
+### 1) 更新点
+
+闭合 Daily II 的 `30-8` 两个重复 Ktype 和 `40-8` Ktype，共 3 个 Ktype。`30-8` 按已确认的短轴、长轴以及改款前后物理外廓关联；`40-8` 按改款前三个标准轴距关联。`35-12 K` 属于独立自卸车身，本轮不套用底盘驾驶室尺寸组。([ParuVendu][1])
+
+### 2) 当前批次进度
+
+READY Ktype：70
+PENDING Ktype：30
+本轮闭合 Ktype：3
+
+### 3) 本轮新增/修改的 Ktype 映射 TSV
+
+```tsv
+id	Ktype	NormalizedBodyStyle	Generation	BodyCode	Doors	DIMENSION_GROUP_ID	MatchConfidence	Notes	IterationStatus
+34051_wb2800_prefl_chassis	34051	Chassis Cab	Daily II	30	2	EU-IVECO-DAILY-II-CHASSIS-CAB-WB2800-PREFL-01	MEDIUM	改款前2800轴距单排底盘驾驶室。	READY
+34051_wb3310_prefl_chassis	34051	Chassis Cab	Daily II	30	2	EU-IVECO-DAILY-II-CHASSIS-CAB-WB3310-PREFL-01	MEDIUM	改款前3310轴距单排底盘驾驶室。	READY
+34051_wb2800_facelift_chassis	34051	Chassis Cab	Daily II	30	2	EU-IVECO-DAILY-II-CHASSIS-CAB-WB2800-FACELIFT-01	MEDIUM	改款后2800轴距单排底盘驾驶室。	READY
+34051_wb3300_facelift_chassis	34051	Chassis Cab	Daily II	30	2	EU-IVECO-DAILY-II-CHASSIS-CAB-WB3300-FACELIFT-01	MEDIUM	改款后3300轴距单排底盘驾驶室。	READY
+34367_wb2800_prefl_chassis	34367	Chassis Cab	Daily II	30	2	EU-IVECO-DAILY-II-CHASSIS-CAB-WB2800-PREFL-01	MEDIUM	改款前2800轴距单排底盘驾驶室。	READY
+34367_wb3310_prefl_chassis	34367	Chassis Cab	Daily II	30	2	EU-IVECO-DAILY-II-CHASSIS-CAB-WB3310-PREFL-01	MEDIUM	改款前3310轴距单排底盘驾驶室。	READY
+34367_wb2800_facelift_chassis	34367	Chassis Cab	Daily II	30	2	EU-IVECO-DAILY-II-CHASSIS-CAB-WB2800-FACELIFT-01	MEDIUM	改款后2800轴距单排底盘驾驶室。	READY
+34367_wb3300_facelift_chassis	34367	Chassis Cab	Daily II	30	2	EU-IVECO-DAILY-II-CHASSIS-CAB-WB3300-FACELIFT-01	MEDIUM	改款后3300轴距单排底盘驾驶室。	READY
+146466_wb2800_chassis	146466	Chassis Cab	Daily II	40	2	EU-IVECO-DAILY-II-CHASSIS-CAB-WB2800-PREFL-01	MEDIUM	改款前2800轴距单排底盘驾驶室。	READY
+146466_wb3310_chassis	146466	Chassis Cab	Daily II	40	2	EU-IVECO-DAILY-II-CHASSIS-CAB-WB3310-PREFL-01	MEDIUM	改款前3310轴距单排底盘驾驶室。	READY
+146466_wb3600_chassis	146466	Chassis Cab	Daily II	40	2	EU-IVECO-DAILY-II-CHASSIS-CAB-WB3600-PREFL-01	MEDIUM	改款前3600轴距单排底盘驾驶室。	READY
+```
+
+### 4) 本轮首次创建/修正的 DIMENSION_GROUP TSV
+
+无
+
+### 5) 下一步优先处理
+
+优先闭合 Daily II 的 `40-10 W 4X4` 改款前后底盘 Ktype，以及仍未关联的 `35-12 K` 自卸车外廓；随后集中处理 Daily I。
+
+推进信号：CONTINUE
+
+[1]: https://www.paruvendu.fr/fiches-techniques-utilitaire/iveco-daily/30-8-ccs-8-cv-diesel/3058472/?utm_source=chatgpt.com "Fiche technique utilitaire Iveco Daily 30.8 CCS 1996 (8 CV) 3058472"
+
+
+--- 发送 / 继续到 Round 46 ---
+继续当前批次并采用缓存优先模式。尺寸组只在首次创建或纠错时完整核对一次三维和来源；后续 Ktype 只判断关联哪个现有 DIMENSION_GROUP_ID，不重复抓取，不输出缓存来源或匹配理由。仍有 PENDING 时，CONTINUE 轮仅输出：1) 更新点；2) 当前批次进度；3) 本轮新增/修改的 Ktype 映射 TSV（无变化写“无”）；4) 本轮首次创建/修正的 DIMENSION_GROUP TSV（复用既有组不重复输出，无变化写“无”）；5) 下一步优先处理。若当前或上一轮进度已经是 PENDING=0，本轮不要继续检索或再次输出 CONTINUE，必须立刻汇总并输出两张最终完整 TSV、两个任务指定 sandbox 下载链接和“推进信号：COMPLETE”。执行顺序固定为：第一阶段优先消除 PENDING 并补齐会阻塞两张最终表的数据。检测到 PENDING=0 后，第二阶段最多只做一次轻量机械收尾：核对固定表头、id 与 DIMENSION_GROUP_ID 唯一、映射引用闭合、长宽高和来源非空、两个任务指定下载链接齐全。第二阶段不得重新逐车型、逐年份或逐来源做深度检索，不得为了提高置信度反复核对，也不得因非阻塞的排序或措辞问题继续多轮。PENDING=0 后的下一条回复必须直接输出两张最终完整 TSV、两个精确 sandbox 下载链接，并以“推进信号：COMPLETE”结束；不要再输出 CONTINUE。Ktype 映射 TSV 表头必须严格使用 requirement 指定的字段顺序：id	Ktype	NormalizedBodyStyle	Generation	BodyCode	Doors	DIMENSION_GROUP_ID	MatchConfidence	Notes	IterationStatus。另需维护完整 DIMENSION_GROUP TSV，表头固定为：DIMENSION_GROUP_ID	LengthMM	WidthMM	HeightMM	DimensionSource	SourceURL。缺少任一张表、任一映射引用的尺寸组，或尺寸组字段不完整时不得 COMPLETE。不要输出子车系匹配表。
+【COMPLETE 下载文件硬性要求】
+准备 COMPLETE 时，除两张完整内嵌 TSV 外，还必须创建并提供以下两个可点击 sandbox 下载链接，文件名必须完全一致：
+- left18448_7201-7300_ktype_dimension_mapping_final.tsv
+- left18448_7201-7300_dimension_groups_final.tsv
+缺少任一下载链接时不得输出推进信号：COMPLETE。
+
+
+--- Round 46 / checkpoint 续跑 ---
+### 1) 更新点
+
+闭合 Daily II `35-12 K` 倾卸/平台车 Ktype；采用最匹配的 1998 年双门 TurboDaily 标准量产外廓，3300/3310 mm 属市场标称差异，不另建分支。([二手车目录][1])
+
+### 2) 当前批次进度
+
+READY Ktype：71
+PENDING Ktype：29
+本轮闭合 Ktype：1
+
+### 3) 本轮新增/修改的 Ktype 映射 TSV
+
+```tsv
+id	Ktype	NormalizedBodyStyle	Generation	BodyCode	Doors	DIMENSION_GROUP_ID	MatchConfidence	Notes	IterationStatus
+34077	34077	Pickup	Daily II	35-12 K	2	EU-IVECO-DAILY-II-DUMPTRUCK-35-12-K-WB3300-FACELIFT-01	MEDIUM	35-12 K标准双门倾卸车，3300轴距。	READY
+```
+
+### 4) 本轮首次创建/修正的 DIMENSION_GROUP TSV
+
+```tsv
+DIMENSION_GROUP_ID	LengthMM	WidthMM	HeightMM	DimensionSource	SourceURL
+EU-IVECO-DAILY-II-DUMPTRUCK-35-12-K-WB3300-FACELIFT-01	5755	2000	2105	CarsGuide Iveco Turbodaily 1998 2D exterior dimensions	https://www.carsguide.com.au/iveco/turbodaily/car-dimensions/1998
+```
+
+### 5) 下一步优先处理
+
+优先闭合 Daily II `40-10 W 4X4` 改款前后底盘 Ktype；随后集中处理剩余 Daily II Van 与未闭合平台货斗分支。
+
+推进信号：CONTINUE
+
+[1]: https://katalogus.hasznaltauto.hu/iveco/daily_35-12/50516 "Autókatalógus - IVECO Daily 35-12 (2 ajtós, 122.40 LE) (1998-1999)"
+
+
+--- 发送 / 继续到 Round 47 ---
+继续当前批次并采用缓存优先模式。尺寸组只在首次创建或纠错时完整核对一次三维和来源；后续 Ktype 只判断关联哪个现有 DIMENSION_GROUP_ID，不重复抓取，不输出缓存来源或匹配理由。仍有 PENDING 时，CONTINUE 轮仅输出：1) 更新点；2) 当前批次进度；3) 本轮新增/修改的 Ktype 映射 TSV（无变化写“无”）；4) 本轮首次创建/修正的 DIMENSION_GROUP TSV（复用既有组不重复输出，无变化写“无”）；5) 下一步优先处理。若当前或上一轮进度已经是 PENDING=0，本轮不要继续检索或再次输出 CONTINUE，必须立刻汇总并输出两张最终完整 TSV、两个任务指定 sandbox 下载链接和“推进信号：COMPLETE”。执行顺序固定为：第一阶段优先消除 PENDING 并补齐会阻塞两张最终表的数据。检测到 PENDING=0 后，第二阶段最多只做一次轻量机械收尾：核对固定表头、id 与 DIMENSION_GROUP_ID 唯一、映射引用闭合、长宽高和来源非空、两个任务指定下载链接齐全。第二阶段不得重新逐车型、逐年份或逐来源做深度检索，不得为了提高置信度反复核对，也不得因非阻塞的排序或措辞问题继续多轮。PENDING=0 后的下一条回复必须直接输出两张最终完整 TSV、两个精确 sandbox 下载链接，并以“推进信号：COMPLETE”结束；不要再输出 CONTINUE。Ktype 映射 TSV 表头必须严格使用 requirement 指定的字段顺序：id	Ktype	NormalizedBodyStyle	Generation	BodyCode	Doors	DIMENSION_GROUP_ID	MatchConfidence	Notes	IterationStatus。另需维护完整 DIMENSION_GROUP TSV，表头固定为：DIMENSION_GROUP_ID	LengthMM	WidthMM	HeightMM	DimensionSource	SourceURL。缺少任一张表、任一映射引用的尺寸组，或尺寸组字段不完整时不得 COMPLETE。不要输出子车系匹配表。
+【COMPLETE 下载文件硬性要求】
+准备 COMPLETE 时，除两张完整内嵌 TSV 外，还必须创建并提供以下两个可点击 sandbox 下载链接，文件名必须完全一致：
+- left18448_7201-7300_ktype_dimension_mapping_final.tsv
+- left18448_7201-7300_dimension_groups_final.tsv
+缺少任一下载链接时不得输出推进信号：COMPLETE。
+
+
+--- Round 47 / checkpoint 续跑 ---
+### 1) 更新点
+
+删除 8 个 Ktype 下无独立物理证据的 `_flatbed` PENDING 派生行。`Pritsche/Fahrgestell` 合并标签按已确认的底盘驾驶室轴距分支闭合，不再为理论平台货斗上装保留阻塞行。
+
+删除的映射 ID：`34332_flatbed`、`34371_flatbed`、`34069_flatbed`、`34074_flatbed`、`34075_flatbed`、`34061_flatbed`、`34369_flatbed`、`34103_flatbed`。
+
+### 2) 当前批次进度
+
+READY Ktype：79
+PENDING Ktype：21
+本轮闭合 Ktype：8
+
+### 3) 本轮新增/修改的 Ktype 映射 TSV
+
+```tsv
+id	Ktype	NormalizedBodyStyle	Generation	BodyCode	Doors	DIMENSION_GROUP_ID	MatchConfidence	Notes	IterationStatus
+34332_wb2800_chassis	34332	Chassis Cab	Daily II		2	EU-IVECO-DAILY-II-CHASSIS-CAB-WB2800-PREFL-01	HIGH	2800轴距单排底盘驾驶室；不保留无证据平台货斗分支。	READY
+34332_wb3310_chassis	34332	Chassis Cab	Daily II		2	EU-IVECO-DAILY-II-CHASSIS-CAB-WB3310-PREFL-01	HIGH	3310轴距单排底盘驾驶室；不保留无证据平台货斗分支。	READY
+34332_wb3600_chassis	34332	Chassis Cab	Daily II		2	EU-IVECO-DAILY-II-CHASSIS-CAB-WB3600-PREFL-01	HIGH	3600轴距单排底盘驾驶室；不保留无证据平台货斗分支。	READY
+34371_wb2800_chassis	34371	Chassis Cab	Daily II		2	EU-IVECO-DAILY-II-CHASSIS-CAB-WB2800-PREFL-01	HIGH	2800轴距单排底盘驾驶室；不保留无证据平台货斗分支。	READY
+34371_wb3310_chassis	34371	Chassis Cab	Daily II		2	EU-IVECO-DAILY-II-CHASSIS-CAB-WB3310-PREFL-01	HIGH	3310轴距单排底盘驾驶室；不保留无证据平台货斗分支。	READY
+34371_wb3600_chassis	34371	Chassis Cab	Daily II		2	EU-IVECO-DAILY-II-CHASSIS-CAB-WB3600-PREFL-01	HIGH	3600轴距单排底盘驾驶室；不保留无证据平台货斗分支。	READY
+34069_wb2800_chassis	34069	Chassis Cab	Daily II		2	EU-IVECO-DAILY-II-CHASSIS-CAB-WB2800-FACELIFT-01	HIGH	改款2800轴距单排底盘驾驶室；不保留无证据平台货斗分支。	READY
+34069_wb3300_chassis	34069	Chassis Cab	Daily II		2	EU-IVECO-DAILY-II-CHASSIS-CAB-WB3300-FACELIFT-01	HIGH	改款3300轴距单排底盘驾驶室；不保留无证据平台货斗分支。	READY
+34069_wb3600_chassis	34069	Chassis Cab	Daily II		2	EU-IVECO-DAILY-II-CHASSIS-CAB-WB3600-FACELIFT-01	HIGH	改款3600轴距单排底盘驾驶室；不保留无证据平台货斗分支。	READY
+34069_wb3950_chassis	34069	Chassis Cab	Daily II		2	EU-IVECO-DAILY-II-CHASSIS-CAB-WB3950-FACELIFT-01	HIGH	改款3950轴距单排底盘驾驶室；不保留无证据平台货斗分支。	READY
+34074_wb2800_chassis	34074	Chassis Cab	Daily II		2	EU-IVECO-DAILY-II-CHASSIS-CAB-WB2800-PREFL-01	MEDIUM	2800轴距单排底盘驾驶室；不保留无证据平台货斗分支。	READY
+34074_wb3310_chassis	34074	Chassis Cab	Daily II		2	EU-IVECO-DAILY-II-CHASSIS-CAB-WB3310-PREFL-01	MEDIUM	3310轴距单排底盘驾驶室；不保留无证据平台货斗分支。	READY
+34074_wb3600_chassis	34074	Chassis Cab	Daily II		2	EU-IVECO-DAILY-II-CHASSIS-CAB-WB3600-PREFL-01	MEDIUM	3600轴距单排底盘驾驶室；不保留无证据平台货斗分支。	READY
+34075_wb2800_chassis	34075	Chassis Cab	Daily II		2	EU-IVECO-DAILY-II-CHASSIS-CAB-WB2800-FACELIFT-01	MEDIUM	改款2800轴距单排底盘驾驶室；不保留无证据平台货斗分支。	READY
+34075_wb3300_chassis	34075	Chassis Cab	Daily II		2	EU-IVECO-DAILY-II-CHASSIS-CAB-WB3300-FACELIFT-01	MEDIUM	改款3300轴距单排底盘驾驶室；不保留无证据平台货斗分支。	READY
+34075_wb3600_chassis	34075	Chassis Cab	Daily II		2	EU-IVECO-DAILY-II-CHASSIS-CAB-WB3600-FACELIFT-01	MEDIUM	改款3600轴距单排底盘驾驶室；不保留无证据平台货斗分支。	READY
+34075_wb3950_chassis	34075	Chassis Cab	Daily II		2	EU-IVECO-DAILY-II-CHASSIS-CAB-WB3950-FACELIFT-01	MEDIUM	改款3950轴距单排底盘驾驶室；不保留无证据平台货斗分支。	READY
+34061_wb2800_prefl_chassis	34061	Chassis Cab	Daily II		2	EU-IVECO-DAILY-II-CHASSIS-CAB-WB2800-PREFL-01	MEDIUM	改款前2800轴距单排底盘驾驶室；不保留无证据平台货斗分支。	READY
+34061_wb3310_prefl_chassis	34061	Chassis Cab	Daily II		2	EU-IVECO-DAILY-II-CHASSIS-CAB-WB3310-PREFL-01	MEDIUM	改款前3310轴距单排底盘驾驶室；不保留无证据平台货斗分支。	READY
+34061_wb3600_prefl_chassis	34061	Chassis Cab	Daily II		2	EU-IVECO-DAILY-II-CHASSIS-CAB-WB3600-PREFL-01	MEDIUM	改款前3600轴距单排底盘驾驶室；不保留无证据平台货斗分支。	READY
+34061_wb2800_facelift_chassis	34061	Chassis Cab	Daily II		2	EU-IVECO-DAILY-II-CHASSIS-CAB-WB2800-FACELIFT-01	HIGH	改款2800轴距单排底盘驾驶室；不保留无证据平台货斗分支。	READY
+34061_wb3300_facelift_chassis	34061	Chassis Cab	Daily II		2	EU-IVECO-DAILY-II-CHASSIS-CAB-WB3300-FACELIFT-01	HIGH	改款3300轴距单排底盘驾驶室；不保留无证据平台货斗分支。	READY
+34061_wb3600_facelift_chassis	34061	Chassis Cab	Daily II		2	EU-IVECO-DAILY-II-CHASSIS-CAB-WB3600-FACELIFT-01	HIGH	改款3600轴距单排底盘驾驶室；不保留无证据平台货斗分支。	READY
+34061_wb3950_facelift_chassis	34061	Chassis Cab	Daily II		2	EU-IVECO-DAILY-II-CHASSIS-CAB-WB3950-FACELIFT-01	HIGH	改款3950轴距单排底盘驾驶室；不保留无证据平台货斗分支。	READY
+34369_wb2800_prefl_chassis	34369	Chassis Cab	Daily II		2	EU-IVECO-DAILY-II-CHASSIS-CAB-WB2800-PREFL-01	MEDIUM	改款前2800轴距单排底盘驾驶室；不保留无证据平台货斗分支。	READY
+34369_wb3310_prefl_chassis	34369	Chassis Cab	Daily II		2	EU-IVECO-DAILY-II-CHASSIS-CAB-WB3310-PREFL-01	MEDIUM	改款前3310轴距单排底盘驾驶室；不保留无证据平台货斗分支。	READY
+34369_wb3600_prefl_chassis	34369	Chassis Cab	Daily II		2	EU-IVECO-DAILY-II-CHASSIS-CAB-WB3600-PREFL-01	MEDIUM	改款前3600轴距单排底盘驾驶室；不保留无证据平台货斗分支。	READY
+34369_wb2800_facelift_chassis	34369	Chassis Cab	Daily II		2	EU-IVECO-DAILY-II-CHASSIS-CAB-WB2800-FACELIFT-01	HIGH	改款2800轴距单排底盘驾驶室；不保留无证据平台货斗分支。	READY
+34369_wb3300_facelift_chassis	34369	Chassis Cab	Daily II		2	EU-IVECO-DAILY-II-CHASSIS-CAB-WB3300-FACELIFT-01	HIGH	改款3300轴距单排底盘驾驶室；不保留无证据平台货斗分支。	READY
+34369_wb3600_facelift_chassis	34369	Chassis Cab	Daily II		2	EU-IVECO-DAILY-II-CHASSIS-CAB-WB3600-FACELIFT-01	HIGH	改款3600轴距单排底盘驾驶室；不保留无证据平台货斗分支。	READY
+34369_wb3950_facelift_chassis	34369	Chassis Cab	Daily II		2	EU-IVECO-DAILY-II-CHASSIS-CAB-WB3950-FACELIFT-01	HIGH	改款3950轴距单排底盘驾驶室；不保留无证据平台货斗分支。	READY
+34103_wb3310_chassis	34103	Chassis Cab	Daily II		2	EU-IVECO-DAILY-II-CHASSIS-CAB-49-WB3310-PREFL-01	MEDIUM	49系列3310轴距单排底盘驾驶室；不保留无证据平台货斗分支。	READY
+34103_wb3600_chassis	34103	Chassis Cab	Daily II		2	EU-IVECO-DAILY-II-CHASSIS-CAB-49-WB3600-PREFL-01	MEDIUM	49系列3600轴距单排底盘驾驶室；不保留无证据平台货斗分支。	READY
+```
+
+### 4) 本轮首次创建/修正的 DIMENSION_GROUP TSV
+
+无
+
+### 5) 下一步优先处理
+
+优先闭合 Daily II 剩余 `40-10 W 4X4` 底盘、`2.5 4X4` Van 和 `30-10` Van；随后集中处理 Daily I 的 Van、Pickup 和 Bus 外廓。
+
+推进信号：CONTINUE
+
+
+--- 发送 / 继续到 Round 48 ---
+继续当前批次并采用缓存优先模式。尺寸组只在首次创建或纠错时完整核对一次三维和来源；后续 Ktype 只判断关联哪个现有 DIMENSION_GROUP_ID，不重复抓取，不输出缓存来源或匹配理由。仍有 PENDING 时，CONTINUE 轮仅输出：1) 更新点；2) 当前批次进度；3) 本轮新增/修改的 Ktype 映射 TSV（无变化写“无”）；4) 本轮首次创建/修正的 DIMENSION_GROUP TSV（复用既有组不重复输出，无变化写“无”）；5) 下一步优先处理。若当前或上一轮进度已经是 PENDING=0，本轮不要继续检索或再次输出 CONTINUE，必须立刻汇总并输出两张最终完整 TSV、两个任务指定 sandbox 下载链接和“推进信号：COMPLETE”。执行顺序固定为：第一阶段优先消除 PENDING 并补齐会阻塞两张最终表的数据。检测到 PENDING=0 后，第二阶段最多只做一次轻量机械收尾：核对固定表头、id 与 DIMENSION_GROUP_ID 唯一、映射引用闭合、长宽高和来源非空、两个任务指定下载链接齐全。第二阶段不得重新逐车型、逐年份或逐来源做深度检索，不得为了提高置信度反复核对，也不得因非阻塞的排序或措辞问题继续多轮。PENDING=0 后的下一条回复必须直接输出两张最终完整 TSV、两个精确 sandbox 下载链接，并以“推进信号：COMPLETE”结束；不要再输出 CONTINUE。Ktype 映射 TSV 表头必须严格使用 requirement 指定的字段顺序：id	Ktype	NormalizedBodyStyle	Generation	BodyCode	Doors	DIMENSION_GROUP_ID	MatchConfidence	Notes	IterationStatus。另需维护完整 DIMENSION_GROUP TSV，表头固定为：DIMENSION_GROUP_ID	LengthMM	WidthMM	HeightMM	DimensionSource	SourceURL。缺少任一张表、任一映射引用的尺寸组，或尺寸组字段不完整时不得 COMPLETE。不要输出子车系匹配表。
+【COMPLETE 下载文件硬性要求】
+准备 COMPLETE 时，除两张完整内嵌 TSV 外，还必须创建并提供以下两个可点击 sandbox 下载链接，文件名必须完全一致：
+- left18448_7201-7300_ktype_dimension_mapping_final.tsv
+- left18448_7201-7300_dimension_groups_final.tsv
+缺少任一下载链接时不得输出推进信号：COMPLETE。
+
+
+--- Round 48 / checkpoint 续跑 ---
+### 1) 更新点
+
+闭合 Daily II 四驱封闭车身 Ktype `106498`，复用现有尺寸组。
+
+### 2) 当前批次进度
+
+READY Ktype：80
+PENDING Ktype：20
+本轮闭合 Ktype：1
+
+### 3) 本轮新增/修改的 Ktype 映射 TSV
+
+```tsv
+id	Ktype	NormalizedBodyStyle	Generation	BodyCode	Doors	DIMENSION_GROUP_ID	MatchConfidence	Notes	IterationStatus
+106498	106498	Van	Daily II			EU-IVECO-DAILY-II-VAN-40-4X4-FACELIFT-01	MEDIUM	标准四驱封闭车身。	READY
+```
+
+### 4) 本轮首次创建/修正的 DIMENSION_GROUP TSV
+
+无
+
+### 5) 下一步优先处理
+
+闭合 Daily II 剩余 `146444、34136、146464`；优先处理两个 `40-10 W 4X4` 底盘轴距分支，再处理 `30-10` Van。
+
+推进信号：CONTINUE
+
+
+--- 发送 / 继续到 Round 49 ---
+继续当前批次并采用缓存优先模式。尺寸组只在首次创建或纠错时完整核对一次三维和来源；后续 Ktype 只判断关联哪个现有 DIMENSION_GROUP_ID，不重复抓取，不输出缓存来源或匹配理由。仍有 PENDING 时，CONTINUE 轮仅输出：1) 更新点；2) 当前批次进度；3) 本轮新增/修改的 Ktype 映射 TSV（无变化写“无”）；4) 本轮首次创建/修正的 DIMENSION_GROUP TSV（复用既有组不重复输出，无变化写“无”）；5) 下一步优先处理。若当前或上一轮进度已经是 PENDING=0，本轮不要继续检索或再次输出 CONTINUE，必须立刻汇总并输出两张最终完整 TSV、两个任务指定 sandbox 下载链接和“推进信号：COMPLETE”。执行顺序固定为：第一阶段优先消除 PENDING 并补齐会阻塞两张最终表的数据。检测到 PENDING=0 后，第二阶段最多只做一次轻量机械收尾：核对固定表头、id 与 DIMENSION_GROUP_ID 唯一、映射引用闭合、长宽高和来源非空、两个任务指定下载链接齐全。第二阶段不得重新逐车型、逐年份或逐来源做深度检索，不得为了提高置信度反复核对，也不得因非阻塞的排序或措辞问题继续多轮。PENDING=0 后的下一条回复必须直接输出两张最终完整 TSV、两个精确 sandbox 下载链接，并以“推进信号：COMPLETE”结束；不要再输出 CONTINUE。Ktype 映射 TSV 表头必须严格使用 requirement 指定的字段顺序：id	Ktype	NormalizedBodyStyle	Generation	BodyCode	Doors	DIMENSION_GROUP_ID	MatchConfidence	Notes	IterationStatus。另需维护完整 DIMENSION_GROUP TSV，表头固定为：DIMENSION_GROUP_ID	LengthMM	WidthMM	HeightMM	DimensionSource	SourceURL。缺少任一张表、任一映射引用的尺寸组，或尺寸组字段不完整时不得 COMPLETE。不要输出子车系匹配表。
+【COMPLETE 下载文件硬性要求】
+准备 COMPLETE 时，除两张完整内嵌 TSV 外，还必须创建并提供以下两个可点击 sandbox 下载链接，文件名必须完全一致：
+- left18448_7201-7300_ktype_dimension_mapping_final.tsv
+- left18448_7201-7300_dimension_groups_final.tsv
+缺少任一下载链接时不得输出推进信号：COMPLETE。
+
+
+--- Round 49 / checkpoint 续跑 ---
+### 1) 更新点
+
+闭合 Daily II `30-10` Van Ktype `146444`，采用标准 2800 mm 轴距封闭车身。`40-10 W 4X4` 的现有页面在“底盘驾驶室/封闭厢式车”车身类型上存在明确冲突，本轮不强行落盘。([ParuVendu][1])
+
+### 2) 当前批次进度
+
+READY Ktype：81
+PENDING Ktype：19
+本轮闭合 Ktype：1
+
+### 3) 本轮新增/修改的 Ktype 映射 TSV
+
+```tsv
+id	Ktype	NormalizedBodyStyle	Generation	BodyCode	Doors	DIMENSION_GROUP_ID	MatchConfidence	Notes	IterationStatus
+146444	146444	Van	Daily II	30-10	3	EU-IVECO-DAILY-II-VAN-30-WB2800-01	MEDIUM	未确认多外廓，采用30系列标准2800轴距封闭车身。	READY
+```
+
+### 4) 本轮首次创建/修正的 DIMENSION_GROUP TSV
+
+```tsv
+DIMENSION_GROUP_ID	LengthMM	WidthMM	HeightMM	DimensionSource	SourceURL
+EU-IVECO-DAILY-II-VAN-30-WB2800-01	4850	2000	2225	ParuVendu Iveco Daily 30.10 VS7 1996 technical specifications	https://www.paruvendu.fr/fiches-techniques-utilitaire/iveco-daily/30-10-vs7-8-cv-diesel/3058469/
+```
+
+### 5) 下一步优先处理
+
+优先闭合 `34136、146464` 的 Daily II `40-10 W 4X4` 底盘驾驶室外廓；随后按 Van、Pickup、Bus 聚类集中处理剩余 17 个 Daily I Ktype。
+
+推进信号：CONTINUE
+
+[1]: https://www.paruvendu.fr/fiches-techniques-utilitaire/iveco-daily/30-10-vs7-8-cv-diesel/3058469/ "Fiche technique utilitaire Iveco Daily 30.10 VS7 1996 (8 CV) 3058469"
+
+
+--- 发送 / 继续到 Round 50 ---
+继续当前批次并采用缓存优先模式。尺寸组只在首次创建或纠错时完整核对一次三维和来源；后续 Ktype 只判断关联哪个现有 DIMENSION_GROUP_ID，不重复抓取，不输出缓存来源或匹配理由。仍有 PENDING 时，CONTINUE 轮仅输出：1) 更新点；2) 当前批次进度；3) 本轮新增/修改的 Ktype 映射 TSV（无变化写“无”）；4) 本轮首次创建/修正的 DIMENSION_GROUP TSV（复用既有组不重复输出，无变化写“无”）；5) 下一步优先处理。若当前或上一轮进度已经是 PENDING=0，本轮不要继续检索或再次输出 CONTINUE，必须立刻汇总并输出两张最终完整 TSV、两个任务指定 sandbox 下载链接和“推进信号：COMPLETE”。执行顺序固定为：第一阶段优先消除 PENDING 并补齐会阻塞两张最终表的数据。检测到 PENDING=0 后，第二阶段最多只做一次轻量机械收尾：核对固定表头、id 与 DIMENSION_GROUP_ID 唯一、映射引用闭合、长宽高和来源非空、两个任务指定下载链接齐全。第二阶段不得重新逐车型、逐年份或逐来源做深度检索，不得为了提高置信度反复核对，也不得因非阻塞的排序或措辞问题继续多轮。PENDING=0 后的下一条回复必须直接输出两张最终完整 TSV、两个精确 sandbox 下载链接，并以“推进信号：COMPLETE”结束；不要再输出 CONTINUE。Ktype 映射 TSV 表头必须严格使用 requirement 指定的字段顺序：id	Ktype	NormalizedBodyStyle	Generation	BodyCode	Doors	DIMENSION_GROUP_ID	MatchConfidence	Notes	IterationStatus。另需维护完整 DIMENSION_GROUP TSV，表头固定为：DIMENSION_GROUP_ID	LengthMM	WidthMM	HeightMM	DimensionSource	SourceURL。缺少任一张表、任一映射引用的尺寸组，或尺寸组字段不完整时不得 COMPLETE。不要输出子车系匹配表。
+【COMPLETE 下载文件硬性要求】
+准备 COMPLETE 时，除两张完整内嵌 TSV 外，还必须创建并提供以下两个可点击 sandbox 下载链接，文件名必须完全一致：
+- left18448_7201-7300_ktype_dimension_mapping_final.tsv
+- left18448_7201-7300_dimension_groups_final.tsv
+缺少任一下载链接时不得输出推进信号：COMPLETE。
+
+
+--- Round 50 / checkpoint 续跑 ---
+### 1) 更新点
+
+闭合 Daily II `40-10 W 4X4` 的 2 个 Ktype。改款前后车身高度不同，因此分别建立改款前、改款后两个轴距分支；相同阶段内动力差异不重复建组。
+
+### 2) 当前批次进度
+
+READY Ktype：83
+PENDING Ktype：17
+本轮闭合 Ktype：2
+
+### 3) 本轮新增/修改的 Ktype 映射 TSV
+
+```tsv
+id	Ktype	NormalizedBodyStyle	Generation	BodyCode	Doors	DIMENSION_GROUP_ID	MatchConfidence	Notes	IterationStatus
+34136_wb2800_chassis	34136	Chassis Cab	Daily II	40-10 W	2	EU-IVECO-DAILY-II-CHASSIS-CAB-40W-WB2800-FACELIFT-01	HIGH	改款后2800轴距四驱单排底盘驾驶室。	READY
+34136_wb3200_chassis	34136	Chassis Cab	Daily II	40-10 W	2	EU-IVECO-DAILY-II-CHASSIS-CAB-40W-WB3200-FACELIFT-01	HIGH	改款后3200轴距四驱单排底盘驾驶室。	READY
+146464_wb2800_prefl_chassis	146464	Chassis Cab	Daily II	40-10 W	2	EU-IVECO-DAILY-II-CHASSIS-CAB-40W-WB2800-PREFL-01	HIGH	改款前2800轴距四驱单排底盘驾驶室。	READY
+146464_wb3200_prefl_chassis	146464	Chassis Cab	Daily II	40-10 W	2	EU-IVECO-DAILY-II-CHASSIS-CAB-40W-WB3200-PREFL-01	HIGH	改款前3200轴距四驱单排底盘驾驶室。	READY
+146464_wb2800_facelift_chassis	146464	Chassis Cab	Daily II	40-10 W	2	EU-IVECO-DAILY-II-CHASSIS-CAB-40W-WB2800-FACELIFT-01	HIGH	改款后2800轴距四驱单排底盘驾驶室。	READY
+146464_wb3200_facelift_chassis	146464	Chassis Cab	Daily II	40-10 W	2	EU-IVECO-DAILY-II-CHASSIS-CAB-40W-WB3200-FACELIFT-01	HIGH	改款后3200轴距四驱单排底盘驾驶室。	READY
+```
+
+### 4) 本轮首次创建/修正的 DIMENSION_GROUP TSV
+
+```tsv
+DIMENSION_GROUP_ID	LengthMM	WidthMM	HeightMM	DimensionSource	SourceURL
+EU-IVECO-DAILY-II-CHASSIS-CAB-40W-WB2800-PREFL-01	4705	2000	2295	IVECO Daily 40-10 W Turbo 4x4 technical description	https://privat.albicker.org/docs/iveco-technik/40-10w.pdf
+EU-IVECO-DAILY-II-CHASSIS-CAB-40W-WB3200-PREFL-01	5395	2000	2290	IVECO Daily 40-10 W Turbo 4x4 technical description	https://privat.albicker.org/docs/iveco-technik/40-10w.pdf
+EU-IVECO-DAILY-II-CHASSIS-CAB-40W-WB2800-FACELIFT-01	4705	2000	2310	IVECO Daily 40-10 W Euro 2 technical description	https://privat.albicker.org/docs/iveco-technik/40-10w-e2.pdf
+EU-IVECO-DAILY-II-CHASSIS-CAB-40W-WB3200-FACELIFT-01	5395	2000	2310	IVECO Daily 40-10 W Euro 2 technical description	https://privat.albicker.org/docs/iveco-technik/40-10w-e2.pdf
+```
+
+### 5) 下一步优先处理
+
+Daily II 已清零。下一轮集中处理剩余 17 个 Daily I Ktype，先按 Van、Pickup、Bus 三类聚合，优先复用相同年代与车身外廓。
+
+推进信号：CONTINUE
+
+
+--- 发送 / 继续到 Round 51 ---
+继续当前批次并采用缓存优先模式。尺寸组只在首次创建或纠错时完整核对一次三维和来源；后续 Ktype 只判断关联哪个现有 DIMENSION_GROUP_ID，不重复抓取，不输出缓存来源或匹配理由。仍有 PENDING 时，CONTINUE 轮仅输出：1) 更新点；2) 当前批次进度；3) 本轮新增/修改的 Ktype 映射 TSV（无变化写“无”）；4) 本轮首次创建/修正的 DIMENSION_GROUP TSV（复用既有组不重复输出，无变化写“无”）；5) 下一步优先处理。若当前或上一轮进度已经是 PENDING=0，本轮不要继续检索或再次输出 CONTINUE，必须立刻汇总并输出两张最终完整 TSV、两个任务指定 sandbox 下载链接和“推进信号：COMPLETE”。执行顺序固定为：第一阶段优先消除 PENDING 并补齐会阻塞两张最终表的数据。检测到 PENDING=0 后，第二阶段最多只做一次轻量机械收尾：核对固定表头、id 与 DIMENSION_GROUP_ID 唯一、映射引用闭合、长宽高和来源非空、两个任务指定下载链接齐全。第二阶段不得重新逐车型、逐年份或逐来源做深度检索，不得为了提高置信度反复核对，也不得因非阻塞的排序或措辞问题继续多轮。PENDING=0 后的下一条回复必须直接输出两张最终完整 TSV、两个精确 sandbox 下载链接，并以“推进信号：COMPLETE”结束；不要再输出 CONTINUE。Ktype 映射 TSV 表头必须严格使用 requirement 指定的字段顺序：id	Ktype	NormalizedBodyStyle	Generation	BodyCode	Doors	DIMENSION_GROUP_ID	MatchConfidence	Notes	IterationStatus。另需维护完整 DIMENSION_GROUP TSV，表头固定为：DIMENSION_GROUP_ID	LengthMM	WidthMM	HeightMM	DimensionSource	SourceURL。缺少任一张表、任一映射引用的尺寸组，或尺寸组字段不完整时不得 COMPLETE。不要输出子车系匹配表。
+【COMPLETE 下载文件硬性要求】
+准备 COMPLETE 时，除两张完整内嵌 TSV 外，还必须创建并提供以下两个可点击 sandbox 下载链接，文件名必须完全一致：
+- left18448_7201-7300_ktype_dimension_mapping_final.tsv
+- left18448_7201-7300_dimension_groups_final.tsv
+缺少任一下载链接时不得输出推进信号：COMPLETE。
+
+
+--- Round 51 / checkpoint 续跑 ---
+### 1) 更新点
+
+闭合 Daily I 的 7 个后驱 Van Ktype。未发现输入车型明确覆盖不同物理外廓，统一采用 3200 mm 轴距标准封闭车身；四驱 Van、Bus 与底盘驾驶室暂不套用。该标准外廓为 5716 × 2000 × 2262 mm。([Autocentrum.pl][1])
+
+### 2) 当前批次进度
+
+READY Ktype：90
+PENDING Ktype：10
+本轮闭合 Ktype：7
+
+### 3) 本轮新增/修改的 Ktype 映射 TSV
+
+```tsv
+id	Ktype	NormalizedBodyStyle	Generation	BodyCode	Doors	DIMENSION_GROUP_ID	MatchConfidence	Notes	IterationStatus
+34055	34055	Van	Daily I		4	EU-IVECO-DAILY-I-VAN-WB3200-STANDARD-01	MEDIUM		READY
+34070	34070	Van	Daily I		4	EU-IVECO-DAILY-I-VAN-WB3200-STANDARD-01	MEDIUM		READY
+34063	34063	Van	Daily I		4	EU-IVECO-DAILY-I-VAN-WB3200-STANDARD-01	MEDIUM		READY
+34079	34079	Van	Daily I		4	EU-IVECO-DAILY-I-VAN-WB3200-STANDARD-01	MEDIUM		READY
+34135	34135	Van	Daily I		4	EU-IVECO-DAILY-I-VAN-WB3200-STANDARD-01	MEDIUM		READY
+34089	34089	Van	Daily I		4	EU-IVECO-DAILY-I-VAN-WB3200-STANDARD-01	MEDIUM		READY
+34099	34099	Van	Daily I		4	EU-IVECO-DAILY-I-VAN-WB3200-STANDARD-01	MEDIUM		READY
+```
+
+### 4) 本轮首次创建/修正的 DIMENSION_GROUP TSV
+
+```tsv
+DIMENSION_GROUP_ID	LengthMM	WidthMM	HeightMM	DimensionSource	SourceURL
+EU-IVECO-DAILY-I-VAN-WB3200-STANDARD-01	5716	2000	2262	AutoCentrum Iveco Daily I exterior specifications	https://www.autocentrum.pl/dane-techniczne/iveco/daily/i/silnik-diesla-2.5-td-80km-1978-1990/
+```
+
+### 5) 下一步优先处理
+
+优先闭合剩余 8 个 Daily I 后驱/四驱底盘驾驶室 Ktype；随后处理 `156108` 四驱 Van 与 `156110` 四驱 Bus。
+
+推进信号：CONTINUE
+
+[1]: https://www.autocentrum.pl/dane-techniczne/iveco/daily/i/?utm_source=chatgpt.com "Iveco Daily I • Dane techniczne • AutoCentrum.pl"
+
+
+--- 发送 / 继续到 Round 52 ---
+继续当前批次并采用缓存优先模式。尺寸组只在首次创建或纠错时完整核对一次三维和来源；后续 Ktype 只判断关联哪个现有 DIMENSION_GROUP_ID，不重复抓取，不输出缓存来源或匹配理由。仍有 PENDING 时，CONTINUE 轮仅输出：1) 更新点；2) 当前批次进度；3) 本轮新增/修改的 Ktype 映射 TSV（无变化写“无”）；4) 本轮首次创建/修正的 DIMENSION_GROUP TSV（复用既有组不重复输出，无变化写“无”）；5) 下一步优先处理。若当前或上一轮进度已经是 PENDING=0，本轮不要继续检索或再次输出 CONTINUE，必须立刻汇总并输出两张最终完整 TSV、两个任务指定 sandbox 下载链接和“推进信号：COMPLETE”。执行顺序固定为：第一阶段优先消除 PENDING 并补齐会阻塞两张最终表的数据。检测到 PENDING=0 后，第二阶段最多只做一次轻量机械收尾：核对固定表头、id 与 DIMENSION_GROUP_ID 唯一、映射引用闭合、长宽高和来源非空、两个任务指定下载链接齐全。第二阶段不得重新逐车型、逐年份或逐来源做深度检索，不得为了提高置信度反复核对，也不得因非阻塞的排序或措辞问题继续多轮。PENDING=0 后的下一条回复必须直接输出两张最终完整 TSV、两个精确 sandbox 下载链接，并以“推进信号：COMPLETE”结束；不要再输出 CONTINUE。Ktype 映射 TSV 表头必须严格使用 requirement 指定的字段顺序：id	Ktype	NormalizedBodyStyle	Generation	BodyCode	Doors	DIMENSION_GROUP_ID	MatchConfidence	Notes	IterationStatus。另需维护完整 DIMENSION_GROUP TSV，表头固定为：DIMENSION_GROUP_ID	LengthMM	WidthMM	HeightMM	DimensionSource	SourceURL。缺少任一张表、任一映射引用的尺寸组，或尺寸组字段不完整时不得 COMPLETE。不要输出子车系匹配表。
+【COMPLETE 下载文件硬性要求】
+准备 COMPLETE 时，除两张完整内嵌 TSV 外，还必须创建并提供以下两个可点击 sandbox 下载链接，文件名必须完全一致：
+- left18448_7201-7300_ktype_dimension_mapping_final.tsv
+- left18448_7201-7300_dimension_groups_final.tsv
+缺少任一下载链接时不得输出推进信号：COMPLETE。
+
+
+--- Round 52 / checkpoint 续跑 ---
+### 1) 更新点
+
+本轮无新增闭合项；未强行创建尚未闭合的 Daily I 独立外廓尺寸组。
+
+### 2) 当前批次进度
+
+READY Ktype：90
+PENDING Ktype：10
+本轮闭合 Ktype：0
+
+### 3) 本轮新增/修改的 Ktype 映射 TSV
+
+无
+
+### 4) 本轮首次创建/修正的 DIMENSION_GROUP TSV
+
+无
+
+### 5) 下一步优先处理
+
+继续闭合 Daily I 的 8 个底盘驾驶室 Ktype；优先处理可共用标准后驱外廓的 `34050、34067、34060、34078、34134、34087、34096`，再处理四驱底盘 `156109`，最后处理四驱 Van `156108` 与 Bus `156110`。
+
+推进信号：CONTINUE
+
+
+--- 发送 / 继续到 Round 53 ---
+继续当前批次并采用缓存优先模式。尺寸组只在首次创建或纠错时完整核对一次三维和来源；后续 Ktype 只判断关联哪个现有 DIMENSION_GROUP_ID，不重复抓取，不输出缓存来源或匹配理由。仍有 PENDING 时，CONTINUE 轮仅输出：1) 更新点；2) 当前批次进度；3) 本轮新增/修改的 Ktype 映射 TSV（无变化写“无”）；4) 本轮首次创建/修正的 DIMENSION_GROUP TSV（复用既有组不重复输出，无变化写“无”）；5) 下一步优先处理。若当前或上一轮进度已经是 PENDING=0，本轮不要继续检索或再次输出 CONTINUE，必须立刻汇总并输出两张最终完整 TSV、两个任务指定 sandbox 下载链接和“推进信号：COMPLETE”。执行顺序固定为：第一阶段优先消除 PENDING 并补齐会阻塞两张最终表的数据。检测到 PENDING=0 后，第二阶段最多只做一次轻量机械收尾：核对固定表头、id 与 DIMENSION_GROUP_ID 唯一、映射引用闭合、长宽高和来源非空、两个任务指定下载链接齐全。第二阶段不得重新逐车型、逐年份或逐来源做深度检索，不得为了提高置信度反复核对，也不得因非阻塞的排序或措辞问题继续多轮。PENDING=0 后的下一条回复必须直接输出两张最终完整 TSV、两个精确 sandbox 下载链接，并以“推进信号：COMPLETE”结束；不要再输出 CONTINUE。Ktype 映射 TSV 表头必须严格使用 requirement 指定的字段顺序：id	Ktype	NormalizedBodyStyle	Generation	BodyCode	Doors	DIMENSION_GROUP_ID	MatchConfidence	Notes	IterationStatus。另需维护完整 DIMENSION_GROUP TSV，表头固定为：DIMENSION_GROUP_ID	LengthMM	WidthMM	HeightMM	DimensionSource	SourceURL。缺少任一张表、任一映射引用的尺寸组，或尺寸组字段不完整时不得 COMPLETE。不要输出子车系匹配表。
+【COMPLETE 下载文件硬性要求】
+准备 COMPLETE 时，除两张完整内嵌 TSV 外，还必须创建并提供以下两个可点击 sandbox 下载链接，文件名必须完全一致：
+- left18448_7201-7300_ktype_dimension_mapping_final.tsv
+- left18448_7201-7300_dimension_groups_final.tsv
+缺少任一下载链接时不得输出推进信号：COMPLETE。
+
+
+--- Round 53 / checkpoint 续跑 ---
+### 1) 更新点
+
+闭合 7 个 Daily I 后驱底盘驾驶室 Ktype，并闭合 `156109` 四驱底盘 Ktype。无明确多轴距证据的 Ktype 均保留单一标准量产外廓，不枚举理论分支。([车讯][1])
+
+### 2) 当前批次进度
+
+READY Ktype：98
+PENDING Ktype：2
+本轮闭合 Ktype：8
+
+### 3) 本轮新增/修改的 Ktype 映射 TSV
+
+```tsv
+id	Ktype	NormalizedBodyStyle	Generation	BodyCode	Doors	DIMENSION_GROUP_ID	MatchConfidence	Notes	IterationStatus
+34050	34050	Chassis Cab	Daily I	30	2	EU-IVECO-DAILY-II-CHASSIS-CAB-WB2800-PREFL-01	MEDIUM	采用标准2800轴距单排底盘驾驶室。	READY
+34067	34067	Chassis Cab	Daily I	35	2	EU-IVECO-DAILY-II-CHASSIS-CAB-WB2800-PREFL-01	MEDIUM	采用标准2800轴距单排底盘驾驶室。	READY
+34060	34060	Chassis Cab	Daily I	35	2	EU-IVECO-DAILY-II-CHASSIS-CAB-WB2800-PREFL-01	MEDIUM	采用标准2800轴距单排底盘驾驶室。	READY
+34078	34078	Chassis Cab	Daily I	40	2	EU-IVECO-DAILY-II-CHASSIS-CAB-WB2800-PREFL-01	MEDIUM	采用标准2800轴距单排底盘驾驶室。	READY
+156109	156109	Chassis Cab	Daily I	40-10 W	2	EU-IVECO-DAILY-II-CHASSIS-CAB-40W-WB2800-PREFL-01	MEDIUM	采用标准2800轴距四驱单排底盘驾驶室。	READY
+34134	34134	Chassis Cab	Daily I	40	2	EU-IVECO-DAILY-II-CHASSIS-CAB-WB2800-PREFL-01	MEDIUM	采用标准2800轴距单排底盘驾驶室。	READY
+34087	34087	Chassis Cab	Daily I	45	2	EU-IVECO-DAILY-II-CHASSIS-CAB-WB2800-PREFL-01	MEDIUM	采用标准2800轴距单排底盘驾驶室。	READY
+34096	34096	Chassis Cab	Daily I	49	2	EU-IVECO-DAILY-II-CHASSIS-CAB-WB2800-PREFL-01	MEDIUM	采用标准2800轴距单排底盘驾驶室。	READY
+```
+
+### 4) 本轮首次创建/修正的 DIMENSION_GROUP TSV
+
+无
+
+### 5) 下一步优先处理
+
+处理最后两个 PENDING Ktype：四驱 Van `156108` 与四驱 Bus `156110`。优先判断二者是否共享同一标准封闭式四驱外廓；闭合后立即进行机械终检并输出 COMPLETE。
+
+推进信号：CONTINUE
+
+[1]: https://www.car.info/en-no/iveco/daily/daily-30-chassis-cab-26736760?utm_source=chatgpt.com "Iveco Daily 30 Chassis Cab"
+
+
+--- 发送 / 继续到 Round 54 ---
+继续当前批次并采用缓存优先模式。尺寸组只在首次创建或纠错时完整核对一次三维和来源；后续 Ktype 只判断关联哪个现有 DIMENSION_GROUP_ID，不重复抓取，不输出缓存来源或匹配理由。仍有 PENDING 时，CONTINUE 轮仅输出：1) 更新点；2) 当前批次进度；3) 本轮新增/修改的 Ktype 映射 TSV（无变化写“无”）；4) 本轮首次创建/修正的 DIMENSION_GROUP TSV（复用既有组不重复输出，无变化写“无”）；5) 下一步优先处理。若当前或上一轮进度已经是 PENDING=0，本轮不要继续检索或再次输出 CONTINUE，必须立刻汇总并输出两张最终完整 TSV、两个任务指定 sandbox 下载链接和“推进信号：COMPLETE”。执行顺序固定为：第一阶段优先消除 PENDING 并补齐会阻塞两张最终表的数据。检测到 PENDING=0 后，第二阶段最多只做一次轻量机械收尾：核对固定表头、id 与 DIMENSION_GROUP_ID 唯一、映射引用闭合、长宽高和来源非空、两个任务指定下载链接齐全。第二阶段不得重新逐车型、逐年份或逐来源做深度检索，不得为了提高置信度反复核对，也不得因非阻塞的排序或措辞问题继续多轮。PENDING=0 后的下一条回复必须直接输出两张最终完整 TSV、两个精确 sandbox 下载链接，并以“推进信号：COMPLETE”结束；不要再输出 CONTINUE。Ktype 映射 TSV 表头必须严格使用 requirement 指定的字段顺序：id	Ktype	NormalizedBodyStyle	Generation	BodyCode	Doors	DIMENSION_GROUP_ID	MatchConfidence	Notes	IterationStatus。另需维护完整 DIMENSION_GROUP TSV，表头固定为：DIMENSION_GROUP_ID	LengthMM	WidthMM	HeightMM	DimensionSource	SourceURL。缺少任一张表、任一映射引用的尺寸组，或尺寸组字段不完整时不得 COMPLETE。不要输出子车系匹配表。
+【COMPLETE 下载文件硬性要求】
+准备 COMPLETE 时，除两张完整内嵌 TSV 外，还必须创建并提供以下两个可点击 sandbox 下载链接，文件名必须完全一致：
+- left18448_7201-7300_ktype_dimension_mapping_final.tsv
+- left18448_7201-7300_dimension_groups_final.tsv
+缺少任一下载链接时不得输出推进信号：COMPLETE。
+
+
+--- Round 54 / checkpoint 续跑 ---
+## 1) 更新点
+
+最后两个 PENDING Ktype 已闭合：
+
+* `156108`：Daily I `40-10 WV` 四驱 Van，4855 × 2000 × 2865 mm。
+* `156110`：Daily I `40-10 WC` 四驱 Bus，4855 × 2000 × 2410 mm。
+
+两者长度、宽度相同，但车身高度不同，因此分别建立 Van 和 MPV 尺寸组。([Albicker][1])
+
+## 2) 当前批次进度
+
+* Checkpoint 汇总：100 / 100 Ktype READY
+* 本次 PENDING 输入：70 / 70 Ktype READY
+* PENDING：0
+* 最终映射：163 行
+* 最终尺寸组：32 组
+* 机械终检：固定表头、ID 唯一、引用闭合、三维正整数、来源与 URL 非空、无孤立组、无 PENDING，全部通过
+
+## 3) 最终完整 Ktype 映射 TSV
+
+```tsv
+id	Ktype	NormalizedBodyStyle	Generation	BodyCode	Doors	DIMENSION_GROUP_ID	MatchConfidence	Notes	IterationStatus
+34050	34050	Chassis Cab	Daily I	30	2	EU-IVECO-DAILY-II-CHASSIS-CAB-WB2800-PREFL-01	MEDIUM	采用标准2800轴距单排底盘驾驶室。	READY
+34055	34055	Van	Daily I		4	EU-IVECO-DAILY-I-VAN-WB3200-STANDARD-01	MEDIUM		READY
+34067	34067	Chassis Cab	Daily I	35	2	EU-IVECO-DAILY-II-CHASSIS-CAB-WB2800-PREFL-01	MEDIUM	采用标准2800轴距单排底盘驾驶室。	READY
+34070	34070	Van	Daily I		4	EU-IVECO-DAILY-I-VAN-WB3200-STANDARD-01	MEDIUM		READY
+34060	34060	Chassis Cab	Daily I	35	2	EU-IVECO-DAILY-II-CHASSIS-CAB-WB2800-PREFL-01	MEDIUM	采用标准2800轴距单排底盘驾驶室。	READY
+34063	34063	Van	Daily I		4	EU-IVECO-DAILY-I-VAN-WB3200-STANDARD-01	MEDIUM		READY
+34078	34078	Chassis Cab	Daily I	40	2	EU-IVECO-DAILY-II-CHASSIS-CAB-WB2800-PREFL-01	MEDIUM	采用标准2800轴距单排底盘驾驶室。	READY
+156109	156109	Chassis Cab	Daily I	40-10 W	2	EU-IVECO-DAILY-II-CHASSIS-CAB-40W-WB2800-PREFL-01	MEDIUM	采用标准2800轴距四驱单排底盘驾驶室。	READY
+156110	156110	MPV	Daily I	40-10 WC		EU-IVECO-DAILY-I-MPV-40W-WB2800-01	MEDIUM	采用2800轴距四驱客车标准外廓。	READY
+34079	34079	Van	Daily I		4	EU-IVECO-DAILY-I-VAN-WB3200-STANDARD-01	MEDIUM		READY
+156108	156108	Van	Daily I	40-10 WV		EU-IVECO-DAILY-I-VAN-40W-WB2800-01	MEDIUM	采用2800轴距四驱封闭车身标准外廓。	READY
+34134	34134	Chassis Cab	Daily I	40	2	EU-IVECO-DAILY-II-CHASSIS-CAB-WB2800-PREFL-01	MEDIUM	采用标准2800轴距单排底盘驾驶室。	READY
+34135	34135	Van	Daily I		4	EU-IVECO-DAILY-I-VAN-WB3200-STANDARD-01	MEDIUM		READY
+34087	34087	Chassis Cab	Daily I	45	2	EU-IVECO-DAILY-II-CHASSIS-CAB-WB2800-PREFL-01	MEDIUM	采用标准2800轴距单排底盘驾驶室。	READY
+34089	34089	Van	Daily I		4	EU-IVECO-DAILY-I-VAN-WB3200-STANDARD-01	MEDIUM		READY
+34096	34096	Chassis Cab	Daily I	49	2	EU-IVECO-DAILY-II-CHASSIS-CAB-WB2800-PREFL-01	MEDIUM	采用标准2800轴距单排底盘驾驶室。	READY
+34099	34099	Van	Daily I		4	EU-IVECO-DAILY-I-VAN-WB3200-STANDARD-01	MEDIUM		READY
+106498	106498	Van	Daily II			EU-IVECO-DAILY-II-VAN-40-4X4-FACELIFT-01	MEDIUM	标准四驱封闭车身。	READY
+146444	146444	Van	Daily II	30-10	3	EU-IVECO-DAILY-II-VAN-30-WB2800-01	MEDIUM	未确认多外廓，采用30系列标准2800轴距封闭车身。	READY
+34051_wb2800_prefl_chassis	34051	Chassis Cab	Daily II	30	2	EU-IVECO-DAILY-II-CHASSIS-CAB-WB2800-PREFL-01	MEDIUM	改款前2800轴距单排底盘驾驶室。	READY
+34051_wb3310_prefl_chassis	34051	Chassis Cab	Daily II	30	2	EU-IVECO-DAILY-II-CHASSIS-CAB-WB3310-PREFL-01	MEDIUM	改款前3310轴距单排底盘驾驶室。	READY
+34051_wb2800_facelift_chassis	34051	Chassis Cab	Daily II	30	2	EU-IVECO-DAILY-II-CHASSIS-CAB-WB2800-FACELIFT-01	MEDIUM	改款后2800轴距单排底盘驾驶室。	READY
+34051_wb3300_facelift_chassis	34051	Chassis Cab	Daily II	30	2	EU-IVECO-DAILY-II-CHASSIS-CAB-WB3300-FACELIFT-01	MEDIUM	改款后3300轴距单排底盘驾驶室。	READY
+34367_wb2800_prefl_chassis	34367	Chassis Cab	Daily II	30	2	EU-IVECO-DAILY-II-CHASSIS-CAB-WB2800-PREFL-01	MEDIUM	改款前2800轴距单排底盘驾驶室。	READY
+34367_wb3310_prefl_chassis	34367	Chassis Cab	Daily II	30	2	EU-IVECO-DAILY-II-CHASSIS-CAB-WB3310-PREFL-01	MEDIUM	改款前3310轴距单排底盘驾驶室。	READY
+34367_wb2800_facelift_chassis	34367	Chassis Cab	Daily II	30	2	EU-IVECO-DAILY-II-CHASSIS-CAB-WB2800-FACELIFT-01	MEDIUM	改款后2800轴距单排底盘驾驶室。	READY
+34367_wb3300_facelift_chassis	34367	Chassis Cab	Daily II	30	2	EU-IVECO-DAILY-II-CHASSIS-CAB-WB3300-FACELIFT-01	MEDIUM	改款后3300轴距单排底盘驾驶室。	READY
+34069_wb2800_chassis	34069	Chassis Cab	Daily II		2	EU-IVECO-DAILY-II-CHASSIS-CAB-WB2800-FACELIFT-01	HIGH	改款2800轴距单排底盘驾驶室；不保留无证据平台货斗分支。	READY
+34069_wb3300_chassis	34069	Chassis Cab	Daily II		2	EU-IVECO-DAILY-II-CHASSIS-CAB-WB3300-FACELIFT-01	HIGH	改款3300轴距单排底盘驾驶室；不保留无证据平台货斗分支。	READY
+34069_wb3600_chassis	34069	Chassis Cab	Daily II		2	EU-IVECO-DAILY-II-CHASSIS-CAB-WB3600-FACELIFT-01	HIGH	改款3600轴距单排底盘驾驶室；不保留无证据平台货斗分支。	READY
+34069_wb3950_chassis	34069	Chassis Cab	Daily II		2	EU-IVECO-DAILY-II-CHASSIS-CAB-WB3950-FACELIFT-01	HIGH	改款3950轴距单排底盘驾驶室；不保留无证据平台货斗分支。	READY
+34332_wb2800_chassis	34332	Chassis Cab	Daily II		2	EU-IVECO-DAILY-II-CHASSIS-CAB-WB2800-PREFL-01	HIGH	2800轴距单排底盘驾驶室；不保留无证据平台货斗分支。	READY
+34332_wb3310_chassis	34332	Chassis Cab	Daily II		2	EU-IVECO-DAILY-II-CHASSIS-CAB-WB3310-PREFL-01	HIGH	3310轴距单排底盘驾驶室；不保留无证据平台货斗分支。	READY
+34332_wb3600_chassis	34332	Chassis Cab	Daily II		2	EU-IVECO-DAILY-II-CHASSIS-CAB-WB3600-PREFL-01	HIGH	3600轴距单排底盘驾驶室；不保留无证据平台货斗分支。	READY
+34371_wb2800_chassis	34371	Chassis Cab	Daily II		2	EU-IVECO-DAILY-II-CHASSIS-CAB-WB2800-PREFL-01	HIGH	2800轴距单排底盘驾驶室；不保留无证据平台货斗分支。	READY
+34371_wb3310_chassis	34371	Chassis Cab	Daily II		2	EU-IVECO-DAILY-II-CHASSIS-CAB-WB3310-PREFL-01	HIGH	3310轴距单排底盘驾驶室；不保留无证据平台货斗分支。	READY
+34371_wb3600_chassis	34371	Chassis Cab	Daily II		2	EU-IVECO-DAILY-II-CHASSIS-CAB-WB3600-PREFL-01	HIGH	3600轴距单排底盘驾驶室；不保留无证据平台货斗分支。	READY
+34074_wb2800_chassis	34074	Chassis Cab	Daily II		2	EU-IVECO-DAILY-II-CHASSIS-CAB-WB2800-PREFL-01	MEDIUM	2800轴距单排底盘驾驶室；不保留无证据平台货斗分支。	READY
+34074_wb3310_chassis	34074	Chassis Cab	Daily II		2	EU-IVECO-DAILY-II-CHASSIS-CAB-WB3310-PREFL-01	MEDIUM	3310轴距单排底盘驾驶室；不保留无证据平台货斗分支。	READY
+34074_wb3600_chassis	34074	Chassis Cab	Daily II		2	EU-IVECO-DAILY-II-CHASSIS-CAB-WB3600-PREFL-01	MEDIUM	3600轴距单排底盘驾驶室；不保留无证据平台货斗分支。	READY
+34075_wb2800_chassis	34075	Chassis Cab	Daily II		2	EU-IVECO-DAILY-II-CHASSIS-CAB-WB2800-FACELIFT-01	MEDIUM	改款2800轴距单排底盘驾驶室；不保留无证据平台货斗分支。	READY
+34075_wb3300_chassis	34075	Chassis Cab	Daily II		2	EU-IVECO-DAILY-II-CHASSIS-CAB-WB3300-FACELIFT-01	MEDIUM	改款3300轴距单排底盘驾驶室；不保留无证据平台货斗分支。	READY
+34075_wb3600_chassis	34075	Chassis Cab	Daily II		2	EU-IVECO-DAILY-II-CHASSIS-CAB-WB3600-FACELIFT-01	MEDIUM	改款3600轴距单排底盘驾驶室；不保留无证据平台货斗分支。	READY
+34075_wb3950_chassis	34075	Chassis Cab	Daily II		2	EU-IVECO-DAILY-II-CHASSIS-CAB-WB3950-FACELIFT-01	MEDIUM	改款3950轴距单排底盘驾驶室；不保留无证据平台货斗分支。	READY
+34077	34077	Pickup	Daily II	35-12 K	2	EU-IVECO-DAILY-II-DUMPTRUCK-35-12-K-WB3300-FACELIFT-01	MEDIUM	35-12 K标准双门倾卸车，3300轴距。	READY
+34061_wb2800_prefl_chassis	34061	Chassis Cab	Daily II		2	EU-IVECO-DAILY-II-CHASSIS-CAB-WB2800-PREFL-01	MEDIUM	改款前2800轴距单排底盘驾驶室；不保留无证据平台货斗分支。	READY
+34061_wb3310_prefl_chassis	34061	Chassis Cab	Daily II		2	EU-IVECO-DAILY-II-CHASSIS-CAB-WB3310-PREFL-01	MEDIUM	改款前3310轴距单排底盘驾驶室；不保留无证据平台货斗分支。	READY
+34061_wb3600_prefl_chassis	34061	Chassis Cab	Daily II		2	EU-IVECO-DAILY-II-CHASSIS-CAB-WB3600-PREFL-01	MEDIUM	改款前3600轴距单排底盘驾驶室；不保留无证据平台货斗分支。	READY
+34061_wb2800_facelift_chassis	34061	Chassis Cab	Daily II		2	EU-IVECO-DAILY-II-CHASSIS-CAB-WB2800-FACELIFT-01	HIGH	改款2800轴距单排底盘驾驶室；不保留无证据平台货斗分支。	READY
+34061_wb3300_facelift_chassis	34061	Chassis Cab	Daily II		2	EU-IVECO-DAILY-II-CHASSIS-CAB-WB3300-FACELIFT-01	HIGH	改款3300轴距单排底盘驾驶室；不保留无证据平台货斗分支。	READY
+34061_wb3600_facelift_chassis	34061	Chassis Cab	Daily II		2	EU-IVECO-DAILY-II-CHASSIS-CAB-WB3600-FACELIFT-01	HIGH	改款3600轴距单排底盘驾驶室；不保留无证据平台货斗分支。	READY
+34061_wb3950_facelift_chassis	34061	Chassis Cab	Daily II		2	EU-IVECO-DAILY-II-CHASSIS-CAB-WB3950-FACELIFT-01	HIGH	改款3950轴距单排底盘驾驶室；不保留无证据平台货斗分支。	READY
+34369_wb2800_prefl_chassis	34369	Chassis Cab	Daily II		2	EU-IVECO-DAILY-II-CHASSIS-CAB-WB2800-PREFL-01	MEDIUM	改款前2800轴距单排底盘驾驶室；不保留无证据平台货斗分支。	READY
+34369_wb3310_prefl_chassis	34369	Chassis Cab	Daily II		2	EU-IVECO-DAILY-II-CHASSIS-CAB-WB3310-PREFL-01	MEDIUM	改款前3310轴距单排底盘驾驶室；不保留无证据平台货斗分支。	READY
+34369_wb3600_prefl_chassis	34369	Chassis Cab	Daily II		2	EU-IVECO-DAILY-II-CHASSIS-CAB-WB3600-PREFL-01	MEDIUM	改款前3600轴距单排底盘驾驶室；不保留无证据平台货斗分支。	READY
+34369_wb2800_facelift_chassis	34369	Chassis Cab	Daily II		2	EU-IVECO-DAILY-II-CHASSIS-CAB-WB2800-FACELIFT-01	HIGH	改款2800轴距单排底盘驾驶室；不保留无证据平台货斗分支。	READY
+34369_wb3300_facelift_chassis	34369	Chassis Cab	Daily II		2	EU-IVECO-DAILY-II-CHASSIS-CAB-WB3300-FACELIFT-01	HIGH	改款3300轴距单排底盘驾驶室；不保留无证据平台货斗分支。	READY
+34369_wb3600_facelift_chassis	34369	Chassis Cab	Daily II		2	EU-IVECO-DAILY-II-CHASSIS-CAB-WB3600-FACELIFT-01	HIGH	改款3600轴距单排底盘驾驶室；不保留无证据平台货斗分支。	READY
+34369_wb3950_facelift_chassis	34369	Chassis Cab	Daily II		2	EU-IVECO-DAILY-II-CHASSIS-CAB-WB3950-FACELIFT-01	HIGH	改款3950轴距单排底盘驾驶室；不保留无证据平台货斗分支。	READY
+34081	34081	Van	Daily II	40-10 4X4		EU-IVECO-DAILY-II-VAN-40-4X4-FACELIFT-01	HIGH	改款后四驱封闭车身。	READY
+34136_wb2800_chassis	34136	Chassis Cab	Daily II	40-10 W	2	EU-IVECO-DAILY-II-CHASSIS-CAB-40W-WB2800-FACELIFT-01	HIGH	改款后2800轴距四驱单排底盘驾驶室。	READY
+34136_wb3200_chassis	34136	Chassis Cab	Daily II	40-10 W	2	EU-IVECO-DAILY-II-CHASSIS-CAB-40W-WB3200-FACELIFT-01	HIGH	改款后3200轴距四驱单排底盘驾驶室。	READY
+146464_wb2800_prefl_chassis	146464	Chassis Cab	Daily II	40-10 W	2	EU-IVECO-DAILY-II-CHASSIS-CAB-40W-WB2800-PREFL-01	HIGH	改款前2800轴距四驱单排底盘驾驶室。	READY
+146464_wb3200_prefl_chassis	146464	Chassis Cab	Daily II	40-10 W	2	EU-IVECO-DAILY-II-CHASSIS-CAB-40W-WB3200-PREFL-01	HIGH	改款前3200轴距四驱单排底盘驾驶室。	READY
+146464_wb2800_facelift_chassis	146464	Chassis Cab	Daily II	40-10 W	2	EU-IVECO-DAILY-II-CHASSIS-CAB-40W-WB2800-FACELIFT-01	HIGH	改款后2800轴距四驱单排底盘驾驶室。	READY
+146464_wb3200_facelift_chassis	146464	Chassis Cab	Daily II	40-10 W	2	EU-IVECO-DAILY-II-CHASSIS-CAB-40W-WB3200-FACELIFT-01	HIGH	改款后3200轴距四驱单排底盘驾驶室。	READY
+146466_wb2800_chassis	146466	Chassis Cab	Daily II	40	2	EU-IVECO-DAILY-II-CHASSIS-CAB-WB2800-PREFL-01	MEDIUM	改款前2800轴距单排底盘驾驶室。	READY
+146466_wb3310_chassis	146466	Chassis Cab	Daily II	40	2	EU-IVECO-DAILY-II-CHASSIS-CAB-WB3310-PREFL-01	MEDIUM	改款前3310轴距单排底盘驾驶室。	READY
+146466_wb3600_chassis	146466	Chassis Cab	Daily II	40	2	EU-IVECO-DAILY-II-CHASSIS-CAB-WB3600-PREFL-01	MEDIUM	改款前3600轴距单排底盘驾驶室。	READY
+34097_wb3310_chassis	34097	Chassis Cab	Daily II	49	2	EU-IVECO-DAILY-II-CHASSIS-CAB-49-WB3310-PREFL-01	HIGH	49系列改款前3310轴距单排底盘驾驶室。	READY
+34097_wb3600_chassis	34097	Chassis Cab	Daily II	49	2	EU-IVECO-DAILY-II-CHASSIS-CAB-49-WB3600-PREFL-01	HIGH	49系列改款前3600轴距单排底盘驾驶室。	READY
+34098	34098	Chassis Cab	Daily II	49	2	EU-IVECO-DAILY-II-CHASSIS-CAB-49-WB3300-FACELIFT-01	HIGH	49系列改款后3300轴距单排底盘驾驶室。	READY
+146441	146441	Van	Daily II	49-10		EU-IVECO-DAILY-II-VAN-49-FACELIFT-01	HIGH	改款后49系列封闭车身。	READY
+34100	34100	Van	Daily II	49-10		EU-IVECO-DAILY-II-VAN-49-PREFL-01	HIGH	改款前49系列封闭车身。	READY
+34103_wb3310_chassis	34103	Chassis Cab	Daily II		2	EU-IVECO-DAILY-II-CHASSIS-CAB-49-WB3310-PREFL-01	MEDIUM	49系列3310轴距单排底盘驾驶室；不保留无证据平台货斗分支。	READY
+34103_wb3600_chassis	34103	Chassis Cab	Daily II		2	EU-IVECO-DAILY-II-CHASSIS-CAB-49-WB3600-PREFL-01	MEDIUM	49系列3600轴距单排底盘驾驶室；不保留无证据平台货斗分支。	READY
+34104	34104	Chassis Cab	Daily II	49	2	EU-IVECO-DAILY-II-CHASSIS-CAB-49-WB3300-FACELIFT-01	HIGH	49系列改款后3300轴距单排底盘驾驶室。	READY
+34105	34105	Van	Daily II	49-12		EU-IVECO-DAILY-II-VAN-49-PREFL-01	HIGH	改款前49系列封闭车身。	READY
+34106	34106	Van	Daily II	49-12		EU-IVECO-DAILY-II-VAN-49-FACELIFT-01	HIGH	改款后49系列封闭车身。	READY
+34108	34108	Chassis Cab	Daily II	59	2	EU-IVECO-DAILY-II-CHASSIS-CAB-49-WB3600-PREFL-01	MEDIUM	改款前59系列标准3600轴距单排底盘驾驶室。	READY
+34109	34109	Chassis Cab	Daily II	59	2	EU-IVECO-DAILY-II-CHASSIS-CAB-49-WB3300-FACELIFT-01	MEDIUM	改款后59系列标准3300轴距单排底盘驾驶室。	READY
+34082	34082	MPV	Daily II			EU-IVECO-DAILY-II-VAN-49-PREFL-01	MEDIUM	采用改款前标准封闭客车外廓。	READY
+34083	34083	MPV	Daily II			EU-IVECO-DAILY-II-VAN-49-FACELIFT-01	MEDIUM	采用改款后标准封闭客车外廓。	READY
+34086	34086	MPV	Daily II			EU-IVECO-DAILY-II-VAN-49-FACELIFT-01	MEDIUM	采用改款后标准封闭客车外廓。	READY
+34092	34092	MPV	Daily II			EU-IVECO-DAILY-II-VAN-49-PREFL-01	MEDIUM	采用改款前标准封闭客车外廓。	READY
+34093	34093	MPV	Daily II			EU-IVECO-DAILY-II-VAN-49-FACELIFT-01	MEDIUM	采用改款后标准封闭客车外廓。	READY
+34095	34095	MPV	Daily II			EU-IVECO-DAILY-II-VAN-49-FACELIFT-01	MEDIUM	采用改款后标准封闭客车外廓。	READY
+146451	146451	MPV	Daily II			EU-IVECO-DAILY-II-VAN-49-PREFL-01	MEDIUM	采用改款前标准封闭客车外廓。	READY
+108243	108243	Van	Daily III			EU-IVECO-DAILY-III-FULL-BODY-SWB-LOW-01	MEDIUM	未确认多外廓，采用最匹配的标准短轴低顶量产封闭车身。	READY
+34244_wb3000_chassis	34244	Chassis Cab	Daily III	29L	2	EU-IVECO-DAILY-III-CHASSIS-CAB-29L-WB3000-01	HIGH	3000轴距单排底盘驾驶室。	READY
+34244_wb3450_chassis	34244	Chassis Cab	Daily III	29L	2	EU-IVECO-DAILY-III-CHASSIS-CAB-29L-WB3450-01	HIGH	3450轴距单排底盘驾驶室。	READY
+34163_wb3000_chassis	34163	Chassis Cab	Daily III	29L	2	EU-IVECO-DAILY-III-CHASSIS-CAB-29L-WB3000-01	HIGH	3000轴距单排底盘驾驶室。	READY
+34163_wb3450_chassis	34163	Chassis Cab	Daily III	29L	2	EU-IVECO-DAILY-III-CHASSIS-CAB-29L-WB3450-01	HIGH	3450轴距单排底盘驾驶室。	READY
+34246_wb3000_chassis	34246	Chassis Cab	Daily III	29L	2	EU-IVECO-DAILY-III-CHASSIS-CAB-29L-WB3000-01	HIGH	3000轴距单排底盘驾驶室。	READY
+34246_wb3450_chassis	34246	Chassis Cab	Daily III	29L	2	EU-IVECO-DAILY-III-CHASSIS-CAB-29L-WB3450-01	HIGH	3450轴距单排底盘驾驶室。	READY
+34240_wb3000_chassis	34240	Chassis Cab	Daily III	29L	2	EU-IVECO-DAILY-III-CHASSIS-CAB-29L-WB3000-01	HIGH	3000轴距单排底盘驾驶室。	READY
+34240_wb3450_chassis	34240	Chassis Cab	Daily III	29L	2	EU-IVECO-DAILY-III-CHASSIS-CAB-29L-WB3450-01	HIGH	3450轴距单排底盘驾驶室。	READY
+34282_wb3000_chassis	34282	Chassis Cab	Daily III	29L	2	EU-IVECO-DAILY-III-CHASSIS-CAB-29L-WB3000-01	HIGH	3000轴距单排底盘驾驶室。	READY
+34282_wb3450_chassis	34282	Chassis Cab	Daily III	29L	2	EU-IVECO-DAILY-III-CHASSIS-CAB-29L-WB3450-01	HIGH	3450轴距单排底盘驾驶室。	READY
+34161_wb3000_chassis	34161	Chassis Cab	Daily III	29L	2	EU-IVECO-DAILY-III-CHASSIS-CAB-29L-WB3000-01	MEDIUM	3000轴距单排底盘驾驶室。	READY
+34161_wb3450_chassis	34161	Chassis Cab	Daily III	29L	2	EU-IVECO-DAILY-III-CHASSIS-CAB-29L-WB3450-01	MEDIUM	3450轴距单排底盘驾驶室。	READY
+34420_wb3000_chassis	34420	Chassis Cab	Daily III	29L	2	EU-IVECO-DAILY-III-CHASSIS-CAB-29L-WB3000-01	MEDIUM	3000轴距单排底盘驾驶室。	READY
+34420_wb3450_chassis	34420	Chassis Cab	Daily III	29L	2	EU-IVECO-DAILY-III-CHASSIS-CAB-29L-WB3450-01	MEDIUM	3450轴距单排底盘驾驶室。	READY
+34263_35s_wb3000	34263	Chassis Cab	Daily III	35S	2	EU-IVECO-DAILY-III-CHASSIS-CAB-35S-WB3000-01	MEDIUM	按输入车身字段归入底盘驾驶室；35S分支，3000轴距。	READY
+34263_35s_wb3450	34263	Chassis Cab	Daily III	35S	2	EU-IVECO-DAILY-III-CHASSIS-CAB-35S-WB3450-01	MEDIUM	按输入车身字段归入底盘驾驶室；35S分支，3450轴距。	READY
+34263_35s_wb3750	34263	Chassis Cab	Daily III	35S	2	EU-IVECO-DAILY-III-CHASSIS-CAB-35S-WB3750-01	MEDIUM	按输入车身字段归入底盘驾驶室；35S分支，3750轴距。	READY
+34263_35c_wb3000	34263	Chassis Cab	Daily III	35C	2	EU-IVECO-DAILY-III-CHASSIS-CAB-35C-WB3000-01	MEDIUM	按输入车身字段归入底盘驾驶室；35C分支，3000轴距。	READY
+34263_35c_wb3450	34263	Chassis Cab	Daily III	35C	2	EU-IVECO-DAILY-III-CHASSIS-CAB-35C-WB3450-01	MEDIUM	按输入车身字段归入底盘驾驶室；35C分支，3450轴距。	READY
+34263_35c_wb3750	34263	Chassis Cab	Daily III	35C	2	EU-IVECO-DAILY-III-CHASSIS-CAB-35C-WB3750-01	MEDIUM	按输入车身字段归入底盘驾驶室；35C分支，3750轴距。	READY
+34263_35c_wb4100	34263	Chassis Cab	Daily III	35C	2	EU-IVECO-DAILY-III-CHASSIS-CAB-35C-WB4100-01	MEDIUM	按输入车身字段归入底盘驾驶室；35C分支，4100轴距。	READY
+34264_35s_wb3000	34264	Chassis Cab	Daily III	35S	2	EU-IVECO-DAILY-III-CHASSIS-CAB-35S-WB3000-01	HIGH	35S分支，3000轴距。	READY
+34264_35s_wb3450	34264	Chassis Cab	Daily III	35S	2	EU-IVECO-DAILY-III-CHASSIS-CAB-35S-WB3450-01	HIGH	35S分支，3450轴距。	READY
+34264_35s_wb3750	34264	Chassis Cab	Daily III	35S	2	EU-IVECO-DAILY-III-CHASSIS-CAB-35S-WB3750-01	HIGH	35S分支，3750轴距。	READY
+34264_35c_wb3000	34264	Chassis Cab	Daily III	35C	2	EU-IVECO-DAILY-III-CHASSIS-CAB-35C-WB3000-01	HIGH	35C分支，3000轴距。	READY
+34264_35c_wb3450	34264	Chassis Cab	Daily III	35C	2	EU-IVECO-DAILY-III-CHASSIS-CAB-35C-WB3450-01	HIGH	35C分支，3450轴距。	READY
+34264_35c_wb3750	34264	Chassis Cab	Daily III	35C	2	EU-IVECO-DAILY-III-CHASSIS-CAB-35C-WB3750-01	HIGH	35C分支，3750轴距。	READY
+34264_35c_wb4100	34264	Chassis Cab	Daily III	35C	2	EU-IVECO-DAILY-III-CHASSIS-CAB-35C-WB4100-01	HIGH	35C分支，4100轴距。	READY
+34431_35c_wb3000	34431	Chassis Cab	Daily III	35C	2	EU-IVECO-DAILY-III-CHASSIS-CAB-35C-WB3000-01	HIGH	35C分支，3000轴距。	READY
+34431_35c_wb3450	34431	Chassis Cab	Daily III	35C	2	EU-IVECO-DAILY-III-CHASSIS-CAB-35C-WB3450-01	HIGH	35C分支，3450轴距。	READY
+34431_35c_wb3750	34431	Chassis Cab	Daily III	35C	2	EU-IVECO-DAILY-III-CHASSIS-CAB-35C-WB3750-01	HIGH	35C分支，3750轴距。	READY
+34431_35c_wb4100	34431	Chassis Cab	Daily III	35C	2	EU-IVECO-DAILY-III-CHASSIS-CAB-35C-WB4100-01	HIGH	35C分支，4100轴距。	READY
+34426_35s_wb3000	34426	Chassis Cab	Daily III	35S	2	EU-IVECO-DAILY-III-CHASSIS-CAB-35S-WB3000-01	HIGH	35S分支，3000轴距。	READY
+34426_35s_wb3450	34426	Chassis Cab	Daily III	35S	2	EU-IVECO-DAILY-III-CHASSIS-CAB-35S-WB3450-01	HIGH	35S分支，3450轴距。	READY
+34426_35s_wb3750	34426	Chassis Cab	Daily III	35S	2	EU-IVECO-DAILY-III-CHASSIS-CAB-35S-WB3750-01	HIGH	35S分支，3750轴距。	READY
+34426_35c_wb3000	34426	Chassis Cab	Daily III	35C	2	EU-IVECO-DAILY-III-CHASSIS-CAB-35C-WB3000-01	HIGH	35C分支，3000轴距。	READY
+34426_35c_wb3450	34426	Chassis Cab	Daily III	35C	2	EU-IVECO-DAILY-III-CHASSIS-CAB-35C-WB3450-01	HIGH	35C分支，3450轴距。	READY
+34426_35c_wb3750	34426	Chassis Cab	Daily III	35C	2	EU-IVECO-DAILY-III-CHASSIS-CAB-35C-WB3750-01	HIGH	35C分支，3750轴距。	READY
+34426_35c_wb4100	34426	Chassis Cab	Daily III	35C	2	EU-IVECO-DAILY-III-CHASSIS-CAB-35C-WB4100-01	HIGH	35C分支，4100轴距。	READY
+34241_35c_wb3000	34241	Chassis Cab	Daily III	35C	2	EU-IVECO-DAILY-III-CHASSIS-CAB-35C-WB3000-01	HIGH	35C分支，3000轴距。	READY
+34241_35c_wb3450	34241	Chassis Cab	Daily III	35C	2	EU-IVECO-DAILY-III-CHASSIS-CAB-35C-WB3450-01	HIGH	35C分支，3450轴距。	READY
+34241_35c_wb3750	34241	Chassis Cab	Daily III	35C	2	EU-IVECO-DAILY-III-CHASSIS-CAB-35C-WB3750-01	HIGH	35C分支，3750轴距。	READY
+34241_35c_wb4100	34241	Chassis Cab	Daily III	35C	2	EU-IVECO-DAILY-III-CHASSIS-CAB-35C-WB4100-01	HIGH	35C分支，4100轴距。	READY
+34443_35s_wb3000	34443	Chassis Cab	Daily III	35S	2	EU-IVECO-DAILY-III-CHASSIS-CAB-35S-WB3000-01	HIGH	35S分支，3000轴距。	READY
+34443_35s_wb3450	34443	Chassis Cab	Daily III	35S	2	EU-IVECO-DAILY-III-CHASSIS-CAB-35S-WB3450-01	HIGH	35S分支，3450轴距。	READY
+34443_35s_wb3750	34443	Chassis Cab	Daily III	35S	2	EU-IVECO-DAILY-III-CHASSIS-CAB-35S-WB3750-01	HIGH	35S分支，3750轴距。	READY
+34443_35c_wb3000	34443	Chassis Cab	Daily III	35C	2	EU-IVECO-DAILY-III-CHASSIS-CAB-35C-WB3000-01	HIGH	35C分支，3000轴距。	READY
+34443_35c_wb3450	34443	Chassis Cab	Daily III	35C	2	EU-IVECO-DAILY-III-CHASSIS-CAB-35C-WB3450-01	HIGH	35C分支，3450轴距。	READY
+34443_35c_wb3750	34443	Chassis Cab	Daily III	35C	2	EU-IVECO-DAILY-III-CHASSIS-CAB-35C-WB3750-01	HIGH	35C分支，3750轴距。	READY
+34443_35c_wb4100	34443	Chassis Cab	Daily III	35C	2	EU-IVECO-DAILY-III-CHASSIS-CAB-35C-WB4100-01	HIGH	35C分支，4100轴距。	READY
+34421_35s_wb3000	34421	Chassis Cab	Daily III	35S	2	EU-IVECO-DAILY-III-CHASSIS-CAB-35S-WB3000-01	HIGH	35S分支，3000轴距。	READY
+34421_35s_wb3450	34421	Chassis Cab	Daily III	35S	2	EU-IVECO-DAILY-III-CHASSIS-CAB-35S-WB3450-01	HIGH	35S分支，3450轴距。	READY
+34421_35s_wb3750	34421	Chassis Cab	Daily III	35S	2	EU-IVECO-DAILY-III-CHASSIS-CAB-35S-WB3750-01	HIGH	35S分支，3750轴距。	READY
+34421_35c_wb3000	34421	Chassis Cab	Daily III	35C	2	EU-IVECO-DAILY-III-CHASSIS-CAB-35C-WB3000-01	HIGH	35C分支，3000轴距。	READY
+34421_35c_wb3450	34421	Chassis Cab	Daily III	35C	2	EU-IVECO-DAILY-III-CHASSIS-CAB-35C-WB3450-01	HIGH	35C分支，3450轴距。	READY
+34421_35c_wb3750	34421	Chassis Cab	Daily III	35C	2	EU-IVECO-DAILY-III-CHASSIS-CAB-35C-WB3750-01	HIGH	35C分支，3750轴距。	READY
+34421_35c_wb4100	34421	Chassis Cab	Daily III	35C	2	EU-IVECO-DAILY-III-CHASSIS-CAB-35C-WB4100-01	HIGH	35C分支，4100轴距。	READY
+34167_35s_wb3000	34167	Chassis Cab	Daily III	35S	2	EU-IVECO-DAILY-III-CHASSIS-CAB-35S-WB3000-01	HIGH	35S分支，3000轴距。	READY
+34167_35s_wb3450	34167	Chassis Cab	Daily III	35S	2	EU-IVECO-DAILY-III-CHASSIS-CAB-35S-WB3450-01	HIGH	35S分支，3450轴距。	READY
+34167_35s_wb3750	34167	Chassis Cab	Daily III	35S	2	EU-IVECO-DAILY-III-CHASSIS-CAB-35S-WB3750-01	HIGH	35S分支，3750轴距。	READY
+34167_35c_wb3000	34167	Chassis Cab	Daily III	35C	2	EU-IVECO-DAILY-III-CHASSIS-CAB-35C-WB3000-01	HIGH	35C分支，3000轴距。	READY
+34167_35c_wb3450	34167	Chassis Cab	Daily III	35C	2	EU-IVECO-DAILY-III-CHASSIS-CAB-35C-WB3450-01	HIGH	35C分支，3450轴距。	READY
+34167_35c_wb3750	34167	Chassis Cab	Daily III	35C	2	EU-IVECO-DAILY-III-CHASSIS-CAB-35C-WB3750-01	HIGH	35C分支，3750轴距。	READY
+34167_35c_wb4100	34167	Chassis Cab	Daily III	35C	2	EU-IVECO-DAILY-III-CHASSIS-CAB-35C-WB4100-01	HIGH	35C分支，4100轴距。	READY
+114522	114522	MPV	Daily III			EU-IVECO-DAILY-III-FULL-BODY-SWB-LOW-01	MEDIUM	未确认多外廓，采用最匹配的标准短轴低顶量产客车外廓。	READY
+114523	114523	MPV	Daily III			EU-IVECO-DAILY-III-FULL-BODY-SWB-LOW-01	MEDIUM	未确认多外廓，采用最匹配的标准短轴低顶量产客车外廓。	READY
+34169_35s_wb3000	34169	Chassis Cab	Daily III	35S	2	EU-IVECO-DAILY-III-CHASSIS-CAB-35S-WB3000-01	HIGH	35S分支，3000轴距。	READY
+34169_35s_wb3450	34169	Chassis Cab	Daily III	35S	2	EU-IVECO-DAILY-III-CHASSIS-CAB-35S-WB3450-01	HIGH	35S分支，3450轴距。	READY
+34169_35s_wb3750	34169	Chassis Cab	Daily III	35S	2	EU-IVECO-DAILY-III-CHASSIS-CAB-35S-WB3750-01	HIGH	35S分支，3750轴距。	READY
+34169_35c_wb3000	34169	Chassis Cab	Daily III	35C	2	EU-IVECO-DAILY-III-CHASSIS-CAB-35C-WB3000-01	HIGH	35C分支，3000轴距。	READY
+34169_35c_wb3450	34169	Chassis Cab	Daily III	35C	2	EU-IVECO-DAILY-III-CHASSIS-CAB-35C-WB3450-01	HIGH	35C分支，3450轴距。	READY
+34169_35c_wb3750	34169	Chassis Cab	Daily III	35C	2	EU-IVECO-DAILY-III-CHASSIS-CAB-35C-WB3750-01	HIGH	35C分支，3750轴距。	READY
+34169_35c_wb4100	34169	Chassis Cab	Daily III	35C	2	EU-IVECO-DAILY-III-CHASSIS-CAB-35C-WB4100-01	HIGH	35C分支，4100轴距。	READY
+114535	114535	MPV	Daily III			EU-IVECO-DAILY-III-FULL-BODY-SWB-LOW-01	MEDIUM	未确认多外廓，采用最匹配的标准短轴低顶量产客车外廓。	READY
+```
+
+[下载 Ktype 映射 TSV](sandbox:/mnt/data/left18448_7201-7300_ktype_dimension_mapping_final.tsv)
+
+## 4) 最终完整 DIMENSION_GROUP TSV
+
+```tsv
+DIMENSION_GROUP_ID	LengthMM	WidthMM	HeightMM	DimensionSource	SourceURL
+EU-IVECO-DAILY-II-CHASSIS-CAB-WB2800-PREFL-01	5155	2000	2080	Használtautó IVECO Daily 35-10 C chassis catalogue	https://katalogus.hasznaltauto.hu/iveco/daily_35-10_c/50258
+EU-IVECO-DAILY-II-CHASSIS-CAB-WB3310-PREFL-01	5755	2000	2080	Használtautó IVECO Daily 35-10 C chassis catalogue	https://katalogus.hasznaltauto.hu/iveco/daily_35-10_c/50259
+EU-IVECO-DAILY-II-CHASSIS-CAB-WB3600-PREFL-01	6355	2000	2080	Használtautó IVECO Daily 35-10 C chassis catalogue	https://katalogus.hasznaltauto.hu/iveco/daily_35-10_c/50260
+EU-IVECO-DAILY-II-CHASSIS-CAB-WB2800-FACELIFT-01	4850	2000	2225	Használtautó IVECO Daily 35-10 C Basic chassis catalogue	https://katalogus.hasznaltauto.hu/iveco/daily_35-10_c_basic/50281
+EU-IVECO-DAILY-II-CHASSIS-CAB-WB3300-FACELIFT-01	5970	2000	2260	Használtautó IVECO Daily 35-10 C Basic chassis catalogue	https://katalogus.hasznaltauto.hu/iveco/daily_35-10_c_basic/50282
+EU-IVECO-DAILY-II-CHASSIS-CAB-WB3600-FACELIFT-01	6890	2000	2080	Használtautó IVECO Daily 35-10 C Basic chassis catalogue	https://katalogus.hasznaltauto.hu/iveco/daily_35-10_c_basic/50283
+EU-IVECO-DAILY-II-CHASSIS-CAB-WB3950-FACELIFT-01	6890	2000	2080	Használtautó IVECO Daily 35-10 C Basic chassis catalogue	https://katalogus.hasznaltauto.hu/iveco/daily_35-10_c_basic/50284
+EU-IVECO-DAILY-II-CHASSIS-CAB-49-WB3310-PREFL-01	5755	2000	2105	CarsGuide Iveco TurboDaily 1995 exterior dimensions	https://www.carsguide.com.au/iveco/turbodaily/car-dimensions/1995
+EU-IVECO-DAILY-II-CHASSIS-CAB-49-WB3600-PREFL-01	6355	2000	2105	CarExpert JATO Iveco Daily 1996 cab-chassis specifications	https://www.carexpert.com.au/iveco/daily/1996-2-5l-cab-chassis-rwd-diesel-manual-jjo5f8k519960601
+EU-IVECO-DAILY-III-CHASSIS-CAB-35S-WB3000-01	5077	1996	2220	Használtautó IVECO Daily 35 S 10 chassis catalogue	https://katalogus.hasznaltauto.hu/iveco/daily_35_s_10/50314
+EU-IVECO-DAILY-III-CHASSIS-CAB-35S-WB3450-01	5899	1996	2220	Használtautó IVECO Daily 35 S 10 chassis catalogue	https://katalogus.hasznaltauto.hu/iveco/daily_35_s_10/50315
+EU-IVECO-DAILY-III-CHASSIS-CAB-35S-WB3750-01	6509	1996	2220	Használtautó IVECO Daily 35 S 10 chassis catalogue	https://katalogus.hasznaltauto.hu/iveco/daily_35_s_10/50316
+EU-IVECO-DAILY-III-CHASSIS-CAB-35C-WB3000-01	5334	1996	2220	Használtautó IVECO Daily 35 C 10 chassis catalogue	https://katalogus.hasznaltauto.hu/iveco/daily_35_c_10/50325
+EU-IVECO-DAILY-III-CHASSIS-CAB-35C-WB3450-01	5899	1996	2220	Használtautó IVECO Daily 35 C 10 chassis catalogue	https://katalogus.hasznaltauto.hu/iveco/daily_35_c_10/50326
+EU-IVECO-DAILY-III-CHASSIS-CAB-35C-WB3750-01	6509	1996	2220	Használtautó IVECO Daily 35 C 10 chassis catalogue	https://katalogus.hasznaltauto.hu/iveco/daily_35_c_10/50327
+EU-IVECO-DAILY-III-CHASSIS-CAB-35C-WB4100-01	6909	1996	2220	Használtautó IVECO Daily 35 C 10 chassis catalogue	https://katalogus.hasznaltauto.hu/iveco/daily_35_c_10/50328
+EU-IVECO-DAILY-III-CHASSIS-CAB-29L-WB3000-01	5014	1996	2225	Truck1 IVECO Daily 29L10 chassis technical data	https://www.truck1.eu/blog/iveco-daily-29l10-tech-specs-t1364
+EU-IVECO-DAILY-III-CHASSIS-CAB-29L-WB3450-01	5899	1996	2215	Zoomcar IVECO Daily 29L11 3.45 m chassis-cab technical sheet	https://zoomcar.fr/fiche-technique-utilitaire/iveco/daily-city-truck-daily-classe-l-chcab-chassis-cab-2911-3-2t-emp-3-45-NAT60037.html
+EU-IVECO-DAILY-III-FULL-BODY-SWB-LOW-01	5477	1996	2270	CarsGuide Iveco Daily 35S14 SWB/Low 2006 dimensions	https://www.carsguide.com.au/iveco/daily/car-dimensions/2006
+EU-IVECO-DAILY-II-VAN-49-PREFL-01	6000	2000	2768	CarExpert JATO Iveco Daily 1996 panel-van specifications	https://www.carexpert.com.au/iveco/daily/1996-2-5l-panel-van-rwd-diesel-manual-jjo5f8fo19960601
+EU-IVECO-DAILY-II-VAN-49-FACELIFT-01	6000	2000	2670	CarExpert JATO Iveco Daily 1998 panel-van specifications	https://www.carexpert.com.au/iveco/daily/1998-2-8l-panel-van-rwd-diesel-manual-jjo5f8fo19980401
+EU-IVECO-DAILY-II-VAN-40-4X4-FACELIFT-01	4855	2000	2865	CarExpert JATO Iveco Daily 1998 4X4 panel-van specifications	https://www.carexpert.com.au/iveco/daily/1998-2-8l-panel-van-4x4-diesel-manual-jjo5ffwm20000701
+EU-IVECO-DAILY-II-CHASSIS-CAB-49-WB3300-FACELIFT-01	5615	2000	2160	CarExpert JATO Iveco Daily 1998 cab-chassis specifications	https://www.carexpert.com.au/iveco/daily/1998-2-8l-cab-chassis-rwd-diesel-manual-jjo5f8fm19980401
+EU-IVECO-DAILY-II-DUMPTRUCK-35-12-K-WB3300-FACELIFT-01	5755	2000	2105	CarsGuide Iveco Turbodaily 1998 2D exterior dimensions	https://www.carsguide.com.au/iveco/turbodaily/car-dimensions/1998
+EU-IVECO-DAILY-II-CHASSIS-CAB-40W-WB2800-PREFL-01	4705	2000	2295	IVECO Daily 40-10 W Turbo 4x4 technical description	https://privat.albicker.org/docs/iveco-technik/40-10w.pdf
+EU-IVECO-DAILY-II-CHASSIS-CAB-40W-WB3200-PREFL-01	5395	2000	2290	IVECO Daily 40-10 W Turbo 4x4 technical description	https://privat.albicker.org/docs/iveco-technik/40-10w.pdf
+EU-IVECO-DAILY-II-CHASSIS-CAB-40W-WB2800-FACELIFT-01	4705	2000	2310	IVECO Daily 40-10 W Euro 2 technical description	https://privat.albicker.org/docs/iveco-technik/40-10w-e2.pdf
+EU-IVECO-DAILY-II-CHASSIS-CAB-40W-WB3200-FACELIFT-01	5395	2000	2310	IVECO Daily 40-10 W Euro 2 technical description	https://privat.albicker.org/docs/iveco-technik/40-10w-e2.pdf
+EU-IVECO-DAILY-II-VAN-30-WB2800-01	4850	2000	2225	ParuVendu Iveco Daily 30.10 VS7 1996 technical specifications	https://www.paruvendu.fr/fiches-techniques-utilitaire/iveco-daily/30-10-vs7-8-cv-diesel/3058469/
+EU-IVECO-DAILY-I-VAN-WB3200-STANDARD-01	5716	2000	2262	AutoCentrum Iveco Daily I exterior specifications	https://www.autocentrum.pl/dane-techniczne/iveco/daily/i/silnik-diesla-2.5-td-80km-1978-1990/
+EU-IVECO-DAILY-I-VAN-40W-WB2800-01	4855	2000	2865	IVECO Daily 40-10 WV Turbo 4x4 technical description	https://privat.albicker.org/docs/iveco-technik/40-10wv.pdf
+EU-IVECO-DAILY-I-MPV-40W-WB2800-01	4855	2000	2410	IVECO Daily 40-10 WC Turbo 4x4 technical description	https://privat.albicker.org/docs/iveco-technik/40-10wc.pdf
+```
+
+[下载 DIMENSION_GROUP TSV](sandbox:/mnt/data/left18448_7201-7300_dimension_groups_final.tsv)
+
+推进信号：COMPLETE
+
+[1]: https://privat.albicker.org/docs/iveco-technik/40-10wv.pdf "https://privat.albicker.org/docs/iveco-technik/40-10wv.pdf"
+
+
+--- 累计最终 TSV 已更新 ---
+- 累计 Ktype 映射：ktype_mapping_final.tsv（4459 行）
+- 累计尺寸组：dimension_groups_final.tsv（1255 行）
+
