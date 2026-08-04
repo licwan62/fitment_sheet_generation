@@ -1,14 +1,14 @@
 {
   "version": 3,
-  "revision": 78,
+  "revision": 90,
   "task_id": "left18448__batch__0142__e3cfe7c4",
   "task_name": "left18448 第 14101-14200 行",
   "vehicle": "left18448 第 14101-14200 行",
   "source_file": "left18448.tsv",
   "status": "进行中",
   "phase": "state_saved",
-  "round": 38,
-  "send_count": 38,
+  "round": 43,
+  "send_count": 43,
   "output_file": "/Users/admin/Documents/GitHub/fitment_sheet_generation/projects/qclaw_fitment_automation/workspaces/0802-eu/replies/part-04/left18448__batch__0142__e3cfe7c4_result.md",
   "conversation_url": "https://chatgpt.com/c/6a70c102-8a8c-83e8-bc5f-7aaa5a2bd332",
   "conversation_branch_count": 1,
@@ -32,12 +32,12 @@
   ],
   "ktype_state": {
     "version": 1,
-    "revision": 38,
+    "revision": 79,
     "task_id": "left18448__batch__0142__e3cfe7c4",
     "source_file": "left18448.tsv",
     "source_start_row": 14101,
     "source_end_row": 14200,
-    "round": 38,
+    "round": 43,
     "ktype_progress": {
       "18681": {
         "status": "pending",
@@ -47,7 +47,7 @@
         "mapping_ids": [],
         "dimension_group_ids": [],
         "pending_reason": "尚未产生 Ktype 映射",
-        "last_updated_round": 38
+        "last_updated_round": 43
       },
       "56091": {
         "status": "ready",
@@ -61,7 +61,7 @@
           "EU-RENAULT-LAGUNA-II-HATCHBACK-PREFL-01"
         ],
         "pending_reason": "",
-        "last_updated_round": 38
+        "last_updated_round": 43
       },
       "15474": {
         "status": "ready",
@@ -75,7 +75,7 @@
           "EU-RENAULT-LAGUNA-II-HATCHBACK-PREFL-01"
         ],
         "pending_reason": "",
-        "last_updated_round": 38
+        "last_updated_round": 43
       },
       "15476": {
         "status": "ready",
@@ -91,7 +91,7 @@
           "EU-RENAULT-LAGUNA-II-HATCHBACK-FACELIFT-01"
         ],
         "pending_reason": "",
-        "last_updated_round": 38
+        "last_updated_round": 43
       },
       "15771": {
         "status": "ready",
@@ -105,7 +105,7 @@
           "EU-RENAULT-LAGUNA-II-HATCHBACK-PREFL-01"
         ],
         "pending_reason": "",
-        "last_updated_round": 38
+        "last_updated_round": 43
       },
       "16582": {
         "status": "ready",
@@ -119,7 +119,7 @@
           "EU-RENAULT-LAGUNA-II-HATCHBACK-PREFL-01"
         ],
         "pending_reason": "",
-        "last_updated_round": 38
+        "last_updated_round": 43
       },
       "18214": {
         "status": "ready",
@@ -133,7 +133,7 @@
           "EU-RENAULT-LAGUNA-II-HATCHBACK-PREFL-01"
         ],
         "pending_reason": "",
-        "last_updated_round": 38
+        "last_updated_round": 43
       },
       "18579": {
         "status": "pending",
@@ -143,7 +143,7 @@
         "mapping_ids": [],
         "dimension_group_ids": [],
         "pending_reason": "尚未产生 Ktype 映射",
-        "last_updated_round": 38
+        "last_updated_round": 43
       },
       "18643": {
         "status": "pending",
@@ -153,7 +153,7 @@
         "mapping_ids": [],
         "dimension_group_ids": [],
         "pending_reason": "尚未产生 Ktype 映射",
-        "last_updated_round": 38
+        "last_updated_round": 43
       },
       "44781": {
         "status": "pending",
@@ -163,7 +163,7 @@
         "mapping_ids": [],
         "dimension_group_ids": [],
         "pending_reason": "尚未产生 Ktype 映射",
-        "last_updated_round": 38
+        "last_updated_round": 43
       },
       "54571": {
         "status": "pending",
@@ -173,7 +173,7 @@
         "mapping_ids": [],
         "dimension_group_ids": [],
         "pending_reason": "尚未产生 Ktype 映射",
-        "last_updated_round": 38
+        "last_updated_round": 43
       },
       "17183": {
         "status": "ready",
@@ -189,7 +189,7 @@
           "EU-RENAULT-LAGUNA-II-HATCHBACK-FACELIFT-01"
         ],
         "pending_reason": "",
-        "last_updated_round": 38
+        "last_updated_round": 43
       },
       "18577": {
         "status": "pending",
@@ -199,7 +199,7 @@
         "mapping_ids": [],
         "dimension_group_ids": [],
         "pending_reason": "尚未产生 Ktype 映射",
-        "last_updated_round": 38
+        "last_updated_round": 43
       },
       "18578": {
         "status": "pending",
@@ -209,7 +209,7 @@
         "mapping_ids": [],
         "dimension_group_ids": [],
         "pending_reason": "尚未产生 Ktype 映射",
-        "last_updated_round": 38
+        "last_updated_round": 43
       },
       "54947": {
         "status": "ready",
@@ -225,7 +225,7 @@
           "EU-RENAULT-LAGUNA-II-HATCHBACK-FACELIFT-01"
         ],
         "pending_reason": "",
-        "last_updated_round": 38
+        "last_updated_round": 43
       },
       "15770": {
         "status": "ready",
@@ -241,7 +241,7 @@
           "EU-RENAULT-LAGUNA-II-HATCHBACK-FACELIFT-01"
         ],
         "pending_reason": "",
-        "last_updated_round": 38
+        "last_updated_round": 43
       },
       "17184": {
         "status": "ready",
@@ -255,7 +255,7 @@
           "EU-RENAULT-LAGUNA-II-HATCHBACK-PREFL-01"
         ],
         "pending_reason": "",
-        "last_updated_round": 38
+        "last_updated_round": 43
       },
       "19043": {
         "status": "pending",
@@ -265,7 +265,7 @@
         "mapping_ids": [],
         "dimension_group_ids": [],
         "pending_reason": "尚未产生 Ktype 映射",
-        "last_updated_round": 38
+        "last_updated_round": 43
       },
       "15772": {
         "status": "ready",
@@ -281,7 +281,7 @@
           "EU-RENAULT-LAGUNA-II-HATCHBACK-FACELIFT-01"
         ],
         "pending_reason": "",
-        "last_updated_round": 38
+        "last_updated_round": 43
       },
       "18644": {
         "status": "pending",
@@ -291,7 +291,7 @@
         "mapping_ids": [],
         "dimension_group_ids": [],
         "pending_reason": "尚未产生 Ktype 映射",
-        "last_updated_round": 38
+        "last_updated_round": 43
       },
       "15475": {
         "status": "ready",
@@ -307,7 +307,7 @@
           "EU-RENAULT-LAGUNA-II-HATCHBACK-FACELIFT-01"
         ],
         "pending_reason": "",
-        "last_updated_round": 38
+        "last_updated_round": 43
       },
       "18893": {
         "status": "pending",
@@ -317,7 +317,7 @@
         "mapping_ids": [],
         "dimension_group_ids": [],
         "pending_reason": "尚未产生 Ktype 映射",
-        "last_updated_round": 38
+        "last_updated_round": 43
       },
       "15477": {
         "status": "pending",
@@ -327,7 +327,7 @@
         "mapping_ids": [],
         "dimension_group_ids": [],
         "pending_reason": "尚未产生 Ktype 映射",
-        "last_updated_round": 38
+        "last_updated_round": 43
       },
       "18682": {
         "status": "pending",
@@ -337,7 +337,7 @@
         "mapping_ids": [],
         "dimension_group_ids": [],
         "pending_reason": "尚未产生 Ktype 映射",
-        "last_updated_round": 38
+        "last_updated_round": 43
       },
       "15478": {
         "status": "pending",
@@ -347,7 +347,7 @@
         "mapping_ids": [],
         "dimension_group_ids": [],
         "pending_reason": "尚未产生 Ktype 映射",
-        "last_updated_round": 38
+        "last_updated_round": 43
       },
       "15480": {
         "status": "pending",
@@ -357,7 +357,7 @@
         "mapping_ids": [],
         "dimension_group_ids": [],
         "pending_reason": "尚未产生 Ktype 映射",
-        "last_updated_round": 38
+        "last_updated_round": 43
       },
       "15774": {
         "status": "pending",
@@ -367,7 +367,7 @@
         "mapping_ids": [],
         "dimension_group_ids": [],
         "pending_reason": "尚未产生 Ktype 映射",
-        "last_updated_round": 38
+        "last_updated_round": 43
       },
       "16583": {
         "status": "pending",
@@ -377,7 +377,7 @@
         "mapping_ids": [],
         "dimension_group_ids": [],
         "pending_reason": "尚未产生 Ktype 映射",
-        "last_updated_round": 38
+        "last_updated_round": 43
       },
       "18213": {
         "status": "pending",
@@ -387,7 +387,7 @@
         "mapping_ids": [],
         "dimension_group_ids": [],
         "pending_reason": "尚未产生 Ktype 映射",
-        "last_updated_round": 38
+        "last_updated_round": 43
       },
       "18583": {
         "status": "pending",
@@ -397,7 +397,7 @@
         "mapping_ids": [],
         "dimension_group_ids": [],
         "pending_reason": "尚未产生 Ktype 映射",
-        "last_updated_round": 38
+        "last_updated_round": 43
       },
       "18646": {
         "status": "pending",
@@ -407,7 +407,7 @@
         "mapping_ids": [],
         "dimension_group_ids": [],
         "pending_reason": "尚未产生 Ktype 映射",
-        "last_updated_round": 38
+        "last_updated_round": 43
       },
       "54572": {
         "status": "pending",
@@ -417,7 +417,7 @@
         "mapping_ids": [],
         "dimension_group_ids": [],
         "pending_reason": "尚未产生 Ktype 映射",
-        "last_updated_round": 38
+        "last_updated_round": 43
       },
       "58572": {
         "status": "pending",
@@ -427,7 +427,7 @@
         "mapping_ids": [],
         "dimension_group_ids": [],
         "pending_reason": "尚未产生 Ktype 映射",
-        "last_updated_round": 38
+        "last_updated_round": 43
       },
       "58610": {
         "status": "pending",
@@ -437,7 +437,7 @@
         "mapping_ids": [],
         "dimension_group_ids": [],
         "pending_reason": "尚未产生 Ktype 映射",
-        "last_updated_round": 38
+        "last_updated_round": 43
       },
       "17185": {
         "status": "pending",
@@ -447,7 +447,7 @@
         "mapping_ids": [],
         "dimension_group_ids": [],
         "pending_reason": "尚未产生 Ktype 映射",
-        "last_updated_round": 38
+        "last_updated_round": 43
       },
       "18581": {
         "status": "pending",
@@ -457,7 +457,7 @@
         "mapping_ids": [],
         "dimension_group_ids": [],
         "pending_reason": "尚未产生 Ktype 映射",
-        "last_updated_round": 38
+        "last_updated_round": 43
       },
       "18582": {
         "status": "pending",
@@ -467,7 +467,7 @@
         "mapping_ids": [],
         "dimension_group_ids": [],
         "pending_reason": "尚未产生 Ktype 映射",
-        "last_updated_round": 38
+        "last_updated_round": 43
       },
       "58606": {
         "status": "pending",
@@ -477,7 +477,7 @@
         "mapping_ids": [],
         "dimension_group_ids": [],
         "pending_reason": "尚未产生 Ktype 映射",
-        "last_updated_round": 38
+        "last_updated_round": 43
       },
       "15773": {
         "status": "pending",
@@ -487,7 +487,7 @@
         "mapping_ids": [],
         "dimension_group_ids": [],
         "pending_reason": "尚未产生 Ktype 映射",
-        "last_updated_round": 38
+        "last_updated_round": 43
       },
       "17186": {
         "status": "pending",
@@ -497,7 +497,7 @@
         "mapping_ids": [],
         "dimension_group_ids": [],
         "pending_reason": "尚未产生 Ktype 映射",
-        "last_updated_round": 38
+        "last_updated_round": 43
       },
       "19044": {
         "status": "pending",
@@ -507,7 +507,7 @@
         "mapping_ids": [],
         "dimension_group_ids": [],
         "pending_reason": "尚未产生 Ktype 映射",
-        "last_updated_round": 38
+        "last_updated_round": 43
       },
       "15775": {
         "status": "pending",
@@ -517,7 +517,7 @@
         "mapping_ids": [],
         "dimension_group_ids": [],
         "pending_reason": "尚未产生 Ktype 映射",
-        "last_updated_round": 38
+        "last_updated_round": 43
       },
       "18645": {
         "status": "pending",
@@ -527,7 +527,7 @@
         "mapping_ids": [],
         "dimension_group_ids": [],
         "pending_reason": "尚未产生 Ktype 映射",
-        "last_updated_round": 38
+        "last_updated_round": 43
       },
       "15479": {
         "status": "pending",
@@ -537,7 +537,7 @@
         "mapping_ids": [],
         "dimension_group_ids": [],
         "pending_reason": "尚未产生 Ktype 映射",
-        "last_updated_round": 38
+        "last_updated_round": 43
       },
       "34751": {
         "status": "pending",
@@ -547,7 +547,7 @@
         "mapping_ids": [],
         "dimension_group_ids": [],
         "pending_reason": "尚未产生 Ktype 映射",
-        "last_updated_round": 38
+        "last_updated_round": 43
       },
       "34750": {
         "status": "pending",
@@ -557,7 +557,7 @@
         "mapping_ids": [],
         "dimension_group_ids": [],
         "pending_reason": "尚未产生 Ktype 映射",
-        "last_updated_round": 38
+        "last_updated_round": 43
       },
       "59354": {
         "status": "pending",
@@ -567,7 +567,7 @@
         "mapping_ids": [],
         "dimension_group_ids": [],
         "pending_reason": "尚未产生 Ktype 映射",
-        "last_updated_round": 38
+        "last_updated_round": 43
       },
       "144148": {
         "status": "pending",
@@ -577,7 +577,7 @@
         "mapping_ids": [],
         "dimension_group_ids": [],
         "pending_reason": "尚未产生 Ktype 映射",
-        "last_updated_round": 38
+        "last_updated_round": 43
       },
       "34739": {
         "status": "pending",
@@ -587,7 +587,7 @@
         "mapping_ids": [],
         "dimension_group_ids": [],
         "pending_reason": "尚未产生 Ktype 映射",
-        "last_updated_round": 38
+        "last_updated_round": 43
       },
       "12788": {
         "status": "pending",
@@ -597,7 +597,7 @@
         "mapping_ids": [],
         "dimension_group_ids": [],
         "pending_reason": "尚未产生 Ktype 映射",
-        "last_updated_round": 38
+        "last_updated_round": 43
       },
       "124878": {
         "status": "pending",
@@ -607,7 +607,7 @@
         "mapping_ids": [],
         "dimension_group_ids": [],
         "pending_reason": "尚未产生 Ktype 映射",
-        "last_updated_round": 38
+        "last_updated_round": 43
       },
       "34740": {
         "status": "pending",
@@ -617,7 +617,7 @@
         "mapping_ids": [],
         "dimension_group_ids": [],
         "pending_reason": "尚未产生 Ktype 映射",
-        "last_updated_round": 38
+        "last_updated_round": 43
       },
       "145633": {
         "status": "pending",
@@ -627,7 +627,7 @@
         "mapping_ids": [],
         "dimension_group_ids": [],
         "pending_reason": "尚未产生 Ktype 映射",
-        "last_updated_round": 38
+        "last_updated_round": 43
       },
       "107938": {
         "status": "pending",
@@ -637,7 +637,7 @@
         "mapping_ids": [],
         "dimension_group_ids": [],
         "pending_reason": "尚未产生 Ktype 映射",
-        "last_updated_round": 38
+        "last_updated_round": 43
       },
       "107940": {
         "status": "pending",
@@ -647,7 +647,7 @@
         "mapping_ids": [],
         "dimension_group_ids": [],
         "pending_reason": "尚未产生 Ktype 映射",
-        "last_updated_round": 38
+        "last_updated_round": 43
       },
       "107937": {
         "status": "pending",
@@ -657,7 +657,7 @@
         "mapping_ids": [],
         "dimension_group_ids": [],
         "pending_reason": "尚未产生 Ktype 映射",
-        "last_updated_round": 38
+        "last_updated_round": 43
       },
       "110731": {
         "status": "pending",
@@ -667,7 +667,7 @@
         "mapping_ids": [],
         "dimension_group_ids": [],
         "pending_reason": "尚未产生 Ktype 映射",
-        "last_updated_round": 38
+        "last_updated_round": 43
       },
       "13410": {
         "status": "pending",
@@ -677,7 +677,7 @@
         "mapping_ids": [],
         "dimension_group_ids": [],
         "pending_reason": "尚未产生 Ktype 映射",
-        "last_updated_round": 38
+        "last_updated_round": 43
       },
       "13421": {
         "status": "pending",
@@ -687,7 +687,7 @@
         "mapping_ids": [],
         "dimension_group_ids": [],
         "pending_reason": "尚未产生 Ktype 映射",
-        "last_updated_round": 38
+        "last_updated_round": 43
       },
       "13413": {
         "status": "pending",
@@ -697,7 +697,7 @@
         "mapping_ids": [],
         "dimension_group_ids": [],
         "pending_reason": "尚未产生 Ktype 映射",
-        "last_updated_round": 38
+        "last_updated_round": 43
       },
       "13414": {
         "status": "pending",
@@ -707,7 +707,7 @@
         "mapping_ids": [],
         "dimension_group_ids": [],
         "pending_reason": "尚未产生 Ktype 映射",
-        "last_updated_round": 38
+        "last_updated_round": 43
       },
       "13415": {
         "status": "pending",
@@ -717,7 +717,7 @@
         "mapping_ids": [],
         "dimension_group_ids": [],
         "pending_reason": "尚未产生 Ktype 映射",
-        "last_updated_round": 38
+        "last_updated_round": 43
       },
       "13899": {
         "status": "ready",
@@ -731,7 +731,7 @@
           "EU-RENAULT-MASTER-I-CHASSIS-CAB-MWB-H1-01"
         ],
         "pending_reason": "",
-        "last_updated_round": 38
+        "last_updated_round": 43
       },
       "13919": {
         "status": "pending",
@@ -741,7 +741,7 @@
         "mapping_ids": [],
         "dimension_group_ids": [],
         "pending_reason": "尚未产生 Ktype 映射",
-        "last_updated_round": 38
+        "last_updated_round": 43
       },
       "13920": {
         "status": "ready",
@@ -755,7 +755,7 @@
           "EU-RENAULT-MASTER-I-CHASSIS-CAB-MWB-H1-01"
         ],
         "pending_reason": "",
-        "last_updated_round": 38
+        "last_updated_round": 43
       },
       "13921": {
         "status": "pending",
@@ -765,7 +765,7 @@
         "mapping_ids": [],
         "dimension_group_ids": [],
         "pending_reason": "尚未产生 Ktype 映射",
-        "last_updated_round": 38
+        "last_updated_round": 43
       },
       "13646": {
         "status": "pending",
@@ -775,7 +775,7 @@
         "mapping_ids": [],
         "dimension_group_ids": [],
         "pending_reason": "尚未产生 Ktype 映射",
-        "last_updated_round": 38
+        "last_updated_round": 43
       },
       "13900": {
         "status": "ready",
@@ -789,7 +789,7 @@
           "EU-RENAULT-MASTER-I-CHASSIS-CAB-MWB-H1-01"
         ],
         "pending_reason": "",
-        "last_updated_round": 38
+        "last_updated_round": 43
       },
       "13922": {
         "status": "pending",
@@ -799,7 +799,7 @@
         "mapping_ids": [],
         "dimension_group_ids": [],
         "pending_reason": "尚未产生 Ktype 映射",
-        "last_updated_round": 38
+        "last_updated_round": 43
       },
       "13923": {
         "status": "pending",
@@ -809,7 +809,7 @@
         "mapping_ids": [],
         "dimension_group_ids": [],
         "pending_reason": "尚未产生 Ktype 映射",
-        "last_updated_round": 38
+        "last_updated_round": 43
       },
       "16491": {
         "status": "pending",
@@ -819,7 +819,7 @@
         "mapping_ids": [],
         "dimension_group_ids": [],
         "pending_reason": "尚未产生 Ktype 映射",
-        "last_updated_round": 38
+        "last_updated_round": 43
       },
       "16492": {
         "status": "pending",
@@ -829,7 +829,7 @@
         "mapping_ids": [],
         "dimension_group_ids": [],
         "pending_reason": "尚未产生 Ktype 映射",
-        "last_updated_round": 38
+        "last_updated_round": 43
       },
       "15709": {
         "status": "pending",
@@ -839,7 +839,7 @@
         "mapping_ids": [],
         "dimension_group_ids": [],
         "pending_reason": "尚未产生 Ktype 映射",
-        "last_updated_round": 38
+        "last_updated_round": 43
       },
       "15710": {
         "status": "pending",
@@ -849,7 +849,7 @@
         "mapping_ids": [],
         "dimension_group_ids": [],
         "pending_reason": "尚未产生 Ktype 映射",
-        "last_updated_round": 38
+        "last_updated_round": 43
       },
       "15603": {
         "status": "pending",
@@ -859,7 +859,7 @@
         "mapping_ids": [],
         "dimension_group_ids": [],
         "pending_reason": "尚未产生 Ktype 映射",
-        "last_updated_round": 38
+        "last_updated_round": 43
       },
       "15604": {
         "status": "pending",
@@ -869,7 +869,7 @@
         "mapping_ids": [],
         "dimension_group_ids": [],
         "pending_reason": "尚未产生 Ktype 映射",
-        "last_updated_round": 38
+        "last_updated_round": 43
       },
       "15605": {
         "status": "ready",
@@ -891,7 +891,7 @@
           "EU-RENAULT-MASTER-II-PLATFORM-CAB-MWB-H2-01"
         ],
         "pending_reason": "",
-        "last_updated_round": 38
+        "last_updated_round": 43
       },
       "10081": {
         "status": "pending",
@@ -901,7 +901,7 @@
         "mapping_ids": [],
         "dimension_group_ids": [],
         "pending_reason": "尚未产生 Ktype 映射",
-        "last_updated_round": 38
+        "last_updated_round": 43
       },
       "10083": {
         "status": "ready",
@@ -924,7 +924,7 @@
           "EU-RENAULT-MASTER-II-PLATFORM-CAB-MWB-H2-01"
         ],
         "pending_reason": "",
-        "last_updated_round": 38
+        "last_updated_round": 43
       },
       "10268": {
         "status": "pending",
@@ -934,7 +934,7 @@
         "mapping_ids": [],
         "dimension_group_ids": [],
         "pending_reason": "尚未产生 Ktype 映射",
-        "last_updated_round": 38
+        "last_updated_round": 43
       },
       "17998": {
         "status": "pending",
@@ -944,7 +944,7 @@
         "mapping_ids": [],
         "dimension_group_ids": [],
         "pending_reason": "尚未产生 Ktype 映射",
-        "last_updated_round": 38
+        "last_updated_round": 43
       },
       "17999": {
         "status": "pending",
@@ -954,7 +954,7 @@
         "mapping_ids": [],
         "dimension_group_ids": [],
         "pending_reason": "尚未产生 Ktype 映射",
-        "last_updated_round": 38
+        "last_updated_round": 43
       },
       "18001": {
         "status": "pending",
@@ -964,7 +964,7 @@
         "mapping_ids": [],
         "dimension_group_ids": [],
         "pending_reason": "尚未产生 Ktype 映射",
-        "last_updated_round": 38
+        "last_updated_round": 43
       },
       "16488": {
         "status": "pending",
@@ -974,7 +974,7 @@
         "mapping_ids": [],
         "dimension_group_ids": [],
         "pending_reason": "尚未产生 Ktype 映射",
-        "last_updated_round": 38
+        "last_updated_round": 43
       },
       "16489": {
         "status": "pending",
@@ -984,7 +984,7 @@
         "mapping_ids": [],
         "dimension_group_ids": [],
         "pending_reason": "尚未产生 Ktype 映射",
-        "last_updated_round": 38
+        "last_updated_round": 43
       },
       "16490": {
         "status": "ready",
@@ -1006,7 +1006,7 @@
           "EU-RENAULT-MASTER-II-PLATFORM-CAB-MWB-H2-01"
         ],
         "pending_reason": "",
-        "last_updated_round": 38
+        "last_updated_round": 43
       },
       "10082": {
         "status": "pending",
@@ -1016,7 +1016,7 @@
         "mapping_ids": [],
         "dimension_group_ids": [],
         "pending_reason": "尚未产生 Ktype 映射",
-        "last_updated_round": 38
+        "last_updated_round": 43
       },
       "10084": {
         "status": "ready",
@@ -1034,7 +1034,7 @@
           "EU-RENAULT-MASTER-II-CHASSIS-CAB-MWB-SINGLE-PREFL-01"
         ],
         "pending_reason": "",
-        "last_updated_round": 38
+        "last_updated_round": 43
       },
       "10269": {
         "status": "pending",
@@ -1044,7 +1044,7 @@
         "mapping_ids": [],
         "dimension_group_ids": [],
         "pending_reason": "尚未产生 Ktype 映射",
-        "last_updated_round": 38
+        "last_updated_round": 43
       },
       "17997": {
         "status": "pending",
@@ -1054,7 +1054,7 @@
         "mapping_ids": [],
         "dimension_group_ids": [],
         "pending_reason": "尚未产生 Ktype 映射",
-        "last_updated_round": 38
+        "last_updated_round": 43
       },
       "18000": {
         "status": "pending",
@@ -1064,7 +1064,7 @@
         "mapping_ids": [],
         "dimension_group_ids": [],
         "pending_reason": "尚未产生 Ktype 映射",
-        "last_updated_round": 38
+        "last_updated_round": 43
       },
       "18002": {
         "status": "pending",
@@ -1074,7 +1074,7 @@
         "mapping_ids": [],
         "dimension_group_ids": [],
         "pending_reason": "尚未产生 Ktype 映射",
-        "last_updated_round": 38
+        "last_updated_round": 43
       },
       "11037": {
         "status": "pending",
@@ -1084,7 +1084,7 @@
         "mapping_ids": [],
         "dimension_group_ids": [],
         "pending_reason": "尚未产生 Ktype 映射",
-        "last_updated_round": 38
+        "last_updated_round": 43
       },
       "15026": {
         "status": "pending",
@@ -1094,7 +1094,7 @@
         "mapping_ids": [],
         "dimension_group_ids": [],
         "pending_reason": "尚未产生 Ktype 映射",
-        "last_updated_round": 38
+        "last_updated_round": 43
       },
       "15031": {
         "status": "pending",
@@ -1104,7 +1104,7 @@
         "mapping_ids": [],
         "dimension_group_ids": [],
         "pending_reason": "尚未产生 Ktype 映射",
-        "last_updated_round": 38
+        "last_updated_round": 43
       },
       "108150": {
         "status": "pending",
@@ -1114,7 +1114,7 @@
         "mapping_ids": [],
         "dimension_group_ids": [],
         "pending_reason": "尚未产生 Ktype 映射",
-        "last_updated_round": 38
+        "last_updated_round": 43
       },
       "108167": {
         "status": "pending",
@@ -1124,7 +1124,7 @@
         "mapping_ids": [],
         "dimension_group_ids": [],
         "pending_reason": "尚未产生 Ktype 映射",
-        "last_updated_round": 38
+        "last_updated_round": 43
       },
       "108176": {
         "status": "ready",
@@ -1168,7 +1168,7 @@
           "EU-RENAULT-MASTER-III-PLATFORM-CAB-FWD-L3H2-FACELIFT2019-01"
         ],
         "pending_reason": "",
-        "last_updated_round": 38
+        "last_updated_round": 43
       },
       "802206": {
         "status": "pending",
@@ -1178,7 +1178,7 @@
         "mapping_ids": [],
         "dimension_group_ids": [],
         "pending_reason": "尚未产生 Ktype 映射",
-        "last_updated_round": 38
+        "last_updated_round": 43
       },
       "802207": {
         "status": "pending",
@@ -1188,7 +1188,7 @@
         "mapping_ids": [],
         "dimension_group_ids": [],
         "pending_reason": "尚未产生 Ktype 映射",
-        "last_updated_round": 38
+        "last_updated_round": 43
       }
     },
     "progress": {
@@ -1282,8 +1282,8 @@
       "current_mapping": "/Users/admin/Documents/GitHub/fitment_sheet_generation/projects/qclaw_fitment_automation/workspaces/0802-eu/checkpoints/part-04/task-state/left18448__batch__0142__e3cfe7c4/current_mapping.tsv",
       "current_dimension_groups": "/Users/admin/Documents/GitHub/fitment_sheet_generation/projects/qclaw_fitment_automation/workspaces/0802-eu/checkpoints/part-04/task-state/left18448__batch__0142__e3cfe7c4/current_dimension_groups.tsv"
     },
-    "updated_at": "2026-08-04 00:49:07"
+    "updated_at": "2026-08-04 10:36:12"
   },
   "remarks": "",
-  "updated_at": "2026-08-04 00:49:07"
+  "updated_at": "2026-08-04 10:36:12"
 }
