@@ -2,8 +2,8 @@
     "version":  1,
     "total_batches":  46,
     "rows_per_batch":  100,
-    "updated_at":  "2026-08-04 06:11:23",
-    "next_pending_index":  45,
+    "updated_at":  "2026-08-04 06:11:24",
+    "next_pending_index":  46,
     "batches":  [
                     {
                         "index":  0,
@@ -460,10 +460,10 @@
                         "batch_number":  46,
                         "task_id":  "left18448__batch__0093__a16aad3e",
                         "display_name":  "left18448 第 9201-9300 行",
-                        "status":  "processing",
-                        "remarks":  "",
+                        "status":  "success",
+                        "remarks":  "检测到明确批次完成信号、两张完整表及下载链接；已更新本批与累计最终 TSV",
                         "checkpoint_file":  "left18448__batch__0093__a16aad3e.json",
-                        "updated_at":  "2026-08-04 06:11:23"
+                        "updated_at":  "2026-08-04 06:11:24"
                     }
                 ]
 }
