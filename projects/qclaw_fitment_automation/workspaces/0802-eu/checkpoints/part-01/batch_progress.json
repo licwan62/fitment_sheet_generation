@@ -2,7 +2,7 @@
     "version":  1,
     "total_batches":  47,
     "rows_per_batch":  100,
-    "updated_at":  "2026-08-04 04:58:03",
+    "updated_at":  "2026-08-04 08:01:15",
     "next_pending_index":  32,
     "batches":  [
                     {
@@ -333,7 +333,7 @@
                         "status":  "error",
                         "remarks":  "连续多轮回复均未给出 TSV 数据（已发送收尾 prompt 仍无数据），视为无可处理数据",
                         "checkpoint_file":  "left18448__batch__0033__b6cfb8ef.json",
-                        "updated_at":  "2026-08-04 01:43:23"
+                        "updated_at":  "2026-08-04 08:01:15"
                     },
                     {
                         "index":  33,

@@ -21,7 +21,7 @@
 当前未成功的任务：
  - left18448.tsv#left18448 第 3201-3300 行 [无数据跳过] 连续多轮回复均未给出 TSV 数据（已发送收尾 prompt 仍无数据），视为无可处理数据
 输出目录：D:\Home\Scripts\fitment_sheet_generation\projects\qclaw_fitment_automation\workspaces\0802-eu\output\part-01
-完成时间：2026-08-04 08:01:20
+完成时间：2026-08-04 04:58:08
 批次进度文件：D:\Home\Scripts\fitment_sheet_generation\projects\qclaw_fitment_automation\workspaces\0802-eu\checkpoints\part-01\batch_progress.json
 批次成功数：46
 批次错误数：1

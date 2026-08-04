@@ -1,11 +1,11 @@
 {
     "version":  1,
-    "revision":  85,
+    "revision":  155,
     "task_id":  "left18448__batch__0033__b6cfb8ef",
     "source_file":  "left18448.tsv",
     "source_start_row":  3201,
     "source_end_row":  3300,
-    "round":  52,
+    "round":  70,
     "ktype_progress":  {
                            "55801":  {
                                          "status":  "ready",
@@ -19,7 +19,7 @@
                                                                      "EU-CHEVROLET-CRUZE-I-WAGON-01"
                                                                  ],
                                          "pending_reason":  "",
-                                         "last_updated_round":  52
+                                         "last_updated_round":  70
                                      },
                            "100838":  {
                                           "status":  "ready",
@@ -33,7 +33,7 @@
                                                                       "EU-CHEVROLET-CRUZE-I-WAGON-01"
                                                                   ],
                                           "pending_reason":  "",
-                                          "last_updated_round":  52
+                                          "last_updated_round":  70
                                       },
                            "100840":  {
                                           "status":  "ready",
@@ -47,7 +47,7 @@
                                                                       "EU-CHEVROLET-CRUZE-I-SEDAN-FACELIFT-01"
                                                                   ],
                                           "pending_reason":  "",
-                                          "last_updated_round":  52
+                                          "last_updated_round":  70
                                       },
                            "55444":  {
                                          "status":  "ready",
@@ -63,7 +63,7 @@
                                                                      "EU-CHEVROLET-CRUZE-I-SEDAN-FACELIFT-01"
                                                                  ],
                                          "pending_reason":  "",
-                                         "last_updated_round":  52
+                                         "last_updated_round":  70
                                      },
                            "57390":  {
                                          "status":  "ready",
@@ -79,7 +79,7 @@
                                                                      "EU-CHEVROLET-CRUZE-I-HATCHBACK-FACELIFT-01"
                                                                  ],
                                          "pending_reason":  "",
-                                         "last_updated_round":  52
+                                         "last_updated_round":  70
                                      },
                            "10350":  {
                                          "status":  "ready",
@@ -95,7 +95,7 @@
                                                                      "EU-CHEVROLET-CRUZE-I-HATCHBACK-FACELIFT-01"
                                                                  ],
                                          "pending_reason":  "",
-                                         "last_updated_round":  52
+                                         "last_updated_round":  70
                                      },
                            "34974":  {
                                          "status":  "ready",
@@ -109,7 +109,7 @@
                                                                      "EU-CHEVROLET-CRUZE-I-SEDAN-PREFL-01"
                                                                  ],
                                          "pending_reason":  "",
-                                         "last_updated_round":  52
+                                         "last_updated_round":  70
                                      },
                            "55802":  {
                                          "status":  "ready",
@@ -123,7 +123,7 @@
                                                                      "EU-CHEVROLET-CRUZE-I-WAGON-01"
                                                                  ],
                                          "pending_reason":  "",
-                                         "last_updated_round":  52
+                                         "last_updated_round":  70
                                      },
                            "18549":  {
                                          "status":  "pending",
@@ -137,7 +137,7 @@
 
                                                                  ],
                                          "pending_reason":  "尚未产生 Ktype 映射",
-                                         "last_updated_round":  52
+                                         "last_updated_round":  70
                                      },
                            "55208":  {
                                          "status":  "pending",
@@ -151,7 +151,7 @@
 
                                                                  ],
                                          "pending_reason":  "尚未产生 Ktype 映射",
-                                         "last_updated_round":  52
+                                         "last_updated_round":  70
                                      },
                            "108690":  {
                                           "status":  "pending",
@@ -165,7 +165,7 @@
 
                                                                   ],
                                           "pending_reason":  "尚未产生 Ktype 映射",
-                                          "last_updated_round":  52
+                                          "last_updated_round":  70
                                       },
                            "111655":  {
                                           "status":  "pending",
@@ -179,7 +179,7 @@
 
                                                                   ],
                                           "pending_reason":  "尚未产生 Ktype 映射",
-                                          "last_updated_round":  52
+                                          "last_updated_round":  70
                                       },
                            "52230":  {
                                          "status":  "pending",
@@ -193,7 +193,7 @@
 
                                                                  ],
                                          "pending_reason":  "尚未产生 Ktype 映射",
-                                         "last_updated_round":  52
+                                         "last_updated_round":  70
                                      },
                            "51090":  {
                                          "status":  "pending",
@@ -207,7 +207,7 @@
 
                                                                  ],
                                          "pending_reason":  "尚未产生 Ktype 映射",
-                                         "last_updated_round":  52
+                                         "last_updated_round":  70
                                      },
                            "51094":  {
                                          "status":  "pending",
@@ -221,7 +221,7 @@
 
                                                                  ],
                                          "pending_reason":  "尚未产生 Ktype 映射",
-                                         "last_updated_round":  52
+                                         "last_updated_round":  70
                                      },
                            "52233":  {
                                          "status":  "pending",
@@ -235,7 +235,7 @@
 
                                                                  ],
                                          "pending_reason":  "尚未产生 Ktype 映射",
-                                         "last_updated_round":  52
+                                         "last_updated_round":  70
                                      },
                            "119649":  {
                                           "status":  "pending",
@@ -249,7 +249,7 @@
 
                                                                   ],
                                           "pending_reason":  "尚未产生 Ktype 映射",
-                                          "last_updated_round":  52
+                                          "last_updated_round":  70
                                       },
                            "54236":  {
                                          "status":  "pending",
@@ -263,7 +263,7 @@
 
                                                                  ],
                                          "pending_reason":  "尚未产生 Ktype 映射",
-                                         "last_updated_round":  52
+                                         "last_updated_round":  70
                                      },
                            "111712":  {
                                           "status":  "pending",
@@ -277,7 +277,7 @@
 
                                                                   ],
                                           "pending_reason":  "尚未产生 Ktype 映射",
-                                          "last_updated_round":  52
+                                          "last_updated_round":  70
                                       },
                            "37203":  {
                                          "status":  "pending",
@@ -291,7 +291,7 @@
 
                                                                  ],
                                          "pending_reason":  "尚未产生 Ktype 映射",
-                                         "last_updated_round":  52
+                                         "last_updated_round":  70
                                      },
                            "51098":  {
                                          "status":  "pending",
@@ -305,7 +305,7 @@
 
                                                                  ],
                                          "pending_reason":  "尚未产生 Ktype 映射",
-                                         "last_updated_round":  52
+                                         "last_updated_round":  70
                                      },
                            "54251":  {
                                          "status":  "pending",
@@ -319,7 +319,7 @@
 
                                                                  ],
                                          "pending_reason":  "尚未产生 Ktype 映射",
-                                         "last_updated_round":  52
+                                         "last_updated_round":  70
                                      },
                            "108705":  {
                                           "status":  "pending",
@@ -333,7 +333,7 @@
 
                                                                   ],
                                           "pending_reason":  "尚未产生 Ktype 映射",
-                                          "last_updated_round":  52
+                                          "last_updated_round":  70
                                       },
                            "123910":  {
                                           "status":  "pending",
@@ -347,7 +347,7 @@
 
                                                                   ],
                                           "pending_reason":  "尚未产生 Ktype 映射",
-                                          "last_updated_round":  52
+                                          "last_updated_round":  70
                                       },
                            "37310":  {
                                          "status":  "pending",
@@ -361,7 +361,7 @@
 
                                                                  ],
                                          "pending_reason":  "尚未产生 Ktype 映射",
-                                         "last_updated_round":  52
+                                         "last_updated_round":  70
                                      },
                            "37402":  {
                                          "status":  "pending",
@@ -375,7 +375,7 @@
 
                                                                  ],
                                          "pending_reason":  "尚未产生 Ktype 映射",
-                                         "last_updated_round":  52
+                                         "last_updated_round":  70
                                      },
                            "37421":  {
                                          "status":  "pending",
@@ -389,7 +389,7 @@
 
                                                                  ],
                                          "pending_reason":  "尚未产生 Ktype 映射",
-                                         "last_updated_round":  52
+                                         "last_updated_round":  70
                                      },
                            "52255":  {
                                          "status":  "pending",
@@ -403,7 +403,7 @@
 
                                                                  ],
                                          "pending_reason":  "尚未产生 Ktype 映射",
-                                         "last_updated_round":  52
+                                         "last_updated_round":  70
                                      },
                            "11260":  {
                                          "status":  "pending",
@@ -417,7 +417,7 @@
 
                                                                  ],
                                          "pending_reason":  "尚未产生 Ktype 映射",
-                                         "last_updated_round":  52
+                                         "last_updated_round":  70
                                      },
                            "11261":  {
                                          "status":  "pending",
@@ -431,7 +431,7 @@
 
                                                                  ],
                                          "pending_reason":  "尚未产生 Ktype 映射",
-                                         "last_updated_round":  52
+                                         "last_updated_round":  70
                                      },
                            "37563":  {
                                          "status":  "pending",
@@ -445,7 +445,7 @@
 
                                                                  ],
                                          "pending_reason":  "尚未产生 Ktype 映射",
-                                         "last_updated_round":  52
+                                         "last_updated_round":  70
                                      },
                            "111588":  {
                                           "status":  "ready",
@@ -475,7 +475,7 @@
                                                                       "EU-CHEVROLET-K2500-GMT400-PICKUP-EXTCAB-4WD-SHORT-2000-01"
                                                                   ],
                                           "pending_reason":  "",
-                                          "last_updated_round":  52
+                                          "last_updated_round":  70
                                       },
                            "111602":  {
                                           "status":  "pending",
@@ -489,7 +489,7 @@
 
                                                                   ],
                                           "pending_reason":  "尚未产生 Ktype 映射",
-                                          "last_updated_round":  52
+                                          "last_updated_round":  70
                                       },
                            "113244":  {
                                           "status":  "pending",
@@ -503,7 +503,7 @@
 
                                                                   ],
                                           "pending_reason":  "尚未产生 Ktype 映射",
-                                          "last_updated_round":  52
+                                          "last_updated_round":  70
                                       },
                            "18537":  {
                                          "status":  "pending",
@@ -517,7 +517,7 @@
 
                                                                  ],
                                          "pending_reason":  "尚未产生 Ktype 映射",
-                                         "last_updated_round":  52
+                                         "last_updated_round":  70
                                      },
                            "113243":  {
                                           "status":  "pending",
@@ -531,7 +531,7 @@
 
                                                                   ],
                                           "pending_reason":  "尚未产生 Ktype 映射",
-                                          "last_updated_round":  52
+                                          "last_updated_round":  70
                                       },
                            "18538":  {
                                          "status":  "pending",
@@ -545,7 +545,7 @@
 
                                                                  ],
                                          "pending_reason":  "尚未产生 Ktype 映射",
-                                         "last_updated_round":  52
+                                         "last_updated_round":  70
                                      },
                            "18536":  {
                                          "status":  "pending",
@@ -559,7 +559,7 @@
 
                                                                  ],
                                          "pending_reason":  "尚未产生 Ktype 映射",
-                                         "last_updated_round":  52
+                                         "last_updated_round":  70
                                      },
                            "142517":  {
                                           "status":  "pending",
@@ -573,7 +573,7 @@
 
                                                                   ],
                                           "pending_reason":  "尚未产生 Ktype 映射",
-                                          "last_updated_round":  52
+                                          "last_updated_round":  70
                                       },
                            "142518":  {
                                           "status":  "pending",
@@ -587,7 +587,7 @@
 
                                                                   ],
                                           "pending_reason":  "尚未产生 Ktype 映射",
-                                          "last_updated_round":  52
+                                          "last_updated_round":  70
                                       },
                            "142846":  {
                                           "status":  "pending",
@@ -601,7 +601,7 @@
 
                                                                   ],
                                           "pending_reason":  "尚未产生 Ktype 映射",
-                                          "last_updated_round":  52
+                                          "last_updated_round":  70
                                       },
                            "13978":  {
                                          "status":  "pending",
@@ -615,7 +615,7 @@
 
                                                                  ],
                                          "pending_reason":  "尚未产生 Ktype 映射",
-                                         "last_updated_round":  52
+                                         "last_updated_round":  70
                                      },
                            "125554":  {
                                           "status":  "pending",
@@ -629,7 +629,7 @@
 
                                                                   ],
                                           "pending_reason":  "尚未产生 Ktype 映射",
-                                          "last_updated_round":  52
+                                          "last_updated_round":  70
                                       },
                            "125565":  {
                                           "status":  "pending",
@@ -643,7 +643,7 @@
 
                                                                   ],
                                           "pending_reason":  "尚未产生 Ktype 映射",
-                                          "last_updated_round":  52
+                                          "last_updated_round":  70
                                       },
                            "55101":  {
                                          "status":  "pending",
@@ -657,7 +657,7 @@
 
                                                                  ],
                                          "pending_reason":  "尚未产生 Ktype 映射",
-                                         "last_updated_round":  52
+                                         "last_updated_round":  70
                                      },
                            "18528":  {
                                          "status":  "pending",
@@ -671,7 +671,7 @@
 
                                                                  ],
                                          "pending_reason":  "尚未产生 Ktype 映射",
-                                         "last_updated_round":  52
+                                         "last_updated_round":  70
                                      },
                            "14606":  {
                                          "status":  "pending",
@@ -685,7 +685,7 @@
 
                                                                  ],
                                          "pending_reason":  "尚未产生 Ktype 映射",
-                                         "last_updated_round":  52
+                                         "last_updated_round":  70
                                      },
                            "18529":  {
                                          "status":  "pending",
@@ -699,7 +699,7 @@
 
                                                                  ],
                                          "pending_reason":  "尚未产生 Ktype 映射",
-                                         "last_updated_round":  52
+                                         "last_updated_round":  70
                                      },
                            "18859":  {
                                          "status":  "pending",
@@ -713,7 +713,7 @@
 
                                                                  ],
                                          "pending_reason":  "尚未产生 Ktype 映射",
-                                         "last_updated_round":  52
+                                         "last_updated_round":  70
                                      },
                            "37744":  {
                                          "status":  "pending",
@@ -727,7 +727,7 @@
 
                                                                  ],
                                          "pending_reason":  "尚未产生 Ktype 映射",
-                                         "last_updated_round":  52
+                                         "last_updated_round":  70
                                      },
                            "112699":  {
                                           "status":  "pending",
@@ -741,7 +741,7 @@
 
                                                                   ],
                                           "pending_reason":  "尚未产生 Ktype 映射",
-                                          "last_updated_round":  52
+                                          "last_updated_round":  70
                                       },
                            "37738":  {
                                          "status":  "pending",
@@ -755,7 +755,7 @@
 
                                                                  ],
                                          "pending_reason":  "尚未产生 Ktype 映射",
-                                         "last_updated_round":  52
+                                         "last_updated_round":  70
                                      },
                            "37764":  {
                                          "status":  "ready",
@@ -769,7 +769,7 @@
                                                                      "EU-CHEVROLET-MONZA-H-BODY-COUPE-2PLUS2-1977-1978-01"
                                                                  ],
                                          "pending_reason":  "",
-                                         "last_updated_round":  52
+                                         "last_updated_round":  70
                                      },
                            "37782":  {
                                          "status":  "pending",
@@ -783,7 +783,7 @@
 
                                                                  ],
                                          "pending_reason":  "尚未产生 Ktype 映射",
-                                         "last_updated_round":  52
+                                         "last_updated_round":  70
                                      },
                            "37791":  {
                                          "status":  "pending",
@@ -797,7 +797,7 @@
 
                                                                  ],
                                          "pending_reason":  "尚未产生 Ktype 映射",
-                                         "last_updated_round":  52
+                                         "last_updated_round":  70
                                      },
                            "8845":  {
                                         "status":  "pending",
@@ -811,7 +811,7 @@
 
                                                                 ],
                                         "pending_reason":  "尚未产生 Ktype 映射",
-                                        "last_updated_round":  52
+                                        "last_updated_round":  70
                                     },
                            "18539":  {
                                          "status":  "pending",
@@ -825,7 +825,7 @@
 
                                                                  ],
                                          "pending_reason":  "尚未产生 Ktype 映射",
-                                         "last_updated_round":  52
+                                         "last_updated_round":  70
                                      },
                            "18542":  {
                                          "status":  "pending",
@@ -839,7 +839,7 @@
 
                                                                  ],
                                          "pending_reason":  "尚未产生 Ktype 映射",
-                                         "last_updated_round":  52
+                                         "last_updated_round":  70
                                      },
                            "18540":  {
                                          "status":  "pending",
@@ -853,7 +853,7 @@
 
                                                                  ],
                                          "pending_reason":  "尚未产生 Ktype 映射",
-                                         "last_updated_round":  52
+                                         "last_updated_round":  70
                                      },
                            "18544":  {
                                          "status":  "pending",
@@ -867,7 +867,7 @@
 
                                                                  ],
                                          "pending_reason":  "尚未产生 Ktype 映射",
-                                         "last_updated_round":  52
+                                         "last_updated_round":  70
                                      },
                            "56755":  {
                                          "status":  "pending",
@@ -881,7 +881,7 @@
 
                                                                  ],
                                          "pending_reason":  "尚未产生 Ktype 映射",
-                                         "last_updated_round":  52
+                                         "last_updated_round":  70
                                      },
                            "5714":  {
                                         "status":  "pending",
@@ -895,7 +895,7 @@
 
                                                                 ],
                                         "pending_reason":  "尚未产生 Ktype 映射",
-                                        "last_updated_round":  52
+                                        "last_updated_round":  70
                                     },
                            "55445":  {
                                          "status":  "pending",
@@ -909,7 +909,7 @@
 
                                                                  ],
                                          "pending_reason":  "尚未产生 Ktype 映射",
-                                         "last_updated_round":  52
+                                         "last_updated_round":  70
                                      },
                            "5745":  {
                                         "status":  "pending",
@@ -923,7 +923,7 @@
 
                                                                 ],
                                         "pending_reason":  "尚未产生 Ktype 映射",
-                                        "last_updated_round":  52
+                                        "last_updated_round":  70
                                     },
                            "5750":  {
                                         "status":  "pending",
@@ -937,7 +937,7 @@
 
                                                                 ],
                                         "pending_reason":  "尚未产生 Ktype 映射",
-                                        "last_updated_round":  52
+                                        "last_updated_round":  70
                                     },
                            "18547":  {
                                          "status":  "pending",
@@ -951,7 +951,7 @@
 
                                                                  ],
                                          "pending_reason":  "尚未产生 Ktype 映射",
-                                         "last_updated_round":  52
+                                         "last_updated_round":  70
                                      },
                            "128228":  {
                                           "status":  "pending",
@@ -965,7 +965,7 @@
 
                                                                   ],
                                           "pending_reason":  "尚未产生 Ktype 映射",
-                                          "last_updated_round":  52
+                                          "last_updated_round":  70
                                       },
                            "18548":  {
                                          "status":  "pending",
@@ -979,7 +979,7 @@
 
                                                                  ],
                                          "pending_reason":  "尚未产生 Ktype 映射",
-                                         "last_updated_round":  52
+                                         "last_updated_round":  70
                                      },
                            "119772":  {
                                           "status":  "pending",
@@ -993,7 +993,7 @@
 
                                                                   ],
                                           "pending_reason":  "尚未产生 Ktype 映射",
-                                          "last_updated_round":  52
+                                          "last_updated_round":  70
                                       },
                            "38019":  {
                                          "status":  "pending",
@@ -1007,7 +1007,7 @@
 
                                                                  ],
                                          "pending_reason":  "尚未产生 Ktype 映射",
-                                         "last_updated_round":  52
+                                         "last_updated_round":  70
                                      },
                            "38016":  {
                                          "status":  "ready",
@@ -1042,7 +1042,7 @@
                                                                      "EU-CHEVROLET-S10-II-PICKUP-EXTCAB-ZR2-2001-01"
                                                                  ],
                                          "pending_reason":  "",
-                                         "last_updated_round":  52
+                                         "last_updated_round":  70
                                      },
                            "111084":  {
                                           "status":  "ready",
@@ -1087,7 +1087,7 @@
                                                                       "EU-CHEVROLET-S10-II-PICKUP-REGCAB-2WD-SHORT-2002-2003-01"
                                                                   ],
                                           "pending_reason":  "",
-                                          "last_updated_round":  52
+                                          "last_updated_round":  70
                                       },
                            "111140":  {
                                           "status":  "pending",
@@ -1101,7 +1101,7 @@
 
                                                                   ],
                                           "pending_reason":  "尚未产生 Ktype 映射",
-                                          "last_updated_round":  52
+                                          "last_updated_round":  70
                                       },
                            "111141":  {
                                           "status":  "pending",
@@ -1115,7 +1115,7 @@
 
                                                                   ],
                                           "pending_reason":  "尚未产生 Ktype 映射",
-                                          "last_updated_round":  52
+                                          "last_updated_round":  70
                                       },
                            "111158":  {
                                           "status":  "pending",
@@ -1129,7 +1129,7 @@
 
                                                                   ],
                                           "pending_reason":  "尚未产生 Ktype 映射",
-                                          "last_updated_round":  52
+                                          "last_updated_round":  70
                                       },
                            "107435":  {
                                           "status":  "ready",
@@ -1143,7 +1143,7 @@
                                                                       "EU-CHEVROLET-SILVERADO1500-K2XX-PICKUP-CREWCAB-4WD-SHORT-01"
                                                                   ],
                                           "pending_reason":  "",
-                                          "last_updated_round":  52
+                                          "last_updated_round":  70
                                       },
                            "107714":  {
                                           "status":  "ready",
@@ -1157,7 +1157,7 @@
                                                                       "EU-CHEVROLET-SILVERADO1500-GMT900-PICKUP-CREWCAB-4WD-SHORT-01"
                                                                   ],
                                           "pending_reason":  "",
-                                          "last_updated_round":  52
+                                          "last_updated_round":  70
                                       },
                            "106629":  {
                                           "status":  "ready",
@@ -1171,7 +1171,7 @@
                                                                       "EU-CHEVROLET-SILVERADO1500-K2XX-PICKUP-CREWCAB-4WD-SHORT-01"
                                                                   ],
                                           "pending_reason":  "",
-                                          "last_updated_round":  52
+                                          "last_updated_round":  70
                                       },
                            "107437":  {
                                           "status":  "ready",
@@ -1185,7 +1185,7 @@
                                                                       "EU-CHEVROLET-SILVERADO1500-K2XX-PICKUP-DOUBLECAB-4WD-STANDARD-01"
                                                                   ],
                                           "pending_reason":  "",
-                                          "last_updated_round":  52
+                                          "last_updated_round":  70
                                       },
                            "106631":  {
                                           "status":  "ready",
@@ -1199,7 +1199,7 @@
                                                                       "EU-CHEVROLET-SILVERADO1500-K2XX-PICKUP-DOUBLECAB-4WD-STANDARD-01"
                                                                   ],
                                           "pending_reason":  "",
-                                          "last_updated_round":  52
+                                          "last_updated_round":  70
                                       },
                            "107433":  {
                                           "status":  "ready",
@@ -1213,7 +1213,7 @@
                                                                       "EU-CHEVROLET-SILVERADO1500-K2XX-PICKUP-REGCAB-4WD-SHORT-01"
                                                                   ],
                                           "pending_reason":  "",
-                                          "last_updated_round":  52
+                                          "last_updated_round":  70
                                       },
                            "57786":  {
                                          "status":  "ready",
@@ -1227,7 +1227,7 @@
                                                                      "EU-CHEVROLET-SILVERADO1500-GMT900-PICKUP-CREWCAB-2WD-SHORT-01"
                                                                  ],
                                          "pending_reason":  "",
-                                         "last_updated_round":  52
+                                         "last_updated_round":  70
                                      },
                            "58589":  {
                                          "status":  "ready",
@@ -1241,7 +1241,7 @@
                                                                      "EU-CHEVROLET-SILVERADO2500-GMT800-PICKUP-REGCAB-RWD-LONG-1999-2004-01"
                                                                  ],
                                          "pending_reason":  "",
-                                         "last_updated_round":  52
+                                         "last_updated_round":  70
                                      },
                            "57788":  {
                                          "status":  "ready",
@@ -1255,7 +1255,7 @@
                                                                      "EU-CHEVROLET-SILVERADO1500-GMT900-PICKUP-CREWCAB-4WD-SHORT-01"
                                                                  ],
                                          "pending_reason":  "",
-                                         "last_updated_round":  52
+                                         "last_updated_round":  70
                                      },
                            "57785":  {
                                          "status":  "ready",
@@ -1269,7 +1269,7 @@
                                                                      "EU-CHEVROLET-SILVERADO1500-GMT900-PICKUP-CREWCAB-HYBRID-2WD-SHORT-01"
                                                                  ],
                                          "pending_reason":  "",
-                                         "last_updated_round":  52
+                                         "last_updated_round":  70
                                      },
                            "58590":  {
                                          "status":  "ready",
@@ -1283,7 +1283,7 @@
                                                                      "EU-CHEVROLET-SILVERADO2500HD-GMT800-PICKUP-REGCAB-LONG-2001-2006-01"
                                                                  ],
                                          "pending_reason":  "",
-                                         "last_updated_round":  52
+                                         "last_updated_round":  70
                                      },
                            "121480":  {
                                           "status":  "ready",
@@ -1297,7 +1297,7 @@
                                                                       "EU-CHEVROLET-SILVERADO2500HD-GMT800-PICKUP-REGCAB-LONG-2001-2006-01"
                                                                   ],
                                           "pending_reason":  "",
-                                          "last_updated_round":  52
+                                          "last_updated_round":  70
                                       },
                            "121481":  {
                                           "status":  "ready",
@@ -1311,7 +1311,7 @@
                                                                       "EU-CHEVROLET-SILVERADO2500HD-GMT800-PICKUP-REGCAB-LONG-2001-2006-01"
                                                                   ],
                                           "pending_reason":  "",
-                                          "last_updated_round":  52
+                                          "last_updated_round":  70
                                       },
                            "125438":  {
                                           "status":  "ready",
@@ -1325,7 +1325,7 @@
                                                                       "EU-CHEVROLET-SILVERADO2500HD-GMT800-PICKUP-REGCAB-LONG-2001-2006-01"
                                                                   ],
                                           "pending_reason":  "",
-                                          "last_updated_round":  52
+                                          "last_updated_round":  70
                                       },
                            "106151":  {
                                           "status":  "ready",
@@ -1339,7 +1339,7 @@
                                                                       "EU-CHEVROLET-SILVERADO1500-GMT900-PICKUP-CREWCAB-2WD-SHORT-01"
                                                                   ],
                                           "pending_reason":  "",
-                                          "last_updated_round":  52
+                                          "last_updated_round":  70
                                       },
                            "38149":  {
                                          "status":  "ready",
@@ -1353,7 +1353,7 @@
                                                                      "EU-CHEVROLET-SILVERADO2500-GMT800-PICKUP-CREWCAB-RWD-STANDARD-2003-2004-01"
                                                                  ],
                                          "pending_reason":  "",
-                                         "last_updated_round":  52
+                                         "last_updated_round":  70
                                      },
                            "106150":  {
                                           "status":  "ready",
@@ -1367,7 +1367,7 @@
                                                                       "EU-CHEVROLET-SILVERADO1500-GMT900-PICKUP-CREWCAB-4WD-SHORT-01"
                                                                   ],
                                           "pending_reason":  "",
-                                          "last_updated_round":  52
+                                          "last_updated_round":  70
                                       },
                            "107590":  {
                                           "status":  "ready",
@@ -1381,7 +1381,7 @@
                                                                       "EU-CHEVROLET-SILVERADO1500-K2XX-PICKUP-CREWCAB-4WD-SHORT-01"
                                                                   ],
                                           "pending_reason":  "",
-                                          "last_updated_round":  52
+                                          "last_updated_round":  70
                                       },
                            "38150":  {
                                          "status":  "ready",
@@ -1395,7 +1395,7 @@
                                                                      "EU-CHEVROLET-SILVERADO2500-GMT800-PICKUP-CREWCAB-4WD-STANDARD-2003-2004-01"
                                                                  ],
                                          "pending_reason":  "",
-                                         "last_updated_round":  52
+                                         "last_updated_round":  70
                                      },
                            "56375":  {
                                          "status":  "ready",
@@ -1409,7 +1409,7 @@
                                                                      "EU-CHEVROLET-SILVERADO1500-GMT900-PICKUP-EXTCAB-2WD-STANDARD-01"
                                                                  ],
                                          "pending_reason":  "",
-                                         "last_updated_round":  52
+                                         "last_updated_round":  70
                                      },
                            "38156":  {
                                          "status":  "ready",
@@ -1423,7 +1423,7 @@
                                                                      "EU-CHEVROLET-SILVERADO2500HD-GMT800-PICKUP-EXTCAB-STANDARD-1999-2004-01"
                                                                  ],
                                          "pending_reason":  "",
-                                         "last_updated_round":  52
+                                         "last_updated_round":  70
                                      },
                            "56374":  {
                                          "status":  "ready",
@@ -1437,7 +1437,7 @@
                                                                      "EU-CHEVROLET-SILVERADO1500-GMT900-PICKUP-EXTCAB-4WD-STANDARD-01"
                                                                  ],
                                          "pending_reason":  "",
-                                         "last_updated_round":  52
+                                         "last_updated_round":  70
                                      },
                            "107592":  {
                                           "status":  "ready",
@@ -1451,7 +1451,7 @@
                                                                       "EU-CHEVROLET-SILVERADO1500-K2XX-PICKUP-DOUBLECAB-4WD-STANDARD-01"
                                                                   ],
                                           "pending_reason":  "",
-                                          "last_updated_round":  52
+                                          "last_updated_round":  70
                                       },
                            "38154":  {
                                          "status":  "ready",
@@ -1465,7 +1465,7 @@
                                                                      "EU-CHEVROLET-SILVERADO2500HD-GMT800-PICKUP-EXTCAB-STANDARD-1999-2004-01"
                                                                  ],
                                          "pending_reason":  "",
-                                         "last_updated_round":  52
+                                         "last_updated_round":  70
                                      },
                            "56369":  {
                                          "status":  "ready",
@@ -1479,7 +1479,7 @@
                                                                      "EU-CHEVROLET-SILVERADO2500HD-GMT900-PICKUP-CREWCAB-4WD-STANDARD-2008-2013-01"
                                                                  ],
                                          "pending_reason":  "",
-                                         "last_updated_round":  52
+                                         "last_updated_round":  70
                                      }
                        },
     "progress":  {
@@ -1556,5 +1556,5 @@
                       "current_mapping":  "D:\\Home\\Scripts\\fitment_sheet_generation\\projects\\qclaw_fitment_automation\\workspaces\\0802-eu\\checkpoints\\part-01\\task-state\\left18448__batch__0033__b6cfb8ef\\current_mapping.tsv",
                       "current_dimension_groups":  "D:\\Home\\Scripts\\fitment_sheet_generation\\projects\\qclaw_fitment_automation\\workspaces\\0802-eu\\checkpoints\\part-01\\task-state\\left18448__batch__0033__b6cfb8ef\\current_dimension_groups.tsv"
                   },
-    "updated_at":  "2026-08-04 01:41:10"
+    "updated_at":  "2026-08-04 08:00:30"
 }
