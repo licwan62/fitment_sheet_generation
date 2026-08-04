@@ -1,21 +1,25 @@
 {
   "version": 1,
-  "revision": 79,
+  "revision": 166,
   "task_id": "left18448__batch__0142__e3cfe7c4",
   "source_file": "left18448.tsv",
   "source_start_row": 14101,
   "source_end_row": 14200,
-  "round": 43,
+  "round": 46,
   "ktype_progress": {
     "18681": {
-      "status": "pending",
+      "status": "ready",
       "source_rows": [
         14101
       ],
-      "mapping_ids": [],
-      "dimension_group_ids": [],
-      "pending_reason": "尚未产生 Ktype 映射",
-      "last_updated_round": 43
+      "mapping_ids": [
+        "18681"
+      ],
+      "dimension_group_ids": [
+        "EU-RENAULT-LAGUNA-II-HATCHBACK-FACELIFT-01"
+      ],
+      "pending_reason": "",
+      "last_updated_round": 46
     },
     "56091": {
       "status": "ready",
@@ -29,7 +33,7 @@
         "EU-RENAULT-LAGUNA-II-HATCHBACK-PREFL-01"
       ],
       "pending_reason": "",
-      "last_updated_round": 43
+      "last_updated_round": 46
     },
     "15474": {
       "status": "ready",
@@ -43,7 +47,7 @@
         "EU-RENAULT-LAGUNA-II-HATCHBACK-PREFL-01"
       ],
       "pending_reason": "",
-      "last_updated_round": 43
+      "last_updated_round": 46
     },
     "15476": {
       "status": "ready",
@@ -59,7 +63,7 @@
         "EU-RENAULT-LAGUNA-II-HATCHBACK-FACELIFT-01"
       ],
       "pending_reason": "",
-      "last_updated_round": 43
+      "last_updated_round": 46
     },
     "15771": {
       "status": "ready",
@@ -73,7 +77,7 @@
         "EU-RENAULT-LAGUNA-II-HATCHBACK-PREFL-01"
       ],
       "pending_reason": "",
-      "last_updated_round": 43
+      "last_updated_round": 46
     },
     "16582": {
       "status": "ready",
@@ -87,7 +91,7 @@
         "EU-RENAULT-LAGUNA-II-HATCHBACK-PREFL-01"
       ],
       "pending_reason": "",
-      "last_updated_round": 43
+      "last_updated_round": 46
     },
     "18214": {
       "status": "ready",
@@ -101,47 +105,63 @@
         "EU-RENAULT-LAGUNA-II-HATCHBACK-PREFL-01"
       ],
       "pending_reason": "",
-      "last_updated_round": 43
+      "last_updated_round": 46
     },
     "18579": {
-      "status": "pending",
+      "status": "ready",
       "source_rows": [
         14108
       ],
-      "mapping_ids": [],
-      "dimension_group_ids": [],
-      "pending_reason": "尚未产生 Ktype 映射",
-      "last_updated_round": 43
+      "mapping_ids": [
+        "18579"
+      ],
+      "dimension_group_ids": [
+        "EU-RENAULT-LAGUNA-II-HATCHBACK-FACELIFT-01"
+      ],
+      "pending_reason": "",
+      "last_updated_round": 46
     },
     "18643": {
-      "status": "pending",
+      "status": "ready",
       "source_rows": [
         14109
       ],
-      "mapping_ids": [],
-      "dimension_group_ids": [],
-      "pending_reason": "尚未产生 Ktype 映射",
-      "last_updated_round": 43
+      "mapping_ids": [
+        "18643"
+      ],
+      "dimension_group_ids": [
+        "EU-RENAULT-LAGUNA-II-HATCHBACK-FACELIFT-01"
+      ],
+      "pending_reason": "",
+      "last_updated_round": 46
     },
     "44781": {
-      "status": "pending",
+      "status": "ready",
       "source_rows": [
         14110
       ],
-      "mapping_ids": [],
-      "dimension_group_ids": [],
-      "pending_reason": "尚未产生 Ktype 映射",
-      "last_updated_round": 43
+      "mapping_ids": [
+        "44781"
+      ],
+      "dimension_group_ids": [
+        "EU-RENAULT-LAGUNA-II-HATCHBACK-FACELIFT-01"
+      ],
+      "pending_reason": "",
+      "last_updated_round": 46
     },
     "54571": {
-      "status": "pending",
+      "status": "ready",
       "source_rows": [
         14111
       ],
-      "mapping_ids": [],
-      "dimension_group_ids": [],
-      "pending_reason": "尚未产生 Ktype 映射",
-      "last_updated_round": 43
+      "mapping_ids": [
+        "54571"
+      ],
+      "dimension_group_ids": [
+        "EU-RENAULT-LAGUNA-II-HATCHBACK-FACELIFT-01"
+      ],
+      "pending_reason": "",
+      "last_updated_round": 46
     },
     "17183": {
       "status": "ready",
@@ -157,27 +177,35 @@
         "EU-RENAULT-LAGUNA-II-HATCHBACK-FACELIFT-01"
       ],
       "pending_reason": "",
-      "last_updated_round": 43
+      "last_updated_round": 46
     },
     "18577": {
-      "status": "pending",
+      "status": "ready",
       "source_rows": [
         14113
       ],
-      "mapping_ids": [],
-      "dimension_group_ids": [],
-      "pending_reason": "尚未产生 Ktype 映射",
-      "last_updated_round": 43
+      "mapping_ids": [
+        "18577"
+      ],
+      "dimension_group_ids": [
+        "EU-RENAULT-LAGUNA-II-HATCHBACK-FACELIFT-01"
+      ],
+      "pending_reason": "",
+      "last_updated_round": 46
     },
     "18578": {
-      "status": "pending",
+      "status": "ready",
       "source_rows": [
         14114
       ],
-      "mapping_ids": [],
-      "dimension_group_ids": [],
-      "pending_reason": "尚未产生 Ktype 映射",
-      "last_updated_round": 43
+      "mapping_ids": [
+        "18578"
+      ],
+      "dimension_group_ids": [
+        "EU-RENAULT-LAGUNA-II-HATCHBACK-FACELIFT-01"
+      ],
+      "pending_reason": "",
+      "last_updated_round": 46
     },
     "54947": {
       "status": "ready",
@@ -193,7 +221,7 @@
         "EU-RENAULT-LAGUNA-II-HATCHBACK-FACELIFT-01"
       ],
       "pending_reason": "",
-      "last_updated_round": 43
+      "last_updated_round": 46
     },
     "15770": {
       "status": "ready",
@@ -209,7 +237,7 @@
         "EU-RENAULT-LAGUNA-II-HATCHBACK-FACELIFT-01"
       ],
       "pending_reason": "",
-      "last_updated_round": 43
+      "last_updated_round": 46
     },
     "17184": {
       "status": "ready",
@@ -223,17 +251,21 @@
         "EU-RENAULT-LAGUNA-II-HATCHBACK-PREFL-01"
       ],
       "pending_reason": "",
-      "last_updated_round": 43
+      "last_updated_round": 46
     },
     "19043": {
-      "status": "pending",
+      "status": "ready",
       "source_rows": [
         14118
       ],
-      "mapping_ids": [],
-      "dimension_group_ids": [],
-      "pending_reason": "尚未产生 Ktype 映射",
-      "last_updated_round": 43
+      "mapping_ids": [
+        "19043"
+      ],
+      "dimension_group_ids": [
+        "EU-RENAULT-LAGUNA-II-HATCHBACK-FACELIFT-01"
+      ],
+      "pending_reason": "",
+      "last_updated_round": 46
     },
     "15772": {
       "status": "ready",
@@ -249,17 +281,21 @@
         "EU-RENAULT-LAGUNA-II-HATCHBACK-FACELIFT-01"
       ],
       "pending_reason": "",
-      "last_updated_round": 43
+      "last_updated_round": 46
     },
     "18644": {
-      "status": "pending",
+      "status": "ready",
       "source_rows": [
         14120
       ],
-      "mapping_ids": [],
-      "dimension_group_ids": [],
-      "pending_reason": "尚未产生 Ktype 映射",
-      "last_updated_round": 43
+      "mapping_ids": [
+        "18644"
+      ],
+      "dimension_group_ids": [
+        "EU-RENAULT-LAGUNA-II-HATCHBACK-FACELIFT-01"
+      ],
+      "pending_reason": "",
+      "last_updated_round": 46
     },
     "15475": {
       "status": "ready",
@@ -275,417 +311,623 @@
         "EU-RENAULT-LAGUNA-II-HATCHBACK-FACELIFT-01"
       ],
       "pending_reason": "",
-      "last_updated_round": 43
+      "last_updated_round": 46
     },
     "18893": {
-      "status": "pending",
+      "status": "ready",
       "source_rows": [
         14122
       ],
-      "mapping_ids": [],
-      "dimension_group_ids": [],
-      "pending_reason": "尚未产生 Ktype 映射",
-      "last_updated_round": 43
+      "mapping_ids": [
+        "18893"
+      ],
+      "dimension_group_ids": [
+        "EU-RENAULT-LAGUNA-II-WAGON-01"
+      ],
+      "pending_reason": "",
+      "last_updated_round": 46
     },
     "15477": {
-      "status": "pending",
+      "status": "ready",
       "source_rows": [
         14123
       ],
-      "mapping_ids": [],
-      "dimension_group_ids": [],
-      "pending_reason": "尚未产生 Ktype 映射",
-      "last_updated_round": 43
+      "mapping_ids": [
+        "15477"
+      ],
+      "dimension_group_ids": [
+        "EU-RENAULT-LAGUNA-II-WAGON-01"
+      ],
+      "pending_reason": "",
+      "last_updated_round": 46
     },
     "18682": {
-      "status": "pending",
+      "status": "ready",
       "source_rows": [
         14124
       ],
-      "mapping_ids": [],
-      "dimension_group_ids": [],
-      "pending_reason": "尚未产生 Ktype 映射",
-      "last_updated_round": 43
+      "mapping_ids": [
+        "18682"
+      ],
+      "dimension_group_ids": [
+        "EU-RENAULT-LAGUNA-II-WAGON-01"
+      ],
+      "pending_reason": "",
+      "last_updated_round": 46
     },
     "15478": {
-      "status": "pending",
+      "status": "ready",
       "source_rows": [
         14125
       ],
-      "mapping_ids": [],
-      "dimension_group_ids": [],
-      "pending_reason": "尚未产生 Ktype 映射",
-      "last_updated_round": 43
+      "mapping_ids": [
+        "15478"
+      ],
+      "dimension_group_ids": [
+        "EU-RENAULT-LAGUNA-II-WAGON-01"
+      ],
+      "pending_reason": "",
+      "last_updated_round": 46
     },
     "15480": {
-      "status": "pending",
+      "status": "ready",
       "source_rows": [
         14126
       ],
-      "mapping_ids": [],
-      "dimension_group_ids": [],
-      "pending_reason": "尚未产生 Ktype 映射",
-      "last_updated_round": 43
+      "mapping_ids": [
+        "15480"
+      ],
+      "dimension_group_ids": [
+        "EU-RENAULT-LAGUNA-II-WAGON-01"
+      ],
+      "pending_reason": "",
+      "last_updated_round": 46
     },
     "15774": {
-      "status": "pending",
+      "status": "ready",
       "source_rows": [
         14127
       ],
-      "mapping_ids": [],
-      "dimension_group_ids": [],
-      "pending_reason": "尚未产生 Ktype 映射",
-      "last_updated_round": 43
+      "mapping_ids": [
+        "15774"
+      ],
+      "dimension_group_ids": [
+        "EU-RENAULT-LAGUNA-II-WAGON-01"
+      ],
+      "pending_reason": "",
+      "last_updated_round": 46
     },
     "16583": {
-      "status": "pending",
+      "status": "ready",
       "source_rows": [
         14128
       ],
-      "mapping_ids": [],
-      "dimension_group_ids": [],
-      "pending_reason": "尚未产生 Ktype 映射",
-      "last_updated_round": 43
+      "mapping_ids": [
+        "16583"
+      ],
+      "dimension_group_ids": [
+        "EU-RENAULT-LAGUNA-II-WAGON-01"
+      ],
+      "pending_reason": "",
+      "last_updated_round": 46
     },
     "18213": {
-      "status": "pending",
+      "status": "ready",
       "source_rows": [
         14129
       ],
-      "mapping_ids": [],
-      "dimension_group_ids": [],
-      "pending_reason": "尚未产生 Ktype 映射",
-      "last_updated_round": 43
+      "mapping_ids": [
+        "18213"
+      ],
+      "dimension_group_ids": [
+        "EU-RENAULT-LAGUNA-II-WAGON-01"
+      ],
+      "pending_reason": "",
+      "last_updated_round": 46
     },
     "18583": {
-      "status": "pending",
+      "status": "ready",
       "source_rows": [
         14130
       ],
-      "mapping_ids": [],
-      "dimension_group_ids": [],
-      "pending_reason": "尚未产生 Ktype 映射",
-      "last_updated_round": 43
+      "mapping_ids": [
+        "18583"
+      ],
+      "dimension_group_ids": [
+        "EU-RENAULT-LAGUNA-II-WAGON-01"
+      ],
+      "pending_reason": "",
+      "last_updated_round": 46
     },
     "18646": {
-      "status": "pending",
+      "status": "ready",
       "source_rows": [
         14131
       ],
-      "mapping_ids": [],
-      "dimension_group_ids": [],
-      "pending_reason": "尚未产生 Ktype 映射",
-      "last_updated_round": 43
+      "mapping_ids": [
+        "18646"
+      ],
+      "dimension_group_ids": [
+        "EU-RENAULT-LAGUNA-II-WAGON-01"
+      ],
+      "pending_reason": "",
+      "last_updated_round": 46
     },
     "54572": {
-      "status": "pending",
+      "status": "ready",
       "source_rows": [
         14132
       ],
-      "mapping_ids": [],
-      "dimension_group_ids": [],
-      "pending_reason": "尚未产生 Ktype 映射",
-      "last_updated_round": 43
+      "mapping_ids": [
+        "54572"
+      ],
+      "dimension_group_ids": [
+        "EU-RENAULT-LAGUNA-II-WAGON-01"
+      ],
+      "pending_reason": "",
+      "last_updated_round": 46
     },
     "58572": {
-      "status": "pending",
+      "status": "ready",
       "source_rows": [
         14133
       ],
-      "mapping_ids": [],
-      "dimension_group_ids": [],
-      "pending_reason": "尚未产生 Ktype 映射",
-      "last_updated_round": 43
+      "mapping_ids": [
+        "58572"
+      ],
+      "dimension_group_ids": [
+        "EU-RENAULT-LAGUNA-II-WAGON-01"
+      ],
+      "pending_reason": "",
+      "last_updated_round": 46
     },
     "58610": {
-      "status": "pending",
+      "status": "ready",
       "source_rows": [
         14134
       ],
-      "mapping_ids": [],
-      "dimension_group_ids": [],
-      "pending_reason": "尚未产生 Ktype 映射",
-      "last_updated_round": 43
+      "mapping_ids": [
+        "58610"
+      ],
+      "dimension_group_ids": [
+        "EU-RENAULT-LAGUNA-II-WAGON-01"
+      ],
+      "pending_reason": "",
+      "last_updated_round": 46
     },
     "17185": {
-      "status": "pending",
+      "status": "ready",
       "source_rows": [
         14135
       ],
-      "mapping_ids": [],
-      "dimension_group_ids": [],
-      "pending_reason": "尚未产生 Ktype 映射",
-      "last_updated_round": 43
+      "mapping_ids": [
+        "17185"
+      ],
+      "dimension_group_ids": [
+        "EU-RENAULT-LAGUNA-II-WAGON-01"
+      ],
+      "pending_reason": "",
+      "last_updated_round": 46
     },
     "18581": {
-      "status": "pending",
+      "status": "ready",
       "source_rows": [
         14136
       ],
-      "mapping_ids": [],
-      "dimension_group_ids": [],
-      "pending_reason": "尚未产生 Ktype 映射",
-      "last_updated_round": 43
+      "mapping_ids": [
+        "18581"
+      ],
+      "dimension_group_ids": [
+        "EU-RENAULT-LAGUNA-II-WAGON-01"
+      ],
+      "pending_reason": "",
+      "last_updated_round": 46
     },
     "18582": {
-      "status": "pending",
+      "status": "ready",
       "source_rows": [
         14137
       ],
-      "mapping_ids": [],
-      "dimension_group_ids": [],
-      "pending_reason": "尚未产生 Ktype 映射",
-      "last_updated_round": 43
+      "mapping_ids": [
+        "18582"
+      ],
+      "dimension_group_ids": [
+        "EU-RENAULT-LAGUNA-II-WAGON-01"
+      ],
+      "pending_reason": "",
+      "last_updated_round": 46
     },
     "58606": {
-      "status": "pending",
+      "status": "ready",
       "source_rows": [
         14138
       ],
-      "mapping_ids": [],
-      "dimension_group_ids": [],
-      "pending_reason": "尚未产生 Ktype 映射",
-      "last_updated_round": 43
+      "mapping_ids": [
+        "58606"
+      ],
+      "dimension_group_ids": [
+        "EU-RENAULT-LAGUNA-II-WAGON-01"
+      ],
+      "pending_reason": "",
+      "last_updated_round": 46
     },
     "15773": {
-      "status": "pending",
+      "status": "ready",
       "source_rows": [
         14139
       ],
-      "mapping_ids": [],
-      "dimension_group_ids": [],
-      "pending_reason": "尚未产生 Ktype 映射",
-      "last_updated_round": 43
+      "mapping_ids": [
+        "15773"
+      ],
+      "dimension_group_ids": [
+        "EU-RENAULT-LAGUNA-II-WAGON-01"
+      ],
+      "pending_reason": "",
+      "last_updated_round": 46
     },
     "17186": {
-      "status": "pending",
+      "status": "ready",
       "source_rows": [
         14140
       ],
-      "mapping_ids": [],
-      "dimension_group_ids": [],
-      "pending_reason": "尚未产生 Ktype 映射",
-      "last_updated_round": 43
+      "mapping_ids": [
+        "17186"
+      ],
+      "dimension_group_ids": [
+        "EU-RENAULT-LAGUNA-II-WAGON-01"
+      ],
+      "pending_reason": "",
+      "last_updated_round": 46
     },
     "19044": {
-      "status": "pending",
+      "status": "ready",
       "source_rows": [
         14141
       ],
-      "mapping_ids": [],
-      "dimension_group_ids": [],
-      "pending_reason": "尚未产生 Ktype 映射",
-      "last_updated_round": 43
+      "mapping_ids": [
+        "19044"
+      ],
+      "dimension_group_ids": [
+        "EU-RENAULT-LAGUNA-II-WAGON-01"
+      ],
+      "pending_reason": "",
+      "last_updated_round": 46
     },
     "15775": {
-      "status": "pending",
+      "status": "ready",
       "source_rows": [
         14142
       ],
-      "mapping_ids": [],
-      "dimension_group_ids": [],
-      "pending_reason": "尚未产生 Ktype 映射",
-      "last_updated_round": 43
+      "mapping_ids": [
+        "15775"
+      ],
+      "dimension_group_ids": [
+        "EU-RENAULT-LAGUNA-II-WAGON-01"
+      ],
+      "pending_reason": "",
+      "last_updated_round": 46
     },
     "18645": {
-      "status": "pending",
+      "status": "ready",
       "source_rows": [
         14143
       ],
-      "mapping_ids": [],
-      "dimension_group_ids": [],
-      "pending_reason": "尚未产生 Ktype 映射",
-      "last_updated_round": 43
+      "mapping_ids": [
+        "18645"
+      ],
+      "dimension_group_ids": [
+        "EU-RENAULT-LAGUNA-II-WAGON-01"
+      ],
+      "pending_reason": "",
+      "last_updated_round": 46
     },
     "15479": {
-      "status": "pending",
+      "status": "ready",
       "source_rows": [
         14144
       ],
-      "mapping_ids": [],
-      "dimension_group_ids": [],
-      "pending_reason": "尚未产生 Ktype 映射",
-      "last_updated_round": 43
+      "mapping_ids": [
+        "15479"
+      ],
+      "dimension_group_ids": [
+        "EU-RENAULT-LAGUNA-II-WAGON-01"
+      ],
+      "pending_reason": "",
+      "last_updated_round": 46
     },
     "34751": {
-      "status": "pending",
+      "status": "ready",
       "source_rows": [
         14145
       ],
-      "mapping_ids": [],
-      "dimension_group_ids": [],
-      "pending_reason": "尚未产生 Ktype 映射",
-      "last_updated_round": 43
+      "mapping_ids": [
+        "34751"
+      ],
+      "dimension_group_ids": [
+        "EU-RENAULT-LAGUNA-III-HATCHBACK-01"
+      ],
+      "pending_reason": "",
+      "last_updated_round": 46
     },
     "34750": {
-      "status": "pending",
+      "status": "ready",
       "source_rows": [
         14146
       ],
-      "mapping_ids": [],
-      "dimension_group_ids": [],
-      "pending_reason": "尚未产生 Ktype 映射",
-      "last_updated_round": 43
+      "mapping_ids": [
+        "34750"
+      ],
+      "dimension_group_ids": [
+        "EU-RENAULT-LAGUNA-III-WAGON-01"
+      ],
+      "pending_reason": "",
+      "last_updated_round": 46
     },
     "59354": {
-      "status": "pending",
+      "status": "ready",
       "source_rows": [
         14147
       ],
-      "mapping_ids": [],
-      "dimension_group_ids": [],
-      "pending_reason": "尚未产生 Ktype 映射",
-      "last_updated_round": 43
+      "mapping_ids": [
+        "59354"
+      ],
+      "dimension_group_ids": [
+        "EU-RENAULT-LATITUDE-I-SEDAN-01"
+      ],
+      "pending_reason": "",
+      "last_updated_round": 46
     },
     "144148": {
-      "status": "pending",
+      "status": "ready",
       "source_rows": [
         14148
       ],
-      "mapping_ids": [],
-      "dimension_group_ids": [],
-      "pending_reason": "尚未产生 Ktype 映射",
-      "last_updated_round": 43
+      "mapping_ids": [
+        "144148"
+      ],
+      "dimension_group_ids": [
+        "EU-RENAULT-LATITUDE-I-SEDAN-01"
+      ],
+      "pending_reason": "",
+      "last_updated_round": 46
     },
     "34739": {
-      "status": "pending",
+      "status": "ready",
       "source_rows": [
         14149
       ],
-      "mapping_ids": [],
-      "dimension_group_ids": [],
-      "pending_reason": "尚未产生 Ktype 映射",
-      "last_updated_round": 43
+      "mapping_ids": [
+        "34739"
+      ],
+      "dimension_group_ids": [
+        "EU-RENAULT-LATITUDE-I-SEDAN-01"
+      ],
+      "pending_reason": "",
+      "last_updated_round": 46
     },
     "12788": {
-      "status": "pending",
+      "status": "ready",
       "source_rows": [
         14150
       ],
-      "mapping_ids": [],
-      "dimension_group_ids": [],
-      "pending_reason": "尚未产生 Ktype 映射",
-      "last_updated_round": 43
+      "mapping_ids": [
+        "12788"
+      ],
+      "dimension_group_ids": [
+        "EU-RENAULT-LATITUDE-I-SEDAN-01"
+      ],
+      "pending_reason": "",
+      "last_updated_round": 46
     },
     "124878": {
-      "status": "pending",
+      "status": "ready",
       "source_rows": [
         14151
       ],
-      "mapping_ids": [],
-      "dimension_group_ids": [],
-      "pending_reason": "尚未产生 Ktype 映射",
-      "last_updated_round": 43
+      "mapping_ids": [
+        "124878"
+      ],
+      "dimension_group_ids": [
+        "EU-RENAULT-LATITUDE-I-SEDAN-01"
+      ],
+      "pending_reason": "",
+      "last_updated_round": 46
     },
     "34740": {
-      "status": "pending",
+      "status": "ready",
       "source_rows": [
         14152
       ],
-      "mapping_ids": [],
-      "dimension_group_ids": [],
-      "pending_reason": "尚未产生 Ktype 映射",
-      "last_updated_round": 43
+      "mapping_ids": [
+        "34740"
+      ],
+      "dimension_group_ids": [
+        "EU-RENAULT-LATITUDE-I-SEDAN-01"
+      ],
+      "pending_reason": "",
+      "last_updated_round": 46
     },
     "145633": {
-      "status": "pending",
+      "status": "ready",
       "source_rows": [
         14153
       ],
-      "mapping_ids": [],
-      "dimension_group_ids": [],
-      "pending_reason": "尚未产生 Ktype 映射",
-      "last_updated_round": 43
+      "mapping_ids": [
+        "145633"
+      ],
+      "dimension_group_ids": [
+        "EU-RENAULT-LOGAN-II-WAGON-PREFL-01"
+      ],
+      "pending_reason": "",
+      "last_updated_round": 46
     },
     "107938": {
-      "status": "pending",
+      "status": "ready",
       "source_rows": [
         14154
       ],
-      "mapping_ids": [],
-      "dimension_group_ids": [],
-      "pending_reason": "尚未产生 Ktype 映射",
-      "last_updated_round": 43
+      "mapping_ids": [
+        "107938_prefl",
+        "107938_facelift"
+      ],
+      "dimension_group_ids": [
+        "EU-RENAULT-LOGAN-I-SEDAN-PREFL-01",
+        "EU-RENAULT-LOGAN-I-SEDAN-FACELIFT-01"
+      ],
+      "pending_reason": "",
+      "last_updated_round": 46
     },
     "107940": {
-      "status": "pending",
+      "status": "ready",
       "source_rows": [
         14155
       ],
-      "mapping_ids": [],
-      "dimension_group_ids": [],
-      "pending_reason": "尚未产生 Ktype 映射",
-      "last_updated_round": 43
+      "mapping_ids": [
+        "107940"
+      ],
+      "dimension_group_ids": [
+        "EU-RENAULT-LOGAN-I-WAGON-FACELIFT-01"
+      ],
+      "pending_reason": "",
+      "last_updated_round": 46
     },
     "107937": {
-      "status": "pending",
+      "status": "ready",
       "source_rows": [
         14156
       ],
-      "mapping_ids": [],
-      "dimension_group_ids": [],
-      "pending_reason": "尚未产生 Ktype 映射",
-      "last_updated_round": 43
+      "mapping_ids": [
+        "107937"
+      ],
+      "dimension_group_ids": [
+        "EU-RENAULT-LOGAN-II-SEDAN-PREFL-01"
+      ],
+      "pending_reason": "",
+      "last_updated_round": 46
     },
     "110731": {
-      "status": "pending",
+      "status": "ready",
       "source_rows": [
         14157
       ],
-      "mapping_ids": [],
-      "dimension_group_ids": [],
-      "pending_reason": "尚未产生 Ktype 映射",
-      "last_updated_round": 43
+      "mapping_ids": [
+        "110731"
+      ],
+      "dimension_group_ids": [
+        "EU-RENAULT-LOGAN-II-SEDAN-PREFL-01"
+      ],
+      "pending_reason": "",
+      "last_updated_round": 46
     },
     "13410": {
-      "status": "pending",
+      "status": "ready",
       "source_rows": [
         14158
       ],
-      "mapping_ids": [],
-      "dimension_group_ids": [],
-      "pending_reason": "尚未产生 Ktype 映射",
-      "last_updated_round": 43
+      "mapping_ids": [
+        "13410_l1h1",
+        "13410_l1h2",
+        "13410_l2h1",
+        "13410_l2h2",
+        "13410_l3h2"
+      ],
+      "dimension_group_ids": [
+        "EU-RENAULT-MASTER-I-VAN-L1H1-01",
+        "EU-RENAULT-MASTER-I-VAN-L1H2-01",
+        "EU-RENAULT-MASTER-I-VAN-L2H1-01",
+        "EU-RENAULT-MASTER-I-VAN-L2H2-01",
+        "EU-RENAULT-MASTER-I-VAN-L3H2-01"
+      ],
+      "pending_reason": "",
+      "last_updated_round": 46
     },
     "13421": {
-      "status": "pending",
+      "status": "ready",
       "source_rows": [
         14159
       ],
-      "mapping_ids": [],
-      "dimension_group_ids": [],
-      "pending_reason": "尚未产生 Ktype 映射",
-      "last_updated_round": 43
+      "mapping_ids": [
+        "13421_l1h1",
+        "13421_l1h2",
+        "13421_l2h1",
+        "13421_l2h2",
+        "13421_l3h2"
+      ],
+      "dimension_group_ids": [
+        "EU-RENAULT-MASTER-I-VAN-L1H1-01",
+        "EU-RENAULT-MASTER-I-VAN-L1H2-01",
+        "EU-RENAULT-MASTER-I-VAN-L2H1-01",
+        "EU-RENAULT-MASTER-I-VAN-L2H2-01",
+        "EU-RENAULT-MASTER-I-VAN-L3H2-01"
+      ],
+      "pending_reason": "",
+      "last_updated_round": 46
     },
     "13413": {
-      "status": "pending",
+      "status": "ready",
       "source_rows": [
         14160
       ],
-      "mapping_ids": [],
-      "dimension_group_ids": [],
-      "pending_reason": "尚未产生 Ktype 映射",
-      "last_updated_round": 43
+      "mapping_ids": [
+        "13413_l1h1",
+        "13413_l1h2",
+        "13413_l2h1",
+        "13413_l2h2",
+        "13413_l3h2"
+      ],
+      "dimension_group_ids": [
+        "EU-RENAULT-MASTER-I-VAN-L1H1-01",
+        "EU-RENAULT-MASTER-I-VAN-L1H2-01",
+        "EU-RENAULT-MASTER-I-VAN-L2H1-01",
+        "EU-RENAULT-MASTER-I-VAN-L2H2-01",
+        "EU-RENAULT-MASTER-I-VAN-L3H2-01"
+      ],
+      "pending_reason": "",
+      "last_updated_round": 46
     },
     "13414": {
-      "status": "pending",
+      "status": "ready",
       "source_rows": [
         14161
       ],
-      "mapping_ids": [],
-      "dimension_group_ids": [],
-      "pending_reason": "尚未产生 Ktype 映射",
-      "last_updated_round": 43
+      "mapping_ids": [
+        "13414_l1h1",
+        "13414_l1h2",
+        "13414_l2h1",
+        "13414_l2h2",
+        "13414_l3h2"
+      ],
+      "dimension_group_ids": [
+        "EU-RENAULT-MASTER-I-VAN-L1H1-01",
+        "EU-RENAULT-MASTER-I-VAN-L1H2-01",
+        "EU-RENAULT-MASTER-I-VAN-L2H1-01",
+        "EU-RENAULT-MASTER-I-VAN-L2H2-01",
+        "EU-RENAULT-MASTER-I-VAN-L3H2-01"
+      ],
+      "pending_reason": "",
+      "last_updated_round": 46
     },
     "13415": {
-      "status": "pending",
+      "status": "ready",
       "source_rows": [
         14162
       ],
-      "mapping_ids": [],
-      "dimension_group_ids": [],
-      "pending_reason": "尚未产生 Ktype 映射",
-      "last_updated_round": 43
+      "mapping_ids": [
+        "13415_l1h1",
+        "13415_l1h2",
+        "13415_l2h1",
+        "13415_l2h2",
+        "13415_l3h2"
+      ],
+      "dimension_group_ids": [
+        "EU-RENAULT-MASTER-I-VAN-L1H1-01",
+        "EU-RENAULT-MASTER-I-VAN-L1H2-01",
+        "EU-RENAULT-MASTER-I-VAN-L2H1-01",
+        "EU-RENAULT-MASTER-I-VAN-L2H2-01",
+        "EU-RENAULT-MASTER-I-VAN-L3H2-01"
+      ],
+      "pending_reason": "",
+      "last_updated_round": 46
     },
     "13899": {
       "status": "ready",
@@ -699,17 +941,29 @@
         "EU-RENAULT-MASTER-I-CHASSIS-CAB-MWB-H1-01"
       ],
       "pending_reason": "",
-      "last_updated_round": 43
+      "last_updated_round": 46
     },
     "13919": {
-      "status": "pending",
+      "status": "ready",
       "source_rows": [
         14164
       ],
-      "mapping_ids": [],
-      "dimension_group_ids": [],
-      "pending_reason": "尚未产生 Ktype 映射",
-      "last_updated_round": 43
+      "mapping_ids": [
+        "13919_l1h1",
+        "13919_l1h2",
+        "13919_l2h1",
+        "13919_l2h2",
+        "13919_l3h2"
+      ],
+      "dimension_group_ids": [
+        "EU-RENAULT-MASTER-I-VAN-L1H1-01",
+        "EU-RENAULT-MASTER-I-VAN-L1H2-01",
+        "EU-RENAULT-MASTER-I-VAN-L2H1-01",
+        "EU-RENAULT-MASTER-I-VAN-L2H2-01",
+        "EU-RENAULT-MASTER-I-VAN-L3H2-01"
+      ],
+      "pending_reason": "",
+      "last_updated_round": 46
     },
     "13920": {
       "status": "ready",
@@ -723,27 +977,51 @@
         "EU-RENAULT-MASTER-I-CHASSIS-CAB-MWB-H1-01"
       ],
       "pending_reason": "",
-      "last_updated_round": 43
+      "last_updated_round": 46
     },
     "13921": {
-      "status": "pending",
+      "status": "ready",
       "source_rows": [
         14166
       ],
-      "mapping_ids": [],
-      "dimension_group_ids": [],
-      "pending_reason": "尚未产生 Ktype 映射",
-      "last_updated_round": 43
+      "mapping_ids": [
+        "13921_l1h1",
+        "13921_l1h2",
+        "13921_l2h1",
+        "13921_l2h2",
+        "13921_l3h2"
+      ],
+      "dimension_group_ids": [
+        "EU-RENAULT-MASTER-I-VAN-L1H1-01",
+        "EU-RENAULT-MASTER-I-VAN-L1H2-01",
+        "EU-RENAULT-MASTER-I-VAN-L2H1-01",
+        "EU-RENAULT-MASTER-I-VAN-L2H2-01",
+        "EU-RENAULT-MASTER-I-VAN-L3H2-01"
+      ],
+      "pending_reason": "",
+      "last_updated_round": 46
     },
     "13646": {
-      "status": "pending",
+      "status": "ready",
       "source_rows": [
         14167
       ],
-      "mapping_ids": [],
-      "dimension_group_ids": [],
-      "pending_reason": "尚未产生 Ktype 映射",
-      "last_updated_round": 43
+      "mapping_ids": [
+        "13646_l1h1",
+        "13646_l1h2",
+        "13646_l2h1",
+        "13646_l2h2",
+        "13646_l3h2"
+      ],
+      "dimension_group_ids": [
+        "EU-RENAULT-MASTER-I-VAN-L1H1-01",
+        "EU-RENAULT-MASTER-I-VAN-L1H2-01",
+        "EU-RENAULT-MASTER-I-VAN-L2H1-01",
+        "EU-RENAULT-MASTER-I-VAN-L2H2-01",
+        "EU-RENAULT-MASTER-I-VAN-L3H2-01"
+      ],
+      "pending_reason": "",
+      "last_updated_round": 46
     },
     "13900": {
       "status": "ready",
@@ -757,87 +1035,139 @@
         "EU-RENAULT-MASTER-I-CHASSIS-CAB-MWB-H1-01"
       ],
       "pending_reason": "",
-      "last_updated_round": 43
+      "last_updated_round": 46
     },
     "13922": {
-      "status": "pending",
+      "status": "ready",
       "source_rows": [
         14169
       ],
-      "mapping_ids": [],
-      "dimension_group_ids": [],
-      "pending_reason": "尚未产生 Ktype 映射",
-      "last_updated_round": 43
+      "mapping_ids": [
+        "13922_l1h1",
+        "13922_l1h2",
+        "13922_l2h1",
+        "13922_l2h2",
+        "13922_l3h2"
+      ],
+      "dimension_group_ids": [
+        "EU-RENAULT-MASTER-I-VAN-L1H1-01",
+        "EU-RENAULT-MASTER-I-VAN-L1H2-01",
+        "EU-RENAULT-MASTER-I-VAN-L2H1-01",
+        "EU-RENAULT-MASTER-I-VAN-L2H2-01",
+        "EU-RENAULT-MASTER-I-VAN-L3H2-01"
+      ],
+      "pending_reason": "",
+      "last_updated_round": 46
     },
     "13923": {
-      "status": "pending",
+      "status": "ready",
       "source_rows": [
         14170
       ],
-      "mapping_ids": [],
-      "dimension_group_ids": [],
-      "pending_reason": "尚未产生 Ktype 映射",
-      "last_updated_round": 43
+      "mapping_ids": [
+        "13923_l1h1",
+        "13923_l1h2",
+        "13923_l2h1",
+        "13923_l2h2",
+        "13923_l3h2"
+      ],
+      "dimension_group_ids": [
+        "EU-RENAULT-MASTER-I-VAN-L1H1-01",
+        "EU-RENAULT-MASTER-I-VAN-L1H2-01",
+        "EU-RENAULT-MASTER-I-VAN-L2H1-01",
+        "EU-RENAULT-MASTER-I-VAN-L2H2-01",
+        "EU-RENAULT-MASTER-I-VAN-L3H2-01"
+      ],
+      "pending_reason": "",
+      "last_updated_round": 46
     },
     "16491": {
-      "status": "pending",
+      "status": "ready",
       "source_rows": [
         14171
       ],
-      "mapping_ids": [],
-      "dimension_group_ids": [],
-      "pending_reason": "尚未产生 Ktype 映射",
-      "last_updated_round": 43
+      "mapping_ids": [
+        "16491"
+      ],
+      "dimension_group_ids": [
+        "EU-RENAULT-MASTER-II-VAN-L1H1-01"
+      ],
+      "pending_reason": "",
+      "last_updated_round": 46
     },
     "16492": {
-      "status": "pending",
+      "status": "ready",
       "source_rows": [
         14172
       ],
-      "mapping_ids": [],
-      "dimension_group_ids": [],
-      "pending_reason": "尚未产生 Ktype 映射",
-      "last_updated_round": 43
+      "mapping_ids": [
+        "16492"
+      ],
+      "dimension_group_ids": [
+        "EU-RENAULT-MASTER-II-VAN-L1H1-01"
+      ],
+      "pending_reason": "",
+      "last_updated_round": 46
     },
     "15709": {
-      "status": "pending",
+      "status": "ready",
       "source_rows": [
         14173
       ],
-      "mapping_ids": [],
-      "dimension_group_ids": [],
-      "pending_reason": "尚未产生 Ktype 映射",
-      "last_updated_round": 43
+      "mapping_ids": [
+        "15709"
+      ],
+      "dimension_group_ids": [
+        "EU-RENAULT-MASTER-II-VAN-L1H1-01"
+      ],
+      "pending_reason": "",
+      "last_updated_round": 46
     },
     "15710": {
-      "status": "pending",
+      "status": "ready",
       "source_rows": [
         14174
       ],
-      "mapping_ids": [],
-      "dimension_group_ids": [],
-      "pending_reason": "尚未产生 Ktype 映射",
-      "last_updated_round": 43
+      "mapping_ids": [
+        "15710"
+      ],
+      "dimension_group_ids": [
+        "EU-RENAULT-MASTER-II-VAN-L1H1-01"
+      ],
+      "pending_reason": "",
+      "last_updated_round": 46
     },
     "15603": {
-      "status": "pending",
+      "status": "ready",
       "source_rows": [
         14175
       ],
-      "mapping_ids": [],
-      "dimension_group_ids": [],
-      "pending_reason": "尚未产生 Ktype 映射",
-      "last_updated_round": 43
+      "mapping_ids": [
+        "15603"
+      ],
+      "dimension_group_ids": [
+        "EU-RENAULT-MASTER-II-VAN-L2H2-01"
+      ],
+      "pending_reason": "",
+      "last_updated_round": 46
     },
     "15604": {
-      "status": "pending",
+      "status": "ready",
       "source_rows": [
         14176
       ],
-      "mapping_ids": [],
-      "dimension_group_ids": [],
-      "pending_reason": "尚未产生 Ktype 映射",
-      "last_updated_round": 43
+      "mapping_ids": [
+        "15604_l1h1",
+        "15604_l2h2",
+        "15604_l3h2"
+      ],
+      "dimension_group_ids": [
+        "EU-RENAULT-MASTER-II-VAN-L1H1-01",
+        "EU-RENAULT-MASTER-II-VAN-L2H2-01",
+        "EU-RENAULT-MASTER-II-VAN-L3H2-01"
+      ],
+      "pending_reason": "",
+      "last_updated_round": 46
     },
     "15605": {
       "status": "ready",
@@ -859,17 +1189,25 @@
         "EU-RENAULT-MASTER-II-PLATFORM-CAB-MWB-H2-01"
       ],
       "pending_reason": "",
-      "last_updated_round": 43
+      "last_updated_round": 46
     },
     "10081": {
-      "status": "pending",
+      "status": "ready",
       "source_rows": [
         14178
       ],
-      "mapping_ids": [],
-      "dimension_group_ids": [],
-      "pending_reason": "尚未产生 Ktype 映射",
-      "last_updated_round": 43
+      "mapping_ids": [
+        "10081_l1h1",
+        "10081_l2h2",
+        "10081_l3h2"
+      ],
+      "dimension_group_ids": [
+        "EU-RENAULT-MASTER-II-VAN-L1H1-01",
+        "EU-RENAULT-MASTER-II-VAN-L2H2-01",
+        "EU-RENAULT-MASTER-II-VAN-L3H2-01"
+      ],
+      "pending_reason": "",
+      "last_updated_round": 46
     },
     "10083": {
       "status": "ready",
@@ -892,67 +1230,102 @@
         "EU-RENAULT-MASTER-II-PLATFORM-CAB-MWB-H2-01"
       ],
       "pending_reason": "",
-      "last_updated_round": 43
+      "last_updated_round": 46
     },
     "10268": {
-      "status": "pending",
+      "status": "ready",
       "source_rows": [
         14180
       ],
-      "mapping_ids": [],
-      "dimension_group_ids": [],
-      "pending_reason": "尚未产生 Ktype 映射",
-      "last_updated_round": 43
+      "mapping_ids": [
+        "10268"
+      ],
+      "dimension_group_ids": [
+        "EU-RENAULT-MASTER-II-VAN-L1H1-01"
+      ],
+      "pending_reason": "",
+      "last_updated_round": 46
     },
     "17998": {
-      "status": "pending",
+      "status": "ready",
       "source_rows": [
         14181
       ],
-      "mapping_ids": [],
-      "dimension_group_ids": [],
-      "pending_reason": "尚未产生 Ktype 映射",
-      "last_updated_round": 43
+      "mapping_ids": [
+        "17998_mwb_single",
+        "17998_lwb_single"
+      ],
+      "dimension_group_ids": [
+        "EU-RENAULT-MASTER-II-CHASSIS-CAB-MWB-SINGLE-01",
+        "EU-RENAULT-MASTER-II-CHASSIS-CAB-LWB-SINGLE-01"
+      ],
+      "pending_reason": "",
+      "last_updated_round": 46
     },
     "17999": {
-      "status": "pending",
+      "status": "ready",
       "source_rows": [
         14182
       ],
-      "mapping_ids": [],
-      "dimension_group_ids": [],
-      "pending_reason": "尚未产生 Ktype 映射",
-      "last_updated_round": 43
+      "mapping_ids": [
+        "17999_l1h1",
+        "17999_l3h2",
+        "17999_fd8"
+      ],
+      "dimension_group_ids": [
+        "EU-RENAULT-MASTER-II-VAN-L1H1-01",
+        "EU-RENAULT-MASTER-II-VAN-L3H2-01"
+      ],
+      "pending_reason": "",
+      "last_updated_round": 46
     },
     "18001": {
-      "status": "pending",
+      "status": "ready",
       "source_rows": [
         14183
       ],
-      "mapping_ids": [],
-      "dimension_group_ids": [],
-      "pending_reason": "尚未产生 Ktype 映射",
-      "last_updated_round": 43
+      "mapping_ids": [
+        "18001"
+      ],
+      "dimension_group_ids": [
+        "EU-RENAULT-MASTER-II-VAN-L2H2-01"
+      ],
+      "pending_reason": "",
+      "last_updated_round": 46
     },
     "16488": {
-      "status": "pending",
+      "status": "ready",
       "source_rows": [
         14184
       ],
-      "mapping_ids": [],
-      "dimension_group_ids": [],
-      "pending_reason": "尚未产生 Ktype 映射",
-      "last_updated_round": 43
+      "mapping_ids": [
+        "16488_l1h1",
+        "16488_l2h2"
+      ],
+      "dimension_group_ids": [
+        "EU-RENAULT-MASTER-II-VAN-L1H1-01",
+        "EU-RENAULT-MASTER-II-VAN-L2H2-01"
+      ],
+      "pending_reason": "",
+      "last_updated_round": 46
     },
     "16489": {
-      "status": "pending",
+      "status": "ready",
       "source_rows": [
         14185
       ],
-      "mapping_ids": [],
-      "dimension_group_ids": [],
-      "pending_reason": "尚未产生 Ktype 映射",
-      "last_updated_round": 43
+      "mapping_ids": [
+        "16489_l1h1",
+        "16489_l2h2",
+        "16489_l3h2"
+      ],
+      "dimension_group_ids": [
+        "EU-RENAULT-MASTER-II-VAN-L1H1-01",
+        "EU-RENAULT-MASTER-II-VAN-L2H2-01",
+        "EU-RENAULT-MASTER-II-VAN-L3H2-01"
+      ],
+      "pending_reason": "",
+      "last_updated_round": 46
     },
     "16490": {
       "status": "ready",
@@ -974,17 +1347,25 @@
         "EU-RENAULT-MASTER-II-PLATFORM-CAB-MWB-H2-01"
       ],
       "pending_reason": "",
-      "last_updated_round": 43
+      "last_updated_round": 46
     },
     "10082": {
-      "status": "pending",
+      "status": "ready",
       "source_rows": [
         14187
       ],
-      "mapping_ids": [],
-      "dimension_group_ids": [],
-      "pending_reason": "尚未产生 Ktype 映射",
-      "last_updated_round": 43
+      "mapping_ids": [
+        "10082_l1h1",
+        "10082_l2h2",
+        "10082_l3h2"
+      ],
+      "dimension_group_ids": [
+        "EU-RENAULT-MASTER-II-VAN-L1H1-01",
+        "EU-RENAULT-MASTER-II-VAN-L2H2-01",
+        "EU-RENAULT-MASTER-II-VAN-L3H2-01"
+      ],
+      "pending_reason": "",
+      "last_updated_round": 46
     },
     "10084": {
       "status": "ready",
@@ -1002,97 +1383,180 @@
         "EU-RENAULT-MASTER-II-CHASSIS-CAB-MWB-SINGLE-PREFL-01"
       ],
       "pending_reason": "",
-      "last_updated_round": 43
+      "last_updated_round": 46
     },
     "10269": {
-      "status": "pending",
+      "status": "ready",
       "source_rows": [
         14189
       ],
-      "mapping_ids": [],
-      "dimension_group_ids": [],
-      "pending_reason": "尚未产生 Ktype 映射",
-      "last_updated_round": 43
+      "mapping_ids": [
+        "10269"
+      ],
+      "dimension_group_ids": [
+        "EU-RENAULT-MASTER-II-VAN-L1H1-01"
+      ],
+      "pending_reason": "",
+      "last_updated_round": 46
     },
     "17997": {
-      "status": "pending",
+      "status": "ready",
       "source_rows": [
         14190
       ],
-      "mapping_ids": [],
-      "dimension_group_ids": [],
-      "pending_reason": "尚未产生 Ktype 映射",
-      "last_updated_round": 43
+      "mapping_ids": [
+        "17997_lwb_single",
+        "17997_lwb_double"
+      ],
+      "dimension_group_ids": [
+        "EU-RENAULT-MASTER-II-CHASSIS-CAB-LWB-SINGLE-01",
+        "EU-RENAULT-MASTER-II-CHASSIS-CAB-LWB-DOUBLE-01"
+      ],
+      "pending_reason": "",
+      "last_updated_round": 46
     },
     "18000": {
-      "status": "pending",
+      "status": "ready",
       "source_rows": [
         14191
       ],
-      "mapping_ids": [],
-      "dimension_group_ids": [],
-      "pending_reason": "尚未产生 Ktype 映射",
-      "last_updated_round": 43
+      "mapping_ids": [
+        "18000"
+      ],
+      "dimension_group_ids": [
+        "EU-RENAULT-MASTER-II-VAN-L1H1-01"
+      ],
+      "pending_reason": "",
+      "last_updated_round": 46
     },
     "18002": {
-      "status": "pending",
+      "status": "ready",
       "source_rows": [
         14192
       ],
-      "mapping_ids": [],
-      "dimension_group_ids": [],
-      "pending_reason": "尚未产生 Ktype 映射",
-      "last_updated_round": 43
+      "mapping_ids": [
+        "18002"
+      ],
+      "dimension_group_ids": [
+        "EU-RENAULT-MASTER-II-VAN-L1H1-01"
+      ],
+      "pending_reason": "",
+      "last_updated_round": 46
     },
     "11037": {
-      "status": "pending",
+      "status": "ready",
       "source_rows": [
         14193
       ],
-      "mapping_ids": [],
-      "dimension_group_ids": [],
-      "pending_reason": "尚未产生 Ktype 映射",
-      "last_updated_round": 43
+      "mapping_ids": [
+        "11037_l1h1",
+        "11037_l2h2"
+      ],
+      "dimension_group_ids": [
+        "EU-RENAULT-MASTER-III-VAN-FWD-L1H1-PRE2019-01",
+        "EU-RENAULT-MASTER-III-VAN-FWD-L2H2-PRE2019-01"
+      ],
+      "pending_reason": "",
+      "last_updated_round": 46
     },
     "15026": {
-      "status": "pending",
+      "status": "ready",
       "source_rows": [
         14194
       ],
-      "mapping_ids": [],
-      "dimension_group_ids": [],
-      "pending_reason": "尚未产生 Ktype 映射",
-      "last_updated_round": 43
+      "mapping_ids": [
+        "15026_single_l2_srw",
+        "15026_single_l2_drw",
+        "15026_single_l3_srw",
+        "15026_single_l3_drw",
+        "15026_single_l4_drw",
+        "15026_double_l2_srw",
+        "15026_double_l3_srw",
+        "15026_double_l3_drw",
+        "15026_double_l4_drw"
+      ],
+      "dimension_group_ids": [
+        "EU-RENAULT-MASTER-III-CHASSIS-CAB-RWD-SINGLE-L2-PRE2019-01",
+        "EU-RENAULT-MASTER-III-CHASSIS-CAB-RWD-SINGLE-L3-SRW-PRE2019-01",
+        "EU-RENAULT-MASTER-III-CHASSIS-CAB-RWD-SINGLE-L3-DRW-PRE2019-01",
+        "EU-RENAULT-MASTER-III-CHASSIS-CAB-RWD-SINGLE-L4-DRW-PRE2019-01",
+        "EU-RENAULT-MASTER-III-CHASSIS-CAB-RWD-DOUBLE-L2-SRW-PRE2019-01",
+        "EU-RENAULT-MASTER-III-CHASSIS-CAB-RWD-DOUBLE-L3-SRW-PRE2019-01",
+        "EU-RENAULT-MASTER-III-CHASSIS-CAB-RWD-DOUBLE-L3-DRW-PRE2019-01",
+        "EU-RENAULT-MASTER-III-CHASSIS-CAB-RWD-DOUBLE-L4-DRW-PRE2019-01"
+      ],
+      "pending_reason": "",
+      "last_updated_round": 46
     },
     "15031": {
-      "status": "pending",
+      "status": "ready",
       "source_rows": [
         14195
       ],
-      "mapping_ids": [],
-      "dimension_group_ids": [],
-      "pending_reason": "尚未产生 Ktype 映射",
-      "last_updated_round": 43
+      "mapping_ids": [
+        "15031"
+      ],
+      "dimension_group_ids": [
+        "EU-RENAULT-MASTER-III-VAN-RWD-L3H2-SRW-PRE2019-01"
+      ],
+      "pending_reason": "",
+      "last_updated_round": 46
     },
     "108150": {
-      "status": "pending",
+      "status": "ready",
       "source_rows": [
         14196
       ],
-      "mapping_ids": [],
-      "dimension_group_ids": [],
-      "pending_reason": "尚未产生 Ktype 映射",
-      "last_updated_round": 43
+      "mapping_ids": [
+        "108150_l1h1_pre2019",
+        "108150_l1h1_facelift2019",
+        "108150_l1h2_pre2019",
+        "108150_l1h2_facelift2019",
+        "108150_l2h2_pre2019",
+        "108150_l2h2_facelift2019",
+        "108150_l2h3_pre2019",
+        "108150_l2h3_facelift2019",
+        "108150_l3h2_pre2019",
+        "108150_l3h2_facelift2019",
+        "108150_l3h3_pre2019",
+        "108150_l3h3_facelift2019"
+      ],
+      "dimension_group_ids": [
+        "EU-RENAULT-MASTER-III-VAN-FWD-L1H1-PRE2019-01",
+        "EU-RENAULT-MASTER-III-VAN-FWD-L1H1-FACELIFT2019-01",
+        "EU-RENAULT-MASTER-III-VAN-FWD-L1H2-PRE2019-01",
+        "EU-RENAULT-MASTER-III-VAN-FWD-L1H2-FACELIFT2019-01",
+        "EU-RENAULT-MASTER-III-VAN-FWD-L2H2-PRE2019-01",
+        "EU-RENAULT-MASTER-III-VAN-FWD-L2H2-FACELIFT2019-01",
+        "EU-RENAULT-MASTER-III-VAN-FWD-L2H3-PRE2019-01",
+        "EU-RENAULT-MASTER-III-VAN-FWD-L2H3-FACELIFT2019-01",
+        "EU-RENAULT-MASTER-III-VAN-FWD-L3H2-PRE2019-01",
+        "EU-RENAULT-MASTER-III-VAN-FWD-L3H2-FACELIFT2019-01",
+        "EU-RENAULT-MASTER-III-VAN-FWD-L3H3-PRE2019-01",
+        "EU-RENAULT-MASTER-III-VAN-FWD-L3H3-FACELIFT2019-01"
+      ],
+      "pending_reason": "",
+      "last_updated_round": 46
     },
     "108167": {
-      "status": "pending",
+      "status": "ready",
       "source_rows": [
         14197
       ],
-      "mapping_ids": [],
-      "dimension_group_ids": [],
-      "pending_reason": "尚未产生 Ktype 映射",
-      "last_updated_round": 43
+      "mapping_ids": [
+        "108167_l1h1_pre2019",
+        "108167_l1h1_facelift2019",
+        "108167_l2h2_pre2019",
+        "108167_l2h2_facelift2019"
+      ],
+      "dimension_group_ids": [
+        "EU-RENAULT-MASTER-III-VAN-FWD-L1H1-PRE2019-01",
+        "EU-RENAULT-MASTER-III-VAN-FWD-L1H1-FACELIFT2019-01",
+        "EU-RENAULT-MASTER-III-VAN-FWD-L2H2-PRE2019-01",
+        "EU-RENAULT-MASTER-III-VAN-FWD-L2H2-FACELIFT2019-01"
+      ],
+      "pending_reason": "",
+      "last_updated_round": 46
     },
     "108176": {
       "status": "ready",
@@ -1136,119 +1600,72 @@
         "EU-RENAULT-MASTER-III-PLATFORM-CAB-FWD-L3H2-FACELIFT2019-01"
       ],
       "pending_reason": "",
-      "last_updated_round": 43
+      "last_updated_round": 46
     },
     "802206": {
-      "status": "pending",
+      "status": "ready",
       "source_rows": [
         14199
       ],
-      "mapping_ids": [],
-      "dimension_group_ids": [],
-      "pending_reason": "尚未产生 Ktype 映射",
-      "last_updated_round": 43
+      "mapping_ids": [
+        "802206_l3h2_srw",
+        "802206_l3h2_drw",
+        "802206_l3h3_srw",
+        "802206_l3h3_drw",
+        "802206_l4h2_drw",
+        "802206_l4h3_drw"
+      ],
+      "dimension_group_ids": [
+        "EU-RENAULT-MASTER-III-VAN-4X4-L3H2-SRW-PRE2019-01",
+        "EU-RENAULT-MASTER-III-VAN-4X4-L3H2-DRW-PRE2019-01",
+        "EU-RENAULT-MASTER-III-VAN-4X4-L3H3-SRW-PRE2019-01",
+        "EU-RENAULT-MASTER-III-VAN-4X4-L3H3-DRW-PRE2019-01",
+        "EU-RENAULT-MASTER-III-VAN-4X4-L4H2-DRW-PRE2019-01",
+        "EU-RENAULT-MASTER-III-VAN-4X4-L4H3-DRW-PRE2019-01"
+      ],
+      "pending_reason": "",
+      "last_updated_round": 46
     },
     "802207": {
-      "status": "pending",
+      "status": "ready",
       "source_rows": [
         14200
       ],
-      "mapping_ids": [],
-      "dimension_group_ids": [],
-      "pending_reason": "尚未产生 Ktype 映射",
-      "last_updated_round": 43
+      "mapping_ids": [
+        "802207_single_l2_srw",
+        "802207_single_l2_drw",
+        "802207_single_l3_srw",
+        "802207_single_l3_drw",
+        "802207_single_l4_drw",
+        "802207_double_l2_srw",
+        "802207_double_l3_srw",
+        "802207_double_l3_drw",
+        "802207_double_l4_drw"
+      ],
+      "dimension_group_ids": [
+        "EU-RENAULT-MASTER-III-CHASSIS-CAB-4X4-SINGLE-L2-SRW-PRE2019-01",
+        "EU-RENAULT-MASTER-III-CHASSIS-CAB-4X4-SINGLE-L2-DRW-PRE2019-01",
+        "EU-RENAULT-MASTER-III-CHASSIS-CAB-4X4-SINGLE-L3-SRW-PRE2019-01",
+        "EU-RENAULT-MASTER-III-CHASSIS-CAB-4X4-SINGLE-L3-DRW-PRE2019-01",
+        "EU-RENAULT-MASTER-III-CHASSIS-CAB-4X4-SINGLE-L4-DRW-PRE2019-01",
+        "EU-RENAULT-MASTER-III-CHASSIS-CAB-4X4-DOUBLE-L2-SRW-PRE2019-01",
+        "EU-RENAULT-MASTER-III-CHASSIS-CAB-4X4-DOUBLE-L3-SRW-PRE2019-01",
+        "EU-RENAULT-MASTER-III-CHASSIS-CAB-4X4-DOUBLE-L3-DRW-PRE2019-01",
+        "EU-RENAULT-MASTER-III-CHASSIS-CAB-4X4-DOUBLE-L4-DRW-PRE2019-01"
+      ],
+      "pending_reason": "",
+      "last_updated_round": 46
     }
   },
   "progress": {
     "input_ktype_count": 100,
-    "ready_ktype_count": 20,
-    "pending_ktype_count": 80,
-    "pending_ktypes": [
-      "18681",
-      "18579",
-      "18643",
-      "44781",
-      "54571",
-      "18577",
-      "18578",
-      "19043",
-      "18644",
-      "18893",
-      "15477",
-      "18682",
-      "15478",
-      "15480",
-      "15774",
-      "16583",
-      "18213",
-      "18583",
-      "18646",
-      "54572",
-      "58572",
-      "58610",
-      "17185",
-      "18581",
-      "18582",
-      "58606",
-      "15773",
-      "17186",
-      "19044",
-      "15775",
-      "18645",
-      "15479",
-      "34751",
-      "34750",
-      "59354",
-      "144148",
-      "34739",
-      "12788",
-      "124878",
-      "34740",
-      "145633",
-      "107938",
-      "107940",
-      "107937",
-      "110731",
-      "13410",
-      "13421",
-      "13413",
-      "13414",
-      "13415",
-      "13919",
-      "13921",
-      "13646",
-      "13922",
-      "13923",
-      "16491",
-      "16492",
-      "15709",
-      "15710",
-      "15603",
-      "15604",
-      "10081",
-      "10268",
-      "17998",
-      "17999",
-      "18001",
-      "16488",
-      "16489",
-      "10082",
-      "10269",
-      "17997",
-      "18000",
-      "18002",
-      "11037",
-      "15026",
-      "15031",
-      "108150",
-      "108167",
-      "802206",
-      "802207"
-    ]
+    "ready_ktype_count": 100,
+    "pending_ktype_count": 0,
+    "pending_ktypes": []
   },
   "artifacts": {
-    "current_mapping": "/Users/admin/Documents/GitHub/fitment_sheet_generation/projects/qclaw_fitment_automation/workspaces/0802-eu/checkpoints/part-04/task-state/left18448__batch__0142__e3cfe7c4/current_mapping.tsv",
-    "current_dimension_groups": "/Users/admin/Documents/GitHub/fitment_sheet_generation/projects/qclaw_fitment_automation/workspaces/0802-eu/checkpoints/part-04/task-state/left18448__batch__0142__e3cfe7c4/current_dimension_groups.tsv"
+    "current_mapping": "D:\\Licheng\\Repo\\fitment_sheet_generation\\projects\\qclaw_fitment_automation\\workspaces\\0802-eu\\checkpoints\\part-04\\task-state\\left18448__batch__0142__e3cfe7c4\\current_mapping.tsv",
+    "current_dimension_groups": "D:\\Licheng\\Repo\\fitment_sheet_generation\\projects\\qclaw_fitment_automation\\workspaces\\0802-eu\\checkpoints\\part-04\\task-state\\left18448__batch__0142__e3cfe7c4\\current_dimension_groups.tsv"
   },
-  "updated_at": "2026-08-04 10:36:12"
+  "updated_at": "2026-08-04 11:23:22"
 }

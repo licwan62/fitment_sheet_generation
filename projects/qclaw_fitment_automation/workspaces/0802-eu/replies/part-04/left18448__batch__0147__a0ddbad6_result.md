@@ -1843,3 +1843,416 @@ id	Ktype	NormalizedBodyStyle	Generation	BodyCode	Doors	DIMENSION_GROUP_ID	MatchC
 
 推进信号：CONTINUE
 
+
+--- 发送 / checkpoint 续跑到 Round 24 ---
+继续当前批次并采用缓存优先模式。尺寸组只在首次创建或纠错时完整核对一次三维和来源；后续 Ktype 只判断关联哪个现有 DIMENSION_GROUP_ID，不重复抓取，不输出缓存来源或匹配理由。仍有 PENDING 时，CONTINUE 轮仅输出：1) 更新点；2) 当前批次进度；3) 本轮新增/修改的 Ktype 映射 TSV（无变化写“无”）；4) 本轮首次创建/修正的 DIMENSION_GROUP TSV（复用既有组不重复输出，无变化写“无”）；5) 下一步优先处理。若当前或上一轮进度已经是 PENDING=0，本轮不要继续检索或再次输出 CONTINUE，必须立刻汇总并输出两张最终完整 TSV、两个任务指定 sandbox 下载链接和“推进信号：COMPLETE”。执行顺序固定为：第一阶段优先消除 PENDING 并补齐会阻塞两张最终表的数据。检测到 PENDING=0 后，第二阶段最多只做一次轻量机械收尾：核对固定表头、id 与 DIMENSION_GROUP_ID 唯一、映射引用闭合、长宽高和来源非空、两个任务指定下载链接齐全。第二阶段不得重新逐车型、逐年份或逐来源做深度检索，不得为了提高置信度反复核对，也不得因非阻塞的排序或措辞问题继续多轮。PENDING=0 后的下一条回复必须直接输出两张最终完整 TSV、两个精确 sandbox 下载链接，并以“推进信号：COMPLETE”结束；不要再输出 CONTINUE。Ktype 映射 TSV 表头必须严格使用 requirement 指定的字段顺序：id	Ktype	NormalizedBodyStyle	Generation	BodyCode	Doors	DIMENSION_GROUP_ID	MatchConfidence	Notes	IterationStatus。另需维护完整 DIMENSION_GROUP TSV，表头固定为：DIMENSION_GROUP_ID	LengthMM	WidthMM	HeightMM	DimensionSource	SourceURL。缺少任一张表、任一映射引用的尺寸组，或尺寸组字段不完整时不得 COMPLETE。不要输出子车系匹配表。
+【COMPLETE 下载文件硬性要求】
+准备 COMPLETE 时，除两张完整内嵌 TSV 外，还必须创建并提供以下两个可点击 sandbox 下载链接，文件名必须完全一致：
+- left18448_14601-14700_ktype_dimension_mapping_final.tsv
+- left18448_14601-14700_dimension_groups_final.tsv
+缺少任一下载链接时不得输出推进信号：COMPLETE。
+
+
+--- Round 24 / checkpoint 续跑 ---
+## 1) 更新点
+
+定向核验后仍无法闭合最后两个物理外廓。B120.55T 的官方型式认证表未填写外廓长、宽、高，并要求登记时按实际车身核验；B110.45 4×4 底盘驾驶室仍未取得同一配置的完整三维。本轮不强行拼接数据。([Astra Open Data][1])
+
+## 2) 当前批次进度
+
+* 输入 Ktype：100
+* READY：97
+* PENDING：3
+* PENDING：`34127、34125、34126`
+
+## 3) 本轮新增/修改的 Ktype 映射 TSV
+
+无
+
+## 4) 本轮首次创建/修正的 DIMENSION_GROUP TSV
+
+无
+
+## 5) 下一步优先处理
+
+仅继续查找：
+
+* `34127`：Messenger B110.45 4×4 底盘驾驶室的完整外廓。
+* `34125、34126`：Messenger B120.55T 牵引车的完整外廓。
+
+推进信号：CONTINUE
+
+[1]: https://opendata.astra.admin.ch/ivzod/2000-Typengenehmigungen_TG_TARGA/2310-pdf-Drucke_TG_1985-1995/2313-franzoesisch/2R3040_F.pdf "BSY1/EVPS/T754S.E517PROD.STC09130.D0002750.?"
+
+
+--- 发送 / 继续到 Round 25 ---
+继续当前批次并采用缓存优先模式。尺寸组只在首次创建或纠错时完整核对一次三维和来源；后续 Ktype 只判断关联哪个现有 DIMENSION_GROUP_ID，不重复抓取，不输出缓存来源或匹配理由。仍有 PENDING 时，CONTINUE 轮仅输出：1) 更新点；2) 当前批次进度；3) 本轮新增/修改的 Ktype 映射 TSV（无变化写“无”）；4) 本轮首次创建/修正的 DIMENSION_GROUP TSV（复用既有组不重复输出，无变化写“无”）；5) 下一步优先处理。若当前或上一轮进度已经是 PENDING=0，本轮不要继续检索或再次输出 CONTINUE，必须立刻汇总并输出两张最终完整 TSV、两个任务指定 sandbox 下载链接和“推进信号：COMPLETE”。执行顺序固定为：第一阶段优先消除 PENDING 并补齐会阻塞两张最终表的数据。检测到 PENDING=0 后，第二阶段最多只做一次轻量机械收尾：核对固定表头、id 与 DIMENSION_GROUP_ID 唯一、映射引用闭合、长宽高和来源非空、两个任务指定下载链接齐全。第二阶段不得重新逐车型、逐年份或逐来源做深度检索，不得为了提高置信度反复核对，也不得因非阻塞的排序或措辞问题继续多轮。PENDING=0 后的下一条回复必须直接输出两张最终完整 TSV、两个精确 sandbox 下载链接，并以“推进信号：COMPLETE”结束；不要再输出 CONTINUE。Ktype 映射 TSV 表头必须严格使用 requirement 指定的字段顺序：id	Ktype	NormalizedBodyStyle	Generation	BodyCode	Doors	DIMENSION_GROUP_ID	MatchConfidence	Notes	IterationStatus。另需维护完整 DIMENSION_GROUP TSV，表头固定为：DIMENSION_GROUP_ID	LengthMM	WidthMM	HeightMM	DimensionSource	SourceURL。缺少任一张表、任一映射引用的尺寸组，或尺寸组字段不完整时不得 COMPLETE。不要输出子车系匹配表。
+【COMPLETE 下载文件硬性要求】
+准备 COMPLETE 时，除两张完整内嵌 TSV 外，还必须创建并提供以下两个可点击 sandbox 下载链接，文件名必须完全一致：
+- left18448_14601-14700_ktype_dimension_mapping_final.tsv
+- left18448_14601-14700_dimension_groups_final.tsv
+缺少任一下载链接时不得输出推进信号：COMPLETE。
+
+
+--- Round 25 / checkpoint 续跑 ---
+## 1) 更新点
+
+定向核验仍未取得两个独立外廓的完整长、无后视镜宽和高；官方型式认证仅确认 `FN60F5` 底盘及 3200/3840 mm 轴距，外廓三维为空。本轮不拼接其他车身数据，现有两张 TSV 未修改。
+
+## 2) 当前批次进度
+
+* 输入 Ktype：100
+* READY：97
+* PENDING：3
+* 当前映射行：124
+* 完整 DIMENSION_GROUP：55
+
+## 3) 本轮新增/修改的 Ktype 映射 TSV
+
+无
+
+## 4) 本轮首次创建/修正的 DIMENSION_GROUP TSV
+
+无
+
+## 5) 下一步优先处理
+
+仅继续处理：
+
+* `34127`：Messenger B110.45 4×4 底盘驾驶室完整外廓。
+* `34125、34126`：Messenger B120.55T 牵引车完整外廓。
+
+推进信号：CONTINUE
+
+
+--- 发送 / 继续到 Round 26 ---
+继续当前批次并采用缓存优先模式。尺寸组只在首次创建或纠错时完整核对一次三维和来源；后续 Ktype 只判断关联哪个现有 DIMENSION_GROUP_ID，不重复抓取，不输出缓存来源或匹配理由。仍有 PENDING 时，CONTINUE 轮仅输出：1) 更新点；2) 当前批次进度；3) 本轮新增/修改的 Ktype 映射 TSV（无变化写“无”）；4) 本轮首次创建/修正的 DIMENSION_GROUP TSV（复用既有组不重复输出，无变化写“无”）；5) 下一步优先处理。若当前或上一轮进度已经是 PENDING=0，本轮不要继续检索或再次输出 CONTINUE，必须立刻汇总并输出两张最终完整 TSV、两个任务指定 sandbox 下载链接和“推进信号：COMPLETE”。执行顺序固定为：第一阶段优先消除 PENDING 并补齐会阻塞两张最终表的数据。检测到 PENDING=0 后，第二阶段最多只做一次轻量机械收尾：核对固定表头、id 与 DIMENSION_GROUP_ID 唯一、映射引用闭合、长宽高和来源非空、两个任务指定下载链接齐全。第二阶段不得重新逐车型、逐年份或逐来源做深度检索，不得为了提高置信度反复核对，也不得因非阻塞的排序或措辞问题继续多轮。PENDING=0 后的下一条回复必须直接输出两张最终完整 TSV、两个精确 sandbox 下载链接，并以“推进信号：COMPLETE”结束；不要再输出 CONTINUE。Ktype 映射 TSV 表头必须严格使用 requirement 指定的字段顺序：id	Ktype	NormalizedBodyStyle	Generation	BodyCode	Doors	DIMENSION_GROUP_ID	MatchConfidence	Notes	IterationStatus。另需维护完整 DIMENSION_GROUP TSV，表头固定为：DIMENSION_GROUP_ID	LengthMM	WidthMM	HeightMM	DimensionSource	SourceURL。缺少任一张表、任一映射引用的尺寸组，或尺寸组字段不完整时不得 COMPLETE。不要输出子车系匹配表。
+【COMPLETE 下载文件硬性要求】
+准备 COMPLETE 时，除两张完整内嵌 TSV 外，还必须创建并提供以下两个可点击 sandbox 下载链接，文件名必须完全一致：
+- left18448_14601-14700_ktype_dimension_mapping_final.tsv
+- left18448_14601-14700_dimension_groups_final.tsv
+缺少任一下载链接时不得输出推进信号：COMPLETE。
+
+
+--- 对话分支 / Round 26 ---
+触发原因：ChatGPT 对话长度上限
+父对话：https://chatgpt.com/c/6a70d9fa-ec14-83e8-840a-29b121e120a3
+新分支：https://chatgpt.com/c/6a717018-e678-83e8-bbb6-c4ff33cd2d32
+
+--- Round 26 / checkpoint 续跑 ---
+## 1）更新点
+
+删除 Mascott 的 13 条无输入证据轴距/驾驶室派生行，4 个 Ktype 收敛为原始单行，并复用已闭合的两个 WB3630 尺寸组。
+
+Messenger 暂不能安全闭合：精确的 B110.35 4×4 底盘驾驶室页面未提供长宽高；B120.55T 资料只能确认牵引车车型及 FN60F5/FN60F7 边界，未提供完整外廓。相关 B80 底盘驾驶室虽有 `5490×2000×2450 mm`，但不能跨用到 4×4 底盘或牵引车配置。([Zoomcar][1])
+
+## 2）当前批进度
+
+READY=97；PENDING=3；revision=49
+
+## 3）本轮新增/修改的 Ktype 映射 TSV
+
+```tsv
+id	Ktype	NormalizedBodyStyle	Generation	BodyCode	Doors	DIMENSION_GROUP_ID	MatchConfidence	Notes	IterationStatus
+34259	34259	Pickup	Mascott Phase I		2	EU-RENAULT-TRUCKS-MASCOTT-PHASE-I-CHASSIS-CAB-WB3630-01	MEDIUM	Canonical standard WB3630 chassis-cab exterior; input does not identify wheelbase	READY
+34275	34275	Pickup	Mascott Phase II		2	EU-RENAULT-TRUCKS-MASCOTT-PHASE-II-CHASSIS-CAB-WB3630-01	HIGH	Canonical standard WB3630 chassis-cab exterior; input does not identify wheelbase	READY
+34277	34277	Pickup	Mascott Phase II		2	EU-RENAULT-TRUCKS-MASCOTT-PHASE-II-CHASSIS-CAB-WB3630-01	MEDIUM	GVW rating does not change the selected WB3630 chassis-cab exterior	READY
+34279	34279	Pickup	Mascott Phase II		2	EU-RENAULT-TRUCKS-MASCOTT-PHASE-II-CHASSIS-CAB-WB3630-01	MEDIUM	GVW rating does not change the selected WB3630 chassis-cab exterior	READY
+34127	34127	Pickup	Messenger	4X4F06	2		MEDIUM	B110.45 4x4 chassis cab	PENDING: exact chassis-cab length and height unavailable
+34125	34125	Tractor	Messenger	FN60F5	2		MEDIUM	B120.55T tractor	PENDING: complete same-configuration tractor exterior dimensions unavailable
+34126	34126	Tractor	Messenger	FN60F7	2		MEDIUM	B120.55T tractor; engine phase alone does not establish an exterior change	PENDING: complete same-configuration tractor exterior dimensions unavailable
+```
+
+## 4）本轮首次创建/修正的 DIMENSION_GROUP TSV
+
+无
+
+## 5）下一步优先处理
+
+仅补齐 Messenger B110.45 4×4 底盘驾驶室，以及 B120.55T 牵引车的同配置完整长宽高；不得用普通两驱底盘或厢式车尺寸替代。
+
+推进信号：CONTINUE
+
+[1]: https://zoomcar.fr/fiche-technique-utilitaire/renault-trucks/messenger-euro-2-chassis-cabine-messenger-euro-2-chassis-cab-b110-35-4x4-NAT59429.html?utm_source=chatgpt.com "Fiche technique RENAULT TRUCKS MESSENGER EURO 2 CHASSIS CA Châssis cabine 1998 59429 | zoomcar.fr"
+
+
+--- 发送 / 继续到 Round 27 ---
+继续当前批次并采用缓存优先模式。尺寸组只在首次创建或纠错时完整核对一次三维和来源；后续 Ktype 只判断关联哪个现有 DIMENSION_GROUP_ID，不重复抓取，不输出缓存来源或匹配理由。仍有 PENDING 时，CONTINUE 轮仅输出：1) 更新点；2) 当前批次进度；3) 本轮新增/修改的 Ktype 映射 TSV（无变化写“无”）；4) 本轮首次创建/修正的 DIMENSION_GROUP TSV（复用既有组不重复输出，无变化写“无”）；5) 下一步优先处理。若当前或上一轮进度已经是 PENDING=0，本轮不要继续检索或再次输出 CONTINUE，必须立刻汇总并输出两张最终完整 TSV、两个任务指定 sandbox 下载链接和“推进信号：COMPLETE”。执行顺序固定为：第一阶段优先消除 PENDING 并补齐会阻塞两张最终表的数据。检测到 PENDING=0 后，第二阶段最多只做一次轻量机械收尾：核对固定表头、id 与 DIMENSION_GROUP_ID 唯一、映射引用闭合、长宽高和来源非空、两个任务指定下载链接齐全。第二阶段不得重新逐车型、逐年份或逐来源做深度检索，不得为了提高置信度反复核对，也不得因非阻塞的排序或措辞问题继续多轮。PENDING=0 后的下一条回复必须直接输出两张最终完整 TSV、两个精确 sandbox 下载链接，并以“推进信号：COMPLETE”结束；不要再输出 CONTINUE。Ktype 映射 TSV 表头必须严格使用 requirement 指定的字段顺序：id	Ktype	NormalizedBodyStyle	Generation	BodyCode	Doors	DIMENSION_GROUP_ID	MatchConfidence	Notes	IterationStatus。另需维护完整 DIMENSION_GROUP TSV，表头固定为：DIMENSION_GROUP_ID	LengthMM	WidthMM	HeightMM	DimensionSource	SourceURL。缺少任一张表、任一映射引用的尺寸组，或尺寸组字段不完整时不得 COMPLETE。不要输出子车系匹配表。
+【COMPLETE 下载文件硬性要求】
+准备 COMPLETE 时，除两张完整内嵌 TSV 外，还必须创建并提供以下两个可点击 sandbox 下载链接，文件名必须完全一致：
+- left18448_14601-14700_ktype_dimension_mapping_final.tsv
+- left18448_14601-14700_dimension_groups_final.tsv
+缺少任一下载链接时不得输出推进信号：COMPLETE。
+
+
+--- Round 27 / checkpoint 续跑 ---
+## 1）更新点
+
+无可落盘更新。相近的官方 B120 牵引车/底盘许可记录未登记有效长宽高；已找到的 B80.35 底盘驾驶室尺寸属于不同配置，不能替代 B110.45 4×4 或 B120.55T 牵引车。
+
+## 2）当前批次进度
+
+READY=97；PENDING=3；revision=49
+
+## 3）本轮新增/修改的 Ktype 映射 TSV
+
+无
+
+## 4）本轮首次创建/修正的 DIMENSION_GROUP TSV
+
+无
+
+## 5）下一步优先处理
+
+仅继续补齐 Messenger B110.45 4×4 底盘驾驶室及 B120.55T 牵引车共享外廓的完整同配置三维；不使用普通两驱底盘、厢式车或其他 B 系车型尺寸替代。
+
+推进信号：CONTINUE
+
+
+--- 发送 / 继续到 Round 28 ---
+继续当前批次并采用缓存优先模式。尺寸组只在首次创建或纠错时完整核对一次三维和来源；后续 Ktype 只判断关联哪个现有 DIMENSION_GROUP_ID，不重复抓取，不输出缓存来源或匹配理由。仍有 PENDING 时，CONTINUE 轮仅输出：1) 更新点；2) 当前批次进度；3) 本轮新增/修改的 Ktype 映射 TSV（无变化写“无”）；4) 本轮首次创建/修正的 DIMENSION_GROUP TSV（复用既有组不重复输出，无变化写“无”）；5) 下一步优先处理。若当前或上一轮进度已经是 PENDING=0，本轮不要继续检索或再次输出 CONTINUE，必须立刻汇总并输出两张最终完整 TSV、两个任务指定 sandbox 下载链接和“推进信号：COMPLETE”。执行顺序固定为：第一阶段优先消除 PENDING 并补齐会阻塞两张最终表的数据。检测到 PENDING=0 后，第二阶段最多只做一次轻量机械收尾：核对固定表头、id 与 DIMENSION_GROUP_ID 唯一、映射引用闭合、长宽高和来源非空、两个任务指定下载链接齐全。第二阶段不得重新逐车型、逐年份或逐来源做深度检索，不得为了提高置信度反复核对，也不得因非阻塞的排序或措辞问题继续多轮。PENDING=0 后的下一条回复必须直接输出两张最终完整 TSV、两个精确 sandbox 下载链接，并以“推进信号：COMPLETE”结束；不要再输出 CONTINUE。Ktype 映射 TSV 表头必须严格使用 requirement 指定的字段顺序：id	Ktype	NormalizedBodyStyle	Generation	BodyCode	Doors	DIMENSION_GROUP_ID	MatchConfidence	Notes	IterationStatus。另需维护完整 DIMENSION_GROUP TSV，表头固定为：DIMENSION_GROUP_ID	LengthMM	WidthMM	HeightMM	DimensionSource	SourceURL。缺少任一张表、任一映射引用的尺寸组，或尺寸组字段不完整时不得 COMPLETE。不要输出子车系匹配表。
+【COMPLETE 下载文件硬性要求】
+准备 COMPLETE 时，除两张完整内嵌 TSV 外，还必须创建并提供以下两个可点击 sandbox 下载链接，文件名必须完全一致：
+- left18448_14601-14700_ktype_dimension_mapping_final.tsv
+- left18448_14601-14700_dimension_groups_final.tsv
+缺少任一下载链接时不得输出推进信号：COMPLETE。
+
+
+--- Round 28 / checkpoint 续跑 ---
+## 1）更新点
+
+无可落盘更新。精确的 Messenger B110.45 4×4 底盘驾驶室规格页未提供完整三维；官方 FN60F5 型式批准资料也未填写整车长、宽、高，而是要求登记时按实际车身核定，因此不能据此创建尺寸组。([Zoomcar][1])
+
+## 2）当前批次进度
+
+READY=97；PENDING=3；revision=49
+
+## 3）本轮新增/修改的 Ktype 映射 TSV
+
+无
+
+## 4）本轮首次创建/修正的 DIMENSION_GROUP TSV
+
+无
+
+## 5）下一步优先处理
+
+仅继续寻找可直接支撑 `4X4F06` 底盘驾驶室及 `FN60F5/FN60F7` 牵引车完整外廓的官方或可信规格资料；不跨用厢式车、普通两驱底盘或带特定上装车辆的尺寸。
+
+推进信号：CONTINUE
+
+[1]: https://zoomcar.fr/fiche-technique-utilitaire/renault-trucks/messenger-euro-2-chassis-cabine-messenger-euro-2-chassis-cab-b110-35-4x4-NAT59429.html "Fiche technique RENAULT TRUCKS MESSENGER EURO 2 CHASSIS CA Châssis cabine 1998 59429 | zoomcar.fr"
+
+
+--- 发送 / 继续到 Round 29 ---
+继续当前批次并采用缓存优先模式。尺寸组只在首次创建或纠错时完整核对一次三维和来源；后续 Ktype 只判断关联哪个现有 DIMENSION_GROUP_ID，不重复抓取，不输出缓存来源或匹配理由。仍有 PENDING 时，CONTINUE 轮仅输出：1) 更新点；2) 当前批次进度；3) 本轮新增/修改的 Ktype 映射 TSV（无变化写“无”）；4) 本轮首次创建/修正的 DIMENSION_GROUP TSV（复用既有组不重复输出，无变化写“无”）；5) 下一步优先处理。若当前或上一轮进度已经是 PENDING=0，本轮不要继续检索或再次输出 CONTINUE，必须立刻汇总并输出两张最终完整 TSV、两个任务指定 sandbox 下载链接和“推进信号：COMPLETE”。执行顺序固定为：第一阶段优先消除 PENDING 并补齐会阻塞两张最终表的数据。检测到 PENDING=0 后，第二阶段最多只做一次轻量机械收尾：核对固定表头、id 与 DIMENSION_GROUP_ID 唯一、映射引用闭合、长宽高和来源非空、两个任务指定下载链接齐全。第二阶段不得重新逐车型、逐年份或逐来源做深度检索，不得为了提高置信度反复核对，也不得因非阻塞的排序或措辞问题继续多轮。PENDING=0 后的下一条回复必须直接输出两张最终完整 TSV、两个精确 sandbox 下载链接，并以“推进信号：COMPLETE”结束；不要再输出 CONTINUE。Ktype 映射 TSV 表头必须严格使用 requirement 指定的字段顺序：id	Ktype	NormalizedBodyStyle	Generation	BodyCode	Doors	DIMENSION_GROUP_ID	MatchConfidence	Notes	IterationStatus。另需维护完整 DIMENSION_GROUP TSV，表头固定为：DIMENSION_GROUP_ID	LengthMM	WidthMM	HeightMM	DimensionSource	SourceURL。缺少任一张表、任一映射引用的尺寸组，或尺寸组字段不完整时不得 COMPLETE。不要输出子车系匹配表。
+【COMPLETE 下载文件硬性要求】
+准备 COMPLETE 时，除两张完整内嵌 TSV 外，还必须创建并提供以下两个可点击 sandbox 下载链接，文件名必须完全一致：
+- left18448_14601-14700_ktype_dimension_mapping_final.tsv
+- left18448_14601-14700_dimension_groups_final.tsv
+缺少任一下载链接时不得输出推进信号：COMPLETE。
+
+
+--- Round 29 / checkpoint 续跑 ---
+## 1）更新点
+
+无可落盘更新。`FN60F5` 原始认证资料未登记整车外廓长宽高；精确匹配 `4X4F06` 的 B110.45 4×4 底盘驾驶室页面同样缺少完整三维，不能据此建立尺寸组。
+
+## 2）当前批次进度
+
+READY=97；PENDING=3；revision=49
+
+## 3）本轮新增/修改的 Ktype 映射 TSV
+
+无
+
+## 4）本轮首次创建/修正的 DIMENSION_GROUP TSV
+
+无
+
+## 5）下一步优先处理
+
+仅查找 `4X4F06` 底盘驾驶室及 `FN60F5/FN60F7` B120.55T 牵引车的原厂规格表、整车型式认证或可信规格数据库；不复查 Mascott，不跨用 B120.35/B120.55 普通底盘及厢式车尺寸。
+
+推进信号：CONTINUE
+
+
+--- 发送 / 无数据收尾 / Round 30 ---
+立即停止检索，直接输出当前已积累的两张最终完整 TSV（Ktype 映射 TSV 和 DIMENSION_GROUP TSV），保留仍有 PENDING 的条目原样输出，不要继续检索或补全。必须包含两个 sandbox 下载链接，并以"推进信号：COMPLETE"结束。
+
+
+--- Round 30 / checkpoint 续跑 ---
+## 更新点
+
+已停止检索。按当前对话唯一提供的 7 个 Ktype 固化现有结果，保留 3 条 `PENDING`，不强制补全或转为 `READY`。
+
+## 当前进度
+
+当前交接输入：READY=4；PENDING=3
+累计进度口径：READY=97；PENDING=3；revision=49
+
+## 最终完整 Ktype 映射 TSV
+
+```tsv
+id	Ktype	NormalizedBodyStyle	Generation	BodyCode	Doors	DIMENSION_GROUP_ID	MatchConfidence	Notes	IterationStatus
+34259	34259	Pickup	Mascott Phase I		2	EU-RENAULT-TRUCKS-MASCOTT-PHASE-I-CHASSIS-CAB-WB3630-01	MEDIUM	Canonical standard WB3630 chassis-cab exterior; input does not identify wheelbase	READY
+34275	34275	Pickup	Mascott Phase II		2	EU-RENAULT-TRUCKS-MASCOTT-PHASE-II-CHASSIS-CAB-WB3630-01	HIGH	Canonical standard WB3630 chassis-cab exterior; input does not identify wheelbase	READY
+34277	34277	Pickup	Mascott Phase II		2	EU-RENAULT-TRUCKS-MASCOTT-PHASE-II-CHASSIS-CAB-WB3630-01	MEDIUM	GVW rating does not change the selected WB3630 chassis-cab exterior	READY
+34279	34279	Pickup	Mascott Phase II		2	EU-RENAULT-TRUCKS-MASCOTT-PHASE-II-CHASSIS-CAB-WB3630-01	MEDIUM	GVW rating does not change the selected WB3630 chassis-cab exterior	READY
+34127	34127	Pickup	Messenger	4X4F06	2		MEDIUM	B110.45 4x4 chassis cab	PENDING: exact chassis-cab length and height unavailable
+34125	34125	Tractor	Messenger	FN60F5	2		MEDIUM	B120.55T tractor	PENDING: complete same-configuration tractor exterior dimensions unavailable
+34126	34126	Tractor	Messenger	FN60F7	2		MEDIUM	B120.55T tractor; engine phase alone does not establish an exterior change	PENDING: complete same-configuration tractor exterior dimensions unavailable
+```
+
+[下载 Ktype 映射 TSV](sandbox:/mnt/data/left18448_14601-14700_ktype_dimension_mapping_final.tsv)
+
+## 最终完整 DIMENSION_GROUP TSV
+
+```tsv
+DIMENSION_GROUP_ID	LengthMM	WidthMM	HeightMM	DimensionSource	SourceURL
+EU-RENAULT-TRUCKS-MASCOTT-PHASE-I-CHASSIS-CAB-WB3630-01	7179	2093	2270	Zoomcar Renault Trucks Mascott CHC 150.35 WB3630 specifications	https://zoomcar.fr/fiche-technique/renault-trucks/mascott-chassis-cabine-chc-150-35-emp-3-630-NAT83435.html
+EU-RENAULT-TRUCKS-MASCOTT-PHASE-II-CHASSIS-CAB-WB3630-01	5998	2041	2262	Zoomcar Renault Trucks Mascott CHC 160.35 WB3630 specifications	https://zoomcar.fr/fiche-technique-utilitaire/renault-trucks/mascott-chassis-cabine-chc-160-35-emp-3-630-NAT87869.html
+```
+
+[下载 DIMENSION_GROUP TSV](sandbox:/mnt/data/left18448_14601-14700_dimension_groups_final.tsv)
+
+推进信号：COMPLETE
+
+
+--- 发送 / 完成信号纠偏 / Round 31 ---
+你刚才给了完成信号，但当前回复缺少完整 Ktype 映射 TSV、完整 DIMENSION_GROUP TSV，存在未引用/缺失/不完整的尺寸组，或仍有数据缺失。请补齐所有必需表；未完成时输出“推进信号：CONTINUE”，确认全部表完整且映射闭合后才输出“推进信号：COMPLETE”。执行顺序固定为：第一阶段优先消除 PENDING 并补齐会阻塞两张最终表的数据。检测到 PENDING=0 后，第二阶段最多只做一次轻量机械收尾：核对固定表头、id 与 DIMENSION_GROUP_ID 唯一、映射引用闭合、长宽高和来源非空、两个任务指定下载链接齐全。第二阶段不得重新逐车型、逐年份或逐来源做深度检索，不得为了提高置信度反复核对，也不得因非阻塞的排序或措辞问题继续多轮。PENDING=0 后的下一条回复必须直接输出两张最终完整 TSV、两个精确 sandbox 下载链接，并以“推进信号：COMPLETE”结束；不要再输出 CONTINUE。Ktype 映射 TSV 表头必须严格使用 requirement 指定的字段顺序：id	Ktype	NormalizedBodyStyle	Generation	BodyCode	Doors	DIMENSION_GROUP_ID	MatchConfidence	Notes	IterationStatus。另需维护完整 DIMENSION_GROUP TSV，表头固定为：DIMENSION_GROUP_ID	LengthMM	WidthMM	HeightMM	DimensionSource	SourceURL。缺少任一张表、任一映射引用的尺寸组，或尺寸组字段不完整时不得 COMPLETE。不要输出子车系匹配表。
+【COMPLETE 下载文件硬性要求】
+准备 COMPLETE 时，除两张完整内嵌 TSV 外，还必须创建并提供以下两个可点击 sandbox 下载链接，文件名必须完全一致：
+- left18448_14601-14700_ktype_dimension_mapping_final.tsv
+- left18448_14601-14700_dimension_groups_final.tsv
+缺少任一下载链接时不得输出推进信号：COMPLETE。
+
+
+--- Round 31 / checkpoint 续跑 ---
+## 1）更新点
+
+闭合 `34127`：建立 Messenger B110.45 4×4 底盘驾驶室尺寸组。原厂技术图确认外廓为 `5000 × 2030 × 2710 mm`。`34125`、`34126` 仍缺少 B120.55T 牵引车同配置完整三维。
+
+## 2）当前批次进度
+
+READY=98；PENDING=2；revision=50
+
+## 3）本轮新增/修改的 Ktype 映射 TSV
+
+```tsv
+id	Ktype	NormalizedBodyStyle	Generation	BodyCode	Doors	DIMENSION_GROUP_ID	MatchConfidence	Notes	IterationStatus
+34127	34127	Pickup	Messenger	4X4F06	2	EU-RENAULT-TRUCKS-MESSENGER-B110-45-4X4-CHASSIS-CAB-01	HIGH	B110.45 4x4 chassis cab	READY
+```
+
+## 4）本轮首次创建/修正的 DIMENSION_GROUP TSV
+
+```tsv
+DIMENSION_GROUP_ID	LengthMM	WidthMM	HeightMM	DimensionSource	SourceURL
+EU-RENAULT-TRUCKS-MESSENGER-B110-45-4X4-CHASSIS-CAB-01	5000	2030	2710	Renault VI B110.45 4x4 technical data sheet 06/1996	https://brochure-camion.com/en/product/23-0062-renault-vi-b110-4x4-military-data-sheet/
+```
+
+## 5）下一步优先处理
+
+仅补齐 `34125`、`34126` 共用的 Messenger B120.55T 牵引车完整同配置外廓，不使用普通底盘、厢式车或带上装车辆尺寸替代。
+
+推进信号：CONTINUE
+
+
+--- 发送 / 继续到 Round 32 ---
+继续当前批次并采用缓存优先模式。尺寸组只在首次创建或纠错时完整核对一次三维和来源；后续 Ktype 只判断关联哪个现有 DIMENSION_GROUP_ID，不重复抓取，不输出缓存来源或匹配理由。仍有 PENDING 时，CONTINUE 轮仅输出：1) 更新点；2) 当前批次进度；3) 本轮新增/修改的 Ktype 映射 TSV（无变化写“无”）；4) 本轮首次创建/修正的 DIMENSION_GROUP TSV（复用既有组不重复输出，无变化写“无”）；5) 下一步优先处理。若当前或上一轮进度已经是 PENDING=0，本轮不要继续检索或再次输出 CONTINUE，必须立刻汇总并输出两张最终完整 TSV、两个任务指定 sandbox 下载链接和“推进信号：COMPLETE”。执行顺序固定为：第一阶段优先消除 PENDING 并补齐会阻塞两张最终表的数据。检测到 PENDING=0 后，第二阶段最多只做一次轻量机械收尾：核对固定表头、id 与 DIMENSION_GROUP_ID 唯一、映射引用闭合、长宽高和来源非空、两个任务指定下载链接齐全。第二阶段不得重新逐车型、逐年份或逐来源做深度检索，不得为了提高置信度反复核对，也不得因非阻塞的排序或措辞问题继续多轮。PENDING=0 后的下一条回复必须直接输出两张最终完整 TSV、两个精确 sandbox 下载链接，并以“推进信号：COMPLETE”结束；不要再输出 CONTINUE。Ktype 映射 TSV 表头必须严格使用 requirement 指定的字段顺序：id	Ktype	NormalizedBodyStyle	Generation	BodyCode	Doors	DIMENSION_GROUP_ID	MatchConfidence	Notes	IterationStatus。另需维护完整 DIMENSION_GROUP TSV，表头固定为：DIMENSION_GROUP_ID	LengthMM	WidthMM	HeightMM	DimensionSource	SourceURL。缺少任一张表、任一映射引用的尺寸组，或尺寸组字段不完整时不得 COMPLETE。不要输出子车系匹配表。
+【COMPLETE 下载文件硬性要求】
+准备 COMPLETE 时，除两张完整内嵌 TSV 外，还必须创建并提供以下两个可点击 sandbox 下载链接，文件名必须完全一致：
+- left18448_14601-14700_ktype_dimension_mapping_final.tsv
+- left18448_14601-14700_dimension_groups_final.tsv
+缺少任一下载链接时不得输出推进信号：COMPLETE。
+
+
+--- Round 32 / checkpoint 续跑 ---
+## 1）更新点
+
+无可落盘更新。`FN60F5` 认证资料仅确认底盘代码和轴距选项，整车长、宽、高字段为空；仍不足以建立 B120.55T 牵引车尺寸组。
+
+## 2）当前批次进度
+
+READY=98；PENDING=2；revision=50
+
+## 3）本轮新增/修改的 Ktype 映射 TSV
+
+无
+
+## 4）本轮首次创建/修正的 DIMENSION_GROUP TSV
+
+无
+
+## 5）下一步优先处理
+
+仅补齐 `34125`、`34126` 共用的 Messenger B120.55T 牵引车完整外廓；优先锁定原厂 B120 Intercooler/Messenger 牵引车技术资料，不跨用普通底盘、厢式车或带上装车辆尺寸。
+
+推进信号：CONTINUE
+
+
+--- 发送 / 继续到 Round 33 ---
+继续当前批次并采用缓存优先模式。尺寸组只在首次创建或纠错时完整核对一次三维和来源；后续 Ktype 只判断关联哪个现有 DIMENSION_GROUP_ID，不重复抓取，不输出缓存来源或匹配理由。仍有 PENDING 时，CONTINUE 轮仅输出：1) 更新点；2) 当前批次进度；3) 本轮新增/修改的 Ktype 映射 TSV（无变化写“无”）；4) 本轮首次创建/修正的 DIMENSION_GROUP TSV（复用既有组不重复输出，无变化写“无”）；5) 下一步优先处理。若当前或上一轮进度已经是 PENDING=0，本轮不要继续检索或再次输出 CONTINUE，必须立刻汇总并输出两张最终完整 TSV、两个任务指定 sandbox 下载链接和“推进信号：COMPLETE”。执行顺序固定为：第一阶段优先消除 PENDING 并补齐会阻塞两张最终表的数据。检测到 PENDING=0 后，第二阶段最多只做一次轻量机械收尾：核对固定表头、id 与 DIMENSION_GROUP_ID 唯一、映射引用闭合、长宽高和来源非空、两个任务指定下载链接齐全。第二阶段不得重新逐车型、逐年份或逐来源做深度检索，不得为了提高置信度反复核对，也不得因非阻塞的排序或措辞问题继续多轮。PENDING=0 后的下一条回复必须直接输出两张最终完整 TSV、两个精确 sandbox 下载链接，并以“推进信号：COMPLETE”结束；不要再输出 CONTINUE。Ktype 映射 TSV 表头必须严格使用 requirement 指定的字段顺序：id	Ktype	NormalizedBodyStyle	Generation	BodyCode	Doors	DIMENSION_GROUP_ID	MatchConfidence	Notes	IterationStatus。另需维护完整 DIMENSION_GROUP TSV，表头固定为：DIMENSION_GROUP_ID	LengthMM	WidthMM	HeightMM	DimensionSource	SourceURL。缺少任一张表、任一映射引用的尺寸组，或尺寸组字段不完整时不得 COMPLETE。不要输出子车系匹配表。
+【COMPLETE 下载文件硬性要求】
+准备 COMPLETE 时，除两张完整内嵌 TSV 外，还必须创建并提供以下两个可点击 sandbox 下载链接，文件名必须完全一致：
+- left18448_14601-14700_ktype_dimension_mapping_final.tsv
+- left18448_14601-14700_dimension_groups_final.tsv
+缺少任一下载链接时不得输出推进信号：COMPLETE。
+
+
+--- Round 33 / checkpoint 续跑 ---
+## 1）更新点
+
+无可落盘更新。现有资料仍不能提供 `FN60F5/FN60F7` B120.55T 牵引车同配置的完整长、宽、高；不得以普通底盘或厢式车尺寸替代。
+
+## 2）当前批次进度
+
+READY=98；PENDING=2；revision=50
+
+## 3）本轮新增/修改的 Ktype 映射 TSV
+
+无
+
+## 4）本轮首次创建/修正的 DIMENSION_GROUP TSV
+
+无
+
+## 5）下一步优先处理
+
+仅处理 `34125`、`34126` 共用的 Messenger B120.55T 牵引车外廓；取得同配置完整三维后，直接关联两条 Ktype 并进入最终机械收尾。
+
+推进信号：CONTINUE
+
+
+--- 发送 / 继续到 Round 34 ---
+继续当前批次并采用缓存优先模式。尺寸组只在首次创建或纠错时完整核对一次三维和来源；后续 Ktype 只判断关联哪个现有 DIMENSION_GROUP_ID，不重复抓取，不输出缓存来源或匹配理由。仍有 PENDING 时，CONTINUE 轮仅输出：1) 更新点；2) 当前批次进度；3) 本轮新增/修改的 Ktype 映射 TSV（无变化写“无”）；4) 本轮首次创建/修正的 DIMENSION_GROUP TSV（复用既有组不重复输出，无变化写“无”）；5) 下一步优先处理。若当前或上一轮进度已经是 PENDING=0，本轮不要继续检索或再次输出 CONTINUE，必须立刻汇总并输出两张最终完整 TSV、两个任务指定 sandbox 下载链接和“推进信号：COMPLETE”。执行顺序固定为：第一阶段优先消除 PENDING 并补齐会阻塞两张最终表的数据。检测到 PENDING=0 后，第二阶段最多只做一次轻量机械收尾：核对固定表头、id 与 DIMENSION_GROUP_ID 唯一、映射引用闭合、长宽高和来源非空、两个任务指定下载链接齐全。第二阶段不得重新逐车型、逐年份或逐来源做深度检索，不得为了提高置信度反复核对，也不得因非阻塞的排序或措辞问题继续多轮。PENDING=0 后的下一条回复必须直接输出两张最终完整 TSV、两个精确 sandbox 下载链接，并以“推进信号：COMPLETE”结束；不要再输出 CONTINUE。Ktype 映射 TSV 表头必须严格使用 requirement 指定的字段顺序：id	Ktype	NormalizedBodyStyle	Generation	BodyCode	Doors	DIMENSION_GROUP_ID	MatchConfidence	Notes	IterationStatus。另需维护完整 DIMENSION_GROUP TSV，表头固定为：DIMENSION_GROUP_ID	LengthMM	WidthMM	HeightMM	DimensionSource	SourceURL。缺少任一张表、任一映射引用的尺寸组，或尺寸组字段不完整时不得 COMPLETE。不要输出子车系匹配表。
+【COMPLETE 下载文件硬性要求】
+准备 COMPLETE 时，除两张完整内嵌 TSV 外，还必须创建并提供以下两个可点击 sandbox 下载链接，文件名必须完全一致：
+- left18448_14601-14700_ktype_dimension_mapping_final.tsv
+- left18448_14601-14700_dimension_groups_final.tsv
+缺少任一下载链接时不得输出推进信号：COMPLETE。
+
+
+--- Round 34 / checkpoint 续跑 ---
+## 1）更新点
+
+本轮无新增或修改；`34125`、`34126` 继续保持 `PENDING`。
+
+## 2）当前批次进度
+
+READY=98；PENDING=2；revision=50
+
+## 3）本轮新增/修改的 Ktype 映射 TSV
+
+无
+
+## 4）本轮首次创建/修正的 DIMENSION_GROUP TSV
+
+无
+
+## 5）下一步优先处理
+
+仅处理 `34125`、`34126` 的 Messenger B120.55T 牵引车完整外廓；闭合后两条直接复用同一尺寸组并进入机械收尾。
+
+推进信号：CONTINUE
+
