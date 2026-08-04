@@ -1442,3 +1442,678 @@ EU-CITROEN-JUMPER-III-VAN-L4H3-01	6363	2050	2764	Citroën Jumper 2017 official d
 - left18448_3801-3900_dimension_groups_final.tsv
 缺少任一下载链接时不得输出推进信号：COMPLETE。
 
+
+--- Round 16 / checkpoint 续跑 ---
+ChatGPT 说：本轮先复用已闭合的 7 个 Jumper III Van 尺寸组，集中确认 2.2 HDi 与 3.0 HDi 各功率版本实际覆盖的 L/H 组合；只有分支边界，不再抓取三维。消息发送超时，请重试。
+
+
+--- 发送 / 推进信号纠偏 / Round 17 ---
+你的上一轮回复缺少正常推进信号。继续当前批次：尺寸组首次建档后必须复用；仅输出本轮新增/修改的 Ktype 映射行和首次创建/修正的 DIMENSION_GROUP 行，无变化明确写“无”，并给出下一步优先处理。未完成输出“推进信号：CONTINUE”；只有同一回复包含两张最终完整表且全部映射闭合时才可 COMPLETE。执行顺序固定为：第一阶段优先消除 PENDING 并补齐会阻塞两张最终表的数据。检测到 PENDING=0 后，第二阶段最多只做一次轻量机械收尾：核对固定表头、id 与 DIMENSION_GROUP_ID 唯一、映射引用闭合、长宽高和来源非空、两个任务指定下载链接齐全。第二阶段不得重新逐车型、逐年份或逐来源做深度检索，不得为了提高置信度反复核对，也不得因非阻塞的排序或措辞问题继续多轮。PENDING=0 后的下一条回复必须直接输出两张最终完整 TSV、两个精确 sandbox 下载链接，并以“推进信号：COMPLETE”结束；不要再输出 CONTINUE。Ktype 映射 TSV 表头必须严格使用 requirement 指定的字段顺序：id	Ktype	NormalizedBodyStyle	Generation	BodyCode	Doors	DIMENSION_GROUP_ID	MatchConfidence	Notes	IterationStatus。另需维护完整 DIMENSION_GROUP TSV，表头固定为：DIMENSION_GROUP_ID	LengthMM	WidthMM	HeightMM	DimensionSource	SourceURL。缺少任一张表、任一映射引用的尺寸组，或尺寸组字段不完整时不得 COMPLETE。不要输出子车系匹配表。
+【COMPLETE 下载文件硬性要求】
+准备 COMPLETE 时，除两张完整内嵌 TSV 外，还必须创建并提供以下两个可点击 sandbox 下载链接，文件名必须完全一致：
+- left18448_3801-3900_ktype_dimension_mapping_final.tsv
+- left18448_3801-3900_dimension_groups_final.tsv
+缺少任一下载链接时不得输出推进信号：COMPLETE。
+
+
+--- 对话分支 / Round 17 ---
+触发原因：ChatGPT 对话长度上限
+父对话：https://chatgpt.com/c/6a70aad4-10fc-83ee-9f68-1d569e45fcf9
+新分支：https://chatgpt.com/c/6a70d534-1b90-83ee-92e6-ffb8ade7e791
+
+--- Round 17 / checkpoint 续跑 ---
+## 更新点
+
+闭合 Jumper III 2.0 BlueHDi 客运 **L2H1/L2H2** 两组，以及前驱单排平台驾驶室 **L1/L2/L2S/L3/L4** 五组；`116486`、`116487`、`116488`、`120601`、`120602`、`120603` 转为 READY。客运分支及三维来自 Citroën 车型技术表；平台驾驶室分支由发动机适配矩阵确认，三维采用 Citroën 技术资料明确列出的不含后视镜宽度和驾驶室高度。
+
+## 当前批进度
+
+READY=46；PENDING=54；revision=19（按输入 Ktype 计）。
+
+## 本轮新增/修改的 Ktype TSV
+
+```tsv
+id	Ktype	NormalizedBodyStyle	Generation	BodyCode	Doors	DIMENSION_GROUP_ID	MatchConfidence	Notes	IterationStatus
+116486	116486	MPV	Jumper III			EU-CITROEN-JUMPER-III-MPV-L2H1-01	MEDIUM		READY
+116487_l2h1	116487	MPV	Jumper III			EU-CITROEN-JUMPER-III-MPV-L2H1-01	MEDIUM	L2H1客运外廓。	READY
+116487_l2h2	116487	MPV	Jumper III			EU-CITROEN-JUMPER-III-MPV-L2H2-01	MEDIUM	L2H2客运外廓。	READY
+116488_l2h1	116488	MPV	Jumper III			EU-CITROEN-JUMPER-III-MPV-L2H1-01	MEDIUM	L2H1客运外廓。	READY
+116488_l2h2	116488	MPV	Jumper III			EU-CITROEN-JUMPER-III-MPV-L2H2-01	MEDIUM	L2H2客运外廓。	READY
+120601_l1	120601	Pickup	Jumper III			EU-CITROEN-JUMPER-III-PLATFORM-CAB-L1-01	MEDIUM	L1平台驾驶室外廓。	READY
+120601_l2	120601	Pickup	Jumper III			EU-CITROEN-JUMPER-III-PLATFORM-CAB-L2-01	MEDIUM	L2平台驾驶室外廓。	READY
+120601_l2s	120601	Pickup	Jumper III			EU-CITROEN-JUMPER-III-PLATFORM-CAB-L2S-01	MEDIUM	L2S平台驾驶室外廓。	READY
+120602_l1	120602	Pickup	Jumper III			EU-CITROEN-JUMPER-III-PLATFORM-CAB-L1-01	MEDIUM	L1平台驾驶室外廓。	READY
+120602_l2	120602	Pickup	Jumper III			EU-CITROEN-JUMPER-III-PLATFORM-CAB-L2-01	MEDIUM	L2平台驾驶室外廓。	READY
+120602_l2s	120602	Pickup	Jumper III			EU-CITROEN-JUMPER-III-PLATFORM-CAB-L2S-01	MEDIUM	L2S平台驾驶室外廓。	READY
+120602_l3	120602	Pickup	Jumper III			EU-CITROEN-JUMPER-III-PLATFORM-CAB-L3-01	MEDIUM	L3平台驾驶室外廓。	READY
+120602_l4	120602	Pickup	Jumper III			EU-CITROEN-JUMPER-III-PLATFORM-CAB-L4-01	MEDIUM	L4平台驾驶室外廓。	READY
+120603_l1	120603	Pickup	Jumper III			EU-CITROEN-JUMPER-III-PLATFORM-CAB-L1-01	MEDIUM	L1平台驾驶室外廓。	READY
+120603_l2	120603	Pickup	Jumper III			EU-CITROEN-JUMPER-III-PLATFORM-CAB-L2-01	MEDIUM	L2平台驾驶室外廓。	READY
+120603_l2s	120603	Pickup	Jumper III			EU-CITROEN-JUMPER-III-PLATFORM-CAB-L2S-01	MEDIUM	L2S平台驾驶室外廓。	READY
+120603_l3	120603	Pickup	Jumper III			EU-CITROEN-JUMPER-III-PLATFORM-CAB-L3-01	MEDIUM	L3平台驾驶室外廓。	READY
+120603_l4	120603	Pickup	Jumper III			EU-CITROEN-JUMPER-III-PLATFORM-CAB-L4-01	MEDIUM	L4平台驾驶室外廓。	READY
+```
+
+## 本轮首次创建/修正的 DIMENSION_GROUP TSV
+
+```tsv
+DIMENSION_GROUP_ID	LengthMM	WidthMM	HeightMM	DimensionSource	SourceURL
+EU-CITROEN-JUMPER-III-MPV-L2H1-01	5413	2050	2254	Citroën Jumper Technical Characteristics, March 2016	https://www.attardigroup.it/sites/default/files/brochures/ct_jumper.225509.pdf
+EU-CITROEN-JUMPER-III-MPV-L2H2-01	5413	2050	2522	Citroën Jumper Technical Characteristics, March 2016	https://www.attardigroup.it/sites/default/files/brochures/ct_jumper.225509.pdf
+EU-CITROEN-JUMPER-III-PLATFORM-CAB-L1-01	4908	2050	2153	Citroën Jumper Technical Data, December 2016	https://www.fabian.hu/wp-content/uploads/2015/06/JUMPER_muszaki_12_16.pdf
+EU-CITROEN-JUMPER-III-PLATFORM-CAB-L2-01	5358	2050	2153	Citroën Jumper Technical Data, December 2016	https://www.fabian.hu/wp-content/uploads/2015/06/JUMPER_muszaki_12_16.pdf
+EU-CITROEN-JUMPER-III-PLATFORM-CAB-L2S-01	5708	2050	2153	Citroën Jumper Technical Data, December 2016	https://www.fabian.hu/wp-content/uploads/2015/06/JUMPER_muszaki_12_16.pdf
+EU-CITROEN-JUMPER-III-PLATFORM-CAB-L3-01	5943	2050	2153	Citroën Jumper Technical Data, December 2016	https://www.fabian.hu/wp-content/uploads/2015/06/JUMPER_muszaki_12_16.pdf
+EU-CITROEN-JUMPER-III-PLATFORM-CAB-L4-01	6308	2050	2153	Citroën Jumper Technical Data, December 2016	https://www.fabian.hu/wp-content/uploads/2015/06/JUMPER_muszaki_12_16.pdf
+```
+
+## 下一步优先处理
+
+优先处理 `122112`、`122113`、`122114` 的 Jumper III 4X4 外廓；随后将 2023+ BlueHDi、ë-Jumper 与 Hydrogen 的平台驾驶室或厢式 Ktype 按物理外廓批量关联。`16763_swb_highroof` 仅解决现有高度冲突，不重开其他已闭合分支。
+
+推进信号：CONTINUE
+
+
+--- 发送 / 继续到 Round 18 ---
+继续当前批次并采用缓存优先模式。尺寸组只在首次创建或纠错时完整核对一次三维和来源；后续 Ktype 只判断关联哪个现有 DIMENSION_GROUP_ID，不重复抓取，不输出缓存来源或匹配理由。仍有 PENDING 时，CONTINUE 轮仅输出：1) 更新点；2) 当前批次进度；3) 本轮新增/修改的 Ktype 映射 TSV（无变化写“无”）；4) 本轮首次创建/修正的 DIMENSION_GROUP TSV（复用既有组不重复输出，无变化写“无”）；5) 下一步优先处理。若当前或上一轮进度已经是 PENDING=0，本轮不要继续检索或再次输出 CONTINUE，必须立刻汇总并输出两张最终完整 TSV、两个任务指定 sandbox 下载链接和“推进信号：COMPLETE”。执行顺序固定为：第一阶段优先消除 PENDING 并补齐会阻塞两张最终表的数据。检测到 PENDING=0 后，第二阶段最多只做一次轻量机械收尾：核对固定表头、id 与 DIMENSION_GROUP_ID 唯一、映射引用闭合、长宽高和来源非空、两个任务指定下载链接齐全。第二阶段不得重新逐车型、逐年份或逐来源做深度检索，不得为了提高置信度反复核对，也不得因非阻塞的排序或措辞问题继续多轮。PENDING=0 后的下一条回复必须直接输出两张最终完整 TSV、两个精确 sandbox 下载链接，并以“推进信号：COMPLETE”结束；不要再输出 CONTINUE。Ktype 映射 TSV 表头必须严格使用 requirement 指定的字段顺序：id	Ktype	NormalizedBodyStyle	Generation	BodyCode	Doors	DIMENSION_GROUP_ID	MatchConfidence	Notes	IterationStatus。另需维护完整 DIMENSION_GROUP TSV，表头固定为：DIMENSION_GROUP_ID	LengthMM	WidthMM	HeightMM	DimensionSource	SourceURL。缺少任一张表、任一映射引用的尺寸组，或尺寸组字段不完整时不得 COMPLETE。不要输出子车系匹配表。
+【COMPLETE 下载文件硬性要求】
+准备 COMPLETE 时，除两张完整内嵌 TSV 外，还必须创建并提供以下两个可点击 sandbox 下载链接，文件名必须完全一致：
+- left18448_3801-3900_ktype_dimension_mapping_final.tsv
+- left18448_3801-3900_dimension_groups_final.tsv
+缺少任一下载链接时不得输出推进信号：COMPLETE。
+
+
+--- Round 18 / checkpoint 续跑 ---
+## 1) 更新点
+
+闭合 Jumper III 厢式车 **L1H1、L2H1、L2H2、L3H2、L3H3、L4H2、L4H3** 七个外廓；关联 `12058`、`12063`、`12066`、`33787`、`33788`、`12069` 和 `122113`。
+
+## 2) 当前批进度
+
+READY=53；PENDING=47；revision=20。
+
+## 3) 本轮新增/修改的 Ktype 映射 TSV
+
+```tsv
+id	Ktype	NormalizedBodyStyle	Generation	BodyCode	Doors	DIMENSION_GROUP_ID	MatchConfidence	Notes	IterationStatus
+12058_l1h1	12058	Van	Jumper III			EU-CITROEN-JUMPER-III-VAN-L1H1-01	MEDIUM	L1H1厢式外廓。	READY
+12058_l2h1	12058	Van	Jumper III			EU-CITROEN-JUMPER-III-VAN-L2H1-01	MEDIUM	L2H1厢式外廓。	READY
+12058_l2h2	12058	Van	Jumper III			EU-CITROEN-JUMPER-III-VAN-L2H2-01	MEDIUM	L2H2厢式外廓。	READY
+12058_l3h2	12058	Van	Jumper III			EU-CITROEN-JUMPER-III-VAN-L3H2-01	MEDIUM	L3H2厢式外廓。	READY
+12058_l3h3	12058	Van	Jumper III			EU-CITROEN-JUMPER-III-VAN-L3H3-01	MEDIUM	L3H3厢式外廓。	READY
+12058_l4h2	12058	Van	Jumper III			EU-CITROEN-JUMPER-III-VAN-L4H2-01	MEDIUM	L4H2厢式外廓。	READY
+12058_l4h3	12058	Van	Jumper III			EU-CITROEN-JUMPER-III-VAN-L4H3-01	MEDIUM	L4H3厢式外廓。	READY
+12063_l1h1	12063	Van	Jumper III			EU-CITROEN-JUMPER-III-VAN-L1H1-01	MEDIUM	L1H1厢式外廓。	READY
+12063_l2h1	12063	Van	Jumper III			EU-CITROEN-JUMPER-III-VAN-L2H1-01	MEDIUM	L2H1厢式外廓。	READY
+12063_l2h2	12063	Van	Jumper III			EU-CITROEN-JUMPER-III-VAN-L2H2-01	MEDIUM	L2H2厢式外廓。	READY
+12063_l3h2	12063	Van	Jumper III			EU-CITROEN-JUMPER-III-VAN-L3H2-01	MEDIUM	L3H2厢式外廓。	READY
+12063_l3h3	12063	Van	Jumper III			EU-CITROEN-JUMPER-III-VAN-L3H3-01	MEDIUM	L3H3厢式外廓。	READY
+12063_l4h2	12063	Van	Jumper III			EU-CITROEN-JUMPER-III-VAN-L4H2-01	MEDIUM	L4H2厢式外廓。	READY
+12063_l4h3	12063	Van	Jumper III			EU-CITROEN-JUMPER-III-VAN-L4H3-01	MEDIUM	L4H3厢式外廓。	READY
+12066_l1h1	12066	Van	Jumper III			EU-CITROEN-JUMPER-III-VAN-L1H1-01	MEDIUM	L1H1厢式外廓。	READY
+12066_l2h1	12066	Van	Jumper III			EU-CITROEN-JUMPER-III-VAN-L2H1-01	MEDIUM	L2H1厢式外廓。	READY
+12066_l2h2	12066	Van	Jumper III			EU-CITROEN-JUMPER-III-VAN-L2H2-01	MEDIUM	L2H2厢式外廓。	READY
+12066_l3h2	12066	Van	Jumper III			EU-CITROEN-JUMPER-III-VAN-L3H2-01	MEDIUM	L3H2厢式外廓。	READY
+12066_l3h3	12066	Van	Jumper III			EU-CITROEN-JUMPER-III-VAN-L3H3-01	MEDIUM	L3H3厢式外廓。	READY
+12066_l4h2	12066	Van	Jumper III			EU-CITROEN-JUMPER-III-VAN-L4H2-01	MEDIUM	L4H2厢式外廓。	READY
+12066_l4h3	12066	Van	Jumper III			EU-CITROEN-JUMPER-III-VAN-L4H3-01	MEDIUM	L4H3厢式外廓。	READY
+33787_l1h1	33787	Van	Jumper III			EU-CITROEN-JUMPER-III-VAN-L1H1-01	MEDIUM	L1H1厢式外廓。	READY
+33787_l2h1	33787	Van	Jumper III			EU-CITROEN-JUMPER-III-VAN-L2H1-01	MEDIUM	L2H1厢式外廓。	READY
+33787_l2h2	33787	Van	Jumper III			EU-CITROEN-JUMPER-III-VAN-L2H2-01	MEDIUM	L2H2厢式外廓。	READY
+33787_l3h2	33787	Van	Jumper III			EU-CITROEN-JUMPER-III-VAN-L3H2-01	MEDIUM	L3H2厢式外廓。	READY
+33787_l3h3	33787	Van	Jumper III			EU-CITROEN-JUMPER-III-VAN-L3H3-01	MEDIUM	L3H3厢式外廓。	READY
+33787_l4h2	33787	Van	Jumper III			EU-CITROEN-JUMPER-III-VAN-L4H2-01	MEDIUM	L4H2厢式外廓。	READY
+33787_l4h3	33787	Van	Jumper III			EU-CITROEN-JUMPER-III-VAN-L4H3-01	MEDIUM	L4H3厢式外廓。	READY
+33788_l1h1	33788	Van	Jumper III			EU-CITROEN-JUMPER-III-VAN-L1H1-01	MEDIUM	L1H1厢式外廓。	READY
+33788_l2h1	33788	Van	Jumper III			EU-CITROEN-JUMPER-III-VAN-L2H1-01	MEDIUM	L2H1厢式外廓。	READY
+33788_l2h2	33788	Van	Jumper III			EU-CITROEN-JUMPER-III-VAN-L2H2-01	MEDIUM	L2H2厢式外廓。	READY
+33788_l3h2	33788	Van	Jumper III			EU-CITROEN-JUMPER-III-VAN-L3H2-01	MEDIUM	L3H2厢式外廓。	READY
+33788_l3h3	33788	Van	Jumper III			EU-CITROEN-JUMPER-III-VAN-L3H3-01	MEDIUM	L3H3厢式外廓。	READY
+33788_l4h2	33788	Van	Jumper III			EU-CITROEN-JUMPER-III-VAN-L4H2-01	MEDIUM	L4H2厢式外廓。	READY
+33788_l4h3	33788	Van	Jumper III			EU-CITROEN-JUMPER-III-VAN-L4H3-01	MEDIUM	L4H3厢式外廓。	READY
+12069_l1h1	12069	Van	Jumper III			EU-CITROEN-JUMPER-III-VAN-L1H1-01	MEDIUM	L1H1厢式外廓。	READY
+12069_l2h1	12069	Van	Jumper III			EU-CITROEN-JUMPER-III-VAN-L2H1-01	MEDIUM	L2H1厢式外廓。	READY
+12069_l2h2	12069	Van	Jumper III			EU-CITROEN-JUMPER-III-VAN-L2H2-01	MEDIUM	L2H2厢式外廓。	READY
+12069_l3h2	12069	Van	Jumper III			EU-CITROEN-JUMPER-III-VAN-L3H2-01	MEDIUM	L3H2厢式外廓。	READY
+12069_l3h3	12069	Van	Jumper III			EU-CITROEN-JUMPER-III-VAN-L3H3-01	MEDIUM	L3H3厢式外廓。	READY
+12069_l4h2	12069	Van	Jumper III			EU-CITROEN-JUMPER-III-VAN-L4H2-01	MEDIUM	L4H2厢式外廓。	READY
+12069_l4h3	12069	Van	Jumper III			EU-CITROEN-JUMPER-III-VAN-L4H3-01	MEDIUM	L4H3厢式外廓。	READY
+122113_l1h1	122113	Van	Jumper III			EU-CITROEN-JUMPER-III-VAN-L1H1-01	MEDIUM	L1H1厢式外廓。	READY
+122113_l2h1	122113	Van	Jumper III			EU-CITROEN-JUMPER-III-VAN-L2H1-01	MEDIUM	L2H1厢式外廓。	READY
+122113_l2h2	122113	Van	Jumper III			EU-CITROEN-JUMPER-III-VAN-L2H2-01	MEDIUM	L2H2厢式外廓。	READY
+122113_l3h2	122113	Van	Jumper III			EU-CITROEN-JUMPER-III-VAN-L3H2-01	MEDIUM	L3H2厢式外廓。	READY
+122113_l3h3	122113	Van	Jumper III			EU-CITROEN-JUMPER-III-VAN-L3H3-01	MEDIUM	L3H3厢式外廓。	READY
+122113_l4h2	122113	Van	Jumper III			EU-CITROEN-JUMPER-III-VAN-L4H2-01	MEDIUM	L4H2厢式外廓。	READY
+122113_l4h3	122113	Van	Jumper III			EU-CITROEN-JUMPER-III-VAN-L4H3-01	MEDIUM	L4H3厢式外廓。	READY
+```
+
+## 4) 本轮首次创建/修正的 DIMENSION_GROUP TSV
+
+```tsv
+DIMENSION_GROUP_ID	LengthMM	WidthMM	HeightMM	DimensionSource	SourceURL
+EU-CITROEN-JUMPER-III-VAN-L1H1-01	4963	2050	2254	Citroën Jumper 2017 Technical Data	https://westrum.no/wp-content/uploads/2017/08/Citroen-Jumper-2017-utdrag-tekniske-data.pdf
+EU-CITROEN-JUMPER-III-VAN-L2H1-01	5413	2050	2254	Citroën Jumper 2017 Technical Data	https://westrum.no/wp-content/uploads/2017/08/Citroen-Jumper-2017-utdrag-tekniske-data.pdf
+EU-CITROEN-JUMPER-III-VAN-L2H2-01	5413	2050	2524	Citroën Jumper 2017 Technical Data	https://westrum.no/wp-content/uploads/2017/08/Citroen-Jumper-2017-utdrag-tekniske-data.pdf
+EU-CITROEN-JUMPER-III-VAN-L3H2-01	5998	2050	2524	Citroën Jumper 2017 Technical Data	https://westrum.no/wp-content/uploads/2017/08/Citroen-Jumper-2017-utdrag-tekniske-data.pdf
+EU-CITROEN-JUMPER-III-VAN-L3H3-01	5998	2050	2764	Citroën Jumper 2017 Technical Data	https://westrum.no/wp-content/uploads/2017/08/Citroen-Jumper-2017-utdrag-tekniske-data.pdf
+EU-CITROEN-JUMPER-III-VAN-L4H2-01	6363	2050	2524	Citroën Jumper 2017 Technical Data	https://westrum.no/wp-content/uploads/2017/08/Citroen-Jumper-2017-utdrag-tekniske-data.pdf
+EU-CITROEN-JUMPER-III-VAN-L4H3-01	6363	2050	2764	Citroën Jumper 2017 Technical Data	https://westrum.no/wp-content/uploads/2017/08/Citroen-Jumper-2017-utdrag-tekniske-data.pdf
+```
+
+## 5) 下一步优先处理
+
+优先将 `12060`、`12064`、`12067`、`33790`、`12070` 及 2023+ 平台驾驶室 Ktype 关联现有平台驾驶室尺寸组；同时保留 `122112`、`122114` 的驾驶室分支边界检查。
+
+推进信号：CONTINUE
+
+
+--- 发送 / 继续到 Round 19 ---
+继续当前批次并采用缓存优先模式。尺寸组只在首次创建或纠错时完整核对一次三维和来源；后续 Ktype 只判断关联哪个现有 DIMENSION_GROUP_ID，不重复抓取，不输出缓存来源或匹配理由。仍有 PENDING 时，CONTINUE 轮仅输出：1) 更新点；2) 当前批次进度；3) 本轮新增/修改的 Ktype 映射 TSV（无变化写“无”）；4) 本轮首次创建/修正的 DIMENSION_GROUP TSV（复用既有组不重复输出，无变化写“无”）；5) 下一步优先处理。若当前或上一轮进度已经是 PENDING=0，本轮不要继续检索或再次输出 CONTINUE，必须立刻汇总并输出两张最终完整 TSV、两个任务指定 sandbox 下载链接和“推进信号：COMPLETE”。执行顺序固定为：第一阶段优先消除 PENDING 并补齐会阻塞两张最终表的数据。检测到 PENDING=0 后，第二阶段最多只做一次轻量机械收尾：核对固定表头、id 与 DIMENSION_GROUP_ID 唯一、映射引用闭合、长宽高和来源非空、两个任务指定下载链接齐全。第二阶段不得重新逐车型、逐年份或逐来源做深度检索，不得为了提高置信度反复核对，也不得因非阻塞的排序或措辞问题继续多轮。PENDING=0 后的下一条回复必须直接输出两张最终完整 TSV、两个精确 sandbox 下载链接，并以“推进信号：COMPLETE”结束；不要再输出 CONTINUE。Ktype 映射 TSV 表头必须严格使用 requirement 指定的字段顺序：id	Ktype	NormalizedBodyStyle	Generation	BodyCode	Doors	DIMENSION_GROUP_ID	MatchConfidence	Notes	IterationStatus。另需维护完整 DIMENSION_GROUP TSV，表头固定为：DIMENSION_GROUP_ID	LengthMM	WidthMM	HeightMM	DimensionSource	SourceURL。缺少任一张表、任一映射引用的尺寸组，或尺寸组字段不完整时不得 COMPLETE。不要输出子车系匹配表。
+【COMPLETE 下载文件硬性要求】
+准备 COMPLETE 时，除两张完整内嵌 TSV 外，还必须创建并提供以下两个可点击 sandbox 下载链接，文件名必须完全一致：
+- left18448_3801-3900_ktype_dimension_mapping_final.tsv
+- left18448_3801-3900_dimension_groups_final.tsv
+缺少任一下载链接时不得输出推进信号：COMPLETE。
+
+
+--- Round 19 / checkpoint 续跑 ---
+## 1) 更新点
+
+批量闭合 12 个 Jumper III 平台驾驶室 Ktype：`122112`、`122114`、`12060`、`12064`、`12067`、`33790`、`12070`、`157424`、`157425`、`157426`、`150977`、`157423`。2023+ 柴油平台驾驶室关联 L2/L3，电动平台驾驶室关联 L3。
+
+## 2) 当前批进度
+
+READY=65；PENDING=35；revision=21。
+
+## 3) 本轮新增/修改的 Ktype 映射 TSV
+
+```tsv
+id	Ktype	NormalizedBodyStyle	Generation	BodyCode	Doors	DIMENSION_GROUP_ID	MatchConfidence	Notes	IterationStatus
+122114_l1	122114	Pickup	Jumper III			EU-CITROEN-JUMPER-III-PLATFORM-CAB-L1-01	MEDIUM	L1平台驾驶室外廓。	READY
+122114_l2	122114	Pickup	Jumper III			EU-CITROEN-JUMPER-III-PLATFORM-CAB-L2-01	MEDIUM	L2平台驾驶室外廓。	READY
+122114_l2s	122114	Pickup	Jumper III			EU-CITROEN-JUMPER-III-PLATFORM-CAB-L2S-01	MEDIUM	L2S平台驾驶室外廓。	READY
+122114_l3	122114	Pickup	Jumper III			EU-CITROEN-JUMPER-III-PLATFORM-CAB-L3-01	MEDIUM	L3平台驾驶室外廓。	READY
+122114_l4	122114	Pickup	Jumper III			EU-CITROEN-JUMPER-III-PLATFORM-CAB-L4-01	MEDIUM	L4平台驾驶室外廓。	READY
+122112_l1	122112	Pickup	Jumper III			EU-CITROEN-JUMPER-III-PLATFORM-CAB-L1-01	MEDIUM	L1平台驾驶室外廓。	READY
+122112_l2	122112	Pickup	Jumper III			EU-CITROEN-JUMPER-III-PLATFORM-CAB-L2-01	MEDIUM	L2平台驾驶室外廓。	READY
+122112_l2s	122112	Pickup	Jumper III			EU-CITROEN-JUMPER-III-PLATFORM-CAB-L2S-01	MEDIUM	L2S平台驾驶室外廓。	READY
+122112_l3	122112	Pickup	Jumper III			EU-CITROEN-JUMPER-III-PLATFORM-CAB-L3-01	MEDIUM	L3平台驾驶室外廓。	READY
+122112_l4	122112	Pickup	Jumper III			EU-CITROEN-JUMPER-III-PLATFORM-CAB-L4-01	MEDIUM	L4平台驾驶室外廓。	READY
+12060_l1	12060	Pickup	Jumper III			EU-CITROEN-JUMPER-III-PLATFORM-CAB-L1-01	MEDIUM	L1平台驾驶室外廓。	READY
+12060_l2	12060	Pickup	Jumper III			EU-CITROEN-JUMPER-III-PLATFORM-CAB-L2-01	MEDIUM	L2平台驾驶室外廓。	READY
+12060_l2s	12060	Pickup	Jumper III			EU-CITROEN-JUMPER-III-PLATFORM-CAB-L2S-01	MEDIUM	L2S平台驾驶室外廓。	READY
+12064_l1	12064	Pickup	Jumper III			EU-CITROEN-JUMPER-III-PLATFORM-CAB-L1-01	MEDIUM	L1平台驾驶室外廓。	READY
+12064_l2	12064	Pickup	Jumper III			EU-CITROEN-JUMPER-III-PLATFORM-CAB-L2-01	MEDIUM	L2平台驾驶室外廓。	READY
+12064_l2s	12064	Pickup	Jumper III			EU-CITROEN-JUMPER-III-PLATFORM-CAB-L2S-01	MEDIUM	L2S平台驾驶室外廓。	READY
+12064_l3	12064	Pickup	Jumper III			EU-CITROEN-JUMPER-III-PLATFORM-CAB-L3-01	MEDIUM	L3平台驾驶室外廓。	READY
+12064_l4	12064	Pickup	Jumper III			EU-CITROEN-JUMPER-III-PLATFORM-CAB-L4-01	MEDIUM	L4平台驾驶室外廓。	READY
+12067_l1	12067	Pickup	Jumper III			EU-CITROEN-JUMPER-III-PLATFORM-CAB-L1-01	MEDIUM	L1平台驾驶室外廓。	READY
+12067_l2	12067	Pickup	Jumper III			EU-CITROEN-JUMPER-III-PLATFORM-CAB-L2-01	MEDIUM	L2平台驾驶室外廓。	READY
+12067_l2s	12067	Pickup	Jumper III			EU-CITROEN-JUMPER-III-PLATFORM-CAB-L2S-01	MEDIUM	L2S平台驾驶室外廓。	READY
+12067_l3	12067	Pickup	Jumper III			EU-CITROEN-JUMPER-III-PLATFORM-CAB-L3-01	MEDIUM	L3平台驾驶室外廓。	READY
+12067_l4	12067	Pickup	Jumper III			EU-CITROEN-JUMPER-III-PLATFORM-CAB-L4-01	MEDIUM	L4平台驾驶室外廓。	READY
+33790_l1	33790	Pickup	Jumper III			EU-CITROEN-JUMPER-III-PLATFORM-CAB-L1-01	MEDIUM	L1平台驾驶室外廓。	READY
+33790_l2	33790	Pickup	Jumper III			EU-CITROEN-JUMPER-III-PLATFORM-CAB-L2-01	MEDIUM	L2平台驾驶室外廓。	READY
+33790_l2s	33790	Pickup	Jumper III			EU-CITROEN-JUMPER-III-PLATFORM-CAB-L2S-01	MEDIUM	L2S平台驾驶室外廓。	READY
+33790_l3	33790	Pickup	Jumper III			EU-CITROEN-JUMPER-III-PLATFORM-CAB-L3-01	MEDIUM	L3平台驾驶室外廓。	READY
+33790_l4	33790	Pickup	Jumper III			EU-CITROEN-JUMPER-III-PLATFORM-CAB-L4-01	MEDIUM	L4平台驾驶室外廓。	READY
+12070_l1	12070	Pickup	Jumper III			EU-CITROEN-JUMPER-III-PLATFORM-CAB-L1-01	MEDIUM	L1平台驾驶室外廓。	READY
+12070_l2	12070	Pickup	Jumper III			EU-CITROEN-JUMPER-III-PLATFORM-CAB-L2-01	MEDIUM	L2平台驾驶室外廓。	READY
+12070_l2s	12070	Pickup	Jumper III			EU-CITROEN-JUMPER-III-PLATFORM-CAB-L2S-01	MEDIUM	L2S平台驾驶室外廓。	READY
+12070_l3	12070	Pickup	Jumper III			EU-CITROEN-JUMPER-III-PLATFORM-CAB-L3-01	MEDIUM	L3平台驾驶室外廓。	READY
+12070_l4	12070	Pickup	Jumper III			EU-CITROEN-JUMPER-III-PLATFORM-CAB-L4-01	MEDIUM	L4平台驾驶室外廓。	READY
+157424_l2	157424	Pickup	Jumper III			EU-CITROEN-JUMPER-III-PLATFORM-CAB-L2-01	MEDIUM	L2平台驾驶室外廓。	READY
+157424_l3	157424	Pickup	Jumper III			EU-CITROEN-JUMPER-III-PLATFORM-CAB-L3-01	MEDIUM	L3平台驾驶室外廓。	READY
+157425_l2	157425	Pickup	Jumper III			EU-CITROEN-JUMPER-III-PLATFORM-CAB-L2-01	MEDIUM	L2平台驾驶室外廓。	READY
+157425_l3	157425	Pickup	Jumper III			EU-CITROEN-JUMPER-III-PLATFORM-CAB-L3-01	MEDIUM	L3平台驾驶室外廓。	READY
+157426_l2	157426	Pickup	Jumper III			EU-CITROEN-JUMPER-III-PLATFORM-CAB-L2-01	MEDIUM	L2平台驾驶室外廓。	READY
+157426_l3	157426	Pickup	Jumper III			EU-CITROEN-JUMPER-III-PLATFORM-CAB-L3-01	MEDIUM	L3平台驾驶室外廓。	READY
+150977	150977	Pickup	Jumper III			EU-CITROEN-JUMPER-III-PLATFORM-CAB-L3-01	MEDIUM	L3平台驾驶室外廓。	READY
+157423	157423	Pickup	Jumper III			EU-CITROEN-JUMPER-III-PLATFORM-CAB-L3-01	MEDIUM	L3平台驾驶室外廓。	READY
+```
+
+## 4) 本轮首次创建/修正的 DIMENSION_GROUP TSV
+
+无
+
+## 5) 下一步优先处理
+
+优先将 `12057`、`12062`、`12065`、`34964`、`12068` 的客运车身关联已闭合 Jumper III MPV/Van 外廓；随后处理 `145319`、`157422`、`802127` 的电动及氢能厢式外廓。
+
+推进信号：CONTINUE
+
+
+--- 发送 / 继续到 Round 20 ---
+继续当前批次并采用缓存优先模式。尺寸组只在首次创建或纠错时完整核对一次三维和来源；后续 Ktype 只判断关联哪个现有 DIMENSION_GROUP_ID，不重复抓取，不输出缓存来源或匹配理由。仍有 PENDING 时，CONTINUE 轮仅输出：1) 更新点；2) 当前批次进度；3) 本轮新增/修改的 Ktype 映射 TSV（无变化写“无”）；4) 本轮首次创建/修正的 DIMENSION_GROUP TSV（复用既有组不重复输出，无变化写“无”）；5) 下一步优先处理。若当前或上一轮进度已经是 PENDING=0，本轮不要继续检索或再次输出 CONTINUE，必须立刻汇总并输出两张最终完整 TSV、两个任务指定 sandbox 下载链接和“推进信号：COMPLETE”。执行顺序固定为：第一阶段优先消除 PENDING 并补齐会阻塞两张最终表的数据。检测到 PENDING=0 后，第二阶段最多只做一次轻量机械收尾：核对固定表头、id 与 DIMENSION_GROUP_ID 唯一、映射引用闭合、长宽高和来源非空、两个任务指定下载链接齐全。第二阶段不得重新逐车型、逐年份或逐来源做深度检索，不得为了提高置信度反复核对，也不得因非阻塞的排序或措辞问题继续多轮。PENDING=0 后的下一条回复必须直接输出两张最终完整 TSV、两个精确 sandbox 下载链接，并以“推进信号：COMPLETE”结束；不要再输出 CONTINUE。Ktype 映射 TSV 表头必须严格使用 requirement 指定的字段顺序：id	Ktype	NormalizedBodyStyle	Generation	BodyCode	Doors	DIMENSION_GROUP_ID	MatchConfidence	Notes	IterationStatus。另需维护完整 DIMENSION_GROUP TSV，表头固定为：DIMENSION_GROUP_ID	LengthMM	WidthMM	HeightMM	DimensionSource	SourceURL。缺少任一张表、任一映射引用的尺寸组，或尺寸组字段不完整时不得 COMPLETE。不要输出子车系匹配表。
+【COMPLETE 下载文件硬性要求】
+准备 COMPLETE 时，除两张完整内嵌 TSV 外，还必须创建并提供以下两个可点击 sandbox 下载链接，文件名必须完全一致：
+- left18448_3801-3900_ktype_dimension_mapping_final.tsv
+- left18448_3801-3900_dimension_groups_final.tsv
+缺少任一下载链接时不得输出推进信号：COMPLETE。
+
+
+--- Round 20 / checkpoint 续跑 ---
+## 1) 更新点
+
+关联 Jumper III 客运 **L1H1/L2H2** 缓存外廓，完成 `12057`、`12062`、`12065`、`34964`、`12068` 共 5 个 Ktype；其中仅有明确双外廓证据的 110/130 版本拆分，其他版本保留单行。([终极规格][1])
+
+## 2) 当前批进度
+
+READY=70；PENDING=30；revision=22。
+
+## 3) 本轮新增/修改的 Ktype 映射 TSV
+
+```tsv
+id	Ktype	NormalizedBodyStyle	Generation	BodyCode	Doors	DIMENSION_GROUP_ID	MatchConfidence	Notes	IterationStatus
+12057_l1h1	12057	MPV	Jumper III			EU-CITROEN-JUMPER-III-VAN-L1H1-01	MEDIUM	L1H1客运外廓。	READY
+12057_l2h2	12057	MPV	Jumper III			EU-CITROEN-JUMPER-III-MPV-L2H2-01	MEDIUM	L2H2客运外廓。	READY
+12062_l1h1	12062	MPV	Jumper III			EU-CITROEN-JUMPER-III-VAN-L1H1-01	MEDIUM	L1H1客运外廓。	READY
+12062_l2h2	12062	MPV	Jumper III			EU-CITROEN-JUMPER-III-MPV-L2H2-01	MEDIUM	L2H2客运外廓。	READY
+12065	12065	MPV	Jumper III			EU-CITROEN-JUMPER-III-MPV-L2H2-01	MEDIUM	L2H2客运外廓。	READY
+34964	34964	MPV	Jumper III			EU-CITROEN-JUMPER-III-MPV-L2H2-01	MEDIUM	标准客运外廓按L2H2关联。	READY
+12068	12068	MPV	Jumper III			EU-CITROEN-JUMPER-III-MPV-L2H2-01	MEDIUM	标准客运外廓按L2H2关联。	READY
+```
+
+## 4) 本轮首次创建/修正的 DIMENSION_GROUP TSV
+
+无
+
+## 5) 下一步优先处理
+
+优先处理 `145319`、`157422`、`802127` 的电动及氢能厢式外廓，再处理 Jumper I 平台驾驶室缓存关联和 `16763_swb_highroof` 的唯一阻塞冲突。
+
+推进信号：CONTINUE
+
+[1]: https://www.ultimatespecs.com/car-specs/citroen/M6938/jumper-combi?utm_source=chatgpt.com "Specs for all Citroen Jumper Combi versions"
+
+
+--- 发送 / 继续到 Round 21 ---
+继续当前批次并采用缓存优先模式。尺寸组只在首次创建或纠错时完整核对一次三维和来源；后续 Ktype 只判断关联哪个现有 DIMENSION_GROUP_ID，不重复抓取，不输出缓存来源或匹配理由。仍有 PENDING 时，CONTINUE 轮仅输出：1) 更新点；2) 当前批次进度；3) 本轮新增/修改的 Ktype 映射 TSV（无变化写“无”）；4) 本轮首次创建/修正的 DIMENSION_GROUP TSV（复用既有组不重复输出，无变化写“无”）；5) 下一步优先处理。若当前或上一轮进度已经是 PENDING=0，本轮不要继续检索或再次输出 CONTINUE，必须立刻汇总并输出两张最终完整 TSV、两个任务指定 sandbox 下载链接和“推进信号：COMPLETE”。执行顺序固定为：第一阶段优先消除 PENDING 并补齐会阻塞两张最终表的数据。检测到 PENDING=0 后，第二阶段最多只做一次轻量机械收尾：核对固定表头、id 与 DIMENSION_GROUP_ID 唯一、映射引用闭合、长宽高和来源非空、两个任务指定下载链接齐全。第二阶段不得重新逐车型、逐年份或逐来源做深度检索，不得为了提高置信度反复核对，也不得因非阻塞的排序或措辞问题继续多轮。PENDING=0 后的下一条回复必须直接输出两张最终完整 TSV、两个精确 sandbox 下载链接，并以“推进信号：COMPLETE”结束；不要再输出 CONTINUE。Ktype 映射 TSV 表头必须严格使用 requirement 指定的字段顺序：id	Ktype	NormalizedBodyStyle	Generation	BodyCode	Doors	DIMENSION_GROUP_ID	MatchConfidence	Notes	IterationStatus。另需维护完整 DIMENSION_GROUP TSV，表头固定为：DIMENSION_GROUP_ID	LengthMM	WidthMM	HeightMM	DimensionSource	SourceURL。缺少任一张表、任一映射引用的尺寸组，或尺寸组字段不完整时不得 COMPLETE。不要输出子车系匹配表。
+【COMPLETE 下载文件硬性要求】
+准备 COMPLETE 时，除两张完整内嵌 TSV 外，还必须创建并提供以下两个可点击 sandbox 下载链接，文件名必须完全一致：
+- left18448_3801-3900_ktype_dimension_mapping_final.tsv
+- left18448_3801-3900_dimension_groups_final.tsv
+缺少任一下载链接时不得输出推进信号：COMPLETE。
+
+
+--- Round 21 / checkpoint 续跑 ---
+## 1) 更新点
+
+完成 `145319`、`157422`、`802127` 三个新能源厢式 Ktype：旧款 ë-Jumper 关联五个已闭合外廓；2023+ ë-Jumper 关联 L3H3、L4H2、L4H3；ë-Jumper Hydrogen 关联 L3H2、L4H3。全部复用现有尺寸组，未重新核对三维。([Stellantis Media][1])
+
+## 2) 当前批进度
+
+READY=73；PENDING=27；revision=23。
+
+## 3) 本轮新增/修改的 Ktype 映射 TSV
+
+```tsv
+id	Ktype	NormalizedBodyStyle	Generation	BodyCode	Doors	DIMENSION_GROUP_ID	MatchConfidence	Notes	IterationStatus
+145319_l1h1	145319	Van	Jumper III			EU-CITROEN-JUMPER-III-VAN-L1H1-01	HIGH	L1H1电动厢式外廓。	READY
+145319_l2h2	145319	Van	Jumper III			EU-CITROEN-JUMPER-III-VAN-L2H2-01	HIGH	L2H2电动厢式外廓。	READY
+145319_l3h2	145319	Van	Jumper III			EU-CITROEN-JUMPER-III-VAN-L3H2-01	HIGH	L3H2电动厢式外廓。	READY
+145319_l4h2	145319	Van	Jumper III			EU-CITROEN-JUMPER-III-VAN-L4H2-01	HIGH	L4H2电动厢式外廓。	READY
+145319_l4h3	145319	Van	Jumper III			EU-CITROEN-JUMPER-III-VAN-L4H3-01	HIGH	L4H3电动厢式外廓。	READY
+157422_l3h3	157422	Van	Jumper III			EU-CITROEN-JUMPER-III-VAN-L3H3-01	MEDIUM	L3H3新款电动厢式外廓。	READY
+157422_l4h2	157422	Van	Jumper III			EU-CITROEN-JUMPER-III-VAN-L4H2-01	MEDIUM	L4H2新款电动厢式外廓。	READY
+157422_l4h3	157422	Van	Jumper III			EU-CITROEN-JUMPER-III-VAN-L4H3-01	MEDIUM	L4H3新款电动厢式外廓。	READY
+802127_l3h2	802127	Van	Jumper III			EU-CITROEN-JUMPER-III-VAN-L3H2-01	MEDIUM	L3H2氢燃料厢式外廓。	READY
+802127_l4h3	802127	Van	Jumper III			EU-CITROEN-JUMPER-III-VAN-L4H3-01	MEDIUM	L4H3氢燃料厢式外廓。	READY
+```
+
+## 4) 本轮首次创建/修正的 DIMENSION_GROUP TSV
+
+无
+
+## 5) 下一步优先处理
+
+优先批量处理 Jumper I 平台驾驶室 `14378`、`14206`、`14377`、`11039`、`15086`、`11040`、`14401`、`15087`；仅为尚无缓存覆盖的轴距外廓创建尺寸组。随后解决 `16763_swb_highroof` 高度冲突。
+
+推进信号：CONTINUE
+
+[1]: https://www.media.stellantis.com/em-en/citroen/press/new-citroen-e-jumper-a-payload-up-to-17-m-in-100-electric-mode "NEW CITROËN Ë-JUMPER : A PAYLOAD UP TO 17 M³ IN 100% ËLECTRIC MODE | Citroën | Stellantis Media"
+
+
+--- 发送 / 继续到 Round 22 ---
+继续当前批次并采用缓存优先模式。尺寸组只在首次创建或纠错时完整核对一次三维和来源；后续 Ktype 只判断关联哪个现有 DIMENSION_GROUP_ID，不重复抓取，不输出缓存来源或匹配理由。仍有 PENDING 时，CONTINUE 轮仅输出：1) 更新点；2) 当前批次进度；3) 本轮新增/修改的 Ktype 映射 TSV（无变化写“无”）；4) 本轮首次创建/修正的 DIMENSION_GROUP TSV（复用既有组不重复输出，无变化写“无”）；5) 下一步优先处理。若当前或上一轮进度已经是 PENDING=0，本轮不要继续检索或再次输出 CONTINUE，必须立刻汇总并输出两张最终完整 TSV、两个任务指定 sandbox 下载链接和“推进信号：COMPLETE”。执行顺序固定为：第一阶段优先消除 PENDING 并补齐会阻塞两张最终表的数据。检测到 PENDING=0 后，第二阶段最多只做一次轻量机械收尾：核对固定表头、id 与 DIMENSION_GROUP_ID 唯一、映射引用闭合、长宽高和来源非空、两个任务指定下载链接齐全。第二阶段不得重新逐车型、逐年份或逐来源做深度检索，不得为了提高置信度反复核对，也不得因非阻塞的排序或措辞问题继续多轮。PENDING=0 后的下一条回复必须直接输出两张最终完整 TSV、两个精确 sandbox 下载链接，并以“推进信号：COMPLETE”结束；不要再输出 CONTINUE。Ktype 映射 TSV 表头必须严格使用 requirement 指定的字段顺序：id	Ktype	NormalizedBodyStyle	Generation	BodyCode	Doors	DIMENSION_GROUP_ID	MatchConfidence	Notes	IterationStatus。另需维护完整 DIMENSION_GROUP TSV，表头固定为：DIMENSION_GROUP_ID	LengthMM	WidthMM	HeightMM	DimensionSource	SourceURL。缺少任一张表、任一映射引用的尺寸组，或尺寸组字段不完整时不得 COMPLETE。不要输出子车系匹配表。
+【COMPLETE 下载文件硬性要求】
+准备 COMPLETE 时，除两张完整内嵌 TSV 外，还必须创建并提供以下两个可点击 sandbox 下载链接，文件名必须完全一致：
+- left18448_3801-3900_ktype_dimension_mapping_final.tsv
+- left18448_3801-3900_dimension_groups_final.tsv
+缺少任一下载链接时不得输出推进信号：COMPLETE。
+
+
+--- Round 22 / checkpoint 续跑 ---
+## 1) 更新点
+
+闭合 Jumper I `230` 前驱平台驾驶室标准中轴外廓，并关联 `14378`、`14206`、`14377`、`11039`、`11040`、`14401` 六个 Ktype。([ParuVendu][1])
+
+## 2) 当前批次进度
+
+READY=79；PENDING=21；revision=24。
+
+## 3) 本轮新增/修改的 Ktype 映射 TSV
+
+```tsv
+id	Ktype	NormalizedBodyStyle	Generation	BodyCode	Doors	DIMENSION_GROUP_ID	MatchConfidence	Notes	IterationStatus
+14378	14378	Pickup	Jumper I	230	2	EU-CITROEN-JUMPER-I-230-PLATFORM-CAB-MWB-01	MEDIUM	按标准中轴平台驾驶室外廓关联。	READY
+14206	14206	Pickup	Jumper I	230	2	EU-CITROEN-JUMPER-I-230-PLATFORM-CAB-MWB-01	MEDIUM	按标准中轴平台驾驶室外廓关联。	READY
+14377	14377	Pickup	Jumper I	230	2	EU-CITROEN-JUMPER-I-230-PLATFORM-CAB-MWB-01	MEDIUM	按标准中轴平台驾驶室外廓关联。	READY
+11039	11039	Pickup	Jumper I	230	2	EU-CITROEN-JUMPER-I-230-PLATFORM-CAB-MWB-01	MEDIUM	按标准中轴平台驾驶室外廓关联。	READY
+11040	11040	Pickup	Jumper I	230	2	EU-CITROEN-JUMPER-I-230-PLATFORM-CAB-MWB-01	MEDIUM	按标准中轴平台驾驶室外廓关联。	READY
+14401	14401	Pickup	Jumper I	230	2	EU-CITROEN-JUMPER-I-230-PLATFORM-CAB-MWB-01	MEDIUM	按标准中轴平台驾驶室外廓关联。	READY
+```
+
+## 4) 本轮首次创建/修正的 DIMENSION_GROUP TSV
+
+```tsv
+DIMENSION_GROUP_ID	LengthMM	WidthMM	HeightMM	DimensionSource	SourceURL
+EU-CITROEN-JUMPER-I-230-PLATFORM-CAB-MWB-01	5010	2000	2150	ParuVendu Citroën Jumper 31 M 2.0 E chassis cab	https://www.paruvendu.fr/fiches-techniques-utilitaire/citroen-jumper/31-m-2-0-e-10-cv-essence/3057558/
+```
+
+## 5) 下一步优先处理
+
+优先处理 `15086`、`15087` 的 Jumper I `230` 四驱长轴平台驾驶室外廓；随后处理 `54933` 客运外廓和 `16763_swb_highroof` 高度冲突。
+
+推进信号：CONTINUE
+
+[1]: https://www.paruvendu.fr/fiches-techniques-utilitaire/citroen-jumper/31-m-2-0-e-10-cv-essence/3057558/ "Fiche technique utilitaire Citroën Jumper 31 M 2.0 E 1994 (10 CV) 3057558"
+
+
+--- 发送 / 继续到 Round 23 ---
+继续当前批次并采用缓存优先模式。尺寸组只在首次创建或纠错时完整核对一次三维和来源；后续 Ktype 只判断关联哪个现有 DIMENSION_GROUP_ID，不重复抓取，不输出缓存来源或匹配理由。仍有 PENDING 时，CONTINUE 轮仅输出：1) 更新点；2) 当前批次进度；3) 本轮新增/修改的 Ktype 映射 TSV（无变化写“无”）；4) 本轮首次创建/修正的 DIMENSION_GROUP TSV（复用既有组不重复输出，无变化写“无”）；5) 下一步优先处理。若当前或上一轮进度已经是 PENDING=0，本轮不要继续检索或再次输出 CONTINUE，必须立刻汇总并输出两张最终完整 TSV、两个任务指定 sandbox 下载链接和“推进信号：COMPLETE”。执行顺序固定为：第一阶段优先消除 PENDING 并补齐会阻塞两张最终表的数据。检测到 PENDING=0 后，第二阶段最多只做一次轻量机械收尾：核对固定表头、id 与 DIMENSION_GROUP_ID 唯一、映射引用闭合、长宽高和来源非空、两个任务指定下载链接齐全。第二阶段不得重新逐车型、逐年份或逐来源做深度检索，不得为了提高置信度反复核对，也不得因非阻塞的排序或措辞问题继续多轮。PENDING=0 后的下一条回复必须直接输出两张最终完整 TSV、两个精确 sandbox 下载链接，并以“推进信号：COMPLETE”结束；不要再输出 CONTINUE。Ktype 映射 TSV 表头必须严格使用 requirement 指定的字段顺序：id	Ktype	NormalizedBodyStyle	Generation	BodyCode	Doors	DIMENSION_GROUP_ID	MatchConfidence	Notes	IterationStatus。另需维护完整 DIMENSION_GROUP TSV，表头固定为：DIMENSION_GROUP_ID	LengthMM	WidthMM	HeightMM	DimensionSource	SourceURL。缺少任一张表、任一映射引用的尺寸组，或尺寸组字段不完整时不得 COMPLETE。不要输出子车系匹配表。
+【COMPLETE 下载文件硬性要求】
+准备 COMPLETE 时，除两张完整内嵌 TSV 外，还必须创建并提供以下两个可点击 sandbox 下载链接，文件名必须完全一致：
+- left18448_3801-3900_ktype_dimension_mapping_final.tsv
+- left18448_3801-3900_dimension_groups_final.tsv
+缺少任一下载链接时不得输出推进信号：COMPLETE。
+
+
+--- Round 23 / checkpoint 续跑 ---
+## 1) 更新点
+
+闭合 `15086`、`15087`、`16763`、`54933`：两项 Jumper I 四驱平台驾驶室复用现有中轴组；`16763_swb_highroof` 高度冲突按短轴高顶 `4749×2024×2475 mm` 修正；`54933` 关联 244 中轴高顶客运外廓。([ParuVendu][1])
+
+## 2) 当前批次进度
+
+READY=83；PENDING=17；revision=25。
+
+## 3) 本轮新增/修改的 Ktype 映射 TSV
+
+```tsv
+id	Ktype	NormalizedBodyStyle	Generation	BodyCode	Doors	DIMENSION_GROUP_ID	MatchConfidence	Notes	IterationStatus
+15086	15086	Pickup	Jumper I	230	2	EU-CITROEN-JUMPER-I-230-PLATFORM-CAB-MWB-01	MEDIUM	四驱动力形式不单独拆分。	READY
+15087	15087	Pickup	Jumper I	230	2	EU-CITROEN-JUMPER-I-230-PLATFORM-CAB-MWB-01	MEDIUM	四驱动力形式不单独拆分。	READY
+16763_swb_highroof	16763	Van	Jumper II	244		EU-CITROEN-JUMPER-II-244-VAN-4X4-SWB-HIGHROOF-01	MEDIUM	244四驱短轴高顶CH型外廓。	READY
+54933	54933	MPV	Jumper II	244		EU-CITROEN-JUMPER-II-244-VAN-4X4-MWB-HIGHROOF-01	MEDIUM	标准客运外廓按中轴高顶关联。	READY
+```
+
+## 4) 本轮首次创建/修正的 DIMENSION_GROUP TSV
+
+```tsv
+DIMENSION_GROUP_ID	LengthMM	WidthMM	HeightMM	DimensionSource	SourceURL
+EU-CITROEN-JUMPER-II-244-VAN-4X4-SWB-HIGHROOF-01	4749	2024	2475	ParuVendu Citroën Jumper TOLE 33 CH 2.8 HDi	https://www.paruvendu.fr/fiches-techniques-utilitaire/citroen-jumper/tole-33-ch-2-8-hdi-9-cv-diesel/3076077/
+```
+
+## 5) 下一步优先处理
+
+对交接中尚未计入当前进度的 17 个已确认 Ktype 执行缓存合并和状态归并，不重新检索；合并后若 `PENDING=0`，立即机械终检并输出两张最终完整 TSV、两个指定下载链接和 `COMPLETE`。
+
+推进信号：CONTINUE
+
+[1]: https://www.paruvendu.fr/fiches-techniques-utilitaire/citroen-jumper/tole-33-ch-2-8-hdi-9-cv-diesel/3076077/ "Fiche technique utilitaire Citroën Jumper TOLE 33 CH 2.8 HDi 2001 (9 CV) 3076077"
+
+
+--- 发送 / 继续到 Round 24 ---
+继续当前批次并采用缓存优先模式。尺寸组只在首次创建或纠错时完整核对一次三维和来源；后续 Ktype 只判断关联哪个现有 DIMENSION_GROUP_ID，不重复抓取，不输出缓存来源或匹配理由。仍有 PENDING 时，CONTINUE 轮仅输出：1) 更新点；2) 当前批次进度；3) 本轮新增/修改的 Ktype 映射 TSV（无变化写“无”）；4) 本轮首次创建/修正的 DIMENSION_GROUP TSV（复用既有组不重复输出，无变化写“无”）；5) 下一步优先处理。若当前或上一轮进度已经是 PENDING=0，本轮不要继续检索或再次输出 CONTINUE，必须立刻汇总并输出两张最终完整 TSV、两个任务指定 sandbox 下载链接和“推进信号：COMPLETE”。执行顺序固定为：第一阶段优先消除 PENDING 并补齐会阻塞两张最终表的数据。检测到 PENDING=0 后，第二阶段最多只做一次轻量机械收尾：核对固定表头、id 与 DIMENSION_GROUP_ID 唯一、映射引用闭合、长宽高和来源非空、两个任务指定下载链接齐全。第二阶段不得重新逐车型、逐年份或逐来源做深度检索，不得为了提高置信度反复核对，也不得因非阻塞的排序或措辞问题继续多轮。PENDING=0 后的下一条回复必须直接输出两张最终完整 TSV、两个精确 sandbox 下载链接，并以“推进信号：COMPLETE”结束；不要再输出 CONTINUE。Ktype 映射 TSV 表头必须严格使用 requirement 指定的字段顺序：id	Ktype	NormalizedBodyStyle	Generation	BodyCode	Doors	DIMENSION_GROUP_ID	MatchConfidence	Notes	IterationStatus。另需维护完整 DIMENSION_GROUP TSV，表头固定为：DIMENSION_GROUP_ID	LengthMM	WidthMM	HeightMM	DimensionSource	SourceURL。缺少任一张表、任一映射引用的尺寸组，或尺寸组字段不完整时不得 COMPLETE。不要输出子车系匹配表。
+【COMPLETE 下载文件硬性要求】
+准备 COMPLETE 时，除两张完整内嵌 TSV 外，还必须创建并提供以下两个可点击 sandbox 下载链接，文件名必须完全一致：
+- left18448_3801-3900_ktype_dimension_mapping_final.tsv
+- left18448_3801-3900_dimension_groups_final.tsv
+缺少任一下载链接时不得输出推进信号：COMPLETE。
+
+
+--- Round 24 / checkpoint 续跑 ---
+## 1) 更新点
+
+剩余 17 个已确认 Ktype 已按缓存机械归并，未重新检索已闭合车型或尺寸组。终检通过：表头与列数正确，`id` 和 `DIMENSION_GROUP_ID` 唯一，映射引用闭合，三维、来源及直接 URL 均非空，无孤立尺寸组。
+
+## 2) 当前批次进度
+
+READY=100；PENDING=0；revision=26。
+本次唯一输入的 60 个 Ktype 已全部覆盖，共 177 条映射、32 个尺寸组。
+
+## 3) 最终完整 Ktype 映射 TSV
+
+```tsv
+id	Ktype	NormalizedBodyStyle	Generation	BodyCode	Doors	DIMENSION_GROUP_ID	MatchConfidence	Notes	IterationStatus
+5713	5713	MPV	Evasion I	22	5	EU-CITROEN-EVASION-I-MPV-5D-01	HIGH	22型五门MPV外廓。	READY
+142701	142701	Van	Evasion I	22	5	EU-CITROEN-EVASION-I-MPV-5D-01	MEDIUM	22型商用派生，沿用五门外廓。	READY
+142697	142697	Van	Evasion I	22	5	EU-CITROEN-EVASION-I-MPV-5D-01	MEDIUM	22型商用派生，沿用五门外廓。	READY
+142699	142699	Van	Evasion I	22	5	EU-CITROEN-EVASION-I-MPV-5D-01	MEDIUM	22型商用派生，沿用五门外廓。	READY
+142698	142698	Van	Evasion I	22	5	EU-CITROEN-EVASION-I-MPV-5D-01	MEDIUM	22型商用派生，沿用五门外廓。	READY
+142700	142700	Van	Evasion I	22	5	EU-CITROEN-EVASION-I-MPV-5D-01	MEDIUM	22型商用派生，沿用五门外廓。	READY
+142695	142695	Van	Evasion I	22	5	EU-CITROEN-EVASION-I-MPV-5D-01	MEDIUM	22型商用派生，沿用五门外廓。	READY
+14378	14378	Pickup	Jumper I	230	2	EU-CITROEN-JUMPER-I-230-PLATFORM-CAB-MWB-01	MEDIUM	按标准中轴平台驾驶室外廓关联。	READY
+13188_swb_lowroof	13188	MPV	Jumper I	230P		EU-CITROEN-JUMPER-I-230P-MPV-SWB-LOWROOF-01	MEDIUM	230P短轴低顶客运外廓。	READY
+13188_mwb_lowroof	13188	MPV	Jumper I	230P		EU-CITROEN-JUMPER-I-230P-MPV-MWB-LOWROOF-01	MEDIUM	230P中轴低顶客运外廓。	READY
+13188_mwb_highroof	13188	MPV	Jumper I	230P		EU-CITROEN-JUMPER-I-230P-MPV-MWB-HIGHROOF-01	MEDIUM	230P中轴高顶客运外廓。	READY
+14750_swb_lowroof	14750	Van	Jumper I	230L		EU-CITROEN-JUMPER-I-230L-VAN-SWB-LOWROOF-01	MEDIUM	短轴低顶厢式外廓。	READY
+14750_swb_highroof	14750	Van	Jumper I	230L		EU-CITROEN-JUMPER-I-230L-VAN-SWB-HIGHROOF-01	MEDIUM	短轴高顶厢式外廓。	READY
+14750_mwb_lowroof	14750	Van	Jumper I	230L		EU-CITROEN-JUMPER-I-230L-VAN-MWB-LOWROOF-01	MEDIUM	中轴低顶厢式外廓。	READY
+14750_mwb_highroof	14750	Van	Jumper I	230L		EU-CITROEN-JUMPER-I-230L-VAN-MWB-HIGHROOF-01	MEDIUM	中轴高顶厢式外廓。	READY
+14750_lwb_highroof	14750	Van	Jumper I	230L		EU-CITROEN-JUMPER-I-230L-VAN-LWB-HIGHROOF-01	MEDIUM	长轴高顶厢式外廓。	READY
+14206	14206	Pickup	Jumper I	230	2	EU-CITROEN-JUMPER-I-230-PLATFORM-CAB-MWB-01	MEDIUM	按标准中轴平台驾驶室外廓关联。	READY
+14377	14377	Pickup	Jumper I	230	2	EU-CITROEN-JUMPER-I-230-PLATFORM-CAB-MWB-01	MEDIUM	按标准中轴平台驾驶室外廓关联。	READY
+14379_swb_lowroof	14379	Van	Jumper I	230L		EU-CITROEN-JUMPER-I-230L-VAN-SWB-LOWROOF-01	MEDIUM	短轴低顶厢式外廓。	READY
+14379_swb_highroof	14379	Van	Jumper I	230L		EU-CITROEN-JUMPER-I-230L-VAN-SWB-HIGHROOF-01	MEDIUM	短轴高顶厢式外廓。	READY
+14379_mwb_lowroof	14379	Van	Jumper I	230L		EU-CITROEN-JUMPER-I-230L-VAN-MWB-LOWROOF-01	MEDIUM	中轴低顶厢式外廓。	READY
+14379_mwb_highroof	14379	Van	Jumper I	230L		EU-CITROEN-JUMPER-I-230L-VAN-MWB-HIGHROOF-01	MEDIUM	中轴高顶厢式外廓。	READY
+14379_lwb_highroof	14379	Van	Jumper I	230L		EU-CITROEN-JUMPER-I-230L-VAN-LWB-HIGHROOF-01	MEDIUM	长轴高顶厢式外廓。	READY
+17579_swb_lowroof	17579	Van	Jumper I	230L		EU-CITROEN-JUMPER-I-230L-VAN-SWB-LOWROOF-01	MEDIUM	短轴低顶厢式外廓。	READY
+17579_swb_highroof	17579	Van	Jumper I	230L		EU-CITROEN-JUMPER-I-230L-VAN-SWB-HIGHROOF-01	MEDIUM	短轴高顶厢式外廓。	READY
+17579_mwb_lowroof	17579	Van	Jumper I	230L		EU-CITROEN-JUMPER-I-230L-VAN-MWB-LOWROOF-01	MEDIUM	中轴低顶厢式外廓。	READY
+17579_mwb_highroof	17579	Van	Jumper I	230L		EU-CITROEN-JUMPER-I-230L-VAN-MWB-HIGHROOF-01	MEDIUM	中轴高顶厢式外廓。	READY
+17579_lwb_highroof	17579	Van	Jumper I	230L		EU-CITROEN-JUMPER-I-230L-VAN-LWB-HIGHROOF-01	MEDIUM	长轴高顶厢式外廓。	READY
+11039	11039	Pickup	Jumper I	230	2	EU-CITROEN-JUMPER-I-230-PLATFORM-CAB-MWB-01	MEDIUM	按标准中轴平台驾驶室外廓关联。	READY
+15086	15086	Pickup	Jumper I	230	2	EU-CITROEN-JUMPER-I-230-PLATFORM-CAB-MWB-01	MEDIUM	四驱动力形式不单独拆分。	READY
+15089_swb_lowroof	15089	Van	Jumper I	230L		EU-CITROEN-JUMPER-I-230L-VAN-4X4-SWB-LOWROOF-01	MEDIUM	四驱短轴低顶厢式外廓。	READY
+15089_mwb_highroof	15089	Van	Jumper I	230L		EU-CITROEN-JUMPER-I-230L-VAN-4X4-MWB-HIGHROOF-01	MEDIUM	四驱中轴高顶厢式外廓。	READY
+15089_mwb_extrahighroof	15089	Van	Jumper I	230L		EU-CITROEN-JUMPER-I-230L-VAN-4X4-MWB-EXTRAHIGHROOF-01	MEDIUM	四驱中轴加高顶厢式外廓。	READY
+11040	11040	Pickup	Jumper I	230	2	EU-CITROEN-JUMPER-I-230-PLATFORM-CAB-MWB-01	MEDIUM	按标准中轴平台驾驶室外廓关联。	READY
+11041_swb_lowroof	11041	Van	Jumper I	230L		EU-CITROEN-JUMPER-I-230L-VAN-SWB-LOWROOF-01	MEDIUM	短轴低顶厢式外廓。	READY
+11041_swb_highroof	11041	Van	Jumper I	230L		EU-CITROEN-JUMPER-I-230L-VAN-SWB-HIGHROOF-01	MEDIUM	短轴高顶厢式外廓。	READY
+11041_mwb_lowroof	11041	Van	Jumper I	230L		EU-CITROEN-JUMPER-I-230L-VAN-MWB-LOWROOF-01	MEDIUM	中轴低顶厢式外廓。	READY
+11041_mwb_highroof	11041	Van	Jumper I	230L		EU-CITROEN-JUMPER-I-230L-VAN-MWB-HIGHROOF-01	MEDIUM	中轴高顶厢式外廓。	READY
+11041_lwb_highroof	11041	Van	Jumper I	230L		EU-CITROEN-JUMPER-I-230L-VAN-LWB-HIGHROOF-01	MEDIUM	长轴高顶厢式外廓。	READY
+14401	14401	Pickup	Jumper I	230	2	EU-CITROEN-JUMPER-I-230-PLATFORM-CAB-MWB-01	MEDIUM	按标准中轴平台驾驶室外廓关联。	READY
+15087	15087	Pickup	Jumper I	230	2	EU-CITROEN-JUMPER-I-230-PLATFORM-CAB-MWB-01	MEDIUM	四驱动力形式不单独拆分。	READY
+15088_swb_lowroof	15088	Van	Jumper I	230L		EU-CITROEN-JUMPER-I-230L-VAN-4X4-SWB-LOWROOF-01	MEDIUM	四驱短轴低顶厢式外廓。	READY
+15088_mwb_highroof	15088	Van	Jumper I	230L		EU-CITROEN-JUMPER-I-230L-VAN-4X4-MWB-HIGHROOF-01	MEDIUM	四驱中轴高顶厢式外廓。	READY
+15088_mwb_extrahighroof	15088	Van	Jumper I	230L		EU-CITROEN-JUMPER-I-230L-VAN-4X4-MWB-EXTRAHIGHROOF-01	MEDIUM	四驱中轴加高顶厢式外廓。	READY
+16763_swb_lowroof	16763	Van	Jumper II	244		EU-CITROEN-JUMPER-II-244-VAN-4X4-SWB-LOWROOF-01	MEDIUM	244四驱短轴低顶C型外廓。	READY
+16763_swb_highroof	16763	Van	Jumper II	244		EU-CITROEN-JUMPER-II-244-VAN-4X4-SWB-HIGHROOF-01	MEDIUM	244四驱短轴高顶CH型外廓。	READY
+16763_mwb_highroof	16763	Van	Jumper II	244		EU-CITROEN-JUMPER-II-244-VAN-4X4-MWB-HIGHROOF-01	MEDIUM	244四驱中轴高顶MH型外廓。	READY
+16763_lwb_highroof	16763	Van	Jumper II	244		EU-CITROEN-JUMPER-II-244-VAN-4X4-LWB-HIGHROOF-01	MEDIUM	244四驱长轴高顶LH型外廓。	READY
+54933	54933	MPV	Jumper II	244		EU-CITROEN-JUMPER-II-244-VAN-4X4-MWB-HIGHROOF-01	MEDIUM	标准客运外廓按中轴高顶关联。	READY
+116486	116486	MPV	Jumper III			EU-CITROEN-JUMPER-III-MPV-L2H1-01	MEDIUM		READY
+120601_l1	120601	Pickup	Jumper III			EU-CITROEN-JUMPER-III-PLATFORM-CAB-L1-01	MEDIUM	L1平台驾驶室外廓。	READY
+120601_l2	120601	Pickup	Jumper III			EU-CITROEN-JUMPER-III-PLATFORM-CAB-L2-01	MEDIUM	L2平台驾驶室外廓。	READY
+120601_l2s	120601	Pickup	Jumper III			EU-CITROEN-JUMPER-III-PLATFORM-CAB-L2S-01	MEDIUM	L2S平台驾驶室外廓。	READY
+116487_l2h1	116487	MPV	Jumper III			EU-CITROEN-JUMPER-III-MPV-L2H1-01	MEDIUM	L2H1客运外廓。	READY
+116487_l2h2	116487	MPV	Jumper III			EU-CITROEN-JUMPER-III-MPV-L2H2-01	MEDIUM	L2H2客运外廓。	READY
+120602_l1	120602	Pickup	Jumper III			EU-CITROEN-JUMPER-III-PLATFORM-CAB-L1-01	MEDIUM	L1平台驾驶室外廓。	READY
+120602_l2	120602	Pickup	Jumper III			EU-CITROEN-JUMPER-III-PLATFORM-CAB-L2-01	MEDIUM	L2平台驾驶室外廓。	READY
+120602_l2s	120602	Pickup	Jumper III			EU-CITROEN-JUMPER-III-PLATFORM-CAB-L2S-01	MEDIUM	L2S平台驾驶室外廓。	READY
+120602_l3	120602	Pickup	Jumper III			EU-CITROEN-JUMPER-III-PLATFORM-CAB-L3-01	MEDIUM	L3平台驾驶室外廓。	READY
+120602_l4	120602	Pickup	Jumper III			EU-CITROEN-JUMPER-III-PLATFORM-CAB-L4-01	MEDIUM	L4平台驾驶室外廓。	READY
+122114_l1	122114	Pickup	Jumper III			EU-CITROEN-JUMPER-III-PLATFORM-CAB-L1-01	MEDIUM	L1平台驾驶室外廓。	READY
+122114_l2	122114	Pickup	Jumper III			EU-CITROEN-JUMPER-III-PLATFORM-CAB-L2-01	MEDIUM	L2平台驾驶室外廓。	READY
+122114_l2s	122114	Pickup	Jumper III			EU-CITROEN-JUMPER-III-PLATFORM-CAB-L2S-01	MEDIUM	L2S平台驾驶室外廓。	READY
+122114_l3	122114	Pickup	Jumper III			EU-CITROEN-JUMPER-III-PLATFORM-CAB-L3-01	MEDIUM	L3平台驾驶室外廓。	READY
+122114_l4	122114	Pickup	Jumper III			EU-CITROEN-JUMPER-III-PLATFORM-CAB-L4-01	MEDIUM	L4平台驾驶室外廓。	READY
+116488_l2h1	116488	MPV	Jumper III			EU-CITROEN-JUMPER-III-MPV-L2H1-01	MEDIUM	L2H1客运外廓。	READY
+116488_l2h2	116488	MPV	Jumper III			EU-CITROEN-JUMPER-III-MPV-L2H2-01	MEDIUM	L2H2客运外廓。	READY
+120603_l1	120603	Pickup	Jumper III			EU-CITROEN-JUMPER-III-PLATFORM-CAB-L1-01	MEDIUM	L1平台驾驶室外廓。	READY
+120603_l2	120603	Pickup	Jumper III			EU-CITROEN-JUMPER-III-PLATFORM-CAB-L2-01	MEDIUM	L2平台驾驶室外廓。	READY
+120603_l2s	120603	Pickup	Jumper III			EU-CITROEN-JUMPER-III-PLATFORM-CAB-L2S-01	MEDIUM	L2S平台驾驶室外廓。	READY
+120603_l3	120603	Pickup	Jumper III			EU-CITROEN-JUMPER-III-PLATFORM-CAB-L3-01	MEDIUM	L3平台驾驶室外廓。	READY
+120603_l4	120603	Pickup	Jumper III			EU-CITROEN-JUMPER-III-PLATFORM-CAB-L4-01	MEDIUM	L4平台驾驶室外廓。	READY
+122112_l1	122112	Pickup	Jumper III			EU-CITROEN-JUMPER-III-PLATFORM-CAB-L1-01	MEDIUM	L1平台驾驶室外廓。	READY
+122112_l2	122112	Pickup	Jumper III			EU-CITROEN-JUMPER-III-PLATFORM-CAB-L2-01	MEDIUM	L2平台驾驶室外廓。	READY
+122112_l2s	122112	Pickup	Jumper III			EU-CITROEN-JUMPER-III-PLATFORM-CAB-L2S-01	MEDIUM	L2S平台驾驶室外廓。	READY
+122112_l3	122112	Pickup	Jumper III			EU-CITROEN-JUMPER-III-PLATFORM-CAB-L3-01	MEDIUM	L3平台驾驶室外廓。	READY
+122112_l4	122112	Pickup	Jumper III			EU-CITROEN-JUMPER-III-PLATFORM-CAB-L4-01	MEDIUM	L4平台驾驶室外廓。	READY
+122113_l1h1	122113	Van	Jumper III			EU-CITROEN-JUMPER-III-VAN-L1H1-01	MEDIUM	L1H1厢式外廓。	READY
+122113_l2h1	122113	Van	Jumper III			EU-CITROEN-JUMPER-III-VAN-L2H1-01	MEDIUM	L2H1厢式外廓。	READY
+122113_l2h2	122113	Van	Jumper III			EU-CITROEN-JUMPER-III-VAN-L2H2-01	MEDIUM	L2H2厢式外廓。	READY
+122113_l3h2	122113	Van	Jumper III			EU-CITROEN-JUMPER-III-VAN-L3H2-01	MEDIUM	L3H2厢式外廓。	READY
+122113_l3h3	122113	Van	Jumper III			EU-CITROEN-JUMPER-III-VAN-L3H3-01	MEDIUM	L3H3厢式外廓。	READY
+122113_l4h2	122113	Van	Jumper III			EU-CITROEN-JUMPER-III-VAN-L4H2-01	MEDIUM	L4H2厢式外廓。	READY
+122113_l4h3	122113	Van	Jumper III			EU-CITROEN-JUMPER-III-VAN-L4H3-01	MEDIUM	L4H3厢式外廓。	READY
+157424_l2	157424	Pickup	Jumper III			EU-CITROEN-JUMPER-III-PLATFORM-CAB-L2-01	MEDIUM	L2平台驾驶室外廓。	READY
+157424_l3	157424	Pickup	Jumper III			EU-CITROEN-JUMPER-III-PLATFORM-CAB-L3-01	MEDIUM	L3平台驾驶室外廓。	READY
+157425_l2	157425	Pickup	Jumper III			EU-CITROEN-JUMPER-III-PLATFORM-CAB-L2-01	MEDIUM	L2平台驾驶室外廓。	READY
+157425_l3	157425	Pickup	Jumper III			EU-CITROEN-JUMPER-III-PLATFORM-CAB-L3-01	MEDIUM	L3平台驾驶室外廓。	READY
+157426_l2	157426	Pickup	Jumper III			EU-CITROEN-JUMPER-III-PLATFORM-CAB-L2-01	MEDIUM	L2平台驾驶室外廓。	READY
+157426_l3	157426	Pickup	Jumper III			EU-CITROEN-JUMPER-III-PLATFORM-CAB-L3-01	MEDIUM	L3平台驾驶室外廓。	READY
+12057_l1h1	12057	MPV	Jumper III			EU-CITROEN-JUMPER-III-VAN-L1H1-01	MEDIUM	L1H1客运外廓。	READY
+12057_l2h2	12057	MPV	Jumper III			EU-CITROEN-JUMPER-III-MPV-L2H2-01	MEDIUM	L2H2客运外廓。	READY
+12058_l1h1	12058	Van	Jumper III			EU-CITROEN-JUMPER-III-VAN-L1H1-01	MEDIUM	L1H1厢式外廓。	READY
+12058_l2h1	12058	Van	Jumper III			EU-CITROEN-JUMPER-III-VAN-L2H1-01	MEDIUM	L2H1厢式外廓。	READY
+12058_l2h2	12058	Van	Jumper III			EU-CITROEN-JUMPER-III-VAN-L2H2-01	MEDIUM	L2H2厢式外廓。	READY
+12058_l3h2	12058	Van	Jumper III			EU-CITROEN-JUMPER-III-VAN-L3H2-01	MEDIUM	L3H2厢式外廓。	READY
+12058_l3h3	12058	Van	Jumper III			EU-CITROEN-JUMPER-III-VAN-L3H3-01	MEDIUM	L3H3厢式外廓。	READY
+12058_l4h2	12058	Van	Jumper III			EU-CITROEN-JUMPER-III-VAN-L4H2-01	MEDIUM	L4H2厢式外廓。	READY
+12058_l4h3	12058	Van	Jumper III			EU-CITROEN-JUMPER-III-VAN-L4H3-01	MEDIUM	L4H3厢式外廓。	READY
+12060_l1	12060	Pickup	Jumper III			EU-CITROEN-JUMPER-III-PLATFORM-CAB-L1-01	MEDIUM	L1平台驾驶室外廓。	READY
+12060_l2	12060	Pickup	Jumper III			EU-CITROEN-JUMPER-III-PLATFORM-CAB-L2-01	MEDIUM	L2平台驾驶室外廓。	READY
+12060_l2s	12060	Pickup	Jumper III			EU-CITROEN-JUMPER-III-PLATFORM-CAB-L2S-01	MEDIUM	L2S平台驾驶室外廓。	READY
+12062_l1h1	12062	MPV	Jumper III			EU-CITROEN-JUMPER-III-VAN-L1H1-01	MEDIUM	L1H1客运外廓。	READY
+12062_l2h2	12062	MPV	Jumper III			EU-CITROEN-JUMPER-III-MPV-L2H2-01	MEDIUM	L2H2客运外廓。	READY
+12063_l1h1	12063	Van	Jumper III			EU-CITROEN-JUMPER-III-VAN-L1H1-01	MEDIUM	L1H1厢式外廓。	READY
+12063_l2h1	12063	Van	Jumper III			EU-CITROEN-JUMPER-III-VAN-L2H1-01	MEDIUM	L2H1厢式外廓。	READY
+12063_l2h2	12063	Van	Jumper III			EU-CITROEN-JUMPER-III-VAN-L2H2-01	MEDIUM	L2H2厢式外廓。	READY
+12063_l3h2	12063	Van	Jumper III			EU-CITROEN-JUMPER-III-VAN-L3H2-01	MEDIUM	L3H2厢式外廓。	READY
+12063_l3h3	12063	Van	Jumper III			EU-CITROEN-JUMPER-III-VAN-L3H3-01	MEDIUM	L3H3厢式外廓。	READY
+12063_l4h2	12063	Van	Jumper III			EU-CITROEN-JUMPER-III-VAN-L4H2-01	MEDIUM	L4H2厢式外廓。	READY
+12063_l4h3	12063	Van	Jumper III			EU-CITROEN-JUMPER-III-VAN-L4H3-01	MEDIUM	L4H3厢式外廓。	READY
+12064_l1	12064	Pickup	Jumper III			EU-CITROEN-JUMPER-III-PLATFORM-CAB-L1-01	MEDIUM	L1平台驾驶室外廓。	READY
+12064_l2	12064	Pickup	Jumper III			EU-CITROEN-JUMPER-III-PLATFORM-CAB-L2-01	MEDIUM	L2平台驾驶室外廓。	READY
+12064_l2s	12064	Pickup	Jumper III			EU-CITROEN-JUMPER-III-PLATFORM-CAB-L2S-01	MEDIUM	L2S平台驾驶室外廓。	READY
+12064_l3	12064	Pickup	Jumper III			EU-CITROEN-JUMPER-III-PLATFORM-CAB-L3-01	MEDIUM	L3平台驾驶室外廓。	READY
+12064_l4	12064	Pickup	Jumper III			EU-CITROEN-JUMPER-III-PLATFORM-CAB-L4-01	MEDIUM	L4平台驾驶室外廓。	READY
+12065	12065	MPV	Jumper III			EU-CITROEN-JUMPER-III-MPV-L2H2-01	MEDIUM	L2H2客运外廓。	READY
+12066_l1h1	12066	Van	Jumper III			EU-CITROEN-JUMPER-III-VAN-L1H1-01	MEDIUM	L1H1厢式外廓。	READY
+12066_l2h1	12066	Van	Jumper III			EU-CITROEN-JUMPER-III-VAN-L2H1-01	MEDIUM	L2H1厢式外廓。	READY
+12066_l2h2	12066	Van	Jumper III			EU-CITROEN-JUMPER-III-VAN-L2H2-01	MEDIUM	L2H2厢式外廓。	READY
+12066_l3h2	12066	Van	Jumper III			EU-CITROEN-JUMPER-III-VAN-L3H2-01	MEDIUM	L3H2厢式外廓。	READY
+12066_l3h3	12066	Van	Jumper III			EU-CITROEN-JUMPER-III-VAN-L3H3-01	MEDIUM	L3H3厢式外廓。	READY
+12066_l4h2	12066	Van	Jumper III			EU-CITROEN-JUMPER-III-VAN-L4H2-01	MEDIUM	L4H2厢式外廓。	READY
+12066_l4h3	12066	Van	Jumper III			EU-CITROEN-JUMPER-III-VAN-L4H3-01	MEDIUM	L4H3厢式外廓。	READY
+12067_l1	12067	Pickup	Jumper III			EU-CITROEN-JUMPER-III-PLATFORM-CAB-L1-01	MEDIUM	L1平台驾驶室外廓。	READY
+12067_l2	12067	Pickup	Jumper III			EU-CITROEN-JUMPER-III-PLATFORM-CAB-L2-01	MEDIUM	L2平台驾驶室外廓。	READY
+12067_l2s	12067	Pickup	Jumper III			EU-CITROEN-JUMPER-III-PLATFORM-CAB-L2S-01	MEDIUM	L2S平台驾驶室外廓。	READY
+12067_l3	12067	Pickup	Jumper III			EU-CITROEN-JUMPER-III-PLATFORM-CAB-L3-01	MEDIUM	L3平台驾驶室外廓。	READY
+12067_l4	12067	Pickup	Jumper III			EU-CITROEN-JUMPER-III-PLATFORM-CAB-L4-01	MEDIUM	L4平台驾驶室外廓。	READY
+33787_l1h1	33787	Van	Jumper III			EU-CITROEN-JUMPER-III-VAN-L1H1-01	MEDIUM	L1H1厢式外廓。	READY
+33787_l2h1	33787	Van	Jumper III			EU-CITROEN-JUMPER-III-VAN-L2H1-01	MEDIUM	L2H1厢式外廓。	READY
+33787_l2h2	33787	Van	Jumper III			EU-CITROEN-JUMPER-III-VAN-L2H2-01	MEDIUM	L2H2厢式外廓。	READY
+33787_l3h2	33787	Van	Jumper III			EU-CITROEN-JUMPER-III-VAN-L3H2-01	MEDIUM	L3H2厢式外廓。	READY
+33787_l3h3	33787	Van	Jumper III			EU-CITROEN-JUMPER-III-VAN-L3H3-01	MEDIUM	L3H3厢式外廓。	READY
+33787_l4h2	33787	Van	Jumper III			EU-CITROEN-JUMPER-III-VAN-L4H2-01	MEDIUM	L4H2厢式外廓。	READY
+33787_l4h3	33787	Van	Jumper III			EU-CITROEN-JUMPER-III-VAN-L4H3-01	MEDIUM	L4H3厢式外廓。	READY
+33790_l1	33790	Pickup	Jumper III			EU-CITROEN-JUMPER-III-PLATFORM-CAB-L1-01	MEDIUM	L1平台驾驶室外廓。	READY
+33790_l2	33790	Pickup	Jumper III			EU-CITROEN-JUMPER-III-PLATFORM-CAB-L2-01	MEDIUM	L2平台驾驶室外廓。	READY
+33790_l2s	33790	Pickup	Jumper III			EU-CITROEN-JUMPER-III-PLATFORM-CAB-L2S-01	MEDIUM	L2S平台驾驶室外廓。	READY
+33790_l3	33790	Pickup	Jumper III			EU-CITROEN-JUMPER-III-PLATFORM-CAB-L3-01	MEDIUM	L3平台驾驶室外廓。	READY
+33790_l4	33790	Pickup	Jumper III			EU-CITROEN-JUMPER-III-PLATFORM-CAB-L4-01	MEDIUM	L4平台驾驶室外廓。	READY
+33788_l1h1	33788	Van	Jumper III			EU-CITROEN-JUMPER-III-VAN-L1H1-01	MEDIUM	L1H1厢式外廓。	READY
+33788_l2h1	33788	Van	Jumper III			EU-CITROEN-JUMPER-III-VAN-L2H1-01	MEDIUM	L2H1厢式外廓。	READY
+33788_l2h2	33788	Van	Jumper III			EU-CITROEN-JUMPER-III-VAN-L2H2-01	MEDIUM	L2H2厢式外廓。	READY
+33788_l3h2	33788	Van	Jumper III			EU-CITROEN-JUMPER-III-VAN-L3H2-01	MEDIUM	L3H2厢式外廓。	READY
+33788_l3h3	33788	Van	Jumper III			EU-CITROEN-JUMPER-III-VAN-L3H3-01	MEDIUM	L3H3厢式外廓。	READY
+33788_l4h2	33788	Van	Jumper III			EU-CITROEN-JUMPER-III-VAN-L4H2-01	MEDIUM	L4H2厢式外廓。	READY
+33788_l4h3	33788	Van	Jumper III			EU-CITROEN-JUMPER-III-VAN-L4H3-01	MEDIUM	L4H3厢式外廓。	READY
+34964	34964	MPV	Jumper III			EU-CITROEN-JUMPER-III-MPV-L2H2-01	MEDIUM	标准客运外廓按L2H2关联。	READY
+12068	12068	MPV	Jumper III			EU-CITROEN-JUMPER-III-MPV-L2H2-01	MEDIUM	标准客运外廓按L2H2关联。	READY
+12069_l1h1	12069	Van	Jumper III			EU-CITROEN-JUMPER-III-VAN-L1H1-01	MEDIUM	L1H1厢式外廓。	READY
+12069_l2h1	12069	Van	Jumper III			EU-CITROEN-JUMPER-III-VAN-L2H1-01	MEDIUM	L2H1厢式外廓。	READY
+12069_l2h2	12069	Van	Jumper III			EU-CITROEN-JUMPER-III-VAN-L2H2-01	MEDIUM	L2H2厢式外廓。	READY
+12069_l3h2	12069	Van	Jumper III			EU-CITROEN-JUMPER-III-VAN-L3H2-01	MEDIUM	L3H2厢式外廓。	READY
+12069_l3h3	12069	Van	Jumper III			EU-CITROEN-JUMPER-III-VAN-L3H3-01	MEDIUM	L3H3厢式外廓。	READY
+12069_l4h2	12069	Van	Jumper III			EU-CITROEN-JUMPER-III-VAN-L4H2-01	MEDIUM	L4H2厢式外廓。	READY
+12069_l4h3	12069	Van	Jumper III			EU-CITROEN-JUMPER-III-VAN-L4H3-01	MEDIUM	L4H3厢式外廓。	READY
+12070_l1	12070	Pickup	Jumper III			EU-CITROEN-JUMPER-III-PLATFORM-CAB-L1-01	MEDIUM	L1平台驾驶室外廓。	READY
+12070_l2	12070	Pickup	Jumper III			EU-CITROEN-JUMPER-III-PLATFORM-CAB-L2-01	MEDIUM	L2平台驾驶室外廓。	READY
+12070_l2s	12070	Pickup	Jumper III			EU-CITROEN-JUMPER-III-PLATFORM-CAB-L2S-01	MEDIUM	L2S平台驾驶室外廓。	READY
+12070_l3	12070	Pickup	Jumper III			EU-CITROEN-JUMPER-III-PLATFORM-CAB-L3-01	MEDIUM	L3平台驾驶室外廓。	READY
+12070_l4	12070	Pickup	Jumper III			EU-CITROEN-JUMPER-III-PLATFORM-CAB-L4-01	MEDIUM	L4平台驾驶室外廓。	READY
+145319_l1h1	145319	Van	Jumper III			EU-CITROEN-JUMPER-III-VAN-L1H1-01	HIGH	L1H1电动厢式外廓。	READY
+145319_l2h2	145319	Van	Jumper III			EU-CITROEN-JUMPER-III-VAN-L2H2-01	HIGH	L2H2电动厢式外廓。	READY
+145319_l3h2	145319	Van	Jumper III			EU-CITROEN-JUMPER-III-VAN-L3H2-01	HIGH	L3H2电动厢式外廓。	READY
+145319_l4h2	145319	Van	Jumper III			EU-CITROEN-JUMPER-III-VAN-L4H2-01	HIGH	L4H2电动厢式外廓。	READY
+145319_l4h3	145319	Van	Jumper III			EU-CITROEN-JUMPER-III-VAN-L4H3-01	HIGH	L4H3电动厢式外廓。	READY
+150977	150977	Pickup	Jumper III			EU-CITROEN-JUMPER-III-PLATFORM-CAB-L3-01	MEDIUM	L3平台驾驶室外廓。	READY
+157422_l3h3	157422	Van	Jumper III			EU-CITROEN-JUMPER-III-VAN-L3H3-01	MEDIUM	L3H3新款电动厢式外廓。	READY
+157422_l4h2	157422	Van	Jumper III			EU-CITROEN-JUMPER-III-VAN-L4H2-01	MEDIUM	L4H2新款电动厢式外廓。	READY
+157422_l4h3	157422	Van	Jumper III			EU-CITROEN-JUMPER-III-VAN-L4H3-01	MEDIUM	L4H3新款电动厢式外廓。	READY
+157423	157423	Pickup	Jumper III			EU-CITROEN-JUMPER-III-PLATFORM-CAB-L3-01	MEDIUM	L3平台驾驶室外廓。	READY
+802127_l3h2	802127	Van	Jumper III			EU-CITROEN-JUMPER-III-VAN-L3H2-01	MEDIUM	L3H2氢燃料厢式外廓。	READY
+802127_l4h3	802127	Van	Jumper III			EU-CITROEN-JUMPER-III-VAN-L4H3-01	MEDIUM	L4H3氢燃料厢式外廓。	READY
+15093	15093	Pickup	Jumpy I			EU-CITROEN-JUMPY-I-PLATFORM-CAB-01	MEDIUM	第一代平台驾驶室外廓。	READY
+10546	10546	Pickup	Jumpy I			EU-CITROEN-JUMPY-I-PLATFORM-CAB-01	MEDIUM	第一代平台驾驶室外廓。	READY
+15096	15096	Pickup	Jumpy I			EU-CITROEN-JUMPY-I-PLATFORM-CAB-01	MEDIUM	第一代平台驾驶室外廓。	READY
+```
+
+[下载完整 Ktype 映射 TSV](sandbox:/mnt/data/left18448_3801-3900_ktype_dimension_mapping_final.tsv)
+
+## 4) 最终完整 DIMENSION_GROUP TSV
+
+```tsv
+DIMENSION_GROUP_ID	LengthMM	WidthMM	HeightMM	DimensionSource	SourceURL
+EU-CITROEN-EVASION-I-MPV-5D-01	4454	1834	1714	Auto-Data Citroën Evasion (22) 2.1 TD	https://www.auto-data.net/en/citroen-evasion-22-2.1-td-109hp-14907
+EU-CITROEN-JUMPER-I-230-PLATFORM-CAB-MWB-01	5010	2000	2150	ParuVendu Citroën Jumper 31 M 2.0 E chassis cab	https://www.paruvendu.fr/fiches-techniques-utilitaire/citroen-jumper/31-m-2-0-e-10-cv-essence/3057558/
+EU-CITROEN-JUMPER-I-230P-MPV-SWB-LOWROOF-01	4680	1998	2102	Transit Center Citroën Jumper I body dimensions	https://www.transitcenter.uk/citroen-jumper-1-data-specification.php
+EU-CITROEN-JUMPER-I-230P-MPV-MWB-LOWROOF-01	5099	1998	2102	Transit Center Citroën Jumper I body dimensions	https://www.transitcenter.uk/citroen-jumper-1-data-specification.php
+EU-CITROEN-JUMPER-I-230P-MPV-MWB-HIGHROOF-01	5099	1998	2420	Transit Center Citroën Jumper I body dimensions	https://www.transitcenter.uk/citroen-jumper-1-data-specification.php
+EU-CITROEN-JUMPER-I-230L-VAN-SWB-LOWROOF-01	4680	1998	2102	Transit Center Citroën Jumper I body dimensions	https://www.transitcenter.uk/citroen-jumper-1-data-specification.php
+EU-CITROEN-JUMPER-I-230L-VAN-SWB-HIGHROOF-01	4680	1998	2420	Transit Center Citroën Jumper I body dimensions	https://www.transitcenter.uk/citroen-jumper-1-data-specification.php
+EU-CITROEN-JUMPER-I-230L-VAN-MWB-LOWROOF-01	5099	1998	2102	Transit Center Citroën Jumper I body dimensions	https://www.transitcenter.uk/citroen-jumper-1-data-specification.php
+EU-CITROEN-JUMPER-I-230L-VAN-MWB-HIGHROOF-01	5099	1998	2420	Transit Center Citroën Jumper I body dimensions	https://www.transitcenter.uk/citroen-jumper-1-data-specification.php
+EU-CITROEN-JUMPER-I-230L-VAN-LWB-HIGHROOF-01	5599	1998	2420	Transit Center Citroën Jumper I body dimensions	https://www.transitcenter.uk/citroen-jumper-1-data-specification.php
+EU-CITROEN-JUMPER-I-230L-VAN-4X4-SWB-LOWROOF-01	4680	1998	2102	Transit Center Citroën Jumper I body dimensions	https://www.transitcenter.uk/citroen-jumper-1-data-specification.php
+EU-CITROEN-JUMPER-I-230L-VAN-4X4-MWB-HIGHROOF-01	5099	1998	2420	Transit Center Citroën Jumper I body dimensions	https://www.transitcenter.uk/citroen-jumper-1-data-specification.php
+EU-CITROEN-JUMPER-I-230L-VAN-4X4-MWB-EXTRAHIGHROOF-01	5099	1998	2735	Truck1 Citroën Jumper 35MS exterior dimensions	https://www.truck1.eu/blog/citroen-jumper-van-35ms-2-8-hdi-127-hp-tech-specs-t28881
+EU-CITROEN-JUMPER-II-244-VAN-4X4-SWB-LOWROOF-01	4749	2024	2145	ParuVendu Citroën Jumper TOLE 33 C 2.8 HDi 4X4	https://www.paruvendu.fr/fiches-techniques-utilitaire/citroen-jumper/tole-33-c-2-8-hdi-4x4-9-cv-diesel/3076073/
+EU-CITROEN-JUMPER-II-244-VAN-4X4-SWB-HIGHROOF-01	4749	2024	2475	ParuVendu Citroën Jumper TOLE 33 CH 2.8 HDi	https://www.paruvendu.fr/fiches-techniques-utilitaire/citroen-jumper/tole-33-ch-2-8-hdi-9-cv-diesel/3076077/
+EU-CITROEN-JUMPER-II-244-VAN-4X4-MWB-HIGHROOF-01	5099	2024	2475	ParuVendu Citroën Jumper TOLE 33 MH 2.8 HDi 4X4 CONFORT	https://www.paruvendu.fr/fiches-techniques-utilitaire/citroen-jumper/tole-33-mh-2-8-hdi-4x4-confort-9-cv-diesel/3091095/
+EU-CITROEN-JUMPER-II-244-VAN-4X4-LWB-HIGHROOF-01	5599	2024	2470	ParuVendu Citroën Jumper TOLE 35 LH 2.8 HDi 4X4 CONFORT	https://www.paruvendu.fr/fiches-techniques-utilitaire/citroen-jumper/tole-35-lh-2-8-hdi-4x4-confort-9-cv-diesel/3091097/
+EU-CITROEN-JUMPER-III-MPV-L2H1-01	5413	2050	2254	Citroën Jumper Technical Characteristics, March 2016	https://www.attardigroup.it/sites/default/files/brochures/ct_jumper.225509.pdf
+EU-CITROEN-JUMPER-III-PLATFORM-CAB-L1-01	4908	2050	2153	Citroën Jumper Technical Data, December 2016	https://www.fabian.hu/wp-content/uploads/2015/06/JUMPER_muszaki_12_16.pdf
+EU-CITROEN-JUMPER-III-PLATFORM-CAB-L2-01	5358	2050	2153	Citroën Jumper Technical Data, December 2016	https://www.fabian.hu/wp-content/uploads/2015/06/JUMPER_muszaki_12_16.pdf
+EU-CITROEN-JUMPER-III-PLATFORM-CAB-L2S-01	5708	2050	2153	Citroën Jumper Technical Data, December 2016	https://www.fabian.hu/wp-content/uploads/2015/06/JUMPER_muszaki_12_16.pdf
+EU-CITROEN-JUMPER-III-MPV-L2H2-01	5413	2050	2522	Citroën Jumper Technical Characteristics, March 2016	https://www.attardigroup.it/sites/default/files/brochures/ct_jumper.225509.pdf
+EU-CITROEN-JUMPER-III-PLATFORM-CAB-L3-01	5943	2050	2153	Citroën Jumper Technical Data, December 2016	https://www.fabian.hu/wp-content/uploads/2015/06/JUMPER_muszaki_12_16.pdf
+EU-CITROEN-JUMPER-III-PLATFORM-CAB-L4-01	6308	2050	2153	Citroën Jumper Technical Data, December 2016	https://www.fabian.hu/wp-content/uploads/2015/06/JUMPER_muszaki_12_16.pdf
+EU-CITROEN-JUMPER-III-VAN-L1H1-01	4963	2050	2254	Citroën Jumper 2017 Technical Data	https://westrum.no/wp-content/uploads/2017/08/Citroen-Jumper-2017-utdrag-tekniske-data.pdf
+EU-CITROEN-JUMPER-III-VAN-L2H1-01	5413	2050	2254	Citroën Jumper 2017 Technical Data	https://westrum.no/wp-content/uploads/2017/08/Citroen-Jumper-2017-utdrag-tekniske-data.pdf
+EU-CITROEN-JUMPER-III-VAN-L2H2-01	5413	2050	2524	Citroën Jumper 2017 Technical Data	https://westrum.no/wp-content/uploads/2017/08/Citroen-Jumper-2017-utdrag-tekniske-data.pdf
+EU-CITROEN-JUMPER-III-VAN-L3H2-01	5998	2050	2524	Citroën Jumper 2017 Technical Data	https://westrum.no/wp-content/uploads/2017/08/Citroen-Jumper-2017-utdrag-tekniske-data.pdf
+EU-CITROEN-JUMPER-III-VAN-L3H3-01	5998	2050	2764	Citroën Jumper 2017 Technical Data	https://westrum.no/wp-content/uploads/2017/08/Citroen-Jumper-2017-utdrag-tekniske-data.pdf
+EU-CITROEN-JUMPER-III-VAN-L4H2-01	6363	2050	2524	Citroën Jumper 2017 Technical Data	https://westrum.no/wp-content/uploads/2017/08/Citroen-Jumper-2017-utdrag-tekniske-data.pdf
+EU-CITROEN-JUMPER-III-VAN-L4H3-01	6363	2050	2764	Citroën Jumper 2017 Technical Data	https://westrum.no/wp-content/uploads/2017/08/Citroen-Jumper-2017-utdrag-tekniske-data.pdf
+EU-CITROEN-JUMPY-I-PLATFORM-CAB-01	4440	1810	1927	Auto-Data Citroën Jumpy I 1.9 TD body dimensions	https://www.auto-data.net/en/citroen-jumpy-i-1.9td-90hp-46343
+```
+
+[下载完整 DIMENSION_GROUP TSV](sandbox:/mnt/data/left18448_3801-3900_dimension_groups_final.tsv)
+
+推进信号：COMPLETE
+
+
+--- 累计最终 TSV 已更新 ---
+- 累计 Ktype 映射：ktype_mapping_final.tsv（4587 行）
+- 累计尺寸组：dimension_groups_final.tsv（1304 行）
+
+- 尺寸冲突协调：
+  - EU-CITROEN-EVASION-I-MPV-5D-01 -> EU-CITROEN-EVASION-I-MPV-5D-02：4454x1812x1710 与 4454x1834x1714，创建新尺寸组

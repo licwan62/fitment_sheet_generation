@@ -1,0 +1,1560 @@
+{
+    "version":  1,
+    "revision":  86,
+    "task_id":  "left18448__batch__0033__b6cfb8ef",
+    "source_file":  "left18448.tsv",
+    "source_start_row":  3201,
+    "source_end_row":  3300,
+    "round":  53,
+    "ktype_progress":  {
+                           "55801":  {
+                                         "status":  "ready",
+                                         "source_rows":  [
+                                                             3201
+                                                         ],
+                                         "mapping_ids":  [
+                                                             "55801"
+                                                         ],
+                                         "dimension_group_ids":  [
+                                                                     "EU-CHEVROLET-CRUZE-I-WAGON-01"
+                                                                 ],
+                                         "pending_reason":  "",
+                                         "last_updated_round":  53
+                                     },
+                           "100838":  {
+                                          "status":  "ready",
+                                          "source_rows":  [
+                                                              3202
+                                                          ],
+                                          "mapping_ids":  [
+                                                              "100838"
+                                                          ],
+                                          "dimension_group_ids":  [
+                                                                      "EU-CHEVROLET-CRUZE-I-WAGON-01"
+                                                                  ],
+                                          "pending_reason":  "",
+                                          "last_updated_round":  53
+                                      },
+                           "100840":  {
+                                          "status":  "ready",
+                                          "source_rows":  [
+                                                              3203
+                                                          ],
+                                          "mapping_ids":  [
+                                                              "100840"
+                                                          ],
+                                          "dimension_group_ids":  [
+                                                                      "EU-CHEVROLET-CRUZE-I-SEDAN-FACELIFT-01"
+                                                                  ],
+                                          "pending_reason":  "",
+                                          "last_updated_round":  53
+                                      },
+                           "55444":  {
+                                         "status":  "ready",
+                                         "source_rows":  [
+                                                             3204
+                                                         ],
+                                         "mapping_ids":  [
+                                                             "55444_prefl",
+                                                             "55444_facelift"
+                                                         ],
+                                         "dimension_group_ids":  [
+                                                                     "EU-CHEVROLET-CRUZE-I-SEDAN-PREFL-01",
+                                                                     "EU-CHEVROLET-CRUZE-I-SEDAN-FACELIFT-01"
+                                                                 ],
+                                         "pending_reason":  "",
+                                         "last_updated_round":  53
+                                     },
+                           "57390":  {
+                                         "status":  "ready",
+                                         "source_rows":  [
+                                                             3205
+                                                         ],
+                                         "mapping_ids":  [
+                                                             "57390_prefl",
+                                                             "57390_facelift"
+                                                         ],
+                                         "dimension_group_ids":  [
+                                                                     "EU-CHEVROLET-CRUZE-I-HATCHBACK-PREFL-01",
+                                                                     "EU-CHEVROLET-CRUZE-I-HATCHBACK-FACELIFT-01"
+                                                                 ],
+                                         "pending_reason":  "",
+                                         "last_updated_round":  53
+                                     },
+                           "10350":  {
+                                         "status":  "ready",
+                                         "source_rows":  [
+                                                             3206
+                                                         ],
+                                         "mapping_ids":  [
+                                                             "10350_prefl",
+                                                             "10350_facelift"
+                                                         ],
+                                         "dimension_group_ids":  [
+                                                                     "EU-CHEVROLET-CRUZE-I-HATCHBACK-PREFL-01",
+                                                                     "EU-CHEVROLET-CRUZE-I-HATCHBACK-FACELIFT-01"
+                                                                 ],
+                                         "pending_reason":  "",
+                                         "last_updated_round":  53
+                                     },
+                           "34974":  {
+                                         "status":  "ready",
+                                         "source_rows":  [
+                                                             3207
+                                                         ],
+                                         "mapping_ids":  [
+                                                             "34974"
+                                                         ],
+                                         "dimension_group_ids":  [
+                                                                     "EU-CHEVROLET-CRUZE-I-SEDAN-PREFL-01"
+                                                                 ],
+                                         "pending_reason":  "",
+                                         "last_updated_round":  53
+                                     },
+                           "55802":  {
+                                         "status":  "ready",
+                                         "source_rows":  [
+                                                             3208
+                                                         ],
+                                         "mapping_ids":  [
+                                                             "55802"
+                                                         ],
+                                         "dimension_group_ids":  [
+                                                                     "EU-CHEVROLET-CRUZE-I-WAGON-01"
+                                                                 ],
+                                         "pending_reason":  "",
+                                         "last_updated_round":  53
+                                     },
+                           "18549":  {
+                                         "status":  "pending",
+                                         "source_rows":  [
+                                                             3209
+                                                         ],
+                                         "mapping_ids":  [
+
+                                                         ],
+                                         "dimension_group_ids":  [
+
+                                                                 ],
+                                         "pending_reason":  "尚未产生 Ktype 映射",
+                                         "last_updated_round":  53
+                                     },
+                           "55208":  {
+                                         "status":  "pending",
+                                         "source_rows":  [
+                                                             3210
+                                                         ],
+                                         "mapping_ids":  [
+
+                                                         ],
+                                         "dimension_group_ids":  [
+
+                                                                 ],
+                                         "pending_reason":  "尚未产生 Ktype 映射",
+                                         "last_updated_round":  53
+                                     },
+                           "108690":  {
+                                          "status":  "pending",
+                                          "source_rows":  [
+                                                              3211
+                                                          ],
+                                          "mapping_ids":  [
+
+                                                          ],
+                                          "dimension_group_ids":  [
+
+                                                                  ],
+                                          "pending_reason":  "尚未产生 Ktype 映射",
+                                          "last_updated_round":  53
+                                      },
+                           "111655":  {
+                                          "status":  "pending",
+                                          "source_rows":  [
+                                                              3212
+                                                          ],
+                                          "mapping_ids":  [
+
+                                                          ],
+                                          "dimension_group_ids":  [
+
+                                                                  ],
+                                          "pending_reason":  "尚未产生 Ktype 映射",
+                                          "last_updated_round":  53
+                                      },
+                           "52230":  {
+                                         "status":  "pending",
+                                         "source_rows":  [
+                                                             3213
+                                                         ],
+                                         "mapping_ids":  [
+
+                                                         ],
+                                         "dimension_group_ids":  [
+
+                                                                 ],
+                                         "pending_reason":  "尚未产生 Ktype 映射",
+                                         "last_updated_round":  53
+                                     },
+                           "51090":  {
+                                         "status":  "pending",
+                                         "source_rows":  [
+                                                             3214
+                                                         ],
+                                         "mapping_ids":  [
+
+                                                         ],
+                                         "dimension_group_ids":  [
+
+                                                                 ],
+                                         "pending_reason":  "尚未产生 Ktype 映射",
+                                         "last_updated_round":  53
+                                     },
+                           "51094":  {
+                                         "status":  "pending",
+                                         "source_rows":  [
+                                                             3215
+                                                         ],
+                                         "mapping_ids":  [
+
+                                                         ],
+                                         "dimension_group_ids":  [
+
+                                                                 ],
+                                         "pending_reason":  "尚未产生 Ktype 映射",
+                                         "last_updated_round":  53
+                                     },
+                           "52233":  {
+                                         "status":  "pending",
+                                         "source_rows":  [
+                                                             3216
+                                                         ],
+                                         "mapping_ids":  [
+
+                                                         ],
+                                         "dimension_group_ids":  [
+
+                                                                 ],
+                                         "pending_reason":  "尚未产生 Ktype 映射",
+                                         "last_updated_round":  53
+                                     },
+                           "119649":  {
+                                          "status":  "pending",
+                                          "source_rows":  [
+                                                              3217
+                                                          ],
+                                          "mapping_ids":  [
+
+                                                          ],
+                                          "dimension_group_ids":  [
+
+                                                                  ],
+                                          "pending_reason":  "尚未产生 Ktype 映射",
+                                          "last_updated_round":  53
+                                      },
+                           "54236":  {
+                                         "status":  "pending",
+                                         "source_rows":  [
+                                                             3218
+                                                         ],
+                                         "mapping_ids":  [
+
+                                                         ],
+                                         "dimension_group_ids":  [
+
+                                                                 ],
+                                         "pending_reason":  "尚未产生 Ktype 映射",
+                                         "last_updated_round":  53
+                                     },
+                           "111712":  {
+                                          "status":  "pending",
+                                          "source_rows":  [
+                                                              3219
+                                                          ],
+                                          "mapping_ids":  [
+
+                                                          ],
+                                          "dimension_group_ids":  [
+
+                                                                  ],
+                                          "pending_reason":  "尚未产生 Ktype 映射",
+                                          "last_updated_round":  53
+                                      },
+                           "37203":  {
+                                         "status":  "pending",
+                                         "source_rows":  [
+                                                             3220
+                                                         ],
+                                         "mapping_ids":  [
+
+                                                         ],
+                                         "dimension_group_ids":  [
+
+                                                                 ],
+                                         "pending_reason":  "尚未产生 Ktype 映射",
+                                         "last_updated_round":  53
+                                     },
+                           "51098":  {
+                                         "status":  "pending",
+                                         "source_rows":  [
+                                                             3221
+                                                         ],
+                                         "mapping_ids":  [
+
+                                                         ],
+                                         "dimension_group_ids":  [
+
+                                                                 ],
+                                         "pending_reason":  "尚未产生 Ktype 映射",
+                                         "last_updated_round":  53
+                                     },
+                           "54251":  {
+                                         "status":  "pending",
+                                         "source_rows":  [
+                                                             3222
+                                                         ],
+                                         "mapping_ids":  [
+
+                                                         ],
+                                         "dimension_group_ids":  [
+
+                                                                 ],
+                                         "pending_reason":  "尚未产生 Ktype 映射",
+                                         "last_updated_round":  53
+                                     },
+                           "108705":  {
+                                          "status":  "pending",
+                                          "source_rows":  [
+                                                              3223
+                                                          ],
+                                          "mapping_ids":  [
+
+                                                          ],
+                                          "dimension_group_ids":  [
+
+                                                                  ],
+                                          "pending_reason":  "尚未产生 Ktype 映射",
+                                          "last_updated_round":  53
+                                      },
+                           "123910":  {
+                                          "status":  "pending",
+                                          "source_rows":  [
+                                                              3224
+                                                          ],
+                                          "mapping_ids":  [
+
+                                                          ],
+                                          "dimension_group_ids":  [
+
+                                                                  ],
+                                          "pending_reason":  "尚未产生 Ktype 映射",
+                                          "last_updated_round":  53
+                                      },
+                           "37310":  {
+                                         "status":  "pending",
+                                         "source_rows":  [
+                                                             3225
+                                                         ],
+                                         "mapping_ids":  [
+
+                                                         ],
+                                         "dimension_group_ids":  [
+
+                                                                 ],
+                                         "pending_reason":  "尚未产生 Ktype 映射",
+                                         "last_updated_round":  53
+                                     },
+                           "37402":  {
+                                         "status":  "pending",
+                                         "source_rows":  [
+                                                             3226
+                                                         ],
+                                         "mapping_ids":  [
+
+                                                         ],
+                                         "dimension_group_ids":  [
+
+                                                                 ],
+                                         "pending_reason":  "尚未产生 Ktype 映射",
+                                         "last_updated_round":  53
+                                     },
+                           "37421":  {
+                                         "status":  "pending",
+                                         "source_rows":  [
+                                                             3227
+                                                         ],
+                                         "mapping_ids":  [
+
+                                                         ],
+                                         "dimension_group_ids":  [
+
+                                                                 ],
+                                         "pending_reason":  "尚未产生 Ktype 映射",
+                                         "last_updated_round":  53
+                                     },
+                           "52255":  {
+                                         "status":  "pending",
+                                         "source_rows":  [
+                                                             3228
+                                                         ],
+                                         "mapping_ids":  [
+
+                                                         ],
+                                         "dimension_group_ids":  [
+
+                                                                 ],
+                                         "pending_reason":  "尚未产生 Ktype 映射",
+                                         "last_updated_round":  53
+                                     },
+                           "11260":  {
+                                         "status":  "pending",
+                                         "source_rows":  [
+                                                             3229
+                                                         ],
+                                         "mapping_ids":  [
+
+                                                         ],
+                                         "dimension_group_ids":  [
+
+                                                                 ],
+                                         "pending_reason":  "尚未产生 Ktype 映射",
+                                         "last_updated_round":  53
+                                     },
+                           "11261":  {
+                                         "status":  "pending",
+                                         "source_rows":  [
+                                                             3230
+                                                         ],
+                                         "mapping_ids":  [
+
+                                                         ],
+                                         "dimension_group_ids":  [
+
+                                                                 ],
+                                         "pending_reason":  "尚未产生 Ktype 映射",
+                                         "last_updated_round":  53
+                                     },
+                           "37563":  {
+                                         "status":  "pending",
+                                         "source_rows":  [
+                                                             3231
+                                                         ],
+                                         "mapping_ids":  [
+
+                                                         ],
+                                         "dimension_group_ids":  [
+
+                                                                 ],
+                                         "pending_reason":  "尚未产生 Ktype 映射",
+                                         "last_updated_round":  53
+                                     },
+                           "111588":  {
+                                          "status":  "ready",
+                                          "source_rows":  [
+                                                              3232
+                                                          ],
+                                          "mapping_ids":  [
+                                                              "111588_1996_lwb",
+                                                              "111588_1997_lwb",
+                                                              "111588_1998_lwb",
+                                                              "111588_1999_lwb",
+                                                              "111588_2000_lwb",
+                                                              "111588_1996_swb",
+                                                              "111588_1997_swb",
+                                                              "111588_1998_swb",
+                                                              "111588_1999_swb",
+                                                              "111588_2000_swb"
+                                                          ],
+                                          "dimension_group_ids":  [
+                                                                      "EU-CHEVROLET-K2500-GMT400-PICKUP-EXTCAB-4WD-LONG-1996-01",
+                                                                      "EU-CHEVROLET-K2500-GMT400-PICKUP-EXTCAB-4WD-LONG-1999-01",
+                                                                      "EU-CHEVROLET-K2500-GMT400-PICKUP-EXTCAB-4WD-LONG-1998-01",
+                                                                      "EU-CHEVROLET-K2500-GMT400-PICKUP-EXTCAB-4WD-LONG-2000-01",
+                                                                      "EU-CHEVROLET-K2500-GMT400-PICKUP-EXTCAB-4WD-SHORT-1996-01",
+                                                                      "EU-CHEVROLET-K2500-GMT400-PICKUP-EXTCAB-4WD-SHORT-1999-01",
+                                                                      "EU-CHEVROLET-K2500-GMT400-PICKUP-EXTCAB-4WD-SHORT-1998-01",
+                                                                      "EU-CHEVROLET-K2500-GMT400-PICKUP-EXTCAB-4WD-SHORT-2000-01"
+                                                                  ],
+                                          "pending_reason":  "",
+                                          "last_updated_round":  53
+                                      },
+                           "111602":  {
+                                          "status":  "pending",
+                                          "source_rows":  [
+                                                              3233
+                                                          ],
+                                          "mapping_ids":  [
+
+                                                          ],
+                                          "dimension_group_ids":  [
+
+                                                                  ],
+                                          "pending_reason":  "尚未产生 Ktype 映射",
+                                          "last_updated_round":  53
+                                      },
+                           "113244":  {
+                                          "status":  "pending",
+                                          "source_rows":  [
+                                                              3234
+                                                          ],
+                                          "mapping_ids":  [
+
+                                                          ],
+                                          "dimension_group_ids":  [
+
+                                                                  ],
+                                          "pending_reason":  "尚未产生 Ktype 映射",
+                                          "last_updated_round":  53
+                                      },
+                           "18537":  {
+                                         "status":  "pending",
+                                         "source_rows":  [
+                                                             3235
+                                                         ],
+                                         "mapping_ids":  [
+
+                                                         ],
+                                         "dimension_group_ids":  [
+
+                                                                 ],
+                                         "pending_reason":  "尚未产生 Ktype 映射",
+                                         "last_updated_round":  53
+                                     },
+                           "113243":  {
+                                          "status":  "pending",
+                                          "source_rows":  [
+                                                              3236
+                                                          ],
+                                          "mapping_ids":  [
+
+                                                          ],
+                                          "dimension_group_ids":  [
+
+                                                                  ],
+                                          "pending_reason":  "尚未产生 Ktype 映射",
+                                          "last_updated_round":  53
+                                      },
+                           "18538":  {
+                                         "status":  "pending",
+                                         "source_rows":  [
+                                                             3237
+                                                         ],
+                                         "mapping_ids":  [
+
+                                                         ],
+                                         "dimension_group_ids":  [
+
+                                                                 ],
+                                         "pending_reason":  "尚未产生 Ktype 映射",
+                                         "last_updated_round":  53
+                                     },
+                           "18536":  {
+                                         "status":  "pending",
+                                         "source_rows":  [
+                                                             3238
+                                                         ],
+                                         "mapping_ids":  [
+
+                                                         ],
+                                         "dimension_group_ids":  [
+
+                                                                 ],
+                                         "pending_reason":  "尚未产生 Ktype 映射",
+                                         "last_updated_round":  53
+                                     },
+                           "142517":  {
+                                          "status":  "pending",
+                                          "source_rows":  [
+                                                              3239
+                                                          ],
+                                          "mapping_ids":  [
+
+                                                          ],
+                                          "dimension_group_ids":  [
+
+                                                                  ],
+                                          "pending_reason":  "尚未产生 Ktype 映射",
+                                          "last_updated_round":  53
+                                      },
+                           "142518":  {
+                                          "status":  "pending",
+                                          "source_rows":  [
+                                                              3240
+                                                          ],
+                                          "mapping_ids":  [
+
+                                                          ],
+                                          "dimension_group_ids":  [
+
+                                                                  ],
+                                          "pending_reason":  "尚未产生 Ktype 映射",
+                                          "last_updated_round":  53
+                                      },
+                           "142846":  {
+                                          "status":  "pending",
+                                          "source_rows":  [
+                                                              3241
+                                                          ],
+                                          "mapping_ids":  [
+
+                                                          ],
+                                          "dimension_group_ids":  [
+
+                                                                  ],
+                                          "pending_reason":  "尚未产生 Ktype 映射",
+                                          "last_updated_round":  53
+                                      },
+                           "13978":  {
+                                         "status":  "pending",
+                                         "source_rows":  [
+                                                             3242
+                                                         ],
+                                         "mapping_ids":  [
+
+                                                         ],
+                                         "dimension_group_ids":  [
+
+                                                                 ],
+                                         "pending_reason":  "尚未产生 Ktype 映射",
+                                         "last_updated_round":  53
+                                     },
+                           "125554":  {
+                                          "status":  "pending",
+                                          "source_rows":  [
+                                                              3243
+                                                          ],
+                                          "mapping_ids":  [
+
+                                                          ],
+                                          "dimension_group_ids":  [
+
+                                                                  ],
+                                          "pending_reason":  "尚未产生 Ktype 映射",
+                                          "last_updated_round":  53
+                                      },
+                           "125565":  {
+                                          "status":  "pending",
+                                          "source_rows":  [
+                                                              3244
+                                                          ],
+                                          "mapping_ids":  [
+
+                                                          ],
+                                          "dimension_group_ids":  [
+
+                                                                  ],
+                                          "pending_reason":  "尚未产生 Ktype 映射",
+                                          "last_updated_round":  53
+                                      },
+                           "55101":  {
+                                         "status":  "pending",
+                                         "source_rows":  [
+                                                             3245
+                                                         ],
+                                         "mapping_ids":  [
+
+                                                         ],
+                                         "dimension_group_ids":  [
+
+                                                                 ],
+                                         "pending_reason":  "尚未产生 Ktype 映射",
+                                         "last_updated_round":  53
+                                     },
+                           "18528":  {
+                                         "status":  "pending",
+                                         "source_rows":  [
+                                                             3246
+                                                         ],
+                                         "mapping_ids":  [
+
+                                                         ],
+                                         "dimension_group_ids":  [
+
+                                                                 ],
+                                         "pending_reason":  "尚未产生 Ktype 映射",
+                                         "last_updated_round":  53
+                                     },
+                           "14606":  {
+                                         "status":  "pending",
+                                         "source_rows":  [
+                                                             3247
+                                                         ],
+                                         "mapping_ids":  [
+
+                                                         ],
+                                         "dimension_group_ids":  [
+
+                                                                 ],
+                                         "pending_reason":  "尚未产生 Ktype 映射",
+                                         "last_updated_round":  53
+                                     },
+                           "18529":  {
+                                         "status":  "pending",
+                                         "source_rows":  [
+                                                             3248
+                                                         ],
+                                         "mapping_ids":  [
+
+                                                         ],
+                                         "dimension_group_ids":  [
+
+                                                                 ],
+                                         "pending_reason":  "尚未产生 Ktype 映射",
+                                         "last_updated_round":  53
+                                     },
+                           "18859":  {
+                                         "status":  "pending",
+                                         "source_rows":  [
+                                                             3249
+                                                         ],
+                                         "mapping_ids":  [
+
+                                                         ],
+                                         "dimension_group_ids":  [
+
+                                                                 ],
+                                         "pending_reason":  "尚未产生 Ktype 映射",
+                                         "last_updated_round":  53
+                                     },
+                           "37744":  {
+                                         "status":  "pending",
+                                         "source_rows":  [
+                                                             3250
+                                                         ],
+                                         "mapping_ids":  [
+
+                                                         ],
+                                         "dimension_group_ids":  [
+
+                                                                 ],
+                                         "pending_reason":  "尚未产生 Ktype 映射",
+                                         "last_updated_round":  53
+                                     },
+                           "112699":  {
+                                          "status":  "pending",
+                                          "source_rows":  [
+                                                              3251
+                                                          ],
+                                          "mapping_ids":  [
+
+                                                          ],
+                                          "dimension_group_ids":  [
+
+                                                                  ],
+                                          "pending_reason":  "尚未产生 Ktype 映射",
+                                          "last_updated_round":  53
+                                      },
+                           "37738":  {
+                                         "status":  "pending",
+                                         "source_rows":  [
+                                                             3252
+                                                         ],
+                                         "mapping_ids":  [
+
+                                                         ],
+                                         "dimension_group_ids":  [
+
+                                                                 ],
+                                         "pending_reason":  "尚未产生 Ktype 映射",
+                                         "last_updated_round":  53
+                                     },
+                           "37764":  {
+                                         "status":  "ready",
+                                         "source_rows":  [
+                                                             3253
+                                                         ],
+                                         "mapping_ids":  [
+                                                             "37764"
+                                                         ],
+                                         "dimension_group_ids":  [
+                                                                     "EU-CHEVROLET-MONZA-H-BODY-COUPE-2PLUS2-1977-1978-01"
+                                                                 ],
+                                         "pending_reason":  "",
+                                         "last_updated_round":  53
+                                     },
+                           "37782":  {
+                                         "status":  "pending",
+                                         "source_rows":  [
+                                                             3254
+                                                         ],
+                                         "mapping_ids":  [
+
+                                                         ],
+                                         "dimension_group_ids":  [
+
+                                                                 ],
+                                         "pending_reason":  "尚未产生 Ktype 映射",
+                                         "last_updated_round":  53
+                                     },
+                           "37791":  {
+                                         "status":  "pending",
+                                         "source_rows":  [
+                                                             3255
+                                                         ],
+                                         "mapping_ids":  [
+
+                                                         ],
+                                         "dimension_group_ids":  [
+
+                                                                 ],
+                                         "pending_reason":  "尚未产生 Ktype 映射",
+                                         "last_updated_round":  53
+                                     },
+                           "8845":  {
+                                        "status":  "pending",
+                                        "source_rows":  [
+                                                            3256
+                                                        ],
+                                        "mapping_ids":  [
+
+                                                        ],
+                                        "dimension_group_ids":  [
+
+                                                                ],
+                                        "pending_reason":  "尚未产生 Ktype 映射",
+                                        "last_updated_round":  53
+                                    },
+                           "18539":  {
+                                         "status":  "pending",
+                                         "source_rows":  [
+                                                             3257
+                                                         ],
+                                         "mapping_ids":  [
+
+                                                         ],
+                                         "dimension_group_ids":  [
+
+                                                                 ],
+                                         "pending_reason":  "尚未产生 Ktype 映射",
+                                         "last_updated_round":  53
+                                     },
+                           "18542":  {
+                                         "status":  "pending",
+                                         "source_rows":  [
+                                                             3258
+                                                         ],
+                                         "mapping_ids":  [
+
+                                                         ],
+                                         "dimension_group_ids":  [
+
+                                                                 ],
+                                         "pending_reason":  "尚未产生 Ktype 映射",
+                                         "last_updated_round":  53
+                                     },
+                           "18540":  {
+                                         "status":  "pending",
+                                         "source_rows":  [
+                                                             3259
+                                                         ],
+                                         "mapping_ids":  [
+
+                                                         ],
+                                         "dimension_group_ids":  [
+
+                                                                 ],
+                                         "pending_reason":  "尚未产生 Ktype 映射",
+                                         "last_updated_round":  53
+                                     },
+                           "18544":  {
+                                         "status":  "pending",
+                                         "source_rows":  [
+                                                             3260
+                                                         ],
+                                         "mapping_ids":  [
+
+                                                         ],
+                                         "dimension_group_ids":  [
+
+                                                                 ],
+                                         "pending_reason":  "尚未产生 Ktype 映射",
+                                         "last_updated_round":  53
+                                     },
+                           "56755":  {
+                                         "status":  "pending",
+                                         "source_rows":  [
+                                                             3261
+                                                         ],
+                                         "mapping_ids":  [
+
+                                                         ],
+                                         "dimension_group_ids":  [
+
+                                                                 ],
+                                         "pending_reason":  "尚未产生 Ktype 映射",
+                                         "last_updated_round":  53
+                                     },
+                           "5714":  {
+                                        "status":  "pending",
+                                        "source_rows":  [
+                                                            3262
+                                                        ],
+                                        "mapping_ids":  [
+
+                                                        ],
+                                        "dimension_group_ids":  [
+
+                                                                ],
+                                        "pending_reason":  "尚未产生 Ktype 映射",
+                                        "last_updated_round":  53
+                                    },
+                           "55445":  {
+                                         "status":  "pending",
+                                         "source_rows":  [
+                                                             3263
+                                                         ],
+                                         "mapping_ids":  [
+
+                                                         ],
+                                         "dimension_group_ids":  [
+
+                                                                 ],
+                                         "pending_reason":  "尚未产生 Ktype 映射",
+                                         "last_updated_round":  53
+                                     },
+                           "5745":  {
+                                        "status":  "pending",
+                                        "source_rows":  [
+                                                            3264
+                                                        ],
+                                        "mapping_ids":  [
+
+                                                        ],
+                                        "dimension_group_ids":  [
+
+                                                                ],
+                                        "pending_reason":  "尚未产生 Ktype 映射",
+                                        "last_updated_round":  53
+                                    },
+                           "5750":  {
+                                        "status":  "pending",
+                                        "source_rows":  [
+                                                            3265
+                                                        ],
+                                        "mapping_ids":  [
+
+                                                        ],
+                                        "dimension_group_ids":  [
+
+                                                                ],
+                                        "pending_reason":  "尚未产生 Ktype 映射",
+                                        "last_updated_round":  53
+                                    },
+                           "18547":  {
+                                         "status":  "pending",
+                                         "source_rows":  [
+                                                             3266
+                                                         ],
+                                         "mapping_ids":  [
+
+                                                         ],
+                                         "dimension_group_ids":  [
+
+                                                                 ],
+                                         "pending_reason":  "尚未产生 Ktype 映射",
+                                         "last_updated_round":  53
+                                     },
+                           "128228":  {
+                                          "status":  "pending",
+                                          "source_rows":  [
+                                                              3267
+                                                          ],
+                                          "mapping_ids":  [
+
+                                                          ],
+                                          "dimension_group_ids":  [
+
+                                                                  ],
+                                          "pending_reason":  "尚未产生 Ktype 映射",
+                                          "last_updated_round":  53
+                                      },
+                           "18548":  {
+                                         "status":  "pending",
+                                         "source_rows":  [
+                                                             3268
+                                                         ],
+                                         "mapping_ids":  [
+
+                                                         ],
+                                         "dimension_group_ids":  [
+
+                                                                 ],
+                                         "pending_reason":  "尚未产生 Ktype 映射",
+                                         "last_updated_round":  53
+                                     },
+                           "119772":  {
+                                          "status":  "pending",
+                                          "source_rows":  [
+                                                              3269
+                                                          ],
+                                          "mapping_ids":  [
+
+                                                          ],
+                                          "dimension_group_ids":  [
+
+                                                                  ],
+                                          "pending_reason":  "尚未产生 Ktype 映射",
+                                          "last_updated_round":  53
+                                      },
+                           "38019":  {
+                                         "status":  "pending",
+                                         "source_rows":  [
+                                                             3270
+                                                         ],
+                                         "mapping_ids":  [
+
+                                                         ],
+                                         "dimension_group_ids":  [
+
+                                                                 ],
+                                         "pending_reason":  "尚未产生 Ktype 映射",
+                                         "last_updated_round":  53
+                                     },
+                           "38016":  {
+                                         "status":  "ready",
+                                         "source_rows":  [
+                                                             3271
+                                                         ],
+                                         "mapping_ids":  [
+                                                             "38016_1995",
+                                                             "38016_1996",
+                                                             "38016_1997",
+                                                             "38016_1998",
+                                                             "38016_1999-2000",
+                                                             "38016_2001-2002",
+                                                             "38016_zr2_1996",
+                                                             "38016_zr2_1997",
+                                                             "38016_zr2_1998",
+                                                             "38016_zr2_2002",
+                                                             "38016_zr2_1999",
+                                                             "38016_zr2_2000",
+                                                             "38016_zr2_2001"
+                                                         ],
+                                         "dimension_group_ids":  [
+                                                                     "EU-CHEVROLET-S10-II-PICKUP-EXTCAB-4WD-1995-01",
+                                                                     "EU-CHEVROLET-S10-II-PICKUP-EXTCAB-4WD-1996-01",
+                                                                     "EU-CHEVROLET-S10-II-PICKUP-EXTCAB-4WD-1997-01",
+                                                                     "EU-CHEVROLET-S10-II-PICKUP-EXTCAB-4WD-1998-01",
+                                                                     "EU-CHEVROLET-S10-II-PICKUP-EXTCAB-4WD-1999-2000-01",
+                                                                     "EU-CHEVROLET-S10-II-PICKUP-EXTCAB-4WD-2001-2002-01",
+                                                                     "EU-CHEVROLET-S10-II-PICKUP-EXTCAB-ZR2-1998-01",
+                                                                     "EU-CHEVROLET-S10-II-PICKUP-EXTCAB-ZR2-2002-01",
+                                                                     "EU-CHEVROLET-S10-II-PICKUP-EXTCAB-ZR2-1999-2000-01",
+                                                                     "EU-CHEVROLET-S10-II-PICKUP-EXTCAB-ZR2-2001-01"
+                                                                 ],
+                                         "pending_reason":  "",
+                                         "last_updated_round":  53
+                                     },
+                           "111084":  {
+                                          "status":  "ready",
+                                          "source_rows":  [
+                                                              3272
+                                                          ],
+                                          "mapping_ids":  [
+                                                              "111084_1994_shortbed",
+                                                              "111084_1994_longbed",
+                                                              "111084_1995_shortbed",
+                                                              "111084_1995_longbed",
+                                                              "111084_1996_shortbed",
+                                                              "111084_1996_longbed",
+                                                              "111084_1997_shortbed",
+                                                              "111084_1997_longbed",
+                                                              "111084_1998_shortbed",
+                                                              "111084_1998_longbed",
+                                                              "111084_1999_shortbed",
+                                                              "111084_1999_longbed",
+                                                              "111084_2000_shortbed",
+                                                              "111084_2000_longbed",
+                                                              "111084_2001_shortbed",
+                                                              "111084_2001_longbed",
+                                                              "111084_2002_shortbed",
+                                                              "111084_2002_longbed",
+                                                              "111084_2003_shortbed",
+                                                              "111084_2003_longbed"
+                                                          ],
+                                          "dimension_group_ids":  [
+                                                                      "EU-CHEVROLET-S10-II-PICKUP-REGCAB-2WD-SHORT-1994-01",
+                                                                      "EU-CHEVROLET-S10-II-PICKUP-REGCAB-2WD-LONG-1994-01",
+                                                                      "EU-CHEVROLET-S10-II-PICKUP-REGCAB-SHORT-1995-01",
+                                                                      "EU-CHEVROLET-S10-II-PICKUP-REGCAB-LONG-1995-01",
+                                                                      "EU-CHEVROLET-S10-II-PICKUP-REGCAB-SHORT-1996-01",
+                                                                      "EU-CHEVROLET-S10-II-PICKUP-REGCAB-LONG-1996-01",
+                                                                      "EU-CHEVROLET-S10-II-PICKUP-REGCAB-2WD-SHORT-1997-01",
+                                                                      "EU-CHEVROLET-S10-II-PICKUP-REGCAB-2WD-LONG-1997-01",
+                                                                      "EU-CHEVROLET-S10-II-PICKUP-REGCAB-2WD-SHORT-1998-1999-01",
+                                                                      "EU-CHEVROLET-S10-II-PICKUP-REGCAB-2WD-LONG-1998-2000-01",
+                                                                      "EU-CHEVROLET-S10-II-PICKUP-REGCAB-2WD-SHORT-2001-01",
+                                                                      "EU-CHEVROLET-S10-II-PICKUP-REGCAB-2WD-LONG-2001-2003-01",
+                                                                      "EU-CHEVROLET-S10-II-PICKUP-REGCAB-2WD-SHORT-2002-2003-01"
+                                                                  ],
+                                          "pending_reason":  "",
+                                          "last_updated_round":  53
+                                      },
+                           "111140":  {
+                                          "status":  "pending",
+                                          "source_rows":  [
+                                                              3273
+                                                          ],
+                                          "mapping_ids":  [
+
+                                                          ],
+                                          "dimension_group_ids":  [
+
+                                                                  ],
+                                          "pending_reason":  "尚未产生 Ktype 映射",
+                                          "last_updated_round":  53
+                                      },
+                           "111141":  {
+                                          "status":  "pending",
+                                          "source_rows":  [
+                                                              3274
+                                                          ],
+                                          "mapping_ids":  [
+
+                                                          ],
+                                          "dimension_group_ids":  [
+
+                                                                  ],
+                                          "pending_reason":  "尚未产生 Ktype 映射",
+                                          "last_updated_round":  53
+                                      },
+                           "111158":  {
+                                          "status":  "pending",
+                                          "source_rows":  [
+                                                              3275
+                                                          ],
+                                          "mapping_ids":  [
+
+                                                          ],
+                                          "dimension_group_ids":  [
+
+                                                                  ],
+                                          "pending_reason":  "尚未产生 Ktype 映射",
+                                          "last_updated_round":  53
+                                      },
+                           "107435":  {
+                                          "status":  "ready",
+                                          "source_rows":  [
+                                                              3276
+                                                          ],
+                                          "mapping_ids":  [
+                                                              "107435"
+                                                          ],
+                                          "dimension_group_ids":  [
+                                                                      "EU-CHEVROLET-SILVERADO1500-K2XX-PICKUP-CREWCAB-4WD-SHORT-01"
+                                                                  ],
+                                          "pending_reason":  "",
+                                          "last_updated_round":  53
+                                      },
+                           "107714":  {
+                                          "status":  "ready",
+                                          "source_rows":  [
+                                                              3277
+                                                          ],
+                                          "mapping_ids":  [
+                                                              "107714"
+                                                          ],
+                                          "dimension_group_ids":  [
+                                                                      "EU-CHEVROLET-SILVERADO1500-GMT900-PICKUP-CREWCAB-4WD-SHORT-01"
+                                                                  ],
+                                          "pending_reason":  "",
+                                          "last_updated_round":  53
+                                      },
+                           "106629":  {
+                                          "status":  "ready",
+                                          "source_rows":  [
+                                                              3278
+                                                          ],
+                                          "mapping_ids":  [
+                                                              "106629"
+                                                          ],
+                                          "dimension_group_ids":  [
+                                                                      "EU-CHEVROLET-SILVERADO1500-K2XX-PICKUP-CREWCAB-4WD-SHORT-01"
+                                                                  ],
+                                          "pending_reason":  "",
+                                          "last_updated_round":  53
+                                      },
+                           "107437":  {
+                                          "status":  "ready",
+                                          "source_rows":  [
+                                                              3279
+                                                          ],
+                                          "mapping_ids":  [
+                                                              "107437"
+                                                          ],
+                                          "dimension_group_ids":  [
+                                                                      "EU-CHEVROLET-SILVERADO1500-K2XX-PICKUP-DOUBLECAB-4WD-STANDARD-01"
+                                                                  ],
+                                          "pending_reason":  "",
+                                          "last_updated_round":  53
+                                      },
+                           "106631":  {
+                                          "status":  "ready",
+                                          "source_rows":  [
+                                                              3280
+                                                          ],
+                                          "mapping_ids":  [
+                                                              "106631"
+                                                          ],
+                                          "dimension_group_ids":  [
+                                                                      "EU-CHEVROLET-SILVERADO1500-K2XX-PICKUP-DOUBLECAB-4WD-STANDARD-01"
+                                                                  ],
+                                          "pending_reason":  "",
+                                          "last_updated_round":  53
+                                      },
+                           "107433":  {
+                                          "status":  "ready",
+                                          "source_rows":  [
+                                                              3281
+                                                          ],
+                                          "mapping_ids":  [
+                                                              "107433"
+                                                          ],
+                                          "dimension_group_ids":  [
+                                                                      "EU-CHEVROLET-SILVERADO1500-K2XX-PICKUP-REGCAB-4WD-SHORT-01"
+                                                                  ],
+                                          "pending_reason":  "",
+                                          "last_updated_round":  53
+                                      },
+                           "57786":  {
+                                         "status":  "ready",
+                                         "source_rows":  [
+                                                             3282
+                                                         ],
+                                         "mapping_ids":  [
+                                                             "57786"
+                                                         ],
+                                         "dimension_group_ids":  [
+                                                                     "EU-CHEVROLET-SILVERADO1500-GMT900-PICKUP-CREWCAB-2WD-SHORT-01"
+                                                                 ],
+                                         "pending_reason":  "",
+                                         "last_updated_round":  53
+                                     },
+                           "58589":  {
+                                         "status":  "ready",
+                                         "source_rows":  [
+                                                             3283
+                                                         ],
+                                         "mapping_ids":  [
+                                                             "58589"
+                                                         ],
+                                         "dimension_group_ids":  [
+                                                                     "EU-CHEVROLET-SILVERADO2500-GMT800-PICKUP-REGCAB-RWD-LONG-1999-2004-01"
+                                                                 ],
+                                         "pending_reason":  "",
+                                         "last_updated_round":  53
+                                     },
+                           "57788":  {
+                                         "status":  "ready",
+                                         "source_rows":  [
+                                                             3284
+                                                         ],
+                                         "mapping_ids":  [
+                                                             "57788"
+                                                         ],
+                                         "dimension_group_ids":  [
+                                                                     "EU-CHEVROLET-SILVERADO1500-GMT900-PICKUP-CREWCAB-4WD-SHORT-01"
+                                                                 ],
+                                         "pending_reason":  "",
+                                         "last_updated_round":  53
+                                     },
+                           "57785":  {
+                                         "status":  "ready",
+                                         "source_rows":  [
+                                                             3285
+                                                         ],
+                                         "mapping_ids":  [
+                                                             "57785"
+                                                         ],
+                                         "dimension_group_ids":  [
+                                                                     "EU-CHEVROLET-SILVERADO1500-GMT900-PICKUP-CREWCAB-HYBRID-2WD-SHORT-01"
+                                                                 ],
+                                         "pending_reason":  "",
+                                         "last_updated_round":  53
+                                     },
+                           "58590":  {
+                                         "status":  "ready",
+                                         "source_rows":  [
+                                                             3286
+                                                         ],
+                                         "mapping_ids":  [
+                                                             "58590"
+                                                         ],
+                                         "dimension_group_ids":  [
+                                                                     "EU-CHEVROLET-SILVERADO2500HD-GMT800-PICKUP-REGCAB-LONG-2001-2006-01"
+                                                                 ],
+                                         "pending_reason":  "",
+                                         "last_updated_round":  53
+                                     },
+                           "121480":  {
+                                          "status":  "ready",
+                                          "source_rows":  [
+                                                              3287
+                                                          ],
+                                          "mapping_ids":  [
+                                                              "121480"
+                                                          ],
+                                          "dimension_group_ids":  [
+                                                                      "EU-CHEVROLET-SILVERADO2500HD-GMT800-PICKUP-REGCAB-LONG-2001-2006-01"
+                                                                  ],
+                                          "pending_reason":  "",
+                                          "last_updated_round":  53
+                                      },
+                           "121481":  {
+                                          "status":  "ready",
+                                          "source_rows":  [
+                                                              3288
+                                                          ],
+                                          "mapping_ids":  [
+                                                              "121481"
+                                                          ],
+                                          "dimension_group_ids":  [
+                                                                      "EU-CHEVROLET-SILVERADO2500HD-GMT800-PICKUP-REGCAB-LONG-2001-2006-01"
+                                                                  ],
+                                          "pending_reason":  "",
+                                          "last_updated_round":  53
+                                      },
+                           "125438":  {
+                                          "status":  "ready",
+                                          "source_rows":  [
+                                                              3289
+                                                          ],
+                                          "mapping_ids":  [
+                                                              "125438"
+                                                          ],
+                                          "dimension_group_ids":  [
+                                                                      "EU-CHEVROLET-SILVERADO2500HD-GMT800-PICKUP-REGCAB-LONG-2001-2006-01"
+                                                                  ],
+                                          "pending_reason":  "",
+                                          "last_updated_round":  53
+                                      },
+                           "106151":  {
+                                          "status":  "ready",
+                                          "source_rows":  [
+                                                              3290
+                                                          ],
+                                          "mapping_ids":  [
+                                                              "106151"
+                                                          ],
+                                          "dimension_group_ids":  [
+                                                                      "EU-CHEVROLET-SILVERADO1500-GMT900-PICKUP-CREWCAB-2WD-SHORT-01"
+                                                                  ],
+                                          "pending_reason":  "",
+                                          "last_updated_round":  53
+                                      },
+                           "38149":  {
+                                         "status":  "ready",
+                                         "source_rows":  [
+                                                             3291
+                                                         ],
+                                         "mapping_ids":  [
+                                                             "38149"
+                                                         ],
+                                         "dimension_group_ids":  [
+                                                                     "EU-CHEVROLET-SILVERADO2500-GMT800-PICKUP-CREWCAB-RWD-STANDARD-2003-2004-01"
+                                                                 ],
+                                         "pending_reason":  "",
+                                         "last_updated_round":  53
+                                     },
+                           "106150":  {
+                                          "status":  "ready",
+                                          "source_rows":  [
+                                                              3292
+                                                          ],
+                                          "mapping_ids":  [
+                                                              "106150"
+                                                          ],
+                                          "dimension_group_ids":  [
+                                                                      "EU-CHEVROLET-SILVERADO1500-GMT900-PICKUP-CREWCAB-4WD-SHORT-01"
+                                                                  ],
+                                          "pending_reason":  "",
+                                          "last_updated_round":  53
+                                      },
+                           "107590":  {
+                                          "status":  "ready",
+                                          "source_rows":  [
+                                                              3293
+                                                          ],
+                                          "mapping_ids":  [
+                                                              "107590"
+                                                          ],
+                                          "dimension_group_ids":  [
+                                                                      "EU-CHEVROLET-SILVERADO1500-K2XX-PICKUP-CREWCAB-4WD-SHORT-01"
+                                                                  ],
+                                          "pending_reason":  "",
+                                          "last_updated_round":  53
+                                      },
+                           "38150":  {
+                                         "status":  "ready",
+                                         "source_rows":  [
+                                                             3294
+                                                         ],
+                                         "mapping_ids":  [
+                                                             "38150"
+                                                         ],
+                                         "dimension_group_ids":  [
+                                                                     "EU-CHEVROLET-SILVERADO2500-GMT800-PICKUP-CREWCAB-4WD-STANDARD-2003-2004-01"
+                                                                 ],
+                                         "pending_reason":  "",
+                                         "last_updated_round":  53
+                                     },
+                           "56375":  {
+                                         "status":  "ready",
+                                         "source_rows":  [
+                                                             3295
+                                                         ],
+                                         "mapping_ids":  [
+                                                             "56375"
+                                                         ],
+                                         "dimension_group_ids":  [
+                                                                     "EU-CHEVROLET-SILVERADO1500-GMT900-PICKUP-EXTCAB-2WD-STANDARD-01"
+                                                                 ],
+                                         "pending_reason":  "",
+                                         "last_updated_round":  53
+                                     },
+                           "38156":  {
+                                         "status":  "ready",
+                                         "source_rows":  [
+                                                             3296
+                                                         ],
+                                         "mapping_ids":  [
+                                                             "38156"
+                                                         ],
+                                         "dimension_group_ids":  [
+                                                                     "EU-CHEVROLET-SILVERADO2500HD-GMT800-PICKUP-EXTCAB-STANDARD-1999-2004-01"
+                                                                 ],
+                                         "pending_reason":  "",
+                                         "last_updated_round":  53
+                                     },
+                           "56374":  {
+                                         "status":  "ready",
+                                         "source_rows":  [
+                                                             3297
+                                                         ],
+                                         "mapping_ids":  [
+                                                             "56374"
+                                                         ],
+                                         "dimension_group_ids":  [
+                                                                     "EU-CHEVROLET-SILVERADO1500-GMT900-PICKUP-EXTCAB-4WD-STANDARD-01"
+                                                                 ],
+                                         "pending_reason":  "",
+                                         "last_updated_round":  53
+                                     },
+                           "107592":  {
+                                          "status":  "ready",
+                                          "source_rows":  [
+                                                              3298
+                                                          ],
+                                          "mapping_ids":  [
+                                                              "107592"
+                                                          ],
+                                          "dimension_group_ids":  [
+                                                                      "EU-CHEVROLET-SILVERADO1500-K2XX-PICKUP-DOUBLECAB-4WD-STANDARD-01"
+                                                                  ],
+                                          "pending_reason":  "",
+                                          "last_updated_round":  53
+                                      },
+                           "38154":  {
+                                         "status":  "ready",
+                                         "source_rows":  [
+                                                             3299
+                                                         ],
+                                         "mapping_ids":  [
+                                                             "38154"
+                                                         ],
+                                         "dimension_group_ids":  [
+                                                                     "EU-CHEVROLET-SILVERADO2500HD-GMT800-PICKUP-EXTCAB-STANDARD-1999-2004-01"
+                                                                 ],
+                                         "pending_reason":  "",
+                                         "last_updated_round":  53
+                                     },
+                           "56369":  {
+                                         "status":  "ready",
+                                         "source_rows":  [
+                                                             3300
+                                                         ],
+                                         "mapping_ids":  [
+                                                             "56369"
+                                                         ],
+                                         "dimension_group_ids":  [
+                                                                     "EU-CHEVROLET-SILVERADO2500HD-GMT900-PICKUP-CREWCAB-4WD-STANDARD-2008-2013-01"
+                                                                 ],
+                                         "pending_reason":  "",
+                                         "last_updated_round":  53
+                                     }
+                       },
+    "progress":  {
+                     "input_ktype_count":  100,
+                     "ready_ktype_count":  37,
+                     "pending_ktype_count":  63,
+                     "pending_ktypes":  [
+                                            "18549",
+                                            "55208",
+                                            "108690",
+                                            "111655",
+                                            "52230",
+                                            "51090",
+                                            "51094",
+                                            "52233",
+                                            "119649",
+                                            "54236",
+                                            "111712",
+                                            "37203",
+                                            "51098",
+                                            "54251",
+                                            "108705",
+                                            "123910",
+                                            "37310",
+                                            "37402",
+                                            "37421",
+                                            "52255",
+                                            "11260",
+                                            "11261",
+                                            "37563",
+                                            "111602",
+                                            "113244",
+                                            "18537",
+                                            "113243",
+                                            "18538",
+                                            "18536",
+                                            "142517",
+                                            "142518",
+                                            "142846",
+                                            "13978",
+                                            "125554",
+                                            "125565",
+                                            "55101",
+                                            "18528",
+                                            "14606",
+                                            "18529",
+                                            "18859",
+                                            "37744",
+                                            "112699",
+                                            "37738",
+                                            "37782",
+                                            "37791",
+                                            "8845",
+                                            "18539",
+                                            "18542",
+                                            "18540",
+                                            "18544",
+                                            "56755",
+                                            "5714",
+                                            "55445",
+                                            "5745",
+                                            "5750",
+                                            "18547",
+                                            "128228",
+                                            "18548",
+                                            "119772",
+                                            "38019",
+                                            "111140",
+                                            "111141",
+                                            "111158"
+                                        ]
+                 },
+    "artifacts":  {
+                      "current_mapping":  "D:\\Home\\Scripts\\fitment_sheet_generation\\projects\\qclaw_fitment_automation\\workspaces\\0802-eu\\checkpoints\\part-01\\task-state\\left18448__batch__0033__b6cfb8ef\\current_mapping.tsv",
+                      "current_dimension_groups":  "D:\\Home\\Scripts\\fitment_sheet_generation\\projects\\qclaw_fitment_automation\\workspaces\\0802-eu\\checkpoints\\part-01\\task-state\\left18448__batch__0033__b6cfb8ef\\current_dimension_groups.tsv"
+                  },
+    "updated_at":  "2026-08-04 01:43:23"
+}
