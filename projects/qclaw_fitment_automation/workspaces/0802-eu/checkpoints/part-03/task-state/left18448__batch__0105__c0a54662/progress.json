@@ -1,0 +1,1259 @@
+{
+  "version": 1,
+  "revision": 81,
+  "task_id": "left18448__batch__0105__c0a54662",
+  "source_file": "left18448.tsv",
+  "source_start_row": 10401,
+  "source_end_row": 10500,
+  "round": 48,
+  "ktype_progress": {
+    "118114": {
+      "status": "ready",
+      "source_rows": [
+        10401
+      ],
+      "mapping_ids": [
+        "118114"
+      ],
+      "dimension_group_ids": [
+        "EU-MERCEDES-BENZ-SLC-R172-CONVERTIBLE-FACELIFT-01"
+      ],
+      "pending_reason": "",
+      "last_updated_round": 48
+    },
+    "118115": {
+      "status": "ready",
+      "source_rows": [
+        10402
+      ],
+      "mapping_ids": [
+        "118115"
+      ],
+      "dimension_group_ids": [
+        "EU-MERCEDES-BENZ-SLC-R172-CONVERTIBLE-FACELIFT-01"
+      ],
+      "pending_reason": "",
+      "last_updated_round": 48
+    },
+    "118112": {
+      "status": "ready",
+      "source_rows": [
+        10403
+      ],
+      "mapping_ids": [
+        "118112"
+      ],
+      "dimension_group_ids": [
+        "EU-MERCEDES-BENZ-SLC-R172-CONVERTIBLE-FACELIFT-01"
+      ],
+      "pending_reason": "",
+      "last_updated_round": 48
+    },
+    "118116": {
+      "status": "pending",
+      "source_rows": [
+        10404
+      ],
+      "mapping_ids": [],
+      "dimension_group_ids": [],
+      "pending_reason": "尚未产生 Ktype 映射",
+      "last_updated_round": 48
+    },
+    "5973": {
+      "status": "pending",
+      "source_rows": [
+        10405
+      ],
+      "mapping_ids": [],
+      "dimension_group_ids": [],
+      "pending_reason": "尚未产生 Ktype 映射",
+      "last_updated_round": 48
+    },
+    "116885": {
+      "status": "pending",
+      "source_rows": [
+        10406
+      ],
+      "mapping_ids": [],
+      "dimension_group_ids": [],
+      "pending_reason": "尚未产生 Ktype 映射",
+      "last_updated_round": 48
+    },
+    "18709": {
+      "status": "pending",
+      "source_rows": [
+        10407
+      ],
+      "mapping_ids": [],
+      "dimension_group_ids": [],
+      "pending_reason": "尚未产生 Ktype 映射",
+      "last_updated_round": 48
+    },
+    "112664": {
+      "status": "pending",
+      "source_rows": [
+        10408
+      ],
+      "mapping_ids": [],
+      "dimension_group_ids": [],
+      "pending_reason": "尚未产生 Ktype 映射",
+      "last_updated_round": 48
+    },
+    "14625": {
+      "status": "pending",
+      "source_rows": [
+        10409
+      ],
+      "mapping_ids": [],
+      "dimension_group_ids": [],
+      "pending_reason": "尚未产生 Ktype 映射",
+      "last_updated_round": 48
+    },
+    "17885": {
+      "status": "pending",
+      "source_rows": [
+        10410
+      ],
+      "mapping_ids": [],
+      "dimension_group_ids": [],
+      "pending_reason": "尚未产生 Ktype 映射",
+      "last_updated_round": 48
+    },
+    "5976": {
+      "status": "pending",
+      "source_rows": [
+        10411
+      ],
+      "mapping_ids": [],
+      "dimension_group_ids": [],
+      "pending_reason": "尚未产生 Ktype 映射",
+      "last_updated_round": 48
+    },
+    "14623": {
+      "status": "pending",
+      "source_rows": [
+        10412
+      ],
+      "mapping_ids": [],
+      "dimension_group_ids": [],
+      "pending_reason": "尚未产生 Ktype 映射",
+      "last_updated_round": 48
+    },
+    "17884": {
+      "status": "pending",
+      "source_rows": [
+        10413
+      ],
+      "mapping_ids": [],
+      "dimension_group_ids": [],
+      "pending_reason": "尚未产生 Ktype 映射",
+      "last_updated_round": 48
+    },
+    "5974": {
+      "status": "pending",
+      "source_rows": [
+        10414
+      ],
+      "mapping_ids": [],
+      "dimension_group_ids": [],
+      "pending_reason": "尚未产生 Ktype 映射",
+      "last_updated_round": 48
+    },
+    "14624": {
+      "status": "pending",
+      "source_rows": [
+        10415
+      ],
+      "mapping_ids": [],
+      "dimension_group_ids": [],
+      "pending_reason": "尚未产生 Ktype 映射",
+      "last_updated_round": 48
+    },
+    "13824": {
+      "status": "pending",
+      "source_rows": [
+        10416
+      ],
+      "mapping_ids": [],
+      "dimension_group_ids": [],
+      "pending_reason": "尚未产生 Ktype 映射",
+      "last_updated_round": 48
+    },
+    "15615": {
+      "status": "pending",
+      "source_rows": [
+        10417
+      ],
+      "mapping_ids": [],
+      "dimension_group_ids": [],
+      "pending_reason": "尚未产生 Ktype 映射",
+      "last_updated_round": 48
+    },
+    "13822": {
+      "status": "pending",
+      "source_rows": [
+        10418
+      ],
+      "mapping_ids": [],
+      "dimension_group_ids": [],
+      "pending_reason": "尚未产生 Ktype 映射",
+      "last_updated_round": 48
+    },
+    "17886": {
+      "status": "pending",
+      "source_rows": [
+        10419
+      ],
+      "mapping_ids": [],
+      "dimension_group_ids": [],
+      "pending_reason": "尚未产生 Ktype 映射",
+      "last_updated_round": 48
+    },
+    "57305": {
+      "status": "pending",
+      "source_rows": [
+        10420
+      ],
+      "mapping_ids": [],
+      "dimension_group_ids": [],
+      "pending_reason": "尚未产生 Ktype 映射",
+      "last_updated_round": 48
+    },
+    "17967": {
+      "status": "pending",
+      "source_rows": [
+        10421
+      ],
+      "mapping_ids": [],
+      "dimension_group_ids": [],
+      "pending_reason": "尚未产生 Ktype 映射",
+      "last_updated_round": 48
+    },
+    "59434": {
+      "status": "pending",
+      "source_rows": [
+        10422
+      ],
+      "mapping_ids": [],
+      "dimension_group_ids": [],
+      "pending_reason": "尚未产生 Ktype 映射",
+      "last_updated_round": 48
+    },
+    "59433": {
+      "status": "pending",
+      "source_rows": [
+        10423
+      ],
+      "mapping_ids": [],
+      "dimension_group_ids": [],
+      "pending_reason": "尚未产生 Ktype 映射",
+      "last_updated_round": 48
+    },
+    "121671": {
+      "status": "pending",
+      "source_rows": [
+        10424
+      ],
+      "mapping_ids": [],
+      "dimension_group_ids": [],
+      "pending_reason": "尚未产生 Ktype 映射",
+      "last_updated_round": 48
+    },
+    "10638": {
+      "status": "pending",
+      "source_rows": [
+        10425
+      ],
+      "mapping_ids": [],
+      "dimension_group_ids": [],
+      "pending_reason": "尚未产生 Ktype 映射",
+      "last_updated_round": 48
+    },
+    "59469": {
+      "status": "pending",
+      "source_rows": [
+        10426
+      ],
+      "mapping_ids": [],
+      "dimension_group_ids": [],
+      "pending_reason": "尚未产生 Ktype 映射",
+      "last_updated_round": 48
+    },
+    "8741": {
+      "status": "pending",
+      "source_rows": [
+        10427
+      ],
+      "mapping_ids": [],
+      "dimension_group_ids": [],
+      "pending_reason": "尚未产生 Ktype 映射",
+      "last_updated_round": 48
+    },
+    "8742": {
+      "status": "pending",
+      "source_rows": [
+        10428
+      ],
+      "mapping_ids": [],
+      "dimension_group_ids": [],
+      "pending_reason": "尚未产生 Ktype 映射",
+      "last_updated_round": 48
+    },
+    "14821": {
+      "status": "pending",
+      "source_rows": [
+        10429
+      ],
+      "mapping_ids": [],
+      "dimension_group_ids": [],
+      "pending_reason": "尚未产生 Ktype 映射",
+      "last_updated_round": 48
+    },
+    "14829": {
+      "status": "pending",
+      "source_rows": [
+        10430
+      ],
+      "mapping_ids": [],
+      "dimension_group_ids": [],
+      "pending_reason": "尚未产生 Ktype 映射",
+      "last_updated_round": 48
+    },
+    "14833": {
+      "status": "pending",
+      "source_rows": [
+        10431
+      ],
+      "mapping_ids": [],
+      "dimension_group_ids": [],
+      "pending_reason": "尚未产生 Ktype 映射",
+      "last_updated_round": 48
+    },
+    "8729": {
+      "status": "pending",
+      "source_rows": [
+        10432
+      ],
+      "mapping_ids": [],
+      "dimension_group_ids": [],
+      "pending_reason": "尚未产生 Ktype 映射",
+      "last_updated_round": 48
+    },
+    "8748": {
+      "status": "pending",
+      "source_rows": [
+        10433
+      ],
+      "mapping_ids": [],
+      "dimension_group_ids": [],
+      "pending_reason": "尚未产生 Ktype 映射",
+      "last_updated_round": 48
+    },
+    "8749": {
+      "status": "pending",
+      "source_rows": [
+        10434
+      ],
+      "mapping_ids": [],
+      "dimension_group_ids": [],
+      "pending_reason": "尚未产生 Ktype 映射",
+      "last_updated_round": 48
+    },
+    "8745": {
+      "status": "pending",
+      "source_rows": [
+        10435
+      ],
+      "mapping_ids": [],
+      "dimension_group_ids": [],
+      "pending_reason": "尚未产生 Ktype 映射",
+      "last_updated_round": 48
+    },
+    "14822": {
+      "status": "pending",
+      "source_rows": [
+        10436
+      ],
+      "mapping_ids": [],
+      "dimension_group_ids": [],
+      "pending_reason": "尚未产生 Ktype 映射",
+      "last_updated_round": 48
+    },
+    "14830": {
+      "status": "pending",
+      "source_rows": [
+        10437
+      ],
+      "mapping_ids": [],
+      "dimension_group_ids": [],
+      "pending_reason": "尚未产生 Ktype 映射",
+      "last_updated_round": 48
+    },
+    "14834": {
+      "status": "pending",
+      "source_rows": [
+        10438
+      ],
+      "mapping_ids": [],
+      "dimension_group_ids": [],
+      "pending_reason": "尚未产生 Ktype 映射",
+      "last_updated_round": 48
+    },
+    "8725": {
+      "status": "pending",
+      "source_rows": [
+        10439
+      ],
+      "mapping_ids": [],
+      "dimension_group_ids": [],
+      "pending_reason": "尚未产生 Ktype 映射",
+      "last_updated_round": 48
+    },
+    "14823": {
+      "status": "pending",
+      "source_rows": [
+        10440
+      ],
+      "mapping_ids": [],
+      "dimension_group_ids": [],
+      "pending_reason": "尚未产生 Ktype 映射",
+      "last_updated_round": 48
+    },
+    "14831": {
+      "status": "pending",
+      "source_rows": [
+        10441
+      ],
+      "mapping_ids": [],
+      "dimension_group_ids": [],
+      "pending_reason": "尚未产生 Ktype 映射",
+      "last_updated_round": 48
+    },
+    "14835": {
+      "status": "pending",
+      "source_rows": [
+        10442
+      ],
+      "mapping_ids": [],
+      "dimension_group_ids": [],
+      "pending_reason": "尚未产生 Ktype 映射",
+      "last_updated_round": 48
+    },
+    "14873": {
+      "status": "pending",
+      "source_rows": [
+        10443
+      ],
+      "mapping_ids": [],
+      "dimension_group_ids": [],
+      "pending_reason": "尚未产生 Ktype 映射",
+      "last_updated_round": 48
+    },
+    "14874": {
+      "status": "pending",
+      "source_rows": [
+        10444
+      ],
+      "mapping_ids": [],
+      "dimension_group_ids": [],
+      "pending_reason": "尚未产生 Ktype 映射",
+      "last_updated_round": 48
+    },
+    "14875": {
+      "status": "pending",
+      "source_rows": [
+        10445
+      ],
+      "mapping_ids": [],
+      "dimension_group_ids": [],
+      "pending_reason": "尚未产生 Ktype 映射",
+      "last_updated_round": 48
+    },
+    "14824": {
+      "status": "pending",
+      "source_rows": [
+        10446
+      ],
+      "mapping_ids": [],
+      "dimension_group_ids": [],
+      "pending_reason": "尚未产生 Ktype 映射",
+      "last_updated_round": 48
+    },
+    "14832": {
+      "status": "pending",
+      "source_rows": [
+        10447
+      ],
+      "mapping_ids": [],
+      "dimension_group_ids": [],
+      "pending_reason": "尚未产生 Ktype 映射",
+      "last_updated_round": 48
+    },
+    "14836": {
+      "status": "pending",
+      "source_rows": [
+        10448
+      ],
+      "mapping_ids": [],
+      "dimension_group_ids": [],
+      "pending_reason": "尚未产生 Ktype 映射",
+      "last_updated_round": 48
+    },
+    "145676": {
+      "status": "pending",
+      "source_rows": [
+        10449
+      ],
+      "mapping_ids": [],
+      "dimension_group_ids": [],
+      "pending_reason": "尚未产生 Ktype 映射",
+      "last_updated_round": 48
+    },
+    "119888": {
+      "status": "pending",
+      "source_rows": [
+        10450
+      ],
+      "mapping_ids": [],
+      "dimension_group_ids": [],
+      "pending_reason": "尚未产生 Ktype 映射",
+      "last_updated_round": 48
+    },
+    "119898": {
+      "status": "pending",
+      "source_rows": [
+        10451
+      ],
+      "mapping_ids": [],
+      "dimension_group_ids": [],
+      "pending_reason": "尚未产生 Ktype 映射",
+      "last_updated_round": 48
+    },
+    "119920": {
+      "status": "pending",
+      "source_rows": [
+        10452
+      ],
+      "mapping_ids": [],
+      "dimension_group_ids": [],
+      "pending_reason": "尚未产生 Ktype 映射",
+      "last_updated_round": 48
+    },
+    "145738": {
+      "status": "pending",
+      "source_rows": [
+        10453
+      ],
+      "mapping_ids": [],
+      "dimension_group_ids": [],
+      "pending_reason": "尚未产生 Ktype 映射",
+      "last_updated_round": 48
+    },
+    "145749": {
+      "status": "ready",
+      "source_rows": [
+        10454
+      ],
+      "mapping_ids": [
+        "145749_l1",
+        "145749_l2"
+      ],
+      "dimension_group_ids": [
+        "EU-MERCEDES-BENZ-SPRINTER-VS30-CHASSIS-FWD-L1-01",
+        "EU-MERCEDES-BENZ-SPRINTER-VS30-CHASSIS-FWD-L2-01"
+      ],
+      "pending_reason": "",
+      "last_updated_round": 48
+    },
+    "15965": {
+      "status": "pending",
+      "source_rows": [
+        10455
+      ],
+      "mapping_ids": [],
+      "dimension_group_ids": [],
+      "pending_reason": "尚未产生 Ktype 映射",
+      "last_updated_round": 48
+    },
+    "5709": {
+      "status": "ready",
+      "source_rows": [
+        10456
+      ],
+      "mapping_ids": [
+        "5709_single_swb",
+        "5709_single_mwb",
+        "5709_single_lwb",
+        "5709_crew_swb",
+        "5709_crew_mwb",
+        "5709_crew_lwb"
+      ],
+      "dimension_group_ids": [
+        "EU-MERCEDES-BENZ-SPRINTER-W906-CHASSIS-AWD-SINGLE-SWB-01",
+        "EU-MERCEDES-BENZ-SPRINTER-W906-CHASSIS-AWD-SINGLE-MWB-01",
+        "EU-MERCEDES-BENZ-SPRINTER-W906-CHASSIS-AWD-SINGLE-LWB-01",
+        "EU-MERCEDES-BENZ-SPRINTER-W906-CHASSIS-AWD-CREWCAB-SWB-01",
+        "EU-MERCEDES-BENZ-SPRINTER-W906-CHASSIS-AWD-CREWCAB-MWB-01",
+        "EU-MERCEDES-BENZ-SPRINTER-W906-CHASSIS-AWD-CREWCAB-LWB-01"
+      ],
+      "pending_reason": "",
+      "last_updated_round": 48
+    },
+    "15966": {
+      "status": "pending",
+      "source_rows": [
+        10457
+      ],
+      "mapping_ids": [],
+      "dimension_group_ids": [],
+      "pending_reason": "尚未产生 Ktype 映射",
+      "last_updated_round": 48
+    },
+    "119896": {
+      "status": "pending",
+      "source_rows": [
+        10458
+      ],
+      "mapping_ids": [],
+      "dimension_group_ids": [],
+      "pending_reason": "尚未产生 Ktype 映射",
+      "last_updated_round": 48
+    },
+    "119897": {
+      "status": "pending",
+      "source_rows": [
+        10459
+      ],
+      "mapping_ids": [],
+      "dimension_group_ids": [],
+      "pending_reason": "尚未产生 Ktype 映射",
+      "last_updated_round": 48
+    },
+    "119922": {
+      "status": "pending",
+      "source_rows": [
+        10460
+      ],
+      "mapping_ids": [],
+      "dimension_group_ids": [],
+      "pending_reason": "尚未产生 Ktype 映射",
+      "last_updated_round": 48
+    },
+    "119899": {
+      "status": "pending",
+      "source_rows": [
+        10461
+      ],
+      "mapping_ids": [],
+      "dimension_group_ids": [],
+      "pending_reason": "尚未产生 Ktype 映射",
+      "last_updated_round": 48
+    },
+    "119911": {
+      "status": "pending",
+      "source_rows": [
+        10462
+      ],
+      "mapping_ids": [],
+      "dimension_group_ids": [],
+      "pending_reason": "尚未产生 Ktype 映射",
+      "last_updated_round": 48
+    },
+    "119923": {
+      "status": "ready",
+      "source_rows": [
+        10463
+      ],
+      "mapping_ids": [
+        "119923_single_swb",
+        "119923_single_mwb",
+        "119923_single_lwb",
+        "119923_crew_swb",
+        "119923_crew_mwb",
+        "119923_crew_lwb"
+      ],
+      "dimension_group_ids": [
+        "EU-MERCEDES-BENZ-SPRINTER-W906-CHASSIS-AWD-SINGLE-SWB-01",
+        "EU-MERCEDES-BENZ-SPRINTER-W906-CHASSIS-AWD-SINGLE-MWB-01",
+        "EU-MERCEDES-BENZ-SPRINTER-W906-CHASSIS-AWD-SINGLE-LWB-01",
+        "EU-MERCEDES-BENZ-SPRINTER-W906-CHASSIS-AWD-CREWCAB-SWB-01",
+        "EU-MERCEDES-BENZ-SPRINTER-W906-CHASSIS-AWD-CREWCAB-MWB-01",
+        "EU-MERCEDES-BENZ-SPRINTER-W906-CHASSIS-AWD-CREWCAB-LWB-01"
+      ],
+      "pending_reason": "",
+      "last_updated_round": 48
+    },
+    "145552": {
+      "status": "ready",
+      "source_rows": [
+        10464
+      ],
+      "mapping_ids": [
+        "145552"
+      ],
+      "dimension_group_ids": [
+        "EU-MERCEDES-BENZ-SPRINTER-VS30-CHASSIS-FWD-L2-01"
+      ],
+      "pending_reason": "",
+      "last_updated_round": 48
+    },
+    "145904": {
+      "status": "pending",
+      "source_rows": [
+        10465
+      ],
+      "mapping_ids": [],
+      "dimension_group_ids": [],
+      "pending_reason": "尚未产生 Ktype 映射",
+      "last_updated_round": 48
+    },
+    "145936": {
+      "status": "ready",
+      "source_rows": [
+        10466
+      ],
+      "mapping_ids": [
+        "145936_l1",
+        "145936_l2"
+      ],
+      "dimension_group_ids": [
+        "EU-MERCEDES-BENZ-SPRINTER-VS30-CHASSIS-FWD-L1-01",
+        "EU-MERCEDES-BENZ-SPRINTER-VS30-CHASSIS-FWD-L2-01"
+      ],
+      "pending_reason": "",
+      "last_updated_round": 48
+    },
+    "57259": {
+      "status": "pending",
+      "source_rows": [
+        10467
+      ],
+      "mapping_ids": [],
+      "dimension_group_ids": [],
+      "pending_reason": "尚未产生 Ktype 映射",
+      "last_updated_round": 48
+    },
+    "16575": {
+      "status": "pending",
+      "source_rows": [
+        10468
+      ],
+      "mapping_ids": [],
+      "dimension_group_ids": [],
+      "pending_reason": "尚未产生 Ktype 映射",
+      "last_updated_round": 48
+    },
+    "57358": {
+      "status": "pending",
+      "source_rows": [
+        10469
+      ],
+      "mapping_ids": [],
+      "dimension_group_ids": [],
+      "pending_reason": "尚未产生 Ktype 映射",
+      "last_updated_round": 48
+    },
+    "57363": {
+      "status": "pending",
+      "source_rows": [
+        10470
+      ],
+      "mapping_ids": [],
+      "dimension_group_ids": [],
+      "pending_reason": "尚未产生 Ktype 映射",
+      "last_updated_round": 48
+    },
+    "59457": {
+      "status": "pending",
+      "source_rows": [
+        10471
+      ],
+      "mapping_ids": [],
+      "dimension_group_ids": [],
+      "pending_reason": "尚未产生 Ktype 映射",
+      "last_updated_round": 48
+    },
+    "57362": {
+      "status": "pending",
+      "source_rows": [
+        10472
+      ],
+      "mapping_ids": [],
+      "dimension_group_ids": [],
+      "pending_reason": "尚未产生 Ktype 映射",
+      "last_updated_round": 48
+    },
+    "145550": {
+      "status": "ready",
+      "source_rows": [
+        10473
+      ],
+      "mapping_ids": [
+        "145550"
+      ],
+      "dimension_group_ids": [
+        "EU-MERCEDES-BENZ-SPRINTER-VS30-CHASSIS-FWD-L2-01"
+      ],
+      "pending_reason": "",
+      "last_updated_round": 48
+    },
+    "145553": {
+      "status": "ready",
+      "source_rows": [
+        10474
+      ],
+      "mapping_ids": [
+        "145553"
+      ],
+      "dimension_group_ids": [
+        "EU-MERCEDES-BENZ-SPRINTER-VS30-CHASSIS-FWD-L2-01"
+      ],
+      "pending_reason": "",
+      "last_updated_round": 48
+    },
+    "148142": {
+      "status": "pending",
+      "source_rows": [
+        10475
+      ],
+      "mapping_ids": [],
+      "dimension_group_ids": [],
+      "pending_reason": "尚未产生 Ktype 映射",
+      "last_updated_round": 48
+    },
+    "157681": {
+      "status": "ready",
+      "source_rows": [
+        10476
+      ],
+      "mapping_ids": [
+        "157681"
+      ],
+      "dimension_group_ids": [
+        "EU-MERCEDES-BENZ-SPRINTER-VS30-CHASSIS-FWD-L2-01"
+      ],
+      "pending_reason": "",
+      "last_updated_round": 48
+    },
+    "145551": {
+      "status": "ready",
+      "source_rows": [
+        10477
+      ],
+      "mapping_ids": [
+        "145551"
+      ],
+      "dimension_group_ids": [
+        "EU-MERCEDES-BENZ-SPRINTER-VS30-CHASSIS-FWD-L2-01"
+      ],
+      "pending_reason": "",
+      "last_updated_round": 48
+    },
+    "5696": {
+      "status": "pending",
+      "source_rows": [
+        10478
+      ],
+      "mapping_ids": [],
+      "dimension_group_ids": [],
+      "pending_reason": "尚未产生 Ktype 映射",
+      "last_updated_round": 48
+    },
+    "10071": {
+      "status": "ready",
+      "source_rows": [
+        10479
+      ],
+      "mapping_ids": [
+        "10071_swb",
+        "10071_mwb",
+        "10071_lwb"
+      ],
+      "dimension_group_ids": [
+        "EU-MERCEDES-BENZ-SPRINTER-W906-BUS-AWD-SWB-STANDARD-01",
+        "EU-MERCEDES-BENZ-SPRINTER-W906-BUS-AWD-MWB-STANDARD-01",
+        "EU-MERCEDES-BENZ-SPRINTER-W906-BUS-AWD-LWB-HIGH-01"
+      ],
+      "pending_reason": "",
+      "last_updated_round": 48
+    },
+    "14589": {
+      "status": "ready",
+      "source_rows": [
+        10480
+      ],
+      "mapping_ids": [
+        "14589_swb",
+        "14589_mwb",
+        "14589_lwb"
+      ],
+      "dimension_group_ids": [
+        "EU-MERCEDES-BENZ-SPRINTER-W906-CHASSIS-AWD-SINGLE-SWB-01",
+        "EU-MERCEDES-BENZ-SPRINTER-W906-CHASSIS-AWD-SINGLE-MWB-01",
+        "EU-MERCEDES-BENZ-SPRINTER-W906-CHASSIS-AWD-SINGLE-LWB-01"
+      ],
+      "pending_reason": "",
+      "last_updated_round": 48
+    },
+    "146012": {
+      "status": "ready",
+      "source_rows": [
+        10481
+      ],
+      "mapping_ids": [
+        "146012_single_l2",
+        "146012_single_l3",
+        "146012_crew_l2"
+      ],
+      "dimension_group_ids": [
+        "EU-MERCEDES-BENZ-SPRINTER-VS30-CHASSIS-AWD-SINGLE-L2-01",
+        "EU-MERCEDES-BENZ-SPRINTER-VS30-CHASSIS-AWD-SINGLE-L3-01",
+        "EU-MERCEDES-BENZ-SPRINTER-VS30-CHASSIS-AWD-CREWCAB-L2-01"
+      ],
+      "pending_reason": "",
+      "last_updated_round": 48
+    },
+    "146079": {
+      "status": "ready",
+      "source_rows": [
+        10482
+      ],
+      "mapping_ids": [
+        "146079_l2_stdroof",
+        "146079_l2_highroof",
+        "146079_l3_highroof"
+      ],
+      "dimension_group_ids": [
+        "EU-MERCEDES-BENZ-SPRINTER-VS30-VAN-AWD-L2-STANDARD-01",
+        "EU-MERCEDES-BENZ-SPRINTER-VS30-VAN-AWD-L2-HIGH-01",
+        "EU-MERCEDES-BENZ-SPRINTER-VS30-VAN-AWD-L3-HIGH-01"
+      ],
+      "pending_reason": "",
+      "last_updated_round": 48
+    },
+    "145996": {
+      "status": "pending",
+      "source_rows": [
+        10483
+      ],
+      "mapping_ids": [],
+      "dimension_group_ids": [],
+      "pending_reason": "尚未产生 Ktype 映射",
+      "last_updated_round": 48
+    },
+    "146011": {
+      "status": "ready",
+      "source_rows": [
+        10484
+      ],
+      "mapping_ids": [
+        "146011_single_l2",
+        "146011_single_l3",
+        "146011_crew_l2",
+        "146011_crew_l3"
+      ],
+      "dimension_group_ids": [
+        "EU-MERCEDES-BENZ-SPRINTER-VS30-CHASSIS-RWD-SINGLE-L2-01",
+        "EU-MERCEDES-BENZ-SPRINTER-VS30-CHASSIS-RWD-SINGLE-L3-01",
+        "EU-MERCEDES-BENZ-SPRINTER-VS30-CHASSIS-RWD-CREWCAB-L2-01",
+        "EU-MERCEDES-BENZ-SPRINTER-VS30-CHASSIS-RWD-CREWCAB-L3-01"
+      ],
+      "pending_reason": "",
+      "last_updated_round": 48
+    },
+    "157546": {
+      "status": "ready",
+      "source_rows": [
+        10485
+      ],
+      "mapping_ids": [
+        "157546_l2",
+        "157546_l3"
+      ],
+      "dimension_group_ids": [
+        "EU-MERCEDES-BENZ-ESPRINTER-VS30-VAN-RWD-L2-01",
+        "EU-MERCEDES-BENZ-ESPRINTER-VS30-VAN-RWD-L3-01"
+      ],
+      "pending_reason": "",
+      "last_updated_round": 48
+    },
+    "800244": {
+      "status": "ready",
+      "source_rows": [
+        10486
+      ],
+      "mapping_ids": [
+        "800244_l2",
+        "800244_l3"
+      ],
+      "dimension_group_ids": [
+        "EU-MERCEDES-BENZ-ESPRINTER-VS30-CHASSIS-RWD-L2-01",
+        "EU-MERCEDES-BENZ-ESPRINTER-VS30-CHASSIS-RWD-L3-01"
+      ],
+      "pending_reason": "",
+      "last_updated_round": 48
+    },
+    "157550": {
+      "status": "ready",
+      "source_rows": [
+        10487
+      ],
+      "mapping_ids": [
+        "157550_l2",
+        "157550_l3"
+      ],
+      "dimension_group_ids": [
+        "EU-MERCEDES-BENZ-ESPRINTER-VS30-VAN-RWD-L2-01",
+        "EU-MERCEDES-BENZ-ESPRINTER-VS30-VAN-RWD-L3-01"
+      ],
+      "pending_reason": "",
+      "last_updated_round": 48
+    },
+    "800245": {
+      "status": "ready",
+      "source_rows": [
+        10488
+      ],
+      "mapping_ids": [
+        "800245_l2",
+        "800245_l3"
+      ],
+      "dimension_group_ids": [
+        "EU-MERCEDES-BENZ-ESPRINTER-VS30-CHASSIS-RWD-L2-01",
+        "EU-MERCEDES-BENZ-ESPRINTER-VS30-CHASSIS-RWD-L3-01"
+      ],
+      "pending_reason": "",
+      "last_updated_round": 48
+    },
+    "146108": {
+      "status": "pending",
+      "source_rows": [
+        10489
+      ],
+      "mapping_ids": [],
+      "dimension_group_ids": [],
+      "pending_reason": "尚未产生 Ktype 映射",
+      "last_updated_round": 48
+    },
+    "146110": {
+      "status": "pending",
+      "source_rows": [
+        10490
+      ],
+      "mapping_ids": [],
+      "dimension_group_ids": [],
+      "pending_reason": "尚未产生 Ktype 映射",
+      "last_updated_round": 48
+    },
+    "146112": {
+      "status": "pending",
+      "source_rows": [
+        10491
+      ],
+      "mapping_ids": [],
+      "dimension_group_ids": [],
+      "pending_reason": "尚未产生 Ktype 映射",
+      "last_updated_round": 48
+    },
+    "146122": {
+      "status": "pending",
+      "source_rows": [
+        10492
+      ],
+      "mapping_ids": [],
+      "dimension_group_ids": [],
+      "pending_reason": "尚未产生 Ktype 映射",
+      "last_updated_round": 48
+    },
+    "146123": {
+      "status": "pending",
+      "source_rows": [
+        10493
+      ],
+      "mapping_ids": [],
+      "dimension_group_ids": [],
+      "pending_reason": "尚未产生 Ktype 映射",
+      "last_updated_round": 48
+    },
+    "8732": {
+      "status": "pending",
+      "source_rows": [
+        10494
+      ],
+      "mapping_ids": [],
+      "dimension_group_ids": [],
+      "pending_reason": "尚未产生 Ktype 映射",
+      "last_updated_round": 48
+    },
+    "8743": {
+      "status": "pending",
+      "source_rows": [
+        10495
+      ],
+      "mapping_ids": [],
+      "dimension_group_ids": [],
+      "pending_reason": "尚未产生 Ktype 映射",
+      "last_updated_round": 48
+    },
+    "8744": {
+      "status": "pending",
+      "source_rows": [
+        10496
+      ],
+      "mapping_ids": [],
+      "dimension_group_ids": [],
+      "pending_reason": "尚未产生 Ktype 映射",
+      "last_updated_round": 48
+    },
+    "145651": {
+      "status": "ready",
+      "source_rows": [
+        10497
+      ],
+      "mapping_ids": [
+        "145651_swb",
+        "145651_mwb"
+      ],
+      "dimension_group_ids": [
+        "EU-MERCEDES-BENZ-SPRINTER-W906-BUS-SWB-01",
+        "EU-MERCEDES-BENZ-SPRINTER-W906-BUS-MWB-01"
+      ],
+      "pending_reason": "",
+      "last_updated_round": 48
+    },
+    "145740": {
+      "status": "ready",
+      "source_rows": [
+        10498
+      ],
+      "mapping_ids": [
+        "145740_swb_stdroof",
+        "145740_swb_highroof",
+        "145740_mwb_stdroof",
+        "145740_mwb_highroof"
+      ],
+      "dimension_group_ids": [
+        "EU-MERCEDES-BENZ-SPRINTER-VS30-VAN-FWD-SWB-STANDARD-01",
+        "EU-MERCEDES-BENZ-SPRINTER-VS30-VAN-FWD-SWB-HIGH-01",
+        "EU-MERCEDES-BENZ-SPRINTER-VS30-VAN-FWD-MWB-STANDARD-01",
+        "EU-MERCEDES-BENZ-SPRINTER-VS30-VAN-FWD-MWB-HIGH-01"
+      ],
+      "pending_reason": "",
+      "last_updated_round": 48
+    },
+    "145747": {
+      "status": "ready",
+      "source_rows": [
+        10499
+      ],
+      "mapping_ids": [
+        "145747_l1",
+        "145747_l2"
+      ],
+      "dimension_group_ids": [
+        "EU-MERCEDES-BENZ-SPRINTER-VS30-CHASSIS-FWD-L1-01",
+        "EU-MERCEDES-BENZ-SPRINTER-VS30-CHASSIS-FWD-L2-01"
+      ],
+      "pending_reason": "",
+      "last_updated_round": 48
+    },
+    "57306": {
+      "status": "pending",
+      "source_rows": [
+        10500
+      ],
+      "mapping_ids": [],
+      "dimension_group_ids": [],
+      "pending_reason": "尚未产生 Ktype 映射",
+      "last_updated_round": 48
+    }
+  },
+  "progress": {
+    "input_ktype_count": 100,
+    "ready_ktype_count": 24,
+    "pending_ktype_count": 76,
+    "pending_ktypes": [
+      "118116",
+      "5973",
+      "116885",
+      "18709",
+      "112664",
+      "14625",
+      "17885",
+      "5976",
+      "14623",
+      "17884",
+      "5974",
+      "14624",
+      "13824",
+      "15615",
+      "13822",
+      "17886",
+      "57305",
+      "17967",
+      "59434",
+      "59433",
+      "121671",
+      "10638",
+      "59469",
+      "8741",
+      "8742",
+      "14821",
+      "14829",
+      "14833",
+      "8729",
+      "8748",
+      "8749",
+      "8745",
+      "14822",
+      "14830",
+      "14834",
+      "8725",
+      "14823",
+      "14831",
+      "14835",
+      "14873",
+      "14874",
+      "14875",
+      "14824",
+      "14832",
+      "14836",
+      "145676",
+      "119888",
+      "119898",
+      "119920",
+      "145738",
+      "15965",
+      "15966",
+      "119896",
+      "119897",
+      "119922",
+      "119899",
+      "119911",
+      "145904",
+      "57259",
+      "16575",
+      "57358",
+      "57363",
+      "59457",
+      "57362",
+      "148142",
+      "5696",
+      "145996",
+      "146108",
+      "146110",
+      "146112",
+      "146122",
+      "146123",
+      "8732",
+      "8743",
+      "8744",
+      "57306"
+    ]
+  },
+  "artifacts": {
+    "current_mapping": "/Users/wang/Documents/GitHub/fitment_sheet_generation/projects/qclaw_fitment_automation/workspaces/0802-eu/checkpoints/part-03/task-state/left18448__batch__0105__c0a54662/current_mapping.tsv",
+    "current_dimension_groups": "/Users/wang/Documents/GitHub/fitment_sheet_generation/projects/qclaw_fitment_automation/workspaces/0802-eu/checkpoints/part-03/task-state/left18448__batch__0105__c0a54662/current_dimension_groups.tsv"
+  },
+  "updated_at": "2026-08-04 02:44:54"
+}
