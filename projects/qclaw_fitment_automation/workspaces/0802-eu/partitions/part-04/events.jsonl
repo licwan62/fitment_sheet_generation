@@ -120,3 +120,5 @@
 {"timestamp":"2026-08-04T11:17:03.0214571Z","type":"task_finished","process_id":61176,"task_id":"left18448__batch__0184__c249918f","data":{"status":"成功","rounds":1,"remarks":"检测到明确批次完成信号、两张完整表及下载链接；已更新本批与累计最终 TSV","sends":1}}
 {"timestamp":"2026-08-04T11:17:08.0304719Z","type":"task_started","process_id":61176,"task_id":"left18448__batch__0185__af591c1f","data":{"display_name":"left18448 第 18401-18448 行","source":"left18448.tsv"}}
 {"timestamp":"2026-08-04T11:26:59.2472747Z","type":"task_finished","process_id":61176,"task_id":"left18448__batch__0185__af591c1f","data":{"status":"成功","rounds":1,"remarks":"检测到明确批次完成信号、两张完整表及下载链接；已更新本批与累计最终 TSV","sends":1}}
+{"timestamp":"2026-08-05T09:18:25.7335818Z","type":"run_tasks_selected","process_id":47428,"task_id":"","data":{"partition_index":4,"partition_count":4,"total_tasks":185,"selected_tasks":46}}
+{"timestamp":"2026-08-05T09:18:34.5711542Z","type":"task_started","process_id":47428,"task_id":"left18448__batch__0146__11160452","data":{"display_name":"left18448 第 14501-14600 行","source":"left18448.tsv"}}

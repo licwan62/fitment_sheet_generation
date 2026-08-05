@@ -1,3 +1,13 @@
+﻿# 任务：1-9 第 1-9 行
+# 来源文件：1-9.tsv
+# 任务 ID：1-9__batch__0001__28b5baef
+
+
+--- 发送 / 首次任务 ---
+【任务名称】
+【全量表更新】1-9 第 1-9 行
+
+【任务要求】
 # EU Auto-Data Ktype 与尺寸组补全规则
 
 输入是 Tab 分隔的欧洲车型表。`Ktype` 是输入外键，但不保证唯一对应物理车身。输出两张解耦的 TSV：Ktype 映射表和 DIMENSION_GROUP 尺寸事实表。
@@ -40,7 +50,6 @@ subseries_match:
 2. 合并不改变物理外廓的发动机、能源、功率、变速箱、普通配置和 facelift 标签。
 3. 仅研究缓存未覆盖的独立物理外廓。
 4. `PENDING=0` 后立即进入一次机械收尾并输出 `COMPLETE`。
-5. 若所有剩余 `PENDING` 都已穷尽允许的可靠来源，仍无法在不猜测、不拼接不同配置且不降低证据标准的前提下推进，则进入 `ALMOST` 收尾，不再重复检索。
 
 不存在明确冲突时，“已有可靠结果并停止”优先于“继续寻找更理想来源”。不得为补非必需字段、提高置信度、优化措辞、增加来源或枚举理论分支而增加轮次。
 
@@ -102,8 +111,6 @@ facelift、LCI、Phase II、改款年份或外观名称本身不是拆分或新�
 
 官方来源不是 `READY` 的强制条件。已有可信二级来源且无冲突时，不得仅为寻找官方页面或提高 `MatchConfidence` 继续搜索。只有同市场、同阶段、同车身/配置、同测量口径下存在具体数值冲突，或宽度口径不明时，才增加核验。
 
-`ALMOST` 只用于真正的证据穷尽：每个剩余 `PENDING` 都必须有具体阻塞原因，并且已无契约允许的可靠来源路径可继续验证。临时网络、浏览器、登录、页面或超时故障，单轮搜索无结果，或仅达到轮次/时间上限，都不是证据穷尽，不得触发 `ALMOST`。不得为了结束任务而降低来源标准、拼接不同配置的三维、猜测缺失值或把 `PENDING` 强行改成 `READY`。
-
 ## 五、每批执行流程
 
 1. 一次读取当前批全部输入。
@@ -112,29 +119,12 @@ facelift、LCI、Phase II、改款年份或外观名称本身不是拆分或新�
 4. 只对缓存未命中的独立物理外廓抓取一次；一个组闭合后立即关联所有适用 Ktype。
 5. 最后只处理无组可关联的 `PENDING`。不得按 Ktype 串行重复搜索同一外廓。
 6. `PENDING=0` 后停止外部检索，最多执行一次表头、唯一性、引用闭合、非空和链接检查，然后立即 `COMPLETE`。
-7. 若仍有 `PENDING`，但所有剩余项均满足证据穷尽条件，则停止重复搜索，输出当前全部可交付的 `READY` 数据并以 `ALMOST` 结束。
 
 ## 六、输出与终检
 
 ### CONTINUE
 
 未完成时仅依次输出：更新点、当前批进度、本轮新增/修改的 Ktype TSV、本轮首次创建/修正的 DIMENSION_GROUP TSV、下一步优先处理，最后一行 `推进信号：CONTINUE`。无变化写“无”；不重复输出未变行或已闭合尺寸组。
-
-### ALMOST
-
-`ALMOST` 是证据穷尽时的任务级终态，但不是成功，也不是行级 `IterationStatus`。剩余记录必须继续使用 `PENDING: <具体原因>`；不得在 Ktype 映射行中写 `ALMOST`。任务以 `ALMOST` 结束后不再发送 `CONTINUE`，但正式完整性审计仍应把它视为未完整任务。
-
-只有仍存在 `PENDING`，并且每个剩余项都满足第四节的证据穷尽条件时，才可输出 `ALMOST`。同一条 ALMOST 回复必须依次包含：
-
-1. 证据穷尽说明和当前 `READY/PENDING` 计数；
-2. 每个剩余 `PENDING` 的 Ktype 与具体阻塞原因；
-3. 全部当前 `READY` 映射组成的完整 Ktype TSV，不得只给变化行、引用上轮或写“其余不变”；
-4. 按任务指定精确文件名创建、内容与内嵌 READY 映射 TSV 一致的可点击 `.tsv` sandbox 链接；
-5. 仅由这些 READY 映射引用、且覆盖其全部引用的完整 DIMENSION_GROUP TSV；每组必须包含完整正整数三维、`DimensionSource` 和非空直接 `SourceURL`，不得包含孤立组；
-6. 按任务指定精确文件名创建、内容与内嵌 DIMENSION_GROUP TSV 一致的第二个可点击 `.tsv` sandbox 链接；
-7. 最后一行单独输出 `推进信号：ALMOST`。
-
-ALMOST 两张表只交付当前可可靠入库的 READY 记录及其尺寸组；PENDING 只在阻塞清单中保留，不得混入 READY 下载文件。缺少任一当前 READY 映射、任一被引用尺寸组、任一 `SourceURL`、任一精确 sandbox 链接或任一 PENDING 原因时，不得输出 `ALMOST`。若 `PENDING=0`，必须使用 `COMPLETE`，不得降级为 `ALMOST`。
 
 ### COMPLETE
 
@@ -149,3 +139,95 @@ ALMOST 两张表只交付当前可可靠入库的 READY 记录及其尺寸组；
 5. 两个任务指定文件名的可点击 sandbox 链接齐全。
 
 任一机械项不满足时只修复该项，不得重新展开逐车型或逐来源研究；修复后立即输出两张完整表、两个链接和 `COMPLETE`。
+
+
+【执行顺序】
+执行顺序固定为：第一阶段优先消除 PENDING 并补齐会阻塞两张最终表的数据。检测到 PENDING=0 后，第二阶段最多只做一次轻量机械收尾：核对固定表头、id 与 DIMENSION_GROUP_ID 唯一、映射引用闭合、长宽高和来源非空、两个任务指定下载链接齐全。第二阶段不得重新逐车型、逐年份或逐来源做深度检索，不得为了提高置信度反复核对，也不得因非阻塞的排序或措辞问题继续多轮。PENDING=0 后的下一条回复必须直接输出两张最终完整 TSV、两个精确 sandbox 下载链接，并以“推进信号：COMPLETE”结束；不要再输出 CONTINUE。
+
+【配置附加规则】
+
+
+【当前文件名】
+1-9.tsv
+
+【当前独立任务】
+1-9 第 1-9 行
+
+【COMPLETE 下载文件硬性要求】
+准备 COMPLETE 时，除两张完整内嵌 TSV 外，还必须创建并提供以下两个可点击 sandbox 下载链接，文件名必须完全一致：
+- 1-9_1-9_ktype_dimension_mapping_final.tsv
+- 1-9_1-9_dimension_groups_final.tsv
+缺少任一下载链接时不得输出推进信号：COMPLETE。
+
+
+【TSV 数据】
+Make	Model	VariantName	BodyStyle	DriveType	Energy	EngineOutputKW	EngineOutputHP	Product Start Month-Year	Product End Month-Year	LastProcessedDate	Ktype	LatestStatus
+Opel	Corsa d	1.4	Schrägheck	Frontantrieb	Benzin	66	90	Jul 2006	Aug 2014	2024-03-01	1	NEW
+BMW	1502-2002	1502	Stufenheck	Heckantrieb	Benzin	55	75	Jan 1975	Jul 1977	2024-03-01	2	NEW
+Renault	Megane iii	2.0 TCE	Coupe	Frontantrieb	Benzin	184	250	May 2009	Aug 2015	2024-03-01	3	NEW
+BMW	1502-2002	1602	Stufenheck	Heckantrieb	Benzin	63	85	Apr 1971	Jul 1975	2024-03-01	4	NEW
+BMW	1502-2002	1802	Stufenheck	Heckantrieb	Benzin	66	90	May 1971	Jul 1975	2024-03-01	5	NEW
+BMW	1502-2002	2002	Stufenheck	Heckantrieb	Benzin	74	100	Feb 1968	Jul 1975	2024-03-01	6	NEW
+BMW	1502-2002	2002	Cabriolet	Heckantrieb	Benzin	74	100	May 1971	Jul 1975	2024-03-01	7	NEW
+BMW	1502-2002	2002 TII	Stufenheck	Heckantrieb	Benzin	96	130	Apr 1971	Jun 1975	2024-03-01	8	NEW
+BMW	1502-2002	2002 Turbo	Stufenheck	Heckantrieb	Benzin	125	170	Jan 1974	Jul 1975	2024-03-01	9	NEW 
+
+
+--- Round 1 / 首次发送 ---
+## 1）更新点
+
+* Ktype `1`：Corsa D 1.4 90 hp 同时覆盖 3 门和 5 门车身，官方规格确认两者不含后视镜宽度分别为 1713 mm、1737 mm，因此拆分为两个物理分支。输入生产期超过已核对的 90 hp 车型生产期，映射置信度标记为 `MEDIUM`，但不阻塞闭合。 、1602、1802、2002、2002 TII 复用标准 E10 两门 Sedan 尺寸组。 ([汽车目录][1])type `3`：Megane III 250 hp 对应 Renault Sport 宽体 Coupe，采用明确标注不含后视镜宽度的 1848 mm 数据。 ([汽车目录][2])type `7`：输入生产期跨越全敞篷 Cabriolet 与 1971 年 7 月起的 Baur TopCabriolet，两个车身高度不同，拆分为两个分支。 ([汽车目录][3])type `9`：2002 Turbo 为独立 E20 宽体外廓，单独建立尺寸组。 ([汽车目录][4]) 2）进度
+
+输入 Ktype：`9/9` 已覆盖
+最终映射行：`11`
+最终尺寸组：`7`
+READY：`11`
+PENDING：`0`
+机械终检：表头、列数、ID 唯一性、引用闭合、正整数三维、来源及链接、孤立组检查均通过。
+
+## 3）最终完整 Ktype TSV
+
+```tsv
+id	Ktype	NormalizedBodyStyle	Generation	BodyCode	Doors	DIMENSION_GROUP_ID	MatchConfidence	Notes	IterationStatus
+1_3dr	1	Hatchback	Corsa D		3	EU-OPEL-CORSA-D-HATCHBACK-3DR-01	MEDIUM	3-door branch; input lifespan extends beyond sourced 90 hp production.	READY
+1_5dr	1	Hatchback	Corsa D		5	EU-OPEL-CORSA-D-HATCHBACK-5DR-01	MEDIUM	5-door branch; input lifespan extends beyond sourced 90 hp production.	READY
+2	2	Sedan	02 Series	E10	2	EU-BMW-02-E10-SEDAN-STANDARD-01	HIGH		READY
+3	3	Coupe	Megane III		3	EU-RENAULT-MEGANE-III-COUPE-RS-01	HIGH	Renault Sport wide-body exterior.	READY
+4	4	Sedan	02 Series	E10	2	EU-BMW-02-E10-SEDAN-STANDARD-01	HIGH		READY
+5	5	Sedan	02 Series	E10	2	EU-BMW-02-E10-SEDAN-STANDARD-01	HIGH		READY
+6	6	Sedan	02 Series	E10	2	EU-BMW-02-E10-SEDAN-STANDARD-01	HIGH		READY
+7_fullcab	7	Convertible	02 Series		2	EU-BMW-02-E10-CONVERTIBLE-FULLCAB-01	HIGH	Full Cabriolet branch through Jun 1971.	READY
+7_topcab	7	Convertible	02 Series		2	EU-BMW-02-E10-CONVERTIBLE-TOPCAB-01	HIGH	Baur TopCabriolet branch from Jul 1971.	READY
+8	8	Sedan	02 Series	E10	2	EU-BMW-02-E10-SEDAN-STANDARD-01	HIGH		READY
+9	9	Sedan	02 Series	E20	2	EU-BMW-02-E20-SEDAN-TURBO-01	HIGH	Factory Turbo wide-body exterior.	READY
+```
+
+[下载 1-9_1-9_ktype_dimension_mapping_final.tsv](sandbox:/mnt/data/1-9_1-9_ktype_dimension_mapping_final.tsv)
+
+## 4）最终完整 DIMENSION_GROUP TSV
+
+```tsv
+DIMENSION_GROUP_ID	LengthMM	WidthMM	HeightMM	DimensionSource	SourceURL
+EU-OPEL-CORSA-D-HATCHBACK-3DR-01	3999	1713	1488	Vauxhall Corsa Price/Specification Guide (12 May 2014)	https://www.vauxhall.co.uk/content/dam/vauxhall/Home/PDFs/Cars/corsa/price-guides/015_Corsa_Spec_PG_12_May_2014-1402308752.pdf
+EU-OPEL-CORSA-D-HATCHBACK-5DR-01	3999	1737	1488	Vauxhall Corsa Price/Specification Guide (12 May 2014)	https://www.vauxhall.co.uk/content/dam/vauxhall/Home/PDFs/Cars/corsa/price-guides/015_Corsa_Spec_PG_12_May_2014-1402308752.pdf
+EU-BMW-02-E10-SEDAN-STANDARD-01	4230	1590	1410	Automobile-Catalog (1975 BMW 1502)	https://www.automobile-catalog.com/car/1975/76940/bmw_1502.html
+EU-RENAULT-MEGANE-III-COUPE-RS-01	4299	1848	1435	Automobile-Catalog (2010 Renault Megane RS)	https://www.automobile-catalog.com/car/2010/2959820/renault_megane_rs_renault_sport.html
+EU-BMW-02-E10-CONVERTIBLE-FULLCAB-01	4230	1590	1360	Automobile-Catalog (1971 BMW 2002 Cabriolet, Jan-Jun)	https://www.automobile-catalog.com/car/1971/77165/bmw_2002_cabriolet.html
+EU-BMW-02-E10-CONVERTIBLE-TOPCAB-01	4230	1590	1400	Automobile-Catalog (1971 BMW 2002 TopCabriolet, from Jul)	https://www.automobile-catalog.com/car/1971/36845/bmw_2002_cabriolet.html
+EU-BMW-02-E20-SEDAN-TURBO-01	4220	1620	1410	Automobile-Catalog (1974 BMW 2002 Turbo)	https://www.automobile-catalog.com/car/1974/26645/bmw_2002_turbo.html
+```
+
+[下载 1-9_1-9_dimension_groups_final.tsv](sandbox:/mnt/data/1-9_1-9_dimension_groups_final.tsv)
+
+推进信号：COMPLETE
+
+[1]: https://www.automobile-catalog.com/car/1975/76940/bmw_1502.html?utm_source=chatgpt.com "Detailed specs review of 1975 BMW 1502 model for Europe"
+[2]: https://www.automobile-catalog.com/car/2010/2959820/renault_megane_rs_renault_sport.html?utm_source=chatgpt.com "2010 Renault Megane RS (Renault Sport) Specs Review (184 kW ..."
+[3]: https://www.automobile-catalog.com/car/1971/77165/bmw_2002_cabriolet.html?utm_source=chatgpt.com "1971 BMW 2002 Cabriolet Specs Review (73.5 kW / 100 PS / 99 hp) (since January 1971 for Europe )"
+[4]: https://www.automobile-catalog.com/car/1974/26645/bmw_2002_turbo.html?utm_source=chatgpt.com "1974 BMW 2002 Turbo Specs Review (125 kW / 170 PS ..."
+
+
+--- 累计最终 TSV 已更新 ---
+- 累计 Ktype 映射：ktype_mapping_final.tsv（11 行）
+- 累计尺寸组：dimension_groups_final.tsv（7 行）
+
