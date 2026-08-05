@@ -97,6 +97,26 @@ def test_incomplete_checkpoint_blocks_final_merge(tmp_path):
         raise AssertionError("incomplete task was not rejected")
 
 
+def test_almost_checkpoint_is_incomplete_and_reported_when_allowed(tmp_path):
+    project, _, manifest_path = build_run(
+        tmp_path, statuses=("成功", "Almost", "成功", "成功")
+    )
+    manifest = merger.validate_manifest(project, manifest_path, 4)
+
+    try:
+        merger.validate_completion(project, manifest, False)
+    except ValueError as exc:
+        assert "Almost" in str(exc)
+        assert "task-2" in str(exc)
+    else:
+        raise AssertionError("Almost task was treated as a successful final merge")
+
+    issues = merger.validate_completion(project, manifest, True)
+    assert len(issues) == 1
+    assert "task-2" in issues[0]
+    assert "Almost" in issues[0]
+
+
 def test_input_hash_change_is_rejected(tmp_path):
     project, _, manifest_path = build_run(tmp_path)
     (project / "input.tsv").write_text("Ktype\nchanged\n", encoding="utf-8")

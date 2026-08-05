@@ -226,7 +226,7 @@ $OpenClawResolvedCommand = ""
 $PlaywrightBridgeProcess = $null
 $PlaywrightBridgeUrl = ""
 $PlaywrightBridgeToken = ""
-$SkipStatuses = @("成功")
+$SkipStatuses = @("成功", "Almost")
 $InputFilePattern = if ($env:FITMENT_INPUT_PATTERN) { $env:FITMENT_INPUT_PATTERN } else { "*.tsv" }
 $InputFileOrder = if ($env:FITMENT_INPUT_ORDER) { $env:FITMENT_INPUT_ORDER } else { "name_asc" }
 $SkipProcessedFiles = ($env:FITMENT_SKIP_PROCESSED -ne "false")
@@ -245,12 +245,12 @@ $ConfiguredTaskRules = (@($ExtraDataInstructions, $DimensionRepresentativeInstru
     Where-Object { -not [string]::IsNullOrWhiteSpace([string]$_) } |
     ForEach-Object { [string]$_ }) -join "`n"
 $AutoEmptyReminder = if ($AutoEmptyColumns) { "以下自动字段必须保留列但值留空：$AutoEmptyColumns。" } else { "" }
-$DimensionGroupReminder = if ($DimensionGroupEnabled) { "另需维护完整 DIMENSION_GROUP TSV，表头固定为：$RequiredDimensionGroupHeader。缺少任一张表、任一映射引用的尺寸组，或尺寸组字段不完整时不得 COMPLETE。" } else { "" }
+$DimensionGroupReminder = if ($DimensionGroupEnabled) { "另需维护完整 DIMENSION_GROUP TSV，表头固定为：$RequiredDimensionGroupHeader。缺少任一张表、任一映射引用的尺寸组，或尺寸组字段不完整时不得 COMPLETE；ALMOST 只能包含当前全部 READY 映射及其引用闭合的尺寸组。" } else { "" }
 $SubseriesReminder = if ($SubseriesEnabled) { "另需维护子车系匹配表，表头固定为：$RequiredSubseriesMatchHeader；以下自动字段必须保留列但值留空：$SubseriesAutoEmptyColumns。" } else { "不要输出子车系匹配表。" }
 $ConfiguredTaskRulesReminder = if ($ConfiguredTaskRules) { "`n$ConfiguredTaskRules" } else { "" }
 $HeaderReminder = "Ktype 映射 TSV 表头必须严格使用 requirement 指定的字段顺序：$RequiredTsvHeader。$AutoEmptyReminder$DimensionGroupReminder$SubseriesReminder$ConfiguredTaskRulesReminder"
 $PhaseOrderReminder = if ($DimensionGroupEnabled) {
-    '执行顺序固定为：第一阶段优先消除 PENDING 并补齐会阻塞两张最终表的数据。检测到 PENDING=0 后，第二阶段最多只做一次轻量机械收尾：核对固定表头、id 与 DIMENSION_GROUP_ID 唯一、映射引用闭合、长宽高和来源非空、两个任务指定下载链接齐全。第二阶段不得重新逐车型、逐年份或逐来源做深度检索，不得为了提高置信度反复核对，也不得因非阻塞的排序或措辞问题继续多轮。PENDING=0 后的下一条回复必须直接输出两张最终完整 TSV、两个精确 sandbox 下载链接，并以“推进信号：COMPLETE”结束；不要再输出 CONTINUE。'
+    '执行顺序固定为：第一阶段优先消除 PENDING 并补齐会阻塞两张最终表的数据。检测到 PENDING=0 后，第二阶段最多只做一次轻量机械收尾：核对固定表头、id 与 DIMENSION_GROUP_ID 唯一、映射引用闭合、长宽高和来源非空、两个任务指定下载链接齐全。第二阶段不得重新逐车型、逐年份或逐来源做深度检索，不得为了提高置信度反复核对，也不得因非阻塞的排序或措辞问题继续多轮。PENDING=0 后的下一条回复必须直接输出两张最终完整 TSV、两个精确 sandbox 下载链接，并以“推进信号：COMPLETE”结束；不要再输出 CONTINUE。若经过多轮可靠检索后，剩余 PENDING 明确因证据不足而无法可靠闭合，并且继续检索已不能推进，可改为 ALMOST 收尾：停止检索，输出当前全部 READY 映射、它们引用的完整尺寸组、两个精确 sandbox 下载链接和每个剩余 PENDING 的具体原因，最后一行输出“推进信号：ALMOST”。临时网络、浏览器、页面或工具故障，以及单轮无结果，不得使用 ALMOST。'
 }
 else {
     '执行顺序必须固定为：第一阶段先解决数据缺失，优先补齐缺失年份、缺失结构/版本/门数/驾驶室/货斗、缺失尺寸、缺失参考车型等会阻塞成表的数据；第二阶段才解决核对问题，逐年核对参考车型覆盖、尺寸口径和迭代状态。只要仍存在任何数据缺失，不要把主要精力转到核对问题，也不要写全部可入库或本批次完成。回复中的下一步方向请按阶段写：有缺失时写“下一步优先补缺失”，缺失已补齐后再写“下一步优先核对”。'
@@ -277,6 +277,12 @@ $LightFinalizeMessage = if ($DimensionGroupEnabled) {
 }
 else {
     $ContinueMessage
+}
+$AlmostFinalizeTemplate = if ($DimensionGroupEnabled) {
+    Get-QClawPromptText -Name "dimension_almost_finalize"
+}
+else {
+    ""
 }
 
 function Invoke-XB {
@@ -1573,18 +1579,39 @@ function Update-TaskKtypeState {
         New-Item -ItemType Directory -Path $paths.Directory -Force | Out-Null
     }
 
+    # ALMOST is a mechanical projection of the state accumulated before that
+    # reply.  Never let an unverified final reply rewrite the snapshot it will
+    # subsequently be compared against; malformed or partial ALMOST output must
+    # therefore behave like an empty state delta.
+    if (Test-AlmostMarker -Text $Reply) {
+        $existingProgress = Read-QClawJsonWithBackup -Path $paths.Progress
+        if ($null -ne $existingProgress) { return $existingProgress }
+        $Reply = ""
+    }
+
     $existingMappings = @(Read-StrictTsvRows -Path $paths.Mapping -Header $RequiredTsvHeader)
     $existingDimensions = @(Read-StrictTsvRows -Path $paths.Dimensions -Header $RequiredDimensionGroupHeader)
     $newMappings = @(Get-ConfiguredFullTableRowsFromText -Text $Reply)
     $newDimensions = @(Get-ConfiguredDimensionGroupRowsFromText -Text $Reply)
 
-    # A COMPLETE response is an authoritative full snapshot; do not retain an
-    # obsolete id that was intentionally removed by a later split/collapse.
-    $authoritativeSnapshot = (-not [string]::IsNullOrWhiteSpace($Reply)) -and `
-        (Test-CompletionSignal -Text $Reply) -and $newMappings.Count -gt 0 -and $newDimensions.Count -gt 0
-    if ($authoritativeSnapshot) {
-        $existingMappings = @()
-        $existingDimensions = @()
+    # A COMPLETE table is authoritative only for the Ktypes present in that
+    # reply.  A branched conversation may legitimately complete just its
+    # PENDING scope; clearing the whole task here would discard READY rows from
+    # earlier branches.  Keep dimension rows as a cache and filter the groups
+    # actually published by the final READY snapshot later.
+    $authoritativeKtypes = @{}
+    $hasCompleteSnapshot = Test-CompletionSignal -Text $Reply
+    $hasScopedAuthoritativeSnapshot = (-not [string]::IsNullOrWhiteSpace($Reply)) -and `
+        $hasCompleteSnapshot -and `
+        $newMappings.Count -gt 0
+    if ($hasScopedAuthoritativeSnapshot) {
+        foreach ($row in $newMappings) {
+            $ktype = ([string]$row.Ktype).Trim()
+            if ($ktype) { $authoritativeKtypes[$ktype] = $true }
+        }
+        $existingMappings = @($existingMappings | Where-Object {
+            -not $authoritativeKtypes.ContainsKey(([string]$_.Ktype).Trim())
+        })
     }
 
     # A derived mapping supersedes a stale id=Ktype placeholder, but preserves
@@ -1747,9 +1774,13 @@ function Restore-TaskKtypeStateFromResultMarkdown {
     $segments = @($history -split '(?m)^--- Round [^\r\n]*---\s*$')
     $historyRound = 0
     foreach ($segment in $segments) {
-        if ($segment -notmatch [regex]::Escape($RequiredTsvHeader)) { continue }
+        # A round is followed by local "发送 / ..." or publish audit blocks
+        # before the next round heading.  Keep those wrappers out of terminal
+        # signal parsing so the reply's physical last line remains meaningful.
+        $replySegment = @($segment -split '(?m)^--- [^\r\n]*---\s*$')[0]
+        if ($replySegment -notmatch [regex]::Escape($RequiredTsvHeader)) { continue }
         $historyRound++
-        $state = Update-TaskKtypeState -Task $Task -Reply $segment -Round $historyRound
+        $state = Update-TaskKtypeState -Task $Task -Reply $replySegment -Round $historyRound
     }
     if ($historyRound -eq 0 -and $FallbackRound -gt 0) {
         $state = Update-TaskKtypeState -Task $Task -Round $FallbackRound
@@ -1887,6 +1918,7 @@ function Initialize-BatchProgress {
         if ($checkpoint) {
             $status = switch ([string]$checkpoint.status) {
                 "成功" { "success" }
+                "Almost" { "almost" }
                 "进行中" { "processing" }
                 default { "error" }
             }
@@ -1899,7 +1931,7 @@ function Initialize-BatchProgress {
             $updatedAt = [string]$existingBatch.updated_at
         }
 
-        if ($status -ne "success" -and $firstNonSuccess -lt 0) {
+        if ($status -notin @("success", "almost") -and $firstNonSuccess -lt 0) {
             $firstNonSuccess = $i
         }
 
@@ -1946,6 +1978,7 @@ function Update-BatchProgressFromCheckpoint {
 
     $newStatus = switch ($Status) {
         "成功" { "success" }
+        "Almost" { "almost" }
         "进行中" { "processing" }
         default { "error" }
     }
@@ -1956,7 +1989,7 @@ function Update-BatchProgressFromCheckpoint {
 
     $firstNonSuccess = -1
     for ($i = 0; $i -lt $progress.batches.Count; $i++) {
-        if ([string]$progress.batches[$i].status -ne "success") {
+        if ([string]$progress.batches[$i].status -notin @("success", "almost")) {
             $firstNonSuccess = $i
             break
         }
@@ -1974,15 +2007,16 @@ function Show-BatchProgressSummary {
     $total = [int]$Progress.total_batches
     $nextIdx = [int]$Progress.next_pending_index
     $successCount = @($Progress.batches | Where-Object { $_.status -eq "success" }).Count
+    $almostCount = @($Progress.batches | Where-Object { $_.status -eq "almost" }).Count
     $errorCount = @($Progress.batches | Where-Object { $_.status -eq "error" }).Count
     $pendingCount = @($Progress.batches | Where-Object { $_.status -eq "pending" }).Count
     $processingCount = @($Progress.batches | Where-Object { $_.status -eq "processing" }).Count
 
     Write-Host "`n批次进度总览:" -ForegroundColor Cyan
-    Write-Host "  总计: $total 批次 | 成功: $successCount | 错误: $errorCount | 处理中: $processingCount | 待处理: $pendingCount" -ForegroundColor Cyan
+    Write-Host "  总计: $total 批次 | 成功: $successCount | Almost: $almostCount | 错误: $errorCount | 处理中: $processingCount | 待处理: $pendingCount" -ForegroundColor Cyan
 
     if ($nextIdx -ge $total) {
-        Write-Host "  所有批次已完成!" -ForegroundColor Green
+        Write-Host "  所有批次均已到达终态。" -ForegroundColor Green
     }
     else {
         $nextBatch = $Progress.batches[$nextIdx]
@@ -2022,14 +2056,65 @@ function Get-ReplyNarrativeText {
     return (($result -join "`n") -replace "`n{3,}", "`n`n").Trim()
 }
 
-function Test-CompletionSignal {
+function Get-ExplicitProgressSignalValues {
     param([string]$Text)
 
     $Text = Get-ReplyNarrativeText -Text $Text
+    if ([string]::IsNullOrWhiteSpace($Text)) { return @() }
+
+    return @(
+        [regex]::Matches(
+            $Text,
+            '(?im)^\s*推进信号\s*[：:]\s*(ALMOST|COMPLETE|CONTINUE|完成|继续)\s*$'
+        ) | ForEach-Object {
+            switch -Regex ([string]$_.Groups[1].Value) {
+                '^(?i)ALMOST$' { 'ALMOST'; break }
+                '^(?i)(COMPLETE|完成)$' { 'COMPLETE'; break }
+                default { 'CONTINUE' }
+            }
+        }
+    )
+}
+
+function Get-LastNonEmptyReplyLine {
+    param([string]$Text)
+
+    if ([string]::IsNullOrWhiteSpace($Text)) { return '' }
+    $lines = @($Text -split "`r?`n" | Where-Object {
+        -not [string]::IsNullOrWhiteSpace($_)
+    })
+    if ($lines.Count -eq 0) { return '' }
+    return [string]$lines[$lines.Count - 1]
+}
+
+function Test-AlmostMarker {
+    param([string]$Text)
+
+    return (@(Get-ExplicitProgressSignalValues -Text $Text) -contains 'ALMOST')
+}
+
+function Test-AlmostSignal {
+    param([string]$Text)
+
+    $signals = @(Get-ExplicitProgressSignalValues -Text $Text)
+    if ($signals.Count -ne 1 -or $signals[0] -ne 'ALMOST') { return $false }
+    return ((Get-LastNonEmptyReplyLine -Text $Text) -match '(?i)^\s*推进信号\s*[：:]\s*ALMOST\s*$')
+}
+
+function Test-CompletionSignal {
+    param([string]$Text)
+
+    $rawText = $Text
+    $Text = Get-ReplyNarrativeText -Text $rawText
     if ([string]::IsNullOrWhiteSpace($Text)) { return $false }
 
+    $signals = @(Get-ExplicitProgressSignalValues -Text $rawText)
+    if ($signals.Count -gt 0) {
+        if ($signals.Count -ne 1 -or $signals[0] -ne 'COMPLETE') { return $false }
+        return ((Get-LastNonEmptyReplyLine -Text $rawText) -match '(?i)^\s*推进信号\s*[：:]\s*(COMPLETE|完成)\s*$')
+    }
+
     $patterns = @(
-        "(?im)^\s*推进信号\s*[：:]\s*(COMPLETE|完成)\s*$",
         "(^|[\r\n。！？.!?；;：:])\s*(本批次|当前批次|该批次)\s*(已)?完成\s*([。！？.!?；;]|$)",
         "(^|[\r\n。！？.!?；;：:])\s*批次(已)?(完成|结束)\s*([。！？.!?；;]|$)",
         "(^|[\r\n。！？.!?；;：:])\s*全部(已)?完成\s*([。！？.!?；;]|$)",
@@ -2048,6 +2133,7 @@ function Test-FullTableRequestSignal {
 
     $Text = Get-ReplyNarrativeText -Text $Text
     if ([string]::IsNullOrWhiteSpace($Text)) { return $false }
+    if (Test-AlmostSignal -Text $Text) { return $false }
 
     $patterns = @(
         "(^|[\r\n。！？.!?；;：:])\s*(全部|所有|均|都)\s*可[入出]库\s*([。！？.!?；;]|$)",
@@ -2146,14 +2232,35 @@ function Get-ConfiguredDimensionGroupRowsFromText {
     return @($rows | ForEach-Object { $_ })
 }
 
+function Test-ReplyContainsStrictTsvHeader {
+    param(
+        [string]$Reply,
+        [string]$Header
+    )
+    if ([string]::IsNullOrWhiteSpace($Reply) -or [string]::IsNullOrWhiteSpace($Header)) { return $false }
+    return ($Reply -match ("(?m)^\s*" + [regex]::Escape($Header) + "\s*$"))
+}
+
 function Test-DimensionGroupTablesComplete {
-    param([string]$Reply)
+    param(
+        [string]$Reply,
+        [switch]$AllowEmpty
+    )
 
     if (-not $DimensionGroupEnabled) { return $true }
 
     $mappingRows = @(Get-ConfiguredFullTableRowsFromText -Text $Reply)
     $dimensionRows = @(Get-ConfiguredDimensionGroupRowsFromText -Text $Reply)
-    if ($mappingRows.Count -eq 0 -or $dimensionRows.Count -eq 0) { return $false }
+    if ($mappingRows.Count -eq 0 -or $dimensionRows.Count -eq 0) {
+        if (
+            $AllowEmpty -and $mappingRows.Count -eq 0 -and $dimensionRows.Count -eq 0 -and
+            (Test-ReplyContainsStrictTsvHeader -Reply $Reply -Header $RequiredTsvHeader) -and
+            (Test-ReplyContainsStrictTsvHeader -Reply $Reply -Header $RequiredDimensionGroupHeader)
+        ) {
+            return $true
+        }
+        return $false
+    }
 
     $groups = @{}
     foreach ($row in $dimensionRows) {
@@ -2260,6 +2367,196 @@ function Get-TaskFinalArtifactNames {
     }
 }
 
+function Get-TaskReadySnapshot {
+    param($Task)
+
+    $paths = Get-TaskStatePaths -Task $Task
+    $progress = Read-QClawJsonWithBackup -Path $paths.Progress
+    if ($null -eq $progress) {
+        $progress = Update-TaskKtypeState -Task $Task -Round 0
+    }
+    $allMappings = @(Read-StrictTsvRows -Path $paths.Mapping -Header $RequiredTsvHeader)
+    $allDimensions = @(Read-StrictTsvRows -Path $paths.Dimensions -Header $RequiredDimensionGroupHeader)
+
+    # READY is a whole-Ktype decision.  Filtering only IterationStatus would
+    # leak an old READY branch from a Ktype that still has another PENDING
+    # branch, so use the checkpoint's aggregate Ktype status as the authority.
+    $readyKtypes = @{}
+    $pending = New-Object System.Collections.Generic.List[object]
+    if ($progress.ktype_progress) {
+        foreach ($property in @($progress.ktype_progress.PSObject.Properties)) {
+            $ktype = [string]$property.Name
+            $entry = $property.Value
+            if ([string]$entry.status -eq "ready") {
+                $readyKtypes[$ktype] = $true
+            }
+            else {
+                $pending.Add([pscustomobject]@{
+                    Ktype = $ktype
+                    Reason = [string]$entry.pending_reason
+                })
+            }
+        }
+    }
+
+    $mappingRows = @($allMappings | Where-Object {
+        $readyKtypes.ContainsKey(([string]$_.Ktype).Trim())
+    })
+    $referencedGroups = @{}
+    foreach ($row in $mappingRows) {
+        $groupId = ([string]$row.DIMENSION_GROUP_ID).Trim()
+        if ($groupId) { $referencedGroups[$groupId] = $true }
+    }
+    $dimensionRows = @($allDimensions | Where-Object {
+        $referencedGroups.ContainsKey(([string]$_.DIMENSION_GROUP_ID).Trim())
+    })
+    $sourceUrls = @(
+        $dimensionRows |
+            ForEach-Object { ([string]$_.SourceURL).Trim() } |
+            Where-Object { $_ } |
+            Select-Object -Unique
+    )
+
+    return [pscustomobject]@{
+        Progress = $progress
+        ReadyKtypes = @($readyKtypes.Keys)
+        Pending = @($pending | ForEach-Object { $_ })
+        MappingRows = @($mappingRows | ForEach-Object { $_ })
+        DimensionRows = @($dimensionRows | ForEach-Object { $_ })
+        SourceUrls = $sourceUrls
+    }
+}
+
+function Test-StrictTsvRowsEqual {
+    param(
+        [object[]]$ExpectedRows,
+        [object[]]$ActualRows,
+        [string]$Header,
+        [string]$KeyColumn
+    )
+
+    if (@($ExpectedRows).Count -ne @($ActualRows).Count) { return $false }
+    $columns = @($Header -split "`t")
+    $expectedByKey = @{}
+    foreach ($row in @($ExpectedRows)) {
+        $key = ([string]$row.$KeyColumn).Trim()
+        if (-not $key -or $expectedByKey.ContainsKey($key)) { return $false }
+        $expectedByKey[$key] = (@($columns | ForEach-Object { [string]$row.$_ }) -join [char]0x1F)
+    }
+    foreach ($row in @($ActualRows)) {
+        $key = ([string]$row.$KeyColumn).Trim()
+        if (-not $key -or -not $expectedByKey.ContainsKey($key)) { return $false }
+        $signature = (@($columns | ForEach-Object { [string]$row.$_ }) -join [char]0x1F)
+        if ($signature -cne [string]$expectedByKey[$key]) { return $false }
+        $expectedByKey.Remove($key)
+    }
+    return ($expectedByKey.Count -eq 0)
+}
+
+function Test-ReplyContainsPendingReasons {
+    param(
+        [string]$Reply,
+        [object[]]$PendingRows
+    )
+
+    if (@($PendingRows).Count -eq 0) { return $false }
+    $narrative = Get-ReplyNarrativeText -Text $Reply
+    if ([string]::IsNullOrWhiteSpace($narrative)) { return $false }
+    $lines = @($narrative -split "`r?`n" | Where-Object {
+        $_ -notmatch 'sandbox:/mnt/data/' -and
+        $_ -notmatch '(?i)^\s*推进信号\s*[：:]'
+    })
+
+    foreach ($pending in @($PendingRows)) {
+        $ktype = ([string]$pending.Ktype).Trim()
+        if (-not $ktype) { return $false }
+        $tokenPattern = '(?<![\p{L}\p{Nd}_])' + [regex]::Escape($ktype) + '(?![\p{L}\p{Nd}_])'
+        $hasReason = $false
+        foreach ($line in $lines) {
+            $match = [regex]::Match([string]$line, $tokenPattern)
+            if (-not $match.Success) { continue }
+            $afterKtype = ([string]$line).Substring($match.Index + $match.Length)
+            $meaningfulReason = $afterKtype -replace '[\s：:，,。.；;、\-—_\[\]\(\)]+', ''
+            $hasReasonMarker = ([string]$line) -match '(?i)(PENDING|待|未|缺|证据|无法|不足|原因|no\s+reliable|missing|insufficient|unresolved|exhausted)'
+            $isGenericStatusOnly = $meaningfulReason -match '^(?i)(PENDING|UNKNOWN|UNRESOLVED|N/?A|待处理|待核|未完成|无法推进|证据不足|暂无)$'
+            if ($hasReasonMarker -and -not $isGenericStatusOnly -and $meaningfulReason.Length -ge 2) {
+                $hasReason = $true
+                break
+            }
+        }
+        if (-not $hasReason) { return $false }
+    }
+    return $true
+}
+
+function Test-ReplyContainsAllReadySnapshot {
+    param(
+        [string]$Reply,
+        $Task
+    )
+
+    if (-not $DimensionGroupEnabled -or -not (Test-AlmostSignal -Text $Reply)) { return $false }
+    if (-not (Test-ReplyContainsRequiredDownloadLinks -Reply $Reply -Task $Task)) { return $false }
+
+    $snapshot = Get-TaskReadySnapshot -Task $Task
+    if (@($snapshot.Pending).Count -eq 0) { return $false }
+    if (-not (Test-ReplyContainsPendingReasons -Reply $Reply -PendingRows $snapshot.Pending)) { return $false }
+    if (-not (Test-DimensionGroupTablesComplete -Reply $Reply -AllowEmpty)) { return $false }
+
+    $actualMappings = @(Get-ConfiguredFullTableRowsFromText -Text $Reply)
+    $actualDimensions = @(Get-ConfiguredDimensionGroupRowsFromText -Text $Reply)
+    foreach ($row in $actualDimensions) {
+        if (([string]$row.SourceURL).Trim() -notmatch '^(?i)https?://') { return $false }
+    }
+    if (-not (Test-StrictTsvRowsEqual -ExpectedRows $snapshot.MappingRows -ActualRows $actualMappings `
+        -Header $RequiredTsvHeader -KeyColumn "id")) { return $false }
+    if (-not (Test-StrictTsvRowsEqual -ExpectedRows $snapshot.DimensionRows -ActualRows $actualDimensions `
+        -Header $RequiredDimensionGroupHeader -KeyColumn "DIMENSION_GROUP_ID")) { return $false }
+    return $true
+}
+
+function Get-TaskAlmostFinalizeMessage {
+    param($Task)
+
+    if (-not $DimensionGroupEnabled) { return $ContinueMessage }
+    $snapshot = Get-TaskReadySnapshot -Task $Task
+    if (@($snapshot.Pending).Count -eq 0) {
+        return $LightFinalizeMessage + (Get-TaskFinalArtifactInstruction -Task $Task)
+    }
+    $names = Get-TaskFinalArtifactNames -Task $Task
+    $mappingText = ConvertTo-StrictTsvText -Header $RequiredTsvHeader -Rows $snapshot.MappingRows
+    $dimensionText = ConvertTo-StrictTsvText -Header $RequiredDimensionGroupHeader -Rows $snapshot.DimensionRows
+    $pendingText = (@($snapshot.Pending) | ForEach-Object {
+        $reason = if ([string]::IsNullOrWhiteSpace([string]$_.Reason)) { "证据不足，无法可靠闭合" } else { [string]$_.Reason }
+        "- $($_.Ktype)：$reason"
+    }) -join "`r`n"
+
+    return @"
+$AlmostFinalizeTemplate
+
+【本地 checkpoint 的唯一 READY 快照】
+整体 READY Ktype：$(@($snapshot.ReadyKtypes).Count)
+READY 映射记录：$(@($snapshot.MappingRows).Count)
+引用尺寸组：$(@($snapshot.DimensionRows).Count)
+去重证据 URL：$(@($snapshot.SourceUrls).Count)
+
+以下 Ktype 映射 TSV 必须逐行原样完整输出，并写入 $($names.MappingFileName)：
+```tsv
+$($mappingText.TrimEnd())
+```
+
+以下 DIMENSION_GROUP TSV 必须逐行原样完整输出，并写入 $($names.DimensionFileName)：
+```tsv
+$($dimensionText.TrimEnd())
+```
+
+【仍为 PENDING；只在说明中列出，禁止写入上述两张 READY 表】
+$pendingText
+
+必须在同一回复中提供这两个精确文件名的可点击 sandbox 下载链接；不得遗漏、改写或重新研究本地 READY 快照。最后一行只能是“推进信号：ALMOST”，不要输出 COMPLETE 或 CONTINUE。
+"@
+}
+
 function Get-TaskFinalArtifactInstruction {
     param($Task)
 
@@ -2267,11 +2564,11 @@ function Get-TaskFinalArtifactInstruction {
     $names = Get-TaskFinalArtifactNames -Task $Task
     return @"
 
-【COMPLETE 下载文件硬性要求】
-准备 COMPLETE 时，除两张完整内嵌 TSV 外，还必须创建并提供以下两个可点击 sandbox 下载链接，文件名必须完全一致：
+【COMPLETE / ALMOST 下载文件硬性要求】
+准备 COMPLETE 时，除两张完整内嵌 TSV 外，还必须创建并提供以下两个可点击 sandbox 下载链接。准备 ALMOST 时，两张表和链接必须覆盖当前全部整体 READY Ktype，并排除所有 PENDING Ktype。文件名必须完全一致：
 - $($names.MappingFileName)
 - $($names.DimensionFileName)
-缺少任一下载链接时不得输出推进信号：COMPLETE。
+缺少任一下载链接时不得输出推进信号：COMPLETE 或 ALMOST。
 "@
 }
 
@@ -2436,7 +2733,8 @@ function Read-StrictTsvRows {
 function Get-LastStrictTableRowsFromText {
     param(
         [string]$Text,
-        [string]$Header
+        [string]$Header,
+        [switch]$AllowEmptyLastTable
     )
 
     if ([string]::IsNullOrWhiteSpace($Text)) { return @() }
@@ -2466,7 +2764,7 @@ function Get-LastStrictTableRowsFromText {
             }
             $rows.Add([pscustomobject]$record)
         }
-        if ($rows.Count -gt 0) {
+        if ($rows.Count -gt 0 -or $AllowEmptyLastTable) {
             $lastRows = @($rows | ForEach-Object { $_ })
         }
     }
@@ -2484,7 +2782,7 @@ function Get-LastSavedRoundReply {
     }
 
     $text = Get-Content -LiteralPath $ResultMarkdownPath -Raw -Encoding UTF8
-    $pattern = '(?ms)^--- Round\s+\d+\s*/[^\r\n]*---\s*\r?\n(?<reply>.*?)(?=^--- (?:Round\s+\d+\s*/|发送\s*/|脚本异常|本地最终 TSV 已更新|对话分支)[^\r\n]*---\s*$|\z)'
+    $pattern = '(?ms)^--- Round\s+\d+\s*/[^\r\n]*---\s*\r?\n(?<reply>.*?)(?=^--- (?:Round\s+\d+\s*/|发送\s*/|脚本异常|本地最终 TSV 已更新|累计[^\r\n]*TSV[^\r\n]*|对话分支)[^\r\n]*---\s*$|\z)'
     $matches = [regex]::Matches($text, $pattern)
     if ($matches.Count -eq 0) { return "" }
     return ([string]$matches[$matches.Count - 1].Groups["reply"].Value).Trim()
@@ -2497,9 +2795,11 @@ function Restore-CompletedTaskArtifacts {
     )
 
     if (-not $DimensionGroupEnabled -or $null -eq $Checkpoint) { return $null }
+    $isAlmost = ([string]$Checkpoint.status -eq "Almost")
     $names = Get-TaskFinalArtifactNames -Task $Task
     $mappingRows = @()
     $dimensionRows = @()
+    $hasStrictTables = $false
 
     # 成功任务优先恢复脚本已发布的本批严格 TSV；Markdown 末尾可能包含
     # 更晚追加的局部进度表或异常说明，不能覆盖已经入库的最终事实。
@@ -2512,6 +2812,7 @@ function Restore-CompletedTaskArtifacts {
     ) {
         $mappingRows = @(Read-StrictTsvRows -Path $publishedMappingPath -Header $RequiredTsvHeader)
         $dimensionRows = @(Read-StrictTsvRows -Path $publishedDimensionPath -Header $RequiredDimensionGroupHeader)
+        $hasStrictTables = $true
     }
 
     $resultPath = [string]$Checkpoint.output_file
@@ -2520,17 +2821,21 @@ function Restore-CompletedTaskArtifacts {
         if (Test-Path -LiteralPath $replyFallback -PathType Leaf) { $resultPath = $replyFallback }
     }
     if (
-        ($mappingRows.Count -eq 0 -or $dimensionRows.Count -eq 0) -and
+        (-not $hasStrictTables) -and
         (-not $resultPath -or -not (Test-Path -LiteralPath $resultPath -PathType Leaf))
     ) {
-        Write-Host "警告: 成功 checkpoint 缺少可读结果文件，无法回填最终 TSV: $($Task.DisplayName)" -ForegroundColor Yellow
+        Write-Host "警告: 终态 checkpoint 缺少可读结果文件，无法回填 TSV: $($Task.DisplayName)" -ForegroundColor Yellow
         return $null
     }
 
-    if ($mappingRows.Count -eq 0 -or $dimensionRows.Count -eq 0) {
+    if (-not $hasStrictTables) {
         $text = Get-Content -LiteralPath $resultPath -Raw -Encoding UTF8
-        $mappingRows = @(Get-LastStrictTableRowsFromText -Text $text -Header $RequiredTsvHeader)
-        if ($mappingRows.Count -eq 0) {
+        $mappingRows = @(Get-LastStrictTableRowsFromText -Text $text -Header $RequiredTsvHeader `
+            -AllowEmptyLastTable:$isAlmost)
+        if (
+            $mappingRows.Count -eq 0 -and
+            ((-not $isAlmost) -or -not (Test-ReplyContainsStrictTsvHeader -Reply $text -Header $RequiredTsvHeader))
+        ) {
             # 兼容移除 EndDateStatus 前已经人工完成的 11 列 Ktype 映射表。
             $legacyHeader = "id`tKtype`tNormalizedBodyStyle`tGeneration`tBodyCode`tDoors`tDIMENSION_GROUP_ID`tEndDateStatus`tMatchConfidence`tNotes`tIterationStatus"
             $legacyRows = @(Get-LastStrictTableRowsFromText -Text $text -Header $legacyHeader)
@@ -2553,11 +2858,16 @@ function Restore-CompletedTaskArtifacts {
                 )
             }
         }
-        $dimensionRows = @(Get-LastStrictTableRowsFromText -Text $text -Header $RequiredDimensionGroupHeader)
+        $dimensionRows = @(Get-LastStrictTableRowsFromText -Text $text -Header $RequiredDimensionGroupHeader `
+            -AllowEmptyLastTable:$isAlmost)
+        $hasStrictTables = (
+            (Test-ReplyContainsStrictTsvHeader -Reply $text -Header $RequiredTsvHeader) -and
+            (Test-ReplyContainsStrictTsvHeader -Reply $text -Header $RequiredDimensionGroupHeader)
+        )
     }
 
-    if ($mappingRows.Count -eq 0 -or $dimensionRows.Count -eq 0) {
-        Write-Host "警告: 成功结果中找不到最终两张 TSV，无法回填: $($Task.DisplayName)" -ForegroundColor Yellow
+    if (-not $hasStrictTables -or ((-not $isAlmost) -and ($mappingRows.Count -eq 0 -or $dimensionRows.Count -eq 0))) {
+        Write-Host "警告: 终态结果中找不到两张 TSV，无法回填: $($Task.DisplayName)" -ForegroundColor Yellow
         return $null
     }
 
@@ -2567,16 +2877,24 @@ $(ConvertTo-StrictTsvText -Header $RequiredDimensionGroupHeader -Rows $dimension
 [下载 Ktype 映射表](sandbox:/mnt/data/$($names.MappingFileName))
 [下载 DIMENSION_GROUP 表](sandbox:/mnt/data/$($names.DimensionFileName))
 "@
-    $minimumRows = [Math]::Max(
-        0,
-        (@([string]$Task.Content -split "`r?`n" | Where-Object {
-            -not [string]::IsNullOrWhiteSpace($_)
-        }).Count - 1)
-    )
-    if (-not (Test-ReplyContainsFullTable -Reply $syntheticReply -MinimumRows $minimumRows -Task $Task)) {
-        throw "历史成功结果的两张最终 TSV 未通过当前完整性校验: $($Task.DisplayName)"
+    $tablesValid = if ($isAlmost) {
+        (Test-DimensionGroupTablesComplete -Reply $syntheticReply -AllowEmpty) -and
+            (Test-ReplyContainsRequiredDownloadLinks -Reply $syntheticReply -Task $Task)
     }
-    return Publish-CompletedTaskTables -Task $Task -Reply $syntheticReply -ResultMarkdownPath ""
+    else {
+        $minimumRows = [Math]::Max(
+            0,
+            (@([string]$Task.Content -split "`r?`n" | Where-Object {
+                -not [string]::IsNullOrWhiteSpace($_)
+            }).Count - 1)
+        )
+        Test-ReplyContainsFullTable -Reply $syntheticReply -MinimumRows $minimumRows -Task $Task
+    }
+    if (-not $tablesValid) {
+        throw "历史终态结果的两张 TSV 未通过当前完整性校验: $($Task.DisplayName)"
+    }
+    return Publish-CompletedTaskTables -Task $Task -Reply $syntheticReply -ResultMarkdownPath "" `
+        -Signal $(if ($isAlmost) { "ALMOST" } else { "COMPLETE" })
 }
 
 function Merge-FinalMappingRows {
@@ -2822,18 +3140,24 @@ function Publish-CompletedTaskTables {
     param(
         $Task,
         [string]$Reply,
-        [string]$ResultMarkdownPath
+        [string]$ResultMarkdownPath,
+        [ValidateSet("COMPLETE", "ALMOST")]
+        [string]$Signal = "COMPLETE"
     )
 
     if (-not $DimensionGroupEnabled) { return $null }
     if (-not (Test-ReplyContainsRequiredDownloadLinks -Reply $Reply -Task $Task)) {
-        throw "COMPLETE 回复缺少两个最终 TSV 下载链接"
+        throw "$Signal 回复缺少两个 TSV 下载链接"
     }
 
     $mappingRows = @(Get-ConfiguredFullTableRowsFromText -Text $Reply)
     $dimensionRows = @(Get-ConfiguredDimensionGroupRowsFromText -Text $Reply)
     if ($mappingRows.Count -eq 0 -or $dimensionRows.Count -eq 0) {
-        throw "COMPLETE 回复缺少可提取的两张完整 TSV"
+        $validEmptyAlmost = $Signal -eq "ALMOST" -and
+            (Test-DimensionGroupTablesComplete -Reply $Reply -AllowEmpty)
+        if (-not $validEmptyAlmost) {
+            throw "$Signal 回复缺少可提取的两张完整 TSV"
+        }
     }
 
     $names = Get-TaskFinalArtifactNames -Task $Task
@@ -2866,9 +3190,10 @@ function Publish-CompletedTaskTables {
         else {
             ""
         }
+        $publishLabel = if ($Signal -eq "ALMOST") { "ALMOST READY 子集" } else { "最终" }
         Add-Content -LiteralPath $ResultMarkdownPath -Encoding UTF8 -Value @"
 
---- 累计最终 TSV 已更新 ---
+--- 累计$publishLabel TSV 已更新 ---
 - 累计 Ktype 映射：$($names.AggregateMappingFileName)（$($mergedMappings.Count) 行）
 - 累计尺寸组：$($names.AggregateDimensionFileName)（$($mergedDimensions.Count) 行）
 $conflictAuditText
@@ -3044,11 +3369,17 @@ function Test-CapturedReplyShellOnly {
 function Test-ForceNextSignal {
     param([string]$Text)
 
-    $Text = Get-ReplyNarrativeText -Text $Text
+    $rawText = $Text
+    $Text = Get-ReplyNarrativeText -Text $rawText
     if ([string]::IsNullOrWhiteSpace($Text)) { return $false }
 
+    $signals = @(Get-ExplicitProgressSignalValues -Text $rawText)
+    if ($signals.Count -gt 0) {
+        if ($signals.Count -ne 1 -or $signals[0] -ne 'CONTINUE') { return $false }
+        return ((Get-LastNonEmptyReplyLine -Text $rawText) -match '(?i)^\s*推进信号\s*[：:]\s*(CONTINUE|继续)\s*$')
+    }
+
     $patterns = @(
-        "(?im)^\s*推进信号\s*[：:]\s*(CONTINUE|继续)\s*$",
         "回复\s*[：:]\s*下一步",
         '请(回复|发送)\s*[“"]?下一步[”"]?',
         "(^|[\r\n])\s*下一步[。.!！]?\s*$",
@@ -4354,7 +4685,8 @@ function Wait-ChatGPTReplyComplete {
             $hasReadyState = (-not $state.isGenerating) -and $state.inputReady -and ($stableSeconds -ge $ReplyStabilityDelay)
             $hasFallbackReadyState = (-not $state.isGenerating) -and ($stableSeconds -ge ($ReplyStabilityDelay + 8))
             $narrativeReply = Get-ReplyNarrativeText -Text $reply
-            $looksLikeUsableReply = (Test-CompletionSignal -Text $narrativeReply) -or
+            $looksLikeUsableReply = (Test-AlmostSignal -Text $narrativeReply) -or
+                (Test-CompletionSignal -Text $narrativeReply) -or
                 (Test-ReplyHasNextDirection -Reply $narrativeReply) -or
                 ($narrativeReply.Length -ge 80)
 
@@ -4401,7 +4733,7 @@ function Test-DeviatedReply {
 
     $Reply = Get-ReplyNarrativeText -Text $Reply
     if (Test-ContainsAny -Text $Reply -Keywords $ProgressKeywords) { return $false }
-    if (Test-CompletionSignal -Text $Reply) { return $false }
+    if ((Test-AlmostSignal -Text $Reply) -or (Test-CompletionSignal -Text $Reply)) { return $false }
     if ($Round -le 2) { return $false }
     if ($Reply.Length -lt 50) { return $false }
     return $true
@@ -4623,6 +4955,7 @@ function Process-TSVTask {
     $status = ""
     $remarks = ""
     $fatalBrowserFailure = $false
+    $taskState = $null
     $conversationUrl = ""
     $checkpoint = Get-TaskCheckpoint -Task $Task
     $resumeFromCheckpoint = $false
@@ -4635,16 +4968,16 @@ function Process-TSVTask {
     $taskFullTableRequestMessage = $FullTableRequestMessage + $artifactInstruction
     $taskMissingSignalsMessage = $MissingSignalsMessage + $artifactInstruction
 
-    if ($checkpoint -and [string]$checkpoint.status -eq "成功") {
+    if ($checkpoint -and [string]$checkpoint.status -in @("成功", "Almost")) {
         if ($DimensionGroupEnabled) {
             $restoredArtifacts = Restore-CompletedTaskArtifacts -Task $Task -Checkpoint $checkpoint
             if ($null -eq $restoredArtifacts) {
-                throw "已成功任务无法回填两张最终 TSV: $($Task.DisplayName)"
+                throw "终态任务无法回填两张 TSV: $($Task.DisplayName)"
             }
-            Write-Host "已从成功 checkpoint 更新累计最终 TSV: $($Task.DisplayName)" -ForegroundColor DarkGreen
+            Write-Host "已从 $($checkpoint.status) checkpoint 更新累计 TSV: $($Task.DisplayName)" -ForegroundColor DarkGreen
         }
-        Write-Host "跳过 checkpoint 已成功车型: $($Task.DisplayName)" -ForegroundColor Gray
-        Add-RunEvent -Type "task_skipped" -Task $Task -Data @{ reason = "checkpoint_success" }
+        Write-Host "跳过 checkpoint 已到终态任务: $($Task.DisplayName) [$($checkpoint.status)]" -ForegroundColor Gray
+        Add-RunEvent -Type "task_skipped" -Task $Task -Data @{ reason = "checkpoint_terminal"; status = [string]$checkpoint.status }
         return
     }
     if ($checkpoint -and
@@ -4697,7 +5030,22 @@ function Process-TSVTask {
             if (-not [string]::IsNullOrWhiteSpace($localResumeReply)) {
                 Write-Host "  已从 checkpoint 结果文件读取最后一个已落盘 Round（$($localResumeReply.Length) 字符）。" -ForegroundColor DarkGreen
                 $localHasFullTable = Test-ReplyContainsFullTable -Reply $localResumeReply -MinimumRows $minimumFullTableRows -Task $Task
-                if ((Test-CompletionSignal -Text $localResumeReply) -and $localHasFullTable) {
+                $localHasAllReady = (Test-AlmostSignal -Text $localResumeReply) -and `
+                    (Test-ReplyContainsAllReadySnapshot -Reply $localResumeReply -Task $Task)
+                if ($localHasAllReady) {
+                    try {
+                        Publish-CompletedTaskTables -Task $Task -Reply $localResumeReply `
+                            -ResultMarkdownPath $outputFile -Signal "ALMOST" | Out-Null
+                        $status = "Almost"
+                        $remarks = "从 checkpoint 本地最后回复恢复全部当前 READY 记录及下载链接；剩余 PENDING 因证据不足结束"
+                        $finishWithoutReplyLoop = $true
+                        Write-Host "  本地最后回复已按 Almost 重新入库，无需重新发送任务。" -ForegroundColor Yellow
+                    }
+                    catch {
+                        Write-Host "  本地 Almost 回复暂未能入库，继续原对话处理: $($_.Exception.Message)" -ForegroundColor Yellow
+                    }
+                }
+                elseif ((Test-CompletionSignal -Text $localResumeReply) -and $localHasFullTable) {
                     try {
                         Publish-CompletedTaskTables -Task $Task -Reply $localResumeReply -ResultMarkdownPath $outputFile | Out-Null
                         $status = "成功"
@@ -4774,7 +5122,22 @@ function Process-TSVTask {
                     $resumeHasFullTable = Test-ReplyContainsFullTable -Reply $resumeReply -MinimumRows $minimumFullTableRows -Task $Task
                 }
 
-                if (-not [string]::IsNullOrWhiteSpace($resumeReply) -and
+                $resumeHasAllReady = $false
+                if (Test-AlmostSignal -Text $resumeReply) {
+                    $taskState = Update-TaskKtypeState -Task $Task -Reply $resumeReply -Round $round
+                    $resumeHasAllReady = Test-ReplyContainsAllReadySnapshot -Reply $resumeReply -Task $Task
+                }
+                if ($resumeHasAllReady) {
+                    $roundTitle = "--- Round $round / checkpoint 恢复 Almost 回复 ---"
+                    Add-Content -Path $outputFile -Value "`r`n$roundTitle`r`n$resumeReply`r`n" -Encoding UTF8
+                    Write-Host "  waiting_reply checkpoint 已存在有效 Almost 回复；直接发布 READY 子集。" -ForegroundColor Yellow
+                    Publish-CompletedTaskTables -Task $Task -Reply $resumeReply `
+                        -ResultMarkdownPath $outputFile -Signal "ALMOST" | Out-Null
+                    $status = "Almost"
+                    $remarks = "恢复 waiting_reply 时检测到全部当前 READY 记录及下载链接；剩余 PENDING 因证据不足结束"
+                    $finishWithoutReplyLoop = $true
+                }
+                elseif (-not [string]::IsNullOrWhiteSpace($resumeReply) -and
                     (Test-CompletionSignal -Text $resumeReply) -and $resumeHasFullTable) {
                     $roundTitle = "--- Round $round / checkpoint 恢复已完成回复 ---"
                     Add-Content -Path $outputFile -Value "`r`n$roundTitle`r`n$resumeReply`r`n" -Encoding UTF8
@@ -4821,7 +5184,20 @@ function Process-TSVTask {
                     $resumeHasFullTable = Test-ReplyContainsFullTable -Reply $resumeReply -MinimumRows $minimumFullTableRows -Task $Task
                 }
 
-                if (-not [string]::IsNullOrWhiteSpace($resumeReply) -and
+                $resumeHasAllReady = $false
+                if (Test-AlmostSignal -Text $resumeReply) {
+                    $taskState = Update-TaskKtypeState -Task $Task -Reply $resumeReply -Round $round
+                    $resumeHasAllReady = Test-ReplyContainsAllReadySnapshot -Reply $resumeReply -Task $Task
+                }
+                if ($resumeHasAllReady) {
+                    Write-Host "  checkpoint 最后一轮已按 Almost 结束；发布全部 READY 子集。" -ForegroundColor Yellow
+                    Publish-CompletedTaskTables -Task $Task -Reply $resumeReply `
+                        -ResultMarkdownPath $outputFile -Signal "ALMOST" | Out-Null
+                    $status = "Almost"
+                    $remarks = "恢复时检测到全部当前 READY 记录及下载链接；剩余 PENDING 因证据不足结束"
+                    $finishWithoutReplyLoop = $true
+                }
+                elseif (-not [string]::IsNullOrWhiteSpace($resumeReply) -and
                     (Test-CompletionSignal -Text $resumeReply) -and $resumeHasFullTable) {
                     Write-Host "  checkpoint 最后一轮已明确完成；结束留痕，不再发送继续指令。" -ForegroundColor Green
                     Publish-CompletedTaskTables -Task $Task -Reply $resumeReply -ResultMarkdownPath $outputFile | Out-Null
@@ -4832,9 +5208,10 @@ function Process-TSVTask {
                 elseif (-not [string]::IsNullOrWhiteSpace($resumeReply)) {
                     $round++
                     $resumeNeedsLightFinalize = Test-ReplyReadyForLightFinalize -Text $resumeReply
-                    $resumeMessage = if (Test-CompletionSignal -Text $resumeReply) { $taskCompletionFixMessage } elseif ($resumeNeedsLightFinalize) { $taskLightFinalizeMessage } else { $taskContinueMessage }
-                    $resumeLabel = if (Test-CompletionSignal -Text $resumeReply) { "checkpoint 完成信号纠偏到 Round $round" } elseif ($resumeNeedsLightFinalize) { "checkpoint 轻量收尾到 Round $round" } else { "checkpoint 续跑到 Round $round" }
-                    Send-TrackedChatGPTMessage -OutputFile $outputFile -Label $resumeLabel -Message $resumeMessage
+                    $resumeIsAlmost = Test-AlmostSignal -Text $resumeReply
+                    $resumeMessage = if ($resumeIsAlmost) { Get-TaskAlmostFinalizeMessage -Task $Task } elseif (Test-CompletionSignal -Text $resumeReply) { $taskCompletionFixMessage } elseif ($resumeNeedsLightFinalize) { $taskLightFinalizeMessage } else { $taskContinueMessage }
+                    $resumeLabel = if ($resumeIsAlmost) { "checkpoint Almost 收尾纠偏到 Round $round" } elseif (Test-CompletionSignal -Text $resumeReply) { "checkpoint 完成信号纠偏到 Round $round" } elseif ($resumeNeedsLightFinalize) { "checkpoint 轻量收尾到 Round $round" } else { "checkpoint 续跑到 Round $round" }
+                    Send-TrackedChatGPTMessage -OutputFile $outputFile -Label $resumeLabel -Message $resumeMessage -LargePayload:$resumeIsAlmost
                     $sendCount++
                     $currentConversationUrl = Wait-CurrentChatGPTConversationUrl
                     if (Test-ChatGPTConversationUrl -Url $currentConversationUrl) {
@@ -4896,7 +5273,20 @@ function Process-TSVTask {
             Add-Content -Path $outputFile -Value "`r`n--- 恢复现场 / 已有回复 ---`r`n$previousReply`r`n" -Encoding UTF8
             try { $conversationUrl = Get-CurrentChatGPTUrl } catch { }
             $existingHasFullTable = Test-ReplyContainsFullTable -Reply $previousReply -MinimumRows $minimumFullTableRows -Task $Task
-            if ((Test-CompletionSignal -Text $previousReply) -and $existingHasFullTable) {
+            $existingHasAllReady = $false
+            if (Test-AlmostSignal -Text $previousReply) {
+                $taskState = Update-TaskKtypeState -Task $Task -Reply $previousReply -Round $round
+                $existingHasAllReady = Test-ReplyContainsAllReadySnapshot -Reply $previousReply -Task $Task
+            }
+            if ($existingHasAllReady) {
+                Write-Host "  恢复现场最后一轮已按 Almost 结束；发布全部 READY 子集。" -ForegroundColor Yellow
+                Publish-CompletedTaskTables -Task $Task -Reply $previousReply `
+                    -ResultMarkdownPath $outputFile -Signal "ALMOST" | Out-Null
+                $status = "Almost"
+                $remarks = "恢复现场检测到全部当前 READY 记录及下载链接；剩余 PENDING 因证据不足结束"
+                $finishWithoutReplyLoop = $true
+            }
+            elseif ((Test-CompletionSignal -Text $previousReply) -and $existingHasFullTable) {
                 Write-Host "  恢复现场最后一轮已明确完成；结束留痕，不再发送继续指令。" -ForegroundColor Green
                 Publish-CompletedTaskTables -Task $Task -Reply $previousReply -ResultMarkdownPath $outputFile | Out-Null
                 $status = "成功"
@@ -4905,10 +5295,11 @@ function Process-TSVTask {
             }
             else {
                 $resumeNeedsLightFinalize = Test-ReplyReadyForLightFinalize -Text $previousReply
-                $resumeMessage = if (Test-CompletionSignal -Text $previousReply) { $taskCompletionFixMessage } elseif ($resumeNeedsLightFinalize) { $taskLightFinalizeMessage } else { $taskContinueMessage }
-                $resumeLabel = if (Test-CompletionSignal -Text $previousReply) { "存档完成信号纠偏" } elseif ($resumeNeedsLightFinalize) { "存档轻量收尾" } else { "存档续跑" }
+                $resumeIsAlmost = Test-AlmostSignal -Text $previousReply
+                $resumeMessage = if ($resumeIsAlmost) { Get-TaskAlmostFinalizeMessage -Task $Task } elseif (Test-CompletionSignal -Text $previousReply) { $taskCompletionFixMessage } elseif ($resumeNeedsLightFinalize) { $taskLightFinalizeMessage } else { $taskContinueMessage }
+                $resumeLabel = if ($resumeIsAlmost) { "存档 Almost 收尾纠偏" } elseif (Test-CompletionSignal -Text $previousReply) { "存档完成信号纠偏" } elseif ($resumeNeedsLightFinalize) { "存档轻量收尾" } else { "存档续跑" }
                 Write-Host "  当前回复已完成并保存，正在发送后续指令..." -ForegroundColor Green
-                Send-TrackedChatGPTMessage -OutputFile $outputFile -Label $resumeLabel -Message $resumeMessage
+                Send-TrackedChatGPTMessage -OutputFile $outputFile -Label $resumeLabel -Message $resumeMessage -LargePayload:$resumeIsAlmost
                 Write-Host "  后续指令已发送，进入自动推进。" -ForegroundColor Green
                 $sendCount++
                 Save-TaskCheckpoint -Task $Task -Status "进行中" -Phase "waiting_reply" -Round $round -SendCount $sendCount -OutputFile $outputFile -ConversationUrl $conversationUrl
@@ -4942,6 +5333,32 @@ function Process-TSVTask {
                 break
             }
 
+            if (Test-AlmostSignal -Text $reply) {
+                $hasAllReadySnapshot = Test-ReplyContainsAllReadySnapshot -Reply $reply -Task $Task
+                if (-not $hasAllReadySnapshot) {
+                    Write-Host "  检测到 ALMOST，但未包含本地全部 READY 快照或两个指定链接，发送机械收尾纠偏..." -ForegroundColor Yellow
+                    if ($nextCount -ge $MaxNextSteps) {
+                        $status = "次数上限终止"
+                        $remarks = "ALMOST 缺少全部当前 READY 记录、闭合尺寸组或指定下载链接，且达到最大下一步次数: $MaxNextSteps"
+                        break
+                    }
+                    $previousReply = $reply
+                    $nextCount++
+                    $round++
+                    $almostFinalizeMessage = Get-TaskAlmostFinalizeMessage -Task $Task
+                    Send-TrackedChatGPTMessage -OutputFile $outputFile -Label "Almost 收尾纠偏 / Round $round" `
+                        -Message $almostFinalizeMessage -LargePayload
+                    $sendCount++
+                    Save-TaskCheckpoint -Task $Task -Status "进行中" -Phase "waiting_reply" -Round $round -SendCount $sendCount -OutputFile $outputFile -ConversationUrl $conversationUrl
+                    continue
+                }
+                $readySnapshot = Get-TaskReadySnapshot -Task $Task
+                Publish-CompletedTaskTables -Task $Task -Reply $reply -ResultMarkdownPath $outputFile -Signal "ALMOST" | Out-Null
+                $status = "Almost"
+                $remarks = "证据不足且无法继续可靠推进；已发布全部当前 READY：Ktype=$(@($readySnapshot.ReadyKtypes).Count)，映射=$(@($readySnapshot.MappingRows).Count)，尺寸组=$(@($readySnapshot.DimensionRows).Count)，PENDING=$(@($readySnapshot.Pending).Count)"
+                break
+            }
+
             $hasFullTable = Test-ReplyContainsFullTable -Reply $reply -MinimumRows $minimumFullTableRows -Task $Task
             $replyHasTsv = Test-ReplyContainsTSV -Reply $reply
             if ($replyHasTsv) {
@@ -4950,20 +5367,26 @@ function Process-TSVTask {
                 $consecutiveEmptyTsvCount++
                 Write-Host "  本轮回复无 TSV 数据（连续 $consecutiveEmptyTsvCount/3 轮）" -ForegroundColor Yellow
                 if ($consecutiveEmptyTsvCount -ge 3 -and -not $emptyTsvFinalSent) {
-                    Write-Host "  连续 3 轮无 TSV，发送直接完成收尾 prompt..." -ForegroundColor Yellow
-                    $emptyTsvFinalMessage = '立即停止检索，直接输出当前已积累的两张最终完整 TSV（Ktype 映射 TSV 和 DIMENSION_GROUP TSV），保留仍有 PENDING 的条目原样输出，不要继续检索或补全。必须包含两个 sandbox 下载链接，并以"推进信号：COMPLETE"结束。'
+                    $hasPendingKtypes = [int]$taskState.progress.pending_ktype_count -gt 0
+                    Write-Host $(if ($hasPendingKtypes) { "  连续 3 轮无 TSV，发送格式与证据状态纠偏..." } else { "  连续 3 轮无 TSV 且 PENDING=0，发送 COMPLETE 轻量收尾 prompt..." }) -ForegroundColor Yellow
+                    # Missing TSV output is not proof that evidence is exhausted.
+                    # Let GPT explicitly choose CONTINUE or ALMOST under the
+                    # requirement; only an explicit ALMOST receives the frozen
+                    # READY snapshot correction above.
+                    $emptyTsvFinalMessage = if ($hasPendingKtypes) { $taskMissingSignalsMessage } else { $taskLightFinalizeMessage }
                     $emptyTsvFinalSent = $true
                     $previousReply = $reply
                     $nextCount++
                     $round++
-                    Send-TrackedChatGPTMessage -OutputFile $outputFile -Label "无数据收尾 / Round $round" -Message $emptyTsvFinalMessage
+                    $emptyFinalizeLabel = if ($hasPendingKtypes) { "无 TSV 格式与证据状态纠偏 / Round $round" } else { "无数据 COMPLETE 收尾 / Round $round" }
+                    Send-TrackedChatGPTMessage -OutputFile $outputFile -Label $emptyFinalizeLabel -Message $emptyTsvFinalMessage
                     $sendCount++
                     Save-TaskCheckpoint -Task $Task -Status "进行中" -Phase "waiting_reply" -Round $round -SendCount $sendCount -OutputFile $outputFile -ConversationUrl $conversationUrl
                     continue
                 }
                 if ($consecutiveEmptyTsvCount -ge 3 -and $emptyTsvFinalSent) {
                     $status = "无数据跳过"
-                    $remarks = "连续多轮回复均未给出 TSV 数据（已发送收尾 prompt 仍无数据），视为无可处理数据"
+                    $remarks = "连续多轮回复均未给出 TSV 数据（已发送格式与证据状态纠偏仍无有效结果）"
                     break
                 }
             }
@@ -5082,7 +5505,18 @@ function Process-TSVTask {
     }
 
     $endTime = Get-Date -Format "yyyy-MM-dd HH:mm:ss"
-    Save-TaskCheckpoint -Task $Task -Status $status -Phase "finished" -Round $round -SendCount $sendCount -OutputFile $outputFile -ConversationUrl $conversationUrl -Remarks $remarks
+    $finalCheckpoint = @{
+        Task = $Task
+        Status = $status
+        Phase = "finished"
+        Round = $round
+        SendCount = $sendCount
+        OutputFile = $outputFile
+        ConversationUrl = $conversationUrl
+        Remarks = $remarks
+    }
+    if ($null -ne $taskState) { $finalCheckpoint.TaskState = $taskState }
+    Save-TaskCheckpoint @finalCheckpoint
     Add-LogEntry -FileName $fileName -StartTime $startTime -EndTime $endTime -Status $status -SendCount $sendCount -OutputFile $outputFile -Remarks $remarks
     Add-RunEvent -Type "task_finished" -Task $Task -Data @{ status = $status; sends = $sendCount; rounds = $round; remarks = $remarks }
     Write-Host "完成: $fileName -> $status ($remarks)" -ForegroundColor $(if ($status -eq "成功") { "Green" } else { "Yellow" })
@@ -5137,6 +5571,7 @@ function Generate-Summary {
 
     $count = @{
         "成功" = 0
+        "Almost" = 0
         "重复终止" = 0
         "次数上限终止" = 0
         "页面错误" = 0
@@ -5165,7 +5600,7 @@ function Generate-Summary {
         else { $count["脚本错误"]++ }
     }
 
-    $failed = $currentRows.Count - $count["成功"]
+    $failed = $currentRows.Count - $count["成功"] - $count["Almost"]
     $unsuccessfulRows = @(
         $currentRows |
             Where-Object {
@@ -5174,7 +5609,7 @@ function Generate-Summary {
                 $remarks = $_."备注"
                 if (-not $remarks) { $remarks = $_.Remarks }
                 $status = Get-NormalizedTaskStatus -Status ([string]$status) -Remarks ([string]$remarks)
-                $status -ne "成功"
+                $status -notin @("成功", "Almost")
             } |
             Sort-Object { $_."文件名" }, { $_.FileName }
     )
@@ -5203,6 +5638,7 @@ function Generate-Summary {
     $summary = @"
 总文件数：$($currentRows.Count)
 成功数：$($count["成功"])
+Almost 数：$($count["Almost"])
 重复终止数：$($count["重复终止"])
 次数上限终止数：$($count["次数上限终止"])
 页面错误数：$($count["页面错误"])
@@ -5220,8 +5656,8 @@ function Generate-Summary {
 进行中数：$($count["进行中"])
 未处理数：$($count["未处理"])
 失败数：$failed
-当前未成功的任务数：$($unsuccessfulRows.Count)
-当前未成功的任务：
+当前未到终态的任务数：$($unsuccessfulRows.Count)
+当前未到终态的任务：
 $unsuccessfulText
 输出目录：$OutputDir
 完成时间：$(Get-Date -Format "yyyy-MM-dd HH:mm:ss")
@@ -5233,6 +5669,7 @@ $unsuccessfulText
         if ($bp) {
             $bpTotal = [int]$bp.total_batches
             $bpSuccess = @($bp.batches | Where-Object { $_.status -eq "success" }).Count
+            $bpAlmost = @($bp.batches | Where-Object { $_.status -eq "almost" }).Count
             $bpError = @($bp.batches | Where-Object { $_.status -eq "error" }).Count
             $bpPending = @($bp.batches | Where-Object { $_.status -eq "pending" }).Count
             $bpProcessing = @($bp.batches | Where-Object { $_.status -eq "processing" }).Count
@@ -5245,6 +5682,7 @@ $unsuccessfulText
 
 批次进度文件：$(Get-BatchProgressPath)
 批次成功数：$bpSuccess
+批次 Almost 数：$bpAlmost
 批次错误数：$bpError
 批次待处理数：$bpPending
 批次处理中数：$bpProcessing
@@ -5381,25 +5819,34 @@ function Main {
     }
 
     $batchProgress = $null
-    $batchSuccessSet = New-Object "System.Collections.Generic.HashSet[string]" ([StringComparer]::OrdinalIgnoreCase)
+    $batchTerminalSet = New-Object "System.Collections.Generic.HashSet[string]" ([StringComparer]::OrdinalIgnoreCase)
     if ($TaskGranularity -eq "batch" -and -not [string]::IsNullOrWhiteSpace($CheckpointDir)) {
         $batchProgress = Initialize-BatchProgress -Tasks $tasks
         Show-BatchProgressSummary -Progress $batchProgress
         foreach ($b in $batchProgress.batches) {
-            if ([string]$b.status -eq "success") {
-                [void]$batchSuccessSet.Add([string]$b.task_id)
+            if ([string]$b.status -in @("success", "almost")) {
+                [void]$batchTerminalSet.Add([string]$b.task_id)
             }
         }
     }
 
     foreach ($task in $tasks) {
         if ($TaskGranularity -eq "file" -and $processedSet.Contains($task.LogName)) {
+            $processedCheckpoint = Get-TaskCheckpoint -Task $task
+            if ($processedCheckpoint -and [string]$processedCheckpoint.status -in @("成功", "Almost")) {
+                Process-TSVTask -Task $task
+                continue
+            }
             Write-Host "跳过已处理文件: $($task.LogName)" -ForegroundColor Gray
             continue
         }
 
-        if ($TaskGranularity -eq "batch" -and $batchSuccessSet.Contains($task.TaskId)) {
-            Write-Host "跳过已成功批次: $($task.DisplayName)" -ForegroundColor Gray
+        if ($TaskGranularity -eq "batch" -and $batchTerminalSet.Contains($task.TaskId)) {
+            # Process-TSVTask takes a read-only fast path for terminal
+            # checkpoints and restores their task tables into the cumulative
+            # artifacts.  Do not bypass it here, otherwise a rebuilt output
+            # directory would silently omit SUCCESS/ALMOST data.
+            Process-TSVTask -Task $task
             continue
         }
 

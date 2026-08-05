@@ -2,7 +2,7 @@
     "version":  1,
     "total_batches":  46,
     "rows_per_batch":  100,
-    "updated_at":  "2026-08-04 19:26:54",
+    "updated_at":  "2026-08-05 17:18:44",
     "next_pending_index":  6,
     "batches":  [
                     {
@@ -70,10 +70,10 @@
                         "batch_number":  7,
                         "task_id":  "left18448__batch__0146__11160452",
                         "display_name":  "left18448 第 14501-14600 行",
-                        "status":  "error",
-                        "remarks":  "连续多轮回复均未给出 TSV 数据（已发送收尾 prompt 仍无数据），视为无可处理数据",
+                        "status":  "processing",
+                        "remarks":  "",
                         "checkpoint_file":  "left18448__batch__0146__11160452.json",
-                        "updated_at":  "2026-08-04 12:37:24"
+                        "updated_at":  "2026-08-05 17:18:44"
                     },
                     {
                         "index":  7,
@@ -460,10 +460,10 @@
                         "batch_number":  46,
                         "task_id":  "left18448__batch__0185__af591c1f",
                         "display_name":  "left18448 第 18401-18448 行",
-                        "status":  "processing",
-                        "remarks":  "",
+                        "status":  "success",
+                        "remarks":  "检测到明确批次完成信号、两张完整表及下载链接；已更新本批与累计最终 TSV",
                         "checkpoint_file":  "left18448__batch__0185__af591c1f.json",
-                        "updated_at":  "2026-08-04 19:26:54"
+                        "updated_at":  "2026-08-04 19:26:59"
                     }
                 ]
 }

@@ -1,12 +1,12 @@
 {
     "version":  3,
-    "revision":  122,
+    "revision":  124,
     "task_id":  "left18448__batch__0146__11160452",
     "task_name":  "left18448 第 14501-14600 行",
     "vehicle":  "left18448 第 14501-14600 行",
     "source_file":  "left18448.tsv",
     "status":  "进行中",
-    "phase":  "state_saved",
+    "phase":  "state_prepared",
     "round":  59,
     "send_count":  59,
     "output_file":  "D:\\Licheng\\Repo\\fitment_sheet_generation\\projects\\qclaw_fitment_automation\\workspaces\\0802-eu\\replies\\part-04\\left18448__batch__0146__11160452_result.md",
@@ -32,12 +32,12 @@
                              ],
     "ktype_state":  {
                         "version":  1,
-                        "revision":  105,
+                        "revision":  161,
                         "task_id":  "left18448__batch__0146__11160452",
                         "source_file":  "left18448.tsv",
                         "source_start_row":  14501,
                         "source_end_row":  14600,
-                        "round":  59,
+                        "round":  55,
                         "ktype_progress":  {
                                                "14019":  {
                                                              "status":  "pending",
@@ -51,7 +51,7 @@
 
                                                                                      ],
                                                              "pending_reason":  "尚未产生 Ktype 映射",
-                                                             "last_updated_round":  59
+                                                             "last_updated_round":  55
                                                          },
                                                "13968":  {
                                                              "status":  "ready",
@@ -65,7 +65,7 @@
                                                                                          "EU-RENAULT-TRAFIC-I-PH1-PLATFORM-PETROL-01"
                                                                                      ],
                                                              "pending_reason":  "",
-                                                             "last_updated_round":  59
+                                                             "last_updated_round":  55
                                                          },
                                                "13946":  {
                                                              "status":  "ready",
@@ -79,7 +79,7 @@
                                                                                          "EU-RENAULT-TRAFIC-I-PLATFORM-SWB-02"
                                                                                      ],
                                                              "pending_reason":  "",
-                                                             "last_updated_round":  59
+                                                             "last_updated_round":  55
                                                          },
                                                "13969":  {
                                                              "status":  "ready",
@@ -93,7 +93,7 @@
                                                                                          "EU-RENAULT-TRAFIC-I-PH1-PLATFORM-PETROL-01"
                                                                                      ],
                                                              "pending_reason":  "",
-                                                             "last_updated_round":  59
+                                                             "last_updated_round":  55
                                                          },
                                                "13859":  {
                                                              "status":  "ready",
@@ -107,7 +107,7 @@
                                                                                          "EU-RENAULT-TRAFIC-I-PH1-PLATFORM-PETROL-01"
                                                                                      ],
                                                              "pending_reason":  "",
-                                                             "last_updated_round":  59
+                                                             "last_updated_round":  55
                                                          },
                                                "14013":  {
                                                              "status":  "pending",
@@ -121,7 +121,7 @@
 
                                                                                      ],
                                                              "pending_reason":  "尚未产生 Ktype 映射",
-                                                             "last_updated_round":  59
+                                                             "last_updated_round":  55
                                                          },
                                                "14014":  {
                                                              "status":  "pending",
@@ -135,7 +135,7 @@
 
                                                                                      ],
                                                              "pending_reason":  "尚未产生 Ktype 映射",
-                                                             "last_updated_round":  59
+                                                             "last_updated_round":  55
                                                          },
                                                "11250":  {
                                                              "status":  "pending",
@@ -149,7 +149,7 @@
 
                                                                                      ],
                                                              "pending_reason":  "尚未产生 Ktype 映射",
-                                                             "last_updated_round":  59
+                                                             "last_updated_round":  55
                                                          },
                                                "15598":  {
                                                              "status":  "pending",
@@ -163,7 +163,7 @@
 
                                                                                      ],
                                                              "pending_reason":  "尚未产生 Ktype 映射",
-                                                             "last_updated_round":  59
+                                                             "last_updated_round":  55
                                                          },
                                                "13764":  {
                                                              "status":  "ready",
@@ -177,7 +177,7 @@
                                                                                          "EU-RENAULT-TRAFIC-I-PLATFORM-SWB-02"
                                                                                      ],
                                                              "pending_reason":  "",
-                                                             "last_updated_round":  59
+                                                             "last_updated_round":  55
                                                          },
                                                "13970":  {
                                                              "status":  "ready",
@@ -191,7 +191,7 @@
                                                                                          "EU-RENAULT-TRAFIC-I-PH1-PLATFORM-DIESEL-01"
                                                                                      ],
                                                              "pending_reason":  "",
-                                                             "last_updated_round":  59
+                                                             "last_updated_round":  55
                                                          },
                                                "13765":  {
                                                              "status":  "ready",
@@ -205,7 +205,7 @@
                                                                                          "EU-RENAULT-TRAFIC-I-PLATFORM-SWB-02"
                                                                                      ],
                                                              "pending_reason":  "",
-                                                             "last_updated_round":  59
+                                                             "last_updated_round":  55
                                                          },
                                                "13766":  {
                                                              "status":  "ready",
@@ -219,7 +219,7 @@
                                                                                          "EU-RENAULT-TRAFIC-I-PLATFORM-SWB-02"
                                                                                      ],
                                                              "pending_reason":  "",
-                                                             "last_updated_round":  59
+                                                             "last_updated_round":  55
                                                          },
                                                "13794":  {
                                                              "status":  "ready",
@@ -233,7 +233,7 @@
                                                                                          "EU-RENAULT-TRAFIC-I-PLATFORM-SWB-02"
                                                                                      ],
                                                              "pending_reason":  "",
-                                                             "last_updated_round":  59
+                                                             "last_updated_round":  55
                                                          },
                                                "14570":  {
                                                              "status":  "pending",
@@ -247,7 +247,7 @@
 
                                                                                      ],
                                                              "pending_reason":  "尚未产生 Ktype 映射",
-                                                             "last_updated_round":  59
+                                                             "last_updated_round":  55
                                                          },
                                                "15713":  {
                                                              "status":  "pending",
@@ -261,7 +261,7 @@
 
                                                                                      ],
                                                              "pending_reason":  "尚未产生 Ktype 映射",
-                                                             "last_updated_round":  59
+                                                             "last_updated_round":  55
                                                          },
                                                "15714":  {
                                                              "status":  "pending",
@@ -275,7 +275,7 @@
 
                                                                                      ],
                                                              "pending_reason":  "尚未产生 Ktype 映射",
-                                                             "last_updated_round":  59
+                                                             "last_updated_round":  55
                                                          },
                                                "15712":  {
                                                              "status":  "pending",
@@ -289,7 +289,7 @@
 
                                                                                      ],
                                                              "pending_reason":  "尚未产生 Ktype 映射",
-                                                             "last_updated_round":  59
+                                                             "last_updated_round":  55
                                                          },
                                                "15716":  {
                                                              "status":  "pending",
@@ -303,7 +303,7 @@
 
                                                                                      ],
                                                              "pending_reason":  "尚未产生 Ktype 映射",
-                                                             "last_updated_round":  59
+                                                             "last_updated_round":  55
                                                          },
                                                "15711":  {
                                                              "status":  "pending",
@@ -317,7 +317,7 @@
 
                                                                                      ],
                                                              "pending_reason":  "尚未产生 Ktype 映射",
-                                                             "last_updated_round":  59
+                                                             "last_updated_round":  55
                                                          },
                                                "15715":  {
                                                              "status":  "pending",
@@ -331,7 +331,7 @@
 
                                                                                      ],
                                                              "pending_reason":  "尚未产生 Ktype 映射",
-                                                             "last_updated_round":  59
+                                                             "last_updated_round":  55
                                                          },
                                                "110695":  {
                                                               "status":  "pending",
@@ -345,7 +345,7 @@
 
                                                                                       ],
                                                               "pending_reason":  "尚未产生 Ktype 映射",
-                                                              "last_updated_round":  59
+                                                              "last_updated_round":  55
                                                           },
                                                "17335":  {
                                                              "status":  "pending",
@@ -359,7 +359,7 @@
 
                                                                                      ],
                                                              "pending_reason":  "尚未产生 Ktype 映射",
-                                                             "last_updated_round":  59
+                                                             "last_updated_round":  55
                                                          },
                                                "17511":  {
                                                              "status":  "pending",
@@ -373,7 +373,7 @@
 
                                                                                      ],
                                                              "pending_reason":  "尚未产生 Ktype 映射",
-                                                             "last_updated_round":  59
+                                                             "last_updated_round":  55
                                                          },
                                                "105905":  {
                                                               "status":  "pending",
@@ -387,7 +387,7 @@
 
                                                                                       ],
                                                               "pending_reason":  "尚未产生 Ktype 映射",
-                                                              "last_updated_round":  59
+                                                              "last_updated_round":  55
                                                           },
                                                "107531":  {
                                                               "status":  "pending",
@@ -401,7 +401,7 @@
 
                                                                                       ],
                                                               "pending_reason":  "尚未产生 Ktype 映射",
-                                                              "last_updated_round":  59
+                                                              "last_updated_round":  55
                                                           },
                                                "105906":  {
                                                               "status":  "pending",
@@ -415,7 +415,7 @@
 
                                                                                       ],
                                                               "pending_reason":  "尚未产生 Ktype 映射",
-                                                              "last_updated_round":  59
+                                                              "last_updated_round":  55
                                                           },
                                                "107532":  {
                                                               "status":  "pending",
@@ -429,7 +429,7 @@
 
                                                                                       ],
                                                               "pending_reason":  "尚未产生 Ktype 映射",
-                                                              "last_updated_round":  59
+                                                              "last_updated_round":  55
                                                           },
                                                "127205":  {
                                                               "status":  "pending",
@@ -443,7 +443,7 @@
 
                                                                                       ],
                                                               "pending_reason":  "尚未产生 Ktype 映射",
-                                                              "last_updated_round":  59
+                                                              "last_updated_round":  55
                                                           },
                                                "115519":  {
                                                               "status":  "pending",
@@ -457,7 +457,7 @@
 
                                                                                       ],
                                                               "pending_reason":  "尚未产生 Ktype 映射",
-                                                              "last_updated_round":  59
+                                                              "last_updated_round":  55
                                                           },
                                                "120239":  {
                                                               "status":  "pending",
@@ -471,7 +471,7 @@
 
                                                                                       ],
                                                               "pending_reason":  "尚未产生 Ktype 映射",
-                                                              "last_updated_round":  59
+                                                              "last_updated_round":  55
                                                           },
                                                "121651":  {
                                                               "status":  "pending",
@@ -485,7 +485,7 @@
 
                                                                                       ],
                                                               "pending_reason":  "尚未产生 Ktype 映射",
-                                                              "last_updated_round":  59
+                                                              "last_updated_round":  55
                                                           },
                                                "105907":  {
                                                               "status":  "pending",
@@ -499,7 +499,7 @@
 
                                                                                       ],
                                                               "pending_reason":  "尚未产生 Ktype 映射",
-                                                              "last_updated_round":  59
+                                                              "last_updated_round":  55
                                                           },
                                                "107533":  {
                                                               "status":  "pending",
@@ -513,7 +513,7 @@
 
                                                                                       ],
                                                               "pending_reason":  "尚未产生 Ktype 映射",
-                                                              "last_updated_round":  59
+                                                              "last_updated_round":  55
                                                           },
                                                "127206":  {
                                                               "status":  "pending",
@@ -527,7 +527,7 @@
 
                                                                                       ],
                                                               "pending_reason":  "尚未产生 Ktype 映射",
-                                                              "last_updated_round":  59
+                                                              "last_updated_round":  55
                                                           },
                                                "115520":  {
                                                               "status":  "pending",
@@ -541,7 +541,7 @@
 
                                                                                       ],
                                                               "pending_reason":  "尚未产生 Ktype 映射",
-                                                              "last_updated_round":  59
+                                                              "last_updated_round":  55
                                                           },
                                                "120241":  {
                                                               "status":  "pending",
@@ -555,7 +555,7 @@
 
                                                                                       ],
                                                               "pending_reason":  "尚未产生 Ktype 映射",
-                                                              "last_updated_round":  59
+                                                              "last_updated_round":  55
                                                           },
                                                "121652":  {
                                                               "status":  "pending",
@@ -569,7 +569,7 @@
 
                                                                                       ],
                                                               "pending_reason":  "尚未产生 Ktype 映射",
-                                                              "last_updated_round":  59
+                                                              "last_updated_round":  55
                                                           },
                                                "105904":  {
                                                               "status":  "pending",
@@ -583,7 +583,7 @@
 
                                                                                       ],
                                                               "pending_reason":  "尚未产生 Ktype 映射",
-                                                              "last_updated_round":  59
+                                                              "last_updated_round":  55
                                                           },
                                                "107530":  {
                                                               "status":  "pending",
@@ -597,7 +597,7 @@
 
                                                                                       ],
                                                               "pending_reason":  "尚未产生 Ktype 映射",
-                                                              "last_updated_round":  59
+                                                              "last_updated_round":  55
                                                           },
                                                "115506":  {
                                                               "status":  "pending",
@@ -611,7 +611,7 @@
 
                                                                                       ],
                                                               "pending_reason":  "尚未产生 Ktype 映射",
-                                                              "last_updated_round":  59
+                                                              "last_updated_round":  55
                                                           },
                                                "120237":  {
                                                               "status":  "pending",
@@ -625,7 +625,7 @@
 
                                                                                       ],
                                                               "pending_reason":  "尚未产生 Ktype 映射",
-                                                              "last_updated_round":  59
+                                                              "last_updated_round":  55
                                                           },
                                                "145045":  {
                                                               "status":  "pending",
@@ -639,7 +639,7 @@
 
                                                                                       ],
                                                               "pending_reason":  "尚未产生 Ktype 映射",
-                                                              "last_updated_round":  59
+                                                              "last_updated_round":  55
                                                           },
                                                "145524":  {
                                                               "status":  "pending",
@@ -653,7 +653,7 @@
 
                                                                                       ],
                                                               "pending_reason":  "尚未产生 Ktype 映射",
-                                                              "last_updated_round":  59
+                                                              "last_updated_round":  55
                                                           },
                                                "145525":  {
                                                               "status":  "pending",
@@ -667,7 +667,7 @@
 
                                                                                       ],
                                                               "pending_reason":  "尚未产生 Ktype 映射",
-                                                              "last_updated_round":  59
+                                                              "last_updated_round":  55
                                                           },
                                                "144927":  {
                                                               "status":  "pending",
@@ -681,7 +681,7 @@
 
                                                                                       ],
                                                               "pending_reason":  "尚未产生 Ktype 映射",
-                                                              "last_updated_round":  59
+                                                              "last_updated_round":  55
                                                           },
                                                "145526":  {
                                                               "status":  "pending",
@@ -695,7 +695,7 @@
 
                                                                                       ],
                                                               "pending_reason":  "尚未产生 Ktype 映射",
-                                                              "last_updated_round":  59
+                                                              "last_updated_round":  55
                                                           },
                                                "150673":  {
                                                               "status":  "pending",
@@ -709,7 +709,7 @@
 
                                                                                       ],
                                                               "pending_reason":  "尚未产生 Ktype 映射",
-                                                              "last_updated_round":  59
+                                                              "last_updated_round":  55
                                                           },
                                                "155339":  {
                                                               "status":  "pending",
@@ -723,7 +723,7 @@
 
                                                                                       ],
                                                               "pending_reason":  "尚未产生 Ktype 映射",
-                                                              "last_updated_round":  59
+                                                              "last_updated_round":  55
                                                           },
                                                "155340":  {
                                                               "status":  "pending",
@@ -737,7 +737,7 @@
 
                                                                                       ],
                                                               "pending_reason":  "尚未产生 Ktype 映射",
-                                                              "last_updated_round":  59
+                                                              "last_updated_round":  55
                                                           },
                                                "7876":  {
                                                             "status":  "pending",
@@ -751,7 +751,7 @@
 
                                                                                     ],
                                                             "pending_reason":  "尚未产生 Ktype 映射",
-                                                            "last_updated_round":  59
+                                                            "last_updated_round":  55
                                                         },
                                                "124320":  {
                                                               "status":  "pending",
@@ -765,7 +765,7 @@
 
                                                                                       ],
                                                               "pending_reason":  "尚未产生 Ktype 映射",
-                                                              "last_updated_round":  59
+                                                              "last_updated_round":  55
                                                           },
                                                "108063":  {
                                                               "status":  "pending",
@@ -779,7 +779,7 @@
 
                                                                                       ],
                                                               "pending_reason":  "尚未产生 Ktype 映射",
-                                                              "last_updated_round":  59
+                                                              "last_updated_round":  55
                                                           },
                                                "108062":  {
                                                               "status":  "pending",
@@ -793,7 +793,7 @@
 
                                                                                       ],
                                                               "pending_reason":  "尚未产生 Ktype 映射",
-                                                              "last_updated_round":  59
+                                                              "last_updated_round":  55
                                                           },
                                                "120596":  {
                                                               "status":  "pending",
@@ -807,7 +807,7 @@
 
                                                                                       ],
                                                               "pending_reason":  "尚未产生 Ktype 映射",
-                                                              "last_updated_round":  59
+                                                              "last_updated_round":  55
                                                           },
                                                "15109":  {
                                                              "status":  "pending",
@@ -821,7 +821,7 @@
 
                                                                                      ],
                                                              "pending_reason":  "尚未产生 Ktype 映射",
-                                                             "last_updated_round":  59
+                                                             "last_updated_round":  55
                                                          },
                                                "18280":  {
                                                              "status":  "pending",
@@ -835,7 +835,7 @@
 
                                                                                      ],
                                                              "pending_reason":  "尚未产生 Ktype 映射",
-                                                             "last_updated_round":  59
+                                                             "last_updated_round":  55
                                                          },
                                                "126647":  {
                                                               "status":  "pending",
@@ -849,7 +849,7 @@
 
                                                                                       ],
                                                               "pending_reason":  "尚未产生 Ktype 映射",
-                                                              "last_updated_round":  59
+                                                              "last_updated_round":  55
                                                           },
                                                "55503":  {
                                                              "status":  "pending",
@@ -863,7 +863,7 @@
 
                                                                                      ],
                                                              "pending_reason":  "尚未产生 Ktype 映射",
-                                                             "last_updated_round":  59
+                                                             "last_updated_round":  55
                                                          },
                                                "163836":  {
                                                               "status":  "pending",
@@ -877,7 +877,7 @@
 
                                                                                       ],
                                                               "pending_reason":  "尚未产生 Ktype 映射",
-                                                              "last_updated_round":  59
+                                                              "last_updated_round":  55
                                                           },
                                                "121500":  {
                                                               "status":  "pending",
@@ -891,7 +891,7 @@
 
                                                                                       ],
                                                               "pending_reason":  "尚未产生 Ktype 映射",
-                                                              "last_updated_round":  59
+                                                              "last_updated_round":  55
                                                           },
                                                "18611":  {
                                                              "status":  "pending",
@@ -905,7 +905,7 @@
 
                                                                                      ],
                                                              "pending_reason":  "尚未产生 Ktype 映射",
-                                                             "last_updated_round":  59
+                                                             "last_updated_round":  55
                                                          },
                                                "16418":  {
                                                              "status":  "pending",
@@ -919,7 +919,7 @@
 
                                                                                      ],
                                                              "pending_reason":  "尚未产生 Ktype 映射",
-                                                             "last_updated_round":  59
+                                                             "last_updated_round":  55
                                                          },
                                                "10870":  {
                                                              "status":  "pending",
@@ -933,7 +933,7 @@
 
                                                                                      ],
                                                              "pending_reason":  "尚未产生 Ktype 映射",
-                                                             "last_updated_round":  59
+                                                             "last_updated_round":  55
                                                          },
                                                "16422":  {
                                                              "status":  "pending",
@@ -947,7 +947,7 @@
 
                                                                                      ],
                                                              "pending_reason":  "尚未产生 Ktype 映射",
-                                                             "last_updated_round":  59
+                                                             "last_updated_round":  55
                                                          },
                                                "18353":  {
                                                              "status":  "pending",
@@ -961,7 +961,7 @@
 
                                                                                      ],
                                                              "pending_reason":  "尚未产生 Ktype 映射",
-                                                             "last_updated_round":  59
+                                                             "last_updated_round":  55
                                                          },
                                                "18612":  {
                                                              "status":  "pending",
@@ -975,7 +975,7 @@
 
                                                                                      ],
                                                              "pending_reason":  "尚未产生 Ktype 映射",
-                                                             "last_updated_round":  59
+                                                             "last_updated_round":  55
                                                          },
                                                "16423":  {
                                                              "status":  "pending",
@@ -989,7 +989,7 @@
 
                                                                                      ],
                                                              "pending_reason":  "尚未产生 Ktype 映射",
-                                                             "last_updated_round":  59
+                                                             "last_updated_round":  55
                                                          },
                                                "16419":  {
                                                              "status":  "pending",
@@ -1003,7 +1003,7 @@
 
                                                                                      ],
                                                              "pending_reason":  "尚未产生 Ktype 映射",
-                                                             "last_updated_round":  59
+                                                             "last_updated_round":  55
                                                          },
                                                "143197":  {
                                                               "status":  "pending",
@@ -1017,7 +1017,7 @@
 
                                                                                       ],
                                                               "pending_reason":  "尚未产生 Ktype 映射",
-                                                              "last_updated_round":  59
+                                                              "last_updated_round":  55
                                                           },
                                                "143198":  {
                                                               "status":  "pending",
@@ -1031,7 +1031,7 @@
 
                                                                                       ],
                                                               "pending_reason":  "尚未产生 Ktype 映射",
-                                                              "last_updated_round":  59
+                                                              "last_updated_round":  55
                                                           },
                                                "143199":  {
                                                               "status":  "pending",
@@ -1045,7 +1045,7 @@
 
                                                                                       ],
                                                               "pending_reason":  "尚未产生 Ktype 映射",
-                                                              "last_updated_round":  59
+                                                              "last_updated_round":  55
                                                           },
                                                "143200":  {
                                                               "status":  "pending",
@@ -1059,7 +1059,7 @@
 
                                                                                       ],
                                                               "pending_reason":  "尚未产生 Ktype 映射",
-                                                              "last_updated_round":  59
+                                                              "last_updated_round":  55
                                                           },
                                                "55132":  {
                                                              "status":  "pending",
@@ -1073,7 +1073,7 @@
 
                                                                                      ],
                                                              "pending_reason":  "尚未产生 Ktype 映射",
-                                                             "last_updated_round":  59
+                                                             "last_updated_round":  55
                                                          },
                                                "125941":  {
                                                               "status":  "pending",
@@ -1087,7 +1087,7 @@
 
                                                                                       ],
                                                               "pending_reason":  "尚未产生 Ktype 映射",
-                                                              "last_updated_round":  59
+                                                              "last_updated_round":  55
                                                           },
                                                "34232":  {
                                                              "status":  "ready",
@@ -1101,7 +1101,7 @@
                                                                                          "EU-RENAULT-TRUCKS-B-90-PH1-VAN-HIGHROOF-01"
                                                                                      ],
                                                              "pending_reason":  "",
-                                                             "last_updated_round":  59
+                                                             "last_updated_round":  55
                                                          },
                                                "34233":  {
                                                              "status":  "pending",
@@ -1115,7 +1115,7 @@
 
                                                                                      ],
                                                              "pending_reason":  "标准平台完整三维及无镜宽度未闭合；映射缺少 DIMENSION_GROUP_ID",
-                                                             "last_updated_round":  59
+                                                             "last_updated_round":  55
                                                          },
                                                "34234":  {
                                                              "status":  "ready",
@@ -1129,7 +1129,7 @@
                                                                                          "EU-RENAULT-TRUCKS-B-90-PH1-VAN-HIGHROOF-01"
                                                                                      ],
                                                              "pending_reason":  "",
-                                                             "last_updated_round":  59
+                                                             "last_updated_round":  55
                                                          },
                                                "34235":  {
                                                              "status":  "pending",
@@ -1143,7 +1143,7 @@
 
                                                                                      ],
                                                              "pending_reason":  "标准平台完整三维及无镜宽度未闭合；映射缺少 DIMENSION_GROUP_ID",
-                                                             "last_updated_round":  59
+                                                             "last_updated_round":  55
                                                          },
                                                "34236":  {
                                                              "status":  "ready",
@@ -1157,7 +1157,7 @@
                                                                                          "EU-RENAULT-TRUCKS-B-90-PH1-VAN-HIGHROOF-01"
                                                                                      ],
                                                              "pending_reason":  "",
-                                                             "last_updated_round":  59
+                                                             "last_updated_round":  55
                                                          },
                                                "34237":  {
                                                              "status":  "pending",
@@ -1171,7 +1171,7 @@
 
                                                                                      ],
                                                              "pending_reason":  "标准平台完整三维及无镜宽度未闭合；映射缺少 DIMENSION_GROUP_ID",
-                                                             "last_updated_round":  59
+                                                             "last_updated_round":  55
                                                          },
                                                "34238":  {
                                                              "status":  "ready",
@@ -1185,7 +1185,7 @@
                                                                                          "EU-RENAULT-TRUCKS-B-90-PH1-PLATFORM-4X4-01"
                                                                                      ],
                                                              "pending_reason":  "",
-                                                             "last_updated_round":  59
+                                                             "last_updated_round":  55
                                                          },
                                                "34239":  {
                                                              "status":  "ready",
@@ -1199,7 +1199,7 @@
                                                                                          "EU-RENAULT-TRUCKS-B-90-PH1-PLATFORM-4X4-01"
                                                                                      ],
                                                              "pending_reason":  "",
-                                                             "last_updated_round":  59
+                                                             "last_updated_round":  55
                                                          },
                                                "34152":  {
                                                              "status":  "ready",
@@ -1213,7 +1213,7 @@
                                                                                          "EU-RENAULT-TRUCKS-MASCOTT-PH1-PLATFORM-WB3630-02"
                                                                                      ],
                                                              "pending_reason":  "",
-                                                             "last_updated_round":  59
+                                                             "last_updated_round":  55
                                                          },
                                                "34153":  {
                                                              "status":  "pending",
@@ -1227,7 +1227,7 @@
 
                                                                                      ],
                                                              "pending_reason":  "尚未产生 Ktype 映射",
-                                                             "last_updated_round":  59
+                                                             "last_updated_round":  55
                                                          },
                                                "34145":  {
                                                              "status":  "pending",
@@ -1241,7 +1241,7 @@
 
                                                                                      ],
                                                              "pending_reason":  "尚未产生 Ktype 映射",
-                                                             "last_updated_round":  59
+                                                             "last_updated_round":  55
                                                          },
                                                "34151":  {
                                                              "status":  "pending",
@@ -1255,7 +1255,7 @@
 
                                                                                      ],
                                                              "pending_reason":  "尚未产生 Ktype 映射",
-                                                             "last_updated_round":  59
+                                                             "last_updated_round":  55
                                                          },
                                                "34150":  {
                                                              "status":  "pending",
@@ -1269,7 +1269,7 @@
 
                                                                                      ],
                                                              "pending_reason":  "尚未产生 Ktype 映射",
-                                                             "last_updated_round":  59
+                                                             "last_updated_round":  55
                                                          },
                                                "34149":  {
                                                              "status":  "pending",
@@ -1283,7 +1283,7 @@
 
                                                                                      ],
                                                              "pending_reason":  "尚未产生 Ktype 映射",
-                                                             "last_updated_round":  59
+                                                             "last_updated_round":  55
                                                          },
                                                "34270":  {
                                                              "status":  "pending",
@@ -1297,7 +1297,7 @@
 
                                                                                      ],
                                                              "pending_reason":  "尚未产生 Ktype 映射",
-                                                             "last_updated_round":  59
+                                                             "last_updated_round":  55
                                                          },
                                                "34271":  {
                                                              "status":  "pending",
@@ -1311,7 +1311,7 @@
 
                                                                                      ],
                                                              "pending_reason":  "尚未产生 Ktype 映射",
-                                                             "last_updated_round":  59
+                                                             "last_updated_round":  55
                                                          },
                                                "34272":  {
                                                              "status":  "pending",
@@ -1325,7 +1325,7 @@
 
                                                                                      ],
                                                              "pending_reason":  "尚未产生 Ktype 映射",
-                                                             "last_updated_round":  59
+                                                             "last_updated_round":  55
                                                          },
                                                "34273":  {
                                                              "status":  "pending",
@@ -1339,7 +1339,7 @@
 
                                                                                      ],
                                                              "pending_reason":  "尚未产生 Ktype 映射",
-                                                             "last_updated_round":  59
+                                                             "last_updated_round":  55
                                                          },
                                                "34274":  {
                                                              "status":  "pending",
@@ -1353,7 +1353,7 @@
 
                                                                                      ],
                                                              "pending_reason":  "尚未产生 Ktype 映射",
-                                                             "last_updated_round":  59
+                                                             "last_updated_round":  55
                                                          },
                                                "34144":  {
                                                              "status":  "pending",
@@ -1367,7 +1367,7 @@
 
                                                                                      ],
                                                              "pending_reason":  "尚未产生 Ktype 映射",
-                                                             "last_updated_round":  59
+                                                             "last_updated_round":  55
                                                          },
                                                "34143":  {
                                                              "status":  "pending",
@@ -1381,7 +1381,7 @@
 
                                                                                      ],
                                                              "pending_reason":  "尚未产生 Ktype 映射",
-                                                             "last_updated_round":  59
+                                                             "last_updated_round":  55
                                                          },
                                                "34189":  {
                                                              "status":  "ready",
@@ -1395,7 +1395,7 @@
                                                                                          "EU-RENAULT-TRUCKS-MASCOTT-PH1-PLATFORM-WB3630-01"
                                                                                      ],
                                                              "pending_reason":  "",
-                                                             "last_updated_round":  59
+                                                             "last_updated_round":  55
                                                          },
                                                "34192":  {
                                                              "status":  "pending",
@@ -1409,7 +1409,7 @@
 
                                                                                      ],
                                                              "pending_reason":  "尚未产生 Ktype 映射",
-                                                             "last_updated_round":  59
+                                                             "last_updated_round":  55
                                                          },
                                                "34193":  {
                                                              "status":  "pending",
@@ -1423,7 +1423,7 @@
 
                                                                                      ],
                                                              "pending_reason":  "尚未产生 Ktype 映射",
-                                                             "last_updated_round":  59
+                                                             "last_updated_round":  55
                                                          },
                                                "34257":  {
                                                              "status":  "ready",
@@ -1437,7 +1437,7 @@
                                                                                          "EU-RENAULT-TRUCKS-MASCOTT-PH1-PLATFORM-WB4130-01"
                                                                                      ],
                                                              "pending_reason":  "",
-                                                             "last_updated_round":  59
+                                                             "last_updated_round":  55
                                                          }
                                            },
                         "progress":  {
@@ -1534,8 +1534,8 @@
                                           "current_mapping":  "D:\\Licheng\\Repo\\fitment_sheet_generation\\projects\\qclaw_fitment_automation\\workspaces\\0802-eu\\checkpoints\\part-04\\task-state\\left18448__batch__0146__11160452\\current_mapping.tsv",
                                           "current_dimension_groups":  "D:\\Licheng\\Repo\\fitment_sheet_generation\\projects\\qclaw_fitment_automation\\workspaces\\0802-eu\\checkpoints\\part-04\\task-state\\left18448__batch__0146__11160452\\current_dimension_groups.tsv"
                                       },
-                        "updated_at":  "2026-08-04 12:37:23"
+                        "updated_at":  "2026-08-05 17:18:43"
                     },
     "remarks":  "",
-    "updated_at":  "2026-08-04 12:37:23"
+    "updated_at":  "2026-08-05 17:18:44"
 }

@@ -237,7 +237,7 @@ macOS zsh/bash：
   -MergePartitions
 ```
 
-正式汇总要求 manifest 中的每个任务都存在状态为 `成功` 的 checkpoint。累计表存在但任务未全部完成时，汇总仍会失败。
+正式汇总要求 manifest 中的每个任务都存在状态为 `成功` 的 checkpoint。`Almost` 是可停止处理的任务终态但不是成功；即使其 READY 部分表已经落盘，默认正式汇总仍会拒绝。
 
 如确实需要生成诊断用途的部分结果，可以显式使用：
 
@@ -357,7 +357,7 @@ macOS zsh/bash：
 
 运行产生的回复、checkpoint、日志和表格已被 `.gitignore` 排除。现有历史文件不会自动删除，已被 Git 跟踪的旧文件也不会自动取消跟踪。
 
-## 完成判定和最终审计
+## 完成判定、ALMOST 和最终审计
 
 当 requirement 启用 `dimension_group_table` 时，一个任务只有同时满足以下条件才会记为成功：
 
@@ -370,6 +370,19 @@ macOS zsh/bash：
 - 尺寸组没有空 ID、重复 ID、空三维或空来源
 
 每个成功批次会先原子写入本批严格 TSV，再更新当前设备的累计表。恢复时优先读取已经发布的严格 TSV，不会用 Markdown 末尾可能存在的局部进度表覆盖它。
+
+当所有剩余 `PENDING` 都已穷尽允许的可靠来源，且无法在不猜测、不拼接不同配置或降低证据标准的前提下继续推进时，任务可以用 `推进信号：ALMOST` 结束。`Almost` 是任务级终态，不是行级 `IterationStatus`，也不等同于 `成功`。临时网络、浏览器、登录、页面或超时故障，单轮搜索无结果，或仅达到轮次上限，均不得使用 `Almost`。
+
+有效的 ALMOST 回复必须包含：
+
+- 每个剩余 PENDING 的 Ktype 和具体阻塞原因
+- 全部当前 READY 映射组成的完整 TSV
+- 这些 READY 映射引用的全部且仅有的 DIMENSION_GROUP
+- 每个尺寸组的完整三维、`DimensionSource` 和非空直接 `SourceURL`
+- 两个任务指定精确文件名的可点击 sandbox 下载链接，且文件内容与内嵌 TSV 一致
+- 最后一行 `推进信号：ALMOST`
+
+ALMOST 任务可以停止自动推进并在后续运行中跳过，但正式跨分片汇总仍把它记为不完整。只有显式使用 `-AllowIncompleteMerge` 时，才会把已经发布的 READY 部分纳入诊断用途的部分汇总；审计报告和 `merge_manifest.json` 仍会标记结果为 partial，而不会把 Almost 伪装成成功。
 
 最终跨设备汇总还会检查：
 
@@ -585,6 +598,7 @@ CI 使用 Windows、PowerShell 7 和 Python 3.12。
 主要状态包括：
 
 - `成功`
+- `Almost`（证据穷尽后的任务终态，但非成功）
 - `进行中`
 - `重复终止`
 - `次数上限终止`
