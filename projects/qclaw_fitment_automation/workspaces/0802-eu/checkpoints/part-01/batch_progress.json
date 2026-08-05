@@ -2,8 +2,8 @@
     "version":  1,
     "total_batches":  47,
     "rows_per_batch":  100,
-    "updated_at":  "2026-08-04 08:01:15",
-    "next_pending_index":  32,
+    "updated_at":  "2026-08-04 09:20:10",
+    "next_pending_index":  47,
     "batches":  [
                     {
                         "index":  0,
@@ -330,10 +330,10 @@
                         "batch_number":  33,
                         "task_id":  "left18448__batch__0033__b6cfb8ef",
                         "display_name":  "left18448 第 3201-3300 行",
-                        "status":  "error",
-                        "remarks":  "连续多轮回复均未给出 TSV 数据（已发送收尾 prompt 仍无数据），视为无可处理数据",
+                        "status":  "success",
+                        "remarks":  "恢复 waiting_reply 时检测到服务器端已有完整表及下载链接；已更新累计最终 TSV",
                         "checkpoint_file":  "left18448__batch__0033__b6cfb8ef.json",
-                        "updated_at":  "2026-08-04 08:01:15"
+                        "updated_at":  "2026-08-04 09:20:10"
                     },
                     {
                         "index":  33,

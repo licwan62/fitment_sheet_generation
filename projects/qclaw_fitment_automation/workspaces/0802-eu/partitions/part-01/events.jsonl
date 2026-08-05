@@ -172,3 +172,8 @@
 {"timestamp":"2026-08-03T23:21:38.1828917Z","type":"run_tasks_selected","process_id":46168,"task_id":"","data":{"partition_index":1,"partition_count":4,"total_tasks":185,"selected_tasks":47}}
 {"timestamp":"2026-08-03T23:21:44.8690762Z","type":"task_started","process_id":46168,"task_id":"left18448__batch__0033__b6cfb8ef","data":{"display_name":"left18448 第 3201-3300 行","source":"left18448.tsv"}}
 {"timestamp":"2026-08-04T00:01:15.3369388Z","type":"task_finished","process_id":46168,"task_id":"left18448__batch__0033__b6cfb8ef","data":{"status":"无数据跳过","rounds":71,"remarks":"连续多轮回复均未给出 TSV 数据（已发送收尾 prompt 仍无数据），视为无可处理数据","sends":71}}
+{"timestamp":"2026-08-04T00:51:53.2306172Z","type":"run_tasks_selected","process_id":25412,"task_id":"","data":{"partition_index":1,"partition_count":4,"total_tasks":185,"selected_tasks":47}}
+{"timestamp":"2026-08-04T00:52:09.3981643Z","type":"task_started","process_id":25412,"task_id":"left18448__batch__0033__b6cfb8ef","data":{"display_name":"left18448 第 3201-3300 行","source":"left18448.tsv"}}
+{"timestamp":"2026-08-04T01:17:56.9899474Z","type":"run_tasks_selected","process_id":30836,"task_id":"","data":{"partition_index":1,"partition_count":4,"total_tasks":185,"selected_tasks":47}}
+{"timestamp":"2026-08-04T01:18:03.8243945Z","type":"task_started","process_id":30836,"task_id":"left18448__batch__0033__b6cfb8ef","data":{"display_name":"left18448 第 3201-3300 行","source":"left18448.tsv"}}
+{"timestamp":"2026-08-04T01:20:10.2531587Z","type":"task_finished","process_id":30836,"task_id":"left18448__batch__0033__b6cfb8ef","data":{"status":"成功","rounds":78,"remarks":"恢复 waiting_reply 时检测到服务器端已有完整表及下载链接；已更新累计最终 TSV","sends":78}}

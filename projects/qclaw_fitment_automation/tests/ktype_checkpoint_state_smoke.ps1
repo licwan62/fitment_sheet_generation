@@ -61,6 +61,37 @@ $group`t4000`t1700`t1400`tTest source`thttps://example.com/ready
     if ($handoff -match '```json|checkpoint_revision|ktype_progress') { throw "交接 prompt 不应内嵌 checkpoint JSON" }
     if ($handoff -notmatch "Test`tPending`t200") { throw "交接 prompt 缺少 PENDING TSV" }
     if ($handoff -match "Test`tReady`t100") { throw "交接 prompt 泄漏 READY 原始输入" }
+
+    # A checkpoint handoff COMPLETE is an incremental snapshot.  It must merge
+    # with the previously persisted READY row instead of replacing it.
+    $pendingGroup = "EU-TEST-PENDING-VAN-01"
+    $names = Get-TaskFinalArtifactNames -Task $task
+    $handoffReply = @"
+$RequiredTsvHeader
+200`t200`tVan`tPending`t`t`t$pendingGroup`tHIGH`t`tREADY
+foreign`t999`tSedan`tForeign`t`t4`tEU-FOREIGN-SEDAN-01`tLOW`t`tPENDING
+
+$RequiredDimensionGroupHeader
+$pendingGroup`t5000`t1900`t2100`tTest pending source`thttps://example.com/pending
+EU-FOREIGN-SEDAN-01`t4500`t1800`t1500`tForeign source`thttps://example.com/foreign
+
+[下载映射](sandbox:/mnt/data/$($names.MappingFileName))
+[下载尺寸](sandbox:/mnt/data/$($names.DimensionFileName))
+推进信号：COMPLETE
+"@
+    $mergedState = Update-TaskKtypeState -Task $task -Reply $handoffReply -Round 3
+    if ($mergedState.progress.ready_ktype_count -ne 2 -or $mergedState.progress.pending_ktype_count -ne 0) {
+        throw "checkpoint COMPLETE 增量错误清空了历史 READY 状态"
+    }
+    $mergedMappings = @(Read-StrictTsvRows -Path $paths.Mapping -Header $RequiredTsvHeader)
+    if ($mergedMappings.Count -ne 2) { throw "checkpoint COMPLETE 未保留历史 READY 映射或混入批外 Ktype" }
+    if (-not (Test-ReplyContainsFullTable -Reply $handoffReply -MinimumRows 2 -Task $task)) {
+        throw "checkpoint 合并快照未通过完成校验"
+    }
+    $completionSnapshot = Get-TaskCompletionSnapshotRows -Task $task -Reply $handoffReply
+    if (@($completionSnapshot.MappingRows).Count -ne 2 -or @($completionSnapshot.DimensionRows).Count -ne 2) {
+        throw "最终发布快照未合并历史 READY 表"
+    }
 }
 finally {
     Remove-Item -LiteralPath $testDir -Recurse -Force -ErrorAction SilentlyContinue

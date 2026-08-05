@@ -1578,23 +1578,54 @@ function Update-TaskKtypeState {
     $newMappings = @(Get-ConfiguredFullTableRowsFromText -Text $Reply)
     $newDimensions = @(Get-ConfiguredDimensionGroupRowsFromText -Text $Reply)
 
-    # A COMPLETE response is an authoritative full snapshot; do not retain an
-    # obsolete id that was intentionally removed by a later split/collapse.
+    # COMPLETE in a checkpoint handoff may contain only the PENDING delta.  It
+    # is authoritative only when the reply itself covers every input Ktype;
+    # otherwise retain the READY rows accumulated before the handoff.
+    $inputKtypesForSnapshot = @(
+        Get-TaskInputRecords -Task $Task |
+            ForEach-Object { ([string]$_.Ktype).Trim() } |
+            Where-Object { $_ } |
+            Select-Object -Unique
+    )
+    $replyKtypeSet = @{}
+    foreach ($row in $newMappings) {
+        $replyKtype = ([string]$row.Ktype).Trim()
+        if ($replyKtype) { $replyKtypeSet[$replyKtype] = $true }
+    }
+    $replyCoversAllInputKtypes = $inputKtypesForSnapshot.Count -gt 0
+    foreach ($inputKtype in $inputKtypesForSnapshot) {
+        if (-not $replyKtypeSet.ContainsKey($inputKtype)) {
+            $replyCoversAllInputKtypes = $false
+            break
+        }
+    }
     $authoritativeSnapshot = (-not [string]::IsNullOrWhiteSpace($Reply)) -and `
-        (Test-CompletionSignal -Text $Reply) -and $newMappings.Count -gt 0 -and $newDimensions.Count -gt 0
+        (Test-CompletionSignal -Text $Reply) -and $newMappings.Count -gt 0 -and `
+        $newDimensions.Count -gt 0 -and $replyCoversAllInputKtypes
     if ($authoritativeSnapshot) {
         $existingMappings = @()
         $existingDimensions = @()
     }
 
-    # A derived mapping supersedes a stale id=Ktype placeholder, but preserves
-    # other already-confirmed derived rows that are absent from this delta.
+    # In an incremental COMPLETE, each Ktype present in the reply is a final
+    # per-Ktype snapshot.  Replace all of that Ktype's older PENDING branches,
+    # while retaining unrelated READY Ktypes from before the handoff.
+    $completionDelta = (-not $authoritativeSnapshot) -and `
+        (Test-CompletionSignal -Text $Reply) -and $replyKtypeSet.Count -gt 0
+    if ($completionDelta) {
+        $existingMappings = @($existingMappings | Where-Object {
+            -not $replyKtypeSet.ContainsKey(([string]$_.Ktype).Trim())
+        })
+    }
+
+    # During ordinary CONTINUE deltas, a derived mapping supersedes only a
+    # stale id=Ktype placeholder and preserves other confirmed derived rows.
     $derivedKtypes = @{}
     foreach ($row in $newMappings) {
         $ktype = ([string]$row.Ktype).Trim()
         if (([string]$row.id).Trim() -ne $ktype) { $derivedKtypes[$ktype] = $true }
     }
-    if ($derivedKtypes.Count -gt 0) {
+    if (-not $completionDelta -and $derivedKtypes.Count -gt 0) {
         $existingMappings = @($existingMappings | Where-Object {
             $ktype = ([string]$_.Ktype).Trim()
             -not ($derivedKtypes.ContainsKey($ktype) -and ([string]$_.id).Trim() -eq $ktype)
@@ -1614,6 +1645,13 @@ function Update-TaskKtypeState {
         }
         $inputByKtype[[string]$record.Ktype].Add($record)
     }
+
+    # Never let a stale/copied row from another batch enter this task's state.
+    # Progress already uses the input set; the persisted tables must use the
+    # same boundary so an out-of-scope PENDING row cannot block completion.
+    $mappingRows = @($mappingRows | Where-Object {
+        $inputByKtype.Contains(([string]$_.Ktype).Trim())
+    })
 
     $progressByKtype = [ordered]@{}
     $pendingKtypes = New-Object System.Collections.Generic.List[string]
@@ -2830,8 +2868,9 @@ function Publish-CompletedTaskTables {
         throw "COMPLETE 回复缺少两个最终 TSV 下载链接"
     }
 
-    $mappingRows = @(Get-ConfiguredFullTableRowsFromText -Text $Reply)
-    $dimensionRows = @(Get-ConfiguredDimensionGroupRowsFromText -Text $Reply)
+    $snapshot = Get-TaskCompletionSnapshotRows -Task $Task -Reply $Reply
+    $mappingRows = @($snapshot.MappingRows)
+    $dimensionRows = @($snapshot.DimensionRows)
     if ($mappingRows.Count -eq 0 -or $dimensionRows.Count -eq 0) {
         throw "COMPLETE 回复缺少可提取的两张完整 TSV"
     }
@@ -2958,6 +2997,95 @@ function Test-ReplyHasPendingRows {
     return $false
 }
 
+function Get-TaskCompletionSnapshotRows {
+    param(
+        $Task,
+        [string]$Reply
+    )
+
+    $newMappings = @(Get-ConfiguredFullTableRowsFromText -Text $Reply)
+    $newDimensions = @(Get-ConfiguredDimensionGroupRowsFromText -Text $Reply)
+    $existingMappings = @()
+    $existingDimensions = @()
+    if ($null -ne $Task -and -not [string]::IsNullOrWhiteSpace($CheckpointDir)) {
+        $paths = Get-TaskStatePaths -Task $Task
+        $existingMappings = @(Read-StrictTsvRows -Path $paths.Mapping -Header $RequiredTsvHeader)
+        $existingDimensions = @(Read-StrictTsvRows -Path $paths.Dimensions -Header $RequiredDimensionGroupHeader)
+    }
+
+    $inputKtypes = @(
+        Get-TaskInputRecords -Task $Task |
+            ForEach-Object { ([string]$_.Ktype).Trim() } |
+            Where-Object { $_ } |
+            Select-Object -Unique
+    )
+    $newKtypeSet = @{}
+    foreach ($row in $newMappings) {
+        $ktype = ([string]$row.Ktype).Trim()
+        if ($ktype) { $newKtypeSet[$ktype] = $true }
+    }
+    $replyIsFullSnapshot = $inputKtypes.Count -gt 0
+    foreach ($ktype in $inputKtypes) {
+        if (-not $newKtypeSet.ContainsKey($ktype)) {
+            $replyIsFullSnapshot = $false
+            break
+        }
+    }
+
+    if ($replyIsFullSnapshot) {
+        $mappingRows = @($newMappings)
+        $dimensionRows = @($newDimensions)
+    }
+    else {
+        # COMPLETE is authoritative for each Ktype included in an incremental
+        # handoff reply, so discard its older PENDING branches first.
+        $completionDelta = (Test-CompletionSignal -Text $Reply) -and $newKtypeSet.Count -gt 0
+        if ($completionDelta) {
+            $existingMappings = @($existingMappings | Where-Object {
+                -not $newKtypeSet.ContainsKey(([string]$_.Ktype).Trim())
+            })
+        }
+
+        # During CONTINUE, a split mapping replaces only id=Ktype placeholders.
+        $derivedKtypes = @{}
+        foreach ($row in $newMappings) {
+            $ktype = ([string]$row.Ktype).Trim()
+            if (([string]$row.id).Trim() -ne $ktype) { $derivedKtypes[$ktype] = $true }
+        }
+        if (-not $completionDelta -and $derivedKtypes.Count -gt 0) {
+            $existingMappings = @($existingMappings | Where-Object {
+                $ktype = ([string]$_.Ktype).Trim()
+                -not ($derivedKtypes.ContainsKey($ktype) -and ([string]$_.id).Trim() -eq $ktype)
+            })
+        }
+        $mappingRows = @(Merge-TaskStateRows -ExistingRows $existingMappings -NewRows $newMappings -KeyColumn "id")
+        $dimensionRows = @(Merge-TaskStateRows -ExistingRows $existingDimensions -NewRows $newDimensions -KeyColumn "DIMENSION_GROUP_ID")
+    }
+
+    $inputKtypeSet = @{}
+    foreach ($ktype in $inputKtypes) { $inputKtypeSet[$ktype] = $true }
+    $mappingRows = @($mappingRows | Where-Object {
+        $inputKtypeSet.ContainsKey(([string]$_.Ktype).Trim())
+    })
+
+    # Historical state can contain a dimension group superseded by a later
+    # mapping.  The final snapshot contains exactly the groups still referenced.
+    $referencedGroups = @{}
+    foreach ($row in $mappingRows) {
+        $groupId = ([string]$row.DIMENSION_GROUP_ID).Trim()
+        if ($groupId) { $referencedGroups[$groupId] = $true }
+    }
+    $dimensionRows = @($dimensionRows | Where-Object {
+        $referencedGroups.ContainsKey(([string]$_.DIMENSION_GROUP_ID).Trim())
+    })
+
+    return [pscustomobject]@{
+        MappingRows = $mappingRows
+        DimensionRows = $dimensionRows
+        InputKtypes = $inputKtypes
+    }
+}
+
 function Test-ReplyContainsFullTable {
     param(
         [string]$Reply,
@@ -2965,13 +3093,32 @@ function Test-ReplyContainsFullTable {
         $Task = $null
     )
 
-    if ($MinimumRows -gt 0 -and (Get-TSVDataRowCountFromText -Text $Reply) -lt $MinimumRows) {
-        return $false
+    if (-not (Test-ReplyContainsRequiredDownloadLinks -Reply $Reply -Task $Task)) { return $false }
+
+    if ($null -eq $Task) {
+        if ($MinimumRows -gt 0 -and (Get-TSVDataRowCountFromText -Text $Reply) -lt $MinimumRows) {
+            return $false
+        }
+        return (Test-DimensionGroupTablesComplete -Reply $Reply)
     }
-    return (
-        (Test-DimensionGroupTablesComplete -Reply $Reply) -and
-        (Test-ReplyContainsRequiredDownloadLinks -Reply $Reply -Task $Task)
-    )
+
+    $snapshot = Get-TaskCompletionSnapshotRows -Task $Task -Reply $Reply
+    if (@($snapshot.MappingRows).Count -eq 0 -or @($snapshot.DimensionRows).Count -eq 0) { return $false }
+
+    $coveredKtypes = @{}
+    foreach ($row in @($snapshot.MappingRows)) {
+        $ktype = ([string]$row.Ktype).Trim()
+        if ($ktype) { $coveredKtypes[$ktype] = $true }
+    }
+    foreach ($ktype in @($snapshot.InputKtypes)) {
+        if (-not $coveredKtypes.ContainsKey($ktype)) { return $false }
+    }
+
+    $syntheticReply = @"
+$(ConvertTo-StrictTsvText -Header $RequiredTsvHeader -Rows $snapshot.MappingRows)
+$(ConvertTo-StrictTsvText -Header $RequiredDimensionGroupHeader -Rows $snapshot.DimensionRows)
+"@
+    return (Test-DimensionGroupTablesComplete -Reply $syntheticReply)
 }
 
 function Test-ReplyContainsTSV {

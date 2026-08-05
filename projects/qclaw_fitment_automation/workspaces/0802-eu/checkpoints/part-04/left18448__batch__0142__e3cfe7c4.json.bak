@@ -1,12 +1,12 @@
 {
   "version": 3,
-  "revision": 78,
+  "revision": 79,
   "task_id": "left18448__batch__0142__e3cfe7c4",
   "task_name": "left18448 第 14101-14200 行",
   "vehicle": "left18448 第 14101-14200 行",
   "source_file": "left18448.tsv",
-  "status": "进行中",
-  "phase": "state_saved",
+  "status": "无数据跳过",
+  "phase": "finished",
   "round": 38,
   "send_count": 38,
   "output_file": "/Users/admin/Documents/GitHub/fitment_sheet_generation/projects/qclaw_fitment_automation/workspaces/0802-eu/replies/part-04/left18448__batch__0142__e3cfe7c4_result.md",
@@ -1284,6 +1284,6 @@
     },
     "updated_at": "2026-08-04 00:49:07"
   },
-  "remarks": "",
+  "remarks": "连续多轮回复均未给出 TSV 数据（已发送收尾 prompt 仍无数据），视为无可处理数据",
   "updated_at": "2026-08-04 00:49:07"
 }
