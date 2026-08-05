@@ -1,4 +1,4 @@
-﻿id	Ktype	NormalizedBodyStyle	Generation	BodyCode	Doors	DIMENSION_GROUP_ID	MatchConfidence	Notes	IterationStatus
+id	Ktype	NormalizedBodyStyle	Generation	BodyCode	Doors	DIMENSION_GROUP_ID	MatchConfidence	Notes	IterationStatus
 1945	1945	Convertible	Golf I Cabriolet	155	2	EU-VW-GOLF-I-A1C-CONVERTIBLE-PREFL-01	HIGH		READY
 59336	59336	Convertible	Golf I Cabriolet	155	2	EU-VW-GOLF-I-A1C-CONVERTIBLE-PREFL-01	HIGH		READY
 1946_prefl	1946	Convertible	Golf I Cabriolet	155	2	EU-VW-GOLF-I-A1C-CONVERTIBLE-PREFL-01	HIGH	1988 model-year body-kit change alters exterior length and width.	READY

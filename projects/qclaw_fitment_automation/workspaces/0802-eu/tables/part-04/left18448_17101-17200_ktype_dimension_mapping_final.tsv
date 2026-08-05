@@ -1,4 +1,4 @@
-﻿id	Ktype	NormalizedBodyStyle	Generation	BodyCode	Doors	DIMENSION_GROUP_ID	MatchConfidence	Notes	IterationStatus
+id	Ktype	NormalizedBodyStyle	Generation	BodyCode	Doors	DIMENSION_GROUP_ID	MatchConfidence	Notes	IterationStatus
 117064_prefl	117064	Convertible	Beetle A5	5C	2	EU-VW-BEETLE-A5-CONVERTIBLE-PREFACELIFT-01	HIGH	Ktype spans pre-facelift and facelift exterior dimensions.	READY
 117064_facelift	117064	Convertible	Beetle A5	5C	2	EU-VW-BEETLE-A5-CONVERTIBLE-FACELIFT-01	HIGH	Ktype spans pre-facelift and facelift exterior dimensions.	READY
 117066_prefl	117066	Hatchback	Beetle A5	5C	3	EU-VW-BEETLE-A5-HATCHBACK-PREFACELIFT-01	HIGH	Ktype spans pre-facelift and facelift exterior dimensions.	READY

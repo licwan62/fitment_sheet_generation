@@ -122,3 +122,150 @@
 {"timestamp":"2026-08-04T11:26:59.2472747Z","type":"task_finished","process_id":61176,"task_id":"left18448__batch__0185__af591c1f","data":{"status":"成功","rounds":1,"remarks":"检测到明确批次完成信号、两张完整表及下载链接；已更新本批与累计最终 TSV","sends":1}}
 {"timestamp":"2026-08-05T09:18:25.7335818Z","type":"run_tasks_selected","process_id":47428,"task_id":"","data":{"partition_index":4,"partition_count":4,"total_tasks":185,"selected_tasks":46}}
 {"timestamp":"2026-08-05T09:18:34.5711542Z","type":"task_started","process_id":47428,"task_id":"left18448__batch__0146__11160452","data":{"display_name":"left18448 第 14501-14600 行","source":"left18448.tsv"}}
+{"timestamp":"2026-08-05T13:35:05.5387110Z","type":"run_tasks_selected","process_id":37377,"task_id":"","data":{"total_tasks":185,"partition_count":4,"selected_tasks":46,"partition_index":4}}
+{"timestamp":"2026-08-05T13:35:14.8261770Z","type":"task_skipped","process_id":37377,"task_id":"left18448__batch__0140__108cf9af","data":{"reason":"checkpoint_terminal","status":"成功"}}
+{"timestamp":"2026-08-05T13:35:15.8971000Z","type":"task_skipped","process_id":37377,"task_id":"left18448__batch__0141__5e4c49f0","data":{"reason":"checkpoint_terminal","status":"成功"}}
+{"timestamp":"2026-08-05T13:35:16.8348590Z","type":"task_skipped","process_id":37377,"task_id":"left18448__batch__0142__e3cfe7c4","data":{"reason":"checkpoint_terminal","status":"成功"}}
+{"timestamp":"2026-08-05T13:35:17.9414420Z","type":"task_skipped","process_id":37377,"task_id":"left18448__batch__0143__0f7d4eef","data":{"reason":"checkpoint_terminal","status":"成功"}}
+{"timestamp":"2026-08-05T13:35:18.7094210Z","type":"task_skipped","process_id":37377,"task_id":"left18448__batch__0144__a4dcca35","data":{"reason":"checkpoint_terminal","status":"成功"}}
+{"timestamp":"2026-08-05T13:35:19.4034800Z","type":"task_skipped","process_id":37377,"task_id":"left18448__batch__0145__488c65c6","data":{"reason":"checkpoint_terminal","status":"成功"}}
+{"timestamp":"2026-08-05T13:35:19.4109700Z","type":"task_started","process_id":37377,"task_id":"left18448__batch__0146__11160452","data":{"display_name":"left18448 第 14501-14600 行","source":"left18448.tsv"}}
+{"timestamp":"2026-08-05T13:50:56.8027030Z","type":"task_finished","process_id":37377,"task_id":"left18448__batch__0146__11160452","data":{"remarks":"异常: Ktype 34233 引用了本批不存在的尺寸组: ","status":"脚本错误","sends":62,"rounds":62}}
+{"timestamp":"2026-08-05T13:51:01.8296470Z","type":"task_started","process_id":37377,"task_id":"left18448__batch__0147__a0ddbad6","data":{"display_name":"left18448 第 14601-14700 行","source":"left18448.tsv"}}
+{"timestamp":"2026-08-05T14:00:15.5427390Z","type":"task_finished","process_id":37377,"task_id":"left18448__batch__0147__a0ddbad6","data":{"remarks":"异常: Ktype 34125 引用了本批不存在的尺寸组: ","status":"脚本错误","sends":36,"rounds":36}}
+{"timestamp":"2026-08-05T14:00:21.2382960Z","type":"task_skipped","process_id":37377,"task_id":"left18448__batch__0148__59486f66","data":{"reason":"checkpoint_terminal","status":"成功"}}
+{"timestamp":"2026-08-05T14:00:21.8221710Z","type":"task_skipped","process_id":37377,"task_id":"left18448__batch__0149__63a8c9c4","data":{"reason":"checkpoint_terminal","status":"成功"}}
+{"timestamp":"2026-08-05T14:00:22.6851520Z","type":"task_skipped","process_id":37377,"task_id":"left18448__batch__0150__8e33fc88","data":{"reason":"checkpoint_terminal","status":"成功"}}
+{"timestamp":"2026-08-05T14:02:18.2690070Z","type":"task_skipped","process_id":37377,"task_id":"left18448__batch__0151__a99a6789","data":{"reason":"checkpoint_terminal","status":"成功"}}
+{"timestamp":"2026-08-05T14:02:19.4956920Z","type":"task_skipped","process_id":37377,"task_id":"left18448__batch__0152__577e10e8","data":{"reason":"checkpoint_terminal","status":"成功"}}
+{"timestamp":"2026-08-05T14:02:20.6399710Z","type":"task_skipped","process_id":37377,"task_id":"left18448__batch__0153__c8d3e4e8","data":{"reason":"checkpoint_terminal","status":"成功"}}
+{"timestamp":"2026-08-05T14:02:21.2826550Z","type":"task_skipped","process_id":37377,"task_id":"left18448__batch__0154__d5a822f0","data":{"reason":"checkpoint_terminal","status":"成功"}}
+{"timestamp":"2026-08-05T14:02:21.9137910Z","type":"task_skipped","process_id":37377,"task_id":"left18448__batch__0155__571ba389","data":{"reason":"checkpoint_terminal","status":"成功"}}
+{"timestamp":"2026-08-05T14:02:22.5553860Z","type":"task_skipped","process_id":37377,"task_id":"left18448__batch__0156__86f519be","data":{"reason":"checkpoint_terminal","status":"成功"}}
+{"timestamp":"2026-08-05T14:02:23.1986000Z","type":"task_skipped","process_id":37377,"task_id":"left18448__batch__0157__ec3a8ca0","data":{"reason":"checkpoint_terminal","status":"成功"}}
+{"timestamp":"2026-08-05T14:02:23.9118170Z","type":"task_skipped","process_id":37377,"task_id":"left18448__batch__0158__3164bc51","data":{"reason":"checkpoint_terminal","status":"成功"}}
+{"timestamp":"2026-08-05T14:02:24.5569920Z","type":"task_skipped","process_id":37377,"task_id":"left18448__batch__0159__ec837699","data":{"reason":"checkpoint_terminal","status":"成功"}}
+{"timestamp":"2026-08-05T14:02:25.1776400Z","type":"task_skipped","process_id":37377,"task_id":"left18448__batch__0160__73981dc1","data":{"reason":"checkpoint_terminal","status":"成功"}}
+{"timestamp":"2026-08-05T14:02:25.8264260Z","type":"task_skipped","process_id":37377,"task_id":"left18448__batch__0161__67780970","data":{"reason":"checkpoint_terminal","status":"成功"}}
+{"timestamp":"2026-08-05T14:02:26.4644950Z","type":"task_skipped","process_id":37377,"task_id":"left18448__batch__0162__88674c01","data":{"reason":"checkpoint_terminal","status":"成功"}}
+{"timestamp":"2026-08-05T14:02:27.1151300Z","type":"task_skipped","process_id":37377,"task_id":"left18448__batch__0163__917565df","data":{"reason":"checkpoint_terminal","status":"成功"}}
+{"timestamp":"2026-08-05T14:02:27.7954100Z","type":"task_skipped","process_id":37377,"task_id":"left18448__batch__0164__4e3300be","data":{"reason":"checkpoint_terminal","status":"成功"}}
+{"timestamp":"2026-08-05T14:02:28.4596290Z","type":"task_skipped","process_id":37377,"task_id":"left18448__batch__0165__da4a29ec","data":{"reason":"checkpoint_terminal","status":"成功"}}
+{"timestamp":"2026-08-05T14:02:29.1143460Z","type":"task_skipped","process_id":37377,"task_id":"left18448__batch__0166__4a854ffd","data":{"reason":"checkpoint_terminal","status":"成功"}}
+{"timestamp":"2026-08-05T14:02:29.7804890Z","type":"task_skipped","process_id":37377,"task_id":"left18448__batch__0167__cd976849","data":{"reason":"checkpoint_terminal","status":"成功"}}
+{"timestamp":"2026-08-05T14:02:30.4395800Z","type":"task_skipped","process_id":37377,"task_id":"left18448__batch__0168__5ed60e57","data":{"reason":"checkpoint_terminal","status":"成功"}}
+{"timestamp":"2026-08-05T14:02:31.0903420Z","type":"task_skipped","process_id":37377,"task_id":"left18448__batch__0169__23d8e4fe","data":{"reason":"checkpoint_terminal","status":"成功"}}
+{"timestamp":"2026-08-05T14:02:31.7374150Z","type":"task_skipped","process_id":37377,"task_id":"left18448__batch__0170__c90cd8bf","data":{"reason":"checkpoint_terminal","status":"成功"}}
+{"timestamp":"2026-08-05T14:02:32.4046290Z","type":"task_skipped","process_id":37377,"task_id":"left18448__batch__0171__daf4a872","data":{"reason":"checkpoint_terminal","status":"成功"}}
+{"timestamp":"2026-08-05T14:02:33.0701220Z","type":"task_skipped","process_id":37377,"task_id":"left18448__batch__0172__8c77e355","data":{"reason":"checkpoint_terminal","status":"成功"}}
+{"timestamp":"2026-08-05T14:02:33.7299610Z","type":"task_skipped","process_id":37377,"task_id":"left18448__batch__0173__91127262","data":{"reason":"checkpoint_terminal","status":"成功"}}
+{"timestamp":"2026-08-05T14:02:34.3932010Z","type":"task_skipped","process_id":37377,"task_id":"left18448__batch__0174__7e0f0406","data":{"reason":"checkpoint_terminal","status":"成功"}}
+{"timestamp":"2026-08-05T14:02:35.0569140Z","type":"task_skipped","process_id":37377,"task_id":"left18448__batch__0175__bf7d5e8d","data":{"reason":"checkpoint_terminal","status":"成功"}}
+{"timestamp":"2026-08-05T14:02:35.7259020Z","type":"task_skipped","process_id":37377,"task_id":"left18448__batch__0176__0e079de2","data":{"reason":"checkpoint_terminal","status":"成功"}}
+{"timestamp":"2026-08-05T14:02:36.4015060Z","type":"task_skipped","process_id":37377,"task_id":"left18448__batch__0177__0039a650","data":{"reason":"checkpoint_terminal","status":"成功"}}
+{"timestamp":"2026-08-05T14:02:37.0817810Z","type":"task_skipped","process_id":37377,"task_id":"left18448__batch__0178__f24f9b04","data":{"reason":"checkpoint_terminal","status":"成功"}}
+{"timestamp":"2026-08-05T14:02:37.7356910Z","type":"task_skipped","process_id":37377,"task_id":"left18448__batch__0179__509be5ec","data":{"reason":"checkpoint_terminal","status":"成功"}}
+{"timestamp":"2026-08-05T14:02:38.4269590Z","type":"task_skipped","process_id":37377,"task_id":"left18448__batch__0180__9a722829","data":{"reason":"checkpoint_terminal","status":"成功"}}
+{"timestamp":"2026-08-05T14:02:39.1029750Z","type":"task_skipped","process_id":37377,"task_id":"left18448__batch__0181__09213ece","data":{"reason":"checkpoint_terminal","status":"成功"}}
+{"timestamp":"2026-08-05T14:02:39.8176190Z","type":"task_skipped","process_id":37377,"task_id":"left18448__batch__0182__ee2fe9f8","data":{"reason":"checkpoint_terminal","status":"成功"}}
+{"timestamp":"2026-08-05T14:02:40.4831010Z","type":"task_skipped","process_id":37377,"task_id":"left18448__batch__0183__8f2c620e","data":{"reason":"checkpoint_terminal","status":"成功"}}
+{"timestamp":"2026-08-05T14:02:41.1811610Z","type":"task_skipped","process_id":37377,"task_id":"left18448__batch__0184__c249918f","data":{"reason":"checkpoint_terminal","status":"成功"}}
+{"timestamp":"2026-08-05T14:02:41.8271350Z","type":"task_skipped","process_id":37377,"task_id":"left18448__batch__0185__af591c1f","data":{"reason":"checkpoint_terminal","status":"成功"}}
+{"timestamp":"2026-08-05T14:05:34.0837730Z","type":"run_tasks_selected","process_id":39398,"task_id":"","data":{"total_tasks":185,"selected_tasks":46,"partition_index":4,"partition_count":4}}
+{"timestamp":"2026-08-05T14:05:41.9793500Z","type":"task_skipped","process_id":39398,"task_id":"left18448__batch__0140__108cf9af","data":{"status":"成功","reason":"checkpoint_terminal"}}
+{"timestamp":"2026-08-05T14:05:42.7838930Z","type":"task_skipped","process_id":39398,"task_id":"left18448__batch__0141__5e4c49f0","data":{"status":"成功","reason":"checkpoint_terminal"}}
+{"timestamp":"2026-08-05T14:05:43.5829010Z","type":"task_skipped","process_id":39398,"task_id":"left18448__batch__0142__e3cfe7c4","data":{"status":"成功","reason":"checkpoint_terminal"}}
+{"timestamp":"2026-08-05T14:05:44.4659900Z","type":"task_skipped","process_id":39398,"task_id":"left18448__batch__0143__0f7d4eef","data":{"status":"成功","reason":"checkpoint_terminal"}}
+{"timestamp":"2026-08-05T14:05:45.1438520Z","type":"task_skipped","process_id":39398,"task_id":"left18448__batch__0144__a4dcca35","data":{"status":"成功","reason":"checkpoint_terminal"}}
+{"timestamp":"2026-08-05T14:05:45.8250840Z","type":"task_skipped","process_id":39398,"task_id":"left18448__batch__0145__488c65c6","data":{"status":"成功","reason":"checkpoint_terminal"}}
+{"timestamp":"2026-08-05T14:05:45.8309540Z","type":"task_started","process_id":39398,"task_id":"left18448__batch__0146__11160452","data":{"source":"left18448.tsv","display_name":"left18448 第 14501-14600 行"}}
+{"timestamp":"2026-08-05T14:06:01.2070310Z","type":"task_finished","process_id":39398,"task_id":"left18448__batch__0146__11160452","data":{"remarks":"异常: Ktype 34233 引用了本批不存在的尺寸组: ","rounds":62,"sends":62,"status":"脚本错误"}}
+{"timestamp":"2026-08-05T14:06:06.2176760Z","type":"task_started","process_id":39398,"task_id":"left18448__batch__0147__a0ddbad6","data":{"source":"left18448.tsv","display_name":"left18448 第 14601-14700 行"}}
+{"timestamp":"2026-08-05T14:06:18.3035360Z","type":"task_finished","process_id":39398,"task_id":"left18448__batch__0147__a0ddbad6","data":{"remarks":"异常: Ktype 34125 引用了本批不存在的尺寸组: ","rounds":36,"sends":36,"status":"脚本错误"}}
+{"timestamp":"2026-08-05T14:06:23.9937000Z","type":"task_skipped","process_id":39398,"task_id":"left18448__batch__0148__59486f66","data":{"status":"成功","reason":"checkpoint_terminal"}}
+{"timestamp":"2026-08-05T14:06:24.6221920Z","type":"task_skipped","process_id":39398,"task_id":"left18448__batch__0149__63a8c9c4","data":{"status":"成功","reason":"checkpoint_terminal"}}
+{"timestamp":"2026-08-05T14:06:25.2453240Z","type":"task_skipped","process_id":39398,"task_id":"left18448__batch__0150__8e33fc88","data":{"status":"成功","reason":"checkpoint_terminal"}}
+{"timestamp":"2026-08-05T14:06:25.8957580Z","type":"task_skipped","process_id":39398,"task_id":"left18448__batch__0151__a99a6789","data":{"status":"成功","reason":"checkpoint_terminal"}}
+{"timestamp":"2026-08-05T14:06:26.5462720Z","type":"task_skipped","process_id":39398,"task_id":"left18448__batch__0152__577e10e8","data":{"status":"成功","reason":"checkpoint_terminal"}}
+{"timestamp":"2026-08-05T14:06:27.2302290Z","type":"task_skipped","process_id":39398,"task_id":"left18448__batch__0153__c8d3e4e8","data":{"status":"成功","reason":"checkpoint_terminal"}}
+{"timestamp":"2026-08-05T14:06:27.8975820Z","type":"task_skipped","process_id":39398,"task_id":"left18448__batch__0154__d5a822f0","data":{"status":"成功","reason":"checkpoint_terminal"}}
+{"timestamp":"2026-08-05T14:06:28.5560310Z","type":"task_skipped","process_id":39398,"task_id":"left18448__batch__0155__571ba389","data":{"status":"成功","reason":"checkpoint_terminal"}}
+{"timestamp":"2026-08-05T14:06:29.2252920Z","type":"task_skipped","process_id":39398,"task_id":"left18448__batch__0156__86f519be","data":{"status":"成功","reason":"checkpoint_terminal"}}
+{"timestamp":"2026-08-05T14:06:29.9526510Z","type":"task_skipped","process_id":39398,"task_id":"left18448__batch__0157__ec3a8ca0","data":{"status":"成功","reason":"checkpoint_terminal"}}
+{"timestamp":"2026-08-05T14:06:30.6728460Z","type":"task_skipped","process_id":39398,"task_id":"left18448__batch__0158__3164bc51","data":{"status":"成功","reason":"checkpoint_terminal"}}
+{"timestamp":"2026-08-05T14:06:31.3531410Z","type":"task_skipped","process_id":39398,"task_id":"left18448__batch__0159__ec837699","data":{"status":"成功","reason":"checkpoint_terminal"}}
+{"timestamp":"2026-08-05T14:06:32.0333990Z","type":"task_skipped","process_id":39398,"task_id":"left18448__batch__0160__73981dc1","data":{"status":"成功","reason":"checkpoint_terminal"}}
+{"timestamp":"2026-08-05T14:06:32.7245740Z","type":"task_skipped","process_id":39398,"task_id":"left18448__batch__0161__67780970","data":{"status":"成功","reason":"checkpoint_terminal"}}
+{"timestamp":"2026-08-05T14:06:33.4150600Z","type":"task_skipped","process_id":39398,"task_id":"left18448__batch__0162__88674c01","data":{"status":"成功","reason":"checkpoint_terminal"}}
+{"timestamp":"2026-08-05T14:06:34.1110730Z","type":"task_skipped","process_id":39398,"task_id":"left18448__batch__0163__917565df","data":{"status":"成功","reason":"checkpoint_terminal"}}
+{"timestamp":"2026-08-05T14:06:34.8242710Z","type":"task_skipped","process_id":39398,"task_id":"left18448__batch__0164__4e3300be","data":{"status":"成功","reason":"checkpoint_terminal"}}
+{"timestamp":"2026-08-05T14:06:35.5245740Z","type":"task_skipped","process_id":39398,"task_id":"left18448__batch__0165__da4a29ec","data":{"status":"成功","reason":"checkpoint_terminal"}}
+{"timestamp":"2026-08-05T14:06:36.2205030Z","type":"task_skipped","process_id":39398,"task_id":"left18448__batch__0166__4a854ffd","data":{"status":"成功","reason":"checkpoint_terminal"}}
+{"timestamp":"2026-08-05T14:06:36.9133890Z","type":"task_skipped","process_id":39398,"task_id":"left18448__batch__0167__cd976849","data":{"status":"成功","reason":"checkpoint_terminal"}}
+{"timestamp":"2026-08-05T14:06:37.6031560Z","type":"task_skipped","process_id":39398,"task_id":"left18448__batch__0168__5ed60e57","data":{"status":"成功","reason":"checkpoint_terminal"}}
+{"timestamp":"2026-08-05T14:06:38.3474560Z","type":"task_skipped","process_id":39398,"task_id":"left18448__batch__0169__23d8e4fe","data":{"status":"成功","reason":"checkpoint_terminal"}}
+{"timestamp":"2026-08-05T14:06:39.0534060Z","type":"task_skipped","process_id":39398,"task_id":"left18448__batch__0170__c90cd8bf","data":{"status":"成功","reason":"checkpoint_terminal"}}
+{"timestamp":"2026-08-05T14:06:39.8471520Z","type":"task_skipped","process_id":39398,"task_id":"left18448__batch__0171__daf4a872","data":{"status":"成功","reason":"checkpoint_terminal"}}
+{"timestamp":"2026-08-05T14:06:40.5263330Z","type":"task_skipped","process_id":39398,"task_id":"left18448__batch__0172__8c77e355","data":{"status":"成功","reason":"checkpoint_terminal"}}
+{"timestamp":"2026-08-05T14:06:41.2349290Z","type":"task_skipped","process_id":39398,"task_id":"left18448__batch__0173__91127262","data":{"status":"成功","reason":"checkpoint_terminal"}}
+{"timestamp":"2026-08-05T14:06:41.9753660Z","type":"task_skipped","process_id":39398,"task_id":"left18448__batch__0174__7e0f0406","data":{"status":"成功","reason":"checkpoint_terminal"}}
+{"timestamp":"2026-08-05T14:06:42.6548210Z","type":"task_skipped","process_id":39398,"task_id":"left18448__batch__0175__bf7d5e8d","data":{"status":"成功","reason":"checkpoint_terminal"}}
+{"timestamp":"2026-08-05T14:06:43.3806250Z","type":"task_skipped","process_id":39398,"task_id":"left18448__batch__0176__0e079de2","data":{"status":"成功","reason":"checkpoint_terminal"}}
+{"timestamp":"2026-08-05T14:06:44.0857900Z","type":"task_skipped","process_id":39398,"task_id":"left18448__batch__0177__0039a650","data":{"status":"成功","reason":"checkpoint_terminal"}}
+{"timestamp":"2026-08-05T14:06:44.7906370Z","type":"task_skipped","process_id":39398,"task_id":"left18448__batch__0178__f24f9b04","data":{"status":"成功","reason":"checkpoint_terminal"}}
+{"timestamp":"2026-08-05T14:06:45.4894700Z","type":"task_skipped","process_id":39398,"task_id":"left18448__batch__0179__509be5ec","data":{"status":"成功","reason":"checkpoint_terminal"}}
+{"timestamp":"2026-08-05T14:06:46.2377350Z","type":"task_skipped","process_id":39398,"task_id":"left18448__batch__0180__9a722829","data":{"status":"成功","reason":"checkpoint_terminal"}}
+{"timestamp":"2026-08-05T14:06:46.9237400Z","type":"task_skipped","process_id":39398,"task_id":"left18448__batch__0181__09213ece","data":{"status":"成功","reason":"checkpoint_terminal"}}
+{"timestamp":"2026-08-05T14:06:47.6282260Z","type":"task_skipped","process_id":39398,"task_id":"left18448__batch__0182__ee2fe9f8","data":{"status":"成功","reason":"checkpoint_terminal"}}
+{"timestamp":"2026-08-05T14:06:48.3601970Z","type":"task_skipped","process_id":39398,"task_id":"left18448__batch__0183__8f2c620e","data":{"status":"成功","reason":"checkpoint_terminal"}}
+{"timestamp":"2026-08-05T14:06:49.0593970Z","type":"task_skipped","process_id":39398,"task_id":"left18448__batch__0184__c249918f","data":{"status":"成功","reason":"checkpoint_terminal"}}
+{"timestamp":"2026-08-05T14:06:49.7669580Z","type":"task_skipped","process_id":39398,"task_id":"left18448__batch__0185__af591c1f","data":{"status":"成功","reason":"checkpoint_terminal"}}
+{"timestamp":"2026-08-05T14:11:31.7007270Z","type":"run_tasks_selected","process_id":40480,"task_id":"","data":{"selected_tasks":46,"total_tasks":185,"partition_index":4,"partition_count":4}}
+{"timestamp":"2026-08-05T14:11:39.9839570Z","type":"task_skipped","process_id":40480,"task_id":"left18448__batch__0140__108cf9af","data":{"status":"成功","reason":"checkpoint_terminal"}}
+{"timestamp":"2026-08-05T14:11:41.0076340Z","type":"task_skipped","process_id":40480,"task_id":"left18448__batch__0141__5e4c49f0","data":{"status":"成功","reason":"checkpoint_terminal"}}
+{"timestamp":"2026-08-05T14:11:42.2010680Z","type":"task_skipped","process_id":40480,"task_id":"left18448__batch__0142__e3cfe7c4","data":{"status":"成功","reason":"checkpoint_terminal"}}
+{"timestamp":"2026-08-05T14:11:43.1326190Z","type":"task_skipped","process_id":40480,"task_id":"left18448__batch__0143__0f7d4eef","data":{"status":"成功","reason":"checkpoint_terminal"}}
+{"timestamp":"2026-08-05T14:11:43.8078000Z","type":"task_skipped","process_id":40480,"task_id":"left18448__batch__0144__a4dcca35","data":{"status":"成功","reason":"checkpoint_terminal"}}
+{"timestamp":"2026-08-05T14:11:44.4919700Z","type":"task_skipped","process_id":40480,"task_id":"left18448__batch__0145__488c65c6","data":{"status":"成功","reason":"checkpoint_terminal"}}
+{"timestamp":"2026-08-05T14:11:44.4999130Z","type":"task_started","process_id":40480,"task_id":"left18448__batch__0146__11160452","data":{"display_name":"left18448 第 14501-14600 行","source":"left18448.tsv"}}
+{"timestamp":"2026-08-05T14:11:49.1692100Z","type":"task_finished","process_id":40480,"task_id":"left18448__batch__0146__11160452","data":{"rounds":62,"sends":62,"remarks":"从 checkpoint 本地最后回复恢复全部当前 READY 记录及下载链接；剩余 PENDING 因证据不足结束","status":"Almost"}}
+{"timestamp":"2026-08-05T14:11:54.1795480Z","type":"task_started","process_id":40480,"task_id":"left18448__batch__0147__a0ddbad6","data":{"display_name":"left18448 第 14601-14700 行","source":"left18448.tsv"}}
+{"timestamp":"2026-08-05T14:11:56.9062900Z","type":"task_finished","process_id":40480,"task_id":"left18448__batch__0147__a0ddbad6","data":{"rounds":36,"sends":36,"remarks":"从 checkpoint 本地最后回复恢复全部当前 READY 记录及下载链接；剩余 PENDING 因证据不足结束","status":"Almost"}}
+{"timestamp":"2026-08-05T14:12:02.6018850Z","type":"task_skipped","process_id":40480,"task_id":"left18448__batch__0148__59486f66","data":{"status":"成功","reason":"checkpoint_terminal"}}
+{"timestamp":"2026-08-05T14:12:03.3446300Z","type":"task_skipped","process_id":40480,"task_id":"left18448__batch__0149__63a8c9c4","data":{"status":"成功","reason":"checkpoint_terminal"}}
+{"timestamp":"2026-08-05T14:12:04.0898110Z","type":"task_skipped","process_id":40480,"task_id":"left18448__batch__0150__8e33fc88","data":{"status":"成功","reason":"checkpoint_terminal"}}
+{"timestamp":"2026-08-05T14:12:04.8308330Z","type":"task_skipped","process_id":40480,"task_id":"left18448__batch__0151__a99a6789","data":{"status":"成功","reason":"checkpoint_terminal"}}
+{"timestamp":"2026-08-05T14:12:05.6888220Z","type":"task_skipped","process_id":40480,"task_id":"left18448__batch__0152__577e10e8","data":{"status":"成功","reason":"checkpoint_terminal"}}
+{"timestamp":"2026-08-05T14:12:06.4585130Z","type":"task_skipped","process_id":40480,"task_id":"left18448__batch__0153__c8d3e4e8","data":{"status":"成功","reason":"checkpoint_terminal"}}
+{"timestamp":"2026-08-05T14:12:07.2018000Z","type":"task_skipped","process_id":40480,"task_id":"left18448__batch__0154__d5a822f0","data":{"status":"成功","reason":"checkpoint_terminal"}}
+{"timestamp":"2026-08-05T14:12:07.9212980Z","type":"task_skipped","process_id":40480,"task_id":"left18448__batch__0155__571ba389","data":{"status":"成功","reason":"checkpoint_terminal"}}
+{"timestamp":"2026-08-05T14:12:08.6181280Z","type":"task_skipped","process_id":40480,"task_id":"left18448__batch__0156__86f519be","data":{"status":"成功","reason":"checkpoint_terminal"}}
+{"timestamp":"2026-08-05T14:12:09.3259750Z","type":"task_skipped","process_id":40480,"task_id":"left18448__batch__0157__ec3a8ca0","data":{"status":"成功","reason":"checkpoint_terminal"}}
+{"timestamp":"2026-08-05T14:12:10.0889230Z","type":"task_skipped","process_id":40480,"task_id":"left18448__batch__0158__3164bc51","data":{"status":"成功","reason":"checkpoint_terminal"}}
+{"timestamp":"2026-08-05T14:12:10.8339780Z","type":"task_skipped","process_id":40480,"task_id":"left18448__batch__0159__ec837699","data":{"status":"成功","reason":"checkpoint_terminal"}}
+{"timestamp":"2026-08-05T14:12:11.5445270Z","type":"task_skipped","process_id":40480,"task_id":"left18448__batch__0160__73981dc1","data":{"status":"成功","reason":"checkpoint_terminal"}}
+{"timestamp":"2026-08-05T14:12:12.2545670Z","type":"task_skipped","process_id":40480,"task_id":"left18448__batch__0161__67780970","data":{"status":"成功","reason":"checkpoint_terminal"}}
+{"timestamp":"2026-08-05T14:12:12.9820690Z","type":"task_skipped","process_id":40480,"task_id":"left18448__batch__0162__88674c01","data":{"status":"成功","reason":"checkpoint_terminal"}}
+{"timestamp":"2026-08-05T14:12:13.6964780Z","type":"task_skipped","process_id":40480,"task_id":"left18448__batch__0163__917565df","data":{"status":"成功","reason":"checkpoint_terminal"}}
+{"timestamp":"2026-08-05T14:12:14.4244870Z","type":"task_skipped","process_id":40480,"task_id":"left18448__batch__0164__4e3300be","data":{"status":"成功","reason":"checkpoint_terminal"}}
+{"timestamp":"2026-08-05T14:12:15.1884700Z","type":"task_skipped","process_id":40480,"task_id":"left18448__batch__0165__da4a29ec","data":{"status":"成功","reason":"checkpoint_terminal"}}
+{"timestamp":"2026-08-05T14:12:15.9158440Z","type":"task_skipped","process_id":40480,"task_id":"left18448__batch__0166__4a854ffd","data":{"status":"成功","reason":"checkpoint_terminal"}}
+{"timestamp":"2026-08-05T14:12:16.6326160Z","type":"task_skipped","process_id":40480,"task_id":"left18448__batch__0167__cd976849","data":{"status":"成功","reason":"checkpoint_terminal"}}
+{"timestamp":"2026-08-05T14:12:17.3630910Z","type":"task_skipped","process_id":40480,"task_id":"left18448__batch__0168__5ed60e57","data":{"status":"成功","reason":"checkpoint_terminal"}}
+{"timestamp":"2026-08-05T14:12:18.1086630Z","type":"task_skipped","process_id":40480,"task_id":"left18448__batch__0169__23d8e4fe","data":{"status":"成功","reason":"checkpoint_terminal"}}
+{"timestamp":"2026-08-05T14:12:18.8984330Z","type":"task_skipped","process_id":40480,"task_id":"left18448__batch__0170__c90cd8bf","data":{"status":"成功","reason":"checkpoint_terminal"}}
+{"timestamp":"2026-08-05T14:12:19.6269650Z","type":"task_skipped","process_id":40480,"task_id":"left18448__batch__0171__daf4a872","data":{"status":"成功","reason":"checkpoint_terminal"}}
+{"timestamp":"2026-08-05T14:12:20.3711360Z","type":"task_skipped","process_id":40480,"task_id":"left18448__batch__0172__8c77e355","data":{"status":"成功","reason":"checkpoint_terminal"}}
+{"timestamp":"2026-08-05T14:12:21.0801530Z","type":"task_skipped","process_id":40480,"task_id":"left18448__batch__0173__91127262","data":{"status":"成功","reason":"checkpoint_terminal"}}
+{"timestamp":"2026-08-05T14:12:21.8102810Z","type":"task_skipped","process_id":40480,"task_id":"left18448__batch__0174__7e0f0406","data":{"status":"成功","reason":"checkpoint_terminal"}}
+{"timestamp":"2026-08-05T14:12:22.5569280Z","type":"task_skipped","process_id":40480,"task_id":"left18448__batch__0175__bf7d5e8d","data":{"status":"成功","reason":"checkpoint_terminal"}}
+{"timestamp":"2026-08-05T14:12:23.3221580Z","type":"task_skipped","process_id":40480,"task_id":"left18448__batch__0176__0e079de2","data":{"status":"成功","reason":"checkpoint_terminal"}}
+{"timestamp":"2026-08-05T14:12:24.0608820Z","type":"task_skipped","process_id":40480,"task_id":"left18448__batch__0177__0039a650","data":{"status":"成功","reason":"checkpoint_terminal"}}
+{"timestamp":"2026-08-05T14:12:24.7910970Z","type":"task_skipped","process_id":40480,"task_id":"left18448__batch__0178__f24f9b04","data":{"status":"成功","reason":"checkpoint_terminal"}}
+{"timestamp":"2026-08-05T14:12:25.5244410Z","type":"task_skipped","process_id":40480,"task_id":"left18448__batch__0179__509be5ec","data":{"status":"成功","reason":"checkpoint_terminal"}}
+{"timestamp":"2026-08-05T14:12:26.2712390Z","type":"task_skipped","process_id":40480,"task_id":"left18448__batch__0180__9a722829","data":{"status":"成功","reason":"checkpoint_terminal"}}
+{"timestamp":"2026-08-05T14:12:27.0392750Z","type":"task_skipped","process_id":40480,"task_id":"left18448__batch__0181__09213ece","data":{"status":"成功","reason":"checkpoint_terminal"}}
+{"timestamp":"2026-08-05T14:12:27.7568070Z","type":"task_skipped","process_id":40480,"task_id":"left18448__batch__0182__ee2fe9f8","data":{"status":"成功","reason":"checkpoint_terminal"}}
+{"timestamp":"2026-08-05T14:12:28.4994260Z","type":"task_skipped","process_id":40480,"task_id":"left18448__batch__0183__8f2c620e","data":{"status":"成功","reason":"checkpoint_terminal"}}
+{"timestamp":"2026-08-05T14:12:29.2426650Z","type":"task_skipped","process_id":40480,"task_id":"left18448__batch__0184__c249918f","data":{"status":"成功","reason":"checkpoint_terminal"}}
+{"timestamp":"2026-08-05T14:12:29.9509010Z","type":"task_skipped","process_id":40480,"task_id":"left18448__batch__0185__af591c1f","data":{"status":"成功","reason":"checkpoint_terminal"}}

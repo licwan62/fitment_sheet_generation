@@ -1,4 +1,4 @@
-﻿id	Ktype	NormalizedBodyStyle	Generation	BodyCode	Doors	DIMENSION_GROUP_ID	MatchConfidence	Notes	IterationStatus
+id	Ktype	NormalizedBodyStyle	Generation	BodyCode	Doors	DIMENSION_GROUP_ID	MatchConfidence	Notes	IterationStatus
 57429_prefl	57429	Sedan	S60 II pre-facelift		4	EU-VOLVO-S60-II-SEDAN-PREFL-01	HIGH	Ktype spans the 2013 dimensional update; split by physical exterior.	READY
 57429_facelift	57429	Sedan	S60 II facelift		4	EU-VOLVO-S60-II-SEDAN-FACELIFT-01	HIGH	Ktype spans the 2013 dimensional update; split by physical exterior.	READY
 100528	100528	Sedan	S60 II facelift		4	EU-VOLVO-S60-II-SEDAN-FACELIFT-01	HIGH		READY

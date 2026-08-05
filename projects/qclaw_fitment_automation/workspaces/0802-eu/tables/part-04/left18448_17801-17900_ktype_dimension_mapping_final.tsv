@@ -1,4 +1,4 @@
-﻿id	Ktype	NormalizedBodyStyle	Generation	BodyCode	Doors	DIMENSION_GROUP_ID	MatchConfidence	Notes	IterationStatus
+id	Ktype	NormalizedBodyStyle	Generation	BodyCode	Doors	DIMENSION_GROUP_ID	MatchConfidence	Notes	IterationStatus
 17074_prefl	17074	Convertible	New Beetle 1Y	1Y	2	EU-VW-NEW-BEETLE-1Y-CONVERTIBLE-PREFACELIFT-01	HIGH	Pre-2005 body branch within a Ktype spanning the exterior-changing facelift.	READY
 17074_facelift	17074	Convertible	New Beetle 1Y	1Y	2	EU-VW-NEW-BEETLE-1Y-CONVERTIBLE-FACELIFT-01	HIGH	2005-facelift body branch within a Ktype spanning the exterior-changing facelift.	READY
 14238_prefl	14238	Hatchback	New Beetle 9C	9C	3	EU-VW-NEW-BEETLE-9C-HATCHBACK-PREFACELIFT-01	HIGH	Pre-2005 body branch within a Ktype spanning the exterior-changing facelift.	READY

@@ -121,5 +121,3 @@ id	Ktype	NormalizedBodyStyle	Generation	BodyCode	Doors	DIMENSION_GROUP_ID	MatchC
 34277	34277	Pickup	Mascott Phase II		2	EU-RENAULT-TRUCKS-MASCOTT-PHASE-II-CHASSIS-CAB-WB3630-01	MEDIUM	GVW rating does not change the selected WB3630 chassis-cab exterior	READY
 34279	34279	Pickup	Mascott Phase II		2	EU-RENAULT-TRUCKS-MASCOTT-PHASE-II-CHASSIS-CAB-WB3630-01	MEDIUM	GVW rating does not change the selected WB3630 chassis-cab exterior	READY
 34127	34127	Pickup	Messenger	4X4F06	2	EU-RENAULT-TRUCKS-MESSENGER-B110-45-4X4-CHASSIS-CAB-01	HIGH	B110.45 4x4 chassis cab	READY
-34125	34125	Tractor	Messenger	FN60F5	2		MEDIUM	B120.55T tractor	PENDING: complete same-configuration tractor exterior dimensions unavailable
-34126	34126	Tractor	Messenger	FN60F7	2		MEDIUM	B120.55T tractor; engine phase alone does not establish an exterior change	PENDING: complete same-configuration tractor exterior dimensions unavailable

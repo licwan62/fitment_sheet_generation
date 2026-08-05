@@ -163,11 +163,8 @@ id	Ktype	NormalizedBodyStyle	Generation	BodyCode	Doors	DIMENSION_GROUP_ID	MatchC
 13766	13766	Pickup	Trafic I Phase II-III	PXX		EU-RENAULT-TRAFIC-I-PLATFORM-SWB-02	MEDIUM	输入未指定轴距或驾驶室；采用标准短轴平台外廓。	READY
 13794	13794	Pickup	Trafic I Phase II-III	PXX		EU-RENAULT-TRAFIC-I-PLATFORM-SWB-02	MEDIUM	输入未指定轴距或驾驶室；采用标准短轴平台外廓。	READY
 34232	34232	Van	Renault B Series Phase I			EU-RENAULT-TRUCKS-B-90-PH1-VAN-HIGHROOF-01	MEDIUM	采用现有B系列加高顶厢式外廓。	READY
-34233	34233	Pickup	Renault B Series Phase I				LOW	输入未指定轴距或驾驶室；保留单一标准平台候选。	PENDING: 标准平台完整三维及无镜宽度未闭合
 34234	34234	Van	Renault B Series Phase I	FN40C1		EU-RENAULT-TRUCKS-B-90-PH1-VAN-HIGHROOF-01	MEDIUM	输入未指定车顶；采用已闭合的3200毫米轴距加高顶厢式外廓。	READY
-34235	34235	Pickup	Renault B Series Phase I	FN40B1			LOW	输入未指定轴距或驾驶室；撤销轴距及单双排派生，保留单一标准平台候选。	PENDING: 标准平台完整三维及无镜宽度未闭合
 34236	34236	Van	Renault B Series Phase I	FN40C1		EU-RENAULT-TRUCKS-B-90-PH1-VAN-HIGHROOF-01	MEDIUM	输入未指定车顶；采用已闭合的3200毫米轴距加高顶厢式外廓。	READY
-34237	34237	Pickup	Renault B Series Phase I	FN40B1			LOW	输入未指定轴距或驾驶室；撤销轴距及单双排派生，保留单一标准平台候选。	PENDING: 标准平台完整三维及无镜宽度未闭合
 34238	34238	Pickup	Renault B Series 4X4 Phase I	FN40B1		EU-RENAULT-TRUCKS-B-90-PH1-PLATFORM-4X4-01	MEDIUM	输入未指定轴距；采用3200毫米标准4X4平台外廓。	READY
 34239	34239	Pickup	Renault B Series 4X4 Phase I	FN40B1		EU-RENAULT-TRUCKS-B-90-PH1-PLATFORM-4X4-01	MEDIUM	输入未指定轴距；采用3200毫米标准4X4平台外廓。	READY
 34152	34152	Pickup	Mascott Phase I		2	EU-RENAULT-TRUCKS-MASCOTT-PH1-PLATFORM-WB3630-02	MEDIUM	输入未指定轴距；采用已闭合的90.35标准中轴单排平台外廓。	READY

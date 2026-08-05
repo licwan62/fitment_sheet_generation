@@ -2256,3 +2256,494 @@ READY=98；PENDING=2；revision=50
 
 推进信号：CONTINUE
 
+
+--- 发送 / checkpoint 续跑到 Round 35 ---
+继续当前批次并采用缓存优先模式。尺寸组只在首次创建或纠错时完整核对一次三维和来源；后续 Ktype 只判断关联哪个现有 DIMENSION_GROUP_ID，不重复抓取，不输出缓存来源或匹配理由。仍有 PENDING 且还有明确可执行的可靠证据路径时，CONTINUE 轮仅输出：1) 更新点；2) 当前批次进度；3) 本轮新增/修改的 Ktype 映射 TSV（无变化写“无”）；4) 本轮首次创建/修正的 DIMENSION_GROUP TSV（复用既有组不重复输出，无变化写“无”）；5) 下一步优先处理。若所有剩余 PENDING 都已穷尽契约允许的可靠来源，仍无法在不猜测、不拼接不同配置且不降低证据标准的前提下推进，则停止重复检索并执行 ALMOST 收尾：ALMOST 是任务级终态但不是成功，也不是行级 IterationStatus；剩余条目继续保持 PENDING。ALMOST 回复必须包含全部当前 READY 映射、这些映射引用的全部 DIMENSION_GROUP（每组 SourceURL 非空）、每个剩余 PENDING 的具体原因，以及两个任务指定精确文件名的可点击 sandbox 下载链接，最后一行单独输出“推进信号：ALMOST”。临时网络、浏览器、登录、页面或超时故障，单轮搜索无结果，或仅达到轮次上限，均不得使用 ALMOST。若当前或上一轮进度已经是 PENDING=0，本轮不要继续检索或再次输出 CONTINUE，也不得输出 ALMOST；必须立刻汇总并输出两张最终完整 TSV、两个任务指定 sandbox 下载链接和“推进信号：COMPLETE”。执行顺序固定为：第一阶段优先消除 PENDING 并补齐会阻塞两张最终表的数据。检测到 PENDING=0 后，第二阶段最多只做一次轻量机械收尾：核对固定表头、id 与 DIMENSION_GROUP_ID 唯一、映射引用闭合、长宽高和来源非空、两个任务指定下载链接齐全。第二阶段不得重新逐车型、逐年份或逐来源做深度检索，不得为了提高置信度反复核对，也不得因非阻塞的排序或措辞问题继续多轮。PENDING=0 后的下一条回复必须直接输出两张最终完整 TSV、两个精确 sandbox 下载链接，并以“推进信号：COMPLETE”结束；不要再输出 CONTINUE。若经过多轮可靠检索后，剩余 PENDING 明确因证据不足而无法可靠闭合，并且继续检索已不能推进，可改为 ALMOST 收尾：停止检索，输出当前全部 READY 映射、它们引用的完整尺寸组、两个精确 sandbox 下载链接和每个剩余 PENDING 的具体原因，最后一行输出“推进信号：ALMOST”。临时网络、浏览器、页面或工具故障，以及单轮无结果，不得使用 ALMOST。Ktype 映射 TSV 表头必须严格使用 requirement 指定的字段顺序：id	Ktype	NormalizedBodyStyle	Generation	BodyCode	Doors	DIMENSION_GROUP_ID	MatchConfidence	Notes	IterationStatus。另需维护完整 DIMENSION_GROUP TSV，表头固定为：DIMENSION_GROUP_ID	LengthMM	WidthMM	HeightMM	DimensionSource	SourceURL。缺少任一张表、任一映射引用的尺寸组，或尺寸组字段不完整时不得 COMPLETE；ALMOST 只能包含当前全部 READY 映射及其引用闭合的尺寸组。不要输出子车系匹配表。
+【COMPLETE / ALMOST 下载文件硬性要求】
+准备 COMPLETE 时，除两张完整内嵌 TSV 外，还必须创建并提供以下两个可点击 sandbox 下载链接。准备 ALMOST 时，两张表和链接必须覆盖当前全部整体 READY Ktype，并排除所有 PENDING Ktype。文件名必须完全一致：
+- left18448_14601-14700_ktype_dimension_mapping_final.tsv
+- left18448_14601-14700_dimension_groups_final.tsv
+缺少任一下载链接时不得输出推进信号：COMPLETE 或 ALMOST。
+
+
+--- Round 35 / checkpoint 续跑 ---
+## 证据穷尽说明
+
+剩余 `34125`、`34126` 已经过多轮同配置检索。可追溯资料只能确认 Messenger B120.55T 牵引车、`FN60F5/FN60F7` 代码及部分底盘信息，无法获得同一量产牵引车配置的完整长、宽、高。
+
+继续推进只能采用普通底盘、厢式车、带上装车辆尺寸，或拼接不同配置数据，均违反当前数据契约，因此停止检索并执行 ALMOST 收尾。
+
+## 当前进度
+
+本次唯一输入范围：READY=5；PENDING=2
+累计交接口径：READY=98；PENDING=2；revision=50
+
+## 剩余 PENDING
+
+* `34125`：Messenger B120.55T 牵引车，BodyCode=`FN60F5`。缺少同配置完整外廓长、无镜宽和高度，不能建立尺寸组。
+* `34126`：Messenger B120.55T 牵引车，BodyCode=`FN60F7`。发动机阶段差异不足以证明外廓变化，但同样缺少可闭合的完整牵引车三维，不能安全复用或新建尺寸组。
+
+## 全部当前 READY Ktype 映射 TSV
+
+```tsv
+id	Ktype	NormalizedBodyStyle	Generation	BodyCode	Doors	DIMENSION_GROUP_ID	MatchConfidence	Notes	IterationStatus
+34259	34259	Pickup	Mascott Phase I		2	EU-RENAULT-TRUCKS-MASCOTT-PHASE-I-CHASSIS-CAB-WB3630-01	MEDIUM	Canonical standard WB3630 chassis-cab exterior; input does not identify wheelbase	READY
+34275	34275	Pickup	Mascott Phase II		2	EU-RENAULT-TRUCKS-MASCOTT-PHASE-II-CHASSIS-CAB-WB3630-01	HIGH	Canonical standard WB3630 chassis-cab exterior; input does not identify wheelbase	READY
+34277	34277	Pickup	Mascott Phase II		2	EU-RENAULT-TRUCKS-MASCOTT-PHASE-II-CHASSIS-CAB-WB3630-01	MEDIUM	GVW rating does not change the selected WB3630 chassis-cab exterior	READY
+34279	34279	Pickup	Mascott Phase II		2	EU-RENAULT-TRUCKS-MASCOTT-PHASE-II-CHASSIS-CAB-WB3630-01	MEDIUM	GVW rating does not change the selected WB3630 chassis-cab exterior	READY
+34127	34127	Pickup	Messenger	4X4F06	2	EU-RENAULT-TRUCKS-MESSENGER-B110-45-4X4-CHASSIS-CAB-01	HIGH	B110.45 4x4 chassis cab	READY
+```
+
+[下载完整 READY Ktype 映射 TSV](sandbox:/mnt/data/left18448_14601-14700_ktype_dimension_mapping_final.tsv)
+
+## 完整 DIMENSION_GROUP TSV
+
+```tsv
+DIMENSION_GROUP_ID	LengthMM	WidthMM	HeightMM	DimensionSource	SourceURL
+EU-RENAULT-TRUCKS-MASCOTT-PHASE-I-CHASSIS-CAB-WB3630-01	7179	2093	2270	Zoomcar Renault Trucks Mascott CHC 150.35 WB3630 specifications	https://zoomcar.fr/fiche-technique/renault-trucks/mascott-chassis-cabine-chc-150-35-emp-3-630-NAT83435.html
+EU-RENAULT-TRUCKS-MASCOTT-PHASE-II-CHASSIS-CAB-WB3630-01	5998	2041	2262	Zoomcar Renault Trucks Mascott CHC 160.35 WB3630 specifications	https://zoomcar.fr/fiche-technique-utilitaire/renault-trucks/mascott-chassis-cabine-chc-160-35-emp-3-630-NAT87869.html
+EU-RENAULT-TRUCKS-MESSENGER-B110-45-4X4-CHASSIS-CAB-01	5000	2030	2710	Renault VI B110.45 4x4 technical data sheet 06/1996	https://brochure-camion.com/en/product/23-0062-renault-vi-b110-4x4-military-data-sheet/
+```
+
+[下载完整 DIMENSION_GROUP TSV](sandbox:/mnt/data/left18448_14601-14700_dimension_groups_final.tsv)
+
+推进信号：ALMOST
+
+
+--- 发送 / Almost 收尾纠偏 / Round 36 ---
+立即执行 ALMOST 收尾。所有剩余 PENDING 已穷尽契约允许的可靠来源，无法在不猜测、不拼接不同配置且不降低证据标准的前提下继续推进；停止外部检索，不再输出 CONTINUE，也不得把 PENDING 强行改成 READY。ALMOST 是任务级终态但不是成功，行级 IterationStatus 仍只使用 READY 或 PENDING: <具体原因>。本回复必须依次包含：1) 证据穷尽说明；2) 当前 READY/PENDING 计数；3) 每个剩余 PENDING 的 Ktype 和具体阻塞原因；4) 全部当前 READY 映射组成的完整 Ktype TSV，不得只给变化行或写“其余不变”；5) 使用任务指定精确文件名的可点击 sandbox 下载链接；6) 仅由这些 READY 映射引用、且覆盖其全部引用的完整 DIMENSION_GROUP TSV，每组必须有完整正整数三维、DimensionSource 和非空直接 SourceURL，不得有孤立组；7) 对应任务指定精确文件名的第二个可点击 sandbox 下载链接。两个下载文件的内容必须分别与内嵌的 READY 映射 TSV 和 DIMENSION_GROUP TSV 一致。最后一行单独输出“推进信号：ALMOST”。临时网络、浏览器、登录、页面或超时故障，单轮搜索无结果，或仅达到轮次上限，不属于证据穷尽，不得使用本收尾。
+
+【本地 checkpoint 的唯一 READY 快照】
+整体 READY Ktype：98
+READY 映射记录：122
+引用尺寸组：56
+去重证据 URL：56
+
+以下 Ktype 映射 TSV 必须逐行原样完整输出，并写入 left18448_14601-14700_ktype_dimension_mapping_final.tsv：
+`	sv
+id	Ktype	NormalizedBodyStyle	Generation	BodyCode	Doors	DIMENSION_GROUP_ID	MatchConfidence	Notes	IterationStatus
+34258_wb3630	34258	Van	Mascott Phase I		4	EU-RENAULT-TRUCKS-MASCOTT-PHASE-I-VAN-WB3630-01	HIGH	WB3630	READY
+34258_wb4130	34258	Van	Mascott Phase I		4	EU-RENAULT-TRUCKS-MASCOTT-PHASE-I-VAN-WB4130-01	HIGH	WB4130	READY
+34260_wb3630	34260	Van	Mascott Phase I		4	EU-RENAULT-TRUCKS-MASCOTT-PHASE-I-VAN-WB3630-01	HIGH	WB3630	READY
+34260_wb4130	34260	Van	Mascott Phase I		4	EU-RENAULT-TRUCKS-MASCOTT-PHASE-I-VAN-WB4130-01	HIGH	WB4130	READY
+34261_wb3630	34261	Van	Mascott Phase I		4	EU-RENAULT-TRUCKS-MASCOTT-PHASE-I-VAN-WB3630-01	HIGH	WB3630	READY
+34261_wb4130	34261	Van	Mascott Phase I		4	EU-RENAULT-TRUCKS-MASCOTT-PHASE-I-VAN-WB4130-01	HIGH	WB4130	READY
+34276_wb3630	34276	Van	Mascott Phase II		4	EU-RENAULT-TRUCKS-MASCOTT-PHASE-II-160-35-VAN-WB3630-01	HIGH	WB3630	READY
+34276_wb4130	34276	Van	Mascott Phase II		4	EU-RENAULT-TRUCKS-MASCOTT-PHASE-II-160-35-VAN-WB4130-01	HIGH	WB4130	READY
+34278	34278	Van	Mascott Phase II	A02300015	4	EU-RENAULT-TRUCKS-MASCOTT-PHASE-II-160-55-VAN-WB3630-01	HIGH	WB3630	READY
+34128	34128	Van	Messenger	4X4F06	4	EU-RENAULT-TRUCKS-MESSENGER-B110-45-4X4-VAN-01	HIGH	B110.45 4x4 standard van exterior	READY
+34117_wb3200	34117	Pickup	Messenger	FN40B5	2	EU-RENAULT-TRUCKS-MESSENGER-B120-35-CHASSIS-CAB-WB3200-01	HIGH	WB3200	READY
+34117_wb3840	34117	Pickup	Messenger	FN40B5	2	EU-RENAULT-TRUCKS-MESSENGER-B120-35-CHASSIS-CAB-01	HIGH	WB3840	READY
+34120_wb3200	34120	Pickup	Messenger	FN40B7	2	EU-RENAULT-TRUCKS-MESSENGER-B120-35-CHASSIS-CAB-WB3200-01	MEDIUM	WB3200	READY
+34120_wb3840	34120	Pickup	Messenger	FN40B7	2	EU-RENAULT-TRUCKS-MESSENGER-B120-35-CHASSIS-CAB-01	MEDIUM	WB3840	READY
+34129	34129	Van	Messenger	FN60	3	EU-RENAULT-TRUCKS-MESSENGER-VAN-WB3840-MEDIUMROOF-01	MEDIUM	Standard 14m3 WB3840 medium-roof production exterior	READY
+34118_wb3200	34118	Pickup	Messenger	FN60F5	2	EU-RENAULT-TRUCKS-MESSENGER-B120-35-CHASSIS-CAB-WB3200-01	HIGH	WB3200	READY
+34118_wb3840	34118	Pickup	Messenger	FN60F5	2	EU-RENAULT-TRUCKS-MESSENGER-B120-35-CHASSIS-CAB-01	HIGH	WB3840	READY
+34119	34119	Van	Messenger	FN60F5	3	EU-RENAULT-TRUCKS-MESSENGER-VAN-WB3840-MEDIUMROOF-01	MEDIUM	Standard 14m3 WB3840 medium-roof production exterior	READY
+34121_wb3200	34121	Pickup	Messenger	FN60F7	2	EU-RENAULT-TRUCKS-MESSENGER-B120-35-CHASSIS-CAB-WB3200-01	MEDIUM	WB3200	READY
+34121_wb3840	34121	Pickup	Messenger	FN60F7	2	EU-RENAULT-TRUCKS-MESSENGER-B120-35-CHASSIS-CAB-01	MEDIUM	WB3840	READY
+34122	34122	Van	Messenger	FN60F7	3	EU-RENAULT-TRUCKS-MESSENGER-VAN-WB3840-MEDIUMROOF-01	MEDIUM	Standard 14m3 WB3840 medium-roof production exterior	READY
+34123_wb3200	34123	Pickup	Messenger	FN60F6	2	EU-RENAULT-TRUCKS-MESSENGER-B120-35-CHASSIS-CAB-WB3200-01	MEDIUM	WB3200	READY
+34123_wb3840	34123	Pickup	Messenger	FN60F6	2	EU-RENAULT-TRUCKS-MESSENGER-B120-35-CHASSIS-CAB-01	MEDIUM	WB3840	READY
+34124_wb3200	34124	Pickup	Messenger	FN60F8	2	EU-RENAULT-TRUCKS-MESSENGER-B120-35-CHASSIS-CAB-WB3200-01	MEDIUM	WB3200	READY
+34124_wb3840	34124	Pickup	Messenger	FN60F8	2	EU-RENAULT-TRUCKS-MESSENGER-B120-35-CHASSIS-CAB-01	MEDIUM	WB3840	READY
+34158	34158	Van	Messenger	FN40B5	3	EU-RENAULT-TRUCKS-MESSENGER-VAN-WB3840-MEDIUMROOF-01	HIGH	Standard 14m3 WB3840 medium-roof production exterior	READY
+34160	34160	Pickup	Messenger	FN40B5	2	EU-RENAULT-TRUCKS-MESSENGER-B80-35-CHASSIS-CAB-01	HIGH		READY
+34376	34376	Van	Messenger	FN40B5	3	EU-RENAULT-TRUCKS-MESSENGER-VAN-WB3840-MEDIUMROOF-01	HIGH	Standard 14m3 WB3840 medium-roof production exterior	READY
+34378	34378	Pickup	Messenger	FN40B5	2	EU-RENAULT-TRUCKS-MESSENGER-B80-35-CHASSIS-CAB-01	HIGH		READY
+34157	34157	Van	Messenger	FN40A5	3	EU-RENAULT-TRUCKS-MESSENGER-VAN-WB3840-MEDIUMROOF-01	HIGH	Standard 14m3 WB3840 medium-roof production exterior	READY
+34159	34159	Pickup	Messenger	FN40A5	2	EU-RENAULT-TRUCKS-MESSENGER-B120-35-CHASSIS-CAB-01	MEDIUM	WB3840	READY
+34375	34375	Van	Messenger	FN40A5	3	EU-RENAULT-TRUCKS-MESSENGER-VAN-WB3840-MEDIUMROOF-01	HIGH	Standard 14m3 WB3840 medium-roof production exterior	READY
+34377	34377	Pickup	Messenger	FN40A5	2	EU-RENAULT-TRUCKS-MESSENGER-B120-35-CHASSIS-CAB-01	MEDIUM	WB3840	READY
+34885	34885	Hatchback	I		2	EU-REVA-I-HATCHBACK-01	HIGH		READY
+13903	13903	Sedan	4/72		4	EU-RILEY-4-72-SEDAN-01	HIGH		READY
+13904	13904	Sedan	Elf Mk II/III		2	EU-RILEY-ELF-MK-II-III-SEDAN-01	HIGH		READY
+13906	13906	Sedan	Kestrel 1100		4	EU-RILEY-KESTREL-ADO16-SEDAN-01	HIGH		READY
+13905	13905	Sedan	Kestrel 1300		4	EU-RILEY-KESTREL-ADO16-SEDAN-01	HIGH		READY
+161885	161885	Coupe	Nevera		2	EU-RIMAC-NEVERA-COUPE-01	HIGH		READY
+801483	801483	Van	EDV 500	RCV	2	EU-RIVIAN-EDV-500-VAN-01	HIGH	European EDV 500 exterior	READY
+48552	48552	Sedan	Corniche I Saloon		2	EU-ROLLS-ROYCE-CORNICHE-I-SALOON-01	HIGH		READY
+116776	116776	Convertible	Corniche II		2	EU-ROLLS-ROYCE-CORNICHE-II-CONVERTIBLE-01	HIGH		READY
+12187	12187	Convertible	Corniche IV		2	EU-ROLLS-ROYCE-CORNICHE-IV-CONVERTIBLE-01	MEDIUM	Standard Corniche IV production exterior	READY
+14719	14719	Convertible	Corniche V		2	EU-ROLLS-ROYCE-CORNICHE-V-CONVERTIBLE-01	HIGH		READY
+802813	802813	SUV	Cullinan Series II		5	EU-ROLLS-ROYCE-CULLINAN-SERIES-II-SUV-01	MEDIUM	Series II standard production exterior	READY
+117936	117936	Convertible	Dawn		2	EU-ROLLS-ROYCE-DAWN-CONVERTIBLE-01	HIGH		READY
+128144	128144	Convertible	Dawn		2	EU-ROLLS-ROYCE-DAWN-CONVERTIBLE-01	HIGH	Ordinary trim differences do not change exterior	READY
+34829	34829	Sedan	Ghost I		4	EU-ROLLS-ROYCE-GHOST-I-SEDAN-01	HIGH	Facelift dimensions treated as unchanged	READY
+119914	119914	Sedan	Ghost I		4	EU-ROLLS-ROYCE-GHOST-I-SEDAN-01	HIGH		READY
+100502	100502	Sedan	Ghost I		4	EU-ROLLS-ROYCE-GHOST-I-SEDAN-01	HIGH	V-Specification does not change exterior	READY
+148391	148391	Sedan	Ghost II		4	EU-ROLLS-ROYCE-GHOST-II-SEDAN-01	HIGH		READY
+100709	100709	Sedan	Park Ward		4	EU-ROLLS-ROYCE-PARK-WARD-SEDAN-01	HIGH		READY
+34893_prefl	34893	Coupe	Phantom VII		2	EU-ROLLS-ROYCE-PHANTOM-VII-COUPE-PREFL-01	HIGH	Pre-2012 exterior branch	READY
+34893_facelift	34893	Coupe	Phantom VII facelift 2012		2	EU-ROLLS-ROYCE-PHANTOM-VII-COUPE-FACELIFT-01	HIGH	2012 facelift exterior branch	READY
+17329_prefl	17329	Sedan	Phantom VII		4	EU-ROLLS-ROYCE-PHANTOM-VII-SEDAN-PREFL-01	HIGH	Pre-2012 exterior branch	READY
+17329_facelift	17329	Sedan	Phantom VII facelift 2012		4	EU-ROLLS-ROYCE-PHANTOM-VII-SEDAN-FACELIFT-01	HIGH	2012 facelift exterior branch	READY
+34830_prefl	34830	Convertible	Phantom VII Drophead Coupe		2	EU-ROLLS-ROYCE-PHANTOM-VII-DROPHEAD-PREFL-01	HIGH	Pre-2012 exterior branch	READY
+34830_facelift	34830	Convertible	Phantom VII Drophead Coupe facelift 2012		2	EU-ROLLS-ROYCE-PHANTOM-VII-DROPHEAD-FACELIFT-01	HIGH	2012 facelift exterior branch	READY
+150950	150950	Sedan	Silver Dawn	SZ	4	EU-ROLLS-ROYCE-SILVER-DAWN-SZ-SEDAN-01	HIGH		READY
+13322	13322	Sedan	Silver Seraph		4	EU-ROLLS-ROYCE-SILVER-SERAPH-SEDAN-01	HIGH		READY
+119802	119802	Sedan	Silver Shadow II		4	EU-ROLLS-ROYCE-SILVER-SHADOW-II-SEDAN-01	HIGH		READY
+12578	12578	Sedan	Silver Spirit Mk II-IV	SZ	4	EU-ROLLS-ROYCE-SILVER-SPIRIT-SZ-SEDAN-01	HIGH	Standard-wheelbase exterior	READY
+12616	12616	Sedan	Silver Spirit Mk II-IV	SZ	4	EU-ROLLS-ROYCE-SILVER-SPIRIT-SZ-SEDAN-01	HIGH	Standard-wheelbase exterior	READY
+12617	12617	Sedan	Silver Spirit Mk II-IV	SZ	4	EU-ROLLS-ROYCE-SILVER-SPIRIT-SZ-SEDAN-01	HIGH	Standard-wheelbase exterior	READY
+150586	150586	Sedan	Silver Spirit Mk I	SZ	4	EU-ROLLS-ROYCE-SILVER-SPIRIT-SZ-SEDAN-01	HIGH	Standard-wheelbase exterior	READY
+105768	105768	Sedan	Silver Spur Mk II/III	SZ	4	EU-ROLLS-ROYCE-SILVER-SPUR-II-III-SEDAN-01	MEDIUM	Pre-1996 long-wheelbase exterior	READY
+119818	119818	Sedan	New Silver Spur	SZ	4	EU-ROLLS-ROYCE-SILVER-SPUR-IV-SEDAN-01	HIGH	1996-model-year exterior	READY
+48578	48578	Sedan	Silver Wraith II		4	EU-ROLLS-ROYCE-SILVER-WRAITH-II-SEDAN-01	HIGH		READY
+801346	801346	Coupe	Spectre		2	EU-ROLLS-ROYCE-SPECTRE-COUPE-01	MEDIUM	Black Badge does not change standard exterior	READY
+155846	155846	Coupe	Spectre		2	EU-ROLLS-ROYCE-SPECTRE-COUPE-01	HIGH		READY
+18762	18762	Hatchback	25	RF		EU-ROVER-25-RF-HATCHBACK-01	HIGH	3-door and 5-door standard exterior dimensions treated as same	READY
+14630	14630	Hatchback	25	RF		EU-ROVER-25-RF-HATCHBACK-01	HIGH	3-door and 5-door standard exterior dimensions treated as same	READY
+14631	14631	Hatchback	25	RF		EU-ROVER-25-RF-HATCHBACK-01	HIGH	3-door and 5-door standard exterior dimensions treated as same	READY
+14632	14632	Hatchback	25	RF		EU-ROVER-25-RF-HATCHBACK-01	HIGH	3-door and 5-door standard exterior dimensions treated as same	READY
+14633	14633	Hatchback	25	RF		EU-ROVER-25-RF-HATCHBACK-01	HIGH	3-door and 5-door standard exterior dimensions treated as same	READY
+14634	14634	Hatchback	25	RF		EU-ROVER-25-RF-HATCHBACK-01	HIGH	3-door and 5-door standard exterior dimensions treated as same	READY
+14635	14635	Hatchback	25	RF		EU-ROVER-25-RF-HATCHBACK-01	HIGH	3-door and 5-door standard exterior dimensions treated as same	READY
+10439_prefl	10439	Sedan	75 pre-facelift	R40	4	EU-ROVER-75-R40-PREFL-SEDAN-01	HIGH	Pre-2004 exterior branch	READY
+10439_facelift	10439	Sedan	75 facelift 2004	R40	4	EU-ROVER-75-R40-FACELIFT-SEDAN-01	HIGH	2004 facelift dimension branch	READY
+15906_prefl	15906	Wagon	75 Tourer pre-facelift	R40	5	EU-ROVER-75-R40-PREFL-WAGON-01	HIGH	Pre-2004 exterior branch	READY
+15906_facelift	15906	Wagon	75 Tourer facelift 2004	R40	5	EU-ROVER-75-R40-FACELIFT-WAGON-01	HIGH	2004 facelift dimension branch	READY
+17787_prefl	17787	Sedan	75 pre-facelift	R40	4	EU-ROVER-75-R40-PREFL-SEDAN-01	HIGH	Pre-2004 exterior branch	READY
+17787_facelift	17787	Sedan	75 facelift 2004	R40	4	EU-ROVER-75-R40-FACELIFT-SEDAN-01	HIGH	2004 facelift dimension branch	READY
+17788_prefl	17788	Wagon	75 Tourer pre-facelift	R40	5	EU-ROVER-75-R40-PREFL-WAGON-01	HIGH	Pre-2004 exterior branch	READY
+17788_facelift	17788	Wagon	75 Tourer facelift 2004	R40	5	EU-ROVER-75-R40-FACELIFT-WAGON-01	HIGH	2004 facelift dimension branch	READY
+10463_prefl	10463	Sedan	75 pre-facelift	R40	4	EU-ROVER-75-R40-PREFL-SEDAN-01	HIGH	Pre-2004 exterior branch	READY
+10463_facelift	10463	Sedan	75 facelift 2004	R40	4	EU-ROVER-75-R40-FACELIFT-SEDAN-01	HIGH	2004 facelift dimension branch	READY
+15909_prefl	15909	Wagon	75 Tourer pre-facelift	R40	5	EU-ROVER-75-R40-PREFL-WAGON-01	HIGH	Pre-2004 exterior branch	READY
+15909_facelift	15909	Wagon	75 Tourer facelift 2004	R40	5	EU-ROVER-75-R40-FACELIFT-WAGON-01	HIGH	2004 facelift dimension branch	READY
+17785_prefl	17785	Sedan	75 pre-facelift	R40	4	EU-ROVER-75-R40-PREFL-SEDAN-01	HIGH	Pre-2004 exterior branch	READY
+17785_facelift	17785	Sedan	75 facelift 2004	R40	4	EU-ROVER-75-R40-FACELIFT-SEDAN-01	HIGH	2004 facelift dimension branch	READY
+17786_prefl	17786	Wagon	75 Tourer pre-facelift	R40	5	EU-ROVER-75-R40-PREFL-WAGON-01	HIGH	Pre-2004 exterior branch	READY
+17786_facelift	17786	Wagon	75 Tourer facelift 2004	R40	5	EU-ROVER-75-R40-FACELIFT-WAGON-01	HIGH	2004 facelift dimension branch	READY
+10461_prefl	10461	Sedan	75 pre-facelift	R40	4	EU-ROVER-75-R40-PREFL-SEDAN-01	HIGH	Pre-2004 exterior branch	READY
+10461_facelift	10461	Sedan	75 facelift 2004	R40	4	EU-ROVER-75-R40-FACELIFT-SEDAN-01	HIGH	2004 facelift dimension branch	READY
+15907_prefl	15907	Wagon	75 Tourer pre-facelift	R40	5	EU-ROVER-75-R40-PREFL-WAGON-01	HIGH	Pre-2004 exterior branch	READY
+15907_facelift	15907	Wagon	75 Tourer facelift 2004	R40	5	EU-ROVER-75-R40-FACELIFT-WAGON-01	HIGH	2004 facelift dimension branch	READY
+10462	10462	Sedan	75 pre-facelift	R40	4	EU-ROVER-75-R40-PREFL-SEDAN-01	HIGH	Production period ended before 2004 facelift	READY
+15908_prefl	15908	Wagon	75 Tourer pre-facelift	R40	5	EU-ROVER-75-R40-PREFL-WAGON-01	HIGH	Pre-2004 exterior branch	READY
+15908_facelift	15908	Wagon	75 Tourer facelift 2004	R40	5	EU-ROVER-75-R40-FACELIFT-WAGON-01	HIGH	2004 facelift dimension branch	READY
+14004	14004	Convertible	100 Cabrio	XP	2	EU-ROVER-100-XP-CONVERTIBLE-01	HIGH		READY
+13982	13982	Hatchback	100	XP		EU-ROVER-100-XP-HATCHBACK-01	HIGH		READY
+13853	13853	Hatchback	100	XP	3	EU-ROVER-100-XP-HATCHBACK-01	HIGH		READY
+100375	100375	Coupe	200	XW	2	EU-ROVER-200-XW-COUPE-01	HIGH		READY
+54948	54948	Sedan	400	RT	4	EU-ROVER-400-RT-SEDAN-01	HIGH		READY
+58727	58727	Hatchback	400	RT	5	EU-ROVER-400-RT-HATCHBACK-01	HIGH		READY
+58728	58728	Sedan	400	RT	4	EU-ROVER-400-RT-SEDAN-01	HIGH		READY
+13981	13981	Sedan	400	XW	4	EU-ROVER-400-XW-SEDAN-01	HIGH		READY
+13965	13965	Sedan	800	XS	4	EU-ROVER-800-1986-1999-SEDAN-01	HIGH		READY
+113055	113055	Coupe	800	RS	2	EU-ROVER-800-1992-1999-COUPE-01	HIGH		READY
+121925	121925	Sedan	800	RS	4	EU-ROVER-800-1986-1999-SEDAN-01	HIGH		READY
+116061	116061	Coupe	800	RS	2	EU-ROVER-800-1992-1999-COUPE-01	HIGH		READY
+12963	12963	Hatchback	800	RS	5	EU-ROVER-800-1988-1999-HATCHBACK-01	HIGH		READY
+12964	12964	Sedan	800	RS	4	EU-ROVER-800-1986-1999-SEDAN-01	HIGH		READY
+13966	13966	Sedan	800	XS	4	EU-ROVER-800-1986-1999-SEDAN-01	HIGH		READY
+5670	5670	Coupe	800	RS	2	EU-ROVER-800-1992-1999-COUPE-01	HIGH		READY
+5669	5669	Sedan	800	RS	4	EU-ROVER-800-1986-1999-SEDAN-01	HIGH		READY
+34259	34259	Pickup	Mascott Phase I		2	EU-RENAULT-TRUCKS-MASCOTT-PHASE-I-CHASSIS-CAB-WB3630-01	MEDIUM	Canonical standard WB3630 chassis-cab exterior; input does not identify wheelbase	READY
+34275	34275	Pickup	Mascott Phase II		2	EU-RENAULT-TRUCKS-MASCOTT-PHASE-II-CHASSIS-CAB-WB3630-01	HIGH	Canonical standard WB3630 chassis-cab exterior; input does not identify wheelbase	READY
+34277	34277	Pickup	Mascott Phase II		2	EU-RENAULT-TRUCKS-MASCOTT-PHASE-II-CHASSIS-CAB-WB3630-01	MEDIUM	GVW rating does not change the selected WB3630 chassis-cab exterior	READY
+34279	34279	Pickup	Mascott Phase II		2	EU-RENAULT-TRUCKS-MASCOTT-PHASE-II-CHASSIS-CAB-WB3630-01	MEDIUM	GVW rating does not change the selected WB3630 chassis-cab exterior	READY
+34127	34127	Pickup	Messenger	4X4F06	2	EU-RENAULT-TRUCKS-MESSENGER-B110-45-4X4-CHASSIS-CAB-01	HIGH	B110.45 4x4 chassis cab	READY
+`
+
+以下 DIMENSION_GROUP TSV 必须逐行原样完整输出，并写入 left18448_14601-14700_dimension_groups_final.tsv：
+`	sv
+DIMENSION_GROUP_ID	LengthMM	WidthMM	HeightMM	DimensionSource	SourceURL
+EU-RENAULT-TRUCKS-MESSENGER-B120-35-CHASSIS-CAB-WB3200-01	5431	2000	2427	Zoomcar Renault Trucks Messenger B120.35 chassis cab WB3200 specifications	https://zoomcar.fr/fiche-technique-utilitaire/renault-trucks/messenger-chassis-cabine-messenger-chassis-cab-b120-35-2-5-tbo-d-NAT58074.html
+EU-RENAULT-TRUCKS-MESSENGER-B120-35-CHASSIS-CAB-01	6071	2000	2426	ParuVendu Renault Trucks Messenger B120 35 chassis cab specifications	https://www.paruvendu.fr/fiches-techniques-utilitaire/renault-trucks/messenger/b120-35-2-5-tbo-d-8-cv-diesel/3058075/
+EU-RENAULT-TRUCKS-MESSENGER-B80-35-CHASSIS-CAB-01	5490	2000	2450	ParuVendu Renault Trucks Messenger B80 35 chassis cab specifications	https://www.paruvendu.fr/fiches-techniques-utilitaire/renault-trucks/messenger/b80-35-8-cv-diesel/3059423/
+EU-REVA-I-HATCHBACK-01	2638	1324	1510	Encycarpedia REVA G-Wiz i specifications	https://www.encycarpedia.com/reva/08-g-wiz-i-hatch
+EU-RILEY-4-72-SEDAN-01	4524	1613	1518	Automobile-Catalog 1964 Riley 4/Seventy-Two	https://www.automobile-catalog.com/car/1964/2991275/riley_4seventy-two.html
+EU-RILEY-ELF-MK-II-III-SEDAN-01	3310	1410	1346	Automobile-Catalog Riley Elf Mk II	https://www.automobile-catalog.com/car/1965/2991350/riley_elf_mk_ii.html
+EU-RILEY-KESTREL-ADO16-SEDAN-01	3727	1534	1346	Automobile-Catalog Riley Kestrel	https://www.automobile-catalog.com/car/1965/2991395/riley_kestrel.html
+EU-RIMAC-NEVERA-COUPE-01	4745	2052	1240	Rimac Automobili Nevera official specifications	https://www.rimac-automobili.com/nevera/
+EU-RIVIAN-EDV-500-VAN-01	6311	2035	2914	Rivian Commercial Van 500/700 2023 Fleet Customers Quick Reference	https://californiahvip.org/wp-content/uploads/2024/03/AL-MY24-Rivian-Spec-Sheet-240307.pdf
+EU-ROLLS-ROYCE-CORNICHE-I-SALOON-01	5169	1829	1492	Automobile-Catalog 1971 Rolls-Royce Corniche Saloon	https://www.automobile-catalog.com/car/1971/2992805/rolls-royce_corniche_saloon.html
+EU-ROLLS-ROYCE-CORNICHE-II-CONVERTIBLE-01	5169	1836	1485	Auto-Data Rolls-Royce Corniche II	https://www.auto-data.net/fr/rolls-royce-corniche-ii-6.75-v8-223hp-automatic-57011
+EU-ROLLS-ROYCE-CORNICHE-IV-CONVERTIBLE-01	5196	1836	1518	Automobile-Catalog 1993 Rolls-Royce Corniche IV	https://www.automobile-catalog.com/car/1993/2993120/rolls-royce_corniche_iv.html
+EU-ROLLS-ROYCE-CORNICHE-V-CONVERTIBLE-01	5405	1910	1475	Auto-Data Rolls-Royce Corniche V	https://www.auto-data.net/en/rolls-royce-corniche-v-6.8-i-v8-turbo-329hp-10935
+EU-ROLLS-ROYCE-CULLINAN-SERIES-II-SUV-01	5341	2000	1835	Auto-Data Rolls-Royce Cullinan specifications	https://www.auto-data.net/en/rolls-royce-cullinan-model-2367
+EU-ROLLS-ROYCE-DAWN-CONVERTIBLE-01	5285	1947	1502	Rolls-Royce Motor Cars Dawn official technical data	https://www.press.rolls-roycemotorcars.com/rolls-royce-motor-cars-pressclub/article/detail/T0233267EN/rolls-royce-dawn-%E2%80%93-uncompromised-drophead-luxury?language=en
+EU-ROLLS-ROYCE-GHOST-I-SEDAN-01	5399	1948	1550	Auto-Data Rolls-Royce Ghost I specifications	https://www.auto-data.net/en/rolls-royce-ghost-i-6.6-v12-48v-570hp-10943
+EU-ROLLS-ROYCE-GHOST-II-SEDAN-01	5546	1978	1571	Carfolio 2020 Rolls-Royce Ghost specifications	https://www.carfolio.com/rolls-royce-ghost-703681
+EU-ROLLS-ROYCE-PARK-WARD-SEDAN-01	5640	1930	1515	Auto-Data Rolls-Royce Park Ward	https://www.auto-data.net/en/rolls-royce-park-ward-generation-2261
+EU-ROLLS-ROYCE-PHANTOM-VII-COUPE-PREFL-01	5609	1987	1592	Auto-Data Rolls-Royce Phantom Coupe	https://www.auto-data.net/en/rolls-royce-phantom-coupe-generation-2262
+EU-ROLLS-ROYCE-PHANTOM-VII-COUPE-FACELIFT-01	5612	1987	1598	Auto-Data Rolls-Royce Phantom Coupe facelift 2012	https://www.auto-data.net/en/rolls-royce-phantom-coupe-facelift-2012-generation-4940
+EU-ROLLS-ROYCE-PHANTOM-VII-SEDAN-PREFL-01	5834	1990	1632	Auto-Data Rolls-Royce Phantom VII	https://www.auto-data.net/en/rolls-royce-phantom-vii-generation-2266
+EU-ROLLS-ROYCE-PHANTOM-VII-SEDAN-FACELIFT-01	5842	1990	1638	Auto-Data Rolls-Royce Phantom VII facelift 2012	https://www.auto-data.net/en/rolls-royce-phantom-vii-facelift-2012-generation-4938
+EU-ROLLS-ROYCE-PHANTOM-VII-DROPHEAD-PREFL-01	5609	1987	1581	Auto-Data Rolls-Royce Phantom Drophead Coupe	https://www.auto-data.net/en/rolls-royce-phantom-drophead-coupe-generation-2268
+EU-ROLLS-ROYCE-PHANTOM-VII-DROPHEAD-FACELIFT-01	5612	1987	1566	Auto-Data Rolls-Royce Phantom Drophead Coupe facelift 2012	https://www.auto-data.net/en/rolls-royce-phantom-drophead-coupe-facelift-2012-generation-4941
+EU-ROLLS-ROYCE-SILVER-DAWN-SZ-SEDAN-01	5395	1914	1480	Automobile-Catalog 1997 Rolls-Royce Silver Dawn	https://www.automobile-catalog.com/car/1997/2993810/rolls-royce_silver_dawn.html
+EU-ROLLS-ROYCE-SILVER-SERAPH-SEDAN-01	5390	1932	1515	Auto-Data Rolls-Royce Silver Seraph	https://www.auto-data.net/en/rolls-royce-silver-seraph-5.4-i-v12-326hp-10938
+EU-ROLLS-ROYCE-SILVER-SHADOW-II-SEDAN-01	5194	1822	1518	Automobile-Catalog 1978 Rolls-Royce Silver Shadow II	https://www.automobile-catalog.com/car/1978/36380/rolls-royce_silver_shadow_ii.html
+EU-ROLLS-ROYCE-SILVER-SPIRIT-SZ-SEDAN-01	5268	1887	1485	Automobile-Catalog 1986 Rolls-Royce Silver Spirit	https://www.automobile-catalog.com/car/1986/2993360/rolls-royce_silver_spirit.html
+EU-ROLLS-ROYCE-SILVER-SPUR-II-III-SEDAN-01	5370	1887	1485	Automobile-Catalog 1994 Rolls-Royce Silver Spur III	https://www.automobile-catalog.com/car/1994/2993600/rolls-royce_silver_spur_iii.html
+EU-ROLLS-ROYCE-SILVER-SPUR-IV-SEDAN-01	5395	1914	1485	Automobile-Catalog 1996 Rolls-Royce Silver Spur	https://www.automobile-catalog.com/car/1996/2993765/rolls-royce_silver_spur.html
+EU-ROLLS-ROYCE-SILVER-WRAITH-II-SEDAN-01	5296	1822	1518	Automobile-Catalog 1980 Rolls-Royce Silver Wraith II	https://www.automobile-catalog.com/car/1980/44210/rolls-royce_silver_wraith_ii.html
+EU-ROLLS-ROYCE-SPECTRE-COUPE-01	5490	2015	1575	Rolls-Royce Motor Cars Spectre final technical data	https://www.press.rolls-roycemotorcars.com/rolls-royce-motor-cars-pressclub/article/detail/T0422818EN/rolls-royce-spectre%3A-the-rolls-royce-that-changes-everything?language=en
+EU-ROVER-25-RF-HATCHBACK-01	3990	1688	1417	Auto-Data Rover 25 RF 1.6 16V specifications	https://www.auto-data.net/en/rover-25-rf-1.6-i-16v-109hp-11584
+EU-ROVER-75-R40-PREFL-SEDAN-01	4747	1778	1424	Auto-Data Rover 75 pre-facelift generation specifications	https://www.auto-data.net/en/rover-75-generation-2464
+EU-ROVER-75-R40-FACELIFT-SEDAN-01	4749	1778	1393	MG Rover Australia Rover 75 brochure July 2004	https://roverownersclub.com.au/wp-content/uploads/2016/05/63-Rover-75-75-Tourer-Publication-MGRA-75-07-04B-July-2004.pdf
+EU-ROVER-75-R40-PREFL-WAGON-01	4792	1778	1424	Automobile-Catalog 2001 Rover 75 1.8 Tourer	https://www.automobile-catalog.com/car/2001/3015380/rover_75_1_8_tourer.html
+EU-ROVER-75-R40-FACELIFT-WAGON-01	4791	1778	1435	Automobile-Catalog 2004 Rover 75 1.8 T Tourer phase II	https://www.automobile-catalog.com/car/2004/3015860/rover_75_1_8_t_tourer.html
+EU-ROVER-100-XP-CONVERTIBLE-01	3521	1550	1395	Auto-Data Rover 100 Cabrio XP 114	https://www.auto-data.net/en/rover-100-cabrio-xp-114-75hp-11496
+EU-ROVER-100-XP-HATCHBACK-01	3521	1550	1377	Auto-Data Rover 100 Metro XP 114 GTI 16V	https://www.auto-data.net/en/rover-100-metro-xp-114-gti-16v-103hp-11499
+EU-ROVER-200-XW-COUPE-01	4270	1680	1370	Auto-Data Rover 200 Coupe XW 216i specifications	https://www.auto-data.net/en/rover-200-coupe-xw-216i-111hp-11562
+EU-ROVER-400-RT-SEDAN-01	4491	1695	1390	Auto-Data Rover 400 RT generation specifications	https://www.auto-data.net/en/rover-400-rt-generation-2460
+EU-ROVER-400-RT-HATCHBACK-01	4320	1700	1390	Auto-Data Rover 400 Hatchback RT 416 Si specifications	https://www.auto-data.net/en/rover-400-hatchback-rt-416-si-111hp-11629
+EU-ROVER-400-XW-SEDAN-01	4370	1680	1400	Auto-Data Rover 400 XW 418 D specifications	https://www.auto-data.net/en/rover-400-xw-418-d-67hp-11636
+EU-ROVER-800-1986-1999-SEDAN-01	4882	1730	1393	Auto-Data Rover 800 820 I/SI RS	https://www.auto-data.net/en/rover-800-820-i-si-rs-136hp-11521
+EU-ROVER-800-1992-1999-COUPE-01	4882	1730	1393	Auto-Data Rover 800 Coupe 820i	https://www.auto-data.net/en/rover-800-coupe-820i-136hp-11532
+EU-ROVER-800-1988-1999-HATCHBACK-01	4880	1730	1390	Auto-Data Rover 800 Hatchback 820 Ti	https://www.auto-data.net/en/rover-800-hatchback-820-ti-200hp-11543
+EU-RENAULT-TRUCKS-MASCOTT-PHASE-I-VAN-WB3630-01	5977	2093	2752	Hasznaltauto Renault Mascott 150.35/150.55 WB3630 specifications	https://katalogus.hasznaltauto.hu/renault/mascott_2.8_td_150.35_3.630_mm_e3/66208
+EU-RENAULT-TRUCKS-MASCOTT-PHASE-I-VAN-WB4130-01	6477	2093	2752	Hasznaltauto Renault Mascott 140.55 WB4130 specifications	https://katalogus.hasznaltauto.hu/renault/mascott_2.8_td_pr._140.55_4.130_mm/66207
+EU-RENAULT-TRUCKS-MASCOTT-PHASE-II-160-35-VAN-WB3630-01	6038	2043	2738	Hasznaltauto Renault Mascott 160.35 WB3630 specifications	https://katalogus.hasznaltauto.hu/renault/mascott_3.0_td_160.35_3.630_mm/66220
+EU-RENAULT-TRUCKS-MASCOTT-PHASE-II-160-35-VAN-WB4130-01	6398	2043	2708	Hasznaltauto Renault Mascott 160.35 WB4130 specifications	https://katalogus.hasznaltauto.hu/renault/mascott_3.0_td_160.35_4.130_mm/66221
+EU-RENAULT-TRUCKS-MASCOTT-PHASE-II-160-55-VAN-WB3630-01	6038	2043	2738	Hasznaltauto Renault Mascott 160.55 WB3630 specifications	https://katalogus.hasznaltauto.hu/renault/mascott_3.0_td_160.55_3.630_mm/66222
+EU-RENAULT-TRUCKS-MESSENGER-B110-45-4X4-VAN-01	5650	2000	2840	Zoomcar Renault Trucks Messenger Euro 2 B110 35 4x4 van specifications	https://zoomcar.fr/fiche-technique-utilitaire/renault-trucks/messenger-euro-2-fourgon-messenger-euro-2fgn-b110-35-4x4-NAT59420.html
+EU-RENAULT-TRUCKS-MESSENGER-VAN-WB3840-MEDIUMROOF-01	6290	2060	2840	Zoomcar Renault Trucks Messenger B80.35 14m3 complete exterior; Auto-Selection B80/B120 14m3 WB3840 medium-roof body match	https://zoomcar.fr/fiche-technique-utilitaire/renault-trucks/messenger-fourgon-b80-35-2-5-d-NAT58058.html
+EU-RENAULT-TRUCKS-MASCOTT-PHASE-I-CHASSIS-CAB-WB3630-01	7179	2093	2270	Zoomcar Renault Trucks Mascott CHC 150.35 WB3630 specifications	https://zoomcar.fr/fiche-technique/renault-trucks/mascott-chassis-cabine-chc-150-35-emp-3-630-NAT83435.html
+EU-RENAULT-TRUCKS-MASCOTT-PHASE-II-CHASSIS-CAB-WB3630-01	5998	2041	2262	Zoomcar Renault Trucks Mascott CHC 160.35 WB3630 specifications	https://zoomcar.fr/fiche-technique-utilitaire/renault-trucks/mascott-chassis-cabine-chc-160-35-emp-3-630-NAT87869.html
+EU-RENAULT-TRUCKS-MESSENGER-B110-45-4X4-CHASSIS-CAB-01	5000	2030	2710	Renault VI B110.45 4x4 technical data sheet 06/1996	https://brochure-camion.com/en/product/23-0062-renault-vi-b110-4x4-military-data-sheet/
+`
+
+【仍为 PENDING；只在说明中列出，禁止写入上述两张 READY 表】
+- 34125：complete same-configuration tractor exterior dimensions unavailable；映射缺少 DIMENSION_GROUP_ID
+- 34126：complete same-configuration tractor exterior dimensions unavailable；映射缺少 DIMENSION_GROUP_ID
+
+必须在同一回复中提供这两个精确文件名的可点击 sandbox 下载链接；不得遗漏、改写或重新研究本地 READY 快照。最后一行只能是“推进信号：ALMOST”，不要输出 COMPLETE 或 CONTINUE。
+
+
+--- Round 36 / checkpoint 续跑 ---
+## 1）证据穷尽说明
+
+剩余 `34125`、`34126` 已穷尽契约允许的可靠来源。现有资料无法提供 Messenger B120.55T 牵引车同一量产配置的完整长、无镜宽和高度；继续推进只能猜测、拼接普通底盘或其他车身配置，或降低证据标准，因此停止外部检索并执行 ALMOST 收尾。
+
+## 2）当前 READY/PENDING 计数
+
+* 整体 READY Ktype：98
+* READY 映射记录：122
+* PENDING Ktype：2
+* READY 映射引用尺寸组：56
+* 去重证据 URL：56
+
+机械检查已通过：122 个 `id` 唯一，全部 READY 映射引用闭合；56 个尺寸组 ID 唯一且无孤立组，三维均为正整数，`DimensionSource` 和直接 `SourceURL` 均非空。
+
+## 3）剩余 PENDING 及具体阻塞原因
+
+* `34125`：`complete same-configuration tractor exterior dimensions unavailable`；Messenger B120.55T 牵引车 `FN60F5` 缺少同配置完整外廓三维，无法分配 `DIMENSION_GROUP_ID`。
+* `34126`：`complete same-configuration tractor exterior dimensions unavailable`；Messenger B120.55T 牵引车 `FN60F7` 缺少同配置完整外廓三维，无法分配 `DIMENSION_GROUP_ID`。
+
+## 4）全部当前 READY Ktype 映射 TSV
+
+```tsv
+id	Ktype	NormalizedBodyStyle	Generation	BodyCode	Doors	DIMENSION_GROUP_ID	MatchConfidence	Notes	IterationStatus
+34258_wb3630	34258	Van	Mascott Phase I		4	EU-RENAULT-TRUCKS-MASCOTT-PHASE-I-VAN-WB3630-01	HIGH	WB3630	READY
+34258_wb4130	34258	Van	Mascott Phase I		4	EU-RENAULT-TRUCKS-MASCOTT-PHASE-I-VAN-WB4130-01	HIGH	WB4130	READY
+34260_wb3630	34260	Van	Mascott Phase I		4	EU-RENAULT-TRUCKS-MASCOTT-PHASE-I-VAN-WB3630-01	HIGH	WB3630	READY
+34260_wb4130	34260	Van	Mascott Phase I		4	EU-RENAULT-TRUCKS-MASCOTT-PHASE-I-VAN-WB4130-01	HIGH	WB4130	READY
+34261_wb3630	34261	Van	Mascott Phase I		4	EU-RENAULT-TRUCKS-MASCOTT-PHASE-I-VAN-WB3630-01	HIGH	WB3630	READY
+34261_wb4130	34261	Van	Mascott Phase I		4	EU-RENAULT-TRUCKS-MASCOTT-PHASE-I-VAN-WB4130-01	HIGH	WB4130	READY
+34276_wb3630	34276	Van	Mascott Phase II		4	EU-RENAULT-TRUCKS-MASCOTT-PHASE-II-160-35-VAN-WB3630-01	HIGH	WB3630	READY
+34276_wb4130	34276	Van	Mascott Phase II		4	EU-RENAULT-TRUCKS-MASCOTT-PHASE-II-160-35-VAN-WB4130-01	HIGH	WB4130	READY
+34278	34278	Van	Mascott Phase II	A02300015	4	EU-RENAULT-TRUCKS-MASCOTT-PHASE-II-160-55-VAN-WB3630-01	HIGH	WB3630	READY
+34128	34128	Van	Messenger	4X4F06	4	EU-RENAULT-TRUCKS-MESSENGER-B110-45-4X4-VAN-01	HIGH	B110.45 4x4 standard van exterior	READY
+34117_wb3200	34117	Pickup	Messenger	FN40B5	2	EU-RENAULT-TRUCKS-MESSENGER-B120-35-CHASSIS-CAB-WB3200-01	HIGH	WB3200	READY
+34117_wb3840	34117	Pickup	Messenger	FN40B5	2	EU-RENAULT-TRUCKS-MESSENGER-B120-35-CHASSIS-CAB-01	HIGH	WB3840	READY
+34120_wb3200	34120	Pickup	Messenger	FN40B7	2	EU-RENAULT-TRUCKS-MESSENGER-B120-35-CHASSIS-CAB-WB3200-01	MEDIUM	WB3200	READY
+34120_wb3840	34120	Pickup	Messenger	FN40B7	2	EU-RENAULT-TRUCKS-MESSENGER-B120-35-CHASSIS-CAB-01	MEDIUM	WB3840	READY
+34129	34129	Van	Messenger	FN60	3	EU-RENAULT-TRUCKS-MESSENGER-VAN-WB3840-MEDIUMROOF-01	MEDIUM	Standard 14m3 WB3840 medium-roof production exterior	READY
+34118_wb3200	34118	Pickup	Messenger	FN60F5	2	EU-RENAULT-TRUCKS-MESSENGER-B120-35-CHASSIS-CAB-WB3200-01	HIGH	WB3200	READY
+34118_wb3840	34118	Pickup	Messenger	FN60F5	2	EU-RENAULT-TRUCKS-MESSENGER-B120-35-CHASSIS-CAB-01	HIGH	WB3840	READY
+34119	34119	Van	Messenger	FN60F5	3	EU-RENAULT-TRUCKS-MESSENGER-VAN-WB3840-MEDIUMROOF-01	MEDIUM	Standard 14m3 WB3840 medium-roof production exterior	READY
+34121_wb3200	34121	Pickup	Messenger	FN60F7	2	EU-RENAULT-TRUCKS-MESSENGER-B120-35-CHASSIS-CAB-WB3200-01	MEDIUM	WB3200	READY
+34121_wb3840	34121	Pickup	Messenger	FN60F7	2	EU-RENAULT-TRUCKS-MESSENGER-B120-35-CHASSIS-CAB-01	MEDIUM	WB3840	READY
+34122	34122	Van	Messenger	FN60F7	3	EU-RENAULT-TRUCKS-MESSENGER-VAN-WB3840-MEDIUMROOF-01	MEDIUM	Standard 14m3 WB3840 medium-roof production exterior	READY
+34123_wb3200	34123	Pickup	Messenger	FN60F6	2	EU-RENAULT-TRUCKS-MESSENGER-B120-35-CHASSIS-CAB-WB3200-01	MEDIUM	WB3200	READY
+34123_wb3840	34123	Pickup	Messenger	FN60F6	2	EU-RENAULT-TRUCKS-MESSENGER-B120-35-CHASSIS-CAB-01	MEDIUM	WB3840	READY
+34124_wb3200	34124	Pickup	Messenger	FN60F8	2	EU-RENAULT-TRUCKS-MESSENGER-B120-35-CHASSIS-CAB-WB3200-01	MEDIUM	WB3200	READY
+34124_wb3840	34124	Pickup	Messenger	FN60F8	2	EU-RENAULT-TRUCKS-MESSENGER-B120-35-CHASSIS-CAB-01	MEDIUM	WB3840	READY
+34158	34158	Van	Messenger	FN40B5	3	EU-RENAULT-TRUCKS-MESSENGER-VAN-WB3840-MEDIUMROOF-01	HIGH	Standard 14m3 WB3840 medium-roof production exterior	READY
+34160	34160	Pickup	Messenger	FN40B5	2	EU-RENAULT-TRUCKS-MESSENGER-B80-35-CHASSIS-CAB-01	HIGH		READY
+34376	34376	Van	Messenger	FN40B5	3	EU-RENAULT-TRUCKS-MESSENGER-VAN-WB3840-MEDIUMROOF-01	HIGH	Standard 14m3 WB3840 medium-roof production exterior	READY
+34378	34378	Pickup	Messenger	FN40B5	2	EU-RENAULT-TRUCKS-MESSENGER-B80-35-CHASSIS-CAB-01	HIGH		READY
+34157	34157	Van	Messenger	FN40A5	3	EU-RENAULT-TRUCKS-MESSENGER-VAN-WB3840-MEDIUMROOF-01	HIGH	Standard 14m3 WB3840 medium-roof production exterior	READY
+34159	34159	Pickup	Messenger	FN40A5	2	EU-RENAULT-TRUCKS-MESSENGER-B120-35-CHASSIS-CAB-01	MEDIUM	WB3840	READY
+34375	34375	Van	Messenger	FN40A5	3	EU-RENAULT-TRUCKS-MESSENGER-VAN-WB3840-MEDIUMROOF-01	HIGH	Standard 14m3 WB3840 medium-roof production exterior	READY
+34377	34377	Pickup	Messenger	FN40A5	2	EU-RENAULT-TRUCKS-MESSENGER-B120-35-CHASSIS-CAB-01	MEDIUM	WB3840	READY
+34885	34885	Hatchback	I		2	EU-REVA-I-HATCHBACK-01	HIGH		READY
+13903	13903	Sedan	4/72		4	EU-RILEY-4-72-SEDAN-01	HIGH		READY
+13904	13904	Sedan	Elf Mk II/III		2	EU-RILEY-ELF-MK-II-III-SEDAN-01	HIGH		READY
+13906	13906	Sedan	Kestrel 1100		4	EU-RILEY-KESTREL-ADO16-SEDAN-01	HIGH		READY
+13905	13905	Sedan	Kestrel 1300		4	EU-RILEY-KESTREL-ADO16-SEDAN-01	HIGH		READY
+161885	161885	Coupe	Nevera		2	EU-RIMAC-NEVERA-COUPE-01	HIGH		READY
+801483	801483	Van	EDV 500	RCV	2	EU-RIVIAN-EDV-500-VAN-01	HIGH	European EDV 500 exterior	READY
+48552	48552	Sedan	Corniche I Saloon		2	EU-ROLLS-ROYCE-CORNICHE-I-SALOON-01	HIGH		READY
+116776	116776	Convertible	Corniche II		2	EU-ROLLS-ROYCE-CORNICHE-II-CONVERTIBLE-01	HIGH		READY
+12187	12187	Convertible	Corniche IV		2	EU-ROLLS-ROYCE-CORNICHE-IV-CONVERTIBLE-01	MEDIUM	Standard Corniche IV production exterior	READY
+14719	14719	Convertible	Corniche V		2	EU-ROLLS-ROYCE-CORNICHE-V-CONVERTIBLE-01	HIGH		READY
+802813	802813	SUV	Cullinan Series II		5	EU-ROLLS-ROYCE-CULLINAN-SERIES-II-SUV-01	MEDIUM	Series II standard production exterior	READY
+117936	117936	Convertible	Dawn		2	EU-ROLLS-ROYCE-DAWN-CONVERTIBLE-01	HIGH		READY
+128144	128144	Convertible	Dawn		2	EU-ROLLS-ROYCE-DAWN-CONVERTIBLE-01	HIGH	Ordinary trim differences do not change exterior	READY
+34829	34829	Sedan	Ghost I		4	EU-ROLLS-ROYCE-GHOST-I-SEDAN-01	HIGH	Facelift dimensions treated as unchanged	READY
+119914	119914	Sedan	Ghost I		4	EU-ROLLS-ROYCE-GHOST-I-SEDAN-01	HIGH		READY
+100502	100502	Sedan	Ghost I		4	EU-ROLLS-ROYCE-GHOST-I-SEDAN-01	HIGH	V-Specification does not change exterior	READY
+148391	148391	Sedan	Ghost II		4	EU-ROLLS-ROYCE-GHOST-II-SEDAN-01	HIGH		READY
+100709	100709	Sedan	Park Ward		4	EU-ROLLS-ROYCE-PARK-WARD-SEDAN-01	HIGH		READY
+34893_prefl	34893	Coupe	Phantom VII		2	EU-ROLLS-ROYCE-PHANTOM-VII-COUPE-PREFL-01	HIGH	Pre-2012 exterior branch	READY
+34893_facelift	34893	Coupe	Phantom VII facelift 2012		2	EU-ROLLS-ROYCE-PHANTOM-VII-COUPE-FACELIFT-01	HIGH	2012 facelift exterior branch	READY
+17329_prefl	17329	Sedan	Phantom VII		4	EU-ROLLS-ROYCE-PHANTOM-VII-SEDAN-PREFL-01	HIGH	Pre-2012 exterior branch	READY
+17329_facelift	17329	Sedan	Phantom VII facelift 2012		4	EU-ROLLS-ROYCE-PHANTOM-VII-SEDAN-FACELIFT-01	HIGH	2012 facelift exterior branch	READY
+34830_prefl	34830	Convertible	Phantom VII Drophead Coupe		2	EU-ROLLS-ROYCE-PHANTOM-VII-DROPHEAD-PREFL-01	HIGH	Pre-2012 exterior branch	READY
+34830_facelift	34830	Convertible	Phantom VII Drophead Coupe facelift 2012		2	EU-ROLLS-ROYCE-PHANTOM-VII-DROPHEAD-FACELIFT-01	HIGH	2012 facelift exterior branch	READY
+150950	150950	Sedan	Silver Dawn	SZ	4	EU-ROLLS-ROYCE-SILVER-DAWN-SZ-SEDAN-01	HIGH		READY
+13322	13322	Sedan	Silver Seraph		4	EU-ROLLS-ROYCE-SILVER-SERAPH-SEDAN-01	HIGH		READY
+119802	119802	Sedan	Silver Shadow II		4	EU-ROLLS-ROYCE-SILVER-SHADOW-II-SEDAN-01	HIGH		READY
+12578	12578	Sedan	Silver Spirit Mk II-IV	SZ	4	EU-ROLLS-ROYCE-SILVER-SPIRIT-SZ-SEDAN-01	HIGH	Standard-wheelbase exterior	READY
+12616	12616	Sedan	Silver Spirit Mk II-IV	SZ	4	EU-ROLLS-ROYCE-SILVER-SPIRIT-SZ-SEDAN-01	HIGH	Standard-wheelbase exterior	READY
+12617	12617	Sedan	Silver Spirit Mk II-IV	SZ	4	EU-ROLLS-ROYCE-SILVER-SPIRIT-SZ-SEDAN-01	HIGH	Standard-wheelbase exterior	READY
+150586	150586	Sedan	Silver Spirit Mk I	SZ	4	EU-ROLLS-ROYCE-SILVER-SPIRIT-SZ-SEDAN-01	HIGH	Standard-wheelbase exterior	READY
+105768	105768	Sedan	Silver Spur Mk II/III	SZ	4	EU-ROLLS-ROYCE-SILVER-SPUR-II-III-SEDAN-01	MEDIUM	Pre-1996 long-wheelbase exterior	READY
+119818	119818	Sedan	New Silver Spur	SZ	4	EU-ROLLS-ROYCE-SILVER-SPUR-IV-SEDAN-01	HIGH	1996-model-year exterior	READY
+48578	48578	Sedan	Silver Wraith II		4	EU-ROLLS-ROYCE-SILVER-WRAITH-II-SEDAN-01	HIGH		READY
+801346	801346	Coupe	Spectre		2	EU-ROLLS-ROYCE-SPECTRE-COUPE-01	MEDIUM	Black Badge does not change standard exterior	READY
+155846	155846	Coupe	Spectre		2	EU-ROLLS-ROYCE-SPECTRE-COUPE-01	HIGH		READY
+18762	18762	Hatchback	25	RF		EU-ROVER-25-RF-HATCHBACK-01	HIGH	3-door and 5-door standard exterior dimensions treated as same	READY
+14630	14630	Hatchback	25	RF		EU-ROVER-25-RF-HATCHBACK-01	HIGH	3-door and 5-door standard exterior dimensions treated as same	READY
+14631	14631	Hatchback	25	RF		EU-ROVER-25-RF-HATCHBACK-01	HIGH	3-door and 5-door standard exterior dimensions treated as same	READY
+14632	14632	Hatchback	25	RF		EU-ROVER-25-RF-HATCHBACK-01	HIGH	3-door and 5-door standard exterior dimensions treated as same	READY
+14633	14633	Hatchback	25	RF		EU-ROVER-25-RF-HATCHBACK-01	HIGH	3-door and 5-door standard exterior dimensions treated as same	READY
+14634	14634	Hatchback	25	RF		EU-ROVER-25-RF-HATCHBACK-01	HIGH	3-door and 5-door standard exterior dimensions treated as same	READY
+14635	14635	Hatchback	25	RF		EU-ROVER-25-RF-HATCHBACK-01	HIGH	3-door and 5-door standard exterior dimensions treated as same	READY
+10439_prefl	10439	Sedan	75 pre-facelift	R40	4	EU-ROVER-75-R40-PREFL-SEDAN-01	HIGH	Pre-2004 exterior branch	READY
+10439_facelift	10439	Sedan	75 facelift 2004	R40	4	EU-ROVER-75-R40-FACELIFT-SEDAN-01	HIGH	2004 facelift dimension branch	READY
+15906_prefl	15906	Wagon	75 Tourer pre-facelift	R40	5	EU-ROVER-75-R40-PREFL-WAGON-01	HIGH	Pre-2004 exterior branch	READY
+15906_facelift	15906	Wagon	75 Tourer facelift 2004	R40	5	EU-ROVER-75-R40-FACELIFT-WAGON-01	HIGH	2004 facelift dimension branch	READY
+17787_prefl	17787	Sedan	75 pre-facelift	R40	4	EU-ROVER-75-R40-PREFL-SEDAN-01	HIGH	Pre-2004 exterior branch	READY
+17787_facelift	17787	Sedan	75 facelift 2004	R40	4	EU-ROVER-75-R40-FACELIFT-SEDAN-01	HIGH	2004 facelift dimension branch	READY
+17788_prefl	17788	Wagon	75 Tourer pre-facelift	R40	5	EU-ROVER-75-R40-PREFL-WAGON-01	HIGH	Pre-2004 exterior branch	READY
+17788_facelift	17788	Wagon	75 Tourer facelift 2004	R40	5	EU-ROVER-75-R40-FACELIFT-WAGON-01	HIGH	2004 facelift dimension branch	READY
+10463_prefl	10463	Sedan	75 pre-facelift	R40	4	EU-ROVER-75-R40-PREFL-SEDAN-01	HIGH	Pre-2004 exterior branch	READY
+10463_facelift	10463	Sedan	75 facelift 2004	R40	4	EU-ROVER-75-R40-FACELIFT-SEDAN-01	HIGH	2004 facelift dimension branch	READY
+15909_prefl	15909	Wagon	75 Tourer pre-facelift	R40	5	EU-ROVER-75-R40-PREFL-WAGON-01	HIGH	Pre-2004 exterior branch	READY
+15909_facelift	15909	Wagon	75 Tourer facelift 2004	R40	5	EU-ROVER-75-R40-FACELIFT-WAGON-01	HIGH	2004 facelift dimension branch	READY
+17785_prefl	17785	Sedan	75 pre-facelift	R40	4	EU-ROVER-75-R40-PREFL-SEDAN-01	HIGH	Pre-2004 exterior branch	READY
+17785_facelift	17785	Sedan	75 facelift 2004	R40	4	EU-ROVER-75-R40-FACELIFT-SEDAN-01	HIGH	2004 facelift dimension branch	READY
+17786_prefl	17786	Wagon	75 Tourer pre-facelift	R40	5	EU-ROVER-75-R40-PREFL-WAGON-01	HIGH	Pre-2004 exterior branch	READY
+17786_facelift	17786	Wagon	75 Tourer facelift 2004	R40	5	EU-ROVER-75-R40-FACELIFT-WAGON-01	HIGH	2004 facelift dimension branch	READY
+10461_prefl	10461	Sedan	75 pre-facelift	R40	4	EU-ROVER-75-R40-PREFL-SEDAN-01	HIGH	Pre-2004 exterior branch	READY
+10461_facelift	10461	Sedan	75 facelift 2004	R40	4	EU-ROVER-75-R40-FACELIFT-SEDAN-01	HIGH	2004 facelift dimension branch	READY
+15907_prefl	15907	Wagon	75 Tourer pre-facelift	R40	5	EU-ROVER-75-R40-PREFL-WAGON-01	HIGH	Pre-2004 exterior branch	READY
+15907_facelift	15907	Wagon	75 Tourer facelift 2004	R40	5	EU-ROVER-75-R40-FACELIFT-WAGON-01	HIGH	2004 facelift dimension branch	READY
+10462	10462	Sedan	75 pre-facelift	R40	4	EU-ROVER-75-R40-PREFL-SEDAN-01	HIGH	Production period ended before 2004 facelift	READY
+15908_prefl	15908	Wagon	75 Tourer pre-facelift	R40	5	EU-ROVER-75-R40-PREFL-WAGON-01	HIGH	Pre-2004 exterior branch	READY
+15908_facelift	15908	Wagon	75 Tourer facelift 2004	R40	5	EU-ROVER-75-R40-FACELIFT-WAGON-01	HIGH	2004 facelift dimension branch	READY
+14004	14004	Convertible	100 Cabrio	XP	2	EU-ROVER-100-XP-CONVERTIBLE-01	HIGH		READY
+13982	13982	Hatchback	100	XP		EU-ROVER-100-XP-HATCHBACK-01	HIGH		READY
+13853	13853	Hatchback	100	XP	3	EU-ROVER-100-XP-HATCHBACK-01	HIGH		READY
+100375	100375	Coupe	200	XW	2	EU-ROVER-200-XW-COUPE-01	HIGH		READY
+54948	54948	Sedan	400	RT	4	EU-ROVER-400-RT-SEDAN-01	HIGH		READY
+58727	58727	Hatchback	400	RT	5	EU-ROVER-400-RT-HATCHBACK-01	HIGH		READY
+58728	58728	Sedan	400	RT	4	EU-ROVER-400-RT-SEDAN-01	HIGH		READY
+13981	13981	Sedan	400	XW	4	EU-ROVER-400-XW-SEDAN-01	HIGH		READY
+13965	13965	Sedan	800	XS	4	EU-ROVER-800-1986-1999-SEDAN-01	HIGH		READY
+113055	113055	Coupe	800	RS	2	EU-ROVER-800-1992-1999-COUPE-01	HIGH		READY
+121925	121925	Sedan	800	RS	4	EU-ROVER-800-1986-1999-SEDAN-01	HIGH		READY
+116061	116061	Coupe	800	RS	2	EU-ROVER-800-1992-1999-COUPE-01	HIGH		READY
+12963	12963	Hatchback	800	RS	5	EU-ROVER-800-1988-1999-HATCHBACK-01	HIGH		READY
+12964	12964	Sedan	800	RS	4	EU-ROVER-800-1986-1999-SEDAN-01	HIGH		READY
+13966	13966	Sedan	800	XS	4	EU-ROVER-800-1986-1999-SEDAN-01	HIGH		READY
+5670	5670	Coupe	800	RS	2	EU-ROVER-800-1992-1999-COUPE-01	HIGH		READY
+5669	5669	Sedan	800	RS	4	EU-ROVER-800-1986-1999-SEDAN-01	HIGH		READY
+34259	34259	Pickup	Mascott Phase I		2	EU-RENAULT-TRUCKS-MASCOTT-PHASE-I-CHASSIS-CAB-WB3630-01	MEDIUM	Canonical standard WB3630 chassis-cab exterior; input does not identify wheelbase	READY
+34275	34275	Pickup	Mascott Phase II		2	EU-RENAULT-TRUCKS-MASCOTT-PHASE-II-CHASSIS-CAB-WB3630-01	HIGH	Canonical standard WB3630 chassis-cab exterior; input does not identify wheelbase	READY
+34277	34277	Pickup	Mascott Phase II		2	EU-RENAULT-TRUCKS-MASCOTT-PHASE-II-CHASSIS-CAB-WB3630-01	MEDIUM	GVW rating does not change the selected WB3630 chassis-cab exterior	READY
+34279	34279	Pickup	Mascott Phase II		2	EU-RENAULT-TRUCKS-MASCOTT-PHASE-II-CHASSIS-CAB-WB3630-01	MEDIUM	GVW rating does not change the selected WB3630 chassis-cab exterior	READY
+34127	34127	Pickup	Messenger	4X4F06	2	EU-RENAULT-TRUCKS-MESSENGER-B110-45-4X4-CHASSIS-CAB-01	HIGH	B110.45 4x4 chassis cab	READY
+```
+
+## 5）Ktype 映射文件
+
+[下载 left18448_14601-14700_ktype_dimension_mapping_final.tsv](sandbox:/mnt/data/left18448_14601-14700_ktype_dimension_mapping_final.tsv)
+
+## 6）完整 DIMENSION_GROUP TSV
+
+```tsv
+DIMENSION_GROUP_ID	LengthMM	WidthMM	HeightMM	DimensionSource	SourceURL
+EU-RENAULT-TRUCKS-MESSENGER-B120-35-CHASSIS-CAB-WB3200-01	5431	2000	2427	Zoomcar Renault Trucks Messenger B120.35 chassis cab WB3200 specifications	https://zoomcar.fr/fiche-technique-utilitaire/renault-trucks/messenger-chassis-cabine-messenger-chassis-cab-b120-35-2-5-tbo-d-NAT58074.html
+EU-RENAULT-TRUCKS-MESSENGER-B120-35-CHASSIS-CAB-01	6071	2000	2426	ParuVendu Renault Trucks Messenger B120 35 chassis cab specifications	https://www.paruvendu.fr/fiches-techniques-utilitaire/renault-trucks/messenger/b120-35-2-5-tbo-d-8-cv-diesel/3058075/
+EU-RENAULT-TRUCKS-MESSENGER-B80-35-CHASSIS-CAB-01	5490	2000	2450	ParuVendu Renault Trucks Messenger B80 35 chassis cab specifications	https://www.paruvendu.fr/fiches-techniques-utilitaire/renault-trucks/messenger/b80-35-8-cv-diesel/3059423/
+EU-REVA-I-HATCHBACK-01	2638	1324	1510	Encycarpedia REVA G-Wiz i specifications	https://www.encycarpedia.com/reva/08-g-wiz-i-hatch
+EU-RILEY-4-72-SEDAN-01	4524	1613	1518	Automobile-Catalog 1964 Riley 4/Seventy-Two	https://www.automobile-catalog.com/car/1964/2991275/riley_4seventy-two.html
+EU-RILEY-ELF-MK-II-III-SEDAN-01	3310	1410	1346	Automobile-Catalog Riley Elf Mk II	https://www.automobile-catalog.com/car/1965/2991350/riley_elf_mk_ii.html
+EU-RILEY-KESTREL-ADO16-SEDAN-01	3727	1534	1346	Automobile-Catalog Riley Kestrel	https://www.automobile-catalog.com/car/1965/2991395/riley_kestrel.html
+EU-RIMAC-NEVERA-COUPE-01	4745	2052	1240	Rimac Automobili Nevera official specifications	https://www.rimac-automobili.com/nevera/
+EU-RIVIAN-EDV-500-VAN-01	6311	2035	2914	Rivian Commercial Van 500/700 2023 Fleet Customers Quick Reference	https://californiahvip.org/wp-content/uploads/2024/03/AL-MY24-Rivian-Spec-Sheet-240307.pdf
+EU-ROLLS-ROYCE-CORNICHE-I-SALOON-01	5169	1829	1492	Automobile-Catalog 1971 Rolls-Royce Corniche Saloon	https://www.automobile-catalog.com/car/1971/2992805/rolls-royce_corniche_saloon.html
+EU-ROLLS-ROYCE-CORNICHE-II-CONVERTIBLE-01	5169	1836	1485	Auto-Data Rolls-Royce Corniche II	https://www.auto-data.net/fr/rolls-royce-corniche-ii-6.75-v8-223hp-automatic-57011
+EU-ROLLS-ROYCE-CORNICHE-IV-CONVERTIBLE-01	5196	1836	1518	Automobile-Catalog 1993 Rolls-Royce Corniche IV	https://www.automobile-catalog.com/car/1993/2993120/rolls-royce_corniche_iv.html
+EU-ROLLS-ROYCE-CORNICHE-V-CONVERTIBLE-01	5405	1910	1475	Auto-Data Rolls-Royce Corniche V	https://www.auto-data.net/en/rolls-royce-corniche-v-6.8-i-v8-turbo-329hp-10935
+EU-ROLLS-ROYCE-CULLINAN-SERIES-II-SUV-01	5341	2000	1835	Auto-Data Rolls-Royce Cullinan specifications	https://www.auto-data.net/en/rolls-royce-cullinan-model-2367
+EU-ROLLS-ROYCE-DAWN-CONVERTIBLE-01	5285	1947	1502	Rolls-Royce Motor Cars Dawn official technical data	https://www.press.rolls-roycemotorcars.com/rolls-royce-motor-cars-pressclub/article/detail/T0233267EN/rolls-royce-dawn-%E2%80%93-uncompromised-drophead-luxury?language=en
+EU-ROLLS-ROYCE-GHOST-I-SEDAN-01	5399	1948	1550	Auto-Data Rolls-Royce Ghost I specifications	https://www.auto-data.net/en/rolls-royce-ghost-i-6.6-v12-48v-570hp-10943
+EU-ROLLS-ROYCE-GHOST-II-SEDAN-01	5546	1978	1571	Carfolio 2020 Rolls-Royce Ghost specifications	https://www.carfolio.com/rolls-royce-ghost-703681
+EU-ROLLS-ROYCE-PARK-WARD-SEDAN-01	5640	1930	1515	Auto-Data Rolls-Royce Park Ward	https://www.auto-data.net/en/rolls-royce-park-ward-generation-2261
+EU-ROLLS-ROYCE-PHANTOM-VII-COUPE-PREFL-01	5609	1987	1592	Auto-Data Rolls-Royce Phantom Coupe	https://www.auto-data.net/en/rolls-royce-phantom-coupe-generation-2262
+EU-ROLLS-ROYCE-PHANTOM-VII-COUPE-FACELIFT-01	5612	1987	1598	Auto-Data Rolls-Royce Phantom Coupe facelift 2012	https://www.auto-data.net/en/rolls-royce-phantom-coupe-facelift-2012-generation-4940
+EU-ROLLS-ROYCE-PHANTOM-VII-SEDAN-PREFL-01	5834	1990	1632	Auto-Data Rolls-Royce Phantom VII	https://www.auto-data.net/en/rolls-royce-phantom-vii-generation-2266
+EU-ROLLS-ROYCE-PHANTOM-VII-SEDAN-FACELIFT-01	5842	1990	1638	Auto-Data Rolls-Royce Phantom VII facelift 2012	https://www.auto-data.net/en/rolls-royce-phantom-vii-facelift-2012-generation-4938
+EU-ROLLS-ROYCE-PHANTOM-VII-DROPHEAD-PREFL-01	5609	1987	1581	Auto-Data Rolls-Royce Phantom Drophead Coupe	https://www.auto-data.net/en/rolls-royce-phantom-drophead-coupe-generation-2268
+EU-ROLLS-ROYCE-PHANTOM-VII-DROPHEAD-FACELIFT-01	5612	1987	1566	Auto-Data Rolls-Royce Phantom Drophead Coupe facelift 2012	https://www.auto-data.net/en/rolls-royce-phantom-drophead-coupe-facelift-2012-generation-4941
+EU-ROLLS-ROYCE-SILVER-DAWN-SZ-SEDAN-01	5395	1914	1480	Automobile-Catalog 1997 Rolls-Royce Silver Dawn	https://www.automobile-catalog.com/car/1997/2993810/rolls-royce_silver_dawn.html
+EU-ROLLS-ROYCE-SILVER-SERAPH-SEDAN-01	5390	1932	1515	Auto-Data Rolls-Royce Silver Seraph	https://www.auto-data.net/en/rolls-royce-silver-seraph-5.4-i-v12-326hp-10938
+EU-ROLLS-ROYCE-SILVER-SHADOW-II-SEDAN-01	5194	1822	1518	Automobile-Catalog 1978 Rolls-Royce Silver Shadow II	https://www.automobile-catalog.com/car/1978/36380/rolls-royce_silver_shadow_ii.html
+EU-ROLLS-ROYCE-SILVER-SPIRIT-SZ-SEDAN-01	5268	1887	1485	Automobile-Catalog 1986 Rolls-Royce Silver Spirit	https://www.automobile-catalog.com/car/1986/2993360/rolls-royce_silver_spirit.html
+EU-ROLLS-ROYCE-SILVER-SPUR-II-III-SEDAN-01	5370	1887	1485	Automobile-Catalog 1994 Rolls-Royce Silver Spur III	https://www.automobile-catalog.com/car/1994/2993600/rolls-royce_silver_spur_iii.html
+EU-ROLLS-ROYCE-SILVER-SPUR-IV-SEDAN-01	5395	1914	1485	Automobile-Catalog 1996 Rolls-Royce Silver Spur	https://www.automobile-catalog.com/car/1996/2993765/rolls-royce_silver_spur.html
+EU-ROLLS-ROYCE-SILVER-WRAITH-II-SEDAN-01	5296	1822	1518	Automobile-Catalog 1980 Rolls-Royce Silver Wraith II	https://www.automobile-catalog.com/car/1980/44210/rolls-royce_silver_wraith_ii.html
+EU-ROLLS-ROYCE-SPECTRE-COUPE-01	5490	2015	1575	Rolls-Royce Motor Cars Spectre final technical data	https://www.press.rolls-roycemotorcars.com/rolls-royce-motor-cars-pressclub/article/detail/T0422818EN/rolls-royce-spectre%3A-the-rolls-royce-that-changes-everything?language=en
+EU-ROVER-25-RF-HATCHBACK-01	3990	1688	1417	Auto-Data Rover 25 RF 1.6 16V specifications	https://www.auto-data.net/en/rover-25-rf-1.6-i-16v-109hp-11584
+EU-ROVER-75-R40-PREFL-SEDAN-01	4747	1778	1424	Auto-Data Rover 75 pre-facelift generation specifications	https://www.auto-data.net/en/rover-75-generation-2464
+EU-ROVER-75-R40-FACELIFT-SEDAN-01	4749	1778	1393	MG Rover Australia Rover 75 brochure July 2004	https://roverownersclub.com.au/wp-content/uploads/2016/05/63-Rover-75-75-Tourer-Publication-MGRA-75-07-04B-July-2004.pdf
+EU-ROVER-75-R40-PREFL-WAGON-01	4792	1778	1424	Automobile-Catalog 2001 Rover 75 1.8 Tourer	https://www.automobile-catalog.com/car/2001/3015380/rover_75_1_8_tourer.html
+EU-ROVER-75-R40-FACELIFT-WAGON-01	4791	1778	1435	Automobile-Catalog 2004 Rover 75 1.8 T Tourer phase II	https://www.automobile-catalog.com/car/2004/3015860/rover_75_1_8_t_tourer.html
+EU-ROVER-100-XP-CONVERTIBLE-01	3521	1550	1395	Auto-Data Rover 100 Cabrio XP 114	https://www.auto-data.net/en/rover-100-cabrio-xp-114-75hp-11496
+EU-ROVER-100-XP-HATCHBACK-01	3521	1550	1377	Auto-Data Rover 100 Metro XP 114 GTI 16V	https://www.auto-data.net/en/rover-100-metro-xp-114-gti-16v-103hp-11499
+EU-ROVER-200-XW-COUPE-01	4270	1680	1370	Auto-Data Rover 200 Coupe XW 216i specifications	https://www.auto-data.net/en/rover-200-coupe-xw-216i-111hp-11562
+EU-ROVER-400-RT-SEDAN-01	4491	1695	1390	Auto-Data Rover 400 RT generation specifications	https://www.auto-data.net/en/rover-400-rt-generation-2460
+EU-ROVER-400-RT-HATCHBACK-01	4320	1700	1390	Auto-Data Rover 400 Hatchback RT 416 Si specifications	https://www.auto-data.net/en/rover-400-hatchback-rt-416-si-111hp-11629
+EU-ROVER-400-XW-SEDAN-01	4370	1680	1400	Auto-Data Rover 400 XW 418 D specifications	https://www.auto-data.net/en/rover-400-xw-418-d-67hp-11636
+EU-ROVER-800-1986-1999-SEDAN-01	4882	1730	1393	Auto-Data Rover 800 820 I/SI RS	https://www.auto-data.net/en/rover-800-820-i-si-rs-136hp-11521
+EU-ROVER-800-1992-1999-COUPE-01	4882	1730	1393	Auto-Data Rover 800 Coupe 820i	https://www.auto-data.net/en/rover-800-coupe-820i-136hp-11532
+EU-ROVER-800-1988-1999-HATCHBACK-01	4880	1730	1390	Auto-Data Rover 800 Hatchback 820 Ti	https://www.auto-data.net/en/rover-800-hatchback-820-ti-200hp-11543
+EU-RENAULT-TRUCKS-MASCOTT-PHASE-I-VAN-WB3630-01	5977	2093	2752	Hasznaltauto Renault Mascott 150.35/150.55 WB3630 specifications	https://katalogus.hasznaltauto.hu/renault/mascott_2.8_td_150.35_3.630_mm_e3/66208
+EU-RENAULT-TRUCKS-MASCOTT-PHASE-I-VAN-WB4130-01	6477	2093	2752	Hasznaltauto Renault Mascott 140.55 WB4130 specifications	https://katalogus.hasznaltauto.hu/renault/mascott_2.8_td_pr._140.55_4.130_mm/66207
+EU-RENAULT-TRUCKS-MASCOTT-PHASE-II-160-35-VAN-WB3630-01	6038	2043	2738	Hasznaltauto Renault Mascott 160.35 WB3630 specifications	https://katalogus.hasznaltauto.hu/renault/mascott_3.0_td_160.35_3.630_mm/66220
+EU-RENAULT-TRUCKS-MASCOTT-PHASE-II-160-35-VAN-WB4130-01	6398	2043	2708	Hasznaltauto Renault Mascott 160.35 WB4130 specifications	https://katalogus.hasznaltauto.hu/renault/mascott_3.0_td_160.35_4.130_mm/66221
+EU-RENAULT-TRUCKS-MASCOTT-PHASE-II-160-55-VAN-WB3630-01	6038	2043	2738	Hasznaltauto Renault Mascott 160.55 WB3630 specifications	https://katalogus.hasznaltauto.hu/renault/mascott_3.0_td_160.55_3.630_mm/66222
+EU-RENAULT-TRUCKS-MESSENGER-B110-45-4X4-VAN-01	5650	2000	2840	Zoomcar Renault Trucks Messenger Euro 2 B110 35 4x4 van specifications	https://zoomcar.fr/fiche-technique-utilitaire/renault-trucks/messenger-euro-2-fourgon-messenger-euro-2fgn-b110-35-4x4-NAT59420.html
+EU-RENAULT-TRUCKS-MESSENGER-VAN-WB3840-MEDIUMROOF-01	6290	2060	2840	Zoomcar Renault Trucks Messenger B80.35 14m3 complete exterior; Auto-Selection B80/B120 14m3 WB3840 medium-roof body match	https://zoomcar.fr/fiche-technique-utilitaire/renault-trucks/messenger-fourgon-b80-35-2-5-d-NAT58058.html
+EU-RENAULT-TRUCKS-MASCOTT-PHASE-I-CHASSIS-CAB-WB3630-01	7179	2093	2270	Zoomcar Renault Trucks Mascott CHC 150.35 WB3630 specifications	https://zoomcar.fr/fiche-technique/renault-trucks/mascott-chassis-cabine-chc-150-35-emp-3-630-NAT83435.html
+EU-RENAULT-TRUCKS-MASCOTT-PHASE-II-CHASSIS-CAB-WB3630-01	5998	2041	2262	Zoomcar Renault Trucks Mascott CHC 160.35 WB3630 specifications	https://zoomcar.fr/fiche-technique-utilitaire/renault-trucks/mascott-chassis-cabine-chc-160-35-emp-3-630-NAT87869.html
+EU-RENAULT-TRUCKS-MESSENGER-B110-45-4X4-CHASSIS-CAB-01	5000	2030	2710	Renault VI B110.45 4x4 technical data sheet 06/1996	https://brochure-camion.com/en/product/23-0062-renault-vi-b110-4x4-military-data-sheet/
+```
+
+## 7）DIMENSION_GROUP 文件
+
+[下载 left18448_14601-14700_dimension_groups_final.tsv](sandbox:/mnt/data/left18448_14601-14700_dimension_groups_final.tsv)
+
+推进信号：ALMOST
+
+
+--- 脚本异常 ---
+异常: Ktype 34125 引用了本批不存在的尺寸组: 
+
+
+--- 脚本异常 ---
+异常: Ktype 34125 引用了本批不存在的尺寸组: 
+
+
+--- 累计ALMOST READY 子集 TSV 已更新 ---
+- 累计 Ktype 映射：ktype_mapping_final.tsv（5749 行）
+- 累计尺寸组：dimension_groups_final.tsv（1384 行）
+

@@ -109,6 +109,20 @@ $readyGroupTwo`t4200`t1800`t1500`tSource two`thttps://example.com/ready-two
         throw "包含全部 READY 快照和两个链接的 ALMOST 回复未通过校验"
     }
 
+    # Publishing ALMOST must use its validated READY-only tables.  The task
+    # checkpoint still contains Ktype 300 as PENDING, with a mapping that must
+    # not be merged back into the published artifact.
+    Publish-CompletedTaskTables -Task $task -Reply $validAlmostReply `
+        -ResultMarkdownPath "" -Signal "ALMOST" | Out-Null
+    $publishedMappings = @(Read-StrictTsvRows `
+        -Path (Join-Path $TableDir $names.MappingFileName) -Header $RequiredTsvHeader)
+    if (@($publishedMappings | Where-Object { $_.Ktype -eq "300" }).Count -ne 0) {
+        throw "ALMOST 发布重新混入了 checkpoint 中的 PENDING 映射"
+    }
+    if ($publishedMappings.Count -ne 2) {
+        throw "ALMOST 发布的 READY 映射数量错误: $($publishedMappings.Count)"
+    }
+
     $almostHistoryPath = Join-Path $testDir "almost-result.md"
     @"
 --- Round 8 / 下一步 ---

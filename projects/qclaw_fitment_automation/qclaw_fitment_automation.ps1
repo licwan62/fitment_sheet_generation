@@ -3177,9 +3177,18 @@ function Publish-CompletedTaskTables {
         throw "$Signal 回复缺少两个 TSV 下载链接"
     }
 
-    $snapshot = Get-TaskCompletionSnapshotRows -Task $Task -Reply $Reply
-    $mappingRows = @($snapshot.MappingRows)
-    $dimensionRows = @($snapshot.DimensionRows)
+    if ($Signal -eq "ALMOST") {
+        # An ALMOST reply is already validated as the exact READY-only
+        # snapshot.  Merging checkpoint rows here would reintroduce historical
+        # PENDING mappings, whose DIMENSION_GROUP_ID is legitimately empty.
+        $mappingRows = @(Get-ConfiguredFullTableRowsFromText -Text $Reply)
+        $dimensionRows = @(Get-ConfiguredDimensionGroupRowsFromText -Text $Reply)
+    }
+    else {
+        $snapshot = Get-TaskCompletionSnapshotRows -Task $Task -Reply $Reply
+        $mappingRows = @($snapshot.MappingRows)
+        $dimensionRows = @($snapshot.DimensionRows)
+    }
     if ($mappingRows.Count -eq 0 -or $dimensionRows.Count -eq 0) {
         $validEmptyAlmost = $Signal -eq "ALMOST" -and
             (Test-DimensionGroupTablesComplete -Reply $Reply -AllowEmpty)

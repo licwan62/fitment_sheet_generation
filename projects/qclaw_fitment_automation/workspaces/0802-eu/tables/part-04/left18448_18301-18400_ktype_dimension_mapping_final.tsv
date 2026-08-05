@@ -1,4 +1,4 @@
-﻿id	Ktype	NormalizedBodyStyle	Generation	BodyCode	Doors	DIMENSION_GROUP_ID	MatchConfidence	Notes	IterationStatus
+id	Ktype	NormalizedBodyStyle	Generation	BodyCode	Doors	DIMENSION_GROUP_ID	MatchConfidence	Notes	IterationStatus
 17772	17772	Van	T5			EU-VW-TRANSPORTER-T5-VAN-L1H1-PREFACELIFT-01	MEDIUM	轴距/车顶未明确，采用短轴低顶标准外廓	READY
 17773	17773	Pickup	T5			EU-VW-TRANSPORTER-T5-PICKUP-SWB-CHASSIS-01	MEDIUM	驾驶室/货斗未明确，采用短轴单排座底盘外廓	READY
 149757	149757	Pickup	T5			EU-VW-TRANSPORTER-T5-PICKUP-SWB-CHASSIS-01	MEDIUM	驾驶室/货斗未明确，采用短轴单排座底盘外廓	READY

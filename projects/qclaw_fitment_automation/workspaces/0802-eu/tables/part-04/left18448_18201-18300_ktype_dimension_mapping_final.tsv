@@ -1,4 +1,4 @@
-﻿id	Ktype	NormalizedBodyStyle	Generation	BodyCode	Doors	DIMENSION_GROUP_ID	MatchConfidence	Notes	IterationStatus
+id	Ktype	NormalizedBodyStyle	Generation	BodyCode	Doors	DIMENSION_GROUP_ID	MatchConfidence	Notes	IterationStatus
 55513	55513	MPV	Touran I Facelift 2010	1T3	5	EU-VW-TOURAN-I-1T3-MPV-FACELIFT-01	HIGH		READY
 142564	142564	Van	Touran I Facelift 2010	1T3	5	EU-VW-TOURAN-I-1T3-MPV-FACELIFT-01	HIGH	商用厢式衍生版复用同代Touran车身外廓。	READY
 17174	17174	MPV	Touran I	1T	5	EU-VW-TOURAN-I-1T-MPV-EARLY-01	HIGH		READY
