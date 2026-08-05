@@ -1,1177 +1,1506 @@
 {
-  "version": 1,
-  "revision": 47,
-  "task_id": "left18448__batch__0146__11160452",
-  "source_file": "left18448.tsv",
-  "source_start_row": 14501,
-  "source_end_row": 14600,
-  "round": 47,
-  "ktype_progress": {
-    "14019": {
-      "status": "pending",
-      "source_rows": [
-        14501
-      ],
-      "mapping_ids": [],
-      "dimension_group_ids": [],
-      "pending_reason": "尚未产生 Ktype 映射",
-      "last_updated_round": 47
-    },
-    "13968": {
-      "status": "ready",
-      "source_rows": [
-        14502
-      ],
-      "mapping_ids": [
-        "13968"
-      ],
-      "dimension_group_ids": [
-        "EU-RENAULT-TRAFIC-I-PH1-PLATFORM-PETROL-01"
-      ],
-      "pending_reason": "",
-      "last_updated_round": 47
-    },
-    "13946": {
-      "status": "ready",
-      "source_rows": [
-        14503
-      ],
-      "mapping_ids": [
-        "13946"
-      ],
-      "dimension_group_ids": [
-        "EU-RENAULT-TRAFIC-I-PLATFORM-SWB-02"
-      ],
-      "pending_reason": "",
-      "last_updated_round": 47
-    },
-    "13969": {
-      "status": "ready",
-      "source_rows": [
-        14504
-      ],
-      "mapping_ids": [
-        "13969"
-      ],
-      "dimension_group_ids": [
-        "EU-RENAULT-TRAFIC-I-PH1-PLATFORM-PETROL-01"
-      ],
-      "pending_reason": "",
-      "last_updated_round": 47
-    },
-    "13859": {
-      "status": "ready",
-      "source_rows": [
-        14505
-      ],
-      "mapping_ids": [
-        "13859"
-      ],
-      "dimension_group_ids": [
-        "EU-RENAULT-TRAFIC-I-PH1-PLATFORM-PETROL-01"
-      ],
-      "pending_reason": "",
-      "last_updated_round": 47
-    },
-    "14013": {
-      "status": "pending",
-      "source_rows": [
-        14506
-      ],
-      "mapping_ids": [],
-      "dimension_group_ids": [],
-      "pending_reason": "尚未产生 Ktype 映射",
-      "last_updated_round": 47
-    },
-    "14014": {
-      "status": "pending",
-      "source_rows": [
-        14507
-      ],
-      "mapping_ids": [],
-      "dimension_group_ids": [],
-      "pending_reason": "尚未产生 Ktype 映射",
-      "last_updated_round": 47
-    },
-    "11250": {
-      "status": "pending",
-      "source_rows": [
-        14508
-      ],
-      "mapping_ids": [],
-      "dimension_group_ids": [],
-      "pending_reason": "尚未产生 Ktype 映射",
-      "last_updated_round": 47
-    },
-    "15598": {
-      "status": "pending",
-      "source_rows": [
-        14509
-      ],
-      "mapping_ids": [],
-      "dimension_group_ids": [],
-      "pending_reason": "尚未产生 Ktype 映射",
-      "last_updated_round": 47
-    },
-    "13764": {
-      "status": "ready",
-      "source_rows": [
-        14510
-      ],
-      "mapping_ids": [
-        "13764"
-      ],
-      "dimension_group_ids": [
-        "EU-RENAULT-TRAFIC-I-PLATFORM-SWB-02"
-      ],
-      "pending_reason": "",
-      "last_updated_round": 47
-    },
-    "13970": {
-      "status": "ready",
-      "source_rows": [
-        14511
-      ],
-      "mapping_ids": [
-        "13970"
-      ],
-      "dimension_group_ids": [
-        "EU-RENAULT-TRAFIC-I-PH1-PLATFORM-DIESEL-01"
-      ],
-      "pending_reason": "",
-      "last_updated_round": 47
-    },
-    "13765": {
-      "status": "ready",
-      "source_rows": [
-        14512
-      ],
-      "mapping_ids": [
-        "13765"
-      ],
-      "dimension_group_ids": [
-        "EU-RENAULT-TRAFIC-I-PLATFORM-SWB-02"
-      ],
-      "pending_reason": "",
-      "last_updated_round": 47
-    },
-    "13766": {
-      "status": "ready",
-      "source_rows": [
-        14513
-      ],
-      "mapping_ids": [
-        "13766"
-      ],
-      "dimension_group_ids": [
-        "EU-RENAULT-TRAFIC-I-PLATFORM-SWB-02"
-      ],
-      "pending_reason": "",
-      "last_updated_round": 47
-    },
-    "13794": {
-      "status": "ready",
-      "source_rows": [
-        14514
-      ],
-      "mapping_ids": [
-        "13794"
-      ],
-      "dimension_group_ids": [
-        "EU-RENAULT-TRAFIC-I-PLATFORM-SWB-02"
-      ],
-      "pending_reason": "",
-      "last_updated_round": 47
-    },
-    "14570": {
-      "status": "pending",
-      "source_rows": [
-        14515
-      ],
-      "mapping_ids": [],
-      "dimension_group_ids": [],
-      "pending_reason": "尚未产生 Ktype 映射",
-      "last_updated_round": 47
-    },
-    "15713": {
-      "status": "pending",
-      "source_rows": [
-        14516
-      ],
-      "mapping_ids": [],
-      "dimension_group_ids": [],
-      "pending_reason": "尚未产生 Ktype 映射",
-      "last_updated_round": 47
-    },
-    "15714": {
-      "status": "pending",
-      "source_rows": [
-        14517
-      ],
-      "mapping_ids": [],
-      "dimension_group_ids": [],
-      "pending_reason": "尚未产生 Ktype 映射",
-      "last_updated_round": 47
-    },
-    "15712": {
-      "status": "pending",
-      "source_rows": [
-        14518
-      ],
-      "mapping_ids": [],
-      "dimension_group_ids": [],
-      "pending_reason": "尚未产生 Ktype 映射",
-      "last_updated_round": 47
-    },
-    "15716": {
-      "status": "pending",
-      "source_rows": [
-        14519
-      ],
-      "mapping_ids": [],
-      "dimension_group_ids": [],
-      "pending_reason": "尚未产生 Ktype 映射",
-      "last_updated_round": 47
-    },
-    "15711": {
-      "status": "pending",
-      "source_rows": [
-        14520
-      ],
-      "mapping_ids": [],
-      "dimension_group_ids": [],
-      "pending_reason": "尚未产生 Ktype 映射",
-      "last_updated_round": 47
-    },
-    "15715": {
-      "status": "pending",
-      "source_rows": [
-        14521
-      ],
-      "mapping_ids": [],
-      "dimension_group_ids": [],
-      "pending_reason": "尚未产生 Ktype 映射",
-      "last_updated_round": 47
-    },
-    "110695": {
-      "status": "pending",
-      "source_rows": [
-        14522
-      ],
-      "mapping_ids": [],
-      "dimension_group_ids": [],
-      "pending_reason": "尚未产生 Ktype 映射",
-      "last_updated_round": 47
-    },
-    "17335": {
-      "status": "pending",
-      "source_rows": [
-        14523
-      ],
-      "mapping_ids": [],
-      "dimension_group_ids": [],
-      "pending_reason": "尚未产生 Ktype 映射",
-      "last_updated_round": 47
-    },
-    "17511": {
-      "status": "pending",
-      "source_rows": [
-        14524
-      ],
-      "mapping_ids": [],
-      "dimension_group_ids": [],
-      "pending_reason": "尚未产生 Ktype 映射",
-      "last_updated_round": 47
-    },
-    "105905": {
-      "status": "pending",
-      "source_rows": [
-        14525
-      ],
-      "mapping_ids": [],
-      "dimension_group_ids": [],
-      "pending_reason": "尚未产生 Ktype 映射",
-      "last_updated_round": 47
-    },
-    "107531": {
-      "status": "pending",
-      "source_rows": [
-        14526
-      ],
-      "mapping_ids": [],
-      "dimension_group_ids": [],
-      "pending_reason": "尚未产生 Ktype 映射",
-      "last_updated_round": 47
-    },
-    "105906": {
-      "status": "pending",
-      "source_rows": [
-        14527
-      ],
-      "mapping_ids": [],
-      "dimension_group_ids": [],
-      "pending_reason": "尚未产生 Ktype 映射",
-      "last_updated_round": 47
-    },
-    "107532": {
-      "status": "pending",
-      "source_rows": [
-        14528
-      ],
-      "mapping_ids": [],
-      "dimension_group_ids": [],
-      "pending_reason": "尚未产生 Ktype 映射",
-      "last_updated_round": 47
-    },
-    "127205": {
-      "status": "pending",
-      "source_rows": [
-        14529
-      ],
-      "mapping_ids": [],
-      "dimension_group_ids": [],
-      "pending_reason": "尚未产生 Ktype 映射",
-      "last_updated_round": 47
-    },
-    "115519": {
-      "status": "pending",
-      "source_rows": [
-        14530
-      ],
-      "mapping_ids": [],
-      "dimension_group_ids": [],
-      "pending_reason": "尚未产生 Ktype 映射",
-      "last_updated_round": 47
-    },
-    "120239": {
-      "status": "pending",
-      "source_rows": [
-        14531
-      ],
-      "mapping_ids": [],
-      "dimension_group_ids": [],
-      "pending_reason": "尚未产生 Ktype 映射",
-      "last_updated_round": 47
-    },
-    "121651": {
-      "status": "pending",
-      "source_rows": [
-        14532
-      ],
-      "mapping_ids": [],
-      "dimension_group_ids": [],
-      "pending_reason": "尚未产生 Ktype 映射",
-      "last_updated_round": 47
-    },
-    "105907": {
-      "status": "pending",
-      "source_rows": [
-        14533
-      ],
-      "mapping_ids": [],
-      "dimension_group_ids": [],
-      "pending_reason": "尚未产生 Ktype 映射",
-      "last_updated_round": 47
-    },
-    "107533": {
-      "status": "pending",
-      "source_rows": [
-        14534
-      ],
-      "mapping_ids": [],
-      "dimension_group_ids": [],
-      "pending_reason": "尚未产生 Ktype 映射",
-      "last_updated_round": 47
-    },
-    "127206": {
-      "status": "pending",
-      "source_rows": [
-        14535
-      ],
-      "mapping_ids": [],
-      "dimension_group_ids": [],
-      "pending_reason": "尚未产生 Ktype 映射",
-      "last_updated_round": 47
-    },
-    "115520": {
-      "status": "pending",
-      "source_rows": [
-        14536
-      ],
-      "mapping_ids": [],
-      "dimension_group_ids": [],
-      "pending_reason": "尚未产生 Ktype 映射",
-      "last_updated_round": 47
-    },
-    "120241": {
-      "status": "pending",
-      "source_rows": [
-        14537
-      ],
-      "mapping_ids": [],
-      "dimension_group_ids": [],
-      "pending_reason": "尚未产生 Ktype 映射",
-      "last_updated_round": 47
-    },
-    "121652": {
-      "status": "pending",
-      "source_rows": [
-        14538
-      ],
-      "mapping_ids": [],
-      "dimension_group_ids": [],
-      "pending_reason": "尚未产生 Ktype 映射",
-      "last_updated_round": 47
-    },
-    "105904": {
-      "status": "pending",
-      "source_rows": [
-        14539
-      ],
-      "mapping_ids": [],
-      "dimension_group_ids": [],
-      "pending_reason": "尚未产生 Ktype 映射",
-      "last_updated_round": 47
-    },
-    "107530": {
-      "status": "pending",
-      "source_rows": [
-        14540
-      ],
-      "mapping_ids": [],
-      "dimension_group_ids": [],
-      "pending_reason": "尚未产生 Ktype 映射",
-      "last_updated_round": 47
-    },
-    "115506": {
-      "status": "pending",
-      "source_rows": [
-        14541
-      ],
-      "mapping_ids": [],
-      "dimension_group_ids": [],
-      "pending_reason": "尚未产生 Ktype 映射",
-      "last_updated_round": 47
-    },
-    "120237": {
-      "status": "pending",
-      "source_rows": [
-        14542
-      ],
-      "mapping_ids": [],
-      "dimension_group_ids": [],
-      "pending_reason": "尚未产生 Ktype 映射",
-      "last_updated_round": 47
-    },
-    "145045": {
-      "status": "pending",
-      "source_rows": [
-        14543
-      ],
-      "mapping_ids": [],
-      "dimension_group_ids": [],
-      "pending_reason": "尚未产生 Ktype 映射",
-      "last_updated_round": 47
-    },
-    "145524": {
-      "status": "pending",
-      "source_rows": [
-        14544
-      ],
-      "mapping_ids": [],
-      "dimension_group_ids": [],
-      "pending_reason": "尚未产生 Ktype 映射",
-      "last_updated_round": 47
-    },
-    "145525": {
-      "status": "pending",
-      "source_rows": [
-        14545
-      ],
-      "mapping_ids": [],
-      "dimension_group_ids": [],
-      "pending_reason": "尚未产生 Ktype 映射",
-      "last_updated_round": 47
-    },
-    "144927": {
-      "status": "pending",
-      "source_rows": [
-        14546
-      ],
-      "mapping_ids": [],
-      "dimension_group_ids": [],
-      "pending_reason": "尚未产生 Ktype 映射",
-      "last_updated_round": 47
-    },
-    "145526": {
-      "status": "pending",
-      "source_rows": [
-        14547
-      ],
-      "mapping_ids": [],
-      "dimension_group_ids": [],
-      "pending_reason": "尚未产生 Ktype 映射",
-      "last_updated_round": 47
-    },
-    "150673": {
-      "status": "pending",
-      "source_rows": [
-        14548
-      ],
-      "mapping_ids": [],
-      "dimension_group_ids": [],
-      "pending_reason": "尚未产生 Ktype 映射",
-      "last_updated_round": 47
-    },
-    "155339": {
-      "status": "pending",
-      "source_rows": [
-        14549
-      ],
-      "mapping_ids": [],
-      "dimension_group_ids": [],
-      "pending_reason": "尚未产生 Ktype 映射",
-      "last_updated_round": 47
-    },
-    "155340": {
-      "status": "pending",
-      "source_rows": [
-        14550
-      ],
-      "mapping_ids": [],
-      "dimension_group_ids": [],
-      "pending_reason": "尚未产生 Ktype 映射",
-      "last_updated_round": 47
-    },
-    "7876": {
-      "status": "pending",
-      "source_rows": [
-        14551
-      ],
-      "mapping_ids": [],
-      "dimension_group_ids": [],
-      "pending_reason": "尚未产生 Ktype 映射",
-      "last_updated_round": 47
-    },
-    "124320": {
-      "status": "pending",
-      "source_rows": [
-        14552
-      ],
-      "mapping_ids": [],
-      "dimension_group_ids": [],
-      "pending_reason": "尚未产生 Ktype 映射",
-      "last_updated_round": 47
-    },
-    "108063": {
-      "status": "pending",
-      "source_rows": [
-        14553
-      ],
-      "mapping_ids": [],
-      "dimension_group_ids": [],
-      "pending_reason": "尚未产生 Ktype 映射",
-      "last_updated_round": 47
-    },
-    "108062": {
-      "status": "pending",
-      "source_rows": [
-        14554
-      ],
-      "mapping_ids": [],
-      "dimension_group_ids": [],
-      "pending_reason": "尚未产生 Ktype 映射",
-      "last_updated_round": 47
-    },
-    "120596": {
-      "status": "pending",
-      "source_rows": [
-        14555
-      ],
-      "mapping_ids": [],
-      "dimension_group_ids": [],
-      "pending_reason": "尚未产生 Ktype 映射",
-      "last_updated_round": 47
-    },
-    "15109": {
-      "status": "pending",
-      "source_rows": [
-        14556
-      ],
-      "mapping_ids": [],
-      "dimension_group_ids": [],
-      "pending_reason": "尚未产生 Ktype 映射",
-      "last_updated_round": 47
-    },
-    "18280": {
-      "status": "pending",
-      "source_rows": [
-        14557
-      ],
-      "mapping_ids": [],
-      "dimension_group_ids": [],
-      "pending_reason": "尚未产生 Ktype 映射",
-      "last_updated_round": 47
-    },
-    "126647": {
-      "status": "pending",
-      "source_rows": [
-        14558
-      ],
-      "mapping_ids": [],
-      "dimension_group_ids": [],
-      "pending_reason": "尚未产生 Ktype 映射",
-      "last_updated_round": 47
-    },
-    "55503": {
-      "status": "pending",
-      "source_rows": [
-        14559
-      ],
-      "mapping_ids": [],
-      "dimension_group_ids": [],
-      "pending_reason": "尚未产生 Ktype 映射",
-      "last_updated_round": 47
-    },
-    "163836": {
-      "status": "pending",
-      "source_rows": [
-        14560
-      ],
-      "mapping_ids": [],
-      "dimension_group_ids": [],
-      "pending_reason": "尚未产生 Ktype 映射",
-      "last_updated_round": 47
-    },
-    "121500": {
-      "status": "pending",
-      "source_rows": [
-        14561
-      ],
-      "mapping_ids": [],
-      "dimension_group_ids": [],
-      "pending_reason": "尚未产生 Ktype 映射",
-      "last_updated_round": 47
-    },
-    "18611": {
-      "status": "pending",
-      "source_rows": [
-        14562
-      ],
-      "mapping_ids": [],
-      "dimension_group_ids": [],
-      "pending_reason": "尚未产生 Ktype 映射",
-      "last_updated_round": 47
-    },
-    "16418": {
-      "status": "pending",
-      "source_rows": [
-        14563
-      ],
-      "mapping_ids": [],
-      "dimension_group_ids": [],
-      "pending_reason": "尚未产生 Ktype 映射",
-      "last_updated_round": 47
-    },
-    "10870": {
-      "status": "pending",
-      "source_rows": [
-        14564
-      ],
-      "mapping_ids": [],
-      "dimension_group_ids": [],
-      "pending_reason": "尚未产生 Ktype 映射",
-      "last_updated_round": 47
-    },
-    "16422": {
-      "status": "pending",
-      "source_rows": [
-        14565
-      ],
-      "mapping_ids": [],
-      "dimension_group_ids": [],
-      "pending_reason": "尚未产生 Ktype 映射",
-      "last_updated_round": 47
-    },
-    "18353": {
-      "status": "pending",
-      "source_rows": [
-        14566
-      ],
-      "mapping_ids": [],
-      "dimension_group_ids": [],
-      "pending_reason": "尚未产生 Ktype 映射",
-      "last_updated_round": 47
-    },
-    "18612": {
-      "status": "pending",
-      "source_rows": [
-        14567
-      ],
-      "mapping_ids": [],
-      "dimension_group_ids": [],
-      "pending_reason": "尚未产生 Ktype 映射",
-      "last_updated_round": 47
-    },
-    "16423": {
-      "status": "pending",
-      "source_rows": [
-        14568
-      ],
-      "mapping_ids": [],
-      "dimension_group_ids": [],
-      "pending_reason": "尚未产生 Ktype 映射",
-      "last_updated_round": 47
-    },
-    "16419": {
-      "status": "pending",
-      "source_rows": [
-        14569
-      ],
-      "mapping_ids": [],
-      "dimension_group_ids": [],
-      "pending_reason": "尚未产生 Ktype 映射",
-      "last_updated_round": 47
-    },
-    "143197": {
-      "status": "pending",
-      "source_rows": [
-        14570
-      ],
-      "mapping_ids": [],
-      "dimension_group_ids": [],
-      "pending_reason": "尚未产生 Ktype 映射",
-      "last_updated_round": 47
-    },
-    "143198": {
-      "status": "pending",
-      "source_rows": [
-        14571
-      ],
-      "mapping_ids": [],
-      "dimension_group_ids": [],
-      "pending_reason": "尚未产生 Ktype 映射",
-      "last_updated_round": 47
-    },
-    "143199": {
-      "status": "pending",
-      "source_rows": [
-        14572
-      ],
-      "mapping_ids": [],
-      "dimension_group_ids": [],
-      "pending_reason": "尚未产生 Ktype 映射",
-      "last_updated_round": 47
-    },
-    "143200": {
-      "status": "pending",
-      "source_rows": [
-        14573
-      ],
-      "mapping_ids": [],
-      "dimension_group_ids": [],
-      "pending_reason": "尚未产生 Ktype 映射",
-      "last_updated_round": 47
-    },
-    "55132": {
-      "status": "pending",
-      "source_rows": [
-        14574
-      ],
-      "mapping_ids": [],
-      "dimension_group_ids": [],
-      "pending_reason": "尚未产生 Ktype 映射",
-      "last_updated_round": 47
-    },
-    "125941": {
-      "status": "pending",
-      "source_rows": [
-        14575
-      ],
-      "mapping_ids": [],
-      "dimension_group_ids": [],
-      "pending_reason": "尚未产生 Ktype 映射",
-      "last_updated_round": 47
-    },
-    "34232": {
-      "status": "pending",
-      "source_rows": [
-        14576
-      ],
-      "mapping_ids": [
-        "34232"
-      ],
-      "dimension_group_ids": [],
-      "pending_reason": "标准厢式外廓完整三维及无镜宽度未闭合；映射缺少 DIMENSION_GROUP_ID",
-      "last_updated_round": 47
-    },
-    "34233": {
-      "status": "pending",
-      "source_rows": [
-        14577
-      ],
-      "mapping_ids": [
-        "34233"
-      ],
-      "dimension_group_ids": [],
-      "pending_reason": "标准平台完整三维及无镜宽度未闭合；映射缺少 DIMENSION_GROUP_ID",
-      "last_updated_round": 47
-    },
-    "34234": {
-      "status": "pending",
-      "source_rows": [
-        14578
-      ],
-      "mapping_ids": [
-        "34234"
-      ],
-      "dimension_group_ids": [],
-      "pending_reason": "标准厢式外廓完整三维及无镜宽度未闭合；映射缺少 DIMENSION_GROUP_ID",
-      "last_updated_round": 47
-    },
-    "34235": {
-      "status": "pending",
-      "source_rows": [
-        14579
-      ],
-      "mapping_ids": [
-        "34235"
-      ],
-      "dimension_group_ids": [],
-      "pending_reason": "标准平台完整三维及无镜宽度未闭合；映射缺少 DIMENSION_GROUP_ID",
-      "last_updated_round": 47
-    },
-    "34236": {
-      "status": "pending",
-      "source_rows": [
-        14580
-      ],
-      "mapping_ids": [
-        "34236"
-      ],
-      "dimension_group_ids": [],
-      "pending_reason": "标准厢式外廓完整三维及无镜宽度未闭合；映射缺少 DIMENSION_GROUP_ID",
-      "last_updated_round": 47
-    },
-    "34237": {
-      "status": "pending",
-      "source_rows": [
-        14581
-      ],
-      "mapping_ids": [
-        "34237"
-      ],
-      "dimension_group_ids": [],
-      "pending_reason": "标准平台完整三维及无镜宽度未闭合；映射缺少 DIMENSION_GROUP_ID",
-      "last_updated_round": 47
-    },
-    "34238": {
-      "status": "ready",
-      "source_rows": [
-        14582
-      ],
-      "mapping_ids": [
-        "34238"
-      ],
-      "dimension_group_ids": [
-        "EU-RENAULT-TRUCKS-B-90-PH1-PLATFORM-4X4-01"
-      ],
-      "pending_reason": "",
-      "last_updated_round": 47
-    },
-    "34239": {
-      "status": "ready",
-      "source_rows": [
-        14583
-      ],
-      "mapping_ids": [
-        "34239"
-      ],
-      "dimension_group_ids": [
-        "EU-RENAULT-TRUCKS-B-90-PH1-PLATFORM-4X4-01"
-      ],
-      "pending_reason": "",
-      "last_updated_round": 47
-    },
-    "34152": {
-      "status": "ready",
-      "source_rows": [
-        14584
-      ],
-      "mapping_ids": [
-        "34152"
-      ],
-      "dimension_group_ids": [
-        "EU-RENAULT-TRUCKS-MASCOTT-PH1-PLATFORM-WB3630-02"
-      ],
-      "pending_reason": "",
-      "last_updated_round": 47
-    },
-    "34153": {
-      "status": "pending",
-      "source_rows": [
-        14585
-      ],
-      "mapping_ids": [],
-      "dimension_group_ids": [],
-      "pending_reason": "尚未产生 Ktype 映射",
-      "last_updated_round": 47
-    },
-    "34145": {
-      "status": "pending",
-      "source_rows": [
-        14586
-      ],
-      "mapping_ids": [],
-      "dimension_group_ids": [],
-      "pending_reason": "尚未产生 Ktype 映射",
-      "last_updated_round": 47
-    },
-    "34151": {
-      "status": "pending",
-      "source_rows": [
-        14587
-      ],
-      "mapping_ids": [],
-      "dimension_group_ids": [],
-      "pending_reason": "尚未产生 Ktype 映射",
-      "last_updated_round": 47
-    },
-    "34150": {
-      "status": "pending",
-      "source_rows": [
-        14588
-      ],
-      "mapping_ids": [],
-      "dimension_group_ids": [],
-      "pending_reason": "尚未产生 Ktype 映射",
-      "last_updated_round": 47
-    },
-    "34149": {
-      "status": "pending",
-      "source_rows": [
-        14589
-      ],
-      "mapping_ids": [],
-      "dimension_group_ids": [],
-      "pending_reason": "尚未产生 Ktype 映射",
-      "last_updated_round": 47
-    },
-    "34270": {
-      "status": "pending",
-      "source_rows": [
-        14590
-      ],
-      "mapping_ids": [],
-      "dimension_group_ids": [],
-      "pending_reason": "尚未产生 Ktype 映射",
-      "last_updated_round": 47
-    },
-    "34271": {
-      "status": "pending",
-      "source_rows": [
-        14591
-      ],
-      "mapping_ids": [],
-      "dimension_group_ids": [],
-      "pending_reason": "尚未产生 Ktype 映射",
-      "last_updated_round": 47
-    },
-    "34272": {
-      "status": "pending",
-      "source_rows": [
-        14592
-      ],
-      "mapping_ids": [],
-      "dimension_group_ids": [],
-      "pending_reason": "尚未产生 Ktype 映射",
-      "last_updated_round": 47
-    },
-    "34273": {
-      "status": "pending",
-      "source_rows": [
-        14593
-      ],
-      "mapping_ids": [],
-      "dimension_group_ids": [],
-      "pending_reason": "尚未产生 Ktype 映射",
-      "last_updated_round": 47
-    },
-    "34274": {
-      "status": "pending",
-      "source_rows": [
-        14594
-      ],
-      "mapping_ids": [],
-      "dimension_group_ids": [],
-      "pending_reason": "尚未产生 Ktype 映射",
-      "last_updated_round": 47
-    },
-    "34144": {
-      "status": "pending",
-      "source_rows": [
-        14595
-      ],
-      "mapping_ids": [],
-      "dimension_group_ids": [],
-      "pending_reason": "尚未产生 Ktype 映射",
-      "last_updated_round": 47
-    },
-    "34143": {
-      "status": "pending",
-      "source_rows": [
-        14596
-      ],
-      "mapping_ids": [],
-      "dimension_group_ids": [],
-      "pending_reason": "尚未产生 Ktype 映射",
-      "last_updated_round": 47
-    },
-    "34189": {
-      "status": "ready",
-      "source_rows": [
-        14597
-      ],
-      "mapping_ids": [
-        "34189"
-      ],
-      "dimension_group_ids": [
-        "EU-RENAULT-TRUCKS-MASCOTT-PH1-PLATFORM-WB3630-01"
-      ],
-      "pending_reason": "",
-      "last_updated_round": 47
-    },
-    "34192": {
-      "status": "pending",
-      "source_rows": [
-        14598
-      ],
-      "mapping_ids": [],
-      "dimension_group_ids": [],
-      "pending_reason": "尚未产生 Ktype 映射",
-      "last_updated_round": 47
-    },
-    "34193": {
-      "status": "pending",
-      "source_rows": [
-        14599
-      ],
-      "mapping_ids": [],
-      "dimension_group_ids": [],
-      "pending_reason": "尚未产生 Ktype 映射",
-      "last_updated_round": 47
-    },
-    "34257": {
-      "status": "ready",
-      "source_rows": [
-        14600
-      ],
-      "mapping_ids": [
-        "34257"
-      ],
-      "dimension_group_ids": [
-        "EU-RENAULT-TRUCKS-MASCOTT-PH1-PLATFORM-WB4130-01"
-      ],
-      "pending_reason": "",
-      "last_updated_round": 47
-    }
-  },
-  "progress": {
-    "input_ktype_count": 100,
-    "ready_ktype_count": 14,
-    "pending_ktype_count": 86,
-    "pending_ktypes": [
-      "14019",
-      "14013",
-      "14014",
-      "11250",
-      "15598",
-      "14570",
-      "15713",
-      "15714",
-      "15712",
-      "15716",
-      "15711",
-      "15715",
-      "110695",
-      "17335",
-      "17511",
-      "105905",
-      "107531",
-      "105906",
-      "107532",
-      "127205",
-      "115519",
-      "120239",
-      "121651",
-      "105907",
-      "107533",
-      "127206",
-      "115520",
-      "120241",
-      "121652",
-      "105904",
-      "107530",
-      "115506",
-      "120237",
-      "145045",
-      "145524",
-      "145525",
-      "144927",
-      "145526",
-      "150673",
-      "155339",
-      "155340",
-      "7876",
-      "124320",
-      "108063",
-      "108062",
-      "120596",
-      "15109",
-      "18280",
-      "126647",
-      "55503",
-      "163836",
-      "121500",
-      "18611",
-      "16418",
-      "10870",
-      "16422",
-      "18353",
-      "18612",
-      "16423",
-      "16419",
-      "143197",
-      "143198",
-      "143199",
-      "143200",
-      "55132",
-      "125941",
-      "34232",
-      "34233",
-      "34234",
-      "34235",
-      "34236",
-      "34237",
-      "34153",
-      "34145",
-      "34151",
-      "34150",
-      "34149",
-      "34270",
-      "34271",
-      "34272",
-      "34273",
-      "34274",
-      "34144",
-      "34143",
-      "34192",
-      "34193"
-    ]
-  },
-  "artifacts": {
-    "current_mapping": "/Users/admin/Documents/GitHub/fitment_sheet_generation/projects/qclaw_fitment_automation/workspaces/0802-eu/checkpoints/part-04/task-state/left18448__batch__0146__11160452/current_mapping.tsv",
-    "current_dimension_groups": "/Users/admin/Documents/GitHub/fitment_sheet_generation/projects/qclaw_fitment_automation/workspaces/0802-eu/checkpoints/part-04/task-state/left18448__batch__0146__11160452/current_dimension_groups.tsv"
-  },
-  "updated_at": "2026-08-04 02:06:17"
+    "version":  1,
+    "revision":  104,
+    "task_id":  "left18448__batch__0146__11160452",
+    "source_file":  "left18448.tsv",
+    "source_start_row":  14501,
+    "source_end_row":  14600,
+    "round":  58,
+    "ktype_progress":  {
+                           "14019":  {
+                                         "status":  "pending",
+                                         "source_rows":  [
+                                                             14501
+                                                         ],
+                                         "mapping_ids":  [
+
+                                                         ],
+                                         "dimension_group_ids":  [
+
+                                                                 ],
+                                         "pending_reason":  "尚未产生 Ktype 映射",
+                                         "last_updated_round":  58
+                                     },
+                           "13968":  {
+                                         "status":  "ready",
+                                         "source_rows":  [
+                                                             14502
+                                                         ],
+                                         "mapping_ids":  [
+                                                             "13968"
+                                                         ],
+                                         "dimension_group_ids":  [
+                                                                     "EU-RENAULT-TRAFIC-I-PH1-PLATFORM-PETROL-01"
+                                                                 ],
+                                         "pending_reason":  "",
+                                         "last_updated_round":  58
+                                     },
+                           "13946":  {
+                                         "status":  "ready",
+                                         "source_rows":  [
+                                                             14503
+                                                         ],
+                                         "mapping_ids":  [
+                                                             "13946"
+                                                         ],
+                                         "dimension_group_ids":  [
+                                                                     "EU-RENAULT-TRAFIC-I-PLATFORM-SWB-02"
+                                                                 ],
+                                         "pending_reason":  "",
+                                         "last_updated_round":  58
+                                     },
+                           "13969":  {
+                                         "status":  "ready",
+                                         "source_rows":  [
+                                                             14504
+                                                         ],
+                                         "mapping_ids":  [
+                                                             "13969"
+                                                         ],
+                                         "dimension_group_ids":  [
+                                                                     "EU-RENAULT-TRAFIC-I-PH1-PLATFORM-PETROL-01"
+                                                                 ],
+                                         "pending_reason":  "",
+                                         "last_updated_round":  58
+                                     },
+                           "13859":  {
+                                         "status":  "ready",
+                                         "source_rows":  [
+                                                             14505
+                                                         ],
+                                         "mapping_ids":  [
+                                                             "13859"
+                                                         ],
+                                         "dimension_group_ids":  [
+                                                                     "EU-RENAULT-TRAFIC-I-PH1-PLATFORM-PETROL-01"
+                                                                 ],
+                                         "pending_reason":  "",
+                                         "last_updated_round":  58
+                                     },
+                           "14013":  {
+                                         "status":  "pending",
+                                         "source_rows":  [
+                                                             14506
+                                                         ],
+                                         "mapping_ids":  [
+
+                                                         ],
+                                         "dimension_group_ids":  [
+
+                                                                 ],
+                                         "pending_reason":  "尚未产生 Ktype 映射",
+                                         "last_updated_round":  58
+                                     },
+                           "14014":  {
+                                         "status":  "pending",
+                                         "source_rows":  [
+                                                             14507
+                                                         ],
+                                         "mapping_ids":  [
+
+                                                         ],
+                                         "dimension_group_ids":  [
+
+                                                                 ],
+                                         "pending_reason":  "尚未产生 Ktype 映射",
+                                         "last_updated_round":  58
+                                     },
+                           "11250":  {
+                                         "status":  "pending",
+                                         "source_rows":  [
+                                                             14508
+                                                         ],
+                                         "mapping_ids":  [
+
+                                                         ],
+                                         "dimension_group_ids":  [
+
+                                                                 ],
+                                         "pending_reason":  "尚未产生 Ktype 映射",
+                                         "last_updated_round":  58
+                                     },
+                           "15598":  {
+                                         "status":  "pending",
+                                         "source_rows":  [
+                                                             14509
+                                                         ],
+                                         "mapping_ids":  [
+
+                                                         ],
+                                         "dimension_group_ids":  [
+
+                                                                 ],
+                                         "pending_reason":  "尚未产生 Ktype 映射",
+                                         "last_updated_round":  58
+                                     },
+                           "13764":  {
+                                         "status":  "ready",
+                                         "source_rows":  [
+                                                             14510
+                                                         ],
+                                         "mapping_ids":  [
+                                                             "13764"
+                                                         ],
+                                         "dimension_group_ids":  [
+                                                                     "EU-RENAULT-TRAFIC-I-PLATFORM-SWB-02"
+                                                                 ],
+                                         "pending_reason":  "",
+                                         "last_updated_round":  58
+                                     },
+                           "13970":  {
+                                         "status":  "ready",
+                                         "source_rows":  [
+                                                             14511
+                                                         ],
+                                         "mapping_ids":  [
+                                                             "13970"
+                                                         ],
+                                         "dimension_group_ids":  [
+                                                                     "EU-RENAULT-TRAFIC-I-PH1-PLATFORM-DIESEL-01"
+                                                                 ],
+                                         "pending_reason":  "",
+                                         "last_updated_round":  58
+                                     },
+                           "13765":  {
+                                         "status":  "ready",
+                                         "source_rows":  [
+                                                             14512
+                                                         ],
+                                         "mapping_ids":  [
+                                                             "13765"
+                                                         ],
+                                         "dimension_group_ids":  [
+                                                                     "EU-RENAULT-TRAFIC-I-PLATFORM-SWB-02"
+                                                                 ],
+                                         "pending_reason":  "",
+                                         "last_updated_round":  58
+                                     },
+                           "13766":  {
+                                         "status":  "ready",
+                                         "source_rows":  [
+                                                             14513
+                                                         ],
+                                         "mapping_ids":  [
+                                                             "13766"
+                                                         ],
+                                         "dimension_group_ids":  [
+                                                                     "EU-RENAULT-TRAFIC-I-PLATFORM-SWB-02"
+                                                                 ],
+                                         "pending_reason":  "",
+                                         "last_updated_round":  58
+                                     },
+                           "13794":  {
+                                         "status":  "ready",
+                                         "source_rows":  [
+                                                             14514
+                                                         ],
+                                         "mapping_ids":  [
+                                                             "13794"
+                                                         ],
+                                         "dimension_group_ids":  [
+                                                                     "EU-RENAULT-TRAFIC-I-PLATFORM-SWB-02"
+                                                                 ],
+                                         "pending_reason":  "",
+                                         "last_updated_round":  58
+                                     },
+                           "14570":  {
+                                         "status":  "pending",
+                                         "source_rows":  [
+                                                             14515
+                                                         ],
+                                         "mapping_ids":  [
+
+                                                         ],
+                                         "dimension_group_ids":  [
+
+                                                                 ],
+                                         "pending_reason":  "尚未产生 Ktype 映射",
+                                         "last_updated_round":  58
+                                     },
+                           "15713":  {
+                                         "status":  "pending",
+                                         "source_rows":  [
+                                                             14516
+                                                         ],
+                                         "mapping_ids":  [
+
+                                                         ],
+                                         "dimension_group_ids":  [
+
+                                                                 ],
+                                         "pending_reason":  "尚未产生 Ktype 映射",
+                                         "last_updated_round":  58
+                                     },
+                           "15714":  {
+                                         "status":  "pending",
+                                         "source_rows":  [
+                                                             14517
+                                                         ],
+                                         "mapping_ids":  [
+
+                                                         ],
+                                         "dimension_group_ids":  [
+
+                                                                 ],
+                                         "pending_reason":  "尚未产生 Ktype 映射",
+                                         "last_updated_round":  58
+                                     },
+                           "15712":  {
+                                         "status":  "pending",
+                                         "source_rows":  [
+                                                             14518
+                                                         ],
+                                         "mapping_ids":  [
+
+                                                         ],
+                                         "dimension_group_ids":  [
+
+                                                                 ],
+                                         "pending_reason":  "尚未产生 Ktype 映射",
+                                         "last_updated_round":  58
+                                     },
+                           "15716":  {
+                                         "status":  "pending",
+                                         "source_rows":  [
+                                                             14519
+                                                         ],
+                                         "mapping_ids":  [
+
+                                                         ],
+                                         "dimension_group_ids":  [
+
+                                                                 ],
+                                         "pending_reason":  "尚未产生 Ktype 映射",
+                                         "last_updated_round":  58
+                                     },
+                           "15711":  {
+                                         "status":  "pending",
+                                         "source_rows":  [
+                                                             14520
+                                                         ],
+                                         "mapping_ids":  [
+
+                                                         ],
+                                         "dimension_group_ids":  [
+
+                                                                 ],
+                                         "pending_reason":  "尚未产生 Ktype 映射",
+                                         "last_updated_round":  58
+                                     },
+                           "15715":  {
+                                         "status":  "pending",
+                                         "source_rows":  [
+                                                             14521
+                                                         ],
+                                         "mapping_ids":  [
+
+                                                         ],
+                                         "dimension_group_ids":  [
+
+                                                                 ],
+                                         "pending_reason":  "尚未产生 Ktype 映射",
+                                         "last_updated_round":  58
+                                     },
+                           "110695":  {
+                                          "status":  "pending",
+                                          "source_rows":  [
+                                                              14522
+                                                          ],
+                                          "mapping_ids":  [
+
+                                                          ],
+                                          "dimension_group_ids":  [
+
+                                                                  ],
+                                          "pending_reason":  "尚未产生 Ktype 映射",
+                                          "last_updated_round":  58
+                                      },
+                           "17335":  {
+                                         "status":  "pending",
+                                         "source_rows":  [
+                                                             14523
+                                                         ],
+                                         "mapping_ids":  [
+
+                                                         ],
+                                         "dimension_group_ids":  [
+
+                                                                 ],
+                                         "pending_reason":  "尚未产生 Ktype 映射",
+                                         "last_updated_round":  58
+                                     },
+                           "17511":  {
+                                         "status":  "pending",
+                                         "source_rows":  [
+                                                             14524
+                                                         ],
+                                         "mapping_ids":  [
+
+                                                         ],
+                                         "dimension_group_ids":  [
+
+                                                                 ],
+                                         "pending_reason":  "尚未产生 Ktype 映射",
+                                         "last_updated_round":  58
+                                     },
+                           "105905":  {
+                                          "status":  "pending",
+                                          "source_rows":  [
+                                                              14525
+                                                          ],
+                                          "mapping_ids":  [
+
+                                                          ],
+                                          "dimension_group_ids":  [
+
+                                                                  ],
+                                          "pending_reason":  "尚未产生 Ktype 映射",
+                                          "last_updated_round":  58
+                                      },
+                           "107531":  {
+                                          "status":  "pending",
+                                          "source_rows":  [
+                                                              14526
+                                                          ],
+                                          "mapping_ids":  [
+
+                                                          ],
+                                          "dimension_group_ids":  [
+
+                                                                  ],
+                                          "pending_reason":  "尚未产生 Ktype 映射",
+                                          "last_updated_round":  58
+                                      },
+                           "105906":  {
+                                          "status":  "pending",
+                                          "source_rows":  [
+                                                              14527
+                                                          ],
+                                          "mapping_ids":  [
+
+                                                          ],
+                                          "dimension_group_ids":  [
+
+                                                                  ],
+                                          "pending_reason":  "尚未产生 Ktype 映射",
+                                          "last_updated_round":  58
+                                      },
+                           "107532":  {
+                                          "status":  "pending",
+                                          "source_rows":  [
+                                                              14528
+                                                          ],
+                                          "mapping_ids":  [
+
+                                                          ],
+                                          "dimension_group_ids":  [
+
+                                                                  ],
+                                          "pending_reason":  "尚未产生 Ktype 映射",
+                                          "last_updated_round":  58
+                                      },
+                           "127205":  {
+                                          "status":  "pending",
+                                          "source_rows":  [
+                                                              14529
+                                                          ],
+                                          "mapping_ids":  [
+
+                                                          ],
+                                          "dimension_group_ids":  [
+
+                                                                  ],
+                                          "pending_reason":  "尚未产生 Ktype 映射",
+                                          "last_updated_round":  58
+                                      },
+                           "115519":  {
+                                          "status":  "pending",
+                                          "source_rows":  [
+                                                              14530
+                                                          ],
+                                          "mapping_ids":  [
+
+                                                          ],
+                                          "dimension_group_ids":  [
+
+                                                                  ],
+                                          "pending_reason":  "尚未产生 Ktype 映射",
+                                          "last_updated_round":  58
+                                      },
+                           "120239":  {
+                                          "status":  "pending",
+                                          "source_rows":  [
+                                                              14531
+                                                          ],
+                                          "mapping_ids":  [
+
+                                                          ],
+                                          "dimension_group_ids":  [
+
+                                                                  ],
+                                          "pending_reason":  "尚未产生 Ktype 映射",
+                                          "last_updated_round":  58
+                                      },
+                           "121651":  {
+                                          "status":  "pending",
+                                          "source_rows":  [
+                                                              14532
+                                                          ],
+                                          "mapping_ids":  [
+
+                                                          ],
+                                          "dimension_group_ids":  [
+
+                                                                  ],
+                                          "pending_reason":  "尚未产生 Ktype 映射",
+                                          "last_updated_round":  58
+                                      },
+                           "105907":  {
+                                          "status":  "pending",
+                                          "source_rows":  [
+                                                              14533
+                                                          ],
+                                          "mapping_ids":  [
+
+                                                          ],
+                                          "dimension_group_ids":  [
+
+                                                                  ],
+                                          "pending_reason":  "尚未产生 Ktype 映射",
+                                          "last_updated_round":  58
+                                      },
+                           "107533":  {
+                                          "status":  "pending",
+                                          "source_rows":  [
+                                                              14534
+                                                          ],
+                                          "mapping_ids":  [
+
+                                                          ],
+                                          "dimension_group_ids":  [
+
+                                                                  ],
+                                          "pending_reason":  "尚未产生 Ktype 映射",
+                                          "last_updated_round":  58
+                                      },
+                           "127206":  {
+                                          "status":  "pending",
+                                          "source_rows":  [
+                                                              14535
+                                                          ],
+                                          "mapping_ids":  [
+
+                                                          ],
+                                          "dimension_group_ids":  [
+
+                                                                  ],
+                                          "pending_reason":  "尚未产生 Ktype 映射",
+                                          "last_updated_round":  58
+                                      },
+                           "115520":  {
+                                          "status":  "pending",
+                                          "source_rows":  [
+                                                              14536
+                                                          ],
+                                          "mapping_ids":  [
+
+                                                          ],
+                                          "dimension_group_ids":  [
+
+                                                                  ],
+                                          "pending_reason":  "尚未产生 Ktype 映射",
+                                          "last_updated_round":  58
+                                      },
+                           "120241":  {
+                                          "status":  "pending",
+                                          "source_rows":  [
+                                                              14537
+                                                          ],
+                                          "mapping_ids":  [
+
+                                                          ],
+                                          "dimension_group_ids":  [
+
+                                                                  ],
+                                          "pending_reason":  "尚未产生 Ktype 映射",
+                                          "last_updated_round":  58
+                                      },
+                           "121652":  {
+                                          "status":  "pending",
+                                          "source_rows":  [
+                                                              14538
+                                                          ],
+                                          "mapping_ids":  [
+
+                                                          ],
+                                          "dimension_group_ids":  [
+
+                                                                  ],
+                                          "pending_reason":  "尚未产生 Ktype 映射",
+                                          "last_updated_round":  58
+                                      },
+                           "105904":  {
+                                          "status":  "pending",
+                                          "source_rows":  [
+                                                              14539
+                                                          ],
+                                          "mapping_ids":  [
+
+                                                          ],
+                                          "dimension_group_ids":  [
+
+                                                                  ],
+                                          "pending_reason":  "尚未产生 Ktype 映射",
+                                          "last_updated_round":  58
+                                      },
+                           "107530":  {
+                                          "status":  "pending",
+                                          "source_rows":  [
+                                                              14540
+                                                          ],
+                                          "mapping_ids":  [
+
+                                                          ],
+                                          "dimension_group_ids":  [
+
+                                                                  ],
+                                          "pending_reason":  "尚未产生 Ktype 映射",
+                                          "last_updated_round":  58
+                                      },
+                           "115506":  {
+                                          "status":  "pending",
+                                          "source_rows":  [
+                                                              14541
+                                                          ],
+                                          "mapping_ids":  [
+
+                                                          ],
+                                          "dimension_group_ids":  [
+
+                                                                  ],
+                                          "pending_reason":  "尚未产生 Ktype 映射",
+                                          "last_updated_round":  58
+                                      },
+                           "120237":  {
+                                          "status":  "pending",
+                                          "source_rows":  [
+                                                              14542
+                                                          ],
+                                          "mapping_ids":  [
+
+                                                          ],
+                                          "dimension_group_ids":  [
+
+                                                                  ],
+                                          "pending_reason":  "尚未产生 Ktype 映射",
+                                          "last_updated_round":  58
+                                      },
+                           "145045":  {
+                                          "status":  "pending",
+                                          "source_rows":  [
+                                                              14543
+                                                          ],
+                                          "mapping_ids":  [
+
+                                                          ],
+                                          "dimension_group_ids":  [
+
+                                                                  ],
+                                          "pending_reason":  "尚未产生 Ktype 映射",
+                                          "last_updated_round":  58
+                                      },
+                           "145524":  {
+                                          "status":  "pending",
+                                          "source_rows":  [
+                                                              14544
+                                                          ],
+                                          "mapping_ids":  [
+
+                                                          ],
+                                          "dimension_group_ids":  [
+
+                                                                  ],
+                                          "pending_reason":  "尚未产生 Ktype 映射",
+                                          "last_updated_round":  58
+                                      },
+                           "145525":  {
+                                          "status":  "pending",
+                                          "source_rows":  [
+                                                              14545
+                                                          ],
+                                          "mapping_ids":  [
+
+                                                          ],
+                                          "dimension_group_ids":  [
+
+                                                                  ],
+                                          "pending_reason":  "尚未产生 Ktype 映射",
+                                          "last_updated_round":  58
+                                      },
+                           "144927":  {
+                                          "status":  "pending",
+                                          "source_rows":  [
+                                                              14546
+                                                          ],
+                                          "mapping_ids":  [
+
+                                                          ],
+                                          "dimension_group_ids":  [
+
+                                                                  ],
+                                          "pending_reason":  "尚未产生 Ktype 映射",
+                                          "last_updated_round":  58
+                                      },
+                           "145526":  {
+                                          "status":  "pending",
+                                          "source_rows":  [
+                                                              14547
+                                                          ],
+                                          "mapping_ids":  [
+
+                                                          ],
+                                          "dimension_group_ids":  [
+
+                                                                  ],
+                                          "pending_reason":  "尚未产生 Ktype 映射",
+                                          "last_updated_round":  58
+                                      },
+                           "150673":  {
+                                          "status":  "pending",
+                                          "source_rows":  [
+                                                              14548
+                                                          ],
+                                          "mapping_ids":  [
+
+                                                          ],
+                                          "dimension_group_ids":  [
+
+                                                                  ],
+                                          "pending_reason":  "尚未产生 Ktype 映射",
+                                          "last_updated_round":  58
+                                      },
+                           "155339":  {
+                                          "status":  "pending",
+                                          "source_rows":  [
+                                                              14549
+                                                          ],
+                                          "mapping_ids":  [
+
+                                                          ],
+                                          "dimension_group_ids":  [
+
+                                                                  ],
+                                          "pending_reason":  "尚未产生 Ktype 映射",
+                                          "last_updated_round":  58
+                                      },
+                           "155340":  {
+                                          "status":  "pending",
+                                          "source_rows":  [
+                                                              14550
+                                                          ],
+                                          "mapping_ids":  [
+
+                                                          ],
+                                          "dimension_group_ids":  [
+
+                                                                  ],
+                                          "pending_reason":  "尚未产生 Ktype 映射",
+                                          "last_updated_round":  58
+                                      },
+                           "7876":  {
+                                        "status":  "pending",
+                                        "source_rows":  [
+                                                            14551
+                                                        ],
+                                        "mapping_ids":  [
+
+                                                        ],
+                                        "dimension_group_ids":  [
+
+                                                                ],
+                                        "pending_reason":  "尚未产生 Ktype 映射",
+                                        "last_updated_round":  58
+                                    },
+                           "124320":  {
+                                          "status":  "pending",
+                                          "source_rows":  [
+                                                              14552
+                                                          ],
+                                          "mapping_ids":  [
+
+                                                          ],
+                                          "dimension_group_ids":  [
+
+                                                                  ],
+                                          "pending_reason":  "尚未产生 Ktype 映射",
+                                          "last_updated_round":  58
+                                      },
+                           "108063":  {
+                                          "status":  "pending",
+                                          "source_rows":  [
+                                                              14553
+                                                          ],
+                                          "mapping_ids":  [
+
+                                                          ],
+                                          "dimension_group_ids":  [
+
+                                                                  ],
+                                          "pending_reason":  "尚未产生 Ktype 映射",
+                                          "last_updated_round":  58
+                                      },
+                           "108062":  {
+                                          "status":  "pending",
+                                          "source_rows":  [
+                                                              14554
+                                                          ],
+                                          "mapping_ids":  [
+
+                                                          ],
+                                          "dimension_group_ids":  [
+
+                                                                  ],
+                                          "pending_reason":  "尚未产生 Ktype 映射",
+                                          "last_updated_round":  58
+                                      },
+                           "120596":  {
+                                          "status":  "pending",
+                                          "source_rows":  [
+                                                              14555
+                                                          ],
+                                          "mapping_ids":  [
+
+                                                          ],
+                                          "dimension_group_ids":  [
+
+                                                                  ],
+                                          "pending_reason":  "尚未产生 Ktype 映射",
+                                          "last_updated_round":  58
+                                      },
+                           "15109":  {
+                                         "status":  "pending",
+                                         "source_rows":  [
+                                                             14556
+                                                         ],
+                                         "mapping_ids":  [
+
+                                                         ],
+                                         "dimension_group_ids":  [
+
+                                                                 ],
+                                         "pending_reason":  "尚未产生 Ktype 映射",
+                                         "last_updated_round":  58
+                                     },
+                           "18280":  {
+                                         "status":  "pending",
+                                         "source_rows":  [
+                                                             14557
+                                                         ],
+                                         "mapping_ids":  [
+
+                                                         ],
+                                         "dimension_group_ids":  [
+
+                                                                 ],
+                                         "pending_reason":  "尚未产生 Ktype 映射",
+                                         "last_updated_round":  58
+                                     },
+                           "126647":  {
+                                          "status":  "pending",
+                                          "source_rows":  [
+                                                              14558
+                                                          ],
+                                          "mapping_ids":  [
+
+                                                          ],
+                                          "dimension_group_ids":  [
+
+                                                                  ],
+                                          "pending_reason":  "尚未产生 Ktype 映射",
+                                          "last_updated_round":  58
+                                      },
+                           "55503":  {
+                                         "status":  "pending",
+                                         "source_rows":  [
+                                                             14559
+                                                         ],
+                                         "mapping_ids":  [
+
+                                                         ],
+                                         "dimension_group_ids":  [
+
+                                                                 ],
+                                         "pending_reason":  "尚未产生 Ktype 映射",
+                                         "last_updated_round":  58
+                                     },
+                           "163836":  {
+                                          "status":  "pending",
+                                          "source_rows":  [
+                                                              14560
+                                                          ],
+                                          "mapping_ids":  [
+
+                                                          ],
+                                          "dimension_group_ids":  [
+
+                                                                  ],
+                                          "pending_reason":  "尚未产生 Ktype 映射",
+                                          "last_updated_round":  58
+                                      },
+                           "121500":  {
+                                          "status":  "pending",
+                                          "source_rows":  [
+                                                              14561
+                                                          ],
+                                          "mapping_ids":  [
+
+                                                          ],
+                                          "dimension_group_ids":  [
+
+                                                                  ],
+                                          "pending_reason":  "尚未产生 Ktype 映射",
+                                          "last_updated_round":  58
+                                      },
+                           "18611":  {
+                                         "status":  "pending",
+                                         "source_rows":  [
+                                                             14562
+                                                         ],
+                                         "mapping_ids":  [
+
+                                                         ],
+                                         "dimension_group_ids":  [
+
+                                                                 ],
+                                         "pending_reason":  "尚未产生 Ktype 映射",
+                                         "last_updated_round":  58
+                                     },
+                           "16418":  {
+                                         "status":  "pending",
+                                         "source_rows":  [
+                                                             14563
+                                                         ],
+                                         "mapping_ids":  [
+
+                                                         ],
+                                         "dimension_group_ids":  [
+
+                                                                 ],
+                                         "pending_reason":  "尚未产生 Ktype 映射",
+                                         "last_updated_round":  58
+                                     },
+                           "10870":  {
+                                         "status":  "pending",
+                                         "source_rows":  [
+                                                             14564
+                                                         ],
+                                         "mapping_ids":  [
+
+                                                         ],
+                                         "dimension_group_ids":  [
+
+                                                                 ],
+                                         "pending_reason":  "尚未产生 Ktype 映射",
+                                         "last_updated_round":  58
+                                     },
+                           "16422":  {
+                                         "status":  "pending",
+                                         "source_rows":  [
+                                                             14565
+                                                         ],
+                                         "mapping_ids":  [
+
+                                                         ],
+                                         "dimension_group_ids":  [
+
+                                                                 ],
+                                         "pending_reason":  "尚未产生 Ktype 映射",
+                                         "last_updated_round":  58
+                                     },
+                           "18353":  {
+                                         "status":  "pending",
+                                         "source_rows":  [
+                                                             14566
+                                                         ],
+                                         "mapping_ids":  [
+
+                                                         ],
+                                         "dimension_group_ids":  [
+
+                                                                 ],
+                                         "pending_reason":  "尚未产生 Ktype 映射",
+                                         "last_updated_round":  58
+                                     },
+                           "18612":  {
+                                         "status":  "pending",
+                                         "source_rows":  [
+                                                             14567
+                                                         ],
+                                         "mapping_ids":  [
+
+                                                         ],
+                                         "dimension_group_ids":  [
+
+                                                                 ],
+                                         "pending_reason":  "尚未产生 Ktype 映射",
+                                         "last_updated_round":  58
+                                     },
+                           "16423":  {
+                                         "status":  "pending",
+                                         "source_rows":  [
+                                                             14568
+                                                         ],
+                                         "mapping_ids":  [
+
+                                                         ],
+                                         "dimension_group_ids":  [
+
+                                                                 ],
+                                         "pending_reason":  "尚未产生 Ktype 映射",
+                                         "last_updated_round":  58
+                                     },
+                           "16419":  {
+                                         "status":  "pending",
+                                         "source_rows":  [
+                                                             14569
+                                                         ],
+                                         "mapping_ids":  [
+
+                                                         ],
+                                         "dimension_group_ids":  [
+
+                                                                 ],
+                                         "pending_reason":  "尚未产生 Ktype 映射",
+                                         "last_updated_round":  58
+                                     },
+                           "143197":  {
+                                          "status":  "pending",
+                                          "source_rows":  [
+                                                              14570
+                                                          ],
+                                          "mapping_ids":  [
+
+                                                          ],
+                                          "dimension_group_ids":  [
+
+                                                                  ],
+                                          "pending_reason":  "尚未产生 Ktype 映射",
+                                          "last_updated_round":  58
+                                      },
+                           "143198":  {
+                                          "status":  "pending",
+                                          "source_rows":  [
+                                                              14571
+                                                          ],
+                                          "mapping_ids":  [
+
+                                                          ],
+                                          "dimension_group_ids":  [
+
+                                                                  ],
+                                          "pending_reason":  "尚未产生 Ktype 映射",
+                                          "last_updated_round":  58
+                                      },
+                           "143199":  {
+                                          "status":  "pending",
+                                          "source_rows":  [
+                                                              14572
+                                                          ],
+                                          "mapping_ids":  [
+
+                                                          ],
+                                          "dimension_group_ids":  [
+
+                                                                  ],
+                                          "pending_reason":  "尚未产生 Ktype 映射",
+                                          "last_updated_round":  58
+                                      },
+                           "143200":  {
+                                          "status":  "pending",
+                                          "source_rows":  [
+                                                              14573
+                                                          ],
+                                          "mapping_ids":  [
+
+                                                          ],
+                                          "dimension_group_ids":  [
+
+                                                                  ],
+                                          "pending_reason":  "尚未产生 Ktype 映射",
+                                          "last_updated_round":  58
+                                      },
+                           "55132":  {
+                                         "status":  "pending",
+                                         "source_rows":  [
+                                                             14574
+                                                         ],
+                                         "mapping_ids":  [
+
+                                                         ],
+                                         "dimension_group_ids":  [
+
+                                                                 ],
+                                         "pending_reason":  "尚未产生 Ktype 映射",
+                                         "last_updated_round":  58
+                                     },
+                           "125941":  {
+                                          "status":  "pending",
+                                          "source_rows":  [
+                                                              14575
+                                                          ],
+                                          "mapping_ids":  [
+
+                                                          ],
+                                          "dimension_group_ids":  [
+
+                                                                  ],
+                                          "pending_reason":  "尚未产生 Ktype 映射",
+                                          "last_updated_round":  58
+                                      },
+                           "34232":  {
+                                         "status":  "ready",
+                                         "source_rows":  [
+                                                             14576
+                                                         ],
+                                         "mapping_ids":  [
+                                                             "34232"
+                                                         ],
+                                         "dimension_group_ids":  [
+                                                                     "EU-RENAULT-TRUCKS-B-90-PH1-VAN-HIGHROOF-01"
+                                                                 ],
+                                         "pending_reason":  "",
+                                         "last_updated_round":  58
+                                     },
+                           "34233":  {
+                                         "status":  "pending",
+                                         "source_rows":  [
+                                                             14577
+                                                         ],
+                                         "mapping_ids":  [
+                                                             "34233"
+                                                         ],
+                                         "dimension_group_ids":  [
+
+                                                                 ],
+                                         "pending_reason":  "标准平台完整三维及无镜宽度未闭合；映射缺少 DIMENSION_GROUP_ID",
+                                         "last_updated_round":  58
+                                     },
+                           "34234":  {
+                                         "status":  "ready",
+                                         "source_rows":  [
+                                                             14578
+                                                         ],
+                                         "mapping_ids":  [
+                                                             "34234"
+                                                         ],
+                                         "dimension_group_ids":  [
+                                                                     "EU-RENAULT-TRUCKS-B-90-PH1-VAN-HIGHROOF-01"
+                                                                 ],
+                                         "pending_reason":  "",
+                                         "last_updated_round":  58
+                                     },
+                           "34235":  {
+                                         "status":  "pending",
+                                         "source_rows":  [
+                                                             14579
+                                                         ],
+                                         "mapping_ids":  [
+                                                             "34235"
+                                                         ],
+                                         "dimension_group_ids":  [
+
+                                                                 ],
+                                         "pending_reason":  "标准平台完整三维及无镜宽度未闭合；映射缺少 DIMENSION_GROUP_ID",
+                                         "last_updated_round":  58
+                                     },
+                           "34236":  {
+                                         "status":  "ready",
+                                         "source_rows":  [
+                                                             14580
+                                                         ],
+                                         "mapping_ids":  [
+                                                             "34236"
+                                                         ],
+                                         "dimension_group_ids":  [
+                                                                     "EU-RENAULT-TRUCKS-B-90-PH1-VAN-HIGHROOF-01"
+                                                                 ],
+                                         "pending_reason":  "",
+                                         "last_updated_round":  58
+                                     },
+                           "34237":  {
+                                         "status":  "pending",
+                                         "source_rows":  [
+                                                             14581
+                                                         ],
+                                         "mapping_ids":  [
+                                                             "34237"
+                                                         ],
+                                         "dimension_group_ids":  [
+
+                                                                 ],
+                                         "pending_reason":  "标准平台完整三维及无镜宽度未闭合；映射缺少 DIMENSION_GROUP_ID",
+                                         "last_updated_round":  58
+                                     },
+                           "34238":  {
+                                         "status":  "ready",
+                                         "source_rows":  [
+                                                             14582
+                                                         ],
+                                         "mapping_ids":  [
+                                                             "34238"
+                                                         ],
+                                         "dimension_group_ids":  [
+                                                                     "EU-RENAULT-TRUCKS-B-90-PH1-PLATFORM-4X4-01"
+                                                                 ],
+                                         "pending_reason":  "",
+                                         "last_updated_round":  58
+                                     },
+                           "34239":  {
+                                         "status":  "ready",
+                                         "source_rows":  [
+                                                             14583
+                                                         ],
+                                         "mapping_ids":  [
+                                                             "34239"
+                                                         ],
+                                         "dimension_group_ids":  [
+                                                                     "EU-RENAULT-TRUCKS-B-90-PH1-PLATFORM-4X4-01"
+                                                                 ],
+                                         "pending_reason":  "",
+                                         "last_updated_round":  58
+                                     },
+                           "34152":  {
+                                         "status":  "ready",
+                                         "source_rows":  [
+                                                             14584
+                                                         ],
+                                         "mapping_ids":  [
+                                                             "34152"
+                                                         ],
+                                         "dimension_group_ids":  [
+                                                                     "EU-RENAULT-TRUCKS-MASCOTT-PH1-PLATFORM-WB3630-02"
+                                                                 ],
+                                         "pending_reason":  "",
+                                         "last_updated_round":  58
+                                     },
+                           "34153":  {
+                                         "status":  "pending",
+                                         "source_rows":  [
+                                                             14585
+                                                         ],
+                                         "mapping_ids":  [
+
+                                                         ],
+                                         "dimension_group_ids":  [
+
+                                                                 ],
+                                         "pending_reason":  "尚未产生 Ktype 映射",
+                                         "last_updated_round":  58
+                                     },
+                           "34145":  {
+                                         "status":  "pending",
+                                         "source_rows":  [
+                                                             14586
+                                                         ],
+                                         "mapping_ids":  [
+
+                                                         ],
+                                         "dimension_group_ids":  [
+
+                                                                 ],
+                                         "pending_reason":  "尚未产生 Ktype 映射",
+                                         "last_updated_round":  58
+                                     },
+                           "34151":  {
+                                         "status":  "pending",
+                                         "source_rows":  [
+                                                             14587
+                                                         ],
+                                         "mapping_ids":  [
+
+                                                         ],
+                                         "dimension_group_ids":  [
+
+                                                                 ],
+                                         "pending_reason":  "尚未产生 Ktype 映射",
+                                         "last_updated_round":  58
+                                     },
+                           "34150":  {
+                                         "status":  "pending",
+                                         "source_rows":  [
+                                                             14588
+                                                         ],
+                                         "mapping_ids":  [
+
+                                                         ],
+                                         "dimension_group_ids":  [
+
+                                                                 ],
+                                         "pending_reason":  "尚未产生 Ktype 映射",
+                                         "last_updated_round":  58
+                                     },
+                           "34149":  {
+                                         "status":  "pending",
+                                         "source_rows":  [
+                                                             14589
+                                                         ],
+                                         "mapping_ids":  [
+
+                                                         ],
+                                         "dimension_group_ids":  [
+
+                                                                 ],
+                                         "pending_reason":  "尚未产生 Ktype 映射",
+                                         "last_updated_round":  58
+                                     },
+                           "34270":  {
+                                         "status":  "pending",
+                                         "source_rows":  [
+                                                             14590
+                                                         ],
+                                         "mapping_ids":  [
+
+                                                         ],
+                                         "dimension_group_ids":  [
+
+                                                                 ],
+                                         "pending_reason":  "尚未产生 Ktype 映射",
+                                         "last_updated_round":  58
+                                     },
+                           "34271":  {
+                                         "status":  "pending",
+                                         "source_rows":  [
+                                                             14591
+                                                         ],
+                                         "mapping_ids":  [
+
+                                                         ],
+                                         "dimension_group_ids":  [
+
+                                                                 ],
+                                         "pending_reason":  "尚未产生 Ktype 映射",
+                                         "last_updated_round":  58
+                                     },
+                           "34272":  {
+                                         "status":  "pending",
+                                         "source_rows":  [
+                                                             14592
+                                                         ],
+                                         "mapping_ids":  [
+
+                                                         ],
+                                         "dimension_group_ids":  [
+
+                                                                 ],
+                                         "pending_reason":  "尚未产生 Ktype 映射",
+                                         "last_updated_round":  58
+                                     },
+                           "34273":  {
+                                         "status":  "pending",
+                                         "source_rows":  [
+                                                             14593
+                                                         ],
+                                         "mapping_ids":  [
+
+                                                         ],
+                                         "dimension_group_ids":  [
+
+                                                                 ],
+                                         "pending_reason":  "尚未产生 Ktype 映射",
+                                         "last_updated_round":  58
+                                     },
+                           "34274":  {
+                                         "status":  "pending",
+                                         "source_rows":  [
+                                                             14594
+                                                         ],
+                                         "mapping_ids":  [
+
+                                                         ],
+                                         "dimension_group_ids":  [
+
+                                                                 ],
+                                         "pending_reason":  "尚未产生 Ktype 映射",
+                                         "last_updated_round":  58
+                                     },
+                           "34144":  {
+                                         "status":  "pending",
+                                         "source_rows":  [
+                                                             14595
+                                                         ],
+                                         "mapping_ids":  [
+
+                                                         ],
+                                         "dimension_group_ids":  [
+
+                                                                 ],
+                                         "pending_reason":  "尚未产生 Ktype 映射",
+                                         "last_updated_round":  58
+                                     },
+                           "34143":  {
+                                         "status":  "pending",
+                                         "source_rows":  [
+                                                             14596
+                                                         ],
+                                         "mapping_ids":  [
+
+                                                         ],
+                                         "dimension_group_ids":  [
+
+                                                                 ],
+                                         "pending_reason":  "尚未产生 Ktype 映射",
+                                         "last_updated_round":  58
+                                     },
+                           "34189":  {
+                                         "status":  "ready",
+                                         "source_rows":  [
+                                                             14597
+                                                         ],
+                                         "mapping_ids":  [
+                                                             "34189"
+                                                         ],
+                                         "dimension_group_ids":  [
+                                                                     "EU-RENAULT-TRUCKS-MASCOTT-PH1-PLATFORM-WB3630-01"
+                                                                 ],
+                                         "pending_reason":  "",
+                                         "last_updated_round":  58
+                                     },
+                           "34192":  {
+                                         "status":  "pending",
+                                         "source_rows":  [
+                                                             14598
+                                                         ],
+                                         "mapping_ids":  [
+
+                                                         ],
+                                         "dimension_group_ids":  [
+
+                                                                 ],
+                                         "pending_reason":  "尚未产生 Ktype 映射",
+                                         "last_updated_round":  58
+                                     },
+                           "34193":  {
+                                         "status":  "pending",
+                                         "source_rows":  [
+                                                             14599
+                                                         ],
+                                         "mapping_ids":  [
+
+                                                         ],
+                                         "dimension_group_ids":  [
+
+                                                                 ],
+                                         "pending_reason":  "尚未产生 Ktype 映射",
+                                         "last_updated_round":  58
+                                     },
+                           "34257":  {
+                                         "status":  "ready",
+                                         "source_rows":  [
+                                                             14600
+                                                         ],
+                                         "mapping_ids":  [
+                                                             "34257"
+                                                         ],
+                                         "dimension_group_ids":  [
+                                                                     "EU-RENAULT-TRUCKS-MASCOTT-PH1-PLATFORM-WB4130-01"
+                                                                 ],
+                                         "pending_reason":  "",
+                                         "last_updated_round":  58
+                                     }
+                       },
+    "progress":  {
+                     "input_ktype_count":  100,
+                     "ready_ktype_count":  17,
+                     "pending_ktype_count":  83,
+                     "pending_ktypes":  [
+                                            "14019",
+                                            "14013",
+                                            "14014",
+                                            "11250",
+                                            "15598",
+                                            "14570",
+                                            "15713",
+                                            "15714",
+                                            "15712",
+                                            "15716",
+                                            "15711",
+                                            "15715",
+                                            "110695",
+                                            "17335",
+                                            "17511",
+                                            "105905",
+                                            "107531",
+                                            "105906",
+                                            "107532",
+                                            "127205",
+                                            "115519",
+                                            "120239",
+                                            "121651",
+                                            "105907",
+                                            "107533",
+                                            "127206",
+                                            "115520",
+                                            "120241",
+                                            "121652",
+                                            "105904",
+                                            "107530",
+                                            "115506",
+                                            "120237",
+                                            "145045",
+                                            "145524",
+                                            "145525",
+                                            "144927",
+                                            "145526",
+                                            "150673",
+                                            "155339",
+                                            "155340",
+                                            "7876",
+                                            "124320",
+                                            "108063",
+                                            "108062",
+                                            "120596",
+                                            "15109",
+                                            "18280",
+                                            "126647",
+                                            "55503",
+                                            "163836",
+                                            "121500",
+                                            "18611",
+                                            "16418",
+                                            "10870",
+                                            "16422",
+                                            "18353",
+                                            "18612",
+                                            "16423",
+                                            "16419",
+                                            "143197",
+                                            "143198",
+                                            "143199",
+                                            "143200",
+                                            "55132",
+                                            "125941",
+                                            "34233",
+                                            "34235",
+                                            "34237",
+                                            "34153",
+                                            "34145",
+                                            "34151",
+                                            "34150",
+                                            "34149",
+                                            "34270",
+                                            "34271",
+                                            "34272",
+                                            "34273",
+                                            "34274",
+                                            "34144",
+                                            "34143",
+                                            "34192",
+                                            "34193"
+                                        ]
+                 },
+    "artifacts":  {
+                      "current_mapping":  "D:\\Licheng\\Repo\\fitment_sheet_generation\\projects\\qclaw_fitment_automation\\workspaces\\0802-eu\\checkpoints\\part-04\\task-state\\left18448__batch__0146__11160452\\current_mapping.tsv",
+                      "current_dimension_groups":  "D:\\Licheng\\Repo\\fitment_sheet_generation\\projects\\qclaw_fitment_automation\\workspaces\\0802-eu\\checkpoints\\part-04\\task-state\\left18448__batch__0146__11160452\\current_dimension_groups.tsv"
+                  },
+    "updated_at":  "2026-08-04 12:35:47"
 }

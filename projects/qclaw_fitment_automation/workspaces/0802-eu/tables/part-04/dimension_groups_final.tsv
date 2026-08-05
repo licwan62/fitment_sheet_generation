@@ -1,4 +1,4 @@
-DIMENSION_GROUP_ID	LengthMM	WidthMM	HeightMM	DimensionSource	SourceURL
+﻿DIMENSION_GROUP_ID	LengthMM	WidthMM	HeightMM	DimensionSource	SourceURL
 EU-RENAULT-CLIO-II-HATCHBACK-3D-FACELIFT-01	3812	1639	1417	Automobile-Catalog 2001 Renault Clio 1.6 16V	https://www.automobile-catalog.com/car/2001/2949215/renault_clio_1_6_16v.html
 EU-RENAULT-CLIO-II-HATCHBACK-5D-FACELIFT-01	3812	1639	1417	Automobile-Catalog 2001 Renault Clio 1.6 16V	https://www.automobile-catalog.com/car/2001/2949215/renault_clio_1_6_16v.html
 EU-RENAULT-CLIO-II-HATCHBACK-3D-PREFL-01	3773	1639	1417	Automobile-Catalog 2000 Renault Clio 1.6 16V	https://www.automobile-catalog.com/car/2000/2949020/renault_clio_1_6_16v.html
@@ -61,7 +61,6 @@ EU-RENAULT-KOLEOS-II-SUV-FACELIFT-01	4673	1843	1678	Renault official Koleos dime
 EU-RENAULT-LAGUNA-III-COUPE-01	4643	1812	1398	Renault UK New Laguna Coupé official press release	https://www.press.renault.co.uk/releases/91
 EU-RENAULT-LAGUNA-I-HATCHBACK-FACELIFT-01	4508	1752	1433	Automobile-Catalog Renault Laguna I hatchback	https://www.automobile-catalog.com/car/1997/2945675/renault_laguna_2_0i_automatic.html
 EU-RENAULT-LAGUNA-I-WAGON-FACELIFT-01	4620	1752	1448	Automobile-Catalog Renault Laguna I Wagon	https://www.automobile-catalog.com/car/1997/2945735/renault_laguna_wagon_1_8i.html
-EU-RENAULT-LAGUNA-II-HATCHBACK-PREFL-01	4576	1772	1429	Automobile-Catalog Renault Laguna II hatchback	https://www.automobile-catalog.com/car/2001/2956625/renault_laguna_2_0_16v.html
 EU-RENAULT-MEGANE-E-TECH-ELECTRIC-SUV-5D-01	4200	1768	1505	Renault Suisse Megane E-Tech Electric official price/spec sheet	https://cdn.group.renault.com/ren/ch/renault-new-cars/pricelists/Renault_Megane_E-Tech_Electric_PL_d.pdf
 EU-RENAULT-MEGANE-I-PHASE-I-HATCHBACK-5D-01	4129	1699	1420	Auto-Data Renault Megane I (BA)	https://www.auto-data.net/en/renault-megane-i-ba-generation-2152
 EU-RENAULT-MEGANE-I-PHASE-II-HATCHBACK-5D-01	4164	1698	1420	Auto-Data Renault Megane I Phase II	https://www.auto-data.net/en/renault-megane-i-phase-ii-1999-generation-5577
@@ -624,3 +623,655 @@ EU-TOYOTA-AYGO-II-HATCHBACK-STANDARD-01	3455	1615	1460	Auto-Data.net	https://www
 EU-TOYOTA-AYGO-X-I-HATCHBACK-ORIGINAL-01	3700	1740	1525	Auto-Data.net	https://www.auto-data.net/en/toyota-aygo-x-model-3031
 EU-TOYOTA-AYGO-X-I-HATCHBACK-FACELIFT-2025-01	3776	1740	1525	Auto-Data.net	https://www.auto-data.net/en/toyota-aygo-x-model-3031
 EU-TOYOTA-BZ4X-I-SUV-FACELIFT-2025-01	4690	1860	1650	Auto-Data.net	https://www.auto-data.net/en/toyota-bz4x-model-3027
+EU-TOYOTA-BZ4X-I-WAGON-TOURING-2026-01	4830	1860	1670	RAC Drive	https://www.rac.co.uk/drive/car-reviews/toyota/bz4x/bz4x-touring/
+EU-TOYOTA-CAMRY-V20-WAGON-STANDARD-01	4610	1710	1440	Auto-Data	https://www.auto-data.net/en/toyota-camry-ii-wagon-v20-generation-1017
+EU-TOYOTA-CAMRY-XV20-SEDAN-STANDARD-01	4765	1785	1430	Auto-Data	https://www.auto-data.net/en/toyota-camry-iv-xv20-generation-1014
+EU-TOYOTA-CAMRY-XV40-SEDAN-PREFACELIFT-01	4815	1820	1480	Auto-Data	https://www.auto-data.net/en/toyota-camry-vi-xv40-generation-1008
+EU-TOYOTA-CAMRY-XV40-SEDAN-FACELIFT-01	4806	1821	1465	Auto-Data	https://www.auto-data.net/en/toyota-camry-vi-xv40-facelift-2009-generation-5813
+EU-TOYOTA-CAMRY-XV50-SEDAN-PREFACELIFT-01	4825	1825	1480	Auto-Data	https://www.auto-data.net/en/toyota-camry-vii-xv50-generation-4696
+EU-TOYOTA-CAMRY-XV50-SEDAN-FACELIFT-01	4850	1825	1480	Auto-Data	https://www.auto-data.net/en/toyota-camry-vii-xv50-facelift-2014-generation-4697
+EU-TOYOTA-CAMRY-V10-SEDAN-STANDARD-01	4435	1690	1395	Auto-Data	https://www.auto-data.net/en/toyota-camry-i-v10-1.8-turbo-d-73hp-3946
+EU-TOYOTA-CAMRY-XV80-SEDAN-STANDARD-01	4915	1840	1450	Auto-Data	https://www.auto-data.net/en/toyota-camry-ix-xv80-generation-9999
+EU-TOYOTA-CARINA-E-T19-SEDAN-STANDARD-01	4530	1695	1410	Auto-Data	https://www.auto-data.net/en/toyota-carina-e-t19-generation-1036
+EU-TOYOTA-CARINA-E-T19-HATCHBACK-STANDARD-01	4530	1695	1410	Auto-Data	https://www.auto-data.net/en/toyota-carina-e-hatch-t19-generation-1034
+EU-TOYOTA-CARINA-E-T19-WAGON-STANDARD-01	4545	1695	1470	Auto-Data	https://www.auto-data.net/en/toyota-carina-e-wagon-t19-generation-1033
+EU-TOYOTA-CARINA-TA1-SEDAN-STANDARD-01	4135	1570	1385	Toyota Global	https://www.toyota-global.com/company/history_of_toyota/75years/vehicle_lineage/car/id60002214/
+EU-TOYOTA-CARINA-TA4L-TA6L-SEDAN-STANDARD-01	4390	1650	1400	Toyota Global	https://www.toyota-global.com/company/history_of_toyota/75years/vehicle_lineage/car/id60002453A/
+EU-TOYOTA-CELICA-A20-A30-COUPE-LIFTBACK-01	4240	1620	1295	Automobile-Catalog	https://www.automobile-catalog.com/car/1976/3460055/toyota_celica_liftback_2000_gt.html
+EU-TOYOTA-CELICA-T18-COUPE-LIFTBACK-01	4420	1690	1300	Auto-Data	https://www.auto-data.net/en/toyota-celica-t18-generation-770
+EU-TOYOTA-CELICA-T16-COUPE-LIFTBACK-01	4380	1710	1290	Auto-Data	https://www.auto-data.net/en/toyota-celica-t16-generation-771
+EU-TOYOTA-CELICA-T23-COUPE-LIFTBACK-01	4335	1735	1320	Auto-Data	https://www.auto-data.net/en/toyota-celica-t23-generation-766
+EU-TOYOTA-CELICA-T20-COUPE-LIFTBACK-01	4425	1750	1305	Auto-Data	https://www.auto-data.net/en/toyota-celica-t20-generation-767
+EU-TOYOTA-CELICA-T20-CONVERTIBLE-STANDARD-01	4496	1750	1295	Auto-Data	https://www.auto-data.net/en/toyota-celica-cabrio-t20-generation-768
+EU-TOYOTA-C-HR-I-SUV-STANDARD-01	4360	1795	1565	Auto-Data	https://www.auto-data.net/en/toyota-c-hr-i-1.2-116hp-26892
+EU-TOYOTA-C-HR-II-SUV-STANDARD-01	4360	1830	1570	Auto-Data	https://www.auto-data.net/en/toyota-c-hr-ii-1.8-140hp-hybrid-e-cvt-49024
+EU-TOYOTA-C-HR-PLUS-I-SUV-STANDARD-01	4520	1870	1595	Toyota Global	https://global.toyota/en/newsroom/toyota/42383534.html
+EU-TOYOTA-COROLLA-E120-E130-WAGON-STANDARD-01	4410	1710	1520	Auto-Data	https://www.auto-data.net/en/toyota-corolla-wagon-ix-e120-e130-generation-821
+EU-TOYOTA-COROLLA-E110-HATCHBACK-LIFTBACK-01	4270	1690	1385	Auto-Data	https://www.auto-data.net/en/toyota-corolla-hatch-viii-e110-generation-827
+EU-TOYOTA-COROLLA-E80-SEDAN-STANDARD-01	4140	1610	1385	Toyota Drive Place	https://toyota.drive.place/corolla/v/group_sedan/506477
+EU-TOYOTA-COROLLA-E80-HATCHBACK-STANDARD-01	3970	1635	1380	Automobile-Catalog	https://www.automobile-catalog.com/car/1987/3533570/toyota_corolla_compact_1_3_std.html
+EU-TOYOTA-COROLLA-E90-WAGON-STANDARD-01	4205	1655	1425	Automobile-Catalog	https://www.automobile-catalog.com/car/1987/3543320/toyota_corolla_wagon_1_3_gl.html
+EU-TOYOTA-COROLLA-AR10-MPV-PREFACELIFT-01	4360	1770	1620	Auto-Data	https://www.auto-data.net/en/toyota-corolla-verso-ii-ar10-1.6-vvt-i-110hp-42295
+EU-TOYOTA-COROLLA-AR10-MPV-FACELIFT-01	4370	1770	1620	Auto-Data	https://www.auto-data.net/en/toyota-corolla-verso-ii-ar10-facelift-2007-1.6-16v-110hp-3292
+EU-TOYOTA-COROLLA-E170-SEDAN-STANDARD-01	4620	1775	1465	Auto-Data	https://www.auto-data.net/en/toyota-corolla-xi-e170-generation-4066
+EU-TOYOTA-COROLLA-E100-SEDAN-STANDARD-01	4270	1685	1380	Auto-Data	https://www.auto-data.net/en/toyota-corolla-vii-e100-generation-830
+EU-TOYOTA-COROLLA-E110-SEDAN-STANDARD-01	4295	1690	1385	Auto-Data	https://www.auto-data.net/en/toyota-corolla-viii-e110-generation-825
+EU-TOYOTA-COROLLA-AE86-COUPE-STANDARD-01	4205	1625	1335	Toyota Global	https://www.toyota-global.com/company/history_of_toyota/75years/vehicle_lineage/car/id60009032/index.html
+EU-TOYOTA-COROLLA-E140-E150-SEDAN-STANDARD-01	4540	1760	1470	Auto-Data	https://www.auto-data.net/en/toyota-corolla-x-e140-e150-generation-816
+EU-TOYOTA-COROLLA-E70-HATCHBACK-STANDARD-01	4050	1610	1385	Auto-Data	https://www.auto-data.net/en/toyota-corolla-hatch-iv-e70-1.8-d-65hp-3425
+EU-TOYOTA-COROLLA-E100-HATCHBACK-COMPACT-01	4095	1685	1380	Auto-Data	https://www.auto-data.net/en/toyota-corolla-compact-vii-e100-generation-831
+EU-TOYOTA-COROLLA-E100-HATCHBACK-LIFTBACK-01	4295	1685	1375	Auto-Data	https://www.auto-data.net/en/toyota-corolla-hatch-vii-e100-generation-832
+EU-TOYOTA-COROLLA-E100-WAGON-STANDARD-01	4260	1685	1460	Auto-Data	https://www.auto-data.net/en/toyota-corolla-wagon-vii-e100-generation-833
+EU-TOYOTA-COROLLA-E110-WAGON-STANDARD-01	4320	1690	1445	Auto-Data	https://www.auto-data.net/en/toyota-corolla-wagon-viii-e110-1.3-i-16v-86hp-3342
+EU-TOYOTA-COROLLA-E120-E130-HATCHBACK-STANDARD-01	4180	1710	1475	Auto-Data	https://www.auto-data.net/en/toyota-corolla-hatch-ix-e120-e130-1.4-i-16v-97hp-3314
+EU-TOYOTA-COROLLA-E120-E130-SEDAN-STANDARD-01	4375	1710	1470	Auto-Data	https://www.auto-data.net/en/toyota-corolla-ix-e120-e130-generation-819
+EU-TOYOTA-COROLLA-E90-SEDAN-STANDARD-01	4195	1655	1365	Toyota Global	https://www.toyota-global.com/company/history_of_toyota/75years/vehicle_lineage/car/id60003780/index.html
+EU-TOYOTA-COROLLA-E70-WAGON-HIGHROOF-01	4215	1610	1450	Auto-Data	https://www.auto-data.net/en/toyota-corolla-wagon-iv-e70-1.8-d-60hp-3428
+EU-TOYOTA-COROLLA-E210-HATCHBACK-STANDARD-01	4370	1790	1435	Auto-Data	https://www.auto-data.net/en/toyota-corolla-hatchback-xii-e210-1.8-122hp-hybrid-e-cvt-34628
+EU-TOYOTA-COROLLA-E210-WAGON-STANDARD-01	4650	1790	1435	Auto-Data	https://www.auto-data.net/en/toyota-corolla-touring-sports-xii-e210-1.8-122hp-hybrid-e-cvt-34626
+EU-TOYOTA-COROLLA-CROSS-I-SUV-STANDARD-01	4460	1825	1620	Auto-Data	https://www.auto-data.net/en/toyota-corolla-cross-1.8-140hp-hybrid-e-cvt-47171
+EU-TOYOTA-COROLLA-VERSO-E120-MPV-STANDARD-01	4240	1710	1610	Auto-Data	https://www.auto-data.net/en/toyota-corolla-verso-model-2415
+EU-TOYOTA-COROLLA-E210-SEDAN-STANDARD-01	4630	1780	1435	Auto-Data	https://www.auto-data.net/en/toyota-corolla-xii-e210-facelift-2022-generation-9065
+EU-RENAULT-LAGUNA-II-HATCHBACK-FACELIFT-01	4598	1772	1433	Automobile-Catalog	https://www.automobile-catalog.com/car/2005/2957030/renault_laguna_2_0_16v.html
+EU-RENAULT-LAGUNA-II-WAGON-01	4695	1772	1443	Automobile-Catalog	https://www.automobile-catalog.com/car/2003/2956970/renault_laguna_wagon_grandtour_1_9_dci_120.html
+EU-RENAULT-LAGUNA-III-HATCHBACK-01	4695	1811	1445	Automobile-Catalog	https://www.automobile-catalog.com/car/2007/2957810/renault_laguna_2_0_16v.html
+EU-RENAULT-LAGUNA-III-WAGON-01	4803	1811	1445	Automobile-Catalog	https://www.automobile-catalog.com/car/2008/2958185/renault_laguna_wagon_grandtour_2_0_16v.html
+EU-RENAULT-LATITUDE-I-SEDAN-01	4897	1832	1483	Renault Latitude press kit	https://0-100.hotnews.ro/home/wp-content/uploads/2010/11/23972_RENAULT_LATITUDE_-_EN_42D42C6C.pdf
+EU-RENAULT-LOGAN-I-SEDAN-PREFL-01	4250	1735	1525	Auto-Data	https://www.auto-data.net/en/dacia-logan-i-1.5-dci-65hp-15892
+EU-RENAULT-LOGAN-I-SEDAN-FACELIFT-01	4290	1740	1534	Auto-Data	https://www.auto-data.net/en/dacia-logan-i-facelift-2008-generation-3957
+EU-RENAULT-LOGAN-I-WAGON-FACELIFT-01	4473	1740	1640	Auto-Data	https://www.auto-data.net/en/dacia-logan-model-1791
+EU-RENAULT-LOGAN-II-WAGON-PREFL-01	4492	1733	1550	Automobile-Catalog	https://www.automobile-catalog.com/car/2014/1856600/dacia_logan_mcv_dci_90_eco2.html
+EU-RENAULT-LOGAN-II-SEDAN-PREFL-01	4346	1733	1517	Auto-Data	https://www.auto-data.net/en/dacia-logan-ii-1.2-75hp-23608
+EU-RENAULT-MASTER-III-VAN-FWD-L1H1-PRE2019-01	5048	2070	2307	Renault Master official brochure (2017)	https://www.diacfa.com/wp-content/uploads/RENAULT_MASTER_ENG.pdf
+EU-RENAULT-MASTER-III-VAN-FWD-L1H1-FACELIFT2019-01	5075	2070	2303	Renault Master X62 official brochure (2023)	https://e-brochure.renault.fr/master_x62/mobile/ct_master_x62_fr_septembre_2023.pdf
+EU-RENAULT-MASTER-III-VAN-FWD-L2H2-PRE2019-01	5548	2070	2499	Renault Master official brochure (2017)	https://www.diacfa.com/wp-content/uploads/RENAULT_MASTER_ENG.pdf
+EU-RENAULT-MASTER-III-VAN-FWD-L2H2-FACELIFT2019-01	5575	2070	2499	Renault Master X62 official brochure (2023)	https://e-brochure.renault.fr/master_x62/mobile/ct_master_x62_fr_septembre_2023.pdf
+EU-RENAULT-MASTER-III-VAN-FWD-L1H2-PRE2019-01	5048	2070	2500	Renault Master official brochure (2017)	https://www.diacfa.com/wp-content/uploads/RENAULT_MASTER_ENG.pdf
+EU-RENAULT-MASTER-III-VAN-FWD-L1H2-FACELIFT2019-01	5075	2070	2500	Renault Master X62 official brochure (2023)	https://e-brochure.renault.fr/master_x62/mobile/ct_master_x62_fr_septembre_2023.pdf
+EU-RENAULT-MASTER-III-VAN-FWD-L2H3-PRE2019-01	5548	2070	2749	Renault Master official brochure (2017)	https://www.diacfa.com/wp-content/uploads/RENAULT_MASTER_ENG.pdf
+EU-RENAULT-MASTER-III-VAN-FWD-L2H3-FACELIFT2019-01	5575	2070	2749	Renault Master X62 official brochure (2023)	https://e-brochure.renault.fr/master_x62/mobile/ct_master_x62_fr_septembre_2023.pdf
+EU-RENAULT-MASTER-III-VAN-FWD-L3H2-PRE2019-01	6198	2070	2488	Renault Master official brochure (2017)	https://www.diacfa.com/wp-content/uploads/RENAULT_MASTER_ENG.pdf
+EU-RENAULT-MASTER-III-VAN-FWD-L3H2-FACELIFT2019-01	6225	2070	2488	Renault Master X62 official brochure (2023)	https://e-brochure.renault.fr/master_x62/mobile/ct_master_x62_fr_septembre_2023.pdf
+EU-RENAULT-MASTER-III-VAN-FWD-L3H3-PRE2019-01	6198	2070	2744	Renault Master official brochure (2017)	https://www.diacfa.com/wp-content/uploads/RENAULT_MASTER_ENG.pdf
+EU-RENAULT-MASTER-III-VAN-FWD-L3H3-FACELIFT2019-01	6225	2070	2744	Renault Master X62 official brochure (2023)	https://e-brochure.renault.fr/master_x62/mobile/ct_master_x62_fr_septembre_2023.pdf
+EU-RENAULT-MASTER-III-VAN-RWD-L3H2-SRW-PRE2019-01	6198	2070	2527	Renault Master official brochure	https://www.diacfa.com/wp-content/uploads/RENAULT_MASTER_ENG.pdf
+EU-RENAULT-MASTER-III-VAN-4X4-L3H2-SRW-PRE2019-01	6198	2070	2527	Renault Master official brochure	https://www.diacfa.com/wp-content/uploads/RENAULT_MASTER_ENG.pdf
+EU-RENAULT-MASTER-III-VAN-4X4-L3H2-DRW-PRE2019-01	6198	2070	2549	Renault Master official brochure	https://www.diacfa.com/wp-content/uploads/RENAULT_MASTER_ENG.pdf
+EU-RENAULT-MASTER-III-VAN-4X4-L3H3-SRW-PRE2019-01	6198	2070	2786	Renault Master official brochure	https://www.diacfa.com/wp-content/uploads/RENAULT_MASTER_ENG.pdf
+EU-RENAULT-MASTER-III-VAN-4X4-L3H3-DRW-PRE2019-01	6198	2070	2815	Renault Master official brochure	https://www.diacfa.com/wp-content/uploads/RENAULT_MASTER_ENG.pdf
+EU-RENAULT-MASTER-III-VAN-4X4-L4H2-DRW-PRE2019-01	6848	2070	2557	Renault Master official brochure	https://www.diacfa.com/wp-content/uploads/RENAULT_MASTER_ENG.pdf
+EU-RENAULT-MASTER-III-VAN-4X4-L4H3-DRW-PRE2019-01	6848	2070	2808	Renault Master official brochure	https://www.diacfa.com/wp-content/uploads/RENAULT_MASTER_ENG.pdf
+EU-RENAULT-MASTER-III-CHASSIS-CAB-4X4-SINGLE-L2-SRW-PRE2019-01	5643	2070	2284	Renault Master official brochure	https://www.diacfa.com/wp-content/uploads/RENAULT_MASTER_ENG.pdf
+EU-RENAULT-MASTER-III-CHASSIS-CAB-4X4-SINGLE-L2-DRW-PRE2019-01	5643	2070	2284	Renault Master official brochure	https://www.diacfa.com/wp-content/uploads/RENAULT_MASTER_ENG.pdf
+EU-RENAULT-MASTER-III-CHASSIS-CAB-4X4-SINGLE-L3-SRW-PRE2019-01	6293	2070	2276	Renault Master official brochure	https://www.diacfa.com/wp-content/uploads/RENAULT_MASTER_ENG.pdf
+EU-RENAULT-MASTER-III-CHASSIS-CAB-4X4-SINGLE-L3-DRW-PRE2019-01	6193	2070	2283	Renault Master official brochure	https://www.diacfa.com/wp-content/uploads/RENAULT_MASTER_ENG.pdf
+EU-RENAULT-MASTER-III-CHASSIS-CAB-4X4-SINGLE-L4-DRW-PRE2019-01	6843	2070	2273	Renault Master official brochure	https://www.diacfa.com/wp-content/uploads/RENAULT_MASTER_ENG.pdf
+EU-RENAULT-MASTER-III-CHASSIS-CAB-4X4-DOUBLE-L2-SRW-PRE2019-01	5643	2070	2295	Renault Master official brochure	https://www.diacfa.com/wp-content/uploads/RENAULT_MASTER_ENG.pdf
+EU-RENAULT-MASTER-III-CHASSIS-CAB-4X4-DOUBLE-L3-SRW-PRE2019-01	6293	2070	2285	Renault Master official brochure	https://www.diacfa.com/wp-content/uploads/RENAULT_MASTER_ENG.pdf
+EU-RENAULT-MASTER-III-CHASSIS-CAB-4X4-DOUBLE-L3-DRW-PRE2019-01	6193	2070	2301	Renault Master official brochure	https://www.diacfa.com/wp-content/uploads/RENAULT_MASTER_ENG.pdf
+EU-RENAULT-MASTER-III-CHASSIS-CAB-4X4-DOUBLE-L4-DRW-PRE2019-01	6843	2070	2286	Renault Master official brochure	https://www.diacfa.com/wp-content/uploads/RENAULT_MASTER_ENG.pdf
+EU-RENAULT-MASTER-III-CHASSIS-CAB-FWD-SINGLE-L2-PRE2019-01	5643	2070	2265	Renault Master official brochure	https://www.diacfa.com/wp-content/uploads/RENAULT_MASTER_ENG.pdf
+EU-RENAULT-MASTER-III-CHASSIS-CAB-FWD-SINGLE-L2-FACELIFT2019-01	5670	2070	2265	Renault Master X62 official brochure (2023)	https://e-brochure.renault.fr/master_x62/mobile/ct_master_x62_fr_septembre_2023.pdf
+EU-RENAULT-MASTER-III-CHASSIS-CAB-FWD-SINGLE-L3-PRE2019-01	6293	2070	2258	Renault Master official brochure	https://www.diacfa.com/wp-content/uploads/RENAULT_MASTER_ENG.pdf
+EU-RENAULT-MASTER-III-CHASSIS-CAB-FWD-SINGLE-L3-FACELIFT2019-01	6320	2070	2258	Renault Master X62 official brochure (2023)	https://e-brochure.renault.fr/master_x62/mobile/ct_master_x62_fr_septembre_2023.pdf
+EU-RENAULT-MASTER-III-CHASSIS-CAB-FWD-DOUBLE-L2-PRE2019-01	5643	2070	2272	Renault Master official brochure	https://www.diacfa.com/wp-content/uploads/RENAULT_MASTER_ENG.pdf
+EU-RENAULT-MASTER-III-CHASSIS-CAB-FWD-DOUBLE-L2-FACELIFT2019-01	5670	2070	2272	Renault Master X62 official brochure (2023)	https://e-brochure.renault.fr/master_x62/mobile/ct_master_x62_fr_septembre_2023.pdf
+EU-RENAULT-MASTER-III-CHASSIS-CAB-FWD-DOUBLE-L3-PRE2019-01	6293	2070	2263	Renault Master official brochure	https://www.diacfa.com/wp-content/uploads/RENAULT_MASTER_ENG.pdf
+EU-RENAULT-MASTER-III-CHASSIS-CAB-FWD-DOUBLE-L3-FACELIFT2019-01	6320	2070	2263	Renault Master X62 official brochure (2023)	https://e-brochure.renault.fr/master_x62/mobile/ct_master_x62_fr_septembre_2023.pdf
+EU-RENAULT-MASTER-III-CHASSIS-CAB-RWD-SINGLE-L2-PRE2019-01	5643	2070	2284	Renault Master official brochure	https://www.diacfa.com/wp-content/uploads/RENAULT_MASTER_ENG.pdf
+EU-RENAULT-MASTER-III-CHASSIS-CAB-RWD-SINGLE-L3-SRW-PRE2019-01	6293	2070	2276	Renault Master official brochure	https://www.diacfa.com/wp-content/uploads/RENAULT_MASTER_ENG.pdf
+EU-RENAULT-MASTER-III-CHASSIS-CAB-RWD-SINGLE-L3-DRW-PRE2019-01	6193	2070	2283	Renault Master official brochure	https://www.diacfa.com/wp-content/uploads/RENAULT_MASTER_ENG.pdf
+EU-RENAULT-MASTER-III-CHASSIS-CAB-RWD-SINGLE-L4-DRW-PRE2019-01	6843	2070	2273	Renault Master official brochure	https://www.diacfa.com/wp-content/uploads/RENAULT_MASTER_ENG.pdf
+EU-RENAULT-MASTER-III-CHASSIS-CAB-RWD-DOUBLE-L2-SRW-PRE2019-01	5643	2070	2295	Renault Master official brochure	https://www.diacfa.com/wp-content/uploads/RENAULT_MASTER_ENG.pdf
+EU-RENAULT-MASTER-III-CHASSIS-CAB-RWD-DOUBLE-L3-SRW-PRE2019-01	6293	2070	2285	Renault Master official brochure	https://www.diacfa.com/wp-content/uploads/RENAULT_MASTER_ENG.pdf
+EU-RENAULT-MASTER-III-CHASSIS-CAB-RWD-DOUBLE-L3-DRW-PRE2019-01	6193	2070	2301	Renault Master official brochure	https://www.diacfa.com/wp-content/uploads/RENAULT_MASTER_ENG.pdf
+EU-RENAULT-MASTER-III-CHASSIS-CAB-RWD-DOUBLE-L4-DRW-PRE2019-01	6843	2070	2286	Renault Master official brochure	https://www.diacfa.com/wp-content/uploads/RENAULT_MASTER_ENG.pdf
+EU-RENAULT-MASTER-III-PLATFORM-CAB-FWD-L2H1-PRE2019-01	5530	2070	2270	Renault Master official brochure (2017)	https://www.diacfa.com/wp-content/uploads/RENAULT_MASTER_ENG.pdf
+EU-RENAULT-MASTER-III-PLATFORM-CAB-FWD-L2H2-PRE2019-01	5530	2070	2463	Renault Master official brochure (2017)	https://www.diacfa.com/wp-content/uploads/RENAULT_MASTER_ENG.pdf
+EU-RENAULT-MASTER-III-PLATFORM-CAB-FWD-L3H1-PRE2019-01	6180	2070	2264	Renault Master official brochure (2017)	https://www.diacfa.com/wp-content/uploads/RENAULT_MASTER_ENG.pdf
+EU-RENAULT-MASTER-III-PLATFORM-CAB-FWD-L3H2-PRE2019-01	6180	2070	2457	Renault Master official brochure (2017)	https://www.diacfa.com/wp-content/uploads/RENAULT_MASTER_ENG.pdf
+EU-RENAULT-MASTER-III-PLATFORM-CAB-FWD-L2H1-FACELIFT2019-01	5557	2100	2270	Renault Master X62 official brochure (2023)	https://e-brochure.renault.fr/master_x62/mobile/ct_master_x62_fr_septembre_2023.pdf
+EU-RENAULT-MASTER-III-PLATFORM-CAB-FWD-L2H2-FACELIFT2019-01	5557	2100	2463	Renault Master X62 official brochure (2023)	https://e-brochure.renault.fr/master_x62/mobile/ct_master_x62_fr_septembre_2023.pdf
+EU-RENAULT-MASTER-III-PLATFORM-CAB-FWD-L3H1-FACELIFT2019-01	6207	2100	2264	Renault Master X62 official brochure (2023)	https://e-brochure.renault.fr/master_x62/mobile/ct_master_x62_fr_septembre_2023.pdf
+EU-RENAULT-MASTER-III-PLATFORM-CAB-FWD-L3H2-FACELIFT2019-01	6207	2100	2457	Renault Master X62 official brochure (2023)	https://e-brochure.renault.fr/master_x62/mobile/ct_master_x62_fr_septembre_2023.pdf
+EU-RENAULT-MASTER-II-VAN-L1H1-01	4899	1990	2253	Vauxhall Movano official brochure December 2008	https://www.vauxhall.co.uk/content/dam/vauxhall/Home/PDFs/historical-brochures/discounted-models/movano/Movano_Dec_2008.pdf
+EU-RENAULT-MASTER-II-VAN-L2H2-01	5399	1990	2486	Vauxhall Movano official brochure December 2008	https://www.vauxhall.co.uk/content/dam/vauxhall/Home/PDFs/historical-brochures/discounted-models/movano/Movano_Dec_2008.pdf
+EU-RENAULT-MASTER-II-VAN-L3H2-01	5899	1990	2484	Vauxhall Movano official brochure December 2008	https://www.vauxhall.co.uk/content/dam/vauxhall/Home/PDFs/historical-brochures/discounted-models/movano/Movano_Dec_2008.pdf
+EU-RENAULT-MASTER-II-CHASSIS-CAB-MWB-SINGLE-01	5369	1990	2198	Vauxhall Movano official brochure December 2008	https://www.vauxhall.co.uk/content/dam/vauxhall/Home/PDFs/historical-brochures/discounted-models/movano/Movano_Dec_2008.pdf
+EU-RENAULT-MASTER-II-CHASSIS-CAB-LWB-SINGLE-01	5869	1990	2194	Vauxhall Movano official brochure December 2008	https://www.vauxhall.co.uk/content/dam/vauxhall/Home/PDFs/historical-brochures/discounted-models/movano/Movano_Dec_2008.pdf
+EU-RENAULT-MASTER-II-CHASSIS-CAB-LWB-DOUBLE-01	5869	1990	2202	Vauxhall Movano official brochure December 2008	https://www.vauxhall.co.uk/content/dam/vauxhall/Home/PDFs/historical-brochures/discounted-models/movano/Movano_Dec_2008.pdf
+EU-RENAULT-MASTER-I-VAN-L1H1-01	4434	2000	2050	Transit Center Renault Master I specifications;Renault Master I reference dimensions	https://www.transitcenter.uk/renault-master-1-data-specification.php;https://fr.wikipedia.org/wiki/Renault_Master_I
+EU-RENAULT-MASTER-I-VAN-L1H2-01	4434	2000	2415	Transit Center Renault Master I specifications;Renault Master I reference dimensions	https://www.transitcenter.uk/renault-master-1-data-specification.php;https://fr.wikipedia.org/wiki/Renault_Master_I
+EU-RENAULT-MASTER-I-VAN-L2H1-01	5000	2000	2050	Transit Center Renault Master I specifications;Renault Master I reference dimensions	https://www.transitcenter.uk/renault-master-1-data-specification.php;https://fr.wikipedia.org/wiki/Renault_Master_I
+EU-RENAULT-MASTER-I-VAN-L2H2-01	5000	2000	2415	Transit Center Renault Master I specifications;Renault Master I reference dimensions	https://www.transitcenter.uk/renault-master-1-data-specification.php;https://fr.wikipedia.org/wiki/Renault_Master_I
+EU-RENAULT-MASTER-I-VAN-L3H2-01	5640	2000	2413	Transit Center Renault Master I specifications;Renault Master I reference dimensions	https://www.transitcenter.uk/renault-master-1-data-specification.php;https://fr.wikipedia.org/wiki/Renault_Master_I
+EU-RENAULT-MASTER-II-CHASSIS-CAB-LWB-SINGLE-PREFL-01	5858	1990	2187	Zoomcar Renault Master Phase I L3H1 chassis-cab specifications;Renault Master II ED/HD/UD body-width specifications	https://zoomcar.fr/fiche-technique-utilitaire/renault/master-chassis-cabine-master-chassis-cab-cc-l3h1-d-3-5-t-NAT58947.html;https://www.piecesauto.fr/marque-automobile/pieces-detachees-renault/master-ii-camion-plate-forme-chassis-ed-hd-ud.html
+EU-RENAULT-MASTER-II-CHASSIS-CAB-LWB-DOUBLE-PREFL-01	5858	1990	2197	Zoomcar Renault Master Phase I L3H1 double-cab specifications;Renault Master II ED/HD/UD body-width specifications	https://zoomcar.fr/fiche-technique-utilitaire/renault/master-02-master-chassis-dble-cab-l3h1-d-3-5-t-NAT59543.html;https://www.piecesauto.fr/marque-automobile/pieces-detachees-renault/master-ii-camion-plate-forme-chassis-ed-hd-ud.html
+EU-RENAULT-MASTER-II-CHASSIS-CAB-MWB-SINGLE-PREFL-01	5358	1990	2192	Swiss Federal type approval 3RA235	https://typenscheinschweiz.ch/typenschein/auto/3RA235
+EU-RENAULT-MASTER-II-PLATFORM-CAB-MWB-H1-01	5313	1990	2200	Caradisiac Renault Master technical sheet;Vauxhall Movano official brochure December 2008	https://www.caradisiac.com/VUL-Renault-Master-la-fiche-technique-28776.htm;https://www.vauxhall.co.uk/content/dam/vauxhall/Home/PDFs/historical-brochures/discounted-models/movano/Movano_Dec_2008.pdf
+EU-RENAULT-MASTER-II-PLATFORM-CAB-MWB-H2-01	5313	1990	2441	Caradisiac Renault Master technical sheet;Vauxhall Movano official brochure December 2008	https://www.caradisiac.com/VUL-Renault-Master-la-fiche-technique-28776.htm;https://www.vauxhall.co.uk/content/dam/vauxhall/Home/PDFs/historical-brochures/discounted-models/movano/Movano_Dec_2008.pdf
+EU-RENAULT-MASTER-I-CHASSIS-CAB-MWB-H1-01	5000	2000	2050	Transit Center Renault Master I specifications;AutoCentrum Renault Master I technical data	https://www.transitcenter.uk/renault-master-1-data-specification.php;https://www.autocentrum.pl/dane-techniczne/renault/master/i/silnik-diesla-2.5-d-80km-1981-1998/
+EU-RENAULT-LAGUNA-II-HATCHBACK-PREFL-01	4576	1772	1429	Automobile-Catalog	https://www.automobile-catalog.com/car/2001/2956595/renault_laguna_1_8_16v.html
+EU-TOYOTA-CORONA-T100-WAGON-STANDARD-01	4280	1610	1420	CarsGuide	https://www.carsguide.com.au/toyota/corona/car-dimensions/1977
+EU-TOYOTA-CRESSIDA-X60-SEDAN-STANDARD-01	4500	1680	1450	UltimateSpecs	https://www.ultimatespecs.com/car-specs/Toyota/5313/Toyota-Cressida-II-22-Diesel.html
+EU-TOYOTA-CRESSIDA-X70-SEDAN-STANDARD-01	4690	1690	1420	UltimateSpecs	https://www.ultimatespecs.com/car-specs/Toyota/5316/Toyota-Cressida-III-24-TD.html
+EU-TOYOTA-CRESSIDA-X30-WAGON-STANDARD-01	4530	1680	1445	Automobile-Catalog	https://www.automobile-catalog.com/car/1978/3474080/toyota_cressida_2000_wagon.html
+EU-TOYOTA-DYNA-IV-PICKUP-NARROW-STANDARD-01	4690	1690	1990	Toyota official vehicle lineage	https://www.toyota-global.com/company/history_of_toyota/75years/vehicle_lineage/car/id60014348/index.html
+EU-TOYOTA-DYNA-V-PICKUP-NARROW-STANDARD-01	4690	1695	1990	Toyota official vehicle lineage	https://www.toyota-global.com/company/history_of_toyota/75years/vehicle_lineage/car/id60016639/index.html
+EU-TOYOTA-DYNA-Y50-PICKUP-JUSTLOW-01	4430	1695	1940	Toyota official vehicle lineage	https://www.toyota-global.com/company/history_of_toyota/75years/vehicle_lineage/car/id60001680/
+EU-TOYOTA-DYNA-U300-PICKUP-NARROW-STANDARD-01	4690	1695	1985	Goo-net catalog	https://www.goo-net.com/catalog/TOYOTA/DYNA/834935/
+EU-TOYOTA-DYNA-100-LY100-PICKUP-STANDARD-01	4430	1695	1940	Toyota official vehicle lineage	https://www.toyota-global.com/company/history_of_toyota/75years/vehicle_lineage/car/id60015363/index.html
+EU-TOYOTA-DYNA-U400-PICKUP-STANDARD-2WD-01	4710	1850	2100	Hino 616 official specification	https://cdn.mattaki.com/hino/static-assets/vehicles/specifications/300-Series/616-STD-AT.pdf
+EU-TOYOTA-DYNA-U700-PICKUP-STANDARD-4WD-01	4685	1695	1990	Nextage Toyota catalog	https://www.nextage.jp/carcatalog/toyota/dyna/tkg-xzu675/
+EU-TOYOTA-FJ-CRUISER-XJ10-SUV-STANDARD-01	4671	1905	1830	Auto-Data	https://www.auto-data.net/en/toyota-fj-cruiser-model-467
+EU-TOYOTA-FORTUNER-II-SUV-STANDARD-01	4795	1855	1835	Auto-Data	https://www.auto-data.net/en/toyota-fortuner-ii-2.8-d-4d-177hp-4wd-automatic-33584
+EU-TOYOTA-GR86-ZN8-COUPE-STANDARD-01	4265	1775	1310	Auto-Data	https://www.auto-data.net/en/toyota-86-ii-gr-2.4-d-4s-235hp-43105
+EU-TOYOTA-GT86-ZN6-COUPE-STANDARD-01	4240	1775	1285	Auto-Data	https://www.auto-data.net/en/toyota-86-i-2.0-d-4s-200hp-18501
+EU-TOYOTA-HIACE-H200-MPV-COMMUTER-01	5380	1880	2285	Toyota official vehicle lineage	https://www.toyota-global.com/company/history_of_toyota/75years/vehicle_lineage/car/id60015464/
+EU-TOYOTA-HIACE-H20-VAN-STANDARD-01	4340	1690	1925	Toyota official vehicle lineage	https://www.toyota-global.com/company/history_of_toyota/75years/vehicle_lineage/car/id60001848B/
+EU-TOYOTA-HIACE-H50-VAN-STANDARD-01	4425	1690	1950	Toyota official vehicle lineage	https://www.toyota-global.com/company/history_of_toyota/75years/vehicle_lineage/car/id60015287/index.html
+EU-TOYOTA-HIACE-H100-ONEBOX-STANDARD-01	4615	1690	1980	Toyota official vehicle lineage	https://www.toyota-global.com/company/history_of_toyota/75years/vehicle_lineage/car/id60001935/index.html
+EU-TOYOTA-HIACE-H200-VAN-STANDARD-01	4695	1695	1980	Toyota official vehicle lineage	https://www.toyota-global.com/company/history_of_toyota/75years/vehicle_lineage/car/id60015495/index.html
+EU-TOYOTA-HILUX-IV-PICKUP-LONG-STANDARD-01	4690	1610	1560	Toyota official vehicle lineage	https://www.toyota-global.com/company/history_of_toyota/75years/vehicle_lineage/car/id60015530/index.html
+EU-TOYOTA-HILUX-V-PICKUP-LONG-4WD-01	4690	1690	1765	Toyota official vehicle lineage	https://www.toyota-global.com/company/history_of_toyota/75years/vehicle_lineage/car/id60015538/index.html
+EU-TOYOTA-HILUX-V-PICKUP-RWD-STANDARD-01	4725	1650	1555	CarsGuide	https://www.carsguide.com.au/toyota/hilux/car-dimensions/1989
+EU-TOYOTA-HILUX-VI-PICKUP-DOUBLECAB-2WD-01	4690	1690	1640	Toyota official vehicle lineage	https://www.toyota-global.com/company/history_of_toyota/75years/vehicle_lineage/car/id60015606/index.html
+EU-TOYOTA-HILUX-VI-PICKUP-STANDARDCAB-4WD-01	4690	1690	1760	Toyota official vehicle lineage	https://www.toyota-global.com/company/history_of_toyota/75years/vehicle_lineage/car/id60015606/index.html
+EU-TOYOTA-HILUX-VII-PICKUP-DOUBLECAB-4WD-01	5255	1835	1810	Toyota Europe	https://newsroom.toyota.eu/2006-paris-motor-show/
+EU-TOYOTA-HILUX-VIII-PICKUP-DOUBLECAB-STANDARD-01	5325	1855	1810	Toyota Europe technical data	https://newsroom.toyota.eu/download/939287/19.10.20newhiluxdpl-technicaldatafinal.doc
+EU-TOYOTA-HILUX-VIII-PICKUP-SINGLECAB-CHASSIS-01	5265	1800	1855	Toyota Australia	https://www.toyota.com.au/hilux/gr-sport
+EU-TOYOTA-LAND-CRUISER-J40-SUV-SWB-HARDTOP-01	3870	1665	1950	Auta5P	https://auta5p.eu/lang/en/katalog/auto.php?idf=Toyota-Land-Cruiser-FJ40-3.9-26770
+EU-TOYOTA-LAND-CRUISER-J60-SUV-FJ62-01	4750	1800	1815	Toyota Global Vehicle Lineage	https://www.toyota-global.com/company/history_of_toyota/75years/vehicle_lineage/car/id60012612/
+EU-TOYOTA-LAND-CRUISER-J40-PICKUP-FJ45-01	4985	1690	1970	CarsGuide 1983 Toyota LandCruiser dimensions	https://www.carsguide.com.au/toyota/landcruiser/car-dimensions/1983
+EU-TOYOTA-LAND-CRUISER-J40-SUV-MWB-HARDTOP-01	4215	1665	1970	Toyota Global Vehicle Lineage	https://www.toyota-global.com/company/history_of_toyota/75years/vehicle_lineage/car/id60012611/
+EU-TOYOTA-LAND-CRUISER-J40-SUV-LWB-VAN-01	4630	1720	1770	Toyota Global Vehicle Lineage	https://www.toyota-global.com/company/history_of_toyota/75years/vehicle_lineage/car/id60012611/
+EU-TOYOTA-LAND-CRUISER-J55-SUV-WAGON-01	4675	1735	1865	Toyota Global Vehicle Lineage	https://www.toyota-global.com/company/history_of_toyota/75years/vehicle_lineage/car/id60017153/
+EU-TOYOTA-LAND-CRUISER-J250-SUV-5DR-01	4925	1980	1935	Toyota Europe Land Cruiser product information	https://newsroom.toyota.eu/the-all-new-toyota-land-cruiser-a-modern-icon-true-to-its-heritage/
+EU-TOYOTA-LAND-CRUISER-J40-SUV-SWB-HARDTOP-02	3915	1665	1970	CarsGuide 1983 Toyota LandCruiser dimensions	https://www.carsguide.com.au/toyota/landcruiser/car-dimensions/1983
+EU-TOYOTA-LAND-CRUISER-J40-PICKUP-BJ45-HJ47-01	4985	1685	1930	CarsGuide 1983 Toyota LandCruiser dimensions	https://www.carsguide.com.au/toyota/landcruiser/car-dimensions/1983
+EU-TOYOTA-LAND-CRUISER-J60-SUV-BJ60-01	4675	1800	1830	CarsGuide 1984 Toyota LandCruiser dimensions	https://www.carsguide.com.au/toyota/landcruiser/car-dimensions/1984
+EU-TOYOTA-LAND-CRUISER-J40-PICKUP-HJ45-01	4985	1665	1920	CarsGuide 1979 Toyota LandCruiser dimensions	https://www.carsguide.com.au/toyota/landcruiser/car-dimensions/1979
+EU-TOYOTA-LAND-CRUISER-J40-SUV-LWB-TROOP-01	4820	1665	2035	CarsGuide 1984 Toyota LandCruiser dimensions	https://www.carsguide.com.au/toyota/landcruiser/car-dimensions/1984
+EU-TOYOTA-LAND-CRUISER-J70-SUV-SWB-HZJ70-01	4060	1690	1905	CarsGuide 1990 Toyota LandCruiser dimensions	https://www.carsguide.com.au/toyota/landcruiser/car-dimensions/1990
+EU-TOYOTA-LAND-CRUISER-J70-SUV-MWB-HZJ74-01	4455	1790	1950	TCV Toyota Land Cruiser 70 HZJ74 specifications	https://www.tc-v.com/specifications/toyota/landcruiser%2B70/zx_4wd_at_4.2diesel/18528/
+EU-TOYOTA-LAND-CRUISER-J70-SUV-4DR-HZJ77-01	4805	1790	1935	Motor-Fan Toyota Land Cruiser 70 HZJ77 catalogue	https://car.motor-fan.jp/catalog/TOYOTA/10102504/10001591
+EU-TOYOTA-LAND-CRUISER-J70-SUV-4DR-HZJ76-01	4910	1870	1955	Toyota Australia LandCruiser 70 specifications	https://www.toyota.com.au/landcruiser-70/range
+EU-TOYOTA-LAND-CRUISER-J70-SUV-LWB-HZJ75-01	4995	1690	2090	CarsGuide 1990 Toyota LandCruiser dimensions	https://www.carsguide.com.au/toyota/landcruiser/car-dimensions/1990
+EU-TOYOTA-LAND-CRUISER-J70-SUV-LWB-HZJ78-01	5060	1690	2115	Auto-Data Toyota Land Cruiser J78 specifications	https://www.auto-data.net/en/toyota-land-cruiser-j78-generation-927
+EU-TOYOTA-LAND-CRUISER-J100-SUV-5DR-01	4890	1940	1880	Auto-Data Toyota Land Cruiser J100 specifications	https://www.auto-data.net/en/toyota-land-cruiser-j100-facelift-2002-4.7-v8-32v-238hp-4wd-automatic-46897
+EU-TOYOTA-LAND-CRUISER-J200-SUV-5DR-01	4950	1970	1950	AutoData24 Toyota Land Cruiser 200 specifications	https://autodata24.com/toyota/land-cruiser/land-cruiser-200/45d-v8-235-hp/details
+EU-TOYOTA-LAND-CRUISER-J80-SUV-5DR-01	4820	1830	1850	Auto-Data Toyota Land Cruiser J80 specifications	https://www.auto-data.net/en/toyota-land-cruiser-j80-4.2-d-135hp-3724
+EU-TOYOTA-LAND-CRUISER-J90-SUV-3DR-FACELIFT-01	4255	1820	1880	Auto-Data Toyota Land Cruiser Prado J90 facelift specifications	https://www.auto-data.net/en/toyota-land-cruiser-prado-j90-facelift-2000-3-door-3.0-d-4d-163hp-4wd-3708
+EU-TOYOTA-LAND-CRUISER-J90-SUV-5DR-FACELIFT-01	4690	1820	1880	Auto-Data Toyota Land Cruiser Prado J90 facelift specifications	https://www.auto-data.net/en/toyota-land-cruiser-prado-j90-facelift-2000-5-door-3.0-d-4d-163hp-4wd-3709
+EU-TOYOTA-LAND-CRUISER-J90-SUV-3DR-PREFL-01	4240	1820	1880	Toyota Global Vehicle Lineage	https://www.toyota-global.com/company/history_of_toyota/75years/vehicle_lineage/car/id60012615/
+EU-TOYOTA-LAND-CRUISER-J90-SUV-5DR-PREFL-01	4675	1820	1880	Toyota Global Vehicle Lineage	https://www.toyota-global.com/company/history_of_toyota/75years/vehicle_lineage/car/id60012615/
+EU-TOYOTA-LAND-CRUISER-J70-PICKUP-HZJ75-01	4995	1690	1970	CarsGuide 1990 Toyota LandCruiser dimensions	https://www.carsguide.com.au/toyota/landcruiser/car-dimensions/1990
+EU-TOYOTA-LAND-CRUISER-J70-PICKUP-HZJ79-01	5095	1770	1970	Toyota Land Cruiser HZJ79 specification sheet	https://cdn.pktrucks.com/specsheets/to5114-toyota-land-cruiser-hzj79-4x4-pickup-specification.pdf
+EU-TOYOTA-LAND-CRUISER-J120-SUV-5DR-01	4715	1875	1870	Auto-Data Toyota Land Cruiser Prado J120 specifications	https://www.auto-data.net/en/toyota-land-cruiser-prado-j120-generation-929
+EU-TOYOTA-LAND-CRUISER-J150-SUV-5DR-FACELIFT-01	4780	1885	1845	Auto-Data Toyota Land Cruiser Prado J150 facelift specifications	https://www.auto-data.net/en/toyota-land-cruiser-prado-j150-facelift-2013-5-door-4.0-v6-dual-vvt-i-281hp-automatic-18524
+EU-TOYOTA-LAND-CRUISER-J150-SUV-5DR-PREFL-01	4760	1885	1890	Auto-Data Toyota Land Cruiser Prado J150 specifications	https://www.auto-data.net/en/toyota-land-cruiser-prado-model-3168
+EU-TOYOTA-LAND-CRUISER-J40-CONVERTIBLE-LWB-01	4960	1690	2080	Automobile-Catalog Toyota Land Cruiser FJ45 Soft Top	https://www.automobile-catalog.com/car/1977/3609725/toyota_land_cruiser_fj45_soft_top.html
+EU-TOYOTA-LAND-CRUISER-J40-CONVERTIBLE-SWB-01	3990	1670	1950	Automobile-Catalog Toyota Land Cruiser FJ40 Soft Top	https://www.automobile-catalog.com/car/1975/3609365/toyota_land_cruiser_fj40_soft_top.html
+EU-TOYOTA-LITEACE-M30-VAN-STANDARD-01	3995	1620	1765	CarsGuide 1988 Toyota LiteAce dimensions	https://www.carsguide.com.au/toyota/lite-ace/car-dimensions/1988
+EU-TOYOTA-LITEACE-M40-MPV-STANDARD-01	4070	1650	1875	Goo-net Toyota LiteAce Wagon catalogue	https://www.goo-net-exchange.com/catalog/TOYOTA__LITEACE_WAGON/1005178/
+EU-TOYOTA-LITEACE-M20-MPV-STANDARD-01	3900	1625	1765	Toyota Global Vehicle Lineage	https://www.toyota-global.com/company/history_of_toyota/75years/vehicle_lineage/car/id60015748/
+EU-TOYOTA-MIRAI-JPD10-SEDAN-01	4890	1815	1535	Toyota Europe Mirai product information	https://newsroom.toyota.eu/2019-mirai--fuel-cell-sedan/
+EU-TOYOTA-MIRAI-JPD20-SEDAN-01	4975	1885	1480	Auto-Data Toyota Mirai II specifications	https://www.auto-data.net/en/toyota-mirai-ii-1.2-kwh-182hp-fcev-41840
+EU-TOYOTA-MR2-W20-COUPE-01	4180	1700	1235	Auto-Data Toyota MR2 W20 specifications	https://www.auto-data.net/en/toyota-mr-2-w2-2.0-16v-175hp-3896
+EU-TOYOTA-MR2-W30-CONVERTIBLE-01	3885	1695	1240	Auto-Data Toyota MR2 W30 specifications	https://www.auto-data.net/en/toyota-mr-2-w3-generation-999
+EU-TOYOTA-PICNIC-XM10-MPV-01	4530	1695	1620	Auto-Data Toyota Picnic XM1 specifications	https://www.auto-data.net/en/toyota-picnic-xm1-generation-809
+EU-TOYOTA-PREMIO-T260-SEDAN-01	4600	1695	1475	Toyota Global Vehicle Lineage	https://www.toyota-global.com/company/history_of_toyota/75years/vehicle_lineage/car/id60008578/
+EU-TOYOTA-PREVIA-XR30-MPV-01	4750	1790	1770	Auto-Data Toyota Previa II specifications	https://www.auto-data.net/en/toyota-previa-2.4-16v-156hp-3522
+EU-TOYOTA-PRIUS-XW20-HATCHBACK-01	4450	1725	1490	Auto-Data Toyota Prius II specifications	https://www.auto-data.net/en/toyota-prius-ii-nhw20-generation-891
+EU-TOYOTA-PRIUS-XW10-SEDAN-01	4315	1695	1475	Auto-Data Toyota Prius I NHW11 specifications	https://www.auto-data.net/en/toyota-prius-i-nhw11-1.5-vvt-i-101hp-hybrid-e-cvt-3553
+EU-TOYOTA-PRIUS-XW40-MPV-PREFL-01	4615	1775	1575	Auto-Data Toyota Prius Plus specifications	https://www.auto-data.net/en/toyota-prius-1.8-hsd-99hp-e-cvt-18521
+EU-TOYOTA-PRIUS-XW30-HATCHBACK-01	4460	1745	1490	Auto-Data Toyota Prius III specifications	https://www.auto-data.net/en/toyota-prius-iii-zvw30-1.8-vvt-i-136hp-hybrid-e-cvt-3551
+EU-TOYOTA-PRIUS-XW50-HATCHBACK-01	4540	1760	1470	Auto-Data Toyota Prius IV specifications	https://www.auto-data.net/en/toyota-prius-iv-xw50-1.8-vvt-i-122hp-hybrid-e-cvt-22776
+EU-TOYOTA-PRIUS-XW40-MPV-FACELIFT-01	4645	1775	1600	Auto-Data Toyota Prius Plus facelift specifications	https://www.auto-data.net/en/toyota-prius-model-429
+EU-TOYOTA-PRIUS-XW50-PHEV-HATCHBACK-01	4645	1760	1470	Auto-Data Toyota Prius IV Plug-in specifications	https://www.auto-data.net/en/toyota-prius-iv-xw50-generation-4695
+EU-TOYOTA-PRIUS-XW60-HATCHBACK-01	4600	1780	1430	Auto-Data Toyota Prius V specifications	https://www.auto-data.net/en/toyota-prius-model-429
+EU-TOYOTA-PROACE-X83-VAN-L1H1-01	4805	1895	1942	VINDecoderz Toyota ProAce 2013 specifications	https://www.vindecoderz.com/EN/Toyota/ProAce/2013/2.0d%20MT/specs-features/12474
+EU-TOYOTA-PROACE-K0-VAN-MEDIUM-01	4959	1920	1899	Toyota UK Proace technical specifications	https://media.toyota.co.uk/wp-content/uploads/sites/5/2021/03/1614162746210223MProaceTechSpec.pdf
+EU-TOYOTA-PROACE-K0-PICKUP-LONG-01	5309	1920	1940	Toyota UK Proace technical specifications	https://media.toyota.co.uk/wp-content/uploads/sites/5/2021/03/1614162746210223MProaceTechSpec.pdf
+EU-TOYOTA-PROACE-CITY-K9-VAN-SWB-01	4403	1848	1880	Toyota UK Proace City technical specifications	https://media.toyota.co.uk/wp-content/uploads/sites/5/2021/03/1614163030210223MProaceCityTechSpec.pdf
+EU-TOYOTA-PROACE-MAX-X290-VAN-L2H2-01	5413	2050	2524	Toyota UK Proace Max technical specifications	https://media.toyota.co.uk/wp-content/uploads/sites/5/pdf/240910-Proace-Max-Tech-Specs.pdf
+EU-TOYOTA-PROACE-MAX-X290-PICKUP-L3-01	5943	2050	2254	Toyota Central Europe Proace Max technical data	https://www.toyotanews.eu/images/PDF/TOYOTA_PROACE_MAX_Technicke_udaje.pdf
+EU-TOYOTA-PROACE-VERSO-II-MPV-MEDIUM-01	4959	1920	1910	Toyota Proace Verso Technical Specifications	https://media.toyota.co.uk/wp-content/uploads/sites/5/pdf/220321M-Proace-Verso-Tech-Spec.pdf
+EU-TOYOTA-PROACE-VERSO-II-MPV-MEDIUM-RC24-01	4981	1924	1910	Toyota Proace Verso specifications	https://www.toyota.pt/carros/proace-verso/especificacoes
+EU-TOYOTA-RACTIS-I-MPV-STD-01	3995	1695	1640	Auto-Data Toyota Ractis I 1.3i	https://www.auto-data.net/en/toyota-ractis-i-1.3i-87hp-3804
+EU-TOYOTA-RAV4-I-SUV-5D-FACELIFT-01	4115	1695	1660	Auto-Data Toyota RAV4 I facelift 5-door	https://www.auto-data.net/en/toyota-rav4-i-xa10-facelift-1997-5-door-generation-7122
+EU-TOYOTA-RAV4-II-SUV-5D-01	4200	1735	1680	Auto-Data Toyota RAV4 II 5-door	https://www.auto-data.net/en/toyota-rav4-ii-xa20-5-door-generation-7127
+EU-TOYOTA-RAV4-III-SUV-FACELIFT-01	4415	1815	1685	Auto-Data Toyota RAV4 III facelift	https://www.auto-data.net/en/toyota-rav4-iii-xa30-facelift-2008-2.0-vvt-i-158hp-4wd-37226
+EU-TOYOTA-RAV4-IV-SUV-PREFL-01	4570	1845	1660	Auto-Data Toyota RAV4 IV	https://www.auto-data.net/en/toyota-rav4-iv-2.2-d-cat-150hp-4wd-automatic-18104
+EU-TOYOTA-RAV4-IV-SUV-FACELIFT-01	4605	1845	1675	Auto-Data Toyota RAV4 IV facelift	https://www.auto-data.net/en/toyota-rav4-iv-facelift-2015-2.0-d-4d-143hp-22604
+EU-TOYOTA-RAV4-VI-SUV-STD-01	4600	1855	1680	Toyota Global all-new RAV4 specifications	https://global.toyota/en/newsroom/toyota/43740895.html
+EU-TOYOTA-RAV4-V-SUV-STD-01	4600	1855	1685	Toyota RAV4 Technical Specifications	https://media.toyota.co.uk/wp-content/uploads/sites/5/pdf/220203M-RAV4-Tech-Spec.pdf
+EU-TOYOTA-SIENNA-III-MPV-STD-01	5085	1985	1750	Toyota 2011 Sienna brochure	https://autocatalogarchive.com/wp-content/uploads/2019/05/Toyota-Sienna-2011-USA.pdf
+EU-TOYOTA-SIENNA-II-MPV-STD-01	5105	1966	1750	Edmunds 2007 Toyota Sienna specifications	https://www.edmunds.com/toyota/sienna/2007/features-specs/
+EU-TOYOTA-STARLET-IV-HATCHBACK-STD-01	3720	1600	1380	Auto-Data Toyota Starlet IV 1.3i	https://www.auto-data.net/en/toyota-starlet-iv-1.3i-12v-82hp-automatic-28781
+EU-TOYOTA-STARLET-II-WAGON-STD-01	3755	1525	1380	Automobile-Catalog Toyota Starlet 1.2	https://www.automobile-catalog.com/car/1982/3479000/toyota_starlet_1_2.html
+EU-TOYOTA-SUPRA-V-COUPE-A90-01	4380	1865	1295	Toyota Global Supra specifications	https://global.toyota/en/newsroom/toyota/42475735.html
+EU-TOYOTA-TERCEL-II-SEDAN-STD-01	3910	1615	1385	Toyota 75 Years vehicle lineage	https://www.toyota-global.com/company/history_of_toyota/75years/vehicle_lineage/car/id60010722B/index.html
+EU-TOYOTA-TUNDRA-II-PICKUP-CREWMAX-SHORT-2WD-01	5809	2029	1925	Toyota 2007 Tundra brochure	https://xr793.com/wp-content/uploads/2022/08/2007-Toyota-Tundra-CN.pdf
+EU-TOYOTA-TUNDRA-II-PICKUP-CREWMAX-SHORT-4WD-01	5809	2029	1935	Toyota 2007 Tundra brochure	https://xr793.com/wp-content/uploads/2022/08/2007-Toyota-Tundra-CN.pdf
+EU-TOYOTA-URBAN-CRUISER-I-SUV-STD-01	4285	1800	1635	Toyota Europe Urban Cruiser press kit	https://newsroom.toyota.eu/world-premiere-of-the-all-new-toyota-urban-cruiser/
+EU-TOYOTA-VENZA-I-SUV-STD-01	4800	1905	1610	Edmunds 2009 Toyota Venza specifications	https://www.edmunds.com/toyota/venza/2009/features-specs/
+EU-TOYOTA-VERSO-I-MPV-STD-01	4440	1790	1620	Auto-Data Toyota Verso 2.0 D-4D	https://www.auto-data.net/en/toyota-verso-2.0-d-4-d-126hp-45279
+EU-TOYOTA-YARIS-I-HATCHBACK-PREFL-01	3615	1660	1500	Auto-Data Toyota Yaris I	https://www.auto-data.net/en/toyota-yaris-i-3-door-1.0i-16v-68hp-automatic-28757
+EU-TOYOTA-YARIS-I-HATCHBACK-FACELIFT-01	3640	1660	1500	Auto-Data Toyota Yaris I facelift	https://www.auto-data.net/en/toyota-yaris-i-facelift-2003-3-door-1.0-vvt-i-65hp-multi-mode-50704
+EU-TOYOTA-YARIS-III-HATCHBACK-PREFL-01	3885	1695	1510	Auto-Data Toyota Yaris III	https://www.auto-data.net/en/toyota-yaris-iii-1.33-dual-vvt-i-99hp-17110
+EU-TOYOTA-YARIS-VERSO-I-MPV-PREFL-01	3860	1690	1680	Toyota Media Yaris Verso launch specifications	https://media.toyota.co.uk/yaris-verso-a-new-dimension-in-family-cars/
+EU-TOYOTA-YARIS-VERSO-I-MPV-FACELIFT-01	3880	1690	1715	Auto-Data Toyota Yaris Verso facelift	https://www.auto-data.net/en/toyota-yaris-verso-facelift-2003-generation-11370
+EU-TOYOTA-YARIS-II-SEDAN-STD-01	4300	1690	1460	CarsGuide 2006 Toyota Yaris sedan dimensions	https://www.carsguide.com.au/toyota/yaris/car-dimensions/2006
+EU-TOYOTA-YARIS-III-HATCHBACK-FACELIFT-2017-01	3945	1695	1510	Auto-Data Toyota Yaris III facelift 2017	https://www.auto-data.net/en/toyota-yaris-iii-facelift-2017-1.0-vvt-i-69hp-29056
+EU-TOYOTA-YARIS-II-HATCHBACK-STD-01	3750	1695	1530	Auto-Data Toyota Yaris II	https://www.auto-data.net/en/toyota-yaris-ii-1.3-i-vvt-i-87hp-automatic-4054
+EU-TOYOTA-YARIS-III-HATCHBACK-FACELIFT-2014-01	3950	1695	1510	Auto-Data Toyota Yaris III facelift 2014	https://www.auto-data.net/en/toyota-yaris-iii-facelift-2014-generation-4865
+EU-TOYOTA-YARIS-CROSS-I-SUV-STD-01	4180	1765	1595	Toyota Europe Yaris Cross press kit	https://newsroom.toyota.eu/all-new-toyota-yaris-cross/
+EU-TOYOTA-YARIS-IV-HATCHBACK-STD-01	3940	1745	1500	Toyota Yaris Technical Specifications	https://media.toyota.co.uk/wp-content/uploads/sites/5/2021/03/1611774776210127MYarisTechSpec.pdf
+EU-TOYOTA-GR-YARIS-I-HATCHBACK-2024-01	3995	1805	1455	Toyota Europe new GR Yaris press kit	https://newsroom.toyota.eu/world-debut-of-the-new-toyota-gr-yaris-at-the-2024-tokyo-auto-salon/
+EU-TRIUMPH-25-PI-MK-I-SEDAN-01	4410	1650	1420	Triumph 2000/2500/2.5 Register technical specifications	https://triumph2000register.co.uk/the-cars/technical-specifications/
+EU-TRIUMPH-25-PI-MK-I-WAGON-01	4410	1650	1420	Triumph 2000/2500/2.5 Register technical specifications	https://triumph2000register.co.uk/the-cars/technical-specifications/
+EU-TRIUMPH-HERALD-1200-CONVERTIBLE-01	3886	1524	1321	Triumph Sports Six Club Herald 1200 specifications	https://www.tssc.org.uk/tssc/cars_final.asp?model_ID=27
+EU-TRIUMPH-HERALD-1200-WAGON-01	3886	1524	1321	Triumph Sports Six Club Herald 1200 specifications	https://www.tssc.org.uk/tssc/cars_final.asp?model_ID=27
+EU-TRIUMPH-VITESSE-I-CONVERTIBLE-01	3886	1524	1321	Auto Express Triumph Vitesse dimensions	https://www.autoexpress.co.uk/classic-cars/104927/triumph-vitesse-buying-guide-and-review-1962-1971
+EU-TRIUMPH-VITESSE-I-SEDAN-01	3886	1524	1321	Auto Express Triumph Vitesse dimensions	https://www.autoexpress.co.uk/classic-cars/104927/triumph-vitesse-buying-guide-and-review-1962-1971
+EU-TROPOS-ABLE-XT-PICKUP-STD-01	3700	1400	1900	Vision Mobility Tropos Able XT test	https://vision-mobility.de/en/news/test-report-tropos-able-xt-tough-electric-utility-vehicle-for-the-city-64385.html
+EU-TROPOS-ABLE-XT-VAN-STD-01	3700	1400	1900	Vision Mobility Tropos Able XT test	https://vision-mobility.de/en/news/test-report-tropos-able-xt-tough-electric-utility-vehicle-for-the-city-64385.html
+EU-TVR-280-WEDGE-COUPE-01	4013	1728	1194	Automobile-Catalog 1984 TVR Tasmin coupe	https://www.automobile-catalog.com/car/1984/44300/tvr_tasmin.html
+EU-TVR-280-WEDGE-CONVERTIBLE-01	4013	1727	1194	ConceptCarz 1984 TVR 280i convertible	https://www.conceptcarz.com/s18545/tvr-280i.aspx
+EU-TVR-350-WEDGE-COUPE-01	4013	1728	1205	Automobile-Catalog TVR Tasmin 350i	https://www.automobile-catalog.com/car/1987/30515/tvr_tasmin_350i.html
+EU-TVR-350-WEDGE-CONVERTIBLE-01	4013	1728	1205	Automobile-Catalog TVR Tasmin 350i	https://www.automobile-catalog.com/car/1987/30515/tvr_tasmin_350i.html
+EU-TVR-WEDGE-CONVERTIBLE-01	4013	1728	1205	Automobile-Catalog	https://www.automobile-catalog.com/car/1987/30965/tvr_390_se.html
+EU-TVR-VIXEN-COUPE-01	3683	1626	1219	Wikipedia (cited specifications)	https://en.wikipedia.org/wiki/TVR_Vixen
+EU-TVR-M-SERIES-COUPE-01	3937	1626	1194	Wikipedia (cited specifications)	https://en.wikipedia.org/wiki/TVR_M_series
+EU-TVR-420-SPORTS-SALOON-COUPE-01	4220	1780	1240	Automobile-Catalog	https://www.automobile-catalog.com/car/1986/57110/tvr_420_sports_saloon.html
+EU-TVR-CERBERA-COUPE-01	4280	1860	1220	Auto-Data.net	https://www.auto-data.net/en/tvr-cerbera-4.5-i-v8-426hp-5825
+EU-TVR-CHIMAERA-CONVERTIBLE-01	3965	1730	1223	Auto-Data.net	https://www.auto-data.net/en/tvr-chimaera-model-631
+EU-TVR-GRIFFITH-CONVERTIBLE-01	3891	1720	1204	AutoEvolution	https://www.autoevolution.com/cars/tvr-griffith-1992.html
+EU-TVR-S-SERIES-V6-CONVERTIBLE-01	3960	1620	1120	Automobile-Catalog	https://www.automobile-catalog.com/car/1988/57335/tvr_s.html
+EU-TVR-S-SERIES-V8-CONVERTIBLE-01	3958	1665	1223	Auto Motor und Sport	https://www.auto-motor-und-sport.de/marken-modelle/tvr/v8/technische-daten/
+EU-TVR-T350-COUPE-01	3970	1840	1200	Carsensor Japan	https://www.carsensor.net/catalog/tvr/t350/F001/M001G001/
+EU-TVR-TASMIN-COUPE-01	4013	1727	1194	Carfolio	https://www.carfolio.com/tvr-tasmin-50534
+EU-TVR-TUSCAN-I-V8-COUPE-01	3710	1730	1230	CarsWP	https://www.carswp.com/tvr-tuscan-v8-1969-specs-4287
+EU-TVR-TUSCAN-II-CONVERTIBLE-01	4235	1810	1200	TVR Car Club	https://www.tvr-car-club.co.uk/tvr-tuscan.html
+EU-TYNE-TX1-VAN-01	3490	1465	1685	TYN-e official 2025 brochure	https://tyn-e.com/media/2025/04/2025_04_TYN-e-Broschure_A4_hoch-Modellfamilie.pdf
+EU-TYNE-TX2-PICKUP-01	4400	1570	1695	TYN-e official 2025 brochure	https://tyn-e.com/media/2025/04/2025_04_TYN-e-Broschure_A4_hoch-Modellfamilie.pdf
+EU-TYNE-TX7-PICKUP-01	4400	1570	1735	TYN-e official 2025 brochure	https://tyn-e.com/media/2025/04/2025_04_TYN-e-Broschure_A4_hoch-Modellfamilie.pdf
+EU-UAZ-452-VAN-01	4360	1940	2090	Auta5P	https://auta5p.eu/lang/en/katalog/auto.php?idf=UAZ-452-A-16231
+EU-UAZ-469B-SUV-01	4025	1785	2050	Wikipedia (cited specifications)	https://en.wikipedia.org/wiki/UAZ-469
+EU-UAZ-CARGO-23602-PICKUP-01	5335	1990	2260	Drom vehicle catalog	https://www.drom.ru/catalog/uaz/cargo/180861/
+EU-UAZ-HUNTER-SUV-01	4100	1730	2025	UAZ official Hunter brochure	https://www.uaz.ru/data/uploads/uaz/originals/uaz-hunter-brochure-en-290722.pdf
+EU-UAZ-PATRIOT-3163-SUV-01	4750	1900	1910	Auto-Data.net	https://www.auto-data.net/en/uaz-patriot-3163-facelift-2016-2.7-135hp-4x4-41047
+EU-VAUXHALL-CHEVETTE-CC-HATCHBACK-01	3945	1570	1308	Auto-Data.net	https://www.auto-data.net/en/vauxhall-chevette-cc-1300-58hp-6068
+EU-VAUXHALL-ZAFIRA-C-MPV-01	4658	1884	1685	Automobile-Catalog	https://www.automobile-catalog.com/car/2013/2540045/opel_zafira_tourer_2_0_cdti_165.html
+EU-VECTOR-M12-COUPE-01	4780	2019	1130	Wikipedia (cited specifications)	https://en.wikipedia.org/wiki/Vector_M12
+EU-VICTORY-VAN-01	4400	1650	1920	Victory official product page	https://ecocar.city/victory-van-pick-up/?lang=en
+EU-VICTORY-PICKUP-SINGLE-CAB-01	4840	1635	1875	Victory official product page	https://ecocar.city/victory-van-pick-up/?lang=en
+EU-VINFAST-VF6-SUV-01	4238	1820	1594	Licarco vehicle specifications	https://licarco.com/vinfast-vf6
+EU-VINFAST-VF8-SUV-01	4750	1934	1667	VinFast official specifications	https://me.vinfast.com/en/vf8
+EU-VINFAST-VF9-SUV-01	5118	2000	1696	Elektriauto vehicle specifications	https://elektriauto.ee/en/vinfast/vf-9-extended-range
+EU-VOLVO-140-145-WAGON-01	4640	1735	1450	CarsGuide	https://www.carsguide.com.au/volvo/145/car-dimensions/1971
+EU-VOLVO-240-244-SEDAN-01	4782	1710	1430	Volvo 240 owner manual specifications	https://www.carmanualsonline.info/volvo-240-1990-owners-manual/?srch=height
+EU-VOLVO-240-245-WAGON-01	4790	1710	1460	Volvo 240 owner manual specifications	https://www.carmanualsonline.info/volvo-240-1990-owners-manual/?srch=height
+EU-VOLVO-440-PREFL-HATCHBACK-01	4312	1686	1390	Wikipedia (cited specifications)	https://en.wikipedia.org/wiki/Volvo_440/460
+EU-VOLVO-440-FACELIFT-HATCHBACK-01	4345	1686	1390	Wikipedia (cited specifications)	https://en.wikipedia.org/wiki/Volvo_440/460
+EU-VOLVO-460-PREFL-SEDAN-01	4405	1686	1390	Wikipedia (cited specifications)	https://en.wikipedia.org/wiki/Volvo_440/460
+EU-VOLVO-480-COUPE-01	4258	1710	1318	VehicleScore	https://vehiclescore.co.uk/car-dimensions-check/volvo/480
+EU-VOLVO-740-SEDAN-01	4785	1750	1410	CarsGuide	https://www.carsguide.com.au/volvo/740/car-dimensions/1987
+EU-VOLVO-740-WAGON-01	4785	1750	1435	Volvo Owners Club	https://www.volvoclub.org.uk/history/740est.shtml
+EU-VOLVO-760-SEDAN-01	4785	1750	1430	CarsGuide	https://www.carsguide.com.au/volvo/760/car-dimensions/1988
+EU-VOLVO-760-WAGON-01	4785	1750	1435	Carfolio	https://www.carfolio.com/volvo-760-gle-estate-turbodiesel-805948
+EU-VOLVO-850-SEDAN-01	4661	1760	1415	Wikipedia (cited specifications)	https://en.wikipedia.org/wiki/Volvo_850
+EU-VOLVO-850-WAGON-01	4709	1760	1415	Wikipedia (cited specifications)	https://en.wikipedia.org/wiki/Volvo_850
+EU-VOLVO-850-AWD-WAGON-01	4709	1760	1445	Wikipedia (cited specifications)	https://en.wikipedia.org/wiki/Volvo_850
+EU-VOLVO-940-SEDAN-01	4870	1750	1410	AutoCentrum	https://www.autocentrum.pl/dane-techniczne/volvo/940/sedan/
+EU-VOLVO-940-WAGON-01	4810	1750	1435	Drive.Place	https://volvo.drive.place/940/i/group_wagon_5/333970
+EU-VOLVO-460-FACELIFT-SEDAN-01	4435	1686	1390	Wikipedia (cited specifications)	https://en.wikipedia.org/wiki/Volvo_440/460
+EU-VOLVO-960-1990-SEDAN-STANDARD-01	4871	1750	1411	Auto-Data	https://www.auto-data.net/en/volvo-960-964-generation-1945
+EU-VOLVO-960-1990-WAGON-STANDARD-01	4850	1750	1434	Auto-Data	https://www.auto-data.net/en/volvo-960-kombi-965-generation-1946
+EU-VOLVO-340-360-1986-SEDAN-STANDARD-01	4415	1660	1392	Automobile-Catalog	https://www.automobile-catalog.com/car/1986/59330/volvo_340_dl_diesel_sedan.html
+EU-VOLVO-C30-2006-HATCHBACK-PREFL-01	4252	1782	1447	Auto-Data	https://www.auto-data.net/en/volvo-c30-generation-1956
+EU-VOLVO-C30-2010-HATCHBACK-FACELIFT-01	4266	1782	1447	Auto-Data	https://www.auto-data.net/en/volvo-c30-facelift-2010-generation-4973
+EU-VOLVO-C40-EC40-2021-SUV-STANDARD-01	4440	1873	1591	Volvo Cars official support	https://www.volvocars.com/en-bh/support/car/c40-recharge/article/0ed816eed33d98cac0a8cc377bc12bc7-e6a7973b2bf222b2c0a8b09757c97ec8-8664b2fa77a7e089c0a8296870d1a409/
+EU-VOLVO-C70-I-CONVERTIBLE-STANDARD-01	4720	1820	1429	Auto-Data	https://www.auto-data.net/en/volvo-c70-convertible-generation-1965
+EU-VOLVO-C70-I-COUPE-STANDARD-01	4720	1820	1414	Auto-Data	https://www.auto-data.net/en/volvo-c70-coupe-generation-1966
+EU-VOLVO-C70-II-CONVERTIBLE-PREFL-01	4582	1820	1457	Auto-Data	https://www.auto-data.net/en/volvo-c70-coupe-cabrio-ii-generation-1964
+EU-VOLVO-C70-II-CONVERTIBLE-FACELIFT-01	4615	1836	1400	Auto-Data	https://www.auto-data.net/en/volvo-c70-coupe-cabrio-ii-facelift-2009-generation-8330
+EU-VOLVO-ES90-2025-HATCHBACK-STANDARD-01	5000	1942	1545	Volvo Cars official support	https://www.volvocars.com/il/support/car/es90/article/0ed816eed33d98cac0a8cc377bc12bc7-e6a7973b2bf222b2c0a8b09757c97ec8-8664b2fa77a7e089c0a8296870d1a409/
+EU-VOLVO-EX30-2023-SUV-STANDARD-01	4233	1838	1550	Volvo Cars official support	https://www.volvocars.com/us/support/car/ex30/article/0ed816eed33d98cac0a8cc377bc12bc7-e6a7973b2bf222b2c0a8b09757c97ec8-8664b2fa77a7e089c0a8296870d1a409/
+EU-VOLVO-EX40-2024-SUV-STANDARD-01	4440	1873	1647	Volvo Cars official support	https://www.volvocars.com/mk/support/car/ex40/article/0ed816eed33d98cac0a8cc377bc12bc7-e6a7973b2bf222b2c0a8b09757c97ec8-8664b2fa77a7e089c0a8296870d1a409/
+EU-VOLVO-EX60-2026-SUV-STANDARD-01	4803	1908	1635	Volvo Cars official support	https://www.volvocars.com/us/support/car/ex60/article/47d2c97fd33effd3c0a8cc3718c999b7-cf578f17ce837790c0a8b04a1abf9aaa-8664b2fa77a7e089c0a8296870d1a409/47d2c97fd33effd3c0a8cc3718c999b7-350655bc554de2a7c0a8b097561c9a50-8664b2fa77a7e089c0a8296870d1a409/0ed816eed33d98cac0a8cc377bc12bc7-e6a7973b2bf222b2c0a8b09757c97ec8-8664b2fa77a7e089c0a8296870d1a409/
+EU-VOLVO-EX90-2023-SUV-STANDARD-01	5037	1964	1741	Volvo Cars official support	https://www.volvocars.com/mt/support/car/ex90/article/0ed816eed33d98cac0a8cc377bc12bc7-e6a7973b2bf222b2c0a8b09757c97ec8-8664b2fa77a7e089c0a8296870d1a409/
+EU-VOLVO-P1800-1963-COUPE-STANDARD-01	4400	1700	1285	Auto-Data	https://www.auto-data.net/en/volvo-1800-model-2899
+EU-VOLVO-PV444-1947-SEDAN-STANDARD-01	4216	1575	1346	Automobile-Catalog	https://www.automobile-catalog.com/car/1947/33890/volvo_pv444.html
+EU-VOLVO-PV544-1958-HATCHBACK-STANDARD-01	4450	1590	1560	Automobile-Catalog	https://www.automobile-catalog.com/car/1958/33875/volvo_pv544_sport.html
+EU-VOLVO-S40-I-SEDAN-STANDARD-01	4516	1720	1422	Auto-Data	https://www.auto-data.net/en/volvo-s40-vs-generation-1972
+EU-VOLVO-S40-II-SEDAN-STANDARD-01	4476	1770	1454	Auto-Data	https://www.auto-data.net/en/volvo-s40-model-941
+EU-VOLVO-S60-I-SEDAN-STANDARD-01	4606	1804	1431	Auto-Data	https://www.auto-data.net/en/volvo-s60-generation-1929
+EU-VOLVO-S60-II-SEDAN-PREFL-01	4628	1865	1484	Auto-Data	https://www.auto-data.net/en/volvo-s60-ii-generation-3841
+EU-VOLVO-S60-II-SEDAN-FACELIFT-01	4635	1865	1484	Auto-Data	https://www.auto-data.net/en/volvo-s60-ii-facelift-2013-generation-4062
+EU-VOLVO-S60-II-CROSS-COUNTRY-SEDAN-STANDARD-01	4638	1866	1539	Auto-Data	https://www.auto-data.net/en/volvo-s60-ii-cross-country-generation-4520
+EU-VOLVO-S60-III-SEDAN-PREFL-01	4761	1850	1431	Auto-Data	https://www.auto-data.net/en/volvo-s60-iii-2.0-b6-299hp-mild-hybrid-awd-automatic-40912
+EU-VOLVO-S60-III-SEDAN-FACELIFT-01	4778	1850	1431	Volvo Cars Support	https://www.volvocars.com/uk/support/car/s60/2023/article/47d2c97fd33effd3c0a8cc3718c999b7-cf578f17ce837790c0a8b04a1abf9aaa-8664b2fa77a7e089c0a8296870d1a409/47d2c97fd33effd3c0a8cc3718c999b7-350655bc554de2a7c0a8b097561c9a50-8664b2fa77a7e089c0a8296870d1a409/0ed816eed33d98cac0a8cc377bc12bc7-e6a7973b2bf222b2c0a8b09757c97ec8-8664b2fa77a7e089c0a8296870d1a409/
+EU-VOLVO-S70-I-SEDAN-STANDARD-01	4720	1760	1400	Auto-Data	https://www.auto-data.net/en/volvo-s70-model-922
+EU-VOLVO-S80-I-SEDAN-PREFL-01	4822	1832	1450	Auto-Data	https://www.auto-data.net/en/volvo-s80-generation-1948
+EU-VOLVO-S80-I-SEDAN-FACELIFT-01	4849	1832	1452	Auto-Data	https://www.auto-data.net/en/volvo-s80-facelift-2003-generation-1949
+EU-VOLVO-S80-II-SEDAN-PREFL-01	4851	1861	1493	Auto-Data	https://www.auto-data.net/en/volvo-s80-ii-generation-1947
+EU-VOLVO-S80-II-SEDAN-FACELIFT-01	4854	1861	1493	Volvo Cars Support	https://www.volvocars.com/sg/support/car/s80/article/18f77489f78f457dc0a801e800a04016/
+EU-VOLVO-S90-II-SEDAN-PREFL-01	4963	1879	1443	Volvo Cars Support	https://www.volvocars.com/uk/support/car/s90/18w17/article/b0804d54c7fc096bc0a81f6f065ad63e/0362eef4c7fc436fc0a81f6f7c27a289/0a9f81ad7fe71c97c0a8015176e5bb71/
+EU-VOLVO-S90-II-SEDAN-FACELIFT-01	4969	1890	1446	Volvo Cars Support	https://www.volvocars.com/uk/support/car/s90/article/766ee075f0e03896c0a8015109ee0749/
+EU-VOLVO-V40-I-WAGON-PREFL-01	4480	1720	1410	Autoevolution	https://www.autoevolution.com/cars/volvo-v40-1996.html
+EU-VOLVO-V40-I-WAGON-FACELIFT-01	4516	1716	1425	Auto-Data	https://www.auto-data.net/en/volvo-v40-combi-vw-2.0-16v-136hp-9520
+EU-VOLVO-V40-II-HATCHBACK-STANDARD-01	4369	1802	1420	Volvo Cars Support	https://www.volvocars.com/ie/support/car/v40/2015/article/d24bb7d1e21ec6e4c0a801e801cf6114/1fb4a1e231ff3432c0a801e8011f8ab3/d3e3a984c472afb4c0a801e8016918f7/
+EU-VOLVO-V40-II-HATCHBACK-CROSS-COUNTRY-01	4370	1802	1458	Volvo Support	https://www.volvocars.com/en-om/support/car/v40-cross-country/15w46/article/d24bb7d1e21ec6e4c0a801e801cf6114/1fb4a1e231ff3432c0a801e8011f8ab3/d3e3a984c472afb4c0a801e8016918f7/
+EU-VOLVO-V50-I-WAGON-STANDARD-01	4514	1770	1452	Volvo Cars Media	https://www.volvocars.com/se/media/press-releases/25EB4C4816347F97/
+EU-VOLVO-V60-I-WAGON-STANDARD-01	4628	1865	1484	CarsGuide	https://www.carsguide.com.au/volvo/v60/car-dimensions/2012
+EU-VOLVO-V60-I-WAGON-CROSS-COUNTRY-01	4638	1865	1545	Volvo Support	https://www.volvocars.com/lb/support/car/v60-cross-country/2016/article/d24bb7d1e21ec6e4c0a801e801cf6114/1fb4a1e231ff3432c0a801e8011f8ab3/18f77489f78f457dc0a801e800a04016/
+EU-VOLVO-V60-II-WAGON-STANDARD-01	4761	1850	1437	Volvo Support	https://www.volvocars.com/en-kw/support/car/v60/article/766ee075f0e03896c0a8015109ee0749/
+EU-VOLVO-V60-II-WAGON-2026-PHEV-01	4778	1850	1427	Volvo Support	https://www.volvocars.com/uk/support/car/v60-plug-in-hybrid/article/47d2c97fd33effd3c0a8cc3718c999b7-cf578f17ce837790c0a8b04a1abf9aaa-8664b2fa77a7e089c0a8296870d1a409_47d2c97fd33effd3c0a8cc3718c999b7-350655bc554de2a7c0a8b097561c9a50-8664b2fa77a7e089c0a8296870d1a409_0ed816eed33d98cac0a8cc377bc12bc7-e6a7973b2bf222b2c0a8b09757c97ec8-8664b2fa77a7e089c0a8296870d1a409/
+EU-VOLVO-V60-II-WAGON-CROSS-COUNTRY-01	4784	1893	1504	Volvo Support	https://www.volvocars.com/en-ca/support/car/v60-cross-country/21w46/article/b0804d54c7fc096bc0a81f6f065ad63e/0362eef4c7fc436fc0a81f6f7c27a289/766ee075f0e03896c0a8015109ee0749/
+EU-VOLVO-V70-I-WAGON-STANDARD-01	4730	1760	1430	Auto-Data	https://www.auto-data.net/en/volvo-v70-i-2.4-16v-bifuel-140hp-9265
+EU-VOLVO-V70-II-WAGON-STANDARD-01	4710	1804	1465	Volvo Car Corporation technical specifications (Volvo Owners Club archive)	https://www.volvoclub.org.uk/background_v70.shtml
+EU-VOLVO-V70-III-WAGON-PREFL-01	4823	1861	1547	Volvo Cars UK media technical data	https://www.media.volvocars.com/uk/en-gb/media/pressreleases/15088
+EU-VOLVO-V70-III-WAGON-FACELIFT-01	4814	1861	1547	Volvo Car Germany MY2014 overview	https://news.cision.com/de/volvo-car-germany-presse/r/volvo-v70-ubersicht-my-2014%2Cc4188917
+EU-VOLVO-V90-II-WAGON-PREFL-01	4936	1879	1475	Volvo Support V90 Twin Engine 2020 dimensions	https://www.volvocars.com/uk/support/car/v90-twin-engine/article/766ee075f0e03896c0a8015109ee0749/
+EU-VOLVO-V90-II-WAGON-FACELIFT-01	4945	1879	1478	Volvo Support V90 2021 dimensions	https://www.volvocars.com/mt/support/car/v90/article/766ee075f0e03896c0a8015109ee0749/
+EU-VOLVO-V90-II-WAGON-CROSS-COUNTRY-PREFL-01	4939	1879	1543	Volvo V90 Cross Country MY2018 technical specifications	https://www.volvoclub.org.uk/press/volvo2018/206089_Volvo_V90_Cross_Country_Model_Year_2018_Technical_Specifications.pdf
+EU-VOLVO-V90-II-WAGON-CROSS-COUNTRY-FACELIFT-01	4959	1879	1543	Volvo Support V90 Cross Country 2021 dimensions	https://www.volvocars.com/hk/support/car/v90-cross-country/20w17/article/b0804d54c7fc096bc0a81f6f065ad63e/0362eef4c7fc436fc0a81f6f7c27a289/766ee075f0e03896c0a8015109ee0749/
+EU-VOLVO-XC40-I-SUV-PREFL-01	4425	1863	1652	Auto-Data Volvo XC40 2018-2022 generation specifications	https://www.auto-data.net/en/volvo-xc40-generation-5808
+EU-VOLVO-XC40-I-SUV-FACELIFT-01	4440	1863	1652	Volvo Support XC40 2024 dimensions	https://www.volvocars.com/mt/support/car/xc40/article/766ee075f0e03896c0a8015109ee0749/
+EU-VOLVO-XC60-I-SUV-PREFL-01	4628	1891	1713	Auto-Data Volvo XC60 I specifications	https://www.auto-data.net/en/volvo-xc60-i-2.4-d5-185hp-awd-geartronic-9387
+EU-VOLVO-XC60-I-SUV-FACELIFT-01	4644	1891	1713	Auto-Data Volvo XC60 I 2013 facelift specifications	https://www.auto-data.net/en/volvo-xc60-i-2013-facelift-2.4-d4-190hp-awd-21808
+EU-VOLVO-XC60-II-SUV-FACELIFT-01	4708	1902	1655	Volvo Support XC60 vehicle dimensions	https://www.volvocars.com/us/support/car/xc60/article/0ed816eed33d98cac0a8cc377bc12bc7-e6a7973b2bf222b2c0a8b09757c97ec8-8664b2fa77a7e089c0a8296870d1a409/
+EU-VOLVO-XC60-II-SUV-PREFACELIFT-01	4688	1902	1658	Auto-Data.net	https://www.auto-data.net/en/volvo-xc60-ii-generation-5397
+EU-VOLVO-XC60-II-SUV-FACELIFT-PHEV-01	4708	1902	1653	Auto-Data.net	https://www.auto-data.net/en/volvo-xc60-ii-facelift-2021-recharge-t6-2.0-253hp-plug-in-hybrid-awd-geartronic-45585
+EU-VOLVO-XC60-II-SUV-FACELIFT-PHEV-02	4708	1902	1651	Volvo Cars support	https://www.volvocars.com/us/support/car/xc60-plug-in-hybrid/article/0ed816eed33d98cac0a8cc377bc12bc7-e6a7973b2bf222b2c0a8b09757c97ec8-8664b2fa77a7e089c0a8296870d1a409/
+EU-VOLVO-XC70-I-WAGON-01	4733	1860	1562	Auto-Data.net	https://www.auto-data.net/en/volvo-xc70-i-generation-1959
+EU-VOLVO-XC70-II-WAGON-01	4838	1870	1604	Auto-Data.net	https://www.auto-data.net/en/volvo-xc70-model-933
+EU-VOLVO-XC90-I-SUV-01	4807	1936	1784	Auto-Data.net	https://www.auto-data.net/en/volvo-xc90-generation-1968
+EU-VOLVO-XC90-II-SUV-PREFACELIFT-01	4950	1923	1776	Auto-Data.net	https://www.auto-data.net/en/volvo-xc90-ii-generation-4274
+EU-VOLVO-XC90-II-SUV-FACELIFT-01	4953	1923	1776	Auto-Data.net	https://www.auto-data.net/en/volvo-xc90-ii-facelift-2019-generation-7427
+EU-VOLVO-XC90-II-SUV-FACELIFT-02	4953	1923	1767	Auto-Data.net	https://www.auto-data.net/en/volvo-xc90-model-938
+EU-VOYAH-COURAGE-I-SUV-RWD-01	4725	1900	1636	Data.CarNewsChina	https://data.carnewschina.com/database/voyah/aratu-knowles/2024/params
+EU-VOYAH-COURAGE-I-SUV-AWD-01	4725	1900	1653	Data.CarNewsChina	https://data.carnewschina.com/database/voyah/aratu-knowles/2024/params
+EU-VOYAH-DREAM-I-MPV-AWD-01	5315	1985	1800	VOYAH Norway	https://www.voyah.no/voyah-dream/spesifikasjoner
+EU-VOYAH-FREE-I-SUV-AWD-01	4905	1950	1645	VOYAH Finland	https://www.voyah.fi/voyah-free
+EU-VW-TYPE-166-CONVERTIBLE-01	3825	1480	1615	Wikipedia	https://en.wikipedia.org/wiki/Volkswagen_Schwimmwagen
+EU-VW-TYPE-181-CONVERTIBLE-01	3780	1640	1620	Conceptcarz	https://www.conceptcarz.com/s10439/volkswagen-type-181-thing.aspx
+EU-VW-AMAROK-I-PICKUP-SINGLECAB-01	5181	1944	1820	Auto-Data.net	https://www.auto-data.net/en/volkswagen-amarok-i-single-cab-2.0-tdi-140hp-20553
+EU-VW-AMAROK-I-PICKUP-DOUBLECAB-01	5254	1944	1834	Auto-Data.net	https://www.auto-data.net/en/volkswagen-amarok-i-double-cab-generation-4342
+EU-VW-AMAROK-I-PICKUP-DOUBLECAB-FACELIFT-01	5254	1954	1834	Auto-Data.net	https://www.auto-data.net/en/volkswagen-amarok-i-double-cab-facelift-2016-generation-5211
+EU-VW-AMAROK-I-PICKUP-CHASSIS-01	5181	1944	1820	CarExpert specifications	https://www.carexpert.com.au/volkswagen/amarok/2015-2l-utility-4x4-diesel-automatic-jog5ak5m20150106
+EU-VW-AMAROK-II-PICKUP-DOUBLECAB-LOW-01	5390	1910	1871	Auto-Data.net	https://www.auto-data.net/en/volkswagen-amarok-ii-2.0-tdi-170hp-4motion-48657
+EU-VW-AMAROK-II-PICKUP-DOUBLECAB-01	5390	1910	1884	Auto-Data.net	https://www.auto-data.net/en/volkswagen-amarok-ii-2.0-tdi-205hp-4motion-48658
+EU-VW-ARTEON-I-HATCHBACK-PREFACELIFT-01	4862	1871	1450	Auto-Data.net	https://www.auto-data.net/en/volkswagen-arteon-generation-5396
+EU-VW-ARTEON-I-HATCHBACK-FACELIFT-01	4866	1871	1460	Auto-Data.net	https://www.auto-data.net/en/volkswagen-arteon-facelift-2020-generation-7833
+EU-VW-ARTEON-I-HATCHBACK-FACELIFT-PHEV-01	4866	1871	1449	Auto-Data.net	https://www.auto-data.net/en/volkswagen-arteon-facelift-2020-1.4-tsi-218hp-ehybrid-dsg-41794
+EU-VW-ARTEON-I-WAGON-FACELIFT-01	4866	1871	1462	Auto-Data.net	https://www.auto-data.net/en/volkswagen-arteon-shooting-brake-facelift-2020-generation-7832
+EU-VW-ARTEON-I-WAGON-FACELIFT-PHEV-01	4866	1871	1450	Auto-Data.net	https://www.auto-data.net/en/volkswagen-arteon-shooting-brake-facelift-2020-1.4-tsi-218hp-ehybrid-dsg-41796
+EU-VW-ATLAS-I-SUV-01	5036	1989	1778	Auto-Data.net	https://www.auto-data.net/en/volkswagen-atlas-3.6-v6-276hp-4motion-automatic-30408
+EU-VW-BEETLE-A5-HATCHBACK-PREFACELIFT-01	4278	1808	1486	Auto-Data.net	https://www.auto-data.net/en/volkswagen-beetle-a5-generation-3785
+EU-VW-BEETLE-A5-CONVERTIBLE-PREFACELIFT-01	4278	1808	1473	Auto-Data.net	https://www.auto-data.net/en/volkswagen-beetle-convertible-a5-1.2-tsi-105hp-dsg-20569
+EU-VW-BEETLE-A5-HATCHBACK-FACELIFT-01	4288	1825	1488	Auto-Data.net	https://www.auto-data.net/en/volkswagen-beetle-model-897
+EU-VW-BEETLE-A5-CONVERTIBLE-FACELIFT-01	4288	1825	1473	Auto-Data.net	https://www.auto-data.net/en/volkswagen-beetle-model-897
+EU-VW-BORA-1J-SEDAN-STANDARD-01	4376	1735	1446	Volkswagen Newsroom Bora vehicle data	https://www.volkswagen-newsroom.com/en/vehicle-data-bora-profile-19676
+EU-VW-BORA-1J-WAGON-STANDARD-01	4409	1735	1473	Volkswagen Newsroom Bora vehicle data	https://www.volkswagen-newsroom.com/en/vehicle-data-bora-profile-19676
+EU-VW-CADDY-ALLTRACK-IV-MPV-VAN-SWB-01	4430	1793	1824	Volkswagen Caddy Trendline and Alltrack brochure	https://www.vw.co.za/idhub/content/dam/onehub_pkw/importers/za/editorials/offers-and-products/brochures-and-specifications/brochures/commercial-vehicles/2020/april/caddy-trendline-and-alltrack-online-brochure.pdf
+EU-VW-CADDY-CALIFORNIA-V-MPV-SWB-01	4500	1855	1798	Volkswagen Caddy California brochure; Auto-Data	https://www.volkswagen-vans.co.uk/idhub/content/dam/onehub_nfz/importers/gb/downloads/brochures/caddy-california/caddy-california-brochure.pdf | https://www.auto-data.net/en/volkswagen-caddy-v-1.5-tsi-114hp-44727
+EU-VW-CADDY-CALIFORNIA-V-MPV-MAXI-01	4853	1855	1800	Volkswagen Caddy California brochure; Auto-Data	https://www.volkswagen-vans.co.uk/idhub/content/dam/onehub_nfz/importers/gb/downloads/brochures/caddy-california/caddy-california-brochure.pdf | https://www.auto-data.net/en/volkswagen-caddy-maxi-v-1.5-tsi-114hp-50681
+EU-VW-CADDY-II-9K-VAN-MPV-01	4207	1695	1836	Volkswagen Newsroom Polo III/Caddy II vehicle data	https://www.volkswagen-newsroom.com/en/vehicle-data-polo-3-profile-19149
+EU-VW-CADDY-II-9U-PICKUP-01	4115	1635	1465	EngineInDetail vehicle specifications	https://www.engineindetail.com/pa/volkswagen-caddy-pickup-1-6-1997
+EU-VW-CADDY-III-2K-MPV-VAN-PREFL-01	4405	1802	1833	Auto-Data	https://www.auto-data.net/en/volkswagen-caddy-iii-1.9-tdi-105hp-8861
+EU-VW-CADDY-III-2K-MPV-VAN-FACELIFT-01	4406	1794	1823	Auto-Data	https://www.auto-data.net/en/volkswagen-caddy-iii-facelift-2010-1.6-tdi-102hp-20509
+EU-VW-CADDY-IV-2K-MPV-VAN-01	4408	1793	1823	Volkswagen Caddy Van MY20 specification sheet	https://www.continentalcars.co.nz/assets/uploads/2016/02/Caddy-Van-MY20-Spec-Sheet-03.pdf
+EU-VW-CADDY-V-SB-MPV-01	4500	1855	1832	Auto-Data	https://www.auto-data.net/en/volkswagen-caddy-v-2.0-tdi-122hp-41989
+EU-VW-CADDY-V-SB-VAN-01	4500	1855	1853	Auto-Data	https://www.auto-data.net/en/volkswagen-caddy-cargo-v-2.0-tdi-122hp-41991
+EU-VW-CALIFORNIA-T4-70-CAMPERVAN-PREFL-01	4655	1840	1990	Westfalia T4 California archive (1994 California Highway pop-top)	https://westfaliat4.info/html/1994_vw_westfalia_t4_californi.html
+EU-VW-CALIFORNIA-T4-7D-CAMPERVAN-FACELIFT-01	4789	1840	1990	Westfalia T4 California archive (1998 California Blue pop-top)	https://westfaliat4.info/html/1998_vw_westfalia_t4_california_blue.html
+EU-VW-CALIFORNIA-T5-7H-CAMPERVAN-01	4890	1904	1990	EngineInDetail	https://www.engineindetail.com/pa/volkswagen-t5-california-1-9-tdi-comfortline-2003
+EU-VW-CALIFORNIA-T6-SG-SH-CAMPERVAN-01	4904	1904	1990	ADAC	https://www.adac.de/rund-ums-fahrzeug/autokatalog/marken-modelle/vw-nutzfahrzeuge/transporter/t6/261587/
+EU-VW-CALIFORNIA-T7-ST-CAMPERVAN-01	5173	1941	1972	Volkswagen Commercial Vehicles California brochure	https://www.volkswagen-vans.co.uk/idhub/content/dam/onehub_nfz/importers/gb/downloads/brochures/california/california-brochure.pdf
+EU-VW-CC-B7-358-COUPE-01	4802	1855	1417	Automobile Dimension – Volkswagen CC 2012	https://www.automobiledimension.com/model/volkswagen/cc
+EU-VW-CORRADO-53I-COUPE-01	4048	1690	1318	Volkswagen Newsroom – Corrado vehicle data	https://www.volkswagen-newsroom.com/en/vehicle-data-corrado-profile-19684
+EU-VW-CRAFTER-II-SY-SZ-VAN-MWB-HIGHROOF-01	5986	2040	2590	Volkswagen Singapore – Crafter dimensions	https://www.volkswagen.com.sg/crafter/crafter
+EU-VW-CRAFTER-II-SY-SZ-PICKUP-MWB-SINGLECAB-01	5996	2037	2330	CarExpert New Zealand – 2023 Volkswagen Crafter chassis cab	https://www.carexpert.co.nz/volkswagen/crafter/2023-2l-chassis-cab-fwd-diesel-automatic-josooawk20220901
+EU-VW-CRAFTER-I-2E-2F-VAN-MWB-HIGHROOF-01	5905	1993	2705	Autotrader Australia – 2011 Volkswagen Crafter dimensions	https://www.autotrader.com.au/volkswagen/crafter/dimensions/2011
+EU-VW-CRAFTER-I-2E-2F-PICKUP-MWB-SINGLECAB-01	5905	1993	2470	Carsales Australia – 2011 Volkswagen Crafter 50 TDI400	https://www.carsales.com.au/research/volkswagen/crafter/2011/50-tdi400/
+EU-VW-EOS-1F-CONVERTIBLE-01	4407	1791	1443	Volkswagen Newsroom – Eos vehicle data	https://www.volkswagen-newsroom.com/en/vehicle-data-eos-profile-19690
+EU-VW-FOX-5Z-HATCHBACK-01	3828	1660	1544	Volkswagen Newsroom – Fox vehicle data	https://www.volkswagen-newsroom.com/en/vehicle-data-fox-profile-19693
+EU-VW-FRIDOLIN-TYPE147-VAN-01	3970	1670	1730	Volkswagen Newsroom – Type 147 Fridolin vehicle data	https://www.volkswagen-newsroom.com/en/vehicle-data-type-147-fridolin-profile-19667
+EU-VW-GOLF-ALLTRACK-VII-AUV-WAGON-PREFL-01	4562	1799	1515	Volkswagen Newsroom – Golf VII Variant vehicle data	https://www.volkswagen-newsroom.com/en/vehicle-data-golf-7-variant-profile-20042
+EU-VW-GOLF-ALLTRACK-VII-AUV-WAGON-FACELIFT-01	4578	1799	1530	Volkswagen Newsroom – Golf VII Variant vehicle data	https://www.volkswagen-newsroom.com/en/vehicle-data-golf-7-variant-profile-20042
+EU-VW-GOLF-ALLTRACK-VIII-CDV-WAGON-01	4639	1795	1510	Automobile Dimension – Volkswagen Golf Alltrack 2021	https://www.automobiledimension.com/model/volkswagen/golf-alltrack
+EU-VW-GOLF-I-A1C-CONVERTIBLE-PREFL-01	3815	1630	1395	Automobile-Catalog – 1988 Volkswagen Golf Cabrio 1.6 GL	https://www.automobile-catalog.com/car/1988/54350/volkswagen_golf_cabrio_1_6_gl.html
+EU-VW-GOLF-I-A1C-CONVERTIBLE-FACELIFT-01	3890	1640	1395	Automobile-Catalog – 1989 Volkswagen Golf Cabrio 1.8i Sport	https://www.automobile-catalog.com/car/1989/54695/volkswagen_golf_cabrio_1_8i_sport.html
+EU-VW-GOLF-II-A2-HATCHBACK-STANDARD-01	3985	1665	1415	Volkswagen Newsroom	https://www.volkswagen-newsroom.com/en/vehicle-data-golf-2-profile-19471
+EU-VW-GOLF-III-A3-CONVERTIBLE-STANDARD-01	4020	1695	1405	Auto-Data	https://www.auto-data.net/en/volkswagen-golf-iii-cabrio-1.9-tdi-90hp-8753
+EU-VW-GOLF-III-A3-HATCHBACK-STANDARD-01	4020	1695	1425	Volkswagen Newsroom	https://www.volkswagen-newsroom.com/en/vehicle-data-golf-3-profile-19474
+EU-VW-GOLF-III-A3-WAGON-STANDARD-01	4340	1695	1430	Auto-Data	https://www.auto-data.net/en/volkswagen-golf-iii-variant-generation-1880
+EU-VW-GOLF-IV-A4-CONVERTIBLE-STANDARD-01	4081	1695	1425	Auto-Data	https://www.auto-data.net/en/volkswagen-golf-iv-cabrio-generation-1878
+EU-VW-GOLF-IV-A4-HATCHBACK-STANDARD-01	4149	1735	1439	Auto-Data	https://www.auto-data.net/en/volkswagen-golf-iv-1.6-101hp-8660
+EU-VW-GOLF-IV-A4-WAGON-STANDARD-01	4397	1735	1485	Volkswagen Newsroom	https://www.volkswagen-newsroom.com/en/vehicle-data-golf-4-variant-profile-19523
+EU-VW-GOLF-PLUS-V-A5-HATCHBACK-PREFL-01	4206	1759	1592	Auto-Data	https://www.auto-data.net/en/volkswagen-golf-v-plus-generation-1875
+EU-VW-GOLF-PLUS-V-A5-HATCHBACK-FACELIFT-01	4204	1759	1592	Auto-Data	https://www.auto-data.net/en/volkswagen-golf-vi-plus-generation-3938
+EU-VW-GOLF-SPORTSVAN-VII-A7-HATCHBACK-PREFL-01	4338	1807	1578	Auto-Data	https://www.auto-data.net/en/volkswagen-golf-vii-sportsvan-1.2-tsi-85hp-23264
+EU-VW-GOLF-SPORTSVAN-VII-A7-HATCHBACK-FACELIFT-01	4351	1807	1613	Auto-Data	https://www.auto-data.net/en/volkswagen-golf-vii-sportsvan-facelift-2017-generation-5939
+EU-VW-GOLF-V-A5-HATCHBACK-STANDARD-01	4204	1759	1485	Auto-Data	https://www.auto-data.net/en/volkswagen-golf-v-5-door-1.6-fsi-115hp-51658
+EU-VW-GOLF-V-A5-HATCHBACK-GTI-01	4216	1759	1469	Auto-Data.net	https://www.auto-data.net/en/volkswagen-golf-v-5-door-gti-2.0-tfsi-200hp-51651
+EU-VW-GOLF-V-A5-HATCHBACK-R32-01	4246	1759	1465	Volkswagen specification sheet (archived copy)	https://www.australiancar.reviews/_pdfs/Volkswagen_Golf-R32_Mk5_Specifications_200607.pdf
+EU-VW-GOLF-VI-A6-HATCHBACK-25-01	4210	1786	1479	Auto-Data.net	https://www.auto-data.net/en/volkswagen-golf-vi-5-door-2.5-170hp-tiptronic-51975
+EU-VW-GOLF-VI-A6-CONVERTIBLE-STANDARD-01	4246	1782	1423	Auto-Data.net	https://www.auto-data.net/en/volkswagen-golf-vi-cabriolet-1.4-tsi-122hp-20414
+EU-VW-GOLF-VI-A6-HATCHBACK-STANDARD-01	4199	1786	1480	Auto-Data.net	https://www.auto-data.net/en/volkswagen-golf-vi-5-door-1.8-tsi-160hp-42837
+EU-VW-GOLF-VI-A6-HATCHBACK-GTI-01	4213	1786	1469	Auto-Data.net	https://www.auto-data.net/en/volkswagen-golf-vi-5-door-gti-2.0-tsi-210hp-dsg-41229
+EU-VW-GOLF-VI-A6-CONVERTIBLE-R-01	4266	1782	1405	Auto-Data.net	https://www.auto-data.net/en/volkswagen-golf-vi-cabriolet-r-2.0-tsi-265hp-dsg-41903
+EU-VW-GOLF-VI-A6-WAGON-STANDARD-01	4534	1781	1504	Volkswagen Newsroom	https://www.volkswagen-newsroom.com/en/vehicle-data-golf-6-variant-profile-19529
+EU-VW-GOLF-VII-A7-HATCHBACK-STANDARD-PREFL-01	4255	1799	1452	Auto-Data.net	https://www.auto-data.net/en/volkswagen-golf-vii-5-door-1.2-tsi-105hp-17885
+EU-VW-GOLF-VII-A7-HATCHBACK-STANDARD-FACELIFT-01	4258	1799	1492	Auto-Data.net	https://www.auto-data.net/en/volkswagen-golf-vii-5-door-facelift-2017-1.6-tdi-115hp-27633
+EU-VW-GOLF-VII-A7-HATCHBACK-GTE-PREFL-01	4270	1799	1457	Auto-Data.net	https://www.auto-data.net/en/volkswagen-golf-vii-5-door-gte-1.4-tsi-204hp-plug-in-hybrid-dsg-20418
+EU-VW-GOLF-VII-A7-HATCHBACK-GTE-FACELIFT-01	4276	1799	1484	Auto-Data.net	https://www.auto-data.net/en/volkswagen-golf-vii-5-door-facelift-2017-gte-1.4-tsi-204hp-plug-in-hybrid-dsg-52611
+EU-VW-GOLF-VII-A7-HATCHBACK-PERFORMANCE-PREFL-01	4268	1799	1442	Auto-Data.net	https://www.auto-data.net/en/volkswagen-golf-vii-5-door-gti-2.0-tsi-220hp-18409
+EU-VW-GOLF-VII-A7-HATCHBACK-GTD-FACELIFT-01	4268	1790	1482	Auto-Data.net	https://www.auto-data.net/en/volkswagen-golf-vii-5-door-facelift-2017-gtd-2.0-tdi-184hp-28057
+EU-VW-GOLF-VII-A7-HATCHBACK-GTI-FACELIFT-01	4268	1799	1482	Auto-Data.net	https://www.auto-data.net/en/volkswagen-golf-vii-5-door-facelift-2017-gti-2.0-tsi-230hp-27832
+EU-VW-GOLF-VII-A7-HATCHBACK-R-PREFL-01	4276	1799	1436	Auto-Data.net	https://www.auto-data.net/en/volkswagen-golf-vii-5-door-r-2.0-tsi-300hp-4motion-dsg-52617
+EU-VW-GOLF-VII-A7-HATCHBACK-R-FACELIFT-01	4263	1799	1465	Auto-Data.net	https://www.auto-data.net/en/volkswagen-golf-vii-5-door-facelift-2017-r-2.0-tsi-310hp-4motion-dsg-27651
+EU-VW-GOLF-VII-A7-HATCHBACK-EGOLF-PREFL-01	4270	1799	1473	Auto-Data.net	https://www.auto-data.net/en/volkswagen-golf-vii-5-door-e-golf-24.2-kwh-115hp-44054
+EU-VW-GOLF-VII-A7-HATCHBACK-EGOLF-FACELIFT-01	4270	1799	1482	Auto-Data.net	https://www.auto-data.net/en/volkswagen-golf-vii-5-door-facelift-2017-e-golf-35.8-kwh-136hp-cvt-32179
+EU-VW-GOLF-VII-A7-WAGON-STANDARD-PREFL-01	4562	1799	1481	Auto-Data.net	https://www.auto-data.net/en/volkswagen-golf-vii-variant-1.4-tsi-122hp-18425
+EU-VW-GOLF-VII-A7-WAGON-STANDARD-FACELIFT-01	4567	1799	1515	Auto-Data.net	https://www.auto-data.net/en/volkswagen-golf-vii-variant-facelift-2017-1.0-tsi-116hp-36010
+EU-VW-GOLF-VII-A7-WAGON-GTD-PREFL-01	4575	1799	1470	Auto-Data.net	https://www.auto-data.net/en/volkswagen-golf-vii-variant-gtd-2.0-tdi-184hp-23317
+EU-VW-GOLF-VII-A7-WAGON-R-STANDARD-01	4586	1789	1495	Volkswagen Newsroom	https://www.volkswagen-newsroom.com/en/vehicle-data-golf-7-variant-profile-20042
+EU-VW-GOLF-VIII-A8-HATCHBACK-STANDARD-HIGH-PREFL-01	4284	1789	1491	Auto-Data.net	https://www.auto-data.net/en/volkswagen-golf-viii-1.5-tgi-130hp-dsg-41967
+EU-VW-GOLF-VIII-A8-HATCHBACK-HYBRID-PREFL-01	4287	1789	1484	Auto-Data.net	https://www.auto-data.net/en/volkswagen-golf-viii-gte-1.4-tsi-245hp-ehybrid-dsg-41337
+EU-VW-GOLF-VIII-A8-HATCHBACK-STANDARD-PREFL-01	4284	1789	1456	Auto-Data.net	https://www.auto-data.net/en/volkswagen-golf-viii-1.5-tsi-130hp-38151
+EU-VW-GOLF-VIII-A8-HATCHBACK-EHYBRID-FACELIFT-01	4289	1789	1476	Auto-Data.net	https://www.auto-data.net/en/volkswagen-golf-viii-facelift-2024-1.5-tsi-204hp-ehybrid-dsg-51778
+EU-VW-GOLF-VIII-A8-HATCHBACK-STANDARD-FACELIFT-01	4282	1789	1483	Auto-Data.net	https://www.auto-data.net/en/volkswagen-golf-viii-facelift-2024-1.5-tsi-150hp-51250
+EU-VW-GOLF-VIII-A8-HATCHBACK-GTE-FACELIFT-01	4289	1789	1478	Auto-Data.net	https://www.auto-data.net/en/volkswagen-golf-viii-facelift-2024-gte-1.5-tsi-272hp-ehybrid-dsg-51779
+EU-VW-GOLF-VIII-A8-HATCHBACK-GTI-FACELIFT-01	4289	1789	1471	Auto-Data.net	https://www.auto-data.net/en/volkswagen-golf-viii-facelift-2024-gti-2.0-tsi-265hp-dsg-51761
+EU-VW-GOLF-VIII-A8-HATCHBACK-GTI50-FACELIFT-01	4292	1789	1463	Auto-Data.net	https://www.auto-data.net/en/volkswagen-golf-viii-facelift-2024-gti-edition-50-2.0-tsi-325hp-dsg-55683
+EU-VW-GOLF-VIII-A8-HATCHBACK-GTD-PREFL-01	4287	1789	1478	Auto-Data.net — Golf VIII GTD	https://www.auto-data.net/en/volkswagen-golf-viii-gtd-2.0-tdi-200hp-dsg-41548
+EU-VW-GOLF-VIII-A8-HATCHBACK-R-PREFL-01	4290	1789	1458	Auto-Data.net — Golf VIII R	https://www.auto-data.net/en/volkswagen-golf-viii-r-2.0-tsi-320hp-4motion-dsg-41722
+EU-VW-GOLF-VIII-CD1-WAGON-STANDARD-01	4633	1789	1455	Volkswagen Newsroom — Golf Variant body dimensions (height without roof rails)	https://www.volkswagen-newsroom.com/en/the-new-golf-variant-and-golf-alltrack-international-media-drive-6540/design-and-dimensions-6543
+EU-VW-GOLF-VIII-CD1-WAGON-R-01	4644	1789	1466	Volkswagen Newsroom — Golf R Estate technical data	https://www.volkswagen-newsroom.com/en/the-new-golf-r-estate-media-drive-7510/technical-data-dimensions-7524
+EU-VW-GRAND-CALIFORNIA-SY-MPV-600-01	5980	2040	2970	Volkswagen Commercial Vehicles — Grand California brochure	https://www.volkswagen-vans.co.uk/idhub/content/dam/onehub_nfz/importers/gb/downloads/brochures/grand-california/grand_california-brochure.pdf
+EU-VW-GRAND-CALIFORNIA-SY-MPV-680-01	6800	2040	2840	Volkswagen Commercial Vehicles — Grand California brochure	https://www.volkswagen-vans.co.uk/idhub/content/dam/onehub_nfz/importers/gb/downloads/brochures/grand-california/grand_california-brochure.pdf
+EU-VW-ID-BUZZ-EB-MPV-SWB-PREFL-01	4712	1985	1937	Volkswagen Newsroom — ID. Buzz data sheet	https://www.volkswagen-newsroom.com/en/the-new-id-buzz-and-id-buzz-cargo-the-world-premiere-7778/data-sheet-the-id-buzz-and-id-buzz-cargo-7796
+EU-VW-ID-BUZZ-EB-MPV-SWB-UPDATED-01	4712	1985	1927	Volkswagen Commercial Vehicles — ID. Buzz technical specifications	https://www.volkswagen-vans.co.uk/en/electric-and-hybrid/electric-models/id-buzz/technical-specifications.html
+EU-VW-ID-BUZZ-EB-MPV-LWB-01	4962	1985	1927	Volkswagen Commercial Vehicles — ID. Buzz technical specifications	https://www.volkswagen-vans.co.uk/en/electric-and-hybrid/electric-models/id-buzz/technical-specifications.html
+EU-VW-ID-BUZZ-EBA-VAN-SWB-01	4712	1985	1938	Volkswagen Newsroom — ID. Buzz Cargo data sheet	https://www.volkswagen-newsroom.com/en/the-new-id-buzz-and-id-buzz-cargo-the-world-premiere-7778/data-sheet-the-id-buzz-and-id-buzz-cargo-7796
+EU-VW-ID-POLO-I-HATCHBACK-STANDARD-01	4053	1816	1530	Volkswagen Newsroom — ID. Polo world premiere	https://www.volkswagen-newsroom.com/en/the-all-new-electric-id-polo-world-premiere-20343
+EU-VW-ID3-E11-HATCHBACK-PREFL-01	4261	1809	1568	Auto-Data.net — ID.3 Pro	https://www.auto-data.net/en/volkswagen-id.3-pro-62-kwh-145hp-41700
+EU-VW-ID3-E11-HATCHBACK-FACELIFT-01	4264	1809	1564	Auto-Data.net — ID.3 facelift generation	https://www.auto-data.net/en/volkswagen-id.3-facelift-2023-generation-9349
+EU-VW-ID3-E11-HATCHBACK-GTX-01	4265	1809	1563	Volkswagen Newsroom — ID.3 GTX technical data	https://www.volkswagen-newsroom.com/en/id3-gtx-and-id3-gtx-performance-18675/technical-data-18692
+EU-VW-ID4-E21-SUV-RWD-01	4584	1852	1634	Volkswagen Newsroom — ID.4 technical data	https://www.volkswagen-newsroom.com/en/the-id4-from-volkswagen-15712/technical-data-of-the-id4-15724
+EU-VW-ID4-E21-SUV-AWD-01	4582	1852	1632	Volkswagen Newsroom — ID.4 technical data	https://www.volkswagen-newsroom.com/en/the-id4-from-volkswagen-15712/technical-data-of-the-id4-15724
+EU-VW-ID4-E21-SUV-GTX-EARLY-01	4582	1852	1637	Auto-Data.net — ID.4 GTX 2021	https://www.auto-data.net/en/volkswagen-id.4-gtx-82-kwh-299hp-4motion-43344
+EU-VW-ID5-E39-SUV-STANDARD-01	4599	1852	1613	Volkswagen Newsroom — ID.5 technical data	https://www.volkswagen-newsroom.com/en/international-vehicle-presentation-volkswagen-id5-and-id5-gtx-7925/technical-data-of-the-id5-7952
+EU-VW-ID5-E39-SUV-GTX-EARLY-01	4582	1852	1619	Volkswagen Newsroom — ID.5 GTX technical data	https://www.volkswagen-newsroom.com/en/international-vehicle-presentation-volkswagen-id5-and-id5-gtx-7925/technical-data-of-the-id5-7952
+EU-VW-ID5-E39-SUV-GTX-UPDATED-01	4582	1852	1601	Auto-Data.net — ID.5 GTX 84 kWh 4MOTION	https://www.auto-data.net/en/volkswagen-id.5-gtx-84-kwh-340hp-4motion-52004
+EU-VW-ID7-ED-HATCHBACK-FASTBACK-01	4961	1862	1536	Volkswagen Newsroom — ID.7 body dimensions	https://www.volkswagen-newsroom.com/en/the-volkswagen-id7-17897/id7-body-dimensions-and-design-17898
+EU-VW-ID7-ED-WAGON-TOURER-01	4961	1862	1536	Volkswagen Newsroom — ID.7 Tourer dimensions	https://www.volkswagen-newsroom.com/en/the-new-id7-tourer-the-world-premiere-18150/exterior-design-and-dimensions-18153
+EU-VW-ILTIS-183-CONVERTIBLE-STANDARD-01	3887	1520	1837	Volkswagen Newsroom archive — Iltis profile	https://www.volkswagen-newsroom.com/en/vehicle-data-iltis-profile-19698
+EU-VW-JETTA-I-16-SEDAN-STANDARD-01	4190	1610	1410	Volkswagen Newsroom archive — Jetta I profile	https://www.volkswagen-newsroom.com/en/vehicle-data-jetta-1-profile-19641
+EU-VW-JETTA-II-16E-19E-SEDAN-STANDARD-01	4315	1665	1415	Volkswagen Newsroom archive — Jetta II profile	https://www.volkswagen-newsroom.com/en/vehicle-data-jetta-2-profile-19644
+EU-VW-JETTA-V-1K2-SEDAN-STANDARD-01	4554	1781	1459	Auto-Data.net — Jetta V 1.6	https://www.auto-data.net/en/volkswagen-jetta-v-1.6-i-102hp-9078
+EU-VW-JETTA-VI-162-SEDAN-PREFL-01	4644	1778	1482	Auto-Data.net — Jetta VI 1.4 TSI	https://www.auto-data.net/en/volkswagen-jetta-vi-1.4-tsi-160hp-44517
+EU-VW-JETTA-VI-162-SEDAN-FACELIFT-01	4659	1778	1482	Auto-Data.net — Jetta VI facelift 1.4 TSI	https://www.auto-data.net/en/volkswagen-jetta-vi-facelift-2014-1.4-tsi-150hp-20491
+EU-VW-KAEFER-1100-TYPE151-CONVERTIBLE-EARLY-01	4070	1540	1550	Volkswagen Newsroom archive — Beetle 1100 Cabriolet Karmann	https://www.volkswagen-newsroom.com/en/vehicle-data-beetle-kaefer-1100-cabriolet-karmann-profile-19611
+EU-VW-KAEFER-1100-TYPE151-CONVERTIBLE-FROM1952-01	4070	1540	1500	Volkswagen Newsroom archive — Beetle 1100 Cabriolet Karmann	https://www.volkswagen-newsroom.com/en/vehicle-data-beetle-kaefer-1100-cabriolet-karmann-profile-19611
+EU-VW-KAEFER-1500-TYPE11-SEDAN-PRE1967-01	4070	1540	1500	Volkswagen Newsroom archive — Beetle 1500 profile	https://www.volkswagen-newsroom.com/en/vehicle-data-beetle-kaefer-1500-profile-19600
+EU-VW-KAEFER-1500-TYPE11-SEDAN-FROM1967-01	4030	1550	1500	Volkswagen Newsroom archive — Beetle 1500 profile	https://www.volkswagen-newsroom.com/en/vehicle-data-beetle-kaefer-1500-profile-19600
+EU-VW-KAEFER-1600-TYPE11-SEDAN-STANDARD-01	4060	1550	1500	Volkswagen Newsroom archive — Beetle 1600/1600i profile	https://www.volkswagen-newsroom.com/en/vehicle-data-beetle-kaefer-16001600i-profile-19604
+EU-VW-KARMANN-GHIA-TYPE14-COUPE-STANDARD-01	4140	1634	1330	Volkswagen Newsroom archive — Karmann Ghia Type 14 Coupé	https://www.volkswagen-newsroom.com/en/vehicle-data-karmann-ghia-type-14-coupe-profile-19631
+EU-VW-KARMANN-GHIA-TYPE14-CONVERTIBLE-STANDARD-01	4140	1634	1330	Volkswagen Newsroom vehicle data — Karmann Ghia Type 14 Cabriolet	https://www.volkswagen-newsroom.com/en/vehicle-data-karmann-ghia-typ-14-cabriolet-profile-19634
+EU-VW-LOAD-UP-AA-VAN-STANDARD-01	3540	1641	1489	Volkswagen UK up! brochure — exterior dimensions, width excluding mirrors	https://www.volkswagen.co.uk/idhub/content/dam/onehub_pkw/importers/gb/downloads/brochures/used-cars/up-nf/vw-up-brochure-december%202015.pdf
+EU-VW-LT-I-VAN-LT28-35-STANDARD-01	4840	2020	2150	Volkswagen LT Workshop Manual 1976–1987 — LT 28/31 standard panel-van dimensions	https://www.scribd.com/document/807413617/Volkswagen-LT-Workshop-Manual-1976-1987-PDF
+EU-VW-LT-I-PICKUP-LT28-35-CHASSISCAB-01	4810	2080	2108	Volkswagen LT Workshop Manual 1976–1987 — LT 28 chassis/cab dimensions	https://www.scribd.com/document/807413617/Volkswagen-LT-Workshop-Manual-1976-1987-PDF
+EU-VW-LT-I-VAN-LT40-55-HIGHROOF-01	5290	2080	2635	Volkswagen LT Workshop Manual 1976–1987 — LT 40/45 high-roof van dimensions	https://www.scribd.com/document/807413617/Volkswagen-LT-Workshop-Manual-1976-1987-PDF
+EU-VW-LT-I-PICKUP-LT40-55-CHASSISCAB-01	5260	2080	2120	Volkswagen LT Workshop Manual 1976–1987 — LT 40/45 chassis/cab dimensions	https://www.scribd.com/document/807413617/Volkswagen-LT-Workshop-Manual-1976-1987-PDF
+EU-VW-LT-II-MPV-MWB-HIGHROOF-01	5585	1933	2570	Drom Volkswagen LT dimensions — Kombi medium-base high-roof	https://www.drom.ru/catalog/lcv/volkswagen/lt/specs/dimensions/
+EU-VW-LT-II-VAN-MWB-STANDARDROOF-01	5585	1933	2345	CarsGuide Volkswagen LT 35 MWB dimensions	https://www.carsguide.com.au/volkswagen/lt/car-dimensions/2004
+EU-VW-LT-II-PICKUP-MWB-CHASSISCAB-01	5470	1922	2155	Truck1 Volkswagen LT 35 medium-base technical specifications	https://www.truck1.eu/blog/volkswagen-lt-iii-van-lt-35-2-5-tdi-95hp-medium-base-tech-specs-t32321
+EU-VW-LUPO-6X-HATCHBACK-STANDARD-01	3527	1640	1460	Auto-Data Volkswagen Lupo 6X 1.4 16V specifications	https://www.auto-data.net/en/volkswagen-lupo-6x-1.4-16v-75hp-automatic-28556
+EU-VW-MULTIVAN-T5-MPV-PREFACELIFT-01	4890	1904	1944	Auto-Data Volkswagen Multivan T5 2.5 TDI specifications	https://www.auto-data.net/en/volkswagen-multivan-t5-2.5-tdi-130hp-46994
+EU-VW-MULTIVAN-T5-MPV-FACELIFT-01	4892	1904	1970	Auto-Data Volkswagen Multivan T5 facelift generation specifications	https://www.auto-data.net/en/volkswagen-multivan-t5-facelift-2009-generation-4340
+EU-VW-MULTIVAN-T6-MPV-STANDARD-01	4904	1904	1970	Volkswagen Commercial Vehicles T6.1 Multivan brochure	https://www.volkswagen-commercial.com.tw/idhub/content/dam/onehub_nfz/importers/tw/models/brochure/2022/%E7%B0%A1%E5%BC%8F%E5%9E%8B%E9%8C%84_T6.1%20Multivan%28220609%29A4.pdf
+EU-VW-MULTIVAN-T7-MPV-STANDARD-01	4973	1941	1907	Volkswagen Commercial Vehicles Multivan technical specifications	https://www.volkswagen-commercial.com.tw/zh/models/NewMultivan.html
+EU-VW-NEW-BEETLE-9C-HATCHBACK-PREFACELIFT-01	4081	1724	1498	Auto-Data Volkswagen New Beetle 9C 1.6 specifications	https://www.auto-data.net/en/volkswagen-new-beetle-9c-1.6-102hp-8806
+EU-VW-NEW-BEETLE-9C-HATCHBACK-FACELIFT-01	4129	1721	1498	Auto-Data Volkswagen New Beetle 9C facelift 1.6 specifications	https://www.auto-data.net/en/volkswagen-new-beetle-9c-facelift-2005-1.6-102hp-28077
+EU-VW-NEW-BEETLE-1Y-CONVERTIBLE-PREFACELIFT-01	4081	1724	1502	Auto-Data Volkswagen New Beetle Convertible 1.6 specifications	https://www.auto-data.net/en/volkswagen-new-beetle-convertible-1.6i-102hp-8800
+EU-VW-NEW-BEETLE-1Y-CONVERTIBLE-FACELIFT-01	4129	1721	1502	Auto-Data Volkswagen New Beetle Convertible facelift 1.6 specifications	https://www.auto-data.net/en/volkswagen-new-beetle-convertible-facelift-2005-1.6-102hp-28091
+EU-VW-PASSAT-B7-WAGON-ALLTRACK-01	4771	1820	1550	Auto-Data	https://www.auto-data.net/en/volkswagen-passat-alltrack-b7-generation-4064
+EU-VW-PASSAT-B8-WAGON-ALLTRACK-PREFACELIFT-01	4777	1832	1530	Auto-Data	https://www.auto-data.net/en/volkswagen-passat-alltrack-b8-generation-4676
+EU-VW-PASSAT-B8-WAGON-ALLTRACK-FACELIFT-01	4780	1853	1527	Auto-Data	https://www.auto-data.net/en/volkswagen-passat-alltrack-b8-facelift-2019-generation-7175
+EU-VW-PASSAT-B1-HATCHBACK-PRE1975-01	4190	1600	1360	Volkswagen Newsroom	https://www.volkswagen-newsroom.com/en/vehicle-data-passat-b1-profile-19535
+EU-VW-PASSAT-B1-HATCHBACK-1975-1980-01	4290	1615	1360	Volkswagen Newsroom	https://www.volkswagen-newsroom.com/en/vehicle-data-passat-b1-profile-19535
+EU-VW-PASSAT-B1-WAGON-STANDARD-01	4265	1615	1359	Auto-Data	https://www.auto-data.net/en/volkswagen-passat-variant-b1-generation-1904
+EU-VW-PASSAT-B2-HATCHBACK-STANDARD-01	4335	1685	1385	Volkswagen Newsroom	https://www.volkswagen-newsroom.com/en/vehicle-data-passat-b2-profile-19538
+EU-VW-PASSAT-B2-WAGON-STANDARD-01	4540	1685	1385	Volkswagen Newsroom	https://www.volkswagen-newsroom.com/en/vehicle-data-passat-b2-profile-19538
+EU-VW-PASSAT-B4-SEDAN-STANDARD-01	4605	1720	1430	Auto-Data	https://www.auto-data.net/en/volkswagen-passat-b4-generation-8293
+EU-VW-PASSAT-B4-WAGON-STANDARD-01	4595	1720	1485	Auto-Data	https://www.auto-data.net/en/volkswagen-passat-variant-b4-generation-8294
+EU-VW-PASSAT-B5-SEDAN-STANDARD-01	4703	1746	1462	Auto-Data	https://www.auto-data.net/en/volkswagen-passat-b5-generation-1897
+EU-VW-PASSAT-B5-WAGON-STANDARD-01	4683	1746	1498	Auto-Data	https://www.auto-data.net/en/volkswagen-passat-variant-b5-generation-1898
+EU-VW-PASSAT-B5-5-SEDAN-STANDARD-01	4704	1746	1463	Auto-Data	https://www.auto-data.net/en/volkswagen-passat-b5.5-generation-8291
+EU-VW-PASSAT-B5-5-WAGON-STANDARD-01	4682	1746	1498	Auto-Data	https://www.auto-data.net/en/volkswagen-passat-variant-b5.5-generation-8292
+EU-VW-PASSAT-B6-SEDAN-STANDARD-01	4765	1820	1472	Auto-Data	https://www.auto-data.net/en/volkswagen-passat-b6-generation-1895
+EU-VW-PASSAT-B6-WAGON-STANDARD-01	4774	1820	1517	Auto-Data	https://www.auto-data.net/en/volkswagen-passat-variant-b6-1.6-i-102hp-8890
+EU-VW-PASSAT-B7-SEDAN-STANDARD-01	4769	1820	1470	Auto-Data	https://www.auto-data.net/en/volkswagen-passat-b7-1.4-tsi-bmt-122hp-44141
+EU-VW-PASSAT-B7-WAGON-STANDARD-01	4771	1820	1516	Auto-Data	https://www.auto-data.net/en/volkswagen-passat-variant-b7-1.4-tsi-122hp-44152
+EU-VW-PASSAT-B8-SEDAN-PREFACELIFT-01	4767	1832	1456	Auto-Data	https://www.auto-data.net/en/volkswagen-passat-b8-1.8-tsi-180hp-21847
+EU-VW-PASSAT-B8-SEDAN-FACELIFT-01	4775	1832	1483	Auto-Data	https://www.auto-data.net/en/volkswagen-passat-b8-facelift-2019-generation-7177
+EU-VW-PASSAT-B8-WAGON-PREFACELIFT-01	4767	1832	1477	Auto-Data	https://www.auto-data.net/en/volkswagen-passat-variant-b8-1.8-tsi-180hp-dsg-22716
+EU-VW-PASSAT-B8-WAGON-FACELIFT-01	4773	1832	1516	Auto-Data	https://www.auto-data.net/en/volkswagen-passat-variant-b8-facelift-2019-2.0-tdi-150hp-39225
+EU-VW-PASSAT-B9-WAGON-STANDARD-01	4917	1849	1521	Auto-Data	https://www.auto-data.net/en/volkswagen-passat-variant-b9-generation-9667
+EU-VW-PASSAT-CC-B6-COUPE-STANDARD-01	4799	1855	1417	Auto-Data	https://www.auto-data.net/en/volkswagen-passat-cc-i-2.0-tdi-bmt-140hp-16846
+EU-VW-PHAETON-3D-SEDAN-PREFACELIFT-01	5055	1903	1450	Auto-Data	https://www.auto-data.net/en/volkswagen-phaeton-3.2-v6-241hp-9142
+EU-VW-PHAETON-3D-SEDAN-FACELIFT-01	5059	1908	1450	Auto-Data	https://www.auto-data.net/en/volkswagen-phaeton-facelift-2010-3.0-v6-tdi-245hp-4motion-tiptronic-54669
+EU-VW-POLO-II-86C-HATCHBACK-STANDARD-01	3655	1580	1355	Volkswagen Newsroom	https://www.volkswagen-newsroom.com/en/vehicle-data-polo-2-profile-19144
+EU-VW-POLO-II-86C-COUPE-STANDARD-01	3655	1590	1355	Volkswagen Newsroom	https://www.volkswagen-newsroom.com/en/vehicle-data-polo-2-profile-19144
+EU-VW-POLO-II-TYPE87-SEDAN-STANDARD-01	3975	1600	1355	Volkswagen Newsroom	https://www.volkswagen-newsroom.com/en/vehicle-data-derby-profile-19687
+EU-VW-POLO-III-6N-HATCHBACK-STANDARD-01	3744	1655	1420	Auto-Data	https://www.auto-data.net/en/volkswagen-polo-iii-6n-generation-1859
+EU-VW-POLO-III-6N2-HATCHBACK-STANDARD-01	3743	1632	1418	Auto-Data	https://www.auto-data.net/en/volkswagen-polo-iii-6n2-facelift-1999-generation-11343
+EU-VW-POLO-III-6N-WAGON-STANDARD-01	4137	1640	1433	Auto-Data	https://www.auto-data.net/en/volkswagen-polo-iii-variant-6n-generation-1858
+EU-VW-POLO-IV-9N-HATCHBACK-PREFACELIFT-01	3897	1650	1465	Auto-Data	https://www.auto-data.net/en/volkswagen-polo-iv-9n-generation-1856
+EU-VW-POLO-IV-9N-HATCHBACK-FACELIFT-01	3916	1650	1467	Auto-Data	https://www.auto-data.net/en/volkswagen-polo-iv-9n-facelift-2005-generation-1854
+EU-VW-POLO-IV-9N-SEDAN-STANDARD-01	4179	1650	1484	Auto-Data	https://www.auto-data.net/en/volkswagen-polo-iv-9n-sedan-generation-11176
+EU-VW-POLO-V-6R-SEDAN-PREFACELIFT-01	4384	1699	1465	Autotras	https://autotras.com/volkswagen/polo-sedan-2010
+EU-VW-POLO-V-6C-SEDAN-FACELIFT-01	4390	1699	1467	Volkswagen South Africa	https://www.vw.co.za/idhub/content/dam/onehub_pkw/importers/za/editorials/offers-and-products/brochures-and-specifications/brochures/passenger-vehicles/2021/february/new/my21-online-brochure-polo-sedan.pdf
+EU-VW-POLO-V-6C-HATCHBACK-FACELIFT-01	3972	1682	1453	Auto-Data	https://www.auto-data.net/en/volkswagen-polo-v-facelift-2014-1.0-60hp-19687
+EU-VW-POLO-VI-AW-HATCHBACK-PREFACELIFT-01	4053	1751	1461	Auto-Data	https://www.auto-data.net/en/volkswagen-polo-vi-1.0-tsi-95hp-30930
+EU-VW-POLO-VI-AW-HATCHBACK-FACELIFT-01	4074	1751	1451	Auto-Data	https://www.auto-data.net/en/volkswagen-polo-vi-facelift-2021-generation-8344
+EU-VW-POLO-V-6R-HATCHBACK-PREFACELIFT-01	3970	1682	1453	Volkswagen Newsroom – New Polo 2009 body presentation	https://www.volkswagen-newsroom.com/en/the-new-polo-international-driving-presentation-3102
+EU-VW-POLO-III-6N-SEDAN-PREFACELIFT-01	4164	1640	1414	Auto-Data – Volkswagen Polo III Classic (6N)	https://www.auto-data.net/en/volkswagen-polo-iii-classic-6n-generation-1857
+EU-VW-POLO-III-6N2-SEDAN-FACELIFT-01	4137	1640	1422	Auto-Data – Volkswagen Polo III Classic (6N2 facelift 1999)	https://www.auto-data.net/en/volkswagen-polo-iii-classic-6n2-facelift-1999-generation-11349
+EU-VW-POLO-V-6R-HATCHBACK-R-WRC-01	4000	1682	1458	Volkswagen Newsroom – Vehicle data Polo V profile	https://www.volkswagen-newsroom.com/de/fahrzeugdaten-polo-5-steckbrief-20046
+EU-VW-POLO-VI-AW-HATCHBACK-GTI-FACELIFT-01	4074	1751	1431	Volkswagen UK – Polo GTI dimensions	https://www.volkswagen.co.uk/en/new/polo/polo-dimensions.html
+EU-VW-ROUTAN-I-7B-MPV-STANDARD-01	5143	1953	1750	Auto-Data – Volkswagen Routan 3.6 V6	https://www.auto-data.net/en/volkswagen-routan-3.6-v6-283hp-automatic-43138
+EU-VW-SANTANA-I-32B-SEDAN-STANDARD-01	4545	1695	1400	Auto-Data – Volkswagen Santana (32B)	https://www.auto-data.net/en/volkswagen-santana-32b-generation-1868
+EU-VW-SCIROCCO-II-53B-COUPE-STANDARD-01	4050	1645	1280	Auto-Data – Volkswagen Scirocco II (53B)	https://www.auto-data.net/en/volkswagen-scirocco-ii-53b-generation-1888
+EU-VW-SCIROCCO-III-13-COUPE-FACELIFT-01	4256	1810	1406	Auto-Data – Volkswagen Scirocco III facelift 2.0 TSI	https://www.auto-data.net/en/volkswagen-scirocco-iii-facelift-2014-2.0-tsi-180hp-20403
+EU-VW-SCIROCCO-III-13-COUPE-R-PREFACELIFT-01	4248	1820	1394	Auto-Data – Volkswagen Scirocco III R 2.0 TSI	https://www.auto-data.net/en/volkswagen-scirocco-iii-r-2.0-tsi-265hp-44244
+EU-VW-SCIROCCO-III-13-COUPE-R-FACELIFT-01	4248	1820	1398	Auto-Data – Volkswagen Scirocco III facelift R 2.0 TSI	https://www.auto-data.net/en/volkswagen-scirocco-iii-facelift-2014-r-2.0-tsi-280hp-dsg-32163
+EU-VW-SCIROCCO-III-13-COUPE-PREFACELIFT-01	4256	1810	1404	Volkswagen Newsroom – New Scirocco 2008 presentation	https://www.volkswagen-newsroom.com/en/the-new-scirocco-international-driving-presentation-portugal-june-2008-2349
+EU-VW-SHARAN-I-7M-MPV-STANDARD-01	4617	1810	1728	Volkswagen Newsroom – Vehicle data Sharan I profile	https://www.volkswagen-newsroom.com/en/vehicle-data-sharan-1-profile-19714
+EU-VW-SHARAN-II-7N-MPV-STANDARD-01	4854	1904	1720	Volkswagen UK – Sharan brochure (height without roof rails)	https://www.volkswagen.co.uk/idhub/content/dam/onehub_pkw/importers/gb/downloads/brochures/used-cars/sharan/sharan-nf/sharan-nf-brochure-dec-2014.pdf
+EU-VW-TAIGO-I-CS-SUV-STANDARD-01	4266	1757	1515	Auto-Data.net	https://www.auto-data.net/en/volkswagen-taigo-1.0-tsi-95hp-44420
+EU-VW-TARO-I-7A-PICKUP-RWD-01	4725	1650	1550	Automoli	https://www.automoli.com/us/vehicles/volkswagen/taro/taro-1917/
+EU-VW-TARO-I-7A-PICKUP-4X4-01	4725	1690	1745	Auto-Data.net	https://www.auto-data.net/en/volkswagen-taro-2.4-d-83hp-4wd-9165
+EU-VW-TAYRON-2024-SUV-STANDARD-01	4792	1853	1668	Volkswagen UK dimensions	https://www.volkswagen.co.uk/en/new/tayron/tayron-dimensions.html
+EU-VW-TAYRON-2024-SUV-PHEV-01	4792	1853	1666	Volkswagen UK dimensions	https://www.volkswagen.co.uk/en/new/tayron/tayron-dimensions.html
+EU-VW-TIGUAN-I-5N-SUV-PREFACELIFT-01	4427	1809	1686	Volkswagen UK brochure	https://www.volkswagen.co.uk/idhub/content/dam/onehub_pkw/importers/gb/downloads/brochures/used-cars/tiguan/tiguan-gp/vw-tiguan-gp-brochure-june-2009.pdf
+EU-VW-TIGUAN-I-5N-SUV-FACELIFT-01	4426	1809	1703	Auto-Data.net	https://www.auto-data.net/en/volkswagen-tiguan-i-facelift-2011-1.4-tsi-bmt-122hp-16863
+EU-VW-TIGUAN-II-AD1-SUV-PREFACELIFT-01	4486	1839	1673	Auto-Data.net	https://www.auto-data.net/en/volkswagen-tiguan-ii-2.0-tdi-150hp-4motion-scr-28585
+EU-VW-TIGUAN-II-AD1-SUV-FACELIFT-01	4509	1839	1684	Auto-Data.net	https://www.auto-data.net/en/volkswagen-tiguan-ii-facelift-2020-2.0-tsi-190hp-4motion-dsg-44379
+EU-VW-TIGUAN-III-CT1-SUV-STANDARD-01	4539	1842	1658	Volkswagen UK technical data	https://www.volkswagen.co.uk/en/new/tiguan.html/__ui/technical-data.app?p=3
+EU-VW-TOUAREG-I-7L-SUV-STANDARD-01	4754	1928	1726	Volkswagen Newsroom vehicle data	https://www.volkswagen-newsroom.com/en/vehicle-data-touareg-1-profile-19718
+EU-VW-TOUAREG-II-7P-SUV-PREFACELIFT-01	4795	1940	1709	Auto-Data.net	https://www.auto-data.net/en/volkswagen-touareg-ii-7p-3.0-tdi-v6-245hp-4motion-automatic-18460
+EU-VW-TOUAREG-II-7P-SUV-FACELIFT-01	4801	1940	1709	Auto-Data.net	https://www.auto-data.net/en/volkswagen-touareg-ii-7p-facelift-2014-3.0-v6-tsi-320hp-4motion-tiptronic-55164
+EU-VW-TOUAREG-III-CR-SUV-PHEV-01	4878	1984	1717	Auto-Data.net	https://www.auto-data.net/en/volkswagen-touareg-iii-cr-3.0-v6-tsi-381hp-ehybrid-4motion-tiptronic-41524
+EU-VW-TOURAN-I-1T-MPV-EARLY-01	4391	1794	1635	Auto-Data.net	https://www.auto-data.net/en/volkswagen-touran-i-1.6-i-102hp-8540
+EU-VW-TOURAN-I-1T3-MPV-FACELIFT-01	4397	1794	1674	Auto-Data.net	https://www.auto-data.net/en/volkswagen-touran-i-facelift-2010-1.4-tsi-140hp-16853
+EU-VW-TOURAN-II-5T-MPV-STANDARD-01	4527	1829	1659	Auto-Data.net	https://www.auto-data.net/en/volkswagen-touran-ii-1.2-tsi-110hp-22686
+EU-VW-TOURAN-I-1T2-MPV-FACELIFT-01	4407	1794	1635	Auto-Data — Volkswagen Touran I facelift 2006	https://www.auto-data.net/en/volkswagen-touran-i-facelift-2006-1.9-tdi-105hp-44604
+EU-VW-TRANSPORTER-T1-PICKUP-STANDARD-01	4280	1750	1920	VW T1 technical data (Korp reference)	https://de.wikipedia.org/wiki/VW_T1
+EU-VW-TRANSPORTER-T1-VAN-STANDARD-01	4280	1750	1940	VW T1 technical data (Korp reference)	https://de.wikipedia.org/wiki/VW_T1
+EU-VW-TRANSPORTER-T2-VAN-BUS-EARLY-01	4420	1765	1960	VW T2 technical data (1970 configuration)	https://de.wikipedia.org/wiki/VW_T2
+EU-VW-TRANSPORTER-T2-PICKUP-STANDARD-01	4505	1720	1940	Just Kampers — VW T2 Bay Window specifications	https://www.justkampers.com/vehicles/vw-t2-bay-window/
+EU-VW-TRANSPORTER-T2-VAN-PANEL-STANDARD-01	4505	1720	1940	Just Kampers — VW T2 Bay Window specifications	https://www.justkampers.com/vehicles/vw-t2-bay-window/
+EU-VW-TRANSPORTER-T3-PICKUP-STANDARD-01	4570	1870	1930	Volkswagen T3 1980 UK brochure	https://autocatalogarchive.com/wp-content/uploads/2019/06/VW-T3-1980-UK.pdf
+EU-VW-TRANSPORTER-T3-VAN-STANDARD-01	4570	1845	1965	Volkswagen T3 1980 UK brochure	https://autocatalogarchive.com/wp-content/uploads/2019/06/VW-T3-1980-UK.pdf
+EU-VW-TRANSPORTER-T4-VAN-L1H1-EARLY-01	4650	1840	1940	Auto-Data — Transporter T4 Panel Van L1H1	https://www.auto-data.net/en/volkswagen-transporter-t4-panel-van-1.9-td-68hp-l1h1-50397
+EU-VW-TRANSPORTER-T4-VAN-L1H1-FACELIFT-01	4707	1840	1940	Auto-Data — Transporter T4 facelift Panel Van L1H1	https://www.auto-data.net/en/volkswagen-transporter-t4-facelift-1996-panel-van-2.4-d-78hp-l1h1-50419
+EU-VW-TRANSPORTER-T4-PICKUP-SWB-STANDARD-01	4707	1840	1940	Volkswagen Transporter T4 chassis/body specifications	https://en.wikipedia.org/wiki/Volkswagen_Transporter_(T4)
+EU-VW-TRANSPORTER-T5-VAN-L1H1-PREFACELIFT-01	4890	1904	1959	Auto-Data — Transporter T5 Panel Van L1H1	https://www.auto-data.net/en/volkswagen-transporter-t5-panel-van-1.9-tdi-102hp-dpf-l1h1-49987
+EU-VW-TRANSPORTER-T5-VAN-L1H1-FACELIFT-01	4892	1904	1990	Auto-Data — Transporter T5 facelift Kombi L1H1	https://www.auto-data.net/en/volkswagen-transporter-t5-facelift-2009-kombi-2.0-tdi-84hp-l1h1-50244
+EU-VW-TRANSPORTER-T5-PICKUP-SWB-CHASSIS-01	4890	1904	1935	CarExpert NZ — 2008 Transporter chassis cab	https://www.carexpert.co.nz/volkswagen/transporter/2008-2-5l-chassis-cab-fwd-diesel-automatic-joa558kk20050805
+EU-VW-TRANSPORTER-T6-VAN-L1H1-01	4904	1904	1990	Volkswagen Nutzfahrzeuge Transporter 6.1 Kastenwagen技术图	https://www.volkswagen-nutzfahrzeuge.de/idhub/content/dam/onehub_nfz/importers/de/download/technische-zeichnungen/transporter/Transporter-6-1-Kastenwagen-KaEcoProfi.pdf
+EU-VW-TRANSPORTER-T6-PICKUP-SWB-SINGLECAB-01	5100	1904	1948	Volkswagen Nutzfahrzeuge Transporter 6.1 Einzelkabine Pritsche技术图	https://www.volkswagen-nutzfahrzeuge.de/idhub/content/dam/onehub_nfz/importers/de/download/technische-zeichnungen/transporter/Transporter-6-1-EK-Pritsche-PrEco.pdf
+EU-VW-TRANSPORTER-T6-MPV-SWB-01	4904	1904	1990	Volkswagen Nutzfahrzeuge Transporter 6.1 Kombi技术图	https://www.volkswagen-nutzfahrzeuge.de/idhub/content/dam/onehub_nfz/importers/de/download/technische-zeichnungen/transporter/Transporter-6-1-Kombi-KoEco.pdf
+EU-VW-TRANSPORTER-T7-VAN-L1H1-01	5050	2032	1981	Volkswagen Vans Transporter panel van官方产品手册	https://www.volkswagen-vans.co.uk/idhub/content/dam/onehub_nfz/importers/gb/downloads/brochures/transporter-panel-van/transporter-brochure.pdf
+EU-VW-TRANSPORTER-T7-PICKUP-LWB-DOUBLECAB-DIESEL-01	5584	2032	1950	Volkswagen Nutzfahrzeuge Transporter Pritschenwagen技术数据；车身宽度取同平台官方无镜宽	https://www.volkswagen-nutzfahrzeuge.de/de/modelle/transporter.html/__ui/technische-daten/showroomNodeId/~~transporter-pritschenwagen/tenant/commercial.app
+EU-VW-TRANSPORTER-T7-PICKUP-LWB-DOUBLECAB-BEV-RWD-01	5584	2032	1956	Volkswagen Nutzfahrzeuge e-Transporter Pritschenwagen技术数据；车身宽度取同平台官方无镜宽	https://www.volkswagen-nutzfahrzeuge.de/de/modelle/transporter-7sgh4f12.html/__ui/technische-daten/showroomNodeId/~~e-transporter-pritschenwagen/tenant/commercial.app
+EU-VW-TRANSPORTER-T7-PICKUP-LWB-DOUBLECAB-BEV-AWD-01	5584	2032	1954	Volkswagen Nutzfahrzeuge e-Transporter 4MOTION Pritschenwagen技术数据；车身宽度取同平台官方无镜宽	https://www.volkswagen-nutzfahrzeuge.de/de/modelle/transporter-7sgh4f12.html/__ui/technische-daten/showroomNodeId/~~e-transporter-pritschenwagen/tenant/commercial.app
+EU-VW-TRANSPORTER-T7-MPV-SWB-01	5050	2032	1996	Volkswagen Nutzfahrzeuge Transporter Kombi官方技术数据	https://www.volkswagen-nutzfahrzeuge.de/de/modelle/transporter/technische-daten/technische-daten-transporter-kombi.html
+EU-VW-T-ROC-I-SUV-PREFACELIFT-01	4234	1819	1573	Auto-Data Volkswagen T-Roc I 1.0 TSI	https://www.auto-data.net/en/volkswagen-t-roc-i-1.0-tsi-116hp-31216
+EU-VW-T-ROC-I-SUV-FACELIFT-01	4236	1819	1584	Auto-Data Volkswagen T-Roc I facelift 2022 1.0 TSI	https://www.auto-data.net/en/volkswagen-t-roc-i-facelift-2022-1.0-tsi-110hp-45198
+EU-VW-T-ROC-I-CONVERTIBLE-01	4271	1811	1527	Volkswagen UK T-Roc Cabriolet官方尺寸页	https://www.volkswagen.co.uk/en/new/t-roc-cabriolet/t-roc-cabriolet-dimensions.html
+EU-VW-T-ROC-II-SUV-01	4373	1828	1573	Volkswagen Newsroom The new T-Roc factsheet	https://www.volkswagen-newsroom.com/en/publications/more/the-new-t-roc-factsheet-3133/download
+EU-VW-UP-AA-HATCHBACK-PREFACELIFT-01	3540	1645	1489	Auto-Data Volkswagen Up! 1.0	https://www.auto-data.net/en/volkswagen-up-1.0-60hp-17897
+EU-VW-UP-AA-HATCHBACK-FACELIFT-01	3600	1645	1504	Auto-Data Volkswagen Up! facelift 2016 1.0	https://www.auto-data.net/en/volkswagen-up-facelift-2016-1.0-60hp-36150
+EU-VW-UP-AA-HATCHBACK-ELECTRIC-PREFACELIFT-01	3540	1645	1498	Auto-Data Volkswagen e-Up! 18.7 kWh	https://www.auto-data.net/en/volkswagen-e-up-18.7-kwh-82hp-37739
+EU-VW-UP-AA-HATCHBACK-ELECTRIC-FACELIFT-01	3600	1645	1492	Auto-Data Volkswagen e-Up! facelift 2016 18.7 kWh	https://www.auto-data.net/en/volkswagen-e-up-facelift-2016-18.7-kwh-82hp-34177
+EU-VW-VENTO-1H-SEDAN-01	4380	1710	1425	Auto-Data Volkswagen Vento 1HX0 1.9 TDI CL	https://www.auto-data.net/en/volkswagen-vento-1hx0-1.9-tdi-cl-110hp-8849
+EU-VW-XL1-COUPE-01	3888	1665	1153	Volkswagen Newsroom XL1 technical data	https://www.volkswagen-newsroom.com/en/the-xl1-3163/the-xl1-the-car-3178
+EU-WEY-05-SUV-01	4870	1960	1690	GWM WEY Europe WEY 05官方车型页	https://www.wey-eu.com/eu/en/wey05
+EU-WEY-COFFEE-02-SUV-01	4668	1890	1730	Auto-Data WEY Coffee 02	https://www.auto-data.net/en/wey-coffee-02-model-3428
+EU-WIESMANN-GT-MF5-COUPE-01	4220	1950	1180	Auto-Data Wiesmann GT MF5 4.4 V8	https://www.auto-data.net/en/wiesmann-gt-mf5-4.4-v8-555hp-automatic-25235
+EU-WIESMANN-MF3-CONVERTIBLE-01	3860	1750	1160	Auto-Data Wiesmann Roadster MF3	https://www.auto-data.net/en/wiesmann-roadster-mf3-generation-5061
+EU-WIESMANN-MF3-GEN1-CONVERTIBLE-STD-01	3860	1750	1160	Auto-Data	https://www.auto-data.net/en/wiesmann-roadster-mf3-3.2i-24v-325hp-10855
+EU-WIESMANN-MF4-GEN1-CONVERTIBLE-STD-01	4230	1880	1190	Auto-Data	https://www.auto-data.net/en/wiesmann-roadster-mf4-generation-5062
+EU-WIESMANN-MF5-GEN1-CONVERTIBLE-STD-01	4220	1950	1180	Auto-Data	https://www.auto-data.net/en/wiesmann-roadster-mf5-generation-5063
+EU-XBUS-XBUS-GEN1-MPV-PASSENGER-01	3960	1640	1960	Dan Seaman Motors	https://www.danseamanmotors.ie/blog?id=190
+EU-XBUS-XBUS-GEN1-PICKUP-FLATBED-01	3960	1640	1960	Dan Seaman Motors	https://www.danseamanmotors.ie/blog?id=190
+EU-XBUS-XBUS-GEN1-VAN-CARGO-01	3960	1640	1960	Dan Seaman Motors	https://www.danseamanmotors.ie/blog?id=190
+EU-XEV-YOYO-GEN1-HATCHBACK-STD-01	2530	1500	1560	Carfolio	https://www.carfolio.com/xev-yoyo-798171
+EU-XPENG-G3I-2021-SUV-STD-01	4495	1820	1610	XPeng official specifications	https://www.xiaopeng.com/g3i/configuration.html
+EU-XPENG-G6-GEN1-SUV-STD-01	4753	1920	1650	XPeng official specifications	https://www.xpeng.com/ae/g6specs.html
+EU-XPENG-G9-GEN1-SUV-RWD-01	4891	1937	1680	XPeng official specifications	https://www.xpeng.com/ae/g9specs.html
+EU-XPENG-G9-GEN1-SUV-AWD-01	4891	1937	1670	XPeng official specifications	https://www.xpeng.com/ae/g9specs.html
+EU-XPENG-P7-2023-SEDAN-STD-01	4888	1896	1450	XPeng official specifications	https://www.xpeng.com/ae/p7.html
+EU-XPENG-P7PLUS-GEN1-HATCHBACK-STD-01	5056	1937	1512	XPeng official specifications	https://www.xpeng.com/fi/test-4
+EU-YUDO-1-GEN1-HATCHBACK-STD-01	3000	1510	1630	Diariomotor	https://www.diariomotor.com/noticia/yooudooo-1-detalles/
+EU-YUDO-2-GEN1-SUV-STD-01	4380	1810	1615	Qué coche me compro	https://www.quecochemecompro.com/precios/yudo-2/yudo-2-pro-15t-dct/
+EU-YUDO-3MAX-GEN1-SUV-STD-01	4590	1880	1608	Cimosa Motor	https://cimosamotor.es/YOOUDOOO-3-MAX/
+EU-YUDO-4-GEN1-SEDAN-STD-01	4675	1835	1480	Qué coche me compro	https://www.quecochemecompro.com/precios/yudo-4-electrico/
+EU-YUDO-6-BAW212-SUV-ADVENTURER-01	4705	1895	1936	Coches.net	https://www.coches.net/noticias/yooudooo-6-todoterreno-gasolina
+EU-YUDO-YUNTU-GEN1-SUV-STD-01	4035	1736	1625	Yudo official specifications	https://www.yudoauto.com.tr/en/teknik-ozellikler.php
+EU-ZASTAVA-KORAL-GEN1-HATCHBACK-STD-01	3552	1548	1345	Auto-Data	https://www.auto-data.net/en/zastava-yugo-koral-1.1-60hp-11668
+EU-ZAZ-TAVRIA-1102-HATCHBACK-STD-01	3708	1554	1410	Auto-Data	https://www.auto-data.net/en/zaz-1102-1.1-53hp-13942
+EU-ZD-D2S-GEN1-HATCHBACK-STD-01	2811	1499	1555	Coches.net / JATO Dynamics	https://www.coches.net/fichas_tecnicas/zhidou/d2s/berlina/3-puertas/17kw_23cv_electrico/108904/822931120210101/
+EU-ZEEKR-001-GEN1-HATCHBACK-STD-01	4970	1999	1560	Auto-Data	https://www.auto-data.net/en/zeekr-001-model-3263
+EU-ZEEKR-7GT-GEN1-WAGON-STD-01	4864	1900	1460	Zeekr Group official launch	https://www.zeekrgroup.com/en/news/202504151
+EU-ZEEKR-7X-GEN1-SUV-STD-01	4825	1930	1666	CarNewsChina / MIIT specifications	https://carnewschina.com/2025/09/10/new-zeekr-7x-ev-outputs-784hp-and-has-up-to-802km-range/
+EU-ZEEKR-X-GEN1-SUV-STD-01	4450	1836	1572	BorderlessCar specifications	https://www.borderlesscar.com/product/zeekr-x/
+EU-ZENVO-ST1-GEN1-COUPE-STD-01	4665	2041	1198	Auto-Data	https://www.auto-data.net/en/zenvo-st1-generation-5920
+EU-ZUENDAPP-JANUS-250-HATCHBACK-STD-01	2890	1410	1400	Auta5P catalog	https://auta5p.eu/lang/en/katalog/auto.php?idf=Zundapp-Janus-250-17514

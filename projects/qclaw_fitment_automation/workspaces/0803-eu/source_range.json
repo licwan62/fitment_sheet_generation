@@ -1,0 +1,9 @@
+{
+  "source_workspace": "../0802-eu",
+  "source_file": "left18448.tsv",
+  "header_counted_as_data": false,
+  "source_data_start_row": 16898,
+  "source_data_end_row": 18448,
+  "output_data_rows": 1551,
+  "local_to_source_row_formula": "source_row = local_row + 16897"
+}

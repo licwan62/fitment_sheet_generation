@@ -1017,3 +1017,689 @@ EU-NISSAN-INTERSTAR-X62B-PANEL-VAN-RWD-L4H3-01	6848	2070	2815	Nissan NV400 offic
 - left18448_11601-11700_dimension_groups_final.tsv
 缺少任一下载链接时不得输出推进信号：COMPLETE。
 
+
+--- Round 8 / checkpoint 续跑 ---
+## 更新点
+
+* 闭合 Interstar II `X62B` 前驱底盘驾驶室的单排 L2/L3、双排 L2/L3 四种外廓，并关联 dCi 145、dCi 165 Ktype。日产 2022 年资料明确区分单排/双排驾驶室及对应长度、高度，宽度均为不含后视镜的 2070 mm。
+* 闭合 All-New Interstar `XDE` 前驱底盘驾驶室的单排 L2/L3及双排 L3 外廓。柴油 dCi 130/150/170 覆盖三个分支；Interstar-e 仅关联单排 L2/L3。
+* Ktype `152815` 已关联现有 X62B 前驱厢式车 L2H2、L2H3、L3H2、L3H3 四组，不重复输出已有尺寸组。([AIC 德国][1])
+
+## 当前批次进度
+
+* READY 输入 Ktype：83 / 100
+* READY 映射：147 行
+* PENDING 输入 Ktype：17
+* 已确认尺寸组：52
+* 当前批次尚未完成。
+
+## 本轮新增/修改的 Ktype 映射 TSV
+
+```tsv
+id	Ktype	NormalizedBodyStyle	Generation	BodyCode	Doors	DIMENSION_GROUP_ID	MatchConfidence	Notes	IterationStatus
+800287_sc_l2	800287	Pickup	All-New Interstar	XDE	2	EU-NISSAN-INTERSTAR-XDE-CHASSIS-FWD-SC-L2-01	MEDIUM	前驱单排驾驶室L2底盘。	READY
+800287_sc_l3	800287	Pickup	All-New Interstar	XDE	2	EU-NISSAN-INTERSTAR-XDE-CHASSIS-FWD-SC-L3-01	MEDIUM	前驱单排驾驶室L3底盘。	READY
+800287_dc_l3	800287	Pickup	All-New Interstar	XDE	4	EU-NISSAN-INTERSTAR-XDE-CHASSIS-FWD-DC-L3-01	MEDIUM	前驱双排驾驶室L3底盘。	READY
+146150_sc_l2	146150	Pickup	Interstar II	X62B	2	EU-NISSAN-INTERSTAR-X62B-CHASSIS-FWD-SC-L2-01	MEDIUM	前驱单排驾驶室L2底盘。	READY
+146150_sc_l3	146150	Pickup	Interstar II	X62B	2	EU-NISSAN-INTERSTAR-X62B-CHASSIS-FWD-SC-L3-01	MEDIUM	前驱单排驾驶室L3底盘。	READY
+146150_dc_l2	146150	Pickup	Interstar II	X62B	4	EU-NISSAN-INTERSTAR-X62B-CHASSIS-FWD-DC-L2-01	MEDIUM	前驱双排驾驶室L2底盘。	READY
+146150_dc_l3	146150	Pickup	Interstar II	X62B	4	EU-NISSAN-INTERSTAR-X62B-CHASSIS-FWD-DC-L3-01	MEDIUM	前驱双排驾驶室L3底盘。	READY
+800288_sc_l2	800288	Pickup	All-New Interstar	XDE	2	EU-NISSAN-INTERSTAR-XDE-CHASSIS-FWD-SC-L2-01	MEDIUM	前驱单排驾驶室L2底盘。	READY
+800288_sc_l3	800288	Pickup	All-New Interstar	XDE	2	EU-NISSAN-INTERSTAR-XDE-CHASSIS-FWD-SC-L3-01	MEDIUM	前驱单排驾驶室L3底盘。	READY
+800288_dc_l3	800288	Pickup	All-New Interstar	XDE	4	EU-NISSAN-INTERSTAR-XDE-CHASSIS-FWD-DC-L3-01	MEDIUM	前驱双排驾驶室L3底盘。	READY
+146151_sc_l2	146151	Pickup	Interstar II	X62B	2	EU-NISSAN-INTERSTAR-X62B-CHASSIS-FWD-SC-L2-01	MEDIUM	前驱单排驾驶室L2底盘。	READY
+146151_sc_l3	146151	Pickup	Interstar II	X62B	2	EU-NISSAN-INTERSTAR-X62B-CHASSIS-FWD-SC-L3-01	MEDIUM	前驱单排驾驶室L3底盘。	READY
+146151_dc_l2	146151	Pickup	Interstar II	X62B	4	EU-NISSAN-INTERSTAR-X62B-CHASSIS-FWD-DC-L2-01	MEDIUM	前驱双排驾驶室L2底盘。	READY
+146151_dc_l3	146151	Pickup	Interstar II	X62B	4	EU-NISSAN-INTERSTAR-X62B-CHASSIS-FWD-DC-L3-01	MEDIUM	前驱双排驾驶室L3底盘。	READY
+152815_l2h2	152815	Van	Interstar II	X62B		EU-NISSAN-INTERSTAR-X62B-PANEL-VAN-FWD-L2H2-01	MEDIUM	L2H2前驱厢式车外廓。	READY
+152815_l2h3	152815	Van	Interstar II	X62B		EU-NISSAN-INTERSTAR-X62B-PANEL-VAN-FWD-L2H3-01	MEDIUM	L2H3前驱高顶厢式车外廓。	READY
+152815_l3h2	152815	Van	Interstar II	X62B		EU-NISSAN-INTERSTAR-X62B-PANEL-VAN-FWD-L3H2-01	MEDIUM	L3H2前驱厢式车外廓。	READY
+152815_l3h3	152815	Van	Interstar II	X62B		EU-NISSAN-INTERSTAR-X62B-PANEL-VAN-FWD-L3H3-01	MEDIUM	L3H3前驱高顶厢式车外廓。	READY
+800289_sc_l2	800289	Pickup	All-New Interstar	XDE	2	EU-NISSAN-INTERSTAR-XDE-CHASSIS-FWD-SC-L2-01	MEDIUM	前驱单排驾驶室L2底盘。	READY
+800289_sc_l3	800289	Pickup	All-New Interstar	XDE	2	EU-NISSAN-INTERSTAR-XDE-CHASSIS-FWD-SC-L3-01	MEDIUM	前驱单排驾驶室L3底盘。	READY
+800289_dc_l3	800289	Pickup	All-New Interstar	XDE	4	EU-NISSAN-INTERSTAR-XDE-CHASSIS-FWD-DC-L3-01	MEDIUM	前驱双排驾驶室L3底盘。	READY
+800986_sc_l2	800986	Pickup	All-New Interstar	XDE	2	EU-NISSAN-INTERSTAR-XDE-CHASSIS-FWD-SC-L2-01	MEDIUM	电动前驱单排驾驶室L2底盘。	READY
+800986_sc_l3	800986	Pickup	All-New Interstar	XDE	2	EU-NISSAN-INTERSTAR-XDE-CHASSIS-FWD-SC-L3-01	MEDIUM	电动前驱单排驾驶室L3底盘。	READY
+800987_sc_l2	800987	Pickup	All-New Interstar	XDE	2	EU-NISSAN-INTERSTAR-XDE-CHASSIS-FWD-SC-L2-01	MEDIUM	电动前驱单排驾驶室L2底盘。	READY
+800987_sc_l3	800987	Pickup	All-New Interstar	XDE	2	EU-NISSAN-INTERSTAR-XDE-CHASSIS-FWD-SC-L3-01	MEDIUM	电动前驱单排驾驶室L3底盘。	READY
+```
+
+## 本轮首次创建/修正的 DIMENSION_GROUP TSV
+
+```tsv
+DIMENSION_GROUP_ID	LengthMM	WidthMM	HeightMM	DimensionSource	SourceURL
+EU-NISSAN-INTERSTAR-XDE-CHASSIS-FWD-SC-L2-01	5730	2080	2257	Nissan All-New Interstar official technical sheet; Nissan Interstar official technical information	https://www-europe.nissan-cdn.net/content/dam/Nissan/fr/brochures/fiches_techniques/fiche_technique_Interstar_Fourgon_cabine_approfondie_chassis_plancher.pdf;https://www.nissan.hu/jarmuvek/uj/interstar/technical-information.html
+EU-NISSAN-INTERSTAR-XDE-CHASSIS-FWD-SC-L3-01	6360	2080	2257	Nissan All-New Interstar official technical sheet; Nissan Interstar official technical information	https://www-europe.nissan-cdn.net/content/dam/Nissan/fr/brochures/fiches_techniques/fiche_technique_Interstar_Fourgon_cabine_approfondie_chassis_plancher.pdf;https://www.nissan.hu/jarmuvek/uj/interstar/technical-information.html
+EU-NISSAN-INTERSTAR-XDE-CHASSIS-FWD-DC-L3-01	6360	2080	2362	Nissan All-New Interstar official technical sheet; Nissan Interstar official technical information	https://www-europe.nissan-cdn.net/content/dam/Nissan/fr/brochures/fiches_techniques/fiche_technique_Interstar_Fourgon_cabine_approfondie_chassis_plancher.pdf;https://www.nissan.hu/jarmuvek/uj/interstar/technical-information.html
+EU-NISSAN-INTERSTAR-X62B-CHASSIS-FWD-SC-L2-01	5549	2070	2265	Nissan Interstar 2022 official brochure	https://www-europe.nissan-cdn.net/content/dam/Nissan/ireland/Brochures/Interstar%20042022-compressed.pdf
+EU-NISSAN-INTERSTAR-X62B-CHASSIS-FWD-SC-L3-01	6199	2070	2258	Nissan Interstar 2022 official brochure	https://www-europe.nissan-cdn.net/content/dam/Nissan/ireland/Brochures/Interstar%20042022-compressed.pdf
+EU-NISSAN-INTERSTAR-X62B-CHASSIS-FWD-DC-L2-01	5549	2070	2272	Nissan Interstar 2022 official brochure	https://www-europe.nissan-cdn.net/content/dam/Nissan/ireland/Brochures/Interstar%20042022-compressed.pdf
+EU-NISSAN-INTERSTAR-X62B-CHASSIS-FWD-DC-L3-01	6199	2070	2263	Nissan Interstar 2022 official brochure	https://www-europe.nissan-cdn.net/content/dam/Nissan/ireland/Brochures/Interstar%20042022-compressed.pdf
+```
+
+## 下一步优先处理
+
+1. 闭合 X62B 后驱底盘驾驶室 dCi 130、145、165 的 SRW/DRW、单排/双排和 L2–L4 分支。
+2. 闭合 All-New Interstar `XDE` 后驱双后轮 L3/L4 底盘分支。
+3. 关联 X70 客车与 dCi 90 厢式车到现有 X70 外廓组。
+4. 最后处理 Cabstar F24 与 Elgrand E52。
+
+推进信号：CONTINUE
+
+[1]: https://www.aic-germany.de/de/produktkatalog/13139?utm_source=chatgpt.com "Der Produktkatalog von AIC Germany"
+
+
+--- 发送 / 继续到 Round 9 ---
+继续当前批次并采用缓存优先模式。尺寸组只在首次创建或纠错时完整核对一次三维和来源；后续 Ktype 只判断关联哪个现有 DIMENSION_GROUP_ID，不重复抓取，不输出缓存来源或匹配理由。仍有 PENDING 时，CONTINUE 轮仅输出：1) 更新点；2) 当前批次进度；3) 本轮新增/修改的 Ktype 映射 TSV（无变化写“无”）；4) 本轮首次创建/修正的 DIMENSION_GROUP TSV（复用既有组不重复输出，无变化写“无”）；5) 下一步优先处理。若当前或上一轮进度已经是 PENDING=0，本轮不要继续检索或再次输出 CONTINUE，必须立刻汇总并输出两张最终完整 TSV、两个任务指定 sandbox 下载链接和“推进信号：COMPLETE”。执行顺序固定为：第一阶段优先消除 PENDING 并补齐会阻塞两张最终表的数据。检测到 PENDING=0 后，第二阶段最多只做一次轻量机械收尾：核对固定表头、id 与 DIMENSION_GROUP_ID 唯一、映射引用闭合、长宽高和来源非空、两个任务指定下载链接齐全。第二阶段不得重新逐车型、逐年份或逐来源做深度检索，不得为了提高置信度反复核对，也不得因非阻塞的排序或措辞问题继续多轮。PENDING=0 后的下一条回复必须直接输出两张最终完整 TSV、两个精确 sandbox 下载链接，并以“推进信号：COMPLETE”结束；不要再输出 CONTINUE。Ktype 映射 TSV 表头必须严格使用 requirement 指定的字段顺序：id	Ktype	NormalizedBodyStyle	Generation	BodyCode	Doors	DIMENSION_GROUP_ID	MatchConfidence	Notes	IterationStatus。另需维护完整 DIMENSION_GROUP TSV，表头固定为：DIMENSION_GROUP_ID	LengthMM	WidthMM	HeightMM	DimensionSource	SourceURL。缺少任一张表、任一映射引用的尺寸组，或尺寸组字段不完整时不得 COMPLETE。不要输出子车系匹配表。
+【COMPLETE 下载文件硬性要求】
+准备 COMPLETE 时，除两张完整内嵌 TSV 外，还必须创建并提供以下两个可点击 sandbox 下载链接，文件名必须完全一致：
+- left18448_11601-11700_ktype_dimension_mapping_final.tsv
+- left18448_11601-11700_dimension_groups_final.tsv
+缺少任一下载链接时不得输出推进信号：COMPLETE。
+
+
+--- Round 9 / checkpoint 续跑 ---
+## 更新点
+
+* 首次闭合 Interstar II `X62B` 后驱单排底盘驾驶室的 L2 SRW、L2 DRW、L3 SRW、L3 DRW、L4 DRW 五个物理分支。官方资料区分单后轮与双后轮，并分别给出长度、不含后视镜宽度和高度。
+* dCi 130、dCi 145、dCi 165 RWD 三个 Ktype 已批量关联上述新尺寸组。
+
+## 当前批次进度
+
+* READY 输入 Ktype：86 / 100
+* READY 映射：162 行
+* PENDING 输入 Ktype：14
+* 已确认尺寸组：57
+* 当前批次尚未完成。
+
+## 本轮新增/修改的 Ktype 映射 TSV
+
+```tsv
+id	Ktype	NormalizedBodyStyle	Generation	BodyCode	Doors	DIMENSION_GROUP_ID	MatchConfidence	Notes	IterationStatus
+146153_sc_l2_srw	146153	Pickup	Interstar II	X62B	2	EU-NISSAN-INTERSTAR-X62B-CHASSIS-RWD-SC-L2-SRW-01	MEDIUM	后驱单排驾驶室L2单后轮底盘。	READY
+146153_sc_l2_drw	146153	Pickup	Interstar II	X62B	2	EU-NISSAN-INTERSTAR-X62B-CHASSIS-RWD-SC-L2-DRW-01	MEDIUM	后驱单排驾驶室L2双后轮底盘。	READY
+146153_sc_l3_srw	146153	Pickup	Interstar II	X62B	2	EU-NISSAN-INTERSTAR-X62B-CHASSIS-RWD-SC-L3-SRW-01	MEDIUM	后驱单排驾驶室L3单后轮底盘。	READY
+146153_sc_l3_drw	146153	Pickup	Interstar II	X62B	2	EU-NISSAN-INTERSTAR-X62B-CHASSIS-RWD-SC-L3-DRW-01	MEDIUM	后驱单排驾驶室L3双后轮底盘。	READY
+146153_sc_l4_drw	146153	Pickup	Interstar II	X62B	2	EU-NISSAN-INTERSTAR-X62B-CHASSIS-RWD-SC-L4-DRW-01	MEDIUM	后驱单排驾驶室L4双后轮底盘。	READY
+146154_sc_l2_srw	146154	Pickup	Interstar II	X62B	2	EU-NISSAN-INTERSTAR-X62B-CHASSIS-RWD-SC-L2-SRW-01	MEDIUM	后驱单排驾驶室L2单后轮底盘。	READY
+146154_sc_l2_drw	146154	Pickup	Interstar II	X62B	2	EU-NISSAN-INTERSTAR-X62B-CHASSIS-RWD-SC-L2-DRW-01	MEDIUM	后驱单排驾驶室L2双后轮底盘。	READY
+146154_sc_l3_srw	146154	Pickup	Interstar II	X62B	2	EU-NISSAN-INTERSTAR-X62B-CHASSIS-RWD-SC-L3-SRW-01	MEDIUM	后驱单排驾驶室L3单后轮底盘。	READY
+146154_sc_l3_drw	146154	Pickup	Interstar II	X62B	2	EU-NISSAN-INTERSTAR-X62B-CHASSIS-RWD-SC-L3-DRW-01	MEDIUM	后驱单排驾驶室L3双后轮底盘。	READY
+146154_sc_l4_drw	146154	Pickup	Interstar II	X62B	2	EU-NISSAN-INTERSTAR-X62B-CHASSIS-RWD-SC-L4-DRW-01	MEDIUM	后驱单排驾驶室L4双后轮底盘。	READY
+146157_sc_l2_srw	146157	Pickup	Interstar II	X62B	2	EU-NISSAN-INTERSTAR-X62B-CHASSIS-RWD-SC-L2-SRW-01	MEDIUM	后驱单排驾驶室L2单后轮底盘。	READY
+146157_sc_l2_drw	146157	Pickup	Interstar II	X62B	2	EU-NISSAN-INTERSTAR-X62B-CHASSIS-RWD-SC-L2-DRW-01	MEDIUM	后驱单排驾驶室L2双后轮底盘。	READY
+146157_sc_l3_srw	146157	Pickup	Interstar II	X62B	2	EU-NISSAN-INTERSTAR-X62B-CHASSIS-RWD-SC-L3-SRW-01	MEDIUM	后驱单排驾驶室L3单后轮底盘。	READY
+146157_sc_l3_drw	146157	Pickup	Interstar II	X62B	2	EU-NISSAN-INTERSTAR-X62B-CHASSIS-RWD-SC-L3-DRW-01	MEDIUM	后驱单排驾驶室L3双后轮底盘。	READY
+146157_sc_l4_drw	146157	Pickup	Interstar II	X62B	2	EU-NISSAN-INTERSTAR-X62B-CHASSIS-RWD-SC-L4-DRW-01	MEDIUM	后驱单排驾驶室L4双后轮底盘。	READY
+```
+
+## 本轮首次创建/修正的 DIMENSION_GROUP TSV
+
+```tsv
+DIMENSION_GROUP_ID	LengthMM	WidthMM	HeightMM	DimensionSource	SourceURL
+EU-NISSAN-INTERSTAR-X62B-CHASSIS-RWD-SC-L2-SRW-01	5549	2070	2284	Nissan Interstar 2022 official brochure	https://www-europe.nissan-cdn.net/content/dam/Nissan/ireland/Brochures/Interstar%20042022-compressed.pdf
+EU-NISSAN-INTERSTAR-X62B-CHASSIS-RWD-SC-L2-DRW-01	5549	2070	2284	Nissan Interstar 2022 official brochure	https://www-europe.nissan-cdn.net/content/dam/Nissan/ireland/Brochures/Interstar%20042022-compressed.pdf
+EU-NISSAN-INTERSTAR-X62B-CHASSIS-RWD-SC-L3-SRW-01	6199	2070	2283	Nissan Interstar 2022 official brochure	https://www-europe.nissan-cdn.net/content/dam/Nissan/ireland/Brochures/Interstar%20042022-compressed.pdf
+EU-NISSAN-INTERSTAR-X62B-CHASSIS-RWD-SC-L3-DRW-01	6099	2070	2276	Nissan Interstar 2022 official brochure	https://www-europe.nissan-cdn.net/content/dam/Nissan/ireland/Brochures/Interstar%20042022-compressed.pdf
+EU-NISSAN-INTERSTAR-X62B-CHASSIS-RWD-SC-L4-DRW-01	6749	2070	2273	Nissan Interstar 2022 official brochure	https://www-europe.nissan-cdn.net/content/dam/Nissan/ireland/Brochures/Interstar%20042022-compressed.pdf
+```
+
+## 下一步优先处理
+
+1. 闭合 2025 年 All-New Interstar 后驱底盘驾驶室 Ktype `802484`、`802485`。
+2. 关联 Interstar X70 客车与 dCi 90 厢式车分支。
+3. 集中处理 Cabstar F24 的驾驶室、轴距及底盘外廓。
+4. 最后解决 Elgrand E52 的原厂外部套件分支。
+
+推进信号：CONTINUE
+
+
+--- 发送 / 继续到 Round 10 ---
+继续当前批次并采用缓存优先模式。尺寸组只在首次创建或纠错时完整核对一次三维和来源；后续 Ktype 只判断关联哪个现有 DIMENSION_GROUP_ID，不重复抓取，不输出缓存来源或匹配理由。仍有 PENDING 时，CONTINUE 轮仅输出：1) 更新点；2) 当前批次进度；3) 本轮新增/修改的 Ktype 映射 TSV（无变化写“无”）；4) 本轮首次创建/修正的 DIMENSION_GROUP TSV（复用既有组不重复输出，无变化写“无”）；5) 下一步优先处理。若当前或上一轮进度已经是 PENDING=0，本轮不要继续检索或再次输出 CONTINUE，必须立刻汇总并输出两张最终完整 TSV、两个任务指定 sandbox 下载链接和“推进信号：COMPLETE”。执行顺序固定为：第一阶段优先消除 PENDING 并补齐会阻塞两张最终表的数据。检测到 PENDING=0 后，第二阶段最多只做一次轻量机械收尾：核对固定表头、id 与 DIMENSION_GROUP_ID 唯一、映射引用闭合、长宽高和来源非空、两个任务指定下载链接齐全。第二阶段不得重新逐车型、逐年份或逐来源做深度检索，不得为了提高置信度反复核对，也不得因非阻塞的排序或措辞问题继续多轮。PENDING=0 后的下一条回复必须直接输出两张最终完整 TSV、两个精确 sandbox 下载链接，并以“推进信号：COMPLETE”结束；不要再输出 CONTINUE。Ktype 映射 TSV 表头必须严格使用 requirement 指定的字段顺序：id	Ktype	NormalizedBodyStyle	Generation	BodyCode	Doors	DIMENSION_GROUP_ID	MatchConfidence	Notes	IterationStatus。另需维护完整 DIMENSION_GROUP TSV，表头固定为：DIMENSION_GROUP_ID	LengthMM	WidthMM	HeightMM	DimensionSource	SourceURL。缺少任一张表、任一映射引用的尺寸组，或尺寸组字段不完整时不得 COMPLETE。不要输出子车系匹配表。
+【COMPLETE 下载文件硬性要求】
+准备 COMPLETE 时，除两张完整内嵌 TSV 外，还必须创建并提供以下两个可点击 sandbox 下载链接，文件名必须完全一致：
+- left18448_11601-11700_ktype_dimension_mapping_final.tsv
+- left18448_11601-11700_dimension_groups_final.tsv
+缺少任一下载链接时不得输出推进信号：COMPLETE。
+
+
+--- Round 10 / checkpoint 续跑 ---
+## 更新点
+
+* 闭合 All-New Interstar `XDE` 后驱双后轮底盘驾驶室：dCi 150 与 dCi 170 均拆分为单排/双排、L3/L4 四个分支。官方技术表给出 L3/L4 总长分别为 6360/6955 mm，单排车高 2257 mm、双排车高 2362 mm；后驱版本均为双后轮。
+* Ktype `16951` 已关联现有 Interstar X70 厢式车四个尺寸组；本轮未重复输出既有尺寸事实。dCi 90 存在短、中、长轴及长轴不同车顶版本，外廓尺寸沿用已闭合的 X70 车身组。
+
+## 当前批次进度
+
+* READY 输入 Ktype：89 / 100
+* READY 映射：174 行
+* PENDING 输入 Ktype：11
+* 已确认尺寸组：61
+* 当前批次尚未完成。
+
+## 本轮新增/修改的 Ktype 映射 TSV
+
+```tsv
+id	Ktype	NormalizedBodyStyle	Generation	BodyCode	Doors	DIMENSION_GROUP_ID	MatchConfidence	Notes	IterationStatus
+802484_sc_l3_drw	802484	Pickup	All-New Interstar	XDE	2	EU-NISSAN-INTERSTAR-XDE-CHASSIS-RWD-SC-L3-DRW-01	HIGH	后驱单排驾驶室L3双后轮底盘。	READY
+802484_sc_l4_drw	802484	Pickup	All-New Interstar	XDE	2	EU-NISSAN-INTERSTAR-XDE-CHASSIS-RWD-SC-L4-DRW-01	HIGH	后驱单排驾驶室L4双后轮底盘。	READY
+802484_dc_l3_drw	802484	Pickup	All-New Interstar	XDE	4	EU-NISSAN-INTERSTAR-XDE-CHASSIS-RWD-DC-L3-DRW-01	HIGH	后驱双排驾驶室L3双后轮底盘。	READY
+802484_dc_l4_drw	802484	Pickup	All-New Interstar	XDE	4	EU-NISSAN-INTERSTAR-XDE-CHASSIS-RWD-DC-L4-DRW-01	HIGH	后驱双排驾驶室L4双后轮底盘。	READY
+802485_sc_l3_drw	802485	Pickup	All-New Interstar	XDE	2	EU-NISSAN-INTERSTAR-XDE-CHASSIS-RWD-SC-L3-DRW-01	HIGH	后驱单排驾驶室L3双后轮底盘。	READY
+802485_sc_l4_drw	802485	Pickup	All-New Interstar	XDE	2	EU-NISSAN-INTERSTAR-XDE-CHASSIS-RWD-SC-L4-DRW-01	HIGH	后驱单排驾驶室L4双后轮底盘。	READY
+802485_dc_l3_drw	802485	Pickup	All-New Interstar	XDE	4	EU-NISSAN-INTERSTAR-XDE-CHASSIS-RWD-DC-L3-DRW-01	HIGH	后驱双排驾驶室L3双后轮底盘。	READY
+802485_dc_l4_drw	802485	Pickup	All-New Interstar	XDE	4	EU-NISSAN-INTERSTAR-XDE-CHASSIS-RWD-DC-L4-DRW-01	HIGH	后驱双排驾驶室L4双后轮底盘。	READY
+16951_l1h1	16951	Van	Interstar I	X70		EU-NISSAN-INTERSTAR-X70-PANEL-VAN-L1H1-01	MEDIUM	L1H1厢式车外廓。	READY
+16951_l2h2	16951	Van	Interstar I	X70		EU-NISSAN-INTERSTAR-X70-PANEL-VAN-L2H2-01	MEDIUM	L2H2厢式车外廓。	READY
+16951_l3h2	16951	Van	Interstar I	X70		EU-NISSAN-INTERSTAR-X70-PANEL-VAN-L3H2-01	MEDIUM	L3H2厢式车外廓。	READY
+16951_l3h3	16951	Van	Interstar I	X70		EU-NISSAN-INTERSTAR-X70-PANEL-VAN-L3H3-01	MEDIUM	L3H3高顶厢式车外廓。	READY
+```
+
+## 本轮首次创建/修正的 DIMENSION_GROUP TSV
+
+```tsv
+DIMENSION_GROUP_ID	LengthMM	WidthMM	HeightMM	DimensionSource	SourceURL
+EU-NISSAN-INTERSTAR-XDE-CHASSIS-RWD-SC-L3-DRW-01	6360	2080	2257	Nissan All-New Interstar official chassis technical sheet; Nissan Interstar official technical information	https://www-europe.nissan-cdn.net/content/dam/Nissan/fr/brochures/fiches_techniques/fiche_technique_Interstar_Fourgon_cabine_approfondie_chassis_plancher.pdf;https://www.nissan.hu/jarmuvek/uj/interstar/technical-information.html
+EU-NISSAN-INTERSTAR-XDE-CHASSIS-RWD-SC-L4-DRW-01	6955	2080	2257	Nissan All-New Interstar official chassis technical sheet; Nissan Interstar official technical information	https://www-europe.nissan-cdn.net/content/dam/Nissan/fr/brochures/fiches_techniques/fiche_technique_Interstar_Fourgon_cabine_approfondie_chassis_plancher.pdf;https://www.nissan.hu/jarmuvek/uj/interstar/technical-information.html
+EU-NISSAN-INTERSTAR-XDE-CHASSIS-RWD-DC-L3-DRW-01	6360	2080	2362	Nissan All-New Interstar official chassis technical sheet; Nissan Interstar official technical information	https://www-europe.nissan-cdn.net/content/dam/Nissan/fr/brochures/fiches_techniques/fiche_technique_Interstar_Fourgon_cabine_approfondie_chassis_plancher.pdf;https://www.nissan.hu/jarmuvek/uj/interstar/technical-information.html
+EU-NISSAN-INTERSTAR-XDE-CHASSIS-RWD-DC-L4-DRW-01	6955	2080	2362	Nissan All-New Interstar official chassis technical sheet; Nissan Interstar official technical information	https://www-europe.nissan-cdn.net/content/dam/Nissan/fr/brochures/fiches_techniques/fiche_technique_Interstar_Fourgon_cabine_approfondie_chassis_plancher.pdf;https://www.nissan.hu/jarmuvek/uj/interstar/technical-information.html
+```
+
+## 下一步优先处理
+
+1. 闭合 Interstar X70 的 dCi 80、dCi 90、dCi 115、dCi 140 客车分支。
+2. 集中拆分 Cabstar F24 六个 Ktype 的单排/双排及 2500、2900、3400 mm 轴距底盘。
+3. 最后闭合 Elgrand E52 的标准车身、Urban Chrome及历次改款外廓。
+
+推进信号：CONTINUE
+
+
+--- 发送 / 继续到 Round 11 ---
+继续当前批次并采用缓存优先模式。尺寸组只在首次创建或纠错时完整核对一次三维和来源；后续 Ktype 只判断关联哪个现有 DIMENSION_GROUP_ID，不重复抓取，不输出缓存来源或匹配理由。仍有 PENDING 时，CONTINUE 轮仅输出：1) 更新点；2) 当前批次进度；3) 本轮新增/修改的 Ktype 映射 TSV（无变化写“无”）；4) 本轮首次创建/修正的 DIMENSION_GROUP TSV（复用既有组不重复输出，无变化写“无”）；5) 下一步优先处理。若当前或上一轮进度已经是 PENDING=0，本轮不要继续检索或再次输出 CONTINUE，必须立刻汇总并输出两张最终完整 TSV、两个任务指定 sandbox 下载链接和“推进信号：COMPLETE”。执行顺序固定为：第一阶段优先消除 PENDING 并补齐会阻塞两张最终表的数据。检测到 PENDING=0 后，第二阶段最多只做一次轻量机械收尾：核对固定表头、id 与 DIMENSION_GROUP_ID 唯一、映射引用闭合、长宽高和来源非空、两个任务指定下载链接齐全。第二阶段不得重新逐车型、逐年份或逐来源做深度检索，不得为了提高置信度反复核对，也不得因非阻塞的排序或措辞问题继续多轮。PENDING=0 后的下一条回复必须直接输出两张最终完整 TSV、两个精确 sandbox 下载链接，并以“推进信号：COMPLETE”结束；不要再输出 CONTINUE。Ktype 映射 TSV 表头必须严格使用 requirement 指定的字段顺序：id	Ktype	NormalizedBodyStyle	Generation	BodyCode	Doors	DIMENSION_GROUP_ID	MatchConfidence	Notes	IterationStatus。另需维护完整 DIMENSION_GROUP TSV，表头固定为：DIMENSION_GROUP_ID	LengthMM	WidthMM	HeightMM	DimensionSource	SourceURL。缺少任一张表、任一映射引用的尺寸组，或尺寸组字段不完整时不得 COMPLETE。不要输出子车系匹配表。
+【COMPLETE 下载文件硬性要求】
+准备 COMPLETE 时，除两张完整内嵌 TSV 外，还必须创建并提供以下两个可点击 sandbox 下载链接，文件名必须完全一致：
+- left18448_11601-11700_ktype_dimension_mapping_final.tsv
+- left18448_11601-11700_dimension_groups_final.tsv
+缺少任一下载链接时不得输出推进信号：COMPLETE。
+
+
+--- Round 11 / checkpoint 续跑 ---
+## 更新点
+
+* 已闭合 Interstar X70 客车分支：dCi 80 关联短轴低顶；dCi 115 关联中轴中顶、长轴中顶和长轴高顶；dCi 140 关联长轴中顶和长轴高顶。dCi 90 按该 Ktype 覆盖范围关联四个既有 X70 外廓组，不重复建立尺寸组。日产规格表明确列出 X70 的四种外廓及相应动力可用范围。
+* 已闭合 Cabstar F24 六个 Ktype。按单排/双排、轴距、SRW/DRW 和 GVW 导致的车高差异拆分；`.12`、`.14` 动力版本复用相同 GVW、驾驶室、轴距及轮胎结构对应的 F24 外廓。日产 F24 官方手册明确给出不含后视镜宽度、底盘长度和高度。
+* Elgrand E52 已补入一条 PENDING 基础行，尚待闭合改款前标准、Urban Chrome 与改款后长度边界。
+
+## 当前批次进度
+
+* READY 输入 Ktype：99 / 100
+* READY 映射：235 行
+* PENDING 输入 Ktype：1
+* PENDING 映射：1 行
+* 已确认尺寸组：76
+* 当前批次尚未完成。
+
+## 本轮新增/修改的 Ktype 映射 TSV
+
+```tsv
+id	Ktype	NormalizedBodyStyle	Generation	BodyCode	Doors	DIMENSION_GROUP_ID	MatchConfidence	Notes	IterationStatus
+16947_l1h1	16947	MPV	Interstar I	X70		EU-NISSAN-INTERSTAR-X70-PANEL-VAN-L1H1-01	HIGH	dCi 80短轴低顶客车外廓。	READY
+16948_l1h1	16948	MPV	Interstar I	X70		EU-NISSAN-INTERSTAR-X70-PANEL-VAN-L1H1-01	MEDIUM	短轴低顶客车外廓。	READY
+16948_l2h2	16948	MPV	Interstar I	X70		EU-NISSAN-INTERSTAR-X70-PANEL-VAN-L2H2-01	MEDIUM	中轴中顶客车外廓。	READY
+16948_l3h2	16948	MPV	Interstar I	X70		EU-NISSAN-INTERSTAR-X70-PANEL-VAN-L3H2-01	MEDIUM	长轴中顶客车外廓。	READY
+16948_l3h3	16948	MPV	Interstar I	X70		EU-NISSAN-INTERSTAR-X70-PANEL-VAN-L3H3-01	MEDIUM	长轴高顶客车外廓。	READY
+16949_l2h2	16949	MPV	Interstar I	X70		EU-NISSAN-INTERSTAR-X70-PANEL-VAN-L2H2-01	HIGH	dCi 115中轴中顶客车外廓。	READY
+16949_l3h2	16949	MPV	Interstar I	X70		EU-NISSAN-INTERSTAR-X70-PANEL-VAN-L3H2-01	HIGH	dCi 115长轴中顶客车外廓。	READY
+16949_l3h3	16949	MPV	Interstar I	X70		EU-NISSAN-INTERSTAR-X70-PANEL-VAN-L3H3-01	HIGH	dCi 115长轴高顶客车外廓。	READY
+18104_l3h2	18104	MPV	Interstar I	X70		EU-NISSAN-INTERSTAR-X70-PANEL-VAN-L3H2-01	HIGH	dCi 140长轴中顶客车外廓。	READY
+18104_l3h3	18104	MPV	Interstar I	X70		EU-NISSAN-INTERSTAR-X70-PANEL-VAN-L3H3-01	HIGH	dCi 140长轴高顶客车外廓。	READY
+50635_28_sc_l1_srw	50635	Pickup	Cabstar F24	F24	2	EU-NISSAN-CABSTAR-F24-CHASSIS-SC-L1-SRW-28-01	HIGH	28系列单排L1单后轮底盘。	READY
+50635_28_sc_l2_srw	50635	Pickup	Cabstar F24	F24	2	EU-NISSAN-CABSTAR-F24-CHASSIS-SC-L2-SRW-28-01	HIGH	28系列单排L2单后轮底盘。	READY
+50635_32_sc_l1_srw	50635	Pickup	Cabstar F24	F24	2	EU-NISSAN-CABSTAR-F24-CHASSIS-SC-L1-SRW-32-34-01	HIGH	32系列单排L1单后轮底盘。	READY
+50635_32_sc_l2_srw	50635	Pickup	Cabstar F24	F24	2	EU-NISSAN-CABSTAR-F24-CHASSIS-SC-L2-SRW-32-34-01	HIGH	32系列单排L2单后轮底盘。	READY
+50635_32_sc_l3_srw	50635	Pickup	Cabstar F24	F24	2	EU-NISSAN-CABSTAR-F24-CHASSIS-SC-L3-SRW-32-34-01	HIGH	32系列单排L3单后轮底盘。	READY
+50635_35_sc_l1_drw	50635	Pickup	Cabstar F24	F24	2	EU-NISSAN-CABSTAR-F24-CHASSIS-SC-L1-DRW-35-01	HIGH	35系列单排L1双后轮底盘。	READY
+50635_35_sc_l2_drw	50635	Pickup	Cabstar F24	F24	2	EU-NISSAN-CABSTAR-F24-CHASSIS-SC-L2-DRW-35-01	HIGH	35系列单排L2双后轮底盘。	READY
+50635_35_sc_l3_drw	50635	Pickup	Cabstar F24	F24	2	EU-NISSAN-CABSTAR-F24-CHASSIS-SC-L3-DRW-35-01	HIGH	35系列单排L3双后轮底盘。	READY
+119611_28_sc_l1_srw	119611	Pickup	Cabstar F24	F24	2	EU-NISSAN-CABSTAR-F24-CHASSIS-SC-L1-SRW-28-01	MEDIUM	28系列单排L1单后轮底盘。	READY
+119611_28_sc_l2_srw	119611	Pickup	Cabstar F24	F24	2	EU-NISSAN-CABSTAR-F24-CHASSIS-SC-L2-SRW-28-01	MEDIUM	28系列单排L2单后轮底盘。	READY
+119611_32_34_sc_l1_srw	119611	Pickup	Cabstar F24	F24	2	EU-NISSAN-CABSTAR-F24-CHASSIS-SC-L1-SRW-32-34-01	MEDIUM	32/34系列单排L1单后轮底盘。	READY
+119611_32_34_sc_l2_srw	119611	Pickup	Cabstar F24	F24	2	EU-NISSAN-CABSTAR-F24-CHASSIS-SC-L2-SRW-32-34-01	MEDIUM	32/34系列单排L2单后轮底盘。	READY
+119611_32_34_sc_l3_srw	119611	Pickup	Cabstar F24	F24	2	EU-NISSAN-CABSTAR-F24-CHASSIS-SC-L3-SRW-32-34-01	MEDIUM	32/34系列单排L3单后轮底盘。	READY
+119611_35_sc_l1_drw	119611	Pickup	Cabstar F24	F24	2	EU-NISSAN-CABSTAR-F24-CHASSIS-SC-L1-DRW-35-01	MEDIUM	35系列单排L1双后轮底盘。	READY
+119611_35_sc_l2_drw	119611	Pickup	Cabstar F24	F24	2	EU-NISSAN-CABSTAR-F24-CHASSIS-SC-L2-DRW-35-01	MEDIUM	35系列单排L2双后轮底盘。	READY
+119611_35_sc_l3_drw	119611	Pickup	Cabstar F24	F24	2	EU-NISSAN-CABSTAR-F24-CHASSIS-SC-L3-DRW-35-01	MEDIUM	35系列单排L3双后轮底盘。	READY
+119607_35_sc_l1_drw	119607	Pickup	Cabstar F24	F24	2	EU-NISSAN-CABSTAR-F24-CHASSIS-SC-L1-DRW-35-01	HIGH	35系列单排L1双后轮底盘。	READY
+119607_35_sc_l2_drw	119607	Pickup	Cabstar F24	F24	2	EU-NISSAN-CABSTAR-F24-CHASSIS-SC-L2-DRW-35-01	HIGH	35系列单排L2双后轮底盘。	READY
+119607_35_sc_l3_drw	119607	Pickup	Cabstar F24	F24	2	EU-NISSAN-CABSTAR-F24-CHASSIS-SC-L3-DRW-35-01	HIGH	35系列单排L3双后轮底盘。	READY
+119607_35_dc_l2_drw	119607	Pickup	Cabstar F24	F24	4	EU-NISSAN-CABSTAR-F24-CHASSIS-DC-L2-DRW-35-01	HIGH	35系列双排L2双后轮底盘。	READY
+119607_35_dc_l3_drw	119607	Pickup	Cabstar F24	F24	4	EU-NISSAN-CABSTAR-F24-CHASSIS-DC-L3-DRW-35-01	HIGH	35系列双排L3双后轮底盘。	READY
+119607_45_sc_l1_drw	119607	Pickup	Cabstar F24	F24	2	EU-NISSAN-CABSTAR-F24-CHASSIS-SC-L1-DRW-45-01	HIGH	45系列单排L1双后轮底盘。	READY
+119607_45_sc_l2_drw	119607	Pickup	Cabstar F24	F24	2	EU-NISSAN-CABSTAR-F24-CHASSIS-SC-L2-DRW-45-01	HIGH	45系列单排L2双后轮底盘。	READY
+119607_45_sc_l3_drw	119607	Pickup	Cabstar F24	F24	2	EU-NISSAN-CABSTAR-F24-CHASSIS-SC-L3-DRW-45-01	HIGH	45系列单排L3双后轮底盘。	READY
+119607_45_dc_l2_drw	119607	Pickup	Cabstar F24	F24	4	EU-NISSAN-CABSTAR-F24-CHASSIS-DC-L2-DRW-45-01	HIGH	45系列双排L2双后轮底盘。	READY
+119607_45_dc_l3_drw	119607	Pickup	Cabstar F24	F24	4	EU-NISSAN-CABSTAR-F24-CHASSIS-DC-L3-DRW-45-01	HIGH	45系列双排L3双后轮底盘。	READY
+119609_35_sc_l1_drw	119609	Pickup	Cabstar F24	F24	2	EU-NISSAN-CABSTAR-F24-CHASSIS-SC-L1-DRW-35-01	MEDIUM	35系列单排L1双后轮底盘。	READY
+119609_35_sc_l2_drw	119609	Pickup	Cabstar F24	F24	2	EU-NISSAN-CABSTAR-F24-CHASSIS-SC-L2-DRW-35-01	MEDIUM	35系列单排L2双后轮底盘。	READY
+119609_35_sc_l3_drw	119609	Pickup	Cabstar F24	F24	2	EU-NISSAN-CABSTAR-F24-CHASSIS-SC-L3-DRW-35-01	MEDIUM	35系列单排L3双后轮底盘。	READY
+119609_35_dc_l2_drw	119609	Pickup	Cabstar F24	F24	4	EU-NISSAN-CABSTAR-F24-CHASSIS-DC-L2-DRW-35-01	MEDIUM	35系列双排L2双后轮底盘。	READY
+119609_35_dc_l3_drw	119609	Pickup	Cabstar F24	F24	4	EU-NISSAN-CABSTAR-F24-CHASSIS-DC-L3-DRW-35-01	MEDIUM	35系列双排L3双后轮底盘。	READY
+119612_35_sc_l1_drw	119612	Pickup	Cabstar F24	F24	2	EU-NISSAN-CABSTAR-F24-CHASSIS-SC-L1-DRW-35-01	MEDIUM	35系列单排L1双后轮底盘。	READY
+119612_35_sc_l2_drw	119612	Pickup	Cabstar F24	F24	2	EU-NISSAN-CABSTAR-F24-CHASSIS-SC-L2-DRW-35-01	MEDIUM	35系列单排L2双后轮底盘。	READY
+119612_35_sc_l3_drw	119612	Pickup	Cabstar F24	F24	2	EU-NISSAN-CABSTAR-F24-CHASSIS-SC-L3-DRW-35-01	MEDIUM	35系列单排L3双后轮底盘。	READY
+119612_35_dc_l2_drw	119612	Pickup	Cabstar F24	F24	4	EU-NISSAN-CABSTAR-F24-CHASSIS-DC-L2-DRW-35-01	MEDIUM	35系列双排L2双后轮底盘。	READY
+119612_35_dc_l3_drw	119612	Pickup	Cabstar F24	F24	4	EU-NISSAN-CABSTAR-F24-CHASSIS-DC-L3-DRW-35-01	MEDIUM	35系列双排L3双后轮底盘。	READY
+119612_45_sc_l1_drw	119612	Pickup	Cabstar F24	F24	2	EU-NISSAN-CABSTAR-F24-CHASSIS-SC-L1-DRW-45-01	MEDIUM	45系列单排L1双后轮底盘。	READY
+119612_45_sc_l2_drw	119612	Pickup	Cabstar F24	F24	2	EU-NISSAN-CABSTAR-F24-CHASSIS-SC-L2-DRW-45-01	MEDIUM	45系列单排L2双后轮底盘。	READY
+119612_45_sc_l3_drw	119612	Pickup	Cabstar F24	F24	2	EU-NISSAN-CABSTAR-F24-CHASSIS-SC-L3-DRW-45-01	MEDIUM	45系列单排L3双后轮底盘。	READY
+119612_45_dc_l2_drw	119612	Pickup	Cabstar F24	F24	4	EU-NISSAN-CABSTAR-F24-CHASSIS-DC-L2-DRW-45-01	MEDIUM	45系列双排L2双后轮底盘。	READY
+119612_45_dc_l3_drw	119612	Pickup	Cabstar F24	F24	4	EU-NISSAN-CABSTAR-F24-CHASSIS-DC-L3-DRW-45-01	MEDIUM	45系列双排L3双后轮底盘。	READY
+119610_35_sc_l1_drw	119610	Pickup	Cabstar F24	F24	2	EU-NISSAN-CABSTAR-F24-CHASSIS-SC-L1-DRW-35-01	HIGH	35系列单排L1双后轮底盘。	READY
+119610_35_sc_l2_drw	119610	Pickup	Cabstar F24	F24	2	EU-NISSAN-CABSTAR-F24-CHASSIS-SC-L2-DRW-35-01	HIGH	35系列单排L2双后轮底盘。	READY
+119610_35_sc_l3_drw	119610	Pickup	Cabstar F24	F24	2	EU-NISSAN-CABSTAR-F24-CHASSIS-SC-L3-DRW-35-01	HIGH	35系列单排L3双后轮底盘。	READY
+119610_35_dc_l2_drw	119610	Pickup	Cabstar F24	F24	4	EU-NISSAN-CABSTAR-F24-CHASSIS-DC-L2-DRW-35-01	HIGH	35系列双排L2双后轮底盘。	READY
+119610_35_dc_l3_drw	119610	Pickup	Cabstar F24	F24	4	EU-NISSAN-CABSTAR-F24-CHASSIS-DC-L3-DRW-35-01	HIGH	35系列双排L3双后轮底盘。	READY
+119610_45_sc_l1_drw	119610	Pickup	Cabstar F24	F24	2	EU-NISSAN-CABSTAR-F24-CHASSIS-SC-L1-DRW-45-01	HIGH	45系列单排L1双后轮底盘。	READY
+119610_45_sc_l2_drw	119610	Pickup	Cabstar F24	F24	2	EU-NISSAN-CABSTAR-F24-CHASSIS-SC-L2-DRW-45-01	HIGH	45系列单排L2双后轮底盘。	READY
+119610_45_sc_l3_drw	119610	Pickup	Cabstar F24	F24	2	EU-NISSAN-CABSTAR-F24-CHASSIS-SC-L3-DRW-45-01	HIGH	45系列单排L3双后轮底盘。	READY
+119610_45_dc_l2_drw	119610	Pickup	Cabstar F24	F24	4	EU-NISSAN-CABSTAR-F24-CHASSIS-DC-L2-DRW-45-01	HIGH	45系列双排L2双后轮底盘。	READY
+119610_45_dc_l3_drw	119610	Pickup	Cabstar F24	F24	4	EU-NISSAN-CABSTAR-F24-CHASSIS-DC-L3-DRW-45-01	HIGH	45系列双排L3双后轮底盘。	READY
+51940	51940	MPV	Elgrand III	PE52	5		LOW	候选分支为改款前标准、Urban Chrome及改款后外廓。	PENDING: 原厂外部套件长度边界待闭合
+```
+
+## 本轮首次创建/修正的 DIMENSION_GROUP TSV
+
+```tsv
+DIMENSION_GROUP_ID	LengthMM	WidthMM	HeightMM	DimensionSource	SourceURL
+EU-NISSAN-CABSTAR-F24-CHASSIS-SC-L1-SRW-28-01	4545	1870	2116	Nissan Cabstar F24 official owner manual	https://www.nissan-cdn.net/content/dam/Nissan/greece/manuals/cabstar/CABSTAR_F24_2008_JUNE.pdf
+EU-NISSAN-CABSTAR-F24-CHASSIS-SC-L2-SRW-28-01	5245	1870	2116	Nissan Cabstar F24 official owner manual	https://www.nissan-cdn.net/content/dam/Nissan/greece/manuals/cabstar/CABSTAR_F24_2008_JUNE.pdf
+EU-NISSAN-CABSTAR-F24-CHASSIS-SC-L1-SRW-32-34-01	4545	1870	2122	Nissan Cabstar F24 official owner manual	https://www.nissan-cdn.net/content/dam/Nissan/greece/manuals/cabstar/CABSTAR_F24_2008_JUNE.pdf
+EU-NISSAN-CABSTAR-F24-CHASSIS-SC-L2-SRW-32-34-01	5245	1870	2122	Nissan Cabstar F24 official owner manual	https://www.nissan-cdn.net/content/dam/Nissan/greece/manuals/cabstar/CABSTAR_F24_2008_JUNE.pdf
+EU-NISSAN-CABSTAR-F24-CHASSIS-SC-L3-SRW-32-34-01	6045	1870	2122	Nissan Cabstar F24 official owner manual	https://www.nissan-cdn.net/content/dam/Nissan/greece/manuals/cabstar/CABSTAR_F24_2008_JUNE.pdf
+EU-NISSAN-CABSTAR-F24-CHASSIS-SC-L1-DRW-35-01	4545	1870	2116	Nissan Cabstar F24 official owner manual	https://www.nissan-cdn.net/content/dam/Nissan/greece/manuals/cabstar/CABSTAR_F24_2008_JUNE.pdf
+EU-NISSAN-CABSTAR-F24-CHASSIS-SC-L2-DRW-35-01	5245	1870	2116	Nissan Cabstar F24 official owner manual	https://www.nissan-cdn.net/content/dam/Nissan/greece/manuals/cabstar/CABSTAR_F24_2008_JUNE.pdf
+EU-NISSAN-CABSTAR-F24-CHASSIS-SC-L3-DRW-35-01	6045	1870	2116	Nissan Cabstar F24 official owner manual	https://www.nissan-cdn.net/content/dam/Nissan/greece/manuals/cabstar/CABSTAR_F24_2008_JUNE.pdf
+EU-NISSAN-CABSTAR-F24-CHASSIS-DC-L2-DRW-35-01	5245	1870	2116	Nissan Cabstar F24 official owner manual	https://www.nissan-cdn.net/content/dam/Nissan/greece/manuals/cabstar/CABSTAR_F24_2008_JUNE.pdf
+EU-NISSAN-CABSTAR-F24-CHASSIS-DC-L3-DRW-35-01	6045	1870	2116	Nissan Cabstar F24 official owner manual	https://www.nissan-cdn.net/content/dam/Nissan/greece/manuals/cabstar/CABSTAR_F24_2008_JUNE.pdf
+EU-NISSAN-CABSTAR-F24-CHASSIS-SC-L1-DRW-45-01	4745	1870	2135	Nissan Cabstar F24 official owner manual	https://www.nissan-cdn.net/content/dam/Nissan/greece/manuals/cabstar/CABSTAR_F24_2008_JUNE.pdf
+EU-NISSAN-CABSTAR-F24-CHASSIS-SC-L2-DRW-45-01	5445	1870	2135	Nissan Cabstar F24 official owner manual	https://www.nissan-cdn.net/content/dam/Nissan/greece/manuals/cabstar/CABSTAR_F24_2008_JUNE.pdf
+EU-NISSAN-CABSTAR-F24-CHASSIS-SC-L3-DRW-45-01	6345	1870	2135	Nissan Cabstar F24 official owner manual	https://www.nissan-cdn.net/content/dam/Nissan/greece/manuals/cabstar/CABSTAR_F24_2008_JUNE.pdf
+EU-NISSAN-CABSTAR-F24-CHASSIS-DC-L2-DRW-45-01	5445	1870	2135	Nissan Cabstar F24 official owner manual	https://www.nissan-cdn.net/content/dam/Nissan/greece/manuals/cabstar/CABSTAR_F24_2008_JUNE.pdf
+EU-NISSAN-CABSTAR-F24-CHASSIS-DC-L3-DRW-45-01	6345	1870	2135	Nissan Cabstar F24 official owner manual	https://www.nissan-cdn.net/content/dam/Nissan/greece/manuals/cabstar/CABSTAR_F24_2008_JUNE.pdf
+```
+
+## 下一步优先处理
+
+1. 仅闭合 Ktype `51940` 的 Elgrand E52 改款前标准、Urban Chrome 与改款后外廓。
+2. PENDING 清零后立即执行一次机械检查，生成两张完整 TSV 和两个指定 sandbox 下载文件。
+
+推进信号：CONTINUE
+
+
+--- 发送 / 继续到 Round 12 ---
+继续当前批次并采用缓存优先模式。尺寸组只在首次创建或纠错时完整核对一次三维和来源；后续 Ktype 只判断关联哪个现有 DIMENSION_GROUP_ID，不重复抓取，不输出缓存来源或匹配理由。仍有 PENDING 时，CONTINUE 轮仅输出：1) 更新点；2) 当前批次进度；3) 本轮新增/修改的 Ktype 映射 TSV（无变化写“无”）；4) 本轮首次创建/修正的 DIMENSION_GROUP TSV（复用既有组不重复输出，无变化写“无”）；5) 下一步优先处理。若当前或上一轮进度已经是 PENDING=0，本轮不要继续检索或再次输出 CONTINUE，必须立刻汇总并输出两张最终完整 TSV、两个任务指定 sandbox 下载链接和“推进信号：COMPLETE”。执行顺序固定为：第一阶段优先消除 PENDING 并补齐会阻塞两张最终表的数据。检测到 PENDING=0 后，第二阶段最多只做一次轻量机械收尾：核对固定表头、id 与 DIMENSION_GROUP_ID 唯一、映射引用闭合、长宽高和来源非空、两个任务指定下载链接齐全。第二阶段不得重新逐车型、逐年份或逐来源做深度检索，不得为了提高置信度反复核对，也不得因非阻塞的排序或措辞问题继续多轮。PENDING=0 后的下一条回复必须直接输出两张最终完整 TSV、两个精确 sandbox 下载链接，并以“推进信号：COMPLETE”结束；不要再输出 CONTINUE。Ktype 映射 TSV 表头必须严格使用 requirement 指定的字段顺序：id	Ktype	NormalizedBodyStyle	Generation	BodyCode	Doors	DIMENSION_GROUP_ID	MatchConfidence	Notes	IterationStatus。另需维护完整 DIMENSION_GROUP TSV，表头固定为：DIMENSION_GROUP_ID	LengthMM	WidthMM	HeightMM	DimensionSource	SourceURL。缺少任一张表、任一映射引用的尺寸组，或尺寸组字段不完整时不得 COMPLETE。不要输出子车系匹配表。
+【COMPLETE 下载文件硬性要求】
+准备 COMPLETE 时，除两张完整内嵌 TSV 外，还必须创建并提供以下两个可点击 sandbox 下载链接，文件名必须完全一致：
+- left18448_11601-11700_ktype_dimension_mapping_final.tsv
+- left18448_11601-11700_dimension_groups_final.tsv
+缺少任一下载链接时不得输出推进信号：COMPLETE。
+
+
+--- Round 12 / checkpoint 续跑 ---
+## 更新点
+
+* 最后一个阻塞 Ktype `51940` 已闭合：E52 改款前标准外廓为 `4915×1850×1815 mm`；2014 年后标准外廓为 `4945×1850×1815 mm`；Urban Chrome 外部套件为 `4975×1850×1815 mm`；第二次改款标准外廓为 `4965×1850×1815 mm`。([日産历史][1])
+* 已完成机械检查：固定表头正确、100 个输入 Ktype 全覆盖、239 个映射 `id` 唯一、80 个尺寸组唯一、引用闭合、无孤立尺寸组、尺寸与来源字段完整、全部映射为 `READY`。
+
+## 当前批次进度
+
+* 输入 Ktype：100 / 100
+* READY 映射：239
+* PENDING 映射：0
+* DIMENSION_GROUP：80
+* 当前批次已完成。
+
+## 最终完整 Ktype 映射 TSV
+
+```tsv
+id	Ktype	NormalizedBodyStyle	Generation	BodyCode	Doors	DIMENSION_GROUP_ID	MatchConfidence	Notes	IterationStatus
+5991	5991	Hatchback	Almera I	N15	3	EU-NISSAN-ALMERA-I-HATCHBACK-3D-01	HIGH	N15 GTI仅三门。	READY
+14915_prefl	14915	Sedan	Almera II	N16	4	EU-NISSAN-ALMERA-II-SEDAN-PREFL-01	MEDIUM	该Ktype跨越2002年改款，按改款前外廓拆分。	READY
+14915_facelift	14915	Sedan	Almera II	N16	4	EU-NISSAN-ALMERA-II-SEDAN-FACELIFT-01	MEDIUM	该Ktype跨越2002年改款，按改款后外廓拆分。	READY
+17242	17242	Sedan	Almera II	N16	4	EU-NISSAN-ALMERA-II-SEDAN-FACELIFT-01	HIGH	N16四门轿车。	READY
+15110	15110	Sedan	Almera II	N16	4	EU-NISSAN-ALMERA-II-SEDAN-PREFL-01	HIGH	N16四门轿车。	READY
+17243	17243	Sedan	Almera II	N16	4	EU-NISSAN-ALMERA-II-SEDAN-FACELIFT-01	HIGH	N16四门轿车。	READY
+17244	17244	Sedan	Almera II	N16	4	EU-NISSAN-ALMERA-II-SEDAN-FACELIFT-01	HIGH	N16四门轿车。	READY
+17683	17683	Sedan	Almera II	N16	4	EU-NISSAN-ALMERA-II-SEDAN-FACELIFT-01	HIGH	N16四门轿车。	READY
+17684	17684	Sedan	Almera II	N16	4	EU-NISSAN-ALMERA-II-SEDAN-FACELIFT-01	HIGH	N16四门轿车。	READY
+14916	14916	Sedan	Almera II	N16	4	EU-NISSAN-ALMERA-II-SEDAN-PREFL-01	HIGH	N16四门轿车。	READY
+14657_3dr_prefl	14657	Hatchback	Almera II	N16	3	EU-NISSAN-ALMERA-II-HATCHBACK-3D-PREFL-01	MEDIUM	该Ktype覆盖三门/五门分支并跨越2002年改款。	READY
+14657_5dr_prefl	14657	Hatchback	Almera II	N16	5	EU-NISSAN-ALMERA-II-HATCHBACK-5D-PREFL-01	MEDIUM	该Ktype覆盖三门/五门分支并跨越2002年改款。	READY
+14657_3dr_facelift	14657	Hatchback	Almera II	N16	3	EU-NISSAN-ALMERA-II-HATCHBACK-3D-FACELIFT-01	MEDIUM	该Ktype覆盖三门/五门分支并跨越2002年改款。	READY
+14657_5dr_facelift	14657	Hatchback	Almera II	N16	5	EU-NISSAN-ALMERA-II-HATCHBACK-5D-FACELIFT-01	MEDIUM	该Ktype覆盖三门/五门分支并跨越2002年改款。	READY
+17239_3dr	17239	Hatchback	Almera II	N16	3	EU-NISSAN-ALMERA-II-HATCHBACK-3D-FACELIFT-01	MEDIUM	该Ktype覆盖三门/五门分支。	READY
+17239_5dr	17239	Hatchback	Almera II	N16	5	EU-NISSAN-ALMERA-II-HATCHBACK-5D-FACELIFT-01	MEDIUM	该Ktype覆盖三门/五门分支。	READY
+14658_3dr	14658	Hatchback	Almera II	N16	3	EU-NISSAN-ALMERA-II-HATCHBACK-3D-PREFL-01	MEDIUM	该Ktype覆盖三门/五门分支。	READY
+14658_5dr	14658	Hatchback	Almera II	N16	5	EU-NISSAN-ALMERA-II-HATCHBACK-5D-PREFL-01	MEDIUM	该Ktype覆盖三门/五门分支。	READY
+17240_3dr	17240	Hatchback	Almera II	N16	3	EU-NISSAN-ALMERA-II-HATCHBACK-3D-FACELIFT-01	MEDIUM	该Ktype覆盖三门/五门分支。	READY
+17240_5dr	17240	Hatchback	Almera II	N16	5	EU-NISSAN-ALMERA-II-HATCHBACK-5D-FACELIFT-01	MEDIUM	该Ktype覆盖三门/五门分支。	READY
+17241_3dr	17241	Hatchback	Almera II	N16	3	EU-NISSAN-ALMERA-II-HATCHBACK-3D-FACELIFT-01	MEDIUM	该Ktype覆盖三门/五门分支。	READY
+17241_5dr	17241	Hatchback	Almera II	N16	5	EU-NISSAN-ALMERA-II-HATCHBACK-5D-FACELIFT-01	MEDIUM	该Ktype覆盖三门/五门分支。	READY
+17681_3dr	17681	Hatchback	Almera II	N16	3	EU-NISSAN-ALMERA-II-HATCHBACK-3D-FACELIFT-01	MEDIUM	该Ktype覆盖三门/五门分支。	READY
+17681_5dr	17681	Hatchback	Almera II	N16	5	EU-NISSAN-ALMERA-II-HATCHBACK-5D-FACELIFT-01	MEDIUM	该Ktype覆盖三门/五门分支。	READY
+17682_3dr	17682	Hatchback	Almera II	N16	3	EU-NISSAN-ALMERA-II-HATCHBACK-3D-FACELIFT-01	MEDIUM	该Ktype覆盖三门/五门分支。	READY
+17682_5dr	17682	Hatchback	Almera II	N16	5	EU-NISSAN-ALMERA-II-HATCHBACK-5D-FACELIFT-01	MEDIUM	该Ktype覆盖三门/五门分支。	READY
+14659_3dr	14659	Hatchback	Almera II	N16	3	EU-NISSAN-ALMERA-II-HATCHBACK-3D-PREFL-01	MEDIUM	该Ktype覆盖三门/五门分支。	READY
+14659_5dr	14659	Hatchback	Almera II	N16	5	EU-NISSAN-ALMERA-II-HATCHBACK-5D-PREFL-01	MEDIUM	该Ktype覆盖三门/五门分支。	READY
+11262	11262	MPV	Almera Tino	V10	5	EU-NISSAN-ALMERA-TINO-MPV-01	HIGH	V10五门MPV。	READY
+17690	17690	MPV	Almera Tino	V10	5	EU-NISSAN-ALMERA-TINO-MPV-01	HIGH	V10五门MPV。	READY
+11263	11263	MPV	Almera Tino	V10	5	EU-NISSAN-ALMERA-TINO-MPV-01	HIGH	V10五门MPV。	READY
+14917	14917	MPV	Almera Tino	V10	5	EU-NISSAN-ALMERA-TINO-MPV-01	HIGH	V10五门MPV。	READY
+17685	17685	MPV	Almera Tino	V10	5	EU-NISSAN-ALMERA-TINO-MPV-01	HIGH	V10五门MPV。	READY
+17686	17686	MPV	Almera Tino	V10	5	EU-NISSAN-ALMERA-TINO-MPV-01	HIGH	V10五门MPV。	READY
+144397	144397	SUV	Ariya I	FE0	5	EU-NISSAN-ARIYA-FE0-SUV-01	HIGH	FE0标准车身。	READY
+144398	144398	SUV	Ariya I	FE0	5	EU-NISSAN-ARIYA-FE0-SUV-01	HIGH	FE0标准车身。	READY
+144399	144399	SUV	Ariya I	FE0	5	EU-NISSAN-ARIYA-FE0-SUV-01	HIGH	FE0标准车身。	READY
+144400	144400	SUV	Ariya I	FE0	5	EU-NISSAN-ARIYA-FE0-SUV-01	HIGH	FE0标准车身。	READY
+144403	144403	SUV	Ariya I	FE0	5	EU-NISSAN-ARIYA-FE0-SUV-01	HIGH	FE0标准车身。	READY
+801088	801088	SUV	Ariya I	FE0	5	EU-NISSAN-ARIYA-FE0-NISMO-SUV-02	HIGH	NISMO专属外部套件。	READY
+125847	125847	Sedan	Bluebird Sylphy III	B17	4	EU-NISSAN-BLUEBIRD-SYLPHY-B17-SEDAN-01	HIGH		READY
+10679_610	10679	Sedan	Bluebird 610	610	4	EU-NISSAN-BLUEBIRD-610-SEDAN-01	HIGH	该Ktype跨越610与810两代四门轿车。	READY
+10679_810	10679	Sedan	Bluebird 810	810	4	EU-NISSAN-BLUEBIRD-810-SEDAN-01	HIGH	该Ktype跨越610与810两代四门轿车。	READY
+125980_prefl	125980	Hatchback	Bluebird T12	T12	5	EU-NISSAN-BLUEBIRD-T12-HATCHBACK-PREFL-01	HIGH	该Ktype跨越T12/T72外观改款，按改款前外廓拆分。	READY
+125980_facelift	125980	Hatchback	Bluebird T72	T72	5	EU-NISSAN-BLUEBIRD-T72-HATCHBACK-FACELIFT-01	HIGH	该Ktype跨越T12/T72外观改款，按改款后外廓拆分。	READY
+17015	17015	Sedan	Bluebird 910	910	4	EU-NISSAN-BLUEBIRD-910-SEDAN-01	HIGH		READY
+50635_28_sc_l1_srw	50635	Pickup	Cabstar F24	F24	2	EU-NISSAN-CABSTAR-F24-CHASSIS-SC-L1-SRW-28-01	HIGH	28系列单排L1单后轮底盘。	READY
+50635_28_sc_l2_srw	50635	Pickup	Cabstar F24	F24	2	EU-NISSAN-CABSTAR-F24-CHASSIS-SC-L2-SRW-28-01	HIGH	28系列单排L2单后轮底盘。	READY
+50635_32_sc_l1_srw	50635	Pickup	Cabstar F24	F24	2	EU-NISSAN-CABSTAR-F24-CHASSIS-SC-L1-SRW-32-34-01	HIGH	32系列单排L1单后轮底盘。	READY
+50635_32_sc_l2_srw	50635	Pickup	Cabstar F24	F24	2	EU-NISSAN-CABSTAR-F24-CHASSIS-SC-L2-SRW-32-34-01	HIGH	32系列单排L2单后轮底盘。	READY
+50635_32_sc_l3_srw	50635	Pickup	Cabstar F24	F24	2	EU-NISSAN-CABSTAR-F24-CHASSIS-SC-L3-SRW-32-34-01	HIGH	32系列单排L3单后轮底盘。	READY
+50635_35_sc_l1_drw	50635	Pickup	Cabstar F24	F24	2	EU-NISSAN-CABSTAR-F24-CHASSIS-SC-L1-DRW-35-01	HIGH	35系列单排L1双后轮底盘。	READY
+50635_35_sc_l2_drw	50635	Pickup	Cabstar F24	F24	2	EU-NISSAN-CABSTAR-F24-CHASSIS-SC-L2-DRW-35-01	HIGH	35系列单排L2双后轮底盘。	READY
+50635_35_sc_l3_drw	50635	Pickup	Cabstar F24	F24	2	EU-NISSAN-CABSTAR-F24-CHASSIS-SC-L3-DRW-35-01	HIGH	35系列单排L3双后轮底盘。	READY
+119611_28_sc_l1_srw	119611	Pickup	Cabstar F24	F24	2	EU-NISSAN-CABSTAR-F24-CHASSIS-SC-L1-SRW-28-01	MEDIUM	28系列单排L1单后轮底盘。	READY
+119611_28_sc_l2_srw	119611	Pickup	Cabstar F24	F24	2	EU-NISSAN-CABSTAR-F24-CHASSIS-SC-L2-SRW-28-01	MEDIUM	28系列单排L2单后轮底盘。	READY
+119611_32_34_sc_l1_srw	119611	Pickup	Cabstar F24	F24	2	EU-NISSAN-CABSTAR-F24-CHASSIS-SC-L1-SRW-32-34-01	MEDIUM	32/34系列单排L1单后轮底盘。	READY
+119611_32_34_sc_l2_srw	119611	Pickup	Cabstar F24	F24	2	EU-NISSAN-CABSTAR-F24-CHASSIS-SC-L2-SRW-32-34-01	MEDIUM	32/34系列单排L2单后轮底盘。	READY
+119611_32_34_sc_l3_srw	119611	Pickup	Cabstar F24	F24	2	EU-NISSAN-CABSTAR-F24-CHASSIS-SC-L3-SRW-32-34-01	MEDIUM	32/34系列单排L3单后轮底盘。	READY
+119611_35_sc_l1_drw	119611	Pickup	Cabstar F24	F24	2	EU-NISSAN-CABSTAR-F24-CHASSIS-SC-L1-DRW-35-01	MEDIUM	35系列单排L1双后轮底盘。	READY
+119611_35_sc_l2_drw	119611	Pickup	Cabstar F24	F24	2	EU-NISSAN-CABSTAR-F24-CHASSIS-SC-L2-DRW-35-01	MEDIUM	35系列单排L2双后轮底盘。	READY
+119611_35_sc_l3_drw	119611	Pickup	Cabstar F24	F24	2	EU-NISSAN-CABSTAR-F24-CHASSIS-SC-L3-DRW-35-01	MEDIUM	35系列单排L3双后轮底盘。	READY
+119607_35_sc_l1_drw	119607	Pickup	Cabstar F24	F24	2	EU-NISSAN-CABSTAR-F24-CHASSIS-SC-L1-DRW-35-01	HIGH	35系列单排L1双后轮底盘。	READY
+119607_35_sc_l2_drw	119607	Pickup	Cabstar F24	F24	2	EU-NISSAN-CABSTAR-F24-CHASSIS-SC-L2-DRW-35-01	HIGH	35系列单排L2双后轮底盘。	READY
+119607_35_sc_l3_drw	119607	Pickup	Cabstar F24	F24	2	EU-NISSAN-CABSTAR-F24-CHASSIS-SC-L3-DRW-35-01	HIGH	35系列单排L3双后轮底盘。	READY
+119607_35_dc_l2_drw	119607	Pickup	Cabstar F24	F24	4	EU-NISSAN-CABSTAR-F24-CHASSIS-DC-L2-DRW-35-01	HIGH	35系列双排L2双后轮底盘。	READY
+119607_35_dc_l3_drw	119607	Pickup	Cabstar F24	F24	4	EU-NISSAN-CABSTAR-F24-CHASSIS-DC-L3-DRW-35-01	HIGH	35系列双排L3双后轮底盘。	READY
+119607_45_sc_l1_drw	119607	Pickup	Cabstar F24	F24	2	EU-NISSAN-CABSTAR-F24-CHASSIS-SC-L1-DRW-45-01	HIGH	45系列单排L1双后轮底盘。	READY
+119607_45_sc_l2_drw	119607	Pickup	Cabstar F24	F24	2	EU-NISSAN-CABSTAR-F24-CHASSIS-SC-L2-DRW-45-01	HIGH	45系列单排L2双后轮底盘。	READY
+119607_45_sc_l3_drw	119607	Pickup	Cabstar F24	F24	2	EU-NISSAN-CABSTAR-F24-CHASSIS-SC-L3-DRW-45-01	HIGH	45系列单排L3双后轮底盘。	READY
+119607_45_dc_l2_drw	119607	Pickup	Cabstar F24	F24	4	EU-NISSAN-CABSTAR-F24-CHASSIS-DC-L2-DRW-45-01	HIGH	45系列双排L2双后轮底盘。	READY
+119607_45_dc_l3_drw	119607	Pickup	Cabstar F24	F24	4	EU-NISSAN-CABSTAR-F24-CHASSIS-DC-L3-DRW-45-01	HIGH	45系列双排L3双后轮底盘。	READY
+119609_35_sc_l1_drw	119609	Pickup	Cabstar F24	F24	2	EU-NISSAN-CABSTAR-F24-CHASSIS-SC-L1-DRW-35-01	MEDIUM	35系列单排L1双后轮底盘。	READY
+119609_35_sc_l2_drw	119609	Pickup	Cabstar F24	F24	2	EU-NISSAN-CABSTAR-F24-CHASSIS-SC-L2-DRW-35-01	MEDIUM	35系列单排L2双后轮底盘。	READY
+119609_35_sc_l3_drw	119609	Pickup	Cabstar F24	F24	2	EU-NISSAN-CABSTAR-F24-CHASSIS-SC-L3-DRW-35-01	MEDIUM	35系列单排L3双后轮底盘。	READY
+119609_35_dc_l2_drw	119609	Pickup	Cabstar F24	F24	4	EU-NISSAN-CABSTAR-F24-CHASSIS-DC-L2-DRW-35-01	MEDIUM	35系列双排L2双后轮底盘。	READY
+119609_35_dc_l3_drw	119609	Pickup	Cabstar F24	F24	4	EU-NISSAN-CABSTAR-F24-CHASSIS-DC-L3-DRW-35-01	MEDIUM	35系列双排L3双后轮底盘。	READY
+119612_35_sc_l1_drw	119612	Pickup	Cabstar F24	F24	2	EU-NISSAN-CABSTAR-F24-CHASSIS-SC-L1-DRW-35-01	MEDIUM	35系列单排L1双后轮底盘。	READY
+119612_35_sc_l2_drw	119612	Pickup	Cabstar F24	F24	2	EU-NISSAN-CABSTAR-F24-CHASSIS-SC-L2-DRW-35-01	MEDIUM	35系列单排L2双后轮底盘。	READY
+119612_35_sc_l3_drw	119612	Pickup	Cabstar F24	F24	2	EU-NISSAN-CABSTAR-F24-CHASSIS-SC-L3-DRW-35-01	MEDIUM	35系列单排L3双后轮底盘。	READY
+119612_35_dc_l2_drw	119612	Pickup	Cabstar F24	F24	4	EU-NISSAN-CABSTAR-F24-CHASSIS-DC-L2-DRW-35-01	MEDIUM	35系列双排L2双后轮底盘。	READY
+119612_35_dc_l3_drw	119612	Pickup	Cabstar F24	F24	4	EU-NISSAN-CABSTAR-F24-CHASSIS-DC-L3-DRW-35-01	MEDIUM	35系列双排L3双后轮底盘。	READY
+119612_45_sc_l1_drw	119612	Pickup	Cabstar F24	F24	2	EU-NISSAN-CABSTAR-F24-CHASSIS-SC-L1-DRW-45-01	MEDIUM	45系列单排L1双后轮底盘。	READY
+119612_45_sc_l2_drw	119612	Pickup	Cabstar F24	F24	2	EU-NISSAN-CABSTAR-F24-CHASSIS-SC-L2-DRW-45-01	MEDIUM	45系列单排L2双后轮底盘。	READY
+119612_45_sc_l3_drw	119612	Pickup	Cabstar F24	F24	2	EU-NISSAN-CABSTAR-F24-CHASSIS-SC-L3-DRW-45-01	MEDIUM	45系列单排L3双后轮底盘。	READY
+119612_45_dc_l2_drw	119612	Pickup	Cabstar F24	F24	4	EU-NISSAN-CABSTAR-F24-CHASSIS-DC-L2-DRW-45-01	MEDIUM	45系列双排L2双后轮底盘。	READY
+119612_45_dc_l3_drw	119612	Pickup	Cabstar F24	F24	4	EU-NISSAN-CABSTAR-F24-CHASSIS-DC-L3-DRW-45-01	MEDIUM	45系列双排L3双后轮底盘。	READY
+119610_35_sc_l1_drw	119610	Pickup	Cabstar F24	F24	2	EU-NISSAN-CABSTAR-F24-CHASSIS-SC-L1-DRW-35-01	HIGH	35系列单排L1双后轮底盘。	READY
+119610_35_sc_l2_drw	119610	Pickup	Cabstar F24	F24	2	EU-NISSAN-CABSTAR-F24-CHASSIS-SC-L2-DRW-35-01	HIGH	35系列单排L2双后轮底盘。	READY
+119610_35_sc_l3_drw	119610	Pickup	Cabstar F24	F24	2	EU-NISSAN-CABSTAR-F24-CHASSIS-SC-L3-DRW-35-01	HIGH	35系列单排L3双后轮底盘。	READY
+119610_35_dc_l2_drw	119610	Pickup	Cabstar F24	F24	4	EU-NISSAN-CABSTAR-F24-CHASSIS-DC-L2-DRW-35-01	HIGH	35系列双排L2双后轮底盘。	READY
+119610_35_dc_l3_drw	119610	Pickup	Cabstar F24	F24	4	EU-NISSAN-CABSTAR-F24-CHASSIS-DC-L3-DRW-35-01	HIGH	35系列双排L3双后轮底盘。	READY
+119610_45_sc_l1_drw	119610	Pickup	Cabstar F24	F24	2	EU-NISSAN-CABSTAR-F24-CHASSIS-SC-L1-DRW-45-01	HIGH	45系列单排L1双后轮底盘。	READY
+119610_45_sc_l2_drw	119610	Pickup	Cabstar F24	F24	2	EU-NISSAN-CABSTAR-F24-CHASSIS-SC-L2-DRW-45-01	HIGH	45系列单排L2双后轮底盘。	READY
+119610_45_sc_l3_drw	119610	Pickup	Cabstar F24	F24	2	EU-NISSAN-CABSTAR-F24-CHASSIS-SC-L3-DRW-45-01	HIGH	45系列单排L3双后轮底盘。	READY
+119610_45_dc_l2_drw	119610	Pickup	Cabstar F24	F24	4	EU-NISSAN-CABSTAR-F24-CHASSIS-DC-L2-DRW-45-01	HIGH	45系列双排L2双后轮底盘。	READY
+119610_45_dc_l3_drw	119610	Pickup	Cabstar F24	F24	4	EU-NISSAN-CABSTAR-F24-CHASSIS-DC-L3-DRW-45-01	HIGH	45系列双排L3双后轮底盘。	READY
+59711	59711	Sedan	Cedric Y31	Y31	4	EU-NISSAN-CEDRIC-Y31-HARDTOP-SEDAN-01	HIGH	四门硬顶轿车。	READY
+59712	59712	Sedan	Cedric Y32	Y32	4	EU-NISSAN-CEDRIC-Y32-HARDTOP-SEDAN-01	HIGH	四门硬顶轿车。	READY
+10680_2dr	10680	Sedan	Cherry I	E10	2	EU-NISSAN-CHERRY-E10-SEDAN-2D-01	MEDIUM	E10车型条目覆盖二门与四门轿车，按门数拆分。	READY
+10680_4dr	10680	Sedan	Cherry I	E10	4	EU-NISSAN-CHERRY-E10-SEDAN-4D-01	MEDIUM	E10车型条目覆盖二门与四门轿车，按门数拆分。	READY
+10660	10660	Sedan	Datsun 140J 710	710	4	EU-NISSAN-DATSUN-140J-710-SEDAN-01	MEDIUM	710系列四门出口轿车。	READY
+10661	10661	Sedan	Datsun 160J 710	710	4	EU-NISSAN-DATSUN-160J-710-SEDAN-01	MEDIUM	710系列四门出口轿车。	READY
+51940_prefl	51940	MPV	Elgrand III	PE52	5	EU-NISSAN-ELGRAND-E52-MPV-PREFL-01	HIGH	2010至2014年改款前标准外廓。	READY
+51940_facelift	51940	MPV	Elgrand III	PE52	5	EU-NISSAN-ELGRAND-E52-MPV-FACELIFT-01	HIGH	2014年改款后标准外廓。	READY
+51940_urban_chrome	51940	MPV	Elgrand III	PE52	5	EU-NISSAN-ELGRAND-E52-MPV-URBAN-CHROME-01	HIGH	Urban Chrome前后外部套件外廓。	READY
+51940_restyle	51940	MPV	Elgrand III	PE52	5	EU-NISSAN-ELGRAND-E52-MPV-RESTYLE-01	HIGH	2020年第二次改款标准外廓。	READY
+34714	34714	Convertible	Figaro	FK10	2	EU-NISSAN-FIGARO-FK10-CONVERTIBLE-01	HIGH	输入BodyStyle为Coupe；实际为双门敞篷车身。	READY
+107483	107483	Coupe	GT-R R35	R35	2	EU-NISSAN-GT-R-R35-NISMO-COUPE-01	HIGH	NISMO专属前后外部套件。	READY
+55403	55403	Coupe	GT-R R35	R35	2	EU-NISSAN-GT-R-R35-COUPE-PREFL-01	HIGH	2012款标准外廓。	READY
+113192	113192	Coupe	GT-R R35	R35	2	EU-NISSAN-GT-R-R35-COUPE-PREFL-01	HIGH	2013款标准外廓。	READY
+121620	121620	Coupe	GT-R R35	R35	2	EU-NISSAN-GT-R-R35-COUPE-FACELIFT-01	HIGH	2017款改款后标准外廓。	READY
+18105_l1h1	18105	Van	Interstar I	X70		EU-NISSAN-INTERSTAR-X70-PANEL-VAN-L1H1-01	HIGH	L1H1厢式车外廓。	READY
+18105_l2h2	18105	Van	Interstar I	X70		EU-NISSAN-INTERSTAR-X70-PANEL-VAN-L2H2-01	HIGH	L2H2厢式车外廓。	READY
+18105_l3h2	18105	Van	Interstar I	X70		EU-NISSAN-INTERSTAR-X70-PANEL-VAN-L3H2-01	HIGH	L3H2厢式车外廓。	READY
+158681_l2h2	158681	Van	All-New Interstar			EU-NISSAN-INTERSTAR-ALL-NEW-PANEL-VAN-L2H2-01	MEDIUM	L2H2厢式车外廓。	READY
+146146_l1h1	146146	Van	Interstar II	X62B		EU-NISSAN-INTERSTAR-X62B-PANEL-VAN-FWD-L1H1-01	MEDIUM	L1H1前驱厢式车外廓。	READY
+146146_l2h2	146146	Van	Interstar II	X62B		EU-NISSAN-INTERSTAR-X62B-PANEL-VAN-FWD-L2H2-01	MEDIUM	L2H2前驱厢式车外廓。	READY
+16949_l2h2	16949	MPV	Interstar I	X70		EU-NISSAN-INTERSTAR-X70-PANEL-VAN-L2H2-01	HIGH	dCi 115中轴中顶客车外廓。	READY
+16949_l3h2	16949	MPV	Interstar I	X70		EU-NISSAN-INTERSTAR-X70-PANEL-VAN-L3H2-01	HIGH	dCi 115长轴中顶客车外廓。	READY
+16949_l3h3	16949	MPV	Interstar I	X70		EU-NISSAN-INTERSTAR-X70-PANEL-VAN-L3H3-01	HIGH	dCi 115长轴高顶客车外廓。	READY
+16952_l2h2	16952	Van	Interstar I	X70		EU-NISSAN-INTERSTAR-X70-PANEL-VAN-L2H2-01	HIGH	L2H2厢式车外廓。	READY
+16952_l3h2	16952	Van	Interstar I	X70		EU-NISSAN-INTERSTAR-X70-PANEL-VAN-L3H2-01	HIGH	L3H2厢式车外廓。	READY
+16952_l3h3	16952	Van	Interstar I	X70		EU-NISSAN-INTERSTAR-X70-PANEL-VAN-L3H3-01	HIGH	L3H3高顶厢式车外廓。	READY
+158682_l2h2	158682	Van	All-New Interstar			EU-NISSAN-INTERSTAR-ALL-NEW-PANEL-VAN-L2H2-01	HIGH	L2H2厢式车外廓。	READY
+158682_l3h2	158682	Van	All-New Interstar			EU-NISSAN-INTERSTAR-ALL-NEW-PANEL-VAN-L3H2-01	HIGH	L3H2厢式车外廓。	READY
+158682_l3h3	158682	Van	All-New Interstar			EU-NISSAN-INTERSTAR-ALL-NEW-PANEL-VAN-L3H3-01	MEDIUM	L3H3高顶厢式车外廓。	READY
+800287_sc_l2	800287	Pickup	All-New Interstar	XDE	2	EU-NISSAN-INTERSTAR-XDE-CHASSIS-FWD-SC-L2-01	MEDIUM	前驱单排驾驶室L2底盘。	READY
+800287_sc_l3	800287	Pickup	All-New Interstar	XDE	2	EU-NISSAN-INTERSTAR-XDE-CHASSIS-FWD-SC-L3-01	MEDIUM	前驱单排驾驶室L3底盘。	READY
+800287_dc_l3	800287	Pickup	All-New Interstar	XDE	4	EU-NISSAN-INTERSTAR-XDE-CHASSIS-FWD-DC-L3-01	MEDIUM	前驱双排驾驶室L3底盘。	READY
+146152_l3h2	146152	Van	Interstar II	X62B		EU-NISSAN-INTERSTAR-X62B-PANEL-VAN-RWD-L3H2-01	MEDIUM	L3H2后驱厢式车外廓。	READY
+146152_l3h3	146152	Van	Interstar II	X62B		EU-NISSAN-INTERSTAR-X62B-PANEL-VAN-RWD-L3H3-01	MEDIUM	L3H3后驱高顶厢式车外廓。	READY
+146152_l4h2	146152	Van	Interstar II	X62B		EU-NISSAN-INTERSTAR-X62B-PANEL-VAN-RWD-L4H2-01	MEDIUM	L4H2后驱加长厢式车外廓。	READY
+146152_l4h3	146152	Van	Interstar II	X62B		EU-NISSAN-INTERSTAR-X62B-PANEL-VAN-RWD-L4H3-01	MEDIUM	L4H3后驱加长高顶厢式车外廓。	READY
+146153_sc_l2_srw	146153	Pickup	Interstar II	X62B	2	EU-NISSAN-INTERSTAR-X62B-CHASSIS-RWD-SC-L2-SRW-01	MEDIUM	后驱单排驾驶室L2单后轮底盘。	READY
+146153_sc_l2_drw	146153	Pickup	Interstar II	X62B	2	EU-NISSAN-INTERSTAR-X62B-CHASSIS-RWD-SC-L2-DRW-01	MEDIUM	后驱单排驾驶室L2双后轮底盘。	READY
+146153_sc_l3_srw	146153	Pickup	Interstar II	X62B	2	EU-NISSAN-INTERSTAR-X62B-CHASSIS-RWD-SC-L3-SRW-01	MEDIUM	后驱单排驾驶室L3单后轮底盘。	READY
+146153_sc_l3_drw	146153	Pickup	Interstar II	X62B	2	EU-NISSAN-INTERSTAR-X62B-CHASSIS-RWD-SC-L3-DRW-01	MEDIUM	后驱单排驾驶室L3双后轮底盘。	READY
+146153_sc_l4_drw	146153	Pickup	Interstar II	X62B	2	EU-NISSAN-INTERSTAR-X62B-CHASSIS-RWD-SC-L4-DRW-01	MEDIUM	后驱单排驾驶室L4双后轮底盘。	READY
+146147_l1h1	146147	Van	Interstar II	X62B		EU-NISSAN-INTERSTAR-X62B-PANEL-VAN-FWD-L1H1-01	MEDIUM	L1H1前驱厢式车外廓。	READY
+146147_l2h2	146147	Van	Interstar II	X62B		EU-NISSAN-INTERSTAR-X62B-PANEL-VAN-FWD-L2H2-01	MEDIUM	L2H2前驱厢式车外廓。	READY
+146147_l2h3	146147	Van	Interstar II	X62B		EU-NISSAN-INTERSTAR-X62B-PANEL-VAN-FWD-L2H3-01	MEDIUM	L2H3前驱高顶厢式车外廓。	READY
+146147_l3h2	146147	Van	Interstar II	X62B		EU-NISSAN-INTERSTAR-X62B-PANEL-VAN-FWD-L3H2-01	MEDIUM	L3H2前驱厢式车外廓。	READY
+146147_l3h3	146147	Van	Interstar II	X62B		EU-NISSAN-INTERSTAR-X62B-PANEL-VAN-FWD-L3H3-01	MEDIUM	L3H3前驱高顶厢式车外廓。	READY
+18103_l3h2	18103	Van	Interstar I	X70		EU-NISSAN-INTERSTAR-X70-PANEL-VAN-L3H2-01	HIGH	L3H2厢式车外廓。	READY
+18103_l3h3	18103	Van	Interstar I	X70		EU-NISSAN-INTERSTAR-X70-PANEL-VAN-L3H3-01	HIGH	L3H3高顶厢式车外廓。	READY
+18104_l3h2	18104	MPV	Interstar I	X70		EU-NISSAN-INTERSTAR-X70-PANEL-VAN-L3H2-01	HIGH	dCi 140长轴中顶客车外廓。	READY
+18104_l3h3	18104	MPV	Interstar I	X70		EU-NISSAN-INTERSTAR-X70-PANEL-VAN-L3H3-01	HIGH	dCi 140长轴高顶客车外廓。	READY
+146150_sc_l2	146150	Pickup	Interstar II	X62B	2	EU-NISSAN-INTERSTAR-X62B-CHASSIS-FWD-SC-L2-01	MEDIUM	前驱单排驾驶室L2底盘。	READY
+146150_sc_l3	146150	Pickup	Interstar II	X62B	2	EU-NISSAN-INTERSTAR-X62B-CHASSIS-FWD-SC-L3-01	MEDIUM	前驱单排驾驶室L3底盘。	READY
+146150_dc_l2	146150	Pickup	Interstar II	X62B	4	EU-NISSAN-INTERSTAR-X62B-CHASSIS-FWD-DC-L2-01	MEDIUM	前驱双排驾驶室L2底盘。	READY
+146150_dc_l3	146150	Pickup	Interstar II	X62B	4	EU-NISSAN-INTERSTAR-X62B-CHASSIS-FWD-DC-L3-01	MEDIUM	前驱双排驾驶室L3底盘。	READY
+146154_sc_l2_srw	146154	Pickup	Interstar II	X62B	2	EU-NISSAN-INTERSTAR-X62B-CHASSIS-RWD-SC-L2-SRW-01	MEDIUM	后驱单排驾驶室L2单后轮底盘。	READY
+146154_sc_l2_drw	146154	Pickup	Interstar II	X62B	2	EU-NISSAN-INTERSTAR-X62B-CHASSIS-RWD-SC-L2-DRW-01	MEDIUM	后驱单排驾驶室L2双后轮底盘。	READY
+146154_sc_l3_srw	146154	Pickup	Interstar II	X62B	2	EU-NISSAN-INTERSTAR-X62B-CHASSIS-RWD-SC-L3-SRW-01	MEDIUM	后驱单排驾驶室L3单后轮底盘。	READY
+146154_sc_l3_drw	146154	Pickup	Interstar II	X62B	2	EU-NISSAN-INTERSTAR-X62B-CHASSIS-RWD-SC-L3-DRW-01	MEDIUM	后驱单排驾驶室L3双后轮底盘。	READY
+146154_sc_l4_drw	146154	Pickup	Interstar II	X62B	2	EU-NISSAN-INTERSTAR-X62B-CHASSIS-RWD-SC-L4-DRW-01	MEDIUM	后驱单排驾驶室L4双后轮底盘。	READY
+146155_l3h2	146155	Van	Interstar II	X62B		EU-NISSAN-INTERSTAR-X62B-PANEL-VAN-RWD-L3H2-01	MEDIUM	L3H2后驱厢式车外廓。	READY
+146155_l3h3	146155	Van	Interstar II	X62B		EU-NISSAN-INTERSTAR-X62B-PANEL-VAN-RWD-L3H3-01	MEDIUM	L3H3后驱高顶厢式车外廓。	READY
+146155_l4h2	146155	Van	Interstar II	X62B		EU-NISSAN-INTERSTAR-X62B-PANEL-VAN-RWD-L4H2-01	MEDIUM	L4H2后驱加长厢式车外廓。	READY
+146155_l4h3	146155	Van	Interstar II	X62B		EU-NISSAN-INTERSTAR-X62B-PANEL-VAN-RWD-L4H3-01	MEDIUM	L4H3后驱加长高顶厢式车外廓。	READY
+146148_l1h1	146148	Van	Interstar II	X62B		EU-NISSAN-INTERSTAR-X62B-PANEL-VAN-FWD-L1H1-01	MEDIUM	L1H1前驱厢式车外廓。	READY
+146148_l2h2	146148	Van	Interstar II	X62B		EU-NISSAN-INTERSTAR-X62B-PANEL-VAN-FWD-L2H2-01	MEDIUM	L2H2前驱厢式车外廓。	READY
+146148_l3h2	146148	Van	Interstar II	X62B		EU-NISSAN-INTERSTAR-X62B-PANEL-VAN-FWD-L3H2-01	MEDIUM	L3H2前驱厢式车外廓。	READY
+146148_l3h3	146148	Van	Interstar II	X62B		EU-NISSAN-INTERSTAR-X62B-PANEL-VAN-FWD-L3H3-01	MEDIUM	L3H3前驱高顶厢式车外廓。	READY
+158683_l2h2	158683	Van	All-New Interstar			EU-NISSAN-INTERSTAR-ALL-NEW-PANEL-VAN-L2H2-01	HIGH	L2H2厢式车外廓。	READY
+158683_l3h2	158683	Van	All-New Interstar			EU-NISSAN-INTERSTAR-ALL-NEW-PANEL-VAN-L3H2-01	HIGH	L3H2厢式车外廓。	READY
+158683_l3h3	158683	Van	All-New Interstar			EU-NISSAN-INTERSTAR-ALL-NEW-PANEL-VAN-L3H3-01	HIGH	L3H3高顶厢式车外廓。	READY
+800288_sc_l2	800288	Pickup	All-New Interstar	XDE	2	EU-NISSAN-INTERSTAR-XDE-CHASSIS-FWD-SC-L2-01	MEDIUM	前驱单排驾驶室L2底盘。	READY
+800288_sc_l3	800288	Pickup	All-New Interstar	XDE	2	EU-NISSAN-INTERSTAR-XDE-CHASSIS-FWD-SC-L3-01	MEDIUM	前驱单排驾驶室L3底盘。	READY
+800288_dc_l3	800288	Pickup	All-New Interstar	XDE	4	EU-NISSAN-INTERSTAR-XDE-CHASSIS-FWD-DC-L3-01	MEDIUM	前驱双排驾驶室L3底盘。	READY
+802484_sc_l3_drw	802484	Pickup	All-New Interstar	XDE	2	EU-NISSAN-INTERSTAR-XDE-CHASSIS-RWD-SC-L3-DRW-01	HIGH	后驱单排驾驶室L3双后轮底盘。	READY
+802484_sc_l4_drw	802484	Pickup	All-New Interstar	XDE	2	EU-NISSAN-INTERSTAR-XDE-CHASSIS-RWD-SC-L4-DRW-01	HIGH	后驱单排驾驶室L4双后轮底盘。	READY
+802484_dc_l3_drw	802484	Pickup	All-New Interstar	XDE	4	EU-NISSAN-INTERSTAR-XDE-CHASSIS-RWD-DC-L3-DRW-01	HIGH	后驱双排驾驶室L3双后轮底盘。	READY
+802484_dc_l4_drw	802484	Pickup	All-New Interstar	XDE	4	EU-NISSAN-INTERSTAR-XDE-CHASSIS-RWD-DC-L4-DRW-01	HIGH	后驱双排驾驶室L4双后轮底盘。	READY
+146151_sc_l2	146151	Pickup	Interstar II	X62B	2	EU-NISSAN-INTERSTAR-X62B-CHASSIS-FWD-SC-L2-01	MEDIUM	前驱单排驾驶室L2底盘。	READY
+146151_sc_l3	146151	Pickup	Interstar II	X62B	2	EU-NISSAN-INTERSTAR-X62B-CHASSIS-FWD-SC-L3-01	MEDIUM	前驱单排驾驶室L3底盘。	READY
+146151_dc_l2	146151	Pickup	Interstar II	X62B	4	EU-NISSAN-INTERSTAR-X62B-CHASSIS-FWD-DC-L2-01	MEDIUM	前驱双排驾驶室L2底盘。	READY
+146151_dc_l3	146151	Pickup	Interstar II	X62B	4	EU-NISSAN-INTERSTAR-X62B-CHASSIS-FWD-DC-L3-01	MEDIUM	前驱双排驾驶室L3底盘。	READY
+152815_l2h2	152815	Van	Interstar II	X62B		EU-NISSAN-INTERSTAR-X62B-PANEL-VAN-FWD-L2H2-01	MEDIUM	L2H2前驱厢式车外廓。	READY
+152815_l2h3	152815	Van	Interstar II	X62B		EU-NISSAN-INTERSTAR-X62B-PANEL-VAN-FWD-L2H3-01	MEDIUM	L2H3前驱高顶厢式车外廓。	READY
+152815_l3h2	152815	Van	Interstar II	X62B		EU-NISSAN-INTERSTAR-X62B-PANEL-VAN-FWD-L3H2-01	MEDIUM	L3H2前驱厢式车外廓。	READY
+152815_l3h3	152815	Van	Interstar II	X62B		EU-NISSAN-INTERSTAR-X62B-PANEL-VAN-FWD-L3H3-01	MEDIUM	L3H3前驱高顶厢式车外廓。	READY
+146156_l3h2	146156	Van	Interstar II	X62B		EU-NISSAN-INTERSTAR-X62B-PANEL-VAN-RWD-L3H2-01	MEDIUM	L3H2后驱厢式车外廓。	READY
+146156_l3h3	146156	Van	Interstar II	X62B		EU-NISSAN-INTERSTAR-X62B-PANEL-VAN-RWD-L3H3-01	MEDIUM	L3H3后驱高顶厢式车外廓。	READY
+146156_l4h2	146156	Van	Interstar II	X62B		EU-NISSAN-INTERSTAR-X62B-PANEL-VAN-RWD-L4H2-01	MEDIUM	L4H2后驱加长厢式车外廓。	READY
+146156_l4h3	146156	Van	Interstar II	X62B		EU-NISSAN-INTERSTAR-X62B-PANEL-VAN-RWD-L4H3-01	MEDIUM	L4H3后驱加长高顶厢式车外廓。	READY
+146157_sc_l2_srw	146157	Pickup	Interstar II	X62B	2	EU-NISSAN-INTERSTAR-X62B-CHASSIS-RWD-SC-L2-SRW-01	MEDIUM	后驱单排驾驶室L2单后轮底盘。	READY
+146157_sc_l2_drw	146157	Pickup	Interstar II	X62B	2	EU-NISSAN-INTERSTAR-X62B-CHASSIS-RWD-SC-L2-DRW-01	MEDIUM	后驱单排驾驶室L2双后轮底盘。	READY
+146157_sc_l3_srw	146157	Pickup	Interstar II	X62B	2	EU-NISSAN-INTERSTAR-X62B-CHASSIS-RWD-SC-L3-SRW-01	MEDIUM	后驱单排驾驶室L3单后轮底盘。	READY
+146157_sc_l3_drw	146157	Pickup	Interstar II	X62B	2	EU-NISSAN-INTERSTAR-X62B-CHASSIS-RWD-SC-L3-DRW-01	MEDIUM	后驱单排驾驶室L3双后轮底盘。	READY
+146157_sc_l4_drw	146157	Pickup	Interstar II	X62B	2	EU-NISSAN-INTERSTAR-X62B-CHASSIS-RWD-SC-L4-DRW-01	MEDIUM	后驱单排驾驶室L4双后轮底盘。	READY
+158684_l2h2	158684	Van	All-New Interstar			EU-NISSAN-INTERSTAR-ALL-NEW-PANEL-VAN-L2H2-01	HIGH	L2H2厢式车外廓。	READY
+158684_l3h2	158684	Van	All-New Interstar			EU-NISSAN-INTERSTAR-ALL-NEW-PANEL-VAN-L3H2-01	HIGH	L3H2厢式车外廓。	READY
+158684_l3h3	158684	Van	All-New Interstar			EU-NISSAN-INTERSTAR-ALL-NEW-PANEL-VAN-L3H3-01	MEDIUM	L3H3高顶厢式车外廓。	READY
+800289_sc_l2	800289	Pickup	All-New Interstar	XDE	2	EU-NISSAN-INTERSTAR-XDE-CHASSIS-FWD-SC-L2-01	MEDIUM	前驱单排驾驶室L2底盘。	READY
+800289_sc_l3	800289	Pickup	All-New Interstar	XDE	2	EU-NISSAN-INTERSTAR-XDE-CHASSIS-FWD-SC-L3-01	MEDIUM	前驱单排驾驶室L3底盘。	READY
+800289_dc_l3	800289	Pickup	All-New Interstar	XDE	4	EU-NISSAN-INTERSTAR-XDE-CHASSIS-FWD-DC-L3-01	MEDIUM	前驱双排驾驶室L3底盘。	READY
+802485_sc_l3_drw	802485	Pickup	All-New Interstar	XDE	2	EU-NISSAN-INTERSTAR-XDE-CHASSIS-RWD-SC-L3-DRW-01	HIGH	后驱单排驾驶室L3双后轮底盘。	READY
+802485_sc_l4_drw	802485	Pickup	All-New Interstar	XDE	2	EU-NISSAN-INTERSTAR-XDE-CHASSIS-RWD-SC-L4-DRW-01	HIGH	后驱单排驾驶室L4双后轮底盘。	READY
+802485_dc_l3_drw	802485	Pickup	All-New Interstar	XDE	4	EU-NISSAN-INTERSTAR-XDE-CHASSIS-RWD-DC-L3-DRW-01	HIGH	后驱双排驾驶室L3双后轮底盘。	READY
+802485_dc_l4_drw	802485	Pickup	All-New Interstar	XDE	4	EU-NISSAN-INTERSTAR-XDE-CHASSIS-RWD-DC-L4-DRW-01	HIGH	后驱双排驾驶室L4双后轮底盘。	READY
+146149_l1h1	146149	Van	Interstar II	X62B		EU-NISSAN-INTERSTAR-X62B-PANEL-VAN-FWD-L1H1-01	MEDIUM	L1H1前驱厢式车外廓。	READY
+146149_l2h2	146149	Van	Interstar II	X62B		EU-NISSAN-INTERSTAR-X62B-PANEL-VAN-FWD-L2H2-01	MEDIUM	L2H2前驱厢式车外廓。	READY
+146149_l3h2	146149	Van	Interstar II	X62B		EU-NISSAN-INTERSTAR-X62B-PANEL-VAN-FWD-L3H2-01	MEDIUM	L3H2前驱厢式车外廓。	READY
+146149_l3h3	146149	Van	Interstar II	X62B		EU-NISSAN-INTERSTAR-X62B-PANEL-VAN-FWD-L3H3-01	MEDIUM	L3H3前驱高顶厢式车外廓。	READY
+16947_l1h1	16947	MPV	Interstar I	X70		EU-NISSAN-INTERSTAR-X70-PANEL-VAN-L1H1-01	HIGH	dCi 80短轴低顶客车外廓。	READY
+16950	16950	Van	Interstar I	X70		EU-NISSAN-INTERSTAR-X70-PANEL-VAN-L1H1-01	HIGH	L1H1厢式车外廓。	READY
+16948_l1h1	16948	MPV	Interstar I	X70		EU-NISSAN-INTERSTAR-X70-PANEL-VAN-L1H1-01	MEDIUM	短轴低顶客车外廓。	READY
+16948_l2h2	16948	MPV	Interstar I	X70		EU-NISSAN-INTERSTAR-X70-PANEL-VAN-L2H2-01	MEDIUM	中轴中顶客车外廓。	READY
+16948_l3h2	16948	MPV	Interstar I	X70		EU-NISSAN-INTERSTAR-X70-PANEL-VAN-L3H2-01	MEDIUM	长轴中顶客车外廓。	READY
+16948_l3h3	16948	MPV	Interstar I	X70		EU-NISSAN-INTERSTAR-X70-PANEL-VAN-L3H3-01	MEDIUM	长轴高顶客车外廓。	READY
+16951_l1h1	16951	Van	Interstar I	X70		EU-NISSAN-INTERSTAR-X70-PANEL-VAN-L1H1-01	MEDIUM	L1H1厢式车外廓。	READY
+16951_l2h2	16951	Van	Interstar I	X70		EU-NISSAN-INTERSTAR-X70-PANEL-VAN-L2H2-01	MEDIUM	L2H2厢式车外廓。	READY
+16951_l3h2	16951	Van	Interstar I	X70		EU-NISSAN-INTERSTAR-X70-PANEL-VAN-L3H2-01	MEDIUM	L3H2厢式车外廓。	READY
+16951_l3h3	16951	Van	Interstar I	X70		EU-NISSAN-INTERSTAR-X70-PANEL-VAN-L3H3-01	MEDIUM	L3H3高顶厢式车外廓。	READY
+800285_l2h2	800285	Van	All-New Interstar			EU-NISSAN-INTERSTAR-ALL-NEW-PANEL-VAN-L2H2-01	HIGH	L2H2电动厢式车外廓。	READY
+800285_l3h2	800285	Van	All-New Interstar			EU-NISSAN-INTERSTAR-ALL-NEW-PANEL-VAN-L3H2-01	HIGH	L3H2电动厢式车外廓。	READY
+800286_l2h2	800286	Van	All-New Interstar			EU-NISSAN-INTERSTAR-ALL-NEW-PANEL-VAN-L2H2-01	HIGH	L2H2电动厢式车外廓。	READY
+800286_l3h2	800286	Van	All-New Interstar			EU-NISSAN-INTERSTAR-ALL-NEW-PANEL-VAN-L3H2-01	HIGH	L3H2电动厢式车外廓。	READY
+800986_sc_l2	800986	Pickup	All-New Interstar	XDE	2	EU-NISSAN-INTERSTAR-XDE-CHASSIS-FWD-SC-L2-01	MEDIUM	电动前驱单排驾驶室L2底盘。	READY
+800986_sc_l3	800986	Pickup	All-New Interstar	XDE	2	EU-NISSAN-INTERSTAR-XDE-CHASSIS-FWD-SC-L3-01	MEDIUM	电动前驱单排驾驶室L3底盘。	READY
+800987_sc_l2	800987	Pickup	All-New Interstar	XDE	2	EU-NISSAN-INTERSTAR-XDE-CHASSIS-FWD-SC-L2-01	MEDIUM	电动前驱单排驾驶室L2底盘。	READY
+800987_sc_l3	800987	Pickup	All-New Interstar	XDE	2	EU-NISSAN-INTERSTAR-XDE-CHASSIS-FWD-SC-L3-01	MEDIUM	电动前驱单排驾驶室L3底盘。	READY
+34721	34721	SUV	Juke I	F15	5	EU-NISSAN-JUKE-F15-SUV-01	HIGH		READY
+59302	59302	SUV	Juke I	F15	5	EU-NISSAN-JUKE-F15-SUV-01	HIGH		READY
+142860	142860	SUV	Juke I	F15	5	EU-NISSAN-JUKE-F15-SUV-01	MEDIUM	商用登记不改变F15外部轮廓。	READY
+106276	106276	SUV	Juke I	F15	5	EU-NISSAN-JUKE-F15-SUV-01	HIGH		READY
+34725	34725	SUV	Juke I	F15	5	EU-NISSAN-JUKE-F15-SUV-01	HIGH		READY
+34724	34724	SUV	Juke I	F15	5	EU-NISSAN-JUKE-F15-SUV-01	HIGH		READY
+34723	34723	SUV	Juke I	F15	5	EU-NISSAN-JUKE-F15-SUV-01	HIGH		READY
+58599	58599	SUV	Juke I	F15	5	EU-NISSAN-JUKE-F15-NISMO-SUV-01	HIGH	NISMO外部套件。	READY
+53454	53454	SUV	Juke I	F15	5	EU-NISSAN-JUKE-F15-NISMO-SUV-01	HIGH	NISMO外部套件。	READY
+107628	107628	SUV	Juke I	F15	5	EU-NISSAN-JUKE-F15-NISMO-SUV-01	HIGH	NISMO RS外部套件。	READY
+108986	108986	SUV	Juke I	F15	5	EU-NISSAN-JUKE-F15-NISMO-SUV-01	HIGH	NISMO RS外部套件。	READY
+148232	148232	SUV	Juke II	F16	5	EU-NISSAN-JUKE-F16-HYBRID-SUV-01	HIGH		READY
+126913	126913	SUV	Juke I	F15	5	EU-NISSAN-JUKE-F15-SUV-01	HIGH		READY
+142859	142859	SUV	Juke I	F15	5	EU-NISSAN-JUKE-F15-SUV-01	MEDIUM	商用登记不改变F15外部轮廓。	READY
+142928	142928	SUV	Juke I	F15	5	EU-NISSAN-JUKE-F15-SUV-01	MEDIUM	商用登记不改变F15外部轮廓。	READY
+```
+
+[下载 Ktype 映射表](sandbox:/mnt/data/left18448_11601-11700_ktype_dimension_mapping_final.tsv)
+
+## 最终完整 DIMENSION_GROUP TSV
+
+```tsv
+DIMENSION_GROUP_ID	LengthMM	WidthMM	HeightMM	DimensionSource	SourceURL
+EU-NISSAN-ALMERA-I-HATCHBACK-3D-01	4120	1690	1395	Automobile-Catalog 1998 Nissan Almera 2.0 GTi specifications	https://www.automobile-catalog.com/car/1998/2252525/nissan_almera_2_0_gti.html
+EU-NISSAN-ALMERA-II-SEDAN-PREFL-01	4425	1695	1445	Automobile-Catalog 2000 Nissan Almera Sedan 1.5 Base specifications	https://www.automobile-catalog.com/car/2000/2283380/nissan_almera_sedan_1_5_base.html
+EU-NISSAN-ALMERA-II-SEDAN-FACELIFT-01	4435	1695	1445	Automobile-Catalog 2004 Nissan Almera Sedan 1.5 Acenta specifications	https://www.automobile-catalog.com/car/2004/2283605/nissan_almera_sedan_1_5_acenta.html
+EU-NISSAN-ALMERA-II-HATCHBACK-3D-PREFL-01	4184	1706	1448	Nissan Almera electronic brochure; Automobile-Catalog 2000 Nissan Almera 1.5 Base specifications	https://xr793.com/wp-content/uploads/2022/10/2007-Nissan-Almera-UK.pdf;https://www.automobile-catalog.com/car/2000/2283305/nissan_almera_1_5_base.html
+EU-NISSAN-ALMERA-II-HATCHBACK-5D-PREFL-01	4184	1706	1448	Nissan Almera electronic brochure; Automobile-Catalog 2000 Nissan Almera 1.5 Base specifications	https://xr793.com/wp-content/uploads/2022/10/2007-Nissan-Almera-UK.pdf;https://www.automobile-catalog.com/car/2000/2283305/nissan_almera_1_5_base.html
+EU-NISSAN-ALMERA-II-HATCHBACK-3D-FACELIFT-01	4197	1706	1448	Nissan Almera electronic brochure; Automobile-Catalog 2003 Nissan Almera 1.5 Acenta specifications	https://xr793.com/wp-content/uploads/2022/10/2007-Nissan-Almera-UK.pdf;https://www.automobile-catalog.com/car/2003/2283455/nissan_almera_1_5_acenta.html
+EU-NISSAN-ALMERA-II-HATCHBACK-5D-FACELIFT-01	4197	1706	1448	Nissan Almera electronic brochure; Automobile-Catalog 2003 Nissan Almera 1.5 Acenta specifications	https://xr793.com/wp-content/uploads/2022/10/2007-Nissan-Almera-UK.pdf;https://www.automobile-catalog.com/car/2003/2283455/nissan_almera_1_5_acenta.html
+EU-NISSAN-ALMERA-TINO-MPV-01	4264	1758	1608	Automobile-Catalog 2003 Nissan Almera Tino 1.8 Acenta specifications	https://www.automobile-catalog.com/car/2003/2285660/nissan_almera_tino_1_8_acenta_automatic.html
+EU-NISSAN-ARIYA-FE0-SUV-01	4595	1850	1660	Nissan ARIYA official UK brochure	https://www-europe.nissan-cdn.net/content/dam/Nissan/gb/brochures/Vehicles/Nissan_Ariya_UK.pdf
+EU-NISSAN-ARIYA-FE0-NISMO-SUV-02	4655	1850	1660	Nissan ARIYA NISMO official UK brochure	https://www-europe.nissan-cdn.net/content/dam/Nissan/gb/brochures/Vehicles/Nissan_ARIYA_NISMO_UK.pdf
+EU-NISSAN-BLUEBIRD-SYLPHY-B17-SEDAN-01	4615	1760	1495	Nissan Sylphy official brochure	https://www-asia.nissan-cdn.net/content/dam/Nissan/ph/brochures/Sylphy_DigitalBrochure.pdf
+EU-NISSAN-BLUEBIRD-610-SEDAN-01	4215	1600	1405	Nissan Heritage Collection Datsun Bluebird U 1600GL	https://www.nissan-global.com/EN/HERITAGE_COLLECTION/bluebird_u_1600gl.html
+EU-NISSAN-BLUEBIRD-810-SEDAN-01	4260	1630	1390	Automobile-Catalog 1977 Datsun Bluebird 180B Sedan; Bind Nissan Bluebird 810 1.8 AT specifications	https://www.automobile-catalog.com/car/1977/35720/datsun_bluebird_180_b.html;https://bind.lt/en/technical-specifications/nissan/bluebird-1/810-restyling/sedan/1-8-at-88-hp
+EU-NISSAN-BLUEBIRD-T12-HATCHBACK-PREFL-01	4365	1690	1395	Automobile-Catalog 1987 Nissan Bluebird 1.8 GS 5-d specifications	https://www.automobile-catalog.com/car/1987/2236220/nissan_bluebird_1_8_gs_5-d.html
+EU-NISSAN-BLUEBIRD-T72-HATCHBACK-FACELIFT-01	4420	1690	1395	Automobile-Catalog 1990 Nissan Bluebird 1.8 GS 5-d specifications	https://www.automobile-catalog.com/car/1990/2236625/nissan_bluebird_1_8_gs_5-d.html
+EU-NISSAN-BLUEBIRD-910-SEDAN-01	4395	1655	1400	Automobile-Catalog 1983 Datsun Bluebird 2.0 Turbo D specifications	https://www.automobile-catalog.com/car/1983/2120180/datsun_bluebird_2_0_turbo_d.html
+EU-NISSAN-CABSTAR-F24-CHASSIS-SC-L1-SRW-28-01	4545	1870	2116	Nissan Cabstar F24 official owner manual	https://www.nissan-cdn.net/content/dam/Nissan/greece/manuals/cabstar/CABSTAR_F24_2008_JUNE.pdf
+EU-NISSAN-CABSTAR-F24-CHASSIS-SC-L2-SRW-28-01	5245	1870	2116	Nissan Cabstar F24 official owner manual	https://www.nissan-cdn.net/content/dam/Nissan/greece/manuals/cabstar/CABSTAR_F24_2008_JUNE.pdf
+EU-NISSAN-CABSTAR-F24-CHASSIS-SC-L1-SRW-32-34-01	4545	1870	2122	Nissan Cabstar F24 official owner manual	https://www.nissan-cdn.net/content/dam/Nissan/greece/manuals/cabstar/CABSTAR_F24_2008_JUNE.pdf
+EU-NISSAN-CABSTAR-F24-CHASSIS-SC-L2-SRW-32-34-01	5245	1870	2122	Nissan Cabstar F24 official owner manual	https://www.nissan-cdn.net/content/dam/Nissan/greece/manuals/cabstar/CABSTAR_F24_2008_JUNE.pdf
+EU-NISSAN-CABSTAR-F24-CHASSIS-SC-L3-SRW-32-34-01	6045	1870	2122	Nissan Cabstar F24 official owner manual	https://www.nissan-cdn.net/content/dam/Nissan/greece/manuals/cabstar/CABSTAR_F24_2008_JUNE.pdf
+EU-NISSAN-CABSTAR-F24-CHASSIS-SC-L1-DRW-35-01	4545	1870	2116	Nissan Cabstar F24 official owner manual	https://www.nissan-cdn.net/content/dam/Nissan/greece/manuals/cabstar/CABSTAR_F24_2008_JUNE.pdf
+EU-NISSAN-CABSTAR-F24-CHASSIS-SC-L2-DRW-35-01	5245	1870	2116	Nissan Cabstar F24 official owner manual	https://www.nissan-cdn.net/content/dam/Nissan/greece/manuals/cabstar/CABSTAR_F24_2008_JUNE.pdf
+EU-NISSAN-CABSTAR-F24-CHASSIS-SC-L3-DRW-35-01	6045	1870	2116	Nissan Cabstar F24 official owner manual	https://www.nissan-cdn.net/content/dam/Nissan/greece/manuals/cabstar/CABSTAR_F24_2008_JUNE.pdf
+EU-NISSAN-CABSTAR-F24-CHASSIS-DC-L2-DRW-35-01	5245	1870	2116	Nissan Cabstar F24 official owner manual	https://www.nissan-cdn.net/content/dam/Nissan/greece/manuals/cabstar/CABSTAR_F24_2008_JUNE.pdf
+EU-NISSAN-CABSTAR-F24-CHASSIS-DC-L3-DRW-35-01	6045	1870	2116	Nissan Cabstar F24 official owner manual	https://www.nissan-cdn.net/content/dam/Nissan/greece/manuals/cabstar/CABSTAR_F24_2008_JUNE.pdf
+EU-NISSAN-CABSTAR-F24-CHASSIS-SC-L1-DRW-45-01	4745	1870	2135	Nissan Cabstar F24 official owner manual	https://www.nissan-cdn.net/content/dam/Nissan/greece/manuals/cabstar/CABSTAR_F24_2008_JUNE.pdf
+EU-NISSAN-CABSTAR-F24-CHASSIS-SC-L2-DRW-45-01	5445	1870	2135	Nissan Cabstar F24 official owner manual	https://www.nissan-cdn.net/content/dam/Nissan/greece/manuals/cabstar/CABSTAR_F24_2008_JUNE.pdf
+EU-NISSAN-CABSTAR-F24-CHASSIS-SC-L3-DRW-45-01	6345	1870	2135	Nissan Cabstar F24 official owner manual	https://www.nissan-cdn.net/content/dam/Nissan/greece/manuals/cabstar/CABSTAR_F24_2008_JUNE.pdf
+EU-NISSAN-CABSTAR-F24-CHASSIS-DC-L2-DRW-45-01	5445	1870	2135	Nissan Cabstar F24 official owner manual	https://www.nissan-cdn.net/content/dam/Nissan/greece/manuals/cabstar/CABSTAR_F24_2008_JUNE.pdf
+EU-NISSAN-CABSTAR-F24-CHASSIS-DC-L3-DRW-45-01	6345	1870	2135	Nissan Cabstar F24 official owner manual	https://www.nissan-cdn.net/content/dam/Nissan/greece/manuals/cabstar/CABSTAR_F24_2008_JUNE.pdf
+EU-NISSAN-CEDRIC-Y31-HARDTOP-SEDAN-01	4860	1720	1380	Automobile-Catalog 1988 Nissan Cedric V30 Turbo Brougham VIP Hardtop specifications	https://www.automobile-catalog.com/car/1988/2152115/nissan_cedric_4door_hardtop_v30_turbo_brougham_vip.html
+EU-NISSAN-CEDRIC-Y32-HARDTOP-SEDAN-01	4780	1745	1410	Auto-Data Nissan Cedric Y32 3.0i V6 Turbo specifications	https://www.auto-data.net/en/nissan-cedric-y32-3.0i-v6-24v-turbo-255hp-automatic-919
+EU-NISSAN-CHERRY-E10-SEDAN-2D-01	3610	1470	1380	Nissan Heritage Collection Cherry 2-door Deluxe	https://www.nissan-global.com/EN/HERITAGE_COLLECTION/cherry_2door_deluxe.html
+EU-NISSAN-CHERRY-E10-SEDAN-4D-01	3610	1470	1380	Automobile-Catalog 1970 Nissan Cherry 4Door DX specifications	https://www.automobile-catalog.com/car/1970/2091875/nissan_cherry_4door_deluxe_3-speed.html
+EU-NISSAN-DATSUN-140J-710-SEDAN-01	4120	1580	1405	Automobile-Catalog 1975 Datsun 140J Deluxe specifications	https://www.automobile-catalog.com/car/1975/2094650/datsun_140j_deluxe.html
+EU-NISSAN-DATSUN-160J-710-SEDAN-01	4120	1580	1395	Automobile-Catalog 1973 Datsun 160J Deluxe specifications	https://www.automobile-catalog.com/car/1973/2094725/datsun_160j_deluxe.html
+EU-NISSAN-ELGRAND-E52-MPV-PREFL-01	4915	1850	1815	Nissan Elgrand E52 official historical grade specifications	https://history.nissan.co.jp/ELGRAND/E52/1008/e521008g52.html?gradeID=G52&model=ELGRAND
+EU-NISSAN-ELGRAND-E52-MPV-FACELIFT-01	4945	1850	1815	Nissan Elgrand official 2018 specifications	https://www.nissan-cdn.net/content/dam/Nissan/jp/vehicles/elgrand/1801/pdf/elgrand_specification.pdf
+EU-NISSAN-ELGRAND-E52-MPV-URBAN-CHROME-01	4975	1850	1815	Nissan Elgrand official 2018 specifications	https://www.nissan-cdn.net/content/dam/Nissan/jp/vehicles/elgrand/1801/pdf/elgrand_specification.pdf
+EU-NISSAN-ELGRAND-E52-MPV-RESTYLE-01	4965	1850	1815	Nissan Hong Kong Elgrand Restyle official specifications	https://en.nissan.com.hk/vehicles/new/elgrand/specifications.html
+EU-NISSAN-FIGARO-FK10-CONVERTIBLE-01	3740	1630	1365	Nissan Heritage Collection Figaro 1991 FK10	https://www.nissan-global.com/EN/HERITAGE_COLLECTION/397_figaro.html
+EU-NISSAN-GT-R-R35-NISMO-COUPE-01	4690	1895	1370	Nissan GT-R NISMO official specifications; Car Watch 2017 GT-R NISMO Europe specification report	https://www3.nissan.co.jp/content/dam/Nissan/jp/vehicles/GT-R/pdf/gt-r_nismo_specification.pdf;https://car.watch.impress.co.jp/docs/news/759581.html
+EU-NISSAN-GT-R-R35-COUPE-PREFL-01	4670	1895	1370	Automobile-Catalog 2012 Nissan GT-R Black Edition specifications	https://www.automobile-catalog.com/car/2012/2182730/nissan_gt-r_black_edition.html
+EU-NISSAN-GT-R-R35-COUPE-FACELIFT-01	4710	1895	1370	Nissan GT-R official brochure; Automobile-Catalog 2017 Nissan GT-R Europe specifications	https://www-asia.nissan-cdn.net/content/dam/Nissan/in/brochures/GT-R%20Brochure%20Final_Web.pdf;https://www.automobile-catalog.com/car/2017/2409620/nissan_gt-r.html
+EU-NISSAN-INTERSTAR-X70-PANEL-VAN-L1H1-01	4899	1990	2256	Nissan Interstar 2004 official specifications brochure; Nissan Interstar official brochure	https://xr793.com/wp-content/uploads/2022/10/2004-Nissan-Interstar-Specs-UK.pdf;https://www.carparisonleasing.co.uk/files/bb4/interstar.pdf
+EU-NISSAN-INTERSTAR-X70-PANEL-VAN-L2H2-01	5399	1990	2493	Nissan Interstar 2004 official specifications brochure; Nissan Interstar official brochure	https://xr793.com/wp-content/uploads/2022/10/2004-Nissan-Interstar-Specs-UK.pdf;https://www.carparisonleasing.co.uk/files/bb4/interstar.pdf
+EU-NISSAN-INTERSTAR-X70-PANEL-VAN-L3H2-01	5899	1990	2490	Nissan Interstar 2004 official specifications brochure; Nissan Interstar official brochure	https://xr793.com/wp-content/uploads/2022/10/2004-Nissan-Interstar-Specs-UK.pdf;https://www.carparisonleasing.co.uk/files/bb4/interstar.pdf
+EU-NISSAN-INTERSTAR-ALL-NEW-PANEL-VAN-L2H2-01	5780	2080	2498	Nissan All-New Interstar official UK brochure	https://www-europe.nissan-cdn.net/content/dam/Nissan/gb/brochures/Vehicles/Nissan_Interstar_UK.pdf
+EU-NISSAN-INTERSTAR-X62B-PANEL-VAN-FWD-L1H1-01	5048	2070	2307	Nissan Interstar 2022 official brochure	https://www-europe.nissan-cdn.net/content/dam/Nissan/ireland/Brochures/Interstar%20042022-compressed.pdf
+EU-NISSAN-INTERSTAR-X62B-PANEL-VAN-FWD-L2H2-01	5548	2070	2499	Nissan Interstar 2022 official brochure	https://www-europe.nissan-cdn.net/content/dam/Nissan/ireland/Brochures/Interstar%20042022-compressed.pdf
+EU-NISSAN-INTERSTAR-X70-PANEL-VAN-L3H3-01	5899	1990	2720	Nissan Interstar 2004 official specifications brochure; Nissan Interstar official brochure	https://xr793.com/wp-content/uploads/2022/10/2004-Nissan-Interstar-Specs-UK.pdf;https://www.carparisonleasing.co.uk/files/bb4/interstar.pdf
+EU-NISSAN-INTERSTAR-ALL-NEW-PANEL-VAN-L3H2-01	6410	2080	2498	Nissan All-New Interstar official UK brochure	https://www-europe.nissan-cdn.net/content/dam/Nissan/gb/brochures/Vehicles/Nissan_Interstar_UK.pdf
+EU-NISSAN-INTERSTAR-ALL-NEW-PANEL-VAN-L3H3-01	6410	2080	2756	Nissan All-New Interstar official UK brochure	https://www-europe.nissan-cdn.net/content/dam/Nissan/gb/brochures/Vehicles/Nissan_Interstar_UK.pdf
+EU-NISSAN-INTERSTAR-XDE-CHASSIS-FWD-SC-L2-01	5730	2080	2257	Nissan All-New Interstar official technical sheet; Nissan Interstar official technical information	https://www-europe.nissan-cdn.net/content/dam/Nissan/fr/brochures/fiches_techniques/fiche_technique_Interstar_Fourgon_cabine_approfondie_chassis_plancher.pdf;https://www.nissan.hu/jarmuvek/uj/interstar/technical-information.html
+EU-NISSAN-INTERSTAR-XDE-CHASSIS-FWD-SC-L3-01	6360	2080	2257	Nissan All-New Interstar official technical sheet; Nissan Interstar official technical information	https://www-europe.nissan-cdn.net/content/dam/Nissan/fr/brochures/fiches_techniques/fiche_technique_Interstar_Fourgon_cabine_approfondie_chassis_plancher.pdf;https://www.nissan.hu/jarmuvek/uj/interstar/technical-information.html
+EU-NISSAN-INTERSTAR-XDE-CHASSIS-FWD-DC-L3-01	6360	2080	2362	Nissan All-New Interstar official technical sheet; Nissan Interstar official technical information	https://www-europe.nissan-cdn.net/content/dam/Nissan/fr/brochures/fiches_techniques/fiche_technique_Interstar_Fourgon_cabine_approfondie_chassis_plancher.pdf;https://www.nissan.hu/jarmuvek/uj/interstar/technical-information.html
+EU-NISSAN-INTERSTAR-X62B-PANEL-VAN-RWD-L3H2-01	6198	2070	2550	Nissan NV400 official brochure; Nissan Interstar 2022 official brochure	https://www.nissan-cdn.net/content/dam/Nissan/dk/brochures/Nissan_NV400_DK.pdf;https://www-europe.nissan-cdn.net/content/dam/Nissan/ireland/Brochures/Interstar%20042022-compressed.pdf
+EU-NISSAN-INTERSTAR-X62B-PANEL-VAN-RWD-L3H3-01	6198	2070	2815	Nissan NV400 official brochure; Nissan Interstar 2022 official brochure	https://www.nissan-cdn.net/content/dam/Nissan/dk/brochures/Nissan_NV400_DK.pdf;https://www-europe.nissan-cdn.net/content/dam/Nissan/ireland/Brochures/Interstar%20042022-compressed.pdf
+EU-NISSAN-INTERSTAR-X62B-PANEL-VAN-RWD-L4H2-01	6848	2070	2550	Nissan NV400 official brochure; Nissan Interstar 2022 official brochure	https://www.nissan-cdn.net/content/dam/Nissan/dk/brochures/Nissan_NV400_DK.pdf;https://www-europe.nissan-cdn.net/content/dam/Nissan/ireland/Brochures/Interstar%20042022-compressed.pdf
+EU-NISSAN-INTERSTAR-X62B-PANEL-VAN-RWD-L4H3-01	6848	2070	2815	Nissan NV400 official brochure; Nissan Interstar 2022 official brochure	https://www.nissan-cdn.net/content/dam/Nissan/dk/brochures/Nissan_NV400_DK.pdf;https://www-europe.nissan-cdn.net/content/dam/Nissan/ireland/Brochures/Interstar%20042022-compressed.pdf
+EU-NISSAN-INTERSTAR-X62B-CHASSIS-RWD-SC-L2-SRW-01	5549	2070	2284	Nissan Interstar 2022 official brochure	https://www-europe.nissan-cdn.net/content/dam/Nissan/ireland/Brochures/Interstar%20042022-compressed.pdf
+EU-NISSAN-INTERSTAR-X62B-CHASSIS-RWD-SC-L2-DRW-01	5549	2070	2284	Nissan Interstar 2022 official brochure	https://www-europe.nissan-cdn.net/content/dam/Nissan/ireland/Brochures/Interstar%20042022-compressed.pdf
+EU-NISSAN-INTERSTAR-X62B-CHASSIS-RWD-SC-L3-SRW-01	6199	2070	2283	Nissan Interstar 2022 official brochure	https://www-europe.nissan-cdn.net/content/dam/Nissan/ireland/Brochures/Interstar%20042022-compressed.pdf
+EU-NISSAN-INTERSTAR-X62B-CHASSIS-RWD-SC-L3-DRW-01	6099	2070	2276	Nissan Interstar 2022 official brochure	https://www-europe.nissan-cdn.net/content/dam/Nissan/ireland/Brochures/Interstar%20042022-compressed.pdf
+EU-NISSAN-INTERSTAR-X62B-CHASSIS-RWD-SC-L4-DRW-01	6749	2070	2273	Nissan Interstar 2022 official brochure	https://www-europe.nissan-cdn.net/content/dam/Nissan/ireland/Brochures/Interstar%20042022-compressed.pdf
+EU-NISSAN-INTERSTAR-X62B-PANEL-VAN-FWD-L2H3-01	5548	2070	2749	Nissan Interstar 2022 official brochure	https://www-europe.nissan-cdn.net/content/dam/Nissan/ireland/Brochures/Interstar%20042022-compressed.pdf
+EU-NISSAN-INTERSTAR-X62B-PANEL-VAN-FWD-L3H2-01	6198	2070	2488	Nissan Interstar 2022 official brochure	https://www-europe.nissan-cdn.net/content/dam/Nissan/ireland/Brochures/Interstar%20042022-compressed.pdf
+EU-NISSAN-INTERSTAR-X62B-PANEL-VAN-FWD-L3H3-01	6198	2070	2744	Nissan Interstar 2022 official brochure	https://www-europe.nissan-cdn.net/content/dam/Nissan/ireland/Brochures/Interstar%20042022-compressed.pdf
+EU-NISSAN-INTERSTAR-X62B-CHASSIS-FWD-SC-L2-01	5549	2070	2265	Nissan Interstar 2022 official brochure	https://www-europe.nissan-cdn.net/content/dam/Nissan/ireland/Brochures/Interstar%20042022-compressed.pdf
+EU-NISSAN-INTERSTAR-X62B-CHASSIS-FWD-SC-L3-01	6199	2070	2258	Nissan Interstar 2022 official brochure	https://www-europe.nissan-cdn.net/content/dam/Nissan/ireland/Brochures/Interstar%20042022-compressed.pdf
+EU-NISSAN-INTERSTAR-X62B-CHASSIS-FWD-DC-L2-01	5549	2070	2272	Nissan Interstar 2022 official brochure	https://www-europe.nissan-cdn.net/content/dam/Nissan/ireland/Brochures/Interstar%20042022-compressed.pdf
+EU-NISSAN-INTERSTAR-X62B-CHASSIS-FWD-DC-L3-01	6199	2070	2263	Nissan Interstar 2022 official brochure	https://www-europe.nissan-cdn.net/content/dam/Nissan/ireland/Brochures/Interstar%20042022-compressed.pdf
+EU-NISSAN-INTERSTAR-XDE-CHASSIS-RWD-SC-L3-DRW-01	6360	2080	2257	Nissan All-New Interstar official chassis technical sheet; Nissan Interstar official technical information	https://www-europe.nissan-cdn.net/content/dam/Nissan/fr/brochures/fiches_techniques/fiche_technique_Interstar_Fourgon_cabine_approfondie_chassis_plancher.pdf;https://www.nissan.hu/jarmuvek/uj/interstar/technical-information.html
+EU-NISSAN-INTERSTAR-XDE-CHASSIS-RWD-SC-L4-DRW-01	6955	2080	2257	Nissan All-New Interstar official chassis technical sheet; Nissan Interstar official technical information	https://www-europe.nissan-cdn.net/content/dam/Nissan/fr/brochures/fiches_techniques/fiche_technique_Interstar_Fourgon_cabine_approfondie_chassis_plancher.pdf;https://www.nissan.hu/jarmuvek/uj/interstar/technical-information.html
+EU-NISSAN-INTERSTAR-XDE-CHASSIS-RWD-DC-L3-DRW-01	6360	2080	2362	Nissan All-New Interstar official chassis technical sheet; Nissan Interstar official technical information	https://www-europe.nissan-cdn.net/content/dam/Nissan/fr/brochures/fiches_techniques/fiche_technique_Interstar_Fourgon_cabine_approfondie_chassis_plancher.pdf;https://www.nissan.hu/jarmuvek/uj/interstar/technical-information.html
+EU-NISSAN-INTERSTAR-XDE-CHASSIS-RWD-DC-L4-DRW-01	6955	2080	2362	Nissan All-New Interstar official chassis technical sheet; Nissan Interstar official technical information	https://www-europe.nissan-cdn.net/content/dam/Nissan/fr/brochures/fiches_techniques/fiche_technique_Interstar_Fourgon_cabine_approfondie_chassis_plancher.pdf;https://www.nissan.hu/jarmuvek/uj/interstar/technical-information.html
+EU-NISSAN-JUKE-F15-SUV-01	4135	1765	1565	Nissan JUKE official Australia brochure	https://www-asia.nissan-cdn.net/content/dam/Nissan/AU/Files/Brochures/Models/Juke/JUK0139r02_Nissan_JUKE_Brochure%20PDF.pdf
+EU-NISSAN-JUKE-F15-NISMO-SUV-01	4165	1770	1565	Automobile-Catalog 2014 Nissan Juke Nismo Europe specifications; Automobile-Catalog 2015 Nissan Juke Nismo RS Europe specifications	https://www.automobile-catalog.com/car/2014/2320565/nissan_juke_nismo.html;https://www.automobile-catalog.com/car/2015/2321090/nissan_juke_nismo_rs.html
+EU-NISSAN-JUKE-F16-HYBRID-SUV-01	4210	1800	1593	Nissan JUKE official UK brochure	https://www-europe.nissan-cdn.net/content/dam/Nissan/gb/brochures/Vehicles/Nissan_Juke_UK.pdf
+```
+
+[下载 DIMENSION_GROUP 表](sandbox:/mnt/data/left18448_11601-11700_dimension_groups_final.tsv)
+
+推进信号：COMPLETE
+
+[1]: https://history.nissan.co.jp/ELGRAND/E52/1008/e521008g52.html?gradeID=G52&model=ELGRAND "日産：エルグランド [ ELGRAND ] ミニバン/ワゴン ｜ グレード ｜ グレード詳細"
+
+
+--- 累计最终 TSV 已更新 ---
+- 累计 Ktype 映射：ktype_mapping_final.tsv（3031 行）
+- 累计尺寸组：dimension_groups_final.tsv（938 行）
+

@@ -2444,3 +2444,853 @@ EU-MERCEDES-BENZ-SPRINTER-W907-RWD-VAN-35T-EXL-SUPERHIGHROOF-01	7367	2020	2825	M
 MB Vans
 +2 | 复制 | 复制 | 开始新对话 | 复制回复 | 喜欢 | 不喜欢 | 切换模型 | 更多操作 | 来源 来源 |  | 添加文件等 | 高 | 启动语音功能 | 今天，8:21
 
+
+--- 发送 / checkpoint 续跑到 Round 32 ---
+继续当前批次并采用缓存优先模式。尺寸组只在首次创建或纠错时完整核对一次三维和来源；后续 Ktype 只判断关联哪个现有 DIMENSION_GROUP_ID，不重复抓取，不输出缓存来源或匹配理由。仍有 PENDING 时，CONTINUE 轮仅输出：1) 更新点；2) 当前批次进度；3) 本轮新增/修改的 Ktype 映射 TSV（无变化写“无”）；4) 本轮首次创建/修正的 DIMENSION_GROUP TSV（复用既有组不重复输出，无变化写“无”）；5) 下一步优先处理。若当前或上一轮进度已经是 PENDING=0，本轮不要继续检索或再次输出 CONTINUE，必须立刻汇总并输出两张最终完整 TSV、两个任务指定 sandbox 下载链接和“推进信号：COMPLETE”。执行顺序固定为：第一阶段优先消除 PENDING 并补齐会阻塞两张最终表的数据。检测到 PENDING=0 后，第二阶段最多只做一次轻量机械收尾：核对固定表头、id 与 DIMENSION_GROUP_ID 唯一、映射引用闭合、长宽高和来源非空、两个任务指定下载链接齐全。第二阶段不得重新逐车型、逐年份或逐来源做深度检索，不得为了提高置信度反复核对，也不得因非阻塞的排序或措辞问题继续多轮。PENDING=0 后的下一条回复必须直接输出两张最终完整 TSV、两个精确 sandbox 下载链接，并以“推进信号：COMPLETE”结束；不要再输出 CONTINUE。Ktype 映射 TSV 表头必须严格使用 requirement 指定的字段顺序：id	Ktype	NormalizedBodyStyle	Generation	BodyCode	Doors	DIMENSION_GROUP_ID	MatchConfidence	Notes	IterationStatus。另需维护完整 DIMENSION_GROUP TSV，表头固定为：DIMENSION_GROUP_ID	LengthMM	WidthMM	HeightMM	DimensionSource	SourceURL。缺少任一张表、任一映射引用的尺寸组，或尺寸组字段不完整时不得 COMPLETE。不要输出子车系匹配表。
+【COMPLETE 下载文件硬性要求】
+准备 COMPLETE 时，除两张完整内嵌 TSV 外，还必须创建并提供以下两个可点击 sandbox 下载链接，文件名必须完全一致：
+- left18448_10401-10500_ktype_dimension_mapping_final.tsv
+- left18448_10401-10500_dimension_groups_final.tsv
+缺少任一下载链接时不得输出推进信号：COMPLETE。
+
+
+--- 发送 / checkpoint 续跑到 Round 32 ---
+继续当前批次并采用缓存优先模式。尺寸组只在首次创建或纠错时完整核对一次三维和来源；后续 Ktype 只判断关联哪个现有 DIMENSION_GROUP_ID，不重复抓取，不输出缓存来源或匹配理由。仍有 PENDING 时，CONTINUE 轮仅输出：1) 更新点；2) 当前批次进度；3) 本轮新增/修改的 Ktype 映射 TSV（无变化写“无”）；4) 本轮首次创建/修正的 DIMENSION_GROUP TSV（复用既有组不重复输出，无变化写“无”）；5) 下一步优先处理。若当前或上一轮进度已经是 PENDING=0，本轮不要继续检索或再次输出 CONTINUE，必须立刻汇总并输出两张最终完整 TSV、两个任务指定 sandbox 下载链接和“推进信号：COMPLETE”。执行顺序固定为：第一阶段优先消除 PENDING 并补齐会阻塞两张最终表的数据。检测到 PENDING=0 后，第二阶段最多只做一次轻量机械收尾：核对固定表头、id 与 DIMENSION_GROUP_ID 唯一、映射引用闭合、长宽高和来源非空、两个任务指定下载链接齐全。第二阶段不得重新逐车型、逐年份或逐来源做深度检索，不得为了提高置信度反复核对，也不得因非阻塞的排序或措辞问题继续多轮。PENDING=0 后的下一条回复必须直接输出两张最终完整 TSV、两个精确 sandbox 下载链接，并以“推进信号：COMPLETE”结束；不要再输出 CONTINUE。Ktype 映射 TSV 表头必须严格使用 requirement 指定的字段顺序：id	Ktype	NormalizedBodyStyle	Generation	BodyCode	Doors	DIMENSION_GROUP_ID	MatchConfidence	Notes	IterationStatus。另需维护完整 DIMENSION_GROUP TSV，表头固定为：DIMENSION_GROUP_ID	LengthMM	WidthMM	HeightMM	DimensionSource	SourceURL。缺少任一张表、任一映射引用的尺寸组，或尺寸组字段不完整时不得 COMPLETE。不要输出子车系匹配表。
+【COMPLETE 下载文件硬性要求】
+准备 COMPLETE 时，除两张完整内嵌 TSV 外，还必须创建并提供以下两个可点击 sandbox 下载链接，文件名必须完全一致：
+- left18448_10401-10500_ktype_dimension_mapping_final.tsv
+- left18448_10401-10500_dimension_groups_final.tsv
+缺少任一下载链接时不得输出推进信号：COMPLETE。
+
+
+--- 对话分支 / Round 32 ---
+触发原因：ChatGPT 对话长度上限
+父对话：https://chatgpt.com/c/6a6fc8fe-8f50-83ee-b6e9-f29da2fb9a8d
+新分支：https://chatgpt.com/c/6a70c84b-459c-83e8-9dfe-78897589d574
+
+--- Round 32 / checkpoint 续跑 ---
+### 更新点
+
+已应用交接中的 3 条 SLC 既有 READY 映射，不重复输出。本轮新增闭合 **10 个 Sprinter 原始 Ktype**：
+
+* eSprinter 厢式：按 907.633 / 907.635 拆分 L2、L3。
+* eSprinter 底盘：按 907.133 / 907.135 拆分 L2、L3。
+* Sprinter 3-T 211 CDI 厢式：按 SWB/MWB 和标准顶/高顶拆分。
+* 5 个 VS30 前驱底盘 Ktype 复用同一 L2 单排驾驶室尺寸组；其中 157681 明确对应 910.133，其余 910.030 按标准 L2 外廓落盘。
+
+eSprinter 官方技术资料分别给出了厢式 L2/L3 和底盘 L2/L3 的完整外廓；Sprinter 技术资料给出了前驱厢式两种轴距及两种车顶高度，现款底盘资料确认了 FWD L2 外廓。
+Ktype 对应的车身代码和分支范围由车型目录记录支持。([Allegro][1])
+
+### 当前批进度
+
+按原始 Ktype 计：
+
+`READY=89；PENDING=11；revision=65`
+
+### 本轮新增/修改的 Ktype 映射 TSV
+
+```tsv
+id	Ktype	NormalizedBodyStyle	Generation	BodyCode	Doors	DIMENSION_GROUP_ID	MatchConfidence	Notes	IterationStatus
+157546_l2	157546	Van	eSprinter VS30	907.633		EU-MERCEDES-BENZ-ESPRINTER-VS30-VAN-RWD-L2-01	HIGH	同一Ktype明确覆盖907.633与907.635，按L2/L3外廓拆分。	READY
+157546_l3	157546	Van	eSprinter VS30	907.635		EU-MERCEDES-BENZ-ESPRINTER-VS30-VAN-RWD-L3-01	HIGH	同一Ktype明确覆盖907.633与907.635，按L2/L3外廓拆分。	READY
+157550_l2	157550	Van	eSprinter VS30	907.633		EU-MERCEDES-BENZ-ESPRINTER-VS30-VAN-RWD-L2-01	HIGH	同一Ktype明确覆盖907.633与907.635，按L2/L3外廓拆分。	READY
+157550_l3	157550	Van	eSprinter VS30	907.635		EU-MERCEDES-BENZ-ESPRINTER-VS30-VAN-RWD-L3-01	HIGH	同一Ktype明确覆盖907.633与907.635，按L2/L3外廓拆分。	READY
+800244_l2	800244	Pickup	eSprinter VS30	907.133	2	EU-MERCEDES-BENZ-ESPRINTER-VS30-CHASSIS-RWD-L2-01	HIGH	同一Ktype明确覆盖907.133与907.135，按L2/L3外廓拆分。	READY
+800244_l3	800244	Pickup	eSprinter VS30	907.135	2	EU-MERCEDES-BENZ-ESPRINTER-VS30-CHASSIS-RWD-L3-01	HIGH	同一Ktype明确覆盖907.133与907.135，按L2/L3外廓拆分。	READY
+800245_l2	800245	Pickup	eSprinter VS30	907.133	2	EU-MERCEDES-BENZ-ESPRINTER-VS30-CHASSIS-RWD-L2-01	HIGH	同一Ktype明确覆盖907.133与907.135，按L2/L3外廓拆分。	READY
+800245_l3	800245	Pickup	eSprinter VS30	907.135	2	EU-MERCEDES-BENZ-ESPRINTER-VS30-CHASSIS-RWD-L3-01	HIGH	同一Ktype明确覆盖907.133与907.135，按L2/L3外廓拆分。	READY
+145740_swb_stdroof	145740	Van	Sprinter VS30	910.621		EU-MERCEDES-BENZ-SPRINTER-VS30-VAN-FWD-SWB-STANDARD-01	HIGH	910.621对应SWB；官方资料明确列出标准顶和高顶外廓。	READY
+145740_swb_highroof	145740	Van	Sprinter VS30	910.621		EU-MERCEDES-BENZ-SPRINTER-VS30-VAN-FWD-SWB-HIGH-01	HIGH	910.621对应SWB；官方资料明确列出标准顶和高顶外廓。	READY
+145740_mwb_stdroof	145740	Van	Sprinter VS30	910.623		EU-MERCEDES-BENZ-SPRINTER-VS30-VAN-FWD-MWB-STANDARD-01	HIGH	910.623对应MWB；官方资料明确列出标准顶和高顶外廓。	READY
+145740_mwb_highroof	145740	Van	Sprinter VS30	910.623		EU-MERCEDES-BENZ-SPRINTER-VS30-VAN-FWD-MWB-HIGH-01	HIGH	910.623对应MWB；官方资料明确列出标准顶和高顶外廓。	READY
+145550	145550	Pickup	Sprinter VS30	910.030	2	EU-MERCEDES-BENZ-SPRINTER-VS30-CHASSIS-FWD-L2-01	MEDIUM	910.030未标明独立轴距边界，采用前驱L2单排驾驶室标准外廓。	READY
+145551	145551	Pickup	Sprinter VS30	910.030	2	EU-MERCEDES-BENZ-SPRINTER-VS30-CHASSIS-FWD-L2-01	MEDIUM	910.030未标明独立轴距边界，采用前驱L2单排驾驶室标准外廓。	READY
+145552	145552	Pickup	Sprinter VS30	910.030	2	EU-MERCEDES-BENZ-SPRINTER-VS30-CHASSIS-FWD-L2-01	MEDIUM	910.030未标明独立轴距边界，采用前驱L2单排驾驶室标准外廓。	READY
+145553	145553	Pickup	Sprinter VS30	910.030	2	EU-MERCEDES-BENZ-SPRINTER-VS30-CHASSIS-FWD-L2-01	MEDIUM	910.030未标明独立轴距边界，采用前驱L2单排驾驶室标准外廓。	READY
+157681	157681	Pickup	Sprinter VS30	910.133	2	EU-MERCEDES-BENZ-SPRINTER-VS30-CHASSIS-FWD-L2-01	HIGH	910.133对应前驱L2单排驾驶室外廓。	READY
+```
+
+### 本轮首次创建/修正的 DIMENSION_GROUP TSV
+
+```tsv
+DIMENSION_GROUP_ID	LengthMM	WidthMM	HeightMM	DimensionSource	SourceURL
+EU-MERCEDES-BENZ-ESPRINTER-VS30-VAN-RWD-L2-01	5932	2020	2718	Mercedes-Benz Vans UK, eSprinter Panel Van technical data	https://www.ciceley.com/wp-content/uploads/2023/07/esprinter-panel-van.pdf
+EU-MERCEDES-BENZ-ESPRINTER-VS30-VAN-RWD-L3-01	7124	2020	2720	Mercedes-Benz Vans UK, eSprinter Panel Van technical data	https://www.ciceley.com/wp-content/uploads/2023/07/esprinter-panel-van.pdf
+EU-MERCEDES-BENZ-ESPRINTER-VS30-CHASSIS-RWD-L2-01	5886	2020	2355	Mercedes-Benz Vans UK, eSprinter Chassis Cab technical data	https://www.ciceley.com/wp-content/uploads/2025/05/esprinter-chassis-van.pdf
+EU-MERCEDES-BENZ-ESPRINTER-VS30-CHASSIS-RWD-L3-01	6696	2020	2344	Mercedes-Benz Vans UK, eSprinter Chassis Cab technical data	https://www.ciceley.com/wp-content/uploads/2025/05/esprinter-chassis-van.pdf
+EU-MERCEDES-BENZ-SPRINTER-VS30-VAN-FWD-SWB-STANDARD-01	5267	2020	2356	Mercedes-Benz Vans Australia, Sprinter Technical Data Model Year 2022	https://www.dovecamperconversions.com.au/storage/2023/10/Mercedes-Benz-Vans-Sprinter-Technical-Data-Brochure-Feb-2022-1.pdf
+EU-MERCEDES-BENZ-SPRINTER-VS30-VAN-FWD-SWB-HIGH-01	5267	2020	2642	Mercedes-Benz Vans Australia, Sprinter Technical Data Model Year 2022	https://www.dovecamperconversions.com.au/storage/2023/10/Mercedes-Benz-Vans-Sprinter-Technical-Data-Brochure-Feb-2022-1.pdf
+EU-MERCEDES-BENZ-SPRINTER-VS30-VAN-FWD-MWB-STANDARD-01	5932	2020	2351	Mercedes-Benz Vans Australia, Sprinter Technical Data Model Year 2022	https://www.dovecamperconversions.com.au/storage/2023/10/Mercedes-Benz-Vans-Sprinter-Technical-Data-Brochure-Feb-2022-1.pdf
+EU-MERCEDES-BENZ-SPRINTER-VS30-VAN-FWD-MWB-HIGH-01	5932	2020	2638	Mercedes-Benz Vans Australia, Sprinter Technical Data Model Year 2022	https://www.dovecamperconversions.com.au/storage/2023/10/Mercedes-Benz-Vans-Sprinter-Technical-Data-Brochure-Feb-2022-1.pdf
+EU-MERCEDES-BENZ-SPRINTER-VS30-CHASSIS-FWD-L2-01	5986	2020	2292	Mercedes-Benz Vans UK, Sprinter Chassis and Crewcab October 2024	https://media.mbvans.co.uk/assets/documents/original/5984-SprinterChassisandCrewcabOctober2024.pdf
+```
+
+### 下一步优先处理
+
+先处理 6 个现款多外廓 Ktype：`145749、145936、145747、146011、146012、146079`；随后仅处理 5 个旧款 W906 项：`5709、119923、10071、14589、145651`。
+
+推进信号：CONTINUE
+
+[1]: https://allegro.cz/produkt/maxgear-19-0333-sada-brzdovych-celisti-9a9bd2c3-5909-42d5-9b57-32fe2dd082ac?utm_source=chatgpt.com "Maxgear 19-0333 Sada brzdových čelistí, (5907558561104) • Ceny, Recenze - Allegro"
+
+
+--- 发送 / 继续到 Round 33 ---
+继续当前批次并采用缓存优先模式。尺寸组只在首次创建或纠错时完整核对一次三维和来源；后续 Ktype 只判断关联哪个现有 DIMENSION_GROUP_ID，不重复抓取，不输出缓存来源或匹配理由。仍有 PENDING 时，CONTINUE 轮仅输出：1) 更新点；2) 当前批次进度；3) 本轮新增/修改的 Ktype 映射 TSV（无变化写“无”）；4) 本轮首次创建/修正的 DIMENSION_GROUP TSV（复用既有组不重复输出，无变化写“无”）；5) 下一步优先处理。若当前或上一轮进度已经是 PENDING=0，本轮不要继续检索或再次输出 CONTINUE，必须立刻汇总并输出两张最终完整 TSV、两个任务指定 sandbox 下载链接和“推进信号：COMPLETE”。执行顺序固定为：第一阶段优先消除 PENDING 并补齐会阻塞两张最终表的数据。检测到 PENDING=0 后，第二阶段最多只做一次轻量机械收尾：核对固定表头、id 与 DIMENSION_GROUP_ID 唯一、映射引用闭合、长宽高和来源非空、两个任务指定下载链接齐全。第二阶段不得重新逐车型、逐年份或逐来源做深度检索，不得为了提高置信度反复核对，也不得因非阻塞的排序或措辞问题继续多轮。PENDING=0 后的下一条回复必须直接输出两张最终完整 TSV、两个精确 sandbox 下载链接，并以“推进信号：COMPLETE”结束；不要再输出 CONTINUE。Ktype 映射 TSV 表头必须严格使用 requirement 指定的字段顺序：id	Ktype	NormalizedBodyStyle	Generation	BodyCode	Doors	DIMENSION_GROUP_ID	MatchConfidence	Notes	IterationStatus。另需维护完整 DIMENSION_GROUP TSV，表头固定为：DIMENSION_GROUP_ID	LengthMM	WidthMM	HeightMM	DimensionSource	SourceURL。缺少任一张表、任一映射引用的尺寸组，或尺寸组字段不完整时不得 COMPLETE。不要输出子车系匹配表。
+【COMPLETE 下载文件硬性要求】
+准备 COMPLETE 时，除两张完整内嵌 TSV 外，还必须创建并提供以下两个可点击 sandbox 下载链接，文件名必须完全一致：
+- left18448_10401-10500_ktype_dimension_mapping_final.tsv
+- left18448_10401-10500_dimension_groups_final.tsv
+缺少任一下载链接时不得输出推进信号：COMPLETE。
+
+
+--- Round 33 / checkpoint 续跑 ---
+### 1）更新点
+
+本轮闭合 4 个原始 Ktype：
+
+* `145749、145936、145747`：按明确覆盖的 FWD L1/L2 车身代码拆分；L2 复用既有尺寸组，仅新增 FWD L1 尺寸组。
+* `146011`：按单排驾驶室/双排驾驶室及 L2/L3 四种明确外廓拆分并全部闭合。相关 Ktype 车身代码范围与官方车型尺寸资料相互闭合。([Meyer Motoren][1])
+
+### 2）当前批进度
+
+`READY=93；PENDING=7；revision=66`
+
+### 3）本轮新增/修改的 Ktype 映射 TSV
+
+```tsv
+id	Ktype	NormalizedBodyStyle	Generation	BodyCode	Doors	DIMENSION_GROUP_ID	MatchConfidence	Notes	IterationStatus
+145749_l1	145749	Pickup	Sprinter VS30	910.131	2	EU-MERCEDES-BENZ-SPRINTER-VS30-CHASSIS-FWD-L1-01	HIGH	按910.131与910.133拆分L1/L2外廓。	READY
+145749_l2	145749	Pickup	Sprinter VS30	910.133	2	EU-MERCEDES-BENZ-SPRINTER-VS30-CHASSIS-FWD-L2-01	HIGH	按910.131与910.133拆分L1/L2外廓。	READY
+145936_l1	145936	Pickup	Sprinter VS30	910.131	2	EU-MERCEDES-BENZ-SPRINTER-VS30-CHASSIS-FWD-L1-01	HIGH	按910.131与910.133拆分L1/L2外廓。	READY
+145936_l2	145936	Pickup	Sprinter VS30	910.133	2	EU-MERCEDES-BENZ-SPRINTER-VS30-CHASSIS-FWD-L2-01	HIGH	按910.131与910.133拆分L1/L2外廓。	READY
+145747_l1	145747	Pickup	Sprinter VS30	910.121	2	EU-MERCEDES-BENZ-SPRINTER-VS30-CHASSIS-FWD-L1-01	HIGH	按910.121与910.123拆分L1/L2外廓。	READY
+145747_l2	145747	Pickup	Sprinter VS30	910.123	2	EU-MERCEDES-BENZ-SPRINTER-VS30-CHASSIS-FWD-L2-01	HIGH	按910.121与910.123拆分L1/L2外廓。	READY
+146011_single_l2	146011	Pickup	Sprinter VS30	907.133	2	EU-MERCEDES-BENZ-SPRINTER-VS30-CHASSIS-RWD-SINGLE-L2-01	HIGH	按单排/双排驾驶室及L2/L3外廓拆分。	READY
+146011_single_l3	146011	Pickup	Sprinter VS30	907.135	2	EU-MERCEDES-BENZ-SPRINTER-VS30-CHASSIS-RWD-SINGLE-L3-01	HIGH	按单排/双排驾驶室及L2/L3外廓拆分。	READY
+146011_crew_l2	146011	Pickup	Sprinter VS30	907.233	4	EU-MERCEDES-BENZ-SPRINTER-VS30-CHASSIS-RWD-CREWCAB-L2-01	HIGH	按单排/双排驾驶室及L2/L3外廓拆分。	READY
+146011_crew_l3	146011	Pickup	Sprinter VS30	907.235	4	EU-MERCEDES-BENZ-SPRINTER-VS30-CHASSIS-RWD-CREWCAB-L3-01	HIGH	按单排/双排驾驶室及L2/L3外廓拆分。	READY
+```
+
+### 4）本轮首次创建/修正的 DIMENSION_GROUP TSV
+
+```tsv
+DIMENSION_GROUP_ID	LengthMM	WidthMM	HeightMM	DimensionSource	SourceURL
+EU-MERCEDES-BENZ-SPRINTER-VS30-CHASSIS-FWD-L1-01	5321	2020	2302	Mercedes-Benz Vans UK, Sprinter brochure Q1 2020	https://nd-mediagallery2-public-production.s3.amazonaws.com/b06466f162c4641be831e508f3a88909/sprinter_brochure_q1_2020.pdf
+EU-MERCEDES-BENZ-SPRINTER-VS30-CHASSIS-RWD-SINGLE-L2-01	5886	2020	2318	Mercedes-Benz Vans UK, Sprinter Chassis Cab and Chassis Crewcab November 2023	https://media.mbvans.co.uk/assets/documents/original/5950-SprinterchassisandcrewvanpricelistNOV2023.pdf
+EU-MERCEDES-BENZ-SPRINTER-VS30-CHASSIS-RWD-SINGLE-L3-01	6695	2020	2311	Mercedes-Benz Vans UK, Sprinter Chassis Cab and Chassis Crewcab November 2023	https://media.mbvans.co.uk/assets/documents/original/5950-SprinterchassisandcrewvanpricelistNOV2023.pdf
+EU-MERCEDES-BENZ-SPRINTER-VS30-CHASSIS-RWD-CREWCAB-L2-01	5886	2020	2282	Mercedes-Benz Vans UK, Sprinter brochure Q1 2020	https://nd-mediagallery2-public-production.s3.amazonaws.com/b06466f162c4641be831e508f3a88909/sprinter_brochure_q1_2020.pdf
+EU-MERCEDES-BENZ-SPRINTER-VS30-CHASSIS-RWD-CREWCAB-L3-01	6695	2020	2301	Mercedes-Benz Vans UK, Sprinter Chassis Cab and Chassis Crewcab November 2023	https://media.mbvans.co.uk/assets/documents/original/5950-SprinterchassisandcrewvanpricelistNOV2023.pdf
+```
+
+### 5）下一步优先处理
+
+优先处理现款 AWD 的 `146012、146079`；随后处理旧款 W906 的 `5709、119923、10071、14589、145651`。
+
+推进信号：CONTINUE
+
+[1]: https://www.meyermotoren.de/fahrzeuge/145749/mercedes-benz/sprinter_3_5t_fahrgestell_b907_b910_/311_cdi_910_131_910_133_ "https://www.meyermotoren.de/fahrzeuge/145749/mercedes-benz/sprinter_3_5t_fahrgestell_b907_b910_/311_cdi_910_131_910_133_"
+
+
+--- 发送 / 继续到 Round 34 ---
+继续当前批次并采用缓存优先模式。尺寸组只在首次创建或纠错时完整核对一次三维和来源；后续 Ktype 只判断关联哪个现有 DIMENSION_GROUP_ID，不重复抓取，不输出缓存来源或匹配理由。仍有 PENDING 时，CONTINUE 轮仅输出：1) 更新点；2) 当前批次进度；3) 本轮新增/修改的 Ktype 映射 TSV（无变化写“无”）；4) 本轮首次创建/修正的 DIMENSION_GROUP TSV（复用既有组不重复输出，无变化写“无”）；5) 下一步优先处理。若当前或上一轮进度已经是 PENDING=0，本轮不要继续检索或再次输出 CONTINUE，必须立刻汇总并输出两张最终完整 TSV、两个任务指定 sandbox 下载链接和“推进信号：COMPLETE”。执行顺序固定为：第一阶段优先消除 PENDING 并补齐会阻塞两张最终表的数据。检测到 PENDING=0 后，第二阶段最多只做一次轻量机械收尾：核对固定表头、id 与 DIMENSION_GROUP_ID 唯一、映射引用闭合、长宽高和来源非空、两个任务指定下载链接齐全。第二阶段不得重新逐车型、逐年份或逐来源做深度检索，不得为了提高置信度反复核对，也不得因非阻塞的排序或措辞问题继续多轮。PENDING=0 后的下一条回复必须直接输出两张最终完整 TSV、两个精确 sandbox 下载链接，并以“推进信号：COMPLETE”结束；不要再输出 CONTINUE。Ktype 映射 TSV 表头必须严格使用 requirement 指定的字段顺序：id	Ktype	NormalizedBodyStyle	Generation	BodyCode	Doors	DIMENSION_GROUP_ID	MatchConfidence	Notes	IterationStatus。另需维护完整 DIMENSION_GROUP TSV，表头固定为：DIMENSION_GROUP_ID	LengthMM	WidthMM	HeightMM	DimensionSource	SourceURL。缺少任一张表、任一映射引用的尺寸组，或尺寸组字段不完整时不得 COMPLETE。不要输出子车系匹配表。
+【COMPLETE 下载文件硬性要求】
+准备 COMPLETE 时，除两张完整内嵌 TSV 外，还必须创建并提供以下两个可点击 sandbox 下载链接，文件名必须完全一致：
+- left18448_10401-10500_ktype_dimension_mapping_final.tsv
+- left18448_10401-10500_dimension_groups_final.tsv
+缺少任一下载链接时不得输出推进信号：COMPLETE。
+
+
+--- Round 34 / checkpoint 续跑 ---
+### 1）更新点
+
+闭合 `146079`。按官方 MY2024 技术表中明确列出的 319 AWD 配置，仅落盘 `907.633` 的标准顶/高顶和 `907.635` 的高顶外廓，不增加未被该配置表支持的分支。宽度均为不含后视镜口径。([梅赛德斯-奔驰商用车][1])
+
+### 2）当前批进度
+
+`READY=94；PENDING=6；revision=67`
+
+### 3）本轮新增/修改的 Ktype 映射 TSV
+
+```tsv
+id	Ktype	NormalizedBodyStyle	Generation	BodyCode	Doors	DIMENSION_GROUP_ID	MatchConfidence	Notes	IterationStatus
+146079_l2_stdroof	146079	Van	Sprinter VS30	907.633		EU-MERCEDES-BENZ-SPRINTER-VS30-VAN-AWD-L2-STANDARD-01	HIGH	907.633明确覆盖标准顶与高顶外廓。	READY
+146079_l2_highroof	146079	Van	Sprinter VS30	907.633		EU-MERCEDES-BENZ-SPRINTER-VS30-VAN-AWD-L2-HIGH-01	HIGH	907.633明确覆盖标准顶与高顶外廓。	READY
+146079_l3_highroof	146079	Van	Sprinter VS30	907.635		EU-MERCEDES-BENZ-SPRINTER-VS30-VAN-AWD-L3-HIGH-01	HIGH	907.635对应L3高顶外廓。	READY
+```
+
+### 4）本轮首次创建/修正的 DIMENSION_GROUP TSV
+
+```tsv
+DIMENSION_GROUP_ID	LengthMM	WidthMM	HeightMM	DimensionSource	SourceURL
+EU-MERCEDES-BENZ-SPRINTER-VS30-VAN-AWD-L2-STANDARD-01	5932	2020	2496	Mercedes-Benz Vans New Zealand, Sprinter Technical Data Model Year 2024	https://www.mercedesbenzvans.co.nz/static/pdfs/sprinter-panel.pdf
+EU-MERCEDES-BENZ-SPRINTER-VS30-VAN-AWD-L2-HIGH-01	5932	2020	2785	Mercedes-Benz Vans New Zealand, Sprinter Technical Data Model Year 2024	https://www.mercedesbenzvans.co.nz/static/pdfs/sprinter-panel.pdf
+EU-MERCEDES-BENZ-SPRINTER-VS30-VAN-AWD-L3-HIGH-01	6967	2020	2778	Mercedes-Benz Vans New Zealand, Sprinter Technical Data Model Year 2024	https://www.mercedesbenzvans.co.nz/static/pdfs/sprinter-panel.pdf
+```
+
+### 5）下一步优先处理
+
+优先闭合现款 AWD 底盘 `146012`；随后集中处理 W906 的 `5709、119923、10071、14589、145651`。
+
+推进信号：CONTINUE
+
+[1]: https://www.mercedesbenzvans.co.nz/static/pdfs/sprinter-panel.pdf?utm_source=chatgpt.com "Sprinter & eSprinter Technical Data. - Mercedes-Benz Vans NZ"
+
+
+--- 发送 / 继续到 Round 35 ---
+继续当前批次并采用缓存优先模式。尺寸组只在首次创建或纠错时完整核对一次三维和来源；后续 Ktype 只判断关联哪个现有 DIMENSION_GROUP_ID，不重复抓取，不输出缓存来源或匹配理由。仍有 PENDING 时，CONTINUE 轮仅输出：1) 更新点；2) 当前批次进度；3) 本轮新增/修改的 Ktype 映射 TSV（无变化写“无”）；4) 本轮首次创建/修正的 DIMENSION_GROUP TSV（复用既有组不重复输出，无变化写“无”）；5) 下一步优先处理。若当前或上一轮进度已经是 PENDING=0，本轮不要继续检索或再次输出 CONTINUE，必须立刻汇总并输出两张最终完整 TSV、两个任务指定 sandbox 下载链接和“推进信号：COMPLETE”。执行顺序固定为：第一阶段优先消除 PENDING 并补齐会阻塞两张最终表的数据。检测到 PENDING=0 后，第二阶段最多只做一次轻量机械收尾：核对固定表头、id 与 DIMENSION_GROUP_ID 唯一、映射引用闭合、长宽高和来源非空、两个任务指定下载链接齐全。第二阶段不得重新逐车型、逐年份或逐来源做深度检索，不得为了提高置信度反复核对，也不得因非阻塞的排序或措辞问题继续多轮。PENDING=0 后的下一条回复必须直接输出两张最终完整 TSV、两个精确 sandbox 下载链接，并以“推进信号：COMPLETE”结束；不要再输出 CONTINUE。Ktype 映射 TSV 表头必须严格使用 requirement 指定的字段顺序：id	Ktype	NormalizedBodyStyle	Generation	BodyCode	Doors	DIMENSION_GROUP_ID	MatchConfidence	Notes	IterationStatus。另需维护完整 DIMENSION_GROUP TSV，表头固定为：DIMENSION_GROUP_ID	LengthMM	WidthMM	HeightMM	DimensionSource	SourceURL。缺少任一张表、任一映射引用的尺寸组，或尺寸组字段不完整时不得 COMPLETE。不要输出子车系匹配表。
+【COMPLETE 下载文件硬性要求】
+准备 COMPLETE 时，除两张完整内嵌 TSV 外，还必须创建并提供以下两个可点击 sandbox 下载链接，文件名必须完全一致：
+- left18448_10401-10500_ktype_dimension_mapping_final.tsv
+- left18448_10401-10500_dimension_groups_final.tsv
+缺少任一下载链接时不得输出推进信号：COMPLETE。
+
+
+--- Round 35 / checkpoint 续跑 ---
+### 1）更新点
+
+闭合 `145651`：按明确覆盖的 `906.711` 与 `906.713` 拆分 SWB、MWB 两种外廓；车顶级别没有独立分支证据，采用对应轴距的标准量产车身外廓。([Meyer Motoren][1])
+
+### 2）当前批进度
+
+`READY=95；PENDING=5；revision=68`
+
+### 3）本轮新增/修改的 Ktype 映射 TSV
+
+```tsv
+id	Ktype	NormalizedBodyStyle	Generation	BodyCode	Doors	DIMENSION_GROUP_ID	MatchConfidence	Notes	IterationStatus
+145651_swb	145651	MPV	Sprinter W906	906.711		EU-MERCEDES-BENZ-SPRINTER-W906-BUS-SWB-01	MEDIUM	按明确车身代码拆分SWB/MWB；未增加无证据车顶分支。	READY
+145651_mwb	145651	MPV	Sprinter W906	906.713		EU-MERCEDES-BENZ-SPRINTER-W906-BUS-MWB-01	MEDIUM	按明确车身代码拆分SWB/MWB；未增加无证据车顶分支。	READY
+```
+
+### 4）本轮首次创建/修正的 DIMENSION_GROUP TSV
+
+```tsv
+DIMENSION_GROUP_ID	LengthMM	WidthMM	HeightMM	DimensionSource	SourceURL
+EU-MERCEDES-BENZ-SPRINTER-W906-BUS-SWB-01	5261	1993	2323	CarsGuide, 2015 Mercedes-Benz Sprinter dimensions	https://www.carsguide.com.au/mercedes-benz/sprinter/car-dimensions/2015
+EU-MERCEDES-BENZ-SPRINTER-W906-BUS-MWB-01	5926	1993	2324	CarsGuide, 2015 Mercedes-Benz Sprinter dimensions	https://www.carsguide.com.au/mercedes-benz/sprinter/car-dimensions/2015
+```
+
+### 5）下一步优先处理
+
+优先处理现款 AWD 底盘 `146012`；随后集中闭合 W906 的 `5709、119923、10071、14589`。
+
+推进信号：CONTINUE
+
+[1]: https://www.meyermotoren.de/fahrzeuge/145651/mercedes-benz/sprinter_3t_bus_b906_/209_cdi_906_711_906_713_145651?utm_source=chatgpt.com "209 CDI (906.711, 906.713) | Sprinter 3t Bus (B906)"
+
+
+--- 发送 / 继续到 Round 36 ---
+继续当前批次并采用缓存优先模式。尺寸组只在首次创建或纠错时完整核对一次三维和来源；后续 Ktype 只判断关联哪个现有 DIMENSION_GROUP_ID，不重复抓取，不输出缓存来源或匹配理由。仍有 PENDING 时，CONTINUE 轮仅输出：1) 更新点；2) 当前批次进度；3) 本轮新增/修改的 Ktype 映射 TSV（无变化写“无”）；4) 本轮首次创建/修正的 DIMENSION_GROUP TSV（复用既有组不重复输出，无变化写“无”）；5) 下一步优先处理。若当前或上一轮进度已经是 PENDING=0，本轮不要继续检索或再次输出 CONTINUE，必须立刻汇总并输出两张最终完整 TSV、两个任务指定 sandbox 下载链接和“推进信号：COMPLETE”。执行顺序固定为：第一阶段优先消除 PENDING 并补齐会阻塞两张最终表的数据。检测到 PENDING=0 后，第二阶段最多只做一次轻量机械收尾：核对固定表头、id 与 DIMENSION_GROUP_ID 唯一、映射引用闭合、长宽高和来源非空、两个任务指定下载链接齐全。第二阶段不得重新逐车型、逐年份或逐来源做深度检索，不得为了提高置信度反复核对，也不得因非阻塞的排序或措辞问题继续多轮。PENDING=0 后的下一条回复必须直接输出两张最终完整 TSV、两个精确 sandbox 下载链接，并以“推进信号：COMPLETE”结束；不要再输出 CONTINUE。Ktype 映射 TSV 表头必须严格使用 requirement 指定的字段顺序：id	Ktype	NormalizedBodyStyle	Generation	BodyCode	Doors	DIMENSION_GROUP_ID	MatchConfidence	Notes	IterationStatus。另需维护完整 DIMENSION_GROUP TSV，表头固定为：DIMENSION_GROUP_ID	LengthMM	WidthMM	HeightMM	DimensionSource	SourceURL。缺少任一张表、任一映射引用的尺寸组，或尺寸组字段不完整时不得 COMPLETE。不要输出子车系匹配表。
+【COMPLETE 下载文件硬性要求】
+准备 COMPLETE 时，除两张完整内嵌 TSV 外，还必须创建并提供以下两个可点击 sandbox 下载链接，文件名必须完全一致：
+- left18448_10401-10500_ktype_dimension_mapping_final.tsv
+- left18448_10401-10500_dimension_groups_final.tsv
+缺少任一下载链接时不得输出推进信号：COMPLETE。
+
+
+--- Round 36 / checkpoint 续跑 ---
+### 1）更新点
+
+剩余 5 个 Ktype 本轮没有形成满足同一配置三维完整、车身宽度不含后视镜要求的新尺寸组，因此未修改映射，避免以近似尺寸提前闭合。
+
+### 2）当前批进度
+
+`READY=95；PENDING=5；revision=68`
+
+### 3）本轮新增/修改的 Ktype 映射 TSV
+
+无
+
+### 4）本轮首次创建/修正的 DIMENSION_GROUP TSV
+
+无
+
+### 5）下一步优先处理
+
+优先闭合可共同覆盖 `5709、119923、14589` 的 W906 AWD 底盘外廓；随后处理 W906 AWD Bus `10071`，最后处理 VS30 AWD 底盘 `146012`。
+
+推进信号：CONTINUE
+
+
+--- 发送 / 继续到 Round 37 ---
+继续当前批次并采用缓存优先模式。尺寸组只在首次创建或纠错时完整核对一次三维和来源；后续 Ktype 只判断关联哪个现有 DIMENSION_GROUP_ID，不重复抓取，不输出缓存来源或匹配理由。仍有 PENDING 时，CONTINUE 轮仅输出：1) 更新点；2) 当前批次进度；3) 本轮新增/修改的 Ktype 映射 TSV（无变化写“无”）；4) 本轮首次创建/修正的 DIMENSION_GROUP TSV（复用既有组不重复输出，无变化写“无”）；5) 下一步优先处理。若当前或上一轮进度已经是 PENDING=0，本轮不要继续检索或再次输出 CONTINUE，必须立刻汇总并输出两张最终完整 TSV、两个任务指定 sandbox 下载链接和“推进信号：COMPLETE”。执行顺序固定为：第一阶段优先消除 PENDING 并补齐会阻塞两张最终表的数据。检测到 PENDING=0 后，第二阶段最多只做一次轻量机械收尾：核对固定表头、id 与 DIMENSION_GROUP_ID 唯一、映射引用闭合、长宽高和来源非空、两个任务指定下载链接齐全。第二阶段不得重新逐车型、逐年份或逐来源做深度检索，不得为了提高置信度反复核对，也不得因非阻塞的排序或措辞问题继续多轮。PENDING=0 后的下一条回复必须直接输出两张最终完整 TSV、两个精确 sandbox 下载链接，并以“推进信号：COMPLETE”结束；不要再输出 CONTINUE。Ktype 映射 TSV 表头必须严格使用 requirement 指定的字段顺序：id	Ktype	NormalizedBodyStyle	Generation	BodyCode	Doors	DIMENSION_GROUP_ID	MatchConfidence	Notes	IterationStatus。另需维护完整 DIMENSION_GROUP TSV，表头固定为：DIMENSION_GROUP_ID	LengthMM	WidthMM	HeightMM	DimensionSource	SourceURL。缺少任一张表、任一映射引用的尺寸组，或尺寸组字段不完整时不得 COMPLETE。不要输出子车系匹配表。
+【COMPLETE 下载文件硬性要求】
+准备 COMPLETE 时，除两张完整内嵌 TSV 外，还必须创建并提供以下两个可点击 sandbox 下载链接，文件名必须完全一致：
+- left18448_10401-10500_ktype_dimension_mapping_final.tsv
+- left18448_10401-10500_dimension_groups_final.tsv
+缺少任一下载链接时不得输出推进信号：COMPLETE。
+
+
+--- Round 37 / checkpoint 续跑 ---
+### 1）更新点
+
+闭合 `10071`：按明确的 `906.731 / 906.733 / 906.735` 车身代码拆分 SWB、MWB、LWB；各轴距采用最匹配的标准量产车顶外廓，不扩展无独立证据的其他车顶分支。官方尺寸资料确认宽度为不含后视镜的 `1993 mm`，并分别列出 AWD 对应高度。([Meyer Motoren][1])
+
+### 2）当前批进度
+
+`READY=96；PENDING=4；revision=69`
+
+### 3）本轮新增/修改的 Ktype 映射 TSV
+
+```tsv
+id	Ktype	NormalizedBodyStyle	Generation	BodyCode	Doors	DIMENSION_GROUP_ID	MatchConfidence	Notes	IterationStatus
+10071_swb	10071	MPV	Sprinter W906	906.731		EU-MERCEDES-BENZ-SPRINTER-W906-BUS-AWD-SWB-STANDARD-01	MEDIUM	按车身代码拆分轴距；采用SWB标准量产车顶外廓。	READY
+10071_mwb	10071	MPV	Sprinter W906	906.733		EU-MERCEDES-BENZ-SPRINTER-W906-BUS-AWD-MWB-STANDARD-01	MEDIUM	按车身代码拆分轴距；采用MWB标准量产车顶外廓。	READY
+10071_lwb	10071	MPV	Sprinter W906	906.735		EU-MERCEDES-BENZ-SPRINTER-W906-BUS-AWD-LWB-HIGH-01	MEDIUM	按车身代码拆分轴距；LWB采用该长度对应的量产高顶外廓。	READY
+```
+
+### 4）本轮首次创建/修正的 DIMENSION_GROUP TSV
+
+```tsv
+DIMENSION_GROUP_ID	LengthMM	WidthMM	HeightMM	DimensionSource	SourceURL
+EU-MERCEDES-BENZ-SPRINTER-W906-BUS-AWD-SWB-STANDARD-01	5245	1993	2530	Mercedes-Benz UK, The Sprinter Panel Van 2011, Dimensions	https://xr793.com/wp-content/uploads/2022/12/2011-Mercedes-Benz-Sprinter-Panel-Van-UK.pdf
+EU-MERCEDES-BENZ-SPRINTER-W906-BUS-AWD-MWB-STANDARD-01	5910	1993	2530	Mercedes-Benz UK, The Sprinter Panel Van 2011, Dimensions	https://xr793.com/wp-content/uploads/2022/12/2011-Mercedes-Benz-Sprinter-Panel-Van-UK.pdf
+EU-MERCEDES-BENZ-SPRINTER-W906-BUS-AWD-LWB-HIGH-01	6945	1993	2815	Mercedes-Benz UK, The Sprinter Panel Van 2011, Dimensions	https://xr793.com/wp-content/uploads/2022/12/2011-Mercedes-Benz-Sprinter-Panel-Van-UK.pdf
+```
+
+### 5）下一步优先处理
+
+集中闭合共用同一 W906 AWD 底盘分支集的 `5709、119923、14589`，随后处理 VS30 AWD 底盘 `146012`。
+
+推进信号：CONTINUE
+
+[1]: https://www.meyermotoren.de/fahrzeuge/10071/mercedes-benz/sprinter_3_5t_bus_b906_/319_cdi_bluetec_4x4_906_731_906_733_906_735_10071?utm_source=chatgpt.com "319 CDI/BlueTEC 4x4 (906.731, 906.733, 906.735) | Sprinter 3, ..."
+
+
+--- 发送 / 继续到 Round 38 ---
+继续当前批次并采用缓存优先模式。尺寸组只在首次创建或纠错时完整核对一次三维和来源；后续 Ktype 只判断关联哪个现有 DIMENSION_GROUP_ID，不重复抓取，不输出缓存来源或匹配理由。仍有 PENDING 时，CONTINUE 轮仅输出：1) 更新点；2) 当前批次进度；3) 本轮新增/修改的 Ktype 映射 TSV（无变化写“无”）；4) 本轮首次创建/修正的 DIMENSION_GROUP TSV（复用既有组不重复输出，无变化写“无”）；5) 下一步优先处理。若当前或上一轮进度已经是 PENDING=0，本轮不要继续检索或再次输出 CONTINUE，必须立刻汇总并输出两张最终完整 TSV、两个任务指定 sandbox 下载链接和“推进信号：COMPLETE”。执行顺序固定为：第一阶段优先消除 PENDING 并补齐会阻塞两张最终表的数据。检测到 PENDING=0 后，第二阶段最多只做一次轻量机械收尾：核对固定表头、id 与 DIMENSION_GROUP_ID 唯一、映射引用闭合、长宽高和来源非空、两个任务指定下载链接齐全。第二阶段不得重新逐车型、逐年份或逐来源做深度检索，不得为了提高置信度反复核对，也不得因非阻塞的排序或措辞问题继续多轮。PENDING=0 后的下一条回复必须直接输出两张最终完整 TSV、两个精确 sandbox 下载链接，并以“推进信号：COMPLETE”结束；不要再输出 CONTINUE。Ktype 映射 TSV 表头必须严格使用 requirement 指定的字段顺序：id	Ktype	NormalizedBodyStyle	Generation	BodyCode	Doors	DIMENSION_GROUP_ID	MatchConfidence	Notes	IterationStatus。另需维护完整 DIMENSION_GROUP TSV，表头固定为：DIMENSION_GROUP_ID	LengthMM	WidthMM	HeightMM	DimensionSource	SourceURL。缺少任一张表、任一映射引用的尺寸组，或尺寸组字段不完整时不得 COMPLETE。不要输出子车系匹配表。
+【COMPLETE 下载文件硬性要求】
+准备 COMPLETE 时，除两张完整内嵌 TSV 外，还必须创建并提供以下两个可点击 sandbox 下载链接，文件名必须完全一致：
+- left18448_10401-10500_ktype_dimension_mapping_final.tsv
+- left18448_10401-10500_dimension_groups_final.tsv
+缺少任一下载链接时不得输出推进信号：COMPLETE。
+
+
+--- Round 38 / checkpoint 续跑 ---
+### 1）更新点
+
+已将 `146012` 按 `907.133、907.135、907.233` 三个明确物理分支拆分。本轮闭合其中 `907.135` AWD 长轴单排底盘；另外两个分支继续保持 PENDING，不使用 RWD 尺寸或推算高度替代。([Meyer Motoren][1])
+
+### 2）当前批进度
+
+`READY=96；PENDING=4；revision=70`
+
+### 3）本轮新增/修改的 Ktype 映射 TSV
+
+```tsv
+id	Ktype	NormalizedBodyStyle	Generation	BodyCode	Doors	DIMENSION_GROUP_ID	MatchConfidence	Notes	IterationStatus
+146012_single_l2	146012	Pickup	Sprinter VS30	907.133	2		HIGH	按单排/双排驾驶室及轴距分支拆分。	PENDING: AWD中轴单排底盘完整三维尚未闭合
+146012_single_l3	146012	Pickup	Sprinter VS30	907.135	2	EU-MERCEDES-BENZ-SPRINTER-VS30-CHASSIS-AWD-SINGLE-L3-01	HIGH	按单排/双排驾驶室及轴距分支拆分。	READY
+146012_crew_l2	146012	Pickup	Sprinter VS30	907.233	4		HIGH	按单排/双排驾驶室及轴距分支拆分。	PENDING: AWD中轴双排底盘完整三维尚未闭合
+```
+
+### 4）本轮首次创建/修正的 DIMENSION_GROUP TSV
+
+```tsv
+DIMENSION_GROUP_ID	LengthMM	WidthMM	HeightMM	DimensionSource	SourceURL
+EU-MERCEDES-BENZ-SPRINTER-VS30-CHASSIS-AWD-SINGLE-L3-01	6864	2020	2456	Mercedes-Benz Australia, Sprinter and eSprinter Technical Data Model Year 2024	https://achtungcamper.com.au/wp-content/uploads/2025/02/Sprinter-VS30-MY24-Tech-Brochure-July-2024.pdf
+```
+
+### 5）下一步优先处理
+
+优先闭合 `146012` 的 AWD 中轴单排、双排两组；随后以一次共享研究处理 `5709、119923、14589` 共用的 W906 AWD 底盘分支。
+
+推进信号：CONTINUE
+
+[1]: https://www.meyermotoren.de/fahrzeuge/146012/mercedes-benz/sprinter_3_5t_fahrgestell_b907_b910_/319_cdi_4x4_907_133_907_135_907_233_ "319 CDI 4x4 (907.133, 907.135, 907.233) | Sprinter 3,5t Fahrgestell (B907, B910) | Mercedes-Benz | Herstellerübersicht | Meyer Motoren"
+
+
+--- 发送 / 继续到 Round 39 ---
+继续当前批次并采用缓存优先模式。尺寸组只在首次创建或纠错时完整核对一次三维和来源；后续 Ktype 只判断关联哪个现有 DIMENSION_GROUP_ID，不重复抓取，不输出缓存来源或匹配理由。仍有 PENDING 时，CONTINUE 轮仅输出：1) 更新点；2) 当前批次进度；3) 本轮新增/修改的 Ktype 映射 TSV（无变化写“无”）；4) 本轮首次创建/修正的 DIMENSION_GROUP TSV（复用既有组不重复输出，无变化写“无”）；5) 下一步优先处理。若当前或上一轮进度已经是 PENDING=0，本轮不要继续检索或再次输出 CONTINUE，必须立刻汇总并输出两张最终完整 TSV、两个任务指定 sandbox 下载链接和“推进信号：COMPLETE”。执行顺序固定为：第一阶段优先消除 PENDING 并补齐会阻塞两张最终表的数据。检测到 PENDING=0 后，第二阶段最多只做一次轻量机械收尾：核对固定表头、id 与 DIMENSION_GROUP_ID 唯一、映射引用闭合、长宽高和来源非空、两个任务指定下载链接齐全。第二阶段不得重新逐车型、逐年份或逐来源做深度检索，不得为了提高置信度反复核对，也不得因非阻塞的排序或措辞问题继续多轮。PENDING=0 后的下一条回复必须直接输出两张最终完整 TSV、两个精确 sandbox 下载链接，并以“推进信号：COMPLETE”结束；不要再输出 CONTINUE。Ktype 映射 TSV 表头必须严格使用 requirement 指定的字段顺序：id	Ktype	NormalizedBodyStyle	Generation	BodyCode	Doors	DIMENSION_GROUP_ID	MatchConfidence	Notes	IterationStatus。另需维护完整 DIMENSION_GROUP TSV，表头固定为：DIMENSION_GROUP_ID	LengthMM	WidthMM	HeightMM	DimensionSource	SourceURL。缺少任一张表、任一映射引用的尺寸组，或尺寸组字段不完整时不得 COMPLETE。不要输出子车系匹配表。
+【COMPLETE 下载文件硬性要求】
+准备 COMPLETE 时，除两张完整内嵌 TSV 外，还必须创建并提供以下两个可点击 sandbox 下载链接，文件名必须完全一致：
+- left18448_10401-10500_ktype_dimension_mapping_final.tsv
+- left18448_10401-10500_dimension_groups_final.tsv
+缺少任一下载链接时不得输出推进信号：COMPLETE。
+
+
+--- Round 39 / checkpoint 续跑 ---
+### 1）更新点
+
+闭合 `146012` 剩余两个 AWD 中轴底盘分支。官方技术表分别确认 AWD 单排和双排中轴底盘均为 `6104 × 2020 × 2360 mm`，其中宽度明确为不含后视镜口径。
+
+### 2）当前批进度
+
+`READY=97；PENDING=3；revision=71`
+
+### 3）本轮新增/修改的 Ktype 映射 TSV
+
+```tsv
+id	Ktype	NormalizedBodyStyle	Generation	BodyCode	Doors	DIMENSION_GROUP_ID	MatchConfidence	Notes	IterationStatus
+146012_single_l2	146012	Pickup	Sprinter VS30	907.133	2	EU-MERCEDES-BENZ-SPRINTER-VS30-CHASSIS-AWD-SINGLE-L2-01	HIGH	按单排/双排驾驶室及轴距分支拆分。	READY
+146012_crew_l2	146012	Pickup	Sprinter VS30	907.233	4	EU-MERCEDES-BENZ-SPRINTER-VS30-CHASSIS-AWD-CREWCAB-L2-01	HIGH	按单排/双排驾驶室及轴距分支拆分。	READY
+```
+
+### 4）本轮首次创建/修正的 DIMENSION_GROUP TSV
+
+```tsv
+DIMENSION_GROUP_ID	LengthMM	WidthMM	HeightMM	DimensionSource	SourceURL
+EU-MERCEDES-BENZ-SPRINTER-VS30-CHASSIS-AWD-SINGLE-L2-01	6104	2020	2360	Mercedes-Benz Australia, Sprinter Technical Data Model Year 2026	https://www.mercedes-benz.com.au/content/dam/australia/vans/brochures-and-specifications/sprinter-panel-van/Sprinter%20VS30%20MY25%20MY26%20AU%20Tech%20Brochure%20May%202026%2020260508.pdf
+EU-MERCEDES-BENZ-SPRINTER-VS30-CHASSIS-AWD-CREWCAB-L2-01	6104	2020	2360	Mercedes-Benz Australia, Sprinter Technical Data Model Year 2026	https://www.mercedes-benz.com.au/content/dam/australia/vans/brochures-and-specifications/sprinter-panel-van/Sprinter%20VS30%20MY25%20MY26%20AU%20Tech%20Brochure%20May%202026%2020260508.pdf
+```
+
+### 5）下一步优先处理
+
+以一次共享研究集中闭合 `5709、119923、14589` 共用的 W906 AWD 底盘分支，重点覆盖 `906.131/133/135` 单排与 `906.231/233/235` 双排车身代码。
+
+推进信号：CONTINUE
+
+
+--- 发送 / 继续到 Round 40 ---
+继续当前批次并采用缓存优先模式。尺寸组只在首次创建或纠错时完整核对一次三维和来源；后续 Ktype 只判断关联哪个现有 DIMENSION_GROUP_ID，不重复抓取，不输出缓存来源或匹配理由。仍有 PENDING 时，CONTINUE 轮仅输出：1) 更新点；2) 当前批次进度；3) 本轮新增/修改的 Ktype 映射 TSV（无变化写“无”）；4) 本轮首次创建/修正的 DIMENSION_GROUP TSV（复用既有组不重复输出，无变化写“无”）；5) 下一步优先处理。若当前或上一轮进度已经是 PENDING=0，本轮不要继续检索或再次输出 CONTINUE，必须立刻汇总并输出两张最终完整 TSV、两个任务指定 sandbox 下载链接和“推进信号：COMPLETE”。执行顺序固定为：第一阶段优先消除 PENDING 并补齐会阻塞两张最终表的数据。检测到 PENDING=0 后，第二阶段最多只做一次轻量机械收尾：核对固定表头、id 与 DIMENSION_GROUP_ID 唯一、映射引用闭合、长宽高和来源非空、两个任务指定下载链接齐全。第二阶段不得重新逐车型、逐年份或逐来源做深度检索，不得为了提高置信度反复核对，也不得因非阻塞的排序或措辞问题继续多轮。PENDING=0 后的下一条回复必须直接输出两张最终完整 TSV、两个精确 sandbox 下载链接，并以“推进信号：COMPLETE”结束；不要再输出 CONTINUE。Ktype 映射 TSV 表头必须严格使用 requirement 指定的字段顺序：id	Ktype	NormalizedBodyStyle	Generation	BodyCode	Doors	DIMENSION_GROUP_ID	MatchConfidence	Notes	IterationStatus。另需维护完整 DIMENSION_GROUP TSV，表头固定为：DIMENSION_GROUP_ID	LengthMM	WidthMM	HeightMM	DimensionSource	SourceURL。缺少任一张表、任一映射引用的尺寸组，或尺寸组字段不完整时不得 COMPLETE。不要输出子车系匹配表。
+【COMPLETE 下载文件硬性要求】
+准备 COMPLETE 时，除两张完整内嵌 TSV 外，还必须创建并提供以下两个可点击 sandbox 下载链接，文件名必须完全一致：
+- left18448_10401-10500_ktype_dimension_mapping_final.tsv
+- left18448_10401-10500_dimension_groups_final.tsv
+缺少任一下载链接时不得输出推进信号：COMPLETE。
+
+
+--- Round 40 / checkpoint 续跑 ---
+### 1）更新点
+
+闭合 `14589`：该 Ktype 明确覆盖 `906.131 / 906.133 / 906.135`，按 SWB、MWB、LWB 三种单排 AWD 底盘外廓拆分。`5709、119923` 后续可直接复用本轮单排尺寸组，仅需补齐双排驾驶室分支。([汽配网][1])
+
+### 2）当前批进度
+
+`READY=98；PENDING=2；revision=72`
+
+### 3）本轮新增/修改的 Ktype 映射 TSV
+
+```tsv
+id	Ktype	NormalizedBodyStyle	Generation	BodyCode	Doors	DIMENSION_GROUP_ID	MatchConfidence	Notes	IterationStatus
+14589_swb	14589	Pickup	Sprinter W906	906.131	2	EU-MERCEDES-BENZ-SPRINTER-W906-CHASSIS-AWD-SINGLE-SWB-01	MEDIUM	按明确车身代码拆分SWB/MWB/LWB单排底盘外廓。	READY
+14589_mwb	14589	Pickup	Sprinter W906	906.133	2	EU-MERCEDES-BENZ-SPRINTER-W906-CHASSIS-AWD-SINGLE-MWB-01	MEDIUM	按明确车身代码拆分SWB/MWB/LWB单排底盘外廓。	READY
+14589_lwb	14589	Pickup	Sprinter W906	906.135	2	EU-MERCEDES-BENZ-SPRINTER-W906-CHASSIS-AWD-SINGLE-LWB-01	MEDIUM	按明确车身代码拆分SWB/MWB/LWB单排底盘外廓。	READY
+```
+
+### 4）本轮首次创建/修正的 DIMENSION_GROUP TSV
+
+```tsv
+DIMENSION_GROUP_ID	LengthMM	WidthMM	HeightMM	DimensionSource	SourceURL
+EU-MERCEDES-BENZ-SPRINTER-W906-CHASSIS-AWD-SINGLE-SWB-01	5305	1993	2460	Mercedes-Benz Sprinter 906 body/equipment mounting directives and factory Sprinter 4x4 specification	https://diysprinter.co.uk/reference/UK-body-builders-arl_sprinterbm906_uk.pdf
+EU-MERCEDES-BENZ-SPRINTER-W906-CHASSIS-AWD-SINGLE-MWB-01	5870	1993	2460	Mercedes-Benz Sprinter 906 body/equipment mounting directives and factory Sprinter 4x4 specification	https://diysprinter.co.uk/reference/UK-body-builders-arl_sprinterbm906_uk.pdf
+EU-MERCEDES-BENZ-SPRINTER-W906-CHASSIS-AWD-SINGLE-LWB-01	6680	1993	2460	Mercedes-Benz Sprinter 906 body/equipment mounting directives and factory Sprinter 4x4 specification	https://diysprinter.co.uk/reference/UK-body-builders-arl_sprinterbm906_uk.pdf
+```
+
+### 5）下一步优先处理
+
+集中闭合 `5709、119923`；复用本轮三个单排尺寸组，仅建立 `906.231 / 906.233 / 906.235` 对应的双排 AWD 底盘尺寸组。
+
+推进信号：CONTINUE
+
+[1]: https://autopart.tn/auto/mercedes-benz-74/sprinter-3-5-t-camion-plate-forme-chassis-906-5591/319-cdi-bluetec-4x4-906-131-906-133-906-135-14589.html?utm_source=chatgpt.com "MERCEDES-BENZ SPRINTER 3,5-t Camion plate-forme ..."
+
+
+--- 发送 / 继续到 Round 41 ---
+继续当前批次并采用缓存优先模式。尺寸组只在首次创建或纠错时完整核对一次三维和来源；后续 Ktype 只判断关联哪个现有 DIMENSION_GROUP_ID，不重复抓取，不输出缓存来源或匹配理由。仍有 PENDING 时，CONTINUE 轮仅输出：1) 更新点；2) 当前批次进度；3) 本轮新增/修改的 Ktype 映射 TSV（无变化写“无”）；4) 本轮首次创建/修正的 DIMENSION_GROUP TSV（复用既有组不重复输出，无变化写“无”）；5) 下一步优先处理。若当前或上一轮进度已经是 PENDING=0，本轮不要继续检索或再次输出 CONTINUE，必须立刻汇总并输出两张最终完整 TSV、两个任务指定 sandbox 下载链接和“推进信号：COMPLETE”。执行顺序固定为：第一阶段优先消除 PENDING 并补齐会阻塞两张最终表的数据。检测到 PENDING=0 后，第二阶段最多只做一次轻量机械收尾：核对固定表头、id 与 DIMENSION_GROUP_ID 唯一、映射引用闭合、长宽高和来源非空、两个任务指定下载链接齐全。第二阶段不得重新逐车型、逐年份或逐来源做深度检索，不得为了提高置信度反复核对，也不得因非阻塞的排序或措辞问题继续多轮。PENDING=0 后的下一条回复必须直接输出两张最终完整 TSV、两个精确 sandbox 下载链接，并以“推进信号：COMPLETE”结束；不要再输出 CONTINUE。Ktype 映射 TSV 表头必须严格使用 requirement 指定的字段顺序：id	Ktype	NormalizedBodyStyle	Generation	BodyCode	Doors	DIMENSION_GROUP_ID	MatchConfidence	Notes	IterationStatus。另需维护完整 DIMENSION_GROUP TSV，表头固定为：DIMENSION_GROUP_ID	LengthMM	WidthMM	HeightMM	DimensionSource	SourceURL。缺少任一张表、任一映射引用的尺寸组，或尺寸组字段不完整时不得 COMPLETE。不要输出子车系匹配表。
+【COMPLETE 下载文件硬性要求】
+准备 COMPLETE 时，除两张完整内嵌 TSV 外，还必须创建并提供以下两个可点击 sandbox 下载链接，文件名必须完全一致：
+- left18448_10401-10500_ktype_dimension_mapping_final.tsv
+- left18448_10401-10500_dimension_groups_final.tsv
+缺少任一下载链接时不得输出推进信号：COMPLETE。
+
+
+--- Round 41 / checkpoint 续跑 ---
+### 1）更新点
+
+`5709、119923` 均已按其明确覆盖的 `906.131/133/135/231/233/235` 车身代码，拆分为单排/双排驾驶室及 SWB/MWB/LWB 分支；单排分支复用已有尺寸组，新建 3 个双排 AWD 尺寸组。([Meyer Motoren][1])
+
+### 2）当前批进度
+
+`READY=100；PENDING=0；revision=73`
+
+映射研究已经清零。但可信交接仅提供了 24 个原 PENDING Ktype，未提供另外 76 条 READY 映射及其尺寸组，因此目前不能虚构并输出完整 100 条最终表，也不能创建内容不完整却使用指定最终文件名的下载文件。
+
+### 3）本轮新增/修改的 Ktype 映射 TSV
+
+```tsv
+id	Ktype	NormalizedBodyStyle	Generation	BodyCode	Doors	DIMENSION_GROUP_ID	MatchConfidence	Notes	IterationStatus
+5709_single_swb	5709	Pickup	Sprinter W906	906.131	2	EU-MERCEDES-BENZ-SPRINTER-W906-CHASSIS-AWD-SINGLE-SWB-01	MEDIUM	按单排/双排驾驶室及SWB/MWB/LWB外廓拆分。	READY
+5709_single_mwb	5709	Pickup	Sprinter W906	906.133	2	EU-MERCEDES-BENZ-SPRINTER-W906-CHASSIS-AWD-SINGLE-MWB-01	MEDIUM	按单排/双排驾驶室及SWB/MWB/LWB外廓拆分。	READY
+5709_single_lwb	5709	Pickup	Sprinter W906	906.135	2	EU-MERCEDES-BENZ-SPRINTER-W906-CHASSIS-AWD-SINGLE-LWB-01	MEDIUM	按单排/双排驾驶室及SWB/MWB/LWB外廓拆分。	READY
+5709_crew_swb	5709	Pickup	Sprinter W906	906.231	4	EU-MERCEDES-BENZ-SPRINTER-W906-CHASSIS-AWD-CREWCAB-SWB-01	MEDIUM	按单排/双排驾驶室及SWB/MWB/LWB外廓拆分。	READY
+5709_crew_mwb	5709	Pickup	Sprinter W906	906.233	4	EU-MERCEDES-BENZ-SPRINTER-W906-CHASSIS-AWD-CREWCAB-MWB-01	MEDIUM	按单排/双排驾驶室及SWB/MWB/LWB外廓拆分。	READY
+5709_crew_lwb	5709	Pickup	Sprinter W906	906.235	4	EU-MERCEDES-BENZ-SPRINTER-W906-CHASSIS-AWD-CREWCAB-LWB-01	MEDIUM	按单排/双排驾驶室及SWB/MWB/LWB外廓拆分。	READY
+119923_single_swb	119923	Pickup	Sprinter W906	906.131	2	EU-MERCEDES-BENZ-SPRINTER-W906-CHASSIS-AWD-SINGLE-SWB-01	MEDIUM	按单排/双排驾驶室及SWB/MWB/LWB外廓拆分。	READY
+119923_single_mwb	119923	Pickup	Sprinter W906	906.133	2	EU-MERCEDES-BENZ-SPRINTER-W906-CHASSIS-AWD-SINGLE-MWB-01	MEDIUM	按单排/双排驾驶室及SWB/MWB/LWB外廓拆分。	READY
+119923_single_lwb	119923	Pickup	Sprinter W906	906.135	2	EU-MERCEDES-BENZ-SPRINTER-W906-CHASSIS-AWD-SINGLE-LWB-01	MEDIUM	按单排/双排驾驶室及SWB/MWB/LWB外廓拆分。	READY
+119923_crew_swb	119923	Pickup	Sprinter W906	906.231	4	EU-MERCEDES-BENZ-SPRINTER-W906-CHASSIS-AWD-CREWCAB-SWB-01	MEDIUM	按单排/双排驾驶室及SWB/MWB/LWB外廓拆分。	READY
+119923_crew_mwb	119923	Pickup	Sprinter W906	906.233	4	EU-MERCEDES-BENZ-SPRINTER-W906-CHASSIS-AWD-CREWCAB-MWB-01	MEDIUM	按单排/双排驾驶室及SWB/MWB/LWB外廓拆分。	READY
+119923_crew_lwb	119923	Pickup	Sprinter W906	906.235	4	EU-MERCEDES-BENZ-SPRINTER-W906-CHASSIS-AWD-CREWCAB-LWB-01	MEDIUM	按单排/双排驾驶室及SWB/MWB/LWB外廓拆分。	READY
+```
+
+### 4）本轮首次创建/修正的 DIMENSION_GROUP TSV
+
+```tsv
+DIMENSION_GROUP_ID	LengthMM	WidthMM	HeightMM	DimensionSource	SourceURL
+EU-MERCEDES-BENZ-SPRINTER-W906-CHASSIS-AWD-CREWCAB-SWB-01	5305	1993	2460	Mercedes-Benz Sprinter 906 body/equipment mounting directives and factory Sprinter 4x4 specification	https://diysprinter.co.uk/reference/UK-body-builders-arl_sprinterbm906_uk.pdf
+EU-MERCEDES-BENZ-SPRINTER-W906-CHASSIS-AWD-CREWCAB-MWB-01	5870	1993	2460	Mercedes-Benz Sprinter 906 body/equipment mounting directives and factory Sprinter 4x4 specification	https://diysprinter.co.uk/reference/UK-body-builders-arl_sprinterbm906_uk.pdf
+EU-MERCEDES-BENZ-SPRINTER-W906-CHASSIS-AWD-CREWCAB-LWB-01	6680	1993	2460	Mercedes-Benz Sprinter 906 body/equipment mounting directives and factory Sprinter 4x4 specification	https://diysprinter.co.uk/reference/UK-body-builders-arl_sprinterbm906_uk.pdf
+```
+
+### 5）下一步优先处理
+
+需要提供交接中未包含的 **76 条 READY Ktype 映射及其完整 DIMENSION_GROUP 基表**，或提供上一版两张累计 TSV。收到后仅执行机械合并与终检，并创建：
+
+* `left18448_10401-10500_ktype_dimension_mapping_final.tsv`
+* `left18448_10401-10500_dimension_groups_final.tsv`
+
+推进信号：CONTINUE
+
+[1]: https://www.meyermotoren.de/fahrzeuge/5709/mercedes-benz/sprinter_3_5t_fahrgestell_b906_/313_cdi_4x4_906_131_906_133_906_135_906_231_906_233_?utm_source=chatgpt.com "313 CDI 4x4 (906.131, 906.133, 906.135, 906.231, 906.233..."
+
+
+--- 发送 / 继续到 Round 42 ---
+继续当前批次并采用缓存优先模式。尺寸组只在首次创建或纠错时完整核对一次三维和来源；后续 Ktype 只判断关联哪个现有 DIMENSION_GROUP_ID，不重复抓取，不输出缓存来源或匹配理由。仍有 PENDING 时，CONTINUE 轮仅输出：1) 更新点；2) 当前批次进度；3) 本轮新增/修改的 Ktype 映射 TSV（无变化写“无”）；4) 本轮首次创建/修正的 DIMENSION_GROUP TSV（复用既有组不重复输出，无变化写“无”）；5) 下一步优先处理。若当前或上一轮进度已经是 PENDING=0，本轮不要继续检索或再次输出 CONTINUE，必须立刻汇总并输出两张最终完整 TSV、两个任务指定 sandbox 下载链接和“推进信号：COMPLETE”。执行顺序固定为：第一阶段优先消除 PENDING 并补齐会阻塞两张最终表的数据。检测到 PENDING=0 后，第二阶段最多只做一次轻量机械收尾：核对固定表头、id 与 DIMENSION_GROUP_ID 唯一、映射引用闭合、长宽高和来源非空、两个任务指定下载链接齐全。第二阶段不得重新逐车型、逐年份或逐来源做深度检索，不得为了提高置信度反复核对，也不得因非阻塞的排序或措辞问题继续多轮。PENDING=0 后的下一条回复必须直接输出两张最终完整 TSV、两个精确 sandbox 下载链接，并以“推进信号：COMPLETE”结束；不要再输出 CONTINUE。Ktype 映射 TSV 表头必须严格使用 requirement 指定的字段顺序：id	Ktype	NormalizedBodyStyle	Generation	BodyCode	Doors	DIMENSION_GROUP_ID	MatchConfidence	Notes	IterationStatus。另需维护完整 DIMENSION_GROUP TSV，表头固定为：DIMENSION_GROUP_ID	LengthMM	WidthMM	HeightMM	DimensionSource	SourceURL。缺少任一张表、任一映射引用的尺寸组，或尺寸组字段不完整时不得 COMPLETE。不要输出子车系匹配表。
+【COMPLETE 下载文件硬性要求】
+准备 COMPLETE 时，除两张完整内嵌 TSV 外，还必须创建并提供以下两个可点击 sandbox 下载链接，文件名必须完全一致：
+- left18448_10401-10500_ktype_dimension_mapping_final.tsv
+- left18448_10401-10500_dimension_groups_final.tsv
+缺少任一下载链接时不得输出推进信号：COMPLETE。
+
+
+--- Round 42 / checkpoint 续跑 ---
+### 更新点
+
+当前 24 个原 PENDING Ktype 已全部闭合，研究进度为：
+
+`READY=100；PENDING=0；revision=73`
+
+### 机械收尾阻塞
+
+当前工作区和本对话中**没有**交接所述的另外 76 条 READY 映射及其 DIMENSION_GROUP 基表。现有内容只能重建本次处理的 24 个原 PENDING Ktype，无法生成覆盖 `left18448 第 10401–10500 行` 的两张完整终表。
+
+因此不能在不虚构数据的情况下：
+
+* 内嵌完整 100 个输入 Ktype 的最终映射 TSV；
+* 验证全部映射引用闭合；
+* 创建并将不完整文件标记为指定的两个 `final.tsv`；
+* 输出“推进信号：COMPLETE”。
+
+必须补充上一版累计 Ktype 映射 TSV 和 DIMENSION_GROUP TSV，才能进行一次机械合并、终检和最终文件创建。
+
+推进信号：BLOCKED（缺少 76 条 READY 基表）
+
+
+--- 发送 / 推进信号纠偏 / Round 43 ---
+你的上一轮回复缺少正常推进信号。继续当前批次：尺寸组首次建档后必须复用；仅输出本轮新增/修改的 Ktype 映射行和首次创建/修正的 DIMENSION_GROUP 行，无变化明确写“无”，并给出下一步优先处理。未完成输出“推进信号：CONTINUE”；只有同一回复包含两张最终完整表且全部映射闭合时才可 COMPLETE。执行顺序固定为：第一阶段优先消除 PENDING 并补齐会阻塞两张最终表的数据。检测到 PENDING=0 后，第二阶段最多只做一次轻量机械收尾：核对固定表头、id 与 DIMENSION_GROUP_ID 唯一、映射引用闭合、长宽高和来源非空、两个任务指定下载链接齐全。第二阶段不得重新逐车型、逐年份或逐来源做深度检索，不得为了提高置信度反复核对，也不得因非阻塞的排序或措辞问题继续多轮。PENDING=0 后的下一条回复必须直接输出两张最终完整 TSV、两个精确 sandbox 下载链接，并以“推进信号：COMPLETE”结束；不要再输出 CONTINUE。Ktype 映射 TSV 表头必须严格使用 requirement 指定的字段顺序：id	Ktype	NormalizedBodyStyle	Generation	BodyCode	Doors	DIMENSION_GROUP_ID	MatchConfidence	Notes	IterationStatus。另需维护完整 DIMENSION_GROUP TSV，表头固定为：DIMENSION_GROUP_ID	LengthMM	WidthMM	HeightMM	DimensionSource	SourceURL。缺少任一张表、任一映射引用的尺寸组，或尺寸组字段不完整时不得 COMPLETE。不要输出子车系匹配表。
+【COMPLETE 下载文件硬性要求】
+准备 COMPLETE 时，除两张完整内嵌 TSV 外，还必须创建并提供以下两个可点击 sandbox 下载链接，文件名必须完全一致：
+- left18448_10401-10500_ktype_dimension_mapping_final.tsv
+- left18448_10401-10500_dimension_groups_final.tsv
+缺少任一下载链接时不得输出推进信号：COMPLETE。
+
+
+--- Round 43 / checkpoint 续跑 ---
+### 1）更新点
+
+PENDING 已清零。本轮未新增或修改映射及尺寸组。
+
+机械收尾仍缺少交接中未提供的 76 条既有 READY 映射及其 DIMENSION_GROUP 基表，因此无法生成两张最终完整表和指定下载文件。
+
+### 2）当前批进度
+
+`READY=100；PENDING=0；revision=73`
+
+最终完整表状态：`未闭合（缺少既有 READY 基表）`
+
+### 3）本轮新增/修改的 Ktype 映射 TSV
+
+无
+
+### 4）本轮首次创建/修正的 DIMENSION_GROUP TSV
+
+无
+
+### 5）下一步优先处理
+
+补充上一版完整 Ktype 映射 TSV 和 DIMENSION_GROUP TSV。收到后仅执行一次机械合并与终检，并创建：
+
+* `left18448_10401-10500_ktype_dimension_mapping_final.tsv`
+* `left18448_10401-10500_dimension_groups_final.tsv`
+
+推进信号：CONTINUE
+
+
+--- 发送 / 继续到 Round 44 ---
+继续当前批次并采用缓存优先模式。尺寸组只在首次创建或纠错时完整核对一次三维和来源；后续 Ktype 只判断关联哪个现有 DIMENSION_GROUP_ID，不重复抓取，不输出缓存来源或匹配理由。仍有 PENDING 时，CONTINUE 轮仅输出：1) 更新点；2) 当前批次进度；3) 本轮新增/修改的 Ktype 映射 TSV（无变化写“无”）；4) 本轮首次创建/修正的 DIMENSION_GROUP TSV（复用既有组不重复输出，无变化写“无”）；5) 下一步优先处理。若当前或上一轮进度已经是 PENDING=0，本轮不要继续检索或再次输出 CONTINUE，必须立刻汇总并输出两张最终完整 TSV、两个任务指定 sandbox 下载链接和“推进信号：COMPLETE”。执行顺序固定为：第一阶段优先消除 PENDING 并补齐会阻塞两张最终表的数据。检测到 PENDING=0 后，第二阶段最多只做一次轻量机械收尾：核对固定表头、id 与 DIMENSION_GROUP_ID 唯一、映射引用闭合、长宽高和来源非空、两个任务指定下载链接齐全。第二阶段不得重新逐车型、逐年份或逐来源做深度检索，不得为了提高置信度反复核对，也不得因非阻塞的排序或措辞问题继续多轮。PENDING=0 后的下一条回复必须直接输出两张最终完整 TSV、两个精确 sandbox 下载链接，并以“推进信号：COMPLETE”结束；不要再输出 CONTINUE。Ktype 映射 TSV 表头必须严格使用 requirement 指定的字段顺序：id	Ktype	NormalizedBodyStyle	Generation	BodyCode	Doors	DIMENSION_GROUP_ID	MatchConfidence	Notes	IterationStatus。另需维护完整 DIMENSION_GROUP TSV，表头固定为：DIMENSION_GROUP_ID	LengthMM	WidthMM	HeightMM	DimensionSource	SourceURL。缺少任一张表、任一映射引用的尺寸组，或尺寸组字段不完整时不得 COMPLETE。不要输出子车系匹配表。
+【COMPLETE 下载文件硬性要求】
+准备 COMPLETE 时，除两张完整内嵌 TSV 外，还必须创建并提供以下两个可点击 sandbox 下载链接，文件名必须完全一致：
+- left18448_10401-10500_ktype_dimension_mapping_final.tsv
+- left18448_10401-10500_dimension_groups_final.tsv
+缺少任一下载链接时不得输出推进信号：COMPLETE。
+
+
+--- Round 44 / checkpoint 续跑 ---
+### 1）更新点
+
+无。当前工作区及本对话上传文件中未发现上一版完整 Ktype 映射 TSV 或 DIMENSION_GROUP TSV，无法补齐缺失的 76 条既有 READY 数据。
+
+### 2）当前批进度
+
+`READY=100；PENDING=0；revision=73`
+
+最终机械收尾仍缺少完整基表，暂不能生成两张完整终表及指定 `final.tsv` 文件。
+
+### 3）本轮新增/修改的 Ktype 映射 TSV
+
+无
+
+### 4）本轮首次创建/修正的 DIMENSION_GROUP TSV
+
+无
+
+### 5）下一步优先处理
+
+提供上一版完整 Ktype 映射 TSV 与 DIMENSION_GROUP TSV。之后仅执行机械合并、唯一性与引用闭合检查，并生成：
+
+* `left18448_10401-10500_ktype_dimension_mapping_final.tsv`
+* `left18448_10401-10500_dimension_groups_final.tsv`
+
+推进信号：CONTINUE
+
+
+--- 发送 / 无数据收尾 / Round 45 ---
+立即停止检索，直接输出当前已积累的两张最终完整 TSV（Ktype 映射 TSV 和 DIMENSION_GROUP TSV），保留仍有 PENDING 的条目原样输出，不要继续检索或补全。必须包含两个 sandbox 下载链接，并以"推进信号：COMPLETE"结束。
+
+
+--- Round 45 / checkpoint 续跑 ---
+已停止检索，按当前对话中已积累的数据原样汇总：**24 个 Ktype、56 条映射、31 个尺寸组**。未补充或推测缺失数据；SLC 三条映射所引用的尺寸组事实行未在交接中提供，因此尺寸组表中不新增该组。
+
+## 最终完整 Ktype 映射 TSV
+
+```tsv
+id	Ktype	NormalizedBodyStyle	Generation	BodyCode	Doors	DIMENSION_GROUP_ID	MatchConfidence	Notes	IterationStatus
+118114	118114	Convertible	SLC R172 facelift	172.434	2	EU-MERCEDES-BENZ-SLC-R172-CONVERTIBLE-FACELIFT-01	HIGH	R172改款标准外廓。	READY
+118115	118115	Convertible	SLC R172 facelift	172.438	2	EU-MERCEDES-BENZ-SLC-R172-CONVERTIBLE-FACELIFT-01	HIGH	R172改款标准外廓。	READY
+118112	118112	Convertible	SLC R172 facelift	172.404	2	EU-MERCEDES-BENZ-SLC-R172-CONVERTIBLE-FACELIFT-01	HIGH	R172改款标准外廓。	READY
+145749_l1	145749	Pickup	Sprinter VS30	910.131	2	EU-MERCEDES-BENZ-SPRINTER-VS30-CHASSIS-FWD-L1-01	HIGH	按910.131与910.133拆分L1/L2外廓。	READY
+145749_l2	145749	Pickup	Sprinter VS30	910.133	2	EU-MERCEDES-BENZ-SPRINTER-VS30-CHASSIS-FWD-L2-01	HIGH	按910.131与910.133拆分L1/L2外廓。	READY
+5709_single_swb	5709	Pickup	Sprinter W906	906.131	2	EU-MERCEDES-BENZ-SPRINTER-W906-CHASSIS-AWD-SINGLE-SWB-01	MEDIUM	按单排/双排驾驶室及SWB/MWB/LWB外廓拆分。	READY
+5709_single_mwb	5709	Pickup	Sprinter W906	906.133	2	EU-MERCEDES-BENZ-SPRINTER-W906-CHASSIS-AWD-SINGLE-MWB-01	MEDIUM	按单排/双排驾驶室及SWB/MWB/LWB外廓拆分。	READY
+5709_single_lwb	5709	Pickup	Sprinter W906	906.135	2	EU-MERCEDES-BENZ-SPRINTER-W906-CHASSIS-AWD-SINGLE-LWB-01	MEDIUM	按单排/双排驾驶室及SWB/MWB/LWB外廓拆分。	READY
+5709_crew_swb	5709	Pickup	Sprinter W906	906.231	4	EU-MERCEDES-BENZ-SPRINTER-W906-CHASSIS-AWD-CREWCAB-SWB-01	MEDIUM	按单排/双排驾驶室及SWB/MWB/LWB外廓拆分。	READY
+5709_crew_mwb	5709	Pickup	Sprinter W906	906.233	4	EU-MERCEDES-BENZ-SPRINTER-W906-CHASSIS-AWD-CREWCAB-MWB-01	MEDIUM	按单排/双排驾驶室及SWB/MWB/LWB外廓拆分。	READY
+5709_crew_lwb	5709	Pickup	Sprinter W906	906.235	4	EU-MERCEDES-BENZ-SPRINTER-W906-CHASSIS-AWD-CREWCAB-LWB-01	MEDIUM	按单排/双排驾驶室及SWB/MWB/LWB外廓拆分。	READY
+119923_single_swb	119923	Pickup	Sprinter W906	906.131	2	EU-MERCEDES-BENZ-SPRINTER-W906-CHASSIS-AWD-SINGLE-SWB-01	MEDIUM	按单排/双排驾驶室及SWB/MWB/LWB外廓拆分。	READY
+119923_single_mwb	119923	Pickup	Sprinter W906	906.133	2	EU-MERCEDES-BENZ-SPRINTER-W906-CHASSIS-AWD-SINGLE-MWB-01	MEDIUM	按单排/双排驾驶室及SWB/MWB/LWB外廓拆分。	READY
+119923_single_lwb	119923	Pickup	Sprinter W906	906.135	2	EU-MERCEDES-BENZ-SPRINTER-W906-CHASSIS-AWD-SINGLE-LWB-01	MEDIUM	按单排/双排驾驶室及SWB/MWB/LWB外廓拆分。	READY
+119923_crew_swb	119923	Pickup	Sprinter W906	906.231	4	EU-MERCEDES-BENZ-SPRINTER-W906-CHASSIS-AWD-CREWCAB-SWB-01	MEDIUM	按单排/双排驾驶室及SWB/MWB/LWB外廓拆分。	READY
+119923_crew_mwb	119923	Pickup	Sprinter W906	906.233	4	EU-MERCEDES-BENZ-SPRINTER-W906-CHASSIS-AWD-CREWCAB-MWB-01	MEDIUM	按单排/双排驾驶室及SWB/MWB/LWB外廓拆分。	READY
+119923_crew_lwb	119923	Pickup	Sprinter W906	906.235	4	EU-MERCEDES-BENZ-SPRINTER-W906-CHASSIS-AWD-CREWCAB-LWB-01	MEDIUM	按单排/双排驾驶室及SWB/MWB/LWB外廓拆分。	READY
+145552	145552	Pickup	Sprinter VS30	910.030	2	EU-MERCEDES-BENZ-SPRINTER-VS30-CHASSIS-FWD-L2-01	MEDIUM	910.030未标明独立轴距边界，采用前驱L2单排驾驶室标准外廓。	READY
+145936_l1	145936	Pickup	Sprinter VS30	910.131	2	EU-MERCEDES-BENZ-SPRINTER-VS30-CHASSIS-FWD-L1-01	HIGH	按910.131与910.133拆分L1/L2外廓。	READY
+145936_l2	145936	Pickup	Sprinter VS30	910.133	2	EU-MERCEDES-BENZ-SPRINTER-VS30-CHASSIS-FWD-L2-01	HIGH	按910.131与910.133拆分L1/L2外廓。	READY
+145550	145550	Pickup	Sprinter VS30	910.030	2	EU-MERCEDES-BENZ-SPRINTER-VS30-CHASSIS-FWD-L2-01	MEDIUM	910.030未标明独立轴距边界，采用前驱L2单排驾驶室标准外廓。	READY
+145553	145553	Pickup	Sprinter VS30	910.030	2	EU-MERCEDES-BENZ-SPRINTER-VS30-CHASSIS-FWD-L2-01	MEDIUM	910.030未标明独立轴距边界，采用前驱L2单排驾驶室标准外廓。	READY
+157681	157681	Pickup	Sprinter VS30	910.133	2	EU-MERCEDES-BENZ-SPRINTER-VS30-CHASSIS-FWD-L2-01	HIGH	910.133对应前驱L2单排驾驶室外廓。	READY
+145551	145551	Pickup	Sprinter VS30	910.030	2	EU-MERCEDES-BENZ-SPRINTER-VS30-CHASSIS-FWD-L2-01	MEDIUM	910.030未标明独立轴距边界，采用前驱L2单排驾驶室标准外廓。	READY
+10071_swb	10071	MPV	Sprinter W906	906.731		EU-MERCEDES-BENZ-SPRINTER-W906-BUS-AWD-SWB-STANDARD-01	MEDIUM	按车身代码拆分轴距；采用SWB标准量产车顶外廓。	READY
+10071_mwb	10071	MPV	Sprinter W906	906.733		EU-MERCEDES-BENZ-SPRINTER-W906-BUS-AWD-MWB-STANDARD-01	MEDIUM	按车身代码拆分轴距；采用MWB标准量产车顶外廓。	READY
+10071_lwb	10071	MPV	Sprinter W906	906.735		EU-MERCEDES-BENZ-SPRINTER-W906-BUS-AWD-LWB-HIGH-01	MEDIUM	按车身代码拆分轴距；LWB采用该长度对应的量产高顶外廓。	READY
+14589_swb	14589	Pickup	Sprinter W906	906.131	2	EU-MERCEDES-BENZ-SPRINTER-W906-CHASSIS-AWD-SINGLE-SWB-01	MEDIUM	按明确车身代码拆分SWB/MWB/LWB单排底盘外廓。	READY
+14589_mwb	14589	Pickup	Sprinter W906	906.133	2	EU-MERCEDES-BENZ-SPRINTER-W906-CHASSIS-AWD-SINGLE-MWB-01	MEDIUM	按明确车身代码拆分SWB/MWB/LWB单排底盘外廓。	READY
+14589_lwb	14589	Pickup	Sprinter W906	906.135	2	EU-MERCEDES-BENZ-SPRINTER-W906-CHASSIS-AWD-SINGLE-LWB-01	MEDIUM	按明确车身代码拆分SWB/MWB/LWB单排底盘外廓。	READY
+146012_single_l2	146012	Pickup	Sprinter VS30	907.133	2	EU-MERCEDES-BENZ-SPRINTER-VS30-CHASSIS-AWD-SINGLE-L2-01	HIGH	按单排/双排驾驶室及轴距分支拆分。	READY
+146012_single_l3	146012	Pickup	Sprinter VS30	907.135	2	EU-MERCEDES-BENZ-SPRINTER-VS30-CHASSIS-AWD-SINGLE-L3-01	HIGH	按单排/双排驾驶室及轴距分支拆分。	READY
+146012_crew_l2	146012	Pickup	Sprinter VS30	907.233	4	EU-MERCEDES-BENZ-SPRINTER-VS30-CHASSIS-AWD-CREWCAB-L2-01	HIGH	按单排/双排驾驶室及轴距分支拆分。	READY
+146079_l2_stdroof	146079	Van	Sprinter VS30	907.633		EU-MERCEDES-BENZ-SPRINTER-VS30-VAN-AWD-L2-STANDARD-01	HIGH	907.633明确覆盖标准顶与高顶外廓。	READY
+146079_l2_highroof	146079	Van	Sprinter VS30	907.633		EU-MERCEDES-BENZ-SPRINTER-VS30-VAN-AWD-L2-HIGH-01	HIGH	907.633明确覆盖标准顶与高顶外廓。	READY
+146079_l3_highroof	146079	Van	Sprinter VS30	907.635		EU-MERCEDES-BENZ-SPRINTER-VS30-VAN-AWD-L3-HIGH-01	HIGH	907.635对应L3高顶外廓。	READY
+146011_single_l2	146011	Pickup	Sprinter VS30	907.133	2	EU-MERCEDES-BENZ-SPRINTER-VS30-CHASSIS-RWD-SINGLE-L2-01	HIGH	按单排/双排驾驶室及L2/L3外廓拆分。	READY
+146011_single_l3	146011	Pickup	Sprinter VS30	907.135	2	EU-MERCEDES-BENZ-SPRINTER-VS30-CHASSIS-RWD-SINGLE-L3-01	HIGH	按单排/双排驾驶室及L2/L3外廓拆分。	READY
+146011_crew_l2	146011	Pickup	Sprinter VS30	907.233	4	EU-MERCEDES-BENZ-SPRINTER-VS30-CHASSIS-RWD-CREWCAB-L2-01	HIGH	按单排/双排驾驶室及L2/L3外廓拆分。	READY
+146011_crew_l3	146011	Pickup	Sprinter VS30	907.235	4	EU-MERCEDES-BENZ-SPRINTER-VS30-CHASSIS-RWD-CREWCAB-L3-01	HIGH	按单排/双排驾驶室及L2/L3外廓拆分。	READY
+157546_l2	157546	Van	eSprinter VS30	907.633		EU-MERCEDES-BENZ-ESPRINTER-VS30-VAN-RWD-L2-01	HIGH	同一Ktype明确覆盖907.633与907.635，按L2/L3外廓拆分。	READY
+157546_l3	157546	Van	eSprinter VS30	907.635		EU-MERCEDES-BENZ-ESPRINTER-VS30-VAN-RWD-L3-01	HIGH	同一Ktype明确覆盖907.633与907.635，按L2/L3外廓拆分。	READY
+800244_l2	800244	Pickup	eSprinter VS30	907.133	2	EU-MERCEDES-BENZ-ESPRINTER-VS30-CHASSIS-RWD-L2-01	HIGH	同一Ktype明确覆盖907.133与907.135，按L2/L3外廓拆分。	READY
+800244_l3	800244	Pickup	eSprinter VS30	907.135	2	EU-MERCEDES-BENZ-ESPRINTER-VS30-CHASSIS-RWD-L3-01	HIGH	同一Ktype明确覆盖907.133与907.135，按L2/L3外廓拆分。	READY
+157550_l2	157550	Van	eSprinter VS30	907.633		EU-MERCEDES-BENZ-ESPRINTER-VS30-VAN-RWD-L2-01	HIGH	同一Ktype明确覆盖907.633与907.635，按L2/L3外廓拆分。	READY
+157550_l3	157550	Van	eSprinter VS30	907.635		EU-MERCEDES-BENZ-ESPRINTER-VS30-VAN-RWD-L3-01	HIGH	同一Ktype明确覆盖907.633与907.635，按L2/L3外廓拆分。	READY
+800245_l2	800245	Pickup	eSprinter VS30	907.133	2	EU-MERCEDES-BENZ-ESPRINTER-VS30-CHASSIS-RWD-L2-01	HIGH	同一Ktype明确覆盖907.133与907.135，按L2/L3外廓拆分。	READY
+800245_l3	800245	Pickup	eSprinter VS30	907.135	2	EU-MERCEDES-BENZ-ESPRINTER-VS30-CHASSIS-RWD-L3-01	HIGH	同一Ktype明确覆盖907.133与907.135，按L2/L3外廓拆分。	READY
+145651_swb	145651	MPV	Sprinter W906	906.711		EU-MERCEDES-BENZ-SPRINTER-W906-BUS-SWB-01	MEDIUM	按明确车身代码拆分SWB/MWB；未增加无证据车顶分支。	READY
+145651_mwb	145651	MPV	Sprinter W906	906.713		EU-MERCEDES-BENZ-SPRINTER-W906-BUS-MWB-01	MEDIUM	按明确车身代码拆分SWB/MWB；未增加无证据车顶分支。	READY
+145740_swb_stdroof	145740	Van	Sprinter VS30	910.621		EU-MERCEDES-BENZ-SPRINTER-VS30-VAN-FWD-SWB-STANDARD-01	HIGH	910.621对应SWB；官方资料明确列出标准顶和高顶外廓。	READY
+145740_swb_highroof	145740	Van	Sprinter VS30	910.621		EU-MERCEDES-BENZ-SPRINTER-VS30-VAN-FWD-SWB-HIGH-01	HIGH	910.621对应SWB；官方资料明确列出标准顶和高顶外廓。	READY
+145740_mwb_stdroof	145740	Van	Sprinter VS30	910.623		EU-MERCEDES-BENZ-SPRINTER-VS30-VAN-FWD-MWB-STANDARD-01	HIGH	910.623对应MWB；官方资料明确列出标准顶和高顶外廓。	READY
+145740_mwb_highroof	145740	Van	Sprinter VS30	910.623		EU-MERCEDES-BENZ-SPRINTER-VS30-VAN-FWD-MWB-HIGH-01	HIGH	910.623对应MWB；官方资料明确列出标准顶和高顶外廓。	READY
+145747_l1	145747	Pickup	Sprinter VS30	910.121	2	EU-MERCEDES-BENZ-SPRINTER-VS30-CHASSIS-FWD-L1-01	HIGH	按910.121与910.123拆分L1/L2外廓。	READY
+145747_l2	145747	Pickup	Sprinter VS30	910.123	2	EU-MERCEDES-BENZ-SPRINTER-VS30-CHASSIS-FWD-L2-01	HIGH	按910.121与910.123拆分L1/L2外廓。	READY
+```
+
+[下载 Ktype 映射 TSV](sandbox:/mnt/data/left18448_10401-10500_ktype_dimension_mapping_final.tsv)
+
+## 最终完整 DIMENSION_GROUP TSV
+
+```tsv
+DIMENSION_GROUP_ID	LengthMM	WidthMM	HeightMM	DimensionSource	SourceURL
+EU-MERCEDES-BENZ-ESPRINTER-VS30-VAN-RWD-L2-01	5932	2020	2718	Mercedes-Benz Vans UK, eSprinter Panel Van technical data	https://www.ciceley.com/wp-content/uploads/2023/07/esprinter-panel-van.pdf
+EU-MERCEDES-BENZ-ESPRINTER-VS30-VAN-RWD-L3-01	7124	2020	2720	Mercedes-Benz Vans UK, eSprinter Panel Van technical data	https://www.ciceley.com/wp-content/uploads/2023/07/esprinter-panel-van.pdf
+EU-MERCEDES-BENZ-ESPRINTER-VS30-CHASSIS-RWD-L2-01	5886	2020	2355	Mercedes-Benz Vans UK, eSprinter Chassis Cab technical data	https://www.ciceley.com/wp-content/uploads/2025/05/esprinter-chassis-van.pdf
+EU-MERCEDES-BENZ-ESPRINTER-VS30-CHASSIS-RWD-L3-01	6696	2020	2344	Mercedes-Benz Vans UK, eSprinter Chassis Cab technical data	https://www.ciceley.com/wp-content/uploads/2025/05/esprinter-chassis-van.pdf
+EU-MERCEDES-BENZ-SPRINTER-VS30-VAN-FWD-SWB-STANDARD-01	5267	2020	2356	Mercedes-Benz Vans Australia, Sprinter Technical Data Model Year 2022	https://www.dovecamperconversions.com.au/storage/2023/10/Mercedes-Benz-Vans-Sprinter-Technical-Data-Brochure-Feb-2022-1.pdf
+EU-MERCEDES-BENZ-SPRINTER-VS30-VAN-FWD-SWB-HIGH-01	5267	2020	2642	Mercedes-Benz Vans Australia, Sprinter Technical Data Model Year 2022	https://www.dovecamperconversions.com.au/storage/2023/10/Mercedes-Benz-Vans-Sprinter-Technical-Data-Brochure-Feb-2022-1.pdf
+EU-MERCEDES-BENZ-SPRINTER-VS30-VAN-FWD-MWB-STANDARD-01	5932	2020	2351	Mercedes-Benz Vans Australia, Sprinter Technical Data Model Year 2022	https://www.dovecamperconversions.com.au/storage/2023/10/Mercedes-Benz-Vans-Sprinter-Technical-Data-Brochure-Feb-2022-1.pdf
+EU-MERCEDES-BENZ-SPRINTER-VS30-VAN-FWD-MWB-HIGH-01	5932	2020	2638	Mercedes-Benz Vans Australia, Sprinter Technical Data Model Year 2022	https://www.dovecamperconversions.com.au/storage/2023/10/Mercedes-Benz-Vans-Sprinter-Technical-Data-Brochure-Feb-2022-1.pdf
+EU-MERCEDES-BENZ-SPRINTER-VS30-CHASSIS-FWD-L2-01	5986	2020	2292	Mercedes-Benz Vans UK, Sprinter Chassis and Crewcab October 2024	https://media.mbvans.co.uk/assets/documents/original/5984-SprinterChassisandCrewcabOctober2024.pdf
+EU-MERCEDES-BENZ-SPRINTER-VS30-CHASSIS-FWD-L1-01	5321	2020	2302	Mercedes-Benz Vans UK, Sprinter brochure Q1 2020	https://nd-mediagallery2-public-production.s3.amazonaws.com/b06466f162c4641be831e508f3a88909/sprinter_brochure_q1_2020.pdf
+EU-MERCEDES-BENZ-SPRINTER-VS30-CHASSIS-RWD-SINGLE-L2-01	5886	2020	2318	Mercedes-Benz Vans UK, Sprinter Chassis Cab and Chassis Crewcab November 2023	https://media.mbvans.co.uk/assets/documents/original/5950-SprinterchassisandcrewvanpricelistNOV2023.pdf
+EU-MERCEDES-BENZ-SPRINTER-VS30-CHASSIS-RWD-SINGLE-L3-01	6695	2020	2311	Mercedes-Benz Vans UK, Sprinter Chassis Cab and Chassis Crewcab November 2023	https://media.mbvans.co.uk/assets/documents/original/5950-SprinterchassisandcrewvanpricelistNOV2023.pdf
+EU-MERCEDES-BENZ-SPRINTER-VS30-CHASSIS-RWD-CREWCAB-L2-01	5886	2020	2282	Mercedes-Benz Vans UK, Sprinter brochure Q1 2020	https://nd-mediagallery2-public-production.s3.amazonaws.com/b06466f162c4641be831e508f3a88909/sprinter_brochure_q1_2020.pdf
+EU-MERCEDES-BENZ-SPRINTER-VS30-CHASSIS-RWD-CREWCAB-L3-01	6695	2020	2301	Mercedes-Benz Vans UK, Sprinter Chassis Cab and Chassis Crewcab November 2023	https://media.mbvans.co.uk/assets/documents/original/5950-SprinterchassisandcrewvanpricelistNOV2023.pdf
+EU-MERCEDES-BENZ-SPRINTER-VS30-VAN-AWD-L2-STANDARD-01	5932	2020	2496	Mercedes-Benz Vans New Zealand, Sprinter Technical Data Model Year 2024	https://www.mercedesbenzvans.co.nz/static/pdfs/sprinter-panel.pdf
+EU-MERCEDES-BENZ-SPRINTER-VS30-VAN-AWD-L2-HIGH-01	5932	2020	2785	Mercedes-Benz Vans New Zealand, Sprinter Technical Data Model Year 2024	https://www.mercedesbenzvans.co.nz/static/pdfs/sprinter-panel.pdf
+EU-MERCEDES-BENZ-SPRINTER-VS30-VAN-AWD-L3-HIGH-01	6967	2020	2778	Mercedes-Benz Vans New Zealand, Sprinter Technical Data Model Year 2024	https://www.mercedesbenzvans.co.nz/static/pdfs/sprinter-panel.pdf
+EU-MERCEDES-BENZ-SPRINTER-W906-BUS-SWB-01	5261	1993	2323	CarsGuide, 2015 Mercedes-Benz Sprinter dimensions	https://www.carsguide.com.au/mercedes-benz/sprinter/car-dimensions/2015
+EU-MERCEDES-BENZ-SPRINTER-W906-BUS-MWB-01	5926	1993	2324	CarsGuide, 2015 Mercedes-Benz Sprinter dimensions	https://www.carsguide.com.au/mercedes-benz/sprinter/car-dimensions/2015
+EU-MERCEDES-BENZ-SPRINTER-W906-BUS-AWD-SWB-STANDARD-01	5245	1993	2530	Mercedes-Benz UK, The Sprinter Panel Van 2011, Dimensions	https://xr793.com/wp-content/uploads/2022/12/2011-Mercedes-Benz-Sprinter-Panel-Van-UK.pdf
+EU-MERCEDES-BENZ-SPRINTER-W906-BUS-AWD-MWB-STANDARD-01	5910	1993	2530	Mercedes-Benz UK, The Sprinter Panel Van 2011, Dimensions	https://xr793.com/wp-content/uploads/2022/12/2011-Mercedes-Benz-Sprinter-Panel-Van-UK.pdf
+EU-MERCEDES-BENZ-SPRINTER-W906-BUS-AWD-LWB-HIGH-01	6945	1993	2815	Mercedes-Benz UK, The Sprinter Panel Van 2011, Dimensions	https://xr793.com/wp-content/uploads/2022/12/2011-Mercedes-Benz-Sprinter-Panel-Van-UK.pdf
+EU-MERCEDES-BENZ-SPRINTER-VS30-CHASSIS-AWD-SINGLE-L3-01	6864	2020	2456	Mercedes-Benz Australia, Sprinter and eSprinter Technical Data Model Year 2024	https://achtungcamper.com.au/wp-content/uploads/2025/02/Sprinter-VS30-MY24-Tech-Brochure-July-2024.pdf
+EU-MERCEDES-BENZ-SPRINTER-VS30-CHASSIS-AWD-SINGLE-L2-01	6104	2020	2360	Mercedes-Benz Australia, Sprinter Technical Data Model Year 2026	https://www.mercedes-benz.com.au/content/dam/australia/vans/brochures-and-specifications/sprinter-panel-van/Sprinter%20VS30%20MY25%20MY26%20AU%20Tech%20Brochure%20May%202026%2020260508.pdf
+EU-MERCEDES-BENZ-SPRINTER-VS30-CHASSIS-AWD-CREWCAB-L2-01	6104	2020	2360	Mercedes-Benz Australia, Sprinter Technical Data Model Year 2026	https://www.mercedes-benz.com.au/content/dam/australia/vans/brochures-and-specifications/sprinter-panel-van/Sprinter%20VS30%20MY25%20MY26%20AU%20Tech%20Brochure%20May%202026%2020260508.pdf
+EU-MERCEDES-BENZ-SPRINTER-W906-CHASSIS-AWD-SINGLE-SWB-01	5305	1993	2460	Mercedes-Benz Sprinter 906 body/equipment mounting directives and factory Sprinter 4x4 specification	https://diysprinter.co.uk/reference/UK-body-builders-arl_sprinterbm906_uk.pdf
+EU-MERCEDES-BENZ-SPRINTER-W906-CHASSIS-AWD-SINGLE-MWB-01	5870	1993	2460	Mercedes-Benz Sprinter 906 body/equipment mounting directives and factory Sprinter 4x4 specification	https://diysprinter.co.uk/reference/UK-body-builders-arl_sprinterbm906_uk.pdf
+EU-MERCEDES-BENZ-SPRINTER-W906-CHASSIS-AWD-SINGLE-LWB-01	6680	1993	2460	Mercedes-Benz Sprinter 906 body/equipment mounting directives and factory Sprinter 4x4 specification	https://diysprinter.co.uk/reference/UK-body-builders-arl_sprinterbm906_uk.pdf
+EU-MERCEDES-BENZ-SPRINTER-W906-CHASSIS-AWD-CREWCAB-SWB-01	5305	1993	2460	Mercedes-Benz Sprinter 906 body/equipment mounting directives and factory Sprinter 4x4 specification	https://diysprinter.co.uk/reference/UK-body-builders-arl_sprinterbm906_uk.pdf
+EU-MERCEDES-BENZ-SPRINTER-W906-CHASSIS-AWD-CREWCAB-MWB-01	5870	1993	2460	Mercedes-Benz Sprinter 906 body/equipment mounting directives and factory Sprinter 4x4 specification	https://diysprinter.co.uk/reference/UK-body-builders-arl_sprinterbm906_uk.pdf
+EU-MERCEDES-BENZ-SPRINTER-W906-CHASSIS-AWD-CREWCAB-LWB-01	6680	1993	2460	Mercedes-Benz Sprinter 906 body/equipment mounting directives and factory Sprinter 4x4 specification	https://diysprinter.co.uk/reference/UK-body-builders-arl_sprinterbm906_uk.pdf
+```
+
+[下载 DIMENSION_GROUP TSV](sandbox:/mnt/data/left18448_10401-10500_dimension_groups_final.tsv)
+
+推进信号：COMPLETE
+
+
+--- 发送 / 完成信号纠偏 / Round 46 ---
+你刚才给了完成信号，但当前回复缺少完整 Ktype 映射 TSV、完整 DIMENSION_GROUP TSV，存在未引用/缺失/不完整的尺寸组，或仍有数据缺失。请补齐所有必需表；未完成时输出“推进信号：CONTINUE”，确认全部表完整且映射闭合后才输出“推进信号：COMPLETE”。执行顺序固定为：第一阶段优先消除 PENDING 并补齐会阻塞两张最终表的数据。检测到 PENDING=0 后，第二阶段最多只做一次轻量机械收尾：核对固定表头、id 与 DIMENSION_GROUP_ID 唯一、映射引用闭合、长宽高和来源非空、两个任务指定下载链接齐全。第二阶段不得重新逐车型、逐年份或逐来源做深度检索，不得为了提高置信度反复核对，也不得因非阻塞的排序或措辞问题继续多轮。PENDING=0 后的下一条回复必须直接输出两张最终完整 TSV、两个精确 sandbox 下载链接，并以“推进信号：COMPLETE”结束；不要再输出 CONTINUE。Ktype 映射 TSV 表头必须严格使用 requirement 指定的字段顺序：id	Ktype	NormalizedBodyStyle	Generation	BodyCode	Doors	DIMENSION_GROUP_ID	MatchConfidence	Notes	IterationStatus。另需维护完整 DIMENSION_GROUP TSV，表头固定为：DIMENSION_GROUP_ID	LengthMM	WidthMM	HeightMM	DimensionSource	SourceURL。缺少任一张表、任一映射引用的尺寸组，或尺寸组字段不完整时不得 COMPLETE。不要输出子车系匹配表。
+【COMPLETE 下载文件硬性要求】
+准备 COMPLETE 时，除两张完整内嵌 TSV 外，还必须创建并提供以下两个可点击 sandbox 下载链接，文件名必须完全一致：
+- left18448_10401-10500_ktype_dimension_mapping_final.tsv
+- left18448_10401-10500_dimension_groups_final.tsv
+缺少任一下载链接时不得输出推进信号：COMPLETE。
+
+
+--- Round 46 / checkpoint 续跑 ---
+### 1）更新点
+
+机械修复了唯一缺失引用的尺寸组：
+
+* `EU-MERCEDES-BENZ-SLC-R172-CONVERTIBLE-FACELIFT-01:contentReference[oaicite:0]{index=0}2006 mm`。([auto-data.net][1])
+
+现有文件内部已通过表头、唯一性、正整数三维、必填字段和映射引用闭合检查。
+
+### 2）当前批进度
+
+* 当前文件映射行：`56`
+* 当前文件覆盖 Ktype：`24`
+* DIMENSION_GROUP：`32`
+* 当前文件 PENDING：`0`
+* 缺失尺寸组引用：`0`
+* 完整批次应覆盖 Ktype：`100`
+* 未提供的既有 READY Ktype：`76`
+
+因此，当前累计的 24 个 Ktype 已闭合，但 `10401–10500` 完整批次的 76 条既有 READY 映射及其相关尺寸组仍不在当前数据中，不能输出完整 100-Ktype 终表或再次给出 COMPLETE。
+
+### 3）本轮新增/修改的 Ktype 映射 TSV
+
+无
+
+### 4）本轮首次创建/修正的 DIMENSION_GROUP TSV
+
+```tsv
+DIMENSION_GROUP_ID	LengthMM	WidthMM	HeightMM	DimensionSource	SourceURL
+EU-MERCEDES-BENZ-SLC-R172-CONVERTIBLE-FACELIFT-01	4133	1810	1301	Auto-Data, Mercedes-Benz SLC R172 facelift 2016 generation	https://www.auto-data.net/en/mercedes-benz-slc-r172-facelift-2016-generation-4672
+```
+
+### 5）下一步优先处理
+
+仅需恢复交接中未提供的 76 条 READY Ktype 映射及其被引用的 DIMENSION_GROUP 基表，然后执行一次机械合并并生成两个完整最终文件；不需要继续车型或尺寸检索。
+
+推进信号：CONTINUE
+
+[1]: https://www.auto-data.net/en/mercedes-benz-slc-r172-facelift-2016-slc-180-156hp-22641?utm_source=chatgpt.com "Mercedes-Benz SLC (R172 facelift 2016) SLC 180 (156 Hp)"
+
+
+--- 发送 / 继续到 Round 47 ---
+继续当前批次并采用缓存优先模式。尺寸组只在首次创建或纠错时完整核对一次三维和来源；后续 Ktype 只判断关联哪个现有 DIMENSION_GROUP_ID，不重复抓取，不输出缓存来源或匹配理由。仍有 PENDING 时，CONTINUE 轮仅输出：1) 更新点；2) 当前批次进度；3) 本轮新增/修改的 Ktype 映射 TSV（无变化写“无”）；4) 本轮首次创建/修正的 DIMENSION_GROUP TSV（复用既有组不重复输出，无变化写“无”）；5) 下一步优先处理。若当前或上一轮进度已经是 PENDING=0，本轮不要继续检索或再次输出 CONTINUE，必须立刻汇总并输出两张最终完整 TSV、两个任务指定 sandbox 下载链接和“推进信号：COMPLETE”。执行顺序固定为：第一阶段优先消除 PENDING 并补齐会阻塞两张最终表的数据。检测到 PENDING=0 后，第二阶段最多只做一次轻量机械收尾：核对固定表头、id 与 DIMENSION_GROUP_ID 唯一、映射引用闭合、长宽高和来源非空、两个任务指定下载链接齐全。第二阶段不得重新逐车型、逐年份或逐来源做深度检索，不得为了提高置信度反复核对，也不得因非阻塞的排序或措辞问题继续多轮。PENDING=0 后的下一条回复必须直接输出两张最终完整 TSV、两个精确 sandbox 下载链接，并以“推进信号：COMPLETE”结束；不要再输出 CONTINUE。Ktype 映射 TSV 表头必须严格使用 requirement 指定的字段顺序：id	Ktype	NormalizedBodyStyle	Generation	BodyCode	Doors	DIMENSION_GROUP_ID	MatchConfidence	Notes	IterationStatus。另需维护完整 DIMENSION_GROUP TSV，表头固定为：DIMENSION_GROUP_ID	LengthMM	WidthMM	HeightMM	DimensionSource	SourceURL。缺少任一张表、任一映射引用的尺寸组，或尺寸组字段不完整时不得 COMPLETE。不要输出子车系匹配表。
+【COMPLETE 下载文件硬性要求】
+准备 COMPLETE 时，除两张完整内嵌 TSV 外，还必须创建并提供以下两个可点击 sandbox 下载链接，文件名必须完全一致：
+- left18448_10401-10500_ktype_dimension_mapping_final.tsv
+- left18448_10401-10500_dimension_groups_final.tsv
+缺少任一下载链接时不得输出推进信号：COMPLETE。
+
+
+--- Round 47 / checkpoint 续跑 ---
+### 1）更新点
+
+无。已停止车型检索并检查现有累计文件；当前文件仅包含本次交接的 24 个 Ktype，无法机械恢复交接中未提供的 76 个既有 READY Ktype。
+
+### 2）当前批进度
+
+* 已提供并闭合：`24` 个 Ktype
+* 当前映射行：`56`
+* 当前尺寸组：`32`
+* 已提供记录中的 PENDING：`0`
+* 最终全批次缺失：`76` 个既有 READY Ktype 及其关联尺寸组
+* 最终两表状态：`尚未完整，不能 COMPLETE`
+
+### 3）本轮新增/修改的 Ktype 映射 TSV
+
+无
+
+### 4）本轮首次创建/修正的 DIMENSION_GROUP TSV
+
+无
+
+### 5）下一步优先处理
+
+恢复或提供缺失的 76 个既有 READY Ktype 映射及其 DIMENSION_GROUP 基表；随后只执行一次机械合并、引用闭合和文件导出，不再开展车型检索。
+
+推进信号：CONTINUE
+
+
+--- 发送 / 继续到 Round 48 ---
+继续当前批次并采用缓存优先模式。尺寸组只在首次创建或纠错时完整核对一次三维和来源；后续 Ktype 只判断关联哪个现有 DIMENSION_GROUP_ID，不重复抓取，不输出缓存来源或匹配理由。仍有 PENDING 时，CONTINUE 轮仅输出：1) 更新点；2) 当前批次进度；3) 本轮新增/修改的 Ktype 映射 TSV（无变化写“无”）；4) 本轮首次创建/修正的 DIMENSION_GROUP TSV（复用既有组不重复输出，无变化写“无”）；5) 下一步优先处理。若当前或上一轮进度已经是 PENDING=0，本轮不要继续检索或再次输出 CONTINUE，必须立刻汇总并输出两张最终完整 TSV、两个任务指定 sandbox 下载链接和“推进信号：COMPLETE”。执行顺序固定为：第一阶段优先消除 PENDING 并补齐会阻塞两张最终表的数据。检测到 PENDING=0 后，第二阶段最多只做一次轻量机械收尾：核对固定表头、id 与 DIMENSION_GROUP_ID 唯一、映射引用闭合、长宽高和来源非空、两个任务指定下载链接齐全。第二阶段不得重新逐车型、逐年份或逐来源做深度检索，不得为了提高置信度反复核对，也不得因非阻塞的排序或措辞问题继续多轮。PENDING=0 后的下一条回复必须直接输出两张最终完整 TSV、两个精确 sandbox 下载链接，并以“推进信号：COMPLETE”结束；不要再输出 CONTINUE。Ktype 映射 TSV 表头必须严格使用 requirement 指定的字段顺序：id	Ktype	NormalizedBodyStyle	Generation	BodyCode	Doors	DIMENSION_GROUP_ID	MatchConfidence	Notes	IterationStatus。另需维护完整 DIMENSION_GROUP TSV，表头固定为：DIMENSION_GROUP_ID	LengthMM	WidthMM	HeightMM	DimensionSource	SourceURL。缺少任一张表、任一映射引用的尺寸组，或尺寸组字段不完整时不得 COMPLETE。不要输出子车系匹配表。
+【COMPLETE 下载文件硬性要求】
+准备 COMPLETE 时，除两张完整内嵌 TSV 外，还必须创建并提供以下两个可点击 sandbox 下载链接，文件名必须完全一致：
+- left18448_10401-10500_ktype_dimension_mapping_final.tsv
+- left18448_10401-10500_dimension_groups_final.tsv
+缺少任一下载链接时不得输出推进信号：COMPLETE。
+
+
+--- Round 48 / checkpoint 续跑 ---
+### 1）更新点
+
+无。未找到可用于恢复缺失 76 个既有 READY Ktype 的完整累计 TSV；未重新检索车型或尺寸。
+
+### 2）当前批进度
+
+`已提供 Ktype=24；研究 PENDING=0；当前映射行=56；当前尺寸组=32`
+
+最终批次仍缺少：
+
+`76 个既有 READY Ktype 映射及其关联 DIMENSION_GROUP`
+
+因此两张表尚未达到 `10401–10500` 全批次完整状态，不能输出 COMPLETE。
+
+### 3）本轮新增/修改的 Ktype 映射 TSV
+
+无
+
+### 4）本轮首次创建/修正的 DIMENSION_GROUP TSV
+
+无
+
+### 5）下一步优先处理
+
+恢复缺失的 76 个既有 READY Ktype 映射及关联 DIMENSION_GROUP 基表；之后仅执行机械合并、唯一性检查、引用闭合检查和指定文件导出，不再检索车型。
+
+推进信号：CONTINUE
+
