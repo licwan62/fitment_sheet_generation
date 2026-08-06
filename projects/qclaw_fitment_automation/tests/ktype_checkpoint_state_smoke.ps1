@@ -62,6 +62,43 @@ $group`t4000`t1700`t1400`tTest source`thttps://example.com/ready
     if ($handoff -notmatch "Test`tPending`t200") { throw "交接 prompt 缺少 PENDING TSV" }
     if ($handoff -match "Test`tReady`t100") { throw "交接 prompt 泄漏 READY 原始输入" }
 
+    $pendingWork = Get-TaskPendingWorkMessage -Task $task -FallbackMessage "继续格式要求"
+    if ($pendingWork -notmatch "本地覆盖率审计纠偏") { throw "未生成覆盖率审计 PENDING prompt" }
+    if ($pendingWork -notmatch "PENDING=1") { throw "PENDING prompt 缺少权威计数" }
+    if ($pendingWork -notmatch "缺失 Ktype：200") { throw "PENDING prompt 缺少 Ktype 清单" }
+    if ($pendingWork -notmatch "Test`tPending`t200") { throw "PENDING prompt 缺少对应原始 TSV 行" }
+    if ($pendingWork -match "Test`tReady`t100") { throw "PENDING prompt 泄漏 READY 原始输入" }
+
+    # ALMOST plus two recognizable TSVs is terminal.  Publishing uses the
+    # locally merged READY snapshot and must not require another correction
+    # round merely because the reply omitted links or per-Ktype reasons.
+    $almostReply = @"
+$RequiredTsvHeader
+100`t100`tHatchback`tReady`t`t5`t$group`tHIGH`t`tREADY
+
+$RequiredDimensionGroupHeader
+$group`t4000`t1700`t1400`tTest source`thttps://example.com/ready
+
+推进信号：ALMOST
+"@
+    if (-not (Test-ReplyContainsAlmostTables -Reply $almostReply)) {
+        throw "ALMOST 两张 TSV 未被识别为可落盘终态"
+    }
+    if (Test-ReplyContainsAllReadySnapshot -Reply $almostReply -Task $task) {
+        throw "测试输入不应意外满足旧版严格 ALMOST 快照规则"
+    }
+    $almostPublished = Publish-AlmostTaskSnapshot -Task $task -ResultMarkdownPath ""
+    if (@($almostPublished.Snapshot.ReadyKtypes).Count -ne 1) {
+        throw "ALMOST 未按本地状态发布 READY 子集"
+    }
+    $almostNames = Get-TaskFinalArtifactNames -Task $task
+    if (-not (Test-Path -LiteralPath (Join-Path $TableDir $almostNames.MappingFileName))) {
+        throw "ALMOST Ktype TSV 未落盘"
+    }
+    if (-not (Test-Path -LiteralPath (Join-Path $TableDir $almostNames.DimensionFileName))) {
+        throw "ALMOST DIMENSION TSV 未落盘"
+    }
+
     # A checkpoint handoff COMPLETE is an incremental snapshot.  It must merge
     # with the previously persisted READY row instead of replacing it.
     $pendingGroup = "EU-TEST-PENDING-VAN-01"

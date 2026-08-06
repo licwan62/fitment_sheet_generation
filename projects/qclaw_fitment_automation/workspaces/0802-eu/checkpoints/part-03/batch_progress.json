@@ -2,18 +2,18 @@
   "version": 1,
   "total_batches": 46,
   "rows_per_batch": 100,
-  "updated_at": "2026-08-04 13:35:36",
-  "next_pending_index": 0,
+  "updated_at": "2026-08-05 22:20:59",
+  "next_pending_index": 14,
   "batches": [
     {
       "index": 0,
       "batch_number": 1,
       "task_id": "left18448__batch__0094__a422bfd1",
       "display_name": "left18448 第 9301-9400 行",
-      "status": "error",
-      "remarks": "连续多轮回复均未给出 TSV 数据（已发送收尾 prompt 仍无数据），视为无可处理数据",
+      "status": "success",
+      "remarks": "检测到明确批次完成信号、两张完整表及下载链接；已更新本批与累计最终 TSV",
       "checkpoint_file": "left18448__batch__0094__a422bfd1.json",
-      "updated_at": "2026-08-04 00:51:45"
+      "updated_at": "2026-08-05 18:58:11"
     },
     {
       "index": 1,
@@ -120,20 +120,20 @@
       "batch_number": 12,
       "task_id": "left18448__batch__0105__c0a54662",
       "display_name": "left18448 第 10401-10500 行",
-      "status": "error",
-      "remarks": "连续多轮回复均未给出 TSV 数据（已发送收尾 prompt 仍无数据），视为无可处理数据",
+      "status": "success",
+      "remarks": "检测到明确批次完成信号、两张完整表及下载链接；已更新本批与累计最终 TSV",
       "checkpoint_file": "left18448__batch__0105__c0a54662.json",
-      "updated_at": "2026-08-04 02:44:54"
+      "updated_at": "2026-08-05 19:02:41"
     },
     {
       "index": 12,
       "batch_number": 13,
       "task_id": "left18448__batch__0106__9dbe60ec",
       "display_name": "left18448 第 10501-10600 行",
-      "status": "error",
-      "remarks": "连续多轮回复均未给出 TSV 数据（已发送收尾 prompt 仍无数据），视为无可处理数据",
+      "status": "success",
+      "remarks": "检测到明确批次完成信号、两张完整表及下载链接；已更新本批与累计最终 TSV",
       "checkpoint_file": "left18448__batch__0106__9dbe60ec.json",
-      "updated_at": "2026-08-04 03:50:44"
+      "updated_at": "2026-08-05 19:08:37"
     },
     {
       "index": 13,
@@ -143,7 +143,7 @@
       "status": "success",
       "remarks": "检测到明确批次完成信号、两张完整表及下载链接；已更新本批与累计最终 TSV",
       "checkpoint_file": "left18448__batch__0107__c4c1d2f6.json",
-      "updated_at": "2026-08-04 05:13:21"
+      "updated_at": "2026-08-05 20:45:10"
     },
     {
       "index": 14,
@@ -151,9 +151,9 @@
       "task_id": "left18448__batch__0108__aad9da3d",
       "display_name": "left18448 第 10701-10800 行",
       "status": "error",
-      "remarks": "连续多轮回复均未给出 TSV 数据（已发送收尾 prompt 仍无数据），视为无可处理数据",
+      "remarks": "连续多轮回复均未给出 TSV 数据（已发送格式与证据状态纠偏仍无有效结果）",
       "checkpoint_file": "left18448__batch__0108__aad9da3d.json",
-      "updated_at": "2026-08-04 08:34:24"
+      "updated_at": "2026-08-05 22:20:59"
     },
     {
       "index": 15,

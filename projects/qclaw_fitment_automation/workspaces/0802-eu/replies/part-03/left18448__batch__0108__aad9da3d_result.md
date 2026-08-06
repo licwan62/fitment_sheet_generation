@@ -4305,3 +4305,454 @@ READY=98；PENDING=2；revision=57
 
 [1]: https://www.zeusauto.lt/en/catalog/tecdoc/personal/mercedes-benz/t2-ln1-cab-with-engine/809-dt-670-199/74/9509/34404?utm_source=chatgpt.com "Spare parts MERCEDES-BENZ T2/LN1 Cab with engine ..."
 
+
+--- 发送 / checkpoint PENDING 记录纠偏到 Round 68 ---
+【本地覆盖率审计纠偏：必须处理以下 PENDING】
+上一轮声称 PENDING=0 已被本地 TSV 覆盖率重算否决。当前权威状态为 PENDING=2；不得执行机械收尾，不得再次声称 PENDING=0，也不得只回复“继续”。
+
+缺失 Ktype：34155,34404
+
+【逐 Ktype 缺失原因】
+- 34155：Triebkopf量产状态的完整三维尚未闭合；映射缺少 DIMENSION_GROUP_ID
+- 34404：Triebkopf量产状态的完整三维尚未闭合；映射缺少 DIMENSION_GROUP_ID
+
+【本轮必须处理的原始 TSV 记录】
+`	sv
+Make	Model	VariantName	BodyStyle	DriveType	Energy	Product Start Month-Year	Product End Month-Year	Ktype
+Mercedes-benz	T2/ln1	809 DT	Triebkopf	Frontantrieb	Diesel	Apr 1986	Dec 1994	34155
+Mercedes-benz	T2/ln1	809 DT	Triebkopf	Frontantrieb	Diesel	Apr 1986	Dec 1994	34404
+`
+
+请现在直接研究并补齐这些记录，输出本轮新增或修改的 Ktype 映射 TSV 及对应 DIMENSION_GROUP TSV。只处理上列 PENDING，已 READY 的 Ktype 不要重新检索或改动。仍有未闭合项时输出推进信号：CONTINUE；只有本地所列 Ktype 均产生完整 READY 映射后，才可输出完整最终两表、指定下载链接及推进信号：COMPLETE。
+继续当前批次并采用缓存优先模式。尺寸组只在首次创建或纠错时完整核对一次三维和来源；后续 Ktype 只判断关联哪个现有 DIMENSION_GROUP_ID，不重复抓取，不输出缓存来源或匹配理由。仍有 PENDING 且还有明确可执行的可靠证据路径时，CONTINUE 轮仅输出：1) 更新点；2) 当前批次进度；3) 本轮新增/修改的 Ktype 映射 TSV（无变化写“无”）；4) 本轮首次创建/修正的 DIMENSION_GROUP TSV（复用既有组不重复输出，无变化写“无”）；5) 下一步优先处理。若所有剩余 PENDING 都已穷尽契约允许的可靠来源，仍无法在不猜测、不拼接不同配置且不降低证据标准的前提下推进，则停止重复检索并执行 ALMOST 收尾：ALMOST 是任务级终态但不是成功，也不是行级 IterationStatus；剩余条目继续保持 PENDING。ALMOST 回复必须包含全部当前 READY 映射、这些映射引用的全部 DIMENSION_GROUP（每组 SourceURL 非空）、每个剩余 PENDING 的具体原因，以及两个任务指定精确文件名的可点击 sandbox 下载链接，最后一行单独输出“推进信号：ALMOST”。临时网络、浏览器、登录、页面或超时故障，单轮搜索无结果，或仅达到轮次上限，均不得使用 ALMOST。若当前或上一轮进度已经是 PENDING=0，本轮不要继续检索或再次输出 CONTINUE，也不得输出 ALMOST；必须立刻汇总并输出两张最终完整 TSV、两个任务指定 sandbox 下载链接和“推进信号：COMPLETE”。执行顺序固定为：第一阶段优先消除 PENDING 并补齐会阻塞两张最终表的数据。检测到 PENDING=0 后，第二阶段最多只做一次轻量机械收尾：核对固定表头、id 与 DIMENSION_GROUP_ID 唯一、映射引用闭合、长宽高和来源非空、两个任务指定下载链接齐全。第二阶段不得重新逐车型、逐年份或逐来源做深度检索，不得为了提高置信度反复核对，也不得因非阻塞的排序或措辞问题继续多轮。PENDING=0 后的下一条回复必须直接输出两张最终完整 TSV、两个精确 sandbox 下载链接，并以“推进信号：COMPLETE”结束；不要再输出 CONTINUE。若经过多轮可靠检索后，剩余 PENDING 明确因证据不足而无法可靠闭合，并且继续检索已不能推进，可改为 ALMOST 收尾：停止检索，输出当前全部 READY 映射、它们引用的完整尺寸组、两个精确 sandbox 下载链接和每个剩余 PENDING 的具体原因，最后一行输出“推进信号：ALMOST”。临时网络、浏览器、页面或工具故障，以及单轮无结果，不得使用 ALMOST。Ktype 映射 TSV 表头必须严格使用 requirement 指定的字段顺序：id	Ktype	NormalizedBodyStyle	Generation	BodyCode	Doors	DIMENSION_GROUP_ID	MatchConfidence	Notes	IterationStatus。另需维护完整 DIMENSION_GROUP TSV，表头固定为：DIMENSION_GROUP_ID	LengthMM	WidthMM	HeightMM	DimensionSource	SourceURL。缺少任一张表、任一映射引用的尺寸组，或尺寸组字段不完整时不得 COMPLETE；ALMOST 只能包含当前全部 READY 映射及其引用闭合的尺寸组。不要输出子车系匹配表。
+【COMPLETE / ALMOST 下载文件硬性要求】
+准备 COMPLETE 时，除两张完整内嵌 TSV 外，还必须创建并提供以下两个可点击 sandbox 下载链接。准备 ALMOST 时，两张表和链接必须覆盖当前全部整体 READY Ktype，并排除所有 PENDING Ktype。文件名必须完全一致：
+- left18448_10701-10800_ktype_dimension_mapping_final.tsv
+- left18448_10701-10800_dimension_groups_final.tsv
+缺少任一下载链接时不得输出推进信号：COMPLETE 或 ALMOST。
+
+
+--- 对话分支 / Round 68 ---
+触发原因：ChatGPT 对话长度上限
+父对话：https://chatgpt.com/c/6a71202e-479c-83e8-a428-34a607f423a9
+新分支：https://chatgpt.com/c/6a73308b-30b0-83ee-a88b-523a3a047191
+
+--- Round 68 / checkpoint 续跑 ---
+### 1）更新点
+
+34155、34404 均继续归入同一 `670.199 / 809 DT Triebkopf` 物理外廓，不拆分尺寸组。现有可靠资料只能确认车型身份；T2 技术资料仅给出车系级尺寸范围，未单独给出 `670.199` 驱动头量产状态的完整长、宽、高，不能将普通厢式车、底盘车或车系范围值代入。 ([Tekstara][1])
+
+### 2）当前批次进度
+
+READY=98；PENDING=2；revision=112。
+本轮未能可靠闭合 `670.199` 完整三维。
+
+### 3）本轮新增/修改的 Ktype 映射 TSV
+
+无
+
+### 4）本轮首次创建/修正的 DIMENSION_GROUP TSV
+
+无
+
+### 5）下一步优先处理
+
+继续定位明确覆盖 `670.199 / 809 DT Triebkopf` 的原厂车身制造商技术图、历史 Aufbaurichtlinie 或型式认证资料，要求同一量产状态同时给出完整三维，并确认宽度不含外后视镜。
+
+推进信号：CONTINUE
+
+[1]: https://tekstara.lt/partscatalogue/mercedes-benz-t2-ln1-kabina-su-varikliu-809-dt-670-199-1986-04-1994-12%2C3-00074-09509-34155-0002.aspx?utm_source=chatgpt.com "MERCEDES-BENZ T2/LN1 Kabina su varikliu 809 DT (670.199)"
+
+
+--- 发送 / PENDING 记录续跑到 Round 69 ---
+【本地覆盖率审计纠偏：必须处理以下 PENDING】
+上一轮声称 PENDING=0 已被本地 TSV 覆盖率重算否决。当前权威状态为 PENDING=2；不得执行机械收尾，不得再次声称 PENDING=0，也不得只回复“继续”。
+
+缺失 Ktype：34155,34404
+
+【逐 Ktype 缺失原因】
+- 34155：Triebkopf量产状态的完整三维尚未闭合；映射缺少 DIMENSION_GROUP_ID
+- 34404：Triebkopf量产状态的完整三维尚未闭合；映射缺少 DIMENSION_GROUP_ID
+
+【本轮必须处理的原始 TSV 记录】
+`	sv
+Make	Model	VariantName	BodyStyle	DriveType	Energy	Product Start Month-Year	Product End Month-Year	Ktype
+Mercedes-benz	T2/ln1	809 DT	Triebkopf	Frontantrieb	Diesel	Apr 1986	Dec 1994	34155
+Mercedes-benz	T2/ln1	809 DT	Triebkopf	Frontantrieb	Diesel	Apr 1986	Dec 1994	34404
+`
+
+请现在直接研究并补齐这些记录，输出本轮新增或修改的 Ktype 映射 TSV 及对应 DIMENSION_GROUP TSV。只处理上列 PENDING，已 READY 的 Ktype 不要重新检索或改动。仍有未闭合项时输出推进信号：CONTINUE；只有本地所列 Ktype 均产生完整 READY 映射后，才可输出完整最终两表、指定下载链接及推进信号：COMPLETE。
+继续当前批次并采用缓存优先模式。尺寸组只在首次创建或纠错时完整核对一次三维和来源；后续 Ktype 只判断关联哪个现有 DIMENSION_GROUP_ID，不重复抓取，不输出缓存来源或匹配理由。仍有 PENDING 且还有明确可执行的可靠证据路径时，CONTINUE 轮仅输出：1) 更新点；2) 当前批次进度；3) 本轮新增/修改的 Ktype 映射 TSV（无变化写“无”）；4) 本轮首次创建/修正的 DIMENSION_GROUP TSV（复用既有组不重复输出，无变化写“无”）；5) 下一步优先处理。若所有剩余 PENDING 都已穷尽契约允许的可靠来源，仍无法在不猜测、不拼接不同配置且不降低证据标准的前提下推进，则停止重复检索并执行 ALMOST 收尾：ALMOST 是任务级终态但不是成功，也不是行级 IterationStatus；剩余条目继续保持 PENDING。ALMOST 回复必须包含全部当前 READY 映射、这些映射引用的全部 DIMENSION_GROUP（每组 SourceURL 非空）、每个剩余 PENDING 的具体原因，以及两个任务指定精确文件名的可点击 sandbox 下载链接，最后一行单独输出“推进信号：ALMOST”。临时网络、浏览器、登录、页面或超时故障，单轮搜索无结果，或仅达到轮次上限，均不得使用 ALMOST。若当前或上一轮进度已经是 PENDING=0，本轮不要继续检索或再次输出 CONTINUE，也不得输出 ALMOST；必须立刻汇总并输出两张最终完整 TSV、两个任务指定 sandbox 下载链接和“推进信号：COMPLETE”。执行顺序固定为：第一阶段优先消除 PENDING 并补齐会阻塞两张最终表的数据。检测到 PENDING=0 后，第二阶段最多只做一次轻量机械收尾：核对固定表头、id 与 DIMENSION_GROUP_ID 唯一、映射引用闭合、长宽高和来源非空、两个任务指定下载链接齐全。第二阶段不得重新逐车型、逐年份或逐来源做深度检索，不得为了提高置信度反复核对，也不得因非阻塞的排序或措辞问题继续多轮。PENDING=0 后的下一条回复必须直接输出两张最终完整 TSV、两个精确 sandbox 下载链接，并以“推进信号：COMPLETE”结束；不要再输出 CONTINUE。若经过多轮可靠检索后，剩余 PENDING 明确因证据不足而无法可靠闭合，并且继续检索已不能推进，可改为 ALMOST 收尾：停止检索，输出当前全部 READY 映射、它们引用的完整尺寸组、两个精确 sandbox 下载链接和每个剩余 PENDING 的具体原因，最后一行输出“推进信号：ALMOST”。临时网络、浏览器、页面或工具故障，以及单轮无结果，不得使用 ALMOST。Ktype 映射 TSV 表头必须严格使用 requirement 指定的字段顺序：id	Ktype	NormalizedBodyStyle	Generation	BodyCode	Doors	DIMENSION_GROUP_ID	MatchConfidence	Notes	IterationStatus。另需维护完整 DIMENSION_GROUP TSV，表头固定为：DIMENSION_GROUP_ID	LengthMM	WidthMM	HeightMM	DimensionSource	SourceURL。缺少任一张表、任一映射引用的尺寸组，或尺寸组字段不完整时不得 COMPLETE；ALMOST 只能包含当前全部 READY 映射及其引用闭合的尺寸组。不要输出子车系匹配表。
+【COMPLETE / ALMOST 下载文件硬性要求】
+准备 COMPLETE 时，除两张完整内嵌 TSV 外，还必须创建并提供以下两个可点击 sandbox 下载链接。准备 ALMOST 时，两张表和链接必须覆盖当前全部整体 READY Ktype，并排除所有 PENDING Ktype。文件名必须完全一致：
+- left18448_10701-10800_ktype_dimension_mapping_final.tsv
+- left18448_10701-10800_dimension_groups_final.tsv
+缺少任一下载链接时不得输出推进信号：COMPLETE 或 ALMOST。
+
+
+--- Round 69 / checkpoint 续跑 ---
+### 1）更新点
+
+34155 与 34404 均对应 `809 DT / 670.199`，差异仅为 90 hp 与 86 hp 动力目录项，不构成物理外廓分支。奔驰零件目录将 `670.199` 明确定义为 **CHASSIS FRONT END WITH CAB**，即带驾驶室和动力系统的前部总成，不能套用普通 T2 厢式车、完整底盘驾驶室或任意改装后整车的长宽高。([PartSouq][1])
+
+本轮仍未找到可靠资料同时给出 `670.199` 量产交付状态的完整长度、无后视镜宽度和高度，因此不能建立尺寸组，也不能强制转为 READY。
+
+### 2）当前批次进度
+
+READY=98；PENDING=2；revision=112。
+
+### 3）本轮新增/修改的 Ktype 映射 TSV
+
+无
+
+### 4）本轮首次创建/修正的 DIMENSION_GROUP TSV
+
+无
+
+### 5）下一步优先处理
+
+优先定位 Mercedes-Benz 针对 `Baumuster 670.199` 的原厂 `Angebotszeichnung`、车身制造商指南或型式认证外廓图。资料必须明确对应 `Triebkopf / CHASSIS FRONT END WITH CAB` 的出厂交付边界，并同时提供完整三维及不含后视镜宽度；不使用普通 T2 车系尺寸范围或后装车身尺寸替代。
+
+推进信号：CONTINUE
+
+[1]: https://partsouq.com/en/catalog/genuine/vehicle?c=MB201810&cid=&q=&srsltid=AfmBOoqvFFBxiq7Ugbv4WcFhbDz_5HGLRNWdE8T-nBwPcA39GcIjQftg&ssd=%24%2AKwFCdmdUHwsOOyMuHTZPVBoOLik3RklERVd4SwMFNjg1PAgrWVRNMDBGRkBIT0MQEA9IDwASGDENVl8FAR4EGhtcUxsXCx0ZRkZGRklIVFgLVFhSS1RVXFMbHwsdGUEiVFtSEhhWEwUOREVUW1IHFVYTBQhSDAAAAAAeaBuF%24&vid=0&utm_source=chatgpt.com "Mercedes-Benz 809 DT Standard, Japan 670.199 Parts Catalogs"
+
+
+--- 发送 / PENDING 记录续跑到 Round 70 ---
+【本地覆盖率审计纠偏：必须处理以下 PENDING】
+上一轮声称 PENDING=0 已被本地 TSV 覆盖率重算否决。当前权威状态为 PENDING=2；不得执行机械收尾，不得再次声称 PENDING=0，也不得只回复“继续”。
+
+缺失 Ktype：34155,34404
+
+【逐 Ktype 缺失原因】
+- 34155：Triebkopf量产状态的完整三维尚未闭合；映射缺少 DIMENSION_GROUP_ID
+- 34404：Triebkopf量产状态的完整三维尚未闭合；映射缺少 DIMENSION_GROUP_ID
+
+【本轮必须处理的原始 TSV 记录】
+`	sv
+Make	Model	VariantName	BodyStyle	DriveType	Energy	Product Start Month-Year	Product End Month-Year	Ktype
+Mercedes-benz	T2/ln1	809 DT	Triebkopf	Frontantrieb	Diesel	Apr 1986	Dec 1994	34155
+Mercedes-benz	T2/ln1	809 DT	Triebkopf	Frontantrieb	Diesel	Apr 1986	Dec 1994	34404
+`
+
+请现在直接研究并补齐这些记录，输出本轮新增或修改的 Ktype 映射 TSV 及对应 DIMENSION_GROUP TSV。只处理上列 PENDING，已 READY 的 Ktype 不要重新检索或改动。仍有未闭合项时输出推进信号：CONTINUE；只有本地所列 Ktype 均产生完整 READY 映射后，才可输出完整最终两表、指定下载链接及推进信号：COMPLETE。
+继续当前批次并采用缓存优先模式。尺寸组只在首次创建或纠错时完整核对一次三维和来源；后续 Ktype 只判断关联哪个现有 DIMENSION_GROUP_ID，不重复抓取，不输出缓存来源或匹配理由。仍有 PENDING 且还有明确可执行的可靠证据路径时，CONTINUE 轮仅输出：1) 更新点；2) 当前批次进度；3) 本轮新增/修改的 Ktype 映射 TSV（无变化写“无”）；4) 本轮首次创建/修正的 DIMENSION_GROUP TSV（复用既有组不重复输出，无变化写“无”）；5) 下一步优先处理。若所有剩余 PENDING 都已穷尽契约允许的可靠来源，仍无法在不猜测、不拼接不同配置且不降低证据标准的前提下推进，则停止重复检索并执行 ALMOST 收尾：ALMOST 是任务级终态但不是成功，也不是行级 IterationStatus；剩余条目继续保持 PENDING。ALMOST 回复必须包含全部当前 READY 映射、这些映射引用的全部 DIMENSION_GROUP（每组 SourceURL 非空）、每个剩余 PENDING 的具体原因，以及两个任务指定精确文件名的可点击 sandbox 下载链接，最后一行单独输出“推进信号：ALMOST”。临时网络、浏览器、登录、页面或超时故障，单轮搜索无结果，或仅达到轮次上限，均不得使用 ALMOST。若当前或上一轮进度已经是 PENDING=0，本轮不要继续检索或再次输出 CONTINUE，也不得输出 ALMOST；必须立刻汇总并输出两张最终完整 TSV、两个任务指定 sandbox 下载链接和“推进信号：COMPLETE”。执行顺序固定为：第一阶段优先消除 PENDING 并补齐会阻塞两张最终表的数据。检测到 PENDING=0 后，第二阶段最多只做一次轻量机械收尾：核对固定表头、id 与 DIMENSION_GROUP_ID 唯一、映射引用闭合、长宽高和来源非空、两个任务指定下载链接齐全。第二阶段不得重新逐车型、逐年份或逐来源做深度检索，不得为了提高置信度反复核对，也不得因非阻塞的排序或措辞问题继续多轮。PENDING=0 后的下一条回复必须直接输出两张最终完整 TSV、两个精确 sandbox 下载链接，并以“推进信号：COMPLETE”结束；不要再输出 CONTINUE。若经过多轮可靠检索后，剩余 PENDING 明确因证据不足而无法可靠闭合，并且继续检索已不能推进，可改为 ALMOST 收尾：停止检索，输出当前全部 READY 映射、它们引用的完整尺寸组、两个精确 sandbox 下载链接和每个剩余 PENDING 的具体原因，最后一行输出“推进信号：ALMOST”。临时网络、浏览器、页面或工具故障，以及单轮无结果，不得使用 ALMOST。Ktype 映射 TSV 表头必须严格使用 requirement 指定的字段顺序：id	Ktype	NormalizedBodyStyle	Generation	BodyCode	Doors	DIMENSION_GROUP_ID	MatchConfidence	Notes	IterationStatus。另需维护完整 DIMENSION_GROUP TSV，表头固定为：DIMENSION_GROUP_ID	LengthMM	WidthMM	HeightMM	DimensionSource	SourceURL。缺少任一张表、任一映射引用的尺寸组，或尺寸组字段不完整时不得 COMPLETE；ALMOST 只能包含当前全部 READY 映射及其引用闭合的尺寸组。不要输出子车系匹配表。
+【COMPLETE / ALMOST 下载文件硬性要求】
+准备 COMPLETE 时，除两张完整内嵌 TSV 外，还必须创建并提供以下两个可点击 sandbox 下载链接。准备 ALMOST 时，两张表和链接必须覆盖当前全部整体 READY Ktype，并排除所有 PENDING Ktype。文件名必须完全一致：
+- left18448_10701-10800_ktype_dimension_mapping_final.tsv
+- left18448_10701-10800_dimension_groups_final.tsv
+缺少任一下载链接时不得输出推进信号：COMPLETE 或 ALMOST。
+
+
+--- Round 70 / checkpoint 续跑 ---
+### 1）更新点
+
+已定位到 **1986 年原版 Mercedes-Benz《Aufbaurichtlinien LKW》**，资料共 320 页；同期目录明确标注其覆盖 `667、668、669、670` 系列，因此属于 `670.199` 可继续核验的直接原厂资料路径。当前公开页面仅提供封面和书目说明，未公开 `670.199 Triebkopf` 对应内页，尚不能从中取得同一量产状态的完整长、无镜宽和高。([Histoquariat][1])
+
+奔驰零件目录继续确认 `670.199` 的车辆边界是 **CHASSIS FRONT END WITH CAB**，而非普通 809 D 完整底盘或厢式车；因此不能套用其他 `670.xxx` 的轴距级别和整车三维。([PartSouq][2])
+
+本轮没有形成可落盘尺寸组，两条映射保持 PENDING。
+
+### 2）当前批次进度
+
+READY=98；PENDING=2；revision=112。
+
+未闭合 Ktype：34155、34404。
+
+### 3）本轮新增/修改的 Ktype 映射 TSV
+
+无
+
+### 4）本轮首次创建/修正的 DIMENSION_GROUP TSV
+
+无
+
+### 5）下一步优先处理
+
+直接获取并核对 1986 年原厂《Aufbaurichtlinien LKW》中 `Baureihe 670 / Baumuster 670.199` 的内页、尺寸图或 Angebotszeichnung；并行检索奔驰官方旧系列车身制造指南归档。只有资料明确给出 `Triebkopf` 出厂交付边界下的完整三维，且宽度确认不含外后视镜，才建立尺寸组并同时关联 34155、34404。奔驰官方归档目前仍保留旧系列车身制造指南入口，因此可靠证据路径尚未穷尽。([bb-portal.mercedes-benz-trucks.com][3])
+
+推进信号：CONTINUE
+
+[1]: https://www.histoquariat.de/Aufbaurichtlinien-Mercedes-LKW-1986 "Aufbaurichtlinien Mercedes LKW 1986 rar - Histoquariat"
+[2]: https://partsouq.com/shop/product/A6739190022-mercedes-support-ring/19627869?utm_source=chatgpt.com "SUPPORT RING A6739190022 | MERCEDES Parts | PartSouq"
+[3]: https://bb-portal.mercedes-benz-trucks.com/de/GLOBAL/special-trucks/technik-und-informationen/auswahl/aufbaurichtlinien-archiv?token=0cda99cd-d629-48f9-af41-50916fe8326b&utm_source=chatgpt.com "Aufbaurichtlinien Archiv"
+
+
+--- 发送 / 无 TSV 格式与证据状态纠偏 / Round 71 ---
+【本地覆盖率审计纠偏：必须处理以下 PENDING】
+上一轮声称 PENDING=0 已被本地 TSV 覆盖率重算否决。当前权威状态为 PENDING=2；不得执行机械收尾，不得再次声称 PENDING=0，也不得只回复“继续”。
+
+缺失 Ktype：34155,34404
+
+【逐 Ktype 缺失原因】
+- 34155：Triebkopf量产状态的完整三维尚未闭合；映射缺少 DIMENSION_GROUP_ID
+- 34404：Triebkopf量产状态的完整三维尚未闭合；映射缺少 DIMENSION_GROUP_ID
+
+【本轮必须处理的原始 TSV 记录】
+`	sv
+Make	Model	VariantName	BodyStyle	DriveType	Energy	Product Start Month-Year	Product End Month-Year	Ktype
+Mercedes-benz	T2/ln1	809 DT	Triebkopf	Frontantrieb	Diesel	Apr 1986	Dec 1994	34155
+Mercedes-benz	T2/ln1	809 DT	Triebkopf	Frontantrieb	Diesel	Apr 1986	Dec 1994	34404
+`
+
+请现在直接研究并补齐这些记录，输出本轮新增或修改的 Ktype 映射 TSV 及对应 DIMENSION_GROUP TSV。只处理上列 PENDING，已 READY 的 Ktype 不要重新检索或改动。仍有未闭合项时输出推进信号：CONTINUE；只有本地所列 Ktype 均产生完整 READY 映射后，才可输出完整最终两表、指定下载链接及推进信号：COMPLETE。
+你的上一轮回复缺少正常推进信号。继续当前批次：尺寸组首次建档后必须复用；仅输出本轮新增/修改的 Ktype 映射行和首次创建/修正的 DIMENSION_GROUP 行，无变化明确写“无”，并给出下一步优先处理。仍有可靠证据路径时输出“推进信号：CONTINUE”。只有 PENDING=0、同一回复包含两张最终完整表且全部映射闭合时才可输出“推进信号：COMPLETE”。如果所有剩余 PENDING 都已穷尽契约允许的可靠来源，且无法在不猜测或拼接不同配置的前提下推进，则执行 ALMOST 收尾：同一回复必须给出全部当前 READY 映射、其引用的全部 DIMENSION_GROUP 及非空 SourceURL、每个剩余 PENDING 的具体原因、两个任务指定精确文件名的可点击 sandbox 下载链接，并在最后一行单独输出“推进信号：ALMOST”。ALMOST 是任务终态但不是成功；临时网络、浏览器、登录、页面或超时故障，单轮无结果或达到轮次上限都不得触发 ALMOST。执行顺序固定为：第一阶段优先消除 PENDING 并补齐会阻塞两张最终表的数据。检测到 PENDING=0 后，第二阶段最多只做一次轻量机械收尾：核对固定表头、id 与 DIMENSION_GROUP_ID 唯一、映射引用闭合、长宽高和来源非空、两个任务指定下载链接齐全。第二阶段不得重新逐车型、逐年份或逐来源做深度检索，不得为了提高置信度反复核对，也不得因非阻塞的排序或措辞问题继续多轮。PENDING=0 后的下一条回复必须直接输出两张最终完整 TSV、两个精确 sandbox 下载链接，并以“推进信号：COMPLETE”结束；不要再输出 CONTINUE。若经过多轮可靠检索后，剩余 PENDING 明确因证据不足而无法可靠闭合，并且继续检索已不能推进，可改为 ALMOST 收尾：停止检索，输出当前全部 READY 映射、它们引用的完整尺寸组、两个精确 sandbox 下载链接和每个剩余 PENDING 的具体原因，最后一行输出“推进信号：ALMOST”。临时网络、浏览器、页面或工具故障，以及单轮无结果，不得使用 ALMOST。Ktype 映射 TSV 表头必须严格使用 requirement 指定的字段顺序：id	Ktype	NormalizedBodyStyle	Generation	BodyCode	Doors	DIMENSION_GROUP_ID	MatchConfidence	Notes	IterationStatus。另需维护完整 DIMENSION_GROUP TSV，表头固定为：DIMENSION_GROUP_ID	LengthMM	WidthMM	HeightMM	DimensionSource	SourceURL。缺少任一张表、任一映射引用的尺寸组，或尺寸组字段不完整时不得 COMPLETE；ALMOST 只能包含当前全部 READY 映射及其引用闭合的尺寸组。不要输出子车系匹配表。
+【COMPLETE / ALMOST 下载文件硬性要求】
+准备 COMPLETE 时，除两张完整内嵌 TSV 外，还必须创建并提供以下两个可点击 sandbox 下载链接。准备 ALMOST 时，两张表和链接必须覆盖当前全部整体 READY Ktype，并排除所有 PENDING Ktype。文件名必须完全一致：
+- left18448_10701-10800_ktype_dimension_mapping_final.tsv
+- left18448_10701-10800_dimension_groups_final.tsv
+缺少任一下载链接时不得输出推进信号：COMPLETE 或 ALMOST。
+
+
+--- Round 71 / checkpoint 续跑 ---
+### 1）更新点
+
+本轮进一步确认 `670.199` 不能套用普通 809 D 底盘尺寸：奔驰 EPC 对 `670.001/.002/.003` 分别标注 3150、3700、4250 mm 轴距，而 `670.199` 单独定义为 **CHASSIS FRONT END WITH CAB**，属于带驾驶室的独立驱动头交付边界。([猫车][1])
+
+已锁定适用的 1986 年奔驰原厂《Aufbaurichtlinien Lkw》，资料编号为 `620 584 03 00 / 6550 6685 00`，适用范围明确覆盖 `507 D–811 D`、Baumuster `667–670`。公开资料目前只有封面和适用范围，尚未取得 `670.199 Triebkopf` 内页中同一量产状态的完整长、无镜宽和高，因此本轮仍不能可靠建立尺寸组。([eBay Images][2])
+
+### 2）当前批次进度
+
+READY=98；PENDING=2；revision=112。
+
+未闭合 Ktype：34155、34404。
+
+### 3）本轮新增/修改的 Ktype 映射 TSV
+
+无
+
+### 4）本轮首次创建/修正的 DIMENSION_GROUP TSV
+
+无
+
+### 5）下一步优先处理
+
+优先取得上述原厂《Aufbaurichtlinien Lkw》中 `Baumuster 670.199 / Triebkopf` 的尺寸图或 `Angebotszeichnung`；并行从 Mercedes-Benz Bodybuilder Portal 的旧系列车身制造指南归档恢复对应原厂 PDF 直链。只有在驱动头出厂交付边界下同时闭合长度、不含外后视镜宽度和高度后，才创建一个尺寸组并同时关联 34155、34404。官方旧系列资料归档路径仍然存在，可靠证据路径尚未穷尽。([奔驰卡车车身制造商门户][3])
+
+推进信号：CONTINUE
+
+[1]: https://www.catcar.info/mercedes/?l=Y2xhc3M9PTN8fGNvdW50cnk9PVN8fHN0PT0yMHx8c3RzPT17IjEwIjoiQXNzb3J0bWVudCBjbGFzcyIsIjIwIjoiVmFuLUphcGFuIn0%3D&lang=en "https://www.catcar.info/mercedes/?l=Y2xhc3M9PTN8fGNvdW50cnk9PVN8fHN0PT0yMHx8c3RzPT17IjEwIjoiQXNzb3J0bWVudCBjbGFzcyIsIjIwIjoiVmFuLUphcGFuIn0%3D&lang=en"
+[2]: https://i.ebayimg.com/images/g/EK0AAOSwC9xhoK85/s-l1600.webp "https://i.ebayimg.com/images/g/EK0AAOSwC9xhoK85/s-l1600.webp"
+[3]: https://bb-portal.mercedes-benz-trucks.com/de/GLOBAL/special-trucks/technik-und-informationen/auswahl/aufbaurichtlinien-archiv?token=0cda99cd-d629-48f9-af41-50916fe8326b "https://bb-portal.mercedes-benz-trucks.com/de/GLOBAL/special-trucks/technik-und-informationen/auswahl/aufbaurichtlinien-archiv?token=0cda99cd-d629-48f9-af41-50916fe8326b"
+
+
+--- 发送 / checkpoint PENDING 记录纠偏到 Round 72 ---
+【本地覆盖率审计纠偏：必须处理以下 PENDING】
+上一轮声称 PENDING=0 已被本地 TSV 覆盖率重算否决。当前权威状态为 PENDING=2；不得执行机械收尾，不得再次声称 PENDING=0，也不得只回复“继续”。
+
+缺失 Ktype：34155,34404
+
+【逐 Ktype 缺失原因】
+- 34155：Triebkopf量产状态的完整三维尚未闭合；映射缺少 DIMENSION_GROUP_ID
+- 34404：Triebkopf量产状态的完整三维尚未闭合；映射缺少 DIMENSION_GROUP_ID
+
+【本轮必须处理的原始 TSV 记录】
+`	sv
+Make	Model	VariantName	BodyStyle	DriveType	Energy	Product Start Month-Year	Product End Month-Year	Ktype
+Mercedes-benz	T2/ln1	809 DT	Triebkopf	Frontantrieb	Diesel	Apr 1986	Dec 1994	34155
+Mercedes-benz	T2/ln1	809 DT	Triebkopf	Frontantrieb	Diesel	Apr 1986	Dec 1994	34404
+`
+
+请现在直接研究并补齐这些记录，输出本轮新增或修改的 Ktype 映射 TSV 及对应 DIMENSION_GROUP TSV。只处理上列 PENDING，已 READY 的 Ktype 不要重新检索或改动。仍有未闭合项时输出推进信号：CONTINUE；只有本地所列 Ktype 均产生完整 READY 映射后，才可输出完整最终两表、指定下载链接及推进信号：COMPLETE。
+继续当前批次并采用缓存优先模式。尺寸组只在首次创建或纠错时完整核对一次三维和来源；后续 Ktype 只判断关联哪个现有 DIMENSION_GROUP_ID，不重复抓取，不输出缓存来源或匹配理由。仍有 PENDING 且还有明确可执行的可靠证据路径时，CONTINUE 轮仅输出：1) 更新点；2) 当前批次进度；3) 本轮新增/修改的 Ktype 映射 TSV（无变化写“无”）；4) 本轮首次创建/修正的 DIMENSION_GROUP TSV（复用既有组不重复输出，无变化写“无”）；5) 下一步优先处理。若所有剩余 PENDING 都已穷尽契约允许的可靠来源，仍无法在不猜测、不拼接不同配置且不降低证据标准的前提下推进，则停止重复检索并执行 ALMOST 收尾：ALMOST 是任务级终态但不是成功，也不是行级 IterationStatus；剩余条目继续保持 PENDING。ALMOST 回复必须包含全部当前 READY 映射、这些映射引用的全部 DIMENSION_GROUP（每组 SourceURL 非空）、每个剩余 PENDING 的具体原因，以及两个任务指定精确文件名的可点击 sandbox 下载链接，最后一行单独输出“推进信号：ALMOST”。临时网络、浏览器、登录、页面或超时故障，单轮搜索无结果，或仅达到轮次上限，均不得使用 ALMOST。若当前或上一轮进度已经是 PENDING=0，本轮不要继续检索或再次输出 CONTINUE，也不得输出 ALMOST；必须立刻汇总并输出两张最终完整 TSV、两个任务指定 sandbox 下载链接和“推进信号：COMPLETE”。执行顺序固定为：第一阶段优先消除 PENDING 并补齐会阻塞两张最终表的数据。检测到 PENDING=0 后，第二阶段最多只做一次轻量机械收尾：核对固定表头、id 与 DIMENSION_GROUP_ID 唯一、映射引用闭合、长宽高和来源非空、两个任务指定下载链接齐全。第二阶段不得重新逐车型、逐年份或逐来源做深度检索，不得为了提高置信度反复核对，也不得因非阻塞的排序或措辞问题继续多轮。PENDING=0 后的下一条回复必须直接输出两张最终完整 TSV、两个精确 sandbox 下载链接，并以“推进信号：COMPLETE”结束；不要再输出 CONTINUE。若经过多轮可靠检索后，剩余 PENDING 明确因证据不足而无法可靠闭合，并且继续检索已不能推进，可改为 ALMOST 收尾：停止检索，输出当前全部 READY 映射、它们引用的完整尺寸组、两个精确 sandbox 下载链接和每个剩余 PENDING 的具体原因，最后一行输出“推进信号：ALMOST”。临时网络、浏览器、页面或工具故障，以及单轮无结果，不得使用 ALMOST。Ktype 映射 TSV 表头必须严格使用 requirement 指定的字段顺序：id	Ktype	NormalizedBodyStyle	Generation	BodyCode	Doors	DIMENSION_GROUP_ID	MatchConfidence	Notes	IterationStatus。另需维护完整 DIMENSION_GROUP TSV，表头固定为：DIMENSION_GROUP_ID	LengthMM	WidthMM	HeightMM	DimensionSource	SourceURL。缺少任一张表、任一映射引用的尺寸组，或尺寸组字段不完整时不得 COMPLETE；ALMOST 只能包含当前全部 READY 映射及其引用闭合的尺寸组。不要输出子车系匹配表。
+【COMPLETE / ALMOST 下载文件硬性要求】
+准备 COMPLETE 时，除两张完整内嵌 TSV 外，还必须创建并提供以下两个可点击 sandbox 下载链接。准备 ALMOST 时，两张表和链接必须覆盖当前全部整体 READY Ktype，并排除所有 PENDING Ktype。文件名必须完全一致：
+- left18448_10701-10800_ktype_dimension_mapping_final.tsv
+- left18448_10701-10800_dimension_groups_final.tsv
+缺少任一下载链接时不得输出推进信号：COMPLETE 或 ALMOST。
+
+
+--- Round 72 / checkpoint 续跑 ---
+### 1）更新点
+
+本轮确认 1987 版 Mercedes-Benz《Aufbaurichtlinien Lkw》明确覆盖 `507 D–811 D / Baumuster 667–670`，属于 `670.199` 的对口原厂技术资料；但目前公开内容仍未提供可清晰读取并明确标注 `670.199 Triebkopf` 的完整长、无镜宽和高，不能据模糊预览或相邻 Baumuster 建组。([PK-Buch][1])
+
+Mercedes-Benz Aufbauhersteller-Portal 明确提供带尺寸的 PDF/DXF 车辆图、技术数据表和 Angebotszeichnung，因此 `670.199` 的车型专属图纸仍是可执行的可靠证据路径，尚未达到证据穷尽。([奔驰卡车车身制造商门户][2])
+
+### 2）当前批次进度
+
+READY=98；PENDING=2；revision=112。
+
+未闭合 Ktype：34155、34404。
+
+### 3）本轮新增/修改的 Ktype 映射 TSV
+
+无
+
+### 4）本轮首次创建/修正的 DIMENSION_GROUP TSV
+
+无
+
+### 5）下一步优先处理
+
+继续恢复或取得原厂手册中 `Baumuster 670.199 / Triebkopf` 的对应内页，以及 Aufbauhersteller-Portal 中该 Baumuster 的 PDF/DXF Angebotszeichnung。仅在同一出厂交付状态下同时取得完整长度、不含外后视镜宽度和高度后，创建一个尺寸组并同时关联 34155、34404。
+
+推进信号：CONTINUE
+
+[1]: https://pk-buch.de/mercedes-nutzfahrzeuge/72576/handbuch-aufbaurichtlinien-mercedes-benz-lkw-lastkraftwagen-stand-03/1987 "Handbuch Aufbaurichtlinien Mercedes Benz LKW Lastkraftwagen, Stand 03/1987 | PK-Buch"
+[2]: https://bb-portal.mercedes-benz-trucks.com/zeiginfo.php?L=&addr=66.249.66.43&auftrag=DE%2Fde%2Farl_truck_gesamt_14122009_de.pdf&benutzer=0&dn_name=arl_truck_gesamt_14122009_de.pdf&kat=aa2&port=46579&referer=https%3A%2F%2Fbb-portal.mercedes-benz-trucks.com%2Fde%2FGLOBAL%2Fspecial-trucks%2Ftechnik-und-informationen%2Fauswahl%2Faufbaurichtlinien-archiv%3FpageId%3D1589%26token%3D0cda99cd-d629-48f9-af41-50916fe8326b&session=6afcc2ecde5ff7a665783e3499f25157&sprache=de&utm_source=chatgpt.com "Aufbaurichtlinien Lastkraftwagen"
+
+
+--- 发送 / PENDING 记录续跑到 Round 73 ---
+【本地覆盖率审计纠偏：必须处理以下 PENDING】
+上一轮声称 PENDING=0 已被本地 TSV 覆盖率重算否决。当前权威状态为 PENDING=2；不得执行机械收尾，不得再次声称 PENDING=0，也不得只回复“继续”。
+
+缺失 Ktype：34155,34404
+
+【逐 Ktype 缺失原因】
+- 34155：Triebkopf量产状态的完整三维尚未闭合；映射缺少 DIMENSION_GROUP_ID
+- 34404：Triebkopf量产状态的完整三维尚未闭合；映射缺少 DIMENSION_GROUP_ID
+
+【本轮必须处理的原始 TSV 记录】
+`	sv
+Make	Model	VariantName	BodyStyle	DriveType	Energy	Product Start Month-Year	Product End Month-Year	Ktype
+Mercedes-benz	T2/ln1	809 DT	Triebkopf	Frontantrieb	Diesel	Apr 1986	Dec 1994	34155
+Mercedes-benz	T2/ln1	809 DT	Triebkopf	Frontantrieb	Diesel	Apr 1986	Dec 1994	34404
+`
+
+请现在直接研究并补齐这些记录，输出本轮新增或修改的 Ktype 映射 TSV 及对应 DIMENSION_GROUP TSV。只处理上列 PENDING，已 READY 的 Ktype 不要重新检索或改动。仍有未闭合项时输出推进信号：CONTINUE；只有本地所列 Ktype 均产生完整 READY 映射后，才可输出完整最终两表、指定下载链接及推进信号：COMPLETE。
+继续当前批次并采用缓存优先模式。尺寸组只在首次创建或纠错时完整核对一次三维和来源；后续 Ktype 只判断关联哪个现有 DIMENSION_GROUP_ID，不重复抓取，不输出缓存来源或匹配理由。仍有 PENDING 且还有明确可执行的可靠证据路径时，CONTINUE 轮仅输出：1) 更新点；2) 当前批次进度；3) 本轮新增/修改的 Ktype 映射 TSV（无变化写“无”）；4) 本轮首次创建/修正的 DIMENSION_GROUP TSV（复用既有组不重复输出，无变化写“无”）；5) 下一步优先处理。若所有剩余 PENDING 都已穷尽契约允许的可靠来源，仍无法在不猜测、不拼接不同配置且不降低证据标准的前提下推进，则停止重复检索并执行 ALMOST 收尾：ALMOST 是任务级终态但不是成功，也不是行级 IterationStatus；剩余条目继续保持 PENDING。ALMOST 回复必须包含全部当前 READY 映射、这些映射引用的全部 DIMENSION_GROUP（每组 SourceURL 非空）、每个剩余 PENDING 的具体原因，以及两个任务指定精确文件名的可点击 sandbox 下载链接，最后一行单独输出“推进信号：ALMOST”。临时网络、浏览器、登录、页面或超时故障，单轮搜索无结果，或仅达到轮次上限，均不得使用 ALMOST。若当前或上一轮进度已经是 PENDING=0，本轮不要继续检索或再次输出 CONTINUE，也不得输出 ALMOST；必须立刻汇总并输出两张最终完整 TSV、两个任务指定 sandbox 下载链接和“推进信号：COMPLETE”。执行顺序固定为：第一阶段优先消除 PENDING 并补齐会阻塞两张最终表的数据。检测到 PENDING=0 后，第二阶段最多只做一次轻量机械收尾：核对固定表头、id 与 DIMENSION_GROUP_ID 唯一、映射引用闭合、长宽高和来源非空、两个任务指定下载链接齐全。第二阶段不得重新逐车型、逐年份或逐来源做深度检索，不得为了提高置信度反复核对，也不得因非阻塞的排序或措辞问题继续多轮。PENDING=0 后的下一条回复必须直接输出两张最终完整 TSV、两个精确 sandbox 下载链接，并以“推进信号：COMPLETE”结束；不要再输出 CONTINUE。若经过多轮可靠检索后，剩余 PENDING 明确因证据不足而无法可靠闭合，并且继续检索已不能推进，可改为 ALMOST 收尾：停止检索，输出当前全部 READY 映射、它们引用的完整尺寸组、两个精确 sandbox 下载链接和每个剩余 PENDING 的具体原因，最后一行输出“推进信号：ALMOST”。临时网络、浏览器、页面或工具故障，以及单轮无结果，不得使用 ALMOST。Ktype 映射 TSV 表头必须严格使用 requirement 指定的字段顺序：id	Ktype	NormalizedBodyStyle	Generation	BodyCode	Doors	DIMENSION_GROUP_ID	MatchConfidence	Notes	IterationStatus。另需维护完整 DIMENSION_GROUP TSV，表头固定为：DIMENSION_GROUP_ID	LengthMM	WidthMM	HeightMM	DimensionSource	SourceURL。缺少任一张表、任一映射引用的尺寸组，或尺寸组字段不完整时不得 COMPLETE；ALMOST 只能包含当前全部 READY 映射及其引用闭合的尺寸组。不要输出子车系匹配表。
+【COMPLETE / ALMOST 下载文件硬性要求】
+准备 COMPLETE 时，除两张完整内嵌 TSV 外，还必须创建并提供以下两个可点击 sandbox 下载链接。准备 ALMOST 时，两张表和链接必须覆盖当前全部整体 READY Ktype，并排除所有 PENDING Ktype。文件名必须完全一致：
+- left18448_10701-10800_ktype_dimension_mapping_final.tsv
+- left18448_10701-10800_dimension_groups_final.tsv
+缺少任一下载链接时不得输出推进信号：COMPLETE 或 ALMOST。
+
+
+--- Round 73 / checkpoint 续跑 ---
+### 1）更新点
+
+本轮取得并核对了原厂《Aufbaurichtlinien Lkw》公开的高清内页。第 47 页仅说明 `507 D–814 D` 的安装副车架，并展示通用驾驶室/底盘轮廓，没有列出 `670.199 Triebkopf` 的车型专属长度、车身无镜宽度和高度，不能据该页建立尺寸组。奔驰官方仍保留旧系列《Aufbaurichtlinien》归档及技术支持渠道，因此可靠证据路径尚未穷尽。
+
+### 2）当前批次进度
+
+READY=98；PENDING=2；revision=112。
+
+未闭合 Ktype：34155、34404。
+
+### 3）本轮新增/修改的 Ktype 映射 TSV
+
+无
+
+### 4）本轮首次创建/修正的 DIMENSION_GROUP TSV
+
+无
+
+### 5）下一步优先处理
+
+从奔驰旧系列归档或 Portal 技术支持取得 `Baumuster 670.199` 的车型专属 `Angebotszeichnung / 2D-Fahrzeugzeichnung`，或原厂手册中对应的完整尺寸页；只接受同一 Triebkopf 出厂交付边界下的完整长度、不含外后视镜宽度和高度。闭合后创建一个尺寸组并同时关联 34155、34404。
+
+推进信号：CONTINUE
+
+
+--- 发送 / PENDING 记录续跑到 Round 74 ---
+【本地覆盖率审计纠偏：必须处理以下 PENDING】
+上一轮声称 PENDING=0 已被本地 TSV 覆盖率重算否决。当前权威状态为 PENDING=2；不得执行机械收尾，不得再次声称 PENDING=0，也不得只回复“继续”。
+
+缺失 Ktype：34155,34404
+
+【逐 Ktype 缺失原因】
+- 34155：Triebkopf量产状态的完整三维尚未闭合；映射缺少 DIMENSION_GROUP_ID
+- 34404：Triebkopf量产状态的完整三维尚未闭合；映射缺少 DIMENSION_GROUP_ID
+
+【本轮必须处理的原始 TSV 记录】
+`	sv
+Make	Model	VariantName	BodyStyle	DriveType	Energy	Product Start Month-Year	Product End Month-Year	Ktype
+Mercedes-benz	T2/ln1	809 DT	Triebkopf	Frontantrieb	Diesel	Apr 1986	Dec 1994	34155
+Mercedes-benz	T2/ln1	809 DT	Triebkopf	Frontantrieb	Diesel	Apr 1986	Dec 1994	34404
+`
+
+请现在直接研究并补齐这些记录，输出本轮新增或修改的 Ktype 映射 TSV 及对应 DIMENSION_GROUP TSV。只处理上列 PENDING，已 READY 的 Ktype 不要重新检索或改动。仍有未闭合项时输出推进信号：CONTINUE；只有本地所列 Ktype 均产生完整 READY 映射后，才可输出完整最终两表、指定下载链接及推进信号：COMPLETE。
+继续当前批次并采用缓存优先模式。尺寸组只在首次创建或纠错时完整核对一次三维和来源；后续 Ktype 只判断关联哪个现有 DIMENSION_GROUP_ID，不重复抓取，不输出缓存来源或匹配理由。仍有 PENDING 且还有明确可执行的可靠证据路径时，CONTINUE 轮仅输出：1) 更新点；2) 当前批次进度；3) 本轮新增/修改的 Ktype 映射 TSV（无变化写“无”）；4) 本轮首次创建/修正的 DIMENSION_GROUP TSV（复用既有组不重复输出，无变化写“无”）；5) 下一步优先处理。若所有剩余 PENDING 都已穷尽契约允许的可靠来源，仍无法在不猜测、不拼接不同配置且不降低证据标准的前提下推进，则停止重复检索并执行 ALMOST 收尾：ALMOST 是任务级终态但不是成功，也不是行级 IterationStatus；剩余条目继续保持 PENDING。ALMOST 回复必须包含全部当前 READY 映射、这些映射引用的全部 DIMENSION_GROUP（每组 SourceURL 非空）、每个剩余 PENDING 的具体原因，以及两个任务指定精确文件名的可点击 sandbox 下载链接，最后一行单独输出“推进信号：ALMOST”。临时网络、浏览器、登录、页面或超时故障，单轮搜索无结果，或仅达到轮次上限，均不得使用 ALMOST。若当前或上一轮进度已经是 PENDING=0，本轮不要继续检索或再次输出 CONTINUE，也不得输出 ALMOST；必须立刻汇总并输出两张最终完整 TSV、两个任务指定 sandbox 下载链接和“推进信号：COMPLETE”。执行顺序固定为：第一阶段优先消除 PENDING 并补齐会阻塞两张最终表的数据。检测到 PENDING=0 后，第二阶段最多只做一次轻量机械收尾：核对固定表头、id 与 DIMENSION_GROUP_ID 唯一、映射引用闭合、长宽高和来源非空、两个任务指定下载链接齐全。第二阶段不得重新逐车型、逐年份或逐来源做深度检索，不得为了提高置信度反复核对，也不得因非阻塞的排序或措辞问题继续多轮。PENDING=0 后的下一条回复必须直接输出两张最终完整 TSV、两个精确 sandbox 下载链接，并以“推进信号：COMPLETE”结束；不要再输出 CONTINUE。若经过多轮可靠检索后，剩余 PENDING 明确因证据不足而无法可靠闭合，并且继续检索已不能推进，可改为 ALMOST 收尾：停止检索，输出当前全部 READY 映射、它们引用的完整尺寸组、两个精确 sandbox 下载链接和每个剩余 PENDING 的具体原因，最后一行输出“推进信号：ALMOST”。临时网络、浏览器、页面或工具故障，以及单轮无结果，不得使用 ALMOST。Ktype 映射 TSV 表头必须严格使用 requirement 指定的字段顺序：id	Ktype	NormalizedBodyStyle	Generation	BodyCode	Doors	DIMENSION_GROUP_ID	MatchConfidence	Notes	IterationStatus。另需维护完整 DIMENSION_GROUP TSV，表头固定为：DIMENSION_GROUP_ID	LengthMM	WidthMM	HeightMM	DimensionSource	SourceURL。缺少任一张表、任一映射引用的尺寸组，或尺寸组字段不完整时不得 COMPLETE；ALMOST 只能包含当前全部 READY 映射及其引用闭合的尺寸组。不要输出子车系匹配表。
+【COMPLETE / ALMOST 下载文件硬性要求】
+准备 COMPLETE 时，除两张完整内嵌 TSV 外，还必须创建并提供以下两个可点击 sandbox 下载链接。准备 ALMOST 时，两张表和链接必须覆盖当前全部整体 READY Ktype，并排除所有 PENDING Ktype。文件名必须完全一致：
+- left18448_10701-10800_ktype_dimension_mapping_final.tsv
+- left18448_10701-10800_dimension_groups_final.tsv
+缺少任一下载链接时不得输出推进信号：COMPLETE 或 ALMOST。
+
+
+--- Round 74 / checkpoint 续跑 ---
+### 1）更新点
+
+本轮找到 1991 年历史技术资料《Transporter T2》，其正文给出的 `5450–7210 × 2180 × 2560–2720 mm` 是 T2 多种完整量产车型的总体尺寸范围，并非 `670.199 Triebkopf` 单一交付状态，不能选取其中任一组数值或将范围端点拼接建组。([themator.museum-digital.de][1])
+
+精确车型目录仍只确认 `809 DT (670.199)` 在相同生产期内存在 63 kW/86 PS 与 66 kW/90 PS 两个动力记录，未提供驱动头专属完整长、无镜宽和高。因此 34155、34404 继续共用一个待闭合物理外廓，但本轮不能建立 `DIMENSION_GROUP`。([autoteiledirekt.de][2])
+
+### 2）当前批次进度
+
+READY=98；PENDING=2；revision=112。
+
+未闭合 Ktype：34155、34404。
+
+### 3）本轮新增/修改的 Ktype 映射 TSV
+
+无
+
+### 4）本轮首次创建/修正的 DIMENSION_GROUP TSV
+
+无
+
+### 5）下一步优先处理
+
+继续取得明确覆盖 Baumuster `670.199` 的原厂 `Angebotszeichnung`、车型专属尺寸页或历史型式认证记录。1987 年原厂《Aufbaurichtlinien》确认覆盖 Baumuster 667–670，但公开书目没有展示 `670.199` 对应内页，下一步只核查该驱动头专属页，不再复查车系级资料或零件目录。([pk-buch.de][3])
+
+推进信号：CONTINUE
+
+[1]: https://themator.museum-digital.de/dokumente/08210357523.pdf?utm_source=chatgpt.com "7.4.1.2.2 Transporter T2"
+[2]: https://www.autoteiledirekt.de/autoersatzteil/mercedes-benz/getriebe-dichtung/t2-ln1-triebkopf.html?utm_source=chatgpt.com "Getriebe Dichtung passend für T2/LN1 Triebkopf in Original Qualität zum günstigen Preis kaufen"
+[3]: https://pk-buch.de/mercedes-nutzfahrzeuge/43511/handbuch-aufbaurichtlinien-mercedes-benz-lkw-lastkraftwagen-stand-03/1987 "Handbuch Aufbaurichtlinien Mercedes Benz LKW Lastkraftwagen, Stand 03/1987 | PK-Buch"
+
+
+--- 发送 / 无 TSV 格式与证据状态纠偏 / Round 75 ---
+【本地覆盖率审计纠偏：必须处理以下 PENDING】
+上一轮声称 PENDING=0 已被本地 TSV 覆盖率重算否决。当前权威状态为 PENDING=2；不得执行机械收尾，不得再次声称 PENDING=0，也不得只回复“继续”。
+
+缺失 Ktype：34155,34404
+
+【逐 Ktype 缺失原因】
+- 34155：Triebkopf量产状态的完整三维尚未闭合；映射缺少 DIMENSION_GROUP_ID
+- 34404：Triebkopf量产状态的完整三维尚未闭合；映射缺少 DIMENSION_GROUP_ID
+
+【本轮必须处理的原始 TSV 记录】
+`	sv
+Make	Model	VariantName	BodyStyle	DriveType	Energy	Product Start Month-Year	Product End Month-Year	Ktype
+Mercedes-benz	T2/ln1	809 DT	Triebkopf	Frontantrieb	Diesel	Apr 1986	Dec 1994	34155
+Mercedes-benz	T2/ln1	809 DT	Triebkopf	Frontantrieb	Diesel	Apr 1986	Dec 1994	34404
+`
+
+请现在直接研究并补齐这些记录，输出本轮新增或修改的 Ktype 映射 TSV 及对应 DIMENSION_GROUP TSV。只处理上列 PENDING，已 READY 的 Ktype 不要重新检索或改动。仍有未闭合项时输出推进信号：CONTINUE；只有本地所列 Ktype 均产生完整 READY 映射后，才可输出完整最终两表、指定下载链接及推进信号：COMPLETE。
+你的上一轮回复缺少正常推进信号。继续当前批次：尺寸组首次建档后必须复用；仅输出本轮新增/修改的 Ktype 映射行和首次创建/修正的 DIMENSION_GROUP 行，无变化明确写“无”，并给出下一步优先处理。仍有可靠证据路径时输出“推进信号：CONTINUE”。只有 PENDING=0、同一回复包含两张最终完整表且全部映射闭合时才可输出“推进信号：COMPLETE”。如果所有剩余 PENDING 都已穷尽契约允许的可靠来源，且无法在不猜测或拼接不同配置的前提下推进，则执行 ALMOST 收尾：同一回复必须给出全部当前 READY 映射、其引用的全部 DIMENSION_GROUP 及非空 SourceURL、每个剩余 PENDING 的具体原因、两个任务指定精确文件名的可点击 sandbox 下载链接，并在最后一行单独输出“推进信号：ALMOST”。ALMOST 是任务终态但不是成功；临时网络、浏览器、登录、页面或超时故障，单轮无结果或达到轮次上限都不得触发 ALMOST。执行顺序固定为：第一阶段优先消除 PENDING 并补齐会阻塞两张最终表的数据。检测到 PENDING=0 后，第二阶段最多只做一次轻量机械收尾：核对固定表头、id 与 DIMENSION_GROUP_ID 唯一、映射引用闭合、长宽高和来源非空、两个任务指定下载链接齐全。第二阶段不得重新逐车型、逐年份或逐来源做深度检索，不得为了提高置信度反复核对，也不得因非阻塞的排序或措辞问题继续多轮。PENDING=0 后的下一条回复必须直接输出两张最终完整 TSV、两个精确 sandbox 下载链接，并以“推进信号：COMPLETE”结束；不要再输出 CONTINUE。若经过多轮可靠检索后，剩余 PENDING 明确因证据不足而无法可靠闭合，并且继续检索已不能推进，可改为 ALMOST 收尾：停止检索，输出当前全部 READY 映射、它们引用的完整尺寸组、两个精确 sandbox 下载链接和每个剩余 PENDING 的具体原因，最后一行输出“推进信号：ALMOST”。临时网络、浏览器、页面或工具故障，以及单轮无结果，不得使用 ALMOST。Ktype 映射 TSV 表头必须严格使用 requirement 指定的字段顺序：id	Ktype	NormalizedBodyStyle	Generation	BodyCode	Doors	DIMENSION_GROUP_ID	MatchConfidence	Notes	IterationStatus。另需维护完整 DIMENSION_GROUP TSV，表头固定为：DIMENSION_GROUP_ID	LengthMM	WidthMM	HeightMM	DimensionSource	SourceURL。缺少任一张表、任一映射引用的尺寸组，或尺寸组字段不完整时不得 COMPLETE；ALMOST 只能包含当前全部 READY 映射及其引用闭合的尺寸组。不要输出子车系匹配表。
+【COMPLETE / ALMOST 下载文件硬性要求】
+准备 COMPLETE 时，除两张完整内嵌 TSV 外，还必须创建并提供以下两个可点击 sandbox 下载链接。准备 ALMOST 时，两张表和链接必须覆盖当前全部整体 READY Ktype，并排除所有 PENDING Ktype。文件名必须完全一致：
+- left18448_10701-10800_ktype_dimension_mapping_final.tsv
+- left18448_10701-10800_dimension_groups_final.tsv
+缺少任一下载链接时不得输出推进信号：COMPLETE 或 ALMOST。
+
+
+--- Round 75 / checkpoint 续跑 ---
+### 1）更新点
+
+已锁定 1991 年 Mercedes-Benz 原厂授权版《Aufbaurichtlinien Motorcaravan》目录结构：第 27 页为 **“Abmessungen und Maßangaben”**，第 96 页为 **“Montagerahmen als Bodengruppe”**，第 98 页为 **“Aufbauten bei Fahrzeugen mit Vorbau”**。该资料共 130 页，覆盖 T1/T2 Motorcaravan 与 667–670 系列，是目前最接近 `670.199 Triebkopf` 外廓定义的可靠资料路径。([eBay.de][1])
+
+但公开预览仅展示适用范围和目录，未展示第 27、96、98 页的尺寸图；现有页面也未明确把任一完整长、无镜宽、高标注为 `670.199`。因此不能从相邻 `670.0/670.3` 底盘、完整 809 D 或示意图推算建组。
+
+### 2）当前批次进度
+
+READY=98；PENDING=2；revision=112。
+
+### 3）本轮新增/修改的 Ktype 映射 TSV
+
+无
+
+### 4）本轮首次创建/修正的 DIMENSION_GROUP TSV
+
+无
+
+### 5）下一步优先处理
+
+继续定位上述原厂资料第 27、96、98 页的可读扫描，重点核查其中是否单列 `Triebkopf / Fahrzeug mit Vorbau / 670.199`；同时检索对应原厂 `Angebotszeichnung`。只有完整三维明确属于同一 `670.199` 出厂交付边界，才创建一个尺寸组并同时关联 34155、34404。原厂资料的精确章节已经确定，可靠证据路径尚未穷尽。
+
+推进信号：CONTINUE
+
+[1]: https://www.ebay.de/itm/377279821045?_ul=DE&chn=ps&google_free_listing_action=view_item&mkcid=28&mkevt=1&srsltid=AfmBOorR2inhVzS-jRe_F9nZUh8ZV9iiANHDen-YOz4MwlyikOnXkTme "PDF Aufbaurichtlinien Motorcaravan Typ 601 / 602 / 611 / 667 / 668.0 / 669 ... | eBay.de"
+

@@ -1789,6 +1789,67 @@ $($pendingInput.TrimEnd())
 "@
 }
 
+function Get-TaskPendingWorkMessage {
+    param($Task, [string]$FallbackMessage = "")
+
+    if (-not $DimensionGroupEnabled) { return $FallbackMessage }
+    $paths = Get-TaskStatePaths -Task $Task
+    $progress = Read-QClawJsonWithBackup -Path $paths.Progress
+    if ($null -eq $progress -or [int]$progress.progress.pending_ktype_count -le 0) {
+        return $FallbackMessage
+    }
+
+    $pendingSet = [ordered]@{}
+    foreach ($ktype in @($progress.progress.pending_ktypes)) {
+        $key = ([string]$ktype).Trim()
+        if ($key) { $pendingSet[$key] = $true }
+    }
+    $inputRecords = @(Get-TaskInputRecords -Task $Task)
+    $pendingLines = New-Object System.Collections.Generic.List[string]
+    $header = if ($inputRecords.Count -gt 0) {
+        [string]$inputRecords[0].Header
+    }
+    else {
+        ([string]$Task.Content -split "`r?`n")[0]
+    }
+    $pendingLines.Add($header)
+    foreach ($record in $inputRecords) {
+        if ($pendingSet.Contains(([string]$record.Ktype).Trim())) {
+            $pendingLines.Add([string]$record.RawLine)
+        }
+    }
+
+    $reasonLines = New-Object System.Collections.Generic.List[string]
+    foreach ($ktype in $pendingSet.Keys) {
+        $entry = $progress.ktype_progress.$ktype
+        $reason = ([string]$entry.pending_reason).Trim()
+        if (-not $reason) { $reason = "尚未产生完整 READY 映射" }
+        $reasonLines.Add("- $ktype：$reason")
+    }
+    $pendingCount = $pendingSet.Count
+    $pendingList = @($pendingSet.Keys) -join ","
+    $pendingInput = $pendingLines -join "`r`n"
+    $reasons = $reasonLines -join "`r`n"
+
+    return @"
+【本地覆盖率审计纠偏：必须处理以下 PENDING】
+上一轮声称 PENDING=0 已被本地 TSV 覆盖率重算否决。当前权威状态为 PENDING=$pendingCount；不得执行机械收尾，不得再次声称 PENDING=0，也不得只回复“继续”。
+
+缺失 Ktype：$pendingList
+
+【逐 Ktype 缺失原因】
+$reasons
+
+【本轮必须处理的原始 TSV 记录】
+```tsv
+$pendingInput
+```
+
+请现在直接研究并补齐这些记录，输出本轮新增或修改的 Ktype 映射 TSV 及对应 DIMENSION_GROUP TSV。只处理上列 PENDING，已 READY 的 Ktype 不要重新检索或改动。仍有未闭合项时输出推进信号：CONTINUE；只有本地所列 Ktype 均产生完整 READY 映射后，才可输出完整最终两表、指定下载链接及推进信号：COMPLETE。
+$FallbackMessage
+"@
+}
+
 function Restore-TaskKtypeStateFromResultMarkdown {
     param(
         $Task,
@@ -2540,6 +2601,39 @@ function Test-ReplyContainsAllReadySnapshot {
     if (-not (Test-StrictTsvRowsEqual -ExpectedRows $snapshot.DimensionRows -ActualRows $actualDimensions `
         -Header $RequiredDimensionGroupHeader -KeyColumn "DIMENSION_GROUP_ID")) { return $false }
     return $true
+}
+
+function Test-ReplyContainsAlmostTables {
+    param([string]$Reply)
+
+    if (-not $DimensionGroupEnabled -or -not (Test-AlmostSignal -Text $Reply)) { return $false }
+    return (
+        (Test-ReplyContainsStrictTsvHeader -Reply $Reply -Header $RequiredTsvHeader) -and
+        (Test-ReplyContainsStrictTsvHeader -Reply $Reply -Header $RequiredDimensionGroupHeader)
+    )
+}
+
+function Publish-AlmostTaskSnapshot {
+    param(
+        $Task,
+        [string]$ResultMarkdownPath
+    )
+
+    $snapshot = Get-TaskReadySnapshot -Task $Task
+    $names = Get-TaskFinalArtifactNames -Task $Task
+    $syntheticReply = @"
+$(ConvertTo-StrictTsvText -Header $RequiredTsvHeader -Rows $snapshot.MappingRows)
+$(ConvertTo-StrictTsvText -Header $RequiredDimensionGroupHeader -Rows $snapshot.DimensionRows)
+[下载 Ktype 映射表](sandbox:/mnt/data/$($names.MappingFileName))
+[下载 DIMENSION_GROUP 表](sandbox:/mnt/data/$($names.DimensionFileName))
+推进信号：ALMOST
+"@
+    $published = Publish-CompletedTaskTables -Task $Task -Reply $syntheticReply `
+        -ResultMarkdownPath $ResultMarkdownPath -Signal "ALMOST"
+    return [pscustomobject]@{
+        Snapshot = $snapshot
+        Published = $published
+    }
 }
 
 function Get-TaskAlmostFinalizeMessage {
@@ -5175,14 +5269,12 @@ function Process-TSVTask {
             if (-not [string]::IsNullOrWhiteSpace($localResumeReply)) {
                 Write-Host "  已从 checkpoint 结果文件读取最后一个已落盘 Round（$($localResumeReply.Length) 字符）。" -ForegroundColor DarkGreen
                 $localHasFullTable = Test-ReplyContainsFullTable -Reply $localResumeReply -MinimumRows $minimumFullTableRows -Task $Task
-                $localHasAllReady = (Test-AlmostSignal -Text $localResumeReply) -and `
-                    (Test-ReplyContainsAllReadySnapshot -Reply $localResumeReply -Task $Task)
-                if ($localHasAllReady) {
+                $localHasPersistableAlmost = Test-ReplyContainsAlmostTables -Reply $localResumeReply
+                if ($localHasPersistableAlmost) {
                     try {
-                        Publish-CompletedTaskTables -Task $Task -Reply $localResumeReply `
-                            -ResultMarkdownPath $outputFile -Signal "ALMOST" | Out-Null
+                        Publish-AlmostTaskSnapshot -Task $Task -ResultMarkdownPath $outputFile | Out-Null
                         $status = "Almost"
-                        $remarks = "从 checkpoint 本地最后回复恢复全部当前 READY 记录及下载链接；剩余 PENDING 因证据不足结束"
+                        $remarks = "从 checkpoint 本地最后回复恢复 ALMOST 与两张 TSV；已发布本地 READY 快照并结束"
                         $finishWithoutReplyLoop = $true
                         Write-Host "  本地最后回复已按 Almost 重新入库，无需重新发送任务。" -ForegroundColor Yellow
                     }
@@ -5267,19 +5359,18 @@ function Process-TSVTask {
                     $resumeHasFullTable = Test-ReplyContainsFullTable -Reply $resumeReply -MinimumRows $minimumFullTableRows -Task $Task
                 }
 
-                $resumeHasAllReady = $false
+                $resumeHasPersistableAlmost = $false
                 if (Test-AlmostSignal -Text $resumeReply) {
                     $taskState = Update-TaskKtypeState -Task $Task -Reply $resumeReply -Round $round
-                    $resumeHasAllReady = Test-ReplyContainsAllReadySnapshot -Reply $resumeReply -Task $Task
+                    $resumeHasPersistableAlmost = Test-ReplyContainsAlmostTables -Reply $resumeReply
                 }
-                if ($resumeHasAllReady) {
+                if ($resumeHasPersistableAlmost) {
                     $roundTitle = "--- Round $round / checkpoint 恢复 Almost 回复 ---"
                     Add-Content -Path $outputFile -Value "`r`n$roundTitle`r`n$resumeReply`r`n" -Encoding UTF8
-                    Write-Host "  waiting_reply checkpoint 已存在有效 Almost 回复；直接发布 READY 子集。" -ForegroundColor Yellow
-                    Publish-CompletedTaskTables -Task $Task -Reply $resumeReply `
-                        -ResultMarkdownPath $outputFile -Signal "ALMOST" | Out-Null
+                    Write-Host "  waiting_reply checkpoint 已存在 ALMOST 与两张 TSV；直接发布本地 READY 子集。" -ForegroundColor Yellow
+                    Publish-AlmostTaskSnapshot -Task $Task -ResultMarkdownPath $outputFile | Out-Null
                     $status = "Almost"
-                    $remarks = "恢复 waiting_reply 时检测到全部当前 READY 记录及下载链接；剩余 PENDING 因证据不足结束"
+                    $remarks = "恢复 waiting_reply 时检测到 ALMOST 与两张 TSV；已发布本地 READY 快照并结束"
                     $finishWithoutReplyLoop = $true
                 }
                 elseif (-not [string]::IsNullOrWhiteSpace($resumeReply) -and
@@ -5329,17 +5420,16 @@ function Process-TSVTask {
                     $resumeHasFullTable = Test-ReplyContainsFullTable -Reply $resumeReply -MinimumRows $minimumFullTableRows -Task $Task
                 }
 
-                $resumeHasAllReady = $false
+                $resumeHasPersistableAlmost = $false
                 if (Test-AlmostSignal -Text $resumeReply) {
                     $taskState = Update-TaskKtypeState -Task $Task -Reply $resumeReply -Round $round
-                    $resumeHasAllReady = Test-ReplyContainsAllReadySnapshot -Reply $resumeReply -Task $Task
+                    $resumeHasPersistableAlmost = Test-ReplyContainsAlmostTables -Reply $resumeReply
                 }
-                if ($resumeHasAllReady) {
-                    Write-Host "  checkpoint 最后一轮已按 Almost 结束；发布全部 READY 子集。" -ForegroundColor Yellow
-                    Publish-CompletedTaskTables -Task $Task -Reply $resumeReply `
-                        -ResultMarkdownPath $outputFile -Signal "ALMOST" | Out-Null
+                if ($resumeHasPersistableAlmost) {
+                    Write-Host "  checkpoint 最后一轮包含 ALMOST 与两张 TSV；发布本地 READY 子集并结束。" -ForegroundColor Yellow
+                    Publish-AlmostTaskSnapshot -Task $Task -ResultMarkdownPath $outputFile | Out-Null
                     $status = "Almost"
-                    $remarks = "恢复时检测到全部当前 READY 记录及下载链接；剩余 PENDING 因证据不足结束"
+                    $remarks = "恢复时检测到 ALMOST 与两张 TSV；已发布本地 READY 快照并结束"
                     $finishWithoutReplyLoop = $true
                 }
                 elseif (-not [string]::IsNullOrWhiteSpace($resumeReply) -and
@@ -5352,10 +5442,11 @@ function Process-TSVTask {
                 }
                 elseif (-not [string]::IsNullOrWhiteSpace($resumeReply)) {
                     $round++
-                    $resumeNeedsLightFinalize = Test-ReplyReadyForLightFinalize -Text $resumeReply
+                    $resumeHasLocalPending = [int]$taskState.progress.pending_ktype_count -gt 0
+                    $resumeNeedsLightFinalize = (-not $resumeHasLocalPending) -and (Test-ReplyReadyForLightFinalize -Text $resumeReply)
                     $resumeIsAlmost = Test-AlmostSignal -Text $resumeReply
-                    $resumeMessage = if ($resumeIsAlmost) { Get-TaskAlmostFinalizeMessage -Task $Task } elseif (Test-CompletionSignal -Text $resumeReply) { $taskCompletionFixMessage } elseif ($resumeNeedsLightFinalize) { $taskLightFinalizeMessage } else { $taskContinueMessage }
-                    $resumeLabel = if ($resumeIsAlmost) { "checkpoint Almost 收尾纠偏到 Round $round" } elseif (Test-CompletionSignal -Text $resumeReply) { "checkpoint 完成信号纠偏到 Round $round" } elseif ($resumeNeedsLightFinalize) { "checkpoint 轻量收尾到 Round $round" } else { "checkpoint 续跑到 Round $round" }
+                    $resumeMessage = if ($resumeIsAlmost) { Get-TaskAlmostFinalizeMessage -Task $Task } elseif ($resumeHasLocalPending) { Get-TaskPendingWorkMessage -Task $Task -FallbackMessage $taskContinueMessage } elseif (Test-CompletionSignal -Text $resumeReply) { $taskCompletionFixMessage } elseif ($resumeNeedsLightFinalize) { $taskLightFinalizeMessage } else { $taskContinueMessage }
+                    $resumeLabel = if ($resumeIsAlmost) { "checkpoint Almost 收尾纠偏到 Round $round" } elseif ($resumeHasLocalPending) { "checkpoint PENDING 记录纠偏到 Round $round" } elseif (Test-CompletionSignal -Text $resumeReply) { "checkpoint 完成信号纠偏到 Round $round" } elseif ($resumeNeedsLightFinalize) { "checkpoint 轻量收尾到 Round $round" } else { "checkpoint 续跑到 Round $round" }
                     Send-TrackedChatGPTMessage -OutputFile $outputFile -Label $resumeLabel -Message $resumeMessage -LargePayload:$resumeIsAlmost
                     $sendCount++
                     $currentConversationUrl = Wait-CurrentChatGPTConversationUrl
@@ -5418,17 +5509,16 @@ function Process-TSVTask {
             Add-Content -Path $outputFile -Value "`r`n--- 恢复现场 / 已有回复 ---`r`n$previousReply`r`n" -Encoding UTF8
             try { $conversationUrl = Get-CurrentChatGPTUrl } catch { }
             $existingHasFullTable = Test-ReplyContainsFullTable -Reply $previousReply -MinimumRows $minimumFullTableRows -Task $Task
-            $existingHasAllReady = $false
+            $existingHasPersistableAlmost = $false
             if (Test-AlmostSignal -Text $previousReply) {
                 $taskState = Update-TaskKtypeState -Task $Task -Reply $previousReply -Round $round
-                $existingHasAllReady = Test-ReplyContainsAllReadySnapshot -Reply $previousReply -Task $Task
+                $existingHasPersistableAlmost = Test-ReplyContainsAlmostTables -Reply $previousReply
             }
-            if ($existingHasAllReady) {
-                Write-Host "  恢复现场最后一轮已按 Almost 结束；发布全部 READY 子集。" -ForegroundColor Yellow
-                Publish-CompletedTaskTables -Task $Task -Reply $previousReply `
-                    -ResultMarkdownPath $outputFile -Signal "ALMOST" | Out-Null
+            if ($existingHasPersistableAlmost) {
+                Write-Host "  恢复现场最后一轮包含 ALMOST 与两张 TSV；发布本地 READY 子集并结束。" -ForegroundColor Yellow
+                Publish-AlmostTaskSnapshot -Task $Task -ResultMarkdownPath $outputFile | Out-Null
                 $status = "Almost"
-                $remarks = "恢复现场检测到全部当前 READY 记录及下载链接；剩余 PENDING 因证据不足结束"
+                $remarks = "恢复现场检测到 ALMOST 与两张 TSV；已发布本地 READY 快照并结束"
                 $finishWithoutReplyLoop = $true
             }
             elseif ((Test-CompletionSignal -Text $previousReply) -and $existingHasFullTable) {
@@ -5439,10 +5529,11 @@ function Process-TSVTask {
                 $finishWithoutReplyLoop = $true
             }
             else {
-                $resumeNeedsLightFinalize = Test-ReplyReadyForLightFinalize -Text $previousReply
+                $resumeHasLocalPending = [int]$taskState.progress.pending_ktype_count -gt 0
+                $resumeNeedsLightFinalize = (-not $resumeHasLocalPending) -and (Test-ReplyReadyForLightFinalize -Text $previousReply)
                 $resumeIsAlmost = Test-AlmostSignal -Text $previousReply
-                $resumeMessage = if ($resumeIsAlmost) { Get-TaskAlmostFinalizeMessage -Task $Task } elseif (Test-CompletionSignal -Text $previousReply) { $taskCompletionFixMessage } elseif ($resumeNeedsLightFinalize) { $taskLightFinalizeMessage } else { $taskContinueMessage }
-                $resumeLabel = if ($resumeIsAlmost) { "存档 Almost 收尾纠偏" } elseif (Test-CompletionSignal -Text $previousReply) { "存档完成信号纠偏" } elseif ($resumeNeedsLightFinalize) { "存档轻量收尾" } else { "存档续跑" }
+                $resumeMessage = if ($resumeIsAlmost) { Get-TaskAlmostFinalizeMessage -Task $Task } elseif ($resumeHasLocalPending) { Get-TaskPendingWorkMessage -Task $Task -FallbackMessage $taskContinueMessage } elseif (Test-CompletionSignal -Text $previousReply) { $taskCompletionFixMessage } elseif ($resumeNeedsLightFinalize) { $taskLightFinalizeMessage } else { $taskContinueMessage }
+                $resumeLabel = if ($resumeIsAlmost) { "存档 Almost 收尾纠偏" } elseif ($resumeHasLocalPending) { "存档 PENDING 记录纠偏" } elseif (Test-CompletionSignal -Text $previousReply) { "存档完成信号纠偏" } elseif ($resumeNeedsLightFinalize) { "存档轻量收尾" } else { "存档续跑" }
                 Write-Host "  当前回复已完成并保存，正在发送后续指令..." -ForegroundColor Green
                 Send-TrackedChatGPTMessage -OutputFile $outputFile -Label $resumeLabel -Message $resumeMessage -LargePayload:$resumeIsAlmost
                 Write-Host "  后续指令已发送，进入自动推进。" -ForegroundColor Green
@@ -5479,12 +5570,12 @@ function Process-TSVTask {
             }
 
             if (Test-AlmostSignal -Text $reply) {
-                $hasAllReadySnapshot = Test-ReplyContainsAllReadySnapshot -Reply $reply -Task $Task
-                if (-not $hasAllReadySnapshot) {
-                    Write-Host "  检测到 ALMOST，但未包含本地全部 READY 快照或两个指定链接，发送机械收尾纠偏..." -ForegroundColor Yellow
+                $hasAlmostTables = Test-ReplyContainsAlmostTables -Reply $reply
+                if (-not $hasAlmostTables) {
+                    Write-Host "  检测到 ALMOST，但缺少两张可识别 TSV，发送一次收尾纠偏..." -ForegroundColor Yellow
                     if ($nextCount -ge $MaxNextSteps) {
                         $status = "次数上限终止"
-                        $remarks = "ALMOST 缺少全部当前 READY 记录、闭合尺寸组或指定下载链接，且达到最大下一步次数: $MaxNextSteps"
+                        $remarks = "ALMOST 缺少两张可识别 TSV，且达到最大下一步次数: $MaxNextSteps"
                         break
                     }
                     $previousReply = $reply
@@ -5497,10 +5588,10 @@ function Process-TSVTask {
                     Save-TaskCheckpoint -Task $Task -Status "进行中" -Phase "waiting_reply" -Round $round -SendCount $sendCount -OutputFile $outputFile -ConversationUrl $conversationUrl
                     continue
                 }
-                $readySnapshot = Get-TaskReadySnapshot -Task $Task
-                Publish-CompletedTaskTables -Task $Task -Reply $reply -ResultMarkdownPath $outputFile -Signal "ALMOST" | Out-Null
+                $almostPublish = Publish-AlmostTaskSnapshot -Task $Task -ResultMarkdownPath $outputFile
+                $readySnapshot = $almostPublish.Snapshot
                 $status = "Almost"
-                $remarks = "证据不足且无法继续可靠推进；已发布全部当前 READY：Ktype=$(@($readySnapshot.ReadyKtypes).Count)，映射=$(@($readySnapshot.MappingRows).Count)，尺寸组=$(@($readySnapshot.DimensionRows).Count)，PENDING=$(@($readySnapshot.Pending).Count)"
+                $remarks = "检测到 ALMOST 与两张 TSV；已落盘并结束，不再推进。READY：Ktype=$(@($readySnapshot.ReadyKtypes).Count)，映射=$(@($readySnapshot.MappingRows).Count)，尺寸组=$(@($readySnapshot.DimensionRows).Count)，PENDING=$(@($readySnapshot.Pending).Count)"
                 break
             }
 
@@ -5518,7 +5609,7 @@ function Process-TSVTask {
                     # Let GPT explicitly choose CONTINUE or ALMOST under the
                     # requirement; only an explicit ALMOST receives the frozen
                     # READY snapshot correction above.
-                    $emptyTsvFinalMessage = if ($hasPendingKtypes) { $taskMissingSignalsMessage } else { $taskLightFinalizeMessage }
+                    $emptyTsvFinalMessage = if ($hasPendingKtypes) { Get-TaskPendingWorkMessage -Task $Task -FallbackMessage $taskMissingSignalsMessage } else { $taskLightFinalizeMessage }
                     $emptyTsvFinalSent = $true
                     $previousReply = $reply
                     $nextCount++
@@ -5564,7 +5655,8 @@ function Process-TSVTask {
                     $previousReply = $reply
                     $nextCount++
                     $round++
-                    Send-TrackedChatGPTMessage -OutputFile $outputFile -Label "完成信号纠偏 / Round $round" -Message $taskCompletionFixMessage
+                    $completionFixMessage = if ([int]$taskState.progress.pending_ktype_count -gt 0) { Get-TaskPendingWorkMessage -Task $Task -FallbackMessage $taskCompletionFixMessage } else { $taskCompletionFixMessage }
+                    Send-TrackedChatGPTMessage -OutputFile $outputFile -Label "完成信号纠偏 / Round $round" -Message $completionFixMessage
                     $sendCount++
                     Save-TaskCheckpoint -Task $Task -Status "进行中" -Phase "waiting_reply" -Round $round -SendCount $sendCount -OutputFile $outputFile -ConversationUrl $conversationUrl
                     continue
@@ -5576,7 +5668,8 @@ function Process-TSVTask {
             }
 
             if (Test-ForceNextSignal -Text $reply) {
-                $needsLightFinalize = Test-ReplyReadyForLightFinalize -Text $reply
+                $hasLocalPending = [int]$taskState.progress.pending_ktype_count -gt 0
+                $needsLightFinalize = (-not $hasLocalPending) -and (Test-ReplyReadyForLightFinalize -Text $reply)
                 Write-Host $(if ($needsLightFinalize) { "  检测到 PENDING=0，发送轻量收尾..." } else { "  检测到继续信号，发送 下一步..." }) -ForegroundColor Yellow
                 if ($nextCount -ge $MaxNextSteps) {
                     $status = "次数上限终止"
@@ -5586,8 +5679,8 @@ function Process-TSVTask {
                 $previousReply = $reply
                 $nextCount++
                 $round++
-                $nextMessage = if ($needsLightFinalize) { $taskLightFinalizeMessage } else { $taskContinueMessage }
-                $nextLabel = if ($needsLightFinalize) { "轻量收尾到 Round $round" } else { "继续到 Round $round" }
+                $nextMessage = if ($hasLocalPending) { Get-TaskPendingWorkMessage -Task $Task -FallbackMessage $taskContinueMessage } elseif ($needsLightFinalize) { $taskLightFinalizeMessage } else { $taskContinueMessage }
+                $nextLabel = if ($hasLocalPending) { "PENDING 记录续跑到 Round $round" } elseif ($needsLightFinalize) { "轻量收尾到 Round $round" } else { "继续到 Round $round" }
                 Send-TrackedChatGPTMessage -OutputFile $outputFile -Label $nextLabel -Message $nextMessage
                 $sendCount++
                 Save-TaskCheckpoint -Task $Task -Status "进行中" -Phase "waiting_reply" -Round $round -SendCount $sendCount -OutputFile $outputFile -ConversationUrl $conversationUrl
@@ -5604,7 +5697,8 @@ function Process-TSVTask {
                 $previousReply = $reply
                 $nextCount++
                 $round++
-                Send-TrackedChatGPTMessage -OutputFile $outputFile -Label "推进信号纠偏 / Round $round" -Message $taskMissingSignalsMessage
+                $missingSignalMessage = if ([int]$taskState.progress.pending_ktype_count -gt 0) { Get-TaskPendingWorkMessage -Task $Task -FallbackMessage $taskMissingSignalsMessage } else { $taskMissingSignalsMessage }
+                Send-TrackedChatGPTMessage -OutputFile $outputFile -Label "推进信号纠偏 / Round $round" -Message $missingSignalMessage
                 $sendCount++
                 Save-TaskCheckpoint -Task $Task -Status "进行中" -Phase "waiting_reply" -Round $round -SendCount $sendCount -OutputFile $outputFile -ConversationUrl $conversationUrl
                 continue
@@ -5632,10 +5726,11 @@ function Process-TSVTask {
             $nextCount++
             $round++
 
-            $needsLightFinalize = Test-ReplyReadyForLightFinalize -Text $reply
+            $hasLocalPending = [int]$taskState.progress.pending_ktype_count -gt 0
+            $needsLightFinalize = (-not $hasLocalPending) -and (Test-ReplyReadyForLightFinalize -Text $reply)
             Write-Host $(if ($needsLightFinalize) { "  检测到 PENDING=0，发送轻量收尾 ($nextCount/$MaxNextSteps)..." } else { "  继续发送 下一步 ($nextCount/$MaxNextSteps)..." }) -ForegroundColor Yellow
-            $nextMessage = if ($needsLightFinalize) { $taskLightFinalizeMessage } else { $taskContinueMessage }
-            $nextLabel = if ($needsLightFinalize) { "轻量收尾到 Round $round" } else { "继续到 Round $round" }
+            $nextMessage = if ($hasLocalPending) { Get-TaskPendingWorkMessage -Task $Task -FallbackMessage $taskContinueMessage } elseif ($needsLightFinalize) { $taskLightFinalizeMessage } else { $taskContinueMessage }
+            $nextLabel = if ($hasLocalPending) { "PENDING 记录续跑到 Round $round" } elseif ($needsLightFinalize) { "轻量收尾到 Round $round" } else { "继续到 Round $round" }
             Send-TrackedChatGPTMessage -OutputFile $outputFile -Label $nextLabel -Message $nextMessage
             $sendCount++
             Save-TaskCheckpoint -Task $Task -Status "进行中" -Phase "waiting_reply" -Round $round -SendCount $sendCount -OutputFile $outputFile -ConversationUrl $conversationUrl

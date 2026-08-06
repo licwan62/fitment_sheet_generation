@@ -1,11 +1,11 @@
 {
   "version": 1,
-  "revision": 55,
+  "revision": 223,
   "task_id": "left18448__batch__0107__c4c1d2f6",
   "source_file": "left18448.tsv",
   "source_start_row": 10601,
   "source_end_row": 10700,
-  "round": 54,
+  "round": 58,
   "ktype_progress": {
     "14985": {
       "status": "ready",
@@ -25,7 +25,7 @@
         "EU-MERCEDES-BENZ-SPRINTER-I-W904-CHASSIS-4T-DCAB-4025-RWD-01"
       ],
       "pending_reason": "",
-      "last_updated_round": 54
+      "last_updated_round": 58
     },
     "15000": {
       "status": "ready",
@@ -49,32 +49,39 @@
         "EU-MERCEDES-BENZ-SPRINTER-I-W904-VAN-4T-4025-H2-RWD-01"
       ],
       "pending_reason": "",
-      "last_updated_round": 54
+      "last_updated_round": 58
     },
     "14986": {
-      "status": "pending",
+      "status": "ready",
       "source_rows": [
         10603
       ],
       "mapping_ids": [
-        "14986_scab_4025",
-        "14986_dcab_4025"
+        "14986_dcab_4025",
+        "14986_scab_4025"
       ],
-      "dimension_group_ids": [],
-      "pending_reason": "已有标准底盘完整三维和官方四驱高度增量，但缺少四驱整车直接完整三维；映射缺少 DIMENSION_GROUP_ID；缺少直接支持904.623四驱双排外廓的完整三维",
-      "last_updated_round": 54
+      "dimension_group_ids": [
+        "EU-MERCEDES-BENZ-SPRINTER-I-W904-PICKUP-DCAB-WB4025-4X4-01",
+        "EU-MERCEDES-BENZ-SPRINTER-I-W904-PICKUP-SCAB-WB4025-4X4-01"
+      ],
+      "pending_reason": "",
+      "last_updated_round": 58
     },
     "15003": {
-      "status": "pending",
+      "status": "ready",
       "source_rows": [
         10604
       ],
       "mapping_ids": [
-        "15003"
+        "15003_h1",
+        "15003_h2"
       ],
-      "dimension_group_ids": [],
-      "pending_reason": "同阶段资料车身宽度存在市场口径冲突且四驱整车高度未直接给出；映射缺少 DIMENSION_GROUP_ID",
-      "last_updated_round": 54
+      "dimension_group_ids": [
+        "EU-MERCEDES-BENZ-SPRINTER-I-W904-VAN-WB4025-H1-4X4-01",
+        "EU-MERCEDES-BENZ-SPRINTER-I-W904-VAN-WB4025-H2-4X4-01"
+      ],
+      "pending_reason": "",
+      "last_updated_round": 58
     },
     "145548": {
       "status": "ready",
@@ -88,7 +95,7 @@
         "EU-MERCEDES-BENZ-SPRINTER-III-VS30-CHASSIS-SCAB-L2-FWD-01"
       ],
       "pending_reason": "",
-      "last_updated_round": 54
+      "last_updated_round": 58
     },
     "145554": {
       "status": "ready",
@@ -102,7 +109,7 @@
         "EU-MERCEDES-BENZ-SPRINTER-III-VS30-CHASSIS-SCAB-L2-FWD-01"
       ],
       "pending_reason": "",
-      "last_updated_round": 54
+      "last_updated_round": 58
     },
     "157686": {
       "status": "ready",
@@ -116,7 +123,7 @@
         "EU-MERCEDES-BENZ-SPRINTER-III-VS30-CHASSIS-SCAB-L2-FWD-01"
       ],
       "pending_reason": "",
-      "last_updated_round": 54
+      "last_updated_round": 58
     },
     "145939": {
       "status": "ready",
@@ -124,25 +131,25 @@
         10608
       ],
       "mapping_ids": [
-        "145939_scab_l1",
-        "145939_scab_l2_pre2024",
-        "145939_scab_l2_2024plus",
-        "145939_scab_l3_pre2024",
-        "145939_scab_l3_2024plus",
         "145939_dcab_l1",
-        "145939_dcab_l2"
+        "145939_dcab_l2",
+        "145939_scab_l1",
+        "145939_scab_l2_2024plus",
+        "145939_scab_l2_pre2024",
+        "145939_scab_l3_2024plus",
+        "145939_scab_l3_pre2024"
       ],
       "dimension_group_ids": [
-        "EU-MERCEDES-BENZ-SPRINTER-III-VS30-CHASSIS-4T-SCAB-L1-RWD-01",
-        "EU-MERCEDES-BENZ-SPRINTER-III-VS30-CHASSIS-4T-SCAB-L2-RWD-PRE2024-01",
-        "EU-MERCEDES-BENZ-SPRINTER-III-VS30-CHASSIS-4T-SCAB-L2-RWD-2024PLUS-01",
-        "EU-MERCEDES-BENZ-SPRINTER-III-VS30-CHASSIS-4T-SCAB-L3-RWD-PRE2024-01",
-        "EU-MERCEDES-BENZ-SPRINTER-III-VS30-CHASSIS-4T-SCAB-L3-RWD-2024PLUS-01",
         "EU-MERCEDES-BENZ-SPRINTER-III-VS30-CHASSIS-4T-DCAB-L1-RWD-01",
-        "EU-MERCEDES-BENZ-SPRINTER-III-VS30-CHASSIS-4T-DCAB-L2-RWD-01"
+        "EU-MERCEDES-BENZ-SPRINTER-III-VS30-CHASSIS-4T-DCAB-L2-RWD-01",
+        "EU-MERCEDES-BENZ-SPRINTER-III-VS30-CHASSIS-4T-SCAB-L1-RWD-01",
+        "EU-MERCEDES-BENZ-SPRINTER-III-VS30-CHASSIS-4T-SCAB-L2-RWD-2024PLUS-01",
+        "EU-MERCEDES-BENZ-SPRINTER-III-VS30-CHASSIS-4T-SCAB-L2-RWD-PRE2024-01",
+        "EU-MERCEDES-BENZ-SPRINTER-III-VS30-CHASSIS-4T-SCAB-L3-RWD-2024PLUS-01",
+        "EU-MERCEDES-BENZ-SPRINTER-III-VS30-CHASSIS-4T-SCAB-L3-RWD-PRE2024-01"
       ],
       "pending_reason": "",
-      "last_updated_round": 54
+      "last_updated_round": 58
     },
     "145549": {
       "status": "ready",
@@ -156,10 +163,10 @@
         "EU-MERCEDES-BENZ-SPRINTER-III-VS30-CHASSIS-SCAB-L2-FWD-01"
       ],
       "pending_reason": "",
-      "last_updated_round": 54
+      "last_updated_round": 58
     },
     "146051": {
-      "status": "pending",
+      "status": "ready",
       "source_rows": [
         10610
       ],
@@ -167,8 +174,8 @@
         "146051_l2h2",
         "146051_l3h2",
         "146051_l3h3",
-        "146051_l4",
-        "146051_l4h2"
+        "146051_l4h2",
+        "146051_l4"
       ],
       "dimension_group_ids": [
         "EU-MERCEDES-BENZ-SPRINTER-III-VS30-VAN-5T-L2H2-AWD-01",
@@ -176,8 +183,8 @@
         "EU-MERCEDES-BENZ-SPRINTER-III-VS30-VAN-5T-L3H3-AWD-01",
         "EU-MERCEDES-BENZ-SPRINTER-III-VS30-VAN-5T-L4H2-AWD-01"
       ],
-      "pending_reason": "需确认907.647四驱L4车顶分支；映射缺少 DIMENSION_GROUP_ID",
-      "last_updated_round": 54
+      "pending_reason": "",
+      "last_updated_round": 58
     },
     "146052": {
       "status": "pending",
@@ -185,31 +192,31 @@
         10611
       ],
       "mapping_ids": [
+        "146052_dcab_l2_awd",
+        "146052_dcab_l2_selectable",
+        "146052_dcab_l3_awd",
+        "146052_dcab_l3_selectable",
+        "146052_scab_l2_awd",
+        "146052_scab_l2_selectable",
+        "146052_scab_l3_awd",
+        "146052_scab_l3_selectable",
         "146052_scab_l2",
         "146052_scab_l3",
         "146052_dcab_l2",
-        "146052_dcab_l3",
-        "146052_scab_l2_selectable",
-        "146052_scab_l2_awd",
-        "146052_scab_l3_selectable",
-        "146052_scab_l3_awd",
-        "146052_dcab_l2_selectable",
-        "146052_dcab_l2_awd",
-        "146052_dcab_l3_selectable",
-        "146052_dcab_l3_awd"
+        "146052_dcab_l3"
       ],
       "dimension_group_ids": [
-        "EU-MERCEDES-BENZ-SPRINTER-III-VS30-CHASSIS-4T-SCAB-L2-4X4-SELECTABLE-01",
-        "EU-MERCEDES-BENZ-SPRINTER-III-VS30-CHASSIS-4T-SCAB-L2-AWD-PERMANENT-01",
-        "EU-MERCEDES-BENZ-SPRINTER-III-VS30-CHASSIS-4T-SCAB-L3-4X4-SELECTABLE-01",
-        "EU-MERCEDES-BENZ-SPRINTER-III-VS30-CHASSIS-4T-SCAB-L3-AWD-PERMANENT-01",
-        "EU-MERCEDES-BENZ-SPRINTER-III-VS30-CHASSIS-4T-DCAB-L2-4X4-SELECTABLE-01",
         "EU-MERCEDES-BENZ-SPRINTER-III-VS30-CHASSIS-4T-DCAB-L2-AWD-PERMANENT-01",
+        "EU-MERCEDES-BENZ-SPRINTER-III-VS30-CHASSIS-4T-DCAB-L2-4X4-SELECTABLE-01",
+        "EU-MERCEDES-BENZ-SPRINTER-III-VS30-CHASSIS-4T-DCAB-L3-AWD-PERMANENT-01",
         "EU-MERCEDES-BENZ-SPRINTER-III-VS30-CHASSIS-4T-DCAB-L3-4X4-SELECTABLE-01",
-        "EU-MERCEDES-BENZ-SPRINTER-III-VS30-CHASSIS-4T-DCAB-L3-AWD-PERMANENT-01"
+        "EU-MERCEDES-BENZ-SPRINTER-III-VS30-CHASSIS-4T-SCAB-L2-AWD-PERMANENT-01",
+        "EU-MERCEDES-BENZ-SPRINTER-III-VS30-CHASSIS-4T-SCAB-L2-4X4-SELECTABLE-01",
+        "EU-MERCEDES-BENZ-SPRINTER-III-VS30-CHASSIS-4T-SCAB-L3-AWD-PERMANENT-01",
+        "EU-MERCEDES-BENZ-SPRINTER-III-VS30-CHASSIS-4T-SCAB-L3-4X4-SELECTABLE-01"
       ],
       "pending_reason": "需直接支持907.143四驱外廓的完整三维；映射缺少 DIMENSION_GROUP_ID；需直接支持907.145四驱外廓的完整三维；需直接支持907.243四驱外廓的完整三维；需直接支持907.245四驱外廓的完整三维",
-      "last_updated_round": 54
+      "last_updated_round": 58
     },
     "146017": {
       "status": "ready",
@@ -227,7 +234,7 @@
         "EU-MERCEDES-BENZ-SPRINTER-III-VS30-VAN-4T-L4H2-RWD-01"
       ],
       "pending_reason": "",
-      "last_updated_round": 54
+      "last_updated_round": 58
     },
     "146020": {
       "status": "ready",
@@ -235,23 +242,23 @@
         10613
       ],
       "mapping_ids": [
-        "146020_scab_l2_pre2024",
-        "146020_scab_l2_2024plus",
-        "146020_scab_l3_pre2024",
-        "146020_scab_l3_2024plus",
         "146020_dcab_l2",
-        "146020_dcab_l3"
+        "146020_dcab_l3",
+        "146020_scab_l2_2024plus",
+        "146020_scab_l2_pre2024",
+        "146020_scab_l3_2024plus",
+        "146020_scab_l3_pre2024"
       ],
       "dimension_group_ids": [
-        "EU-MERCEDES-BENZ-SPRINTER-III-VS30-CHASSIS-4T-SCAB-L2-RWD-PRE2024-01",
-        "EU-MERCEDES-BENZ-SPRINTER-III-VS30-CHASSIS-4T-SCAB-L2-RWD-2024PLUS-01",
-        "EU-MERCEDES-BENZ-SPRINTER-III-VS30-CHASSIS-4T-SCAB-L3-RWD-PRE2024-01",
-        "EU-MERCEDES-BENZ-SPRINTER-III-VS30-CHASSIS-4T-SCAB-L3-RWD-2024PLUS-01",
         "EU-MERCEDES-BENZ-SPRINTER-III-VS30-CHASSIS-4T-DCAB-L2-RWD-01",
-        "EU-MERCEDES-BENZ-SPRINTER-III-VS30-CHASSIS-4T-DCAB-L3-RWD-PRE2024-01"
+        "EU-MERCEDES-BENZ-SPRINTER-III-VS30-CHASSIS-4T-DCAB-L3-RWD-PRE2024-01",
+        "EU-MERCEDES-BENZ-SPRINTER-III-VS30-CHASSIS-4T-SCAB-L2-RWD-2024PLUS-01",
+        "EU-MERCEDES-BENZ-SPRINTER-III-VS30-CHASSIS-4T-SCAB-L2-RWD-PRE2024-01",
+        "EU-MERCEDES-BENZ-SPRINTER-III-VS30-CHASSIS-4T-SCAB-L3-RWD-2024PLUS-01",
+        "EU-MERCEDES-BENZ-SPRINTER-III-VS30-CHASSIS-4T-SCAB-L3-RWD-PRE2024-01"
       ],
       "pending_reason": "",
-      "last_updated_round": 54
+      "last_updated_round": 58
     },
     "157420": {
       "status": "ready",
@@ -267,7 +274,7 @@
         "EU-MERCEDES-BENZ-SPRINTER-III-VS30-ESPRINTER-4T-VAN-L3H2-RWD-01"
       ],
       "pending_reason": "",
-      "last_updated_round": 54
+      "last_updated_round": 58
     },
     "800246": {
       "status": "ready",
@@ -283,7 +290,7 @@
         "EU-MERCEDES-BENZ-SPRINTER-III-VS30-ESPRINTER-4T-CHASSIS-SCAB-L3-RWD-01"
       ],
       "pending_reason": "",
-      "last_updated_round": 54
+      "last_updated_round": 58
     },
     "157421": {
       "status": "ready",
@@ -299,7 +306,7 @@
         "EU-MERCEDES-BENZ-SPRINTER-III-VS30-ESPRINTER-4T-VAN-L3H2-RWD-01"
       ],
       "pending_reason": "",
-      "last_updated_round": 54
+      "last_updated_round": 58
     },
     "800247": {
       "status": "ready",
@@ -315,7 +322,7 @@
         "EU-MERCEDES-BENZ-SPRINTER-III-VS30-ESPRINTER-4T-CHASSIS-SCAB-L3-RWD-01"
       ],
       "pending_reason": "",
-      "last_updated_round": 54
+      "last_updated_round": 58
     },
     "145090": {
       "status": "ready",
@@ -323,19 +330,19 @@
         10618
       ],
       "mapping_ids": [
+        "145090_l1h1",
         "145090_l2h2",
         "145090_l3h2",
-        "145090_l4h2",
-        "145090_l1h1"
+        "145090_l4h2"
       ],
       "dimension_group_ids": [
+        "EU-MERCEDES-BENZ-SPRINTER-III-VS30-TOURER-4T-L1H1-RWD-01",
         "EU-MERCEDES-BENZ-SPRINTER-III-VS30-TOURER-4T-L2H2-RWD-01",
         "EU-MERCEDES-BENZ-SPRINTER-III-VS30-TOURER-4T-L3H2-RWD-01",
-        "EU-MERCEDES-BENZ-SPRINTER-III-VS30-TOURER-4T-L4H2-RWD-01",
-        "EU-MERCEDES-BENZ-SPRINTER-III-VS30-TOURER-4T-L1H1-RWD-01"
+        "EU-MERCEDES-BENZ-SPRINTER-III-VS30-TOURER-4T-L4H2-RWD-01"
       ],
       "pending_reason": "",
-      "last_updated_round": 54
+      "last_updated_round": 58
     },
     "147381": {
       "status": "ready",
@@ -353,7 +360,7 @@
         "EU-MERCEDES-BENZ-SPRINTER-III-VS30-TOURER-4T-L3H2-RWD-01"
       ],
       "pending_reason": "",
-      "last_updated_round": 54
+      "last_updated_round": 58
     },
     "145091": {
       "status": "ready",
@@ -361,17 +368,17 @@
         10620
       ],
       "mapping_ids": [
+        "145091_l2h2",
         "145091_l3h2",
-        "145091_l4h2",
-        "145091_l2h2"
+        "145091_l4h2"
       ],
       "dimension_group_ids": [
+        "EU-MERCEDES-BENZ-SPRINTER-III-VS30-TOURER-4T-L2H2-RWD-01",
         "EU-MERCEDES-BENZ-SPRINTER-III-VS30-TOURER-4T-L3H2-RWD-01",
-        "EU-MERCEDES-BENZ-SPRINTER-III-VS30-TOURER-4T-L4H2-RWD-01",
-        "EU-MERCEDES-BENZ-SPRINTER-III-VS30-TOURER-4T-L2H2-RWD-01"
+        "EU-MERCEDES-BENZ-SPRINTER-III-VS30-TOURER-4T-L4H2-RWD-01"
       ],
       "pending_reason": "",
-      "last_updated_round": 54
+      "last_updated_round": 58
     },
     "119917": {
       "status": "ready",
@@ -397,7 +404,7 @@
         "EU-MERCEDES-BENZ-SPRINTER-II-W906-VAN-5T-ELWB-H3-RWD-01"
       ],
       "pending_reason": "",
-      "last_updated_round": 54
+      "last_updated_round": 58
     },
     "119924": {
       "status": "ready",
@@ -417,41 +424,41 @@
         "EU-MERCEDES-BENZ-SPRINTER-II-W906-CHASSIS-5T-DCAB-LWB-RWD-01"
       ],
       "pending_reason": "",
-      "last_updated_round": 54
+      "last_updated_round": 58
     },
     "57314": {
-      "status": "pending",
+      "status": "ready",
       "source_rows": [
         10623
       ],
       "mapping_ids": [
+        "57314_elwb_h2_prefl",
+        "57314_elwb_h3_prefl",
+        "57314_lwb_h2_prefl",
+        "57314_lwb_h3_prefl",
+        "57314_mwb_h1_prefl",
+        "57314_mwb_h2_prefl",
+        "57314_mwb_h3_prefl",
         "57314_mwb_h1",
         "57314_mwb_h2",
         "57314_mwb_h3",
         "57314_lwb_h2",
         "57314_lwb_h3",
         "57314_elwb_h2",
-        "57314_elwb_h3",
-        "57314_mwb_h1_prefl",
-        "57314_mwb_h2_prefl",
-        "57314_mwb_h3_prefl",
-        "57314_lwb_h2_prefl",
-        "57314_lwb_h3_prefl",
-        "57314_elwb_h2_prefl",
-        "57314_elwb_h3_prefl"
+        "57314_elwb_h3"
       ],
       "dimension_group_ids": [
-        "EU-MERCEDES-BENZ-SPRINTER-II-W906-VAN-5T-LWB-H2-AWD-PREFL-01",
+        "EU-MERCEDES-BENZ-SPRINTER-II-W906-VAN-5T-ELWB-H2-AWD-PREFL-01",
+        "EU-MERCEDES-BENZ-SPRINTER-II-W906-VAN-5T-ELWB-H3-AWD-PREFL-01",
+        "EU-MERCEDES-BENZ-SPRINTER-II-W906-VAN-5T-LWB-H2-AWD-PREFL-02",
+        "EU-MERCEDES-BENZ-SPRINTER-II-W906-VAN-5T-LWB-H3-AWD-PREFL-01",
         "EU-MERCEDES-BENZ-SPRINTER-II-W906-VAN-5T-MWB-H1-AWD-PREFL-01",
         "EU-MERCEDES-BENZ-SPRINTER-II-W906-VAN-5T-MWB-H2-AWD-PREFL-01",
         "EU-MERCEDES-BENZ-SPRINTER-II-W906-VAN-5T-MWB-H3-AWD-PREFL-01",
-        "EU-MERCEDES-BENZ-SPRINTER-II-W906-VAN-5T-LWB-H2-AWD-PREFL-02",
-        "EU-MERCEDES-BENZ-SPRINTER-II-W906-VAN-5T-LWB-H3-AWD-PREFL-01",
-        "EU-MERCEDES-BENZ-SPRINTER-II-W906-VAN-5T-ELWB-H2-AWD-PREFL-01",
-        "EU-MERCEDES-BENZ-SPRINTER-II-W906-VAN-5T-ELWB-H3-AWD-PREFL-01"
+        "EU-MERCEDES-BENZ-SPRINTER-II-W906-VAN-5T-LWB-H2-AWD-PREFL-01"
       ],
-      "pending_reason": "需确认5-T AWD中轴标准顶完整三维；映射缺少 DIMENSION_GROUP_ID；需确认5-T AWD中轴高顶完整三维；需确认5-T AWD中轴超高顶完整三维；需确认5-T AWD长轴超高顶车高；需确认5-T AWD超长轴高顶完整三维；需确认5-T AWD超长轴超高顶完整三维",
-      "last_updated_round": 54
+      "pending_reason": "",
+      "last_updated_round": 58
     },
     "57318": {
       "status": "ready",
@@ -469,7 +476,7 @@
         "EU-MERCEDES-BENZ-SPRINTER-II-W906-CHASSIS-5T-DCAB-LWB-RWD-PREFL-01"
       ],
       "pending_reason": "",
-      "last_updated_round": 54
+      "last_updated_round": 58
     },
     "57359": {
       "status": "ready",
@@ -497,7 +504,7 @@
         "EU-MERCEDES-BENZ-SPRINTER-II-W906-CHASSIS-5T-DCAB-LWB-RWD-01"
       ],
       "pending_reason": "",
-      "last_updated_round": 54
+      "last_updated_round": 58
     },
     "57360": {
       "status": "ready",
@@ -523,7 +530,7 @@
         "EU-MERCEDES-BENZ-SPRINTER-II-W906-VAN-5T-ELWB-H3-RWD-01"
       ],
       "pending_reason": "",
-      "last_updated_round": 54
+      "last_updated_round": 58
     },
     "117829": {
       "status": "ready",
@@ -539,55 +546,55 @@
         "EU-MERCEDES-BENZ-SPRINTER-II-W906-VAN-5T-ELWB-H2-RWD-01"
       ],
       "pending_reason": "",
-      "last_updated_round": 54
+      "last_updated_round": 58
     },
     "57315": {
-      "status": "pending",
+      "status": "ready",
       "source_rows": [
         10628
       ],
       "mapping_ids": [
+        "57315_elwb_h2_facelift",
+        "57315_elwb_h2_prefl",
+        "57315_elwb_h3_facelift",
+        "57315_elwb_h3_prefl",
+        "57315_lwb_h2_facelift",
+        "57315_lwb_h2_prefl",
+        "57315_lwb_h3_facelift",
+        "57315_lwb_h3_prefl",
+        "57315_mwb_h1_facelift",
+        "57315_mwb_h1_prefl",
+        "57315_mwb_h2_facelift",
+        "57315_mwb_h2_prefl",
+        "57315_mwb_h3_facelift",
+        "57315_mwb_h3_prefl",
         "57315_mwb_h1",
         "57315_mwb_h2",
         "57315_mwb_h3",
         "57315_lwb_h2",
         "57315_lwb_h3",
         "57315_elwb_h2",
-        "57315_elwb_h3",
-        "57315_mwb_h1_prefl",
-        "57315_mwb_h2_prefl",
-        "57315_mwb_h3_prefl",
-        "57315_lwb_h2_prefl",
-        "57315_lwb_h3_prefl",
-        "57315_elwb_h2_prefl",
-        "57315_elwb_h3_prefl",
-        "57315_mwb_h1_facelift",
-        "57315_mwb_h2_facelift",
-        "57315_mwb_h3_facelift",
-        "57315_lwb_h2_facelift",
-        "57315_lwb_h3_facelift",
-        "57315_elwb_h2_facelift",
-        "57315_elwb_h3_facelift"
+        "57315_elwb_h3"
       ],
       "dimension_group_ids": [
-        "EU-MERCEDES-BENZ-SPRINTER-II-W906-VAN-5T-LWB-H2-AWD-PREFL-01",
-        "EU-MERCEDES-BENZ-SPRINTER-II-W906-VAN-5T-MWB-H1-AWD-PREFL-01",
-        "EU-MERCEDES-BENZ-SPRINTER-II-W906-VAN-5T-MWB-H2-AWD-PREFL-01",
-        "EU-MERCEDES-BENZ-SPRINTER-II-W906-VAN-5T-MWB-H3-AWD-PREFL-01",
-        "EU-MERCEDES-BENZ-SPRINTER-II-W906-VAN-5T-LWB-H2-AWD-PREFL-02",
-        "EU-MERCEDES-BENZ-SPRINTER-II-W906-VAN-5T-LWB-H3-AWD-PREFL-01",
-        "EU-MERCEDES-BENZ-SPRINTER-II-W906-VAN-5T-ELWB-H2-AWD-PREFL-01",
-        "EU-MERCEDES-BENZ-SPRINTER-II-W906-VAN-5T-ELWB-H3-AWD-PREFL-01",
-        "EU-MERCEDES-BENZ-SPRINTER-II-W906-VAN-5T-MWB-H1-AWD-FACELIFT-01",
-        "EU-MERCEDES-BENZ-SPRINTER-II-W906-VAN-5T-MWB-H2-AWD-FACELIFT-01",
-        "EU-MERCEDES-BENZ-SPRINTER-II-W906-VAN-5T-MWB-H3-AWD-FACELIFT-01",
-        "EU-MERCEDES-BENZ-SPRINTER-II-W906-VAN-5T-LWB-H2-AWD-FACELIFT-01",
-        "EU-MERCEDES-BENZ-SPRINTER-II-W906-VAN-5T-LWB-H3-AWD-FACELIFT-01",
         "EU-MERCEDES-BENZ-SPRINTER-II-W906-VAN-5T-ELWB-H2-AWD-FACELIFT-01",
-        "EU-MERCEDES-BENZ-SPRINTER-II-W906-VAN-5T-ELWB-H3-AWD-FACELIFT-01"
+        "EU-MERCEDES-BENZ-SPRINTER-II-W906-VAN-5T-ELWB-H2-AWD-PREFL-01",
+        "EU-MERCEDES-BENZ-SPRINTER-II-W906-VAN-5T-ELWB-H3-AWD-FACELIFT-01",
+        "EU-MERCEDES-BENZ-SPRINTER-II-W906-VAN-5T-ELWB-H3-AWD-PREFL-01",
+        "EU-MERCEDES-BENZ-SPRINTER-II-W906-VAN-5T-LWB-H2-AWD-FACELIFT-01",
+        "EU-MERCEDES-BENZ-SPRINTER-II-W906-VAN-5T-LWB-H2-AWD-PREFL-02",
+        "EU-MERCEDES-BENZ-SPRINTER-II-W906-VAN-5T-LWB-H3-AWD-FACELIFT-01",
+        "EU-MERCEDES-BENZ-SPRINTER-II-W906-VAN-5T-LWB-H3-AWD-PREFL-01",
+        "EU-MERCEDES-BENZ-SPRINTER-II-W906-VAN-5T-MWB-H1-AWD-FACELIFT-01",
+        "EU-MERCEDES-BENZ-SPRINTER-II-W906-VAN-5T-MWB-H1-AWD-PREFL-01",
+        "EU-MERCEDES-BENZ-SPRINTER-II-W906-VAN-5T-MWB-H2-AWD-FACELIFT-01",
+        "EU-MERCEDES-BENZ-SPRINTER-II-W906-VAN-5T-MWB-H2-AWD-PREFL-01",
+        "EU-MERCEDES-BENZ-SPRINTER-II-W906-VAN-5T-MWB-H3-AWD-FACELIFT-01",
+        "EU-MERCEDES-BENZ-SPRINTER-II-W906-VAN-5T-MWB-H3-AWD-PREFL-01",
+        "EU-MERCEDES-BENZ-SPRINTER-II-W906-VAN-5T-LWB-H2-AWD-PREFL-01"
       ],
-      "pending_reason": "需确认MWB-H1四驱精确车高；映射缺少 DIMENSION_GROUP_ID；需确认MWB-H2四驱精确车高；需确认MWB-H3四驱精确车高；需确认LWB-H3四驱精确车高；需确认ELWB-H2四驱精确车高；需确认ELWB-H3四驱精确车高",
-      "last_updated_round": 54
+      "pending_reason": "",
+      "last_updated_round": 58
     },
     "119918": {
       "status": "ready",
@@ -613,7 +620,7 @@
         "EU-MERCEDES-BENZ-SPRINTER-II-W906-VAN-5T-ELWB-H3-RWD-01"
       ],
       "pending_reason": "",
-      "last_updated_round": 54
+      "last_updated_round": 58
     },
     "119925": {
       "status": "ready",
@@ -633,7 +640,7 @@
         "EU-MERCEDES-BENZ-SPRINTER-II-W906-CHASSIS-5T-DCAB-LWB-RWD-01"
       ],
       "pending_reason": "",
-      "last_updated_round": 54
+      "last_updated_round": 58
     },
     "119919": {
       "status": "ready",
@@ -661,7 +668,7 @@
         "EU-MERCEDES-BENZ-SPRINTER-II-W906-VAN-5T-ELWB-H3-AWD-FACELIFT-01"
       ],
       "pending_reason": "",
-      "last_updated_round": 54
+      "last_updated_round": 58
     },
     "119926": {
       "status": "ready",
@@ -681,7 +688,7 @@
         "EU-MERCEDES-BENZ-SPRINTER-II-W906-CHASSIS-5T-DCAB-LWB-RWD-01"
       ],
       "pending_reason": "",
-      "last_updated_round": 54
+      "last_updated_round": 58
     },
     "145932": {
       "status": "ready",
@@ -699,41 +706,41 @@
         "EU-MERCEDES-BENZ-SPRINTER-III-VS30-VAN-5T-L4H2-RWD-01"
       ],
       "pending_reason": "",
-      "last_updated_round": 54
+      "last_updated_round": 58
     },
     "57316": {
-      "status": "pending",
+      "status": "ready",
       "source_rows": [
         10634
       ],
       "mapping_ids": [
+        "57316_elwb_h2_prefl",
+        "57316_elwb_h3_prefl",
+        "57316_lwb_h2_prefl",
+        "57316_lwb_h3_prefl",
+        "57316_mwb_h1_prefl",
+        "57316_mwb_h2_prefl",
+        "57316_mwb_h3_prefl",
         "57316_mwb_h1",
         "57316_mwb_h2",
         "57316_mwb_h3",
         "57316_lwb_h2",
         "57316_lwb_h3",
         "57316_elwb_h2",
-        "57316_elwb_h3",
-        "57316_mwb_h1_prefl",
-        "57316_mwb_h2_prefl",
-        "57316_mwb_h3_prefl",
-        "57316_lwb_h2_prefl",
-        "57316_lwb_h3_prefl",
-        "57316_elwb_h2_prefl",
-        "57316_elwb_h3_prefl"
+        "57316_elwb_h3"
       ],
       "dimension_group_ids": [
-        "EU-MERCEDES-BENZ-SPRINTER-II-W906-VAN-5T-LWB-H2-AWD-PREFL-01",
+        "EU-MERCEDES-BENZ-SPRINTER-II-W906-VAN-5T-ELWB-H2-AWD-PREFL-01",
+        "EU-MERCEDES-BENZ-SPRINTER-II-W906-VAN-5T-ELWB-H3-AWD-PREFL-01",
+        "EU-MERCEDES-BENZ-SPRINTER-II-W906-VAN-5T-LWB-H2-AWD-PREFL-02",
+        "EU-MERCEDES-BENZ-SPRINTER-II-W906-VAN-5T-LWB-H3-AWD-PREFL-01",
         "EU-MERCEDES-BENZ-SPRINTER-II-W906-VAN-5T-MWB-H1-AWD-PREFL-01",
         "EU-MERCEDES-BENZ-SPRINTER-II-W906-VAN-5T-MWB-H2-AWD-PREFL-01",
         "EU-MERCEDES-BENZ-SPRINTER-II-W906-VAN-5T-MWB-H3-AWD-PREFL-01",
-        "EU-MERCEDES-BENZ-SPRINTER-II-W906-VAN-5T-LWB-H2-AWD-PREFL-02",
-        "EU-MERCEDES-BENZ-SPRINTER-II-W906-VAN-5T-LWB-H3-AWD-PREFL-01",
-        "EU-MERCEDES-BENZ-SPRINTER-II-W906-VAN-5T-ELWB-H2-AWD-PREFL-01",
-        "EU-MERCEDES-BENZ-SPRINTER-II-W906-VAN-5T-ELWB-H3-AWD-PREFL-01"
+        "EU-MERCEDES-BENZ-SPRINTER-II-W906-VAN-5T-LWB-H2-AWD-PREFL-01"
       ],
-      "pending_reason": "需确认5-T AWD中轴标准顶完整三维；映射缺少 DIMENSION_GROUP_ID；需确认5-T AWD中轴高顶完整三维；需确认5-T AWD中轴超高顶完整三维；需确认5-T AWD长轴超高顶车高；需确认5-T AWD超长轴高顶完整三维；需确认5-T AWD超长轴超高顶完整三维",
-      "last_updated_round": 54
+      "pending_reason": "",
+      "last_updated_round": 58
     },
     "57319": {
       "status": "ready",
@@ -753,7 +760,7 @@
         "EU-MERCEDES-BENZ-SPRINTER-II-W906-CHASSIS-5T-DCAB-LWB-RWD-PREFL-01"
       ],
       "pending_reason": "",
-      "last_updated_round": 54
+      "last_updated_round": 58
     },
     "145938": {
       "status": "ready",
@@ -773,7 +780,7 @@
         "EU-MERCEDES-BENZ-SPRINTER-III-VS30-CHASSIS-5T-DCAB-LWB-RWD-01"
       ],
       "pending_reason": "",
-      "last_updated_round": 54
+      "last_updated_round": 58
     },
     "117828": {
       "status": "ready",
@@ -789,7 +796,7 @@
         "EU-MERCEDES-BENZ-SPRINTER-II-W906-VAN-5T-ELWB-H2-RWD-01"
       ],
       "pending_reason": "",
-      "last_updated_round": 54
+      "last_updated_round": 58
     },
     "16574": {
       "status": "ready",
@@ -817,7 +824,7 @@
         "EU-MERCEDES-BENZ-SPRINTER-II-W906-CHASSIS-5T-DCAB-LWB-RWD-01"
       ],
       "pending_reason": "",
-      "last_updated_round": 54
+      "last_updated_round": 58
     },
     "57309": {
       "status": "ready",
@@ -859,7 +866,7 @@
         "EU-MERCEDES-BENZ-SPRINTER-II-W906-VAN-5T-ELWB-H3-AWD-FACELIFT-01"
       ],
       "pending_reason": "",
-      "last_updated_round": 54
+      "last_updated_round": 58
     },
     "145307": {
       "status": "ready",
@@ -875,7 +882,7 @@
         "EU-MERCEDES-BENZ-SPRINTER-II-W906-VAN-5T-LWB-H3-RWD-01"
       ],
       "pending_reason": "",
-      "last_updated_round": 54
+      "last_updated_round": 58
     },
     "145940": {
       "status": "ready",
@@ -893,7 +900,7 @@
         "EU-MERCEDES-BENZ-SPRINTER-III-VS30-VAN-5T-L4H2-RWD-01"
       ],
       "pending_reason": "",
-      "last_updated_round": 54
+      "last_updated_round": 58
     },
     "147379": {
       "status": "ready",
@@ -913,7 +920,7 @@
         "EU-MERCEDES-BENZ-SPRINTER-III-VS30-CHASSIS-5T-DCAB-LWB-RWD-01"
       ],
       "pending_reason": "",
-      "last_updated_round": 54
+      "last_updated_round": 58
     },
     "57308": {
       "status": "ready",
@@ -955,7 +962,7 @@
         "EU-MERCEDES-BENZ-SPRINTER-II-W906-VAN-5T-ELWB-H3-AWD-FACELIFT-01"
       ],
       "pending_reason": "",
-      "last_updated_round": 54
+      "last_updated_round": 58
     },
     "57320": {
       "status": "ready",
@@ -975,7 +982,7 @@
         "EU-MERCEDES-BENZ-SPRINTER-II-W906-CHASSIS-5T-DCAB-LWB-RWD-PREFL-01"
       ],
       "pending_reason": "",
-      "last_updated_round": 54
+      "last_updated_round": 58
     },
     "117827": {
       "status": "ready",
@@ -991,7 +998,7 @@
         "EU-MERCEDES-BENZ-SPRINTER-II-W906-VAN-5T-ELWB-H2-RWD-01"
       ],
       "pending_reason": "",
-      "last_updated_round": 54
+      "last_updated_round": 58
     },
     "146019": {
       "status": "ready",
@@ -1009,7 +1016,7 @@
         "EU-MERCEDES-BENZ-SPRINTER-III-VS30-VAN-5T-L4H2-RWD-01"
       ],
       "pending_reason": "",
-      "last_updated_round": 54
+      "last_updated_round": 58
     },
     "57317": {
       "status": "ready",
@@ -1051,7 +1058,7 @@
         "EU-MERCEDES-BENZ-SPRINTER-II-W906-VAN-5T-ELWB-H3-AWD-FACELIFT-01"
       ],
       "pending_reason": "",
-      "last_updated_round": 54
+      "last_updated_round": 58
     },
     "57321": {
       "status": "ready",
@@ -1079,7 +1086,7 @@
         "EU-MERCEDES-BENZ-SPRINTER-II-W906-CHASSIS-5T-DCAB-LWB-RWD-01"
       ],
       "pending_reason": "",
-      "last_updated_round": 54
+      "last_updated_round": 58
     },
     "146053": {
       "status": "ready",
@@ -1099,19 +1106,19 @@
         "EU-MERCEDES-BENZ-SPRINTER-III-VS30-CHASSIS-5T-DCAB-LWB-RWD-01"
       ],
       "pending_reason": "",
-      "last_updated_round": 54
+      "last_updated_round": 58
     },
     "146080": {
-      "status": "pending",
+      "status": "ready",
       "source_rows": [
         10650
       ],
       "mapping_ids": [
         "146080_l2h2",
         "146080_l3h2",
-        "146080_l4",
         "146080_l3h3",
-        "146080_l4h2"
+        "146080_l4h2",
+        "146080_l4"
       ],
       "dimension_group_ids": [
         "EU-MERCEDES-BENZ-SPRINTER-III-VS30-VAN-5T-L2H2-AWD-01",
@@ -1119,8 +1126,8 @@
         "EU-MERCEDES-BENZ-SPRINTER-III-VS30-VAN-5T-L3H3-AWD-01",
         "EU-MERCEDES-BENZ-SPRINTER-III-VS30-VAN-5T-L4H2-AWD-01"
       ],
-      "pending_reason": "需确认907.657四驱L4车顶与完整三维；映射缺少 DIMENSION_GROUP_ID",
-      "last_updated_round": 54
+      "pending_reason": "",
+      "last_updated_round": 58
     },
     "146021": {
       "status": "ready",
@@ -1140,7 +1147,7 @@
         "EU-MERCEDES-BENZ-SPRINTER-III-VS30-CHASSIS-5T-DCAB-LWB-RWD-01"
       ],
       "pending_reason": "",
-      "last_updated_round": 54
+      "last_updated_round": 58
     },
     "34280": {
       "status": "ready",
@@ -1160,7 +1167,7 @@
         "EU-MERCEDES-BENZ-SPRINTER-I-W905-CHASSIS-6T-DCAB-4025-RWD-01"
       ],
       "pending_reason": "",
-      "last_updated_round": 54
+      "last_updated_round": 58
     },
     "8723": {
       "status": "ready",
@@ -1176,7 +1183,7 @@
         "EU-MERCEDES-BENZ-T1-W602-PICKUP-HIGHBED-WB3350-01"
       ],
       "pending_reason": "",
-      "last_updated_round": 54
+      "last_updated_round": 58
     },
     "59449": {
       "status": "ready",
@@ -1196,7 +1203,7 @@
         "EU-MERCEDES-BENZ-T1-W601-VAN-WB3350-H2-01"
       ],
       "pending_reason": "",
-      "last_updated_round": 54
+      "last_updated_round": 58
     },
     "10964": {
       "status": "ready",
@@ -1212,7 +1219,7 @@
         "EU-MERCEDES-BENZ-T1-W602-PICKUP-HIGHBED-WB3350-01"
       ],
       "pending_reason": "",
-      "last_updated_round": 54
+      "last_updated_round": 58
     },
     "10963": {
       "status": "pending",
@@ -1220,22 +1227,22 @@
         10656
       ],
       "mapping_ids": [
+        "10963_wb3050_h1",
+        "10963_wb3350_h1",
+        "10963_wb3700_h1",
         "10963_bm602361",
         "10963_bm602362",
         "10963_bm602363",
         "10963_bm602372",
-        "10963_bm602373",
-        "10963_wb3050_h1",
-        "10963_wb3350_h1",
-        "10963_wb3700_h1"
+        "10963_bm602373"
       ],
       "dimension_group_ids": [
         "EU-MERCEDES-BENZ-T1-W602-VAN-WB3050-H1-02",
         "EU-MERCEDES-BENZ-T1-W602-VAN-WB3350-H1-01",
         "EU-MERCEDES-BENZ-T1-W602-VAN-WB3700-H1-01"
       ],
-      "pending_reason": "需确认602.361轴距车顶及完整三维；映射缺少 DIMENSION_GROUP_ID；需确认602.362轴距车顶及完整三维；需确认602.363轴距车顶及完整三维；需确认602.372车身边界及完整三维；需确认602.373车身边界及完整三维",
-      "last_updated_round": 54
+      "pending_reason": "需确认602.372车身边界及完整三维；映射缺少 DIMENSION_GROUP_ID；需确认602.373车身边界及完整三维",
+      "last_updated_round": 58
     },
     "10965": {
       "status": "ready",
@@ -1253,64 +1260,64 @@
         "EU-MERCEDES-BENZ-T1-W602-PICKUP-HIGHBED-WB3700-01"
       ],
       "pending_reason": "",
-      "last_updated_round": 54
+      "last_updated_round": 58
     },
     "59450": {
-      "status": "pending",
+      "status": "ready",
       "source_rows": [
         10658
       ],
       "mapping_ids": [
-        "59450_bm602061",
-        "59450_bm602062",
         "59450_wb3050_h1",
-        "59450_wb3350_h1"
+        "59450_wb3350_h1",
+        "59450_bm602061",
+        "59450_bm602062"
       ],
       "dimension_group_ids": [
         "EU-MERCEDES-BENZ-T1-W602-VAN-WB3050-H1-01",
         "EU-MERCEDES-BENZ-T1-W602-VAN-WB3350-H1-01"
       ],
-      "pending_reason": "需确认602.061轴距车顶及完整三维；映射缺少 DIMENSION_GROUP_ID；需确认602.062轴距车顶及完整三维",
-      "last_updated_round": 54
+      "pending_reason": "",
+      "last_updated_round": 58
     },
     "107647": {
-      "status": "pending",
+      "status": "ready",
       "source_rows": [
         10659
       ],
       "mapping_ids": [
-        "107647_bm602061",
-        "107647_bm602062",
         "107647_wb3050_h1",
-        "107647_wb3350_h1"
+        "107647_wb3350_h1",
+        "107647_bm602061",
+        "107647_bm602062"
       ],
       "dimension_group_ids": [
         "EU-MERCEDES-BENZ-T1-W602-VAN-WB3050-H1-01",
         "EU-MERCEDES-BENZ-T1-W602-VAN-WB3350-H1-01"
       ],
-      "pending_reason": "需确认602.061轴距车顶及完整三维；映射缺少 DIMENSION_GROUP_ID；需确认602.062轴距车顶及完整三维",
-      "last_updated_round": 54
+      "pending_reason": "",
+      "last_updated_round": 58
     },
     "10961": {
-      "status": "pending",
+      "status": "ready",
       "source_rows": [
         10660
       ],
       "mapping_ids": [
-        "10961_bm602413",
-        "10961_bm602416",
-        "10961_bm602417",
         "10961_wb3050",
         "10961_wb3350",
-        "10961_wb3700"
+        "10961_wb3700",
+        "10961_bm602413",
+        "10961_bm602416",
+        "10961_bm602417"
       ],
       "dimension_group_ids": [
         "EU-MERCEDES-BENZ-T1-W602-PICKUP-HIGHBED-WB3050-01",
         "EU-MERCEDES-BENZ-T1-W602-PICKUP-HIGHBED-WB3350-01",
         "EU-MERCEDES-BENZ-T1-W602-PICKUP-HIGHBED-WB3700-01"
       ],
-      "pending_reason": "需确认602.413驾驶室轴距及完整三维；映射缺少 DIMENSION_GROUP_ID；需确认602.416驾驶室轴距及完整三维；需确认602.417驾驶室轴距及完整三维",
-      "last_updated_round": 54
+      "pending_reason": "",
+      "last_updated_round": 58
     },
     "10962": {
       "status": "ready",
@@ -1324,7 +1331,7 @@
         "EU-MERCEDES-BENZ-T1-W602-PICKUP-HIGHBED-WB3350-01"
       ],
       "pending_reason": "",
-      "last_updated_round": 54
+      "last_updated_round": 58
     },
     "125942": {
       "status": "ready",
@@ -1340,7 +1347,7 @@
         "EU-MERCEDES-BENZ-T1-TN-W611-VAN-WB3700-H2-01"
       ],
       "pending_reason": "",
-      "last_updated_round": 54
+      "last_updated_round": 58
     },
     "34187": {
       "status": "pending",
@@ -1360,25 +1367,25 @@
         "EU-MERCEDES-BENZ-T1-TN-W611-PICKUP-SCAB-WB3700-01"
       ],
       "pending_reason": "需确认611.017双排驾驶室精确三维及不含后视镜宽度；映射缺少 DIMENSION_GROUP_ID；需确认611.018双排驾驶室精确三维及不含后视镜宽度",
-      "last_updated_round": 54
+      "last_updated_round": 58
     },
     "34188": {
-      "status": "pending",
+      "status": "ready",
       "source_rows": [
         10664
       ],
       "mapping_ids": [
-        "34188_wb3350",
-        "34188_wb3700",
         "34188_wb3350_h1",
-        "34188_wb3700_h2"
+        "34188_wb3700_h2",
+        "34188_wb3350",
+        "34188_wb3700"
       ],
       "dimension_group_ids": [
         "EU-MERCEDES-BENZ-T1-TN-W611-VAN-WB3350-H1-01",
         "EU-MERCEDES-BENZ-T1-TN-W611-VAN-WB3700-H2-01"
       ],
-      "pending_reason": "需确认611.067车顶组合及完整三维；映射缺少 DIMENSION_GROUP_ID；需确认611.068车顶组合及完整三维",
-      "last_updated_round": 54
+      "pending_reason": "",
+      "last_updated_round": 58
     },
     "34383": {
       "status": "pending",
@@ -1398,25 +1405,25 @@
         "EU-MERCEDES-BENZ-T1-TN-W611-PICKUP-SCAB-WB3700-01"
       ],
       "pending_reason": "需确认611.017双排驾驶室精确三维及不含后视镜宽度；映射缺少 DIMENSION_GROUP_ID；需确认611.018双排驾驶室精确三维及不含后视镜宽度",
-      "last_updated_round": 54
+      "last_updated_round": 58
     },
     "34384": {
-      "status": "pending",
+      "status": "ready",
       "source_rows": [
         10666
       ],
       "mapping_ids": [
-        "34384_wb3350",
-        "34384_wb3700",
         "34384_wb3350_h1",
-        "34384_wb3700_h2"
+        "34384_wb3700_h2",
+        "34384_wb3350",
+        "34384_wb3700"
       ],
       "dimension_group_ids": [
         "EU-MERCEDES-BENZ-T1-TN-W611-VAN-WB3350-H1-01",
         "EU-MERCEDES-BENZ-T1-TN-W611-VAN-WB3700-H2-01"
       ],
-      "pending_reason": "需确认611.067车顶组合及完整三维；映射缺少 DIMENSION_GROUP_ID；需确认611.068车顶组合及完整三维",
-      "last_updated_round": 54
+      "pending_reason": "",
+      "last_updated_round": 58
     },
     "34179": {
       "status": "pending",
@@ -1436,25 +1443,25 @@
         "EU-MERCEDES-BENZ-T1-TN-W611-PICKUP-SCAB-WB3700-01"
       ],
       "pending_reason": "长宽边界已确认，需补齐双排3350精确HeightMM；映射缺少 DIMENSION_GROUP_ID；长宽边界已确认，需补齐双排3700精确HeightMM",
-      "last_updated_round": 54
+      "last_updated_round": 58
     },
     "34180": {
-      "status": "pending",
+      "status": "ready",
       "source_rows": [
         10668
       ],
       "mapping_ids": [
-        "34180_wb3350",
-        "34180_wb3700",
         "34180_wb3350_h1",
-        "34180_wb3700_h2"
+        "34180_wb3700_h2",
+        "34180_wb3350",
+        "34180_wb3700"
       ],
       "dimension_group_ids": [
         "EU-MERCEDES-BENZ-T1-TN-W611-VAN-WB3350-H1-01",
         "EU-MERCEDES-BENZ-T1-TN-W611-VAN-WB3700-H2-01"
       ],
-      "pending_reason": "需确认611.367车顶组合及完整三维；映射缺少 DIMENSION_GROUP_ID；需确认611.368车顶组合及完整三维",
-      "last_updated_round": 54
+      "pending_reason": "",
+      "last_updated_round": 58
     },
     "34181": {
       "status": "pending",
@@ -1474,25 +1481,25 @@
         "EU-MERCEDES-BENZ-T1-TN-W611-PICKUP-SCAB-WB3700-01"
       ],
       "pending_reason": "长宽边界已确认，需补齐双排3350精确HeightMM；映射缺少 DIMENSION_GROUP_ID；长宽边界已确认，需补齐双排3700精确HeightMM",
-      "last_updated_round": 54
+      "last_updated_round": 58
     },
     "34182": {
-      "status": "pending",
+      "status": "ready",
       "source_rows": [
         10670
       ],
       "mapping_ids": [
-        "34182_wb3350",
-        "34182_wb3700",
         "34182_wb3350_h1",
-        "34182_wb3700_h2"
+        "34182_wb3700_h2",
+        "34182_wb3350",
+        "34182_wb3700"
       ],
       "dimension_group_ids": [
         "EU-MERCEDES-BENZ-T1-TN-W611-VAN-WB3350-H1-01",
         "EU-MERCEDES-BENZ-T1-TN-W611-VAN-WB3700-H2-01"
       ],
-      "pending_reason": "需确认611.367车顶组合及完整三维；映射缺少 DIMENSION_GROUP_ID；需确认611.368车顶组合及完整三维",
-      "last_updated_round": 54
+      "pending_reason": "",
+      "last_updated_round": 58
     },
     "34379": {
       "status": "pending",
@@ -1512,25 +1519,25 @@
         "EU-MERCEDES-BENZ-T1-TN-W611-PICKUP-SCAB-WB3700-01"
       ],
       "pending_reason": "长宽边界已确认，需补齐双排3350精确HeightMM；映射缺少 DIMENSION_GROUP_ID；长宽边界已确认，需补齐双排3700精确HeightMM",
-      "last_updated_round": 54
+      "last_updated_round": 58
     },
     "34380": {
-      "status": "pending",
+      "status": "ready",
       "source_rows": [
         10672
       ],
       "mapping_ids": [
-        "34380_wb3350",
-        "34380_wb3700",
         "34380_wb3350_h1",
-        "34380_wb3700_h2"
+        "34380_wb3700_h2",
+        "34380_wb3350",
+        "34380_wb3700"
       ],
       "dimension_group_ids": [
         "EU-MERCEDES-BENZ-T1-TN-W611-VAN-WB3350-H1-01",
         "EU-MERCEDES-BENZ-T1-TN-W611-VAN-WB3700-H2-01"
       ],
-      "pending_reason": "需确认611.367车顶组合及完整三维；映射缺少 DIMENSION_GROUP_ID；需确认611.368车顶组合及完整三维",
-      "last_updated_round": 54
+      "pending_reason": "",
+      "last_updated_round": 58
     },
     "34183": {
       "status": "pending",
@@ -1550,25 +1557,25 @@
         "EU-MERCEDES-BENZ-T1-TN-W611-PICKUP-SCAB-WB3700-01"
       ],
       "pending_reason": "长宽边界已确认，需补齐双排3350精确HeightMM；映射缺少 DIMENSION_GROUP_ID；长宽边界已确认，需补齐双排3700精确HeightMM",
-      "last_updated_round": 54
+      "last_updated_round": 58
     },
     "34184": {
-      "status": "pending",
+      "status": "ready",
       "source_rows": [
         10674
       ],
       "mapping_ids": [
-        "34184_wb3350",
-        "34184_wb3700",
         "34184_wb3350_h1",
-        "34184_wb3700_h2"
+        "34184_wb3700_h2",
+        "34184_wb3350",
+        "34184_wb3700"
       ],
       "dimension_group_ids": [
         "EU-MERCEDES-BENZ-T1-TN-W611-VAN-WB3350-H1-01",
         "EU-MERCEDES-BENZ-T1-TN-W611-VAN-WB3700-H2-01"
       ],
-      "pending_reason": "需确认611.467车顶组合及完整三维；映射缺少 DIMENSION_GROUP_ID；需确认611.468车顶组合及完整三维",
-      "last_updated_round": 54
+      "pending_reason": "",
+      "last_updated_round": 58
     },
     "34185": {
       "status": "pending",
@@ -1588,25 +1595,25 @@
         "EU-MERCEDES-BENZ-T1-TN-W611-PICKUP-SCAB-WB3700-01"
       ],
       "pending_reason": "需确认611.417双排驾驶室精确三维及不含后视镜宽度；映射缺少 DIMENSION_GROUP_ID；需确认611.418双排驾驶室精确三维及不含后视镜宽度",
-      "last_updated_round": 54
+      "last_updated_round": 58
     },
     "34186": {
-      "status": "pending",
+      "status": "ready",
       "source_rows": [
         10676
       ],
       "mapping_ids": [
-        "34186_wb3350",
-        "34186_wb3700",
         "34186_wb3350_h1",
-        "34186_wb3700_h2"
+        "34186_wb3700_h2",
+        "34186_wb3350",
+        "34186_wb3700"
       ],
       "dimension_group_ids": [
         "EU-MERCEDES-BENZ-T1-TN-W611-VAN-WB3350-H1-01",
         "EU-MERCEDES-BENZ-T1-TN-W611-VAN-WB3700-H2-01"
       ],
-      "pending_reason": "需确认611.467车顶组合及完整三维；映射缺少 DIMENSION_GROUP_ID；需确认611.468车顶组合及完整三维",
-      "last_updated_round": 54
+      "pending_reason": "",
+      "last_updated_round": 58
     },
     "34381": {
       "status": "pending",
@@ -1626,25 +1633,25 @@
         "EU-MERCEDES-BENZ-T1-TN-W611-PICKUP-SCAB-WB3700-01"
       ],
       "pending_reason": "需确认611.417双排驾驶室精确三维及不含后视镜宽度；映射缺少 DIMENSION_GROUP_ID；需确认611.418双排驾驶室精确三维及不含后视镜宽度",
-      "last_updated_round": 54
+      "last_updated_round": 58
     },
     "34382": {
-      "status": "pending",
+      "status": "ready",
       "source_rows": [
         10678
       ],
       "mapping_ids": [
-        "34382_wb3350",
-        "34382_wb3700",
         "34382_wb3350_h1",
-        "34382_wb3700_h2"
+        "34382_wb3700_h2",
+        "34382_wb3350",
+        "34382_wb3700"
       ],
       "dimension_group_ids": [
         "EU-MERCEDES-BENZ-T1-TN-W611-VAN-WB3350-H1-01",
         "EU-MERCEDES-BENZ-T1-TN-W611-VAN-WB3700-H2-01"
       ],
-      "pending_reason": "需确认611.467车顶组合及完整三维；映射缺少 DIMENSION_GROUP_ID；需确认611.468车顶组合及完整三维",
-      "last_updated_round": 54
+      "pending_reason": "",
+      "last_updated_round": 58
     },
     "34000": {
       "status": "ready",
@@ -1664,7 +1671,7 @@
         "EU-MERCEDES-BENZ-T2-L-W309-VAN-L2H2-01"
       ],
       "pending_reason": "",
-      "last_updated_round": 54
+      "last_updated_round": 58
     },
     "34001": {
       "status": "ready",
@@ -1680,7 +1687,7 @@
         "EU-MERCEDES-BENZ-T2-L-W309-PICKUP-L2-01"
       ],
       "pending_reason": "",
-      "last_updated_round": 54
+      "last_updated_round": 58
     },
     "34002": {
       "status": "ready",
@@ -1700,7 +1707,7 @@
         "EU-MERCEDES-BENZ-T2-L-W309-VAN-L2H2-01"
       ],
       "pending_reason": "",
-      "last_updated_round": 54
+      "last_updated_round": 58
     },
     "34003": {
       "status": "ready",
@@ -1716,7 +1723,7 @@
         "EU-MERCEDES-BENZ-T2-L-W309-PICKUP-L2-01"
       ],
       "pending_reason": "",
-      "last_updated_round": 54
+      "last_updated_round": 58
     },
     "34004": {
       "status": "ready",
@@ -1736,7 +1743,7 @@
         "EU-MERCEDES-BENZ-T2-L-W309-VAN-L2H2-01"
       ],
       "pending_reason": "",
-      "last_updated_round": 54
+      "last_updated_round": 58
     },
     "34005": {
       "status": "ready",
@@ -1752,7 +1759,7 @@
         "EU-MERCEDES-BENZ-T2-L-W309-PICKUP-L2-01"
       ],
       "pending_reason": "",
-      "last_updated_round": 54
+      "last_updated_round": 58
     },
     "34341": {
       "status": "ready",
@@ -1772,7 +1779,7 @@
         "EU-MERCEDES-BENZ-T2-L-W309-VAN-L2H2-01"
       ],
       "pending_reason": "",
-      "last_updated_round": 54
+      "last_updated_round": 58
     },
     "34342": {
       "status": "ready",
@@ -1788,7 +1795,7 @@
         "EU-MERCEDES-BENZ-T2-L-W309-PICKUP-L2-01"
       ],
       "pending_reason": "",
-      "last_updated_round": 54
+      "last_updated_round": 58
     },
     "34009": {
       "status": "ready",
@@ -1808,7 +1815,7 @@
         "EU-MERCEDES-BENZ-T2-L-W309-VAN-L2H2-01"
       ],
       "pending_reason": "",
-      "last_updated_round": 54
+      "last_updated_round": 58
     },
     "34010": {
       "status": "ready",
@@ -1824,7 +1831,7 @@
         "EU-MERCEDES-BENZ-T2-L-W309-PICKUP-L2-01"
       ],
       "pending_reason": "",
-      "last_updated_round": 54
+      "last_updated_round": 58
     },
     "34006": {
       "status": "ready",
@@ -1844,7 +1851,7 @@
         "EU-MERCEDES-BENZ-T2-L-W309-VAN-L2H2-01"
       ],
       "pending_reason": "",
-      "last_updated_round": 54
+      "last_updated_round": 58
     },
     "34007": {
       "status": "ready",
@@ -1864,7 +1871,7 @@
         "EU-MERCEDES-BENZ-T2-L-W309-VAN-L2H2-01"
       ],
       "pending_reason": "",
-      "last_updated_round": 54
+      "last_updated_round": 58
     },
     "34008": {
       "status": "ready",
@@ -1880,7 +1887,7 @@
         "EU-MERCEDES-BENZ-T2-L-W309-PICKUP-L2-01"
       ],
       "pending_reason": "",
-      "last_updated_round": 54
+      "last_updated_round": 58
     },
     "34343": {
       "status": "ready",
@@ -1900,7 +1907,7 @@
         "EU-MERCEDES-BENZ-T2-L-W309-VAN-L2H2-01"
       ],
       "pending_reason": "",
-      "last_updated_round": 54
+      "last_updated_round": 58
     },
     "34344": {
       "status": "ready",
@@ -1920,7 +1927,7 @@
         "EU-MERCEDES-BENZ-T2-L-W309-VAN-L2H2-01"
       ],
       "pending_reason": "",
-      "last_updated_round": 54
+      "last_updated_round": 58
     },
     "34345": {
       "status": "ready",
@@ -1936,7 +1943,7 @@
         "EU-MERCEDES-BENZ-T2-L-W309-PICKUP-L2-01"
       ],
       "pending_reason": "",
-      "last_updated_round": 54
+      "last_updated_round": 58
     },
     "34012": {
       "status": "ready",
@@ -1952,7 +1959,7 @@
         "EU-MERCEDES-BENZ-T2-L-W309-PICKUP-L2-01"
       ],
       "pending_reason": "",
-      "last_updated_round": 54
+      "last_updated_round": 58
     },
     "34013": {
       "status": "ready",
@@ -1972,7 +1979,7 @@
         "EU-MERCEDES-BENZ-T2-L-W309-VAN-L2H2-01"
       ],
       "pending_reason": "",
-      "last_updated_round": 54
+      "last_updated_round": 58
     },
     "34015": {
       "status": "ready",
@@ -1992,7 +1999,7 @@
         "EU-MERCEDES-BENZ-T2-L-W309-VAN-L2H2-01"
       ],
       "pending_reason": "",
-      "last_updated_round": 54
+      "last_updated_round": 58
     },
     "34016": {
       "status": "ready",
@@ -2006,7 +2013,7 @@
         "EU-MERCEDES-BENZ-T2-L-W309-PICKUP-L1-01"
       ],
       "pending_reason": "",
-      "last_updated_round": 54
+      "last_updated_round": 58
     },
     "34347": {
       "status": "ready",
@@ -2030,7 +2037,7 @@
         "EU-MERCEDES-BENZ-T2-L-W309-VAN-L3H2-01"
       ],
       "pending_reason": "",
-      "last_updated_round": 54
+      "last_updated_round": 58
     },
     "34348": {
       "status": "ready",
@@ -2048,47 +2055,29 @@
         "EU-MERCEDES-BENZ-T2-L-W309-PICKUP-L3-01"
       ],
       "pending_reason": "",
-      "last_updated_round": 54
+      "last_updated_round": 58
     }
   },
   "progress": {
     "input_ktype_count": 100,
-    "ready_ktype_count": 72,
-    "pending_ktype_count": 28,
+    "ready_ktype_count": 90,
+    "pending_ktype_count": 10,
     "pending_ktypes": [
-      "14986",
-      "15003",
-      "146051",
       "146052",
-      "57314",
-      "57315",
-      "57316",
-      "146080",
       "10963",
-      "59450",
-      "107647",
-      "10961",
       "34187",
-      "34188",
       "34383",
-      "34384",
       "34179",
-      "34180",
       "34181",
-      "34182",
       "34379",
-      "34380",
       "34183",
-      "34184",
       "34185",
-      "34186",
-      "34381",
-      "34382"
+      "34381"
     ]
   },
   "artifacts": {
     "current_mapping": "/Users/wang/Documents/GitHub/fitment_sheet_generation/projects/qclaw_fitment_automation/workspaces/0802-eu/checkpoints/part-03/task-state/left18448__batch__0107__c4c1d2f6/current_mapping.tsv",
     "current_dimension_groups": "/Users/wang/Documents/GitHub/fitment_sheet_generation/projects/qclaw_fitment_automation/workspaces/0802-eu/checkpoints/part-03/task-state/left18448__batch__0107__c4c1d2f6/current_dimension_groups.tsv"
   },
-  "updated_at": "2026-08-04 05:00:02"
+  "updated_at": "2026-08-05 20:36:29"
 }

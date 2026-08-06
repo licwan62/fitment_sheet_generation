@@ -3294,3 +3294,131 @@ EU-MERCEDES-BENZ-SLC-R172-CONVERTIBLE-FACELIFT-01	4133	1810	1301	Auto-Data, Merc
 
 推进信号：CONTINUE
 
+
+--- 发送 / checkpoint 续跑到 Round 49 ---
+继续当前批次并采用缓存优先模式。尺寸组只在首次创建或纠错时完整核对一次三维和来源；后续 Ktype 只判断关联哪个现有 DIMENSION_GROUP_ID，不重复抓取，不输出缓存来源或匹配理由。仍有 PENDING 且还有明确可执行的可靠证据路径时，CONTINUE 轮仅输出：1) 更新点；2) 当前批次进度；3) 本轮新增/修改的 Ktype 映射 TSV（无变化写“无”）；4) 本轮首次创建/修正的 DIMENSION_GROUP TSV（复用既有组不重复输出，无变化写“无”）；5) 下一步优先处理。若所有剩余 PENDING 都已穷尽契约允许的可靠来源，仍无法在不猜测、不拼接不同配置且不降低证据标准的前提下推进，则停止重复检索并执行 ALMOST 收尾：ALMOST 是任务级终态但不是成功，也不是行级 IterationStatus；剩余条目继续保持 PENDING。ALMOST 回复必须包含全部当前 READY 映射、这些映射引用的全部 DIMENSION_GROUP（每组 SourceURL 非空）、每个剩余 PENDING 的具体原因，以及两个任务指定精确文件名的可点击 sandbox 下载链接，最后一行单独输出“推进信号：ALMOST”。临时网络、浏览器、登录、页面或超时故障，单轮搜索无结果，或仅达到轮次上限，均不得使用 ALMOST。若当前或上一轮进度已经是 PENDING=0，本轮不要继续检索或再次输出 CONTINUE，也不得输出 ALMOST；必须立刻汇总并输出两张最终完整 TSV、两个任务指定 sandbox 下载链接和“推进信号：COMPLETE”。执行顺序固定为：第一阶段优先消除 PENDING 并补齐会阻塞两张最终表的数据。检测到 PENDING=0 后，第二阶段最多只做一次轻量机械收尾：核对固定表头、id 与 DIMENSION_GROUP_ID 唯一、映射引用闭合、长宽高和来源非空、两个任务指定下载链接齐全。第二阶段不得重新逐车型、逐年份或逐来源做深度检索，不得为了提高置信度反复核对，也不得因非阻塞的排序或措辞问题继续多轮。PENDING=0 后的下一条回复必须直接输出两张最终完整 TSV、两个精确 sandbox 下载链接，并以“推进信号：COMPLETE”结束；不要再输出 CONTINUE。若经过多轮可靠检索后，剩余 PENDING 明确因证据不足而无法可靠闭合，并且继续检索已不能推进，可改为 ALMOST 收尾：停止检索，输出当前全部 READY 映射、它们引用的完整尺寸组、两个精确 sandbox 下载链接和每个剩余 PENDING 的具体原因，最后一行输出“推进信号：ALMOST”。临时网络、浏览器、页面或工具故障，以及单轮无结果，不得使用 ALMOST。Ktype 映射 TSV 表头必须严格使用 requirement 指定的字段顺序：id	Ktype	NormalizedBodyStyle	Generation	BodyCode	Doors	DIMENSION_GROUP_ID	MatchConfidence	Notes	IterationStatus。另需维护完整 DIMENSION_GROUP TSV，表头固定为：DIMENSION_GROUP_ID	LengthMM	WidthMM	HeightMM	DimensionSource	SourceURL。缺少任一张表、任一映射引用的尺寸组，或尺寸组字段不完整时不得 COMPLETE；ALMOST 只能包含当前全部 READY 映射及其引用闭合的尺寸组。不要输出子车系匹配表。
+【COMPLETE / ALMOST 下载文件硬性要求】
+准备 COMPLETE 时，除两张完整内嵌 TSV 外，还必须创建并提供以下两个可点击 sandbox 下载链接。准备 ALMOST 时，两张表和链接必须覆盖当前全部整体 READY Ktype，并排除所有 PENDING Ktype。文件名必须完全一致：
+- left18448_10401-10500_ktype_dimension_mapping_final.tsv
+- left18448_10401-10500_dimension_groups_final.tsv
+缺少任一下载链接时不得输出推进信号：COMPLETE 或 ALMOST。
+
+
+--- Round 49 / checkpoint 续跑 ---
+## 更新点
+
+当前累计数据已完成机械收尾：**24 个输入 Ktype、56 条映射、32 个尺寸组、PENDING=0**。固定表头、ID 唯一性、引用闭合、正整数三维、来源非空及孤立尺寸组检查均通过；这些属于项目规定的确定性校验范围。
+
+## 最终完整 Ktype 映射 TSV
+
+```tsv
+id	Ktype	NormalizedBodyStyle	Generation	BodyCode	Doors	DIMENSION_GROUP_ID	MatchConfidence	Notes	IterationStatus
+118114	118114	Convertible	SLC R172 facelift	172.434	2	EU-MERCEDES-BENZ-SLC-R172-CONVERTIBLE-FACELIFT-01	HIGH	R172改款标准外廓。	READY
+118115	118115	Convertible	SLC R172 facelift	172.438	2	EU-MERCEDES-BENZ-SLC-R172-CONVERTIBLE-FACELIFT-01	HIGH	R172改款标准外廓。	READY
+118112	118112	Convertible	SLC R172 facelift	172.404	2	EU-MERCEDES-BENZ-SLC-R172-CONVERTIBLE-FACELIFT-01	HIGH	R172改款标准外廓。	READY
+145749_l1	145749	Pickup	Sprinter VS30	910.131	2	EU-MERCEDES-BENZ-SPRINTER-VS30-CHASSIS-FWD-L1-01	HIGH	按910.131与910.133拆分L1/L2外廓。	READY
+145749_l2	145749	Pickup	Sprinter VS30	910.133	2	EU-MERCEDES-BENZ-SPRINTER-VS30-CHASSIS-FWD-L2-01	HIGH	按910.131与910.133拆分L1/L2外廓。	READY
+5709_single_swb	5709	Pickup	Sprinter W906	906.131	2	EU-MERCEDES-BENZ-SPRINTER-W906-CHASSIS-AWD-SINGLE-SWB-01	MEDIUM	按单排/双排驾驶室及SWB/MWB/LWB外廓拆分。	READY
+5709_single_mwb	5709	Pickup	Sprinter W906	906.133	2	EU-MERCEDES-BENZ-SPRINTER-W906-CHASSIS-AWD-SINGLE-MWB-01	MEDIUM	按单排/双排驾驶室及SWB/MWB/LWB外廓拆分。	READY
+5709_single_lwb	5709	Pickup	Sprinter W906	906.135	2	EU-MERCEDES-BENZ-SPRINTER-W906-CHASSIS-AWD-SINGLE-LWB-01	MEDIUM	按单排/双排驾驶室及SWB/MWB/LWB外廓拆分。	READY
+5709_crew_swb	5709	Pickup	Sprinter W906	906.231	4	EU-MERCEDES-BENZ-SPRINTER-W906-CHASSIS-AWD-CREWCAB-SWB-01	MEDIUM	按单排/双排驾驶室及SWB/MWB/LWB外廓拆分。	READY
+5709_crew_mwb	5709	Pickup	Sprinter W906	906.233	4	EU-MERCEDES-BENZ-SPRINTER-W906-CHASSIS-AWD-CREWCAB-MWB-01	MEDIUM	按单排/双排驾驶室及SWB/MWB/LWB外廓拆分。	READY
+5709_crew_lwb	5709	Pickup	Sprinter W906	906.235	4	EU-MERCEDES-BENZ-SPRINTER-W906-CHASSIS-AWD-CREWCAB-LWB-01	MEDIUM	按单排/双排驾驶室及SWB/MWB/LWB外廓拆分。	READY
+119923_single_swb	119923	Pickup	Sprinter W906	906.131	2	EU-MERCEDES-BENZ-SPRINTER-W906-CHASSIS-AWD-SINGLE-SWB-01	MEDIUM	按单排/双排驾驶室及SWB/MWB/LWB外廓拆分。	READY
+119923_single_mwb	119923	Pickup	Sprinter W906	906.133	2	EU-MERCEDES-BENZ-SPRINTER-W906-CHASSIS-AWD-SINGLE-MWB-01	MEDIUM	按单排/双排驾驶室及SWB/MWB/LWB外廓拆分。	READY
+119923_single_lwb	119923	Pickup	Sprinter W906	906.135	2	EU-MERCEDES-BENZ-SPRINTER-W906-CHASSIS-AWD-SINGLE-LWB-01	MEDIUM	按单排/双排驾驶室及SWB/MWB/LWB外廓拆分。	READY
+119923_crew_swb	119923	Pickup	Sprinter W906	906.231	4	EU-MERCEDES-BENZ-SPRINTER-W906-CHASSIS-AWD-CREWCAB-SWB-01	MEDIUM	按单排/双排驾驶室及SWB/MWB/LWB外廓拆分。	READY
+119923_crew_mwb	119923	Pickup	Sprinter W906	906.233	4	EU-MERCEDES-BENZ-SPRINTER-W906-CHASSIS-AWD-CREWCAB-MWB-01	MEDIUM	按单排/双排驾驶室及SWB/MWB/LWB外廓拆分。	READY
+119923_crew_lwb	119923	Pickup	Sprinter W906	906.235	4	EU-MERCEDES-BENZ-SPRINTER-W906-CHASSIS-AWD-CREWCAB-LWB-01	MEDIUM	按单排/双排驾驶室及SWB/MWB/LWB外廓拆分。	READY
+145552	145552	Pickup	Sprinter VS30	910.030	2	EU-MERCEDES-BENZ-SPRINTER-VS30-CHASSIS-FWD-L2-01	MEDIUM	910.030未标明独立轴距边界，采用前驱L2单排驾驶室标准外廓。	READY
+145936_l1	145936	Pickup	Sprinter VS30	910.131	2	EU-MERCEDES-BENZ-SPRINTER-VS30-CHASSIS-FWD-L1-01	HIGH	按910.131与910.133拆分L1/L2外廓。	READY
+145936_l2	145936	Pickup	Sprinter VS30	910.133	2	EU-MERCEDES-BENZ-SPRINTER-VS30-CHASSIS-FWD-L2-01	HIGH	按910.131与910.133拆分L1/L2外廓。	READY
+145550	145550	Pickup	Sprinter VS30	910.030	2	EU-MERCEDES-BENZ-SPRINTER-VS30-CHASSIS-FWD-L2-01	MEDIUM	910.030未标明独立轴距边界，采用前驱L2单排驾驶室标准外廓。	READY
+145553	145553	Pickup	Sprinter VS30	910.030	2	EU-MERCEDES-BENZ-SPRINTER-VS30-CHASSIS-FWD-L2-01	MEDIUM	910.030未标明独立轴距边界，采用前驱L2单排驾驶室标准外廓。	READY
+157681	157681	Pickup	Sprinter VS30	910.133	2	EU-MERCEDES-BENZ-SPRINTER-VS30-CHASSIS-FWD-L2-01	HIGH	910.133对应前驱L2单排驾驶室外廓。	READY
+145551	145551	Pickup	Sprinter VS30	910.030	2	EU-MERCEDES-BENZ-SPRINTER-VS30-CHASSIS-FWD-L2-01	MEDIUM	910.030未标明独立轴距边界，采用前驱L2单排驾驶室标准外廓。	READY
+10071_swb	10071	MPV	Sprinter W906	906.731		EU-MERCEDES-BENZ-SPRINTER-W906-BUS-AWD-SWB-STANDARD-01	MEDIUM	按车身代码拆分轴距；采用SWB标准量产车顶外廓。	READY
+10071_mwb	10071	MPV	Sprinter W906	906.733		EU-MERCEDES-BENZ-SPRINTER-W906-BUS-AWD-MWB-STANDARD-01	MEDIUM	按车身代码拆分轴距；采用MWB标准量产车顶外廓。	READY
+10071_lwb	10071	MPV	Sprinter W906	906.735		EU-MERCEDES-BENZ-SPRINTER-W906-BUS-AWD-LWB-HIGH-01	MEDIUM	按车身代码拆分轴距；LWB采用该长度对应的量产高顶外廓。	READY
+14589_swb	14589	Pickup	Sprinter W906	906.131	2	EU-MERCEDES-BENZ-SPRINTER-W906-CHASSIS-AWD-SINGLE-SWB-01	MEDIUM	按明确车身代码拆分SWB/MWB/LWB单排底盘外廓。	READY
+14589_mwb	14589	Pickup	Sprinter W906	906.133	2	EU-MERCEDES-BENZ-SPRINTER-W906-CHASSIS-AWD-SINGLE-MWB-01	MEDIUM	按明确车身代码拆分SWB/MWB/LWB单排底盘外廓。	READY
+14589_lwb	14589	Pickup	Sprinter W906	906.135	2	EU-MERCEDES-BENZ-SPRINTER-W906-CHASSIS-AWD-SINGLE-LWB-01	MEDIUM	按明确车身代码拆分SWB/MWB/LWB单排底盘外廓。	READY
+146012_single_l2	146012	Pickup	Sprinter VS30	907.133	2	EU-MERCEDES-BENZ-SPRINTER-VS30-CHASSIS-AWD-SINGLE-L2-01	HIGH	按单排/双排驾驶室及轴距分支拆分。	READY
+146012_single_l3	146012	Pickup	Sprinter VS30	907.135	2	EU-MERCEDES-BENZ-SPRINTER-VS30-CHASSIS-AWD-SINGLE-L3-01	HIGH	按单排/双排驾驶室及轴距分支拆分。	READY
+146012_crew_l2	146012	Pickup	Sprinter VS30	907.233	4	EU-MERCEDES-BENZ-SPRINTER-VS30-CHASSIS-AWD-CREWCAB-L2-01	HIGH	按单排/双排驾驶室及轴距分支拆分。	READY
+146079_l2_stdroof	146079	Van	Sprinter VS30	907.633		EU-MERCEDES-BENZ-SPRINTER-VS30-VAN-AWD-L2-STANDARD-01	HIGH	907.633明确覆盖标准顶与高顶外廓。	READY
+146079_l2_highroof	146079	Van	Sprinter VS30	907.633		EU-MERCEDES-BENZ-SPRINTER-VS30-VAN-AWD-L2-HIGH-01	HIGH	907.633明确覆盖标准顶与高顶外廓。	READY
+146079_l3_highroof	146079	Van	Sprinter VS30	907.635		EU-MERCEDES-BENZ-SPRINTER-VS30-VAN-AWD-L3-HIGH-01	HIGH	907.635对应L3高顶外廓。	READY
+146011_single_l2	146011	Pickup	Sprinter VS30	907.133	2	EU-MERCEDES-BENZ-SPRINTER-VS30-CHASSIS-RWD-SINGLE-L2-01	HIGH	按单排/双排驾驶室及L2/L3外廓拆分。	READY
+146011_single_l3	146011	Pickup	Sprinter VS30	907.135	2	EU-MERCEDES-BENZ-SPRINTER-VS30-CHASSIS-RWD-SINGLE-L3-01	HIGH	按单排/双排驾驶室及L2/L3外廓拆分。	READY
+146011_crew_l2	146011	Pickup	Sprinter VS30	907.233	4	EU-MERCEDES-BENZ-SPRINTER-VS30-CHASSIS-RWD-CREWCAB-L2-01	HIGH	按单排/双排驾驶室及L2/L3外廓拆分。	READY
+146011_crew_l3	146011	Pickup	Sprinter VS30	907.235	4	EU-MERCEDES-BENZ-SPRINTER-VS30-CHASSIS-RWD-CREWCAB-L3-01	HIGH	按单排/双排驾驶室及L2/L3外廓拆分。	READY
+157546_l2	157546	Van	eSprinter VS30	907.633		EU-MERCEDES-BENZ-ESPRINTER-VS30-VAN-RWD-L2-01	HIGH	同一Ktype明确覆盖907.633与907.635，按L2/L3外廓拆分。	READY
+157546_l3	157546	Van	eSprinter VS30	907.635		EU-MERCEDES-BENZ-ESPRINTER-VS30-VAN-RWD-L3-01	HIGH	同一Ktype明确覆盖907.633与907.635，按L2/L3外廓拆分。	READY
+800244_l2	800244	Pickup	eSprinter VS30	907.133	2	EU-MERCEDES-BENZ-ESPRINTER-VS30-CHASSIS-RWD-L2-01	HIGH	同一Ktype明确覆盖907.133与907.135，按L2/L3外廓拆分。	READY
+800244_l3	800244	Pickup	eSprinter VS30	907.135	2	EU-MERCEDES-BENZ-ESPRINTER-VS30-CHASSIS-RWD-L3-01	HIGH	同一Ktype明确覆盖907.133与907.135，按L2/L3外廓拆分。	READY
+157550_l2	157550	Van	eSprinter VS30	907.633		EU-MERCEDES-BENZ-ESPRINTER-VS30-VAN-RWD-L2-01	HIGH	同一Ktype明确覆盖907.633与907.635，按L2/L3外廓拆分。	READY
+157550_l3	157550	Van	eSprinter VS30	907.635		EU-MERCEDES-BENZ-ESPRINTER-VS30-VAN-RWD-L3-01	HIGH	同一Ktype明确覆盖907.633与907.635，按L2/L3外廓拆分。	READY
+800245_l2	800245	Pickup	eSprinter VS30	907.133	2	EU-MERCEDES-BENZ-ESPRINTER-VS30-CHASSIS-RWD-L2-01	HIGH	同一Ktype明确覆盖907.133与907.135，按L2/L3外廓拆分。	READY
+800245_l3	800245	Pickup	eSprinter VS30	907.135	2	EU-MERCEDES-BENZ-ESPRINTER-VS30-CHASSIS-RWD-L3-01	HIGH	同一Ktype明确覆盖907.133与907.135，按L2/L3外廓拆分。	READY
+145651_swb	145651	MPV	Sprinter W906	906.711		EU-MERCEDES-BENZ-SPRINTER-W906-BUS-SWB-01	MEDIUM	按明确车身代码拆分SWB/MWB；未增加无证据车顶分支。	READY
+145651_mwb	145651	MPV	Sprinter W906	906.713		EU-MERCEDES-BENZ-SPRINTER-W906-BUS-MWB-01	MEDIUM	按明确车身代码拆分SWB/MWB；未增加无证据车顶分支。	READY
+145740_swb_stdroof	145740	Van	Sprinter VS30	910.621		EU-MERCEDES-BENZ-SPRINTER-VS30-VAN-FWD-SWB-STANDARD-01	HIGH	910.621对应SWB；官方资料明确列出标准顶和高顶外廓。	READY
+145740_swb_highroof	145740	Van	Sprinter VS30	910.621		EU-MERCEDES-BENZ-SPRINTER-VS30-VAN-FWD-SWB-HIGH-01	HIGH	910.621对应SWB；官方资料明确列出标准顶和高顶外廓。	READY
+145740_mwb_stdroof	145740	Van	Sprinter VS30	910.623		EU-MERCEDES-BENZ-SPRINTER-VS30-VAN-FWD-MWB-STANDARD-01	HIGH	910.623对应MWB；官方资料明确列出标准顶和高顶外廓。	READY
+145740_mwb_highroof	145740	Van	Sprinter VS30	910.623		EU-MERCEDES-BENZ-SPRINTER-VS30-VAN-FWD-MWB-HIGH-01	HIGH	910.623对应MWB；官方资料明确列出标准顶和高顶外廓。	READY
+145747_l1	145747	Pickup	Sprinter VS30	910.121	2	EU-MERCEDES-BENZ-SPRINTER-VS30-CHASSIS-FWD-L1-01	HIGH	按910.121与910.123拆分L1/L2外廓。	READY
+145747_l2	145747	Pickup	Sprinter VS30	910.123	2	EU-MERCEDES-BENZ-SPRINTER-VS30-CHASSIS-FWD-L2-01	HIGH	按910.121与910.123拆分L1/L2外廓。	READY
+```
+
+[下载完整 Ktype 映射 TSV](sandbox:/mnt/data/left18448_10401-10500_ktype_dimension_mapping_final.tsv)
+
+## 最终完整 DIMENSION_GROUP TSV
+
+```tsv
+DIMENSION_GROUP_ID	LengthMM	WidthMM	HeightMM	DimensionSource	SourceURL
+EU-MERCEDES-BENZ-ESPRINTER-VS30-VAN-RWD-L2-01	5932	2020	2718	Mercedes-Benz Vans UK, eSprinter Panel Van technical data	https://www.ciceley.com/wp-content/uploads/2023/07/esprinter-panel-van.pdf
+EU-MERCEDES-BENZ-ESPRINTER-VS30-VAN-RWD-L3-01	7124	2020	2720	Mercedes-Benz Vans UK, eSprinter Panel Van technical data	https://www.ciceley.com/wp-content/uploads/2023/07/esprinter-panel-van.pdf
+EU-MERCEDES-BENZ-ESPRINTER-VS30-CHASSIS-RWD-L2-01	5886	2020	2355	Mercedes-Benz Vans UK, eSprinter Chassis Cab technical data	https://www.ciceley.com/wp-content/uploads/2025/05/esprinter-chassis-van.pdf
+EU-MERCEDES-BENZ-ESPRINTER-VS30-CHASSIS-RWD-L3-01	6696	2020	2344	Mercedes-Benz Vans UK, eSprinter Chassis Cab technical data	https://www.ciceley.com/wp-content/uploads/2025/05/esprinter-chassis-van.pdf
+EU-MERCEDES-BENZ-SPRINTER-VS30-VAN-FWD-SWB-STANDARD-01	5267	2020	2356	Mercedes-Benz Vans Australia, Sprinter Technical Data Model Year 2022	https://www.dovecamperconversions.com.au/storage/2023/10/Mercedes-Benz-Vans-Sprinter-Technical-Data-Brochure-Feb-2022-1.pdf
+EU-MERCEDES-BENZ-SPRINTER-VS30-VAN-FWD-SWB-HIGH-01	5267	2020	2642	Mercedes-Benz Vans Australia, Sprinter Technical Data Model Year 2022	https://www.dovecamperconversions.com.au/storage/2023/10/Mercedes-Benz-Vans-Sprinter-Technical-Data-Brochure-Feb-2022-1.pdf
+EU-MERCEDES-BENZ-SPRINTER-VS30-VAN-FWD-MWB-STANDARD-01	5932	2020	2351	Mercedes-Benz Vans Australia, Sprinter Technical Data Model Year 2022	https://www.dovecamperconversions.com.au/storage/2023/10/Mercedes-Benz-Vans-Sprinter-Technical-Data-Brochure-Feb-2022-1.pdf
+EU-MERCEDES-BENZ-SPRINTER-VS30-VAN-FWD-MWB-HIGH-01	5932	2020	2638	Mercedes-Benz Vans Australia, Sprinter Technical Data Model Year 2022	https://www.dovecamperconversions.com.au/storage/2023/10/Mercedes-Benz-Vans-Sprinter-Technical-Data-Brochure-Feb-2022-1.pdf
+EU-MERCEDES-BENZ-SPRINTER-VS30-CHASSIS-FWD-L2-01	5986	2020	2292	Mercedes-Benz Vans UK, Sprinter Chassis and Crewcab October 2024	https://media.mbvans.co.uk/assets/documents/original/5984-SprinterChassisandCrewcabOctober2024.pdf
+EU-MERCEDES-BENZ-SPRINTER-VS30-CHASSIS-FWD-L1-01	5321	2020	2302	Mercedes-Benz Vans UK, Sprinter brochure Q1 2020	https://nd-mediagallery2-public-production.s3.amazonaws.com/b06466f162c4641be831e508f3a88909/sprinter_brochure_q1_2020.pdf
+EU-MERCEDES-BENZ-SPRINTER-VS30-CHASSIS-RWD-SINGLE-L2-01	5886	2020	2318	Mercedes-Benz Vans UK, Sprinter Chassis Cab and Chassis Crewcab November 2023	https://media.mbvans.co.uk/assets/documents/original/5950-SprinterchassisandcrewvanpricelistNOV2023.pdf
+EU-MERCEDES-BENZ-SPRINTER-VS30-CHASSIS-RWD-SINGLE-L3-01	6695	2020	2311	Mercedes-Benz Vans UK, Sprinter Chassis Cab and Chassis Crewcab November 2023	https://media.mbvans.co.uk/assets/documents/original/5950-SprinterchassisandcrewvanpricelistNOV2023.pdf
+EU-MERCEDES-BENZ-SPRINTER-VS30-CHASSIS-RWD-CREWCAB-L2-01	5886	2020	2282	Mercedes-Benz Vans UK, Sprinter brochure Q1 2020	https://nd-mediagallery2-public-production.s3.amazonaws.com/b06466f162c4641be831e508f3a88909/sprinter_brochure_q1_2020.pdf
+EU-MERCEDES-BENZ-SPRINTER-VS30-CHASSIS-RWD-CREWCAB-L3-01	6695	2020	2301	Mercedes-Benz Vans UK, Sprinter Chassis Cab and Chassis Crewcab November 2023	https://media.mbvans.co.uk/assets/documents/original/5950-SprinterchassisandcrewvanpricelistNOV2023.pdf
+EU-MERCEDES-BENZ-SPRINTER-VS30-VAN-AWD-L2-STANDARD-01	5932	2020	2496	Mercedes-Benz Vans New Zealand, Sprinter Technical Data Model Year 2024	https://www.mercedesbenzvans.co.nz/static/pdfs/sprinter-panel.pdf
+EU-MERCEDES-BENZ-SPRINTER-VS30-VAN-AWD-L2-HIGH-01	5932	2020	2785	Mercedes-Benz Vans New Zealand, Sprinter Technical Data Model Year 2024	https://www.mercedesbenzvans.co.nz/static/pdfs/sprinter-panel.pdf
+EU-MERCEDES-BENZ-SPRINTER-VS30-VAN-AWD-L3-HIGH-01	6967	2020	2778	Mercedes-Benz Vans New Zealand, Sprinter Technical Data Model Year 2024	https://www.mercedesbenzvans.co.nz/static/pdfs/sprinter-panel.pdf
+EU-MERCEDES-BENZ-SPRINTER-W906-BUS-SWB-01	5261	1993	2323	CarsGuide, 2015 Mercedes-Benz Sprinter dimensions	https://www.carsguide.com.au/mercedes-benz/sprinter/car-dimensions/2015
+EU-MERCEDES-BENZ-SPRINTER-W906-BUS-MWB-01	5926	1993	2324	CarsGuide, 2015 Mercedes-Benz Sprinter dimensions	https://www.carsguide.com.au/mercedes-benz/sprinter/car-dimensions/2015
+EU-MERCEDES-BENZ-SPRINTER-W906-BUS-AWD-SWB-STANDARD-01	5245	1993	2530	Mercedes-Benz UK, The Sprinter Panel Van 2011, Dimensions	https://xr793.com/wp-content/uploads/2022/12/2011-Mercedes-Benz-Sprinter-Panel-Van-UK.pdf
+EU-MERCEDES-BENZ-SPRINTER-W906-BUS-AWD-MWB-STANDARD-01	5910	1993	2530	Mercedes-Benz UK, The Sprinter Panel Van 2011, Dimensions	https://xr793.com/wp-content/uploads/2022/12/2011-Mercedes-Benz-Sprinter-Panel-Van-UK.pdf
+EU-MERCEDES-BENZ-SPRINTER-W906-BUS-AWD-LWB-HIGH-01	6945	1993	2815	Mercedes-Benz UK, The Sprinter Panel Van 2011, Dimensions	https://xr793.com/wp-content/uploads/2022/12/2011-Mercedes-Benz-Sprinter-Panel-Van-UK.pdf
+EU-MERCEDES-BENZ-SPRINTER-VS30-CHASSIS-AWD-SINGLE-L3-01	6864	2020	2456	Mercedes-Benz Australia, Sprinter and eSprinter Technical Data Model Year 2024	https://achtungcamper.com.au/wp-content/uploads/2025/02/Sprinter-VS30-MY24-Tech-Brochure-July-2024.pdf
+EU-MERCEDES-BENZ-SPRINTER-VS30-CHASSIS-AWD-SINGLE-L2-01	6104	2020	2360	Mercedes-Benz Australia, Sprinter Technical Data Model Year 2026	https://www.mercedes-benz.com.au/content/dam/australia/vans/brochures-and-specifications/sprinter-panel-van/Sprinter%20VS30%20MY25%20MY26%20AU%20Tech%20Brochure%20May%202026%2020260508.pdf
+EU-MERCEDES-BENZ-SPRINTER-VS30-CHASSIS-AWD-CREWCAB-L2-01	6104	2020	2360	Mercedes-Benz Australia, Sprinter Technical Data Model Year 2026	https://www.mercedes-benz.com.au/content/dam/australia/vans/brochures-and-specifications/sprinter-panel-van/Sprinter%20VS30%20MY25%20MY26%20AU%20Tech%20Brochure%20May%202026%2020260508.pdf
+EU-MERCEDES-BENZ-SPRINTER-W906-CHASSIS-AWD-SINGLE-SWB-01	5305	1993	2460	Mercedes-Benz Sprinter 906 body/equipment mounting directives and factory Sprinter 4x4 specification	https://diysprinter.co.uk/reference/UK-body-builders-arl_sprinterbm906_uk.pdf
+EU-MERCEDES-BENZ-SPRINTER-W906-CHASSIS-AWD-SINGLE-MWB-01	5870	1993	2460	Mercedes-Benz Sprinter 906 body/equipment mounting directives and factory Sprinter 4x4 specification	https://diysprinter.co.uk/reference/UK-body-builders-arl_sprinterbm906_uk.pdf
+EU-MERCEDES-BENZ-SPRINTER-W906-CHASSIS-AWD-SINGLE-LWB-01	6680	1993	2460	Mercedes-Benz Sprinter 906 body/equipment mounting directives and factory Sprinter 4x4 specification	https://diysprinter.co.uk/reference/UK-body-builders-arl_sprinterbm906_uk.pdf
+EU-MERCEDES-BENZ-SPRINTER-W906-CHASSIS-AWD-CREWCAB-SWB-01	5305	1993	2460	Mercedes-Benz Sprinter 906 body/equipment mounting directives and factory Sprinter 4x4 specification	https://diysprinter.co.uk/reference/UK-body-builders-arl_sprinterbm906_uk.pdf
+EU-MERCEDES-BENZ-SPRINTER-W906-CHASSIS-AWD-CREWCAB-MWB-01	5870	1993	2460	Mercedes-Benz Sprinter 906 body/equipment mounting directives and factory Sprinter 4x4 specification	https://diysprinter.co.uk/reference/UK-body-builders-arl_sprinterbm906_uk.pdf
+EU-MERCEDES-BENZ-SPRINTER-W906-CHASSIS-AWD-CREWCAB-LWB-01	6680	1993	2460	Mercedes-Benz Sprinter 906 body/equipment mounting directives and factory Sprinter 4x4 specification	https://diysprinter.co.uk/reference/UK-body-builders-arl_sprinterbm906_uk.pdf
+EU-MERCEDES-BENZ-SLC-R172-CONVERTIBLE-FACELIFT-01	4133	1810	1301	Auto-Data, Mercedes-Benz SLC R172 facelift 2016 generation	https://www.auto-data.net/en/mercedes-benz-slc-r172-facelift-2016-generation-4672
+```
+
+[下载完整 DIMENSION_GROUP TSV](sandbox:/mnt/data/left18448_10401-10500_dimension_groups_final.tsv)
+
+推进信号：COMPLETE
+
+
+--- 累计最终 TSV 已更新 ---
+- 累计 Ktype 映射：ktype_mapping_final.tsv（6032 行）
+- 累计尺寸组：dimension_groups_final.tsv（1734 行）
+
+- 尺寸冲突协调：
+  - EU-MERCEDES-BENZ-SLC-R172-CONVERTIBLE-FACELIFT-01 -> EU-MERCEDES-BENZ-SLC-R172-CONVERTIBLE-FACELIFT-02：4134x1810x1301 与 4133x1810x1301，创建新尺寸组

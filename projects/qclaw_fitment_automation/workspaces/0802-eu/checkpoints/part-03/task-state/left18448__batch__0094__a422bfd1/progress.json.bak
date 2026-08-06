@@ -1,11 +1,11 @@
 {
   "version": 1,
-  "revision": 21,
+  "revision": 30,
   "task_id": "left18448__batch__0094__a422bfd1",
   "source_file": "left18448.tsv",
   "source_start_row": 9301,
   "source_end_row": 9400,
-  "round": 16,
+  "round": 7,
   "ktype_progress": {
     "126755": {
       "status": "ready",
@@ -19,27 +19,37 @@
         "EU-MERCEDES-BENZ-AMG-GT-C190-GT-COUPE-01"
       ],
       "pending_reason": "",
-      "last_updated_round": 16
+      "last_updated_round": 7
     },
     "128046": {
-      "status": "pending",
+      "status": "ready",
       "source_rows": [
         9302
       ],
-      "mapping_ids": [],
-      "dimension_group_ids": [],
-      "pending_reason": "尚未产生 Ktype 映射",
-      "last_updated_round": 16
+      "mapping_ids": [
+        "128046_prefl",
+        "128046_facelift"
+      ],
+      "dimension_group_ids": [
+        "EU-MERCEDES-BENZ-AMG-GT-C190-GTC-COUPE-PREFL-01",
+        "EU-MERCEDES-BENZ-AMG-GT-C190-GTC-COUPE-FACELIFT-01"
+      ],
+      "pending_reason": "",
+      "last_updated_round": 7
     },
     "123743": {
-      "status": "pending",
+      "status": "ready",
       "source_rows": [
         9303
       ],
-      "mapping_ids": [],
-      "dimension_group_ids": [],
-      "pending_reason": "尚未产生 Ktype 映射",
-      "last_updated_round": 16
+      "mapping_ids": [
+        "123743"
+      ],
+      "dimension_group_ids": [
+        "EU-MERCEDES-BENZ-AMG-GT-C190-GTR-COUPE-01"
+      ],
+      "pending_reason": "",
+      "last_updated_round": 7
     },
     "108074": {
       "status": "ready",
@@ -53,7 +63,7 @@
         "EU-MERCEDES-BENZ-AMG-GT-C190-GT-COUPE-01"
       ],
       "pending_reason": "",
-      "last_updated_round": 16
+      "last_updated_round": 7
     },
     "126756": {
       "status": "ready",
@@ -67,117 +77,175 @@
         "EU-MERCEDES-BENZ-AMG-GT-C190-GT-COUPE-01"
       ],
       "pending_reason": "",
-      "last_updated_round": 16
+      "last_updated_round": 7
     },
     "123745": {
-      "status": "pending",
+      "status": "ready",
       "source_rows": [
         9306
       ],
-      "mapping_ids": [],
-      "dimension_group_ids": [],
-      "pending_reason": "尚未产生 Ktype 映射",
-      "last_updated_round": 16
+      "mapping_ids": [
+        "123745"
+      ],
+      "dimension_group_ids": [
+        "EU-MERCEDES-BENZ-AMG-GT-R190-GT-ROADSTER-01"
+      ],
+      "pending_reason": "",
+      "last_updated_round": 7
     },
     "123747": {
-      "status": "pending",
+      "status": "ready",
       "source_rows": [
         9307
       ],
-      "mapping_ids": [],
-      "dimension_group_ids": [],
-      "pending_reason": "尚未产生 Ktype 映射",
-      "last_updated_round": 16
+      "mapping_ids": [
+        "123747_prefl",
+        "123747_facelift"
+      ],
+      "dimension_group_ids": [
+        "EU-MERCEDES-BENZ-AMG-GT-R190-GTC-ROADSTER-PREFL-01",
+        "EU-MERCEDES-BENZ-AMG-GT-R190-GTC-ROADSTER-FACELIFT-01"
+      ],
+      "pending_reason": "",
+      "last_updated_round": 7
     },
     "18590": {
-      "status": "pending",
+      "status": "ready",
       "source_rows": [
         9308
       ],
-      "mapping_ids": [],
-      "dimension_group_ids": [],
-      "pending_reason": "尚未产生 Ktype 映射",
-      "last_updated_round": 16
+      "mapping_ids": [
+        "18590_prefl",
+        "18590_facelift"
+      ],
+      "dimension_group_ids": [
+        "EU-MERCEDES-BENZ-B-KLASSE-W245-MPV-PREFL-01",
+        "EU-MERCEDES-BENZ-B-KLASSE-W245-MPV-FACELIFT-01"
+      ],
+      "pending_reason": "",
+      "last_updated_round": 7
     },
     "114993": {
-      "status": "pending",
+      "status": "ready",
       "source_rows": [
         9309
       ],
-      "mapping_ids": [],
-      "dimension_group_ids": [],
-      "pending_reason": "尚未产生 Ktype 映射",
-      "last_updated_round": 16
+      "mapping_ids": [
+        "114993"
+      ],
+      "dimension_group_ids": [
+        "EU-MERCEDES-BENZ-B-KLASSE-W246-MPV-FACELIFT-01"
+      ],
+      "pending_reason": "",
+      "last_updated_round": 7
     },
     "59384": {
-      "status": "pending",
+      "status": "ready",
       "source_rows": [
         9310
       ],
-      "mapping_ids": [],
-      "dimension_group_ids": [],
-      "pending_reason": "尚未产生 Ktype 映射",
-      "last_updated_round": 16
+      "mapping_ids": [
+        "59384_prefl",
+        "59384_facelift"
+      ],
+      "dimension_group_ids": [
+        "EU-MERCEDES-BENZ-B-KLASSE-W246-MPV-PREFL-01",
+        "EU-MERCEDES-BENZ-B-KLASSE-W246-MPV-FACELIFT-01"
+      ],
+      "pending_reason": "",
+      "last_updated_round": 7
     },
     "18510": {
-      "status": "pending",
+      "status": "ready",
       "source_rows": [
         9311
       ],
-      "mapping_ids": [],
-      "dimension_group_ids": [],
-      "pending_reason": "尚未产生 Ktype 映射",
-      "last_updated_round": 16
+      "mapping_ids": [
+        "18510_prefl",
+        "18510_facelift"
+      ],
+      "dimension_group_ids": [
+        "EU-MERCEDES-BENZ-B-KLASSE-W245-MPV-PREFL-01",
+        "EU-MERCEDES-BENZ-B-KLASSE-W245-MPV-FACELIFT-01"
+      ],
+      "pending_reason": "",
+      "last_updated_round": 7
     },
     "12171": {
-      "status": "pending",
+      "status": "ready",
       "source_rows": [
         9312
       ],
-      "mapping_ids": [],
-      "dimension_group_ids": [],
-      "pending_reason": "尚未产生 Ktype 映射",
-      "last_updated_round": 16
+      "mapping_ids": [
+        "12171_prefl",
+        "12171_facelift"
+      ],
+      "dimension_group_ids": [
+        "EU-MERCEDES-BENZ-B-KLASSE-W246-MPV-PREFL-01",
+        "EU-MERCEDES-BENZ-B-KLASSE-W246-MPV-FACELIFT-01"
+      ],
+      "pending_reason": "",
+      "last_updated_round": 7
     },
     "12173": {
-      "status": "pending",
+      "status": "ready",
       "source_rows": [
         9313
       ],
-      "mapping_ids": [],
-      "dimension_group_ids": [],
-      "pending_reason": "尚未产生 Ktype 映射",
-      "last_updated_round": 16
+      "mapping_ids": [
+        "12173"
+      ],
+      "dimension_group_ids": [
+        "EU-MERCEDES-BENZ-B-KLASSE-W246-MPV-PREFL-01"
+      ],
+      "pending_reason": "",
+      "last_updated_round": 7
     },
     "18507": {
-      "status": "pending",
+      "status": "ready",
       "source_rows": [
         9314
       ],
-      "mapping_ids": [],
-      "dimension_group_ids": [],
-      "pending_reason": "尚未产生 Ktype 映射",
-      "last_updated_round": 16
+      "mapping_ids": [
+        "18507_prefl",
+        "18507_facelift"
+      ],
+      "dimension_group_ids": [
+        "EU-MERCEDES-BENZ-B-KLASSE-W245-MPV-PREFL-01",
+        "EU-MERCEDES-BENZ-B-KLASSE-W245-MPV-FACELIFT-01"
+      ],
+      "pending_reason": "",
+      "last_updated_round": 7
     },
     "107068": {
-      "status": "pending",
+      "status": "ready",
       "source_rows": [
         9315
       ],
-      "mapping_ids": [],
-      "dimension_group_ids": [],
-      "pending_reason": "尚未产生 Ktype 映射",
-      "last_updated_round": 16
+      "mapping_ids": [
+        "107068"
+      ],
+      "dimension_group_ids": [
+        "EU-MERCEDES-BENZ-B-KLASSE-W246-MPV-PREFL-01"
+      ],
+      "pending_reason": "",
+      "last_updated_round": 7
     },
     "59438": {
-      "status": "pending",
+      "status": "ready",
       "source_rows": [
         9316
       ],
-      "mapping_ids": [],
-      "dimension_group_ids": [],
-      "pending_reason": "尚未产生 Ktype 映射",
-      "last_updated_round": 16
+      "mapping_ids": [
+        "59438_prefl",
+        "59438_facelift"
+      ],
+      "dimension_group_ids": [
+        "EU-MERCEDES-BENZ-B-KLASSE-W246-MPV-PREFL-01",
+        "EU-MERCEDES-BENZ-B-KLASSE-W246-MPV-FACELIFT-01"
+      ],
+      "pending_reason": "",
+      "last_updated_round": 7
     },
     "142492": {
       "status": "ready",
@@ -191,7 +259,7 @@
         "EU-MERCEDES-BENZ-B-KLASSE-W247-HATCHBACK-01"
       ],
       "pending_reason": "",
-      "last_updated_round": 16
+      "last_updated_round": 7
     },
     "150758": {
       "status": "ready",
@@ -205,27 +273,39 @@
         "EU-MERCEDES-BENZ-B-KLASSE-W247-HATCHBACK-01"
       ],
       "pending_reason": "",
-      "last_updated_round": 16
+      "last_updated_round": 7
     },
     "12172": {
-      "status": "pending",
+      "status": "ready",
       "source_rows": [
         9319
       ],
-      "mapping_ids": [],
-      "dimension_group_ids": [],
-      "pending_reason": "尚未产生 Ktype 映射",
-      "last_updated_round": 16
+      "mapping_ids": [
+        "12172_prefl",
+        "12172_facelift"
+      ],
+      "dimension_group_ids": [
+        "EU-MERCEDES-BENZ-B-KLASSE-W246-MPV-PREFL-01",
+        "EU-MERCEDES-BENZ-B-KLASSE-W246-MPV-FACELIFT-01"
+      ],
+      "pending_reason": "",
+      "last_updated_round": 7
     },
     "18511": {
-      "status": "pending",
+      "status": "ready",
       "source_rows": [
         9320
       ],
-      "mapping_ids": [],
-      "dimension_group_ids": [],
-      "pending_reason": "尚未产生 Ktype 映射",
-      "last_updated_round": 16
+      "mapping_ids": [
+        "18511_prefl",
+        "18511_facelift"
+      ],
+      "dimension_group_ids": [
+        "EU-MERCEDES-BENZ-B-KLASSE-W245-MPV-PREFL-01",
+        "EU-MERCEDES-BENZ-B-KLASSE-W245-MPV-FACELIFT-01"
+      ],
+      "pending_reason": "",
+      "last_updated_round": 7
     },
     "142493": {
       "status": "ready",
@@ -239,57 +319,81 @@
         "EU-MERCEDES-BENZ-B-KLASSE-W247-HATCHBACK-01"
       ],
       "pending_reason": "",
-      "last_updated_round": 16
+      "last_updated_round": 7
     },
     "12174": {
-      "status": "pending",
+      "status": "ready",
       "source_rows": [
         9322
       ],
-      "mapping_ids": [],
-      "dimension_group_ids": [],
-      "pending_reason": "尚未产生 Ktype 映射",
-      "last_updated_round": 16
+      "mapping_ids": [
+        "12174"
+      ],
+      "dimension_group_ids": [
+        "EU-MERCEDES-BENZ-B-KLASSE-W246-MPV-PREFL-01"
+      ],
+      "pending_reason": "",
+      "last_updated_round": 7
     },
     "18508": {
-      "status": "pending",
+      "status": "ready",
       "source_rows": [
         9323
       ],
-      "mapping_ids": [],
-      "dimension_group_ids": [],
-      "pending_reason": "尚未产生 Ktype 映射",
-      "last_updated_round": 16
+      "mapping_ids": [
+        "18508_prefl",
+        "18508_facelift"
+      ],
+      "dimension_group_ids": [
+        "EU-MERCEDES-BENZ-B-KLASSE-W245-MPV-PREFL-01",
+        "EU-MERCEDES-BENZ-B-KLASSE-W245-MPV-FACELIFT-01"
+      ],
+      "pending_reason": "",
+      "last_updated_round": 7
     },
     "54958": {
-      "status": "pending",
+      "status": "ready",
       "source_rows": [
         9324
       ],
-      "mapping_ids": [],
-      "dimension_group_ids": [],
-      "pending_reason": "尚未产生 Ktype 映射",
-      "last_updated_round": 16
+      "mapping_ids": [
+        "54958_prefl",
+        "54958_facelift"
+      ],
+      "dimension_group_ids": [
+        "EU-MERCEDES-BENZ-B-KLASSE-W245-MPV-PREFL-01",
+        "EU-MERCEDES-BENZ-B-KLASSE-W245-MPV-FACELIFT-01"
+      ],
+      "pending_reason": "",
+      "last_updated_round": 7
     },
     "107895": {
-      "status": "pending",
+      "status": "ready",
       "source_rows": [
         9325
       ],
-      "mapping_ids": [],
-      "dimension_group_ids": [],
-      "pending_reason": "尚未产生 Ktype 映射",
-      "last_updated_round": 16
+      "mapping_ids": [
+        "107895"
+      ],
+      "dimension_group_ids": [
+        "EU-MERCEDES-BENZ-B-KLASSE-W246-MPV-FACELIFT-01"
+      ],
+      "pending_reason": "",
+      "last_updated_round": 7
     },
     "107896": {
-      "status": "pending",
+      "status": "ready",
       "source_rows": [
         9326
       ],
-      "mapping_ids": [],
-      "dimension_group_ids": [],
-      "pending_reason": "尚未产生 Ktype 映射",
-      "last_updated_round": 16
+      "mapping_ids": [
+        "107896"
+      ],
+      "dimension_group_ids": [
+        "EU-MERCEDES-BENZ-B-KLASSE-W246-MPV-FACELIFT-01"
+      ],
+      "pending_reason": "",
+      "last_updated_round": 7
     },
     "150759": {
       "status": "ready",
@@ -303,67 +407,99 @@
         "EU-MERCEDES-BENZ-B-KLASSE-W247-HATCHBACK-01"
       ],
       "pending_reason": "",
-      "last_updated_round": 16
+      "last_updated_round": 7
     },
     "57257": {
-      "status": "pending",
+      "status": "ready",
       "source_rows": [
         9328
       ],
-      "mapping_ids": [],
-      "dimension_group_ids": [],
-      "pending_reason": "尚未产生 Ktype 映射",
-      "last_updated_round": 16
+      "mapping_ids": [
+        "57257_prefl",
+        "57257_facelift"
+      ],
+      "dimension_group_ids": [
+        "EU-MERCEDES-BENZ-B-KLASSE-W246-MPV-PREFL-01",
+        "EU-MERCEDES-BENZ-B-KLASSE-W246-NATURAL-GAS-MPV-01"
+      ],
+      "pending_reason": "",
+      "last_updated_round": 7
     },
     "18512": {
-      "status": "pending",
+      "status": "ready",
       "source_rows": [
         9329
       ],
-      "mapping_ids": [],
-      "dimension_group_ids": [],
-      "pending_reason": "尚未产生 Ktype 映射",
-      "last_updated_round": 16
+      "mapping_ids": [
+        "18512_prefl",
+        "18512_facelift"
+      ],
+      "dimension_group_ids": [
+        "EU-MERCEDES-BENZ-B-KLASSE-W245-MPV-PREFL-01",
+        "EU-MERCEDES-BENZ-B-KLASSE-W245-MPV-FACELIFT-01"
+      ],
+      "pending_reason": "",
+      "last_updated_round": 7
     },
     "57292": {
-      "status": "pending",
+      "status": "ready",
       "source_rows": [
         9330
       ],
-      "mapping_ids": [],
-      "dimension_group_ids": [],
-      "pending_reason": "尚未产生 Ktype 映射",
-      "last_updated_round": 16
+      "mapping_ids": [
+        "57292_prefl",
+        "57292_facelift"
+      ],
+      "dimension_group_ids": [
+        "EU-MERCEDES-BENZ-B-KLASSE-W246-MPV-PREFL-01",
+        "EU-MERCEDES-BENZ-B-KLASSE-W246-MPV-FACELIFT-01"
+      ],
+      "pending_reason": "",
+      "last_updated_round": 7
     },
     "100550": {
-      "status": "pending",
+      "status": "ready",
       "source_rows": [
         9331
       ],
-      "mapping_ids": [],
-      "dimension_group_ids": [],
-      "pending_reason": "尚未产生 Ktype 映射",
-      "last_updated_round": 16
+      "mapping_ids": [
+        "100550_prefl",
+        "100550_facelift"
+      ],
+      "dimension_group_ids": [
+        "EU-MERCEDES-BENZ-B-KLASSE-W246-MPV-PREFL-01",
+        "EU-MERCEDES-BENZ-B-KLASSE-W246-MPV-FACELIFT-01"
+      ],
+      "pending_reason": "",
+      "last_updated_round": 7
     },
     "107954": {
-      "status": "pending",
+      "status": "ready",
       "source_rows": [
         9332
       ],
-      "mapping_ids": [],
-      "dimension_group_ids": [],
-      "pending_reason": "尚未产生 Ktype 映射",
-      "last_updated_round": 16
+      "mapping_ids": [
+        "107954"
+      ],
+      "dimension_group_ids": [
+        "EU-MERCEDES-BENZ-B-KLASSE-W246-MPV-FACELIFT-01"
+      ],
+      "pending_reason": "",
+      "last_updated_round": 7
     },
     "107955": {
-      "status": "pending",
+      "status": "ready",
       "source_rows": [
         9333
       ],
-      "mapping_ids": [],
-      "dimension_group_ids": [],
-      "pending_reason": "尚未产生 Ktype 映射",
-      "last_updated_round": 16
+      "mapping_ids": [
+        "107955"
+      ],
+      "dimension_group_ids": [
+        "EU-MERCEDES-BENZ-B-KLASSE-W246-MPV-FACELIFT-01"
+      ],
+      "pending_reason": "",
+      "last_updated_round": 7
     },
     "150777": {
       "status": "ready",
@@ -377,27 +513,37 @@
         "EU-MERCEDES-BENZ-B-KLASSE-W247-HATCHBACK-01"
       ],
       "pending_reason": "",
-      "last_updated_round": 16
+      "last_updated_round": 7
     },
     "55581": {
-      "status": "pending",
+      "status": "ready",
       "source_rows": [
         9335
       ],
-      "mapping_ids": [],
-      "dimension_group_ids": [],
-      "pending_reason": "尚未产生 Ktype 映射",
-      "last_updated_round": 16
+      "mapping_ids": [
+        "55581_prefl",
+        "55581_facelift"
+      ],
+      "dimension_group_ids": [
+        "EU-MERCEDES-BENZ-B-KLASSE-W246-MPV-PREFL-01",
+        "EU-MERCEDES-BENZ-B-KLASSE-W246-MPV-FACELIFT-01"
+      ],
+      "pending_reason": "",
+      "last_updated_round": 7
     },
     "107894": {
-      "status": "pending",
+      "status": "ready",
       "source_rows": [
         9336
       ],
-      "mapping_ids": [],
-      "dimension_group_ids": [],
-      "pending_reason": "尚未产生 Ktype 映射",
-      "last_updated_round": 16
+      "mapping_ids": [
+        "107894"
+      ],
+      "dimension_group_ids": [
+        "EU-MERCEDES-BENZ-B-KLASSE-W246-MPV-FACELIFT-01"
+      ],
+      "pending_reason": "",
+      "last_updated_round": 7
     },
     "150722": {
       "status": "ready",
@@ -411,7 +557,7 @@
         "EU-MERCEDES-BENZ-B-KLASSE-W247-HATCHBACK-01"
       ],
       "pending_reason": "",
-      "last_updated_round": 16
+      "last_updated_round": 7
     },
     "150778": {
       "status": "ready",
@@ -425,27 +571,35 @@
         "EU-MERCEDES-BENZ-B-KLASSE-W247-HATCHBACK-01"
       ],
       "pending_reason": "",
-      "last_updated_round": 16
+      "last_updated_round": 7
     },
     "108181": {
-      "status": "pending",
+      "status": "ready",
       "source_rows": [
         9339
       ],
-      "mapping_ids": [],
-      "dimension_group_ids": [],
-      "pending_reason": "尚未产生 Ktype 映射",
-      "last_updated_round": 16
+      "mapping_ids": [
+        "108181"
+      ],
+      "dimension_group_ids": [
+        "EU-MERCEDES-BENZ-B-KLASSE-W242-ELECTRIC-MPV-01"
+      ],
+      "pending_reason": "",
+      "last_updated_round": 7
     },
     "109338": {
-      "status": "pending",
+      "status": "ready",
       "source_rows": [
         9340
       ],
-      "mapping_ids": [],
-      "dimension_group_ids": [],
-      "pending_reason": "尚未产生 Ktype 映射",
-      "last_updated_round": 16
+      "mapping_ids": [
+        "109338"
+      ],
+      "dimension_group_ids": [
+        "EU-MERCEDES-BENZ-B-KLASSE-W242-ELECTRIC-MPV-01"
+      ],
+      "pending_reason": "",
+      "last_updated_round": 7
     },
     "54934": {
       "status": "ready",
@@ -459,7 +613,7 @@
         "EU-MERCEDES-BENZ-B-KLASSE-W245-HATCHBACK-FACELIFT-01"
       ],
       "pending_reason": "",
-      "last_updated_round": 16
+      "last_updated_round": 7
     },
     "100170": {
       "status": "ready",
@@ -473,7 +627,7 @@
         "EU-MERCEDES-BENZ-CITAN-W415-VAN-LONG-01"
       ],
       "pending_reason": "",
-      "last_updated_round": 16
+      "last_updated_round": 7
     },
     "145362": {
       "status": "ready",
@@ -487,7 +641,7 @@
         "EU-MERCEDES-BENZ-CITAN-W420-VAN-STANDARD-01"
       ],
       "pending_reason": "",
-      "last_updated_round": 16
+      "last_updated_round": 7
     },
     "145363": {
       "status": "ready",
@@ -501,7 +655,7 @@
         "EU-MERCEDES-BENZ-CITAN-W420-VAN-STANDARD-01"
       ],
       "pending_reason": "",
-      "last_updated_round": 16
+      "last_updated_round": 7
     },
     "145359": {
       "status": "ready",
@@ -515,7 +669,7 @@
         "EU-MERCEDES-BENZ-CITAN-W420-VAN-STANDARD-01"
       ],
       "pending_reason": "",
-      "last_updated_round": 16
+      "last_updated_round": 7
     },
     "145360": {
       "status": "ready",
@@ -529,7 +683,7 @@
         "EU-MERCEDES-BENZ-CITAN-W420-VAN-STANDARD-01"
       ],
       "pending_reason": "",
-      "last_updated_round": 16
+      "last_updated_round": 7
     },
     "145361": {
       "status": "ready",
@@ -543,7 +697,7 @@
         "EU-MERCEDES-BENZ-CITAN-W420-VAN-STANDARD-01"
       ],
       "pending_reason": "",
-      "last_updated_round": 16
+      "last_updated_round": 7
     },
     "57351": {
       "status": "ready",
@@ -557,7 +711,7 @@
         "EU-MERCEDES-BENZ-CITAN-W415-VAN-LONG-01"
       ],
       "pending_reason": "",
-      "last_updated_round": 16
+      "last_updated_round": 7
     },
     "57352": {
       "status": "ready",
@@ -571,7 +725,7 @@
         "EU-MERCEDES-BENZ-CITAN-W415-VAN-LONG-01"
       ],
       "pending_reason": "",
-      "last_updated_round": 16
+      "last_updated_round": 7
     },
     "100171": {
       "status": "ready",
@@ -585,7 +739,7 @@
         "EU-MERCEDES-BENZ-CITAN-W415-VAN-LONG-01"
       ],
       "pending_reason": "",
-      "last_updated_round": 16
+      "last_updated_round": 7
     },
     "149241": {
       "status": "ready",
@@ -599,7 +753,7 @@
         "EU-MERCEDES-BENZ-CITAN-W420-ECITAN-VAN-STANDARD-01"
       ],
       "pending_reason": "",
-      "last_updated_round": 16
+      "last_updated_round": 7
     },
     "57353": {
       "status": "ready",
@@ -613,7 +767,7 @@
         "EU-MERCEDES-BENZ-CITAN-W415-MIXTO-EXTRA-LONG-01"
       ],
       "pending_reason": "",
-      "last_updated_round": 16
+      "last_updated_round": 7
     },
     "100172": {
       "status": "ready",
@@ -627,7 +781,7 @@
         "EU-MERCEDES-BENZ-CITAN-W415-MIXTO-EXTRA-LONG-01"
       ],
       "pending_reason": "",
-      "last_updated_round": 16
+      "last_updated_round": 7
     },
     "145368": {
       "status": "ready",
@@ -641,7 +795,7 @@
         "EU-MERCEDES-BENZ-CITAN-W420-TOURER-STANDARD-01"
       ],
       "pending_reason": "",
-      "last_updated_round": 16
+      "last_updated_round": 7
     },
     "100182": {
       "status": "ready",
@@ -655,7 +809,7 @@
         "EU-MERCEDES-BENZ-CITAN-W415-TOURER-LONG-01"
       ],
       "pending_reason": "",
-      "last_updated_round": 16
+      "last_updated_round": 7
     },
     "145369": {
       "status": "ready",
@@ -669,7 +823,7 @@
         "EU-MERCEDES-BENZ-CITAN-W420-TOURER-STANDARD-01"
       ],
       "pending_reason": "",
-      "last_updated_round": 16
+      "last_updated_round": 7
     },
     "57354": {
       "status": "ready",
@@ -683,7 +837,7 @@
         "EU-MERCEDES-BENZ-CITAN-W415-TOURER-LONG-01"
       ],
       "pending_reason": "",
-      "last_updated_round": 16
+      "last_updated_round": 7
     },
     "145370": {
       "status": "ready",
@@ -697,7 +851,7 @@
         "EU-MERCEDES-BENZ-CITAN-W420-TOURER-STANDARD-01"
       ],
       "pending_reason": "",
-      "last_updated_round": 16
+      "last_updated_round": 7
     },
     "57355": {
       "status": "ready",
@@ -711,7 +865,7 @@
         "EU-MERCEDES-BENZ-CITAN-W415-TOURER-LONG-01"
       ],
       "pending_reason": "",
-      "last_updated_round": 16
+      "last_updated_round": 7
     },
     "145371": {
       "status": "ready",
@@ -725,7 +879,7 @@
         "EU-MERCEDES-BENZ-CITAN-W420-TOURER-STANDARD-01"
       ],
       "pending_reason": "",
-      "last_updated_round": 16
+      "last_updated_round": 7
     },
     "100180": {
       "status": "ready",
@@ -739,7 +893,7 @@
         "EU-MERCEDES-BENZ-CITAN-W415-TOURER-LONG-01"
       ],
       "pending_reason": "",
-      "last_updated_round": 16
+      "last_updated_round": 7
     },
     "147695": {
       "status": "ready",
@@ -753,7 +907,7 @@
         "EU-MERCEDES-BENZ-CITAN-W420-TOURER-STANDARD-01"
       ],
       "pending_reason": "",
-      "last_updated_round": 16
+      "last_updated_round": 7
     },
     "155330": {
       "status": "ready",
@@ -767,7 +921,7 @@
         "EU-MERCEDES-BENZ-CITAN-W420-ECITAN-TOURER-STANDARD-01"
       ],
       "pending_reason": "",
-      "last_updated_round": 16
+      "last_updated_round": 7
     },
     "120127": {
       "status": "ready",
@@ -781,57 +935,77 @@
         "EU-MERCEDES-BENZ-C-KLASSE-A205-CONVERTIBLE-FACELIFT-01"
       ],
       "pending_reason": "",
-      "last_updated_round": 16
+      "last_updated_round": 7
     },
     "158612": {
-      "status": "pending",
+      "status": "ready",
       "source_rows": [
         9365
       ],
-      "mapping_ids": [],
-      "dimension_group_ids": [],
-      "pending_reason": "尚未产生 Ktype 映射",
-      "last_updated_round": 16
+      "mapping_ids": [
+        "158612"
+      ],
+      "dimension_group_ids": [
+        "EU-MERCEDES-BENZ-C-KLASSE-W206-AMG-C43-SEDAN-FACELIFT-01"
+      ],
+      "pending_reason": "",
+      "last_updated_round": 7
     },
     "800858": {
-      "status": "pending",
+      "status": "ready",
       "source_rows": [
         9366
       ],
-      "mapping_ids": [],
-      "dimension_group_ids": [],
-      "pending_reason": "尚未产生 Ktype 映射",
-      "last_updated_round": 16
+      "mapping_ids": [
+        "800858"
+      ],
+      "dimension_group_ids": [
+        "EU-MERCEDES-BENZ-C-KLASSE-S206-AMG-C43-WAGON-FACELIFT-01"
+      ],
+      "pending_reason": "",
+      "last_updated_round": 7
     },
     "800859": {
-      "status": "pending",
+      "status": "ready",
       "source_rows": [
         9367
       ],
-      "mapping_ids": [],
-      "dimension_group_ids": [],
-      "pending_reason": "尚未产生 Ktype 映射",
-      "last_updated_round": 16
+      "mapping_ids": [
+        "800859"
+      ],
+      "dimension_group_ids": [
+        "EU-MERCEDES-BENZ-C-KLASSE-S206-AMG-C43-WAGON-FACELIFT-01"
+      ],
+      "pending_reason": "",
+      "last_updated_round": 7
     },
     "147481": {
-      "status": "pending",
+      "status": "ready",
       "source_rows": [
         9368
       ],
-      "mapping_ids": [],
-      "dimension_group_ids": [],
-      "pending_reason": "尚未产生 Ktype 映射",
-      "last_updated_round": 16
+      "mapping_ids": [
+        "147481"
+      ],
+      "dimension_group_ids": [
+        "EU-MERCEDES-BENZ-C-KLASSE-S206-AMG-C43-WAGON-PREFL-01"
+      ],
+      "pending_reason": "",
+      "last_updated_round": 7
     },
     "147483": {
-      "status": "pending",
+      "status": "ready",
       "source_rows": [
         9369
       ],
-      "mapping_ids": [],
-      "dimension_group_ids": [],
-      "pending_reason": "尚未产生 Ktype 映射",
-      "last_updated_round": 16
+      "mapping_ids": [
+        "147483"
+      ],
+      "dimension_group_ids": [
+        "EU-MERCEDES-BENZ-C-KLASSE-W206-AMG-C43-SEDAN-PREFL-01"
+      ],
+      "pending_reason": "",
+      "last_updated_round": 7
     },
     "108004": {
       "status": "ready",
@@ -847,7 +1021,7 @@
         "EU-MERCEDES-BENZ-C-KLASSE-W205-AMG-C63-SEDAN-FACELIFT-01"
       ],
       "pending_reason": "",
-      "last_updated_round": 16
+      "last_updated_round": 7
     },
     "108009": {
       "status": "ready",
@@ -863,7 +1037,7 @@
         "EU-MERCEDES-BENZ-C-KLASSE-S205-AMG-C63-WAGON-FACELIFT-01"
       ],
       "pending_reason": "",
-      "last_updated_round": 16
+      "last_updated_round": 7
     },
     "116942": {
       "status": "ready",
@@ -879,7 +1053,7 @@
         "EU-MERCEDES-BENZ-C-KLASSE-C205-AMG-C63-COUPE-FACELIFT-01"
       ],
       "pending_reason": "",
-      "last_updated_round": 16
+      "last_updated_round": 7
     },
     "120128": {
       "status": "ready",
@@ -895,7 +1069,7 @@
         "EU-MERCEDES-BENZ-C-KLASSE-A205-AMG-C63-CONVERTIBLE-FACELIFT-01"
       ],
       "pending_reason": "",
-      "last_updated_round": 16
+      "last_updated_round": 7
     },
     "108005": {
       "status": "ready",
@@ -911,7 +1085,7 @@
         "EU-MERCEDES-BENZ-C-KLASSE-W205-AMG-C63-SEDAN-FACELIFT-01"
       ],
       "pending_reason": "",
-      "last_updated_round": 16
+      "last_updated_round": 7
     },
     "108010": {
       "status": "ready",
@@ -927,7 +1101,7 @@
         "EU-MERCEDES-BENZ-C-KLASSE-S205-AMG-C63-WAGON-FACELIFT-01"
       ],
       "pending_reason": "",
-      "last_updated_round": 16
+      "last_updated_round": 7
     },
     "116943": {
       "status": "ready",
@@ -943,7 +1117,7 @@
         "EU-MERCEDES-BENZ-C-KLASSE-C205-AMG-C63-COUPE-FACELIFT-01"
       ],
       "pending_reason": "",
-      "last_updated_round": 16
+      "last_updated_round": 7
     },
     "120129": {
       "status": "ready",
@@ -959,27 +1133,35 @@
         "EU-MERCEDES-BENZ-C-KLASSE-A205-AMG-C63-CONVERTIBLE-FACELIFT-01"
       ],
       "pending_reason": "",
-      "last_updated_round": 16
+      "last_updated_round": 7
     },
     "150717": {
-      "status": "pending",
+      "status": "ready",
       "source_rows": [
         9378
       ],
-      "mapping_ids": [],
-      "dimension_group_ids": [],
-      "pending_reason": "尚未产生 Ktype 映射",
-      "last_updated_round": 16
+      "mapping_ids": [
+        "150717"
+      ],
+      "dimension_group_ids": [
+        "EU-MERCEDES-BENZ-C-KLASSE-W206-AMG-C63-S-E-PERFORMANCE-SEDAN-01"
+      ],
+      "pending_reason": "",
+      "last_updated_round": 7
     },
     "150719": {
-      "status": "pending",
+      "status": "ready",
       "source_rows": [
         9379
       ],
-      "mapping_ids": [],
-      "dimension_group_ids": [],
-      "pending_reason": "尚未产生 Ktype 映射",
-      "last_updated_round": 16
+      "mapping_ids": [
+        "150719"
+      ],
+      "dimension_group_ids": [
+        "EU-MERCEDES-BENZ-C-KLASSE-S206-AMG-C63-S-E-PERFORMANCE-WAGON-01"
+      ],
+      "pending_reason": "",
+      "last_updated_round": 7
     },
     "112350": {
       "status": "ready",
@@ -993,7 +1175,7 @@
         "EU-MERCEDES-BENZ-C-KLASSE-W205-SEDAN-01"
       ],
       "pending_reason": "",
-      "last_updated_round": 16
+      "last_updated_round": 7
     },
     "112361": {
       "status": "ready",
@@ -1007,7 +1189,7 @@
         "EU-MERCEDES-BENZ-C-KLASSE-S205-WAGON-01"
       ],
       "pending_reason": "",
-      "last_updated_round": 16
+      "last_updated_round": 7
     },
     "18882": {
       "status": "ready",
@@ -1021,7 +1203,7 @@
         "EU-MERCEDES-BENZ-C-KLASSE-CL203-COUPE-01"
       ],
       "pending_reason": "",
-      "last_updated_round": 16
+      "last_updated_round": 7
     },
     "10333": {
       "status": "ready",
@@ -1035,7 +1217,7 @@
         "EU-MERCEDES-BENZ-C-KLASSE-C204-COUPE-01"
       ],
       "pending_reason": "",
-      "last_updated_round": 16
+      "last_updated_round": 7
     },
     "14814": {
       "status": "ready",
@@ -1049,7 +1231,7 @@
         "EU-MERCEDES-BENZ-C-KLASSE-W203-SEDAN-01"
       ],
       "pending_reason": "",
-      "last_updated_round": 16
+      "last_updated_round": 7
     },
     "15262": {
       "status": "ready",
@@ -1063,7 +1245,7 @@
         "EU-MERCEDES-BENZ-C-KLASSE-CL203-COUPE-01"
       ],
       "pending_reason": "",
-      "last_updated_round": 16
+      "last_updated_round": 7
     },
     "15832": {
       "status": "ready",
@@ -1077,7 +1259,7 @@
         "EU-MERCEDES-BENZ-C-KLASSE-S203-WAGON-01"
       ],
       "pending_reason": "",
-      "last_updated_round": 16
+      "last_updated_round": 7
     },
     "58670": {
       "status": "ready",
@@ -1091,7 +1273,7 @@
         "EU-MERCEDES-BENZ-C-KLASSE-C204-COUPE-01"
       ],
       "pending_reason": "",
-      "last_updated_round": 16
+      "last_updated_round": 7
     },
     "100750": {
       "status": "ready",
@@ -1105,7 +1287,7 @@
         "EU-MERCEDES-BENZ-C-KLASSE-W205-SEDAN-01"
       ],
       "pending_reason": "",
-      "last_updated_round": 16
+      "last_updated_round": 7
     },
     "106413": {
       "status": "ready",
@@ -1119,7 +1301,7 @@
         "EU-MERCEDES-BENZ-C-KLASSE-S204-WAGON-FACELIFT-01"
       ],
       "pending_reason": "",
-      "last_updated_round": 16
+      "last_updated_round": 7
     },
     "106453": {
       "status": "ready",
@@ -1133,7 +1315,7 @@
         "EU-MERCEDES-BENZ-C-KLASSE-S205-WAGON-01"
       ],
       "pending_reason": "",
-      "last_updated_round": 16
+      "last_updated_round": 7
     },
     "116938": {
       "status": "ready",
@@ -1147,7 +1329,7 @@
         "EU-MERCEDES-BENZ-C-KLASSE-C205-COUPE-FACELIFT-01"
       ],
       "pending_reason": "",
-      "last_updated_round": 16
+      "last_updated_round": 7
     },
     "120121": {
       "status": "ready",
@@ -1161,27 +1343,35 @@
         "EU-MERCEDES-BENZ-C-KLASSE-A205-CONVERTIBLE-FACELIFT-01"
       ],
       "pending_reason": "",
-      "last_updated_round": 16
+      "last_updated_round": 7
     },
     "143576": {
-      "status": "pending",
+      "status": "ready",
       "source_rows": [
         9393
       ],
-      "mapping_ids": [],
-      "dimension_group_ids": [],
-      "pending_reason": "尚未产生 Ktype 映射",
-      "last_updated_round": 16
+      "mapping_ids": [
+        "143576"
+      ],
+      "dimension_group_ids": [
+        "EU-MERCEDES-BENZ-C-KLASSE-W206-SEDAN-01"
+      ],
+      "pending_reason": "",
+      "last_updated_round": 7
     },
     "145151": {
-      "status": "pending",
+      "status": "ready",
       "source_rows": [
         9394
       ],
-      "mapping_ids": [],
-      "dimension_group_ids": [],
-      "pending_reason": "尚未产生 Ktype 映射",
-      "last_updated_round": 16
+      "mapping_ids": [
+        "145151"
+      ],
+      "dimension_group_ids": [
+        "EU-MERCEDES-BENZ-C-KLASSE-S206-WAGON-01"
+      ],
+      "pending_reason": "",
+      "last_updated_round": 7
     },
     "106289": {
       "status": "ready",
@@ -1195,7 +1385,7 @@
         "EU-MERCEDES-BENZ-C-KLASSE-W205-SEDAN-01"
       ],
       "pending_reason": "",
-      "last_updated_round": 16
+      "last_updated_round": 7
     },
     "107473": {
       "status": "ready",
@@ -1209,7 +1399,7 @@
         "EU-MERCEDES-BENZ-C-KLASSE-S205-WAGON-01"
       ],
       "pending_reason": "",
-      "last_updated_round": 16
+      "last_updated_round": 7
     },
     "12313": {
       "status": "ready",
@@ -1225,7 +1415,7 @@
         "EU-MERCEDES-BENZ-C-KLASSE-S204-WAGON-FACELIFT-01"
       ],
       "pending_reason": "",
-      "last_updated_round": 16
+      "last_updated_round": 7
     },
     "10036": {
       "status": "ready",
@@ -1241,7 +1431,7 @@
         "EU-MERCEDES-BENZ-C-KLASSE-S204-WAGON-FACELIFT-01"
       ],
       "pending_reason": "",
-      "last_updated_round": 16
+      "last_updated_round": 7
     },
     "59476": {
       "status": "ready",
@@ -1257,7 +1447,7 @@
         "EU-MERCEDES-BENZ-C-KLASSE-W204-SEDAN-FACELIFT-01"
       ],
       "pending_reason": "",
-      "last_updated_round": 16
+      "last_updated_round": 7
     },
     "16714": {
       "status": "ready",
@@ -1271,58 +1461,18 @@
         "EU-MERCEDES-BENZ-C-KLASSE-W203-SEDAN-01"
       ],
       "pending_reason": "",
-      "last_updated_round": 16
+      "last_updated_round": 7
     }
   },
   "progress": {
     "input_ktype_count": 100,
-    "ready_ktype_count": 61,
-    "pending_ktype_count": 39,
-    "pending_ktypes": [
-      "128046",
-      "123743",
-      "123745",
-      "123747",
-      "18590",
-      "114993",
-      "59384",
-      "18510",
-      "12171",
-      "12173",
-      "18507",
-      "107068",
-      "59438",
-      "12172",
-      "18511",
-      "12174",
-      "18508",
-      "54958",
-      "107895",
-      "107896",
-      "57257",
-      "18512",
-      "57292",
-      "100550",
-      "107954",
-      "107955",
-      "55581",
-      "107894",
-      "108181",
-      "109338",
-      "158612",
-      "800858",
-      "800859",
-      "147481",
-      "147483",
-      "150717",
-      "150719",
-      "143576",
-      "145151"
-    ]
+    "ready_ktype_count": 100,
+    "pending_ktype_count": 0,
+    "pending_ktypes": []
   },
   "artifacts": {
     "current_mapping": "/Users/wang/Documents/GitHub/fitment_sheet_generation/projects/qclaw_fitment_automation/workspaces/0802-eu/checkpoints/part-03/task-state/left18448__batch__0094__a422bfd1/current_mapping.tsv",
     "current_dimension_groups": "/Users/wang/Documents/GitHub/fitment_sheet_generation/projects/qclaw_fitment_automation/workspaces/0802-eu/checkpoints/part-03/task-state/left18448__batch__0094__a422bfd1/current_dimension_groups.tsv"
   },
-  "updated_at": "2026-08-04 00:50:21"
+  "updated_at": "2026-08-05 18:52:26"
 }

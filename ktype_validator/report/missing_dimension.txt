@@ -1,0 +1,1 @@
+row	id	Ktype	DIMENSION_GROUP_ID

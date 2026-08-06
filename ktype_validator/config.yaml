@@ -1,0 +1,16 @@
+files:
+  mapping: ktype_mapping_final.tsv
+  dimension: dimension_groups_final.tsv
+  source: projects/qclaw_fitment_automation/all-eu.tsv
+
+workspaces:
+  - projects/qclaw_fitment_automation/workspaces/0727-eu
+  - projects/qclaw_fitment_automation/workspaces/0728-eu
+  - projects/qclaw_fitment_automation/workspaces/0728-eu-2
+  - projects/qclaw_fitment_automation/workspaces/0730-eu
+  - projects/qclaw_fitment_automation/workspaces/0731-eu
+  - projects/qclaw_fitment_automation/workspaces/0802-eu
+  - projects/qclaw_fitment_automation/workspaces/0805-eu继续迭代
+
+iteration:
+  output: iteration_input.tsv

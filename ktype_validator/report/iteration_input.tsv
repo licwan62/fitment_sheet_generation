@@ -1,0 +1,27 @@
+Make	Model	VariantName	BodyStyle	DriveType	Energy	EngineOutputKW	EngineOutputHP	Product Start Month-Year	Product End Month-Year	Ktype
+Mercedes-benz	T2/l	L 608 D	Pritsche/Fahrgestell	Heckantrieb	Diesel	63	85	Jan 1970	Dec 1988	34020
+Mercedes-benz	T2/l	L 608 D	Pritsche/Fahrgestell	Heckantrieb	Diesel	63	85	Feb 1984	Dec 1988	34252
+Mercedes-benz	T2/l	L 613 D	Pritsche/Fahrgestell	Heckantrieb	Diesel	96	130	Apr 1977	Dec 1988	34022
+Mercedes-benz	T2/l	LF 408 G	Kommunalfahrzeug	Heckantrieb	Benzin	55	75	Aug 1972	Dec 1974	34011
+Mercedes-benz	T2/l	LF 408 G	Kommunalfahrzeug	Heckantrieb	Benzin	63	85	Aug 1972	Dec 1974	34346
+Mercedes-benz	T2/l	LF 409 G	Kommunalfahrzeug	Heckantrieb	Benzin	66	90	Jan 1975	Aug 1982	34014
+Mercedes-benz	T2/l	LK 408 G	Pritsche/Fahrgestell	Heckantrieb	Benzin	63	85	Jan 1968	Dec 1974	34229
+Mercedes-benz	T2/l	LK 408 G, LK 409	Pritsche/Fahrgestell	Heckantrieb	Benzin	66	90	Jan 1975	Aug 1982	34230
+Mercedes-benz	T2/l	LK 408 G, LK 409	Pritsche/Fahrgestell	Heckantrieb	Benzin	70	95	Aug 1982	Sep 1983	34231
+Mercedes-benz	T2/l	LKO 508 DG	Kommunalfahrzeug	Heckantrieb	Diesel	63	85	Jun 1972	Feb 1977	34250
+Mercedes-benz	T2/l	LKO 508 DG	Pritsche/Fahrgestell	Heckantrieb	Diesel	63	85	Sep 1972	Jun 1988	34251
+Mercedes-benz	T2/ln1	507 DK	Pritsche/Fahrgestell	Heckantrieb	Diesel	53	72	Apr 1986	Apr 1989	34025
+Mercedes-benz	T2/ln1	809 DT	Triebkopf	Frontantrieb	Diesel	63	86	Apr 1986	Dec 1994	34404
+Mercedes-benz	T2/ln1	809 DT	Triebkopf	Frontantrieb	Diesel	66	90	Apr 1986	Dec 1994	34155
+Mercedes-benz	T2/ln1	O 609 D	Bus	Heckantrieb	Diesel	66	90	Jul 1987	Dec 1992	34114
+Mercedes-benz	T2/ln1	O 611 D	Bus	Heckantrieb	Diesel	85	116	Jul 1987	Dec 1992	34115
+Mercedes-benz	T2/ln1	O 614 D	Bus	Heckantrieb	Diesel	100	136	Jul 1987	Dec 1992	34116
+Mercedes-benz	Vario	613 D, 614 D	Triebkopf	Heckantrieb	Diesel	95	129	Jan 2006	Dec 2013	100304
+Mercedes-benz	Vario	615 D, 616 D	Triebkopf	Heckantrieb	Diesel	115	156	Jan 2006	Dec 2013	100305
+Mercedes-benz	Vario	618 D	Triebkopf	Heckantrieb	Diesel	130	177	Sep 2006	Dec 2013	100306
+Mercedes-benz	Vario	810 DT	Triebkopf	Heckantrieb	Diesel	75	102	Sep 1996	Jun 2006	34226
+Renault Trucks	B	70	Pritsche/Fahrgestell	Heckantrieb	Diesel	53	72	Jan 1983	Dec 1990	34233
+Renault Trucks	B	90	Pritsche/Fahrgestell	Heckantrieb	Diesel	68	92	Apr 1986	Sep 1990	34235
+Renault Trucks	B	90	Pritsche/Fahrgestell	Heckantrieb	Diesel	71	97	Aug 1990	Jan 1992	34237
+Renault Trucks	Messenger	B 120.55t	Sattelschlepper	Heckantrieb	Diesel	85	116	Jan 1994	Sep 1996	34125
+Renault Trucks	Messenger	B 120.55t	Sattelschlepper	Heckantrieb	Diesel	90	122	Sep 1996	Jun 1999	34126

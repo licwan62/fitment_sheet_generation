@@ -1,0 +1,73 @@
+========================
+Ktype Validation Report
+========================
+
+
+Ktype Coverage
+
+TOTAL:
+35548
+
+READY:
+35522
+
+PENDING:
+26
+
+
+Discovered Files
+
+MAPPING FILES:
+11
+
+DIMENSION FILES:
+10
+
+SKIPPED FILES:
+0
+
+PASS
+
+
+Iteration Input
+
+SOURCE ROWS:
+26
+
+UNMATCHED KTYPES:
+0
+
+
+Dimension Reference
+
+TOTAL MAPPING:
+50363
+
+VALID:
+50363
+
+MISSING DIMENSION:
+0
+
+PASS
+
+
+Dimension Conflict
+
+CONFLICT GROUPS:
+178
+
+FAILED
+
+
+Mapping Merge Conflict
+
+CONFLICT IDS:
+387
+
+FAILED
+
+
+FINAL STATUS:
+
+FAILED

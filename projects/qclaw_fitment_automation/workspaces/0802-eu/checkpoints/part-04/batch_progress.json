@@ -2,8 +2,13 @@
   "version": 1,
   "total_batches": 46,
   "rows_per_batch": 100,
+<<<<<<< Updated upstream
   "updated_at": "2026-08-05 22:11:56",
   "next_pending_index": 46,
+=======
+  "updated_at": "2026-08-05 17:19:04",
+  "next_pending_index": 6,
+>>>>>>> Stashed changes
   "batches": [
     {
       "index": 0,
@@ -70,20 +75,34 @@
       "batch_number": 7,
       "task_id": "left18448__batch__0146__11160452",
       "display_name": "left18448 第 14501-14600 行",
+<<<<<<< Updated upstream
       "status": "almost",
       "remarks": "从 checkpoint 本地最后回复恢复全部当前 READY 记录及下载链接；剩余 PENDING 因证据不足结束",
       "checkpoint_file": "left18448__batch__0146__11160452.json",
       "updated_at": "2026-08-05 22:11:49"
+=======
+      "status": "pending",
+      "remarks": "Ktype 覆盖率审计重开：缺少 80 个 Ktype；7876,10870,11250,14013,14014,14019,14570,15109,15598,15711,15712,15713,15714,15715,15716,16418,16419,16422,16423,17335,17511,18280,18353,18611,18612,34143,34144,34145,34149,34150,34151,34153,34192,34193,34270,34271,34272,34273,34274,55132,55503,105904,105905,105906,105907,107530,107531,107532,107533,108062,108063,110695,115506,115519,115520,120237,120239,120241,120596,121500,121651,121652,124320,125941,126647,127205,127206,143197,143198,143199,143200,144927,145045,145524,145525,145526,150673,155339,155340,163836",
+      "checkpoint_file": "left18448__batch__0146__11160452.json",
+      "updated_at": "2026-08-05 17:19:04"
+>>>>>>> Stashed changes
     },
     {
       "index": 7,
       "batch_number": 8,
       "task_id": "left18448__batch__0147__a0ddbad6",
       "display_name": "left18448 第 14601-14700 行",
+<<<<<<< Updated upstream
       "status": "almost",
       "remarks": "从 checkpoint 本地最后回复恢复全部当前 READY 记录及下载链接；剩余 PENDING 因证据不足结束",
       "checkpoint_file": "left18448__batch__0147__a0ddbad6.json",
       "updated_at": "2026-08-05 22:11:56"
+=======
+      "status": "error",
+      "remarks": "连续多轮回复均未给出 TSV 数据（已发送收尾 prompt 仍无数据），视为无可处理数据",
+      "checkpoint_file": "left18448__batch__0147__a0ddbad6.json",
+      "updated_at": "2026-08-04 13:38:18"
+>>>>>>> Stashed changes
     },
     {
       "index": 8,
@@ -466,4 +485,8 @@
       "updated_at": "2026-08-04 19:26:59"
     }
   ]
+<<<<<<< Updated upstream
 }
+=======
+}
+>>>>>>> Stashed changes
